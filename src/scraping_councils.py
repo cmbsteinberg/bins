@@ -18,19 +18,18 @@ async def run_agent(
     async with agent.run_mcp_servers():
         result = await agent.run(prompt, usage_limits=UsageLimits(request_limit=20))
         print(result.output)
-        print(result.usage)
+        print(result.usage())
         return result
 
 
 async def main(prompt="""Go to example.com"""):
-    councils = pl.read_csv("data/bins_info_with_uprn.csv").to_dicts()
+    councils = pl.read_csv("data/postcodes_by_council.csv").to_dicts()
 
     for council in councils:
-        if not council.get("uprn_url"):
+        if not council.get("post"):
             prompt = PROMPT.format(
                 URL=council.get("URL"),
-                POSTCODE1=council.get("pcd1"),
-                POSTCODE2=council.get("pcd2"),
+                POSTCODE1=council.get("postcode"),
             )
             council_name = council.get("Authority Name").replace(" ", "_").lower()
 
@@ -41,18 +40,28 @@ async def main(prompt="""Go to example.com"""):
                     model_id="gemini-2.5-flash",
                 )
 
-                result_dict = {
-                    "output": result.output.model_dump(),
-                    "usage": result.usage,  # Already a dict
+                result_dict_parsed = {
+                    "output": json.loads(
+                        result.output.model_dump_json()
+                    ),  # This is now a Python dictionary
+                    "messages": json.loads(
+                        result.all_messages_json()
+                    ),  # This is now a Python list of dictionaries
                 }
+
+                print(result_dict_parsed)
 
                 # Write to JSON file
                 with open(
-                    f"{TRACE_DIR.format(council_name=council_name)}_result.json",
+                    f"{TRACE_DIR.format(council_name=council_name)}/result.json",
                     "w",
                     encoding="utf-8",
                 ) as f:
-                    json.dump(result_dict, f, indent=2, ensure_ascii=False)
+                    json.dump(result_dict_parsed, f, indent=2, ensure_ascii=False)
+
+                print(
+                    f"File saved to {TRACE_DIR.format(council_name=council_name)}/result_parsed.json"
+                )
 
             except Exception as e:
                 print(f"This run failed with exception {e}")

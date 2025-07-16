@@ -14,13 +14,13 @@ class BinColour(Enum):
     GREEN = "green"
 
 
-class BinInfo(BaseModel):
+class BinInfo(BaseModel, use_enum_values=True):
     next_pickup_day: Union[datetime, str, None]
     frequency: Optional[str]
     bin_colour: Optional[BinColour]
 
 
-class BinDays(BaseModel):
+class BinDays(BaseModel, use_enum_values=True):
     postcode: Optional[str]
     general_waste: BinInfo
     recycling: BinInfo

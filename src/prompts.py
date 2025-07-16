@@ -28,5 +28,5 @@ If you encounter issues:
 
 Look for alternative entry points (e.g., "Check my bin day")
 Note any technical difficulties in your response
-If the provided postcode doesn't work try postcodes from the same council area (use your knowledge of local postcodes). Here is a suggestion {POSTCODE2}
+If the provided postcode doesn't work try postcodes from the same council area (use your knowledge of local postcodes).
 """

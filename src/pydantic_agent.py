@@ -14,11 +14,10 @@ from models import BinDays
 # Loads GOOGLE_APPLICATION_CREDENTIALS
 load_dotenv()
 
-TRACE_DIR = "./data/traces/{council_name}"
-
 
 def create_agent(
-    council_name,
+    output_dir,
+    output_type=BinDays,
     model_id="gemini-2.5-flash",
     system_prompt: str = "You are a helpful web-browsing agent who researches and retrieves bin collection information for a specific council area by accessing their official website and lookup system",
 ):
@@ -29,7 +28,7 @@ def create_agent(
             "@playwright/mcp@latest",
             "--headless",
             "--save-trace",
-            f"--output-dir={TRACE_DIR.format(council_name=council_name)}",
+            f"--output-dir={output_dir}",
         ],
     )
 
@@ -47,7 +46,7 @@ def create_agent(
     agent = Agent(
         model,  # Using Vertex AI Gemini model
         mcp_servers=[playwright_server],
-        output_type=BinDays,
+        output_type=output_type,
         system_prompt=system_prompt,
         model_settings=ModelSettings(temperature=0.3),
     )

@@ -51,7 +51,7 @@ def main():
                 print("--- Errors ---")
                 print(result.stderr)
         else:
-            print(f"Skipping a row due to missing data: {council}")
+            print(f"Skipping row {council}")
 
     print("\nAll councils processed.")
 

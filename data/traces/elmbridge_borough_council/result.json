@@ -1,0 +1,573 @@
+{
+  "output": {
+    "postcode": "KT10 0AA",
+    "general_waste": {
+      "next_pickup_day": "Wednesday 30/07/2025",
+      "frequency": "Fortnightly",
+      "bin_colour": "black"
+    },
+    "recycling": {
+      "next_pickup_day": "Wednesday 23/07/2025",
+      "frequency": "Fortnightly",
+      "bin_colour": "blue"
+    },
+    "food_waste": {
+      "next_pickup_day": "Wednesday 23/07/2025",
+      "frequency": "Weekly",
+      "bin_colour": "brown"
+    },
+    "garden_waste": {
+      "next_pickup_day": "None",
+      "frequency": "None",
+      "bin_colour": "green"
+    },
+    "notes": "Garden waste collection is an optional, paid service and not part of the standard collection for this address."
+  },
+  "messages": [
+    {
+      "parts": [
+        {
+          "content": "You are a helpful web-browsing agent who researches and retrieves bin collection information for a specific council area by accessing their official website and lookup system",
+          "timestamp": "2025-07-21T11:10:36.769633Z",
+          "dynamic_ref": null,
+          "part_kind": "system-prompt"
+        },
+        {
+          "content": "\n### Bin Collection Schedule Lookup Task\n\n## Objective\n\nResearch and retrieve bin collection information for a specific council area by accessing their official website and lookup system.\n\n## Instructions\n\n# Step 1: Navigate to Council Website\nAccess the council website at: https://www.elmbridge.gov.uk/waste-and-recycling/missed-bins/\n\n# Step 2: Test Postcodes\nSearch for the collection schedules for this postcodes: KT10 0AA\nIf a full address is required, use any house number (e.g., \"1 [Street Name]\") or select any option on a dropdown. The specific address doesn't matter - we only need the collection schedule format\n\n## Output\n\nProvide the following information for each bin type (if exists) + the postcode:\n    next_pickup_day\n    frequency \n    bin_colour\n\nIf it doesn't exist, that is ok. Just answer None for these fields.\n\n## Troubleshooting\nIf you encounter issues:\n\nLook for alternative entry points (e.g., \"Check my bin day\")\nNote any technical difficulties in your response\nIf the provided postcode doesn't work try postcodes from the same council area (use your knowledge of local postcodes).\n",
+          "timestamp": "2025-07-21T11:10:36.769639Z",
+          "part_kind": "user-prompt"
+        }
+      ],
+      "instructions": null,
+      "kind": "request"
+    },
+    {
+      "parts": [
+        {
+          "tool_name": "browser_navigate",
+          "args": {
+            "url": "https://www.elmbridge.gov.uk/waste-and-recycling/missed-bins/"
+          },
+          "tool_call_id": "pyd_ai_8996d0d1d5d14a119953acdb6116d85b",
+          "part_kind": "tool-call"
+        }
+      ],
+      "usage": {
+        "requests": 1,
+        "request_tokens": 1399,
+        "response_tokens": 26,
+        "total_tokens": 1604,
+        "details": {
+          "thoughts_tokens": 179,
+          "text_candidates_tokens": 26,
+          "text_prompt_tokens": 1399
+        }
+      },
+      "model_name": "gemini-2.5-flash",
+      "timestamp": "2025-07-21T11:10:38.537495Z",
+      "kind": "response",
+      "vendor_details": {
+        "finish_reason": "STOP"
+      },
+      "vendor_id": "LSB-aMmbAoSiz_IPj8Wm2AE"
+    },
+    {
+      "parts": [
+        {
+          "tool_name": "browser_navigate",
+          "content": "### Ran Playwright code\n```js\n// Navigate to https://www.elmbridge.gov.uk/waste-and-recycling/missed-bins/\nawait page.goto('https://www.elmbridge.gov.uk/waste-and-recycling/missed-bins/');\n```\n\n### Page state\n- Page URL: https://www.elmbridge.gov.uk/bins-waste-and-recycling/missed-bin-collection\n- Page Title: Missed bin collection | Elmbridge Borough Council\n- Page Snapshot:\n```yaml\n- generic [active] [ref=e1]:\n  - alertdialog [ref=e2]:\n    - generic [ref=e4]:\n      - document [ref=e5]:\n        - heading \"We use cookies on this site to enhance your user experience\" [level=2] [ref=e6]\n        - paragraph [ref=e7]: By clicking the Accept button, you agree to us doing so.\n        - button \"More info\" [ref=e8] [cursor=pointer]\n      - generic [ref=e9]:\n        - button \"Accept\" [ref=e10] [cursor=pointer]\n        - button \"No, thanks\" [ref=e11] [cursor=pointer]\n  - generic [ref=e12]:\n    - banner [ref=e13]:\n      - link \"Skip to main content\" [ref=e14] [cursor=pointer]:\n        - /url: \"#main-content\"\n      - generic [ref=e18]:\n        - banner [ref=e19]:\n          - generic [ref=e20]:\n            - link \"Elmbridge Borough Council\" [ref=e24] [cursor=pointer]:\n              - /url: https://www.elmbridge.gov.uk/\n              - img \"Elmbridge Borough Council\" [ref=e25] [cursor=pointer]\n            - generic [ref=e27]:\n              - textbox \"Search\" [ref=e29]\n              - button \"Search\" [ref=e31] [cursor=pointer]\n        - generic [ref=e32]:\n          - button \"Toggle services menu\" [ref=e33] [cursor=pointer]:\n            - generic [ref=e34] [cursor=pointer]: Services\n            - generic [ref=e35] [cursor=pointer]: ›\n          - text: ›\n        - navigation [ref=e37]:\n          - navigation \"Services menu\" [ref=e39]:\n            - heading \"Services menu\" [level=2] [ref=e40]\n            - list [ref=e41]:\n              - listitem [ref=e42]:\n                - link \"My Account\" [ref=e43] [cursor=pointer]:\n                  - /url: https://myaccount.elmbridge.gov.uk/\n    - banner [ref=e45]:\n      - navigation \"Breadcrumbs\" [ref=e49]:\n        - heading \"Breadcrumbs\" [level=2] [ref=e50]\n        - list [ref=e51]:\n          - listitem [ref=e52]:\n            - link \"Home\" [ref=e53] [cursor=pointer]:\n              - /url: /\n          - listitem [ref=e54]:\n            - text: »\n            - link \"Bins, waste and recycling\" [ref=e55] [cursor=pointer]:\n              - /url: /bins-waste-and-recycling\n    - main [ref=e56]:\n      - banner [ref=e57]:\n        - generic [ref=e59]:\n          - generic [ref=e61]:\n            - heading \"Missed bin collection\" [level=1] [ref=e62]\n            - paragraph [ref=e63]: How to report a missed bin collection.\n          - navigation \"Section Navigation\" [ref=e65]:\n            - list [ref=e66]:\n              - listitem [ref=e67]:\n                - link \"Report a missed bin\" [ref=e68] [cursor=pointer]:\n                  - /url: https://missedbin-myforms.elmbridge.gov.uk/MissedBinFormYA/launch\n                  - generic [ref=e69] [cursor=pointer]: Report a missed bin\n                  - img [ref=e71] [cursor=pointer]\n      - banner [ref=e73]:\n        - article [ref=e76]:\n          - generic [ref=e80]:\n            - paragraph [ref=e81]: Please do not report a missed collection before 4pm on your collection day.\n            - paragraph [ref=e82]: You can report a missed bin up to 2 working days after your due collection day. For example, if your collection day is Monday you can report a missed bin up to 11:59pm on Wednesday, or if your collection day is on Friday you can report a missed bin up to 11:59pm on Tuesday.\n            - heading \"After you have reported\" [level=2] [ref=e83]\n            - paragraph [ref=e84]: Once you have reported your missed bin collection, make sure your bin is out on the edge of the property. We will collect it as soon as possible. We will let you know whether it has been collected or not.\n            - paragraph [ref=e85]: \"Your bins will not be collected if:\"\n            - list [ref=e86]:\n              - listitem [ref=e87]:\n                - text: they are not out on the correct collection day before 6:30am -\n                - link \"check your bin collection day\" [ref=e88] [cursor=pointer]:\n                  - /url: /bins-waste-and-recycling/bin-collection-days\n              - listitem [ref=e89]: they contain items we don’t collect\n              - listitem [ref=e90]: they are too heavy to be tipped into the truck - you may have to lighten the content before we can return to empty it\n              - listitem [ref=e91]: the bin lid is not closed - bin lids need to be closed otherwise the bin is not safe to empty, if your bin is too full for the lid to shut, remove some items until it closes\n            - paragraph [ref=e92]: The crew will not be able to collect any recycling placed in black bags.\n            - heading \"Missed garden waste collection\" [level=2] [ref=e93]\n            - paragraph [ref=e94]:\n              - text: We are unable to ask the crew to return to empty your bin if your garden waste subscription was not active on your collection day. Please see our\n              - link \"terms and conditions\" [ref=e95] [cursor=pointer]:\n                - /url: /bins-waste-and-recycling/garden-waste-service/garden-waste-subscription-service-terms-and\n              - text: .\n            - heading \"Missed medical waste collection\" [level=2] [ref=e96]\n            - paragraph [ref=e97]: To report a missed medical waste collection, please contact Customer Services on 01372 474474.\n      - banner [ref=e98]:\n        - paragraph [ref=e103]:\n          - text: Help improve this site by\n          - link \"giving feedback\" [ref=e104] [cursor=pointer]:\n            - /url: https://elmbridge-self.achieveservice.com/AchieveForms/?mode=fill&consentMessage=yes&form_uri=sandbox-publish://AF-Process-438936a4-ba3f-47f2-8125-5e4c2a78943d/AF-Stage-d67573e7-2176-4469-8a04-0e3057bfcc82/definition.json&process=1&process_uri=sandbox-processes://AF-Process-438936a4-ba3f-47f2-8125-5e4c2a78943d&process_id=AF-Process-438936a4-ba3f-47f2-8125-5e4c2a78943d\n    - contentinfo [ref=e105]:\n      - generic [ref=e108]:\n        - banner [ref=e110]:\n          - link \"Elmbridge Borough Council\" [ref=e116] [cursor=pointer]:\n            - /url: https://www.elmbridge.gov.uk/\n            - img \"Elmbridge Borough Council\" [ref=e117] [cursor=pointer]\n        - banner [ref=e119]:\n          - navigation \"Get in touch\" [ref=e122]:\n            - heading \"Get in touch\" [level=2] [ref=e123]\n            - list [ref=e124]:\n              - listitem [ref=e125]:\n                - link \"Contact us\" [ref=e126] [cursor=pointer]:\n                  - /url: /your-council/how-find-and-contact-us-phone-and-online\n              - listitem [ref=e127]:\n                - link \"Accessibility\" [ref=e128] [cursor=pointer]:\n                  - /url: https://www.elmbridge.gov.uk/accessibility\n              - listitem [ref=e129]:\n                - link \"Terms and conditions\" [ref=e130] [cursor=pointer]:\n                  - /url: https://www.elmbridge.gov.uk/website-terms-and-conditions\n              - listitem [ref=e131]:\n                - link \"Privacy\" [ref=e132] [cursor=pointer]:\n                  - /url: https://www.elmbridge.gov.uk/your-council/privacy-and-data-protection/elmbridge-borough-council-privacy-notice\n              - listitem [ref=e133]:\n                - link \"Cookies\" [ref=e134] [cursor=pointer]:\n                  - /url: https://www.elmbridge.gov.uk/your-council/privacy-and-data-protection/cookies-notice\n              - listitem [ref=e135]:\n                - link \"Jobs\" [ref=e136] [cursor=pointer]:\n                  - /url: https://www.elmbridge.gov.uk/jobs-work-experience-and-volunteering\n        - banner [ref=e138]:\n          - navigation \"Follow us\" [ref=e141]:\n            - heading \"Follow us\" [level=2] [ref=e142]\n            - list [ref=e143]:\n              - listitem [ref=e144]:\n                - link \"facebook\" [ref=e145] [cursor=pointer]:\n                  - /url: https://www.facebook.com/ElmbridgeBoroughCouncil\n              - listitem [ref=e146]:\n                - link \"Instagram\" [ref=e147] [cursor=pointer]:\n                  - /url: https://www.instagram.com/elmbridgebc\n              - listitem [ref=e148]:\n                - link \"linkedin\" [ref=e149] [cursor=pointer]:\n                  - /url: https://uk.linkedin.com/company/elmbridge-borough-council\n              - listitem [ref=e150]:\n                - link \"youtube\" [ref=e151] [cursor=pointer]:\n                  - /url: https://www.youtube.com/elmbridgebc\n```",
+          "tool_call_id": "pyd_ai_8996d0d1d5d14a119953acdb6116d85b",
+          "metadata": null,
+          "timestamp": "2025-07-21T11:10:39.547240Z",
+          "part_kind": "tool-return"
+        }
+      ],
+      "instructions": null,
+      "kind": "request"
+    },
+    {
+      "parts": [
+        {
+          "tool_name": "browser_click",
+          "args": {
+            "element": "check your bin collection day",
+            "ref": "e88"
+          },
+          "tool_call_id": "pyd_ai_7388e503aa0547b1b95b0acbe7dcc907",
+          "part_kind": "tool-call"
+        }
+      ],
+      "usage": {
+        "requests": 1,
+        "request_tokens": 4200,
+        "response_tokens": 13,
+        "total_tokens": 4263,
+        "details": {
+          "cached_content_tokens": 1474,
+          "thoughts_tokens": 50,
+          "text_cache_tokens": 1474,
+          "text_candidates_tokens": 13,
+          "text_prompt_tokens": 4200
+        }
+      },
+      "model_name": "gemini-2.5-flash",
+      "timestamp": "2025-07-21T11:10:40.499960Z",
+      "kind": "response",
+      "vendor_details": {
+        "finish_reason": "STOP"
+      },
+      "vendor_id": "LyB-aOijJ66tz_IPye_36Ak"
+    },
+    {
+      "parts": [
+        {
+          "content": "TimeoutError: locator.click: Timeout 5000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('aria-ref=e88')\u001b[22m\n\u001b[2m    - locator resolved to <a data-entity-type=\"node\" title=\"Bin collection days\" data-entity-substitution=\"canonical\" href=\"/bins-waste-and-recycling/bin-collection-days\" data-entity-uuid=\"fe47acbd-2882-4733-ad2d-62df10fcebe5\">check your bin collection day</a>\u001b[22m\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is visible, enabled and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - <div class=\"popup-content info eu-cookie-compliance-content\">…</div> from <div id=\"sliding-popup\" role=\"alertdialog\" aria-describedby=\"popup-text\" class=\"sliding-popup-top clearfix\">…</div> subtree intercepts pointer events\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is not stable\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m      - waiting 100ms\u001b[22m\n\u001b[2m    4 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is visible, enabled and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - <div class=\"popup-content info eu-cookie-compliance-content\">…</div> from <div id=\"sliding-popup\" role=\"alertdialog\" aria-describedby=\"popup-text\" class=\"sliding-popup-top clearfix\">…</div> subtree intercepts pointer events\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m      - waiting 500ms\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is visible, enabled and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - <div id=\"sliding-popup\" role=\"alertdialog\" aria-describedby=\"popup-text\" class=\"sliding-popup-top clearfix\">…</div> intercepts pointer events\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m      - waiting 500ms\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is visible, enabled and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - <div class=\"popup-content info eu-cookie-compliance-content\">…</div> from <div id=\"sliding-popup\" role=\"alertdialog\" aria-describedby=\"popup-text\" class=\"sliding-popup-top clearfix\">…</div> subtree intercepts pointer events\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m      - waiting 500ms\u001b[22m\n\u001b[2m    - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m    - element is visible, enabled and stable\u001b[22m\n\u001b[2m    - scrolling into view if needed\u001b[22m\n\u001b[2m    - done scrolling\u001b[22m\n\u001b[2m    - <div id=\"sliding-popup\" role=\"alertdialog\" aria-describedby=\"popup-text\" class=\"sliding-popup-top clearfix\">…</div> intercepts pointer events\u001b[22m\n\u001b[2m  - retrying click action\u001b[22m\n\u001b[2m    - waiting 500ms\u001b[22m\n",
+          "tool_name": "browser_click",
+          "tool_call_id": "pyd_ai_7388e503aa0547b1b95b0acbe7dcc907",
+          "timestamp": "2025-07-21T11:10:45.566995Z",
+          "part_kind": "retry-prompt"
+        }
+      ],
+      "instructions": null,
+      "kind": "request"
+    },
+    {
+      "parts": [
+        {
+          "tool_name": "browser_click",
+          "args": {
+            "ref": "e10",
+            "element": "Accept"
+          },
+          "tool_call_id": "pyd_ai_271ff0acdd504ac1b5dd5dc1bf0da0db",
+          "part_kind": "tool-call"
+        }
+      ],
+      "usage": {
+        "requests": 1,
+        "request_tokens": 5307,
+        "response_tokens": 9,
+        "total_tokens": 5373,
+        "details": {
+          "thoughts_tokens": 57,
+          "text_candidates_tokens": 9,
+          "text_prompt_tokens": 5307
+        }
+      },
+      "model_name": "gemini-2.5-flash",
+      "timestamp": "2025-07-21T11:10:46.852662Z",
+      "kind": "response",
+      "vendor_details": {
+        "finish_reason": "STOP"
+      },
+      "vendor_id": "NSB-aOKuLKKhmPUP0sPjuAM"
+    },
+    {
+      "parts": [
+        {
+          "tool_name": "browser_click",
+          "content": "### Ran Playwright code\n```js\n// Click Accept\nawait page.getByRole('button', { name: 'Accept' }).click();\n```\n\n### New console messages\n- [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://www.elmbridg...\n- [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://www.elmbridg...\n- [ERROR] Manifest fetch from https://www.elmbridge.gov.uk/themes/custom/elmbridge/assets/images/favic...\n- [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://www.elmbridg...\n\n### Page state\n- Page URL: https://www.elmbridge.gov.uk/bins-waste-and-recycling/missed-bin-collection\n- Page Title: Missed bin collection | Elmbridge Borough Council\n- Page Snapshot:\n```yaml\n- generic [ref=e12]:\n  - banner [ref=e13]:\n    - link \"Skip to main content\" [ref=e14] [cursor=pointer]:\n      - /url: \"#main-content\"\n    - generic [ref=e18]:\n      - banner [ref=e19]:\n        - generic [ref=e20]:\n          - link \"Elmbridge Borough Council\" [ref=e24] [cursor=pointer]:\n            - /url: https://www.elmbridge.gov.uk/\n            - img \"Elmbridge Borough Council\" [ref=e25] [cursor=pointer]\n          - generic [ref=e27]:\n            - textbox \"Search\" [ref=e29]\n            - button \"Search\" [ref=e31] [cursor=pointer]\n      - generic [ref=e32]:\n        - button \"Toggle services menu\" [ref=e33] [cursor=pointer]:\n          - generic [ref=e34] [cursor=pointer]: Services\n          - generic [ref=e35] [cursor=pointer]: ›\n        - text: ›\n      - navigation [ref=e37]:\n        - navigation \"Services menu\" [ref=e39]:\n          - heading \"Services menu\" [level=2] [ref=e40]\n          - list [ref=e41]:\n            - listitem [ref=e42]:\n              - link \"My Account\" [ref=e43] [cursor=pointer]:\n                - /url: https://myaccount.elmbridge.gov.uk/\n  - banner [ref=e45]:\n    - navigation \"Breadcrumbs\" [ref=e49]:\n      - heading \"Breadcrumbs\" [level=2] [ref=e50]\n      - list [ref=e51]:\n        - listitem [ref=e52]:\n          - link \"Home\" [ref=e53] [cursor=pointer]:\n            - /url: /\n        - listitem [ref=e54]:\n          - text: »\n          - link \"Bins, waste and recycling\" [ref=e55] [cursor=pointer]:\n            - /url: /bins-waste-and-recycling\n  - main [ref=e56]:\n    - banner [ref=e57]:\n      - generic [ref=e59]:\n        - generic [ref=e61]:\n          - heading \"Missed bin collection\" [level=1] [ref=e62]\n          - paragraph [ref=e63]: How to report a missed bin collection.\n        - navigation \"Section Navigation\" [ref=e65]:\n          - list [ref=e66]:\n            - listitem [ref=e67]:\n              - link \"Report a missed bin\" [ref=e68] [cursor=pointer]:\n                - /url: https://missedbin-myforms.elmbridge.gov.uk/MissedBinFormYA/launch\n                - generic [ref=e69] [cursor=pointer]: Report a missed bin\n                - img [ref=e71] [cursor=pointer]\n    - banner [ref=e73]:\n      - article [ref=e76]:\n        - generic [ref=e80]:\n          - paragraph [ref=e81]: Please do not report a missed collection before 4pm on your collection day.\n          - paragraph [ref=e82]: You can report a missed bin up to 2 working days after your due collection day. For example, if your collection day is Monday you can report a missed bin up to 11:59pm on Wednesday, or if your collection day is on Friday you can report a missed bin up to 11:59pm on Tuesday.\n          - heading \"After you have reported\" [level=2] [ref=e83]\n          - paragraph [ref=e84]: Once you have reported your missed bin collection, make sure your bin is out on the edge of the property. We will collect it as soon as possible. We will let you know whether it has been collected or not.\n          - paragraph [ref=e85]: \"Your bins will not be collected if:\"\n          - list [ref=e86]:\n            - listitem [ref=e87]:\n              - text: they are not out on the correct collection day before 6:30am -\n              - link \"check your bin collection day\" [ref=e88] [cursor=pointer]:\n                - /url: /bins-waste-and-recycling/bin-collection-days\n            - listitem [ref=e89]: they contain items we don’t collect\n            - listitem [ref=e90]: they are too heavy to be tipped into the truck - you may have to lighten the content before we can return to empty it\n            - listitem [ref=e91]: the bin lid is not closed - bin lids need to be closed otherwise the bin is not safe to empty, if your bin is too full for the lid to shut, remove some items until it closes\n          - paragraph [ref=e92]: The crew will not be able to collect any recycling placed in black bags.\n          - heading \"Missed garden waste collection\" [level=2] [ref=e93]\n          - paragraph [ref=e94]:\n            - text: We are unable to ask the crew to return to empty your bin if your garden waste subscription was not active on your collection day. Please see our\n            - link \"terms and conditions\" [ref=e95] [cursor=pointer]:\n              - /url: /bins-waste-and-recycling/garden-waste-service/garden-waste-subscription-service-terms-and\n            - text: .\n          - heading \"Missed medical waste collection\" [level=2] [ref=e96]\n          - paragraph [ref=e97]: To report a missed medical waste collection, please contact Customer Services on 01372 474474.\n    - banner [ref=e98]:\n      - paragraph [ref=e103]:\n        - text: Help improve this site by\n        - link \"giving feedback\" [ref=e104] [cursor=pointer]:\n          - /url: https://elmbridge-self.achieveservice.com/AchieveForms/?mode=fill&consentMessage=yes&form_uri=sandbox-publish://AF-Process-438936a4-ba3f-47f2-8125-5e4c2a78943d/AF-Stage-d67573e7-2176-4469-8a04-0e3057bfcc82/definition.json&process=1&process_uri=sandbox-processes://AF-Process-438936a4-ba3f-47f2-8125-5e4c2a78943d&process_id=AF-Process-438936a4-ba3f-47f2-8125-5e4c2a78943d\n  - contentinfo [ref=e105]:\n    - generic [ref=e108]:\n      - banner [ref=e110]:\n        - link \"Elmbridge Borough Council\" [ref=e116] [cursor=pointer]:\n          - /url: https://www.elmbridge.gov.uk/\n          - img \"Elmbridge Borough Council\" [ref=e117] [cursor=pointer]\n      - banner [ref=e119]:\n        - navigation \"Get in touch\" [ref=e122]:\n          - heading \"Get in touch\" [level=2] [ref=e123]\n          - list [ref=e124]:\n            - listitem [ref=e125]:\n              - link \"Contact us\" [ref=e126] [cursor=pointer]:\n                - /url: /your-council/how-find-and-contact-us-phone-and-online\n            - listitem [ref=e127]:\n              - link \"Accessibility\" [ref=e128] [cursor=pointer]:\n                - /url: https://www.elmbridge.gov.uk/accessibility\n            - listitem [ref=e129]:\n              - link \"Terms and conditions\" [ref=e130] [cursor=pointer]:\n                - /url: https://www.elmbridge.gov.uk/website-terms-and-conditions\n            - listitem [ref=e131]:\n              - link \"Privacy\" [ref=e132] [cursor=pointer]:\n                - /url: https://www.elmbridge.gov.uk/your-council/privacy-and-data-protection/elmbridge-borough-council-privacy-notice\n            - listitem [ref=e133]:\n              - link \"Cookies\" [ref=e134] [cursor=pointer]:\n                - /url: https://www.elmbridge.gov.uk/your-council/privacy-and-data-protection/cookies-notice\n            - listitem [ref=e135]:\n              - link \"Jobs\" [ref=e136] [cursor=pointer]:\n                - /url: https://www.elmbridge.gov.uk/jobs-work-experience-and-volunteering\n      - banner [ref=e138]:\n        - navigation \"Follow us\" [ref=e141]:\n          - heading \"Follow us\" [level=2] [ref=e142]\n          - list [ref=e143]:\n            - listitem [ref=e144]:\n              - link \"facebook\" [ref=e145] [cursor=pointer]:\n                - /url: https://www.facebook.com/ElmbridgeBoroughCouncil\n            - listitem [ref=e146]:\n              - link \"Instagram\" [ref=e147] [cursor=pointer]:\n                - /url: https://www.instagram.com/elmbridgebc\n            - listitem [ref=e148]:\n              - link \"linkedin\" [ref=e149] [cursor=pointer]:\n                - /url: https://uk.linkedin.com/company/elmbridge-borough-council\n            - listitem [ref=e150]:\n              - link \"youtube\" [ref=e151] [cursor=pointer]:\n                - /url: https://www.youtube.com/elmbridgebc\n```",
+          "tool_call_id": "pyd_ai_271ff0acdd504ac1b5dd5dc1bf0da0db",
+          "metadata": null,
+          "timestamp": "2025-07-21T11:10:47.987441Z",
+          "part_kind": "tool-return"
+        }
+      ],
+      "instructions": null,
+      "kind": "request"
+    },
+    {
+      "parts": [
+        {
+          "tool_name": "browser_click",
+          "args": {
+            "element": "check your bin collection day",
+            "ref": "e88"
+          },
+          "tool_call_id": "pyd_ai_a46d4cdfdaf64d17ace2eaaa27bb8e57",
+          "part_kind": "tool-call"
+        }
+      ],
+      "usage": {
+        "requests": 1,
+        "request_tokens": 8031,
+        "response_tokens": 13,
+        "total_tokens": 8067,
+        "details": {
+          "cached_content_tokens": 4068,
+          "thoughts_tokens": 23,
+          "text_cache_tokens": 4068,
+          "text_candidates_tokens": 13,
+          "text_prompt_tokens": 8031
+        }
+      },
+      "model_name": "gemini-2.5-flash",
+      "timestamp": "2025-07-21T11:10:48.689137Z",
+      "kind": "response",
+      "vendor_details": {
+        "finish_reason": "STOP"
+      },
+      "vendor_id": "OCB-aOrUBK6tz_IPye_36Ak"
+    },
+    {
+      "parts": [
+        {
+          "tool_name": "browser_click",
+          "content": "### Ran Playwright code\n```js\n// Click check your bin collection day\nawait page.getByRole('link', { name: 'check your bin collection day' }).click();\n```\n\n### New console messages\n- [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://www.elmbridg...\n- [ERROR] Manifest fetch from https://www.elmbridge.gov.uk/themes/custom/elmbridge/assets/images/favic...\n\n### Page state\n- Page URL: https://www.elmbridge.gov.uk/bins-waste-and-recycling/bin-collection-days\n- Page Title: Bin collection days | Elmbridge Borough Council\n- Page Snapshot:\n```yaml\n- generic [ref=e2]:\n  - banner [ref=e3]:\n    - link \"Skip to main content\" [ref=e4] [cursor=pointer]:\n      - /url: \"#main-content\"\n    - generic [ref=e8]:\n      - banner [ref=e9]:\n        - generic [ref=e10]:\n          - link \"Elmbridge Borough Council\" [ref=e14] [cursor=pointer]:\n            - /url: https://www.elmbridge.gov.uk/\n            - img \"Elmbridge Borough Council\" [ref=e15] [cursor=pointer]\n          - generic [ref=e17]:\n            - textbox \"Search\" [ref=e19]\n            - button \"Search\" [ref=e21] [cursor=pointer]\n      - generic [ref=e22]:\n        - button \"Toggle services menu\" [ref=e23] [cursor=pointer]:\n          - generic [ref=e24] [cursor=pointer]: Services\n          - generic [ref=e25] [cursor=pointer]: ›\n        - text: ›\n      - navigation [ref=e27]:\n        - navigation \"Services menu\" [ref=e29]:\n          - heading \"Services menu\" [level=2] [ref=e30]\n          - list [ref=e31]:\n            - listitem [ref=e32]:\n              - link \"My Account\" [ref=e33] [cursor=pointer]:\n                - /url: https://myaccount.elmbridge.gov.uk/\n  - banner [ref=e35]:\n    - navigation \"Breadcrumbs\" [ref=e39]:\n      - heading \"Breadcrumbs\" [level=2] [ref=e40]\n      - list [ref=e41]:\n        - listitem [ref=e42]:\n          - link \"Home\" [ref=e43] [cursor=pointer]:\n            - /url: /\n        - listitem [ref=e44]:\n          - text: »\n          - link \"Bins, waste and recycling\" [ref=e45] [cursor=pointer]:\n            - /url: /bins-waste-and-recycling\n  - main [ref=e46]:\n    - banner [ref=e47]:\n      - generic [ref=e51]:\n        - heading \"Bin collection days\" [level=1] [ref=e52]\n        - paragraph [ref=e53]: Check your collection day.\n    - banner [ref=e54]:\n      - article [ref=e57]:\n        - generic [ref=e61]:\n          - paragraph [ref=e62]: \"Enter your postcode to find details of your refuse and recycling collection days:\"\n          - paragraph [ref=e63]:\n            - link \"Check your collection day\" [ref=e64] [cursor=pointer]:\n              - /url: http://elmbridge-self.achieveservice.com/service/Your_bin_collection_days\n          - paragraph [ref=e65]:\n            - text: For more information see\n            - link \"bins, waste and recycling\" [ref=e66] [cursor=pointer]:\n              - /url: /bins-waste-and-recycling\n            - text: .\n    - banner [ref=e67]:\n      - paragraph [ref=e72]:\n        - text: Help improve this site by\n        - link \"giving feedback\" [ref=e73] [cursor=pointer]:\n          - /url: https://elmbridge-self.achieveservice.com/AchieveForms/?mode=fill&consentMessage=yes&form_uri=sandbox-publish://AF-Process-438936a4-ba3f-47f2-8125-5e4c2a78943d/AF-Stage-d67573e7-2176-4469-8a04-0e3057bfcc82/definition.json&process=1&process_uri=sandbox-processes://AF-Process-438936a4-ba3f-47f2-8125-5e4c2a78943d&process_id=AF-Process-438936a4-ba3f-47f2-8125-5e4c2a78943d\n  - contentinfo [ref=e74]:\n    - generic [ref=e77]:\n      - banner [ref=e79]:\n        - link \"Elmbridge Borough Council\" [ref=e85] [cursor=pointer]:\n          - /url: https://www.elmbridge.gov.uk/\n          - img \"Elmbridge Borough Council\" [ref=e86] [cursor=pointer]\n      - banner [ref=e88]:\n        - navigation \"Get in touch\" [ref=e91]:\n          - heading \"Get in touch\" [level=2] [ref=e92]\n          - list [ref=e93]:\n            - listitem [ref=e94]:\n              - link \"Contact us\" [ref=e95] [cursor=pointer]:\n                - /url: /your-council/how-find-and-contact-us-phone-and-online\n            - listitem [ref=e96]:\n              - link \"Accessibility\" [ref=e97] [cursor=pointer]:\n                - /url: https://www.elmbridge.gov.uk/accessibility\n            - listitem [ref=e98]:\n              - link \"Terms and conditions\" [ref=e99] [cursor=pointer]:\n                - /url: https://www.elmbridge.gov.uk/website-terms-and-conditions\n            - listitem [ref=e100]:\n              - link \"Privacy\" [ref=e101] [cursor=pointer]:\n                - /url: https://www.elmbridge.gov.uk/your-council/privacy-and-data-protection/elmbridge-borough-council-privacy-notice\n            - listitem [ref=e102]:\n              - link \"Cookies\" [ref=e103] [cursor=pointer]:\n                - /url: https://www.elmbridge.gov.uk/your-council/privacy-and-data-protection/cookies-notice\n            - listitem [ref=e104]:\n              - link \"Jobs\" [ref=e105] [cursor=pointer]:\n                - /url: https://www.elmbridge.gov.uk/jobs-work-experience-and-volunteering\n      - banner [ref=e107]:\n        - navigation \"Follow us\" [ref=e110]:\n          - heading \"Follow us\" [level=2] [ref=e111]\n          - list [ref=e112]:\n            - listitem [ref=e113]:\n              - link \"facebook\" [ref=e114] [cursor=pointer]:\n                - /url: https://www.facebook.com/ElmbridgeBoroughCouncil\n            - listitem [ref=e115]:\n              - link \"Instagram\" [ref=e116] [cursor=pointer]:\n                - /url: https://www.instagram.com/elmbridgebc\n            - listitem [ref=e117]:\n              - link \"linkedin\" [ref=e118] [cursor=pointer]:\n                - /url: https://uk.linkedin.com/company/elmbridge-borough-council\n            - listitem [ref=e119]:\n              - link \"youtube\" [ref=e120] [cursor=pointer]:\n                - /url: https://www.youtube.com/elmbridgebc\n```",
+          "tool_call_id": "pyd_ai_a46d4cdfdaf64d17ace2eaaa27bb8e57",
+          "metadata": null,
+          "timestamp": "2025-07-21T11:10:49.930532Z",
+          "part_kind": "tool-return"
+        }
+      ],
+      "instructions": null,
+      "kind": "request"
+    },
+    {
+      "parts": [
+        {
+          "tool_name": "browser_click",
+          "args": {
+            "element": "Check your collection day",
+            "ref": "e64"
+          },
+          "tool_call_id": "pyd_ai_ebd8511488ce47b6995b2dbb6719d563",
+          "part_kind": "tool-call"
+        }
+      ],
+      "usage": {
+        "requests": 1,
+        "request_tokens": 10074,
+        "response_tokens": 12,
+        "total_tokens": 10127,
+        "details": {
+          "thoughts_tokens": 41,
+          "text_candidates_tokens": 12,
+          "text_prompt_tokens": 10074
+        }
+      },
+      "model_name": "gemini-2.5-flash",
+      "timestamp": "2025-07-21T11:10:51.131980Z",
+      "kind": "response",
+      "vendor_details": {
+        "finish_reason": "STOP"
+      },
+      "vendor_id": "OiB-aPeGAYSiz_IPj8Wm2AE"
+    },
+    {
+      "parts": [
+        {
+          "content": "TimeoutError: locator.click: Timeout 5000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('aria-ref=e64')\u001b[22m\n\u001b[2m    - locator resolved to <a href=\"http://elmbridge-self.achieveservice.com/service/Your_bin_collection_days\">Check your collection day</a>\u001b[22m\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m    - element is visible, enabled and stable\u001b[22m\n\u001b[2m    - scrolling into view if needed\u001b[22m\n\u001b[2m    - done scrolling\u001b[22m\n\u001b[2m    - performing click action\u001b[22m\n\u001b[2m    - click action done\u001b[22m\n\u001b[2m    - waiting for scheduled navigations to finish\u001b[22m\n",
+          "tool_name": "browser_click",
+          "tool_call_id": "pyd_ai_ebd8511488ce47b6995b2dbb6719d563",
+          "timestamp": "2025-07-21T11:10:58.939145Z",
+          "part_kind": "retry-prompt"
+        }
+      ],
+      "instructions": null,
+      "kind": "request"
+    },
+    {
+      "parts": [
+        {
+          "tool_name": "browser_click",
+          "args": {
+            "element": "Check your collection day",
+            "ref": "e64"
+          },
+          "tool_call_id": "pyd_ai_f3616eeed25a4cf9859880ce54fc429a",
+          "part_kind": "tool-call"
+        }
+      ],
+      "usage": {
+        "requests": 1,
+        "request_tokens": 10330,
+        "response_tokens": 12,
+        "total_tokens": 10383,
+        "details": {
+          "cached_content_tokens": 9217,
+          "thoughts_tokens": 41,
+          "text_cache_tokens": 9217,
+          "text_candidates_tokens": 12,
+          "text_prompt_tokens": 10330
+        }
+      },
+      "model_name": "gemini-2.5-flash",
+      "timestamp": "2025-07-21T11:10:59.915130Z",
+      "kind": "response",
+      "vendor_details": {
+        "finish_reason": "STOP"
+      },
+      "vendor_id": "QyB-aPnOA66tz_IPye_36Ak"
+    },
+    {
+      "parts": [
+        {
+          "content": "Error: Ref not found, likely because element was removed. Use browser_snapshot to see what elements are currently on the page.",
+          "tool_name": "browser_click",
+          "tool_call_id": "pyd_ai_f3616eeed25a4cf9859880ce54fc429a",
+          "timestamp": "2025-07-21T11:10:59.923980Z",
+          "part_kind": "retry-prompt"
+        }
+      ],
+      "instructions": null,
+      "kind": "request"
+    },
+    {
+      "parts": [
+        {
+          "tool_name": "browser_snapshot",
+          "args": {},
+          "tool_call_id": "pyd_ai_aa72de9e2a81409ab6ef625f206e88a0",
+          "part_kind": "tool-call"
+        }
+      ],
+      "usage": {
+        "requests": 1,
+        "request_tokens": 10382,
+        "response_tokens": 3,
+        "total_tokens": 10443,
+        "details": {
+          "cached_content_tokens": 5853,
+          "thoughts_tokens": 58,
+          "text_cache_tokens": 5853,
+          "text_candidates_tokens": 3,
+          "text_prompt_tokens": 10382
+        }
+      },
+      "model_name": "gemini-2.5-flash",
+      "timestamp": "2025-07-21T11:11:01.302960Z",
+      "kind": "response",
+      "vendor_details": {
+        "finish_reason": "STOP"
+      },
+      "vendor_id": "RCB-aLN2oqGY9Q_Sw-O4Aw"
+    },
+    {
+      "parts": [
+        {
+          "tool_name": "browser_snapshot",
+          "content": "### Ran Playwright code\n```js\n// <internal code to capture accessibility snapshot>\n```\n\n### New console messages\n- [WARNING] reCAPTCHA couldn't find user-provided function: onloadCallback @ https://www.gstatic.com/r...\n- [WARNING] Google Maps JavaScript API has been loaded directly without loading=async. This can result...\n\n### Page state\n- Page URL: https://elmbridge-self.achieveservice.com/AchieveForms/?mode=fill&consentMessage=yes&form_uri=sandbox-publish://AF-Process-be7d38c3-325c-4028-95c9-140e896d3ad4/AF-Stage-6ee0ea94-54aa-4c8b-9286-08c91e00b4b0/definition.json&process=1&process_uri=sandbox-processes://AF-Process-be7d38c3-325c-4028-95c9-140e896d3ad4&process_id=AF-Process-be7d38c3-325c-4028-95c9-140e896d3ad4\n- Page Title: Your bin collection days and calendar - Section 1 - Your Collection Details - My Account\n- Page Snapshot:\n```yaml\n- generic [active] [ref=e1]:\n  - link \"Skip to content\" [ref=e2] [cursor=pointer]:\n    - /url: \"#self-content\"\n  - alertdialog \"Cookie policy notice\" [ref=e3]:\n    - generic [ref=e4]:\n      - paragraph [ref=e5]: This site is powered by Granicus.\n      - paragraph [ref=e6]: To provide you with the best online experience we use a range of essential site cookies. These essential cookies enable you to remain logged in and for your site preferences to be remembered, in addition to other essential functions. Granicus does not use analytics, advertising or tracking cookies. In addition to these essential cookies, the organisation which owns this site may choose to place supplementary cookies, for example to support analytics. Should they choose to do this, they have an obligation to let you know where this is the case, and what the benefits and costs are, who they share it with, and what options you have.\n      - paragraph [ref=e7]:\n        - text: More information on\n        - link \"Granicus' cookie policy.\" [ref=e8] [cursor=pointer]:\n          - /url: https://support.granicus.com/s/article/govService-Cookie-Statement\n      - button \"Close\" [ref=e9] [cursor=pointer]\n  - link \"Elmbridge Borough Council\" [ref=e15] [cursor=pointer]:\n    - /url: https://www.elmbridge.gov.uk\n    - img \"Elmbridge Borough Council\" [ref=e16] [cursor=pointer]\n  - banner [ref=e17]\n  - navigation:\n    - generic: \n  - iframe [ref=e29]:\n    - generic [ref=f1e9]:\n      - status [ref=f1e10]: loading completed\n      - generic [ref=f1e12]:\n        - heading \"Your bin collection days and calendar\" [level=1] [ref=f1e13]:\n          - generic [ref=f1e14]: Your bin collection days and calendar\n        - paragraph\n      - generic [ref=f1e17]:\n        - text: \n        - generic [ref=f1e19]:\n          - generic [ref=f1e20]: Section 1\n          - generic [ref=f1e24]:\n            - generic [ref=f1e25] [cursor=pointer]:\n              - generic [ref=f1e26] [cursor=pointer]: \"Enter your postcode to find your bin collection days and to download your bin calendar:\"\n              - img \"Required\" [ref=f1e27] [cursor=pointer]: \"*\"\n            - textbox \"Enter your postcode to find your bin collection days and to download your bin calendar:Required\" [ref=f1e29]\n          - paragraph [ref=f1e38]:\n            - strong [ref=f1e40]:\n              - link \"Find out more information on our bins, waste and recycling.\" [ref=f1e41] [cursor=pointer]:\n                - /url: https://www.elmbridge.gov.uk/bins-waste-and-recycling\n            - generic [ref=f1e43]:\n              - text: There are also collections of\n              - strong [ref=f1e44]:\n                - link \"small electrical items, batteries, clothing and home textiles\" [ref=f1e46] [cursor=pointer]:\n                  - /url: http://www.elmbridge.gov.uk/waste-and-recycling/clothes-textiles-and-small-electricals-collection/\n              - text: \", on your normal collection day.\"\n          - group [ref=f1e51]:   \n          - generic [ref=f1e56]:\n            - paragraph [ref=f1e57]:\n              - generic [ref=f1e59]:\n                - text: \"* if you are subscribed to the\"\n                - strong [ref=f1e60]:\n                  - link \"garden waste service\" [ref=f1e61] [cursor=pointer]:\n                    - /url: https://www.elmbridge.gov.uk/bins-waste-and-recycling/garden-waste-service/\n                - text: and pay an annual fee.\n            - paragraph [ref=f1e62]:\n              - generic [ref=f1e63]: If you subscribe to the garden waste service at a later date please check back for your updated collection calendar.\n          - generic [ref=f1e69]:\n            - text: Explore more data in the\n            - strong [ref=f1e70]:\n              - link \"Property Explorer\" [ref=f1e72] [cursor=pointer]:\n                - /url: https://emaps.elmbridge.gov.uk/ebc_property_explorer.aspx?requesttype=parseTemplate&template=PEX_Search.tmplt\n        - navigation [ref=f1e79]:\n          - button \" Cancel\" [ref=f1e81] [cursor=pointer]:\n            - generic [ref=f1e82] [cursor=pointer]: \n            - generic [ref=f1e83] [cursor=pointer]: Cancel\n          - generic: \n  - contentinfo [ref=e30]\n```",
+          "tool_call_id": "pyd_ai_aa72de9e2a81409ab6ef625f206e88a0",
+          "metadata": null,
+          "timestamp": "2025-07-21T11:11:01.337064Z",
+          "part_kind": "tool-return"
+        }
+      ],
+      "instructions": null,
+      "kind": "request"
+    },
+    {
+      "parts": [
+        {
+          "tool_name": "browser_click",
+          "args": {
+            "element": "Close",
+            "ref": "e9"
+          },
+          "tool_call_id": "pyd_ai_9bf7274421484e45bf56f644c577d7c4",
+          "part_kind": "tool-call"
+        }
+      ],
+      "usage": {
+        "requests": 1,
+        "request_tokens": 11965,
+        "response_tokens": 8,
+        "total_tokens": 12064,
+        "details": {
+          "cached_content_tokens": 10214,
+          "thoughts_tokens": 91,
+          "text_cache_tokens": 10214,
+          "text_candidates_tokens": 8,
+          "text_prompt_tokens": 11965
+        }
+      },
+      "model_name": "gemini-2.5-flash",
+      "timestamp": "2025-07-21T11:11:02.736106Z",
+      "kind": "response",
+      "vendor_details": {
+        "finish_reason": "STOP"
+      },
+      "vendor_id": "RSB-aOvjGoSiz_IPj8Wm2AE"
+    },
+    {
+      "parts": [
+        {
+          "tool_name": "browser_click",
+          "content": "### Ran Playwright code\n```js\n// Click Close\nawait page.getByRole('button', { name: 'Close' }).click();\n```\n\n### Page state\n- Page URL: https://elmbridge-self.achieveservice.com/AchieveForms/?mode=fill&consentMessage=yes&form_uri=sandbox-publish://AF-Process-be7d38c3-325c-4028-95c9-140e896d3ad4/AF-Stage-6ee0ea94-54aa-4c8b-9286-08c91e00b4b0/definition.json&process=1&process_uri=sandbox-processes://AF-Process-be7d38c3-325c-4028-95c9-140e896d3ad4&process_id=AF-Process-be7d38c3-325c-4028-95c9-140e896d3ad4\n- Page Title: Your bin collection days and calendar - Section 1 - Your Collection Details - My Account\n- Page Snapshot:\n```yaml\n- generic [active] [ref=e1]:\n  - link \"Skip to content\" [ref=e2] [cursor=pointer]:\n    - /url: \"#self-content\"\n  - link \"Elmbridge Borough Council\" [ref=e15] [cursor=pointer]:\n    - /url: https://www.elmbridge.gov.uk\n    - img \"Elmbridge Borough Council\" [ref=e16] [cursor=pointer]\n  - banner [ref=e17]\n  - navigation:\n    - generic: \n  - iframe [ref=e29]:\n    - generic [ref=f1e9]:\n      - status [ref=f1e10]: loading completed\n      - generic [ref=f1e12]:\n        - heading \"Your bin collection days and calendar\" [level=1] [ref=f1e13]:\n          - generic [ref=f1e14]: Your bin collection days and calendar\n        - paragraph\n      - generic [ref=f1e17]:\n        - text: \n        - generic [ref=f1e19]:\n          - generic [ref=f1e20]: Section 1\n          - generic [ref=f1e24]:\n            - generic [ref=f1e25] [cursor=pointer]:\n              - generic [ref=f1e26] [cursor=pointer]: \"Enter your postcode to find your bin collection days and to download your bin calendar:\"\n              - img \"Required\" [ref=f1e27] [cursor=pointer]: \"*\"\n            - textbox \"Enter your postcode to find your bin collection days and to download your bin calendar:Required\" [ref=f1e29]\n          - paragraph [ref=f1e38]:\n            - strong [ref=f1e40]:\n              - link \"Find out more information on our bins, waste and recycling.\" [ref=f1e41] [cursor=pointer]:\n                - /url: https://www.elmbridge.gov.uk/bins-waste-and-recycling\n            - generic [ref=f1e43]:\n              - text: There are also collections of\n              - strong [ref=f1e44]:\n                - link \"small electrical items, batteries, clothing and home textiles\" [ref=f1e46] [cursor=pointer]:\n                  - /url: http://www.elmbridge.gov.uk/waste-and-recycling/clothes-textiles-and-small-electricals-collection/\n              - text: \", on your normal collection day.\"\n          - group [ref=f1e51]:   \n          - generic [ref=f1e56]:\n            - paragraph [ref=f1e57]:\n              - generic [ref=f1e59]:\n                - text: \"* if you are subscribed to the\"\n                - strong [ref=f1e60]:\n                  - link \"garden waste service\" [ref=f1e61] [cursor=pointer]:\n                    - /url: https://www.elmbridge.gov.uk/bins-waste-and-recycling/garden-waste-service/\n                - text: and pay an annual fee.\n            - paragraph [ref=f1e62]:\n              - generic [ref=f1e63]: If you subscribe to the garden waste service at a later date please check back for your updated collection calendar.\n          - generic [ref=f1e69]:\n            - text: Explore more data in the\n            - strong [ref=f1e70]:\n              - link \"Property Explorer\" [ref=f1e72] [cursor=pointer]:\n                - /url: https://emaps.elmbridge.gov.uk/ebc_property_explorer.aspx?requesttype=parseTemplate&template=PEX_Search.tmplt\n        - navigation [ref=f1e79]:\n          - button \" Cancel\" [ref=f1e81] [cursor=pointer]:\n            - generic [ref=f1e82] [cursor=pointer]: \n            - generic [ref=f1e83] [cursor=pointer]: Cancel\n          - generic: \n  - contentinfo [ref=e30]\n```",
+          "tool_call_id": "pyd_ai_9bf7274421484e45bf56f644c577d7c4",
+          "metadata": null,
+          "timestamp": "2025-07-21T11:11:03.822884Z",
+          "part_kind": "tool-return"
+        }
+      ],
+      "instructions": null,
+      "kind": "request"
+    },
+    {
+      "parts": [
+        {
+          "tool_name": "browser_type",
+          "args": {
+            "element": "Enter your postcode to find your bin collection days and to download your bin calendar:Required",
+            "text": "KT10 0AA",
+            "ref": "f1e29"
+          },
+          "tool_call_id": "pyd_ai_1533027d1ab04d5f8d79635500afe5e6",
+          "part_kind": "tool-call"
+        }
+      ],
+      "usage": {
+        "requests": 1,
+        "request_tokens": 13250,
+        "response_tokens": 34,
+        "total_tokens": 13346,
+        "details": {
+          "cached_content_tokens": 1719,
+          "thoughts_tokens": 62,
+          "text_cache_tokens": 1719,
+          "text_candidates_tokens": 34,
+          "text_prompt_tokens": 13250
+        }
+      },
+      "model_name": "gemini-2.5-flash",
+      "timestamp": "2025-07-21T11:11:05.091050Z",
+      "kind": "response",
+      "vendor_details": {
+        "finish_reason": "STOP"
+      },
+      "vendor_id": "RyB-aN-zN66tz_IPye_36Ak"
+    },
+    {
+      "parts": [
+        {
+          "tool_name": "browser_type",
+          "content": "### Ran Playwright code\n```js\n// Fill \"KT10 0AA\" into \"Enter your postcode to find your bin collection days and to download your bin calendar:Required\"\nawait page.locator('iframe[title=\"Your bin collection days and calendar\"]').contentFrame().getByRole('textbox', { name: 'Enter your postcode to find' }).fill('KT10 0AA');\n```\n\n### Page state\n- Page URL: https://elmbridge-self.achieveservice.com/AchieveForms/?mode=fill&consentMessage=yes&form_uri=sandbox-publish://AF-Process-be7d38c3-325c-4028-95c9-140e896d3ad4/AF-Stage-6ee0ea94-54aa-4c8b-9286-08c91e00b4b0/definition.json&process=1&process_uri=sandbox-processes://AF-Process-be7d38c3-325c-4028-95c9-140e896d3ad4&process_id=AF-Process-be7d38c3-325c-4028-95c9-140e896d3ad4\n- Page Title: Your bin collection days and calendar - Section 1 - Your Collection Details - My Account\n- Page Snapshot:\n```yaml\n- generic [ref=e1]:\n  - link \"Skip to content\" [ref=e2] [cursor=pointer]:\n    - /url: \"#self-content\"\n  - link \"Elmbridge Borough Council\" [ref=e15] [cursor=pointer]:\n    - /url: https://www.elmbridge.gov.uk\n    - img \"Elmbridge Borough Council\" [ref=e16] [cursor=pointer]\n  - banner [ref=e17]\n  - navigation:\n    - generic: \n  - iframe [active] [ref=e29]:\n    - generic [ref=f1e9]:\n      - status [ref=f1e10]: loading completed\n      - generic [ref=f1e12]:\n        - heading \"Your bin collection days and calendar\" [level=1] [ref=f1e13]:\n          - generic [ref=f1e14]: Your bin collection days and calendar\n        - paragraph\n      - generic [ref=f1e17]:\n        - text: \n        - generic [ref=f1e19]:\n          - generic [ref=f1e20]: Section 1\n          - generic [ref=f1e24]:\n            - generic [ref=f1e25] [cursor=pointer]:\n              - generic [ref=f1e26] [cursor=pointer]: \"Enter your postcode to find your bin collection days and to download your bin calendar:\"\n              - img \"Required\" [ref=f1e27] [cursor=pointer]: \"*\"\n            - textbox \"Enter your postcode to find your bin collection days and to download your bin calendar:Required\" [active] [ref=f1e29]: KT10 0AA\n          - generic [ref=f1e86]:\n            - generic [ref=f1e87] [cursor=pointer]:\n              - generic [ref=f1e88] [cursor=pointer]: \"Select your address:\"\n              - img \"Required\" [ref=f1e89] [cursor=pointer]: \"*\"\n            - combobox [ref=f1e91]:\n              - option \"Select...\" [selected]\n              - option \"FLAT, 3, MANOR ROAD NORTH, ESHER, SURREY, KT10 0AA\"\n              - option \"5, MANOR ROAD NORTH, ESHER, SURREY, KT10 0AA\"\n              - option \"7, MANOR ROAD NORTH, ESHER, SURREY, KT10 0AA\"\n              - option \"9, MANOR ROAD NORTH, ESHER, SURREY, KT10 0AA\"\n              - option \"11, MANOR ROAD NORTH, ESHER, SURREY, KT10 0AA\"\n              - option \"13, MANOR ROAD NORTH, ESHER, SURREY, KT10 0AA\"\n              - option \"15, MANOR ROAD NORTH, ESHER, SURREY, KT10 0AA\"\n              - option \"17, MANOR ROAD NORTH, ESHER, SURREY, KT10 0AA\"\n              - option \"19, MANOR ROAD NORTH, ESHER, SURREY, KT10 0AA\"\n              - option \"21, MANOR ROAD NORTH, ESHER, SURREY, KT10 0AA\"\n              - option \"23, MANOR ROAD NORTH, ESHER, SURREY, KT10 0AA\"\n              - option \"25, MANOR ROAD NORTH, ESHER, SURREY, KT10 0AA\"\n              - option \"27, MANOR ROAD NORTH, ESHER, SURREY, KT10 0AA\"\n              - option \"29, MANOR ROAD NORTH, ESHER, SURREY, KT10 0AA\"\n              - option \"31, MANOR ROAD NORTH, ESHER, SURREY, KT10 0AA\"\n              - option \"35, MANOR ROAD NORTH, ESHER, SURREY, KT10 0AA\"\n              - option \"37, MANOR ROAD NORTH, ESHER, SURREY, KT10 0AA\"\n              - option \"39, MANOR ROAD NORTH, ESHER, SURREY, KT10 0AA\"\n              - option \"41, MANOR ROAD NORTH, ESHER, SURREY, KT10 0AA\"\n              - option \"43, MANOR ROAD NORTH, ESHER, SURREY, KT10 0AA\"\n              - option \"45, MANOR ROAD NORTH, ESHER, SURREY, KT10 0AA\"\n              - option \"47A, MANOR ROAD NORTH, ESHER, SURREY, KT10 0AA\"\n              - option \"47, MANOR ROAD NORTH, ESHER, SURREY, KT10 0AA\"\n              - option \"49, MANOR ROAD NORTH, ESHER, SURREY, KT10 0AA\"\n              - option \"51, MANOR ROAD NORTH, ESHER, SURREY, KT10 0AA\"\n              - option \"FLAT A, 53, MANOR ROAD NORTH, ESHER, SURREY, KT10 0AA\"\n              - option \"53, MANOR ROAD NORTH, ESHER, SURREY, KT10 0AA\"\n              - option \"55A, MANOR ROAD NORTH, ESHER, SURREY, KT10 0AA\"\n              - option \"55, MANOR ROAD NORTH, ESHER, SURREY, KT10 0AA\"\n              - option \"57A, MANOR ROAD NORTH, ESHER, SURREY, KT10 0AA\"\n              - option \"57, MANOR ROAD NORTH, ESHER, SURREY, KT10 0AA\"\n              - option \"59, MANOR ROAD NORTH, ESHER, SURREY, KT10 0AA\"\n              - option \"61, MANOR ROAD NORTH, ESHER, SURREY, KT10 0AA\"\n              - option \"RHODESIA, MANOR ROAD NORTH, ESHER, SURREY, KT10 0AA\"\n              - option \"RICHLIN, MANOR ROAD NORTH, ESHER, SURREY, KT10 0AA\"\n          - paragraph [ref=f1e38]:\n            - strong [ref=f1e40]:\n              - link \"Find out more information on our bins, waste and recycling.\" [ref=f1e41] [cursor=pointer]:\n                - /url: https://www.elmbridge.gov.uk/bins-waste-and-recycling\n            - generic [ref=f1e43]:\n              - text: There are also collections of\n              - strong [ref=f1e44]:\n                - link \"small electrical items, batteries, clothing and home textiles\" [ref=f1e46] [cursor=pointer]:\n                  - /url: http://www.elmbridge.gov.uk/waste-and-recycling/clothes-textiles-and-small-electricals-collection/\n              - text: \", on your normal collection day.\"\n          - group [ref=f1e51]:   \n          - generic [ref=f1e56]:\n            - paragraph [ref=f1e57]:\n              - generic [ref=f1e59]:\n                - text: \"* if you are subscribed to the\"\n                - strong [ref=f1e60]:\n                  - link \"garden waste service\" [ref=f1e61] [cursor=pointer]:\n                    - /url: https://www.elmbridge.gov.uk/bins-waste-and-recycling/garden-waste-service/\n                - text: and pay an annual fee.\n            - paragraph [ref=f1e62]:\n              - generic [ref=f1e63]: If you subscribe to the garden waste service at a later date please check back for your updated collection calendar.\n          - generic [ref=f1e69]:\n            - text: Explore more data in the\n            - strong [ref=f1e70]:\n              - link \"Property Explorer\" [ref=f1e72] [cursor=pointer]:\n                - /url: https://emaps.elmbridge.gov.uk/ebc_property_explorer.aspx?requesttype=parseTemplate&template=PEX_Search.tmplt\n        - navigation [ref=f1e79]:\n          - button \" Cancel\" [ref=f1e81] [cursor=pointer]:\n            - generic [ref=f1e82] [cursor=pointer]: \n            - generic [ref=f1e83] [cursor=pointer]: Cancel\n          - generic: \n  - contentinfo [ref=e30]\n```",
+          "tool_call_id": "pyd_ai_1533027d1ab04d5f8d79635500afe5e6",
+          "metadata": null,
+          "timestamp": "2025-07-21T11:11:06.675414Z",
+          "part_kind": "tool-return"
+        }
+      ],
+      "instructions": null,
+      "kind": "request"
+    },
+    {
+      "parts": [
+        {
+          "tool_name": "browser_select_option",
+          "args": {
+            "values": [
+              "FLAT, 3, MANOR ROAD NORTH, ESHER, SURREY, KT10 0AA"
+            ],
+            "element": "combobox",
+            "ref": "f1e91"
+          },
+          "tool_call_id": "pyd_ai_f4cf8bec67794bf6b6d47ed0c8abcd3d",
+          "part_kind": "tool-call"
+        }
+      ],
+      "usage": {
+        "requests": 1,
+        "request_tokens": 15676,
+        "response_tokens": 37,
+        "total_tokens": 15766,
+        "details": {
+          "cached_content_tokens": 13143,
+          "thoughts_tokens": 53,
+          "text_cache_tokens": 13143,
+          "text_candidates_tokens": 37,
+          "text_prompt_tokens": 15676
+        }
+      },
+      "model_name": "gemini-2.5-flash",
+      "timestamp": "2025-07-21T11:11:07.856855Z",
+      "kind": "response",
+      "vendor_details": {
+        "finish_reason": "STOP"
+      },
+      "vendor_id": "SiB-aNi3LoSiz_IPj8Wm2AE"
+    },
+    {
+      "parts": [
+        {
+          "tool_name": "browser_select_option",
+          "content": "### Ran Playwright code\n```js\n// Select options [FLAT, 3, MANOR ROAD NORTH, ESHER, SURREY, KT10 0AA] in combobox\nawait page.locator('iframe[title=\"Your bin collection days and calendar\"]').contentFrame().getByLabel('Select your address: *').selectOption(['FLAT, 3, MANOR ROAD NORTH, ESHER, SURREY, KT10 0AA']);\n```\n\n### Page state\n- Page URL: https://elmbridge-self.achieveservice.com/AchieveForms/?mode=fill&consentMessage=yes&form_uri=sandbox-publish://AF-Process-be7d38c3-325c-4028-95c9-140e896d3ad4/AF-Stage-6ee0ea94-54aa-4c8b-9286-08c91e00b4b0/definition.json&process=1&process_uri=sandbox-processes://AF-Process-be7d38c3-325c-4028-95c9-140e896d3ad4&process_id=AF-Process-be7d38c3-325c-4028-95c9-140e896d3ad4\n- Page Title: Your bin collection days and calendar - Section 1 - Your Collection Details - My Account\n- Page Snapshot:\n```yaml\n- generic [ref=e1]:\n  - link \"Skip to content\" [ref=e2] [cursor=pointer]:\n    - /url: \"#self-content\"\n  - link \"Elmbridge Borough Council\" [ref=e15] [cursor=pointer]:\n    - /url: https://www.elmbridge.gov.uk\n    - img \"Elmbridge Borough Council\" [ref=e16] [cursor=pointer]\n  - banner [ref=e17]\n  - navigation:\n    - generic: \n  - iframe [active] [ref=e29]:\n    - generic [ref=f1e9]:\n      - status [ref=f1e10]: loading completed\n      - generic [ref=f1e12]:\n        - heading \"Your bin collection days and calendar\" [level=1] [ref=f1e13]:\n          - generic [ref=f1e14]: Your bin collection days and calendar\n        - paragraph\n      - generic [ref=f1e17]:\n        - text: \n        - generic [ref=f1e19]:\n          - generic [ref=f1e20]: Section 1\n          - generic [ref=f1e24]:\n            - generic [ref=f1e25] [cursor=pointer]:\n              - generic [ref=f1e26] [cursor=pointer]: \"Enter your postcode to find your bin collection days and to download your bin calendar:\"\n              - img \"Required\" [ref=f1e27] [cursor=pointer]: \"*\"\n            - textbox \"Enter your postcode to find your bin collection days and to download your bin calendar:Required\" [active] [ref=f1e29]: KT10 0AA\n          - generic [ref=f1e86]:\n            - generic [ref=f1e87] [cursor=pointer]:\n              - generic [ref=f1e88] [cursor=pointer]: \"Select your address:\"\n              - img \"Required\" [ref=f1e89] [cursor=pointer]: \"*\"\n            - combobox [ref=f1e91]:\n              - option \"Select...\"\n              - option \"FLAT, 3, MANOR ROAD NORTH, ESHER, SURREY, KT10 0AA\" [selected]\n              - option \"5, MANOR ROAD NORTH, ESHER, SURREY, KT10 0AA\"\n              - option \"7, MANOR ROAD NORTH, ESHER, SURREY, KT10 0AA\"\n              - option \"9, MANOR ROAD NORTH, ESHER, SURREY, KT10 0AA\"\n              - option \"11, MANOR ROAD NORTH, ESHER, SURREY, KT10 0AA\"\n              - option \"13, MANOR ROAD NORTH, ESHER, SURREY, KT10 0AA\"\n              - option \"15, MANOR ROAD NORTH, ESHER, SURREY, KT10 0AA\"\n              - option \"17, MANOR ROAD NORTH, ESHER, SURREY, KT10 0AA\"\n              - option \"19, MANOR ROAD NORTH, ESHER, SURREY, KT10 0AA\"\n              - option \"21, MANOR ROAD NORTH, ESHER, SURREY, KT10 0AA\"\n              - option \"23, MANOR ROAD NORTH, ESHER, SURREY, KT10 0AA\"\n              - option \"25, MANOR ROAD NORTH, ESHER, SURREY, KT10 0AA\"\n              - option \"27, MANOR ROAD NORTH, ESHER, SURREY, KT10 0AA\"\n              - option \"29, MANOR ROAD NORTH, ESHER, SURREY, KT10 0AA\"\n              - option \"31, MANOR ROAD NORTH, ESHER, SURREY, KT10 0AA\"\n              - option \"35, MANOR ROAD NORTH, ESHER, SURREY, KT10 0AA\"\n              - option \"37, MANOR ROAD NORTH, ESHER, SURREY, KT10 0AA\"\n              - option \"39, MANOR ROAD NORTH, ESHER, SURREY, KT10 0AA\"\n              - option \"41, MANOR ROAD NORTH, ESHER, SURREY, KT10 0AA\"\n              - option \"43, MANOR ROAD NORTH, ESHER, SURREY, KT10 0AA\"\n              - option \"45, MANOR ROAD NORTH, ESHER, SURREY, KT10 0AA\"\n              - option \"47A, MANOR ROAD NORTH, ESHER, SURREY, KT10 0AA\"\n              - option \"47, MANOR ROAD NORTH, ESHER, SURREY, KT10 0AA\"\n              - option \"49, MANOR ROAD NORTH, ESHER, SURREY, KT10 0AA\"\n              - option \"51, MANOR ROAD NORTH, ESHER, SURREY, KT10 0AA\"\n              - option \"FLAT A, 53, MANOR ROAD NORTH, ESHER, SURREY, KT10 0AA\"\n              - option \"53, MANOR ROAD NORTH, ESHER, SURREY, KT10 0AA\"\n              - option \"55A, MANOR ROAD NORTH, ESHER, SURREY, KT10 0AA\"\n              - option \"55, MANOR ROAD NORTH, ESHER, SURREY, KT10 0AA\"\n              - option \"57A, MANOR ROAD NORTH, ESHER, SURREY, KT10 0AA\"\n              - option \"57, MANOR ROAD NORTH, ESHER, SURREY, KT10 0AA\"\n              - option \"59, MANOR ROAD NORTH, ESHER, SURREY, KT10 0AA\"\n              - option \"61, MANOR ROAD NORTH, ESHER, SURREY, KT10 0AA\"\n              - option \"RHODESIA, MANOR ROAD NORTH, ESHER, SURREY, KT10 0AA\"\n              - option \"RICHLIN, MANOR ROAD NORTH, ESHER, SURREY, KT10 0AA\"\n            - text: ✔\n          - paragraph [ref=f1e38]:\n            - strong [ref=f1e40]:\n              - link \"Find out more information on our bins, waste and recycling.\" [ref=f1e41] [cursor=pointer]:\n                - /url: https://www.elmbridge.gov.uk/bins-waste-and-recycling\n            - generic [ref=f1e43]:\n              - text: There are also collections of\n              - strong [ref=f1e44]:\n                - link \"small electrical items, batteries, clothing and home textiles\" [ref=f1e46] [cursor=pointer]:\n                  - /url: http://www.elmbridge.gov.uk/waste-and-recycling/clothes-textiles-and-small-electricals-collection/\n              - text: \", on your normal collection day.\"\n          - generic [ref=f1e49]:\n            - group [ref=f1e130]:\n              - generic [ref=f1e134]:\n                - status [ref=f1e135]\n                - generic [ref=f1e137]:\n                  - text: \n                  - generic [ref=f1e150]:\n                    - strong [ref=f1e153]: Wednesday 23/07/2025\n                    - generic [ref=f1e155]: Recycling\n                    - generic [ref=f1e157]: Food waste\n                    - generic [ref=f1e159]: Clothes, textiles and small electricals\n                    - separator [ref=f1e164]\n                  - generic [ref=f1e179]:\n                    - navigation:\n                      - generic: \n                      - generic: \n            - group [ref=f1e185]:\n              - generic [ref=f1e189]:\n                - status [ref=f1e190]\n                - generic [ref=f1e192]:\n                  - text: \n                  - generic [ref=f1e205]:\n                    - strong [ref=f1e208]: Wednesday 30/07/2025\n                    - generic [ref=f1e210]: Refuse\n                    - generic [ref=f1e212]: Food waste\n                    - generic [ref=f1e214]: Clothes, textiles and small electricals\n                    - separator [ref=f1e219]\n                  - generic [ref=f1e234]:\n                    - navigation:\n                      - generic: \n                      - generic: \n            - group [ref=f1e240]:\n              - generic [ref=f1e244]:\n                - status [ref=f1e245]\n                - generic [ref=f1e247]:\n                  - text: \n                  - generic [ref=f1e260]:\n                    - strong [ref=f1e263]: Wednesday 06/08/2025\n                    - generic [ref=f1e265]: Recycling\n                    - generic [ref=f1e267]: Food waste\n                    - generic [ref=f1e269]: Clothes, textiles and small electricals\n                    - separator [ref=f1e274]\n                  - generic [ref=f1e289]:\n                    - navigation:\n                      - generic: \n                      - generic: \n            - group [ref=f1e295]:\n              - generic [ref=f1e299]:\n                - status [ref=f1e300]\n                - generic [ref=f1e302]:\n                  - text: \n                  - generic [ref=f1e315]:\n                    - strong [ref=f1e318]: Wednesday 13/08/2025\n                    - generic [ref=f1e320]: Refuse\n                    - generic [ref=f1e322]: Food waste\n                    - generic [ref=f1e324]: Clothes, textiles and small electricals\n                    - separator [ref=f1e329]\n                  - generic [ref=f1e344]:\n                    - navigation:\n                      - generic: \n                      - generic: \n            - group [ref=f1e350]:\n              - generic [ref=f1e354]:\n                - status [ref=f1e355]\n                - generic [ref=f1e357]:\n                  - text: \n                  - generic [ref=f1e370]:\n                    - strong [ref=f1e373]: Wednesday 20/08/2025\n                    - generic [ref=f1e375]: Recycling\n                    - generic [ref=f1e377]: Food waste\n                    - generic [ref=f1e379]: Clothes, textiles and small electricals\n                    - separator [ref=f1e384]\n                  - generic [ref=f1e399]:\n                    - navigation:\n                      - generic: \n                      - generic: \n            - group [ref=f1e405]:   \n          - generic [ref=f1e56]:\n            - paragraph [ref=f1e57]:\n              - generic [ref=f1e59]:\n                - text: \"* if you are subscribed to the\"\n                - strong [ref=f1e60]:\n                  - link \"garden waste service\" [ref=f1e61] [cursor=pointer]:\n                    - /url: https://www.elmbridge.gov.uk/bins-waste-and-recycling/garden-waste-service/\n                - text: and pay an annual fee.\n            - paragraph [ref=f1e62]:\n              - generic [ref=f1e63]: If you subscribe to the garden waste service at a later date please check back for your updated collection calendar.\n          - generic [ref=f1e69]:\n            - text: Explore more data in the\n            - strong [ref=f1e70]:\n              - link \"Property Explorer\" [ref=f1e72] [cursor=pointer]:\n                - /url: https://emaps.elmbridge.gov.uk/ebc_property_explorer.aspx?requesttype=parseTemplate&template=PEX_Search.tmplt\n        - navigation [ref=f1e79]:\n          - button \" Cancel\" [ref=f1e81] [cursor=pointer]:\n            - generic [ref=f1e82] [cursor=pointer]: \n            - generic [ref=f1e83] [cursor=pointer]: Cancel\n          - generic: \n      - generic \"loading please wait\":\n        - progressbar\n  - contentinfo [ref=e30]\n```",
+          "tool_call_id": "pyd_ai_f4cf8bec67794bf6b6d47ed0c8abcd3d",
+          "metadata": null,
+          "timestamp": "2025-07-21T11:11:09.052605Z",
+          "part_kind": "tool-return"
+        }
+      ],
+      "instructions": null,
+      "kind": "request"
+    },
+    {
+      "parts": [
+        {
+          "tool_name": "final_result",
+          "args": {
+            "notes": "Garden waste collection is an optional, paid service and not part of the standard collection for this address.",
+            "garden_waste": {
+              "frequency": "None",
+              "bin_colour": "green",
+              "next_pickup_day": "None"
+            },
+            "postcode": "KT10 0AA",
+            "general_waste": {
+              "bin_colour": "black",
+              "frequency": "Fortnightly",
+              "next_pickup_day": "Wednesday 30/07/2025"
+            },
+            "food_waste": {
+              "next_pickup_day": "Wednesday 23/07/2025",
+              "bin_colour": "brown",
+              "frequency": "Weekly"
+            },
+            "recycling": {
+              "next_pickup_day": "Wednesday 23/07/2025",
+              "frequency": "Fortnightly",
+              "bin_colour": "blue"
+            }
+          },
+          "tool_call_id": "pyd_ai_1ede307f59e54746a8589adfcd5d6beb",
+          "part_kind": "tool-call"
+        }
+      ],
+      "usage": {
+        "requests": 1,
+        "request_tokens": 19167,
+        "response_tokens": 126,
+        "total_tokens": 19937,
+        "details": {
+          "cached_content_tokens": 12485,
+          "thoughts_tokens": 644,
+          "text_cache_tokens": 12485,
+          "text_candidates_tokens": 126,
+          "text_prompt_tokens": 19167
+        }
+      },
+      "model_name": "gemini-2.5-flash",
+      "timestamp": "2025-07-21T11:11:15.432863Z",
+      "kind": "response",
+      "vendor_details": {
+        "finish_reason": "STOP"
+      },
+      "vendor_id": "TSB-aJTKCKKhmPUP0sPjuAM"
+    },
+    {
+      "parts": [
+        {
+          "tool_name": "final_result",
+          "content": "Final result processed.",
+          "tool_call_id": "pyd_ai_1ede307f59e54746a8589adfcd5d6beb",
+          "metadata": null,
+          "timestamp": "2025-07-21T11:11:15.433269Z",
+          "part_kind": "tool-return"
+        }
+      ],
+      "instructions": null,
+      "kind": "request"
+    }
+  ]
+}

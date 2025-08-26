@@ -1,0 +1,89 @@
+{
+  "metadata": {
+    "trace_name": "erewash_borough_council",
+    "processed_at": "2025-08-26 18:44:24",
+    "workflow_steps_count": 3,
+    "navigation_events_count": 5
+  },
+  "scraping_patterns": {
+    "login_detected": false,
+    "form_submissions": 0,
+    "navigation_count": 1,
+    "unique_domains": [
+      "map.erewash.gov.uk"
+    ],
+    "api_endpoints": [],
+    "data_extraction_indicators": []
+  },
+  "workflow_steps": [
+    {
+      "action": "goto",
+      "target": "https://map.erewash.gov.uk/isharelive.web/myerewash.aspx",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "fill",
+      "target": "aria-ref=e48 >> internal:describe=\"textbox \\\"Search for a location:\\\"\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0,
+      "value": "DE21 5AR"
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e55 >> internal:describe=\"link \\\"5 The Leys, Little Eaton, Derby, DE21 5AR\\\"\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    }
+  ],
+  "navigation_events": [
+    {
+      "url": "https://map.erewash.gov.uk/isharelive.web/myerewash.aspx",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=utf-8",
+      "size": 12389,
+      "timestamp": "2025-07-21T10:22:18.607Z"
+    },
+    {
+      "url": "https://map.erewash.gov.uk/isharelive.web/myerewash.aspx?action=SetAddress&UniqueId=100030124852",
+      "method": "GET",
+      "status": 302,
+      "redirect_url": "https://map.erewash.gov.uk/isharelive.web/myerewash.aspx",
+      "mime_type": "text/html; charset=utf-8",
+      "size": -1,
+      "timestamp": "2025-07-21T10:22:25.070Z"
+    },
+    {
+      "url": "https://map.erewash.gov.uk/isharelive.web/myerewash.aspx",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=utf-8",
+      "size": 18436,
+      "timestamp": "2025-07-21T10:22:25.459Z"
+    },
+    {
+      "url": "https://map.erewash.gov.uk/isharelive.web/MapGetImage.aspx?RequestType=Map&MapWidth=400%20&MapHeight=400&MapSource=mapsources/base_ospremium&Easting=436677&Northing=342615&Zoom=100&mapid=-1&ServiceAction=GotoLocation&ZoomPin=1",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": 0,
+      "timestamp": "2025-07-21T10:22:26.539Z"
+    },
+    {
+      "url": "https://map.erewash.gov.uk/isharelive.web/MapGetImage.aspx?RequestType=Map&MapWidth=400%20&MapHeight=400&MapSource=mapsources/base_osmapsapi_static_map&Easting=436677&Northing=342615&Zoom=100&mapid=-1&ServiceAction=GotoLocation&ZoomPin=1",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": 0,
+      "timestamp": "2025-07-21T10:22:26.539Z"
+    }
+  ]
+}

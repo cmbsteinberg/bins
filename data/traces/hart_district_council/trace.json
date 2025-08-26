@@ -1,0 +1,223 @@
+{
+  "metadata": {
+    "trace_name": "hart_district_council",
+    "processed_at": "2025-08-26 18:44:24",
+    "workflow_steps_count": 6,
+    "navigation_events_count": 17
+  },
+  "scraping_patterns": {
+    "login_detected": false,
+    "form_submissions": 7,
+    "navigation_count": 2,
+    "unique_domains": [
+      "static.addtoany.com",
+      "www.hart.gov.uk",
+      "fast.fonts.net",
+      "maps.hart.gov.uk",
+      "a.eu.silktide.com"
+    ],
+    "api_endpoints": [],
+    "data_extraction_indicators": []
+  },
+  "workflow_steps": [
+    {
+      "action": "goto",
+      "target": "https://www.hart.gov.uk/your-area",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e67 >> internal:describe=\"link \\\"(link is external)\\\"\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "goto",
+      "target": "https://www.hart.gov.uk/waste-and-recycling/when-my-bin-day",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "fill",
+      "target": "aria-ref=e72 >> internal:describe=\"textbox \\\"e.g. GU51 4AE\\\"\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0,
+      "value": "GU10 5BD"
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e73 >> internal:describe=\"button \\\"Look up address\\\"\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "selectOption",
+      "target": "aria-ref=e152 >> internal:describe=\"listbox \\\"Select\\\"\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0,
+      "value": null
+    }
+  ],
+  "navigation_events": [
+    {
+      "url": "https://www.hart.gov.uk/your-area",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=UTF-8",
+      "size": 38034,
+      "timestamp": "2025-07-21T07:39:14.438Z"
+    },
+    {
+      "url": "https://a.eu.silktide.com/v1/events",
+      "method": "POST",
+      "status": 202,
+      "redirect_url": null,
+      "mime_type": "text/plain; charset=utf-8",
+      "size": 2,
+      "timestamp": "2025-07-21T07:39:14.560Z"
+    },
+    {
+      "url": "https://static.addtoany.com/menu/sm.25.html",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=utf-8",
+      "size": 716,
+      "timestamp": "2025-07-21T07:39:15.713Z"
+    },
+    {
+      "url": "https://static.addtoany.com/cdn-cgi/speculation",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/speculationrules+json",
+      "size": 128,
+      "timestamp": "2025-07-21T07:39:15.983Z"
+    },
+    {
+      "url": "https://a.eu.silktide.com/v1/events/beacon",
+      "method": "POST",
+      "status": 202,
+      "redirect_url": null,
+      "mime_type": "text/plain; charset=utf-8",
+      "size": 2,
+      "timestamp": "2025-07-21T07:39:17.735Z"
+    },
+    {
+      "url": "http://maps.hart.gov.uk/mycouncil.aspx",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=utf-8",
+      "size": 46048,
+      "timestamp": "2025-07-21T07:39:17.796Z"
+    },
+    {
+      "url": "http://fast.fonts.net/cssapi/56c28163-b5b8-47c5-99be-39d4ad6b964d.css",
+      "method": "GET",
+      "status": 307,
+      "redirect_url": "https://fast.fonts.net/cssapi/56c28163-b5b8-47c5-99be-39d4ad6b964d.css",
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T07:39:18.033Z"
+    },
+    {
+      "url": "https://a.eu.silktide.com/v1/events",
+      "method": "POST",
+      "status": 202,
+      "redirect_url": null,
+      "mime_type": "text/plain; charset=utf-8",
+      "size": 2,
+      "timestamp": "2025-07-21T07:39:18.101Z"
+    },
+    {
+      "url": "https://static.addtoany.com/menu/sm.25.html",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=utf-8",
+      "size": 716,
+      "timestamp": "2025-07-21T07:39:18.188Z"
+    },
+    {
+      "url": "https://static.addtoany.com/cdn-cgi/speculation",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/speculationrules+json",
+      "size": 128,
+      "timestamp": "2025-07-21T07:39:18.207Z"
+    },
+    {
+      "url": "https://www.hart.gov.uk/waste-and-recycling/when-my-bin-day",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=UTF-8",
+      "size": 37380,
+      "timestamp": "2025-07-21T07:39:31.707Z"
+    },
+    {
+      "url": "https://a.eu.silktide.com/v1/events",
+      "method": "POST",
+      "status": 202,
+      "redirect_url": null,
+      "mime_type": "text/plain; charset=utf-8",
+      "size": 2,
+      "timestamp": "2025-07-21T07:39:31.830Z"
+    },
+    {
+      "url": "https://static.addtoany.com/menu/sm.25.html",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=utf-8",
+      "size": 716,
+      "timestamp": "2025-07-21T07:39:31.920Z"
+    },
+    {
+      "url": "https://static.addtoany.com/cdn-cgi/speculation",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/speculationrules+json",
+      "size": 128,
+      "timestamp": "2025-07-21T07:39:31.944Z"
+    },
+    {
+      "url": "https://a.eu.silktide.com/v1/events",
+      "method": "POST",
+      "status": 202,
+      "redirect_url": null,
+      "mime_type": "text/plain; charset=utf-8",
+      "size": 2,
+      "timestamp": "2025-07-21T07:39:35.096Z"
+    },
+    {
+      "url": "https://www.hart.gov.uk/bbd-whitespace/list-addresses?postalCode=GU10%205BD&_wrapper_format=drupal_ajax",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 12762,
+      "timestamp": "2025-07-21T07:39:35.096Z"
+    },
+    {
+      "url": "https://www.hart.gov.uk/bbd-whitespace/next-collection-dates?uprn=100060417791&uri=entity%3Anode%2F172&text=View%20the%20calendar&_wrapper_format=drupal_ajax",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 4411,
+      "timestamp": "2025-07-21T07:39:37.667Z"
+    }
+  ]
+}

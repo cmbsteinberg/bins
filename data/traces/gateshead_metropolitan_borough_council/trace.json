@@ -1,0 +1,293 @@
+{
+  "metadata": {
+    "trace_name": "gateshead_metropolitan_borough_council",
+    "processed_at": "2025-08-26 18:44:24",
+    "workflow_steps_count": 7,
+    "navigation_events_count": 22
+  },
+  "scraping_patterns": {
+    "login_detected": false,
+    "form_submissions": 6,
+    "navigation_count": 1,
+    "unique_domains": [
+      "region1.analytics.google.com",
+      "www.gateshead.gov.uk",
+      "gateshead.gov.uk",
+      "use.typekit.net"
+    ],
+    "api_endpoints": [],
+    "data_extraction_indicators": []
+  },
+  "workflow_steps": [
+    {
+      "action": "goto",
+      "target": "https://www.gateshead.gov.uk/article/1785/Bins-and-recycling",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e74 >> internal:describe=\"Bin collection day checker\"",
+      "status": "Failed",
+      "details": {
+        "error": "Timeout 5000ms exceeded."
+      },
+      "timestamp": 0
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e15 >> internal:describe=\"Yes, I agree\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e74 >> internal:describe=\"Bin collection day checker\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "fill",
+      "target": "aria-ref=e50 >> internal:describe=\"Postcode (For example, NE11 0XN)\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0,
+      "value": "DH3 1AH"
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e53 >> internal:describe=\"Find address\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "selectOption",
+      "target": "aria-ref=e82 >> internal:describe=\"Address\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0,
+      "value": null
+    }
+  ],
+  "navigation_events": [
+    {
+      "url": "https://www.gateshead.gov.uk/article/1785/Bins-and-recycling",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=utf-8",
+      "size": 105894,
+      "timestamp": "2025-07-21T16:38:11.522Z"
+    },
+    {
+      "url": "https://use.typekit.net/af/f18587/00000000000000007735a07a/30/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/font-woff2",
+      "size": 17756,
+      "timestamp": "2025-07-21T16:38:11.872Z"
+    },
+    {
+      "url": "https://use.typekit.net/af/220823/000000000000000000015231/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/font-woff2",
+      "size": 46076,
+      "timestamp": "2025-07-21T16:38:11.872Z"
+    },
+    {
+      "url": "https://use.typekit.net/af/8939f9/00000000000000007735a061/30/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/font-woff2",
+      "size": 18584,
+      "timestamp": "2025-07-21T16:38:11.873Z"
+    },
+    {
+      "url": "https://www.gateshead.gov.uk/article/3712/Cookies",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": 0,
+      "timestamp": "2025-07-21T16:38:21.875Z"
+    },
+    {
+      "url": "https://www.gateshead.gov.uk/article/3150/Bin-collection-day-checker",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=utf-8",
+      "size": 116061,
+      "timestamp": "2025-07-21T16:38:24.299Z"
+    },
+    {
+      "url": "https://use.typekit.net/af/8939f9/00000000000000007735a061/30/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/font-woff2",
+      "size": -1,
+      "timestamp": "2025-07-21T16:38:25.066Z"
+    },
+    {
+      "url": "https://use.typekit.net/af/f18587/00000000000000007735a07a/30/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/font-woff2",
+      "size": -1,
+      "timestamp": "2025-07-21T16:38:25.066Z"
+    },
+    {
+      "url": "https://use.typekit.net/af/220823/000000000000000000015231/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/font-woff2",
+      "size": -1,
+      "timestamp": "2025-07-21T16:38:25.067Z"
+    },
+    {
+      "url": "https://region1.analytics.google.com/g/collect?v=2&tid=G-JS2CWWXYT5&gtm=45je57h0v894358921z89121308216za200&_p=1753115905018&_gaz=1&gcd=13l3l3l3l1l1&npa=0&dma=0&tag_exp=101509157~103116026~103200004~103233427~104684208~104684211&cid=1244461466.1753115905&ul=en-gb&sr=800x600&uaa=arm&uab=64&uafvl=Not)A%253BBrand%3B8.0.0.0%7CChromium%3B138.0.7204.101%7CGoogle%2520Chrome%3B138.0.7204.101&uamb=0&uam=&uap=macOS&uapv=15.5.0&uaw=0&are=1&frm=0&pscdl=noapi&_s=1&sid=1753115905&sct=1&seg=0&dl=https%3A%2F%2Fwww.gateshead.gov.uk%2Farticle%2F3150%2FBin-collection-day-checker&dr=https%3A%2F%2Fwww.gateshead.gov.uk%2Farticle%2F1785%2FBins-and-recycling&dt=Bin%20collection%20day%20checker%20-%20Gateshead%20Council&en=page_view&_fv=1&_nsi=1&_ss=1&tfd=877",
+      "method": "POST",
+      "status": 204,
+      "redirect_url": null,
+      "mime_type": "text/plain",
+      "size": -1,
+      "timestamp": "2025-07-21T16:38:25.162Z"
+    },
+    {
+      "url": "https://region1.analytics.google.com/g/collect?v=2&tid=G-JS2CWWXYT5&gtm=45je57h0v894358921z89121308216za200&_p=1753115905018&gcd=13l3l3l3l1l1&npa=0&dma=0&tag_exp=101509157~103116026~103200004~103233427~104684208~104684211&cid=1244461466.1753115905&ul=en-gb&sr=800x600&uaa=arm&uab=64&uafvl=Not)A%253BBrand%3B8.0.0.0%7CChromium%3B138.0.7204.101%7CGoogle%2520Chrome%3B138.0.7204.101&uamb=0&uam=&uap=macOS&uapv=15.5.0&uaw=0&are=1&frm=0&pscdl=noapi&_eu=AAAAAAQ&_s=2&sid=1753115905&sct=1&seg=0&dl=https%3A%2F%2Fwww.gateshead.gov.uk%2Farticle%2F3150%2FBin-collection-day-checker&dr=https%3A%2F%2Fwww.gateshead.gov.uk%2Farticle%2F1785%2FBins-and-recycling&dt=Bin%20collection%20day%20checker%20-%20Gateshead%20Council&en=page_load_time&epn.load_time_sec=1.03&_et=156&tfd=5645",
+      "method": "POST",
+      "status": 204,
+      "redirect_url": null,
+      "mime_type": "text/plain",
+      "size": -1,
+      "timestamp": "2025-07-21T16:38:29.892Z"
+    },
+    {
+      "url": "https://region1.analytics.google.com/g/collect?v=2&tid=G-JS2CWWXYT5&gtm=45je57h0v894358921za200&_p=1753115905018&gcd=13l3l3l3l1l1&npa=0&dma=0&tag_exp=101509157~103116026~103200004~103233427~104684208~104684211&cid=1244461466.1753115905&ul=en-gb&sr=800x600&uaa=arm&uab=64&uafvl=Not)A%253BBrand%3B8.0.0.0%7CChromium%3B138.0.7204.101%7CGoogle%2520Chrome%3B138.0.7204.101&uamb=0&uam=&uap=macOS&uapv=15.5.0&uaw=0&are=1&frm=0&pscdl=noapi&_eu=AEEAAAQ&_s=3&sid=1753115905&sct=1&seg=0&dl=https%3A%2F%2Fwww.gateshead.gov.uk%2Farticle%2F3150%2FBin-collection-day-checker&dr=https%3A%2F%2Fwww.gateshead.gov.uk%2Farticle%2F1785%2FBins-and-recycling&dt=Bin%20collection%20day%20checker%20-%20Gateshead%20Council&en=form_start&ep.form_id=BINCOLLECTIONCHECKER_FORM&ep.form_name=&ep.form_destination=https%3A%2F%2Fwww.gateshead.gov.uk%2Fapiserver%2Fformsservice%2Fhttp%2Fprocesssubmission%3FpageSessionId%3Dca2f60eb-90c6-49f3-8af8-3d24fd2b2afa%26fsid%3Dd6f0924f-70cc-45fc-ae35-21cc9a33ca9c%26fsn%3Df6a5226a-cc04-4968-aab4-546247f10296&epn.form_length=18&ep.first_field_id=BINCOLLECTIONCHECKER_ADDRESSSEARCH_ADDRESSLOOKUPPOSTCODE&ep.first_field_name=BINCOLLECTIONCHECKER_ADDRESSSEARCH_ADDRESSLOOKUPPOSTCODE&ep.first_field_type=text&epn.first_field_position=1&_et=4609&tfd=10648",
+      "method": "POST",
+      "status": 204,
+      "redirect_url": null,
+      "mime_type": "text/plain",
+      "size": -1,
+      "timestamp": "2025-07-21T16:38:34.892Z"
+    },
+    {
+      "url": "https://www.gateshead.gov.uk/apiserver/formsservice/http/processsubmission?pageSessionId=ca2f60eb-90c6-49f3-8af8-3d24fd2b2afa&fsid=d6f0924f-70cc-45fc-ae35-21cc9a33ca9c&fsn=f6a5226a-cc04-4968-aab4-546247f10296",
+      "method": "POST",
+      "status": 303,
+      "redirect_url": "https://www.gateshead.gov.uk/apiserver/formsservice/http/verifycookie?pageSessionId=ca2f60eb-90c6-49f3-8af8-3d24fd2b2afa&fsid=d6f0924f-70cc-45fc-ae35-21cc9a33ca9c",
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:38:42.634Z",
+      "form_data": {
+        "BINCOLLECTIONCHECKER_PAGESESSIONID": "ca2f60eb-90c6-49f3-8af8-3d24fd2b2afa",
+        "BINCOLLECTIONCHECKER_SESSIONID": "d6f0924f-70cc-45fc-ae35-21cc9a33ca9c",
+        "BINCOLLECTIONCHECKER_NONCE": "f6a5226a-cc04-4968-aab4-546247f10296",
+        "BINCOLLECTIONCHECKER_VARIABLES": "e30=",
+        "BINCOLLECTIONCHECKER_PAGENAME": "ADDRESSSEARCH",
+        "BINCOLLECTIONCHECKER_PAGEINSTANCE": "0",
+        "BINCOLLECTIONCHECKER_ADDRESSSEARCH_ASSISTOFF": "false",
+        "BINCOLLECTIONCHECKER_ADDRESSSEARCH_ASSISTON": "true",
+        "BINCOLLECTIONCHECKER_ADDRESSSEARCH_STAFFLAYOUT": "false",
+        "BINCOLLECTIONCHECKER_ADDRESSSEARCH_ADDRESSLOOKUPPOSTCODE": "DH3 1AH",
+        "BINCOLLECTIONCHECKER_ADDRESSSEARCH_ADDRESSLOOKUPADDRESS": "1",
+        "BINCOLLECTIONCHECKER_ADDRESSSEARCH_FIELD125": "false",
+        "BINCOLLECTIONCHECKER_ADDRESSSEARCH_UPRN": "100000010369",
+        "BINCOLLECTIONCHECKER_ADDRESSSEARCH_ADDRESSTEXT": "1 Kateregina, DH3 1AH",
+        "BINCOLLECTIONCHECKER_FORMACTION_NEXT": "BINCOLLECTIONCHECKER_ADDRESSSEARCH_NEXTBUTTON"
+      }
+    },
+    {
+      "url": "https://www.gateshead.gov.uk/apiserver/formsservice/http/verifycookie?pageSessionId=ca2f60eb-90c6-49f3-8af8-3d24fd2b2afa&fsid=d6f0924f-70cc-45fc-ae35-21cc9a33ca9c",
+      "method": "GET",
+      "status": 303,
+      "redirect_url": "https://www.gateshead.gov.uk/article/3150/Bin-collection-day-checker?pageSessionId=ca2f60eb-90c6-49f3-8af8-3d24fd2b2afa&fsn=c8ecdc1e-5469-4f29-96c2-eee1afcb261b",
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:38:43.328Z"
+    },
+    {
+      "url": "https://www.gateshead.gov.uk/article/3150/Bin-collection-day-checker?pageSessionId=ca2f60eb-90c6-49f3-8af8-3d24fd2b2afa&fsn=c8ecdc1e-5469-4f29-96c2-eee1afcb261b",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=utf-8",
+      "size": 106219,
+      "timestamp": "2025-07-21T16:38:43.411Z"
+    },
+    {
+      "url": "https://use.typekit.net/af/8939f9/00000000000000007735a061/30/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/font-woff2",
+      "size": -1,
+      "timestamp": "2025-07-21T16:38:44.933Z"
+    },
+    {
+      "url": "https://use.typekit.net/af/f18587/00000000000000007735a07a/30/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/font-woff2",
+      "size": -1,
+      "timestamp": "2025-07-21T16:38:44.935Z"
+    },
+    {
+      "url": "https://use.typekit.net/af/220823/000000000000000000015231/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/font-woff2",
+      "size": -1,
+      "timestamp": "2025-07-21T16:38:44.935Z"
+    },
+    {
+      "url": "https://gateshead.gov.uk/media/11283/icon__bins--blue-bin/variant1/icon__bins--blue.png",
+      "method": "GET",
+      "status": 301,
+      "redirect_url": "https://www.gateshead.gov.uk/media/11283/icon__bins--blue-bin/variant1/icon__bins--blue.png",
+      "mime_type": "text/html; charset=UTF-8",
+      "size": -1,
+      "timestamp": "2025-07-21T16:38:45.001Z"
+    },
+    {
+      "url": "https://gateshead.gov.uk/media/11284/icon__bins--green/variant1/icon__bins--green.png",
+      "method": "GET",
+      "status": 301,
+      "redirect_url": "https://www.gateshead.gov.uk/media/11284/icon__bins--green/variant1/icon__bins--green.png",
+      "mime_type": "text/html; charset=UTF-8",
+      "size": -1,
+      "timestamp": "2025-07-21T16:38:45.001Z"
+    },
+    {
+      "url": "https://gateshead.gov.uk/media/11285/icon__bins--greendark/variant1/icon__bins--greendark.png",
+      "method": "GET",
+      "status": 301,
+      "redirect_url": "https://www.gateshead.gov.uk/media/11285/icon__bins--greendark/variant1/icon__bins--greendark.png",
+      "mime_type": "text/html; charset=UTF-8",
+      "size": -1,
+      "timestamp": "2025-07-21T16:38:45.001Z"
+    },
+    {
+      "url": "https://region1.analytics.google.com/g/collect?v=2&tid=G-JS2CWWXYT5&gtm=45je57h0v894358921z89121308216za200&_p=1753115924887&gcd=13l3l3l3l1l1&npa=0&dma=0&tag_exp=101509157~103116026~103200004~103233427~104684208~104684211&cid=1244461466.1753115905&ul=en-gb&sr=800x600&uaa=arm&uab=64&uafvl=Not)A%253BBrand%3B8.0.0.0%7CChromium%3B138.0.7204.101%7CGoogle%2520Chrome%3B138.0.7204.101&uamb=0&uam=&uap=macOS&uapv=15.5.0&uaw=0&are=1&frm=0&pscdl=noapi&_eu=AAAAAAQ&sid=1753115905&sct=1&seg=1&dl=https%3A%2F%2Fwww.gateshead.gov.uk%2Farticle%2F3150%2FBin-collection-day-checker%3FpageSessionId%3Dca2f60eb-90c6-49f3-8af8-3d24fd2b2afa%26fsn%3Dc8ecdc1e-5469-4f29-96c2-eee1afcb261b&dr=https%3A%2F%2Fwww.gateshead.gov.uk%2Farticle%2F3150%2FBin-collection-day-checker&dt=Bin%20collection%20day%20checker%20-%20Gateshead%20Council&_s=1&tfd=7410",
+      "method": "POST",
+      "status": 204,
+      "redirect_url": null,
+      "mime_type": "text/plain",
+      "size": -1,
+      "timestamp": "2025-07-21T16:38:49.999Z"
+    }
+  ]
+}

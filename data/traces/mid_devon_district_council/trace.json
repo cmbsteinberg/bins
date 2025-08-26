@@ -1,0 +1,484 @@
+{
+  "metadata": {
+    "trace_name": "mid_devon_district_council",
+    "processed_at": "2025-08-26 18:44:24",
+    "workflow_steps_count": 7,
+    "navigation_events_count": 44
+  },
+  "scraping_patterns": {
+    "login_detected": false,
+    "form_submissions": 23,
+    "navigation_count": 1,
+    "unique_domains": [
+      "www.google.com",
+      "www.middevon.gov.uk",
+      "my.middevon.gov.uk",
+      "maps.googleapis.com"
+    ],
+    "api_endpoints": [
+      "https://www.middevon.gov.uk/assets/img/logo/manifest.json",
+      "https://my.middevon.gov.uk/en/AchieveForms/?form_uri=sandbox-publish://AF-Process-2289dd06-9a12-4202-ba09-857fe756f6bd/AF-Stage-eb382015-001c-415d-beda-84f796dbb167/definition.json&redirectlink=%2Fen&cancelRedirectLink=%2Fen&consentMessage=yes",
+      "https://my.middevon.gov.uk/authapi/isauthenticated?uri=https%253A%252F%252Fmy.middevon.gov.uk%252Fen%252FAchieveForms%252F%253Fform_uri%253Dsandbox-publish%253A%252F%252FAF-Process-2289dd06-9a12-4202-ba09-857fe756f6bd%252FAF-Stage-eb382015-001c-415d-beda-84f796dbb167%252Fdefinition.json%2526redirectlink%253D%25252Fen%2526cancelRedirectLink%253D%25252Fen%2526consentMessage%253Dyes&hostname=my.middevon.gov.uk&withCredentials=true",
+      "https://maps.googleapis.com/maps/api/mapsjs/gen_204?csp_test=true",
+      "https://my.middevon.gov.uk/api/self/self-content/getByKeyAndApp?language=en&key=FORM_LOADING_TEXT&app=SELF_CORE&_=1753093711782&sid=92bfd61b9dc73f5a27cc69bfc06356eb",
+      "https://my.middevon.gov.uk/api/get-document/json?uri=sandbox-publish%3A%2F%2FAF-Process-2289dd06-9a12-4202-ba09-857fe756f6bd%2FAF-Stage-eb382015-001c-415d-beda-84f796dbb167%2Fdefinition.json&_=1753093711833&sid=92bfd61b9dc73f5a27cc69bfc06356eb",
+      "https://my.middevon.gov.uk/api/get-document/json?uri=sandbox-publish%3A%2F%2FAF-Process-2289dd06-9a12-4202-ba09-857fe756f6bd%2Fdefinition.json&_=1753093712015&sid=92bfd61b9dc73f5a27cc69bfc06356eb",
+      "https://my.middevon.gov.uk/api/af-configs-list/list?_=1753093712218&sid=92bfd61b9dc73f5a27cc69bfc06356eb",
+      "https://my.middevon.gov.uk/api/queue-processor-config/get?_=1753093712219&sid=92bfd61b9dc73f5a27cc69bfc06356eb",
+      "https://my.middevon.gov.uk/api/nextref?_=1753093712219&sid=92bfd61b9dc73f5a27cc69bfc06356eb",
+      "https://my.middevon.gov.uk/api/get-document/json?uri=sandbox-publish%3A%2F%2FAF-Process-2289dd06-9a12-4202-ba09-857fe756f6bd%2FAF-Stage-eb382015-001c-415d-beda-84f796dbb167%2FAF-Form-c55a402a-fcbb-4841-afa7-b9426b9812c1%2Fdefinition.json&_=1753093724212&sid=92bfd61b9dc73f5a27cc69bfc06356eb"
+    ],
+    "data_extraction_indicators": []
+  },
+  "workflow_steps": [
+    {
+      "action": "goto",
+      "target": "https://www.middevon.gov.uk/residents/recycling-rubbish/check-collection-dates/",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e49 >> internal:describe=\"Accept all cookies\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e77 >> internal:describe=\"Start button\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "fill",
+      "target": "aria-ref=f1e27 >> internal:describe=\"Enter your PostcodeRequired\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0,
+      "value": "EX15 1AH"
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=f1e35 >> internal:describe=\"Select AddressRequired Select...\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "selectOption",
+      "target": "aria-ref=f1e504 >> internal:describe=\"Select AddressRequired Select... 2 Station Road, Cullompton, EX15 1AH 3 Station Road, Cullompton, EX15 1AH 3a Station Road, Cullompton, EX15 1AH 4a Station Road, Cullompton, EX15 1AH 4 Station Road, Cullompton, EX15 1AH 5 Station Road, Cullompton, EX15 1AH Police Station 6 Station Road, Cullompton, EX15 1AH 7 Station Road, Cullompton, EX15 1AH 8 Station Road, Cullompton, EX15 1AH 9 Station Road, Cullompton, EX15 1AH 11 Station Road, Cullompton, EX15 1AH 13 Station Road, Cullompton, EX15 1AH 15 Station Road, Cullompton, EX15 1AH 17 Station Road, Cullompton, EX15 1AH 19 Station Road, Cullompton, EX15 1AH The Flat 21-23 Station Road, Cullompton, EX15 1AH 21-23 Station Road, Cullompton, EX15 1AH 29 Station Road, Cullompton, EX15 1AH 31 Station Road, Cullompton, EX15 1AH 33 Station Road, Cullompton, EX15 1AH 35 Station Road, Cullompton, EX15 1AH\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0,
+      "value": null
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=f1e261 >> internal:describe=\"Next\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    }
+  ],
+  "navigation_events": [
+    {
+      "url": "https://www.middevon.gov.uk/residents/recycling-rubbish/check-collection-dates/",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=utf-8",
+      "size": 30791,
+      "timestamp": "2025-07-21T10:28:23.474Z"
+    },
+    {
+      "url": "https://www.middevon.gov.uk/Assets/fonts/fontawesome-webfont.woff2?v=4.5.0",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/x-font-woff2",
+      "size": 64464,
+      "timestamp": "2025-07-21T10:28:23.668Z"
+    },
+    {
+      "url": "https://www.middevon.gov.uk/assets/img/logo/manifest.json",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 828,
+      "timestamp": "2025-07-21T10:28:23.699Z"
+    },
+    {
+      "url": "https://my.middevon.gov.uk/en/AchieveForms/?form_uri=sandbox-publish://AF-Process-2289dd06-9a12-4202-ba09-857fe756f6bd/AF-Stage-eb382015-001c-415d-beda-84f796dbb167/definition.json&redirectlink=%2Fen&cancelRedirectLink=%2Fen&consentMessage=yes",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=UTF-8",
+      "size": 23228,
+      "timestamp": "2025-07-21T10:28:27.068Z"
+    },
+    {
+      "url": "https://www.google.com/jsapi",
+      "method": "GET",
+      "status": 301,
+      "redirect_url": "https://www.gstatic.com/charts/loader.js",
+      "mime_type": "text/html; charset=UTF-8",
+      "size": -1,
+      "timestamp": "2025-07-21T10:28:30.862Z"
+    },
+    {
+      "url": "https://my.middevon.gov.uk/authapi/isauthenticated?uri=https%253A%252F%252Fmy.middevon.gov.uk%252Fen%252FAchieveForms%252F%253Fform_uri%253Dsandbox-publish%253A%252F%252FAF-Process-2289dd06-9a12-4202-ba09-857fe756f6bd%252FAF-Stage-eb382015-001c-415d-beda-84f796dbb167%252Fdefinition.json%2526redirectlink%253D%25252Fen%2526cancelRedirectLink%253D%25252Fen%2526consentMessage%253Dyes&hostname=my.middevon.gov.uk&withCredentials=true",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=utf-8",
+      "size": 2988,
+      "timestamp": "2025-07-21T10:28:31.236Z"
+    },
+    {
+      "url": "https://my.middevon.gov.uk/apibroker/domain/my.middevon.gov.uk?_=1753093711081&sid=92bfd61b9dc73f5a27cc69bfc06356eb",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 217,
+      "timestamp": "2025-07-21T10:28:31.311Z"
+    },
+    {
+      "url": "https://my.middevon.gov.uk/apibroker/domain/my.middevon.gov.uk?_=1753093711085&sid=92bfd61b9dc73f5a27cc69bfc06356eb",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 217,
+      "timestamp": "2025-07-21T10:28:31.313Z"
+    },
+    {
+      "url": "https://my.middevon.gov.uk/apibroker/self-settings?keys=CustomIFrameCss%2CCustomCssInline&app_name=Self&_=1753093711165&sid=92bfd61b9dc73f5a27cc69bfc06356eb",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=UTF-8",
+      "size": 199,
+      "timestamp": "2025-07-21T10:28:31.315Z"
+    },
+    {
+      "url": "https://my.middevon.gov.uk/fillform/?iframe_id=fillform-frame-1&db_id=",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=UTF-8",
+      "size": 4319,
+      "timestamp": "2025-07-21T10:28:31.330Z"
+    },
+    {
+      "url": "https://www.google.com/jsapi?key=AIzaSyDMYR3xNkRwUG-OsKEC4WVi1ptWIPzybMs",
+      "method": "GET",
+      "status": 301,
+      "redirect_url": "https://www.gstatic.com/charts/loader.js?key=AIzaSyDMYR3xNkRwUG-OsKEC4WVi1ptWIPzybMs",
+      "mime_type": "text/html; charset=UTF-8",
+      "size": -1,
+      "timestamp": "2025-07-21T10:28:31.429Z"
+    },
+    {
+      "url": "https://maps.googleapis.com/maps/api/mapsjs/gen_204?csp_test=true",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=UTF-8",
+      "size": 3,
+      "timestamp": "2025-07-21T10:28:31.808Z"
+    },
+    {
+      "url": "https://my.middevon.gov.uk/api/self/self-content/getByKeyAndApp?language=en&key=FORM_LOADING_TEXT&app=SELF_CORE&_=1753093711782&sid=92bfd61b9dc73f5a27cc69bfc06356eb",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 169,
+      "timestamp": "2025-07-21T10:28:31.816Z"
+    },
+    {
+      "url": "https://my.middevon.gov.uk/api/get-document/json?uri=sandbox-publish%3A%2F%2FAF-Process-2289dd06-9a12-4202-ba09-857fe756f6bd%2FAF-Stage-eb382015-001c-415d-beda-84f796dbb167%2Fdefinition.json&_=1753093711833&sid=92bfd61b9dc73f5a27cc69bfc06356eb",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 71168,
+      "timestamp": "2025-07-21T10:28:31.848Z"
+    },
+    {
+      "url": "https://my.middevon.gov.uk/api/get-document/json?uri=sandbox-publish%3A%2F%2FAF-Process-2289dd06-9a12-4202-ba09-857fe756f6bd%2Fdefinition.json&_=1753093712015&sid=92bfd61b9dc73f5a27cc69bfc06356eb",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 13257,
+      "timestamp": "2025-07-21T10:28:32.017Z"
+    },
+    {
+      "url": "https://my.middevon.gov.uk/api/af-configs-list/list?_=1753093712218&sid=92bfd61b9dc73f5a27cc69bfc06356eb",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 1374,
+      "timestamp": "2025-07-21T10:28:32.223Z"
+    },
+    {
+      "url": "https://my.middevon.gov.uk/api/queue-processor-config/get?_=1753093712219&sid=92bfd61b9dc73f5a27cc69bfc06356eb",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 38,
+      "timestamp": "2025-07-21T10:28:32.224Z"
+    },
+    {
+      "url": "https://my.middevon.gov.uk/api/nextref?_=1753093712219&sid=92bfd61b9dc73f5a27cc69bfc06356eb",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 116,
+      "timestamp": "2025-07-21T10:28:32.224Z"
+    },
+    {
+      "url": "https://my.middevon.gov.uk/apibroker/location?app_name=AF-Renderer::Self&_=1753093712220&sid=92bfd61b9dc73f5a27cc69bfc06356eb",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=UTF-8",
+      "size": 272,
+      "timestamp": "2025-07-21T10:28:32.225Z"
+    },
+    {
+      "url": "https://my.middevon.gov.uk/apibroker/environment-tokens-public?app_name=AF-Renderer::Self&_=1753093712220&sid=92bfd61b9dc73f5a27cc69bfc06356eb",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=UTF-8",
+      "size": 855,
+      "timestamp": "2025-07-21T10:28:32.225Z"
+    },
+    {
+      "url": "https://my.middevon.gov.uk/apibroker/runLookup?id=64c24c3e7f5bb&repeat_against=&noRetry=false&getOnlyTokens=undefined&log_id=&app_name=AF-Renderer::Self&_=1753093712348&sid=92bfd61b9dc73f5a27cc69bfc06356eb",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=UTF-8",
+      "size": 2665,
+      "timestamp": "2025-07-21T10:28:32.357Z"
+    },
+    {
+      "url": "https://my.middevon.gov.uk/apibroker/runLookup?id=641c7ae9b4c96&repeat_against=&noRetry=false&getOnlyTokens=undefined&log_id=&app_name=AF-Renderer::Self&_=1753093712844&sid=92bfd61b9dc73f5a27cc69bfc06356eb",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=UTF-8",
+      "size": 1394,
+      "timestamp": "2025-07-21T10:28:32.848Z"
+    },
+    {
+      "url": "https://my.middevon.gov.uk/apibroker/runLookup?id=6423144f50ec0&repeat_against=&noRetry=false&getOnlyTokens=undefined&log_id=&app_name=AF-Renderer::Self&_=1753093713326&sid=92bfd61b9dc73f5a27cc69bfc06356eb",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=UTF-8",
+      "size": 1394,
+      "timestamp": "2025-07-21T10:28:33.331Z"
+    },
+    {
+      "url": "https://my.middevon.gov.uk/apibroker/runLookup?id=645e13a01dba1&repeat_against=&noRetry=false&getOnlyTokens=undefined&log_id=&app_name=AF-Renderer::Self&_=1753093713779&sid=92bfd61b9dc73f5a27cc69bfc06356eb",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=UTF-8",
+      "size": 1394,
+      "timestamp": "2025-07-21T10:28:33.784Z"
+    },
+    {
+      "url": "https://my.middevon.gov.uk/apibroker/runLookup?id=642315aacb919&repeat_against=&noRetry=false&getOnlyTokens=undefined&log_id=&app_name=AF-Renderer::Self&_=1753093714204&sid=92bfd61b9dc73f5a27cc69bfc06356eb",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=UTF-8",
+      "size": 1394,
+      "timestamp": "2025-07-21T10:28:34.208Z"
+    },
+    {
+      "url": "https://my.middevon.gov.uk/apibroker/runLookup?id=64231699483cf&repeat_against=&noRetry=false&getOnlyTokens=undefined&log_id=&app_name=AF-Renderer::Self&_=1753093714629&sid=92bfd61b9dc73f5a27cc69bfc06356eb",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=UTF-8",
+      "size": 1394,
+      "timestamp": "2025-07-21T10:28:34.633Z"
+    },
+    {
+      "url": "https://my.middevon.gov.uk/apibroker/runLookup?id=642421bab7478&repeat_against=&noRetry=false&getOnlyTokens=undefined&log_id=&app_name=AF-Renderer::Self&_=1753093715114&sid=92bfd61b9dc73f5a27cc69bfc06356eb",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=UTF-8",
+      "size": 1394,
+      "timestamp": "2025-07-21T10:28:35.118Z"
+    },
+    {
+      "url": "https://my.middevon.gov.uk/apibroker/runLookup?id=6424229605d13&repeat_against=&noRetry=false&getOnlyTokens=undefined&log_id=&app_name=AF-Renderer::Self&_=1753093715536&sid=92bfd61b9dc73f5a27cc69bfc06356eb",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=UTF-8",
+      "size": 1394,
+      "timestamp": "2025-07-21T10:28:35.540Z"
+    },
+    {
+      "url": "https://my.middevon.gov.uk/apibroker/runLookup?id=645e14020c9cc&repeat_against=&noRetry=false&getOnlyTokens=undefined&log_id=&app_name=AF-Renderer::Self&_=1753093715949&sid=92bfd61b9dc73f5a27cc69bfc06356eb",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=UTF-8",
+      "size": 1394,
+      "timestamp": "2025-07-21T10:28:35.954Z"
+    },
+    {
+      "url": "https://my.middevon.gov.uk/apibroker/runLookup?id=64c24c3e7f5bb&repeat_against=&noRetry=false&getOnlyTokens=undefined&log_id=&app_name=AF-Renderer::Self&_=1753093716365&sid=92bfd61b9dc73f5a27cc69bfc06356eb",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=UTF-8",
+      "size": 51528,
+      "timestamp": "2025-07-21T10:28:36.369Z"
+    },
+    {
+      "url": "https://my.middevon.gov.uk/apibroker/runLookup?id=641c7ae9b4c96&repeat_against=&noRetry=false&getOnlyTokens=undefined&log_id=&app_name=AF-Renderer::Self&_=1753093720282&sid=92bfd61b9dc73f5a27cc69bfc06356eb",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=UTF-8",
+      "size": 2219,
+      "timestamp": "2025-07-21T10:28:40.287Z"
+    },
+    {
+      "url": "https://my.middevon.gov.uk/apibroker/runLookup?id=6423144f50ec0&repeat_against=&noRetry=false&getOnlyTokens=undefined&log_id=&app_name=AF-Renderer::Self&_=1753093720841&sid=92bfd61b9dc73f5a27cc69bfc06356eb",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=UTF-8",
+      "size": 2171,
+      "timestamp": "2025-07-21T10:28:40.844Z"
+    },
+    {
+      "url": "https://my.middevon.gov.uk/apibroker/runLookup?id=645e13a01dba1&repeat_against=&noRetry=false&getOnlyTokens=undefined&log_id=&app_name=AF-Renderer::Self&_=1753093721374&sid=92bfd61b9dc73f5a27cc69bfc06356eb",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=UTF-8",
+      "size": 2245,
+      "timestamp": "2025-07-21T10:28:41.380Z"
+    },
+    {
+      "url": "https://my.middevon.gov.uk/apibroker/runLookup?id=642315aacb919&repeat_against=&noRetry=false&getOnlyTokens=undefined&log_id=&app_name=AF-Renderer::Self&_=1753093721809&sid=92bfd61b9dc73f5a27cc69bfc06356eb",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=UTF-8",
+      "size": 2245,
+      "timestamp": "2025-07-21T10:28:41.812Z"
+    },
+    {
+      "url": "https://my.middevon.gov.uk/apibroker/runLookup?id=64231699483cf&repeat_against=&noRetry=false&getOnlyTokens=undefined&log_id=&app_name=AF-Renderer::Self&_=1753093722251&sid=92bfd61b9dc73f5a27cc69bfc06356eb",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=UTF-8",
+      "size": 1394,
+      "timestamp": "2025-07-21T10:28:42.255Z"
+    },
+    {
+      "url": "https://my.middevon.gov.uk/apibroker/runLookup?id=642421bab7478&repeat_against=&noRetry=false&getOnlyTokens=undefined&log_id=&app_name=AF-Renderer::Self&_=1753093722669&sid=92bfd61b9dc73f5a27cc69bfc06356eb",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=UTF-8",
+      "size": 1394,
+      "timestamp": "2025-07-21T10:28:42.675Z"
+    },
+    {
+      "url": "https://my.middevon.gov.uk/apibroker/runLookup?id=6424229605d13&repeat_against=&noRetry=false&getOnlyTokens=undefined&log_id=&app_name=AF-Renderer::Self&_=1753093723196&sid=92bfd61b9dc73f5a27cc69bfc06356eb",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=UTF-8",
+      "size": 1394,
+      "timestamp": "2025-07-21T10:28:43.202Z"
+    },
+    {
+      "url": "https://my.middevon.gov.uk/apibroker/runLookup?id=645e14020c9cc&repeat_against=&noRetry=false&getOnlyTokens=undefined&log_id=&app_name=AF-Renderer::Self&_=1753093723729&sid=92bfd61b9dc73f5a27cc69bfc06356eb",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=UTF-8",
+      "size": 1394,
+      "timestamp": "2025-07-21T10:28:43.734Z"
+    },
+    {
+      "url": "https://my.middevon.gov.uk/api/get-document/json?uri=sandbox-publish%3A%2F%2FAF-Process-2289dd06-9a12-4202-ba09-857fe756f6bd%2FAF-Stage-eb382015-001c-415d-beda-84f796dbb167%2FAF-Form-c55a402a-fcbb-4841-afa7-b9426b9812c1%2Fdefinition.json&_=1753093724212&sid=92bfd61b9dc73f5a27cc69bfc06356eb",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 7535,
+      "timestamp": "2025-07-21T10:28:44.215Z"
+    },
+    {
+      "url": "https://my.middevon.gov.uk/apibroker/runLookup?id=654d03668abbc&repeat_against=&noRetry=false&getOnlyTokens=undefined&log_id=&app_name=AF-Renderer::Self&_=1753093724214&sid=92bfd61b9dc73f5a27cc69bfc06356eb",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=UTF-8",
+      "size": 10583,
+      "timestamp": "2025-07-21T10:28:44.216Z"
+    },
+    {
+      "url": "https://my.middevon.gov.uk/apibroker/runLookup?id=645a29f62bbb6&repeat_against=&noRetry=false&getOnlyTokens=undefined&log_id=&app_name=AF-Renderer::Self&_=1753093724660&sid=92bfd61b9dc73f5a27cc69bfc06356eb",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=UTF-8",
+      "size": 1319,
+      "timestamp": "2025-07-21T10:28:44.662Z"
+    },
+    {
+      "url": "https://my.middevon.gov.uk/apibroker/runLookup?id=645a2b8c47d62&repeat_against=&noRetry=false&getOnlyTokens=undefined&log_id=&app_name=AF-Renderer::Self&_=1753093725085&sid=92bfd61b9dc73f5a27cc69bfc06356eb",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=UTF-8",
+      "size": 1319,
+      "timestamp": "2025-07-21T10:28:45.087Z"
+    },
+    {
+      "url": "https://my.middevon.gov.uk/apibroker/runLookup?id=653110cb8f5e3&repeat_against=&noRetry=false&getOnlyTokens=undefined&log_id=&app_name=AF-Renderer::Self&_=1753093725504&sid=92bfd61b9dc73f5a27cc69bfc06356eb",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=UTF-8",
+      "size": 1306,
+      "timestamp": "2025-07-21T10:28:45.508Z"
+    },
+    {
+      "url": "https://my.middevon.gov.uk/apibroker/runLookup?id=653108999634c&repeat_against=&noRetry=false&getOnlyTokens=undefined&log_id=&app_name=AF-Renderer::Self&_=1753093725910&sid=92bfd61b9dc73f5a27cc69bfc06356eb",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=UTF-8",
+      "size": 1414,
+      "timestamp": "2025-07-21T10:28:45.916Z"
+    }
+  ]
+}

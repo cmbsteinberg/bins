@@ -1,0 +1,107 @@
+{
+  "metadata": {
+    "trace_name": "swindon_borough_council",
+    "processed_at": "2025-08-26 18:44:24",
+    "workflow_steps_count": 3,
+    "navigation_events_count": 7
+  },
+  "scraping_patterns": {
+    "login_detected": false,
+    "form_submissions": 0,
+    "navigation_count": 3,
+    "unique_domains": [
+      "www.google.com",
+      "www.swindon.gov.uk"
+    ],
+    "api_endpoints": [],
+    "data_extraction_indicators": []
+  },
+  "workflow_steps": [
+    {
+      "action": "goto",
+      "target": "http://www.swindon.gov.uk/householdwaste",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "goto",
+      "target": "https://www.google.com/search?q=Swindon+Council+bin+collection",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "goto",
+      "target": "https://www.swindon.gov.uk",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    }
+  ],
+  "navigation_events": [
+    {
+      "url": "http://www.swindon.gov.uk/householdwaste",
+      "method": "GET",
+      "status": 403,
+      "redirect_url": null,
+      "mime_type": "text/html",
+      "size": 520,
+      "timestamp": "2025-07-22T07:35:47.231Z"
+    },
+    {
+      "url": "https://www.google.com/search?q=Swindon+Council+bin+collection",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=UTF-8",
+      "size": 84232,
+      "timestamp": "2025-07-22T07:35:48.484Z"
+    },
+    {
+      "url": "https://www.google.com/search?q=Swindon+Council+bin+collection&sei=VD9_aPqiGuSakdUP7o2ZyQI",
+      "method": "GET",
+      "status": 302,
+      "redirect_url": "https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3DSwindon%2BCouncil%2Bbin%2Bcollection%26sei%3DVD9_aPqiGuSakdUP7o2ZyQI&q=EhAqAmtv95-3AIkn1Md-vIq5GNT-_MMGIjBQP_AmAaO1wRDz32pSwXnEUsyP9pidjomP_kOMAYJk3tQf_fzAFWXHGH2lFrrboNwyAVJaAUM",
+      "mime_type": "text/html; charset=UTF-8",
+      "size": -1,
+      "timestamp": "2025-07-22T07:35:48.652Z"
+    },
+    {
+      "url": "https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3DSwindon%2BCouncil%2Bbin%2Bcollection%26sei%3DVD9_aPqiGuSakdUP7o2ZyQI&q=EhAqAmtv95-3AIkn1Md-vIq5GNT-_MMGIjBQP_AmAaO1wRDz32pSwXnEUsyP9pidjomP_kOMAYJk3tQf_fzAFWXHGH2lFrrboNwyAVJaAUM",
+      "method": "GET",
+      "status": 429,
+      "redirect_url": null,
+      "mime_type": "text/html",
+      "size": 3366,
+      "timestamp": "2025-07-22T07:35:49.178Z"
+    },
+    {
+      "url": "https://www.google.com/recaptcha/api2/anchor?ar=1&k=6LdLLIMbAAAAAIl-KLj9p1ePhM-4LCCDbjtJLqRO&co=aHR0cHM6Ly93d3cuZ29vZ2xlLmNvbTo0NDM.&hl=en&v=3jpV4E_UA9gZWYy11LtggjoU&size=normal&s=jIS49d1PWf28WA9ZErr0hmLQ1w90RcHm9KnfGwXi93Jk251uyIUcDHxeE5UA8zwLPmX3RHNjmQkR6YHP95PFzm2WR3tc9UUZQXJe0VlVgnS430--zaZDhUd5HnlY0fKOcup9OpRYBCMxC0Xe_ixDhkFfyCS_g_MOXB-M6Z3oGUwyMeZUoX_RGXBCpCM9tl9b-ZOUeEwIv4CBkA3-G9nN7mSEyqzz-tnuPxTt_3ja7vL3xl8igXpziBbU8boXbLqBLdF1vtPGH0bCdULZDZVCVFFJ0RdHCAI&anchor-ms=20000&execute-ms=15000&cb=5z48rc3lyi1r",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=utf-8",
+      "size": 76041,
+      "timestamp": "2025-07-22T07:35:49.316Z"
+    },
+    {
+      "url": "https://www.google.com/recaptcha/api2/bframe?hl=en&v=3jpV4E_UA9gZWYy11LtggjoU&k=6LdLLIMbAAAAAIl-KLj9p1ePhM-4LCCDbjtJLqRO",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=utf-8",
+      "size": 7808,
+      "timestamp": "2025-07-22T07:35:49.733Z"
+    },
+    {
+      "url": "https://www.swindon.gov.uk/",
+      "method": "GET",
+      "status": 403,
+      "redirect_url": null,
+      "mime_type": "text/html",
+      "size": 520,
+      "timestamp": "2025-07-22T07:35:51.648Z"
+    }
+  ]
+}

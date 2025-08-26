@@ -1,0 +1,273 @@
+{
+  "metadata": {
+    "trace_name": "london_borough_of_sutton",
+    "processed_at": "2025-08-26 18:44:24",
+    "workflow_steps_count": 8,
+    "navigation_events_count": 20
+  },
+  "scraping_patterns": {
+    "login_detected": false,
+    "form_submissions": 2,
+    "navigation_count": 1,
+    "unique_domains": [
+      "waste-services.sutton.gov.uk",
+      "www.sutton.gov.uk",
+      "consent.cookie-script.com",
+      "heatmaps.monsido.com"
+    ],
+    "api_endpoints": [
+      "https://heatmaps.monsido.com/v1/settings/Z8Gph02yPUtbYY2UMLuxPQ.json",
+      "https://heatmaps.monsido.com/v1/settings/Z8Gph02yPUtbYY2UMLuxPQ.json",
+      "https://heatmaps.monsido.com/v1/settings/Z8Gph02yPUtbYY2UMLuxPQ.json",
+      "https://heatmaps.monsido.com/v1/settings/Z8Gph02yPUtbYY2UMLuxPQ.json"
+    ],
+    "data_extraction_indicators": []
+  },
+  "workflow_steps": [
+    {
+      "action": "goto",
+      "target": "https://www.sutton.gov.uk/info/200449/waste_and_recycling/1578/when_are_my_bins_collected",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e202 >> internal:describe=\"Accept all button\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e74 >> internal:describe=\"Check your next bin collection day button\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "fill",
+      "target": "aria-ref=e25 >> internal:describe=\"Postcode textbox\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0,
+      "value": "CR0 4FA"
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e26 >> internal:describe=\"Go button\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e30 >> internal:describe=\"Select an address combobox\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e127 >> internal:describe=\"Flat 1, Waddon House, 283 Stafford Road, Wallington, Croydon, CR0 4FA option\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e35 >> internal:describe=\"Continue button\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    }
+  ],
+  "navigation_events": [
+    {
+      "url": "https://www.sutton.gov.uk/info/200449/waste_and_recycling/1578/when_are_my_bins_collected",
+      "method": "GET",
+      "status": 301,
+      "redirect_url": "https://www.sutton.gov.uk/-/check-your-bin-collection-days",
+      "mime_type": "text/html",
+      "size": -1,
+      "timestamp": "2025-07-21T10:23:21.197Z"
+    },
+    {
+      "url": "https://www.sutton.gov.uk/-/check-your-bin-collection-days",
+      "method": "GET",
+      "status": 302,
+      "redirect_url": "https://www.sutton.gov.uk/w/check-your-bin-collection-days",
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T10:23:21.234Z"
+    },
+    {
+      "url": "https://www.sutton.gov.uk/w/check-your-bin-collection-days",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html;charset=UTF-8",
+      "size": 121518,
+      "timestamp": "2025-07-21T10:23:21.248Z"
+    },
+    {
+      "url": "https://www.sutton.gov.uk/c/portal/layout?p_l_id=647&p_p_cacheability=cacheLevelPage&p_p_id=com_placecube_digitalplace_announcements_banner_web_AnnouncementsBannerPortlet&p_p_lifecycle=2&p_p_resource_id=%2Fannouncements-banner%2Fget-configuration",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html;charset=UTF-8",
+      "size": 58,
+      "timestamp": "2025-07-21T10:23:21.710Z"
+    },
+    {
+      "url": "https://consent.cookie-script.com/analytics?action=firstshown&time=1753093401848&script=a7ba59044d04a1624a4e3db9dbf7b7b0&category=",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 47,
+      "timestamp": "2025-07-21T10:23:21.856Z"
+    },
+    {
+      "url": "https://consent.cookie-script.com/collect?action=accept&time=1753093403308&page=https%3A%2F%2Fwww.sutton.gov.uk%2Fw%2Fcheck-your-bin-collection-days&dnt=false&script=a7ba59044d04a1624a4e3db9dbf7b7b0&consenttext=This%20website%20uses%20cookies%20to%20improve%20user%20experience.%20By%20using%20our%20website%20you%20consent%20to%20all%20cookies%20in%20accordance%20with%20our%20Cookie%20Policy.&category=unclassified,performance,targeting,functionality",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 47,
+      "timestamp": "2025-07-21T10:23:23.328Z"
+    },
+    {
+      "url": "https://consent.cookie-script.com/analytics?action=firstacceptall&time=1753093403308&script=a7ba59044d04a1624a4e3db9dbf7b7b0&category=",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 47,
+      "timestamp": "2025-07-21T10:23:23.329Z"
+    },
+    {
+      "url": "https://heatmaps.monsido.com/v1/settings/Z8Gph02yPUtbYY2UMLuxPQ.json",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 245,
+      "timestamp": "2025-07-21T10:23:23.416Z"
+    },
+    {
+      "url": "https://waste-services.sutton.gov.uk/waste",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=utf-8",
+      "size": 20240,
+      "timestamp": "2025-07-21T10:23:35.858Z"
+    },
+    {
+      "url": "https://waste-services.sutton.gov.uk/.well-known/manifest-waste.webmanifest",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/manifest+json",
+      "size": 295,
+      "timestamp": "2025-07-21T10:23:36.205Z"
+    },
+    {
+      "url": "https://heatmaps.monsido.com/v1/settings/Z8Gph02yPUtbYY2UMLuxPQ.json",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 245,
+      "timestamp": "2025-07-21T10:23:36.231Z"
+    },
+    {
+      "url": "https://waste-services.sutton.gov.uk/waste",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=utf-8",
+      "size": 33441,
+      "timestamp": "2025-07-21T10:23:40.573Z",
+      "form_data": {
+        "postcode": "CR0 4FA"
+      }
+    },
+    {
+      "url": "https://heatmaps.monsido.com/v1/settings/Z8Gph02yPUtbYY2UMLuxPQ.json",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 245,
+      "timestamp": "2025-07-21T10:23:41.693Z"
+    },
+    {
+      "url": "https://waste-services.sutton.gov.uk/.well-known/manifest-waste.webmanifest",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/manifest+json",
+      "size": 295,
+      "timestamp": "2025-07-21T10:23:41.697Z"
+    },
+    {
+      "url": "https://waste-services.sutton.gov.uk/waste",
+      "method": "POST",
+      "status": 302,
+      "redirect_url": "https://waste-services.sutton.gov.uk/waste/4502216",
+      "mime_type": "text/html; charset=utf-8",
+      "size": -1,
+      "timestamp": "2025-07-21T10:23:49.108Z",
+      "form_data": {
+        "address": "4502216"
+      }
+    },
+    {
+      "url": "https://waste-services.sutton.gov.uk/waste/4502216",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=utf-8",
+      "size": 20069,
+      "timestamp": "2025-07-21T10:23:49.217Z"
+    },
+    {
+      "url": "https://heatmaps.monsido.com/v1/settings/Z8Gph02yPUtbYY2UMLuxPQ.json",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 245,
+      "timestamp": "2025-07-21T10:23:49.508Z"
+    },
+    {
+      "url": "https://waste-services.sutton.gov.uk/.well-known/manifest-waste.webmanifest",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/manifest+json",
+      "size": 295,
+      "timestamp": "2025-07-21T10:23:49.508Z"
+    },
+    {
+      "url": "https://waste-services.sutton.gov.uk/waste/4502216?page_loading=1",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=utf-8",
+      "size": 299,
+      "timestamp": "2025-07-21T10:23:51.446Z"
+    },
+    {
+      "url": "https://waste-services.sutton.gov.uk/waste/4502216?page_loading=1",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=utf-8",
+      "size": 27823,
+      "timestamp": "2025-07-21T10:23:54.220Z"
+    }
+  ]
+}

@@ -1,0 +1,265 @@
+{
+  "metadata": {
+    "trace_name": "north_hertfordshire_district_council",
+    "processed_at": "2025-08-26 18:44:24",
+    "workflow_steps_count": 8,
+    "navigation_events_count": 20
+  },
+  "scraping_patterns": {
+    "login_detected": false,
+    "form_submissions": 5,
+    "navigation_count": 1,
+    "unique_domains": [
+      "performance.councilplatform.com",
+      "lobster-static-upload-production.s3.eu-west-1.amazonaws.com",
+      "api.ebiai.app",
+      "www.north-herts.gov.uk",
+      "waste.nc.north-herts.gov.uk"
+    ],
+    "api_endpoints": [],
+    "data_extraction_indicators": []
+  },
+  "workflow_steps": [
+    {
+      "action": "goto",
+      "target": "https://www.north-herts.gov.uk/home/waste-and-recycling",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e10 >> internal:describe=\"Accept all cookies\"",
+      "status": "Failed",
+      "details": {
+        "error": "Timeout 5000ms exceeded."
+      },
+      "timestamp": 0
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e308 >> internal:describe=\"No Thanks\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e89 >> internal:describe=\"Find your bin collection day\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e10 >> internal:describe=\"Accept all cookies\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e95 >> internal:describe=\"Find your bin collection day\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "fill",
+      "target": "aria-ref=e73 >> internal:describe=\"Search for an address. For example, 123 Test Road, or SG6 3JF. Postcodes must contain a space. * (Required)\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0,
+      "value": "AL4 8LJ"
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e79 >> internal:describe=\"Find bin collection dates\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    }
+  ],
+  "navigation_events": [
+    {
+      "url": "https://www.north-herts.gov.uk/home/waste-and-recycling",
+      "method": "GET",
+      "status": 301,
+      "redirect_url": "https://www.north-herts.gov.uk/bins-and-recycling",
+      "mime_type": "text/html; charset=utf-8",
+      "size": -1,
+      "timestamp": "2025-07-21T10:38:09.298Z"
+    },
+    {
+      "url": "https://www.north-herts.gov.uk/bins-and-recycling",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=UTF-8",
+      "size": 86291,
+      "timestamp": "2025-07-21T10:38:09.387Z"
+    },
+    {
+      "url": "https://performance.councilplatform.com/matomo.php?action_name=Bins%20and%20recycling%20%7C%20North%20Herts%20Council&idsite=16&rec=1&r=373294&h=11&m=38&s=9&url=https%3A%2F%2Fwww.north-herts.gov.uk%2Fbins-and-recycling&_id=&_idn=1&send_image=0&_refts=0&pdf=1&qt=0&realp=0&wma=0&fla=0&java=0&ag=0&cookie=1&res=800x600&pv_id=4PKnEO&pf_net=0&pf_srv=19&pf_tfr=1&uadata=%7B%22fullVersionList%22%3A%5B%7B%22brand%22%3A%22Not)A%3BBrand%22%2C%22version%22%3A%228.0.0.0%22%7D%2C%7B%22brand%22%3A%22Chromium%22%2C%22version%22%3A%22138.0.7204.101%22%7D%2C%7B%22brand%22%3A%22Google%20Chrome%22%2C%22version%22%3A%22138.0.7204.101%22%7D%5D%2C%22mobile%22%3Afalse%2C%22model%22%3A%22%22%2C%22platform%22%3A%22macOS%22%2C%22platformVersion%22%3A%2215.5.0%22%7D",
+      "method": "POST",
+      "status": 204,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": 0,
+      "timestamp": "2025-07-21T10:38:09.543Z"
+    },
+    {
+      "url": "https://www.north-herts.gov.uk/profiles/contrib/council_platform/themes/council_platform_theme/dist/fonts/roboto-v20-latin-regular.woff2",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/octet-stream",
+      "size": 15736,
+      "timestamp": "2025-07-21T10:38:09.580Z"
+    },
+    {
+      "url": "https://www.north-herts.gov.uk/profiles/contrib/council_platform/themes/council_platform_theme/dist/fonts/roboto-v20-latin-700.woff2",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/octet-stream",
+      "size": 15816,
+      "timestamp": "2025-07-21T10:38:09.580Z"
+    },
+    {
+      "url": "https://www.north-herts.gov.uk/sitewide_alert/load",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 21,
+      "timestamp": "2025-07-21T10:38:09.612Z"
+    },
+    {
+      "url": "https://api.ebiai.app/channels/clients/680f84393dd93c13b73e54c9/pipelines/680f84423dd93c13b73e9a0f/messenger/config",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=utf-8",
+      "size": 1264,
+      "timestamp": "2025-07-21T10:38:09.764Z"
+    },
+    {
+      "url": "https://lobster-static-upload-production.s3.eu-west-1.amazonaws.com/avatars%0A%0A/680f843ad61f3419b50e9a45/5fa01227-aa1c-4124-9932-0f7b44de773e.png",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/octet-stream",
+      "size": 517761,
+      "timestamp": "2025-07-21T10:38:09.891Z"
+    },
+    {
+      "url": "https://www.north-herts.gov.uk/find-your-bin-collection-day",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=UTF-8",
+      "size": 85093,
+      "timestamp": "2025-07-21T10:38:19.084Z"
+    },
+    {
+      "url": "https://www.north-herts.gov.uk/profiles/contrib/council_platform/themes/council_platform_theme/dist/fonts/roboto-v20-latin-regular.woff2",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/octet-stream",
+      "size": -1,
+      "timestamp": "2025-07-21T10:38:19.185Z"
+    },
+    {
+      "url": "https://www.north-herts.gov.uk/profiles/contrib/council_platform/themes/council_platform_theme/dist/fonts/roboto-v20-latin-700.woff2",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/octet-stream",
+      "size": -1,
+      "timestamp": "2025-07-21T10:38:19.186Z"
+    },
+    {
+      "url": "https://www.north-herts.gov.uk/sitewide_alert/load",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 21,
+      "timestamp": "2025-07-21T10:38:19.221Z"
+    },
+    {
+      "url": "https://performance.councilplatform.com/matomo.php?action_name=Find%20your%20bin%20collection%20day%20%7C%20North%20Herts%20Council&idsite=16&rec=1&r=197718&h=11&m=38&s=19&url=https%3A%2F%2Fwww.north-herts.gov.uk%2Ffind-your-bin-collection-day&urlref=https%3A%2F%2Fwww.north-herts.gov.uk%2Fbins-and-recycling&_id=&_idn=1&send_image=0&_refts=0&pdf=1&qt=0&realp=0&wma=0&fla=0&java=0&ag=0&cookie=1&res=800x600&pv_id=LJXBQm&pf_net=0&pf_srv=38&pf_tfr=0&uadata=%7B%22fullVersionList%22%3A%5B%7B%22brand%22%3A%22Not)A%3BBrand%22%2C%22version%22%3A%228.0.0.0%22%7D%2C%7B%22brand%22%3A%22Chromium%22%2C%22version%22%3A%22138.0.7204.101%22%7D%2C%7B%22brand%22%3A%22Google%20Chrome%22%2C%22version%22%3A%22138.0.7204.101%22%7D%5D%2C%22mobile%22%3Afalse%2C%22model%22%3A%22%22%2C%22platform%22%3A%22macOS%22%2C%22platformVersion%22%3A%2215.5.0%22%7D",
+      "method": "POST",
+      "status": 204,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": 0,
+      "timestamp": "2025-07-21T10:38:19.224Z"
+    },
+    {
+      "url": "https://api.ebiai.app/channels/clients/680f84393dd93c13b73e54c9/pipelines/680f84423dd93c13b73e9a0f/messenger/config",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=utf-8",
+      "size": 1264,
+      "timestamp": "2025-07-21T10:38:19.292Z"
+    },
+    {
+      "url": "https://lobster-static-upload-production.s3.eu-west-1.amazonaws.com/avatars%0A%0A/680f843ad61f3419b50e9a45/5fa01227-aa1c-4124-9932-0f7b44de773e.png",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/octet-stream",
+      "size": 517761,
+      "timestamp": "2025-07-21T10:38:19.299Z"
+    },
+    {
+      "url": "https://performance.councilplatform.com/matomo.php?link=https%3A%2F%2Fwaste.nc.north-herts.gov.uk%2Fw%2Fwebpage%2Ffind-bin-collection-day-input-address&idsite=16&rec=1&r=069607&h=11&m=38&s=24&url=https%3A%2F%2Fwww.north-herts.gov.uk%2Ffind-your-bin-collection-day&urlref=https%3A%2F%2Fwww.north-herts.gov.uk%2Fbins-and-recycling&_id=&_idn=1&send_image=0&_refts=0&pdf=1&qt=0&realp=0&wma=0&fla=0&java=0&ag=0&cookie=1&res=800x600&pf_net=0&pf_srv=38&pf_tfr=0&pf_dm1=86&pf_dm2=44&pf_onl=1&pv_id=LJXBQm&uadata=%7B%22brands%22%3A%5B%7B%22brand%22%3A%22Not)A%3BBrand%22%2C%22version%22%3A%228%22%7D%2C%7B%22brand%22%3A%22Chromium%22%2C%22version%22%3A%22138%22%7D%2C%7B%22brand%22%3A%22Google%20Chrome%22%2C%22version%22%3A%22138%22%7D%5D%2C%22platform%22%3A%22macOS%22%7D",
+      "method": "POST",
+      "status": 204,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T10:38:24.310Z"
+    },
+    {
+      "url": "https://waste.nc.north-herts.gov.uk/w/webpage/find-bin-collection-day-input-address",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=utf-8",
+      "size": 31388,
+      "timestamp": "2025-07-21T10:38:24.452Z"
+    },
+    {
+      "url": "https://waste.nc.north-herts.gov.uk/w/webpage/find-bin-collection-day-input-address",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; Charset=utf-8",
+      "size": 26915,
+      "timestamp": "2025-07-21T10:38:25.119Z"
+    },
+    {
+      "url": "https://waste.nc.north-herts.gov.uk/assets/fonts/FontAwesome/fa-solid-900.woff2",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/font-woff2",
+      "size": 352752,
+      "timestamp": "2025-07-21T10:38:25.307Z"
+    },
+    {
+      "url": "https://waste.nc.north-herts.gov.uk/w/webpage/find-bin-collection-day-input-address?webpage_subpage_id=PAG0000778GBNLM1&webpage_token=81bf109be5477ba63904dc10c69c37000417bf78a9e0d2b21585ec15ef05088d",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; Charset=utf-8",
+      "size": 695286,
+      "timestamp": "2025-07-21T10:38:30.264Z"
+    }
+  ]
+}

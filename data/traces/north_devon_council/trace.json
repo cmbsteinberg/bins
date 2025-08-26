@@ -1,0 +1,676 @@
+{
+  "metadata": {
+    "trace_name": "north_devon_council",
+    "processed_at": "2025-08-26 18:44:24",
+    "workflow_steps_count": 7,
+    "navigation_events_count": 64
+  },
+  "scraping_patterns": {
+    "login_detected": false,
+    "form_submissions": 14,
+    "navigation_count": 3,
+    "unique_domains": [
+      "us01ccistatic.zoom.us",
+      "www.google.com",
+      "maps.googleapis.com",
+      "us01campaign.zoom.us",
+      "us01apizva.zoom.us",
+      "us01cciapi.zoom.us",
+      "file.zoom.us",
+      "file-paa.zoom.us",
+      "my.northdevon.gov.uk",
+      "www.northdevon.gov.uk"
+    ],
+    "api_endpoints": [
+      "https://us01ccistatic.zoom.us/us01cci/web-sdk/assets/locale/chat/en-GB.json?v=7661",
+      "https://file-paa.zoom.us/4eXu8RPTRkiW6DOdsAabRQ/MS4yLpHL9jiFxXh2ALcpP_gao7E8EklIGkfLlr9Fuw2mqDQm/HXduaXzpTzy_CkB6k8iGkA.json?response-cache-control=max-age%3D60",
+      "https://us01ccistatic.zoom.us/us01cci/web-sdk/assets/locale/chat/en-GB.json?v=7661",
+      "https://file-paa.zoom.us/tUj1VP04QfGqBzwtbUdCVA/MS4yLmuvh64fV2uqCF8sWPdUiKV09TK5dJnueSSxLruF2sxG/YBkWo8SuRhK3oFsGBuaCTg.json?response-cache-control=max-age%3D60&v=1730219870",
+      "https://us01ccistatic.zoom.us/us01cci/web-sdk/assets/locale/chat/en-GB.json?v=7661",
+      "https://us01ccistatic.zoom.us/us01cci/web-sdk/assets/locale/chat/en-GB.json?v=7661",
+      "https://file-paa.zoom.us/4eXu8RPTRkiW6DOdsAabRQ/MS4yLpHL9jiFxXh2ALcpP_gao7E8EklIGkfLlr9Fuw2mqDQm/HXduaXzpTzy_CkB6k8iGkA.json?response-cache-control=max-age%3D60",
+      "https://file-paa.zoom.us/tUj1VP04QfGqBzwtbUdCVA/MS4yLmuvh64fV2uqCF8sWPdUiKV09TK5dJnueSSxLruF2sxG/YBkWo8SuRhK3oFsGBuaCTg.json?response-cache-control=max-age%3D60&v=1730219870",
+      "https://maps.googleapis.com/maps/api/mapsjs/gen_204?csp_test=true",
+      "https://my.northdevon.gov.uk/api/self/self-content/getByKeyAndApp?language=en&key=FORM_LOADING_TEXT&app=SELF_CORE&_=1753084919602&sid=a0865a3f3d981f25932026ef6ddb4e40",
+      "https://my.northdevon.gov.uk/api/get-document/json?uri=sandbox-publish%3A%2F%2FAF-Process-d615d6eb-6718-4e33-a2ff-18f1e5e58f8b%2FAF-Stage-0e576350-a6e1-444e-a105-cb020f910845%2Fdefinition.json&_=1753084919644&sid=a0865a3f3d981f25932026ef6ddb4e40",
+      "https://my.northdevon.gov.uk/api/get-document/json?uri=sandbox-publish%3A%2F%2FAF-Process-d615d6eb-6718-4e33-a2ff-18f1e5e58f8b%2Fdefinition.json&_=1753084919801&sid=a0865a3f3d981f25932026ef6ddb4e40",
+      "https://my.northdevon.gov.uk/api/af-configs-list/list?_=1753084920014&sid=a0865a3f3d981f25932026ef6ddb4e40",
+      "https://my.northdevon.gov.uk/api/nextref?_=1753084920015&sid=a0865a3f3d981f25932026ef6ddb4e40",
+      "https://my.northdevon.gov.uk/api/queue-processor-config/get?_=1753084920015&sid=a0865a3f3d981f25932026ef6ddb4e40",
+      "https://my.northdevon.gov.uk/api/get-document/json?uri=sandbox-publish%3A%2F%2FAF-Process-d615d6eb-6718-4e33-a2ff-18f1e5e58f8b%2FAF-Stage-0e576350-a6e1-444e-a105-cb020f910845%2FAF-Form-18a46f32-328b-4ce3-bd2e-11fd7791461c%2Fdefinition.json&_=1753084932786&sid=a0865a3f3d981f25932026ef6ddb4e40",
+      "https://my.northdevon.gov.uk/api/get-document/json?uri=sandbox-publish%3A%2F%2FAF-Process-d615d6eb-6718-4e33-a2ff-18f1e5e58f8b%2FAF-Stage-0e576350-a6e1-444e-a105-cb020f910845%2FAF-Form-5e45b09d-c94d-422f-b2ae-bfe4b11f1508%2Fdefinition.json&_=1753084932785&sid=a0865a3f3d981f25932026ef6ddb4e40"
+    ],
+    "data_extraction_indicators": []
+  },
+  "workflow_steps": [
+    {
+      "action": "goto",
+      "target": "http://www.northdevon.gov.uk/bins-and-recycling/collection-dates/",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "goto",
+      "target": "http://www.northdevon.gov.uk/",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e117 >> internal:describe=\"link \\\"\uf279 Find it Waste collections, car parks, public toilets, council offices\\\"\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "goto",
+      "target": "https://my.northdevon.gov.uk/service/WasteRecyclingCollectionCalendar",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "fill",
+      "target": "aria-ref=f1e34 >> internal:describe=\"textbox \\\"Postcode\\\"\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0,
+      "value": "EX16 8AA"
+    },
+    {
+      "action": "selectOption",
+      "target": "aria-ref=f1e60 >> internal:describe=\"combobox\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0,
+      "value": null
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=f1e57 >> internal:describe=\"button \\\"Next \uf054\\\"\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    }
+  ],
+  "navigation_events": [
+    {
+      "url": "http://www.northdevon.gov.uk/bins-and-recycling/collection-dates/",
+      "method": "GET",
+      "status": 301,
+      "redirect_url": "https://www.northdevon.gov.uk/bins-and-recycling/collection-dates/",
+      "mime_type": "text/html",
+      "size": -1,
+      "timestamp": "2025-07-21T08:01:49.795Z"
+    },
+    {
+      "url": "https://www.northdevon.gov.uk/bins-and-recycling/collection-dates/",
+      "method": "GET",
+      "status": 404,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=UTF-8",
+      "size": 26891,
+      "timestamp": "2025-07-21T08:01:49.833Z"
+    },
+    {
+      "url": "https://www.northdevon.gov.uk/themes/custom/localgov_northdevon/assets/images/favicons/site.webmanifest",
+      "method": "GET",
+      "status": 404,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=UTF-8",
+      "size": 26707,
+      "timestamp": "2025-07-21T08:01:51.082Z"
+    },
+    {
+      "url": "http://www.northdevon.gov.uk/",
+      "method": "GET",
+      "status": 301,
+      "redirect_url": "https://www.northdevon.gov.uk/",
+      "mime_type": "text/html",
+      "size": -1,
+      "timestamp": "2025-07-21T08:01:52.783Z"
+    },
+    {
+      "url": "https://www.northdevon.gov.uk/",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=UTF-8",
+      "size": 43027,
+      "timestamp": "2025-07-21T08:01:52.791Z"
+    },
+    {
+      "url": "https://us01ccistatic.zoom.us/us01cci/web-sdk/cross-storage.html?lang=en",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html",
+      "size": 6999,
+      "timestamp": "2025-07-21T08:01:53.089Z"
+    },
+    {
+      "url": "https://www.northdevon.gov.uk/themes/custom/localgov_northdevon/assets/images/favicons/site.webmanifest",
+      "method": "GET",
+      "status": 404,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=UTF-8",
+      "size": 26707,
+      "timestamp": "2025-07-21T08:01:53.467Z"
+    },
+    {
+      "url": "https://us01campaign.zoom.us/v1/zcc/campaign/language/list?apikey=X-zFdW7JRq-g4yr90n6F0g",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 1357,
+      "timestamp": "2025-07-21T08:01:53.788Z"
+    },
+    {
+      "url": "https://us01campaign.zoom.us/v1/zcc/campaign/styleByApiKey?url=https%3A%2F%2Fwww.northdevon.gov.uk%2F&mode=campaign&apiKeyType2=X-zFdW7JRq-g4yr90n6F0g",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 5775,
+      "timestamp": "2025-07-21T08:01:53.788Z"
+    },
+    {
+      "url": "https://us01campaign.zoom.us/v1/live-sdk-version/fast?apikey=X-zFdW7JRq-g4yr90n6F0g",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 288,
+      "timestamp": "2025-07-21T08:01:53.789Z"
+    },
+    {
+      "url": "https://us01apizva.zoom.us/v1/websdk/version?apikey=X-zFdW7JRq-g4yr90n6F0g&instanceId=QLJMhUu0GTtGg0goysTGH",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 74,
+      "timestamp": "2025-07-21T08:01:53.789Z"
+    },
+    {
+      "url": "https://us01cciapi.zoom.us/v1/livesdk/info?apikey=X-zFdW7JRq-g4yr90n6F0g&sdkVersion=7661&zrZak=&isKiosk=false&instanceId=QLJMhUu0GTtGg0goysTGH",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 74,
+      "timestamp": "2025-07-21T08:01:54.003Z"
+    },
+    {
+      "url": "https://us01ccistatic.zoom.us/us01cci/web-sdk/assets/locale/chat/en-GB.json?v=7661",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 18044,
+      "timestamp": "2025-07-21T08:01:54.359Z"
+    },
+    {
+      "url": "https://file-paa.zoom.us/TCeNSSpLSa6CWbPYZSNBTQ/MS4yLr8PivqIihb39_VUiNWR0JTkc8W3YTQWyVcbDqmi4pg3/Mediamodifier-Design%20%282%29.svg?response-cache-control=max-age%3D60&v=1733401255",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/octet-stream",
+      "size": 24831,
+      "timestamp": "2025-07-21T08:01:54.359Z"
+    },
+    {
+      "url": "https://file-paa.zoom.us/4eXu8RPTRkiW6DOdsAabRQ/MS4yLpHL9jiFxXh2ALcpP_gao7E8EklIGkfLlr9Fuw2mqDQm/HXduaXzpTzy_CkB6k8iGkA.json?response-cache-control=max-age%3D60",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/octet-stream",
+      "size": 320,
+      "timestamp": "2025-07-21T08:01:54.832Z"
+    },
+    {
+      "url": "https://us01ccistatic.zoom.us/us01cci/web-sdk/assets/locale/chat/en-GB.json?v=7661",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 18044,
+      "timestamp": "2025-07-21T08:01:54.832Z"
+    },
+    {
+      "url": "https://file-paa.zoom.us/tUj1VP04QfGqBzwtbUdCVA/MS4yLmuvh64fV2uqCF8sWPdUiKV09TK5dJnueSSxLruF2sxG/YBkWo8SuRhK3oFsGBuaCTg.json?response-cache-control=max-age%3D60&v=1730219870",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/octet-stream",
+      "size": 9995,
+      "timestamp": "2025-07-21T08:01:54.833Z"
+    },
+    {
+      "url": "https://www.northdevon.gov.uk/do-it-online/find-it",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=UTF-8",
+      "size": 52187,
+      "timestamp": "2025-07-21T08:01:55.060Z"
+    },
+    {
+      "url": "https://us01ccistatic.zoom.us/us01cci/web-sdk/cross-storage.html?lang=en",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html",
+      "size": 6999,
+      "timestamp": "2025-07-21T08:01:55.180Z"
+    },
+    {
+      "url": "https://www.northdevon.gov.uk/themes/custom/localgov_northdevon/assets/images/favicons/site.webmanifest",
+      "method": "GET",
+      "status": 404,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=UTF-8",
+      "size": 26707,
+      "timestamp": "2025-07-21T08:01:55.192Z"
+    },
+    {
+      "url": "https://us01campaign.zoom.us/v1/zcc/campaign/language/list?apikey=X-zFdW7JRq-g4yr90n6F0g",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 1357,
+      "timestamp": "2025-07-21T08:01:55.375Z"
+    },
+    {
+      "url": "https://us01campaign.zoom.us/v1/live-sdk-version/fast?apikey=X-zFdW7JRq-g4yr90n6F0g",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 288,
+      "timestamp": "2025-07-21T08:01:55.375Z"
+    },
+    {
+      "url": "https://us01campaign.zoom.us/v1/zcc/campaign/styleByApiKey?url=https%3A%2F%2Fwww.northdevon.gov.uk%2Fdo-it-online%2Ffind-it&mode=campaign&apiKeyType2=X-zFdW7JRq-g4yr90n6F0g",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 5775,
+      "timestamp": "2025-07-21T08:01:55.375Z"
+    },
+    {
+      "url": "https://us01apizva.zoom.us/v1/websdk/version?apikey=X-zFdW7JRq-g4yr90n6F0g&instanceId=QLJMhUu0GTtGg0goysTGH",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 74,
+      "timestamp": "2025-07-21T08:01:55.376Z"
+    },
+    {
+      "url": "https://us01cciapi.zoom.us/v1/livesdk/info?apikey=X-zFdW7JRq-g4yr90n6F0g&sdkVersion=7661&zrZak=&isKiosk=false&instanceId=QLJMhUu0GTtGg0goysTGH",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 74,
+      "timestamp": "2025-07-21T08:01:55.453Z"
+    },
+    {
+      "url": "https://us01ccistatic.zoom.us/us01cci/web-sdk/assets/locale/chat/en-GB.json?v=7661",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 18044,
+      "timestamp": "2025-07-21T08:01:55.587Z"
+    },
+    {
+      "url": "https://file-paa.zoom.us/TCeNSSpLSa6CWbPYZSNBTQ/MS4yLr8PivqIihb39_VUiNWR0JTkc8W3YTQWyVcbDqmi4pg3/Mediamodifier-Design%20%282%29.svg?response-cache-control=max-age%3D60&v=1733401255",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/octet-stream",
+      "size": 24831,
+      "timestamp": "2025-07-21T08:01:55.588Z"
+    },
+    {
+      "url": "https://us01ccistatic.zoom.us/us01cci/web-sdk/assets/locale/chat/en-GB.json?v=7661",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 18044,
+      "timestamp": "2025-07-21T08:01:55.795Z"
+    },
+    {
+      "url": "https://file.zoom.us/file/EBM50U2EQlGWmf2Ctp9UQA?jwt=eyJ6bV9za20iOiJ6bV9vMm0iLCJ0eXAiOiJKV1QiLCJrIjoiQ0hVLzRHdHAiLCJhbGciOiJFUzI1NiJ9.eyJhdWQiOiJ6ZnMiLCJ0b2tlbklkIjoiNGFKaHhfRndSRGlJRXZUX20xa1dXQSIsImFwcE5hbWUiOiJjYW1wYWlnbiIsImlzcyI6ImNhbXBhaWduIiwicGVybWlzc2lvbiI6IntcImFjdGlvblwiOlwicmVhZFwiLFwiZW50aXR5XCI6e1wiY291bnRcIjowLFwiZmlsZUlkXCI6XCJFQk01MFUyRVFsR1dtZjJDdHA5VVFBXCIsXCJtYXhTaXplXCI6MH19IiwiZXhwIjoxNzUzMDg3NDkwLCJ0b2tlblR5cGUiOiJwcmVzaWduVG9rZW4iLCJpYXQiOjE3NTMwODM4OTB9.CdfHA7jU4fr3fFLLUHwR0ecqNe8cBWYcMWeghuFl5SufdQ-GITJlwWIK-6l-yT_RVVWQTZHDxx37jh_ICki8cQ&mode=play&with_domain=true",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/octet-stream",
+      "size": 88043,
+      "timestamp": "2025-07-21T08:01:55.795Z"
+    },
+    {
+      "url": "https://file-paa.zoom.us/4eXu8RPTRkiW6DOdsAabRQ/MS4yLpHL9jiFxXh2ALcpP_gao7E8EklIGkfLlr9Fuw2mqDQm/HXduaXzpTzy_CkB6k8iGkA.json?response-cache-control=max-age%3D60",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/octet-stream",
+      "size": 320,
+      "timestamp": "2025-07-21T08:01:55.796Z"
+    },
+    {
+      "url": "https://file-paa.zoom.us/tUj1VP04QfGqBzwtbUdCVA/MS4yLmuvh64fV2uqCF8sWPdUiKV09TK5dJnueSSxLruF2sxG/YBkWo8SuRhK3oFsGBuaCTg.json?response-cache-control=max-age%3D60&v=1730219870",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/octet-stream",
+      "size": 9995,
+      "timestamp": "2025-07-21T08:01:55.797Z"
+    },
+    {
+      "url": "https://my.northdevon.gov.uk/service/WasteRecyclingCollectionCalendar",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=UTF-8",
+      "size": 15723,
+      "timestamp": "2025-07-21T08:01:57.661Z"
+    },
+    {
+      "url": "https://www.google.com/jsapi",
+      "method": "GET",
+      "status": 301,
+      "redirect_url": "https://www.gstatic.com/charts/loader.js",
+      "mime_type": "text/html; charset=UTF-8",
+      "size": -1,
+      "timestamp": "2025-07-21T08:01:58.869Z"
+    },
+    {
+      "url": "https://my.northdevon.gov.uk/authapi/isauthenticated?uri=https%253A%252F%252Fmy.northdevon.gov.uk%252Fservice%252FWasteRecyclingCollectionCalendar&hostname=my.northdevon.gov.uk&withCredentials=true",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=utf-8",
+      "size": 1813,
+      "timestamp": "2025-07-21T08:01:59.110Z"
+    },
+    {
+      "url": "https://my.northdevon.gov.uk/apibroker/domain/my.northdevon.gov.uk?_=1753084919107&sid=a0865a3f3d981f25932026ef6ddb4e40",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 242,
+      "timestamp": "2025-07-21T08:01:59.201Z"
+    },
+    {
+      "url": "https://my.northdevon.gov.uk/apibroker/domain/my.northdevon.gov.uk?_=1753084919110&sid=a0865a3f3d981f25932026ef6ddb4e40",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 242,
+      "timestamp": "2025-07-21T08:01:59.201Z"
+    },
+    {
+      "url": "https://my.northdevon.gov.uk/apibroker/self-settings?keys=CustomIFrameCss%2CCustomCssInline&app_name=Self&_=1753084919190&sid=a0865a3f3d981f25932026ef6ddb4e40",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=UTF-8",
+      "size": 197,
+      "timestamp": "2025-07-21T08:01:59.201Z"
+    },
+    {
+      "url": "https://my.northdevon.gov.uk/fillform/?iframe_id=fillform-frame-1&db_id=",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=UTF-8",
+      "size": 4331,
+      "timestamp": "2025-07-21T08:01:59.278Z"
+    },
+    {
+      "url": "https://www.google.com/jsapi?key=AIzaSyDMYR3xNkRwUG-OsKEC4WVi1ptWIPzybMs",
+      "method": "GET",
+      "status": 301,
+      "redirect_url": "https://www.gstatic.com/charts/loader.js?key=AIzaSyDMYR3xNkRwUG-OsKEC4WVi1ptWIPzybMs",
+      "mime_type": "text/html; charset=UTF-8",
+      "size": -1,
+      "timestamp": "2025-07-21T08:01:59.324Z"
+    },
+    {
+      "url": "https://maps.googleapis.com/maps/api/mapsjs/gen_204?csp_test=true",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=UTF-8",
+      "size": 3,
+      "timestamp": "2025-07-21T08:01:59.596Z"
+    },
+    {
+      "url": "https://my.northdevon.gov.uk/api/self/self-content/getByKeyAndApp?language=en&key=FORM_LOADING_TEXT&app=SELF_CORE&_=1753084919602&sid=a0865a3f3d981f25932026ef6ddb4e40",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 169,
+      "timestamp": "2025-07-21T08:01:59.619Z"
+    },
+    {
+      "url": "https://my.northdevon.gov.uk/api/get-document/json?uri=sandbox-publish%3A%2F%2FAF-Process-d615d6eb-6718-4e33-a2ff-18f1e5e58f8b%2FAF-Stage-0e576350-a6e1-444e-a105-cb020f910845%2Fdefinition.json&_=1753084919644&sid=a0865a3f3d981f25932026ef6ddb4e40",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 50538,
+      "timestamp": "2025-07-21T08:01:59.648Z"
+    },
+    {
+      "url": "https://my.northdevon.gov.uk/api/get-document/json?uri=sandbox-publish%3A%2F%2FAF-Process-d615d6eb-6718-4e33-a2ff-18f1e5e58f8b%2Fdefinition.json&_=1753084919801&sid=a0865a3f3d981f25932026ef6ddb4e40",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 5451,
+      "timestamp": "2025-07-21T08:01:59.803Z"
+    },
+    {
+      "url": "https://my.northdevon.gov.uk/api/af-configs-list/list?_=1753084920014&sid=a0865a3f3d981f25932026ef6ddb4e40",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 1212,
+      "timestamp": "2025-07-21T08:02:00.019Z"
+    },
+    {
+      "url": "https://my.northdevon.gov.uk/api/nextref?_=1753084920015&sid=a0865a3f3d981f25932026ef6ddb4e40",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 116,
+      "timestamp": "2025-07-21T08:02:00.020Z"
+    },
+    {
+      "url": "https://my.northdevon.gov.uk/apibroker/location?app_name=AF-Renderer::Self&_=1753084920016&sid=a0865a3f3d981f25932026ef6ddb4e40",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=UTF-8",
+      "size": 272,
+      "timestamp": "2025-07-21T08:02:00.020Z"
+    },
+    {
+      "url": "https://my.northdevon.gov.uk/api/queue-processor-config/get?_=1753084920015&sid=a0865a3f3d981f25932026ef6ddb4e40",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 39,
+      "timestamp": "2025-07-21T08:02:00.020Z"
+    },
+    {
+      "url": "https://my.northdevon.gov.uk/apibroker/environment-tokens-public?app_name=AF-Renderer::Self&_=1753084920016&sid=a0865a3f3d981f25932026ef6ddb4e40",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=UTF-8",
+      "size": 907,
+      "timestamp": "2025-07-21T08:02:00.020Z"
+    },
+    {
+      "url": "https://my.northdevon.gov.uk/apibroker/runLookup?id=5849617f4ce25&repeat_against=&noRetry=false&getOnlyTokens=undefined&log_id=&app_name=AF-Renderer::Self&_=1753084920145&sid=a0865a3f3d981f25932026ef6ddb4e40",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=UTF-8",
+      "size": 2660,
+      "timestamp": "2025-07-21T08:02:00.148Z"
+    },
+    {
+      "url": "https://my.northdevon.gov.uk/apibroker/runLookup?id=65141c7c38bd0&repeat_against=&noRetry=true&getOnlyTokens=undefined&log_id=&app_name=AF-Renderer::Self&_=1753084920394&sid=a0865a3f3d981f25932026ef6ddb4e40",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=UTF-8",
+      "size": 1015,
+      "timestamp": "2025-07-21T08:02:00.398Z"
+    },
+    {
+      "url": "https://my.northdevon.gov.uk/apibroker/runLookup?id=5849617f4ce25&repeat_against=&noRetry=false&getOnlyTokens=undefined&log_id=&app_name=AF-Renderer::Self&_=1753084928521&sid=a0865a3f3d981f25932026ef6ddb4e40",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=UTF-8",
+      "size": 114290,
+      "timestamp": "2025-07-21T08:02:08.525Z"
+    },
+    {
+      "url": "https://my.northdevon.gov.uk/apibroker/runLookup?id=65141c7c38bd0&repeat_against=&noRetry=true&getOnlyTokens=undefined&log_id=&app_name=AF-Renderer::Self&_=1753084930962&sid=a0865a3f3d981f25932026ef6ddb4e40",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=UTF-8",
+      "size": 1484,
+      "timestamp": "2025-07-21T08:02:10.967Z"
+    },
+    {
+      "url": "https://my.northdevon.gov.uk/api/get-document/json?uri=sandbox-publish%3A%2F%2FAF-Process-d615d6eb-6718-4e33-a2ff-18f1e5e58f8b%2FAF-Stage-0e576350-a6e1-444e-a105-cb020f910845%2FAF-Form-18a46f32-328b-4ce3-bd2e-11fd7791461c%2Fdefinition.json&_=1753084932786&sid=a0865a3f3d981f25932026ef6ddb4e40",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 6631,
+      "timestamp": "2025-07-21T08:02:12.788Z"
+    },
+    {
+      "url": "https://my.northdevon.gov.uk/api/get-document/json?uri=sandbox-publish%3A%2F%2FAF-Process-d615d6eb-6718-4e33-a2ff-18f1e5e58f8b%2FAF-Stage-0e576350-a6e1-444e-a105-cb020f910845%2FAF-Form-5e45b09d-c94d-422f-b2ae-bfe4b11f1508%2Fdefinition.json&_=1753084932785&sid=a0865a3f3d981f25932026ef6ddb4e40",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 5427,
+      "timestamp": "2025-07-21T08:02:12.788Z"
+    },
+    {
+      "url": "https://my.northdevon.gov.uk/apibroker/runLookup?id=59e606ee95b7a&repeat_against=&noRetry=true&getOnlyTokens=undefined&log_id=&app_name=AF-Renderer::Self&_=1753084932786&sid=a0865a3f3d981f25932026ef6ddb4e40",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=UTF-8",
+      "size": 1397,
+      "timestamp": "2025-07-21T08:02:12.788Z"
+    },
+    {
+      "url": "https://my.northdevon.gov.uk/apibroker/runLookup?id=625587f465a91&repeat_against=&noRetry=true&getOnlyTokens=undefined&log_id=&app_name=AF-Renderer::Self&_=1753084933589&sid=a0865a3f3d981f25932026ef6ddb4e40",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=UTF-8",
+      "size": 1479,
+      "timestamp": "2025-07-21T08:02:13.593Z"
+    },
+    {
+      "url": "https://my.northdevon.gov.uk/apibroker/runLookup?id=6255925ca44cb&repeat_against=&noRetry=true&getOnlyTokens=undefined&log_id=&app_name=AF-Renderer::Self&_=1753084936050&sid=a0865a3f3d981f25932026ef6ddb4e40",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=UTF-8",
+      "size": 1453,
+      "timestamp": "2025-07-21T08:02:16.054Z"
+    },
+    {
+      "url": "https://my.northdevon.gov.uk/apibroker/runLookup?id=610943652e64f&repeat_against=&noRetry=true&getOnlyTokens=undefined&log_id=&app_name=AF-Renderer::Self&_=1753084936380&sid=a0865a3f3d981f25932026ef6ddb4e40",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=UTF-8",
+      "size": 1491,
+      "timestamp": "2025-07-21T08:02:16.384Z"
+    },
+    {
+      "url": "https://my.northdevon.gov.uk/apibroker/runLookup?id=6256d7830063b&repeat_against=&noRetry=true&getOnlyTokens=undefined&log_id=&app_name=AF-Renderer::Self&_=1753084936768&sid=a0865a3f3d981f25932026ef6ddb4e40",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=UTF-8",
+      "size": 736,
+      "timestamp": "2025-07-21T08:02:16.773Z"
+    },
+    {
+      "url": "https://my.northdevon.gov.uk/apibroker/runLookup?id=6242ce0054bb1&repeat_against=&noRetry=true&getOnlyTokens=undefined&log_id=&app_name=AF-Renderer::Self&_=1753084937145&sid=a0865a3f3d981f25932026ef6ddb4e40",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=UTF-8",
+      "size": 1146,
+      "timestamp": "2025-07-21T08:02:17.149Z"
+    },
+    {
+      "url": "https://my.northdevon.gov.uk/apibroker/runLookup?id=6241b13004ad9&repeat_against=&noRetry=false&getOnlyTokens=undefined&log_id=&app_name=AF-Renderer::Self&_=1753084937475&sid=a0865a3f3d981f25932026ef6ddb4e40",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=UTF-8",
+      "size": 9363,
+      "timestamp": "2025-07-21T08:02:17.480Z"
+    },
+    {
+      "url": "https://my.northdevon.gov.uk/apibroker/runLookup?id=61091d927cd81&repeat_against=&noRetry=false&getOnlyTokens=undefined&log_id=&app_name=AF-Renderer::Self&_=1753084938730&sid=a0865a3f3d981f25932026ef6ddb4e40",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=UTF-8",
+      "size": 60600,
+      "timestamp": "2025-07-21T08:02:18.742Z"
+    },
+    {
+      "url": "https://my.northdevon.gov.uk/apibroker/runLookup?id=6242ce0054bb1&repeat_against=&noRetry=true&getOnlyTokens=undefined&log_id=&app_name=AF-Renderer::Self&_=1753084943432&sid=a0865a3f3d981f25932026ef6ddb4e40",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=UTF-8",
+      "size": 1146,
+      "timestamp": "2025-07-21T08:02:23.458Z"
+    },
+    {
+      "url": "https://my.northdevon.gov.uk/apibroker/runLookup?id=610943652e64f&repeat_against=&noRetry=true&getOnlyTokens=undefined&log_id=&app_name=AF-Renderer::Self&_=1753084943953&sid=a0865a3f3d981f25932026ef6ddb4e40",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=UTF-8",
+      "size": 20788,
+      "timestamp": "2025-07-21T08:02:23.968Z"
+    }
+  ]
+}

@@ -1,0 +1,128 @@
+{
+  "metadata": {
+    "trace_name": "tewkesbury_borough_council",
+    "processed_at": "2025-08-26 18:44:24",
+    "workflow_steps_count": 4,
+    "navigation_events_count": 8
+  },
+  "scraping_patterns": {
+    "login_detected": false,
+    "form_submissions": 0,
+    "navigation_count": 1,
+    "unique_domains": [
+      "pagecorrect.monsido.com",
+      "tewkesbury.gov.uk",
+      "api-2.tewkesbury.gov.uk",
+      "www.tewkesbury.gov.uk"
+    ],
+    "api_endpoints": [
+      "https://pagecorrect.monsido.com/v1/settings/83gCta66jzbuxq6g3VZpaQ.json"
+    ],
+    "data_extraction_indicators": []
+  },
+  "workflow_steps": [
+    {
+      "action": "goto",
+      "target": "https://www.tewkesbury.gov.uk/waste-and-recycling?rq=bin%20collection",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "fill",
+      "target": "aria-ref=e52 >> internal:describe=\"searchbox \\\"Postcode:\\\"\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0,
+      "value": "GL19 4AG"
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e53 >> internal:describe=\"button \\\"Search\\\"\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e258 >> internal:describe=\"link \\\"Woodbine Cottage The Leigh Gloucester GL19 4AG\\\"\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    }
+  ],
+  "navigation_events": [
+    {
+      "url": "https://www.tewkesbury.gov.uk/waste-and-recycling?rq=bin%20collection",
+      "method": "GET",
+      "status": 301,
+      "redirect_url": "https://tewkesbury.gov.uk/waste-and-recycling?rq=bin%20collection",
+      "mime_type": "text/html",
+      "size": -1,
+      "timestamp": "2025-07-21T07:57:53.486Z"
+    },
+    {
+      "url": "https://tewkesbury.gov.uk/waste-and-recycling?rq=bin%20collection",
+      "method": "GET",
+      "status": 301,
+      "redirect_url": "https://tewkesbury.gov.uk/services/waste-and-recycling",
+      "mime_type": "text/html; charset=UTF-8",
+      "size": -1,
+      "timestamp": "2025-07-21T07:57:53.523Z"
+    },
+    {
+      "url": "https://tewkesbury.gov.uk/services/waste-and-recycling",
+      "method": "GET",
+      "status": 301,
+      "redirect_url": "https://tewkesbury.gov.uk/services/waste-and-recycling/",
+      "mime_type": "text/html; charset=UTF-8",
+      "size": -1,
+      "timestamp": "2025-07-21T07:57:53.540Z"
+    },
+    {
+      "url": "https://tewkesbury.gov.uk/services/waste-and-recycling/",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=UTF-8",
+      "size": 61949,
+      "timestamp": "2025-07-21T07:57:53.550Z"
+    },
+    {
+      "url": "https://pagecorrect.monsido.com/v1/settings/83gCta66jzbuxq6g3VZpaQ.json",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 1409,
+      "timestamp": "2025-07-21T07:57:54.771Z"
+    },
+    {
+      "url": "https://api-2.tewkesbury.gov.uk/incab/properties/GL19%204AG/lookup?_=1753084674657",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=utf-8",
+      "size": 6604,
+      "timestamp": "2025-07-21T07:57:59.026Z"
+    },
+    {
+      "url": "https://tewkesbury.gov.uk/services/waste-and-recycling/bulky-collections/",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=UTF-8",
+      "size": 0,
+      "timestamp": "2025-07-21T07:57:59.588Z"
+    },
+    {
+      "url": "https://api-2.tewkesbury.gov.uk/incab/rounds/200004334842/next-collection?_=1753084674658",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=utf-8",
+      "size": 733,
+      "timestamp": "2025-07-21T07:58:02.777Z"
+    }
+  ]
+}

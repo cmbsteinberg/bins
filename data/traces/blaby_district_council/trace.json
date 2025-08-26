@@ -1,0 +1,204 @@
+{
+  "metadata": {
+    "trace_name": "blaby_district_council",
+    "processed_at": "2025-08-26 18:44:24",
+    "workflow_steps_count": 8,
+    "navigation_events_count": 13
+  },
+  "scraping_patterns": {
+    "login_detected": false,
+    "form_submissions": 5,
+    "navigation_count": 4,
+    "unique_domains": [
+      "apikeys.civiccomputing.com",
+      "my.blaby.gov.uk",
+      "www.blaby.gov.uk",
+      "q.clarity.ms",
+      "clapi.civiccomputing.com"
+    ],
+    "api_endpoints": [],
+    "data_extraction_indicators": []
+  },
+  "workflow_steps": [
+    {
+      "action": "goto",
+      "target": "http://my.blaby.gov.uk/collections",
+      "status": "Failed",
+      "details": {
+        "error": "Timeout 60000ms exceeded."
+      },
+      "timestamp": 0
+    },
+    {
+      "action": "goto",
+      "target": "http://my.blaby.gov.uk/collections",
+      "status": "Failed",
+      "details": {
+        "error": "net::ERR_CONNECTION_TIMED_OUT at http://my.blaby.gov.uk/collections"
+      },
+      "timestamp": 0
+    },
+    {
+      "action": "goto",
+      "target": "https://www.blaby.gov.uk/",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e22 >> internal:describe=\"Accept all button\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "goto",
+      "target": "https://my.blaby.gov.uk/collections",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "fill",
+      "target": "aria-ref=e40 >> internal:describe=\"Postcode textbox\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0,
+      "value": "LE10 3PB"
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e41 >> internal:describe=\"Go button\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e50 >> internal:describe=\"2 Brookfield, Sharnford, LE10 3PB link\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    }
+  ],
+  "navigation_events": [
+    {
+      "url": "https://www.blaby.gov.uk/",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=utf-8",
+      "size": 27455,
+      "timestamp": "2025-07-21T08:01:12.336Z"
+    },
+    {
+      "url": "https://apikeys.civiccomputing.com/c/v?d=www.blaby.gov.uk&p=CookieControl%20Multi-Site&v=9&k=c9854ac8121234f70ef11f8517a1f1188c7b418e&format=json",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 301,
+      "timestamp": "2025-07-21T08:01:12.726Z"
+    },
+    {
+      "url": "https://q.clarity.ms/collect",
+      "method": "POST",
+      "status": 204,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": 0,
+      "timestamp": "2025-07-21T08:01:13.024Z"
+    },
+    {
+      "url": "https://q.clarity.ms/collect",
+      "method": "POST",
+      "status": 204,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": 0,
+      "timestamp": "2025-07-21T08:01:14.185Z"
+    },
+    {
+      "url": "https://clapi.civiccomputing.com/1/log?k=c9854ac8121234f70ef11f8517a1f1188c7b418e&d=www.blaby.gov.uk&u=undefined&c=%22%7B%5C%22necessaryCookies%5C%22%3A%5B%5D%2C%5C%22optionalCookies%5C%22%3A%7B%5C%22analytics%5C%22%3A%5C%22accepted%5C%22%2C%5C%22preferences%5C%22%3A%5C%22accepted%5C%22%7D%2C%5C%22statement%5C%22%3A%7B%5C%22shown%5C%22%3Atrue%2C%5C%22updated%5C%22%3A%5C%2221%2F10%2F2021%5C%22%7D%2C%5C%22consentDate%5C%22%3A1753084874961%2C%5C%22consentExpiry%5C%22%3A90%2C%5C%22interactedWith%5C%22%3Atrue%2C%5C%22user%5C%22%3A%5C%22DD542831-6DA0-48C7-A0DA-C4ED30FB55A0%5C%22%7D%22",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 13,
+      "timestamp": "2025-07-21T08:01:14.965Z"
+    },
+    {
+      "url": "https://q.clarity.ms/collect",
+      "method": "POST",
+      "status": 204,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": 0,
+      "timestamp": "2025-07-21T08:01:16.958Z"
+    },
+    {
+      "url": "https://q.clarity.ms/collect",
+      "method": "POST",
+      "status": 204,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": 0,
+      "timestamp": "2025-07-21T08:01:20.731Z"
+    },
+    {
+      "url": "https://q.clarity.ms/collect",
+      "method": "POST",
+      "status": 204,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": 0,
+      "timestamp": "2025-07-21T08:01:26.732Z"
+    },
+    {
+      "url": "https://my.blaby.gov.uk/collections",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=UTF-8",
+      "size": 13026,
+      "timestamp": "2025-07-21T08:01:27.779Z"
+    },
+    {
+      "url": "https://my.blaby.gov.uk/collections?location=change&address=LE10+3PB&layer=",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=UTF-8",
+      "size": 22746,
+      "timestamp": "2025-07-21T08:01:32.327Z"
+    },
+    {
+      "url": "https://my.blaby.gov.uk/site/images/loading.gif",
+      "method": "GET",
+      "status": 404,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=UTF-8",
+      "size": 8945,
+      "timestamp": "2025-07-21T08:01:32.407Z"
+    },
+    {
+      "url": "https://my.blaby.gov.uk/set-location.php?ref=100030377477&redirect=collections&rememberloc=",
+      "method": "GET",
+      "status": 302,
+      "redirect_url": "https://my.blaby.gov.uk/collections",
+      "mime_type": "text/html; charset=UTF-8",
+      "size": -1,
+      "timestamp": "2025-07-21T08:01:35.422Z"
+    },
+    {
+      "url": "https://my.blaby.gov.uk/collections",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=UTF-8",
+      "size": 15508,
+      "timestamp": "2025-07-21T08:01:35.488Z"
+    }
+  ]
+}

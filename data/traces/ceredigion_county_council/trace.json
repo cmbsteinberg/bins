@@ -1,0 +1,288 @@
+{
+  "metadata": {
+    "trace_name": "ceredigion_county_council",
+    "processed_at": "2025-08-26 18:44:24",
+    "workflow_steps_count": 10,
+    "navigation_events_count": 18
+  },
+  "scraping_patterns": {
+    "login_detected": false,
+    "form_submissions": 4,
+    "navigation_count": 2,
+    "unique_domains": [
+      "clapi.civiccomputing.com",
+      "forms.ceredigion.gov.uk",
+      "www.ceredigion.gov.uk",
+      "apikeys.civiccomputing.com"
+    ],
+    "api_endpoints": [],
+    "data_extraction_indicators": []
+  },
+  "workflow_steps": [
+    {
+      "action": "goto",
+      "target": "https://www.ceredigion.gov.uk/English/Resident/Bins-Recycling/Recycling-Bin-Collection-Dates/Pages/default.aspx",
+      "status": "Failed",
+      "details": {
+        "error": "net::ERR_HTTP_RESPONSE_CODE_FAILURE at https://www.ceredigion.gov.uk/English/Resident/Bins-Recycling/Recycling-Bin-Collection-Dates/Pages/default.aspx"
+      },
+      "timestamp": 0
+    },
+    {
+      "action": "goto",
+      "target": "https://www.ceredigion.gov.uk/",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e12 >> internal:describe=\"Welcome Visit our English website\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e22 >> internal:describe=\"I Accept\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e107 >> internal:describe=\"Recycling & Bin Collection Dates\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e80 >> internal:describe=\"Postcode Search\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "fill",
+      "target": "aria-ref=e27 >> internal:describe=\"Postcode\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0,
+      "value": "SA38 9EH"
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e29 >> internal:describe=\"Find Address\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "selectOption",
+      "target": "aria-ref=e54 >> internal:describe=\"Select Address\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0,
+      "value": null
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e85 >> internal:describe=\"Next\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    }
+  ],
+  "navigation_events": [
+    {
+      "url": "https://www.ceredigion.gov.uk/English/Resident/Bins-Recycling/Recycling-Bin-Collection-Dates/Pages/default.aspx",
+      "method": "GET",
+      "status": 404,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T10:27:26.830Z"
+    },
+    {
+      "url": "https://www.ceredigion.gov.uk/",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=utf-8",
+      "size": 4317,
+      "timestamp": "2025-07-21T10:27:28.463Z"
+    },
+    {
+      "url": "https://www.ceredigion.gov.uk/resident",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=utf-8",
+      "size": 31699,
+      "timestamp": "2025-07-21T10:27:30.161Z"
+    },
+    {
+      "url": "https://apikeys.civiccomputing.com/c/v?d=www.ceredigion.gov.uk&p=CookieControl%20Free&v=9&k=cb8b7ef25939324d3dfb50d57e456d7709fddeb2&format=json",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 137,
+      "timestamp": "2025-07-21T10:27:30.335Z"
+    },
+    {
+      "url": "https://clapi.civiccomputing.com/1/log?k=cb8b7ef25939324d3dfb50d57e456d7709fddeb2&d=www.ceredigion.gov.uk&u=undefined&c=%22%7B%5C%22necessaryCookies%5C%22%3A%5B%5D%2C%5C%22optionalCookies%5C%22%3A%7B%5C%22analytics%5C%22%3A%5C%22accepted%5C%22%7D%2C%5C%22statement%5C%22%3A%7B%5C%22shown%5C%22%3Atrue%2C%5C%22updated%5C%22%3A%5C%2225%2F05%2F2018%5C%22%7D%2C%5C%22consentDate%5C%22%3A1753093652948%2C%5C%22consentExpiry%5C%22%3A90%2C%5C%22interactedWith%5C%22%3Atrue%2C%5C%22user%5C%22%3A%5C%220ED5E32F-A380-4D36-B146-90912F750B8E%5C%22%7D%22",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 13,
+      "timestamp": "2025-07-21T10:27:32.954Z"
+    },
+    {
+      "url": "https://www.ceredigion.gov.uk/resident/bins-recycling/",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=utf-8",
+      "size": 24099,
+      "timestamp": "2025-07-21T10:27:35.649Z"
+    },
+    {
+      "url": "https://apikeys.civiccomputing.com/c/v?d=www.ceredigion.gov.uk&p=CookieControl%20Free&v=9&k=cb8b7ef25939324d3dfb50d57e456d7709fddeb2&format=json",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 137,
+      "timestamp": "2025-07-21T10:27:35.749Z"
+    },
+    {
+      "url": "http://forms.ceredigion.gov.uk/ufs/ufsmain?formid=REFUSE_ROUTES",
+      "method": "GET",
+      "status": 301,
+      "redirect_url": "https://forms.ceredigion.gov.uk/ebase/ufsmain?formid=REFUSE_ROUTES",
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T10:27:38.565Z"
+    },
+    {
+      "url": "https://forms.ceredigion.gov.uk/ebase/ufsmain?formid=REFUSE_ROUTES",
+      "method": "GET",
+      "status": 302,
+      "redirect_url": "https://forms.ceredigion.gov.uk/ebase/REFUSE_ROUTES.eb?Reset=false&ebd=0&ebz=1_1753093658672",
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T10:27:38.610Z"
+    },
+    {
+      "url": "https://forms.ceredigion.gov.uk/ebase/REFUSE_ROUTES.eb?Reset=false&ebd=0&ebz=1_1753093658672",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html;charset=UTF-8",
+      "size": 20817,
+      "timestamp": "2025-07-21T10:27:38.709Z"
+    },
+    {
+      "url": "https://forms.ceredigion.gov.uk/ebase/ufsajax?ebz=1_1753093658672",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 5579,
+      "timestamp": "2025-07-21T10:27:43.456Z"
+    },
+    {
+      "url": "https://forms.ceredigion.gov.uk/ebase/ufsajax?ebz=1_1753093658672",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 3206,
+      "timestamp": "2025-07-21T10:27:45.906Z"
+    },
+    {
+      "url": "https://forms.ceredigion.gov.uk/ebase/ufsajax?ebz=1_1753093658672",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 17,
+      "timestamp": "2025-07-21T10:27:48.466Z"
+    },
+    {
+      "url": "https://forms.ceredigion.gov.uk/ebase/REFUSE_ROUTES.eb?ebz=1_1753093658672",
+      "method": "POST",
+      "status": 302,
+      "redirect_url": "https://forms.ceredigion.gov.uk/ebase/REFUSE_ROUTES.eb?Reset=false&ebd=0&ebz=1_1753093658672",
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T10:27:48.655Z",
+      "form_data": {
+        "formid": "/Forms/REFUSE_ROUTES",
+        "ebs": "1_1753093658672",
+        "origrequrl": "http://forms.ceredigion.gov.uk/ebase/ufsmain?formid=REFUSE_ROUTES",
+        "formstack": "REFUSE_ROUTES:24ad4005-7b07-422d-8ff6-760ea6cbba81",
+        "PAGE:E.h": "",
+        "PAGE:B.h": "",
+        "PAGE:N.h": "",
+        "PAGE:S.h": "",
+        "PAGE:R.h": "",
+        "PAGE:D": "",
+        "PAGE:H": "",
+        "PAGE:X": "0",
+        "PAGE:Y": "0",
+        "PAGE:F": "CTID-2SZqK9ha-_",
+        "ufsEndUser*": "1",
+        "pageSeq": "1",
+        "pageId": "SEARCH",
+        "formStateId": "1",
+        "$USERVAR1": "",
+        "$USERVAR2": "v.1.83",
+        "$USERVAR3": "",
+        "CTRL:3hXVeHBY:_.h": "",
+        "CTRL:R6llfHNT:_:A": "Y",
+        "HID:inputs": "ACTRL:3hXVeHBY:_.h,ACTRL:2SZqK9ha:_,ICTRL:R6llfHNT:_:A,APAGE:E.h,APAGE:B.h,APAGE:N.h,APAGE:S.h,APAGE:R.h",
+        "ebReshow": "true"
+      }
+    },
+    {
+      "url": "https://forms.ceredigion.gov.uk/ebase/REFUSE_ROUTES.eb?Reset=false&ebd=0&ebz=1_1753093658672",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html;charset=UTF-8",
+      "size": 24094,
+      "timestamp": "2025-07-21T10:27:48.674Z"
+    },
+    {
+      "url": "https://forms.ceredigion.gov.uk/ebase/$ws/Web_Resources/Images/logo_sm.png",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T10:27:49.244Z"
+    },
+    {
+      "url": "https://forms.ceredigion.gov.uk/ebase/$ws/Web_Resources/Images/CLIC_Logo_SM.png",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T10:27:49.244Z"
+    },
+    {
+      "url": "https://forms.ceredigion.gov.uk/ebase/ebWebResource/Shared/Web_Resources/font-awesome-5.5.0/webfonts/fa-regular-400.woff2",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/octet-stream;charset=windows-1252",
+      "size": 14844,
+      "timestamp": "2025-07-21T10:27:49.255Z"
+    }
+  ]
+}

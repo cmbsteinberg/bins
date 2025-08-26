@@ -1,0 +1,218 @@
+{
+  "metadata": {
+    "trace_name": "city_of_wolverhampton_council",
+    "processed_at": "2025-08-26 18:44:24",
+    "workflow_steps_count": 6,
+    "navigation_events_count": 16
+  },
+  "scraping_patterns": {
+    "login_detected": false,
+    "form_submissions": 3,
+    "navigation_count": 1,
+    "unique_domains": [
+      "www.wolverhampton.gov.uk",
+      "cdnjs.cloudflare.com"
+    ],
+    "api_endpoints": [],
+    "data_extraction_indicators": []
+  },
+  "workflow_steps": [
+    {
+      "action": "goto",
+      "target": "http://www.wolverhampton.gov.uk/bincollections",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e295 >> internal:describe=\"Okay, I agree\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "fill",
+      "target": "aria-ref=e119 >> internal:describe=\"Search eg. WV1 1SG\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0,
+      "value": "WV1 1QF"
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e120 >> internal:describe=\"Look up address\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "selectOption",
+      "target": "aria-ref=e303 >> internal:describe=\"combobox\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0,
+      "value": null
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e350 >> internal:describe=\"Search\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    }
+  ],
+  "navigation_events": [
+    {
+      "url": "http://www.wolverhampton.gov.uk/bincollections",
+      "method": "GET",
+      "status": 301,
+      "redirect_url": "https://www.wolverhampton.gov.uk/bincollections",
+      "mime_type": "text/html",
+      "size": -1,
+      "timestamp": "2025-07-21T10:28:58.809Z"
+    },
+    {
+      "url": "https://www.wolverhampton.gov.uk/bincollections",
+      "method": "GET",
+      "status": 301,
+      "redirect_url": "https://www.wolverhampton.gov.uk/waste-and-recycling/bin-collection-dates",
+      "mime_type": "text/html; charset=utf-8",
+      "size": -1,
+      "timestamp": "2025-07-21T10:28:58.859Z"
+    },
+    {
+      "url": "https://www.wolverhampton.gov.uk/waste-and-recycling/bin-collection-dates",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=UTF-8",
+      "size": 64843,
+      "timestamp": "2025-07-21T10:28:58.947Z"
+    },
+    {
+      "url": "https://www.wolverhampton.gov.uk/themes/custom/omega_bigbluedoor/fonts/font-awesome-4.7.0/fonts/fontawesome-webfont.woff2?v=4.7.0",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/octet-stream",
+      "size": 77160,
+      "timestamp": "2025-07-21T10:28:59.092Z"
+    },
+    {
+      "url": "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/webfonts/fa-brands-400.woff2",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/octet-stream; charset=utf-8",
+      "size": 118072,
+      "timestamp": "2025-07-21T10:28:59.092Z"
+    },
+    {
+      "url": "https://www.wolverhampton.gov.uk/themes/custom/omega_bigbluedoor/fonts/icomoon/fonts/icomoon.ttf?2mv7uj=",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/octet-stream",
+      "size": 2224,
+      "timestamp": "2025-07-21T10:28:59.093Z"
+    },
+    {
+      "url": "https://www.wolverhampton.gov.uk/modules/sandbox/accessibility_tool/fonts/icomoon/fonts/icomoon.ttf?vpgtup=",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/octet-stream",
+      "size": 2372,
+      "timestamp": "2025-07-21T10:28:59.093Z"
+    },
+    {
+      "url": "https://www.wolverhampton.gov.uk/node/hidden-content/10638",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=UTF-8",
+      "size": 0,
+      "timestamp": "2025-07-21T10:28:59.112Z"
+    },
+    {
+      "url": "https://www.wolverhampton.gov.uk/eu-cookie-compliance/store_consent/banner",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 4,
+      "timestamp": "2025-07-21T10:29:01.684Z"
+    },
+    {
+      "url": "https://www.wolverhampton.gov.uk/waste-and-recycling/bin-collection-dates?ajax_form=1&_wrapper_format=drupal_ajax",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 6729,
+      "timestamp": "2025-07-21T10:29:06.322Z"
+    },
+    {
+      "url": "https://www.wolverhampton.gov.uk/waste-and-recycling/bin-collection-dates",
+      "method": "POST",
+      "status": 303,
+      "redirect_url": "https://www.wolverhampton.gov.uk/find-my-nearest/WV1%201QF/100071351943",
+      "mime_type": "text/html; charset=utf-8",
+      "size": -1,
+      "timestamp": "2025-07-21T10:29:12.717Z",
+      "form_data": {
+        "form_build_id": "form-4mEuWhq6BTsioQ1zbhmkcI8ldQ8PfWA0m3KSsCqGNxU",
+        "form_id": "cwc_find_my_nearest_search",
+        "postcode": "WV1 1QF",
+        "uprn": "100071351943",
+        "op": "Search"
+      }
+    },
+    {
+      "url": "https://www.wolverhampton.gov.uk/find-my-nearest/WV1%201QF/100071351943",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=UTF-8",
+      "size": 49366,
+      "timestamp": "2025-07-21T10:29:13.104Z"
+    },
+    {
+      "url": "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/webfonts/fa-brands-400.woff2",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/octet-stream; charset=utf-8",
+      "size": -1,
+      "timestamp": "2025-07-21T10:29:15.846Z"
+    },
+    {
+      "url": "https://www.wolverhampton.gov.uk/modules/sandbox/accessibility_tool/fonts/icomoon/fonts/icomoon.ttf?vpgtup=",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/octet-stream",
+      "size": -1,
+      "timestamp": "2025-07-21T10:29:15.846Z"
+    },
+    {
+      "url": "https://www.wolverhampton.gov.uk/themes/custom/omega_bigbluedoor/fonts/font-awesome-4.7.0/fonts/fontawesome-webfont.woff2?v=4.7.0",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T10:29:15.855Z"
+    },
+    {
+      "url": "https://www.wolverhampton.gov.uk/themes/custom/omega_bigbluedoor/fonts/icomoon/fonts/icomoon.ttf?2mv7uj=",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T10:29:15.856Z"
+    }
+  ]
+}

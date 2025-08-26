@@ -1,0 +1,140 @@
+{
+  "metadata": {
+    "trace_name": "north_tyneside_council",
+    "processed_at": "2025-08-26 18:44:24",
+    "workflow_steps_count": 8,
+    "navigation_events_count": 6
+  },
+  "scraping_patterns": {
+    "login_detected": false,
+    "form_submissions": 2,
+    "navigation_count": 2,
+    "unique_domains": [
+      "my.northtyneside.gov.uk"
+    ],
+    "api_endpoints": [],
+    "data_extraction_indicators": []
+  },
+  "workflow_steps": [
+    {
+      "action": "goto",
+      "target": "https://my.northtyneside.gov.uk/category/80/rubbish-and-recycling",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e7 >> internal:describe=\"Agree to cookies\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e91 >> internal:describe=\"Bin collection dates\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "fill",
+      "target": "aria-ref=e83 >> internal:describe=\"Postcode (Required)\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0,
+      "value": "NE12 5AB"
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e84 >> internal:describe=\"Find\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "selectOption",
+      "target": "aria-ref=e141 >> internal:describe=\"House number *\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0,
+      "value": null
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e183 >> internal:describe=\"Use\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "goto",
+      "target": "https://my.northtyneside.gov.uk/category/84/what-goes-my-bins",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    }
+  ],
+  "navigation_events": [
+    {
+      "url": "https://my.northtyneside.gov.uk/category/80/rubbish-and-recycling",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=utf-8",
+      "size": 23435,
+      "timestamp": "2025-07-21T10:40:38.076Z"
+    },
+    {
+      "url": "https://my.northtyneside.gov.uk/category/81/bin-collection-dates",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=utf-8",
+      "size": 20537,
+      "timestamp": "2025-07-21T10:40:42.914Z"
+    },
+    {
+      "url": "https://my.northtyneside.gov.uk/system/ajax",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=utf-8",
+      "size": 8062,
+      "timestamp": "2025-07-21T10:40:47.276Z"
+    },
+    {
+      "url": "https://my.northtyneside.gov.uk/category/81/bin-collection-dates",
+      "method": "POST",
+      "status": 302,
+      "redirect_url": "https://my.northtyneside.gov.uk/category/81/bin-collection-dates",
+      "mime_type": "text/html; charset=UTF-8",
+      "size": -1,
+      "timestamp": "2025-07-21T10:41:02.246Z",
+      "form_data": {
+        "house_number": "000047242490",
+        "op": "Use",
+        "form_build_id": "form-Wh1S4LIRknO0IAO8kOFNxdhV2_INGVQ9_vJaFDRWQ-w",
+        "form_id": "ntc_address_wizard"
+      }
+    },
+    {
+      "url": "https://my.northtyneside.gov.uk/category/81/bin-collection-dates",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=utf-8",
+      "size": 19628,
+      "timestamp": "2025-07-21T10:41:02.422Z"
+    },
+    {
+      "url": "https://my.northtyneside.gov.uk/category/84/what-goes-my-bins",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=utf-8",
+      "size": 23954,
+      "timestamp": "2025-07-21T10:41:06.682Z"
+    }
+  ]
+}

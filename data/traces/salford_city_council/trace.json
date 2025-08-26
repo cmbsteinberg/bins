@@ -1,0 +1,257 @@
+{
+  "metadata": {
+    "trace_name": "salford_city_council",
+    "processed_at": "2025-08-26 18:44:24",
+    "workflow_steps_count": 6,
+    "navigation_events_count": 20
+  },
+  "scraping_patterns": {
+    "login_detected": false,
+    "form_submissions": 7,
+    "navigation_count": 1,
+    "unique_domains": [
+      "www.salford.gov.uk",
+      "v4in1-si.click4assistance.co.uk",
+      "browser-update.org",
+      "uksouth-1.in.applicationinsights.azure.com"
+    ],
+    "api_endpoints": [
+      "https://www.salford.gov.uk/manifest.json",
+      "https://www.salford.gov.uk/manifest.json",
+      "https://www.salford.gov.uk/manifest.json",
+      "https://www.salford.gov.uk/umbraco/api/SalfordAPI/AddressSearch",
+      "https://www.salford.gov.uk/manifest.json"
+    ],
+    "data_extraction_indicators": []
+  },
+  "workflow_steps": [
+    {
+      "action": "goto",
+      "target": "https://www.salford.gov.uk/bins",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e7 >> internal:describe=\"Accept cookies\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e46 >> internal:describe=\"Bin collection days\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "fill",
+      "target": "aria-ref=e51 >> internal:describe=\"textbox \\\"Enter your street name OR full Salford postcode\\\"\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0,
+      "value": "M27 0AU"
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e53 >> internal:describe=\"Search\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e176 >> internal:describe=\"1 Ashley Drive, Swinton, Manchester, M27 0AU\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    }
+  ],
+  "navigation_events": [
+    {
+      "url": "https://www.salford.gov.uk/bins",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=utf-8",
+      "size": 27814,
+      "timestamp": "2025-07-21T11:08:57.579Z"
+    },
+    {
+      "url": "https://www.salford.gov.uk/manifest.json",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 289,
+      "timestamp": "2025-07-21T11:08:58.886Z"
+    },
+    {
+      "url": "https://uksouth-1.in.applicationinsights.azure.com//v2/track",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=utf-8",
+      "size": 62,
+      "timestamp": "2025-07-21T11:08:58.978Z"
+    },
+    {
+      "url": "https://www.salford.gov.uk/bins",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=utf-8",
+      "size": 26969,
+      "timestamp": "2025-07-21T11:09:00.004Z",
+      "form_data": {
+        "cookiesubmit": "Accept cookies"
+      }
+    },
+    {
+      "url": "https://v4in1-si.click4assistance.co.uk/SI.js",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T11:09:00.057Z"
+    },
+    {
+      "url": "https://browser-update.org/update.min.js",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T11:09:00.065Z"
+    },
+    {
+      "url": "https://www.salford.gov.uk/manifest.json",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 289,
+      "timestamp": "2025-07-21T11:09:00.136Z"
+    },
+    {
+      "url": "https://uksouth-1.in.applicationinsights.azure.com//v2/track",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=utf-8",
+      "size": 62,
+      "timestamp": "2025-07-21T11:09:00.159Z"
+    },
+    {
+      "url": "https://www.salford.gov.uk/bins-and-recycling/bin-collection-days/",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=utf-8",
+      "size": 33338,
+      "timestamp": "2025-07-21T11:09:02.163Z"
+    },
+    {
+      "url": "https://v4in1-si.click4assistance.co.uk/SI.js",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T11:09:02.203Z"
+    },
+    {
+      "url": "https://browser-update.org/update.min.js",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T11:09:02.219Z"
+    },
+    {
+      "url": "https://www.salford.gov.uk/manifest.json",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 289,
+      "timestamp": "2025-07-21T11:09:02.293Z"
+    },
+    {
+      "url": "https://uksouth-1.in.applicationinsights.azure.com//v2/track",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=utf-8",
+      "size": 62,
+      "timestamp": "2025-07-21T11:09:02.312Z"
+    },
+    {
+      "url": "https://www.salford.gov.uk/umbraco/api/SalfordAPI/AddressSearch",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/plain; charset=utf-8",
+      "size": 2520,
+      "timestamp": "2025-07-21T11:09:06.562Z"
+    },
+    {
+      "url": "https://www.salford.gov.uk/bins-and-recycling/bin-collection-days/your-bin-collections/?UPRN=100011344042",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=utf-8",
+      "size": 26549,
+      "timestamp": "2025-07-21T11:09:08.914Z"
+    },
+    {
+      "url": "https://uksouth-1.in.applicationinsights.azure.com//v2/track",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=utf-8",
+      "size": -1,
+      "timestamp": "2025-07-21T11:09:08.915Z"
+    },
+    {
+      "url": "https://v4in1-si.click4assistance.co.uk/SI.js",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T11:09:12.196Z"
+    },
+    {
+      "url": "https://browser-update.org/update.min.js",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T11:09:12.221Z"
+    },
+    {
+      "url": "https://www.salford.gov.uk/manifest.json",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 289,
+      "timestamp": "2025-07-21T11:09:12.257Z"
+    },
+    {
+      "url": "https://uksouth-1.in.applicationinsights.azure.com//v2/track",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=utf-8",
+      "size": 62,
+      "timestamp": "2025-07-21T11:09:12.318Z"
+    }
+  ]
+}

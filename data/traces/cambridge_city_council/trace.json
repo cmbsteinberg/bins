@@ -1,0 +1,172 @@
+{
+  "metadata": {
+    "trace_name": "cambridge_city_council",
+    "processed_at": "2025-08-26 18:44:24",
+    "workflow_steps_count": 5,
+    "navigation_events_count": 12
+  },
+  "scraping_patterns": {
+    "login_detected": false,
+    "form_submissions": 6,
+    "navigation_count": 1,
+    "unique_domains": [
+      "servicelayer3c.azure-api.net",
+      "dc.services.visualstudio.com",
+      "consentcdn.cookiebot.com",
+      "www.cambridge.gov.uk",
+      "a.eu.silktide.com"
+    ],
+    "api_endpoints": [
+      "https://consentcdn.cookiebot.com/consentconfig/a3c66d69-1aa5-4b23-b193-9c6c41cd4d13/settings.json"
+    ],
+    "data_extraction_indicators": []
+  },
+  "workflow_steps": [
+    {
+      "action": "goto",
+      "target": "https://www.cambridge.gov.uk/check-when-your-bin-will-be-emptied",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "fill",
+      "target": "aria-ref=e71 >> internal:describe=\"textbox \\\"Please enter your postcode\\\"\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0,
+      "value": "CB1 1BB"
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e74 >> internal:describe=\"button \\\"Search\\\"\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e218 >> internal:describe=\"link \\\"1 petersfield, CAMBRIDGE, CB1 1BB\\\"\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e484 >> internal:describe=\"button \\\"See more dates\\\"\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    }
+  ],
+  "navigation_events": [
+    {
+      "url": "https://www.cambridge.gov.uk/check-when-your-bin-will-be-emptied",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=utf-8",
+      "size": 39300,
+      "timestamp": "2025-07-21T07:57:18.883Z"
+    },
+    {
+      "url": "https://a.eu.silktide.com/v1/events",
+      "method": "POST",
+      "status": 202,
+      "redirect_url": null,
+      "mime_type": "text/plain; charset=utf-8",
+      "size": 2,
+      "timestamp": "2025-07-21T07:57:19.234Z"
+    },
+    {
+      "url": "https://www.cambridge.gov.uk/icons/icomoon.ttf?dlzl4g",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/x-font-ttf",
+      "size": 13252,
+      "timestamp": "2025-07-21T07:57:19.275Z"
+    },
+    {
+      "url": "https://consentcdn.cookiebot.com/sdk/bc-v4.min.html",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html",
+      "size": 627,
+      "timestamp": "2025-07-21T07:57:19.526Z"
+    },
+    {
+      "url": "https://consentcdn.cookiebot.com/consentconfig/a3c66d69-1aa5-4b23-b193-9c6c41cd4d13/settings.json",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 605,
+      "timestamp": "2025-07-21T07:57:20.431Z"
+    },
+    {
+      "url": "https://dc.services.visualstudio.com/v2/track",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=utf-8",
+      "size": 96,
+      "timestamp": "2025-07-21T07:57:20.446Z"
+    },
+    {
+      "url": "https://a.eu.silktide.com/v1/events",
+      "method": "POST",
+      "status": 202,
+      "redirect_url": null,
+      "mime_type": "text/plain; charset=utf-8",
+      "size": 2,
+      "timestamp": "2025-07-21T07:57:23.348Z"
+    },
+    {
+      "url": "https://servicelayer3c.azure-api.net/wastecalendar/address/search?postcode=CB11BB",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=utf-8",
+      "size": 9955,
+      "timestamp": "2025-07-21T07:57:23.349Z"
+    },
+    {
+      "url": "https://a.eu.silktide.com/v1/events/beacon",
+      "method": "POST",
+      "status": 202,
+      "redirect_url": null,
+      "mime_type": "text/plain; charset=utf-8",
+      "size": 2,
+      "timestamp": "2025-07-21T07:57:26.017Z"
+    },
+    {
+      "url": "https://servicelayer3c.azure-api.net/wastecalendar/collection/search/200004167511/?authority=CCC&numberOfCollections=12",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=utf-8",
+      "size": 1485,
+      "timestamp": "2025-07-21T07:57:26.017Z"
+    },
+    {
+      "url": "https://dc.services.visualstudio.com/v2/track",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=utf-8",
+      "size": 96,
+      "timestamp": "2025-07-21T07:57:35.463Z"
+    },
+    {
+      "url": "https://a.eu.silktide.com/v1/events",
+      "method": "POST",
+      "status": 202,
+      "redirect_url": null,
+      "mime_type": "text/plain; charset=utf-8",
+      "size": 2,
+      "timestamp": "2025-07-21T07:57:45.179Z"
+    }
+  ]
+}

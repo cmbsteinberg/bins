@@ -1,0 +1,378 @@
+{
+  "metadata": {
+    "trace_name": "newry,_mourne_and_down_district_council",
+    "processed_at": "2025-08-26 18:44:24",
+    "workflow_steps_count": 6,
+    "navigation_events_count": 32
+  },
+  "scraping_patterns": {
+    "login_detected": false,
+    "form_submissions": 9,
+    "navigation_count": 1,
+    "unique_domains": [
+      "www.newrymournedown.org",
+      "region1.analytics.google.com",
+      "www.browsealoud.com"
+    ],
+    "api_endpoints": [
+      "https://www.browsealoud.com/version.json",
+      "https://www.browsealoud.com/modules/3.9.7/sri.json",
+      "https://www.newrymournedown.org/images/general/manifest.json",
+      "https://www.browsealoud.com/version.json",
+      "https://www.browsealoud.com/modules/3.9.7/sri.json",
+      "https://www.newrymournedown.org/images/general/manifest.json",
+      "https://www.browsealoud.com/version.json",
+      "https://www.browsealoud.com/modules/3.9.7/sri.json",
+      "https://www.newrymournedown.org/images/general/manifest.json",
+      "https://www.browsealoud.com/version.json",
+      "https://www.browsealoud.com/modules/3.9.7/sri.json",
+      "https://www.newrymournedown.org/images/general/manifest.json",
+      "https://www.browsealoud.com/version.json",
+      "https://www.browsealoud.com/modules/3.9.7/sri.json",
+      "https://www.newrymournedown.org/images/general/manifest.json"
+    ],
+    "data_extraction_indicators": []
+  },
+  "workflow_steps": [
+    {
+      "action": "goto",
+      "target": "http://www.newrymournedown.org/bin-collection-information-and-calendar",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e1323 >> internal:describe=\"link \\\"Click here\\\"\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "selectOption",
+      "target": "aria-ref=e1351 >> internal:describe=\"combobox\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0,
+      "value": null
+    },
+    {
+      "action": "fill",
+      "target": "aria-ref=e1364 >> internal:describe=\"textbox\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0,
+      "value": "7AF"
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e1365 >> internal:describe=\"button \\\"SEARCH\\\"\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e1372 >> internal:describe=\"link \\\"View Schedule\\\"\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    }
+  ],
+  "navigation_events": [
+    {
+      "url": "http://www.newrymournedown.org/bin-collection-information-and-calendar",
+      "method": "GET",
+      "status": 301,
+      "redirect_url": "https://www.newrymournedown.org/bin-collection-information-and-calendar",
+      "mime_type": "text/html; charset=UTF-8",
+      "size": -1,
+      "timestamp": "2025-07-21T07:41:52.063Z"
+    },
+    {
+      "url": "https://www.newrymournedown.org/bin-collection-information-and-calendar",
+      "method": "GET",
+      "status": 301,
+      "redirect_url": "https://www.newrymournedown.org/bin-collection-information",
+      "mime_type": "text/html; Charset=utf-8",
+      "size": -1,
+      "timestamp": "2025-07-21T07:41:52.103Z"
+    },
+    {
+      "url": "https://www.newrymournedown.org/bin-collection-information",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; Charset=utf-8",
+      "size": 134843,
+      "timestamp": "2025-07-21T07:41:52.251Z"
+    },
+    {
+      "url": "https://www.browsealoud.com/version.json",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 31,
+      "timestamp": "2025-07-21T07:41:53.186Z"
+    },
+    {
+      "url": "https://www.browsealoud.com/modules/3.9.7/sri.json",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 478,
+      "timestamp": "2025-07-21T07:41:53.362Z"
+    },
+    {
+      "url": "https://region1.analytics.google.com/g/collect?v=2&tid=G-34HB6C06LC&gtm=45je57g1v9125520173za200&_p=1753083713164&_gaz=1&gcd=13l3l3l3l1l1&npa=0&dma=0&tag_exp=101509157~103116026~103200004~103233427~104684208~104684211&cid=1420795045.1753083714&ul=en-gb&sr=800x600&uaa=arm&uab=64&uafvl=Not)A%253BBrand%3B8.0.0.0%7CChromium%3B138.0.7204.101%7CGoogle%2520Chrome%3B138.0.7204.101&uamb=0&uam=&uap=macOS&uapv=15.5.0&uaw=0&are=1&frm=0&pscdl=noapi&_s=1&sid=1753083714&sct=1&seg=0&dl=https%3A%2F%2Fwww.newrymournedown.org%2Fbin-collection-information&dt=Bin%20Collection%20Information&en=page_view&_fv=1&_nsi=1&_ss=1&_ee=1&tfd=2200",
+      "method": "POST",
+      "status": 204,
+      "redirect_url": null,
+      "mime_type": "text/plain",
+      "size": -1,
+      "timestamp": "2025-07-21T07:41:54.264Z"
+    },
+    {
+      "url": "https://www.newrymournedown.org/images/general/manifest.json",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/manifest+json",
+      "size": 283,
+      "timestamp": "2025-07-21T07:41:54.314Z"
+    },
+    {
+      "url": "https://www.newrymournedown.org/weekly-bin-collections",
+      "method": "GET",
+      "status": 301,
+      "redirect_url": "https://www.newrymournedown.org/weekly-bin-collection-and-calendar",
+      "mime_type": "text/html; Charset=utf-8",
+      "size": -1,
+      "timestamp": "2025-07-21T07:41:56.398Z"
+    },
+    {
+      "url": "https://www.newrymournedown.org/weekly-bin-collection-and-calendar",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; Charset=utf-8",
+      "size": 133472,
+      "timestamp": "2025-07-21T07:41:56.468Z"
+    },
+    {
+      "url": "https://www.browsealoud.com/version.json",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 31,
+      "timestamp": "2025-07-21T07:41:56.898Z"
+    },
+    {
+      "url": "https://www.browsealoud.com/modules/3.9.7/sri.json",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 478,
+      "timestamp": "2025-07-21T07:41:56.972Z"
+    },
+    {
+      "url": "https://www.newrymournedown.org/images/general/manifest.json",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/manifest+json",
+      "size": 283,
+      "timestamp": "2025-07-21T07:41:56.972Z"
+    },
+    {
+      "url": "https://region1.analytics.google.com/g/collect?v=2&tid=G-34HB6C06LC&gtm=45je57g1v9125520173za200&_p=1753083716888&gcd=13l3l3l3l1l1&npa=0&dma=0&tag_exp=101509157~103116026~103200004~103233427~104684208~104684211&cid=1420795045.1753083714&ul=en-gb&sr=800x600&uaa=arm&uab=64&uafvl=Not)A%253BBrand%3B8.0.0.0%7CChromium%3B138.0.7204.101%7CGoogle%2520Chrome%3B138.0.7204.101&uamb=0&uam=&uap=macOS&uapv=15.5.0&uaw=0&are=1&frm=0&pscdl=noapi&_eu=AAAAAAQ&_s=1&sid=1753083714&sct=1&seg=1&dl=https%3A%2F%2Fwww.newrymournedown.org%2Fweekly-bin-collection-and-calendar&dr=https%3A%2F%2Fwww.newrymournedown.org%2Fbin-collection-information&dt=Weekly%20Bin%20Collections%20and%20Calendar&en=page_view&_ee=1&tfd=4341",
+      "method": "POST",
+      "status": 204,
+      "redirect_url": null,
+      "mime_type": "text/plain",
+      "size": -1,
+      "timestamp": "2025-07-21T07:42:00.695Z"
+    },
+    {
+      "url": "https://region1.analytics.google.com/g/collect?v=2&tid=G-34HB6C06LC&gtm=45je57g1v9125520173za200&_p=1753083716888&gcd=13l3l3l3l1l1&npa=0&dma=0&tag_exp=101509157~103116026~103200004~103233427~104684208~104684211&cid=1420795045.1753083714&ul=en-gb&sr=800x600&uaa=arm&uab=64&uafvl=Not)A%253BBrand%3B8.0.0.0%7CChromium%3B138.0.7204.101%7CGoogle%2520Chrome%3B138.0.7204.101&uamb=0&uam=&uap=macOS&uapv=15.5.0&uaw=0&are=1&frm=0&pscdl=noapi&_eu=AEEAAAQ&_s=2&sid=1753083714&sct=1&seg=1&dl=https%3A%2F%2Fwww.newrymournedown.org%2Fweekly-bin-collection-and-calendar&dr=https%3A%2F%2Fwww.newrymournedown.org%2Fbin-collection-information&dt=Weekly%20Bin%20Collections%20and%20Calendar&en=form_start&ep.form_id=mainbodyform&ep.form_name=mainbodyform&ep.form_destination=https%3A%2F%2Fwww.newrymournedown.org%2Fweekly-bin-collection-and-calendar%23search&epn.form_length=4&ep.first_field_id=PostcodeBT&ep.first_field_name=PostcodeBT&ep.first_field_type=&epn.first_field_position=1&_et=3740&tfd=9343",
+      "method": "POST",
+      "status": 204,
+      "redirect_url": null,
+      "mime_type": "text/plain",
+      "size": -1,
+      "timestamp": "2025-07-21T07:42:05.697Z"
+    },
+    {
+      "url": "https://www.newrymournedown.org//library/log-visit.asp",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 15,
+      "timestamp": "2025-07-21T07:42:09.901Z"
+    },
+    {
+      "url": "https://www.newrymournedown.org/weekly-bin-collection-and-calendar",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; Charset=utf-8",
+      "size": 144665,
+      "timestamp": "2025-07-21T07:42:21.208Z",
+      "form_data": {
+        "PostcodeBT": "BT24",
+        "PostcodeEND": "7AF",
+        "postback": "1",
+        "submit_btn": "SEARCH"
+      }
+    },
+    {
+      "url": "https://www.browsealoud.com/version.json",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 31,
+      "timestamp": "2025-07-21T07:42:22.603Z"
+    },
+    {
+      "url": "https://www.browsealoud.com/modules/3.9.7/sri.json",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 478,
+      "timestamp": "2025-07-21T07:42:22.630Z"
+    },
+    {
+      "url": "https://www.newrymournedown.org/images/general/manifest.json",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/manifest+json",
+      "size": 283,
+      "timestamp": "2025-07-21T07:42:22.631Z"
+    },
+    {
+      "url": "https://region1.analytics.google.com/g/collect?v=2&tid=G-34HB6C06LC&gtm=45je57g1v9125520173za200&_p=1753083742559&gcd=13l3l3l3l1l1&npa=0&dma=0&tag_exp=101509157~103116026~103200004~103233427~104684208~104684211&cid=1420795045.1753083714&ul=en-gb&sr=800x600&uaa=arm&uab=64&uafvl=Not)A%253BBrand%3B8.0.0.0%7CChromium%3B138.0.7204.101%7CGoogle%2520Chrome%3B138.0.7204.101&uamb=0&uam=&uap=macOS&uapv=15.5.0&uaw=0&are=1&frm=0&pscdl=noapi&_eu=AAAAAAQ&_s=1&sid=1753083714&sct=1&seg=1&dl=https%3A%2F%2Fwww.newrymournedown.org%2Fweekly-bin-collection-and-calendar&dr=https%3A%2F%2Fwww.newrymournedown.org%2Fweekly-bin-collection-and-calendar&dt=Weekly%20Bin%20Collections%20and%20Calendar&en=page_view&_ee=1&tfd=5940",
+      "method": "POST",
+      "status": 204,
+      "redirect_url": null,
+      "mime_type": "text/plain",
+      "size": -1,
+      "timestamp": "2025-07-21T07:42:27.096Z"
+    },
+    {
+      "url": "https://www.newrymournedown.org/bin-collections/TUE-Z2.pdf?v=5",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/pdf",
+      "size": 345,
+      "timestamp": "2025-07-21T07:42:27.156Z"
+    },
+    {
+      "url": "https://region1.analytics.google.com/g/collect?v=2&tid=G-34HB6C06LC&gtm=45je57g1v9125520173za200&_p=1753083742559&gcd=13l3l3l3l1l1&npa=0&dma=0&tag_exp=101509157~103116026~103200004~103233427~104684208~104684211&cid=1420795045.1753083714&ul=en-gb&sr=800x600&uaa=arm&uab=64&uafvl=Not)A%253BBrand%3B8.0.0.0%7CChromium%3B138.0.7204.101%7CGoogle%2520Chrome%3B138.0.7204.101&uamb=0&uam=&uap=macOS&uapv=15.5.0&uaw=0&are=1&frm=0&pscdl=noapi&_eu=AEAAAAQ&_s=2&sid=1753083714&sct=1&seg=1&dl=https%3A%2F%2Fwww.newrymournedown.org%2Fweekly-bin-collection-and-calendar&dr=https%3A%2F%2Fwww.newrymournedown.org%2Fweekly-bin-collection-and-calendar&dt=Weekly%20Bin%20Collections%20and%20Calendar&en=file_download&ep.link_id=&ep.link_url=https%3A%2F%2Fwww.newrymournedown.org%2Fbin-collections%2FTUE-Z2.pdf%3Fv%3D5&ep.link_text=View%20Schedule&ep.file_name=%2Fbin-collections%2FTUE-Z2.pdf&ep.file_extension=pdf&_et=4501&tfd=10941",
+      "method": "POST",
+      "status": 204,
+      "redirect_url": null,
+      "mime_type": "text/plain",
+      "size": -1,
+      "timestamp": "2025-07-21T07:42:32.098Z"
+    },
+    {
+      "url": "https://www.newrymournedown.org/weekly-bin-collection-and-calendar",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; Charset=utf-8",
+      "size": 133472,
+      "timestamp": "2025-07-21T07:42:49.107Z"
+    },
+    {
+      "url": "https://www.browsealoud.com/version.json",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 31,
+      "timestamp": "2025-07-21T07:42:49.903Z"
+    },
+    {
+      "url": "https://www.browsealoud.com/modules/3.9.7/sri.json",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 478,
+      "timestamp": "2025-07-21T07:42:49.947Z"
+    },
+    {
+      "url": "https://www.newrymournedown.org/images/general/manifest.json",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/manifest+json",
+      "size": 283,
+      "timestamp": "2025-07-21T07:42:49.947Z"
+    },
+    {
+      "url": "https://region1.analytics.google.com/g/collect?v=2&tid=G-34HB6C06LC&gtm=45je57g1v9125520173za200&_p=1753083769853&gcd=13l3l3l3l1l1&npa=0&dma=0&tag_exp=101509157~103116026~103200004~103233427~104684208~104684211&cid=1420795045.1753083714&ul=en-gb&sr=800x600&uaa=arm&uab=64&uafvl=Not)A%253BBrand%3B8.0.0.0%7CChromium%3B138.0.7204.101%7CGoogle%2520Chrome%3B138.0.7204.101&uamb=0&uam=&uap=macOS&uapv=15.5.0&uaw=0&are=1&frm=0&pscdl=noapi&_eu=AAAAAAQ&_s=1&sid=1753083714&sct=1&seg=1&dl=https%3A%2F%2Fwww.newrymournedown.org%2Fweekly-bin-collection-and-calendar&dr=https%3A%2F%2Fwww.newrymournedown.org%2Fbin-collection-information&dt=Weekly%20Bin%20Collections%20and%20Calendar&en=page_view&_ee=1&tfd=5789",
+      "method": "POST",
+      "status": 204,
+      "redirect_url": null,
+      "mime_type": "text/plain",
+      "size": -1,
+      "timestamp": "2025-07-21T07:42:54.898Z"
+    },
+    {
+      "url": "https://www.newrymournedown.org/bin-collection-information",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; Charset=utf-8",
+      "size": 134843,
+      "timestamp": "2025-07-21T07:43:53.532Z"
+    },
+    {
+      "url": "https://www.browsealoud.com/version.json",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 31,
+      "timestamp": "2025-07-21T07:43:53.604Z"
+    },
+    {
+      "url": "https://www.browsealoud.com/modules/3.9.7/sri.json",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 478,
+      "timestamp": "2025-07-21T07:43:53.658Z"
+    },
+    {
+      "url": "https://www.newrymournedown.org/images/general/manifest.json",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/manifest+json",
+      "size": 283,
+      "timestamp": "2025-07-21T07:43:53.658Z"
+    },
+    {
+      "url": "https://region1.analytics.google.com/g/collect?v=2&tid=G-34HB6C06LC&gtm=45je57g1v9125520173za200&_p=1753083833588&gcd=13l3l3l3l1l1&npa=0&dma=0&tag_exp=101509157~103116026~103200004~103233427~104684208~104684211&cid=1420795045.1753083714&ul=en-gb&sr=800x600&uaa=arm&uab=64&uafvl=Not)A%253BBrand%3B8.0.0.0%7CChromium%3B138.0.7204.101%7CGoogle%2520Chrome%3B138.0.7204.101&uamb=0&uam=&uap=macOS&uapv=15.5.0&uaw=0&are=1&frm=0&pscdl=noapi&_eu=AAAAAAQ&_s=1&sid=1753083714&sct=1&seg=1&dl=https%3A%2F%2Fwww.newrymournedown.org%2Fbin-collection-information&dt=Bin%20Collection%20Information&en=page_view&_ee=1&tfd=5084",
+      "method": "POST",
+      "status": 204,
+      "redirect_url": null,
+      "mime_type": "text/plain",
+      "size": -1,
+      "timestamp": "2025-07-21T07:43:58.618Z"
+    }
+  ]
+}

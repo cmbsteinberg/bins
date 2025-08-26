@@ -1,0 +1,333 @@
+{
+  "metadata": {
+    "trace_name": "great_yarmouth_borough_council",
+    "processed_at": "2025-08-26 18:44:24",
+    "workflow_steps_count": 8,
+    "navigation_events_count": 26
+  },
+  "scraping_patterns": {
+    "login_detected": false,
+    "form_submissions": 4,
+    "navigation_count": 1,
+    "unique_domains": [
+      "gybc-bot-server.ubisendaws.com",
+      "o356983.ingest.sentry.io",
+      "www.great-yarmouth.gov.uk",
+      "gybc-api.ubisend.io",
+      "myaccount.great-yarmouth.gov.uk",
+      "www.browsealoud.com"
+    ],
+    "api_endpoints": [
+      "https://www.browsealoud.com/version.json",
+      "https://www.browsealoud.com/modules/3.9.7/sri.json",
+      "https://o356983.ingest.sentry.io/api/5561265/envelope/?sentry_version=7&sentry_key=21682833592d45dfb6fd3525409f57cd&sentry_client=sentry.javascript.react%2F9.17.0",
+      "https://www.browsealoud.com/version.json",
+      "https://www.browsealoud.com/modules/3.9.7/sri.json",
+      "https://www.browsealoud.com/version.json",
+      "https://www.browsealoud.com/modules/3.9.7/sri.json",
+      "https://www.browsealoud.com/version.json",
+      "https://www.browsealoud.com/modules/3.9.7/sri.json",
+      "https://www.browsealoud.com/version.json",
+      "https://www.browsealoud.com/modules/3.9.7/sri.json"
+    ],
+    "data_extraction_indicators": []
+  },
+  "workflow_steps": [
+    {
+      "action": "goto",
+      "target": "http://www.great-yarmouth.gov.uk/rubbish-and-recycling",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e92 >> internal:describe=\"How do I find my bin collection day?\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e131 >> internal:describe=\"Find my waste collection days\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "fill",
+      "target": "aria-ref=e95 >> internal:describe=\"Address to Find *\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0,
+      "value": "NR29 3AJ"
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e99 >> internal:describe=\"PERFORM SEARCH\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "selectOption",
+      "target": "aria-ref=e181 >> internal:describe=\"Selected Address *\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0,
+      "value": null
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e109 >> internal:describe=\"LOOKUP COLLECTION DAYS\"",
+      "status": "Failed",
+      "details": {
+        "error": "Timeout 5000ms exceeded."
+      },
+      "timestamp": 0
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e109 >> internal:describe=\"LOOKUP COLLECTION DAYS\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    }
+  ],
+  "navigation_events": [
+    {
+      "url": "http://www.great-yarmouth.gov.uk/rubbish-and-recycling",
+      "method": "GET",
+      "status": 302,
+      "redirect_url": "https://www.great-yarmouth.gov.uk/rubbish-and-recycling",
+      "mime_type": "text/html; charset=utf-8",
+      "size": -1,
+      "timestamp": "2025-07-21T16:26:38.321Z"
+    },
+    {
+      "url": "https://www.great-yarmouth.gov.uk/rubbish-and-recycling",
+      "method": "GET",
+      "status": 302,
+      "redirect_url": "https://www.great-yarmouth.gov.uk/article/8296/About-waste-management",
+      "mime_type": "text/html; charset=utf-8",
+      "size": -1,
+      "timestamp": "2025-07-21T16:26:38.355Z"
+    },
+    {
+      "url": "https://www.great-yarmouth.gov.uk/article/8296/About-waste-management",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=utf-8",
+      "size": 57548,
+      "timestamp": "2025-07-21T16:26:38.421Z"
+    },
+    {
+      "url": "https://www.browsealoud.com/version.json",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 31,
+      "timestamp": "2025-07-21T16:26:38.654Z"
+    },
+    {
+      "url": "https://www.browsealoud.com/modules/3.9.7/sri.json",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 478,
+      "timestamp": "2025-07-21T16:26:38.693Z"
+    },
+    {
+      "url": "https://o356983.ingest.sentry.io/api/5561265/envelope/?sentry_version=7&sentry_key=21682833592d45dfb6fd3525409f57cd&sentry_client=sentry.javascript.react%2F9.17.0",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 2,
+      "timestamp": "2025-07-21T16:26:39.016Z"
+    },
+    {
+      "url": "https://gybc-bot-server.ubisendaws.com/socket.io/?EIO=4&transport=polling&t=biwxm29x",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/plain; charset=UTF-8",
+      "size": 97,
+      "timestamp": "2025-07-21T16:26:39.128Z"
+    },
+    {
+      "url": "https://gybc-api.ubisend.io/bot/converse/auth?client_id=pIfyhRHpTF&browser_url=https:%2F%2Fwww.great-yarmouth.gov.uk%2Farticle%2F8296%2FAbout-waste-management&setting=null&channel_driver_name=Converse",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": -1,
+      "timestamp": "2025-07-21T16:26:39.130Z"
+    },
+    {
+      "url": "https://gybc-bot-server.ubisendaws.com/socket.io/?EIO=4&transport=polling&t=biwzcv40&sid=DcWZQT9TL0LnQ-ROAZJe",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=utf-8",
+      "size": 2,
+      "timestamp": "2025-07-21T16:26:39.140Z"
+    },
+    {
+      "url": "https://gybc-bot-server.ubisendaws.com/socket.io/?EIO=4&transport=polling&t=biwzdc1p&sid=DcWZQT9TL0LnQ-ROAZJe",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/plain; charset=UTF-8",
+      "size": 32,
+      "timestamp": "2025-07-21T16:26:39.141Z"
+    },
+    {
+      "url": "https://gybc-bot-server.ubisendaws.com/socket.io/?EIO=4&transport=polling&t=biwzqqry&sid=DcWZQT9TL0LnQ-ROAZJe",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/plain; charset=UTF-8",
+      "size": 1,
+      "timestamp": "2025-07-21T16:26:39.144Z"
+    },
+    {
+      "url": "https://www.great-yarmouth.gov.uk/article/2332/How-do-I-find-my-bin-collection-day",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=utf-8",
+      "size": 57589,
+      "timestamp": "2025-07-21T16:26:40.519Z"
+    },
+    {
+      "url": "https://www.browsealoud.com/version.json",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 31,
+      "timestamp": "2025-07-21T16:26:40.687Z"
+    },
+    {
+      "url": "https://www.browsealoud.com/modules/3.9.7/sri.json",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 478,
+      "timestamp": "2025-07-21T16:26:40.698Z"
+    },
+    {
+      "url": "https://myaccount.great-yarmouth.gov.uk/find-my-waste-collection-days",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=utf-8",
+      "size": 126058,
+      "timestamp": "2025-07-21T16:26:43.230Z"
+    },
+    {
+      "url": "https://www.browsealoud.com/version.json",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 31,
+      "timestamp": "2025-07-21T16:26:44.907Z"
+    },
+    {
+      "url": "https://www.browsealoud.com/modules/3.9.7/sri.json",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 478,
+      "timestamp": "2025-07-21T16:26:44.921Z"
+    },
+    {
+      "url": "https://myaccount.great-yarmouth.gov.uk/apiserver/postcode",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=utf-8",
+      "size": 57091,
+      "timestamp": "2025-07-21T16:26:49.773Z"
+    },
+    {
+      "url": "https://myaccount.great-yarmouth.gov.uk/apiserver/formsservice/http/processsubmission?pageSessionId=f4f1f8c0-3122-4a16-9866-f7b9cbb612a1&fsid=df71a64d-a912-41df-a4ce-e3139dd93eca&fsn=71bef5a7-9cce-4eed-90b3-712f0d3667c1",
+      "method": "POST",
+      "status": 303,
+      "redirect_url": "https://myaccount.great-yarmouth.gov.uk/apiserver/formsservice/http/verifycookie?pageSessionId=f4f1f8c0-3122-4a16-9866-f7b9cbb612a1&fsid=df71a64d-a912-41df-a4ce-e3139dd93eca",
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:27:00.889Z"
+    },
+    {
+      "url": "https://myaccount.great-yarmouth.gov.uk/apiserver/formsservice/http/verifycookie?pageSessionId=f4f1f8c0-3122-4a16-9866-f7b9cbb612a1&fsid=df71a64d-a912-41df-a4ce-e3139dd93eca",
+      "method": "GET",
+      "status": 303,
+      "redirect_url": "https://myaccount.great-yarmouth.gov.uk/find-my-waste-collection-days?pageSessionId=f4f1f8c0-3122-4a16-9866-f7b9cbb612a1&fsn=8099cdcc-fe85-4d52-a1b5-1b1263f1e430",
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:27:01.579Z"
+    },
+    {
+      "url": "https://myaccount.great-yarmouth.gov.uk/find-my-waste-collection-days?pageSessionId=f4f1f8c0-3122-4a16-9866-f7b9cbb612a1&fsn=8099cdcc-fe85-4d52-a1b5-1b1263f1e430",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=utf-8",
+      "size": 67563,
+      "timestamp": "2025-07-21T16:27:01.644Z"
+    },
+    {
+      "url": "https://www.browsealoud.com/version.json",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 31,
+      "timestamp": "2025-07-21T16:27:07.668Z"
+    },
+    {
+      "url": "https://www.browsealoud.com/modules/3.9.7/sri.json",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 478,
+      "timestamp": "2025-07-21T16:27:07.676Z"
+    },
+    {
+      "url": "https://myaccount.great-yarmouth.gov.uk/bulky-item-collection-booking?wp=68479",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=utf-8",
+      "size": 57427,
+      "timestamp": "2025-07-21T16:27:11.458Z"
+    },
+    {
+      "url": "https://www.browsealoud.com/version.json",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 31,
+      "timestamp": "2025-07-21T16:27:12.562Z"
+    },
+    {
+      "url": "https://www.browsealoud.com/modules/3.9.7/sri.json",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 478,
+      "timestamp": "2025-07-21T16:27:12.564Z"
+    }
+  ]
+}

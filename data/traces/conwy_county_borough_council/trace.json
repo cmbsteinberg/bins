@@ -1,0 +1,206 @@
+{
+  "metadata": {
+    "trace_name": "conwy_county_borough_council",
+    "processed_at": "2025-08-26 18:44:24",
+    "workflow_steps_count": 7,
+    "navigation_events_count": 14
+  },
+  "scraping_patterns": {
+    "login_detected": false,
+    "form_submissions": 2,
+    "navigation_count": 1,
+    "unique_domains": [
+      "www.conwy.gov.uk"
+    ],
+    "api_endpoints": [],
+    "data_extraction_indicators": []
+  },
+  "workflow_steps": [
+    {
+      "action": "goto",
+      "target": "http://www.conwy.gov.uk/en/Resident/Recycling-and-Waste/Recycling-and-Waste.aspx",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e119 >> internal:describe=\"Check My Collection Day\"",
+      "status": "Failed",
+      "details": {
+        "error": "Timeout 5000ms exceeded."
+      },
+      "timestamp": 0
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e337 >> internal:describe=\"Accept all\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e119 >> internal:describe=\"Check My Collection Day\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "fill",
+      "target": "aria-ref=f1e8 >> internal:describe=\"Enter your post code\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0,
+      "value": "LL16 5HT"
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=f1e9 >> internal:describe=\"Submit\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=f1e8 >> internal:describe=\"1 Maes Aled, Llansannan, Denbigh, LL16 5HT\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    }
+  ],
+  "navigation_events": [
+    {
+      "url": "http://www.conwy.gov.uk/en/Resident/Recycling-and-Waste/Recycling-and-Waste.aspx",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=utf-8",
+      "size": 59809,
+      "timestamp": "2025-07-21T10:52:16.496Z"
+    },
+    {
+      "url": "http://www.conwy.gov.uk/SiteElements/Fonts/OpenSans-Regular-webfont.woff",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/x-font-woff",
+      "size": 19624,
+      "timestamp": "2025-07-21T10:52:16.822Z"
+    },
+    {
+      "url": "http://www.conwy.gov.uk/en/Resident/Recycling-and-Waste/Check-my-collection-day.aspx",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=utf-8",
+      "size": 29573,
+      "timestamp": "2025-07-21T10:52:28.603Z"
+    },
+    {
+      "url": "http://www.conwy.gov.uk/Contensis-Forms/erf/collection-postcode-soap1.asp?ilangid=1",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html",
+      "size": 1709,
+      "timestamp": "2025-07-21T10:52:28.804Z"
+    },
+    {
+      "url": "http://www.conwy.gov.uk/SiteElements/Fonts/OpenSans-Regular-webfont.woff",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/x-font-woff",
+      "size": -1,
+      "timestamp": "2025-07-21T10:52:28.809Z"
+    },
+    {
+      "url": "http://www.conwy.gov.uk/SiteElements/Fonts/OpenSans-Regular-webfont.woff",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/x-font-woff",
+      "size": -1,
+      "timestamp": "2025-07-21T10:52:28.864Z"
+    },
+    {
+      "url": "http://www.conwy.gov.uk/Contensis-Forms/erf/collection-address-soap.asp?ilangid=1",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html",
+      "size": 6821,
+      "timestamp": "2025-07-21T10:52:34.073Z",
+      "form_data": {
+        "pcode": "LL16 5HT"
+      }
+    },
+    {
+      "url": "http://www.conwy.gov.uk/SiteElements/Fonts/OpenSans-Regular-webfont.woff",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/x-font-woff",
+      "size": -1,
+      "timestamp": "2025-07-21T10:52:34.214Z"
+    },
+    {
+      "url": "http://www.conwy.gov.uk/Contensis-Forms/erf/collection-result-soap-xmas2025.asp?ilangid=1&uprn=100100945876",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html",
+      "size": 9849,
+      "timestamp": "2025-07-21T10:52:36.647Z"
+    },
+    {
+      "url": "http://www.conwy.gov.uk/SiteElements/Fonts/OpenSans-Regular-webfont.woff",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/x-font-woff",
+      "size": -1,
+      "timestamp": "2025-07-21T10:52:36.835Z"
+    },
+    {
+      "url": "http://www.conwy.gov.uk/Contensis-Forms/erf/collection-address-soap.asp?ilangid=1",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html",
+      "size": 6821,
+      "timestamp": "2025-07-21T10:52:43.618Z",
+      "form_data": {
+        "pcode": "LL16 5HT"
+      }
+    },
+    {
+      "url": "http://www.conwy.gov.uk/SiteElements/Fonts/OpenSans-Regular-webfont.woff",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/x-font-woff",
+      "size": -1,
+      "timestamp": "2025-07-21T10:52:43.627Z"
+    },
+    {
+      "url": "http://www.conwy.gov.uk/Contensis-Forms/erf/collection-postcode-soap1.asp?ilangid=1",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html",
+      "size": 1709,
+      "timestamp": "2025-07-21T10:53:45.394Z"
+    },
+    {
+      "url": "http://www.conwy.gov.uk/SiteElements/Fonts/OpenSans-Regular-webfont.woff",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/x-font-woff",
+      "size": -1,
+      "timestamp": "2025-07-21T10:53:45.410Z"
+    }
+  ]
+}

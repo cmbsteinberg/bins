@@ -1,0 +1,201 @@
+{
+  "metadata": {
+    "trace_name": "lisburn_and_castlereagh_city_council",
+    "processed_at": "2025-08-26 18:44:24",
+    "workflow_steps_count": 5,
+    "navigation_events_count": 15
+  },
+  "scraping_patterns": {
+    "login_detected": false,
+    "form_submissions": 5,
+    "navigation_count": 1,
+    "unique_domains": [
+      "www.lisburncastlereagh.gov.uk",
+      "apikeys.civiccomputing.com",
+      "b.clarity.ms",
+      "lisburn.isl-fusion.com",
+      "clapi.civiccomputing.com",
+      "www.browsealoud.com"
+    ],
+    "api_endpoints": [
+      "https://www.browsealoud.com/version.json",
+      "https://www.browsealoud.com/modules/3.9.7/sri.json"
+    ],
+    "data_extraction_indicators": []
+  },
+  "workflow_steps": [
+    {
+      "action": "goto",
+      "target": "https://www.lisburncastlereagh.gov.uk/resident/bins-recycling/when-is-my-bin-collection-day",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e17 >> internal:describe=\"I Accept Cookies\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "fill",
+      "target": "aria-ref=f1e8 >> internal:describe=\"Address\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0,
+      "value": "BT16 1AH"
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=f1e10 >> internal:describe=\"Search\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=f1e17 >> internal:describe=\"1 MILLREAGH GROVE, DUNDONALD. BT16 1AH\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    }
+  ],
+  "navigation_events": [
+    {
+      "url": "https://www.lisburncastlereagh.gov.uk/resident/bins-recycling/when-is-my-bin-collection-day",
+      "method": "GET",
+      "status": 302,
+      "redirect_url": "https://www.lisburncastlereagh.gov.uk/w/collection-days-and-holiday-information",
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:27:25.848Z"
+    },
+    {
+      "url": "https://www.lisburncastlereagh.gov.uk/w/collection-days-and-holiday-information",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html;charset=UTF-8",
+      "size": 131544,
+      "timestamp": "2025-07-21T16:27:25.892Z"
+    },
+    {
+      "url": "https://www.browsealoud.com/version.json",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 31,
+      "timestamp": "2025-07-21T16:27:27.202Z"
+    },
+    {
+      "url": "https://lisburn.isl-fusion.com/",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=UTF-8",
+      "size": 3256,
+      "timestamp": "2025-07-21T16:27:27.252Z"
+    },
+    {
+      "url": "https://www.lisburncastlereagh.gov.uk/c/portal/layout?p_l_id=379&p_p_cacheability=cacheLevelPage&p_p_id=com_placecube_digitalplace_announcements_banner_web_AnnouncementsBannerPortlet&p_p_lifecycle=2&p_p_resource_id=%2Fannouncements-banner%2Fget-configuration",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html;charset=UTF-8",
+      "size": 53,
+      "timestamp": "2025-07-21T16:27:27.271Z"
+    },
+    {
+      "url": "https://apikeys.civiccomputing.com/c/v?d=www.lisburncastlereagh.gov.uk&p=CookieControl%20Free&v=9&k=5a127a2bcd9f928ef937ffafbbac487793c54b69&format=json",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 145,
+      "timestamp": "2025-07-21T16:27:27.274Z"
+    },
+    {
+      "url": "https://www.browsealoud.com/modules/3.9.7/sri.json",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 478,
+      "timestamp": "2025-07-21T16:27:27.281Z"
+    },
+    {
+      "url": "https://b.clarity.ms/collect",
+      "method": "POST",
+      "status": 204,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": 0,
+      "timestamp": "2025-07-21T16:27:27.433Z"
+    },
+    {
+      "url": "https://b.clarity.ms/collect",
+      "method": "POST",
+      "status": 204,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": 0,
+      "timestamp": "2025-07-21T16:27:28.484Z"
+    },
+    {
+      "url": "https://clapi.civiccomputing.com/1/log?k=5a127a2bcd9f928ef937ffafbbac487793c54b69&d=www.lisburncastlereagh.gov.uk&u=undefined&c=%22%7B%5C%22necessaryCookies%5C%22%3A%5B%5D%2C%5C%22optionalCookies%5C%22%3A%7B%5C%22analytics%5C%22%3A%5C%22accepted%5C%22%7D%2C%5C%22statement%5C%22%3A%7B%7D%2C%5C%22consentDate%5C%22%3A1753115248831%2C%5C%22consentExpiry%5C%22%3A90%2C%5C%22interactedWith%5C%22%3Atrue%2C%5C%22user%5C%22%3A%5C%22A5115000-4D68-495A-82A4-810FDD3F62B0%5C%22%7D%22",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 13,
+      "timestamp": "2025-07-21T16:27:28.838Z"
+    },
+    {
+      "url": "https://b.clarity.ms/collect",
+      "method": "POST",
+      "status": 204,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": 0,
+      "timestamp": "2025-07-21T16:27:30.833Z"
+    },
+    {
+      "url": "https://lisburn.isl-fusion.com/address/bt16%201ah",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 5519,
+      "timestamp": "2025-07-21T16:27:34.104Z"
+    },
+    {
+      "url": "https://b.clarity.ms/collect",
+      "method": "POST",
+      "status": 204,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": 0,
+      "timestamp": "2025-07-21T16:27:35.061Z"
+    },
+    {
+      "url": "https://lisburn.isl-fusion.com/view/8D8Hfz6qFwLjnNi6/",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=UTF-8",
+      "size": 31306,
+      "timestamp": "2025-07-21T16:27:36.870Z"
+    },
+    {
+      "url": "https://b.clarity.ms/collect",
+      "method": "POST",
+      "status": 204,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": 0,
+      "timestamp": "2025-07-21T16:27:41.337Z"
+    }
+  ]
+}

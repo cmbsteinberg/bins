@@ -1,0 +1,301 @@
+{
+  "metadata": {
+    "trace_name": "torbay_council",
+    "processed_at": "2025-08-26 18:44:24",
+    "workflow_steps_count": 12,
+    "navigation_events_count": 17
+  },
+  "scraping_patterns": {
+    "login_detected": false,
+    "form_submissions": 4,
+    "navigation_count": 1,
+    "unique_domains": [
+      "www.torbay.gov.uk",
+      "selfservice-torbay.servicebuilder.co.uk"
+    ],
+    "api_endpoints": [
+      "https://www.torbay.gov.uk/umbraco/cookies/api/getconfig",
+      "https://www.torbay.gov.uk/icons/manifest.json",
+      "https://www.torbay.gov.uk/umbraco/cookies/api/getconfig",
+      "https://www.torbay.gov.uk/icons/manifest.json"
+    ],
+    "data_extraction_indicators": []
+  },
+  "workflow_steps": [
+    {
+      "action": "goto",
+      "target": "http://www.torbay.gov.uk/waste",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e58 >> internal:describe=\"When is my bin collected?\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e78 >> internal:describe=\"Find your bin collection dates Opens in a new window\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "fill",
+      "target": "aria-ref=e32 >> internal:describe=\"Enter post code or street name\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0,
+      "value": "TQ1 1BG"
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e33 >> internal:describe=\"Search\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "selectOption",
+      "target": "aria-ref=e103 >> internal:describe=\"Select address\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0,
+      "value": null
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e40 >> internal:describe=\"Submit\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e212 >> internal:describe=\"Check another property\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "fill",
+      "target": "aria-ref=e32 >> internal:describe=\"Enter post code or street name\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0,
+      "value": "TQ2 5AA"
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e33 >> internal:describe=\"Search\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "selectOption",
+      "target": "aria-ref=e103 >> internal:describe=\"Select address\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0,
+      "value": null
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e40 >> internal:describe=\"Submit\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    }
+  ],
+  "navigation_events": [
+    {
+      "url": "http://www.torbay.gov.uk/waste",
+      "method": "GET",
+      "status": 301,
+      "redirect_url": "https://www.torbay.gov.uk/waste",
+      "mime_type": "text/html; charset=iso-8859-1",
+      "size": -1,
+      "timestamp": "2025-07-21T16:36:32.291Z"
+    },
+    {
+      "url": "https://www.torbay.gov.uk/waste",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=utf-8",
+      "size": 72933,
+      "timestamp": "2025-07-21T16:36:32.340Z"
+    },
+    {
+      "url": "https://www.torbay.gov.uk/umbraco/cookies/api/getconfig",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=utf-8",
+      "size": 3583,
+      "timestamp": "2025-07-21T16:36:32.767Z"
+    },
+    {
+      "url": "https://www.torbay.gov.uk/icons/manifest.json",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 294,
+      "timestamp": "2025-07-21T16:36:32.773Z"
+    },
+    {
+      "url": "https://www.torbay.gov.uk/recycling/bin-collections/",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=utf-8",
+      "size": 69542,
+      "timestamp": "2025-07-21T16:36:33.807Z"
+    },
+    {
+      "url": "https://www.torbay.gov.uk/umbraco/cookies/api/getconfig",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=utf-8",
+      "size": 3583,
+      "timestamp": "2025-07-21T16:36:34.249Z"
+    },
+    {
+      "url": "https://www.torbay.gov.uk/icons/manifest.json",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 294,
+      "timestamp": "2025-07-21T16:36:34.264Z"
+    },
+    {
+      "url": "https://selfservice-torbay.servicebuilder.co.uk/renderform?t=62&k=09B72FF904A21A4B01A72AB6CCF28DC95105031C",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=utf-8",
+      "size": 23348,
+      "timestamp": "2025-07-21T16:36:37.004Z"
+    },
+    {
+      "url": "https://selfservice-torbay.servicebuilder.co.uk/ajax/refresh?i=02d63076-931a-45e5-8c4e-270504c7c892&o=62&s=0",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=utf-8",
+      "size": 2,
+      "timestamp": "2025-07-21T16:36:37.202Z"
+    },
+    {
+      "url": "https://selfservice-torbay.servicebuilder.co.uk/webfonts/fa-solid-900.woff2",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/font-woff2",
+      "size": 320080,
+      "timestamp": "2025-07-21T16:36:37.203Z"
+    },
+    {
+      "url": "https://selfservice-torbay.servicebuilder.co.uk/core/addresslookup",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=utf-8",
+      "size": 8426,
+      "timestamp": "2025-07-21T16:36:42.841Z",
+      "form_data": {
+        "query": "TQ1 1BG",
+        "searchNlpg": "False",
+        "classification": ""
+      }
+    },
+    {
+      "url": "https://selfservice-torbay.servicebuilder.co.uk/renderform/Form",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=utf-8",
+      "size": 992,
+      "timestamp": "2025-07-21T16:36:50.157Z",
+      "form_data": {
+        "__RequestVerificationToken": "BI0Ia2wmhQFvU_ckLq1urhELp2nILvGRbyu-Dy4DYNipC70iEhxvs52NOEI6-dBdKGdfcYgt77Cmr7IoG5M49Zj99rw1",
+        "FormGuid": "02d63076-931a-45e5-8c4e-270504c7c892",
+        "ObjectTemplateID": "62",
+        "Trigger": "submit",
+        "CurrentSectionID": "0",
+        "TriggerCtl": "",
+        "FF1168": "U100041187150",
+        "FF1168lbltxt": "Please select your address",
+        "FF1168-text": "TQ1 1BG"
+      }
+    },
+    {
+      "url": "https://selfservice-torbay.servicebuilder.co.uk/renderform?t=62&k=09B72FF904A21A4B01A72AB6CCF28DC95105031C",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=utf-8",
+      "size": 23348,
+      "timestamp": "2025-07-21T16:36:53.433Z"
+    },
+    {
+      "url": "https://selfservice-torbay.servicebuilder.co.uk/webfonts/fa-solid-900.woff2",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/font-woff2",
+      "size": -1,
+      "timestamp": "2025-07-21T16:36:53.469Z"
+    },
+    {
+      "url": "https://selfservice-torbay.servicebuilder.co.uk/ajax/refresh?i=208ae98b-cd1a-4f46-aa51-66b726354c08&o=62&s=0",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=utf-8",
+      "size": 2,
+      "timestamp": "2025-07-21T16:36:53.469Z"
+    },
+    {
+      "url": "https://selfservice-torbay.servicebuilder.co.uk/core/addresslookup",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=utf-8",
+      "size": 4365,
+      "timestamp": "2025-07-21T16:36:59.538Z",
+      "form_data": {
+        "query": "TQ2 5AA",
+        "searchNlpg": "False",
+        "classification": ""
+      }
+    },
+    {
+      "url": "https://selfservice-torbay.servicebuilder.co.uk/renderform/Form",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=utf-8",
+      "size": 967,
+      "timestamp": "2025-07-21T16:37:05.588Z",
+      "form_data": {
+        "__RequestVerificationToken": "ylQUlVHy4ZSsRA4AL5b-n_D5QrFikoLJt8JLjdveCedhFzvpxnczMP9t7VmkDtg5xDM9moCmjonhXuHFXz58h6UE8lg1",
+        "FormGuid": "208ae98b-cd1a-4f46-aa51-66b726354c08",
+        "ObjectTemplateID": "62",
+        "Trigger": "submit",
+        "CurrentSectionID": "0",
+        "TriggerCtl": "",
+        "FF1168": "U100040556252",
+        "FF1168lbltxt": "Please select your address",
+        "FF1168-text": "TQ2 5AA"
+      }
+    }
+  ]
+}

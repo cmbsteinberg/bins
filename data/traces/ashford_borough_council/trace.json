@@ -1,0 +1,234 @@
+{
+  "metadata": {
+    "trace_name": "ashford_borough_council",
+    "processed_at": "2025-08-26 18:44:24",
+    "workflow_steps_count": 9,
+    "navigation_events_count": 15
+  },
+  "scraping_patterns": {
+    "login_detected": false,
+    "form_submissions": 7,
+    "navigation_count": 1,
+    "unique_domains": [
+      "heatmaps.monsido.com",
+      "apikeys.civiccomputing.com",
+      "www.ashford.gov.uk",
+      "secure.ashford.gov.uk",
+      "pagecorrect.monsido.com",
+      "q.clarity.ms",
+      "translate.googleapis.com"
+    ],
+    "api_endpoints": [
+      "https://www.ashford.gov.uk/images/icons/favicon/manifest.json",
+      "https://heatmaps.monsido.com/v1/settings/P1a635YquGDMplU-MQhmtA.json",
+      "https://pagecorrect.monsido.com/v1/settings/P1a635YquGDMplU-MQhmtA.json"
+    ],
+    "data_extraction_indicators": []
+  },
+  "workflow_steps": [
+    {
+      "action": "goto",
+      "target": "http://www.ashford.gov.uk/waste",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e15 >> internal:describe=\"I Accept Cookies\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e61 >> internal:describe=\"Find My Bin Day\"",
+      "status": "Failed",
+      "details": {
+        "error": "Timeout 5000ms exceeded."
+      },
+      "timestamp": 0
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e265 >> internal:describe=\"No thanks\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e61 >> internal:describe=\"Find My Bin Day\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "fill",
+      "target": "aria-ref=e26 >> internal:describe=\"textbox\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0,
+      "value": "CT4 8AL"
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e27 >> internal:describe=\"Continue >\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "selectOption",
+      "target": "aria-ref=e101 >> internal:describe=\"combobox\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0,
+      "value": null
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e126 >> internal:describe=\"Continue >\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    }
+  ],
+  "navigation_events": [
+    {
+      "url": "http://www.ashford.gov.uk/waste",
+      "method": "GET",
+      "status": 301,
+      "redirect_url": "https://www.ashford.gov.uk/waste",
+      "mime_type": "text/html; charset=UTF-8",
+      "size": -1,
+      "timestamp": "2025-07-21T07:44:06.244Z"
+    },
+    {
+      "url": "https://www.ashford.gov.uk/waste",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=utf-8",
+      "size": 347938,
+      "timestamp": "2025-07-21T07:44:06.300Z"
+    },
+    {
+      "url": "https://apikeys.civiccomputing.com/c/v?d=www.ashford.gov.uk&p=CookieControl%20Multi-Site&v=9&k=75c2488d91e6a18440c3d9f645f6a6f0c3c43820&format=json",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 303,
+      "timestamp": "2025-07-21T07:44:07.593Z"
+    },
+    {
+      "url": "https://www.ashford.gov.uk/images/icons/favicon/manifest.json",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 720,
+      "timestamp": "2025-07-21T07:44:07.643Z"
+    },
+    {
+      "url": "https://heatmaps.monsido.com/v1/settings/P1a635YquGDMplU-MQhmtA.json",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 259,
+      "timestamp": "2025-07-21T07:44:07.696Z"
+    },
+    {
+      "url": "https://pagecorrect.monsido.com/v1/settings/P1a635YquGDMplU-MQhmtA.json",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 730,
+      "timestamp": "2025-07-21T07:44:07.696Z"
+    },
+    {
+      "url": "https://q.clarity.ms/collect",
+      "method": "POST",
+      "status": 204,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": 0,
+      "timestamp": "2025-07-21T07:44:09.045Z"
+    },
+    {
+      "url": "https://q.clarity.ms/collect",
+      "method": "POST",
+      "status": 204,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": 0,
+      "timestamp": "2025-07-21T07:44:09.217Z"
+    },
+    {
+      "url": "https://q.clarity.ms/collect",
+      "method": "POST",
+      "status": 204,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": 0,
+      "timestamp": "2025-07-21T07:44:14.474Z"
+    },
+    {
+      "url": "https://translate.googleapis.com/element/log?format=json&hasfast=true&authuser=0",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/plain; charset=UTF-8",
+      "size": 131,
+      "timestamp": "2025-07-21T07:44:18.115Z"
+    },
+    {
+      "url": "https://q.clarity.ms/collect",
+      "method": "POST",
+      "status": 204,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": 0,
+      "timestamp": "2025-07-21T07:44:18.375Z"
+    },
+    {
+      "url": "https://www.ashford.gov.uk/recycling-waste-and-bins/find-my-bin-collection-days/",
+      "method": "GET",
+      "status": 301,
+      "redirect_url": "https://secure.ashford.gov.uk/waste/collectiondaylookup/",
+      "mime_type": "text/html; charset=utf-8",
+      "size": -1,
+      "timestamp": "2025-07-21T07:44:20.957Z"
+    },
+    {
+      "url": "https://secure.ashford.gov.uk/waste/collectiondaylookup/",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=utf-8",
+      "size": 16486,
+      "timestamp": "2025-07-21T07:44:20.971Z"
+    },
+    {
+      "url": "https://secure.ashford.gov.uk/waste/collectiondaylookup/",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/plain; charset=utf-8",
+      "size": 19534,
+      "timestamp": "2025-07-21T07:44:26.962Z"
+    },
+    {
+      "url": "https://secure.ashford.gov.uk/waste/collectiondaylookup/",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/plain; charset=utf-8",
+      "size": 24261,
+      "timestamp": "2025-07-21T07:44:32.042Z"
+    }
+  ]
+}

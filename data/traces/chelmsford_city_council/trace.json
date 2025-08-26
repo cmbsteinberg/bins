@@ -1,0 +1,230 @@
+{
+  "metadata": {
+    "trace_name": "chelmsford_city_council",
+    "processed_at": "2025-08-26 18:44:24",
+    "workflow_steps_count": 8,
+    "navigation_events_count": 16
+  },
+  "scraping_patterns": {
+    "login_detected": false,
+    "form_submissions": 3,
+    "navigation_count": 1,
+    "unique_domains": [
+      "www.chelmsford.gov.uk",
+      "customer.cludo.com",
+      "region1.analytics.google.com",
+      "apikeys.civiccomputing.com"
+    ],
+    "api_endpoints": [],
+    "data_extraction_indicators": []
+  },
+  "workflow_steps": [
+    {
+      "action": "goto",
+      "target": "https://www.chelmsford.gov.uk/bins-and-recycling/check-your-collection-day/",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "fill",
+      "target": "aria-ref=e89 >> internal:describe=\"Search by address or postcode\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0,
+      "value": "CM1 1AE"
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e92 >> internal:describe=\"Search\"",
+      "status": "Failed",
+      "details": {
+        "error": "Timeout 5000ms exceeded."
+      },
+      "timestamp": 0
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e291 >> internal:describe=\"ACCEPT\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e92 >> internal:describe=\"Search\"",
+      "status": "Failed",
+      "details": {
+        "error": "Timeout 5000ms exceeded."
+      },
+      "timestamp": 0
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e92 >> internal:describe=\"Search\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e99 >> internal:describe=\"Search\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e112 >> internal:describe=\"view or download the collection calendar\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    }
+  ],
+  "navigation_events": [
+    {
+      "url": "https://www.chelmsford.gov.uk/bins-and-recycling/check-your-collection-day/",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=utf-8",
+      "size": 36405,
+      "timestamp": "2025-07-21T16:45:18.879Z"
+    },
+    {
+      "url": "https://www.chelmsford.gov.uk/sb/core-js.js.v638884732374824451",
+      "method": "GET",
+      "status": 301,
+      "redirect_url": "https://www.chelmsford.gov.uk/sb/core-js.js.v638884732374824451/",
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:45:20.334Z"
+    },
+    {
+      "url": "https://www.chelmsford.gov.uk/public/css/icomoon/fonts/icomoon.ttf?on3np8",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/x-font-ttf",
+      "size": 218868,
+      "timestamp": "2025-07-21T16:45:20.399Z"
+    },
+    {
+      "url": "https://apikeys.civiccomputing.com/c/v?d=www.chelmsford.gov.uk&p=CookieControl%20Single-Site&v=9&k=206deebef2fc88294f5a19e4c75407872cbc82f3&format=json",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 307,
+      "timestamp": "2025-07-21T16:45:21.592Z"
+    },
+    {
+      "url": "https://www.chelmsford.gov.uk/bins-and-recycling/check-your-collection-day/?14532_keyword=CM1+1AE",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=utf-8",
+      "size": 47883,
+      "timestamp": "2025-07-21T16:45:44.875Z"
+    },
+    {
+      "url": "https://customer.cludo.com/css/templates/v2.1/essentials/cludo-search.min.css",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:45:56.196Z"
+    },
+    {
+      "url": "https://www.chelmsford.gov.uk/sb/core-js.js.v638884732374824451",
+      "method": "GET",
+      "status": 301,
+      "redirect_url": "https://www.chelmsford.gov.uk/sb/core-js.js.v638884732374824451/",
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:45:56.211Z"
+    },
+    {
+      "url": "https://www.chelmsford.gov.uk/public/css/icomoon/fonts/icomoon.ttf?on3np8",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/x-font-ttf",
+      "size": -1,
+      "timestamp": "2025-07-21T16:45:56.279Z"
+    },
+    {
+      "url": "https://apikeys.civiccomputing.com/c/v?d=www.chelmsford.gov.uk&p=CookieControl%20Single-Site&v=9&k=206deebef2fc88294f5a19e4c75407872cbc82f3&format=json",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 307,
+      "timestamp": "2025-07-21T16:45:56.287Z"
+    },
+    {
+      "url": "https://region1.analytics.google.com/g/collect?v=2&tid=G-45D9M3CFMD&gtm=45je57h0v9105111749z876082256za200zb76082256&_p=1753116356193&gcs=G111&gcd=13r3r3l3l5l1&npa=0&dma=0&tag_exp=101509157~103116026~103200004~103233427~104684208~104684211&cid=889699925.1753116322&ul=en-gb&sr=800x600&uaa=arm&uab=64&uafvl=Not)A%253BBrand%3B8.0.0.0%7CChromium%3B138.0.7204.101%7CGoogle%2520Chrome%3B138.0.7204.101&uamb=0&uam=&uap=macOS&uapv=15.5.0&uaw=0&are=1&frm=0&pscdl=noapi&_eu=AAAAAAQ&_s=1&sid=1753116321&sct=1&seg=1&dl=https%3A%2F%2Fwww.chelmsford.gov.uk%2Fbins-and-recycling%2Fcheck-your-collection-day%2F%3F14532_keyword%3DCM1%2B1AE&dr=https%3A%2F%2Fwww.chelmsford.gov.uk%2Fbins-and-recycling%2Fcheck-your-collection-day%2F&dt=Check%20your%20collection%20day&en=page_view&tfd=11538",
+      "method": "POST",
+      "status": 204,
+      "redirect_url": null,
+      "mime_type": "text/plain",
+      "size": -1,
+      "timestamp": "2025-07-21T16:45:56.309Z"
+    },
+    {
+      "url": "https://region1.analytics.google.com/g/collect?v=2&tid=G-45D9M3CFMD&gtm=45je57h0v9105111749za200zb76082256&_p=1753116356193&gcs=G111&gcd=13r3r3l3l5l1&npa=0&dma=0&tag_exp=101509157~103116026~103200004~103233427~104684208~104684211&cid=889699925.1753116322&ul=en-gb&sr=800x600&uaa=arm&uab=64&uafvl=Not)A%253BBrand%3B8.0.0.0%7CChromium%3B138.0.7204.101%7CGoogle%2520Chrome%3B138.0.7204.101&uamb=0&uam=&uap=macOS&uapv=15.5.0&uaw=0&are=1&frm=0&pscdl=noapi&_eu=AEAAAAQ&_s=2&sid=1753116321&sct=1&seg=1&dl=https%3A%2F%2Fwww.chelmsford.gov.uk%2Fbins-and-recycling%2Fcheck-your-collection-day%2F%3F14532_keyword%3DCM1%2B1AE&dr=https%3A%2F%2Fwww.chelmsford.gov.uk%2Fbins-and-recycling%2Fcheck-your-collection-day%2F&dt=Check%20your%20collection%20day&en=scroll&epn.percent_scrolled=90&tfd=16540",
+      "method": "POST",
+      "status": 204,
+      "redirect_url": null,
+      "mime_type": "text/plain",
+      "size": -1,
+      "timestamp": "2025-07-21T16:46:01.311Z"
+    },
+    {
+      "url": "https://www.chelmsford.gov.uk/bins-and-recycling/check-your-collection-day/thursday-b-collection-calendar/",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=utf-8",
+      "size": 34069,
+      "timestamp": "2025-07-21T16:46:05.344Z"
+    },
+    {
+      "url": "https://www.chelmsford.gov.uk/sb/core-js.js.v638884732374824451",
+      "method": "GET",
+      "status": 301,
+      "redirect_url": "https://www.chelmsford.gov.uk/sb/core-js.js.v638884732374824451/",
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:46:05.391Z"
+    },
+    {
+      "url": "https://www.chelmsford.gov.uk/public/css/icomoon/fonts/icomoon.ttf?on3np8",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/x-font-ttf",
+      "size": 218868,
+      "timestamp": "2025-07-21T16:46:05.420Z"
+    },
+    {
+      "url": "https://apikeys.civiccomputing.com/c/v?d=www.chelmsford.gov.uk&p=CookieControl%20Single-Site&v=9&k=206deebef2fc88294f5a19e4c75407872cbc82f3&format=json",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 307,
+      "timestamp": "2025-07-21T16:46:05.498Z"
+    },
+    {
+      "url": "https://region1.analytics.google.com/g/collect?v=2&tid=G-45D9M3CFMD&gtm=45je57h0v9105111749z876082256za200zb76082256&_p=1753116365388&_gaz=1&gcs=G111&gcd=13r3r3l3l5l1&npa=0&dma=0&tag_exp=101509157~103116026~103200004~103233427~104684208~104684211&cid=889699925.1753116322&ul=en-gb&sr=800x600&uaa=arm&uab=64&uafvl=Not)A%253BBrand%3B8.0.0.0%7CChromium%3B138.0.7204.101%7CGoogle%2520Chrome%3B138.0.7204.101&uamb=0&uam=&uap=macOS&uapv=15.5.0&uaw=0&are=1&frm=0&pscdl=noapi&_s=1&sid=1753116365&sct=1&seg=0&dl=https%3A%2F%2Fwww.chelmsford.gov.uk%2Fbins-and-recycling%2Fcheck-your-collection-day%2Fthursday-b-collection-calendar%2F&dr=https%3A%2F%2Fwww.chelmsford.gov.uk%2Fbins-and-recycling%2Fcheck-your-collection-day%2F%3F14532_keyword%3DCM1%2B1AE&dt=Thursday%20B%20collection%20calendar&en=page_view&_fv=1&_ss=1&tfd=220",
+      "method": "POST",
+      "status": 204,
+      "redirect_url": null,
+      "mime_type": "text/plain",
+      "size": -1,
+      "timestamp": "2025-07-21T16:46:05.520Z"
+    }
+  ]
+}

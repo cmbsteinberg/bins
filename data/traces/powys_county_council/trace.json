@@ -1,0 +1,226 @@
+{
+  "metadata": {
+    "trace_name": "powys_county_council",
+    "processed_at": "2025-08-26 18:44:24",
+    "workflow_steps_count": 7,
+    "navigation_events_count": 15
+  },
+  "scraping_patterns": {
+    "login_detected": false,
+    "form_submissions": 2,
+    "navigation_count": 1,
+    "unique_domains": [
+      "www.powys.gov.uk",
+      "en.powys.gov.uk"
+    ],
+    "api_endpoints": [
+      "https://en.powys.gov.uk/manifest.json",
+      "https://en.powys.gov.uk/manifest.json",
+      "https://en.powys.gov.uk/manifest.json"
+    ],
+    "data_extraction_indicators": []
+  },
+  "workflow_steps": [
+    {
+      "action": "goto",
+      "target": "http://www.powys.gov.uk/en/bins-rubbish-recycling/report-a-bin-collection-problem/",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e14 >> internal:describe=\"Accept all button\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e138 >> internal:describe=\"Bin collection day link\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "fill",
+      "target": "aria-ref=e63 >> internal:describe=\"Postcode textbox\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0,
+      "value": "CF44 9JE"
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e66 >> internal:describe=\"Find address button\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "selectOption",
+      "target": "aria-ref=e69 >> internal:describe=\"Address combobox\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0,
+      "value": null
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e162 >> internal:describe=\"Next button\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    }
+  ],
+  "navigation_events": [
+    {
+      "url": "http://www.powys.gov.uk/en/bins-rubbish-recycling/report-a-bin-collection-problem/",
+      "method": "GET",
+      "status": 301,
+      "redirect_url": "https://www.powys.gov.uk/en/bins-rubbish-recycling/report-a-bin-collection-problem/",
+      "mime_type": "text/html; charset=iso-8859-1",
+      "size": -1,
+      "timestamp": "2025-07-21T10:26:51.729Z"
+    },
+    {
+      "url": "https://www.powys.gov.uk/en/bins-rubbish-recycling/report-a-bin-collection-problem/",
+      "method": "GET",
+      "status": 301,
+      "redirect_url": "https://en.powys.gov.uk/",
+      "mime_type": "text/html; charset=iso-8859-1",
+      "size": -1,
+      "timestamp": "2025-07-21T10:26:51.790Z"
+    },
+    {
+      "url": "https://en.powys.gov.uk/",
+      "method": "GET",
+      "status": 302,
+      "redirect_url": "https://en.powys.gov.uk/?ccp=true",
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T10:26:51.879Z"
+    },
+    {
+      "url": "https://en.powys.gov.uk/?ccp=true",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html;charset=UTF-8",
+      "size": 55222,
+      "timestamp": "2025-07-21T10:26:51.956Z"
+    },
+    {
+      "url": "https://en.powys.gov.uk/fonts/icons.woff?m=1750678418000",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/x-font-woff",
+      "size": 50876,
+      "timestamp": "2025-07-21T10:26:52.206Z"
+    },
+    {
+      "url": "https://en.powys.gov.uk/manifest.json",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json;charset=utf-8",
+      "size": 798,
+      "timestamp": "2025-07-21T10:26:52.319Z"
+    },
+    {
+      "url": "https://en.powys.gov.uk/article/10159/Cookie-Consent",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": 0,
+      "timestamp": "2025-07-21T10:26:53.487Z"
+    },
+    {
+      "url": "https://en.powys.gov.uk/binday",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html;charset=UTF-8",
+      "size": 60177,
+      "timestamp": "2025-07-21T10:26:55.843Z"
+    },
+    {
+      "url": "https://en.powys.gov.uk/fonts/icons.woff?m=1750678418000",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/x-font-woff",
+      "size": 50876,
+      "timestamp": "2025-07-21T10:26:56.347Z"
+    },
+    {
+      "url": "https://en.powys.gov.uk/manifest.json",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json;charset=utf-8",
+      "size": 798,
+      "timestamp": "2025-07-21T10:26:56.350Z"
+    },
+    {
+      "url": "https://en.powys.gov.uk/apiserver/formsservice/http/processsubmission?pageSessionId=8d80eeef-95e4-43a9-ba2b-d073fb05cc45&fsid=39810429-ddd0-4555-95df-61fcc325ad6c&fsn=4b5f95ae-b4bb-4d9c-8939-1f0f4cfa86d0",
+      "method": "POST",
+      "status": 303,
+      "redirect_url": "https://en.powys.gov.uk/apiserver/formsservice/http/verifycookie?pageSessionId=8d80eeef-95e4-43a9-ba2b-d073fb05cc45&fsid=39810429-ddd0-4555-95df-61fcc325ad6c",
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T10:27:15.389Z",
+      "form_data": {
+        "BINDAYLOOKUP_PAGESESSIONID": "8d80eeef-95e4-43a9-ba2b-d073fb05cc45",
+        "BINDAYLOOKUP_SESSIONID": "39810429-ddd0-4555-95df-61fcc325ad6c",
+        "BINDAYLOOKUP_NONCE": "4b5f95ae-b4bb-4d9c-8939-1f0f4cfa86d0",
+        "BINDAYLOOKUP_VARIABLES": "e30=",
+        "BINDAYLOOKUP_PAGENAME": "ADDRESSLOOKUP",
+        "BINDAYLOOKUP_PAGEINSTANCE": "0",
+        "BINDAYLOOKUP_ADDRESSLOOKUP_ADDRESSLOOKUPPOSTCODE": "CF44 9JE",
+        "BINDAYLOOKUP_ADDRESSLOOKUP_ADDRESSLOOKUPADDRESS": "0",
+        "BINDAYLOOKUP_ADDRESSLOOKUP_POSTALADDRESS": "ABERLLIA FARM, YSTRADFELLTE, ABERDARE, CF44 9JE",
+        "BINDAYLOOKUP_ADDRESSLOOKUP_UPRN": "10011806367",
+        "BINDAYLOOKUP_FORMACTION_NEXT": "BINDAYLOOKUP_ADDRESSLOOKUP_ADDRESSLOOKUPBUTTONS"
+      }
+    },
+    {
+      "url": "https://en.powys.gov.uk/apiserver/formsservice/http/verifycookie?pageSessionId=8d80eeef-95e4-43a9-ba2b-d073fb05cc45&fsid=39810429-ddd0-4555-95df-61fcc325ad6c",
+      "method": "GET",
+      "status": 303,
+      "redirect_url": "https://en.powys.gov.uk/binday?pageSessionId=8d80eeef-95e4-43a9-ba2b-d073fb05cc45&fsn=3f708130-0ad5-4d8f-9491-738ff207ab96",
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T10:27:15.601Z"
+    },
+    {
+      "url": "https://en.powys.gov.uk/binday?pageSessionId=8d80eeef-95e4-43a9-ba2b-d073fb05cc45&fsn=3f708130-0ad5-4d8f-9491-738ff207ab96",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html;charset=UTF-8",
+      "size": 57225,
+      "timestamp": "2025-07-21T10:27:15.643Z"
+    },
+    {
+      "url": "https://en.powys.gov.uk/fonts/icons.woff?m=1750678418000",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/x-font-woff",
+      "size": -1,
+      "timestamp": "2025-07-21T10:27:16.925Z"
+    },
+    {
+      "url": "https://en.powys.gov.uk/manifest.json",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json;charset=utf-8",
+      "size": 798,
+      "timestamp": "2025-07-21T10:27:16.991Z"
+    }
+  ]
+}

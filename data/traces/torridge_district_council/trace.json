@@ -1,0 +1,335 @@
+{
+  "metadata": {
+    "trace_name": "torridge_district_council",
+    "processed_at": "2025-08-26 18:44:24",
+    "workflow_steps_count": 5,
+    "navigation_events_count": 29
+  },
+  "scraping_patterns": {
+    "login_detected": false,
+    "form_submissions": 7,
+    "navigation_count": 1,
+    "unique_domains": [
+      "www.google.com",
+      "maps.googleapis.com",
+      "www.torridge.gov.uk",
+      "geocode.arcgis.com",
+      "nominatim.openstreetmap.org",
+      "torridgedc-self.achieveservice.com"
+    ],
+    "api_endpoints": [
+      "https://maps.googleapis.com/maps/api/mapsjs/gen_204?csp_test=true",
+      "https://torridgedc-self.achieveservice.com/api/self/self-content/getByKeyAndApp?language=en&key=FORM_LOADING_TEXT&app=SELF_CORE&_=1753085173764&sid=e5d814910c6893c3029f54324812968f",
+      "https://torridgedc-self.achieveservice.com/api/get-document/json?uri=sandbox-publish%3A%2F%2FAF-Process-bb925b16-12f7-4233-9b77-c644617535f6%2FAF-Stage-a963b8c5-2715-4d5d-805c-18e16c033612%2Fdefinition.json&_=1753085173811&sid=e5d814910c6893c3029f54324812968f",
+      "https://torridgedc-self.achieveservice.com/api/get-document/json?uri=sandbox-publish%3A%2F%2FAF-Process-bb925b16-12f7-4233-9b77-c644617535f6%2Fdefinition.json&_=1753085173992&sid=e5d814910c6893c3029f54324812968f",
+      "https://torridgedc-self.achieveservice.com/api/queue-processor-config/get?_=1753085174172&sid=e5d814910c6893c3029f54324812968f",
+      "https://torridgedc-self.achieveservice.com/api/nextref?_=1753085174172&sid=e5d814910c6893c3029f54324812968f",
+      "https://torridgedc-self.achieveservice.com/api/af-configs-list/list?_=1753085174171&sid=e5d814910c6893c3029f54324812968f",
+      "https://torridgedc-self.achieveservice.com/api/get-document/json?uri=sandbox-publish%3A%2F%2FAF-Process-bb925b16-12f7-4233-9b77-c644617535f6%2FAF-Stage-a963b8c5-2715-4d5d-805c-18e16c033612%2FAF-Form-0e7afc52-6449-4f1d-a9c8-28095c98f67e%2Fdefinition.json&_=1753085184587&sid=e5d814910c6893c3029f54324812968f",
+      "https://geocode.arcgis.com/arcgis/rest/services/World/GeocodeServer/?f=json"
+    ],
+    "data_extraction_indicators": []
+  },
+  "workflow_steps": [
+    {
+      "action": "goto",
+      "target": "https://www.torridge.gov.uk/forms/firmstep/wastecalendar.html",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e9 >> internal:describe=\"button \\\"Close\\\"\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "fill",
+      "target": "aria-ref=f1e45 >> internal:describe=\"textbox \\\"Enter your postcodeRequired\\\"\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0,
+      "value": "EX18 7QE"
+    },
+    {
+      "action": "selectOption",
+      "target": "aria-ref=f1e58 >> internal:describe=\"combobox\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0,
+      "value": null
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=f1e96 >> internal:describe=\"button \\\"Next \uf054\\\"\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    }
+  ],
+  "navigation_events": [
+    {
+      "url": "https://www.torridge.gov.uk/forms/firmstep/wastecalendar.html",
+      "method": "GET",
+      "status": 301,
+      "redirect_url": "https://www.torridge.gov.uk/collectiondates",
+      "mime_type": "text/html; charset=utf-8",
+      "size": -1,
+      "timestamp": "2025-07-21T08:06:11.001Z"
+    },
+    {
+      "url": "https://www.torridge.gov.uk/collectiondates",
+      "method": "GET",
+      "status": 301,
+      "redirect_url": "https://torridgedc-self.achieveservice.com/service/My_property_information",
+      "mime_type": "text/html; charset=utf-8",
+      "size": -1,
+      "timestamp": "2025-07-21T08:06:11.111Z"
+    },
+    {
+      "url": "https://torridgedc-self.achieveservice.com/service/My_property_information",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=UTF-8",
+      "size": 28812,
+      "timestamp": "2025-07-21T08:06:11.125Z"
+    },
+    {
+      "url": "https://www.google.com/jsapi",
+      "method": "GET",
+      "status": 301,
+      "redirect_url": "https://www.gstatic.com/charts/loader.js",
+      "mime_type": "text/html; charset=UTF-8",
+      "size": -1,
+      "timestamp": "2025-07-21T08:06:12.522Z"
+    },
+    {
+      "url": "https://torridgedc-self.achieveservice.com/authapi/isauthenticated?uri=https%253A%252F%252Ftorridgedc-self.achieveservice.com%252Fservice%252FMy_property_information&hostname=torridgedc-self.achieveservice.com&withCredentials=true",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=utf-8",
+      "size": 1889,
+      "timestamp": "2025-07-21T08:06:12.788Z"
+    },
+    {
+      "url": "https://torridgedc-self.achieveservice.com/apibroker/domain/torridgedc-self.achieveservice.com?_=1753085172803&sid=e5d814910c6893c3029f54324812968f",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 258,
+      "timestamp": "2025-07-21T08:06:12.907Z"
+    },
+    {
+      "url": "https://torridgedc-self.achieveservice.com/apibroker/domain/torridgedc-self.achieveservice.com?_=1753085172778&sid=e5d814910c6893c3029f54324812968f",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 258,
+      "timestamp": "2025-07-21T08:06:12.907Z"
+    },
+    {
+      "url": "https://torridgedc-self.achieveservice.com/apibroker/self-settings?keys=CustomIFrameCss%2CCustomCssInline&app_name=Self&_=1753085172875&sid=e5d814910c6893c3029f54324812968f",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=UTF-8",
+      "size": 216,
+      "timestamp": "2025-07-21T08:06:12.907Z"
+    },
+    {
+      "url": "https://torridgedc-self.achieveservice.com/fillform/?iframe_id=fillform-frame-1&db_id=",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=UTF-8",
+      "size": 4333,
+      "timestamp": "2025-07-21T08:06:12.958Z"
+    },
+    {
+      "url": "https://www.google.com/jsapi?key=AIzaSyDMYR3xNkRwUG-OsKEC4WVi1ptWIPzybMs",
+      "method": "GET",
+      "status": 301,
+      "redirect_url": "https://www.gstatic.com/charts/loader.js?key=AIzaSyDMYR3xNkRwUG-OsKEC4WVi1ptWIPzybMs",
+      "mime_type": "text/html; charset=UTF-8",
+      "size": -1,
+      "timestamp": "2025-07-21T08:06:13.483Z"
+    },
+    {
+      "url": "https://maps.googleapis.com/maps/api/mapsjs/gen_204?csp_test=true",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=UTF-8",
+      "size": 3,
+      "timestamp": "2025-07-21T08:06:13.761Z"
+    },
+    {
+      "url": "https://torridgedc-self.achieveservice.com/api/self/self-content/getByKeyAndApp?language=en&key=FORM_LOADING_TEXT&app=SELF_CORE&_=1753085173764&sid=e5d814910c6893c3029f54324812968f",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 169,
+      "timestamp": "2025-07-21T08:06:13.778Z"
+    },
+    {
+      "url": "https://torridgedc-self.achieveservice.com/api/get-document/json?uri=sandbox-publish%3A%2F%2FAF-Process-bb925b16-12f7-4233-9b77-c644617535f6%2FAF-Stage-a963b8c5-2715-4d5d-805c-18e16c033612%2Fdefinition.json&_=1753085173811&sid=e5d814910c6893c3029f54324812968f",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 64794,
+      "timestamp": "2025-07-21T08:06:13.812Z"
+    },
+    {
+      "url": "https://torridgedc-self.achieveservice.com/api/get-document/json?uri=sandbox-publish%3A%2F%2FAF-Process-bb925b16-12f7-4233-9b77-c644617535f6%2Fdefinition.json&_=1753085173992&sid=e5d814910c6893c3029f54324812968f",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 5398,
+      "timestamp": "2025-07-21T08:06:13.994Z"
+    },
+    {
+      "url": "https://torridgedc-self.achieveservice.com/api/queue-processor-config/get?_=1753085174172&sid=e5d814910c6893c3029f54324812968f",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 38,
+      "timestamp": "2025-07-21T08:06:14.177Z"
+    },
+    {
+      "url": "https://torridgedc-self.achieveservice.com/api/nextref?_=1753085174172&sid=e5d814910c6893c3029f54324812968f",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 116,
+      "timestamp": "2025-07-21T08:06:14.177Z"
+    },
+    {
+      "url": "https://torridgedc-self.achieveservice.com/apibroker/environment-tokens-public?app_name=AF-Renderer::Self&_=1753085174173&sid=e5d814910c6893c3029f54324812968f",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=UTF-8",
+      "size": 5517,
+      "timestamp": "2025-07-21T08:06:14.177Z"
+    },
+    {
+      "url": "https://torridgedc-self.achieveservice.com/api/af-configs-list/list?_=1753085174171&sid=e5d814910c6893c3029f54324812968f",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 1212,
+      "timestamp": "2025-07-21T08:06:14.177Z"
+    },
+    {
+      "url": "https://torridgedc-self.achieveservice.com/apibroker/location?app_name=AF-Renderer::Self&_=1753085174174&sid=e5d814910c6893c3029f54324812968f",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=UTF-8",
+      "size": 272,
+      "timestamp": "2025-07-21T08:06:14.178Z"
+    },
+    {
+      "url": "https://torridgedc-self.achieveservice.com/apibroker/runLookup?id=5a3aefaf052d9&repeat_against=&noRetry=false&getOnlyTokens=undefined&log_id=&app_name=AF-Renderer::Self&_=1753085174270&sid=e5d814910c6893c3029f54324812968f",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=UTF-8",
+      "size": 2814,
+      "timestamp": "2025-07-21T08:06:14.276Z"
+    },
+    {
+      "url": "https://torridgedc-self.achieveservice.com/apibroker/runLookup?id=5a3aefaf052d9&repeat_against=&noRetry=false&getOnlyTokens=undefined&log_id=&app_name=AF-Renderer::Self&_=1753085178275&sid=e5d814910c6893c3029f54324812968f",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=UTF-8",
+      "size": 88955,
+      "timestamp": "2025-07-21T08:06:18.280Z"
+    },
+    {
+      "url": "https://torridgedc-self.achieveservice.com/apibroker/runLookup?id=6583107397653&repeat_against=&noRetry=true&getOnlyTokens=undefined&log_id=&app_name=AF-Renderer::Self&_=1753085180419&sid=e5d814910c6893c3029f54324812968f",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=UTF-8",
+      "size": 2079,
+      "timestamp": "2025-07-21T08:06:20.422Z"
+    },
+    {
+      "url": "https://torridgedc-self.achieveservice.com/api/get-document/json?uri=sandbox-publish%3A%2F%2FAF-Process-bb925b16-12f7-4233-9b77-c644617535f6%2FAF-Stage-a963b8c5-2715-4d5d-805c-18e16c033612%2FAF-Form-0e7afc52-6449-4f1d-a9c8-28095c98f67e%2Fdefinition.json&_=1753085184587&sid=e5d814910c6893c3029f54324812968f",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 12019,
+      "timestamp": "2025-07-21T08:06:24.593Z"
+    },
+    {
+      "url": "https://geocode.arcgis.com/arcgis/rest/services/World/GeocodeServer/?f=json",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json;charset=UTF-8",
+      "size": 1006653,
+      "timestamp": "2025-07-21T08:06:24.598Z"
+    },
+    {
+      "url": "https://torridgedc-self.achieveservice.com/apibroker/runLookup?id=659416e5a6e2e&repeat_against=&noRetry=true&getOnlyTokens=undefined&log_id=&app_name=AF-Renderer::Self&_=1753085184592&sid=e5d814910c6893c3029f54324812968f",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=UTF-8",
+      "size": 4607,
+      "timestamp": "2025-07-21T08:06:24.600Z"
+    },
+    {
+      "url": "https://torridgedc-self.achieveservice.com/apibroker/runLookup?id=65956fdb70ea4&repeat_against=&noRetry=true&getOnlyTokens=undefined&log_id=&app_name=AF-Renderer::Self&_=1753085186114&sid=e5d814910c6893c3029f54324812968f",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=UTF-8",
+      "size": 107473,
+      "timestamp": "2025-07-21T08:06:26.119Z"
+    },
+    {
+      "url": "https://torridgedc-self.achieveservice.com/apibroker/runLookup?id=65843f780f7ce&repeat_against=&noRetry=false&getOnlyTokens=undefined&log_id=&app_name=AF-Renderer::Self&_=1753085188854&sid=e5d814910c6893c3029f54324812968f",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=UTF-8",
+      "size": 5869,
+      "timestamp": "2025-07-21T08:06:28.859Z"
+    },
+    {
+      "url": "https://torridgedc-self.achieveservice.com/apibroker/runLookup?id=65956fdb70ea4&repeat_against=&noRetry=true&getOnlyTokens=undefined&log_id=&app_name=AF-Renderer::Self&_=1753085189521&sid=e5d814910c6893c3029f54324812968f",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=UTF-8",
+      "size": 107473,
+      "timestamp": "2025-07-21T08:06:29.529Z"
+    },
+    {
+      "url": "https://nominatim.openstreetmap.org/reverse?format=json&lat=50.8828771095578&lon=-3.94564370820622&zoom=18&addressdetails=1",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=utf-8",
+      "size": 738,
+      "timestamp": "2025-07-21T08:06:29.925Z"
+    }
+  ]
+}

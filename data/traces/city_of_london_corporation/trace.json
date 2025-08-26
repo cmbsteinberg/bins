@@ -1,0 +1,559 @@
+{
+  "metadata": {
+    "trace_name": "city_of_london_corporation",
+    "processed_at": "2025-08-26 18:44:24",
+    "workflow_steps_count": 8,
+    "navigation_events_count": 50
+  },
+  "scraping_patterns": {
+    "login_detected": false,
+    "form_submissions": 7,
+    "navigation_count": 2,
+    "unique_domains": [
+      "apikeys.civiccomputing.com",
+      "cdn.aaanow.ai",
+      "www.cityoflondon.gov.uk",
+      "api.websitecarbon.com",
+      "aaanow.ai"
+    ],
+    "api_endpoints": [
+      "https://www.cityoflondon.gov.uk/api/delivery/projects/website/nodes/?entryFields=sys.contentTypeId%2Csys.id&entryLinkDepth=3&language=en-GB",
+      "https://www.cityoflondon.gov.uk/api/delivery/projects/website/entries/search?linkDepth=3&pageIndex=0&pageSize=20&where=%5B%7B%22field%22%3A%22sys.id%22%2C%22equalTo%22%3A%22c86d8652-689c-4d20-8163-4916d5bc870a%22%7D%2C%7B%22field%22%3A%22sys.language%22%2C%22equalTo%22%3A%22en-GB%22%7D%2C%7B%22field%22%3A%22sys.versionStatus%22%2C%22equalTo%22%3A%22published%22%7D%5D",
+      "https://www.cityoflondon.gov.uk/api/delivery/projects/website/nodes/b1dcfd5e-d3c7-4122-b670-4381b8494e74/ancestors?language=en-GB",
+      "https://www.cityoflondon.gov.uk/static/img/favicon/manifest.json",
+      "https://www.cityoflondon.gov.uk/api/delivery/projects/website/nodes/?depth=3&entryFields=sys.id&language=en-GB",
+      "https://www.cityoflondon.gov.uk/api/delivery/projects/website/entries/search?fields=entryTitle%2CentryDescription%2Ckeywords%2Casset%2Cimage%2Ctype%2CexternalImagePath%2CthumbnailImagePath%2Csummary%2Ctext%2Cward%2CpublishedDate%2CcreatedDate%2Cdate%2CeventLocation%2Clocation%2CcontactDetails%2CopeningTimes%2CpostalAddress%2CdateOfClosure%2Cstreet%2CdescriptiveLocation%2CreasonForClosure%2Cinformation%2CexternalURL%2CexternalUrl%2Clink%2Ccategories%2Csys.contentTypeId%2Csys.slug%2Csys.uri%2Csys.version.published%2Csys.version.created%2CdateSubmitted&linkDepth=1&orderBy=%5B%7B%22asc%22%3A%22date.from%22%7D%5D&pageIndex=0&pageSize=3&where=%5B%7B%22field%22%3A%22sys.versionStatus%22%2C%22equalTo%22%3A%22published%22%7D%2C%7B%22field%22%3A%22date.to%22%2C%22greaterThanOrEqualTo%22%3A%222025-07-21T00%3A00%3A00%22%7D%2C%7B%22or%22%3A%5B%7B%22field%22%3A%22categories.general.sys.id%22%2C%22in%22%3A%5B%226c3f68d6-88be-42cf-89aa-c7adeb8ea2ff%22%2C%22b04bf24a-2dc7-4f7e-a5d5-d8143009cfd5%22%2C%22b5e8f3eb-ada9-4e10-b1e4-082805beb1bc%22%2C%2272530538-bed2-4fe2-9bc1-406786c9a771%22%2C%22296c6a5e-3b4e-4f7d-9ec8-cdbb4eb90348%22%2C%228ad66b9e-9ecf-479d-8e5d-ead1c5696ccf%22%2C%2278f340fe-6b3b-453b-a795-a5a0802ccc2c%22%2C%22499a5149-5f1c-4097-8a8a-1592ecfb23f1%22%2C%227512ddf0-7264-41c4-bfd3-d4aef3b078b5%22%2C%2212341e36-bab3-4341-a4d6-613bae830835%22%2C%22546186ed-fd0d-4d88-9e36-adbde9cca664%22%2C%221131f12f-d5e9-43de-9e52-2ef5600645b0%22%2C%22b7ca02b7-fec3-4635-91d0-b4b160f0c6b7%22%2C%2259822347-ebf4-4dcc-ae06-519988ba77cc%22%2C%22a79fb6fd-ee0d-4697-9870-d59e2f972c1d%22%2C%227244272c-89aa-438f-b748-949654348c8f%22%5D%7D%2C%7B%22field%22%3A%22categories.locations.sys.id%22%2C%22in%22%3A%5B%222e7d849e-409c-466d-9ba7-6242cc346d7c%22%2C%2260b100f0-658d-493e-bbef-4445e14811bc%22%5D%7D%5D%7D%2C%7B%22and%22%3A%5B%7B%22field%22%3A%22sys.dataFormat%22%2C%22equalTo%22%3A%22entry%22%7D%2C%7B%22field%22%3A%22sys.contentTypeId%22%2C%22in%22%3A%5B%22event%22%5D%7D%5D%7D%5D",
+      "https://www.cityoflondon.gov.uk/api/delivery/projects/website/nodes/things-to-do?entryFields=sys.contentTypeId%2Csys.id&entryLinkDepth=3&language=en-GB",
+      "https://www.cityoflondon.gov.uk/api/delivery/projects/website/nodes/6a938372-d7ea-4712-ac7e-62b4a9dbcd17/ancestors?language=en-GB",
+      "https://www.cityoflondon.gov.uk/api/delivery/projects/website/nodes/things-to-do?depth=3&entryFields=sys.id&language=en-GB",
+      "https://www.cityoflondon.gov.uk/api/delivery/projects/website/nodes/search?entryFields=sys.contentTypeId%2Csys.id&entryLinkDepth=3&language=en-GB",
+      "https://www.cityoflondon.gov.uk/api/delivery/projects/website/entries/search?linkDepth=3&pageIndex=0&pageSize=20&where=%5B%7B%22field%22%3A%22sys.id%22%2C%22equalTo%22%3A%22eac5431f-d563-4fb4-8fbe-6a5c869129f4%22%7D%2C%7B%22field%22%3A%22sys.language%22%2C%22equalTo%22%3A%22en-GB%22%7D%2C%7B%22field%22%3A%22sys.versionStatus%22%2C%22equalTo%22%3A%22published%22%7D%5D",
+      "https://www.cityoflondon.gov.uk/api/delivery/projects/website/nodes/e1854b71-64bd-4f42-aad6-ad7dd63de869/ancestors?language=en-GB",
+      "https://www.cityoflondon.gov.uk/api/delivery/projects/website/entries/search?fields=entryTitle%2CentryDescription%2Ckeywords%2Casset%2Cimage%2Ctype%2CexternalImagePath%2CthumbnailImagePath%2Csummary%2Ctext%2Cward%2CpublishedDate%2CcreatedDate%2Cdate%2CeventLocation%2Clocation%2CcontactDetails%2CopeningTimes%2CpostalAddress%2CdateOfClosure%2Cstreet%2CdescriptiveLocation%2CreasonForClosure%2Cinformation%2CexternalURL%2CexternalUrl%2Clink%2Ccategories%2Csys.contentTypeId%2Csys.slug%2Csys.uri%2Csys.version.published%2Csys.version.created%2CdateSubmitted&linkDepth=1&pageIndex=0&pageSize=9&where=%5B%7B%22or%22%3A%5B%7B%22or%22%3A%5B%7B%22field%22%3A%22entryTitle%22%2C%22contains%22%3A%22bin%20collection%22%2C%22weight%22%3A150%7D%2C%7B%22field%22%3A%22entryTitle%22%2C%22freeText%22%3A%7B%22term%22%3A%22bin%20collection%22%2C%22fuzzy%22%3Afalse%2C%22operator%22%3A%22and%22%7D%2C%22weight%22%3A150%7D%5D%7D%2C%7B%22field%22%3A%22metaContent.metaDescription%22%2C%22freeText%22%3A%7B%22term%22%3A%22bin%20collection%22%2C%22fuzzy%22%3Afalse%2C%22operator%22%3A%22and%22%7D%2C%22weight%22%3A75%7D%2C%7B%22field%22%3A%22region%22%2C%22freeText%22%3A%7B%22term%22%3A%22bin%20collection%22%2C%22fuzzy%22%3Afalse%2C%22operator%22%3A%22and%22%7D%2C%22weight%22%3A20%7D%2C%7B%22field%22%3A%22ward%22%2C%22freeText%22%3A%7B%22term%22%3A%22bin%20collection%22%2C%22fuzzy%22%3Afalse%2C%22operator%22%3A%22and%22%7D%2C%22weight%22%3A40%7D%2C%7B%22field%22%3A%22keyPosts%22%2C%22freeText%22%3A%7B%22term%22%3A%22bin%20collection%22%2C%22fuzzy%22%3Afalse%2C%22operator%22%3A%22and%22%7D%2C%22weight%22%3A40%7D%2C%7B%22field%22%3A%22district%22%2C%22freeText%22%3A%7B%22term%22%3A%22bin%20collection%22%2C%22fuzzy%22%3Afalse%2C%22operator%22%3A%22and%22%7D%2C%22weight%22%3A40%7D%2C%7B%22field%22%3A%22content.textArea%22%2C%22freeText%22%3A%7B%22term%22%3A%22bin%20collection%22%2C%22fuzzy%22%3Afalse%2C%22operator%22%3A%22and%22%7D%2C%22weight%22%3A10%7D%2C%7B%22field%22%3A%22content.accordion.title%22%2C%22freeText%22%3A%7B%22term%22%3A%22bin%20collection%22%2C%22fuzzy%22%3Afalse%2C%22operator%22%3A%22and%22%7D%2C%22weight%22%3A20%7D%2C%7B%22field%22%3A%22content.accordion.textarea%22%2C%22freeText%22%3A%7B%22term%22%3A%22bin%20collection%22%2C%22fuzzy%22%3Afalse%2C%22operator%22%3A%22and%22%7D%2C%22weight%22%3A10%7D%2C%7B%22field%22%3A%22content.alertBlock.text%22%2C%22freeText%22%3A%7B%22term%22%3A%22bin%20collection%22%2C%22fuzzy%22%3Afalse%2C%22operator%22%3A%22and%22%7D%2C%22weight%22%3A20%7D%2C%7B%22field%22%3A%22content.quote.quote.text%22%2C%22freeText%22%3A%7B%22term%22%3A%22bin%20collection%22%2C%22fuzzy%22%3Afalse%2C%22operator%22%3A%22and%22%7D%2C%22weight%22%3A10%7D%2C%7B%22field%22%3A%22content.quote.subText%22%2C%22freeText%22%3A%7B%22term%22%3A%22bin%20collection%22%2C%22fuzzy%22%3Afalse%2C%22operator%22%3A%22and%22%7D%2C%22weight%22%3A10%7D%2C%7B%22field%22%3A%22description%22%2C%22freeText%22%3A%7B%22term%22%3A%22bin%20collection%22%2C%22fuzzy%22%3Afalse%2C%22operator%22%3A%22and%22%7D%2C%22weight%22%3A20%7D%2C%7B%22field%22%3A%22text%22%2C%22freeText%22%3A%7B%22term%22%3A%22bin%20collection%22%2C%22fuzzy%22%3Afalse%2C%22operator%22%3A%22and%22%7D%2C%22weight%22%3A20%7D%2C%7B%22field%22%3A%22textarea%22%2C%22freeText%22%3A%7B%22term%22%3A%22bin%20collection%22%2C%22fuzzy%22%3Afalse%2C%22operator%22%3A%22and%22%7D%2C%22weight%22%3A10%7D%2C%7B%22field%22%3A%22content.textarea%22%2C%22freeText%22%3A%7B%22term%22%3A%22bin%20collection%22%2C%22fuzzy%22%3Afalse%2C%22operator%22%3A%22and%22%7D%2C%22weight%22%3A10%7D%2C%7B%22field%22%3A%22keywords%22%2C%22contains%22%3A%22bin%20collection%22%2C%22weight%22%3A1500%7D%2C%7B%22field%22%3A%22searchContent%22%2C%22freeText%22%3A%7B%22term%22%3A%22bin%20collection%22%2C%22fuzzy%22%3Afalse%2C%22operator%22%3A%22and%22%7D%7D%5D%7D%2C%7B%22field%22%3A%22sys.versionStatus%22%2C%22equalTo%22%3A%22published%22%7D%2C%7B%22and%22%3A%5B%7B%22field%22%3A%22sys.dataFormat%22%2C%22equalTo%22%3A%22entry%22%7D%2C%7B%22field%22%3A%22sys.contentTypeId%22%2C%22in%22%3A%5B%22corporateLandingPage%22%2C%22corporateContentPage%22%2C%22democracyCouncillor%22%2C%22democracyCommittee%22%2C%22democracyMeeting%22%2C%22landingPage%22%2C%22assetFile%22%2C%22contentPage%22%2C%22listingPage%22%2C%22listingPageEvents%22%2C%22listingPagePropertyDevelopmentToolkit%22%2C%22listingPageRemembrancersOffice%22%2C%22listingPageRoadClosures%22%2C%22listingPageVenuesAttractions%22%2C%22event%22%2C%22venue%22%2C%22news%22%5D%7D%5D%7D%5D",
+      "https://www.cityoflondon.gov.uk/api/delivery/projects/website/entries/search?fields=entryTitle%2CentryDescription%2Ckeywords%2Casset%2Cimage%2Ctype%2CexternalImagePath%2CthumbnailImagePath%2Csummary%2Ctext%2Cward%2CpublishedDate%2CcreatedDate%2Cdate%2CeventLocation%2Clocation%2CcontactDetails%2CopeningTimes%2CpostalAddress%2CdateOfClosure%2Cstreet%2CdescriptiveLocation%2CreasonForClosure%2Cinformation%2CexternalURL%2CexternalUrl%2Clink%2Ccategories%2Csys.contentTypeId%2Csys.slug%2Csys.uri%2Csys.version.published%2Csys.version.created%2CdateSubmitted&linkDepth=1&pageIndex=0&pageSize=9&where=%5B%7B%22or%22%3A%5B%7B%22or%22%3A%5B%7B%22field%22%3A%22entryTitle%22%2C%22contains%22%3A%22bin%20collection%22%2C%22weight%22%3A150%7D%2C%7B%22field%22%3A%22entryTitle%22%2C%22freeText%22%3A%7B%22term%22%3A%22bin%20collection%22%2C%22fuzzy%22%3Afalse%2C%22operator%22%3A%22and%22%7D%2C%22weight%22%3A150%7D%5D%7D%2C%7B%22field%22%3A%22metaContent.metaDescription%22%2C%22freeText%22%3A%7B%22term%22%3A%22bin%20collection%22%2C%22fuzzy%22%3Afalse%2C%22operator%22%3A%22and%22%7D%2C%22weight%22%3A75%7D%2C%7B%22field%22%3A%22region%22%2C%22freeText%22%3A%7B%22term%22%3A%22bin%20collection%22%2C%22fuzzy%22%3Afalse%2C%22operator%22%3A%22and%22%7D%2C%22weight%22%3A20%7D%2C%7B%22field%22%3A%22ward%22%2C%22freeText%22%3A%7B%22term%22%3A%22bin%20collection%22%2C%22fuzzy%22%3Afalse%2C%22operator%22%3A%22and%22%7D%2C%22weight%22%3A40%7D%2C%7B%22field%22%3A%22keyPosts%22%2C%22freeText%22%3A%7B%22term%22%3A%22bin%20collection%22%2C%22fuzzy%22%3Afalse%2C%22operator%22%3A%22and%22%7D%2C%22weight%22%3A40%7D%2C%7B%22field%22%3A%22district%22%2C%22freeText%22%3A%7B%22term%22%3A%22bin%20collection%22%2C%22fuzzy%22%3Afalse%2C%22operator%22%3A%22and%22%7D%2C%22weight%22%3A40%7D%2C%7B%22field%22%3A%22content.textArea%22%2C%22freeText%22%3A%7B%22term%22%3A%22bin%20collection%22%2C%22fuzzy%22%3Afalse%2C%22operator%22%3A%22and%22%7D%2C%22weight%22%3A10%7D%2C%7B%22field%22%3A%22content.accordion.title%22%2C%22freeText%22%3A%7B%22term%22%3A%22bin%20collection%22%2C%22fuzzy%22%3Afalse%2C%22operator%22%3A%22and%22%7D%2C%22weight%22%3A20%7D%2C%7B%22field%22%3A%22content.accordion.textarea%22%2C%22freeText%22%3A%7B%22term%22%3A%22bin%20collection%22%2C%22fuzzy%22%3Afalse%2C%22operator%22%3A%22and%22%7D%2C%22weight%22%3A10%7D%2C%7B%22field%22%3A%22content.alertBlock.text%22%2C%22freeText%22%3A%7B%22term%22%3A%22bin%20collection%22%2C%22fuzzy%22%3Afalse%2C%22operator%22%3A%22and%22%7D%2C%22weight%22%3A20%7D%2C%7B%22field%22%3A%22content.quote.quote.text%22%2C%22freeText%22%3A%7B%22term%22%3A%22bin%20collection%22%2C%22fuzzy%22%3Afalse%2C%22operator%22%3A%22and%22%7D%2C%22weight%22%3A10%7D%2C%7B%22field%22%3A%22content.quote.subText%22%2C%22freeText%22%3A%7B%22term%22%3A%22bin%20collection%22%2C%22fuzzy%22%3Afalse%2C%22operator%22%3A%22and%22%7D%2C%22weight%22%3A10%7D%2C%7B%22field%22%3A%22description%22%2C%22freeText%22%3A%7B%22term%22%3A%22bin%20collection%22%2C%22fuzzy%22%3Afalse%2C%22operator%22%3A%22and%22%7D%2C%22weight%22%3A20%7D%2C%7B%22field%22%3A%22text%22%2C%22freeText%22%3A%7B%22term%22%3A%22bin%20collection%22%2C%22fuzzy%22%3Afalse%2C%22operator%22%3A%22and%22%7D%2C%22weight%22%3A20%7D%2C%7B%22field%22%3A%22textarea%22%2C%22freeText%22%3A%7B%22term%22%3A%22bin%20collection%22%2C%22fuzzy%22%3Afalse%2C%22operator%22%3A%22and%22%7D%2C%22weight%22%3A10%7D%2C%7B%22field%22%3A%22content.textarea%22%2C%22freeText%22%3A%7B%22term%22%3A%22bin%20collection%22%2C%22fuzzy%22%3Afalse%2C%22operator%22%3A%22and%22%7D%2C%22weight%22%3A10%7D%2C%7B%22field%22%3A%22keywords%22%2C%22contains%22%3A%22bin%20collection%22%2C%22weight%22%3A1500%7D%2C%7B%22field%22%3A%22searchContent%22%2C%22freeText%22%3A%7B%22term%22%3A%22bin%20collection%22%2C%22fuzzy%22%3Afalse%2C%22operator%22%3A%22and%22%7D%7D%5D%7D%2C%7B%22field%22%3A%22sys.versionStatus%22%2C%22equalTo%22%3A%22published%22%7D%2C%7B%22and%22%3A%5B%7B%22field%22%3A%22sys.dataFormat%22%2C%22equalTo%22%3A%22entry%22%7D%2C%7B%22field%22%3A%22sys.contentTypeId%22%2C%22in%22%3A%5B%22event%22%2C%22venue%22%5D%7D%5D%7D%5D",
+      "https://www.cityoflondon.gov.uk/api/delivery/projects/website/entries/search?fields=entryTitle%2CentryDescription%2Ckeywords%2Casset%2Cimage%2Ctype%2CexternalImagePath%2CthumbnailImagePath%2Csummary%2Ctext%2Cward%2CpublishedDate%2CcreatedDate%2Cdate%2CeventLocation%2Clocation%2CcontactDetails%2CopeningTimes%2CpostalAddress%2CdateOfClosure%2Cstreet%2CdescriptiveLocation%2CreasonForClosure%2Cinformation%2CexternalURL%2CexternalUrl%2Clink%2Ccategories%2Csys.contentTypeId%2Csys.slug%2Csys.uri%2Csys.version.published%2Csys.version.created%2CdateSubmitted&linkDepth=1&pageIndex=0&pageSize=9&where=%5B%7B%22or%22%3A%5B%7B%22or%22%3A%5B%7B%22field%22%3A%22entryTitle%22%2C%22contains%22%3A%22bin%20collection%22%2C%22weight%22%3A150%7D%2C%7B%22field%22%3A%22entryTitle%22%2C%22freeText%22%3A%7B%22term%22%3A%22bin%20collection%22%2C%22fuzzy%22%3Afalse%2C%22operator%22%3A%22and%22%7D%2C%22weight%22%3A150%7D%5D%7D%2C%7B%22field%22%3A%22metaContent.metaDescription%22%2C%22freeText%22%3A%7B%22term%22%3A%22bin%20collection%22%2C%22fuzzy%22%3Afalse%2C%22operator%22%3A%22and%22%7D%2C%22weight%22%3A75%7D%2C%7B%22field%22%3A%22region%22%2C%22freeText%22%3A%7B%22term%22%3A%22bin%20collection%22%2C%22fuzzy%22%3Afalse%2C%22operator%22%3A%22and%22%7D%2C%22weight%22%3A20%7D%2C%7B%22field%22%3A%22ward%22%2C%22freeText%22%3A%7B%22term%22%3A%22bin%20collection%22%2C%22fuzzy%22%3Afalse%2C%22operator%22%3A%22and%22%7D%2C%22weight%22%3A40%7D%2C%7B%22field%22%3A%22keyPosts%22%2C%22freeText%22%3A%7B%22term%22%3A%22bin%20collection%22%2C%22fuzzy%22%3Afalse%2C%22operator%22%3A%22and%22%7D%2C%22weight%22%3A40%7D%2C%7B%22field%22%3A%22district%22%2C%22freeText%22%3A%7B%22term%22%3A%22bin%20collection%22%2C%22fuzzy%22%3Afalse%2C%22operator%22%3A%22and%22%7D%2C%22weight%22%3A40%7D%2C%7B%22field%22%3A%22content.textArea%22%2C%22freeText%22%3A%7B%22term%22%3A%22bin%20collection%22%2C%22fuzzy%22%3Afalse%2C%22operator%22%3A%22and%22%7D%2C%22weight%22%3A10%7D%2C%7B%22field%22%3A%22content.accordion.title%22%2C%22freeText%22%3A%7B%22term%22%3A%22bin%20collection%22%2C%22fuzzy%22%3Afalse%2C%22operator%22%3A%22and%22%7D%2C%22weight%22%3A20%7D%2C%7B%22field%22%3A%22content.accordion.textarea%22%2C%22freeText%22%3A%7B%22term%22%3A%22bin%20collection%22%2C%22fuzzy%22%3Afalse%2C%22operator%22%3A%22and%22%7D%2C%22weight%22%3A10%7D%2C%7B%22field%22%3A%22content.alertBlock.text%22%2C%22freeText%22%3A%7B%22term%22%3A%22bin%20collection%22%2C%22fuzzy%22%3Afalse%2C%22operator%22%3A%22and%22%7D%2C%22weight%22%3A20%7D%2C%7B%22field%22%3A%22content.quote.quote.text%22%2C%22freeText%22%3A%7B%22term%22%3A%22bin%20collection%22%2C%22fuzzy%22%3Afalse%2C%22operator%22%3A%22and%22%7D%2C%22weight%22%3A10%7D%2C%7B%22field%22%3A%22content.quote.subText%22%2C%22freeText%22%3A%7B%22term%22%3A%22bin%20collection%22%2C%22fuzzy%22%3Afalse%2C%22operator%22%3A%22and%22%7D%2C%22weight%22%3A10%7D%2C%7B%22field%22%3A%22description%22%2C%22freeText%22%3A%7B%22term%22%3A%22bin%20collection%22%2C%22fuzzy%22%3Afalse%2C%22operator%22%3A%22and%22%7D%2C%22weight%22%3A20%7D%2C%7B%22field%22%3A%22text%22%2C%22freeText%22%3A%7B%22term%22%3A%22bin%20collection%22%2C%22fuzzy%22%3Afalse%2C%22operator%22%3A%22and%22%7D%2C%22weight%22%3A20%7D%2C%7B%22field%22%3A%22textarea%22%2C%22freeText%22%3A%7B%22term%22%3A%22bin%20collection%22%2C%22fuzzy%22%3Afalse%2C%22operator%22%3A%22and%22%7D%2C%22weight%22%3A10%7D%2C%7B%22field%22%3A%22content.textarea%22%2C%22freeText%22%3A%7B%22term%22%3A%22bin%20collection%22%2C%22fuzzy%22%3Afalse%2C%22operator%22%3A%22and%22%7D%2C%22weight%22%3A10%7D%2C%7B%22field%22%3A%22keywords%22%2C%22contains%22%3A%22bin%20collection%22%2C%22weight%22%3A1500%7D%2C%7B%22field%22%3A%22searchContent%22%2C%22freeText%22%3A%7B%22term%22%3A%22bin%20collection%22%2C%22fuzzy%22%3Afalse%2C%22operator%22%3A%22and%22%7D%7D%5D%7D%2C%7B%22field%22%3A%22sys.versionStatus%22%2C%22equalTo%22%3A%22published%22%7D%2C%7B%22and%22%3A%5B%7B%22field%22%3A%22sys.dataFormat%22%2C%22equalTo%22%3A%22entry%22%7D%2C%7B%22field%22%3A%22sys.contentTypeId%22%2C%22in%22%3A%5B%22contentPage%22%2C%22landingPage%22%2C%22assetFile%22%2C%22listingPage%22%2C%22listingPageEvents%22%2C%22listingPagePropertyDevelopmentToolkit%22%2C%22listingPageRemembrancersOffice%22%2C%22listingPageRoadClosures%22%2C%22listingPageVenuesAttractions%22%2C%22event%22%2C%22venue%22%2C%22corporateLandingPage%22%2C%22corporateContentPage%22%5D%7D%5D%7D%5D",
+      "https://www.cityoflondon.gov.uk/api/delivery/projects/website/entries/search?fields=entryTitle%2CentryDescription%2Ckeywords%2Casset%2Cimage%2Ctype%2CexternalImagePath%2CthumbnailImagePath%2Csummary%2Ctext%2Cward%2CpublishedDate%2CcreatedDate%2Cdate%2CeventLocation%2Clocation%2CcontactDetails%2CopeningTimes%2CpostalAddress%2CdateOfClosure%2Cstreet%2CdescriptiveLocation%2CreasonForClosure%2Cinformation%2CexternalURL%2CexternalUrl%2Clink%2Ccategories%2Csys.contentTypeId%2Csys.slug%2Csys.uri%2Csys.version.published%2Csys.version.created%2CdateSubmitted&linkDepth=1&pageIndex=0&pageSize=9&where=%5B%7B%22or%22%3A%5B%7B%22or%22%3A%5B%7B%22field%22%3A%22entryTitle%22%2C%22contains%22%3A%22bin%20collection%22%2C%22weight%22%3A150%7D%2C%7B%22field%22%3A%22entryTitle%22%2C%22freeText%22%3A%7B%22term%22%3A%22bin%20collection%22%2C%22fuzzy%22%3Afalse%2C%22operator%22%3A%22and%22%7D%2C%22weight%22%3A150%7D%5D%7D%2C%7B%22field%22%3A%22metaContent.metaDescription%22%2C%22freeText%22%3A%7B%22term%22%3A%22bin%20collection%22%2C%22fuzzy%22%3Afalse%2C%22operator%22%3A%22and%22%7D%2C%22weight%22%3A75%7D%2C%7B%22field%22%3A%22region%22%2C%22freeText%22%3A%7B%22term%22%3A%22bin%20collection%22%2C%22fuzzy%22%3Afalse%2C%22operator%22%3A%22and%22%7D%2C%22weight%22%3A20%7D%2C%7B%22field%22%3A%22ward%22%2C%22freeText%22%3A%7B%22term%22%3A%22bin%20collection%22%2C%22fuzzy%22%3Afalse%2C%22operator%22%3A%22and%22%7D%2C%22weight%22%3A40%7D%2C%7B%22field%22%3A%22keyPosts%22%2C%22freeText%22%3A%7B%22term%22%3A%22bin%20collection%22%2C%22fuzzy%22%3Afalse%2C%22operator%22%3A%22and%22%7D%2C%22weight%22%3A40%7D%2C%7B%22field%22%3A%22district%22%2C%22freeText%22%3A%7B%22term%22%3A%22bin%20collection%22%2C%22fuzzy%22%3Afalse%2C%22operator%22%3A%22and%22%7D%2C%22weight%22%3A40%7D%2C%7B%22field%22%3A%22content.textArea%22%2C%22freeText%22%3A%7B%22term%22%3A%22bin%20collection%22%2C%22fuzzy%22%3Afalse%2C%22operator%22%3A%22and%22%7D%2C%22weight%22%3A10%7D%2C%7B%22field%22%3A%22content.accordion.title%22%2C%22freeText%22%3A%7B%22term%22%3A%22bin%20collection%22%2C%22fuzzy%22%3Afalse%2C%22operator%22%3A%22and%22%7D%2C%22weight%22%3A20%7D%2C%7B%22field%22%3A%22content.accordion.textarea%22%2C%22freeText%22%3A%7B%22term%22%3A%22bin%20collection%22%2C%22fuzzy%22%3Afalse%2C%22operator%22%3A%22and%22%7D%2C%22weight%22%3A10%7D%2C%7B%22field%22%3A%22content.alertBlock.text%22%2C%22freeText%22%3A%7B%22term%22%3A%22bin%20collection%22%2C%22fuzzy%22%3Afalse%2C%22operator%22%3A%22and%22%7D%2C%22weight%22%3A20%7D%2C%7B%22field%22%3A%22content.quote.quote.text%22%2C%22freeText%22%3A%7B%22term%22%3A%22bin%20collection%22%2C%22fuzzy%22%3Afalse%2C%22operator%22%3A%22and%22%7D%2C%22weight%22%3A10%7D%2C%7B%22field%22%3A%22content.quote.subText%22%2C%22freeText%22%3A%7B%22term%22%3A%22bin%20collection%22%2C%22fuzzy%22%3Afalse%2C%22operator%22%3A%22and%22%7D%2C%22weight%22%3A10%7D%2C%7B%22field%22%3A%22description%22%2C%22freeText%22%3A%7B%22term%22%3A%22bin%20collection%22%2C%22fuzzy%22%3Afalse%2C%22operator%22%3A%22and%22%7D%2C%22weight%22%3A20%7D%2C%7B%22field%22%3A%22text%22%2C%22freeText%22%3A%7B%22term%22%3A%22bin%20collection%22%2C%22fuzzy%22%3Afalse%2C%22operator%22%3A%22and%22%7D%2C%22weight%22%3A20%7D%2C%7B%22field%22%3A%22textarea%22%2C%22freeText%22%3A%7B%22term%22%3A%22bin%20collection%22%2C%22fuzzy%22%3Afalse%2C%22operator%22%3A%22and%22%7D%2C%22weight%22%3A10%7D%2C%7B%22field%22%3A%22content.textarea%22%2C%22freeText%22%3A%7B%22term%22%3A%22bin%20collection%22%2C%22fuzzy%22%3Afalse%2C%22operator%22%3A%22and%22%7D%2C%22weight%22%3A10%7D%2C%7B%22field%22%3A%22keywords%22%2C%22contains%22%3A%22bin%20collection%22%2C%22weight%22%3A1500%7D%2C%7B%22field%22%3A%22searchContent%22%2C%22freeText%22%3A%7B%22term%22%3A%22bin%20collection%22%2C%22fuzzy%22%3Afalse%2C%22operator%22%3A%22and%22%7D%7D%5D%7D%2C%7B%22field%22%3A%22sys.versionStatus%22%2C%22equalTo%22%3A%22published%22%7D%2C%7B%22and%22%3A%5B%7B%22field%22%3A%22sys.dataFormat%22%2C%22equalTo%22%3A%22entry%22%7D%2C%7B%22field%22%3A%22sys.contentTypeId%22%2C%22in%22%3A%5B%22news%22%5D%7D%5D%7D%5D",
+      "https://www.cityoflondon.gov.uk/api/delivery/projects/website/entries/search?fields=entryTitle%2CentryDescription%2Ckeywords%2Casset%2Cimage%2Ctype%2CexternalImagePath%2CthumbnailImagePath%2Csummary%2Ctext%2Cward%2CpublishedDate%2CcreatedDate%2Cdate%2CeventLocation%2Clocation%2CcontactDetails%2CopeningTimes%2CpostalAddress%2CdateOfClosure%2Cstreet%2CdescriptiveLocation%2CreasonForClosure%2Cinformation%2CexternalURL%2CexternalUrl%2Clink%2Ccategories%2Csys.contentTypeId%2Csys.slug%2Csys.uri%2Csys.version.published%2Csys.version.created%2CdateSubmitted&linkDepth=1&pageIndex=0&pageSize=9&where=%5B%7B%22or%22%3A%5B%7B%22or%22%3A%5B%7B%22field%22%3A%22entryTitle%22%2C%22contains%22%3A%22bin%20collection%22%2C%22weight%22%3A150%7D%2C%7B%22field%22%3A%22entryTitle%22%2C%22freeText%22%3A%7B%22term%22%3A%22bin%20collection%22%2C%22fuzzy%22%3Afalse%2C%22operator%22%3A%22and%22%7D%2C%22weight%22%3A150%7D%5D%7D%2C%7B%22field%22%3A%22metaContent.metaDescription%22%2C%22freeText%22%3A%7B%22term%22%3A%22bin%20collection%22%2C%22fuzzy%22%3Afalse%2C%22operator%22%3A%22and%22%7D%2C%22weight%22%3A75%7D%2C%7B%22field%22%3A%22region%22%2C%22freeText%22%3A%7B%22term%22%3A%22bin%20collection%22%2C%22fuzzy%22%3Afalse%2C%22operator%22%3A%22and%22%7D%2C%22weight%22%3A20%7D%2C%7B%22field%22%3A%22ward%22%2C%22freeText%22%3A%7B%22term%22%3A%22bin%20collection%22%2C%22fuzzy%22%3Afalse%2C%22operator%22%3A%22and%22%7D%2C%22weight%22%3A40%7D%2C%7B%22field%22%3A%22keyPosts%22%2C%22freeText%22%3A%7B%22term%22%3A%22bin%20collection%22%2C%22fuzzy%22%3Afalse%2C%22operator%22%3A%22and%22%7D%2C%22weight%22%3A40%7D%2C%7B%22field%22%3A%22district%22%2C%22freeText%22%3A%7B%22term%22%3A%22bin%20collection%22%2C%22fuzzy%22%3Afalse%2C%22operator%22%3A%22and%22%7D%2C%22weight%22%3A40%7D%2C%7B%22field%22%3A%22content.textArea%22%2C%22freeText%22%3A%7B%22term%22%3A%22bin%20collection%22%2C%22fuzzy%22%3Afalse%2C%22operator%22%3A%22and%22%7D%2C%22weight%22%3A10%7D%2C%7B%22field%22%3A%22content.accordion.title%22%2C%22freeText%22%3A%7B%22term%22%3A%22bin%20collection%22%2C%22fuzzy%22%3Afalse%2C%22operator%22%3A%22and%22%7D%2C%22weight%22%3A20%7D%2C%7B%22field%22%3A%22content.accordion.textarea%22%2C%22freeText%22%3A%7B%22term%22%3A%22bin%20collection%22%2C%22fuzzy%22%3Afalse%2C%22operator%22%3A%22and%22%7D%2C%22weight%22%3A10%7D%2C%7B%22field%22%3A%22content.alertBlock.text%22%2C%22freeText%22%3A%7B%22term%22%3A%22bin%20collection%22%2C%22fuzzy%22%3Afalse%2C%22operator%22%3A%22and%22%7D%2C%22weight%22%3A20%7D%2C%7B%22field%22%3A%22content.quote.quote.text%22%2C%22freeText%22%3A%7B%22term%22%3A%22bin%20collection%22%2C%22fuzzy%22%3Afalse%2C%22operator%22%3A%22and%22%7D%2C%22weight%22%3A10%7D%2C%7B%22field%22%3A%22content.quote.subText%22%2C%22freeText%22%3A%7B%22term%22%3A%22bin%20collection%22%2C%22fuzzy%22%3Afalse%2C%22operator%22%3A%22and%22%7D%2C%22weight%22%3A10%7D%2C%7B%22field%22%3A%22description%22%2C%22freeText%22%3A%7B%22term%22%3A%22bin%20collection%22%2C%22fuzzy%22%3Afalse%2C%22operator%22%3A%22and%22%7D%2C%22weight%22%3A20%7D%2C%7B%22field%22%3A%22text%22%2C%22freeText%22%3A%7B%22term%22%3A%22bin%20collection%22%2C%22fuzzy%22%3Afalse%2C%22operator%22%3A%22and%22%7D%2C%22weight%22%3A20%7D%2C%7B%22field%22%3A%22textarea%22%2C%22freeText%22%3A%7B%22term%22%3A%22bin%20collection%22%2C%22fuzzy%22%3Afalse%2C%22operator%22%3A%22and%22%7D%2C%22weight%22%3A10%7D%2C%7B%22field%22%3A%22content.textarea%22%2C%22freeText%22%3A%7B%22term%22%3A%22bin%20collection%22%2C%22fuzzy%22%3Afalse%2C%22operator%22%3A%22and%22%7D%2C%22weight%22%3A10%7D%2C%7B%22field%22%3A%22keywords%22%2C%22contains%22%3A%22bin%20collection%22%2C%22weight%22%3A1500%7D%2C%7B%22field%22%3A%22searchContent%22%2C%22freeText%22%3A%7B%22term%22%3A%22bin%20collection%22%2C%22fuzzy%22%3Afalse%2C%22operator%22%3A%22and%22%7D%7D%5D%7D%2C%7B%22field%22%3A%22sys.versionStatus%22%2C%22equalTo%22%3A%22published%22%7D%2C%7B%22and%22%3A%5B%7B%22field%22%3A%22sys.dataFormat%22%2C%22equalTo%22%3A%22entry%22%7D%2C%7B%22field%22%3A%22sys.contentTypeId%22%2C%22in%22%3A%5B%22democracyCouncillor%22%2C%22democracyCommittee%22%2C%22democracyMeeting%22%5D%7D%5D%7D%5D",
+      "https://www.cityoflondon.gov.uk/api/delivery/projects/website/nodes/services/waste-and-recycling/household-waste-and-recycling/recycling-waste-and-bin-collections?entryFields=sys.contentTypeId%2Csys.id&entryLinkDepth=3&language=en-GB",
+      "https://www.cityoflondon.gov.uk/api/delivery/projects/website/entries/search?linkDepth=3&pageIndex=0&pageSize=20&where=%5B%7B%22field%22%3A%22sys.id%22%2C%22equalTo%22%3A%2206efb229-e447-45bc-a69f-427134a7419a%22%7D%2C%7B%22field%22%3A%22sys.language%22%2C%22equalTo%22%3A%22en-GB%22%7D%2C%7B%22field%22%3A%22sys.versionStatus%22%2C%22equalTo%22%3A%22published%22%7D%5D",
+      "https://www.cityoflondon.gov.uk/api/delivery/projects/website/nodes/1c6d2d33-506c-41ff-9c37-227809527e74/ancestors?language=en-GB",
+      "https://www.cityoflondon.gov.uk/api/delivery/projects/website/nodes/services/waste-and-recycling/household-waste-and-recycling/recycling-waste-and-bin-collections?depth=3&entryFields=sys.id&language=en-GB",
+      "https://www.cityoflondon.gov.uk/api/delivery/projects/website/entries/search?fields=entryTitle%2CentryDescription%2Ckeywords%2Casset%2Cimage%2Ctype%2CexternalImagePath%2CthumbnailImagePath%2Csummary%2Ctext%2Cward%2CpublishedDate%2CcreatedDate%2Cdate%2CeventLocation%2Clocation%2CcontactDetails%2CopeningTimes%2CpostalAddress%2CdateOfClosure%2Cstreet%2CdescriptiveLocation%2CreasonForClosure%2Cinformation%2CexternalURL%2CexternalUrl%2Clink%2Ccategories%2Csys.contentTypeId%2Csys.slug%2Csys.uri%2Csys.version.published%2Csys.version.created%2CdateSubmitted&linkDepth=1&orderBy=%5B%7B%22asc%22%3A%22date.from%22%7D%5D&pageIndex=0&pageSize=3&where=%5B%7B%22field%22%3A%22sys.versionStatus%22%2C%22equalTo%22%3A%22published%22%7D%2C%7B%22field%22%3A%22date.to%22%2C%22greaterThanOrEqualTo%22%3A%222025-07-21T00%3A00%3A00%22%7D%2C%7B%22or%22%3A%5B%7B%22field%22%3A%22categories.general.sys.id%22%2C%22in%22%3A%5B%2259822347-ebf4-4dcc-ae06-519988ba77cc%22%5D%7D%5D%7D%2C%7B%22and%22%3A%5B%7B%22field%22%3A%22sys.dataFormat%22%2C%22equalTo%22%3A%22entry%22%7D%2C%7B%22field%22%3A%22sys.contentTypeId%22%2C%22in%22%3A%5B%22event%22%5D%7D%5D%7D%5D",
+      "https://www.cityoflondon.gov.uk/api/delivery/projects/website/nodes/services/waste-and-recycling/household-waste-and-recycling/recycling-waste-and-bin-collections/register-for-waste-and-recycling-collections?entryFields=sys.contentTypeId%2Csys.id&entryLinkDepth=3&language=en-GB",
+      "https://www.cityoflondon.gov.uk/api/delivery/projects/website/entries/search?linkDepth=1&pageIndex=0&pageSize=20&where=%5B%7B%22field%22%3A%22sys.id%22%2C%22equalTo%22%3A%22b8b413d4-a1de-4dbd-9928-6019b6e94771%22%7D%2C%7B%22field%22%3A%22sys.language%22%2C%22equalTo%22%3A%22en-GB%22%7D%2C%7B%22field%22%3A%22sys.versionStatus%22%2C%22equalTo%22%3A%22published%22%7D%5D",
+      "https://www.cityoflondon.gov.uk/api/delivery/projects/website/nodes/b25fef9c-5252-4f88-8646-899e36cf89d1/ancestors?language=en-GB"
+    ],
+    "data_extraction_indicators": []
+  },
+  "workflow_steps": [
+    {
+      "action": "goto",
+      "target": "http://www.cityoflondon.gov.uk/services/environment-and-planning/waste-and-recycling/household-waste-and-recycling/Pages/household-recycling.aspx",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "goto",
+      "target": "https://www.cityoflondon.gov.uk/",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e12 >> internal:describe=\"I Accept Cookies\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e91 >> internal:describe=\"Open search area\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "fill",
+      "target": "aria-ref=e309 >> internal:describe=\"Search\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0,
+      "value": "bin collection"
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e310 >> internal:describe=\"Search\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e404 >> internal:describe=\"Recycling, waste and bin collections Waste and recycling collections: register and information about pick-ups during special holidays\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e631 >> internal:describe=\"Register for waste and recycling collections\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    }
+  ],
+  "navigation_events": [
+    {
+      "url": "http://www.cityoflondon.gov.uk/services/environment-and-planning/waste-and-recycling/household-waste-and-recycling/Pages/household-recycling.aspx",
+      "method": "GET",
+      "status": 307,
+      "redirect_url": "https://www.cityoflondon.gov.uk/services/environment-and-planning/waste-and-recycling/household-waste-and-recycling/Pages/household-recycling.aspx",
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T10:26:03.258Z"
+    },
+    {
+      "url": "https://www.cityoflondon.gov.uk/services/environment-and-planning/waste-and-recycling/household-waste-and-recycling/Pages/household-recycling.aspx",
+      "method": "GET",
+      "status": 404,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=utf-8",
+      "size": 2730,
+      "timestamp": "2025-07-21T10:26:03.271Z"
+    },
+    {
+      "url": "https://www.cityoflondon.gov.uk/cdn-cgi/challenge-platform/scripts/jsd/main.js",
+      "method": "GET",
+      "status": 302,
+      "redirect_url": "https://www.cityoflondon.gov.uk/cdn-cgi/challenge-platform/h/g/scripts/jsd/4d127ba5149d/main.js?",
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T10:26:04.065Z"
+    },
+    {
+      "url": "https://www.cityoflondon.gov.uk/cdn-cgi/rum?",
+      "method": "POST",
+      "status": 204,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": 0,
+      "timestamp": "2025-07-21T10:26:04.067Z"
+    },
+    {
+      "url": "https://www.cityoflondon.gov.uk/cdn-cgi/challenge-platform/h/g/jsd/r/0.9020499059771289:1753089426:awQ9iike4C5K6AokR0R2Aq-swVzLAHXBvJuq-GHJgfo/9629ff72c8afbd9d",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/plain; charset=UTF-8",
+      "size": 0,
+      "timestamp": "2025-07-21T10:26:04.373Z"
+    },
+    {
+      "url": "https://www.cityoflondon.gov.uk/",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=utf-8",
+      "size": 837688,
+      "timestamp": "2025-07-21T10:26:05.493Z"
+    },
+    {
+      "url": "https://apikeys.civiccomputing.com/c/v?d=www.cityoflondon.gov.uk&p=CookieControl%20Multi-Site&v=9&k=6187ad5e396a88f0c84b566f59106eb813b84ec5&format=json",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 308,
+      "timestamp": "2025-07-21T10:26:05.671Z"
+    },
+    {
+      "url": "https://www.cityoflondon.gov.uk/api/delivery/projects/website/nodes/?entryFields=sys.contentTypeId%2Csys.id&entryLinkDepth=3&language=en-GB",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=utf-8",
+      "size": 426,
+      "timestamp": "2025-07-21T10:26:05.777Z"
+    },
+    {
+      "url": "https://www.cityoflondon.gov.uk/api/delivery/projects/website/entries/search?linkDepth=3&pageIndex=0&pageSize=20&where=%5B%7B%22field%22%3A%22sys.id%22%2C%22equalTo%22%3A%22c86d8652-689c-4d20-8163-4916d5bc870a%22%7D%2C%7B%22field%22%3A%22sys.language%22%2C%22equalTo%22%3A%22en-GB%22%7D%2C%7B%22field%22%3A%22sys.versionStatus%22%2C%22equalTo%22%3A%22published%22%7D%5D",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 76379,
+      "timestamp": "2025-07-21T10:26:05.796Z"
+    },
+    {
+      "url": "https://www.cityoflondon.gov.uk/cdn-cgi/rum?",
+      "method": "POST",
+      "status": 204,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": 0,
+      "timestamp": "2025-07-21T10:26:05.870Z"
+    },
+    {
+      "url": "https://www.cityoflondon.gov.uk/api/delivery/projects/website/nodes/b1dcfd5e-d3c7-4122-b670-4381b8494e74/ancestors?language=en-GB",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=utf-8",
+      "size": 2,
+      "timestamp": "2025-07-21T10:26:05.870Z"
+    },
+    {
+      "url": "https://www.cityoflondon.gov.uk/static/img/favicon/manifest.json",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=UTF-8",
+      "size": 352,
+      "timestamp": "2025-07-21T10:26:05.870Z"
+    },
+    {
+      "url": "https://www.cityoflondon.gov.uk/api/delivery/projects/website/nodes/?depth=3&entryFields=sys.id&language=en-GB",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=utf-8",
+      "size": 341488,
+      "timestamp": "2025-07-21T10:26:05.871Z"
+    },
+    {
+      "url": "https://api.websitecarbon.com/b?url=cityoflondon.gov.uk",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json;charset=UTF-8",
+      "size": 71,
+      "timestamp": "2025-07-21T10:26:06.011Z"
+    },
+    {
+      "url": "https://api.websitecarbon.com/b?url=cityoflondon.gov.uk",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json;charset=UTF-8",
+      "size": 71,
+      "timestamp": "2025-07-21T10:26:06.011Z"
+    },
+    {
+      "url": "https://api.websitecarbon.com/b?url=cityoflondon.gov.uk",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json;charset=UTF-8",
+      "size": 71,
+      "timestamp": "2025-07-21T10:26:06.012Z"
+    },
+    {
+      "url": "https://api.websitecarbon.com/b?url=cityoflondon.gov.uk",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json;charset=UTF-8",
+      "size": 71,
+      "timestamp": "2025-07-21T10:26:06.012Z"
+    },
+    {
+      "url": "https://www.cityoflondon.gov.uk/api/delivery/projects/website/entries/search?fields=entryTitle%2CentryDescription%2Ckeywords%2Casset%2Cimage%2Ctype%2CexternalImagePath%2CthumbnailImagePath%2Csummary%2Ctext%2Cward%2CpublishedDate%2CcreatedDate%2Cdate%2CeventLocation%2Clocation%2CcontactDetails%2CopeningTimes%2CpostalAddress%2CdateOfClosure%2Cstreet%2CdescriptiveLocation%2CreasonForClosure%2Cinformation%2CexternalURL%2CexternalUrl%2Clink%2Ccategories%2Csys.contentTypeId%2Csys.slug%2Csys.uri%2Csys.version.published%2Csys.version.created%2CdateSubmitted&linkDepth=1&orderBy=%5B%7B%22asc%22%3A%22date.from%22%7D%5D&pageIndex=0&pageSize=3&where=%5B%7B%22field%22%3A%22sys.versionStatus%22%2C%22equalTo%22%3A%22published%22%7D%2C%7B%22field%22%3A%22date.to%22%2C%22greaterThanOrEqualTo%22%3A%222025-07-21T00%3A00%3A00%22%7D%2C%7B%22or%22%3A%5B%7B%22field%22%3A%22categories.general.sys.id%22%2C%22in%22%3A%5B%226c3f68d6-88be-42cf-89aa-c7adeb8ea2ff%22%2C%22b04bf24a-2dc7-4f7e-a5d5-d8143009cfd5%22%2C%22b5e8f3eb-ada9-4e10-b1e4-082805beb1bc%22%2C%2272530538-bed2-4fe2-9bc1-406786c9a771%22%2C%22296c6a5e-3b4e-4f7d-9ec8-cdbb4eb90348%22%2C%228ad66b9e-9ecf-479d-8e5d-ead1c5696ccf%22%2C%2278f340fe-6b3b-453b-a795-a5a0802ccc2c%22%2C%22499a5149-5f1c-4097-8a8a-1592ecfb23f1%22%2C%227512ddf0-7264-41c4-bfd3-d4aef3b078b5%22%2C%2212341e36-bab3-4341-a4d6-613bae830835%22%2C%22546186ed-fd0d-4d88-9e36-adbde9cca664%22%2C%221131f12f-d5e9-43de-9e52-2ef5600645b0%22%2C%22b7ca02b7-fec3-4635-91d0-b4b160f0c6b7%22%2C%2259822347-ebf4-4dcc-ae06-519988ba77cc%22%2C%22a79fb6fd-ee0d-4697-9870-d59e2f972c1d%22%2C%227244272c-89aa-438f-b748-949654348c8f%22%5D%7D%2C%7B%22field%22%3A%22categories.locations.sys.id%22%2C%22in%22%3A%5B%222e7d849e-409c-466d-9ba7-6242cc346d7c%22%2C%2260b100f0-658d-493e-bbef-4445e14811bc%22%5D%7D%5D%7D%2C%7B%22and%22%3A%5B%7B%22field%22%3A%22sys.dataFormat%22%2C%22equalTo%22%3A%22entry%22%7D%2C%7B%22field%22%3A%22sys.contentTypeId%22%2C%22in%22%3A%5B%22event%22%5D%7D%5D%7D%5D",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 20651,
+      "timestamp": "2025-07-21T10:26:06.013Z"
+    },
+    {
+      "url": "https://www.cityoflondon.gov.uk/api/delivery/projects/website/nodes/things-to-do?entryFields=sys.contentTypeId%2Csys.id&entryLinkDepth=3&language=en-GB",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=utf-8",
+      "size": 492,
+      "timestamp": "2025-07-21T10:26:06.014Z"
+    },
+    {
+      "url": "https://cdn.aaanow.ai/px3CUQBB6iGb9AViecVXNQ/www.cityoflondon.gov.uk/things-to-do",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 1066,
+      "timestamp": "2025-07-21T10:26:06.016Z"
+    },
+    {
+      "url": "https://api.websitecarbon.com/b?url=cityoflondon.gov.uk",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json;charset=UTF-8",
+      "size": 71,
+      "timestamp": "2025-07-21T10:26:06.017Z"
+    },
+    {
+      "url": "https://api.websitecarbon.com/b?url=cityoflondon.gov.uk",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json;charset=UTF-8",
+      "size": 71,
+      "timestamp": "2025-07-21T10:26:06.017Z"
+    },
+    {
+      "url": "https://www.cityoflondon.gov.uk/api/delivery/projects/website/nodes/6a938372-d7ea-4712-ac7e-62b4a9dbcd17/ancestors?language=en-GB",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=utf-8",
+      "size": 378,
+      "timestamp": "2025-07-21T10:26:06.037Z"
+    },
+    {
+      "url": "https://www.cityoflondon.gov.uk/api/delivery/projects/website/nodes/things-to-do?depth=3&entryFields=sys.id&language=en-GB",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=utf-8",
+      "size": 210288,
+      "timestamp": "2025-07-21T10:26:06.037Z"
+    },
+    {
+      "url": "https://api.websitecarbon.com/b?url=cityoflondon.gov.uk",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json;charset=UTF-8",
+      "size": 71,
+      "timestamp": "2025-07-21T10:26:06.058Z"
+    },
+    {
+      "url": "https://api.websitecarbon.com/b?url=cityoflondon.gov.uk",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json;charset=UTF-8",
+      "size": 71,
+      "timestamp": "2025-07-21T10:26:06.058Z"
+    },
+    {
+      "url": "https://api.websitecarbon.com/b?url=cityoflondon.gov.uk",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json;charset=UTF-8",
+      "size": 71,
+      "timestamp": "2025-07-21T10:26:06.094Z"
+    },
+    {
+      "url": "https://api.websitecarbon.com/b?url=cityoflondon.gov.uk",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json;charset=UTF-8",
+      "size": 71,
+      "timestamp": "2025-07-21T10:26:06.094Z"
+    },
+    {
+      "url": "https://api.websitecarbon.com/b?url=cityoflondon.gov.uk",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json;charset=UTF-8",
+      "size": 71,
+      "timestamp": "2025-07-21T10:26:06.096Z"
+    },
+    {
+      "url": "https://api.websitecarbon.com/b?url=cityoflondon.gov.uk",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json;charset=UTF-8",
+      "size": 71,
+      "timestamp": "2025-07-21T10:26:06.096Z"
+    },
+    {
+      "url": "https://aaanow.ai/_acm/px3CUQBB6iGb9AViecVXNQ/_analysis?token=www.cityoflondon.gov.uk%2Fthings-to-do%3A1udnig%3A_3uCmgxu_wjGyRAwLmrJ2QGvQiGciZWEYl0nWCe6oko",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 12,
+      "timestamp": "2025-07-21T10:26:06.206Z"
+    },
+    {
+      "url": "https://www.cityoflondon.gov.uk/cdn-cgi/rum?",
+      "method": "POST",
+      "status": 204,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": 0,
+      "timestamp": "2025-07-21T10:26:14.572Z"
+    },
+    {
+      "url": "https://www.cityoflondon.gov.uk/api/delivery/projects/website/nodes/search?entryFields=sys.contentTypeId%2Csys.id&entryLinkDepth=3&language=en-GB",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=utf-8",
+      "size": 463,
+      "timestamp": "2025-07-21T10:26:14.573Z"
+    },
+    {
+      "url": "https://www.cityoflondon.gov.uk/api/delivery/projects/website/entries/search?linkDepth=3&pageIndex=0&pageSize=20&where=%5B%7B%22field%22%3A%22sys.id%22%2C%22equalTo%22%3A%22eac5431f-d563-4fb4-8fbe-6a5c869129f4%22%7D%2C%7B%22field%22%3A%22sys.language%22%2C%22equalTo%22%3A%22en-GB%22%7D%2C%7B%22field%22%3A%22sys.versionStatus%22%2C%22equalTo%22%3A%22published%22%7D%5D",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 23537,
+      "timestamp": "2025-07-21T10:26:14.617Z"
+    },
+    {
+      "url": "https://www.cityoflondon.gov.uk/api/delivery/projects/website/nodes/e1854b71-64bd-4f42-aad6-ad7dd63de869/ancestors?language=en-GB",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=utf-8",
+      "size": 378,
+      "timestamp": "2025-07-21T10:26:14.644Z"
+    },
+    {
+      "url": "https://www.cityoflondon.gov.uk/api/delivery/projects/website/entries/search?fields=entryTitle%2CentryDescription%2Ckeywords%2Casset%2Cimage%2Ctype%2CexternalImagePath%2CthumbnailImagePath%2Csummary%2Ctext%2Cward%2CpublishedDate%2CcreatedDate%2Cdate%2CeventLocation%2Clocation%2CcontactDetails%2CopeningTimes%2CpostalAddress%2CdateOfClosure%2Cstreet%2CdescriptiveLocation%2CreasonForClosure%2Cinformation%2CexternalURL%2CexternalUrl%2Clink%2Ccategories%2Csys.contentTypeId%2Csys.slug%2Csys.uri%2Csys.version.published%2Csys.version.created%2CdateSubmitted&linkDepth=1&pageIndex=0&pageSize=9&where=%5B%7B%22or%22%3A%5B%7B%22or%22%3A%5B%7B%22field%22%3A%22entryTitle%22%2C%22contains%22%3A%22bin%20collection%22%2C%22weight%22%3A150%7D%2C%7B%22field%22%3A%22entryTitle%22%2C%22freeText%22%3A%7B%22term%22%3A%22bin%20collection%22%2C%22fuzzy%22%3Afalse%2C%22operator%22%3A%22and%22%7D%2C%22weight%22%3A150%7D%5D%7D%2C%7B%22field%22%3A%22metaContent.metaDescription%22%2C%22freeText%22%3A%7B%22term%22%3A%22bin%20collection%22%2C%22fuzzy%22%3Afalse%2C%22operator%22%3A%22and%22%7D%2C%22weight%22%3A75%7D%2C%7B%22field%22%3A%22region%22%2C%22freeText%22%3A%7B%22term%22%3A%22bin%20collection%22%2C%22fuzzy%22%3Afalse%2C%22operator%22%3A%22and%22%7D%2C%22weight%22%3A20%7D%2C%7B%22field%22%3A%22ward%22%2C%22freeText%22%3A%7B%22term%22%3A%22bin%20collection%22%2C%22fuzzy%22%3Afalse%2C%22operator%22%3A%22and%22%7D%2C%22weight%22%3A40%7D%2C%7B%22field%22%3A%22keyPosts%22%2C%22freeText%22%3A%7B%22term%22%3A%22bin%20collection%22%2C%22fuzzy%22%3Afalse%2C%22operator%22%3A%22and%22%7D%2C%22weight%22%3A40%7D%2C%7B%22field%22%3A%22district%22%2C%22freeText%22%3A%7B%22term%22%3A%22bin%20collection%22%2C%22fuzzy%22%3Afalse%2C%22operator%22%3A%22and%22%7D%2C%22weight%22%3A40%7D%2C%7B%22field%22%3A%22content.textArea%22%2C%22freeText%22%3A%7B%22term%22%3A%22bin%20collection%22%2C%22fuzzy%22%3Afalse%2C%22operator%22%3A%22and%22%7D%2C%22weight%22%3A10%7D%2C%7B%22field%22%3A%22content.accordion.title%22%2C%22freeText%22%3A%7B%22term%22%3A%22bin%20collection%22%2C%22fuzzy%22%3Afalse%2C%22operator%22%3A%22and%22%7D%2C%22weight%22%3A20%7D%2C%7B%22field%22%3A%22content.accordion.textarea%22%2C%22freeText%22%3A%7B%22term%22%3A%22bin%20collection%22%2C%22fuzzy%22%3Afalse%2C%22operator%22%3A%22and%22%7D%2C%22weight%22%3A10%7D%2C%7B%22field%22%3A%22content.alertBlock.text%22%2C%22freeText%22%3A%7B%22term%22%3A%22bin%20collection%22%2C%22fuzzy%22%3Afalse%2C%22operator%22%3A%22and%22%7D%2C%22weight%22%3A20%7D%2C%7B%22field%22%3A%22content.quote.quote.text%22%2C%22freeText%22%3A%7B%22term%22%3A%22bin%20collection%22%2C%22fuzzy%22%3Afalse%2C%22operator%22%3A%22and%22%7D%2C%22weight%22%3A10%7D%2C%7B%22field%22%3A%22content.quote.subText%22%2C%22freeText%22%3A%7B%22term%22%3A%22bin%20collection%22%2C%22fuzzy%22%3Afalse%2C%22operator%22%3A%22and%22%7D%2C%22weight%22%3A10%7D%2C%7B%22field%22%3A%22description%22%2C%22freeText%22%3A%7B%22term%22%3A%22bin%20collection%22%2C%22fuzzy%22%3Afalse%2C%22operator%22%3A%22and%22%7D%2C%22weight%22%3A20%7D%2C%7B%22field%22%3A%22text%22%2C%22freeText%22%3A%7B%22term%22%3A%22bin%20collection%22%2C%22fuzzy%22%3Afalse%2C%22operator%22%3A%22and%22%7D%2C%22weight%22%3A20%7D%2C%7B%22field%22%3A%22textarea%22%2C%22freeText%22%3A%7B%22term%22%3A%22bin%20collection%22%2C%22fuzzy%22%3Afalse%2C%22operator%22%3A%22and%22%7D%2C%22weight%22%3A10%7D%2C%7B%22field%22%3A%22content.textarea%22%2C%22freeText%22%3A%7B%22term%22%3A%22bin%20collection%22%2C%22fuzzy%22%3Afalse%2C%22operator%22%3A%22and%22%7D%2C%22weight%22%3A10%7D%2C%7B%22field%22%3A%22keywords%22%2C%22contains%22%3A%22bin%20collection%22%2C%22weight%22%3A1500%7D%2C%7B%22field%22%3A%22searchContent%22%2C%22freeText%22%3A%7B%22term%22%3A%22bin%20collection%22%2C%22fuzzy%22%3Afalse%2C%22operator%22%3A%22and%22%7D%7D%5D%7D%2C%7B%22field%22%3A%22sys.versionStatus%22%2C%22equalTo%22%3A%22published%22%7D%2C%7B%22and%22%3A%5B%7B%22field%22%3A%22sys.dataFormat%22%2C%22equalTo%22%3A%22entry%22%7D%2C%7B%22field%22%3A%22sys.contentTypeId%22%2C%22in%22%3A%5B%22corporateLandingPage%22%2C%22corporateContentPage%22%2C%22democracyCouncillor%22%2C%22democracyCommittee%22%2C%22democracyMeeting%22%2C%22landingPage%22%2C%22assetFile%22%2C%22contentPage%22%2C%22listingPage%22%2C%22listingPageEvents%22%2C%22listingPagePropertyDevelopmentToolkit%22%2C%22listingPageRemembrancersOffice%22%2C%22listingPageRoadClosures%22%2C%22listingPageVenuesAttractions%22%2C%22event%22%2C%22venue%22%2C%22news%22%5D%7D%5D%7D%5D",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 7820,
+      "timestamp": "2025-07-21T10:26:14.696Z"
+    },
+    {
+      "url": "https://www.cityoflondon.gov.uk/api/delivery/projects/website/entries/search?fields=entryTitle%2CentryDescription%2Ckeywords%2Casset%2Cimage%2Ctype%2CexternalImagePath%2CthumbnailImagePath%2Csummary%2Ctext%2Cward%2CpublishedDate%2CcreatedDate%2Cdate%2CeventLocation%2Clocation%2CcontactDetails%2CopeningTimes%2CpostalAddress%2CdateOfClosure%2Cstreet%2CdescriptiveLocation%2CreasonForClosure%2Cinformation%2CexternalURL%2CexternalUrl%2Clink%2Ccategories%2Csys.contentTypeId%2Csys.slug%2Csys.uri%2Csys.version.published%2Csys.version.created%2CdateSubmitted&linkDepth=1&pageIndex=0&pageSize=9&where=%5B%7B%22or%22%3A%5B%7B%22or%22%3A%5B%7B%22field%22%3A%22entryTitle%22%2C%22contains%22%3A%22bin%20collection%22%2C%22weight%22%3A150%7D%2C%7B%22field%22%3A%22entryTitle%22%2C%22freeText%22%3A%7B%22term%22%3A%22bin%20collection%22%2C%22fuzzy%22%3Afalse%2C%22operator%22%3A%22and%22%7D%2C%22weight%22%3A150%7D%5D%7D%2C%7B%22field%22%3A%22metaContent.metaDescription%22%2C%22freeText%22%3A%7B%22term%22%3A%22bin%20collection%22%2C%22fuzzy%22%3Afalse%2C%22operator%22%3A%22and%22%7D%2C%22weight%22%3A75%7D%2C%7B%22field%22%3A%22region%22%2C%22freeText%22%3A%7B%22term%22%3A%22bin%20collection%22%2C%22fuzzy%22%3Afalse%2C%22operator%22%3A%22and%22%7D%2C%22weight%22%3A20%7D%2C%7B%22field%22%3A%22ward%22%2C%22freeText%22%3A%7B%22term%22%3A%22bin%20collection%22%2C%22fuzzy%22%3Afalse%2C%22operator%22%3A%22and%22%7D%2C%22weight%22%3A40%7D%2C%7B%22field%22%3A%22keyPosts%22%2C%22freeText%22%3A%7B%22term%22%3A%22bin%20collection%22%2C%22fuzzy%22%3Afalse%2C%22operator%22%3A%22and%22%7D%2C%22weight%22%3A40%7D%2C%7B%22field%22%3A%22district%22%2C%22freeText%22%3A%7B%22term%22%3A%22bin%20collection%22%2C%22fuzzy%22%3Afalse%2C%22operator%22%3A%22and%22%7D%2C%22weight%22%3A40%7D%2C%7B%22field%22%3A%22content.textArea%22%2C%22freeText%22%3A%7B%22term%22%3A%22bin%20collection%22%2C%22fuzzy%22%3Afalse%2C%22operator%22%3A%22and%22%7D%2C%22weight%22%3A10%7D%2C%7B%22field%22%3A%22content.accordion.title%22%2C%22freeText%22%3A%7B%22term%22%3A%22bin%20collection%22%2C%22fuzzy%22%3Afalse%2C%22operator%22%3A%22and%22%7D%2C%22weight%22%3A20%7D%2C%7B%22field%22%3A%22content.accordion.textarea%22%2C%22freeText%22%3A%7B%22term%22%3A%22bin%20collection%22%2C%22fuzzy%22%3Afalse%2C%22operator%22%3A%22and%22%7D%2C%22weight%22%3A10%7D%2C%7B%22field%22%3A%22content.alertBlock.text%22%2C%22freeText%22%3A%7B%22term%22%3A%22bin%20collection%22%2C%22fuzzy%22%3Afalse%2C%22operator%22%3A%22and%22%7D%2C%22weight%22%3A20%7D%2C%7B%22field%22%3A%22content.quote.quote.text%22%2C%22freeText%22%3A%7B%22term%22%3A%22bin%20collection%22%2C%22fuzzy%22%3Afalse%2C%22operator%22%3A%22and%22%7D%2C%22weight%22%3A10%7D%2C%7B%22field%22%3A%22content.quote.subText%22%2C%22freeText%22%3A%7B%22term%22%3A%22bin%20collection%22%2C%22fuzzy%22%3Afalse%2C%22operator%22%3A%22and%22%7D%2C%22weight%22%3A10%7D%2C%7B%22field%22%3A%22description%22%2C%22freeText%22%3A%7B%22term%22%3A%22bin%20collection%22%2C%22fuzzy%22%3Afalse%2C%22operator%22%3A%22and%22%7D%2C%22weight%22%3A20%7D%2C%7B%22field%22%3A%22text%22%2C%22freeText%22%3A%7B%22term%22%3A%22bin%20collection%22%2C%22fuzzy%22%3Afalse%2C%22operator%22%3A%22and%22%7D%2C%22weight%22%3A20%7D%2C%7B%22field%22%3A%22textarea%22%2C%22freeText%22%3A%7B%22term%22%3A%22bin%20collection%22%2C%22fuzzy%22%3Afalse%2C%22operator%22%3A%22and%22%7D%2C%22weight%22%3A10%7D%2C%7B%22field%22%3A%22content.textarea%22%2C%22freeText%22%3A%7B%22term%22%3A%22bin%20collection%22%2C%22fuzzy%22%3Afalse%2C%22operator%22%3A%22and%22%7D%2C%22weight%22%3A10%7D%2C%7B%22field%22%3A%22keywords%22%2C%22contains%22%3A%22bin%20collection%22%2C%22weight%22%3A1500%7D%2C%7B%22field%22%3A%22searchContent%22%2C%22freeText%22%3A%7B%22term%22%3A%22bin%20collection%22%2C%22fuzzy%22%3Afalse%2C%22operator%22%3A%22and%22%7D%7D%5D%7D%2C%7B%22field%22%3A%22sys.versionStatus%22%2C%22equalTo%22%3A%22published%22%7D%2C%7B%22and%22%3A%5B%7B%22field%22%3A%22sys.dataFormat%22%2C%22equalTo%22%3A%22entry%22%7D%2C%7B%22field%22%3A%22sys.contentTypeId%22%2C%22in%22%3A%5B%22event%22%2C%22venue%22%5D%7D%5D%7D%5D",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 68,
+      "timestamp": "2025-07-21T10:26:14.965Z"
+    },
+    {
+      "url": "https://www.cityoflondon.gov.uk/api/delivery/projects/website/entries/search?fields=entryTitle%2CentryDescription%2Ckeywords%2Casset%2Cimage%2Ctype%2CexternalImagePath%2CthumbnailImagePath%2Csummary%2Ctext%2Cward%2CpublishedDate%2CcreatedDate%2Cdate%2CeventLocation%2Clocation%2CcontactDetails%2CopeningTimes%2CpostalAddress%2CdateOfClosure%2Cstreet%2CdescriptiveLocation%2CreasonForClosure%2Cinformation%2CexternalURL%2CexternalUrl%2Clink%2Ccategories%2Csys.contentTypeId%2Csys.slug%2Csys.uri%2Csys.version.published%2Csys.version.created%2CdateSubmitted&linkDepth=1&pageIndex=0&pageSize=9&where=%5B%7B%22or%22%3A%5B%7B%22or%22%3A%5B%7B%22field%22%3A%22entryTitle%22%2C%22contains%22%3A%22bin%20collection%22%2C%22weight%22%3A150%7D%2C%7B%22field%22%3A%22entryTitle%22%2C%22freeText%22%3A%7B%22term%22%3A%22bin%20collection%22%2C%22fuzzy%22%3Afalse%2C%22operator%22%3A%22and%22%7D%2C%22weight%22%3A150%7D%5D%7D%2C%7B%22field%22%3A%22metaContent.metaDescription%22%2C%22freeText%22%3A%7B%22term%22%3A%22bin%20collection%22%2C%22fuzzy%22%3Afalse%2C%22operator%22%3A%22and%22%7D%2C%22weight%22%3A75%7D%2C%7B%22field%22%3A%22region%22%2C%22freeText%22%3A%7B%22term%22%3A%22bin%20collection%22%2C%22fuzzy%22%3Afalse%2C%22operator%22%3A%22and%22%7D%2C%22weight%22%3A20%7D%2C%7B%22field%22%3A%22ward%22%2C%22freeText%22%3A%7B%22term%22%3A%22bin%20collection%22%2C%22fuzzy%22%3Afalse%2C%22operator%22%3A%22and%22%7D%2C%22weight%22%3A40%7D%2C%7B%22field%22%3A%22keyPosts%22%2C%22freeText%22%3A%7B%22term%22%3A%22bin%20collection%22%2C%22fuzzy%22%3Afalse%2C%22operator%22%3A%22and%22%7D%2C%22weight%22%3A40%7D%2C%7B%22field%22%3A%22district%22%2C%22freeText%22%3A%7B%22term%22%3A%22bin%20collection%22%2C%22fuzzy%22%3Afalse%2C%22operator%22%3A%22and%22%7D%2C%22weight%22%3A40%7D%2C%7B%22field%22%3A%22content.textArea%22%2C%22freeText%22%3A%7B%22term%22%3A%22bin%20collection%22%2C%22fuzzy%22%3Afalse%2C%22operator%22%3A%22and%22%7D%2C%22weight%22%3A10%7D%2C%7B%22field%22%3A%22content.accordion.title%22%2C%22freeText%22%3A%7B%22term%22%3A%22bin%20collection%22%2C%22fuzzy%22%3Afalse%2C%22operator%22%3A%22and%22%7D%2C%22weight%22%3A20%7D%2C%7B%22field%22%3A%22content.accordion.textarea%22%2C%22freeText%22%3A%7B%22term%22%3A%22bin%20collection%22%2C%22fuzzy%22%3Afalse%2C%22operator%22%3A%22and%22%7D%2C%22weight%22%3A10%7D%2C%7B%22field%22%3A%22content.alertBlock.text%22%2C%22freeText%22%3A%7B%22term%22%3A%22bin%20collection%22%2C%22fuzzy%22%3Afalse%2C%22operator%22%3A%22and%22%7D%2C%22weight%22%3A20%7D%2C%7B%22field%22%3A%22content.quote.quote.text%22%2C%22freeText%22%3A%7B%22term%22%3A%22bin%20collection%22%2C%22fuzzy%22%3Afalse%2C%22operator%22%3A%22and%22%7D%2C%22weight%22%3A10%7D%2C%7B%22field%22%3A%22content.quote.subText%22%2C%22freeText%22%3A%7B%22term%22%3A%22bin%20collection%22%2C%22fuzzy%22%3Afalse%2C%22operator%22%3A%22and%22%7D%2C%22weight%22%3A10%7D%2C%7B%22field%22%3A%22description%22%2C%22freeText%22%3A%7B%22term%22%3A%22bin%20collection%22%2C%22fuzzy%22%3Afalse%2C%22operator%22%3A%22and%22%7D%2C%22weight%22%3A20%7D%2C%7B%22field%22%3A%22text%22%2C%22freeText%22%3A%7B%22term%22%3A%22bin%20collection%22%2C%22fuzzy%22%3Afalse%2C%22operator%22%3A%22and%22%7D%2C%22weight%22%3A20%7D%2C%7B%22field%22%3A%22textarea%22%2C%22freeText%22%3A%7B%22term%22%3A%22bin%20collection%22%2C%22fuzzy%22%3Afalse%2C%22operator%22%3A%22and%22%7D%2C%22weight%22%3A10%7D%2C%7B%22field%22%3A%22content.textarea%22%2C%22freeText%22%3A%7B%22term%22%3A%22bin%20collection%22%2C%22fuzzy%22%3Afalse%2C%22operator%22%3A%22and%22%7D%2C%22weight%22%3A10%7D%2C%7B%22field%22%3A%22keywords%22%2C%22contains%22%3A%22bin%20collection%22%2C%22weight%22%3A1500%7D%2C%7B%22field%22%3A%22searchContent%22%2C%22freeText%22%3A%7B%22term%22%3A%22bin%20collection%22%2C%22fuzzy%22%3Afalse%2C%22operator%22%3A%22and%22%7D%7D%5D%7D%2C%7B%22field%22%3A%22sys.versionStatus%22%2C%22equalTo%22%3A%22published%22%7D%2C%7B%22and%22%3A%5B%7B%22field%22%3A%22sys.dataFormat%22%2C%22equalTo%22%3A%22entry%22%7D%2C%7B%22field%22%3A%22sys.contentTypeId%22%2C%22in%22%3A%5B%22contentPage%22%2C%22landingPage%22%2C%22assetFile%22%2C%22listingPage%22%2C%22listingPageEvents%22%2C%22listingPagePropertyDevelopmentToolkit%22%2C%22listingPageRemembrancersOffice%22%2C%22listingPageRoadClosures%22%2C%22listingPageVenuesAttractions%22%2C%22event%22%2C%22venue%22%2C%22corporateLandingPage%22%2C%22corporateContentPage%22%5D%7D%5D%7D%5D",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 7491,
+      "timestamp": "2025-07-21T10:26:14.965Z"
+    },
+    {
+      "url": "https://www.cityoflondon.gov.uk/api/delivery/projects/website/entries/search?fields=entryTitle%2CentryDescription%2Ckeywords%2Casset%2Cimage%2Ctype%2CexternalImagePath%2CthumbnailImagePath%2Csummary%2Ctext%2Cward%2CpublishedDate%2CcreatedDate%2Cdate%2CeventLocation%2Clocation%2CcontactDetails%2CopeningTimes%2CpostalAddress%2CdateOfClosure%2Cstreet%2CdescriptiveLocation%2CreasonForClosure%2Cinformation%2CexternalURL%2CexternalUrl%2Clink%2Ccategories%2Csys.contentTypeId%2Csys.slug%2Csys.uri%2Csys.version.published%2Csys.version.created%2CdateSubmitted&linkDepth=1&pageIndex=0&pageSize=9&where=%5B%7B%22or%22%3A%5B%7B%22or%22%3A%5B%7B%22field%22%3A%22entryTitle%22%2C%22contains%22%3A%22bin%20collection%22%2C%22weight%22%3A150%7D%2C%7B%22field%22%3A%22entryTitle%22%2C%22freeText%22%3A%7B%22term%22%3A%22bin%20collection%22%2C%22fuzzy%22%3Afalse%2C%22operator%22%3A%22and%22%7D%2C%22weight%22%3A150%7D%5D%7D%2C%7B%22field%22%3A%22metaContent.metaDescription%22%2C%22freeText%22%3A%7B%22term%22%3A%22bin%20collection%22%2C%22fuzzy%22%3Afalse%2C%22operator%22%3A%22and%22%7D%2C%22weight%22%3A75%7D%2C%7B%22field%22%3A%22region%22%2C%22freeText%22%3A%7B%22term%22%3A%22bin%20collection%22%2C%22fuzzy%22%3Afalse%2C%22operator%22%3A%22and%22%7D%2C%22weight%22%3A20%7D%2C%7B%22field%22%3A%22ward%22%2C%22freeText%22%3A%7B%22term%22%3A%22bin%20collection%22%2C%22fuzzy%22%3Afalse%2C%22operator%22%3A%22and%22%7D%2C%22weight%22%3A40%7D%2C%7B%22field%22%3A%22keyPosts%22%2C%22freeText%22%3A%7B%22term%22%3A%22bin%20collection%22%2C%22fuzzy%22%3Afalse%2C%22operator%22%3A%22and%22%7D%2C%22weight%22%3A40%7D%2C%7B%22field%22%3A%22district%22%2C%22freeText%22%3A%7B%22term%22%3A%22bin%20collection%22%2C%22fuzzy%22%3Afalse%2C%22operator%22%3A%22and%22%7D%2C%22weight%22%3A40%7D%2C%7B%22field%22%3A%22content.textArea%22%2C%22freeText%22%3A%7B%22term%22%3A%22bin%20collection%22%2C%22fuzzy%22%3Afalse%2C%22operator%22%3A%22and%22%7D%2C%22weight%22%3A10%7D%2C%7B%22field%22%3A%22content.accordion.title%22%2C%22freeText%22%3A%7B%22term%22%3A%22bin%20collection%22%2C%22fuzzy%22%3Afalse%2C%22operator%22%3A%22and%22%7D%2C%22weight%22%3A20%7D%2C%7B%22field%22%3A%22content.accordion.textarea%22%2C%22freeText%22%3A%7B%22term%22%3A%22bin%20collection%22%2C%22fuzzy%22%3Afalse%2C%22operator%22%3A%22and%22%7D%2C%22weight%22%3A10%7D%2C%7B%22field%22%3A%22content.alertBlock.text%22%2C%22freeText%22%3A%7B%22term%22%3A%22bin%20collection%22%2C%22fuzzy%22%3Afalse%2C%22operator%22%3A%22and%22%7D%2C%22weight%22%3A20%7D%2C%7B%22field%22%3A%22content.quote.quote.text%22%2C%22freeText%22%3A%7B%22term%22%3A%22bin%20collection%22%2C%22fuzzy%22%3Afalse%2C%22operator%22%3A%22and%22%7D%2C%22weight%22%3A10%7D%2C%7B%22field%22%3A%22content.quote.subText%22%2C%22freeText%22%3A%7B%22term%22%3A%22bin%20collection%22%2C%22fuzzy%22%3Afalse%2C%22operator%22%3A%22and%22%7D%2C%22weight%22%3A10%7D%2C%7B%22field%22%3A%22description%22%2C%22freeText%22%3A%7B%22term%22%3A%22bin%20collection%22%2C%22fuzzy%22%3Afalse%2C%22operator%22%3A%22and%22%7D%2C%22weight%22%3A20%7D%2C%7B%22field%22%3A%22text%22%2C%22freeText%22%3A%7B%22term%22%3A%22bin%20collection%22%2C%22fuzzy%22%3Afalse%2C%22operator%22%3A%22and%22%7D%2C%22weight%22%3A20%7D%2C%7B%22field%22%3A%22textarea%22%2C%22freeText%22%3A%7B%22term%22%3A%22bin%20collection%22%2C%22fuzzy%22%3Afalse%2C%22operator%22%3A%22and%22%7D%2C%22weight%22%3A10%7D%2C%7B%22field%22%3A%22content.textarea%22%2C%22freeText%22%3A%7B%22term%22%3A%22bin%20collection%22%2C%22fuzzy%22%3Afalse%2C%22operator%22%3A%22and%22%7D%2C%22weight%22%3A10%7D%2C%7B%22field%22%3A%22keywords%22%2C%22contains%22%3A%22bin%20collection%22%2C%22weight%22%3A1500%7D%2C%7B%22field%22%3A%22searchContent%22%2C%22freeText%22%3A%7B%22term%22%3A%22bin%20collection%22%2C%22fuzzy%22%3Afalse%2C%22operator%22%3A%22and%22%7D%7D%5D%7D%2C%7B%22field%22%3A%22sys.versionStatus%22%2C%22equalTo%22%3A%22published%22%7D%2C%7B%22and%22%3A%5B%7B%22field%22%3A%22sys.dataFormat%22%2C%22equalTo%22%3A%22entry%22%7D%2C%7B%22field%22%3A%22sys.contentTypeId%22%2C%22in%22%3A%5B%22news%22%5D%7D%5D%7D%5D",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 2983,
+      "timestamp": "2025-07-21T10:26:14.966Z"
+    },
+    {
+      "url": "https://www.cityoflondon.gov.uk/api/delivery/projects/website/entries/search?fields=entryTitle%2CentryDescription%2Ckeywords%2Casset%2Cimage%2Ctype%2CexternalImagePath%2CthumbnailImagePath%2Csummary%2Ctext%2Cward%2CpublishedDate%2CcreatedDate%2Cdate%2CeventLocation%2Clocation%2CcontactDetails%2CopeningTimes%2CpostalAddress%2CdateOfClosure%2Cstreet%2CdescriptiveLocation%2CreasonForClosure%2Cinformation%2CexternalURL%2CexternalUrl%2Clink%2Ccategories%2Csys.contentTypeId%2Csys.slug%2Csys.uri%2Csys.version.published%2Csys.version.created%2CdateSubmitted&linkDepth=1&pageIndex=0&pageSize=9&where=%5B%7B%22or%22%3A%5B%7B%22or%22%3A%5B%7B%22field%22%3A%22entryTitle%22%2C%22contains%22%3A%22bin%20collection%22%2C%22weight%22%3A150%7D%2C%7B%22field%22%3A%22entryTitle%22%2C%22freeText%22%3A%7B%22term%22%3A%22bin%20collection%22%2C%22fuzzy%22%3Afalse%2C%22operator%22%3A%22and%22%7D%2C%22weight%22%3A150%7D%5D%7D%2C%7B%22field%22%3A%22metaContent.metaDescription%22%2C%22freeText%22%3A%7B%22term%22%3A%22bin%20collection%22%2C%22fuzzy%22%3Afalse%2C%22operator%22%3A%22and%22%7D%2C%22weight%22%3A75%7D%2C%7B%22field%22%3A%22region%22%2C%22freeText%22%3A%7B%22term%22%3A%22bin%20collection%22%2C%22fuzzy%22%3Afalse%2C%22operator%22%3A%22and%22%7D%2C%22weight%22%3A20%7D%2C%7B%22field%22%3A%22ward%22%2C%22freeText%22%3A%7B%22term%22%3A%22bin%20collection%22%2C%22fuzzy%22%3Afalse%2C%22operator%22%3A%22and%22%7D%2C%22weight%22%3A40%7D%2C%7B%22field%22%3A%22keyPosts%22%2C%22freeText%22%3A%7B%22term%22%3A%22bin%20collection%22%2C%22fuzzy%22%3Afalse%2C%22operator%22%3A%22and%22%7D%2C%22weight%22%3A40%7D%2C%7B%22field%22%3A%22district%22%2C%22freeText%22%3A%7B%22term%22%3A%22bin%20collection%22%2C%22fuzzy%22%3Afalse%2C%22operator%22%3A%22and%22%7D%2C%22weight%22%3A40%7D%2C%7B%22field%22%3A%22content.textArea%22%2C%22freeText%22%3A%7B%22term%22%3A%22bin%20collection%22%2C%22fuzzy%22%3Afalse%2C%22operator%22%3A%22and%22%7D%2C%22weight%22%3A10%7D%2C%7B%22field%22%3A%22content.accordion.title%22%2C%22freeText%22%3A%7B%22term%22%3A%22bin%20collection%22%2C%22fuzzy%22%3Afalse%2C%22operator%22%3A%22and%22%7D%2C%22weight%22%3A20%7D%2C%7B%22field%22%3A%22content.accordion.textarea%22%2C%22freeText%22%3A%7B%22term%22%3A%22bin%20collection%22%2C%22fuzzy%22%3Afalse%2C%22operator%22%3A%22and%22%7D%2C%22weight%22%3A10%7D%2C%7B%22field%22%3A%22content.alertBlock.text%22%2C%22freeText%22%3A%7B%22term%22%3A%22bin%20collection%22%2C%22fuzzy%22%3Afalse%2C%22operator%22%3A%22and%22%7D%2C%22weight%22%3A20%7D%2C%7B%22field%22%3A%22content.quote.quote.text%22%2C%22freeText%22%3A%7B%22term%22%3A%22bin%20collection%22%2C%22fuzzy%22%3Afalse%2C%22operator%22%3A%22and%22%7D%2C%22weight%22%3A10%7D%2C%7B%22field%22%3A%22content.quote.subText%22%2C%22freeText%22%3A%7B%22term%22%3A%22bin%20collection%22%2C%22fuzzy%22%3Afalse%2C%22operator%22%3A%22and%22%7D%2C%22weight%22%3A10%7D%2C%7B%22field%22%3A%22description%22%2C%22freeText%22%3A%7B%22term%22%3A%22bin%20collection%22%2C%22fuzzy%22%3Afalse%2C%22operator%22%3A%22and%22%7D%2C%22weight%22%3A20%7D%2C%7B%22field%22%3A%22text%22%2C%22freeText%22%3A%7B%22term%22%3A%22bin%20collection%22%2C%22fuzzy%22%3Afalse%2C%22operator%22%3A%22and%22%7D%2C%22weight%22%3A20%7D%2C%7B%22field%22%3A%22textarea%22%2C%22freeText%22%3A%7B%22term%22%3A%22bin%20collection%22%2C%22fuzzy%22%3Afalse%2C%22operator%22%3A%22and%22%7D%2C%22weight%22%3A10%7D%2C%7B%22field%22%3A%22content.textarea%22%2C%22freeText%22%3A%7B%22term%22%3A%22bin%20collection%22%2C%22fuzzy%22%3Afalse%2C%22operator%22%3A%22and%22%7D%2C%22weight%22%3A10%7D%2C%7B%22field%22%3A%22keywords%22%2C%22contains%22%3A%22bin%20collection%22%2C%22weight%22%3A1500%7D%2C%7B%22field%22%3A%22searchContent%22%2C%22freeText%22%3A%7B%22term%22%3A%22bin%20collection%22%2C%22fuzzy%22%3Afalse%2C%22operator%22%3A%22and%22%7D%7D%5D%7D%2C%7B%22field%22%3A%22sys.versionStatus%22%2C%22equalTo%22%3A%22published%22%7D%2C%7B%22and%22%3A%5B%7B%22field%22%3A%22sys.dataFormat%22%2C%22equalTo%22%3A%22entry%22%7D%2C%7B%22field%22%3A%22sys.contentTypeId%22%2C%22in%22%3A%5B%22democracyCouncillor%22%2C%22democracyCommittee%22%2C%22democracyMeeting%22%5D%7D%5D%7D%5D",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 68,
+      "timestamp": "2025-07-21T10:26:14.966Z"
+    },
+    {
+      "url": "https://www.cityoflondon.gov.uk/cdn-cgi/rum?",
+      "method": "POST",
+      "status": 204,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": 0,
+      "timestamp": "2025-07-21T10:26:17.253Z"
+    },
+    {
+      "url": "https://www.cityoflondon.gov.uk/api/delivery/projects/website/nodes/services/waste-and-recycling/household-waste-and-recycling/recycling-waste-and-bin-collections?entryFields=sys.contentTypeId%2Csys.id&entryLinkDepth=3&language=en-GB",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=utf-8",
+      "size": 702,
+      "timestamp": "2025-07-21T10:26:17.305Z"
+    },
+    {
+      "url": "https://www.cityoflondon.gov.uk/api/delivery/projects/website/entries/search?linkDepth=3&pageIndex=0&pageSize=20&where=%5B%7B%22field%22%3A%22sys.id%22%2C%22equalTo%22%3A%2206efb229-e447-45bc-a69f-427134a7419a%22%7D%2C%7B%22field%22%3A%22sys.language%22%2C%22equalTo%22%3A%22en-GB%22%7D%2C%7B%22field%22%3A%22sys.versionStatus%22%2C%22equalTo%22%3A%22published%22%7D%5D",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 85208,
+      "timestamp": "2025-07-21T10:26:17.308Z"
+    },
+    {
+      "url": "https://www.cityoflondon.gov.uk/api/delivery/projects/website/nodes/1c6d2d33-506c-41ff-9c37-227809527e74/ancestors?language=en-GB",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=utf-8",
+      "size": 1803,
+      "timestamp": "2025-07-21T10:26:17.309Z"
+    },
+    {
+      "url": "https://www.cityoflondon.gov.uk/api/delivery/projects/website/nodes/services/waste-and-recycling/household-waste-and-recycling/recycling-waste-and-bin-collections?depth=3&entryFields=sys.id&language=en-GB",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=utf-8",
+      "size": 2321,
+      "timestamp": "2025-07-21T10:26:17.310Z"
+    },
+    {
+      "url": "https://www.cityoflondon.gov.uk/api/delivery/projects/website/entries/search?fields=entryTitle%2CentryDescription%2Ckeywords%2Casset%2Cimage%2Ctype%2CexternalImagePath%2CthumbnailImagePath%2Csummary%2Ctext%2Cward%2CpublishedDate%2CcreatedDate%2Cdate%2CeventLocation%2Clocation%2CcontactDetails%2CopeningTimes%2CpostalAddress%2CdateOfClosure%2Cstreet%2CdescriptiveLocation%2CreasonForClosure%2Cinformation%2CexternalURL%2CexternalUrl%2Clink%2Ccategories%2Csys.contentTypeId%2Csys.slug%2Csys.uri%2Csys.version.published%2Csys.version.created%2CdateSubmitted&linkDepth=1&orderBy=%5B%7B%22asc%22%3A%22date.from%22%7D%5D&pageIndex=0&pageSize=3&where=%5B%7B%22field%22%3A%22sys.versionStatus%22%2C%22equalTo%22%3A%22published%22%7D%2C%7B%22field%22%3A%22date.to%22%2C%22greaterThanOrEqualTo%22%3A%222025-07-21T00%3A00%3A00%22%7D%2C%7B%22or%22%3A%5B%7B%22field%22%3A%22categories.general.sys.id%22%2C%22in%22%3A%5B%2259822347-ebf4-4dcc-ae06-519988ba77cc%22%5D%7D%5D%7D%2C%7B%22and%22%3A%5B%7B%22field%22%3A%22sys.dataFormat%22%2C%22equalTo%22%3A%22entry%22%7D%2C%7B%22field%22%3A%22sys.contentTypeId%22%2C%22in%22%3A%5B%22event%22%5D%7D%5D%7D%5D",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 4635,
+      "timestamp": "2025-07-21T10:26:17.312Z"
+    },
+    {
+      "url": "https://www.cityoflondon.gov.uk/cdn-cgi/rum?",
+      "method": "POST",
+      "status": 204,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": 0,
+      "timestamp": "2025-07-21T10:26:19.966Z"
+    },
+    {
+      "url": "https://www.cityoflondon.gov.uk/api/delivery/projects/website/nodes/services/waste-and-recycling/household-waste-and-recycling/recycling-waste-and-bin-collections/register-for-waste-and-recycling-collections?entryFields=sys.contentTypeId%2Csys.id&entryLinkDepth=3&language=en-GB",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=utf-8",
+      "size": 809,
+      "timestamp": "2025-07-21T10:26:19.967Z"
+    },
+    {
+      "url": "https://www.cityoflondon.gov.uk/api/delivery/projects/website/entries/search?linkDepth=1&pageIndex=0&pageSize=20&where=%5B%7B%22field%22%3A%22sys.id%22%2C%22equalTo%22%3A%22b8b413d4-a1de-4dbd-9928-6019b6e94771%22%7D%2C%7B%22field%22%3A%22sys.language%22%2C%22equalTo%22%3A%22en-GB%22%7D%2C%7B%22field%22%3A%22sys.versionStatus%22%2C%22equalTo%22%3A%22published%22%7D%5D",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 31549,
+      "timestamp": "2025-07-21T10:26:19.968Z"
+    },
+    {
+      "url": "https://www.cityoflondon.gov.uk/api/delivery/projects/website/nodes/b25fef9c-5252-4f88-8646-899e36cf89d1/ancestors?language=en-GB",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=utf-8",
+      "size": 2374,
+      "timestamp": "2025-07-21T10:26:20.043Z"
+    }
+  ]
+}

@@ -1,0 +1,340 @@
+{
+  "metadata": {
+    "trace_name": "bridgend_county_borough_council",
+    "processed_at": "2025-08-26 18:44:24",
+    "workflow_steps_count": 8,
+    "navigation_events_count": 27
+  },
+  "scraping_patterns": {
+    "login_detected": false,
+    "form_submissions": 1,
+    "navigation_count": 2,
+    "unique_domains": [
+      "bridgendportal.azurewebsites.net",
+      "apikeys.civiccomputing.com",
+      "www.bridgend.gov.uk",
+      "backend.logicdialog.ai",
+      "socket-server-input.logicdialog.ai",
+      "use.typekit.net",
+      "www.browsealoud.com"
+    ],
+    "api_endpoints": [
+      "https://www.browsealoud.com/version.json",
+      "https://www.browsealoud.com/modules/3.9.7/sri.json",
+      "https://www.browsealoud.com/version.json",
+      "https://www.browsealoud.com/modules/3.9.7/sri.json",
+      "https://backend.logicdialog.ai/api/user/client-info?client=bridgend",
+      "https://backend.logicdialog.ai/api/user/client-info?language=en&client=bridgend&domain=www.bridgend.gov.uk",
+      "https://socket-server-input.logicdialog.ai/api/user/session?language=en&client=bridgend&domain=www.bridgend.gov.uk&persistBetweenPages=true",
+      "https://www.browsealoud.com/version.json",
+      "https://www.browsealoud.com/modules/3.9.7/sri.json",
+      "https://www.browsealoud.com/version.json",
+      "https://www.browsealoud.com/modules/3.9.7/sri.json"
+    ],
+    "data_extraction_indicators": []
+  },
+  "workflow_steps": [
+    {
+      "action": "goto",
+      "target": "https://www.bridgend.gov.uk/residents/recycling-waste-and-environment/refuse-collections/",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "goto",
+      "target": "https://www.bridgend.gov.uk/residents/",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e52 >> internal:describe=\"Recycling and waste link\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e75 >> internal:describe=\"Refuse collections link\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e76 >> internal:describe=\"Find out your waste and recycling collection day link\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "fill",
+      "target": "aria-ref=e39 >> internal:describe=\"textbox \\\"Enter your street name or postcode\\\"\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0,
+      "value": "CF31 1DE"
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e42 >> internal:describe=\"Look up property button\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e68 >> internal:describe=\"1 Rushfield Gardens, Bridgend, CF31 1DE link\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    }
+  ],
+  "navigation_events": [
+    {
+      "url": "https://www.bridgend.gov.uk/residents/recycling-waste-and-environment/refuse-collections/",
+      "method": "GET",
+      "status": 404,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=utf-8",
+      "size": 12766,
+      "timestamp": "2025-07-21T11:04:10.653Z"
+    },
+    {
+      "url": "https://apikeys.civiccomputing.com/c/v?d=www.bridgend.gov.uk&p=CookieControl%20Multi-Site&v=9&k=d63ecb7d0b1cbe294ab2c0526af4085e6fcdad6c&format=json",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 304,
+      "timestamp": "2025-07-21T11:04:10.798Z"
+    },
+    {
+      "url": "https://www.browsealoud.com/version.json",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 31,
+      "timestamp": "2025-07-21T11:04:10.799Z"
+    },
+    {
+      "url": "https://www.browsealoud.com/modules/3.9.7/sri.json",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 478,
+      "timestamp": "2025-07-21T11:04:10.829Z"
+    },
+    {
+      "url": "https://www.bridgend.gov.uk/residents/",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=utf-8",
+      "size": 45779,
+      "timestamp": "2025-07-21T11:04:12.503Z"
+    },
+    {
+      "url": "https://apikeys.civiccomputing.com/c/v?d=www.bridgend.gov.uk&p=CookieControl%20Multi-Site&v=9&k=d63ecb7d0b1cbe294ab2c0526af4085e6fcdad6c&format=json",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 304,
+      "timestamp": "2025-07-21T11:04:12.583Z"
+    },
+    {
+      "url": "https://www.browsealoud.com/version.json",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 31,
+      "timestamp": "2025-07-21T11:04:12.584Z"
+    },
+    {
+      "url": "https://www.browsealoud.com/modules/3.9.7/sri.json",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 478,
+      "timestamp": "2025-07-21T11:04:12.648Z"
+    },
+    {
+      "url": "https://backend.logicdialog.ai/api/user/client-info?client=bridgend",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=utf-8",
+      "size": 7477,
+      "timestamp": "2025-07-21T11:04:12.749Z"
+    },
+    {
+      "url": "https://backend.logicdialog.ai/api/user/client-info?language=en&client=bridgend&domain=www.bridgend.gov.uk",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=utf-8",
+      "size": 7477,
+      "timestamp": "2025-07-21T11:04:13.117Z"
+    },
+    {
+      "url": "https://socket-server-input.logicdialog.ai/api/user/session?language=en&client=bridgend&domain=www.bridgend.gov.uk&persistBetweenPages=true",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=utf-8",
+      "size": 101,
+      "timestamp": "2025-07-21T11:04:13.220Z"
+    },
+    {
+      "url": "https://www.bridgend.gov.uk/residents/recycling-and-waste/",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=utf-8",
+      "size": 27351,
+      "timestamp": "2025-07-21T11:04:14.352Z"
+    },
+    {
+      "url": "https://www.browsealoud.com/version.json",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 31,
+      "timestamp": "2025-07-21T11:04:14.386Z"
+    },
+    {
+      "url": "https://apikeys.civiccomputing.com/c/v?d=www.bridgend.gov.uk&p=CookieControl%20Multi-Site&v=9&k=d63ecb7d0b1cbe294ab2c0526af4085e6fcdad6c&format=json",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 304,
+      "timestamp": "2025-07-21T11:04:14.386Z"
+    },
+    {
+      "url": "https://www.browsealoud.com/modules/3.9.7/sri.json",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 478,
+      "timestamp": "2025-07-21T11:04:14.426Z"
+    },
+    {
+      "url": "https://www.bridgend.gov.uk/residents/recycling-and-waste/refuse-collections/",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=utf-8",
+      "size": 21236,
+      "timestamp": "2025-07-21T11:04:17.012Z"
+    },
+    {
+      "url": "https://www.browsealoud.com/version.json",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 31,
+      "timestamp": "2025-07-21T11:04:17.047Z"
+    },
+    {
+      "url": "https://apikeys.civiccomputing.com/c/v?d=www.bridgend.gov.uk&p=CookieControl%20Multi-Site&v=9&k=d63ecb7d0b1cbe294ab2c0526af4085e6fcdad6c&format=json",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 304,
+      "timestamp": "2025-07-21T11:04:17.047Z"
+    },
+    {
+      "url": "https://www.browsealoud.com/modules/3.9.7/sri.json",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 478,
+      "timestamp": "2025-07-21T11:04:17.088Z"
+    },
+    {
+      "url": "https://bridgendportal.azurewebsites.net/",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=UTF-8",
+      "size": 11372,
+      "timestamp": "2025-07-21T11:04:20.306Z"
+    },
+    {
+      "url": "https://use.typekit.net/af/9b05f3/000000000000000000013365/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/font-woff2",
+      "size": 51524,
+      "timestamp": "2025-07-21T11:04:20.416Z"
+    },
+    {
+      "url": "https://use.typekit.net/af/309dfe/000000000000000000010091/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/font-woff2",
+      "size": 43076,
+      "timestamp": "2025-07-21T11:04:20.416Z"
+    },
+    {
+      "url": "https://www.bridgend.gov.uk/website/themes/default/images/favicons/favicon-32x32.png",
+      "method": "GET",
+      "status": 404,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": 0,
+      "timestamp": "2025-07-21T11:04:20.434Z"
+    },
+    {
+      "url": "https://bridgendportal.azurewebsites.net/property/",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 3468,
+      "timestamp": "2025-07-21T11:04:25.371Z"
+    },
+    {
+      "url": "https://bridgendportal.azurewebsites.net/property/100100485220",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=UTF-8",
+      "size": 9658,
+      "timestamp": "2025-07-21T11:04:27.743Z"
+    },
+    {
+      "url": "https://use.typekit.net/af/309dfe/000000000000000000010091/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/font-woff2",
+      "size": -1,
+      "timestamp": "2025-07-21T11:04:28.212Z"
+    },
+    {
+      "url": "https://use.typekit.net/af/9b05f3/000000000000000000013365/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/font-woff2",
+      "size": -1,
+      "timestamp": "2025-07-21T11:04:28.214Z"
+    }
+  ]
+}

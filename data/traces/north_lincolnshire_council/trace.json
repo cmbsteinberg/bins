@@ -1,0 +1,597 @@
+{
+  "metadata": {
+    "trace_name": "north_lincolnshire_council",
+    "processed_at": "2025-08-26 18:44:24",
+    "workflow_steps_count": 4,
+    "navigation_events_count": 56
+  },
+  "scraping_patterns": {
+    "login_detected": false,
+    "form_submissions": 13,
+    "navigation_count": 1,
+    "unique_domains": [
+      "miccwc.northlincs.gov.uk",
+      "pixel.rubiconproject.com",
+      "c.amazon-adsystem.com",
+      "lb.eu-1-id5-sync.com",
+      "signal-metrics-collector-beta.s-onetag.com",
+      "gum.criteo.com",
+      "api.cmp.inmobi.com",
+      "ep1.adtrafficquality.google",
+      "m.northlincs.gov.uk",
+      "match.adsrvr.org",
+      "connect-metrics-collector.s-onetag.com",
+      "id5-sync.com",
+      "floor.pbxai.com",
+      "www.google.com",
+      "onetag-geo.s-onetag.com",
+      "ib.adnxs.com",
+      "ads.counciladvertising.net",
+      "signal-floors.s-onetag.com",
+      "s.cpx.to",
+      "cmp.inmobi.com",
+      "pagecorrect.monsido.com",
+      "ep2.adtrafficquality.google",
+      "q.clarity.ms",
+      "www.northlincs.gov.uk",
+      "map.northlincs.gov.uk",
+      "visit-server.inmobi-choice.io",
+      "heatmaps.monsido.com"
+    ],
+    "api_endpoints": [
+      "https://cmp.inmobi.com/GVL-v3/vendor-list-trimmed-v1.json",
+      "https://cmp.inmobi.com/GVL-v2/cmp-list.json",
+      "https://cmp.inmobi.com/us-mspa/v1/purposes-national-en.json",
+      "https://cmp.inmobi.com/GVL-v3/vendor-list-trimmed-v1.json",
+      "https://cmp.inmobi.com/tcfv2/google-atp-list.json",
+      "https://cmp.inmobi.com/custom-translations/mjq2rgU4Jj7VF/dafc918e-8f78-462d-ba02-963863765eab/en.json",
+      "https://miccwc.northlincs.gov.uk/CustomerChat/api/chat/getqueueinfo?sgid=0&sgname=WebChat&tenantid=-1",
+      "https://miccwc.northlincs.gov.uk/CustomerChat/api/chat/chatconfiguration",
+      "https://heatmaps.monsido.com/v1/settings/Oqj0dZH_Q-viHfLYun9mXg.json",
+      "https://pagecorrect.monsido.com/v1/settings/Oqj0dZH_Q-viHfLYun9mXg.json",
+      "https://id5-sync.com/api/config/prebid",
+      "https://id5-sync.com/g/v2/983.json",
+      "https://m.northlincs.gov.uk/findlocation/search.json?authority_code=2003&&callback=jQuery34108606461364763598_1753093766100&search_term=DN15%200BE&_=1753093766101",
+      "https://miccwc.northlincs.gov.uk/CustomerChat/api/chat/getqueueinfo?sgid=0&sgname=WebChat&tenantid=-1",
+      "https://miccwc.northlincs.gov.uk/CustomerChat/api/chat/getqueueinfo?sgid=0&sgname=WebChat&tenantid=-1"
+    ],
+    "data_extraction_indicators": []
+  },
+  "workflow_steps": [
+    {
+      "action": "goto",
+      "target": "https://www.northlincs.gov.uk/bins-waste-and-recycling/collection-dates/",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e23 >> internal:describe=\"AGREE button\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "fill",
+      "target": "aria-ref=e92 >> internal:describe=\"address search\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0,
+      "value": "DN15 0BE"
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e204 >> internal:describe=\"1 High Street, Dragonby, DN15 0BE\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    }
+  ],
+  "navigation_events": [
+    {
+      "url": "https://www.northlincs.gov.uk/bins-waste-and-recycling/collection-dates/",
+      "method": "GET",
+      "status": 301,
+      "redirect_url": "https://www.northlincs.gov.uk/bins-waste-and-recycling/bin-and-box-collection-dates/",
+      "mime_type": "text/html; charset=UTF-8",
+      "size": -1,
+      "timestamp": "2025-07-21T10:29:25.358Z"
+    },
+    {
+      "url": "https://www.northlincs.gov.uk/bins-waste-and-recycling/bin-and-box-collection-dates/",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=UTF-8",
+      "size": 50922,
+      "timestamp": "2025-07-21T10:29:26.023Z"
+    },
+    {
+      "url": "https://cmp.inmobi.com/geoip",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 54,
+      "timestamp": "2025-07-21T10:29:26.346Z"
+    },
+    {
+      "url": "https://cmp.inmobi.com/GVL-v3/vendor-list-trimmed-v1.json",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 653376,
+      "timestamp": "2025-07-21T10:29:26.369Z"
+    },
+    {
+      "url": "https://cmp.inmobi.com/GVL-v2/cmp-list.json",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 24286,
+      "timestamp": "2025-07-21T10:29:26.392Z"
+    },
+    {
+      "url": "https://visit-server.inmobi-choice.io/visit-event",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": 0,
+      "timestamp": "2025-07-21T10:29:26.413Z"
+    },
+    {
+      "url": "https://cmp.inmobi.com/us-mspa/v1/purposes-national-en.json",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 10687,
+      "timestamp": "2025-07-21T10:29:26.414Z"
+    },
+    {
+      "url": "https://cmp.inmobi.com/GVL-v3/vendor-list-trimmed-v1.json",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 653376,
+      "timestamp": "2025-07-21T10:29:26.417Z"
+    },
+    {
+      "url": "https://cmp.inmobi.com/tcfv2/google-atp-list.json",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 144561,
+      "timestamp": "2025-07-21T10:29:26.417Z"
+    },
+    {
+      "url": "https://cmp.inmobi.com/geoip",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 54,
+      "timestamp": "2025-07-21T10:29:26.452Z"
+    },
+    {
+      "url": "https://api.cmp.inmobi.com/?log=%7B%22accountId%22%3A%22mjq2rgU4Jj7VF%22%2C%22domain%22%3A%22www.northlincs.gov.uk%22%2C%22publisher%22%3A%22North%20Lincolnshire%20Council%20%22%2C%22cmpId%22%3A10%2C%22cmpVersion%22%3A%222.61%22%2C%22displayType%22%3A%22tcfui%3Amandatory%22%2C%22configurationHashCode%22%3A%22Cny0GLaUp97HOokSS3tunQ%22%2C%22tagVersion%22%3A%22V3%22%2C%22gvlVersion%22%3A3%2C%22siteUuid%22%3A%2225d93260-6a1c-477c-af2e-70075872cd71%22%2C%22browserName%22%3A%22Chrome%22%2C%22deviceType%22%3A%22pc%22%2C%22cmpPlatform%22%3A%22Mac%20OS%22%2C%22pageFormat%22%3A%22HTTP%22%2C%22country%22%3A%22gbr%22%2C%22region%22%3A%22eng%22%2C%22city%22%3A%22brixton%20hill%22%2C%22configs%22%3A%7B%22gbcApplicable%22%3Afalse%2C%22themeUuid%22%3A%22dafc918e-8f78-462d-ba02-963863765eab%22%2C%22language%22%3A%22en%22%2C%22copApplicable%22%3Afalse%2C%22advancedApplicable%22%3Afalse%7D%2C%22existingCMPStatus%22%3Anull%2C%22existingGBCStatus%22%3Anull%2C%22existingConfigs%22%3A%7B%7D%2C%22manualTrigger%22%3Afalse%2C%22clientTimestamp%22%3A1753093766440%2C%22operationType%22%3A%22init%22%2C%22sessionId%22%3A%22GDPR-qy3jdp3l09127w8hravm%22%7D",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/plain; charset=utf-8",
+      "size": 2,
+      "timestamp": "2025-07-21T10:29:26.452Z"
+    },
+    {
+      "url": "https://cmp.inmobi.com/custom-translations/mjq2rgU4Jj7VF/dafc918e-8f78-462d-ba02-963863765eab/en.json",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 3,
+      "timestamp": "2025-07-21T10:29:26.481Z"
+    },
+    {
+      "url": "https://miccwc.northlincs.gov.uk/CustomerChat/Content/Templates.html",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html",
+      "size": 7439,
+      "timestamp": "2025-07-21T10:29:28.173Z"
+    },
+    {
+      "url": "https://miccwc.northlincs.gov.uk/CustomerChat/Content/fontawesome-5.6.1/webfonts/fa-solid-900.woff2",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/font-woff2",
+      "size": 79072,
+      "timestamp": "2025-07-21T10:29:28.256Z"
+    },
+    {
+      "url": "https://miccwc.northlincs.gov.uk/CustomerChat/Content/fontawesome-5.6.1/webfonts/fa-brands-400.woff2",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/font-woff2",
+      "size": 73936,
+      "timestamp": "2025-07-21T10:29:28.257Z"
+    },
+    {
+      "url": "https://miccwc.northlincs.gov.uk/CustomerChat/api/chat/getqueueinfo?sgid=0&sgname=WebChat&tenantid=-1",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=utf-8",
+      "size": 35,
+      "timestamp": "2025-07-21T10:29:28.264Z"
+    },
+    {
+      "url": "https://miccwc.northlincs.gov.uk/CustomerChat/api/chat/chatconfiguration",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=utf-8",
+      "size": 138,
+      "timestamp": "2025-07-21T10:29:28.378Z"
+    },
+    {
+      "url": "https://miccwc.northlincs.gov.uk/CustomerChat/Content/fontawesome-5.6.1/webfonts/fa-regular-400.woff2",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/font-woff2",
+      "size": 14868,
+      "timestamp": "2025-07-21T10:29:28.650Z"
+    },
+    {
+      "url": "https://api.cmp.inmobi.com/?log=%7B%22userEvents%22%3A%5B%7B%22clientTimestamp%22%3A1753093766439%2C%22event%22%3A%22startOnPage%3AGDPR_0%22%7D%2C%7B%22clientTimestamp%22%3A1753093769864%2C%22event%22%3A%22acceptAll%3Aclick%22%7D%5D%2C%22acceptanceState%22%3A%22All%22%2C%22objectionState%22%3A%22None%22%2C%22tcData%22%3A%22CQU5x4AQU5x4AAKA9AENB0FsAP_gAEPgAAwILYNR_G__bWlr-b73aftkeYxP9_hr7sQxBgbJk24FzLvW_JwWx2E5NAzatqIKmRIAu3TBIQNlHJDURVCgKogVryDMaEyUoTNKJ6BkiFMRI2JYCFxvm4tjeQCY5vr991c1mB-N7dr83dzyy4hHn3a5_2S1WJCdIYetDfv8ZBKT-9IEd_x8v4v4_F7pE2-eS1n_pGvp6D9-Yns_dB299_baffzPn__rl_e_X_vf_n37v943H77v____fBbAAEw0KiCMsiBEIlAwggQAKCsIAKBAEAACQNEBACYMCnIGAC6wmQAgBQADBACAAEGAAIAABIAEIgAoAIBAABAIFAAGABAEBAAwMAAYALAQCAAEB0DFMCCAQLABIzIoNMCUABIICWyoQSAIEFcIQizwCCBETBQAAAgAFAQAAPBYCEkgJWJBAFxBNAAAQAABRAgQIpGzAEFAZotBeDJ9GRpgGD5gmSUyDIAmCMjJNiE34TDxyFEKCHIAAAAA.f_gAAAAAAAAA%22%2C%22nonIabConsentData%22%3A%22%22%2C%22gppData%22%3A%22DBABMA~CQU5x4AQU5x4AAKA9AENB0FsAP_gAEPgAAwILYNR_G__bWlr-b73aftkeYxP9_hr7sQxBgbJk24FzLvW_JwWx2E5NAzatqIKmRIAu3TBIQNlHJDURVCgKogVryDMaEyUoTNKJ6BkiFMRI2JYCFxvm4tjeQCY5vr991c1mB-N7dr83dzyy4hHn3a5_2S1WJCdIYetDfv8ZBKT-9IEd_x8v4v4_F7pE2-eS1n_pGvp6D9-Yns_dB299_baffzPn__rl_e_X_vf_n37v943H77v____fBbAAEw0KiCMsiBEIlAwggQAKCsIAKBAEAACQNEBACYMCnIGAC6wmQAgBQADBACAAEGAAIAABIAEIgAoAIBAABAIFAAGABAEBAAwMAAYALAQCAAEB0DFMCCAQLABIzIoNMCUABIICWyoQSAIEFcIQizwCCBETBQAAAgAFAQAAPBYCEkgJWJBAFxBNAAAQAABRAgQIpGzAEFAZotBeDJ9GRpgGD5gmSUyDIAmCMjJNiE34TDxyFEKCHIAAAAA.f_gAAAAAAAAA%22%2C%22clientTimestamp%22%3A1753093769864%2C%22operationType%22%3A%22done%22%2C%22sessionId%22%3A%22GDPR-qy3jdp3l09127w8hravm%22%7D",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/plain; charset=utf-8",
+      "size": 2,
+      "timestamp": "2025-07-21T10:29:29.870Z"
+    },
+    {
+      "url": "https://ads.counciladvertising.net/tag/config/northlincolnshirec/mpu?url=www.northlincs.gov.uk%2Fbins-waste-and-recycling%2Fbin-and-box-collection-dates%2F",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 134,
+      "timestamp": "2025-07-21T10:29:29.870Z"
+    },
+    {
+      "url": "https://ads.counciladvertising.net/tag/config/northlincolnshirec/ibar?url=www.northlincs.gov.uk%2Fbins-waste-and-recycling%2Fbin-and-box-collection-dates%2F",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 134,
+      "timestamp": "2025-07-21T10:29:29.870Z"
+    },
+    {
+      "url": "https://heatmaps.monsido.com/v1/settings/Oqj0dZH_Q-viHfLYun9mXg.json",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 267,
+      "timestamp": "2025-07-21T10:29:29.962Z"
+    },
+    {
+      "url": "https://pagecorrect.monsido.com/v1/settings/Oqj0dZH_Q-viHfLYun9mXg.json",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 208,
+      "timestamp": "2025-07-21T10:29:29.963Z"
+    },
+    {
+      "url": "https://c.amazon-adsystem.com/cdn/prod/config?src=600&u=https%3A%2F%2Fwww.northlincs.gov.uk&pubid=9547a513-f2e5-4004-bd92-dc734efe7cf2",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json;charset=UTF-8",
+      "size": 196,
+      "timestamp": "2025-07-21T10:29:30.011Z"
+    },
+    {
+      "url": "https://onetag-geo.s-onetag.com/",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 555,
+      "timestamp": "2025-07-21T10:29:30.066Z"
+    },
+    {
+      "url": "https://onetag-geo.s-onetag.com/",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 555,
+      "timestamp": "2025-07-21T10:29:30.066Z"
+    },
+    {
+      "url": "https://signal-floors.s-onetag.com/www.northlincs.gov.uk/09728cac-3eb9-4e5a-8f71-9036963cd473",
+      "method": "GET",
+      "status": 404,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 0,
+      "timestamp": "2025-07-21T10:29:30.066Z"
+    },
+    {
+      "url": "https://match.adsrvr.org/track/rid?ttd_pid=0fkciot&fmt=json&gdpr=1&gdpr_consent=CQU5x4AQU5x4AAKA9AENB0FsAP_gAEPgAAwILYNR_G__bWlr-b73aftkeYxP9_hr7sQxBgbJk24FzLvW_JwWx2E5NAzatqIKmRIAu3TBIQNlHJDURVCgKogVryDMaEyUoTNKJ6BkiFMRI2JYCFxvm4tjeQCY5vr991c1mB-N7dr83dzyy4hHn3a5_2S1WJCdIYetDfv8ZBKT-9IEd_x8v4v4_F7pE2-eS1n_pGvp6D9-Yns_dB299_baffzPn__rl_e_X_vf_n37v943H77v____fBbAAEw0KiCMsiBEIlAwggQAKCsIAKBAEAACQNEBACYMCnIGAC6wmQAgBQADBACAAEGAAIAABIAEIgAoAIBAABAIFAAGABAEBAAwMAAYALAQCAAEB0DFMCCAQLABIzIoNMCUABIICWyoQSAIEFcIQizwCCBETBQAAAgAFAQAAPBYCEkgJWJBAFxBNAAAQAABRAgQIpGzAEFAZotBeDJ9GRpgGD5gmSUyDIAmCMjJNiE34TDxyFEKCHIAAAAA.f_gAAAAAAAAA",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 108,
+      "timestamp": "2025-07-21T10:29:30.067Z"
+    },
+    {
+      "url": "https://ib.adnxs.com/getuidj?gdpr=1&gdpr_consent=CQU5x4AQU5x4AAKA9AENB0FsAP_gAEPgAAwILYNR_G__bWlr-b73aftkeYxP9_hr7sQxBgbJk24FzLvW_JwWx2E5NAzatqIKmRIAu3TBIQNlHJDURVCgKogVryDMaEyUoTNKJ6BkiFMRI2JYCFxvm4tjeQCY5vr991c1mB-N7dr83dzyy4hHn3a5_2S1WJCdIYetDfv8ZBKT-9IEd_x8v4v4_F7pE2-eS1n_pGvp6D9-Yns_dB299_baffzPn__rl_e_X_vf_n37v943H77v____fBbAAEw0KiCMsiBEIlAwggQAKCsIAKBAEAACQNEBACYMCnIGAC6wmQAgBQADBACAAEGAAIAABIAEIgAoAIBAABAIFAAGABAEBAAwMAAYALAQCAAEB0DFMCCAQLABIzIoNMCUABIICWyoQSAIEFcIQizwCCBETBQAAAgAFAQAAPBYCEkgJWJBAFxBNAAAQAABRAgQIpGzAEFAZotBeDJ9GRpgGD5gmSUyDIAmCMjJNiE34TDxyFEKCHIAAAAA.f_gAAAAAAAAA",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=utf-8",
+      "size": 11,
+      "timestamp": "2025-07-21T10:29:30.067Z"
+    },
+    {
+      "url": "https://floor.pbxai.com/?pubxId=e2140966-98d4-471a-b2f6-1c773ac644dc&page=https://www.northlincs.gov.uk/bins-waste-and-recycling/bin-and-box-collection-dates/",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 273,
+      "timestamp": "2025-07-21T10:29:30.154Z"
+    },
+    {
+      "url": "https://id5-sync.com/api/config/prebid",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json;charset=UTF-8",
+      "size": 195,
+      "timestamp": "2025-07-21T10:29:30.154Z"
+    },
+    {
+      "url": "https://onetag-geo.s-onetag.com/",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 555,
+      "timestamp": "2025-07-21T10:29:30.195Z"
+    },
+    {
+      "url": "https://ep1.adtrafficquality.google/getconfig/sodar?sv=200&tid=gda&tv=r20250716&st=env",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=UTF-8",
+      "size": 17178,
+      "timestamp": "2025-07-21T10:29:30.308Z"
+    },
+    {
+      "url": "https://lb.eu-1-id5-sync.com/lb/v1",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json;charset=UTF-8",
+      "size": 45,
+      "timestamp": "2025-07-21T10:29:30.323Z"
+    },
+    {
+      "url": "https://q.clarity.ms/collect",
+      "method": "POST",
+      "status": 204,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": 0,
+      "timestamp": "2025-07-21T10:29:30.327Z"
+    },
+    {
+      "url": "https://s.cpx.to/fire.js?pid=12187&url=https%3A%2F%2Fwww.northlincs.gov.uk%2Fbins-waste-and-recycling%2Fbin-and-box-collection-dates%2F&hn_ver=106&cdl=4300&dsp=TTD&dsp_uid=8f145511-2951-48bd-a09d-93d013ba2895&gcv=CQU5x4AQU5x4AAKA9AENB0FsAP_gAEPgAAwILYNR_G__bWlr-b73aftkeYxP9_hr7sQxBgbJk24FzLvW_JwWx2E5NAzatqIKmRIAu3TBIQNlHJDURVCgKogVryDMaEyUoTNKJ6BkiFMRI2JYCFxvm4tjeQCY5vr991c1mB-N7dr83dzyy4hHn3a5_2S1WJCdIYetDfv8ZBKT-9IEd_x8v4v4_F7pE2-eS1n_pGvp6D9-Yns_dB299_baffzPn__rl_e_X_vf_n37v943H77v____fBbAAEw0KiCMsiBEIlAwggQAKCsIAKBAEAACQNEBACYMCnIGAC6wmQAgBQADBACAAEGAAIAABIAEIgAoAIBAABAIFAAGABAEBAAwMAAYALAQCAAEB0DFMCCAQLABIzIoNMCUABIICWyoQSAIEFcIQizwCCBETBQAAAgAFAQAAPBYCEkgJWJBAFxBNAAAQAABRAgQIpGzAEFAZotBeDJ9GRpgGD5gmSUyDIAmCMjJNiE34TDxyFEKCHIAAAAA.f_gAAAAAAAAA",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": 49,
+      "timestamp": "2025-07-21T10:29:30.332Z"
+    },
+    {
+      "url": "https://id5-sync.com/g/v2/983.json",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 1348,
+      "timestamp": "2025-07-21T10:29:30.334Z"
+    },
+    {
+      "url": "https://ep2.adtrafficquality.google/sodar/sodar2/237/runner.html",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html",
+      "size": 13159,
+      "timestamp": "2025-07-21T10:29:30.453Z"
+    },
+    {
+      "url": "https://www.google.com/recaptcha/api2/aframe",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=utf-8",
+      "size": 829,
+      "timestamp": "2025-07-21T10:29:30.506Z"
+    },
+    {
+      "url": "https://pixel.rubiconproject.com/token?pid=34010&customParamenters",
+      "method": "GET",
+      "status": 302,
+      "redirect_url": "https://s.cpx.to/sync?dsp=rubicon&dsp_uid=MDCTDP1L-9-EG7G&customParamenters=",
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T10:29:30.513Z"
+    },
+    {
+      "url": "https://s.cpx.to/sync?dsp=rubicon&dsp_uid=MDCTDP1L-9-EG7G&customParamenters=",
+      "method": "GET",
+      "status": 204,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": 0,
+      "timestamp": "2025-07-21T10:29:30.565Z"
+    },
+    {
+      "url": "https://ep2.adtrafficquality.google/generate_204?jdZY8Q",
+      "method": "GET",
+      "status": 204,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": 0,
+      "timestamp": "2025-07-21T10:29:30.999Z"
+    },
+    {
+      "url": "https://gum.criteo.com/syncframe?origin=publishertag&topUrl=www.northlincs.gov.uk&gdpr=1&gdpr_consent=CQU5x4AQU5x4AAKA9AENB0FsAP_gAEPgAAwILYNR_G__bWlr-b73aftkeYxP9_hr7sQxBgbJk24FzLvW_JwWx2E5NAzatqIKmRIAu3TBIQNlHJDURVCgKogVryDMaEyUoTNKJ6BkiFMRI2JYCFxvm4tjeQCY5vr991c1mB-N7dr83dzyy4hHn3a5_2S1WJCdIYetDfv8ZBKT-9IEd_x8v4v4_F7pE2-eS1n_pGvp6D9-Yns_dB299_baffzPn__rl_e_X_vf_n37v943H77v____fBbAAEw0KiCMsiBEIlAwggQAKCsIAKBAEAACQNEBACYMCnIGAC6wmQAgBQADBACAAEGAAIAABIAEIgAoAIBAABAIFAAGABAEBAAwMAAYALAQCAAEB0DFMCCAQLABIzIoNMCUABIICWyoQSAIEFcIQizwCCBETBQAAAgAFAQAAPBYCEkgJWJBAFxBNAAAQAABRAgQIpGzAEFAZotBeDJ9GRpgGD5gmSUyDIAmCMjJNiE34TDxyFEKCHIAAAAA.f_gAAAAAAAAA&gpp=DBABMA~CQU7OFiQU7OFiAKA9AENB0FsAP_gAEPgAAwILYNR_G__bWlr-b73aftkeYxP9_hr7sQxBgbJk24FzLvW_JwWx2E5NAzatqIKmRIAu3TBIQNlHJDURVCgKogVryDMaEyUoTNKJ6BkiFMRI2JYCFxvm4tjeQCY5vr991c1mB-N7dr83dzyy4hHn3a5_2S1WJCdIYetDfv8ZBKT-9IEd_x8v4v4_F7pE2-eS1n_pGvp6D9-Yns_dB299_baffzPn__rl_e_X_vf_n37v943H77v____fBbAAEw0KiCMsiBEIlAwggQAKCsIAKBAEAACQNEBACYMCnIGAC6wmQAgBQADBACAAEGAAIAABIAEIgAoAIBAABAIFAAGABAEBAAwMAAYALAQCAAEB0DFMCCAQLABIzIoNMCUABIICWyoQSAIEFcIQizwCCBETBQAAAgAFAQAAPBYCEkgJWJBAFxBNAAAQAABRAgQIpGzAEFAZotBeDJ9GRpgGD5gmSUyDIAmCMjJNiE34TDxyFEKCHIAAAAA.f_gAAAAAAAAA&gpp_sid=2",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=utf-8",
+      "size": 1606,
+      "timestamp": "2025-07-21T10:29:31.236Z"
+    },
+    {
+      "url": "https://q.clarity.ms/collect",
+      "method": "POST",
+      "status": 204,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": 0,
+      "timestamp": "2025-07-21T10:29:31.403Z"
+    },
+    {
+      "url": "https://q.clarity.ms/collect",
+      "method": "POST",
+      "status": 204,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": 0,
+      "timestamp": "2025-07-21T10:29:33.579Z"
+    },
+    {
+      "url": "https://connect-metrics-collector.s-onetag.com/metrics",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": 0,
+      "timestamp": "2025-07-21T10:29:41.055Z"
+    },
+    {
+      "url": "https://signal-metrics-collector-beta.s-onetag.com/metrics",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": 0,
+      "timestamp": "2025-07-21T10:29:41.199Z"
+    },
+    {
+      "url": "https://m.northlincs.gov.uk/findlocation/search.json?authority_code=2003&&callback=jQuery34108606461364763598_1753093766100&search_term=DN15%200BE&_=1753093766101",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=utf-8",
+      "size": -1,
+      "timestamp": "2025-07-21T10:29:42.256Z"
+    },
+    {
+      "url": "https://map.northlincs.gov.uk/getdata.aspx?callback=?&requesttype=json&Type=data&ds=bin_calendar&select=uprn,calendar,calendar_link&filter=^uprn^=%27100050208683%27",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=utf-8",
+      "size": 213,
+      "timestamp": "2025-07-21T10:29:44.237Z"
+    },
+    {
+      "url": "https://m.northlincs.gov.uk/bin_collections?no_collections=20&uprn=100050208683",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 23703,
+      "timestamp": "2025-07-21T10:29:45.072Z"
+    },
+    {
+      "url": "https://q.clarity.ms/collect",
+      "method": "POST",
+      "status": 204,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": 0,
+      "timestamp": "2025-07-21T10:29:45.077Z"
+    },
+    {
+      "url": "https://miccwc.northlincs.gov.uk/CustomerChat/api/chat/getqueueinfo?sgid=0&sgname=WebChat&tenantid=-1",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=utf-8",
+      "size": 35,
+      "timestamp": "2025-07-21T10:29:48.266Z"
+    },
+    {
+      "url": "https://q.clarity.ms/collect",
+      "method": "POST",
+      "status": 204,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": 0,
+      "timestamp": "2025-07-21T10:29:49.575Z"
+    },
+    {
+      "url": "https://signal-metrics-collector-beta.s-onetag.com/metrics",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": 0,
+      "timestamp": "2025-07-21T10:29:55.199Z"
+    },
+    {
+      "url": "https://q.clarity.ms/collect",
+      "method": "POST",
+      "status": 204,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": 0,
+      "timestamp": "2025-07-21T10:29:56.140Z"
+    },
+    {
+      "url": "https://miccwc.northlincs.gov.uk/CustomerChat/api/chat/getqueueinfo?sgid=0&sgname=WebChat&tenantid=-1",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=utf-8",
+      "size": 35,
+      "timestamp": "2025-07-21T10:30:08.268Z"
+    }
+  ]
+}

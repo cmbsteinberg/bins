@@ -1,0 +1,158 @@
+{
+  "metadata": {
+    "trace_name": "rushcliffe_borough_council",
+    "processed_at": "2025-08-26 18:44:24",
+    "workflow_steps_count": 5,
+    "navigation_events_count": 9
+  },
+  "scraping_patterns": {
+    "login_detected": false,
+    "form_submissions": 2,
+    "navigation_count": 1,
+    "unique_domains": [
+      "js.arcgis.com",
+      "eserv.rushcliffe.gov.uk",
+      "selfservice.rushcliffe.gov.uk"
+    ],
+    "api_endpoints": [],
+    "data_extraction_indicators": []
+  },
+  "workflow_steps": [
+    {
+      "action": "goto",
+      "target": "https://eserv.rushcliffe.gov.uk/onlineservices/binrounds/",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "fill",
+      "target": "aria-ref=e39 >> internal:describe=\"textbox \\\"Enter postcode...\\\"\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0,
+      "value": "LE12 5EQ"
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e40 >> internal:describe=\"button \\\"Search\\\"\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "selectOption",
+      "target": "aria-ref=e95 >> internal:describe=\"combobox \\\"Select address\\\"\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0,
+      "value": null
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e47 >> internal:describe=\"button \\\"Submit\\\"\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    }
+  ],
+  "navigation_events": [
+    {
+      "url": "https://eserv.rushcliffe.gov.uk/onlineservices/binrounds/",
+      "method": "GET",
+      "status": 302,
+      "redirect_url": "https://selfservice.rushcliffe.gov.uk/renderform.aspx?t=1242&k=86BDCD8DE8D868B9E23D10842A7A4FE0F1023CCA",
+      "mime_type": "text/html; charset=UTF-8",
+      "size": -1,
+      "timestamp": "2025-07-21T16:44:48.627Z"
+    },
+    {
+      "url": "https://selfservice.rushcliffe.gov.uk/renderform.aspx?t=1242&k=86BDCD8DE8D868B9E23D10842A7A4FE0F1023CCA",
+      "method": "GET",
+      "status": 301,
+      "redirect_url": "https://selfservice.rushcliffe.gov.uk/renderform?t=1242&k=86BDCD8DE8D868B9E23D10842A7A4FE0F1023CCA",
+      "mime_type": "text/html; charset=utf-8",
+      "size": -1,
+      "timestamp": "2025-07-21T16:44:48.711Z"
+    },
+    {
+      "url": "https://selfservice.rushcliffe.gov.uk/renderform?t=1242&k=86BDCD8DE8D868B9E23D10842A7A4FE0F1023CCA",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=utf-8",
+      "size": 16333,
+      "timestamp": "2025-07-21T16:44:48.779Z"
+    },
+    {
+      "url": "https://js.arcgis.com/3.39",
+      "method": "GET",
+      "status": 301,
+      "redirect_url": "https://js.arcgis.com/3.39/init.js",
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:44:48.825Z"
+    },
+    {
+      "url": "https://selfservice.rushcliffe.gov.uk/ajax/refresh?i=6a3322a2-45b7-4333-a26a-e6d61e8f302a&o=1242&s=1397",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=utf-8",
+      "size": 2,
+      "timestamp": "2025-07-21T16:44:49.036Z"
+    },
+    {
+      "url": "https://selfservice.rushcliffe.gov.uk/webfonts/fa-solid-900.woff2",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/font-woff2",
+      "size": 320080,
+      "timestamp": "2025-07-21T16:44:49.038Z"
+    },
+    {
+      "url": "https://selfservice.rushcliffe.gov.uk/webfonts/fa-brands-400.woff2",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/font-woff2",
+      "size": 108800,
+      "timestamp": "2025-07-21T16:44:49.039Z"
+    },
+    {
+      "url": "https://selfservice.rushcliffe.gov.uk/core/addresslookup",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=utf-8",
+      "size": 3272,
+      "timestamp": "2025-07-21T16:44:52.736Z",
+      "form_data": {
+        "query": "LE12 5EQ",
+        "searchNlpg": "True",
+        "classification": ""
+      }
+    },
+    {
+      "url": "https://selfservice.rushcliffe.gov.uk/renderform/Form",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=utf-8",
+      "size": 1067,
+      "timestamp": "2025-07-21T16:44:57.452Z",
+      "form_data": {
+        "__RequestVerificationToken": "ZK9x5j5hzB8hiTLKSTtibkNDDgcQA_fvYPiOw3psg5lGzsuqm7gDjlpyv2cTEnBiLgIoJVKgqpq4BCsxhRZEnZduFs8456XhTfD1FwZZRlg1",
+        "FormGuid": "6a3322a2-45b7-4333-a26a-e6d61e8f302a",
+        "ObjectTemplateID": "1242",
+        "Trigger": "submit",
+        "CurrentSectionID": "1397",
+        "TriggerCtl": "",
+        "FF3518": "U3040046684",
+        "FF3518lbltxt": "Your address:",
+        "FF3518-text": "LE12 5EQ"
+      }
+    }
+  ]
+}

@@ -1,0 +1,259 @@
+{
+  "metadata": {
+    "trace_name": "darlington_borough_council",
+    "processed_at": "2025-08-26 18:44:24",
+    "workflow_steps_count": 6,
+    "navigation_events_count": 21
+  },
+  "scraping_patterns": {
+    "login_detected": false,
+    "form_submissions": 0,
+    "navigation_count": 2,
+    "unique_domains": [
+      "www.darlington.gov.uk"
+    ],
+    "api_endpoints": [
+      "https://www.darlington.gov.uk/manifest.json",
+      "https://www.darlington.gov.uk/manifest.json",
+      "https://www.darlington.gov.uk/manifest.json"
+    ],
+    "data_extraction_indicators": []
+  },
+  "workflow_steps": [
+    {
+      "action": "goto",
+      "target": "http://www.darlington.gov.uk/environment-and-planning/street-scene/revised-weekly-collection-lookup/",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "goto",
+      "target": "https://www.darlington.gov.uk/",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e101 >> internal:describe=\"Find your bin day\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "fill",
+      "target": "aria-ref=e120 >> internal:describe=\"Your Postcode\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0,
+      "value": "DL1 1AG"
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e121 >> internal:describe=\"Find Your Address\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "selectOption",
+      "target": "aria-ref=e231 >> internal:describe=\"Select your address\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0,
+      "value": null
+    }
+  ],
+  "navigation_events": [
+    {
+      "url": "http://www.darlington.gov.uk/environment-and-planning/street-scene/revised-weekly-collection-lookup/",
+      "method": "GET",
+      "status": 307,
+      "redirect_url": "https://www.darlington.gov.uk/environment-and-planning/street-scene/revised-weekly-collection-lookup/",
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T10:42:42.112Z"
+    },
+    {
+      "url": "https://www.darlington.gov.uk/environment-and-planning/street-scene/revised-weekly-collection-lookup/",
+      "method": "GET",
+      "status": 404,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=utf-8",
+      "size": 15663,
+      "timestamp": "2025-07-21T10:42:42.127Z"
+    },
+    {
+      "url": "https://www.darlington.gov.uk/manifest.json",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 1612,
+      "timestamp": "2025-07-21T10:42:42.468Z"
+    },
+    {
+      "url": "https://www.darlington.gov.uk/",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=utf-8",
+      "size": 118890,
+      "timestamp": "2025-07-21T10:42:44.479Z"
+    },
+    {
+      "url": "https://www.darlington.gov.uk/internalapi/events/getevents?categories=3&includeVenues=true",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=utf-8",
+      "size": 2277670,
+      "timestamp": "2025-07-21T10:42:44.796Z"
+    },
+    {
+      "url": "https://www.darlington.gov.uk/internalapi/consultations/GetConsultations",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=utf-8",
+      "size": 74066,
+      "timestamp": "2025-07-21T10:42:44.797Z"
+    },
+    {
+      "url": "https://www.darlington.gov.uk/internalapi/news/GetHomePageArticles",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=utf-8",
+      "size": 8635,
+      "timestamp": "2025-07-21T10:42:44.797Z"
+    },
+    {
+      "url": "https://www.darlington.gov.uk/internalapi/news/GetArticles",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=utf-8",
+      "size": 42576,
+      "timestamp": "2025-07-21T10:42:44.797Z"
+    },
+    {
+      "url": "https://www.darlington.gov.uk/internalapi/vacancies/GetAllVacancies?mode=all",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=utf-8",
+      "size": 52010,
+      "timestamp": "2025-07-21T10:42:44.797Z"
+    },
+    {
+      "url": "https://www.darlington.gov.uk/manifest.json",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 1612,
+      "timestamp": "2025-07-21T10:42:44.799Z"
+    },
+    {
+      "url": "https://www.darlington.gov.uk/media/23023/move-more-climbing-wall.jpg",
+      "method": "GET",
+      "status": 404,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=utf-8",
+      "size": 15634,
+      "timestamp": "2025-07-21T10:42:45.106Z"
+    },
+    {
+      "url": "https://www.darlington.gov.uk/bins-waste-and-recycling/collection-day-lookup/",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=utf-8",
+      "size": 66037,
+      "timestamp": "2025-07-21T10:42:48.969Z"
+    },
+    {
+      "url": "https://www.darlington.gov.uk/internalapi/news/GetArticles",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=utf-8",
+      "size": 42576,
+      "timestamp": "2025-07-21T10:42:49.122Z"
+    },
+    {
+      "url": "https://www.darlington.gov.uk/internalapi/consultations/GetConsultations",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=utf-8",
+      "size": 74066,
+      "timestamp": "2025-07-21T10:42:49.122Z"
+    },
+    {
+      "url": "https://www.darlington.gov.uk/internalapi/vacancies/GetAllVacancies?mode=all",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=utf-8",
+      "size": 52010,
+      "timestamp": "2025-07-21T10:42:49.122Z"
+    },
+    {
+      "url": "https://www.darlington.gov.uk/internalapi/events/getevents?categories=3&includeVenues=true",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=utf-8",
+      "size": 2277670,
+      "timestamp": "2025-07-21T10:42:49.122Z"
+    },
+    {
+      "url": "https://www.darlington.gov.uk/manifest.json",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 1612,
+      "timestamp": "2025-07-21T10:42:49.124Z"
+    },
+    {
+      "url": "https://www.darlington.gov.uk/postaladdress/GetAddressesByPostcode/DL1%201AG",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=utf-8",
+      "size": 3882,
+      "timestamp": "2025-07-21T10:42:57.228Z"
+    },
+    {
+      "url": "https://www.darlington.gov.uk/postaladdress/GetAddressesDetails/10003080170",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=utf-8",
+      "size": 489,
+      "timestamp": "2025-07-21T10:43:00.916Z"
+    },
+    {
+      "url": "https://www.darlington.gov.uk/bins-waste-and-recycling/dbc-refuse-and-recycling/?uprn=10003080170",
+      "method": "GET",
+      "status": 301,
+      "redirect_url": "https://www.darlington.gov.uk/bins-waste-and-recycling/collection-day-lookup/?uprn=10003080170",
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T10:43:01.329Z"
+    },
+    {
+      "url": "https://www.darlington.gov.uk/bins-waste-and-recycling/collection-day-lookup/?uprn=10003080170",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=utf-8",
+      "size": 5256,
+      "timestamp": "2025-07-21T10:43:01.373Z"
+    }
+  ]
+}

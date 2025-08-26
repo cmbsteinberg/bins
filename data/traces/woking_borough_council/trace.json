@@ -1,0 +1,268 @@
+{
+  "metadata": {
+    "trace_name": "woking_borough_council",
+    "processed_at": "2025-08-26 18:44:24",
+    "workflow_steps_count": 8,
+    "navigation_events_count": 20
+  },
+  "scraping_patterns": {
+    "login_detected": false,
+    "form_submissions": 10,
+    "navigation_count": 1,
+    "unique_domains": [
+      "www.google.com",
+      "www.woking.gov.uk",
+      "asjwsw-wrpwokingmunicipal-live.whitespacews.com",
+      "b.clarity.ms"
+    ],
+    "api_endpoints": [],
+    "data_extraction_indicators": []
+  },
+  "workflow_steps": [
+    {
+      "action": "goto",
+      "target": "https://www.woking.gov.uk/waste-and-recycling",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e10 >> internal:describe=\"Accept button\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e94 >> internal:describe=\"Find your bin collection day link\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e101 >> internal:describe=\"Check when your bins are collected \u2013 Joint Waste Solutions link\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e27 >> internal:describe=\"View My Collections link\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "fill",
+      "target": "aria-ref=e34 >> internal:describe=\"Postcode textbox\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0,
+      "value": "GU21 2AA"
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e38 >> internal:describe=\"Continue button\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e29 >> internal:describe=\"36, VICTORIA ROAD, KNAPHILL, WOKING, SURREY link\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    }
+  ],
+  "navigation_events": [
+    {
+      "url": "https://www.woking.gov.uk/waste-and-recycling",
+      "method": "GET",
+      "status": 301,
+      "redirect_url": "https://www.woking.gov.uk/bins-waste-recycling",
+      "mime_type": "text/html",
+      "size": -1,
+      "timestamp": "2025-07-21T16:28:15.666Z"
+    },
+    {
+      "url": "https://www.woking.gov.uk/bins-waste-recycling",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=UTF-8",
+      "size": 67106,
+      "timestamp": "2025-07-21T16:28:15.716Z"
+    },
+    {
+      "url": "https://www.google.com/recaptcha/api2/anchor?ar=1&k=6LcGhb0qAAAAAM4FA0qMjvGkCxcV9A9xj8lXU8qU&co=aHR0cHM6Ly93d3cud29raW5nLmdvdi51azo0NDM.&hl=en&v=3jpV4E_UA9gZWYy11LtggjoU&size=invisible&anchor-ms=20000&execute-ms=15000&cb=gr3a6kln79xm",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=utf-8",
+      "size": 73342,
+      "timestamp": "2025-07-21T16:28:17.003Z"
+    },
+    {
+      "url": "https://b.clarity.ms/collect",
+      "method": "POST",
+      "status": 204,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": 0,
+      "timestamp": "2025-07-21T16:28:17.116Z"
+    },
+    {
+      "url": "https://www.woking.gov.uk/themes/custom/bbd_localgov/assets/images/favicons/site.webmanifest",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/octet-stream",
+      "size": 263,
+      "timestamp": "2025-07-21T16:28:17.515Z"
+    },
+    {
+      "url": "https://www.google.com/recaptcha/api2/reload?k=6LcGhb0qAAAAAM4FA0qMjvGkCxcV9A9xj8lXU8qU",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=utf-8",
+      "size": 38627,
+      "timestamp": "2025-07-21T16:28:17.786Z"
+    },
+    {
+      "url": "https://www.google.com/recaptcha/api2/clr?k=6LcGhb0qAAAAAM4FA0qMjvGkCxcV9A9xj8lXU8qU",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/binary",
+      "size": -1,
+      "timestamp": "2025-07-21T16:28:17.887Z"
+    },
+    {
+      "url": "https://b.clarity.ms/collect",
+      "method": "POST",
+      "status": 204,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": 0,
+      "timestamp": "2025-07-21T16:28:18.473Z"
+    },
+    {
+      "url": "https://b.clarity.ms/collect",
+      "method": "POST",
+      "status": 204,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": 0,
+      "timestamp": "2025-07-21T16:28:20.652Z"
+    },
+    {
+      "url": "https://www.woking.gov.uk/bins-waste-recycling/bin-collections/find-your-bin-collection-day",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=UTF-8",
+      "size": 59917,
+      "timestamp": "2025-07-21T16:28:20.821Z"
+    },
+    {
+      "url": "https://www.google.com/recaptcha/api2/anchor?ar=1&k=6LcGhb0qAAAAAM4FA0qMjvGkCxcV9A9xj8lXU8qU&co=aHR0cHM6Ly93d3cud29raW5nLmdvdi51azo0NDM.&hl=en&v=3jpV4E_UA9gZWYy11LtggjoU&size=invisible&anchor-ms=20000&execute-ms=15000&cb=9zst6lhs9xbo",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=utf-8",
+      "size": 73425,
+      "timestamp": "2025-07-21T16:28:21.023Z"
+    },
+    {
+      "url": "https://b.clarity.ms/collect",
+      "method": "POST",
+      "status": 204,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": 0,
+      "timestamp": "2025-07-21T16:28:21.055Z"
+    },
+    {
+      "url": "https://www.woking.gov.uk/themes/custom/bbd_localgov/assets/images/favicons/site.webmanifest",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/octet-stream",
+      "size": 263,
+      "timestamp": "2025-07-21T16:28:21.185Z"
+    },
+    {
+      "url": "https://www.google.com/recaptcha/api2/reload?k=6LcGhb0qAAAAAM4FA0qMjvGkCxcV9A9xj8lXU8qU",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=utf-8",
+      "size": 38576,
+      "timestamp": "2025-07-21T16:28:21.431Z"
+    },
+    {
+      "url": "https://www.google.com/recaptcha/api2/clr?k=6LcGhb0qAAAAAM4FA0qMjvGkCxcV9A9xj8lXU8qU",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/binary",
+      "size": -1,
+      "timestamp": "2025-07-21T16:28:21.548Z"
+    },
+    {
+      "url": "https://b.clarity.ms/collect",
+      "method": "POST",
+      "status": 204,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": 0,
+      "timestamp": "2025-07-21T16:28:22.144Z"
+    },
+    {
+      "url": "https://asjwsw-wrpwokingmunicipal-live.whitespacews.com/",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=UTF-8",
+      "size": 23339,
+      "timestamp": "2025-07-21T16:28:23.866Z"
+    },
+    {
+      "url": "https://asjwsw-wrpwokingmunicipal-live.whitespacews.com/?Track=2025/07/21/QCIR2T4G2YTMK&serviceID=A&seq=1",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=UTF-8",
+      "size": 11603,
+      "timestamp": "2025-07-21T16:28:26.644Z"
+    },
+    {
+      "url": "https://asjwsw-wrpwokingmunicipal-live.whitespacews.com/mop.php?serviceID=A&Track=2025/07/21/QCIR2T4G2YTMK&seq=2",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=UTF-8",
+      "size": 22983,
+      "timestamp": "2025-07-21T16:28:32.321Z",
+      "form_data": {
+        "address_name_number": "",
+        "address_street": "",
+        "street_town": "",
+        "address_postcode": "GU21 2AA"
+      }
+    },
+    {
+      "url": "https://asjwsw-wrpwokingmunicipal-live.whitespacews.com/mop.php?Track=2025/07/21/QCIR2T4G2YTMK&serviceID=A&seq=3&pIndex=5",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=UTF-8",
+      "size": 46941,
+      "timestamp": "2025-07-21T16:28:35.961Z"
+    }
+  ]
+}

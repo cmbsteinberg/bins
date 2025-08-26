@@ -1,0 +1,150 @@
+{
+  "metadata": {
+    "trace_name": "wiltshire_council",
+    "processed_at": "2025-08-26 18:44:24",
+    "workflow_steps_count": 5,
+    "navigation_events_count": 10
+  },
+  "scraping_patterns": {
+    "login_detected": false,
+    "form_submissions": 6,
+    "navigation_count": 1,
+    "unique_domains": [
+      "ilambassadorformsprod.azurewebsites.net",
+      "a.eu.silktide.com"
+    ],
+    "api_endpoints": [],
+    "data_extraction_indicators": []
+  },
+  "workflow_steps": [
+    {
+      "action": "goto",
+      "target": "https://ilambassadorformsprod.azurewebsites.net/wastecollectiondays/index",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "fill",
+      "target": "aria-ref=e31 >> internal:describe=\"textbox \\\"Postcode of your property\\\"\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0,
+      "value": "BA12 0AB"
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e32 >> internal:describe=\"button \\\"Search and find my address\\\"\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "selectOption",
+      "target": "aria-ref=e88 >> internal:describe=\"combobox \\\"We found the following addresses for this postcode\\\"\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0,
+      "value": null
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e139 >> internal:describe=\"link \\\"Monthly collections\\\"\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    }
+  ],
+  "navigation_events": [
+    {
+      "url": "https://ilambassadorformsprod.azurewebsites.net/wastecollectiondays/index",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=utf-8",
+      "size": 14425,
+      "timestamp": "2025-07-21T10:27:59.830Z"
+    },
+    {
+      "url": "https://a.eu.silktide.com/v1/events",
+      "method": "POST",
+      "status": 202,
+      "redirect_url": null,
+      "mime_type": "text/plain; charset=utf-8",
+      "size": 2,
+      "timestamp": "2025-07-21T10:27:59.961Z"
+    },
+    {
+      "url": "https://ilambassadorformsprod.azurewebsites.net/assets/images/govuk-crest.png",
+      "method": "GET",
+      "status": 404,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=utf-8",
+      "size": 1940,
+      "timestamp": "2025-07-21T10:28:01.039Z"
+    },
+    {
+      "url": "https://ilambassadorformsprod.azurewebsites.net/assets/fonts/light-f38ad40456-v1.woff2",
+      "method": "GET",
+      "status": 404,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=utf-8",
+      "size": -1,
+      "timestamp": "2025-07-21T10:28:01.040Z"
+    },
+    {
+      "url": "https://ilambassadorformsprod.azurewebsites.net/assets/fonts/light-458f8ea81c-v1.woff",
+      "method": "GET",
+      "status": 404,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=utf-8",
+      "size": -1,
+      "timestamp": "2025-07-21T10:28:01.052Z"
+    },
+    {
+      "url": "https://a.eu.silktide.com/v1/events",
+      "method": "POST",
+      "status": 202,
+      "redirect_url": null,
+      "mime_type": "text/plain; charset=utf-8",
+      "size": 2,
+      "timestamp": "2025-07-21T10:28:04.288Z"
+    },
+    {
+      "url": "https://ilambassadorformsprod.azurewebsites.net/wastecollectiondays/addresslist",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=utf-8",
+      "size": 31278,
+      "timestamp": "2025-07-21T10:28:04.289Z"
+    },
+    {
+      "url": "https://ilambassadorformsprod.azurewebsites.net/wastecollectiondays/wastecollectionupcoming",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=utf-8",
+      "size": 40747,
+      "timestamp": "2025-07-21T10:28:06.489Z"
+    },
+    {
+      "url": "https://a.eu.silktide.com/v1/events/beacon",
+      "method": "POST",
+      "status": 202,
+      "redirect_url": null,
+      "mime_type": "text/plain; charset=utf-8",
+      "size": 2,
+      "timestamp": "2025-07-21T10:28:11.795Z"
+    },
+    {
+      "url": "https://ilambassadorformsprod.azurewebsites.net/wastecollectiondays/collectionlist",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=utf-8",
+      "size": 44751,
+      "timestamp": "2025-07-21T10:28:11.798Z"
+    }
+  ]
+}

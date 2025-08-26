@@ -1,0 +1,398 @@
+{
+  "metadata": {
+    "trace_name": "west_devon_borough_council",
+    "processed_at": "2025-08-26 18:44:24",
+    "workflow_steps_count": 7,
+    "navigation_events_count": 35
+  },
+  "scraping_patterns": {
+    "login_detected": false,
+    "form_submissions": 15,
+    "navigation_count": 2,
+    "unique_domains": [
+      "westdevon.fccenvironment.co.uk",
+      "www.westdevon.gov.uk",
+      "westdevon.gov.uk",
+      "produkswebassistsignalr18.service.signalr.net",
+      "webassistant.onconnect.app",
+      "webassist.onconnect.app",
+      "swdevon.innocraft.cloud"
+    ],
+    "api_endpoints": [
+      "https://webassistant.onconnect.app/assets/appConfig.json",
+      "https://webassistant.onconnect.app/assets/appConfig.json",
+      "https://webassistant.onconnect.app/assets/appConfig.json"
+    ],
+    "data_extraction_indicators": []
+  },
+  "workflow_steps": [
+    {
+      "action": "goto",
+      "target": "https://www.westdevon.gov.uk/article/4526/Find-your-Recycling-Waste-collection-day",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "goto",
+      "target": "https://www.westdevon.gov.uk/",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e137 >> internal:describe=\"Check bin day\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "fill",
+      "target": "aria-ref=e55 >> internal:describe=\"Postcode*\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0,
+      "value": "EX17 5AL"
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e58 >> internal:describe=\"Find address\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "selectOption",
+      "target": "aria-ref=e125 >> internal:describe=\"Address\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0,
+      "value": null
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e194 >> internal:describe=\"Read more about the Recycling and Food Collection Service >\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    }
+  ],
+  "navigation_events": [
+    {
+      "url": "https://www.westdevon.gov.uk/article/4526/Find-your-Recycling-Waste-collection-day",
+      "method": "GET",
+      "status": 404,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=UTF-8",
+      "size": 36538,
+      "timestamp": "2025-07-21T10:59:08.415Z"
+    },
+    {
+      "url": "https://webassist.onconnect.app/v1/loader/a46fce52-ff7a-45bf-ad4f-0923f51c42d6",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=utf-8",
+      "size": 52,
+      "timestamp": "2025-07-21T10:59:08.921Z"
+    },
+    {
+      "url": "https://www.westdevon.gov.uk/themes/custom/localgov_westdevon/assets/images/favicons/site.webmanifest",
+      "method": "GET",
+      "status": 404,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=UTF-8",
+      "size": 36537,
+      "timestamp": "2025-07-21T10:59:09.138Z"
+    },
+    {
+      "url": "https://webassistant.onconnect.app/assets/appConfig.json",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 73,
+      "timestamp": "2025-07-21T10:59:09.261Z"
+    },
+    {
+      "url": "https://webassist.onconnect.app/v1/workspaces/a46fce52-ff7a-45bf-ad4f-0923f51c42d6/init",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=utf-8",
+      "size": 1460,
+      "timestamp": "2025-07-21T10:59:09.469Z"
+    },
+    {
+      "url": "https://produkswebassistsignalr18.service.signalr.net/client/negotiate?hub=webassistant&negotiateVersion=1",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 334,
+      "timestamp": "2025-07-21T10:59:09.670Z"
+    },
+    {
+      "url": "https://webassist.onconnect.app/v1/postback",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": 0,
+      "timestamp": "2025-07-21T10:59:09.671Z"
+    },
+    {
+      "url": "https://swdevon.innocraft.cloud/matomo.php?action_name=Sorry!%20%7C%20West%20Devon%20Borough%20Council&idsite=2&rec=1&r=798460&h=11&m=59&s=9&url=https%3A%2F%2Fwww.westdevon.gov.uk%2Farticle%2F4526%2FFind-your-Recycling-Waste-collection-day&_id=e45769cbe32affe1&_idn=1&send_image=0&_refts=0&pv_id=kHP7FT&fa_pv=1&fa_fp[0][fa_vid]=UJLbKl&fa_fp[0][fa_id]=views-exposed-form-localgov-sitewide-search-sitewide-search-page-block&fa_fp[0][fa_fv]=1&pf_net=40&pf_srv=373&pf_tfr=2&pf_dm1=137&uadata=%7B%22formFactors%22%3A%5B%22Desktop%22%5D%2C%22fullVersionList%22%3A%5B%7B%22brand%22%3A%22Not)A%3BBrand%22%2C%22version%22%3A%228.0.0.0%22%7D%2C%7B%22brand%22%3A%22Chromium%22%2C%22version%22%3A%22138.0.7204.101%22%7D%2C%7B%22brand%22%3A%22Google%20Chrome%22%2C%22version%22%3A%22138.0.7204.101%22%7D%5D%2C%22mobile%22%3Afalse%2C%22model%22%3A%22%22%2C%22platform%22%3A%22macOS%22%2C%22platformVersion%22%3A%2215.5.0%22%7D&pdf=1&qt=0&realp=0&wma=0&fla=0&java=0&ag=0&cookie=1&res=800x600",
+      "method": "POST",
+      "status": 204,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": 0,
+      "timestamp": "2025-07-21T10:59:09.989Z"
+    },
+    {
+      "url": "https://www.westdevon.gov.uk/",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=UTF-8",
+      "size": 71364,
+      "timestamp": "2025-07-21T10:59:11.551Z"
+    },
+    {
+      "url": "https://webassist.onconnect.app/v1/loader/a46fce52-ff7a-45bf-ad4f-0923f51c42d6",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=utf-8",
+      "size": 52,
+      "timestamp": "2025-07-21T10:59:11.644Z"
+    },
+    {
+      "url": "https://swdevon.innocraft.cloud/matomo.php?action_name=West%20Devon%20%7C%20West%20Devon%20Borough%20Council&idsite=2&rec=1&r=836458&h=11&m=59&s=11&url=https%3A%2F%2Fwww.westdevon.gov.uk%2F&_id=e45769cbe32affe1&_idn=0&send_image=0&_refts=0&pv_id=4BWCIy&fa_pv=1&fa_fp[0][fa_vid]=NjkzJC&fa_fp[0][fa_id]=views-exposed-form-localgov-sitewide-search-sitewide-search-page-block&fa_fp[0][fa_fv]=1&fa_fp[1][fa_vid]=lin6VS&fa_fp[1][fa_id]=views-exposed-form-localgov-sitewide-search-sitewide-search-page-block&fa_fp[1][fa_fv]=1&pf_net=0&pf_srv=59&pf_tfr=1&uadata=%7B%22formFactors%22%3A%5B%22Desktop%22%5D%2C%22fullVersionList%22%3A%5B%7B%22brand%22%3A%22Not)A%3BBrand%22%2C%22version%22%3A%228.0.0.0%22%7D%2C%7B%22brand%22%3A%22Chromium%22%2C%22version%22%3A%22138.0.7204.101%22%7D%2C%7B%22brand%22%3A%22Google%20Chrome%22%2C%22version%22%3A%22138.0.7204.101%22%7D%5D%2C%22mobile%22%3Afalse%2C%22model%22%3A%22%22%2C%22platform%22%3A%22macOS%22%2C%22platformVersion%22%3A%2215.5.0%22%7D&pdf=1&qt=0&realp=0&wma=0&fla=0&java=0&ag=0&cookie=1&res=800x600",
+      "method": "POST",
+      "status": 204,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": 0,
+      "timestamp": "2025-07-21T10:59:11.673Z"
+    },
+    {
+      "url": "https://webassistant.onconnect.app/assets/appConfig.json",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 73,
+      "timestamp": "2025-07-21T10:59:11.776Z"
+    },
+    {
+      "url": "https://www.westdevon.gov.uk/themes/custom/localgov_westdevon/assets/images/favicons/site.webmanifest",
+      "method": "GET",
+      "status": 404,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=UTF-8",
+      "size": 36537,
+      "timestamp": "2025-07-21T10:59:11.825Z"
+    },
+    {
+      "url": "https://webassist.onconnect.app/v1/workspaces/a46fce52-ff7a-45bf-ad4f-0923f51c42d6/init",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=utf-8",
+      "size": 1417,
+      "timestamp": "2025-07-21T10:59:11.861Z"
+    },
+    {
+      "url": "https://produkswebassistsignalr18.service.signalr.net/client/negotiate?hub=webassistant&negotiateVersion=1",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 334,
+      "timestamp": "2025-07-21T10:59:11.984Z"
+    },
+    {
+      "url": "https://webassist.onconnect.app/v1/workspaces/a46fce52-ff7a-45bf-ad4f-0923f51c42d6/appusers/0f7967df-9c88-4923-a0eb-28ff05807a81/messages?continuationToken=",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=utf-8",
+      "size": 40,
+      "timestamp": "2025-07-21T10:59:11.984Z"
+    },
+    {
+      "url": "https://webassist.onconnect.app/v1/postback",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": 0,
+      "timestamp": "2025-07-21T10:59:11.985Z"
+    },
+    {
+      "url": "https://swdevon.innocraft.cloud/matomo.php?link=https%3A%2F%2Fwestdevon.fccenvironment.co.uk%2Fmycollections&idsite=2&rec=1&r=614029&h=11&m=59&s=13&url=https%3A%2F%2Fwww.westdevon.gov.uk%2F&_id=e45769cbe32affe1&_idn=0&send_image=0&_refts=0&pf_net=0&pf_srv=59&pf_tfr=1&pf_dm1=45&pf_dm2=62&pf_onl=0&pv_id=4BWCIy&uadata=%7B%22formFactors%22%3A%5B%22Desktop%22%5D%2C%22fullVersionList%22%3A%5B%7B%22brand%22%3A%22Not)A%3BBrand%22%2C%22version%22%3A%228.0.0.0%22%7D%2C%7B%22brand%22%3A%22Chromium%22%2C%22version%22%3A%22138.0.7204.101%22%7D%2C%7B%22brand%22%3A%22Google%20Chrome%22%2C%22version%22%3A%22138.0.7204.101%22%7D%5D%2C%22mobile%22%3Afalse%2C%22model%22%3A%22%22%2C%22platform%22%3A%22macOS%22%2C%22platformVersion%22%3A%2215.5.0%22%7D&pdf=1&qt=0&realp=0&wma=0&fla=0&java=0&ag=0&cookie=1&res=800x600",
+      "method": "POST",
+      "status": 204,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T10:59:13.903Z"
+    },
+    {
+      "url": "https://westdevon.fccenvironment.co.uk/mycollections",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=UTF-8",
+      "size": 18297,
+      "timestamp": "2025-07-21T10:59:14.087Z"
+    },
+    {
+      "url": "https://westdevon.fccenvironment.co.uk/ajaxprocessor/getaddresses",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=UTF-8",
+      "size": 4512,
+      "timestamp": "2025-07-21T10:59:18.654Z"
+    },
+    {
+      "url": "https://westdevon.fccenvironment.co.uk/ajaxprocessor/getcollectiondetails",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=UTF-8",
+      "size": 3494,
+      "timestamp": "2025-07-21T10:59:21.530Z"
+    },
+    {
+      "url": "https://westdevon.gov.uk/recycling",
+      "method": "GET",
+      "status": 301,
+      "redirect_url": "https://www.westdevon.gov.uk/recycling",
+      "mime_type": "text/html",
+      "size": -1,
+      "timestamp": "2025-07-21T10:59:26.437Z"
+    },
+    {
+      "url": "https://www.westdevon.gov.uk/recycling",
+      "method": "GET",
+      "status": 301,
+      "redirect_url": "https://westdevon.gov.uk/waste-and-recycling/how-your-waste-and-recycling-service-works/recycling-boxes-and-sack",
+      "mime_type": "text/html; charset=utf-8",
+      "size": -1,
+      "timestamp": "2025-07-21T10:59:26.478Z"
+    },
+    {
+      "url": "https://westdevon.gov.uk/waste-and-recycling/how-your-waste-and-recycling-service-works/recycling-boxes-and-sack",
+      "method": "GET",
+      "status": 301,
+      "redirect_url": "https://www.westdevon.gov.uk/waste-and-recycling/how-your-waste-and-recycling-service-works/recycling-boxes-and-sack",
+      "mime_type": "text/html",
+      "size": -1,
+      "timestamp": "2025-07-21T10:59:26.634Z"
+    },
+    {
+      "url": "https://www.westdevon.gov.uk/waste-and-recycling/how-your-waste-and-recycling-service-works/recycling-boxes-and-sack",
+      "method": "GET",
+      "status": 301,
+      "redirect_url": "https://www.westdevon.gov.uk/waste-and-recycling/guide-waste-and-recycling/recycling-boxes-and-sack",
+      "mime_type": "text/html; charset=utf-8",
+      "size": -1,
+      "timestamp": "2025-07-21T10:59:26.679Z"
+    },
+    {
+      "url": "https://www.westdevon.gov.uk/waste-and-recycling/guide-waste-and-recycling/recycling-boxes-and-sack",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=UTF-8",
+      "size": 46288,
+      "timestamp": "2025-07-21T10:59:27.028Z"
+    },
+    {
+      "url": "https://webassist.onconnect.app/v1/loader/a46fce52-ff7a-45bf-ad4f-0923f51c42d6",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=utf-8",
+      "size": 52,
+      "timestamp": "2025-07-21T10:59:27.115Z"
+    },
+    {
+      "url": "https://swdevon.innocraft.cloud/matomo.php?action_name=Recycling%20-%20Boxes%20and%20Sack%20%7C%20West%20Devon%20Borough%20Council&idsite=2&rec=1&r=690625&h=11&m=59&s=27&url=https%3A%2F%2Fwww.westdevon.gov.uk%2Fwaste-and-recycling%2Fguide-waste-and-recycling%2Frecycling-boxes-and-sack&urlref=https%3A%2F%2Fwestdevon.fccenvironment.co.uk%2F&_id=e45769cbe32affe1&_idn=0&send_image=0&_refts=0&pv_id=VEVBam&fa_pv=1&fa_fp[0][fa_vid]=5VCOWh&fa_fp[0][fa_id]=views-exposed-form-localgov-sitewide-search-sitewide-search-page-block&fa_fp[0][fa_fv]=1&pf_net=0&pf_srv=49&pf_tfr=0&uadata=%7B%22formFactors%22%3A%5B%22Desktop%22%5D%2C%22fullVersionList%22%3A%5B%7B%22brand%22%3A%22Not)A%3BBrand%22%2C%22version%22%3A%228.0.0.0%22%7D%2C%7B%22brand%22%3A%22Chromium%22%2C%22version%22%3A%22138.0.7204.101%22%7D%2C%7B%22brand%22%3A%22Google%20Chrome%22%2C%22version%22%3A%22138.0.7204.101%22%7D%5D%2C%22mobile%22%3Afalse%2C%22model%22%3A%22%22%2C%22platform%22%3A%22macOS%22%2C%22platformVersion%22%3A%2215.5.0%22%7D&pdf=1&qt=0&realp=0&wma=0&fla=0&java=0&ag=0&cookie=1&res=800x600",
+      "method": "POST",
+      "status": 204,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": 0,
+      "timestamp": "2025-07-21T10:59:27.194Z"
+    },
+    {
+      "url": "https://www.westdevon.gov.uk/themes/custom/localgov_westdevon/assets/images/favicons/site.webmanifest",
+      "method": "GET",
+      "status": 404,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=UTF-8",
+      "size": 36537,
+      "timestamp": "2025-07-21T10:59:27.238Z"
+    },
+    {
+      "url": "https://webassistant.onconnect.app/assets/appConfig.json",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 73,
+      "timestamp": "2025-07-21T10:59:27.290Z"
+    },
+    {
+      "url": "https://webassist.onconnect.app/v1/workspaces/a46fce52-ff7a-45bf-ad4f-0923f51c42d6/init",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=utf-8",
+      "size": 1420,
+      "timestamp": "2025-07-21T10:59:27.332Z"
+    },
+    {
+      "url": "https://produkswebassistsignalr18.service.signalr.net/client/negotiate?hub=webassistant&negotiateVersion=1",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 334,
+      "timestamp": "2025-07-21T10:59:27.378Z"
+    },
+    {
+      "url": "https://webassist.onconnect.app/v1/workspaces/a46fce52-ff7a-45bf-ad4f-0923f51c42d6/appusers/0f7967df-9c88-4923-a0eb-28ff05807a81/messages?continuationToken=",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=utf-8",
+      "size": 40,
+      "timestamp": "2025-07-21T10:59:27.378Z"
+    },
+    {
+      "url": "https://webassist.onconnect.app/v1/postback",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": 0,
+      "timestamp": "2025-07-21T10:59:27.378Z"
+    },
+    {
+      "url": "https://westdevon.fccenvironment.co.uk/mycollections",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=UTF-8",
+      "size": 18301,
+      "timestamp": "2025-07-21T10:59:29.770Z"
+    }
+  ]
+}

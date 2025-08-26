@@ -1,0 +1,140 @@
+{
+  "metadata": {
+    "trace_name": "teignbridge_district_council",
+    "processed_at": "2025-08-26 18:44:24",
+    "workflow_steps_count": 5,
+    "navigation_events_count": 9
+  },
+  "scraping_patterns": {
+    "login_detected": false,
+    "form_submissions": 0,
+    "navigation_count": 1,
+    "unique_domains": [
+      "www.google.com",
+      "www.teignbridge.gov.uk"
+    ],
+    "api_endpoints": [],
+    "data_extraction_indicators": []
+  },
+  "workflow_steps": [
+    {
+      "action": "goto",
+      "target": "http://www.teignbridge.gov.uk/bins",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e80 >> internal:describe=\"When are my bins and boxes collected?\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "fill",
+      "target": "aria-ref=e85 >> internal:describe=\"Enter post code or part of address:\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0,
+      "value": "EX2 9QN"
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e86 >> internal:describe=\"Search for address\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e210 >> internal:describe=\"Farview, Shillingford St George, EXETER, EX2 9QN\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    }
+  ],
+  "navigation_events": [
+    {
+      "url": "http://www.teignbridge.gov.uk/bins",
+      "method": "GET",
+      "status": 301,
+      "redirect_url": "https://www.teignbridge.gov.uk/bins",
+      "mime_type": "text/html; charset=UTF-8",
+      "size": -1,
+      "timestamp": "2025-07-21T16:38:55.525Z"
+    },
+    {
+      "url": "https://www.teignbridge.gov.uk/bins",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=utf-8",
+      "size": 37638,
+      "timestamp": "2025-07-21T16:38:55.571Z"
+    },
+    {
+      "url": "https://www.google.com/recaptcha/api2/anchor?ar=1&k=6Lc9BXAUAAAAALXb61NceJqtgOyznOhC8oDUjlrH&co=aHR0cHM6Ly93d3cudGVpZ25icmlkZ2UuZ292LnVrOjQ0Mw..&hl=en&v=3jpV4E_UA9gZWYy11LtggjoU&size=normal&anchor-ms=20000&execute-ms=15000&cb=f0jbdhbara25",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=utf-8",
+      "size": 74036,
+      "timestamp": "2025-07-21T16:38:55.906Z"
+    },
+    {
+      "url": "https://www.google.com/recaptcha/api2/bframe?hl=en&v=3jpV4E_UA9gZWYy11LtggjoU&k=6Lc9BXAUAAAAALXb61NceJqtgOyznOhC8oDUjlrH",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=utf-8",
+      "size": 7808,
+      "timestamp": "2025-07-21T16:38:56.574Z"
+    },
+    {
+      "url": "https://www.teignbridge.gov.uk/recycling-and-waste/bin-and-box-collections/when-are-my-bins-and-boxes-collected/",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=utf-8",
+      "size": 36177,
+      "timestamp": "2025-07-21T16:38:57.678Z"
+    },
+    {
+      "url": "https://www.google.com/recaptcha/api2/anchor?ar=1&k=6Lc9BXAUAAAAALXb61NceJqtgOyznOhC8oDUjlrH&co=aHR0cHM6Ly93d3cudGVpZ25icmlkZ2UuZ292LnVrOjQ0Mw..&hl=en&v=3jpV4E_UA9gZWYy11LtggjoU&size=normal&anchor-ms=20000&execute-ms=15000&cb=11q1d6j0w3f",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=utf-8",
+      "size": 74450,
+      "timestamp": "2025-07-21T16:38:57.814Z"
+    },
+    {
+      "url": "https://www.google.com/recaptcha/api2/bframe?hl=en&v=3jpV4E_UA9gZWYy11LtggjoU&k=6Lc9BXAUAAAAALXb61NceJqtgOyznOhC8oDUjlrH",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=utf-8",
+      "size": 7808,
+      "timestamp": "2025-07-21T16:38:58.135Z"
+    },
+    {
+      "url": "https://www.teignbridge.gov.uk/repositories/hidden-pages/address-finder?qtype=bins&term=EX2%209QN",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=utf-8",
+      "size": 4538,
+      "timestamp": "2025-07-21T16:39:02.531Z"
+    },
+    {
+      "url": "https://www.teignbridge.gov.uk/repositories/hidden-pages/bin-finder?uprn=010032954129",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/HTML; charset=utf-8",
+      "size": 4409,
+      "timestamp": "2025-07-21T16:39:15.244Z"
+    }
+  ]
+}

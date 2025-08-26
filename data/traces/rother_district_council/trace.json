@@ -1,0 +1,203 @@
+{
+  "metadata": {
+    "trace_name": "rother_district_council",
+    "processed_at": "2025-08-26 18:44:24",
+    "workflow_steps_count": 6,
+    "navigation_events_count": 15
+  },
+  "scraping_patterns": {
+    "login_detected": false,
+    "form_submissions": 12,
+    "navigation_count": 1,
+    "unique_domains": [
+      "europe.directline.botframework.com",
+      "q.clarity.ms",
+      "www.rother.gov.uk"
+    ],
+    "api_endpoints": [],
+    "data_extraction_indicators": []
+  },
+  "workflow_steps": [
+    {
+      "action": "goto",
+      "target": "http://www.rother.gov.uk/whenismybinday",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e19 >> internal:describe=\"Accept All\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "fill",
+      "target": "aria-ref=e95 >> internal:describe=\"Address Search\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0,
+      "value": "BN24 6PR"
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e97 >> internal:describe=\"Search\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "selectOption",
+      "target": "aria-ref=e146 >> internal:describe=\"Please select your address\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0,
+      "value": null
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e194 >> internal:describe=\"Search\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    }
+  ],
+  "navigation_events": [
+    {
+      "url": "http://www.rother.gov.uk/whenismybinday",
+      "method": "GET",
+      "status": 301,
+      "redirect_url": "https://www.rother.gov.uk/whenismybinday",
+      "mime_type": "text/html",
+      "size": -1,
+      "timestamp": "2025-07-21T08:05:23.243Z"
+    },
+    {
+      "url": "https://www.rother.gov.uk/whenismybinday",
+      "method": "GET",
+      "status": 302,
+      "redirect_url": "https://www.rother.gov.uk/findmynearest",
+      "mime_type": "text/html; charset=UTF-8",
+      "size": -1,
+      "timestamp": "2025-07-21T08:05:23.271Z"
+    },
+    {
+      "url": "https://www.rother.gov.uk/findmynearest",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=UTF-8",
+      "size": 46172,
+      "timestamp": "2025-07-21T08:05:23.474Z"
+    },
+    {
+      "url": "https://www.rother.gov.uk/wp-admin/admin-ajax.php",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=UTF-8",
+      "size": 81,
+      "timestamp": "2025-07-21T08:05:25.361Z"
+    },
+    {
+      "url": "https://q.clarity.ms/collect",
+      "method": "POST",
+      "status": 204,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": 0,
+      "timestamp": "2025-07-21T08:05:25.473Z"
+    },
+    {
+      "url": "https://europe.directline.botframework.com/v3/directline/conversations",
+      "method": "POST",
+      "status": 201,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=utf-8",
+      "size": 2169,
+      "timestamp": "2025-07-21T08:05:25.922Z"
+    },
+    {
+      "url": "https://www.rother.gov.uk/wp-admin/admin-ajax.php",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=UTF-8",
+      "size": 16,
+      "timestamp": "2025-07-21T08:05:26.330Z"
+    },
+    {
+      "url": "https://q.clarity.ms/collect",
+      "method": "POST",
+      "status": 204,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": 0,
+      "timestamp": "2025-07-21T08:05:26.953Z"
+    },
+    {
+      "url": "https://www.rother.gov.uk/wp-admin/admin-ajax.php",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=UTF-8",
+      "size": 16,
+      "timestamp": "2025-07-21T08:05:27.290Z"
+    },
+    {
+      "url": "https://q.clarity.ms/collect",
+      "method": "POST",
+      "status": 204,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": 0,
+      "timestamp": "2025-07-21T08:05:29.451Z"
+    },
+    {
+      "url": "https://www.rother.gov.uk/wp-admin/admin-ajax.php",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=UTF-8",
+      "size": 6036,
+      "timestamp": "2025-07-21T08:05:40.805Z"
+    },
+    {
+      "url": "https://q.clarity.ms/collect",
+      "method": "POST",
+      "status": 204,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": 0,
+      "timestamp": "2025-07-21T08:05:42.388Z"
+    },
+    {
+      "url": "https://q.clarity.ms/collect",
+      "method": "POST",
+      "status": 204,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": 0,
+      "timestamp": "2025-07-21T08:05:46.519Z"
+    },
+    {
+      "url": "https://www.rother.gov.uk/wp-admin/admin-ajax.php",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=UTF-8",
+      "size": 7421,
+      "timestamp": "2025-07-21T08:05:55.454Z"
+    },
+    {
+      "url": "https://q.clarity.ms/collect",
+      "method": "POST",
+      "status": 204,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": 0,
+      "timestamp": "2025-07-21T08:05:58.286Z"
+    }
+  ]
+}

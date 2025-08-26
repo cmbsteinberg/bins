@@ -1,0 +1,155 @@
+{
+  "metadata": {
+    "trace_name": "stafford_borough_council",
+    "processed_at": "2025-08-26 18:44:24",
+    "workflow_steps_count": 6,
+    "navigation_events_count": 10
+  },
+  "scraping_patterns": {
+    "login_detected": false,
+    "form_submissions": 0,
+    "navigation_count": 1,
+    "unique_domains": [
+      "www.staffordbc.gov.uk"
+    ],
+    "api_endpoints": [],
+    "data_extraction_indicators": []
+  },
+  "workflow_steps": [
+    {
+      "action": "goto",
+      "target": "https://www.staffordbc.gov.uk/binday",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e11 >> internal:describe=\"Accept Cookies\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e105 >> internal:describe=\"www.staffordbc.gov.uk/collectiondays\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "fill",
+      "target": "aria-ref=e93 >> internal:describe=\"Postcode:\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0,
+      "value": "ST11 9HL"
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e95 >> internal:describe=\"Search button\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e97 >> internal:describe=\"Barton Oaks Adamthwaite Drive Blythe Bridge Stoke-On-Trent Stoke On Trent ST11 9HL\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    }
+  ],
+  "navigation_events": [
+    {
+      "url": "https://www.staffordbc.gov.uk/binday",
+      "method": "GET",
+      "status": 301,
+      "redirect_url": "https://www.staffordbc.gov.uk/waste-and-recycling",
+      "mime_type": "text/html; charset=utf-8",
+      "size": -1,
+      "timestamp": "2025-07-21T16:35:51.712Z"
+    },
+    {
+      "url": "https://www.staffordbc.gov.uk/waste-and-recycling",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=UTF-8",
+      "size": 42411,
+      "timestamp": "2025-07-21T16:35:51.795Z"
+    },
+    {
+      "url": "https://www.staffordbc.gov.uk/sitewide_alert/load",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 1165,
+      "timestamp": "2025-07-21T16:35:52.149Z"
+    },
+    {
+      "url": "https://www.staffordbc.gov.uk/themes/stafford_borough_council/images/gradient.png",
+      "method": "GET",
+      "status": 404,
+      "redirect_url": null,
+      "mime_type": "text/html",
+      "size": 548,
+      "timestamp": "2025-07-21T16:35:54.944Z"
+    },
+    {
+      "url": "https://www.staffordbc.gov.uk/about-my-area",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=UTF-8",
+      "size": 29711,
+      "timestamp": "2025-07-21T16:35:57.671Z"
+    },
+    {
+      "url": "https://www.staffordbc.gov.uk/sitewide_alert/load",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 1165,
+      "timestamp": "2025-07-21T16:35:57.940Z"
+    },
+    {
+      "url": "https://www.staffordbc.gov.uk/about-my-area?field_add_data_postcode_value=ST11+9HL",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=UTF-8",
+      "size": 38668,
+      "timestamp": "2025-07-21T16:36:03.386Z"
+    },
+    {
+      "url": "https://www.staffordbc.gov.uk/sitewide_alert/load",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 1165,
+      "timestamp": "2025-07-21T16:36:04.315Z"
+    },
+    {
+      "url": "https://www.staffordbc.gov.uk/address/100031788201",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=UTF-8",
+      "size": 47402,
+      "timestamp": "2025-07-21T16:36:07.388Z"
+    },
+    {
+      "url": "https://www.staffordbc.gov.uk/sitewide_alert/load",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 1165,
+      "timestamp": "2025-07-21T16:36:07.990Z"
+    }
+  ]
+}

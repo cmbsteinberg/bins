@@ -1,0 +1,106 @@
+{
+  "metadata": {
+    "trace_name": "gosport_borough_council",
+    "processed_at": "2025-08-26 18:44:24",
+    "workflow_steps_count": 4,
+    "navigation_events_count": 5
+  },
+  "scraping_patterns": {
+    "login_detected": false,
+    "form_submissions": 1,
+    "navigation_count": 1,
+    "unique_domains": [
+      "www.gosport.gov.uk"
+    ],
+    "api_endpoints": [],
+    "data_extraction_indicators": []
+  },
+  "workflow_steps": [
+    {
+      "action": "goto",
+      "target": "https://www.gosport.gov.uk/refusecollections",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e105 >> internal:describe=\"Refuse and Recycling collection day search\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "fill",
+      "target": "aria-ref=e82 >> internal:describe=\"Postcode\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0,
+      "value": "PO12 1AG"
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e88 >> internal:describe=\"Next\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    }
+  ],
+  "navigation_events": [
+    {
+      "url": "https://www.gosport.gov.uk/refusecollections",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=utf-8",
+      "size": 49862,
+      "timestamp": "2025-07-21T08:07:11.203Z"
+    },
+    {
+      "url": "https://www.gosport.gov.uk/refuserecyclingdays",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=utf-8",
+      "size": 57143,
+      "timestamp": "2025-07-21T08:07:13.313Z"
+    },
+    {
+      "url": "https://www.gosport.gov.uk/apiserver/formsservice/http/processsubmission?pageSessionId=d1ee9a1f-5cd9-49ec-a587-6fc7a1a9ae79&fsid=f22f47f4-f2e9-4bac-ad88-c73c4785ed7c&fsn=0ea59d8e-1a7a-40a0-ac64-f98937d544a6",
+      "method": "POST",
+      "status": 303,
+      "redirect_url": "https://www.gosport.gov.uk/apiserver/formsservice/http/verifycookie?pageSessionId=d1ee9a1f-5cd9-49ec-a587-6fc7a1a9ae79&fsid=f22f47f4-f2e9-4bac-ad88-c73c4785ed7c",
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T08:07:18.802Z",
+      "form_data": {
+        "APISUPATRAK_PAGESESSIONID": "d1ee9a1f-5cd9-49ec-a587-6fc7a1a9ae79",
+        "APISUPATRAK_SESSIONID": "f22f47f4-f2e9-4bac-ad88-c73c4785ed7c",
+        "APISUPATRAK_NONCE": "0ea59d8e-1a7a-40a0-ac64-f98937d544a6",
+        "APISUPATRAK_VARIABLES": "e30=",
+        "APISUPATRAK_PAGENAME": "PAGE1",
+        "APISUPATRAK_PAGEINSTANCE": "0",
+        "APISUPATRAK_PAGE1_POSTCODE": "PO12 1AG",
+        "APISUPATRAK_FORMACTION_NEXT": "APISUPATRAK_PAGE1_FIELD4"
+      }
+    },
+    {
+      "url": "https://www.gosport.gov.uk/apiserver/formsservice/http/verifycookie?pageSessionId=d1ee9a1f-5cd9-49ec-a587-6fc7a1a9ae79&fsid=f22f47f4-f2e9-4bac-ad88-c73c4785ed7c",
+      "method": "GET",
+      "status": 303,
+      "redirect_url": "https://www.gosport.gov.uk/refuserecyclingdays?pageSessionId=d1ee9a1f-5cd9-49ec-a587-6fc7a1a9ae79&fsn=810a6af9-75c5-4b1a-a6af-8189fb509ce0",
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T08:07:19.255Z"
+    },
+    {
+      "url": "https://www.gosport.gov.uk/refuserecyclingdays?pageSessionId=d1ee9a1f-5cd9-49ec-a587-6fc7a1a9ae79&fsn=810a6af9-75c5-4b1a-a6af-8189fb509ce0",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=utf-8",
+      "size": 123317,
+      "timestamp": "2025-07-21T08:07:19.325Z"
+    }
+  ]
+}

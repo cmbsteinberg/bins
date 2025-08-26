@@ -1,0 +1,421 @@
+{
+  "metadata": {
+    "trace_name": "wokingham_borough_council",
+    "processed_at": "2025-08-26 18:44:24",
+    "workflow_steps_count": 6,
+    "navigation_events_count": 37
+  },
+  "scraping_patterns": {
+    "login_detected": false,
+    "form_submissions": 14,
+    "navigation_count": 1,
+    "unique_domains": [
+      "www.wokingham.gov.uk",
+      "hitcounter.govmetric.com",
+      "produkswebassistsignalr18.service.signalr.net",
+      "webassistant.onconnect.app",
+      "webassist.onconnect.app"
+    ],
+    "api_endpoints": [
+      "https://webassistant.onconnect.app/assets/appConfig.json",
+      "https://webassistant.onconnect.app/assets/appConfig.json",
+      "https://webassistant.onconnect.app/assets/appConfig.json",
+      "https://webassistant.onconnect.app/assets/appConfig.json"
+    ],
+    "data_extraction_indicators": []
+  },
+  "workflow_steps": [
+    {
+      "action": "goto",
+      "target": "https://www.wokingham.gov.uk/rubbish-and-recycling/collections/",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e68 >> internal:describe=\"Find your bin collection day\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "fill",
+      "target": "aria-ref=e87 >> internal:describe=\"Postcode\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0,
+      "value": "RG10 0AE"
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e88 >> internal:describe=\"Find Address\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "selectOption",
+      "target": "aria-ref=e93 >> internal:describe=\"Address\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0,
+      "value": null
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e122 >> internal:describe=\"Show collection dates\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    }
+  ],
+  "navigation_events": [
+    {
+      "url": "https://www.wokingham.gov.uk/rubbish-and-recycling/collections/",
+      "method": "GET",
+      "status": 301,
+      "redirect_url": "https://www.wokingham.gov.uk/rubbish-and-recycling/waste-collection",
+      "mime_type": "text/html; charset=utf-8",
+      "size": -1,
+      "timestamp": "2025-07-21T10:22:38.287Z"
+    },
+    {
+      "url": "https://www.wokingham.gov.uk/rubbish-and-recycling/waste-collection",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=UTF-8",
+      "size": 59814,
+      "timestamp": "2025-07-21T10:22:38.394Z"
+    },
+    {
+      "url": "https://webassist.onconnect.app/v1/loader/3aa261b2-db8a-4bf7-915a-1de3ee57a1ee",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=utf-8",
+      "size": 52,
+      "timestamp": "2025-07-21T10:22:39.620Z"
+    },
+    {
+      "url": "https://hitcounter.govmetric.com/Home/Index/2439?override=https%3A%2F%2Fwww.wokingham.gov.uk%2Frubbish-and-recycling%2Fwaste-collection",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": 0,
+      "timestamp": "2025-07-21T10:22:39.624Z"
+    },
+    {
+      "url": "https://www.wokingham.gov.uk/themes/custom/wok/favicons/site.webmanifest",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/octet-stream",
+      "size": 498,
+      "timestamp": "2025-07-21T10:22:39.663Z"
+    },
+    {
+      "url": "https://webassistant.onconnect.app/assets/appConfig.json",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 73,
+      "timestamp": "2025-07-21T10:22:40.048Z"
+    },
+    {
+      "url": "https://webassist.onconnect.app/v1/workspaces/3aa261b2-db8a-4bf7-915a-1de3ee57a1ee/init",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=utf-8",
+      "size": 1452,
+      "timestamp": "2025-07-21T10:22:40.118Z"
+    },
+    {
+      "url": "https://produkswebassistsignalr18.service.signalr.net/client/negotiate?hub=webassistant&negotiateVersion=1",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 334,
+      "timestamp": "2025-07-21T10:22:40.245Z"
+    },
+    {
+      "url": "https://webassist.onconnect.app/v1/postback",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": 0,
+      "timestamp": "2025-07-21T10:22:40.245Z"
+    },
+    {
+      "url": "https://www.wokingham.gov.uk/rubbish-and-recycling/waste-collection/find-your-bin-collection-day",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=UTF-8",
+      "size": 53818,
+      "timestamp": "2025-07-21T10:22:42.031Z"
+    },
+    {
+      "url": "https://webassist.onconnect.app/v1/loader/3aa261b2-db8a-4bf7-915a-1de3ee57a1ee",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=utf-8",
+      "size": 52,
+      "timestamp": "2025-07-21T10:22:42.140Z"
+    },
+    {
+      "url": "https://hitcounter.govmetric.com/Home/Index/2439?override=https%3A%2F%2Fwww.wokingham.gov.uk%2Frubbish-and-recycling%2Fwaste-collection%2Ffind-your-bin-collection-day",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": 0,
+      "timestamp": "2025-07-21T10:22:42.182Z"
+    },
+    {
+      "url": "https://webassistant.onconnect.app/assets/appConfig.json",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 73,
+      "timestamp": "2025-07-21T10:22:42.265Z"
+    },
+    {
+      "url": "https://www.wokingham.gov.uk/themes/custom/wok/favicons/site.webmanifest",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/octet-stream",
+      "size": 498,
+      "timestamp": "2025-07-21T10:22:42.315Z"
+    },
+    {
+      "url": "https://webassist.onconnect.app/v1/workspaces/3aa261b2-db8a-4bf7-915a-1de3ee57a1ee/init",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=utf-8",
+      "size": 1409,
+      "timestamp": "2025-07-21T10:22:42.353Z"
+    },
+    {
+      "url": "https://produkswebassistsignalr18.service.signalr.net/client/negotiate?hub=webassistant&negotiateVersion=1",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 334,
+      "timestamp": "2025-07-21T10:22:42.484Z"
+    },
+    {
+      "url": "https://webassist.onconnect.app/v1/workspaces/3aa261b2-db8a-4bf7-915a-1de3ee57a1ee/appusers/c3801e38-8207-4ee7-aea2-4bc71222c399/messages?continuationToken=",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=utf-8",
+      "size": 40,
+      "timestamp": "2025-07-21T10:22:42.484Z"
+    },
+    {
+      "url": "https://webassist.onconnect.app/v1/postback",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": 0,
+      "timestamp": "2025-07-21T10:22:42.484Z"
+    },
+    {
+      "url": "https://www.wokingham.gov.uk/rubbish-and-recycling/waste-collection/find-your-bin-collection-day",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=UTF-8",
+      "size": 56101,
+      "timestamp": "2025-07-21T10:22:47.044Z",
+      "form_data": {
+        "postcode_search_csv": "RG10 0AE",
+        "op": "Find Address",
+        "form_build_id": "form-27jaum6ZmBZigoypT9XdsXB2yt7o2kBScyQpsBSKDAw",
+        "form_id": "waste_recycling_information"
+      }
+    },
+    {
+      "url": "https://webassist.onconnect.app/v1/loader/3aa261b2-db8a-4bf7-915a-1de3ee57a1ee",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=utf-8",
+      "size": 52,
+      "timestamp": "2025-07-21T10:22:48.605Z"
+    },
+    {
+      "url": "https://www.wokingham.gov.uk/images/icons/chevron-down.svg",
+      "method": "GET",
+      "status": 404,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=utf-8",
+      "size": 548,
+      "timestamp": "2025-07-21T10:22:48.607Z"
+    },
+    {
+      "url": "https://hitcounter.govmetric.com/Home/Index/2439?override=https%3A%2F%2Fwww.wokingham.gov.uk%2Frubbish-and-recycling%2Fwaste-collection%2Ffind-your-bin-collection-day",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": 0,
+      "timestamp": "2025-07-21T10:22:48.610Z"
+    },
+    {
+      "url": "https://webassistant.onconnect.app/assets/appConfig.json",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 73,
+      "timestamp": "2025-07-21T10:22:48.688Z"
+    },
+    {
+      "url": "https://www.wokingham.gov.uk/themes/custom/wok/favicons/site.webmanifest",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/octet-stream",
+      "size": 498,
+      "timestamp": "2025-07-21T10:22:48.734Z"
+    },
+    {
+      "url": "https://webassist.onconnect.app/v1/workspaces/3aa261b2-db8a-4bf7-915a-1de3ee57a1ee/init",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=utf-8",
+      "size": 1411,
+      "timestamp": "2025-07-21T10:22:48.777Z"
+    },
+    {
+      "url": "https://produkswebassistsignalr18.service.signalr.net/client/negotiate?hub=webassistant&negotiateVersion=1",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 334,
+      "timestamp": "2025-07-21T10:22:48.884Z"
+    },
+    {
+      "url": "https://webassist.onconnect.app/v1/workspaces/3aa261b2-db8a-4bf7-915a-1de3ee57a1ee/appusers/c3801e38-8207-4ee7-aea2-4bc71222c399/messages?continuationToken=",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=utf-8",
+      "size": 40,
+      "timestamp": "2025-07-21T10:22:48.884Z"
+    },
+    {
+      "url": "https://webassist.onconnect.app/v1/postback",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": 0,
+      "timestamp": "2025-07-21T10:22:48.884Z"
+    },
+    {
+      "url": "https://www.wokingham.gov.uk/rubbish-and-recycling/waste-collection/find-your-bin-collection-day",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=UTF-8",
+      "size": 59972,
+      "timestamp": "2025-07-21T10:22:53.750Z",
+      "form_data": {
+        "postcode_search_csv": "RG10 0AE",
+        "address_options_csv": "76806",
+        "op": "Show collection dates",
+        "form_build_id": "form-xVVvM10hHWPLaR9_C6x-vkemYG_ehHiQGnQ0_W4nLIk",
+        "form_id": "waste_recycling_information"
+      }
+    },
+    {
+      "url": "https://webassist.onconnect.app/v1/loader/3aa261b2-db8a-4bf7-915a-1de3ee57a1ee",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=utf-8",
+      "size": 52,
+      "timestamp": "2025-07-21T10:22:54.642Z"
+    },
+    {
+      "url": "https://hitcounter.govmetric.com/Home/Index/2439?override=https%3A%2F%2Fwww.wokingham.gov.uk%2Frubbish-and-recycling%2Fwaste-collection%2Ffind-your-bin-collection-day",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": 0,
+      "timestamp": "2025-07-21T10:22:54.666Z"
+    },
+    {
+      "url": "https://webassistant.onconnect.app/assets/appConfig.json",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 73,
+      "timestamp": "2025-07-21T10:22:54.744Z"
+    },
+    {
+      "url": "https://www.wokingham.gov.uk/themes/custom/wok/favicons/site.webmanifest",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/octet-stream",
+      "size": 498,
+      "timestamp": "2025-07-21T10:22:54.788Z"
+    },
+    {
+      "url": "https://webassist.onconnect.app/v1/workspaces/3aa261b2-db8a-4bf7-915a-1de3ee57a1ee/init",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=utf-8",
+      "size": 1412,
+      "timestamp": "2025-07-21T10:22:54.790Z"
+    },
+    {
+      "url": "https://produkswebassistsignalr18.service.signalr.net/client/negotiate?hub=webassistant&negotiateVersion=1",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 334,
+      "timestamp": "2025-07-21T10:22:54.929Z"
+    },
+    {
+      "url": "https://webassist.onconnect.app/v1/workspaces/3aa261b2-db8a-4bf7-915a-1de3ee57a1ee/appusers/c3801e38-8207-4ee7-aea2-4bc71222c399/messages?continuationToken=",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=utf-8",
+      "size": 40,
+      "timestamp": "2025-07-21T10:22:54.930Z"
+    },
+    {
+      "url": "https://webassist.onconnect.app/v1/postback",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": 0,
+      "timestamp": "2025-07-21T10:22:54.930Z"
+    }
+  ]
+}

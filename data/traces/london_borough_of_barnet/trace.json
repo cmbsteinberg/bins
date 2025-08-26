@@ -1,0 +1,2322 @@
+{
+  "metadata": {
+    "trace_name": "london_borough_of_barnet",
+    "processed_at": "2025-08-26 18:44:24",
+    "workflow_steps_count": 9,
+    "navigation_events_count": 245
+  },
+  "scraping_patterns": {
+    "login_detected": false,
+    "form_submissions": 21,
+    "navigation_count": 1,
+    "unique_domains": [
+      "app.meetami.ai",
+      "maps.googleapis.com",
+      "cognito-identity.eu-west-1.amazonaws.com",
+      "dataplane.rum.eu-west-1.amazonaws.com",
+      "account.barnet.gov.uk",
+      "use.fontawesome.com",
+      "sts.eu-west-1.amazonaws.com",
+      "region1.analytics.google.com",
+      "www.barnet.gov.uk"
+    ],
+    "api_endpoints": [
+      "https://maps.googleapis.com/maps/api/mapsjs/gen_204?csp_test=true",
+      "https://maps.googleapis.com/maps/api/mapsjs/gen_204?csp_test=true",
+      "https://maps.googleapis.com/maps/api/mapsjs/gen_204?csp_test=true"
+    ],
+    "data_extraction_indicators": []
+  },
+  "workflow_steps": [
+    {
+      "action": "goto",
+      "target": "http://www.barnet.gov.uk/household-waste",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e9 >> internal:describe=\"Accept additional cookies\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "fill",
+      "target": "aria-ref=e34 >> internal:describe=\"Search our website\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0,
+      "value": "bin collection"
+    },
+    {
+      "action": "press",
+      "target": "aria-ref=e34 >> internal:describe=\"Search our website\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0,
+      "key": "Enter"
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e114 >> internal:describe=\"Find your bin collection day\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e76 >> internal:describe=\"Find your household collection day\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "fill",
+      "target": "aria-ref=e68 >> internal:describe=\"Postcode\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0,
+      "value": "EN4 8AD"
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e74 >> internal:describe=\"Find address\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "selectOption",
+      "target": "aria-ref=e82 >> internal:describe=\"Select your address\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0,
+      "value": null
+    }
+  ],
+  "navigation_events": [
+    {
+      "url": "http://www.barnet.gov.uk/household-waste",
+      "method": "GET",
+      "status": 301,
+      "redirect_url": "https://www.barnet.gov.uk/household-waste",
+      "mime_type": "text/html",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:13.210Z"
+    },
+    {
+      "url": "https://www.barnet.gov.uk/household-waste",
+      "method": "GET",
+      "status": 301,
+      "redirect_url": "https://www.barnet.gov.uk/recycling-and-waste/household-recycling-and-waste",
+      "mime_type": "text/html; charset=utf-8",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:13.263Z"
+    },
+    {
+      "url": "https://www.barnet.gov.uk/recycling-and-waste/household-recycling-and-waste",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=UTF-8",
+      "size": 37897,
+      "timestamp": "2025-07-21T16:29:13.463Z"
+    },
+    {
+      "url": "https://cognito-identity.eu-west-1.amazonaws.com/",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/x-amz-json-1.1",
+      "size": 63,
+      "timestamp": "2025-07-21T16:29:14.199Z"
+    },
+    {
+      "url": "https://cognito-identity.eu-west-1.amazonaws.com/",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/x-amz-json-1.1",
+      "size": 997,
+      "timestamp": "2025-07-21T16:29:14.282Z"
+    },
+    {
+      "url": "https://sts.eu-west-1.amazonaws.com/",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/xml",
+      "size": 2065,
+      "timestamp": "2025-07-21T16:29:14.303Z",
+      "form_data": {
+        "RoleArn": "arn:aws:iam::715491853018:role/barnet2022-prd-01-rum-UnAuthenticatedRole-I3O4Z1U4R85S",
+        "RoleSessionName": "cwr",
+        "WebIdentityToken": "eyJraWQiOiJldS13ZXN0LTEtOCIsInR5cCI6IkpXUyIsImFsZyI6IlJTNTEyIn0.eyJzdWIiOiJldS13ZXN0LTE6YTY5NmEzNDItZGEyNC1jZDE0LTQ5ZDMtZjQ3MTE1NjIzZjQwIiwiYXVkIjoiZXUtd2VzdC0xOjVmMjc5NzJhLTUzN2MtNDZmOS05OTc5LWUzNzdlOGE5YjYxOCIsImFtciI6WyJ1bmF1dGhlbnRpY2F0ZWQiXSwiaXNzIjoiaHR0cHM6Ly9jb2duaXRvLWlkZW50aXR5LmFtYXpvbmF3cy5jb20iLCJodHRwczovL2NvZ25pdG8taWRlbnRpdHkuYW1hem9uYXdzLmNvbS9pZGVudGl0eS1wb29sLWFybiI6ImFybjphd3M6Y29nbml0by1pZGVudGl0eTpldS13ZXN0LTE6NzE1NDkxODUzMDE4OmlkZW50aXR5cG9vbC9ldS13ZXN0LTE6NWYyNzk3MmEtNTM3Yy00NmY5LTk5NzktZTM3N2U4YTliNjE4IiwiZXhwIjoxNzUzMTE1OTU0LCJpYXQiOjE3NTMxMTUzNTR9.gZd6QijKC1kXnDj8MWl4l852xXoTJembreEqJ9c8RwX_FRqOBKsOkutbdvuHNkbEE00mZTNCoLQjzEPC4zdSIUMhMQcjC6-GLnxuThjWhD9NuHmw5BDYCPifkr5IIE8v2dE_2oab9ZDELa6s5coPRhBP82mOPd28ypWltIQl-tqOTjhbNa9jbW1UfhEILJb4E074dTySLxmuIV-JtO8dCV2MaQQHPaBYYJNb-vmxUtsiWnXgzFz9VK2j5SfwYMhM6njrbr3T4AWNjMWMO0WbzvMh2f1nLNjsm5_-0FzShTt9J3ErtlYAuNDiE1fxmA6RGf2N9irA0oQ_FtdTfIt4xw",
+        "Action": "AssumeRoleWithWebIdentity",
+        "Version": "2011-06-15"
+      }
+    },
+    {
+      "url": "https://www.barnet.gov.uk/_Incapsula_Resource?SWKMTFSR=1&e=0.6819133471116755",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/plain",
+      "size": 1,
+      "timestamp": "2025-07-21T16:29:14.464Z"
+    },
+    {
+      "url": "https://region1.analytics.google.com/g/collect?v=2&tid=G-FQ5GMMMGZJ&gtm=45je57g1v9102221442z89133169014za200zb9133169014&_p=1753115356306&_gaz=1&gcd=13l3l3l3l1l1&npa=0&dma=0&tag_exp=101509157~102015666~103116026~103200004~103233427~104684208~104684211&cid=2007449364.1753115356&ul=en-gb&sr=800x600&ir=1&uaa=arm&uab=64&uafvl=Not)A%253BBrand%3B8.0.0.0%7CChromium%3B138.0.7204.101%7CGoogle%2520Chrome%3B138.0.7204.101&uamb=0&uam=&uap=macOS&uapv=15.5.0&uaw=0&are=1&frm=0&pscdl=noapi&_eu=EA&_s=1&sid=1753115356&sct=1&seg=0&dl=https%3A%2F%2Fwww.barnet.gov.uk%2Frecycling-and-waste%2Fhousehold-recycling-and-waste&dt=Household%20recycling%20and%20waste%20%7C%20Barnet%20Council&en=page_view&_fv=1&_nsi=1&_ss=1&tfd=3280",
+      "method": "POST",
+      "status": 204,
+      "redirect_url": null,
+      "mime_type": "text/plain",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:16.520Z"
+    },
+    {
+      "url": "https://app.meetami.ai/chats/enabled/48922672210/",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=UTF-8",
+      "size": 1,
+      "timestamp": "2025-07-21T16:29:16.541Z",
+      "form_data": {
+        "locationPath": "/recycling-and-waste/household-recycling-and-waste"
+      }
+    },
+    {
+      "url": "https://app.meetami.ai/chats/chat/48922672210",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=UTF-8",
+      "size": 518280,
+      "timestamp": "2025-07-21T16:29:17.427Z"
+    },
+    {
+      "url": "https://app.meetami.ai/js/sound/ami-sound.mp3",
+      "method": "GET",
+      "status": 206,
+      "redirect_url": null,
+      "mime_type": "audio/mpeg",
+      "size": 7882,
+      "timestamp": "2025-07-21T16:29:17.994Z"
+    },
+    {
+      "url": "https://app.meetami.ai/chats/register_user/48922672210",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=UTF-8",
+      "size": 211,
+      "timestamp": "2025-07-21T16:29:17.998Z"
+    },
+    {
+      "url": "https://app.meetami.ai/unsent_messages/save_user_message/1251753115358195/",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=UTF-8",
+      "size": 1,
+      "timestamp": "2025-07-21T16:29:19.094Z"
+    },
+    {
+      "url": "https://dataplane.rum.eu-west-1.amazonaws.com/appmonitors/78d95838-de09-4092-8f3a-f84b8b87d173/",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 2,
+      "timestamp": "2025-07-21T16:29:19.199Z"
+    },
+    {
+      "url": "https://region1.analytics.google.com/g/collect?v=2&tid=G-FQ5GMMMGZJ&gtm=45je57g1v9102221442za200zb9133169014&_p=1753115356306&gcd=13l3l3l3l1l1&npa=0&dma=0&tag_exp=101509157~102015666~103116026~103200004~103233427~104684208~104684211&cid=2007449364.1753115356&ul=en-gb&sr=800x600&ir=1&uaa=arm&uab=64&uafvl=Not)A%253BBrand%3B8.0.0.0%7CChromium%3B138.0.7204.101%7CGoogle%2520Chrome%3B138.0.7204.101&uamb=0&uam=&uap=macOS&uapv=15.5.0&uaw=0&are=1&frm=0&pscdl=noapi&_eu=EEEAAAQ&_s=3&sid=1753115356&sct=1&seg=0&dl=https%3A%2F%2Fwww.barnet.gov.uk%2Frecycling-and-waste%2Fhousehold-recycling-and-waste&dt=Household%20recycling%20and%20waste%20%7C%20Barnet%20Council&en=form_submit&_c=1&ep.form_id=views-exposed-form-oblg-search-global-search-1&ep.form_name=&ep.form_destination=https%3A%2F%2Fwww.barnet.gov.uk%2Fsearch&epn.form_length=2&_et=1&tfd=7299",
+      "method": "POST",
+      "status": 302,
+      "redirect_url": "https://region1.google-analytics.com/privacy-sandbox/register-conversion?_c=1&cid=2007449364.1753115356&dbk=6563846547159726789&dma=0&en=form_submit&gtm=45je57g1v9102221442za200zb9133169014&npa=0&tid=G-FQ5GMMMGZJ&dl=https%3A%2F%2Fwww.barnet.gov.uk%3F",
+      "mime_type": "text/html; charset=UTF-8",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:20.508Z"
+    },
+    {
+      "url": "https://region1.analytics.google.com/g/collect?v=2&tid=G-FQ5GMMMGZJ&gtm=45je57g1v9102221442za200zb9133169014&_p=1753115356306&gcd=13l3l3l3l1l1&npa=0&dma=0&tag_exp=101509157~102015666~103116026~103200004~103233427~104684208~104684211&cid=2007449364.1753115356&ul=en-gb&sr=800x600&ir=1&uaa=arm&uab=64&uafvl=Not)A%253BBrand%3B8.0.0.0%7CChromium%3B138.0.7204.101%7CGoogle%2520Chrome%3B138.0.7204.101&uamb=0&uam=&uap=macOS&uapv=15.5.0&uaw=0&are=1&frm=0&pscdl=noapi&_eu=EEEAAAQ&_s=2&sid=1753115356&sct=1&seg=0&dl=https%3A%2F%2Fwww.barnet.gov.uk%2Frecycling-and-waste%2Fhousehold-recycling-and-waste&dt=Household%20recycling%20and%20waste%20%7C%20Barnet%20Council&en=form_start&_c=1&ep.form_id=views-exposed-form-oblg-search-global-search-1&ep.form_name=&ep.form_destination=https%3A%2F%2Fwww.barnet.gov.uk%2Fsearch&epn.form_length=2&ep.first_field_id=edit-search&ep.first_field_name=search&ep.first_field_type=text&epn.first_field_position=1&_et=4015&tfd=7297",
+      "method": "POST",
+      "status": 302,
+      "redirect_url": "https://region1.google-analytics.com/privacy-sandbox/register-conversion?_c=1&cid=2007449364.1753115356&dbk=1463010101070867645&dma=0&en=form_start&gtm=45je57g1v9102221442za200zb9133169014&npa=0&tid=G-FQ5GMMMGZJ&dl=https%3A%2F%2Fwww.barnet.gov.uk%3F",
+      "mime_type": "text/html; charset=UTF-8",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:20.508Z"
+    },
+    {
+      "url": "https://www.barnet.gov.uk/search?search=bin+collection",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=UTF-8",
+      "size": 44620,
+      "timestamp": "2025-07-21T16:29:20.554Z"
+    },
+    {
+      "url": "https://app.meetami.ai/chats/track_load/48922672210/1251753115358195",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=UTF-8",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:20.735Z"
+    },
+    {
+      "url": "https://www.barnet.gov.uk/search_api_autocomplete/oblg_search?display=global_search&&filter=search&q=bin%20collection",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:20.786Z"
+    },
+    {
+      "url": "https://www.barnet.gov.uk/sites/default/files/hotjar/hotjar.script.js?szqrbf",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:21.613Z"
+    },
+    {
+      "url": "https://www.barnet.gov.uk/core/assets/vendor/jquery.ui/themes/base/core.css?szqrbf",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:21.614Z"
+    },
+    {
+      "url": "https://www.barnet.gov.uk/core/assets/vendor/jquery.ui/themes/base/autocomplete.css?szqrbf",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:21.614Z"
+    },
+    {
+      "url": "https://www.barnet.gov.uk/sites/default/files/eu_cookie_compliance/eu_cookie_compliance.script.js?szqrbf",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:21.614Z"
+    },
+    {
+      "url": "https://www.barnet.gov.uk/core/assets/vendor/jquery.ui/themes/base/menu.css?szqrbf",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:21.615Z"
+    },
+    {
+      "url": "https://www.barnet.gov.uk/themes/contrib/stable/css/system/components/align.module.css?szqrbf",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:21.615Z"
+    },
+    {
+      "url": "https://www.barnet.gov.uk/themes/contrib/stable/css/system/components/fieldgroup.module.css?szqrbf",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:21.615Z"
+    },
+    {
+      "url": "https://www.barnet.gov.uk/themes/contrib/stable/css/system/components/container-inline.module.css?szqrbf",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:21.616Z"
+    },
+    {
+      "url": "https://www.barnet.gov.uk/themes/contrib/stable/css/system/components/clearfix.module.css?szqrbf",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:21.616Z"
+    },
+    {
+      "url": "https://www.barnet.gov.uk/themes/contrib/stable/css/system/components/details.module.css?szqrbf",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:21.616Z"
+    },
+    {
+      "url": "https://www.barnet.gov.uk/themes/contrib/stable/css/system/components/hidden.module.css?szqrbf",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:21.617Z"
+    },
+    {
+      "url": "https://www.barnet.gov.uk/themes/contrib/stable/css/system/components/item-list.module.css?szqrbf",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:21.617Z"
+    },
+    {
+      "url": "https://www.barnet.gov.uk/themes/contrib/stable/css/system/components/js.module.css?szqrbf",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:21.617Z"
+    },
+    {
+      "url": "https://www.barnet.gov.uk/themes/contrib/stable/css/system/components/nowrap.module.css?szqrbf",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:21.618Z"
+    },
+    {
+      "url": "https://www.barnet.gov.uk/themes/contrib/stable/css/system/components/position-container.module.css?szqrbf",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:21.618Z"
+    },
+    {
+      "url": "https://www.barnet.gov.uk/themes/contrib/stable/css/system/components/reset-appearance.module.css?szqrbf",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:21.618Z"
+    },
+    {
+      "url": "https://www.barnet.gov.uk/themes/contrib/stable/css/system/components/resize.module.css?szqrbf",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:21.618Z"
+    },
+    {
+      "url": "https://www.barnet.gov.uk/themes/contrib/stable/css/system/components/system-status-counter.css?szqrbf",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:21.618Z"
+    },
+    {
+      "url": "https://www.barnet.gov.uk/themes/contrib/stable/css/system/components/system-status-report-counters.css?szqrbf",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:21.619Z"
+    },
+    {
+      "url": "https://www.barnet.gov.uk/themes/contrib/stable/css/system/components/system-status-report-general-info.css?szqrbf",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:21.619Z"
+    },
+    {
+      "url": "https://www.barnet.gov.uk/themes/contrib/stable/css/system/components/tablesort.module.css?szqrbf",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:21.619Z"
+    },
+    {
+      "url": "https://www.barnet.gov.uk/themes/contrib/stable/css/core/components/progress.module.css?szqrbf",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:21.619Z"
+    },
+    {
+      "url": "https://www.barnet.gov.uk/themes/contrib/stable/css/core/components/ajax-progress.module.css?szqrbf",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:21.619Z"
+    },
+    {
+      "url": "https://www.barnet.gov.uk/themes/contrib/stable/css/core/components/autocomplete-loading.module.css?szqrbf",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:21.619Z"
+    },
+    {
+      "url": "https://www.barnet.gov.uk/modules/contrib/jquery_ui/assets/vendor/jquery.ui/themes/base/core.css?szqrbf",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:21.619Z"
+    },
+    {
+      "url": "https://www.barnet.gov.uk/modules/contrib/jquery_ui/assets/vendor/jquery.ui/themes/base/accordion.css?szqrbf",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:21.620Z"
+    },
+    {
+      "url": "https://www.barnet.gov.uk/themes/contrib/stable/css/views/views.module.css?szqrbf",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:21.620Z"
+    },
+    {
+      "url": "https://www.barnet.gov.uk/modules/contrib/footnotes/assets/css/footnotes.css?szqrbf",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:21.620Z"
+    },
+    {
+      "url": "https://www.barnet.gov.uk/modules/contrib/eu_cookie_compliance/css/eu_cookie_compliance.bare.css?szqrbf",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:21.620Z"
+    },
+    {
+      "url": "https://www.barnet.gov.uk/core/assets/vendor/jquery.ui/themes/base/theme.css?szqrbf",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:21.620Z"
+    },
+    {
+      "url": "https://www.barnet.gov.uk/modules/contrib/jquery_ui/assets/vendor/jquery.ui/themes/base/theme.css?szqrbf",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:21.621Z"
+    },
+    {
+      "url": "https://www.barnet.gov.uk/modules/contrib/search_api_autocomplete/css/search_api_autocomplete.css?szqrbf",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:21.621Z"
+    },
+    {
+      "url": "https://www.barnet.gov.uk/themes/custom/barnet_council/assets/css/barnet-council.css?szqrbf",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:21.621Z"
+    },
+    {
+      "url": "https://www.barnet.gov.uk/themes/custom/barnet_council/assets/css/includes/leaflet.css?szqrbf",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:21.621Z"
+    },
+    {
+      "url": "https://www.barnet.gov.uk/themes/custom/barnet_council/assets/css/includes/MarkerCluster.css?szqrbf",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:21.621Z"
+    },
+    {
+      "url": "https://www.barnet.gov.uk/themes/custom/barnet_council/assets/css/includes/MarkerCluster.Default.css?szqrbf",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:21.622Z"
+    },
+    {
+      "url": "https://www.barnet.gov.uk/themes/custom/local_gov_wl/assets/css/open-iconic.css?szqrbf",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:21.622Z"
+    },
+    {
+      "url": "https://www.barnet.gov.uk/core/misc/drupalSettingsLoader.js?v=10.3.2",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:21.622Z"
+    },
+    {
+      "url": "https://www.barnet.gov.uk/modules/custom/capitagov_awsrum/js/capitagov_awsrum.script.js?szqrbf",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:21.622Z"
+    },
+    {
+      "url": "https://www.barnet.gov.uk/themes/custom/barnet_council/assets/images/png_icons/barnet-logo-green.png",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:21.622Z"
+    },
+    {
+      "url": "https://www.barnet.gov.uk/themes/custom/barnet_council/assets/images/logos/green.png",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:21.623Z"
+    },
+    {
+      "url": "https://www.barnet.gov.uk/themes/custom/barnet_council/assets/images/svg_icons/social_media/facebook.svg",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:21.623Z"
+    },
+    {
+      "url": "https://www.barnet.gov.uk/themes/custom/barnet_council/assets/images/svg_icons/social_media/twitter.svg",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:21.623Z"
+    },
+    {
+      "url": "https://www.barnet.gov.uk/themes/custom/barnet_council/assets/images/svg_icons/social_media/instagram.svg",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:21.624Z"
+    },
+    {
+      "url": "https://www.barnet.gov.uk/core/assets/vendor/jquery/jquery.min.js?v=3.7.1",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:21.624Z"
+    },
+    {
+      "url": "https://www.barnet.gov.uk/core/assets/vendor/once/once.min.js?v=1.0.1",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:21.624Z"
+    },
+    {
+      "url": "https://www.barnet.gov.uk/core/misc/drupal.js?v=10.3.2",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:21.624Z"
+    },
+    {
+      "url": "https://www.barnet.gov.uk/core/misc/drupal.init.js?v=10.3.2",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:21.624Z"
+    },
+    {
+      "url": "https://www.barnet.gov.uk/core/assets/vendor/jquery.ui/ui/version-min.js?v=10.3.2",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:21.624Z"
+    },
+    {
+      "url": "https://www.barnet.gov.uk/themes/custom/barnet_council/assets/images/svg_icons/social_media/youtube.svg",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:21.624Z"
+    },
+    {
+      "url": "https://www.barnet.gov.uk/core/assets/vendor/jquery.ui/ui/data-min.js?v=10.3.2",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:21.625Z"
+    },
+    {
+      "url": "https://www.barnet.gov.uk/core/assets/vendor/jquery.ui/ui/disable-selection-min.js?v=10.3.2",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:21.625Z"
+    },
+    {
+      "url": "https://www.barnet.gov.uk/core/assets/vendor/jquery.ui/ui/form-min.js?v=10.3.2",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:21.625Z"
+    },
+    {
+      "url": "https://www.barnet.gov.uk/core/assets/vendor/jquery.ui/ui/jquery-patch-min.js?v=10.3.2",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:21.625Z"
+    },
+    {
+      "url": "https://www.barnet.gov.uk/core/assets/vendor/jquery.ui/ui/scroll-parent-min.js?v=10.3.2",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:21.625Z"
+    },
+    {
+      "url": "https://www.barnet.gov.uk/core/assets/vendor/jquery.ui/ui/unique-id-min.js?v=10.3.2",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:21.626Z"
+    },
+    {
+      "url": "https://www.barnet.gov.uk/core/assets/vendor/jquery.ui/ui/focusable-min.js?v=10.3.2",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:21.626Z"
+    },
+    {
+      "url": "https://www.barnet.gov.uk/core/assets/vendor/jquery.ui/ui/ie-min.js?v=10.3.2",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:21.626Z"
+    },
+    {
+      "url": "https://www.barnet.gov.uk/core/assets/vendor/jquery.ui/ui/keycode-min.js?v=10.3.2",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:21.626Z"
+    },
+    {
+      "url": "https://www.barnet.gov.uk/core/assets/vendor/jquery.ui/ui/plugin-min.js?v=10.3.2",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:21.626Z"
+    },
+    {
+      "url": "https://www.barnet.gov.uk/core/assets/vendor/jquery.ui/ui/safe-active-element-min.js?v=10.3.2",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:21.626Z"
+    },
+    {
+      "url": "https://www.barnet.gov.uk/core/assets/vendor/jquery.ui/ui/safe-blur-min.js?v=10.3.2",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:21.626Z"
+    },
+    {
+      "url": "https://www.barnet.gov.uk/core/assets/vendor/jquery.ui/ui/widget-min.js?v=10.3.2",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:21.626Z"
+    },
+    {
+      "url": "https://www.barnet.gov.uk/core/assets/vendor/jquery.ui/ui/labels-min.js?v=10.3.2",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:21.627Z"
+    },
+    {
+      "url": "https://www.barnet.gov.uk/core/assets/vendor/jquery.ui/ui/widgets/autocomplete-min.js?v=10.3.2",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:21.627Z"
+    },
+    {
+      "url": "https://www.barnet.gov.uk/core/assets/vendor/jquery.ui/ui/widgets/menu-min.js?v=10.3.2",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:21.627Z"
+    },
+    {
+      "url": "https://www.barnet.gov.uk/modules/contrib/jquery_ui/assets/vendor/jquery.ui/ui/version-min.js?v=1.13.2",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:21.627Z"
+    },
+    {
+      "url": "https://www.barnet.gov.uk/modules/contrib/jquery_ui/assets/vendor/jquery.ui/ui/keycode-min.js?v=1.13.2",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:21.627Z"
+    },
+    {
+      "url": "https://www.barnet.gov.uk/modules/contrib/jquery_ui/assets/vendor/jquery.ui/ui/unique-id-min.js?v=1.13.2",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:21.627Z"
+    },
+    {
+      "url": "https://www.barnet.gov.uk/modules/contrib/jquery_ui/assets/vendor/jquery.ui/ui/widget-min.js?v=1.13.2",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:21.627Z"
+    },
+    {
+      "url": "https://www.barnet.gov.uk/modules/contrib/jquery_ui/assets/vendor/jquery.ui/ui/widgets/accordion-min.js?v=1.13.2",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:21.627Z"
+    },
+    {
+      "url": "https://www.barnet.gov.uk/core/assets/vendor/tabbable/index.umd.min.js?v=6.2.0",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:21.628Z"
+    },
+    {
+      "url": "https://www.barnet.gov.uk/core/misc/autocomplete.js?v=10.3.2",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:21.628Z"
+    },
+    {
+      "url": "https://www.barnet.gov.uk/themes/custom/barnet_council/assets/js/leaflet.js?szqrbf",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:21.628Z"
+    },
+    {
+      "url": "https://www.barnet.gov.uk/themes/custom/barnet_council/assets/js/leaflet.markercluster.js?szqrbf",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:21.628Z"
+    },
+    {
+      "url": "https://www.barnet.gov.uk/themes/custom/barnet_council/assets/js/maps.js?szqrbf",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:21.628Z"
+    },
+    {
+      "url": "https://www.barnet.gov.uk/themes/custom/barnet_council/assets/js/directories.js?szqrbf",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:21.628Z"
+    },
+    {
+      "url": "https://www.barnet.gov.uk/themes/custom/barnet_council/assets/js/global.js?szqrbf",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:21.628Z"
+    },
+    {
+      "url": "https://www.barnet.gov.uk/themes/custom/barnet_council/assets/js/reciteme.js?szqrbf",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:21.628Z"
+    },
+    {
+      "url": "https://www.barnet.gov.uk/themes/custom/barnet_council/assets/js/modernizr.js?szqrbf",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:21.628Z"
+    },
+    {
+      "url": "https://www.barnet.gov.uk/themes/custom/barnet_council/assets/js/content-button.js?szqrbf",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:21.629Z"
+    },
+    {
+      "url": "https://www.barnet.gov.uk/core/assets/vendor/js-cookie/js.cookie.min.js?v=3.0.5",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:21.629Z"
+    },
+    {
+      "url": "https://www.barnet.gov.uk/themes/custom/barnet_council/assets/js/one-digital-login.js?szqrbf",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:21.629Z"
+    },
+    {
+      "url": "https://www.barnet.gov.uk/core/misc/progress.js?v=10.3.2",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:21.629Z"
+    },
+    {
+      "url": "https://www.barnet.gov.uk/core/assets/vendor/loadjs/loadjs.min.js?v=4.3.0",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:21.629Z"
+    },
+    {
+      "url": "https://www.barnet.gov.uk/modules/contrib/eu_cookie_compliance/js/eu_cookie_compliance.min.js?v=10.3.2",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:21.629Z"
+    },
+    {
+      "url": "https://www.barnet.gov.uk/core/misc/debounce.js?v=10.3.2",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:21.630Z"
+    },
+    {
+      "url": "https://www.barnet.gov.uk/core/misc/announce.js?v=10.3.2",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:21.630Z"
+    },
+    {
+      "url": "https://www.barnet.gov.uk/core/misc/message.js?v=10.3.2",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:21.630Z"
+    },
+    {
+      "url": "https://www.barnet.gov.uk/core/misc/ajax.js?v=10.3.2",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:21.630Z"
+    },
+    {
+      "url": "https://www.barnet.gov.uk/themes/contrib/stable/js/ajax.js?v=10.3.2",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:21.630Z"
+    },
+    {
+      "url": "https://www.barnet.gov.uk/core/misc/jquery.tabbable.shim.js?v=10.3.2",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:21.630Z"
+    },
+    {
+      "url": "https://www.barnet.gov.uk/core/misc/position.js?v=10.3.2",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:21.630Z"
+    },
+    {
+      "url": "https://www.barnet.gov.uk/modules/contrib/search_api_autocomplete/js/search_api_autocomplete.js?szqrbf",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:21.630Z"
+    },
+    {
+      "url": "https://www.barnet.gov.uk/themes/custom/barnet_council/assets/css/print.css?szqrbf",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:21.650Z"
+    },
+    {
+      "url": "https://www.barnet.gov.uk/themes/custom/barnet_council/assets/js/google-tag-manager.js",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:21.996Z"
+    },
+    {
+      "url": "https://region1.analytics.google.com/g/collect?v=2&tid=G-FQ5GMMMGZJ&gtm=45je57g1v9102221442z89133169014za200zb9133169014&_p=1753115362003&gcd=13l3l3l3l1l1&npa=0&dma=0&tag_exp=101509157~102015666~103116026~103200004~103233427~104684208~104684211&cid=2007449364.1753115356&ul=en-gb&sr=800x600&ir=1&uaa=arm&uab=64&uafvl=Not)A%253BBrand%3B8.0.0.0%7CChromium%3B138.0.7204.101%7CGoogle%2520Chrome%3B138.0.7204.101&uamb=0&uam=&uap=macOS&uapv=15.5.0&uaw=0&are=1&frm=0&pscdl=noapi&_eu=EAAAAAQ&_s=1&sid=1753115356&sct=1&seg=1&dl=https%3A%2F%2Fwww.barnet.gov.uk%2Fsearch%3Fsearch%3Dbin%2Bcollection&dr=https%3A%2F%2Fwww.barnet.gov.uk%2Frecycling-and-waste%2Fhousehold-recycling-and-waste&dt=Search%20%7C%20Barnet%20Council&en=page_view&tfd=1519",
+      "method": "POST",
+      "status": 204,
+      "redirect_url": null,
+      "mime_type": "text/plain",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:22.033Z"
+    },
+    {
+      "url": "https://region1.analytics.google.com/g/collect?v=2&tid=G-FQ5GMMMGZJ&gtm=45je57g1v9102221442za200zb9133169014&_p=1753115362003&gcd=13l3l3l3l1l1&npa=0&dma=0&tag_exp=101509157~102015666~103116026~103200004~103233427~104684208~104684211&cid=2007449364.1753115356&ul=en-gb&sr=800x600&ir=1&uaa=arm&uab=64&uafvl=Not)A%253BBrand%3B8.0.0.0%7CChromium%3B138.0.7204.101%7CGoogle%2520Chrome%3B138.0.7204.101&uamb=0&uam=&uap=macOS&uapv=15.5.0&uaw=0&are=1&frm=0&pscdl=noapi&_eu=EEAAAAQ&_s=2&sid=1753115356&sct=1&seg=1&dl=https%3A%2F%2Fwww.barnet.gov.uk%2Fsearch%3Fsearch%3Dbin%2Bcollection&dr=https%3A%2F%2Fwww.barnet.gov.uk%2Frecycling-and-waste%2Fhousehold-recycling-and-waste&dt=Search%20%7C%20Barnet%20Council&en=view_search_results&_c=1&ep.search_term=bin%20collection&_et=1&tfd=1520",
+      "method": "POST",
+      "status": 302,
+      "redirect_url": "https://region1.google-analytics.com/privacy-sandbox/register-conversion?_c=1&cid=2007449364.1753115356&dbk=8923233292751494365&dma=0&en=view_search_results&gtm=45je57g1v9102221442za200zb9133169014&npa=0&tid=G-FQ5GMMMGZJ&dl=https%3A%2F%2Fwww.barnet.gov.uk%3F",
+      "mime_type": "text/html; charset=UTF-8",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:22.034Z"
+    },
+    {
+      "url": "https://app.meetami.ai/chats/enabled/48922672210/",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=UTF-8",
+      "size": 1,
+      "timestamp": "2025-07-21T16:29:22.131Z",
+      "form_data": {
+        "locationPath": "/search"
+      }
+    },
+    {
+      "url": "https://app.meetami.ai/chats/chat/48922672210/1/1251753115358195",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=UTF-8",
+      "size": 515415,
+      "timestamp": "2025-07-21T16:29:22.704Z"
+    },
+    {
+      "url": "https://app.meetami.ai/chats/track_load/48922672210/1251753115358195",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=UTF-8",
+      "size": 1,
+      "timestamp": "2025-07-21T16:29:22.919Z"
+    },
+    {
+      "url": "https://app.meetami.ai/unsent_messages/save_user_message/1251753115358195/",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=UTF-8",
+      "size": 1,
+      "timestamp": "2025-07-21T16:29:24.008Z"
+    },
+    {
+      "url": "https://region1.analytics.google.com/g/collect?v=2&tid=G-FQ5GMMMGZJ&gtm=45je57g1v9102221442z89133169014za200zb9133169014&_p=1753115362003&gcd=13l3l3l3l1l1&npa=0&dma=0&tag_exp=101509157~102015666~103116026~103200004~103233427~104684208~104684211&cid=2007449364.1753115356&ul=en-gb&sr=800x600&ir=1&uaa=arm&uab=64&uafvl=Not)A%253BBrand%3B8.0.0.0%7CChromium%3B138.0.7204.101%7CGoogle%2520Chrome%3B138.0.7204.101&uamb=0&uam=&uap=macOS&uapv=15.5.0&uaw=0&are=1&frm=0&pscdl=noapi&_eu=EAAAAAQ&_s=3&sid=1753115356&sct=1&seg=1&dl=https%3A%2F%2Fwww.barnet.gov.uk%2Fsearch%3Fsearch%3Dbin%2Bcollection&dr=https%3A%2F%2Fwww.barnet.gov.uk%2Frecycling-and-waste%2Fhousehold-recycling-and-waste&dt=Search%20%7C%20Barnet%20Council&en=external_clicks&_c=1&ep.link_url=https%3A%2F%2Fwww.barnet.gov.uk%2Frecycling-and-waste%2Fbin-collections%2Ffind-your-bin-collection-day&ep.link_id=&ep.link_classes=&ep.link_text=Find%20your%20bin%20collection%20day&ep.outbound=true&ep.link_domain=www.barnet.gov.uk&_et=2868&tfd=4390",
+      "method": "POST",
+      "status": 302,
+      "redirect_url": "https://region1.google-analytics.com/privacy-sandbox/register-conversion?_c=1&cid=2007449364.1753115356&dbk=2354717697374124848&dma=0&en=external_clicks&gtm=45je57g1v9102221442z89133169014za200zb9133169014&npa=0&tid=G-FQ5GMMMGZJ&dl=https%3A%2F%2Fwww.barnet.gov.uk%3F",
+      "mime_type": "text/html; charset=UTF-8",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:24.900Z"
+    },
+    {
+      "url": "https://www.barnet.gov.uk/recycling-and-waste/bin-collections/find-your-bin-collection-day",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=UTF-8",
+      "size": 35029,
+      "timestamp": "2025-07-21T16:29:24.952Z"
+    },
+    {
+      "url": "https://www.barnet.gov.uk/sites/default/files/hotjar/hotjar.script.js?szqrbf",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:25.473Z"
+    },
+    {
+      "url": "https://www.barnet.gov.uk/sites/default/files/eu_cookie_compliance/eu_cookie_compliance.script.js?szqrbf",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:25.474Z"
+    },
+    {
+      "url": "https://www.barnet.gov.uk/core/assets/vendor/jquery.ui/themes/base/core.css?szqrbf",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:25.475Z"
+    },
+    {
+      "url": "https://www.barnet.gov.uk/core/assets/vendor/jquery.ui/themes/base/autocomplete.css?szqrbf",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:25.475Z"
+    },
+    {
+      "url": "https://www.barnet.gov.uk/core/assets/vendor/jquery.ui/themes/base/menu.css?szqrbf",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:25.475Z"
+    },
+    {
+      "url": "https://www.barnet.gov.uk/themes/contrib/stable/css/system/components/align.module.css?szqrbf",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:25.476Z"
+    },
+    {
+      "url": "https://www.barnet.gov.uk/themes/contrib/stable/css/system/components/fieldgroup.module.css?szqrbf",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:25.476Z"
+    },
+    {
+      "url": "https://www.barnet.gov.uk/themes/contrib/stable/css/system/components/container-inline.module.css?szqrbf",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:25.476Z"
+    },
+    {
+      "url": "https://www.barnet.gov.uk/themes/contrib/stable/css/system/components/clearfix.module.css?szqrbf",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:25.477Z"
+    },
+    {
+      "url": "https://www.barnet.gov.uk/themes/contrib/stable/css/system/components/details.module.css?szqrbf",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:25.477Z"
+    },
+    {
+      "url": "https://www.barnet.gov.uk/themes/contrib/stable/css/system/components/hidden.module.css?szqrbf",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:25.477Z"
+    },
+    {
+      "url": "https://www.barnet.gov.uk/themes/contrib/stable/css/system/components/item-list.module.css?szqrbf",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:25.477Z"
+    },
+    {
+      "url": "https://www.barnet.gov.uk/themes/contrib/stable/css/system/components/js.module.css?szqrbf",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:25.478Z"
+    },
+    {
+      "url": "https://www.barnet.gov.uk/themes/contrib/stable/css/system/components/nowrap.module.css?szqrbf",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:25.478Z"
+    },
+    {
+      "url": "https://www.barnet.gov.uk/themes/contrib/stable/css/system/components/position-container.module.css?szqrbf",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:25.478Z"
+    },
+    {
+      "url": "https://www.barnet.gov.uk/themes/contrib/stable/css/system/components/reset-appearance.module.css?szqrbf",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:25.478Z"
+    },
+    {
+      "url": "https://www.barnet.gov.uk/themes/contrib/stable/css/system/components/resize.module.css?szqrbf",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:25.478Z"
+    },
+    {
+      "url": "https://www.barnet.gov.uk/themes/contrib/stable/css/system/components/system-status-counter.css?szqrbf",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:25.479Z"
+    },
+    {
+      "url": "https://www.barnet.gov.uk/themes/contrib/stable/css/system/components/system-status-report-counters.css?szqrbf",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:25.479Z"
+    },
+    {
+      "url": "https://www.barnet.gov.uk/themes/contrib/stable/css/system/components/system-status-report-general-info.css?szqrbf",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:25.480Z"
+    },
+    {
+      "url": "https://www.barnet.gov.uk/themes/contrib/stable/css/system/components/tablesort.module.css?szqrbf",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:25.480Z"
+    },
+    {
+      "url": "https://www.barnet.gov.uk/themes/contrib/stable/css/core/components/progress.module.css?szqrbf",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:25.480Z"
+    },
+    {
+      "url": "https://www.barnet.gov.uk/themes/contrib/stable/css/core/components/ajax-progress.module.css?szqrbf",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:25.481Z"
+    },
+    {
+      "url": "https://www.barnet.gov.uk/themes/contrib/stable/css/core/components/autocomplete-loading.module.css?szqrbf",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:25.481Z"
+    },
+    {
+      "url": "https://www.barnet.gov.uk/modules/contrib/jquery_ui/assets/vendor/jquery.ui/themes/base/core.css?szqrbf",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:25.481Z"
+    },
+    {
+      "url": "https://www.barnet.gov.uk/modules/contrib/jquery_ui/assets/vendor/jquery.ui/themes/base/accordion.css?szqrbf",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:25.482Z"
+    },
+    {
+      "url": "https://www.barnet.gov.uk/themes/contrib/stable/css/views/views.module.css?szqrbf",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:25.482Z"
+    },
+    {
+      "url": "https://www.barnet.gov.uk/modules/contrib/footnotes/assets/css/footnotes.css?szqrbf",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:25.482Z"
+    },
+    {
+      "url": "https://www.barnet.gov.uk/modules/contrib/eu_cookie_compliance/css/eu_cookie_compliance.bare.css?szqrbf",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:25.482Z"
+    },
+    {
+      "url": "https://www.barnet.gov.uk/core/assets/vendor/jquery.ui/themes/base/theme.css?szqrbf",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:25.482Z"
+    },
+    {
+      "url": "https://www.barnet.gov.uk/modules/contrib/jquery_ui/assets/vendor/jquery.ui/themes/base/theme.css?szqrbf",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:25.482Z"
+    },
+    {
+      "url": "https://www.barnet.gov.uk/modules/contrib/search_api_autocomplete/css/search_api_autocomplete.css?szqrbf",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:25.482Z"
+    },
+    {
+      "url": "https://www.barnet.gov.uk/profiles/custom/oblg_profile/modules/custom/ob_oblg_emergency_alerts/assets/css/banner-alert.css?szqrbf",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:25.483Z"
+    },
+    {
+      "url": "https://www.barnet.gov.uk/themes/custom/barnet_council/assets/css/barnet-council.css?szqrbf",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:25.483Z"
+    },
+    {
+      "url": "https://www.barnet.gov.uk/themes/custom/barnet_council/assets/css/includes/leaflet.css?szqrbf",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:25.483Z"
+    },
+    {
+      "url": "https://www.barnet.gov.uk/themes/custom/barnet_council/assets/css/includes/MarkerCluster.css?szqrbf",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:25.483Z"
+    },
+    {
+      "url": "https://www.barnet.gov.uk/themes/custom/barnet_council/assets/css/includes/MarkerCluster.Default.css?szqrbf",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:25.483Z"
+    },
+    {
+      "url": "https://www.barnet.gov.uk/themes/custom/local_gov_wl/assets/css/open-iconic.css?szqrbf",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:25.483Z"
+    },
+    {
+      "url": "https://www.barnet.gov.uk/core/misc/drupalSettingsLoader.js?v=10.3.2",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:25.484Z"
+    },
+    {
+      "url": "https://www.barnet.gov.uk/modules/custom/capitagov_awsrum/js/capitagov_awsrum.script.js?szqrbf",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:25.484Z"
+    },
+    {
+      "url": "https://www.barnet.gov.uk/themes/custom/barnet_council/assets/images/png_icons/barnet-logo-green.png",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:25.484Z"
+    },
+    {
+      "url": "https://www.barnet.gov.uk/themes/custom/barnet_council/assets/images/logos/green.png",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:25.484Z"
+    },
+    {
+      "url": "https://www.barnet.gov.uk/themes/custom/barnet_council/assets/images/svg_icons/social_media/facebook.svg",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:25.484Z"
+    },
+    {
+      "url": "https://www.barnet.gov.uk/themes/custom/barnet_council/assets/images/svg_icons/social_media/twitter.svg",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:25.484Z"
+    },
+    {
+      "url": "https://www.barnet.gov.uk/themes/custom/barnet_council/assets/images/svg_icons/social_media/instagram.svg",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:25.484Z"
+    },
+    {
+      "url": "https://www.barnet.gov.uk/core/assets/vendor/jquery/jquery.min.js?v=3.7.1",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:25.485Z"
+    },
+    {
+      "url": "https://www.barnet.gov.uk/core/assets/vendor/once/once.min.js?v=1.0.1",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:25.485Z"
+    },
+    {
+      "url": "https://www.barnet.gov.uk/core/misc/drupal.js?v=10.3.2",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:25.485Z"
+    },
+    {
+      "url": "https://www.barnet.gov.uk/core/misc/drupal.init.js?v=10.3.2",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:25.485Z"
+    },
+    {
+      "url": "https://www.barnet.gov.uk/core/assets/vendor/jquery.ui/ui/version-min.js?v=10.3.2",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:25.485Z"
+    },
+    {
+      "url": "https://www.barnet.gov.uk/core/assets/vendor/jquery.ui/ui/data-min.js?v=10.3.2",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:25.485Z"
+    },
+    {
+      "url": "https://www.barnet.gov.uk/core/assets/vendor/jquery.ui/ui/disable-selection-min.js?v=10.3.2",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:25.485Z"
+    },
+    {
+      "url": "https://www.barnet.gov.uk/core/assets/vendor/jquery.ui/ui/form-min.js?v=10.3.2",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:25.485Z"
+    },
+    {
+      "url": "https://www.barnet.gov.uk/themes/custom/barnet_council/assets/images/svg_icons/social_media/youtube.svg",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:25.485Z"
+    },
+    {
+      "url": "https://www.barnet.gov.uk/core/assets/vendor/jquery.ui/ui/jquery-patch-min.js?v=10.3.2",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:25.486Z"
+    },
+    {
+      "url": "https://www.barnet.gov.uk/core/assets/vendor/jquery.ui/ui/scroll-parent-min.js?v=10.3.2",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:25.486Z"
+    },
+    {
+      "url": "https://www.barnet.gov.uk/core/assets/vendor/jquery.ui/ui/unique-id-min.js?v=10.3.2",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:25.486Z"
+    },
+    {
+      "url": "https://www.barnet.gov.uk/core/assets/vendor/jquery.ui/ui/focusable-min.js?v=10.3.2",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:25.486Z"
+    },
+    {
+      "url": "https://www.barnet.gov.uk/core/assets/vendor/jquery.ui/ui/ie-min.js?v=10.3.2",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:25.486Z"
+    },
+    {
+      "url": "https://www.barnet.gov.uk/core/assets/vendor/jquery.ui/ui/keycode-min.js?v=10.3.2",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:25.486Z"
+    },
+    {
+      "url": "https://www.barnet.gov.uk/core/assets/vendor/jquery.ui/ui/plugin-min.js?v=10.3.2",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:25.486Z"
+    },
+    {
+      "url": "https://www.barnet.gov.uk/core/assets/vendor/jquery.ui/ui/safe-active-element-min.js?v=10.3.2",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:25.486Z"
+    },
+    {
+      "url": "https://www.barnet.gov.uk/core/assets/vendor/jquery.ui/ui/safe-blur-min.js?v=10.3.2",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:25.486Z"
+    },
+    {
+      "url": "https://www.barnet.gov.uk/core/assets/vendor/jquery.ui/ui/widget-min.js?v=10.3.2",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:25.486Z"
+    },
+    {
+      "url": "https://www.barnet.gov.uk/core/assets/vendor/jquery.ui/ui/labels-min.js?v=10.3.2",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:25.487Z"
+    },
+    {
+      "url": "https://www.barnet.gov.uk/core/assets/vendor/jquery.ui/ui/widgets/autocomplete-min.js?v=10.3.2",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:25.487Z"
+    },
+    {
+      "url": "https://www.barnet.gov.uk/core/assets/vendor/jquery.ui/ui/widgets/menu-min.js?v=10.3.2",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:25.487Z"
+    },
+    {
+      "url": "https://www.barnet.gov.uk/modules/contrib/jquery_ui/assets/vendor/jquery.ui/ui/version-min.js?v=1.13.2",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:25.487Z"
+    },
+    {
+      "url": "https://www.barnet.gov.uk/modules/contrib/jquery_ui/assets/vendor/jquery.ui/ui/keycode-min.js?v=1.13.2",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:25.487Z"
+    },
+    {
+      "url": "https://www.barnet.gov.uk/modules/contrib/jquery_ui/assets/vendor/jquery.ui/ui/unique-id-min.js?v=1.13.2",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:25.487Z"
+    },
+    {
+      "url": "https://www.barnet.gov.uk/modules/contrib/jquery_ui/assets/vendor/jquery.ui/ui/widget-min.js?v=1.13.2",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:25.487Z"
+    },
+    {
+      "url": "https://www.barnet.gov.uk/modules/contrib/jquery_ui/assets/vendor/jquery.ui/ui/widgets/accordion-min.js?v=1.13.2",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:25.487Z"
+    },
+    {
+      "url": "https://www.barnet.gov.uk/core/assets/vendor/tabbable/index.umd.min.js?v=6.2.0",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:25.487Z"
+    },
+    {
+      "url": "https://www.barnet.gov.uk/core/misc/autocomplete.js?v=10.3.2",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:25.487Z"
+    },
+    {
+      "url": "https://www.barnet.gov.uk/themes/custom/barnet_council/assets/js/leaflet.js?szqrbf",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:25.488Z"
+    },
+    {
+      "url": "https://www.barnet.gov.uk/themes/custom/barnet_council/assets/js/leaflet.markercluster.js?szqrbf",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:25.488Z"
+    },
+    {
+      "url": "https://www.barnet.gov.uk/themes/custom/barnet_council/assets/js/maps.js?szqrbf",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:25.488Z"
+    },
+    {
+      "url": "https://www.barnet.gov.uk/themes/custom/barnet_council/assets/js/directories.js?szqrbf",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:25.488Z"
+    },
+    {
+      "url": "https://www.barnet.gov.uk/themes/custom/barnet_council/assets/js/global.js?szqrbf",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:25.488Z"
+    },
+    {
+      "url": "https://www.barnet.gov.uk/themes/custom/barnet_council/assets/js/reciteme.js?szqrbf",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:25.488Z"
+    },
+    {
+      "url": "https://www.barnet.gov.uk/themes/custom/barnet_council/assets/js/modernizr.js?szqrbf",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:25.488Z"
+    },
+    {
+      "url": "https://www.barnet.gov.uk/themes/custom/barnet_council/assets/js/content-button.js?szqrbf",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:25.488Z"
+    },
+    {
+      "url": "https://www.barnet.gov.uk/core/assets/vendor/js-cookie/js.cookie.min.js?v=3.0.5",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:25.488Z"
+    },
+    {
+      "url": "https://www.barnet.gov.uk/modules/contrib/eu_cookie_compliance/js/eu_cookie_compliance.min.js?v=10.3.2",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:25.488Z"
+    },
+    {
+      "url": "https://www.barnet.gov.uk/themes/custom/barnet_council/assets/js/one-digital-login.js?szqrbf",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:25.489Z"
+    },
+    {
+      "url": "https://www.barnet.gov.uk/core/misc/progress.js?v=10.3.2",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:25.489Z"
+    },
+    {
+      "url": "https://www.barnet.gov.uk/core/assets/vendor/loadjs/loadjs.min.js?v=4.3.0",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:25.489Z"
+    },
+    {
+      "url": "https://www.barnet.gov.uk/core/misc/debounce.js?v=10.3.2",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:25.489Z"
+    },
+    {
+      "url": "https://www.barnet.gov.uk/core/misc/announce.js?v=10.3.2",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:25.489Z"
+    },
+    {
+      "url": "https://www.barnet.gov.uk/core/misc/message.js?v=10.3.2",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:25.489Z"
+    },
+    {
+      "url": "https://www.barnet.gov.uk/core/misc/ajax.js?v=10.3.2",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:25.489Z"
+    },
+    {
+      "url": "https://www.barnet.gov.uk/themes/contrib/stable/js/ajax.js?v=10.3.2",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:25.489Z"
+    },
+    {
+      "url": "https://www.barnet.gov.uk/core/misc/jquery.tabbable.shim.js?v=10.3.2",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:25.489Z"
+    },
+    {
+      "url": "https://www.barnet.gov.uk/core/misc/position.js?v=10.3.2",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:25.489Z"
+    },
+    {
+      "url": "https://www.barnet.gov.uk/modules/contrib/search_api_autocomplete/js/search_api_autocomplete.js?szqrbf",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:25.489Z"
+    },
+    {
+      "url": "https://www.barnet.gov.uk/profiles/custom/oblg_profile/modules/custom/ob_oblg_emergency_alerts/assets/js/banner-alert.js?v=1.x",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:25.490Z"
+    },
+    {
+      "url": "https://www.barnet.gov.uk/themes/custom/barnet_council/assets/css/print.css?szqrbf",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:25.656Z"
+    },
+    {
+      "url": "https://www.barnet.gov.uk/themes/custom/barnet_council/assets/js/google-tag-manager.js",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:25.903Z"
+    },
+    {
+      "url": "https://app.meetami.ai/chats/enabled/48922672210/",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=UTF-8",
+      "size": 1,
+      "timestamp": "2025-07-21T16:29:26.028Z",
+      "form_data": {
+        "locationPath": "/recycling-and-waste/bin-collections/find-your-bin-collection-day"
+      }
+    },
+    {
+      "url": "https://app.meetami.ai/chats/chat/48922672210/1/1251753115358195",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=UTF-8",
+      "size": 518380,
+      "timestamp": "2025-07-21T16:29:26.587Z"
+    },
+    {
+      "url": "https://app.meetami.ai/chats/track_load/48922672210/1251753115358195",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=UTF-8",
+      "size": 1,
+      "timestamp": "2025-07-21T16:29:27.831Z"
+    },
+    {
+      "url": "https://region1.analytics.google.com/g/collect?v=2&tid=G-FQ5GMMMGZJ&gtm=45je57g1v9102221442z89133169014za200zb9133169014&_p=1753115365915&gcd=13l3l3l3l1l1&npa=0&dma=0&tag_exp=101509157~102015666~103116026~103200004~103233427~104684208~104684211&cid=2007449364.1753115356&ul=en-gb&sr=800x600&ir=1&uaa=arm&uab=64&uafvl=Not)A%253BBrand%3B8.0.0.0%7CChromium%3B138.0.7204.101%7CGoogle%2520Chrome%3B138.0.7204.101&uamb=0&uam=&uap=macOS&uapv=15.5.0&uaw=0&are=1&frm=0&pscdl=noapi&_eu=EAAAAAQ&_s=1&sid=1753115356&sct=1&seg=1&dl=https%3A%2F%2Fwww.barnet.gov.uk%2Frecycling-and-waste%2Fbin-collections%2Ffind-your-bin-collection-day&dr=https%3A%2F%2Fwww.barnet.gov.uk%2Fsearch%3Fsearch%3Dbin%2Bcollection&dt=Find%20your%20bin%20collection%20day%20%7C%20Barnet%20Council&en=page_view&tfd=3798",
+      "method": "POST",
+      "status": 204,
+      "redirect_url": null,
+      "mime_type": "text/plain",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:28.699Z"
+    },
+    {
+      "url": "https://account.barnet.gov.uk/Forms/Home/Redirector/Index/?id=6a2ac067-3322-46e5-96e4-16c0c214454a&mod=OA&casetype=BAR&formname=BNTCOLDATE&_gl=1*llp3kh*_gcl_au*NDgzOTQ1ODUzLjE3NTMxMTUzNTY.*_ga*MjAwNzQ0OTM2NC4xNzUzMTE1MzU2*_ga_FQ5GMMMGZJ*czE3NTMxMTUzNTYkbzEkZzEkdDE3NTMxMTUzNjUkajUxJGwwJGgw",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html",
+      "size": 212,
+      "timestamp": "2025-07-21T16:29:28.752Z"
+    },
+    {
+      "url": "https://account.barnet.gov.uk/Forms/Home/Redirector/Index/?id=6a2ac067-3322-46e5-96e4-16c0c214454a&mod=OA&casetype=BAR&formname=BNTCOLDATE&_gl=1*llp3kh*_gcl_au*NDgzOTQ1ODUzLjE3NTMxMTUzNTY.*_ga*MjAwNzQ0OTM2NC4xNzUzMTE1MzU2*_ga_FQ5GMMMGZJ*czE3NTMxMTUzNTYkbzEkZzEkdDE3NTMxMTUzNjUkajUxJGwwJGgw",
+      "method": "GET",
+      "status": 302,
+      "redirect_url": "https://account.barnet.gov.uk/OnlineApplication/Redirector.aspx?comingfrom=home&casetype=BAR&formname=BNTCOLDATE&oaurl=https://account.barnet.gov.uk/Forms&lang=&mod=OA&CaseRef=",
+      "mime_type": "text/html; charset=utf-8",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:28.844Z"
+    },
+    {
+      "url": "https://account.barnet.gov.uk/_Incapsula_Resource?SWKMTFSR=1&e=0.6126587680068946",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/plain",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:28.844Z"
+    },
+    {
+      "url": "https://account.barnet.gov.uk/OnlineApplication/Redirector.aspx?comingfrom=home&casetype=BAR&formname=BNTCOLDATE&oaurl=https://account.barnet.gov.uk/Forms&lang=&mod=OA&CaseRef=",
+      "method": "GET",
+      "status": 302,
+      "redirect_url": "https://account.barnet.gov.uk/OnlineApplication/introduction.htm?redirectToPage=ApplicationForm.aspx&withParams=form=BNTCOLDATE&time=638887157690444133",
+      "mime_type": "text/html; charset=utf-8",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:28.883Z"
+    },
+    {
+      "url": "https://account.barnet.gov.uk/OnlineApplication/introduction.htm?redirectToPage=ApplicationForm.aspx&withParams=form=BNTCOLDATE&time=638887157690444133",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html",
+      "size": 1827,
+      "timestamp": "2025-07-21T16:29:28.999Z"
+    },
+    {
+      "url": "https://account.barnet.gov.uk/OnlineApplication/Scripts/jquery-3.6.0.js",
+      "method": "GET",
+      "status": 404,
+      "redirect_url": null,
+      "mime_type": "text/html",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:29.039Z"
+    },
+    {
+      "url": "https://account.barnet.gov.uk/OnlineApplication/Loader.aspx?redirectToPage=ApplicationForm.aspx&withParams=form=BNTCOLDATE&time=638887157690444133&time=1753115369067",
+      "method": "GET",
+      "status": 302,
+      "redirect_url": "https://account.barnet.gov.uk/OnlineApplication/ApplicationForm.aspx?form=BNTCOLDATE&time=638887157690444133,1753115369067",
+      "mime_type": "text/html; charset=utf-8",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:29.120Z"
+    },
+    {
+      "url": "https://account.barnet.gov.uk/OnlineApplication/ApplicationForm.aspx?form=BNTCOLDATE&time=638887157690444133,1753115369067",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=utf-8",
+      "size": 179015,
+      "timestamp": "2025-07-21T16:29:29.145Z"
+    },
+    {
+      "url": "https://maps.googleapis.com/maps/api/mapsjs/gen_204?csp_test=true",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=UTF-8",
+      "size": 3,
+      "timestamp": "2025-07-21T16:29:29.574Z"
+    },
+    {
+      "url": "https://use.fontawesome.com/releases/v4.7.0/fonts/fontawesome-webfont.woff2",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/font-woff2",
+      "size": 77160,
+      "timestamp": "2025-07-21T16:29:29.635Z"
+    },
+    {
+      "url": "https://account.barnet.gov.uk/OnlineApplication/ApplicationForm.aspx?form=BNTCOLDATE&time=638887157690444133%2c1753115369067",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/plain; charset=utf-8",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:34.715Z"
+    },
+    {
+      "url": "https://account.barnet.gov.uk/OnlineApplication/ApplicationForm.aspx?form=BNTCOLDATE",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=utf-8",
+      "size": 189172,
+      "timestamp": "2025-07-21T16:29:35.975Z"
+    },
+    {
+      "url": "https://maps.googleapis.com/maps/api/mapsjs/gen_204?csp_test=true",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=UTF-8",
+      "size": 3,
+      "timestamp": "2025-07-21T16:29:36.373Z"
+    },
+    {
+      "url": "https://use.fontawesome.com/releases/v4.7.0/fonts/fontawesome-webfont.woff2",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/font-woff2",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:36.395Z"
+    },
+    {
+      "url": "https://www.barnet.gov.uk/themes/custom/barnet_council/assets/images/png_icons/barnet-logo-green.png",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:36.396Z"
+    },
+    {
+      "url": "https://account.barnet.gov.uk/OnlineApplication/ApplicationForm.aspx?form=BNTCOLDATE",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/plain; charset=utf-8",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:38.806Z"
+    },
+    {
+      "url": "https://account.barnet.gov.uk/OnlineApplication/ApplicationForm.aspx?form=BNTCOLDATE",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=utf-8",
+      "size": 191677,
+      "timestamp": "2025-07-21T16:29:46.317Z"
+    },
+    {
+      "url": "https://maps.googleapis.com/maps/api/mapsjs/gen_204?csp_test=true",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=UTF-8",
+      "size": 3,
+      "timestamp": "2025-07-21T16:29:46.685Z"
+    },
+    {
+      "url": "https://use.fontawesome.com/releases/v4.7.0/fonts/fontawesome-webfont.woff2",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/font-woff2",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:46.693Z"
+    },
+    {
+      "url": "https://www.barnet.gov.uk/themes/custom/barnet_council/assets/images/png_icons/barnet-logo-green.png",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:46.694Z"
+    }
+  ]
+}

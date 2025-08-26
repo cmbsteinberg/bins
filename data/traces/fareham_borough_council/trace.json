@@ -1,0 +1,122 @@
+{
+  "metadata": {
+    "trace_name": "fareham_borough_council",
+    "processed_at": "2025-08-26 18:44:24",
+    "workflow_steps_count": 5,
+    "navigation_events_count": 7
+  },
+  "scraping_patterns": {
+    "login_detected": false,
+    "form_submissions": 1,
+    "navigation_count": 1,
+    "unique_domains": [
+      "clients1.google.com",
+      "www.fareham.gov.uk"
+    ],
+    "api_endpoints": [],
+    "data_extraction_indicators": []
+  },
+  "workflow_steps": [
+    {
+      "action": "goto",
+      "target": "https://www.fareham.gov.uk/waste_collection_and_recycling/bincalendar.aspx",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e15 >> internal:describe=\"I Accept\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e154 >> internal:describe=\"Check which area you fall under\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "fill",
+      "target": "aria-ref=e170 >> internal:describe=\"Postcode\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0,
+      "value": "PO14 1AB"
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e174 >> internal:describe=\"Search\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    }
+  ],
+  "navigation_events": [
+    {
+      "url": "https://www.fareham.gov.uk/waste_collection_and_recycling/bincalendar.aspx",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=utf-8",
+      "size": 27187,
+      "timestamp": "2025-07-21T07:51:20.625Z"
+    },
+    {
+      "url": "https://www.fareham.gov.uk/resources/acceptcookies.aspx?mode=all",
+      "method": "GET",
+      "status": 302,
+      "redirect_url": "https://www.fareham.gov.uk/waste_collection_and_recycling/bincalendar.aspx?close=True",
+      "mime_type": "text/html; charset=utf-8",
+      "size": -1,
+      "timestamp": "2025-07-21T07:51:21.955Z"
+    },
+    {
+      "url": "https://www.fareham.gov.uk/waste_collection_and_recycling/bincalendar.aspx?close=True",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=utf-8",
+      "size": 25146,
+      "timestamp": "2025-07-21T07:51:22.103Z"
+    },
+    {
+      "url": "https://clients1.google.com/generate_204",
+      "method": "GET",
+      "status": 204,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": 0,
+      "timestamp": "2025-07-21T07:51:22.396Z"
+    },
+    {
+      "url": "https://www.fareham.gov.uk/internetlookups/search.aspx?list=DomesticBinCollections",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=utf-8",
+      "size": 34461,
+      "timestamp": "2025-07-21T07:51:24.842Z"
+    },
+    {
+      "url": "https://clients1.google.com/generate_204",
+      "method": "GET",
+      "status": 204,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": 0,
+      "timestamp": "2025-07-21T07:51:25.067Z"
+    },
+    {
+      "url": "https://www.fareham.gov.uk/internetlookups/search.aspx?list=DomesticBinCollections",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/plain; charset=utf-8",
+      "size": 14303,
+      "timestamp": "2025-07-21T07:51:29.523Z"
+    }
+  ]
+}

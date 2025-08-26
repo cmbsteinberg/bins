@@ -1,0 +1,325 @@
+{
+  "metadata": {
+    "trace_name": "wakefield_metropolitan_district_council",
+    "processed_at": "2025-08-26 18:44:24",
+    "workflow_steps_count": 6,
+    "navigation_events_count": 27
+  },
+  "scraping_patterns": {
+    "login_detected": false,
+    "form_submissions": 4,
+    "navigation_count": 1,
+    "unique_domains": [
+      "maps.googleapis.com",
+      "www.google.com",
+      "apikeys.civiccomputing.com",
+      "www.wakefield.gov.uk",
+      "region1.analytics.google.com",
+      "www.browsealoud.com"
+    ],
+    "api_endpoints": [
+      "https://www.browsealoud.com/version.json",
+      "https://www.browsealoud.com/modules/3.9.7/sri.json",
+      "https://maps.googleapis.com/maps/api/mapsjs/gen_204?csp_test=true",
+      "https://www.browsealoud.com/version.json",
+      "https://www.browsealoud.com/modules/3.9.7/sri.json",
+      "https://maps.googleapis.com/maps/api/mapsjs/gen_204?csp_test=true",
+      "https://www.browsealoud.com/version.json",
+      "https://www.browsealoud.com/modules/3.9.7/sri.json",
+      "https://maps.googleapis.com/maps/api/mapsjs/gen_204?csp_test=true"
+    ],
+    "data_extraction_indicators": []
+  },
+  "workflow_steps": [
+    {
+      "action": "goto",
+      "target": "http://www.wakefield.gov.uk/site/where-i-live",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e15 >> internal:describe=\"I Accept Cookies\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "fill",
+      "target": "aria-ref=e91 >> internal:describe=\"Enter your full postcode or house number and street\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0,
+      "value": "LS26 9DN"
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e92 >> internal:describe=\"Search\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e83 >> internal:describe=\"31 Newmarket Lane Methley Leeds Ls26 9Dn\"",
+      "status": "Failed",
+      "details": {
+        "error": "Timeout 5000ms exceeded."
+      },
+      "timestamp": 0
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e83 >> internal:describe=\"31 Newmarket Lane Methley Leeds Ls26 9Dn\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    }
+  ],
+  "navigation_events": [
+    {
+      "url": "http://www.wakefield.gov.uk/site/where-i-live",
+      "method": "GET",
+      "status": 301,
+      "redirect_url": "https://www.wakefield.gov.uk/site/where-i-live",
+      "mime_type": "text/html",
+      "size": -1,
+      "timestamp": "2025-07-21T10:31:22.882Z"
+    },
+    {
+      "url": "https://www.wakefield.gov.uk/site/where-i-live",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=utf-8",
+      "size": 55903,
+      "timestamp": "2025-07-21T10:31:22.950Z"
+    },
+    {
+      "url": "https://www.browsealoud.com/version.json",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 31,
+      "timestamp": "2025-07-21T10:31:23.184Z"
+    },
+    {
+      "url": "https://www.browsealoud.com/modules/3.9.7/sri.json",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 478,
+      "timestamp": "2025-07-21T10:31:23.211Z"
+    },
+    {
+      "url": "https://maps.googleapis.com/maps/api/mapsjs/gen_204?csp_test=true",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=UTF-8",
+      "size": 3,
+      "timestamp": "2025-07-21T10:31:24.275Z"
+    },
+    {
+      "url": "https://region1.analytics.google.com/g/collect?v=2&tid=G-GNQ0X593GQ&gtm=45je57g1v9104773455z89126705450za200&_p=1753093883141&_gaz=1&gcd=13l3l3l3l1l1&npa=0&dma=0&tag_exp=101509157~103116026~103200004~103233427~104684208~104684211&cid=1281121520.1753093884&ul=en-gb&sr=800x600&uaa=arm&uab=64&uafvl=Not)A%253BBrand%3B8.0.0.0%7CChromium%3B138.0.7204.101%7CGoogle%2520Chrome%3B138.0.7204.101&uamb=0&uam=&uap=macOS&uapv=15.5.0&uaw=0&are=1&frm=0&pscdl=noapi&_s=1&sid=1753093884&sct=1&seg=0&dl=https%3A%2F%2Fwww.wakefield.gov.uk%2Fsite%2Fwhere-i-live&dt=Check%20your%20bin%20collection%20dates%20and%20Where%20I%20Live%20information%20-%20Wakefield%20Council&en=page_view&_fv=1&_nsi=1&_ss=1&tfd=1442",
+      "method": "POST",
+      "status": 204,
+      "redirect_url": null,
+      "mime_type": "text/plain",
+      "size": -1,
+      "timestamp": "2025-07-21T10:31:24.336Z"
+    },
+    {
+      "url": "https://apikeys.civiccomputing.com/c/v?d=www.wakefield.gov.uk&p=CookieControl%20Multi-Site&v=9&k=6770c6582f3bd4e8ed21e89e3c4e29b5bad7001e&format=json",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 305,
+      "timestamp": "2025-07-21T10:31:25.320Z"
+    },
+    {
+      "url": "https://www.wakefield.gov.uk/_Incapsula_Resource?SWKMTFSR=1&e=0.49438085617907057",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/plain",
+      "size": 1,
+      "timestamp": "2025-07-21T10:31:25.416Z"
+    },
+    {
+      "url": "https://www.google.com/recaptcha/api2/anchor?ar=1&k=6Ldy8SYlAAAAANyRaA_TZmw57NdnpD7VAyUgNfTT&co=aHR0cHM6Ly93d3cud2FrZWZpZWxkLmdvdi51azo0NDM.&hl=en&v=3jpV4E_UA9gZWYy11LtggjoU&size=normal&anchor-ms=20000&execute-ms=15000&cb=7bxqjuz092m",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=utf-8",
+      "size": 74605,
+      "timestamp": "2025-07-21T10:31:25.472Z"
+    },
+    {
+      "url": "https://www.google.com/recaptcha/api2/bframe?hl=en&v=3jpV4E_UA9gZWYy11LtggjoU&k=6Ldy8SYlAAAAANyRaA_TZmw57NdnpD7VAyUgNfTT",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=utf-8",
+      "size": 7808,
+      "timestamp": "2025-07-21T10:31:26.385Z"
+    },
+    {
+      "url": "https://region1.analytics.google.com/g/collect?v=2&tid=G-GNQ0X593GQ&gtm=45je57g1v9104773455za200&_p=1753093883141&_gaz=1&gcs=G111&gcd=13r3r3l3l5l1&npa=0&dma=0&tag_exp=101509157~103116026~103200004~103233427~104684208~104684211&cid=1281121520.1753093884&ul=en-gb&sr=800x600&uaa=arm&uab=64&uafvl=Not)A%253BBrand%3B8.0.0.0%7CChromium%3B138.0.7204.101%7CGoogle%2520Chrome%3B138.0.7204.101&uamb=0&uam=&uap=macOS&uapv=15.5.0&uaw=0&are=1&frm=0&pscdl=noapi&_eu=AEE&_s=3&sid=1753093884&sct=1&seg=1&dl=https%3A%2F%2Fwww.wakefield.gov.uk%2Fsite%2Fwhere-i-live&dt=Check%20your%20bin%20collection%20dates%20and%20Where%20I%20Live%20information%20-%20Wakefield%20Council&en=form_start&ep.form_id=wilcard&ep.form_name=wilForm&ep.form_destination=https%3A%2F%2Fwww.wakefield.gov.uk%2Fpick-your-address&epn.form_length=1&ep.first_field_id=where-i-live&ep.first_field_name=where-i-live&ep.first_field_type=search&epn.first_field_position=1&_et=16121&tfd=19431",
+      "method": "POST",
+      "status": 204,
+      "redirect_url": null,
+      "mime_type": "text/plain",
+      "size": -1,
+      "timestamp": "2025-07-21T10:31:42.316Z"
+    },
+    {
+      "url": "https://www.wakefield.gov.uk/pick-your-address?where-i-live=LS26%209DN",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=utf-8",
+      "size": 98259,
+      "timestamp": "2025-07-21T10:31:42.472Z"
+    },
+    {
+      "url": "https://www.browsealoud.com/version.json",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 31,
+      "timestamp": "2025-07-21T10:31:43.025Z"
+    },
+    {
+      "url": "https://apikeys.civiccomputing.com/c/v?d=www.wakefield.gov.uk&p=CookieControl%20Multi-Site&v=9&k=6770c6582f3bd4e8ed21e89e3c4e29b5bad7001e&format=json",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 305,
+      "timestamp": "2025-07-21T10:31:43.031Z"
+    },
+    {
+      "url": "https://www.wakefield.gov.uk/_Incapsula_Resource?SWKMTFSR=1&e=0.13523775928423654",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/plain",
+      "size": -1,
+      "timestamp": "2025-07-21T10:31:43.177Z"
+    },
+    {
+      "url": "https://www.browsealoud.com/modules/3.9.7/sri.json",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 478,
+      "timestamp": "2025-07-21T10:31:43.178Z"
+    },
+    {
+      "url": "https://maps.googleapis.com/maps/api/mapsjs/gen_204?csp_test=true",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=UTF-8",
+      "size": 3,
+      "timestamp": "2025-07-21T10:31:43.271Z"
+    },
+    {
+      "url": "https://region1.analytics.google.com/g/collect?v=2&tid=G-GNQ0X593GQ&gtm=45je57g1v9104773455z89126705450za200zb9126705450&_p=1753093902952&_gaz=1&gcs=G111&gcd=13r3r3l3l5l1&npa=0&dma=0&tag_exp=101509157~103116026~103200004~103233427~104684208~104684211&cid=1633691501.1753093903&ul=en-gb&sr=800x600&uaa=arm&uab=64&uafvl=Not)A%253BBrand%3B8.0.0.0%7CChromium%3B138.0.7204.101%7CGoogle%2520Chrome%3B138.0.7204.101&uamb=0&uam=&uap=macOS&uapv=15.5.0&uaw=0&are=1&frm=0&pscdl=noapi&_eu=AAAAAAQ&_s=2&sid=1753093903&sct=1&seg=0&dl=https%3A%2F%2Fwww.wakefield.gov.uk%2Fpick-your-address%3Fwhere-i-live%3DLS26%25209DN&dr=https%3A%2F%2Fwww.wakefield.gov.uk%2Fsite%2Fwhere-i-live&dt=Pick%20your%20address%20-%20Wakefield%20Council&en=page_load_time&epn.loading_time_sec=1.66&_et=922&tfd=1668",
+      "method": "POST",
+      "status": 204,
+      "redirect_url": null,
+      "mime_type": "text/plain",
+      "size": -1,
+      "timestamp": "2025-07-21T10:31:43.992Z"
+    },
+    {
+      "url": "https://www.wakefield.gov.uk/where-i-live?uprn=63140691&a=31%20Newmarket%20Lane%20Methley%20Leeds%20Ls26%209Dn&usrn=41805483&e=437365&n=425584&p=LS26%209DN",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=utf-8",
+      "size": 69549,
+      "timestamp": "2025-07-21T10:31:46.492Z"
+    },
+    {
+      "url": "https://www.browsealoud.com/version.json",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 31,
+      "timestamp": "2025-07-21T10:31:52.654Z"
+    },
+    {
+      "url": "https://apikeys.civiccomputing.com/c/v?d=www.wakefield.gov.uk&p=CookieControl%20Multi-Site&v=9&k=6770c6582f3bd4e8ed21e89e3c4e29b5bad7001e&format=json",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 305,
+      "timestamp": "2025-07-21T10:31:52.690Z"
+    },
+    {
+      "url": "https://www.browsealoud.com/modules/3.9.7/sri.json",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 478,
+      "timestamp": "2025-07-21T10:31:52.725Z"
+    },
+    {
+      "url": "https://www.google.com/recaptcha/api2/anchor?ar=1&k=6Ldy8SYlAAAAANyRaA_TZmw57NdnpD7VAyUgNfTT&co=aHR0cHM6Ly93d3cud2FrZWZpZWxkLmdvdi51azo0NDM.&hl=en&v=3jpV4E_UA9gZWYy11LtggjoU&size=normal&anchor-ms=20000&execute-ms=15000&cb=qv962l7gr93n",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=utf-8",
+      "size": 74802,
+      "timestamp": "2025-07-21T10:31:52.855Z"
+    },
+    {
+      "url": "https://maps.googleapis.com/maps/api/mapsjs/gen_204?csp_test=true",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=UTF-8",
+      "size": 3,
+      "timestamp": "2025-07-21T10:31:52.950Z"
+    },
+    {
+      "url": "https://www.wakefield.gov.uk/_Incapsula_Resource?SWKMTFSR=1&e=0.9219001937374979",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/plain",
+      "size": 1,
+      "timestamp": "2025-07-21T10:31:52.951Z"
+    },
+    {
+      "url": "https://region1.analytics.google.com/g/collect?v=2&tid=G-GNQ0X593GQ&gtm=45je57g1v9104773455z89126705450za200&_p=1753093912618&_gaz=1&gcs=G111&gcd=13r3r3l3l5l1&npa=0&dma=0&tag_exp=101509157~103116026~103200004~103233427~104684208~104684211&cid=1633691501.1753093903&ul=en-gb&sr=800x600&uaa=arm&uab=64&uafvl=Not)A%253BBrand%3B8.0.0.0%7CChromium%3B138.0.7204.101%7CGoogle%2520Chrome%3B138.0.7204.101&uamb=0&uam=&uap=macOS&uapv=15.5.0&uaw=0&are=1&frm=0&pscdl=noapi&_eu=AAAAAAQ&_s=3&sid=1753093903&sct=1&seg=0&dl=https%3A%2F%2Fwww.wakefield.gov.uk%2Fwhere-i-live%3Fuprn%3D63140691%26a%3D31%2520Newmarket%2520Lane%2520Methley%2520Leeds%2520Ls26%25209Dn%26usrn%3D41805483%26e%3D437365%26n%3D425584%26p%3DLS26%25209DN&dr=https%3A%2F%2Fwww.wakefield.gov.uk%2Fpick-your-address%3Fwhere-i-live%3DLS26%25209DN&dt=Check%20your%20bin%20collection%20dates%20and%20Where%20I%20Live%20information%20-%20Wakefield%20Council&en=page_load_time&epn.loading_time_sec=6.86&_et=573&tfd=6867",
+      "method": "POST",
+      "status": 204,
+      "redirect_url": null,
+      "mime_type": "text/plain",
+      "size": -1,
+      "timestamp": "2025-07-21T10:31:53.302Z"
+    },
+    {
+      "url": "https://www.google.com/recaptcha/api2/bframe?hl=en&v=3jpV4E_UA9gZWYy11LtggjoU&k=6Ldy8SYlAAAAANyRaA_TZmw57NdnpD7VAyUgNfTT",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=utf-8",
+      "size": 7808,
+      "timestamp": "2025-07-21T10:31:53.542Z"
+    }
+  ]
+}

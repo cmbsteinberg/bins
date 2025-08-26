@@ -1,0 +1,140 @@
+{
+  "metadata": {
+    "trace_name": "west_berkshire_council",
+    "processed_at": "2025-08-26 18:44:24",
+    "workflow_steps_count": 5,
+    "navigation_events_count": 9
+  },
+  "scraping_patterns": {
+    "login_detected": false,
+    "form_submissions": 6,
+    "navigation_count": 1,
+    "unique_domains": [
+      "www.westberks.gov.uk"
+    ],
+    "api_endpoints": [],
+    "data_extraction_indicators": []
+  },
+  "workflow_steps": [
+    {
+      "action": "goto",
+      "target": "https://www.westberks.gov.uk/rubbishandrecyclingcollections",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e54 >> internal:describe=\"Find your next collection day\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "fill",
+      "target": "aria-ref=e65 >> internal:describe=\"Postcode*\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0,
+      "value": "OX12 9NJ"
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e68 >> internal:describe=\"Find address\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "selectOption",
+      "target": "aria-ref=e71 >> internal:describe=\"Address\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0,
+      "value": null
+    }
+  ],
+  "navigation_events": [
+    {
+      "url": "https://www.westberks.gov.uk/rubbishandrecyclingcollections",
+      "method": "GET",
+      "status": 301,
+      "redirect_url": "https://www.westberks.gov.uk/rubbishandrecycling",
+      "mime_type": "text/html; charset=utf-8",
+      "size": -1,
+      "timestamp": "2025-07-21T10:33:45.100Z"
+    },
+    {
+      "url": "https://www.westberks.gov.uk/rubbishandrecycling",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=utf-8",
+      "size": 55219,
+      "timestamp": "2025-07-21T10:33:45.281Z"
+    },
+    {
+      "url": "https://www.westberks.gov.uk/binday",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=utf-8",
+      "size": 116682,
+      "timestamp": "2025-07-21T10:33:46.951Z"
+    },
+    {
+      "url": "https://www.westberks.gov.uk/apiserver/ajaxlibrary",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=utf-8",
+      "size": 412,
+      "timestamp": "2025-07-21T10:33:47.735Z"
+    },
+    {
+      "url": "https://www.westberks.gov.uk/apiserver/ajaxlibrary",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=utf-8",
+      "size": 406,
+      "timestamp": "2025-07-21T10:33:47.735Z"
+    },
+    {
+      "url": "https://www.westberks.gov.uk/apiserver/ajaxlibrary",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=utf-8",
+      "size": 139,
+      "timestamp": "2025-07-21T10:34:04.798Z"
+    },
+    {
+      "url": "https://www.westberks.gov.uk/apiserver/ajaxlibrary",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=utf-8",
+      "size": 145,
+      "timestamp": "2025-07-21T10:34:04.799Z"
+    },
+    {
+      "url": "https://www.westberks.gov.uk/apiserver/ajaxlibrary",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=utf-8",
+      "size": 145,
+      "timestamp": "2025-07-21T10:34:04.799Z"
+    },
+    {
+      "url": "https://www.westberks.gov.uk/apiserver/ajaxlibrary",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=utf-8",
+      "size": 70,
+      "timestamp": "2025-07-21T10:34:04.799Z"
+    }
+  ]
+}

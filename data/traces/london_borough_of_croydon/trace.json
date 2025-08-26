@@ -1,0 +1,253 @@
+{
+  "metadata": {
+    "trace_name": "london_borough_of_croydon",
+    "processed_at": "2025-08-26 18:44:24",
+    "workflow_steps_count": 8,
+    "navigation_events_count": 19
+  },
+  "scraping_patterns": {
+    "login_detected": false,
+    "form_submissions": 4,
+    "navigation_count": 1,
+    "unique_domains": [
+      "service.croydon.gov.uk",
+      "www.croydon.gov.uk",
+      "lbcdsanetcallp.blob.core.windows.net"
+    ],
+    "api_endpoints": [],
+    "data_extraction_indicators": []
+  },
+  "workflow_steps": [
+    {
+      "action": "goto",
+      "target": "http://www.croydon.gov.uk/environment/rrandw/",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e17 >> internal:describe=\"Yes, accept and close\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e78 >> internal:describe=\"Check your bin collection days\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e73 >> internal:describe=\"Check now\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "fill",
+      "target": "aria-ref=e88 >> internal:describe=\"textbox\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0,
+      "value": "CR0 0AB"
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e90 >> internal:describe=\"Find address\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "selectOption",
+      "target": "aria-ref=e218 >> internal:describe=\"combobox \\\"Address and Property Details (Remote)\\\"\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0,
+      "value": null
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e263 >> internal:describe=\"Next\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    }
+  ],
+  "navigation_events": [
+    {
+      "url": "http://www.croydon.gov.uk/environment/rrandw/",
+      "method": "GET",
+      "status": 301,
+      "redirect_url": "https://www.croydon.gov.uk/environment/rrandw/",
+      "mime_type": "text/html",
+      "size": -1,
+      "timestamp": "2025-07-21T10:38:53.548Z"
+    },
+    {
+      "url": "https://www.croydon.gov.uk/environment/rrandw/",
+      "method": "GET",
+      "status": 301,
+      "redirect_url": "https://www.croydon.gov.uk/rubbish-and-recycling?src=D7",
+      "mime_type": "text/html; charset=utf-8",
+      "size": -1,
+      "timestamp": "2025-07-21T10:38:53.581Z"
+    },
+    {
+      "url": "https://www.croydon.gov.uk/rubbish-and-recycling?src=D7",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=UTF-8",
+      "size": 72971,
+      "timestamp": "2025-07-21T10:38:53.759Z"
+    },
+    {
+      "url": "https://www.croydon.gov.uk/themes/contrib/localgov_base_croydon/assets/images/favicons/site.webmanifest",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": 502,
+      "timestamp": "2025-07-21T10:38:54.975Z"
+    },
+    {
+      "url": "https://www.croydon.gov.uk/rubbish-and-recycling/bins/check-your-bin-collection-days",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=UTF-8",
+      "size": 60121,
+      "timestamp": "2025-07-21T10:38:58.563Z"
+    },
+    {
+      "url": "https://www.croydon.gov.uk/modules/contrib/eu_cookie_compliance/js/eu_cookie_compliance.min.js?v=10.4.5",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T10:38:58.599Z"
+    },
+    {
+      "url": "https://www.croydon.gov.uk/themes/contrib/localgov_base_croydon/assets/images/favicons/site.webmanifest",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": 502,
+      "timestamp": "2025-07-21T10:38:58.735Z"
+    },
+    {
+      "url": "https://service.croydon.gov.uk/wasteservices/w/webpage/bin-day-enter-address",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=utf-8",
+      "size": 43595,
+      "timestamp": "2025-07-21T10:39:02.073Z"
+    },
+    {
+      "url": "https://service.croydon.gov.uk/wasteservices/w/webpage/bin-day-enter-address",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; Charset=utf-8",
+      "size": 34498,
+      "timestamp": "2025-07-21T10:39:02.557Z"
+    },
+    {
+      "url": "https://lbcdsanetcallp.blob.core.windows.net/fonts/fiendstar-bold/9280a336215bd036e843a066d1dc1bd2.woff2",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/octet-stream",
+      "size": 17920,
+      "timestamp": "2025-07-21T10:39:02.562Z"
+    },
+    {
+      "url": "https://service.croydon.gov.uk/wasteservices/assets/fonts/FontAwesome/fa-solid-900.woff2",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/font-woff2",
+      "size": 352752,
+      "timestamp": "2025-07-21T10:39:02.563Z"
+    },
+    {
+      "url": "https://service.croydon.gov.uk/wasteservices/assets/fonts/FontAwesome/fa-brands-400.woff2",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/font-woff2",
+      "size": 118976,
+      "timestamp": "2025-07-21T10:39:02.564Z"
+    },
+    {
+      "url": "https://service.croydon.gov.uk/wasteservices/w/webpage/bin-day-enter-address?webpage_subpage_id=PAG0000898EECEC1&webpage_token=faab02e1f62a58f7bad4c2ae5b8622e19846b97dde2a76f546c4bb1230cee044&widget_action=fragment_action",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=UTF-8",
+      "size": 8174,
+      "timestamp": "2025-07-21T10:39:07.481Z"
+    },
+    {
+      "url": "https://service.croydon.gov.uk/wasteservices/w/webpage/bin-day-enter-address?webpage_subpage_id=PAG0000898EECEC1&webpage_token=faab02e1f62a58f7bad4c2ae5b8622e19846b97dde2a76f546c4bb1230cee044",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=UTF-8",
+      "size": -1,
+      "timestamp": "2025-07-21T10:39:12.763Z"
+    },
+    {
+      "url": "https://service.croydon.gov.uk/wasteservices/w/webpage/your-bin-collection-details?context_record_id=350989537&webpage_token=b5bd3049523267cc59d4cfdde036e5ba2d2f7cbc7248cb3cf3e24c24d05e27b8",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=utf-8",
+      "size": 44418,
+      "timestamp": "2025-07-21T10:39:12.904Z"
+    },
+    {
+      "url": "https://lbcdsanetcallp.blob.core.windows.net/fonts/fiendstar-bold/9280a336215bd036e843a066d1dc1bd2.woff2",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/octet-stream",
+      "size": -1,
+      "timestamp": "2025-07-21T10:39:13.123Z"
+    },
+    {
+      "url": "https://service.croydon.gov.uk/wasteservices/assets/fonts/FontAwesome/fa-brands-400.woff2",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/font-woff2",
+      "size": -1,
+      "timestamp": "2025-07-21T10:39:13.124Z"
+    },
+    {
+      "url": "https://service.croydon.gov.uk/wasteservices/assets/fonts/FontAwesome/fa-solid-900.woff2",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/font-woff2",
+      "size": -1,
+      "timestamp": "2025-07-21T10:39:13.125Z"
+    },
+    {
+      "url": "https://service.croydon.gov.uk/wasteservices/w/webpage/your-bin-collection-details?context_record_id=350989537&webpage_token=b5bd3049523267cc59d4cfdde036e5ba2d2f7cbc7248cb3cf3e24c24d05e27b8",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; Charset=utf-8",
+      "size": 236306,
+      "timestamp": "2025-07-21T10:39:13.208Z"
+    }
+  ]
+}

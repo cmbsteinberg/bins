@@ -1,0 +1,246 @@
+{
+  "metadata": {
+    "trace_name": "bath_and_north_east_somerset_council",
+    "processed_at": "2025-08-26 18:44:24",
+    "workflow_steps_count": 6,
+    "navigation_events_count": 19
+  },
+  "scraping_patterns": {
+    "login_detected": false,
+    "form_submissions": 5,
+    "navigation_count": 1,
+    "unique_domains": [
+      "www.bathnes.gov.uk",
+      "c.bing.com",
+      "c.clarity.ms",
+      "v.clarity.ms",
+      "api.bathnes.gov.uk",
+      "app.bathnes.gov.uk",
+      "cdnjs.cloudflare.com"
+    ],
+    "api_endpoints": [
+      "https://api.bathnes.gov.uk/webapi/api/AddressesAPI/v2/search/BA1%201AR/150/true",
+      "https://api.bathnes.gov.uk/webapi/api/BinsAPI/v2/getbartecroute/10023108359/true"
+    ],
+    "data_extraction_indicators": []
+  },
+  "workflow_steps": [
+    {
+      "action": "goto",
+      "target": "https://www.bathnes.gov.uk/rubbish-and-recycling",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e79 >> internal:describe=\"Collection day finder\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "fill",
+      "target": "aria-ref=e54 >> internal:describe=\"Enter a postcode\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0,
+      "value": "BA1 1AR"
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e55 >> internal:describe=\"Find\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "selectOption",
+      "target": "aria-ref=e96 >> internal:describe=\"Select an address\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0,
+      "value": null
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e132 >> internal:describe=\"Find collection days\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    }
+  ],
+  "navigation_events": [
+    {
+      "url": "https://www.bathnes.gov.uk/rubbish-and-recycling",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=UTF-8",
+      "size": 30742,
+      "timestamp": "2025-07-22T07:36:18.740Z"
+    },
+    {
+      "url": "https://c.clarity.ms/c.gif",
+      "method": "GET",
+      "status": 302,
+      "redirect_url": "https://c.bing.com/c.gif?CtsSyncId=E138E6BB3CF046AAA95CA8454917D6D4&RedC=c.clarity.ms&MXFR=3E5925BA5688656C3D6A3390579D64DE",
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-22T07:36:18.970Z"
+    },
+    {
+      "url": "https://c.bing.com/c.gif?CtsSyncId=E138E6BB3CF046AAA95CA8454917D6D4&RedC=c.clarity.ms&MXFR=3E5925BA5688656C3D6A3390579D64DE",
+      "method": "GET",
+      "status": 302,
+      "redirect_url": "https://c.clarity.ms/c.gif?CtsSyncId=E138E6BB3CF046AAA95CA8454917D6D4&MUID=3E5925BA5688656C3D6A3390579D64DE",
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-22T07:36:19.028Z"
+    },
+    {
+      "url": "https://v.clarity.ms/collect",
+      "method": "POST",
+      "status": 204,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": 0,
+      "timestamp": "2025-07-22T07:36:19.063Z"
+    },
+    {
+      "url": "https://www.bathnes.gov.uk/collection-day-finder",
+      "method": "GET",
+      "status": 301,
+      "redirect_url": "https://app.bathnes.gov.uk/webforms/waste/collectionday/",
+      "mime_type": "text/html; charset=utf-8",
+      "size": -1,
+      "timestamp": "2025-07-22T07:36:20.713Z"
+    },
+    {
+      "url": "https://app.bathnes.gov.uk/webforms/waste/collectionday/",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html",
+      "size": 9462,
+      "timestamp": "2025-07-22T07:36:20.721Z"
+    },
+    {
+      "url": "https://app.bathnes.gov.uk/webforms/waste/CommonFiles/modules/uxheader.html?1753169780927",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html",
+      "size": 2083,
+      "timestamp": "2025-07-22T07:36:21.053Z"
+    },
+    {
+      "url": "https://app.bathnes.gov.uk/webforms/waste/CommonFiles/modules/uxnav.html?1753169780927",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html",
+      "size": 2090,
+      "timestamp": "2025-07-22T07:36:21.084Z"
+    },
+    {
+      "url": "https://app.bathnes.gov.uk/webforms/waste/CommonFiles/modules/uxfooter.html?1753169780927",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html",
+      "size": 1993,
+      "timestamp": "2025-07-22T07:36:21.164Z"
+    },
+    {
+      "url": "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/webfonts/fa-brands-400.woff2",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/octet-stream; charset=utf-8",
+      "size": 117852,
+      "timestamp": "2025-07-22T07:36:21.190Z"
+    },
+    {
+      "url": "https://v.clarity.ms/collect",
+      "method": "POST",
+      "status": 204,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": 0,
+      "timestamp": "2025-07-22T07:36:21.202Z"
+    },
+    {
+      "url": "https://app.bathnes.gov.uk/webforms/waste/CommonFiles/modules/postcodeLookup/addressPostcode.html?1753169780927",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html",
+      "size": 3483,
+      "timestamp": "2025-07-22T07:36:21.275Z"
+    },
+    {
+      "url": "https://app.bathnes.gov.uk/webforms/waste/CommonFiles/modules/postcodeLookup/addressSelectize.html?1753169780927",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html",
+      "size": 2209,
+      "timestamp": "2025-07-22T07:36:21.380Z"
+    },
+    {
+      "url": "https://app.bathnes.gov.uk/webforms/waste/collectionday/modules/collectionDetails.html?1753169780927",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html",
+      "size": 5525,
+      "timestamp": "2025-07-22T07:36:21.381Z"
+    },
+    {
+      "url": "https://v.clarity.ms/collect",
+      "method": "POST",
+      "status": 204,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": 0,
+      "timestamp": "2025-07-22T07:36:22.216Z"
+    },
+    {
+      "url": "https://api.bathnes.gov.uk/webapi/api/AddressesAPI/v2/search/BA1%201AR/150/true",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=utf-8",
+      "size": 11409,
+      "timestamp": "2025-07-22T07:36:24.830Z"
+    },
+    {
+      "url": "https://v.clarity.ms/collect",
+      "method": "POST",
+      "status": 204,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": 0,
+      "timestamp": "2025-07-22T07:36:25.610Z"
+    },
+    {
+      "url": "https://api.bathnes.gov.uk/webapi/api/BinsAPI/v2/getbartecroute/10023108359/true",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=utf-8",
+      "size": 2404,
+      "timestamp": "2025-07-22T07:36:39.195Z"
+    },
+    {
+      "url": "https://v.clarity.ms/collect",
+      "method": "POST",
+      "status": 204,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": 0,
+      "timestamp": "2025-07-22T07:36:39.905Z"
+    }
+  ]
+}

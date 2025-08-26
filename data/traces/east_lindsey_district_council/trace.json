@@ -1,0 +1,130 @@
+{
+  "metadata": {
+    "trace_name": "east_lindsey_district_council",
+    "processed_at": "2025-08-26 18:44:24",
+    "workflow_steps_count": 6,
+    "navigation_events_count": 7
+  },
+  "scraping_patterns": {
+    "login_detected": false,
+    "form_submissions": 4,
+    "navigation_count": 1,
+    "unique_domains": [
+      "www.e-lindsey.gov.uk",
+      "region1.analytics.google.com"
+    ],
+    "api_endpoints": [],
+    "data_extraction_indicators": []
+  },
+  "workflow_steps": [
+    {
+      "action": "goto",
+      "target": "https://www.e-lindsey.gov.uk/mywastecollections",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e10 >> internal:describe=\"Accept all\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "fill",
+      "target": "aria-ref=e66 >> internal:describe=\"Postcode\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0,
+      "value": "DN36 5AB"
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e69 >> internal:describe=\"Find address\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "selectOption",
+      "target": "aria-ref=e141 >> internal:describe=\"Address\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0,
+      "value": null
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e78 >> internal:describe=\"Search\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    }
+  ],
+  "navigation_events": [
+    {
+      "url": "https://www.e-lindsey.gov.uk/mywastecollections",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=utf-8",
+      "size": 80623,
+      "timestamp": "2025-07-21T07:47:45.040Z"
+    },
+    {
+      "url": "https://www.e-lindsey.gov.uk/article/6220/Cookies",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": 0,
+      "timestamp": "2025-07-21T07:47:46.935Z"
+    },
+    {
+      "url": "https://region1.analytics.google.com/g/collect?v=2&tid=G-DPQG546XP8&gtm=45je57g1v9126049289za200&_p=1753084066979&_gaz=1&gcd=13l3l3l3l1l1&npa=0&dma=0&tag_exp=101509157~103116026~103200004~103233427~104684208~104684211~104991058&cid=121218251.1753084067&ul=en-gb&sr=800x600&uaa=arm&uab=64&uafvl=Not)A%253BBrand%3B8.0.0.0%7CChromium%3B138.0.7204.101%7CGoogle%2520Chrome%3B138.0.7204.101&uamb=0&uam=&uap=macOS&uapv=15.5.0&uaw=0&are=1&frm=0&pscdl=noapi&_s=1&sid=1753084066&sct=1&seg=0&dl=https%3A%2F%2Fwww.e-lindsey.gov.uk%2Fmywastecollections&dt=Your%20Waste%20Collection%20Days%20-%20East%20Lindsey%20District%20Council&_tu=QA&en=page_view&_fv=1&_nsi=1&_ss=1&_ee=1&ep.anonymizeIp=true&ep.location=https%3A%2F%2Fwww.e-lindsey.gov.uk%2Fmywastecollections&tfd=1949",
+      "method": "POST",
+      "status": 204,
+      "redirect_url": null,
+      "mime_type": "text/plain",
+      "size": -1,
+      "timestamp": "2025-07-21T07:47:46.988Z"
+    },
+    {
+      "url": "https://www.e-lindsey.gov.uk/apiserver/formsservice/http/processsubmission?pageSessionId=fb4f0043-76a1-4635-8a62-769191b5a3f5&fsid=3e964eeb-3e91-493b-834b-ea8f71eba0eb&fsn=76760d2f-72c4-4d04-8d77-d593017997e6",
+      "method": "POST",
+      "status": 303,
+      "redirect_url": "https://www.e-lindsey.gov.uk/apiserver/formsservice/http/verifycookie?pageSessionId=fb4f0043-76a1-4635-8a62-769191b5a3f5&fsid=3e964eeb-3e91-493b-834b-ea8f71eba0eb",
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T07:47:55.877Z"
+    },
+    {
+      "url": "https://www.e-lindsey.gov.uk/apiserver/formsservice/http/verifycookie?pageSessionId=fb4f0043-76a1-4635-8a62-769191b5a3f5&fsid=3e964eeb-3e91-493b-834b-ea8f71eba0eb",
+      "method": "GET",
+      "status": 303,
+      "redirect_url": "https://www.e-lindsey.gov.uk/mywastecollections?pageSessionId=fb4f0043-76a1-4635-8a62-769191b5a3f5&fsn=d8cb3811-637f-4694-b5d3-1811d55665a8",
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T07:47:56.491Z"
+    },
+    {
+      "url": "https://www.e-lindsey.gov.uk/mywastecollections?pageSessionId=fb4f0043-76a1-4635-8a62-769191b5a3f5&fsn=d8cb3811-637f-4694-b5d3-1811d55665a8",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=utf-8",
+      "size": 75422,
+      "timestamp": "2025-07-21T07:47:56.529Z"
+    },
+    {
+      "url": "https://region1.analytics.google.com/g/collect?v=2&tid=G-DPQG546XP8&gtm=45je57g1v9126049289za200&_p=1753084077266&gcd=13l3l3l3l1l1&npa=0&dma=0&tag_exp=101509157~103116026~103200004~103233427~104684208~104684211~104991058&cid=121218251.1753084067&ul=en-gb&sr=800x600&uaa=arm&uab=64&uafvl=Not)A%253BBrand%3B8.0.0.0%7CChromium%3B138.0.7204.101%7CGoogle%2520Chrome%3B138.0.7204.101&uamb=0&uam=&uap=macOS&uapv=15.5.0&uaw=0&are=1&frm=0&pscdl=noapi&_eu=AAAAAAQ&_s=1&sid=1753084066&sct=1&seg=1&dl=https%3A%2F%2Fwww.e-lindsey.gov.uk%2Fmywastecollections%3FpageSessionId%3Dfb4f0043-76a1-4635-8a62-769191b5a3f5%26fsn%3Dd8cb3811-637f-4694-b5d3-1811d55665a8&dr=https%3A%2F%2Fwww.e-lindsey.gov.uk%2Fmywastecollections&dt=Your%20Waste%20Collection%20Days%20-%20East%20Lindsey%20District%20Council&_tu=QA&en=page_view&_ee=1&ep.anonymizeIp=true&ep.location=https%3A%2F%2Fwww.e-lindsey.gov.uk%2Fmywastecollections%3FpageSessionId%3Dfb4f0043-76a1-4635-8a62-769191b5a3f5%26fsn%3Dd8cb3811-637f-4694-b5d3-1811d55665a8&tfd=6459",
+      "method": "POST",
+      "status": 204,
+      "redirect_url": null,
+      "mime_type": "text/plain",
+      "size": -1,
+      "timestamp": "2025-07-21T07:48:02.276Z"
+    }
+  ]
+}

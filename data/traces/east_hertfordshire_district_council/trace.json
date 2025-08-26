@@ -1,0 +1,179 @@
+{
+  "metadata": {
+    "trace_name": "east_hertfordshire_district_council",
+    "processed_at": "2025-08-26 18:44:24",
+    "workflow_steps_count": 7,
+    "navigation_events_count": 11
+  },
+  "scraping_patterns": {
+    "login_detected": false,
+    "form_submissions": 2,
+    "navigation_count": 1,
+    "unique_domains": [
+      "static.addtoany.com",
+      "east-herts.co.uk",
+      "www.eastherts.gov.uk",
+      "hitcounter.govmetric.com",
+      "settings.luckyorange.com",
+      "region1.analytics.google.com"
+    ],
+    "api_endpoints": [
+      "https://east-herts.co.uk/api/addresses/AL60FD",
+      "https://east-herts.co.uk/api/services/10023086655"
+    ],
+    "data_extraction_indicators": []
+  },
+  "workflow_steps": [
+    {
+      "action": "goto",
+      "target": "https://www.eastherts.gov.uk/bins-waste-recycling",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e330 >> internal:describe=\"Accept all\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e99 >> internal:describe=\"Look up your collection day\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "fill",
+      "target": "aria-ref=e39 >> internal:describe=\"Enter postcode (e.g., CM233GN)\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0,
+      "value": "AL6 0FD"
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e40 >> internal:describe=\"Find My Address\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e67 >> internal:describe=\"Add your property number or select from the list\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e90 >> internal:describe=\"1 SEVENACRES, TEWIN, WELWYN, AL6 0FD\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    }
+  ],
+  "navigation_events": [
+    {
+      "url": "https://www.eastherts.gov.uk/bins-waste-recycling",
+      "method": "GET",
+      "status": 301,
+      "redirect_url": "https://www.eastherts.gov.uk/bins-waste-and-recycling",
+      "mime_type": "text/html; charset=utf-8",
+      "size": -1,
+      "timestamp": "2025-07-21T16:37:38.159Z"
+    },
+    {
+      "url": "https://www.eastherts.gov.uk/bins-waste-and-recycling",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=UTF-8",
+      "size": 42745,
+      "timestamp": "2025-07-21T16:37:38.203Z"
+    },
+    {
+      "url": "https://region1.analytics.google.com/g/collect?v=2&tid=G-X4RF2BEBQE&gtm=45je57h0v873909827za200&_p=1753115858218&_gaz=1&gcd=13l3l3l3l1l1&npa=0&dma=0&tag_exp=101509157~103116026~103200004~103233427~104684208~104684211~104952206~104952208&gdid=dMDhkMT&cid=1387020945.1753115858&ul=en-gb&sr=800x600&uaa=arm&uab=64&uafvl=Not)A%253BBrand%3B8.0.0.0%7CChromium%3B138.0.7204.101%7CGoogle%2520Chrome%3B138.0.7204.101&uamb=0&uam=&uap=macOS&uapv=15.5.0&uaw=0&are=1&frm=0&pscdl=noapi&_eu=AAAI&_s=1&sid=1753115858&sct=1&seg=0&dl=https%3A%2F%2Fwww.eastherts.gov.uk%2Fbins-waste-and-recycling&dt=Bins%2C%20Waste%20and%20Recycling%20%7C%20East%20Herts%20District%20Council&en=page_view&_fv=1&_ss=1&tfd=260",
+      "method": "POST",
+      "status": 204,
+      "redirect_url": null,
+      "mime_type": "text/plain",
+      "size": -1,
+      "timestamp": "2025-07-21T16:37:38.424Z"
+    },
+    {
+      "url": "https://settings.luckyorange.com/a485b4fc",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=utf-8",
+      "size": 149,
+      "timestamp": "2025-07-21T16:37:39.293Z"
+    },
+    {
+      "url": "https://hitcounter.govmetric.com/Home/Index/1649?override=https%3A%2F%2Fwww.eastherts.gov.uk%2Fbins-waste-and-recycling",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": 0,
+      "timestamp": "2025-07-21T16:37:39.412Z"
+    },
+    {
+      "url": "https://static.addtoany.com/menu/sm.25.html",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=utf-8",
+      "size": 716,
+      "timestamp": "2025-07-21T16:37:39.516Z"
+    },
+    {
+      "url": "https://static.addtoany.com/cdn-cgi/speculation",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/speculationrules+json",
+      "size": 128,
+      "timestamp": "2025-07-21T16:37:39.825Z"
+    },
+    {
+      "url": "https://region1.analytics.google.com/g/collect?v=2&tid=G-X4RF2BEBQE&gtm=45je57h0v873909827za200&_p=1753115858218&gcd=13l3l3l3l1l1&npa=0&dma=0&tag_exp=101509157~103116026~103200004~103233427~104684208~104684211~104952206~104952208&gdid=dMDhkMT&cid=1387020945.1753115858&ul=en-gb&sr=800x600&uaa=arm&uab=64&uafvl=Not)A%253BBrand%3B8.0.0.0%7CChromium%3B138.0.7204.101%7CGoogle%2520Chrome%3B138.0.7204.101&uamb=0&uam=&uap=macOS&uapv=15.5.0&uaw=0&are=1&frm=0&pscdl=noapi&_eu=AAAIAAQ&_s=2&sid=1753115858&sct=1&seg=0&dl=https%3A%2F%2Fwww.eastherts.gov.uk%2Fbins-waste-and-recycling&dt=Bins%2C%20Waste%20and%20Recycling%20%7C%20East%20Herts%20District%20Council&en=Click&_ee=1&ep.event_category=Outbound%20links&ep.event_label=https%3A%2F%2Feast-herts.co.uk%2F&ep.transport_type=beacon&_et=4793&tfd=5064",
+      "method": "POST",
+      "status": 204,
+      "redirect_url": null,
+      "mime_type": "text/plain",
+      "size": -1,
+      "timestamp": "2025-07-21T16:37:43.224Z"
+    },
+    {
+      "url": "https://east-herts.co.uk/",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=UTF-8",
+      "size": 1147,
+      "timestamp": "2025-07-21T16:37:43.282Z"
+    },
+    {
+      "url": "https://east-herts.co.uk/api/addresses/AL60FD",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=utf-8",
+      "size": 5576,
+      "timestamp": "2025-07-21T16:37:48.060Z"
+    },
+    {
+      "url": "https://east-herts.co.uk/api/services/10023086655",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=utf-8",
+      "size": 4449,
+      "timestamp": "2025-07-21T16:37:53.632Z"
+    }
+  ]
+}

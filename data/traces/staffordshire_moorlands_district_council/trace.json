@@ -1,0 +1,251 @@
+{
+  "metadata": {
+    "trace_name": "staffordshire_moorlands_district_council",
+    "processed_at": "2025-08-26 18:44:24",
+    "workflow_steps_count": 7,
+    "navigation_events_count": 17
+  },
+  "scraping_patterns": {
+    "login_detected": false,
+    "form_submissions": 3,
+    "navigation_count": 1,
+    "unique_domains": [
+      "www.staffsmoorlands.gov.uk"
+    ],
+    "api_endpoints": [],
+    "data_extraction_indicators": []
+  },
+  "workflow_steps": [
+    {
+      "action": "goto",
+      "target": "https://www.staffsmoorlands.gov.uk/sm/bins",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e13 >> internal:describe=\"Accept all cookies\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e84 >> internal:describe=\"Find your bin day\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "fill",
+      "target": "aria-ref=e81 >> internal:describe=\"Postcode (for example ST13 7DY)\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0,
+      "value": "DE6 2AF"
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e85 >> internal:describe=\"Find address\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "selectOption",
+      "target": "aria-ref=e89 >> internal:describe=\"Select an address\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0,
+      "value": null
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e176 >> internal:describe=\"Next\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    }
+  ],
+  "navigation_events": [
+    {
+      "url": "https://www.staffsmoorlands.gov.uk/sm/bins",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html;charset=UTF-8",
+      "size": 60588,
+      "timestamp": "2025-07-21T07:53:54.855Z"
+    },
+    {
+      "url": "https://www.staffsmoorlands.gov.uk/fonts/icons.woff?m=1750678418000",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/x-font-woff",
+      "size": 50876,
+      "timestamp": "2025-07-21T07:53:55.130Z"
+    },
+    {
+      "url": "https://www.staffsmoorlands.gov.uk/article/3709/Cookies",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": 0,
+      "timestamp": "2025-07-21T07:53:56.115Z"
+    },
+    {
+      "url": "https://www.staffsmoorlands.gov.uk/findyourbinday",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html;charset=UTF-8",
+      "size": 73191,
+      "timestamp": "2025-07-21T07:53:58.211Z"
+    },
+    {
+      "url": "https://www.staffsmoorlands.gov.uk/fonts/icons.woff?m=1750678418000",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/x-font-woff",
+      "size": -1,
+      "timestamp": "2025-07-21T07:53:58.704Z"
+    },
+    {
+      "url": "https://www.staffsmoorlands.gov.uk/apiserver/formsservice/http/processsubmission?pageSessionId=576a1c6f-b383-4c97-b062-9dff4c67f102&fsid=123ae0d1-6426-41f8-9c91-a3cc8d383892&fsn=7b319214-c023-46a1-973a-894c57db5d21",
+      "method": "POST",
+      "status": 303,
+      "redirect_url": "https://www.staffsmoorlands.gov.uk/apiserver/formsservice/http/verifycookie?pageSessionId=576a1c6f-b383-4c97-b062-9dff4c67f102&fsid=123ae0d1-6426-41f8-9c91-a3cc8d383892",
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T07:54:03.113Z",
+      "form_data": {
+        "FINDBINDAYSSTAFFORDSHIREMOORLANDS_PAGESESSIONID": "576a1c6f-b383-4c97-b062-9dff4c67f102",
+        "FINDBINDAYSSTAFFORDSHIREMOORLANDS_SESSIONID": "123ae0d1-6426-41f8-9c91-a3cc8d383892",
+        "FINDBINDAYSSTAFFORDSHIREMOORLANDS_NONCE": "7b319214-c023-46a1-973a-894c57db5d21",
+        "FINDBINDAYSSTAFFORDSHIREMOORLANDS_VARIABLES": "e30=",
+        "FINDBINDAYSSTAFFORDSHIREMOORLANDS_PAGENAME": "POSTCODESELECT",
+        "FINDBINDAYSSTAFFORDSHIREMOORLANDS_PAGEINSTANCE": "0",
+        "FINDBINDAYSSTAFFORDSHIREMOORLANDS_POSTCODESELECT_POSTCODE": "DE6 2AF",
+        "FINDBINDAYSSTAFFORDSHIREMOORLANDS_FORMACTION_NEXT": "FINDBINDAYSSTAFFORDSHIREMOORLANDS_POSTCODESELECT_PAGE1NEXT"
+      }
+    },
+    {
+      "url": "https://www.staffsmoorlands.gov.uk/apiserver/formsservice/http/verifycookie?pageSessionId=576a1c6f-b383-4c97-b062-9dff4c67f102&fsid=123ae0d1-6426-41f8-9c91-a3cc8d383892",
+      "method": "GET",
+      "status": 303,
+      "redirect_url": "https://www.staffsmoorlands.gov.uk/findyourbinday?pageSessionId=576a1c6f-b383-4c97-b062-9dff4c67f102&fsn=3a755062-2aa7-444e-960b-2399a8d824b4",
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T07:54:03.457Z"
+    },
+    {
+      "url": "https://www.staffsmoorlands.gov.uk/findyourbinday?pageSessionId=576a1c6f-b383-4c97-b062-9dff4c67f102&fsn=3a755062-2aa7-444e-960b-2399a8d824b4",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html;charset=UTF-8",
+      "size": 95773,
+      "timestamp": "2025-07-21T07:54:03.517Z"
+    },
+    {
+      "url": "https://www.staffsmoorlands.gov.uk/fonts/icons.woff?m=1750678418000",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/x-font-woff",
+      "size": -1,
+      "timestamp": "2025-07-21T07:54:04.485Z"
+    },
+    {
+      "url": "https://www.staffsmoorlands.gov.uk/apiserver/formsservice/http/processsubmission?pageSessionId=576a1c6f-b383-4c97-b062-9dff4c67f102&fsid=123ae0d1-6426-41f8-9c91-a3cc8d383892&fsn=3a755062-2aa7-444e-960b-2399a8d824b4",
+      "method": "POST",
+      "status": 303,
+      "redirect_url": "https://www.staffsmoorlands.gov.uk/findyourbinday?pageSessionId=576a1c6f-b383-4c97-b062-9dff4c67f102&fsn=69b05661-33e2-47fe-b792-5cfdecf66a09",
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T07:54:10.466Z",
+      "form_data": {
+        "FINDBINDAYSSTAFFORDSHIREMOORLANDS_PAGESESSIONID": "576a1c6f-b383-4c97-b062-9dff4c67f102",
+        "FINDBINDAYSSTAFFORDSHIREMOORLANDS_SESSIONID": "123ae0d1-6426-41f8-9c91-a3cc8d383892",
+        "FINDBINDAYSSTAFFORDSHIREMOORLANDS_NONCE": "3a755062-2aa7-444e-960b-2399a8d824b4",
+        "FINDBINDAYSSTAFFORDSHIREMOORLANDS_VARIABLES": "e30=",
+        "FINDBINDAYSSTAFFORDSHIREMOORLANDS_PAGENAME": "ADDRESSSELECT",
+        "FINDBINDAYSSTAFFORDSHIREMOORLANDS_PAGEINSTANCE": "0",
+        "FINDBINDAYSSTAFFORDSHIREMOORLANDS_ADDRESSSELECT_FIELD6": "true",
+        "FINDBINDAYSSTAFFORDSHIREMOORLANDS_ADDRESSSELECT_FIELD9": "false",
+        "FINDBINDAYSSTAFFORDSHIREMOORLANDS_ADDRESSSELECT_ADDRESSEARCHEERRORLAYOUT": "false",
+        "FINDBINDAYSSTAFFORDSHIREMOORLANDS_ADDRESSSELECT_SELECTADDRESS": "true",
+        "FINDBINDAYSSTAFFORDSHIREMOORLANDS_ADDRESSSELECT_FIELD11": "true",
+        "FINDBINDAYSSTAFFORDSHIREMOORLANDS_ADDRESSSELECT_ADDRESS": "200003041527",
+        "FINDBINDAYSSTAFFORDSHIREMOORLANDS_FORMACTION_NEXT": "FINDBINDAYSSTAFFORDSHIREMOORLANDS_ADDRESSSELECT_ADDRESSSELECTNEXTBTN"
+      }
+    },
+    {
+      "url": "https://www.staffsmoorlands.gov.uk/findyourbinday?pageSessionId=576a1c6f-b383-4c97-b062-9dff4c67f102&fsn=69b05661-33e2-47fe-b792-5cfdecf66a09",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html;charset=UTF-8",
+      "size": 231339,
+      "timestamp": "2025-07-21T07:54:11.187Z"
+    },
+    {
+      "url": "https://www.staffsmoorlands.gov.uk/themes/moorlands/images/colourcheck--greybrownbins.jpg",
+      "method": "GET",
+      "status": 404,
+      "redirect_url": null,
+      "mime_type": "text/html;charset=UTF-8",
+      "size": 8184,
+      "timestamp": "2025-07-21T07:54:12.696Z"
+    },
+    {
+      "url": "https://www.staffsmoorlands.gov.uk/themes/moorlands/images/SM_logo_alliance.png",
+      "method": "GET",
+      "status": 404,
+      "redirect_url": null,
+      "mime_type": "text/html;charset=UTF-8",
+      "size": 8184,
+      "timestamp": "2025-07-21T07:54:12.696Z"
+    },
+    {
+      "url": "https://www.staffsmoorlands.gov.uk/themes/moorlands/images/SM_logo_recycles.png",
+      "method": "GET",
+      "status": 404,
+      "redirect_url": null,
+      "mime_type": "text/html;charset=UTF-8",
+      "size": 3482,
+      "timestamp": "2025-07-21T07:54:12.696Z"
+    },
+    {
+      "url": "https://www.staffsmoorlands.gov.uk/themes/moorlands/images/colourcheck--bluelidbins.jpg",
+      "method": "GET",
+      "status": 404,
+      "redirect_url": null,
+      "mime_type": "text/html;charset=UTF-8",
+      "size": 40920,
+      "timestamp": "2025-07-21T07:54:12.696Z"
+    },
+    {
+      "url": "https://www.staffsmoorlands.gov.uk/themes/moorlands/images/SM_logo_council.png",
+      "method": "GET",
+      "status": 404,
+      "redirect_url": null,
+      "mime_type": "text/html;charset=UTF-8",
+      "size": 8184,
+      "timestamp": "2025-07-21T07:54:12.696Z"
+    },
+    {
+      "url": "https://www.staffsmoorlands.gov.uk/fonts/icons.woff?m=1750678418000",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/x-font-woff",
+      "size": -1,
+      "timestamp": "2025-07-21T07:54:12.701Z"
+    }
+  ]
+}

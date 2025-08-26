@@ -1,0 +1,447 @@
+{
+  "metadata": {
+    "trace_name": "gloucester_city_council",
+    "processed_at": "2025-08-26 18:44:24",
+    "workflow_steps_count": 8,
+    "navigation_events_count": 39
+  },
+  "scraping_patterns": {
+    "login_detected": false,
+    "form_submissions": 17,
+    "navigation_count": 1,
+    "unique_domains": [
+      "www.google.com",
+      "gloucester-self.achieveservice.com",
+      "maps.googleapis.com",
+      "apikeys.civiccomputing.com",
+      "www.gloucester.gov.uk",
+      "translate.googleapis.com"
+    ],
+    "api_endpoints": [
+      "https://maps.googleapis.com/maps/api/mapsjs/gen_204?csp_test=true",
+      "https://gloucester-self.achieveservice.com/api/self/self-content/getByKeyAndApp?language=en&key=FORM_LOADING_TEXT&app=SELF_CORE&_=1753094403024&sid=e9a6d82237506d901de4150dc079c810",
+      "https://gloucester-self.achieveservice.com/api/get-document/json?uri=sandbox-publish%3A%2F%2FAF-Process-04123e92-cea3-42df-8131-ff6a2964ca47%2FAF-Stage-3316d9fa-2c89-4ef6-ab0c-0adf1b5c0af8%2Fdefinition.json&_=1753094403070&sid=e9a6d82237506d901de4150dc079c810",
+      "https://gloucester-self.achieveservice.com/api/get-document/json?uri=sandbox-publish%3A%2F%2FAF-Process-04123e92-cea3-42df-8131-ff6a2964ca47%2Fdefinition.json&_=1753094403268&sid=e9a6d82237506d901de4150dc079c810",
+      "https://gloucester-self.achieveservice.com/api/queue-processor-config/get?_=1753094403469&sid=e9a6d82237506d901de4150dc079c810",
+      "https://gloucester-self.achieveservice.com/api/nextref?_=1753094403470&sid=e9a6d82237506d901de4150dc079c810",
+      "https://gloucester-self.achieveservice.com/api/af-configs-list/list?_=1753094403468&sid=e9a6d82237506d901de4150dc079c810",
+      "https://gloucester-self.achieveservice.com/api/get-document/json?uri=sandbox-publish%3A%2F%2FAF-Process-04123e92-cea3-42df-8131-ff6a2964ca47%2FAF-Stage-3316d9fa-2c89-4ef6-ab0c-0adf1b5c0af8%2FAF-Form-bf26ae48-89be-480a-8618-c106b4b3c15c%2Fdefinition.json&_=1753094403662&sid=e9a6d82237506d901de4150dc079c810"
+    ],
+    "data_extraction_indicators": []
+  },
+  "workflow_steps": [
+    {
+      "action": "goto",
+      "target": "https://www.gloucester.gov.uk/environment-waste-recycling/waste-recycling-street-cleaning/bins-recycling/",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e337 >> internal:describe=\"Check Your Bin Day\"",
+      "status": "Failed",
+      "details": {
+        "error": "Timeout 5000ms exceeded."
+      },
+      "timestamp": 0
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e447 >> internal:describe=\"I Accept Cookies\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e337 >> internal:describe=\"Check Your Bin Day\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e319 >> internal:describe=\"Check your bin day here\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e9 >> internal:describe=\"Close\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "fill",
+      "target": "aria-ref=f1e40 >> internal:describe=\"Postcode or street nameRequired\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0,
+      "value": "GL1 1GA"
+    },
+    {
+      "action": "selectOption",
+      "target": "aria-ref=f1e295 >> internal:describe=\"combobox\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0,
+      "value": null
+    }
+  ],
+  "navigation_events": [
+    {
+      "url": "https://www.gloucester.gov.uk/environment-waste-recycling/waste-recycling-street-cleaning/bins-recycling/",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=utf-8",
+      "size": 41926,
+      "timestamp": "2025-07-21T10:39:43.790Z"
+    },
+    {
+      "url": "https://apikeys.civiccomputing.com/c/v?d=www.gloucester.gov.uk&p=CookieControl%20Multi-Site&v=9&k=21f8095d6c2d43631d9826afa0a7ddce3531407e&format=json",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 306,
+      "timestamp": "2025-07-21T10:39:44.133Z"
+    },
+    {
+      "url": "https://translate.googleapis.com/element/log?format=json&hasfast=true&authuser=0",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/plain; charset=UTF-8",
+      "size": 131,
+      "timestamp": "2025-07-21T10:39:54.206Z"
+    },
+    {
+      "url": "https://www.gloucester.gov.uk/environment-waste-recycling/waste-recycling-street-cleaning/bins-recycling/check-your-bin-day/",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=utf-8",
+      "size": 35966,
+      "timestamp": "2025-07-21T10:39:57.901Z"
+    },
+    {
+      "url": "https://apikeys.civiccomputing.com/c/v?d=www.gloucester.gov.uk&p=CookieControl%20Multi-Site&v=9&k=21f8095d6c2d43631d9826afa0a7ddce3531407e&format=json",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 306,
+      "timestamp": "2025-07-21T10:39:58.069Z"
+    },
+    {
+      "url": "https://gloucester-self.achieveservice.com/service/Bins___Check_your_bin_day",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=UTF-8",
+      "size": 18949,
+      "timestamp": "2025-07-21T10:40:00.754Z"
+    },
+    {
+      "url": "https://www.google.com/jsapi",
+      "method": "GET",
+      "status": 301,
+      "redirect_url": "https://www.gstatic.com/charts/loader.js",
+      "mime_type": "text/html; charset=UTF-8",
+      "size": -1,
+      "timestamp": "2025-07-21T10:40:01.951Z"
+    },
+    {
+      "url": "https://gloucester-self.achieveservice.com/authapi/isauthenticated?uri=https%253A%252F%252Fgloucester-self.achieveservice.com%252Fservice%252FBins___Check_your_bin_day&hostname=gloucester-self.achieveservice.com&withCredentials=true",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=utf-8",
+      "size": 2508,
+      "timestamp": "2025-07-21T10:40:02.273Z"
+    },
+    {
+      "url": "https://gloucester-self.achieveservice.com/apibroker/domain/gloucester-self.achieveservice.com?_=1753094402255&sid=e9a6d82237506d901de4150dc079c810",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 258,
+      "timestamp": "2025-07-21T10:40:02.334Z"
+    },
+    {
+      "url": "https://gloucester-self.achieveservice.com/apibroker/domain/gloucester-self.achieveservice.com?_=1753094402259&sid=e9a6d82237506d901de4150dc079c810",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 258,
+      "timestamp": "2025-07-21T10:40:02.334Z"
+    },
+    {
+      "url": "https://gloucester-self.achieveservice.com/apibroker/self-settings?keys=CustomIFrameCss%2CCustomCssInline&app_name=Self&_=1753094402332&sid=e9a6d82237506d901de4150dc079c810",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=UTF-8",
+      "size": 207,
+      "timestamp": "2025-07-21T10:40:02.334Z"
+    },
+    {
+      "url": "https://gloucester-self.achieveservice.com/fillform/?iframe_id=fillform-frame-1&db_id=",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=UTF-8",
+      "size": 4333,
+      "timestamp": "2025-07-21T10:40:02.438Z"
+    },
+    {
+      "url": "https://www.google.com/jsapi?key=AIzaSyDMYR3xNkRwUG-OsKEC4WVi1ptWIPzybMs",
+      "method": "GET",
+      "status": 301,
+      "redirect_url": "https://www.gstatic.com/charts/loader.js?key=AIzaSyDMYR3xNkRwUG-OsKEC4WVi1ptWIPzybMs",
+      "mime_type": "text/html; charset=UTF-8",
+      "size": -1,
+      "timestamp": "2025-07-21T10:40:02.767Z"
+    },
+    {
+      "url": "https://maps.googleapis.com/maps/api/mapsjs/gen_204?csp_test=true",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=UTF-8",
+      "size": 3,
+      "timestamp": "2025-07-21T10:40:03.043Z"
+    },
+    {
+      "url": "https://gloucester-self.achieveservice.com/api/self/self-content/getByKeyAndApp?language=en&key=FORM_LOADING_TEXT&app=SELF_CORE&_=1753094403024&sid=e9a6d82237506d901de4150dc079c810",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 169,
+      "timestamp": "2025-07-21T10:40:03.045Z"
+    },
+    {
+      "url": "https://gloucester-self.achieveservice.com/api/get-document/json?uri=sandbox-publish%3A%2F%2FAF-Process-04123e92-cea3-42df-8131-ff6a2964ca47%2FAF-Stage-3316d9fa-2c89-4ef6-ab0c-0adf1b5c0af8%2Fdefinition.json&_=1753094403070&sid=e9a6d82237506d901de4150dc079c810",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 230251,
+      "timestamp": "2025-07-21T10:40:03.085Z"
+    },
+    {
+      "url": "https://gloucester-self.achieveservice.com/api/get-document/json?uri=sandbox-publish%3A%2F%2FAF-Process-04123e92-cea3-42df-8131-ff6a2964ca47%2Fdefinition.json&_=1753094403268&sid=e9a6d82237506d901de4150dc079c810",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 22542,
+      "timestamp": "2025-07-21T10:40:03.269Z"
+    },
+    {
+      "url": "https://gloucester-self.achieveservice.com/api/queue-processor-config/get?_=1753094403469&sid=e9a6d82237506d901de4150dc079c810",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 38,
+      "timestamp": "2025-07-21T10:40:03.476Z"
+    },
+    {
+      "url": "https://gloucester-self.achieveservice.com/apibroker/environment-tokens-public?app_name=AF-Renderer::Self&_=1753094403471&sid=e9a6d82237506d901de4150dc079c810",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=UTF-8",
+      "size": 10728,
+      "timestamp": "2025-07-21T10:40:03.476Z"
+    },
+    {
+      "url": "https://gloucester-self.achieveservice.com/api/nextref?_=1753094403470&sid=e9a6d82237506d901de4150dc079c810",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 116,
+      "timestamp": "2025-07-21T10:40:03.476Z"
+    },
+    {
+      "url": "https://gloucester-self.achieveservice.com/api/af-configs-list/list?_=1753094403468&sid=e9a6d82237506d901de4150dc079c810",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 1212,
+      "timestamp": "2025-07-21T10:40:03.476Z"
+    },
+    {
+      "url": "https://gloucester-self.achieveservice.com/apibroker/location?app_name=AF-Renderer::Self&_=1753094403471&sid=e9a6d82237506d901de4150dc079c810",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=UTF-8",
+      "size": 272,
+      "timestamp": "2025-07-21T10:40:03.477Z"
+    },
+    {
+      "url": "https://gloucester-self.achieveservice.com/api/get-document/json?uri=sandbox-publish%3A%2F%2FAF-Process-04123e92-cea3-42df-8131-ff6a2964ca47%2FAF-Stage-3316d9fa-2c89-4ef6-ab0c-0adf1b5c0af8%2FAF-Form-bf26ae48-89be-480a-8618-c106b4b3c15c%2Fdefinition.json&_=1753094403662&sid=e9a6d82237506d901de4150dc079c810",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 12048,
+      "timestamp": "2025-07-21T10:40:03.665Z"
+    },
+    {
+      "url": "https://gloucester-self.achieveservice.com/apibroker/runLookup?id=57fb9bf5aa4b8&repeat_against=&noRetry=false&getOnlyTokens=true&log_id=&app_name=AF-Renderer::Self&_=1753094403664&sid=e9a6d82237506d901de4150dc079c810",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=UTF-8",
+      "size": 122,
+      "timestamp": "2025-07-21T10:40:03.668Z"
+    },
+    {
+      "url": "https://gloucester-self.achieveservice.com/apibroker/runLookup?id=645df93e1b901&repeat_against=&noRetry=false&getOnlyTokens=true&log_id=&app_name=AF-Renderer::Self&_=1753094403869&sid=e9a6d82237506d901de4150dc079c810",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=UTF-8",
+      "size": 89,
+      "timestamp": "2025-07-21T10:40:03.874Z"
+    },
+    {
+      "url": "https://translate.googleapis.com/element/log?format=json&hasfast=true&authuser=0",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/plain; charset=UTF-8",
+      "size": 131,
+      "timestamp": "2025-07-21T10:40:08.567Z"
+    },
+    {
+      "url": "https://gloucester-self.achieveservice.com/apibroker/runLookup?id=57fb9bf5aa4b8&repeat_against=&noRetry=false&getOnlyTokens=undefined&log_id=&app_name=AF-Renderer::Self&_=1753094418178&sid=e9a6d82237506d901de4150dc079c810",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=UTF-8",
+      "size": 100370,
+      "timestamp": "2025-07-21T10:40:18.182Z"
+    },
+    {
+      "url": "https://gloucester-self.achieveservice.com/apibroker/runLookup?id=63f72ddc8ca25&repeat_against=&noRetry=true&getOnlyTokens=undefined&log_id=&app_name=AF-Renderer::Self&_=1753094421810&sid=e9a6d82237506d901de4150dc079c810",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=UTF-8",
+      "size": 3964,
+      "timestamp": "2025-07-21T10:40:21.815Z"
+    },
+    {
+      "url": "https://gloucester-self.achieveservice.com/apibroker/runLookup?id=645df93e1b901&repeat_against=&noRetry=false&getOnlyTokens=undefined&log_id=&app_name=AF-Renderer::Self&_=1753094422515&sid=e9a6d82237506d901de4150dc079c810",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=UTF-8",
+      "size": 3084,
+      "timestamp": "2025-07-21T10:40:22.520Z"
+    },
+    {
+      "url": "https://gloucester-self.achieveservice.com/apibroker/runLookup?id=63f731d2b50d7&repeat_against=&noRetry=true&getOnlyTokens=undefined&log_id=&app_name=AF-Renderer::Self&_=1753094423126&sid=e9a6d82237506d901de4150dc079c810",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=UTF-8",
+      "size": 2135,
+      "timestamp": "2025-07-21T10:40:23.135Z"
+    },
+    {
+      "url": "https://gloucester-self.achieveservice.com/apibroker/runLookup?id=63f89f73018c0&repeat_against=&noRetry=true&getOnlyTokens=undefined&log_id=&app_name=AF-Renderer::Self&_=1753094423685&sid=e9a6d82237506d901de4150dc079c810",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=UTF-8",
+      "size": 2225,
+      "timestamp": "2025-07-21T10:40:23.693Z"
+    },
+    {
+      "url": "https://gloucester-self.achieveservice.com/apibroker/runLookup?id=63f8a11714712&repeat_against=&noRetry=true&getOnlyTokens=undefined&log_id=&app_name=AF-Renderer::Self&_=1753094424196&sid=e9a6d82237506d901de4150dc079c810",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=UTF-8",
+      "size": 2080,
+      "timestamp": "2025-07-21T10:40:24.206Z"
+    },
+    {
+      "url": "https://gloucester-self.achieveservice.com/apibroker/runLookup?id=645e1194d55c9&repeat_against=&noRetry=true&getOnlyTokens=undefined&log_id=&app_name=AF-Renderer::Self&_=1753094424866&sid=e9a6d82237506d901de4150dc079c810",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=UTF-8",
+      "size": 2155,
+      "timestamp": "2025-07-21T10:40:24.877Z"
+    },
+    {
+      "url": "https://gloucester-self.achieveservice.com/apibroker/runLookup?id=63ca72c70c3b1&repeat_against=&noRetry=true&getOnlyTokens=undefined&log_id=&app_name=AF-Renderer::Self&_=1753094425312&sid=e9a6d82237506d901de4150dc079c810",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=UTF-8",
+      "size": 1557,
+      "timestamp": "2025-07-21T10:40:25.323Z"
+    },
+    {
+      "url": "https://gloucester-self.achieveservice.com/apibroker/runLookup?id=63ce540f1e8d9&repeat_against=&noRetry=true&getOnlyTokens=undefined&log_id=&app_name=AF-Renderer::Self&_=1753094425898&sid=e9a6d82237506d901de4150dc079c810",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=UTF-8",
+      "size": 1557,
+      "timestamp": "2025-07-21T10:40:25.905Z"
+    },
+    {
+      "url": "https://gloucester-self.achieveservice.com/apibroker/runLookup?id=63cfcf4756b5d&repeat_against=&noRetry=true&getOnlyTokens=undefined&log_id=&app_name=AF-Renderer::Self&_=1753094426506&sid=e9a6d82237506d901de4150dc079c810",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=UTF-8",
+      "size": 1600,
+      "timestamp": "2025-07-21T10:40:26.516Z"
+    },
+    {
+      "url": "https://gloucester-self.achieveservice.com/apibroker/runLookup?id=63cfd38c69ac1&repeat_against=&noRetry=true&getOnlyTokens=undefined&log_id=&app_name=AF-Renderer::Self&_=1753094426917&sid=e9a6d82237506d901de4150dc079c810",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=UTF-8",
+      "size": 1600,
+      "timestamp": "2025-07-21T10:40:26.925Z"
+    },
+    {
+      "url": "https://gloucester-self.achieveservice.com/apibroker/runLookup?id=63cfcf8ac7877&repeat_against=&noRetry=true&getOnlyTokens=undefined&log_id=&app_name=AF-Renderer::Self&_=1753094427425&sid=e9a6d82237506d901de4150dc079c810",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=UTF-8",
+      "size": 1525,
+      "timestamp": "2025-07-21T10:40:27.441Z"
+    },
+    {
+      "url": "https://gloucester-self.achieveservice.com/apibroker/runLookup?id=63cfd3d204e14&repeat_against=&noRetry=true&getOnlyTokens=undefined&log_id=&app_name=AF-Renderer::Self&_=1753094427837&sid=e9a6d82237506d901de4150dc079c810",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=UTF-8",
+      "size": 1522,
+      "timestamp": "2025-07-21T10:40:27.848Z"
+    }
+  ]
+}

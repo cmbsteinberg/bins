@@ -1,0 +1,307 @@
+{
+  "metadata": {
+    "trace_name": "south_staffordshire_council",
+    "processed_at": "2025-08-26 18:44:24",
+    "workflow_steps_count": 9,
+    "navigation_events_count": 23
+  },
+  "scraping_patterns": {
+    "login_detected": false,
+    "form_submissions": 3,
+    "navigation_count": 1,
+    "unique_domains": [
+      "maps.googleapis.com",
+      "www.sstaffs.gov.uk",
+      "cdnjs.cloudflare.com"
+    ],
+    "api_endpoints": [
+      "https://maps.googleapis.com/maps/api/mapsjs/gen_204?csp_test=true"
+    ],
+    "data_extraction_indicators": []
+  },
+  "workflow_steps": [
+    {
+      "action": "goto",
+      "target": "https://www.sstaffs.gov.uk/bins-recycling/index.cfm",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e11 >> internal:describe=\"Accept button\"",
+      "status": "Failed",
+      "details": {
+        "error": "Timeout 5000ms exceeded."
+      },
+      "timestamp": 0
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e293 >> internal:describe=\"No thanks button\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e11 >> internal:describe=\"Accept button\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e87 >> internal:describe=\"View your collection calendar link\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "fill",
+      "target": "aria-ref=e77 >> internal:describe=\"Postcode textbox\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0,
+      "value": "DY3 4AN"
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e78 >> internal:describe=\"Look up address button\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "selectOption",
+      "target": "aria-ref=e205 >> internal:describe=\"Address dropdown\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0,
+      "value": null
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e240 >> internal:describe=\"Search button\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    }
+  ],
+  "navigation_events": [
+    {
+      "url": "https://www.sstaffs.gov.uk/bins-recycling/index.cfm",
+      "method": "GET",
+      "status": 301,
+      "redirect_url": "https://www.sstaffs.gov.uk/bins-and-recycling",
+      "mime_type": "text/html; charset=utf-8",
+      "size": -1,
+      "timestamp": "2025-07-21T08:03:09.003Z"
+    },
+    {
+      "url": "https://www.sstaffs.gov.uk/bins-and-recycling",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=UTF-8",
+      "size": 48038,
+      "timestamp": "2025-07-21T08:03:10.009Z"
+    },
+    {
+      "url": "https://www.sstaffs.gov.uk/themes/custom/bbd_localgov/fonts/neris/Neris-Black.otf",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/octet-stream",
+      "size": 206372,
+      "timestamp": "2025-07-21T08:03:10.174Z"
+    },
+    {
+      "url": "https://www.sstaffs.gov.uk/themes/custom/bbd_localgov/fonts/neris/Neris-Light.otf",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/octet-stream",
+      "size": 200408,
+      "timestamp": "2025-07-21T08:03:10.174Z"
+    },
+    {
+      "url": "https://www.sstaffs.gov.uk/themes/custom/bbd_localgov/fonts/neris/Neris-SemiBold.otf",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/octet-stream",
+      "size": 202536,
+      "timestamp": "2025-07-21T08:03:10.175Z"
+    },
+    {
+      "url": "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/webfonts/fa-brands-400.woff2",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/octet-stream; charset=utf-8",
+      "size": 117852,
+      "timestamp": "2025-07-21T08:03:10.175Z"
+    },
+    {
+      "url": "https://www.sstaffs.gov.uk/themes/custom/bbd_localgov/assets/images/favicons/site.webmanifest",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/octet-stream",
+      "size": 428,
+      "timestamp": "2025-07-21T08:03:11.331Z"
+    },
+    {
+      "url": "https://www.sstaffs.gov.uk/bins-and-recycling/view-your-collection-calendar",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=UTF-8",
+      "size": 42483,
+      "timestamp": "2025-07-21T08:03:23.955Z"
+    },
+    {
+      "url": "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/webfonts/fa-brands-400.woff2",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/octet-stream; charset=utf-8",
+      "size": -1,
+      "timestamp": "2025-07-21T08:03:24.085Z"
+    },
+    {
+      "url": "https://www.sstaffs.gov.uk/themes/custom/bbd_localgov/fonts/neris/Neris-Black.otf",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T08:03:24.115Z"
+    },
+    {
+      "url": "https://www.sstaffs.gov.uk/themes/custom/bbd_localgov/fonts/neris/Neris-Light.otf",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T08:03:24.115Z"
+    },
+    {
+      "url": "https://www.sstaffs.gov.uk/themes/custom/bbd_localgov/fonts/neris/Neris-SemiBold.otf",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T08:03:24.115Z"
+    },
+    {
+      "url": "https://www.sstaffs.gov.uk/themes/custom/bbd_localgov/assets/images/favicons/site.webmanifest",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/octet-stream",
+      "size": 428,
+      "timestamp": "2025-07-21T08:03:24.119Z"
+    },
+    {
+      "url": "https://www.sstaffs.gov.uk/bins-and-recycling/view-your-collection-calendar?ajax_form=1&_wrapper_format=drupal_ajax",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 5363,
+      "timestamp": "2025-07-21T08:03:28.442Z"
+    },
+    {
+      "url": "https://www.sstaffs.gov.uk/bins-and-recycling/view-your-collection-calendar",
+      "method": "POST",
+      "status": 303,
+      "redirect_url": "https://www.sstaffs.gov.uk/where-i-live?uprn=010090089159",
+      "mime_type": "text/html; charset=utf-8",
+      "size": -1,
+      "timestamp": "2025-07-21T08:03:44.050Z",
+      "form_data": {
+        "form_build_id": "form-d7pSrLrOO-G1O36Le_NnI87A4d_C8W314Q8CFcmMQ0c",
+        "form_id": "bbd_bin_lookup_form",
+        "postcode": "DY3 4AN",
+        "uprn": "010090089159",
+        "op": "Search"
+      }
+    },
+    {
+      "url": "https://www.sstaffs.gov.uk/where-i-live?uprn=010090089159",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=UTF-8",
+      "size": 66967,
+      "timestamp": "2025-07-21T08:03:44.336Z"
+    },
+    {
+      "url": "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/webfonts/fa-brands-400.woff2",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/octet-stream; charset=utf-8",
+      "size": -1,
+      "timestamp": "2025-07-21T08:03:45.503Z"
+    },
+    {
+      "url": "https://www.sstaffs.gov.uk/themes/custom/bbd_localgov/fonts/neris/Neris-Black.otf",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T08:03:45.549Z"
+    },
+    {
+      "url": "https://www.sstaffs.gov.uk/themes/custom/bbd_localgov/fonts/neris/Neris-Light.otf",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T08:03:45.549Z"
+    },
+    {
+      "url": "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/webfonts/fa-solid-900.woff2",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/octet-stream; charset=utf-8",
+      "size": 156400,
+      "timestamp": "2025-07-21T08:03:45.549Z"
+    },
+    {
+      "url": "https://maps.googleapis.com/maps/api/mapsjs/gen_204?csp_test=true",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=UTF-8",
+      "size": 3,
+      "timestamp": "2025-07-21T08:03:45.656Z"
+    },
+    {
+      "url": "https://www.sstaffs.gov.uk/themes/custom/bbd_localgov/assets/images/favicons/site.webmanifest",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/octet-stream",
+      "size": 428,
+      "timestamp": "2025-07-21T08:03:45.668Z"
+    },
+    {
+      "url": "https://maps.googleapis.com/$rpc/google.internal.maps.mapsjs.v1.MapsJsInternalService/GetViewportInfo",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json+protobuf; charset=UTF-8",
+      "size": 47116,
+      "timestamp": "2025-07-21T08:03:45.752Z"
+    }
+  ]
+}

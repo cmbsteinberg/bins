@@ -1,0 +1,245 @@
+{
+  "metadata": {
+    "trace_name": "medway_council",
+    "processed_at": "2025-08-26 18:44:24",
+    "workflow_steps_count": 7,
+    "navigation_events_count": 18
+  },
+  "scraping_patterns": {
+    "login_detected": false,
+    "form_submissions": 7,
+    "navigation_count": 1,
+    "unique_domains": [
+      "metrics.hotjar.io",
+      "api.medway.gov.uk",
+      "consentcdn.cookiebot.com",
+      "static.hotjar.com",
+      "q.clarity.ms",
+      "www.medway.gov.uk"
+    ],
+    "api_endpoints": [
+      "https://consentcdn.cookiebot.com/consentconfig/627ec184-9ee2-4381-8b05-9399b0ee04b3/settings.json",
+      "https://consentcdn.cookiebot.com/consentconfig/627ec184-9ee2-4381-8b05-9399b0ee04b3/settings.json",
+      "https://api.medway.gov.uk/api/addressing/getaddresses/ME1%201AE",
+      "https://api.medway.gov.uk/api/waste/getwasteday/44114285"
+    ],
+    "data_extraction_indicators": []
+  },
+  "workflow_steps": [
+    {
+      "action": "goto",
+      "target": "https://www.medway.gov.uk/info/200132/waste_and_recycling",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e86 >> internal:describe=\"Allow all cookies\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e144 >> internal:describe=\"Check collection day\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "fill",
+      "target": "aria-ref=e65 >> internal:describe=\"Postcode\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0,
+      "value": "ME1 1AE"
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e67 >> internal:describe=\"Find\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "selectOption",
+      "target": "aria-ref=e161 >> internal:describe=\"Select your address:\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0,
+      "value": null
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e198 >> internal:describe=\"Confirm Address\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    }
+  ],
+  "navigation_events": [
+    {
+      "url": "https://www.medway.gov.uk/info/200132/waste_and_recycling",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=UTF-8",
+      "size": 67335,
+      "timestamp": "2025-07-21T07:41:24.379Z"
+    },
+    {
+      "url": "https://consentcdn.cookiebot.com/sdk/bc-v4.min.html",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html",
+      "size": 627,
+      "timestamp": "2025-07-21T07:41:24.892Z"
+    },
+    {
+      "url": "https://www.medway.gov.uk/site/favicon/site.webmanifest",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": 1176,
+      "timestamp": "2025-07-21T07:41:25.286Z"
+    },
+    {
+      "url": "https://consentcdn.cookiebot.com/consentconfig/627ec184-9ee2-4381-8b05-9399b0ee04b3/settings.json",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 605,
+      "timestamp": "2025-07-21T07:41:26.975Z"
+    },
+    {
+      "url": "https://q.clarity.ms/collect",
+      "method": "POST",
+      "status": 204,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": 0,
+      "timestamp": "2025-07-21T07:41:28.523Z"
+    },
+    {
+      "url": "https://www.medway.gov.uk/homepage/45/check_collection_day",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=UTF-8",
+      "size": 37234,
+      "timestamp": "2025-07-21T07:41:29.639Z"
+    },
+    {
+      "url": "https://www.medway.gov.uk/site/favicon/site.webmanifest",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": 1176,
+      "timestamp": "2025-07-21T07:41:29.857Z"
+    },
+    {
+      "url": "https://consentcdn.cookiebot.com/sdk/bc-v4.min.html",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html",
+      "size": 627,
+      "timestamp": "2025-07-21T07:41:29.957Z"
+    },
+    {
+      "url": "https://consentcdn.cookiebot.com/consentconfig/627ec184-9ee2-4381-8b05-9399b0ee04b3/settings.json",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 605,
+      "timestamp": "2025-07-21T07:41:29.972Z"
+    },
+    {
+      "url": "https://static.hotjar.com/c/hotjar-125082.js?sv=5",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T07:41:30.079Z"
+    },
+    {
+      "url": "https://q.clarity.ms/collect",
+      "method": "POST",
+      "status": 204,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": 0,
+      "timestamp": "2025-07-21T07:41:30.255Z"
+    },
+    {
+      "url": "https://q.clarity.ms/collect",
+      "method": "POST",
+      "status": 204,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": 0,
+      "timestamp": "2025-07-21T07:41:31.801Z"
+    },
+    {
+      "url": "https://metrics.hotjar.io/?v=6&site_id=125082",
+      "method": "POST",
+      "status": 204,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": 0,
+      "timestamp": "2025-07-21T07:41:33.149Z"
+    },
+    {
+      "url": "https://api.medway.gov.uk/api/addressing/getaddresses/ME1%201AE",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=utf-8",
+      "size": 9475,
+      "timestamp": "2025-07-21T07:41:34.734Z"
+    },
+    {
+      "url": "https://q.clarity.ms/collect",
+      "method": "POST",
+      "status": 204,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": 0,
+      "timestamp": "2025-07-21T07:41:34.992Z"
+    },
+    {
+      "url": "https://q.clarity.ms/collect",
+      "method": "POST",
+      "status": 204,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": 0,
+      "timestamp": "2025-07-21T07:41:38.246Z"
+    },
+    {
+      "url": "https://api.medway.gov.uk/api/waste/getwasteday/44114285",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=utf-8",
+      "size": 63,
+      "timestamp": "2025-07-21T07:41:40.532Z"
+    },
+    {
+      "url": "https://q.clarity.ms/collect",
+      "method": "POST",
+      "status": 204,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": 0,
+      "timestamp": "2025-07-21T07:41:42.450Z"
+    }
+  ]
+}

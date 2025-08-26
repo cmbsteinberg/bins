@@ -1,0 +1,179 @@
+{
+  "metadata": {
+    "trace_name": "buckinghamshire_council",
+    "processed_at": "2025-08-26 18:44:24",
+    "workflow_steps_count": 6,
+    "navigation_events_count": 12
+  },
+  "scraping_patterns": {
+    "login_detected": false,
+    "form_submissions": 4,
+    "navigation_count": 1,
+    "unique_domains": [
+      "iapp.itouchvision.com",
+      "www.buckinghamshire.gov.uk",
+      "itouchvision.app",
+      "v4in1-si.click4assistance.co.uk"
+    ],
+    "api_endpoints": [
+      "https://iapp.itouchvision.com/iappcollectionday/collection-day/%PUBLIC_URL%/manifest.json"
+    ],
+    "data_extraction_indicators": []
+  },
+  "workflow_steps": [
+    {
+      "action": "goto",
+      "target": "https://www.buckinghamshire.gov.uk/waste-and-recycling/household-bins-and-recycling/",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e144 >> internal:describe=\"Check your bin collection day\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e54 >> internal:describe=\"Check now\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "fill",
+      "target": "aria-ref=e28 >> internal:describe=\"Enter a postcode\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0,
+      "value": "HP10 0AA"
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e30 >> internal:describe=\"Find\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "selectOption",
+      "target": "aria-ref=e61 >> internal:describe=\"Select an address\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0,
+      "value": null
+    }
+  ],
+  "navigation_events": [
+    {
+      "url": "https://www.buckinghamshire.gov.uk/waste-and-recycling/household-bins-and-recycling/",
+      "method": "GET",
+      "status": 301,
+      "redirect_url": "https://www.buckinghamshire.gov.uk/waste-and-recycling/check-what-you-can-put-in-your-bins/",
+      "mime_type": "text/html; charset=utf-8",
+      "size": -1,
+      "timestamp": "2025-07-21T10:35:40.966Z"
+    },
+    {
+      "url": "https://www.buckinghamshire.gov.uk/waste-and-recycling/check-what-you-can-put-in-your-bins/",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=utf-8",
+      "size": 79144,
+      "timestamp": "2025-07-21T10:35:41.034Z"
+    },
+    {
+      "url": "https://www.buckinghamshire.gov.uk/site.webmanifest",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/octet-stream",
+      "size": 426,
+      "timestamp": "2025-07-21T10:35:41.523Z"
+    },
+    {
+      "url": "https://www.buckinghamshire.gov.uk/waste-and-recycling/find-out-when-its-your-bin-collection/",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=utf-8",
+      "size": 53823,
+      "timestamp": "2025-07-21T10:35:42.495Z"
+    },
+    {
+      "url": "https://v4in1-si.click4assistance.co.uk/SI.js",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T10:35:42.579Z"
+    },
+    {
+      "url": "https://www.buckinghamshire.gov.uk/site.webmanifest",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/octet-stream",
+      "size": 426,
+      "timestamp": "2025-07-21T10:35:42.580Z"
+    },
+    {
+      "url": "https://iapp.itouchvision.com/iappcollectionday/collection-day/?uuid=FA353FC74600CBE61BE409534D00A8EC09BDA3AC&lang=en",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=UTF-8",
+      "size": 795,
+      "timestamp": "2025-07-21T10:35:44.750Z"
+    },
+    {
+      "url": "https://itouchvision.app/portal/itouchvision/gdsv5/util/igetclientdetails",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=UTF-8",
+      "size": 576,
+      "timestamp": "2025-07-21T10:35:45.022Z"
+    },
+    {
+      "url": "https://iapp.itouchvision.com/iappcollectionday/collection-day/%PUBLIC_URL%/manifest.json",
+      "method": "GET",
+      "status": 400,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=iso-8859-1",
+      "size": 226,
+      "timestamp": "2025-07-21T10:35:45.023Z"
+    },
+    {
+      "url": "https://itouchvision.app/portal/itouchvision/gdsv5/theme/getthemesettings",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=UTF-8",
+      "size": 3936,
+      "timestamp": "2025-07-21T10:35:45.298Z"
+    },
+    {
+      "url": "https://itouchvision.app/portal/itouchvision/kmbd/address",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=UTF-8",
+      "size": 7840,
+      "timestamp": "2025-07-21T10:35:49.407Z"
+    },
+    {
+      "url": "https://itouchvision.app/portal/itouchvision/kmbd/collectionDay",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=UTF-8",
+      "size": 1344,
+      "timestamp": "2025-07-21T10:35:52.107Z"
+    }
+  ]
+}

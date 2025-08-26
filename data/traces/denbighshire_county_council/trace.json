@@ -1,0 +1,139 @@
+{
+  "metadata": {
+    "trace_name": "denbighshire_county_council",
+    "processed_at": "2025-08-26 18:44:24",
+    "workflow_steps_count": 6,
+    "navigation_events_count": 8
+  },
+  "scraping_patterns": {
+    "login_detected": false,
+    "form_submissions": 0,
+    "navigation_count": 1,
+    "unique_domains": [
+      "refusecalendarapi.denbighshire.gov.uk",
+      "www.denbighshire.gov.uk"
+    ],
+    "api_endpoints": [],
+    "data_extraction_indicators": []
+  },
+  "workflow_steps": [
+    {
+      "action": "goto",
+      "target": "https://www.denbighshire.gov.uk/en/bins-and-recycling/bins-recycling.aspx",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e14 >> internal:describe=\"Accept all cookies\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e79 >> internal:describe=\"Bin collection dates\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "fill",
+      "target": "aria-ref=f1e10 >> internal:describe=\"Postcode\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0,
+      "value": "CH7 4BR"
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=f1e11 >> internal:describe=\"View bin collections\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "selectOption",
+      "target": "aria-ref=f1e15 >> internal:describe=\"Please confirm your address:\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0,
+      "value": null
+    }
+  ],
+  "navigation_events": [
+    {
+      "url": "https://www.denbighshire.gov.uk/en/bins-and-recycling/bins-recycling.aspx",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=utf-8",
+      "size": 42584,
+      "timestamp": "2025-07-21T10:24:34.361Z"
+    },
+    {
+      "url": "https://www.denbighshire.gov.uk/en/bins-and-recycling/bin-collections.aspx",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=utf-8",
+      "size": 25039,
+      "timestamp": "2025-07-21T10:24:38.242Z"
+    },
+    {
+      "url": "https://refusecalendarapi.denbighshire.gov.uk/",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html",
+      "size": 603,
+      "timestamp": "2025-07-21T10:24:38.331Z"
+    },
+    {
+      "url": "https://refusecalendarapi.denbighshire.gov.uk/Csrf/token",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=utf-8",
+      "size": 167,
+      "timestamp": "2025-07-21T10:24:43.172Z"
+    },
+    {
+      "url": "https://refusecalendarapi.denbighshire.gov.uk/Calendar/addresses/CH7%204BR",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=utf-8",
+      "size": 2162,
+      "timestamp": "2025-07-21T10:24:43.258Z"
+    },
+    {
+      "url": "https://refusecalendarapi.denbighshire.gov.uk/Csrf/token",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=utf-8",
+      "size": 167,
+      "timestamp": "2025-07-21T10:24:45.651Z"
+    },
+    {
+      "url": "https://refusecalendarapi.denbighshire.gov.uk/Calendar/10003927498",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=utf-8",
+      "size": 166,
+      "timestamp": "2025-07-21T10:24:45.674Z"
+    },
+    {
+      "url": "https://www.denbighshire.gov.uk/en/bins-and-recycling/bins-recycling.aspx",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=utf-8",
+      "size": 42584,
+      "timestamp": "2025-07-21T10:24:51.062Z"
+    }
+  ]
+}

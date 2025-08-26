@@ -1,0 +1,199 @@
+{
+  "metadata": {
+    "trace_name": "bracknell_forest_council",
+    "processed_at": "2025-08-26 18:44:24",
+    "workflow_steps_count": 7,
+    "navigation_events_count": 13
+  },
+  "scraping_patterns": {
+    "login_detected": false,
+    "form_submissions": 9,
+    "navigation_count": 1,
+    "unique_domains": [
+      "policy.cookiereports.com",
+      "www.bracknell-forest.gov.uk",
+      "produkswebassistsignalr18.service.signalr.net",
+      "webassistant.onconnect.app",
+      "webassist.onconnect.app",
+      "selfservice.mybfc.bracknell-forest.gov.uk"
+    ],
+    "api_endpoints": [
+      "https://webassistant.onconnect.app/assets/appConfig.json"
+    ],
+    "data_extraction_indicators": []
+  },
+  "workflow_steps": [
+    {
+      "action": "goto",
+      "target": "https://www.bracknell-forest.gov.uk/bins-and-recycling/find-your-collection-day",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e120 >> internal:describe=\"Accept all cookies\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e59 >> internal:describe=\"Start now\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "fill",
+      "target": "aria-ref=e39 >> internal:describe=\"Postcode or street name\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0,
+      "value": "GU15 4PA"
+    },
+    {
+      "action": "fill",
+      "target": "aria-ref=e78 >> internal:describe=\"Postcode or street name\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0,
+      "value": "RG12 7PA"
+    },
+    {
+      "action": "selectOption",
+      "target": "aria-ref=e86 >> internal:describe=\"combobox\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0,
+      "value": null
+    },
+    {
+      "action": "selectOption",
+      "target": "aria-ref=e86 >> internal:describe=\"combobox\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0,
+      "value": null
+    }
+  ],
+  "navigation_events": [
+    {
+      "url": "https://www.bracknell-forest.gov.uk/bins-and-recycling/find-your-collection-day",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=UTF-8",
+      "size": 19955,
+      "timestamp": "2025-07-21T19:00:43.028Z"
+    },
+    {
+      "url": "https://webassist.onconnect.app/v1/loader/8b2694e6-a5eb-49a2-ba91-0e8cd01c12cd",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=utf-8",
+      "size": 52,
+      "timestamp": "2025-07-21T19:00:44.196Z"
+    },
+    {
+      "url": "https://webassistant.onconnect.app/assets/appConfig.json",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 73,
+      "timestamp": "2025-07-21T19:00:44.509Z"
+    },
+    {
+      "url": "https://webassist.onconnect.app/v1/workspaces/8b2694e6-a5eb-49a2-ba91-0e8cd01c12cd/init",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=utf-8",
+      "size": 1805,
+      "timestamp": "2025-07-21T19:00:44.587Z"
+    },
+    {
+      "url": "https://produkswebassistsignalr18.service.signalr.net/client/negotiate?hub=webassistant&negotiateVersion=1",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 334,
+      "timestamp": "2025-07-21T19:00:45.112Z"
+    },
+    {
+      "url": "https://webassist.onconnect.app/v1/postback",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": 0,
+      "timestamp": "2025-07-21T19:00:45.112Z"
+    },
+    {
+      "url": "https://policy.cookiereports.com/consent/",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 51,
+      "timestamp": "2025-07-21T19:00:46.108Z"
+    },
+    {
+      "url": "https://selfservice.mybfc.bracknell-forest.gov.uk/w/webpage/waste-collection-days",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=utf-8",
+      "size": 44806,
+      "timestamp": "2025-07-21T19:00:48.523Z"
+    },
+    {
+      "url": "https://selfservice.mybfc.bracknell-forest.gov.uk/w/webpage/waste-collection-days",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; Charset=utf-8",
+      "size": 10430,
+      "timestamp": "2025-07-21T19:00:49.182Z"
+    },
+    {
+      "url": "https://selfservice.mybfc.bracknell-forest.gov.uk/w/webpage/waste-collection-days?webpage_subpage_id=PAG0000570FEFFB1&webpage_token=390170046582b0e3d7ca68ef1d6b4829ccff0b1ae9c531047219c6f9b5295738&widget_action=handle_event",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 6272,
+      "timestamp": "2025-07-21T19:00:52.505Z"
+    },
+    {
+      "url": "https://selfservice.mybfc.bracknell-forest.gov.uk/w/webpage/waste-collection-days?webpage_subpage_id=PAG0000570FEFFB1&webpage_token=390170046582b0e3d7ca68ef1d6b4829ccff0b1ae9c531047219c6f9b5295738&widget_action=handle_event",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 1036,
+      "timestamp": "2025-07-21T19:00:54.923Z"
+    },
+    {
+      "url": "https://selfservice.mybfc.bracknell-forest.gov.uk/w/webpage/waste-collection-days?webpage_subpage_id=PAG0000570FEFFB1&webpage_token=390170046582b0e3d7ca68ef1d6b4829ccff0b1ae9c531047219c6f9b5295738&widget_action=handle_event",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 127,
+      "timestamp": "2025-07-21T19:00:58.814Z"
+    },
+    {
+      "url": "https://selfservice.mybfc.bracknell-forest.gov.uk/w/webpage/waste-collection-days?webpage_subpage_id=PAG0000570FEFFB1&webpage_token=390170046582b0e3d7ca68ef1d6b4829ccff0b1ae9c531047219c6f9b5295738&widget_action=handle_event",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 127,
+      "timestamp": "2025-07-21T19:01:01.688Z"
+    }
+  ]
+}

@@ -1,0 +1,132 @@
+{
+  "metadata": {
+    "trace_name": "worcester_city_council",
+    "processed_at": "2025-08-26 18:44:24",
+    "workflow_steps_count": 5,
+    "navigation_events_count": 7
+  },
+  "scraping_patterns": {
+    "login_detected": false,
+    "form_submissions": 1,
+    "navigation_count": 1,
+    "unique_domains": [
+      "selfserve.worcester.gov.uk"
+    ],
+    "api_endpoints": [],
+    "data_extraction_indicators": []
+  },
+  "workflow_steps": [
+    {
+      "action": "goto",
+      "target": "http://selfserve.worcester.gov.uk/wccroundlookup/wcc_search.jsp",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "fill",
+      "target": "aria-ref=e48 >> internal:describe=\"textbox \\\"Postcode: *\\\"\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0,
+      "value": "WR1 1AE"
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e50 >> internal:describe=\"button \\\"Find address\\\"\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "selectOption",
+      "target": "aria-ref=e87 >> internal:describe=\"combobox \\\"Please select your address: *\\\"\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0,
+      "value": null
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e55 >> internal:describe=\"button \\\"Next\\\"\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    }
+  ],
+  "navigation_events": [
+    {
+      "url": "http://selfserve.worcester.gov.uk/wccroundlookup/wcc_search.jsp",
+      "method": "GET",
+      "status": 302,
+      "redirect_url": "https://selfserve.worcester.gov.uk/wccroundlookup/wcc_search.jsp",
+      "mime_type": "text/html;charset=ISO-8859-1",
+      "size": -1,
+      "timestamp": "2025-07-21T10:32:05.865Z"
+    },
+    {
+      "url": "https://selfserve.worcester.gov.uk/wccroundlookup/wcc_search.jsp",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html;charset=ISO-8859-1",
+      "size": 12870,
+      "timestamp": "2025-07-21T10:32:05.908Z"
+    },
+    {
+      "url": "https://selfserve.worcester.gov.uk/sw2sharedresources/resources/css/wcc/fonts/glyphicons-halflings-regular.woff",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": 16448,
+      "timestamp": "2025-07-21T10:32:06.092Z"
+    },
+    {
+      "url": "https://selfserve.worcester.gov.uk/sw2AddressLookupWS/jaxrs/PostCode?simple=T&pcode=WR1%201AE&authority=WCC&historical=&hidedummyuprn=1",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 2436,
+      "timestamp": "2025-07-21T10:32:09.262Z"
+    },
+    {
+      "url": "https://selfserve.worcester.gov.uk/sw2AddressLookupWS/jaxrs/PostCode?simple=T&pcode=WR1%201AE&authority=WCC&historical=&hidedummyuprn=1",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 2436,
+      "timestamp": "2025-07-21T10:32:09.526Z"
+    },
+    {
+      "url": "https://selfserve.worcester.gov.uk/wccroundlookup/HandleSearchScreen",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html;charset=ISO-8859-1",
+      "size": 13851,
+      "timestamp": "2025-07-21T10:32:13.967Z",
+      "form_data": {
+        "nmalAddrtxt": "WR1 1AE",
+        "alAddrsel": "10090444442",
+        "txtPage": "std",
+        "txtSearchPerformedFlag": "false",
+        "futuredate": "",
+        "address": "",
+        "jsenabled": "TsOkrIPJrqo5nVGVChHj",
+        "btnSubmit": "Next"
+      }
+    },
+    {
+      "url": "https://selfserve.worcester.gov.uk/sw2sharedresources/resources/css/wcc/fonts/glyphicons-halflings-regular.woff",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T10:32:14.439Z"
+    }
+  ]
+}

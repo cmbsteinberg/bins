@@ -1,0 +1,411 @@
+{
+  "metadata": {
+    "trace_name": "rochford_district_council",
+    "processed_at": "2025-08-26 18:44:24",
+    "workflow_steps_count": 4,
+    "navigation_events_count": 38
+  },
+  "scraping_patterns": {
+    "login_detected": false,
+    "form_submissions": 5,
+    "navigation_count": 1,
+    "unique_domains": [
+      "performance.councilplatform.com",
+      "api-eu1.niceincontact.com",
+      "www.rochford.gov.uk",
+      "cdn.raygun.io",
+      "api-e33.niceincontact.com",
+      "unpkg.com",
+      "home-e33.niceincontact.com",
+      "www.browsealoud.com"
+    ],
+    "api_endpoints": [
+      "https://www.browsealoud.com/version.json",
+      "https://www.browsealoud.com/modules/3.9.7/sri.json",
+      "https://home-e33.niceincontact.com/inContact/ChatClient/locales/en-GB/translation.json",
+      "https://home-e33.niceincontact.com/inContact/ChatClient/locales/en/translation.json",
+      "https://home-e33.niceincontact.com/inContact/ChatClient/locales/en-US/translation.json",
+      "https://www.browsealoud.com/version.json",
+      "https://www.browsealoud.com/modules/3.9.7/sri.json",
+      "https://home-e33.niceincontact.com/inContact/ChatClient/locales/en/translation.json",
+      "https://home-e33.niceincontact.com/inContact/ChatClient/locales/en-US/translation.json",
+      "https://home-e33.niceincontact.com/inContact/ChatClient/locales/en-GB/translation.json"
+    ],
+    "data_extraction_indicators": []
+  },
+  "workflow_steps": [
+    {
+      "action": "goto",
+      "target": "https://www.rochford.gov.uk/environment/recycling/bins-and-collections",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e10 >> internal:describe=\"Accept cookies\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "selectOption",
+      "target": "aria-ref=e677 >> internal:describe=\"combobox \\\"Select Road\\\"\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0,
+      "value": null
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e116 >> internal:describe=\"online bin collection calendar\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    }
+  ],
+  "navigation_events": [
+    {
+      "url": "https://www.rochford.gov.uk/environment/recycling/bins-and-collections",
+      "method": "GET",
+      "status": 301,
+      "redirect_url": "https://www.rochford.gov.uk/bins-and-collections",
+      "mime_type": "text/html; charset=utf-8",
+      "size": -1,
+      "timestamp": "2025-07-21T07:59:27.537Z"
+    },
+    {
+      "url": "https://www.rochford.gov.uk/bins-and-collections",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=UTF-8",
+      "size": 159672,
+      "timestamp": "2025-07-21T07:59:27.913Z"
+    },
+    {
+      "url": "https://www.browsealoud.com/version.json",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 31,
+      "timestamp": "2025-07-21T07:59:28.163Z"
+    },
+    {
+      "url": "https://home-e33.niceincontact.com/inContact/ChatClient/ChatClient.aspx?poc=658354cc-0735-4b0e-bec0-81c594ba00ab&bu=4600554",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=utf-8",
+      "size": 883,
+      "timestamp": "2025-07-21T07:59:28.170Z"
+    },
+    {
+      "url": "https://www.rochford.gov.uk/profiles/contrib/council_platform/themes/council_platform_theme/dist/fonts/roboto-v20-latin-regular.woff2",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/octet-stream",
+      "size": 15736,
+      "timestamp": "2025-07-21T07:59:28.215Z"
+    },
+    {
+      "url": "https://home-e33.niceincontact.com/inContact/ChatClient/chatButton.html",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html",
+      "size": 5400,
+      "timestamp": "2025-07-21T07:59:28.215Z"
+    },
+    {
+      "url": "https://www.rochford.gov.uk/profiles/contrib/council_platform/themes/council_platform_theme/dist/fonts/roboto-v20-latin-700.woff2",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/octet-stream",
+      "size": 15816,
+      "timestamp": "2025-07-21T07:59:28.217Z"
+    },
+    {
+      "url": "https://www.browsealoud.com/modules/3.9.7/sri.json",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 478,
+      "timestamp": "2025-07-21T07:59:28.258Z"
+    },
+    {
+      "url": "https://performance.councilplatform.com/matomo.php?action_name=Bins%20and%20Collections%20%7C%20Rochford%20Council&idsite=14&rec=1&r=540918&h=8&m=59&s=28&url=https%3A%2F%2Fwww.rochford.gov.uk%2Fbins-and-collections&_id=&_idn=1&send_image=0&_refts=0&pdf=1&qt=0&realp=0&wma=0&fla=0&java=0&ag=0&cookie=1&res=800x600&pv_id=2At8F9&pf_net=0&pf_srv=102&pf_tfr=3&pf_dm1=137&uadata=%7B%22fullVersionList%22%3A%5B%7B%22brand%22%3A%22Not)A%3BBrand%22%2C%22version%22%3A%228.0.0.0%22%7D%2C%7B%22brand%22%3A%22Chromium%22%2C%22version%22%3A%22138.0.7204.101%22%7D%2C%7B%22brand%22%3A%22Google%20Chrome%22%2C%22version%22%3A%22138.0.7204.101%22%7D%5D%2C%22mobile%22%3Afalse%2C%22model%22%3A%22%22%2C%22platform%22%3A%22macOS%22%2C%22platformVersion%22%3A%2215.5.0%22%7D",
+      "method": "POST",
+      "status": 204,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": 0,
+      "timestamp": "2025-07-21T07:59:28.273Z"
+    },
+    {
+      "url": "https://www.rochford.gov.uk/sitewide_alert/load",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 21,
+      "timestamp": "2025-07-21T07:59:28.315Z"
+    },
+    {
+      "url": "https://home-e33.niceincontact.com/inContact/ChatClient/index.html",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html",
+      "size": 2497,
+      "timestamp": "2025-07-21T07:59:28.587Z"
+    },
+    {
+      "url": "https://unpkg.com/markdown-it/dist/markdown-it.min.js",
+      "method": "GET",
+      "status": 302,
+      "redirect_url": "https://unpkg.com/markdown-it@14.1.0/dist/markdown-it.min.js",
+      "mime_type": "text/plain;charset=UTF-8",
+      "size": -1,
+      "timestamp": "2025-07-21T07:59:28.619Z"
+    },
+    {
+      "url": "https://api-e33.niceincontact.com/InContactAuthorizationServer/Token",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=utf-8",
+      "size": 1006,
+      "timestamp": "2025-07-21T07:59:28.788Z"
+    },
+    {
+      "url": "https://home-e33.niceincontact.com/inContact/ChatClient/locales/en-GB/translation.json",
+      "method": "GET",
+      "status": 404,
+      "redirect_url": null,
+      "mime_type": "text/html",
+      "size": 1245,
+      "timestamp": "2025-07-21T07:59:28.822Z"
+    },
+    {
+      "url": "https://home-e33.niceincontact.com/inContact/ChatClient/locales/en/translation.json",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 3792,
+      "timestamp": "2025-07-21T07:59:28.823Z"
+    },
+    {
+      "url": "https://home-e33.niceincontact.com/inContact/ChatClient/locales/en-US/translation.json",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 3794,
+      "timestamp": "2025-07-21T07:59:28.823Z"
+    },
+    {
+      "url": "https://api-eu1.niceincontact.com/incontactapi//services/v16.0/points-of-contact/658354cc-0735-4b0e-bec0-81c594ba00ab/chat-profile",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=utf-8",
+      "size": 351781,
+      "timestamp": "2025-07-21T07:59:29.052Z"
+    },
+    {
+      "url": "https://home-e33.niceincontact.com/inContact/ChatClient/styles/themes/fonts/Roboto-Regular.woff",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/font-woff",
+      "size": 19520,
+      "timestamp": "2025-07-21T07:59:29.500Z"
+    },
+    {
+      "url": "https://performance.councilplatform.com/matomo.php?ping=1&idsite=14&rec=1&r=498292&h=8&m=59&s=29&url=https%3A%2F%2Fwww.rochford.gov.uk%2Fbins-and-collections&_id=72dece32b93a61ff&_idn=0&send_image=0&_refts=0&pdf=1&qt=0&realp=0&wma=0&fla=0&java=0&ag=0&cookie=1&res=800x600&pf_net=0&pf_srv=102&pf_tfr=3&pf_dm1=137&pf_dm2=454&pf_onl=0&pv_id=2At8F9&uadata=%7B%22brands%22%3A%5B%7B%22brand%22%3A%22Not)A%3BBrand%22%2C%22version%22%3A%228%22%7D%2C%7B%22brand%22%3A%22Chromium%22%2C%22version%22%3A%22138%22%7D%2C%7B%22brand%22%3A%22Google%20Chrome%22%2C%22version%22%3A%22138%22%7D%5D%2C%22platform%22%3A%22macOS%22%7D",
+      "method": "POST",
+      "status": 204,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": 0,
+      "timestamp": "2025-07-21T07:59:29.781Z"
+    },
+    {
+      "url": "https://www.rochford.gov.uk/views/ajax?_wrapper_format=drupal_ajax&tid=774&view_name=widgets&view_display_id=widgets_bins&view_args=&view_path=%2Fnode%2F322&view_base_path=&view_dom_id=b4ad9c3ad6d223ded0afd3ba050b845a7a4c1b48a9e4b14e6c45f64f9cd0d4aa&pager_element=0&_drupal_ajax=1&ajax_page_state%5Btheme%5D=rochford&ajax_page_state%5Btheme_token%5D=&ajax_page_state%5Blibraries%5D=eJyFVNFy4zAI_CE3-iQGS8ShlYRGyHF8X3_YTmeujeJ7sR1YbcSygKrUgPMn-SbVedULAE9ZKkGiATvpcfSgbY0EI-ZMtQtS44C5QBOQuUKmRSO1RhW8RIv0DqH3pMojR24rcCpV7pQoN-2hxyoLKRpZ6KW9yBefXdEbeYUxiv-yO-WGbEBI-ICFQ7u9OcLhhPIqslWo4hmjyRcY4WrUpsafrpY3SQQFJwIjJjlu0wNyjnY9UMLqb8ZZEzRusUuasBgwWoCCNQobwU9lr_zonqMJ7dJ5Pk2CFvScpx5o6_JRzpWrWrJROsNLoYqNJUOUHOw1Vg7TWdOqlTTK44mAaMXZ_8wlbFX2D0wbf5MCpuDX0VvYWn-NsryTQqne2SQ7zmzdAyNJYgJ2JW8L795-WCGT7PRWyQv001xrtoSMd572wjsINdW-zQ-YMa6NvQ7jMT30KKImwpWj_VSHs02YzmPi9g4ykUmFcfAyZ88Riqm2O2iaG-WR6uR2333cmZYz1IQxUl0_PFaZzWGv2HazeXVTlBHjh_rKxWb3PyjbJJs9fIHnyHpJJTJmT64XHGjuIHtBc0mlYRtAtE1ho-b--b7ofbIdgjnoKcQMNEespxiVyGH4JaceekZcZW4wzhwDVdcWsQVo8-n39j-zgXVfR6uTTJYfEjZJ4o7XUMXfTLnwW9mX-FPL55rAwrD5Y1eEGrk38WGznA2G2c362xxnM9OPJbaNgbrX0GVv5aCr2qS7EZWGrWh1-_OCn_j4EUgS5kh_AVAXkwI",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 83864,
+      "timestamp": "2025-07-21T07:59:33.596Z"
+    },
+    {
+      "url": "https://www.rochford.gov.uk/online-bin-collections-calendar",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=UTF-8",
+      "size": 107515,
+      "timestamp": "2025-07-21T07:59:38.735Z"
+    },
+    {
+      "url": "https://www.rochford.gov.uk/profiles/contrib/council_platform/themes/council_platform_theme/dist/fonts/roboto-v20-latin-regular.woff2",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/octet-stream",
+      "size": -1,
+      "timestamp": "2025-07-21T07:59:38.921Z"
+    },
+    {
+      "url": "https://www.rochford.gov.uk/profiles/contrib/council_platform/themes/council_platform_theme/dist/fonts/roboto-v20-latin-700.woff2",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/octet-stream",
+      "size": -1,
+      "timestamp": "2025-07-21T07:59:38.922Z"
+    },
+    {
+      "url": "https://www.browsealoud.com/version.json",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 31,
+      "timestamp": "2025-07-21T07:59:38.925Z"
+    },
+    {
+      "url": "https://home-e33.niceincontact.com/inContact/ChatClient/ChatClient.aspx?poc=658354cc-0735-4b0e-bec0-81c594ba00ab&bu=4600554",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=utf-8",
+      "size": -1,
+      "timestamp": "2025-07-21T07:59:38.925Z"
+    },
+    {
+      "url": "https://home-e33.niceincontact.com/inContact/ChatClient/chatButton.html",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html",
+      "size": 5400,
+      "timestamp": "2025-07-21T07:59:38.967Z"
+    },
+    {
+      "url": "https://performance.councilplatform.com/matomo.php?action_name=Online%20Bin%20Collections%20Calendar%20%7C%20Rochford%20Council&idsite=14&rec=1&r=969524&h=8&m=59&s=38&url=https%3A%2F%2Fwww.rochford.gov.uk%2Fonline-bin-collections-calendar&urlref=https%3A%2F%2Fwww.rochford.gov.uk%2Fbins-and-collections&_id=&_idn=1&send_image=0&_refts=0&pdf=1&qt=0&realp=0&wma=0&fla=0&java=0&ag=0&cookie=1&res=800x600&pv_id=yzhODj&pf_net=0&pf_srv=97&pf_tfr=1&uadata=%7B%22fullVersionList%22%3A%5B%7B%22brand%22%3A%22Not)A%3BBrand%22%2C%22version%22%3A%228.0.0.0%22%7D%2C%7B%22brand%22%3A%22Chromium%22%2C%22version%22%3A%22138.0.7204.101%22%7D%2C%7B%22brand%22%3A%22Google%20Chrome%22%2C%22version%22%3A%22138.0.7204.101%22%7D%5D%2C%22mobile%22%3Afalse%2C%22model%22%3A%22%22%2C%22platform%22%3A%22macOS%22%2C%22platformVersion%22%3A%2215.5.0%22%7D",
+      "method": "POST",
+      "status": 204,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": 0,
+      "timestamp": "2025-07-21T07:59:38.971Z"
+    },
+    {
+      "url": "https://www.rochford.gov.uk/sitewide_alert/load",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 21,
+      "timestamp": "2025-07-21T07:59:38.972Z"
+    },
+    {
+      "url": "https://www.browsealoud.com/modules/3.9.7/sri.json",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 478,
+      "timestamp": "2025-07-21T07:59:38.973Z"
+    },
+    {
+      "url": "https://home-e33.niceincontact.com/inContact/ChatClient/styles/themes/fonts/Roboto-Regular.woff",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/font-woff",
+      "size": -1,
+      "timestamp": "2025-07-21T07:59:39.049Z"
+    },
+    {
+      "url": "https://home-e33.niceincontact.com/inContact/ChatClient/index.html",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html",
+      "size": 2497,
+      "timestamp": "2025-07-21T07:59:39.073Z"
+    },
+    {
+      "url": "https://cdn.raygun.io/raygun4js/raygun.min.js",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T07:59:39.089Z"
+    },
+    {
+      "url": "https://home-e33.niceincontact.com/inContact/ChatClient/locales/en/translation.json",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 3792,
+      "timestamp": "2025-07-21T07:59:39.089Z"
+    },
+    {
+      "url": "https://home-e33.niceincontact.com/inContact/ChatClient/locales/en-US/translation.json",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 3794,
+      "timestamp": "2025-07-21T07:59:39.089Z"
+    },
+    {
+      "url": "https://home-e33.niceincontact.com/inContact/ChatClient/locales/en-GB/translation.json",
+      "method": "GET",
+      "status": 404,
+      "redirect_url": null,
+      "mime_type": "text/html",
+      "size": 1245,
+      "timestamp": "2025-07-21T07:59:39.089Z"
+    },
+    {
+      "url": "https://api-e33.niceincontact.com/InContactAuthorizationServer/Token",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=utf-8",
+      "size": 1006,
+      "timestamp": "2025-07-21T07:59:39.089Z"
+    },
+    {
+      "url": "https://home-e33.niceincontact.com/inContact/ChatClient/styles/themes/fonts/Roboto-Regular.woff",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/font-woff",
+      "size": -1,
+      "timestamp": "2025-07-21T07:59:39.090Z"
+    },
+    {
+      "url": "https://api-eu1.niceincontact.com/incontactapi//services/v16.0/points-of-contact/658354cc-0735-4b0e-bec0-81c594ba00ab/chat-profile",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=utf-8",
+      "size": 351781,
+      "timestamp": "2025-07-21T07:59:39.322Z"
+    }
+  ]
+}

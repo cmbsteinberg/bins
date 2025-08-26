@@ -1,0 +1,649 @@
+{
+  "metadata": {
+    "trace_name": "cheshire_west_and_chester_council",
+    "processed_at": "2025-08-26 18:44:24",
+    "workflow_steps_count": 5,
+    "navigation_events_count": 61
+  },
+  "scraping_patterns": {
+    "login_detected": false,
+    "form_submissions": 11,
+    "navigation_count": 1,
+    "unique_domains": [
+      "www.google.com",
+      "maps.googleapis.com",
+      "my.cheshirewestandchester.gov.uk",
+      "apikeys.civiccomputing.com",
+      "www.cheshirewestandchester.gov.uk",
+      "cms-qwest.cloud.contensis.com"
+    ],
+    "api_endpoints": [
+      "https://www.cheshirewestandchester.gov.uk/api/delivery/projects/cwcc/entries/search?orderBy=%5B%7B%22asc%22%3A%22entryTitle%22%7D%5D&pageIndex=0&pageSize=100&where=%5B%7B%22and%22%3A%5B%7B%22field%22%3A%22sys.dataFormat%22%2C%22equalTo%22%3A%22entry%22%7D%2C%7B%22field%22%3A%22sys.contentTypeId%22%2C%22in%22%3A%5B%22category%22%5D%7D%5D%7D%2C%7B%22field%22%3A%22sys.versionStatus%22%2C%22equalTo%22%3A%22published%22%7D%5D",
+      "https://www.cheshirewestandchester.gov.uk/api/delivery/projects/cwcc/entries/search?linkDepth=2&orderBy=%5B%7B%22desc%22%3A%22sys.version.published%22%7D%2C%7B%22asc%22%3A%22entryTitle%22%7D%5D&pageIndex=0&pageSize=3&where=%5B%7B%22field%22%3A%22sys.versionStatus%22%2C%22equalTo%22%3A%22published%22%7D%2C%7B%22and%22%3A%5B%7B%22or%22%3A%5B%7B%22not%22%3A%5B%7B%22field%22%3A%22sys.contentTypeId%22%2C%22equalTo%22%3A%22pageEvent%22%7D%5D%7D%2C%7B%22field%22%3A%22eventDate%22%2C%22greaterThanOrEqualTo%22%3A%220d%22%7D%5D%7D%2C%7B%22not%22%3A%5B%7B%22field%22%3A%22hideFromSearch%22%2C%22equalTo%22%3Atrue%7D%5D%7D%5D%7D%2C%7B%22and%22%3A%5B%7B%22field%22%3A%22sys.dataFormat%22%2C%22equalTo%22%3A%22entry%22%7D%2C%7B%22field%22%3A%22sys.contentTypeId%22%2C%22in%22%3A%5B%22featureResults%22%5D%7D%5D%7D%5D",
+      "https://cms-qwest.cloud.contensis.com/api/delivery/projects/cwcc/entries/0443f556-0b30-41bf-8b4d-1806735784d0",
+      "https://www.cheshirewestandchester.gov.uk/api/delivery/projects/cwcc/entries/search?fields=entryTitle%2CentryDescription%2Csys.contentTypeId%2Csys.slug%2Csys.uri%2Csys.version.published%2Casset%2CmetaImage%2CeventDate%2Csummary%2CentryDescription%2Ctitle%2CpublishDate%2CexternalLink%2Curl%2Ckeywords&linkDepth=2&orderBy=%5B%7B%22desc%22%3A%22sys.version.published%22%7D%2C%7B%22asc%22%3A%22entryTitle%22%7D%5D&pageIndex=0&pageSize=9&where=%5B%7B%22field%22%3A%22sys.versionStatus%22%2C%22equalTo%22%3A%22published%22%7D%2C%7B%22and%22%3A%5B%7B%22or%22%3A%5B%7B%22not%22%3A%5B%7B%22field%22%3A%22sys.contentTypeId%22%2C%22equalTo%22%3A%22pageEvent%22%7D%5D%7D%2C%7B%22field%22%3A%22eventDate%22%2C%22greaterThanOrEqualTo%22%3A%220d%22%7D%5D%7D%2C%7B%22not%22%3A%5B%7B%22field%22%3A%22hideFromSearch%22%2C%22equalTo%22%3Atrue%7D%5D%7D%5D%7D%2C%7B%22not%22%3A%5B%7B%22field%22%3A%22sys.id%22%2C%22in%22%3A%5B%22daa3df59-fbbd-459b-aa03-b77d71514f31%22%2C%226f51b581-7404-4ab8-a6f1-02a0a3232aa5%22%2C%228f34380e-611c-4a29-905d-6303e9d0a7c5%22%5D%7D%5D%7D%2C%7B%22and%22%3A%5B%7B%22field%22%3A%22sys.dataFormat%22%2C%22equalTo%22%3A%22entry%22%7D%2C%7B%22field%22%3A%22sys.contentTypeId%22%2C%22in%22%3A%5B%22pageContent%22%2C%22pageEvent%22%2C%22pageLanding%22%2C%22pageNews%22%2C%22asset%22%2C%22parishCouncil%22%2C%22pageInformation1%22%5D%7D%5D%7D%5D",
+      "https://www.cheshirewestandchester.gov.uk/api/delivery/projects/cwcc/entries/search?linkDepth=1&orderBy=%5B%7B%22desc%22%3A%22publishDate%22%7D%5D&pageIndex=0&pageSize=3&where=%5B%7B%22field%22%3A%22sys.versionStatus%22%2C%22equalTo%22%3A%22published%22%7D%2C%7B%22and%22%3A%5B%7B%22field%22%3A%22sys.dataFormat%22%2C%22equalTo%22%3A%22entry%22%7D%2C%7B%22field%22%3A%22sys.contentTypeId%22%2C%22in%22%3A%5B%22featureResults%22%5D%7D%5D%7D%5D",
+      "https://www.cheshirewestandchester.gov.uk/api/delivery/projects/cwcc/entries/search?fields=entryTitle%2CentryDescription%2Csys.contentTypeId%2Csys.slug%2Csys.uri%2Csys.version.published%2Casset%2CmetaImage%2CeventDate%2Csummary%2CentryDescription%2Ctitle&linkDepth=1&pageIndex=0&pageSize=9&where=%5B%7B%22field%22%3A%22sys.versionStatus%22%2C%22equalTo%22%3A%22published%22%7D%2C%7B%22or%22%3A%5B%7B%22field%22%3A%22sys.uri%22%2C%22startsWith%22%3A%22%2Fdocuments%2F%22%7D%2C%7B%22field%22%3A%22sys.uri%22%2C%22startsWith%22%3A%22%2Fnews-and-views%2F%22%7D%2C%7B%22field%22%3A%22sys.uri%22%2C%22startsWith%22%3A%22%2Fyour-council%2F%22%7D%2C%7B%22field%22%3A%22sys.uri%22%2C%22startsWith%22%3A%22%2Fresidents%2F%22%7D%5D%7D%2C%7B%22and%22%3A%5B%7B%22field%22%3A%22sys.dataFormat%22%2C%22equalTo%22%3A%22asset%22%7D%2C%7B%22field%22%3A%22sys.contentTypeId%22%2C%22in%22%3A%5B%22pdf%22%5D%7D%5D%7D%5D",
+      "https://www.cheshirewestandchester.gov.uk/api/delivery/projects/cwcc/entries/search?linkDepth=1&orderBy=%5B%7B%22asc%22%3A%22eventDate%22%7D%5D&pageIndex=0&pageSize=3&where=%5B%7B%22field%22%3A%22sys.versionStatus%22%2C%22equalTo%22%3A%22published%22%7D%2C%7B%22field%22%3A%22eventDate%22%2C%22greaterThanOrEqualTo%22%3A%220d%22%7D%2C%7B%22and%22%3A%5B%7B%22field%22%3A%22sys.dataFormat%22%2C%22equalTo%22%3A%22entry%22%7D%2C%7B%22field%22%3A%22sys.contentTypeId%22%2C%22in%22%3A%5B%22featureResults%22%5D%7D%5D%7D%5D",
+      "https://www.cheshirewestandchester.gov.uk/api/delivery/projects/cwcc/entries/search?linkDepth=2&pageIndex=0&pageSize=1&where=%5B%7B%22field%22%3A%22sys.versionStatus%22%2C%22equalTo%22%3A%22published%22%7D%2C%7B%22field%22%3A%22sys.contentTypeId%22%2C%22in%22%3A%5B%22siteSettings%22%5D%7D%5D",
+      "https://cms-qwest.cloud.contensis.com/api/delivery/projects/cwcc/entries/0443f556-0b30-41bf-8b4d-1806735784d0",
+      "https://cms-qwest.cloud.contensis.com/api/delivery/projects/cwcc/entries/0443f556-0b30-41bf-8b4d-1806735784d0",
+      "https://cms-qwest.cloud.contensis.com/api/delivery/projects/cwcc/entries/0443f556-0b30-41bf-8b4d-1806735784d0",
+      "https://cms-qwest.cloud.contensis.com/api/delivery/projects/cwcc/entries/0443f556-0b30-41bf-8b4d-1806735784d0",
+      "https://www.cheshirewestandchester.gov.uk/api/delivery/projects/cwcc/entries/search?fields=entryTitle%2CentryDescription%2Csys.contentTypeId%2Csys.slug%2Csys.uri%2Csys.version.published%2Casset%2CmetaImage%2CeventDate%2Csummary%2CentryDescription%2Ctitle%2CpublishDate%2CisHide%2CreadingTime%2CexternalLink%2Curl&linkDepth=1&orderBy=%5B%7B%22desc%22%3A%22publishDate%22%7D%5D&pageIndex=0&pageSize=9&where=%5B%7B%22field%22%3A%22sys.versionStatus%22%2C%22equalTo%22%3A%22published%22%7D%2C%7B%22not%22%3A%5B%7B%22field%22%3A%22sys.id%22%2C%22in%22%3A%5B%226f51b581-7404-4ab8-a6f1-02a0a3232aa5%22%2C%22daa3df59-fbbd-459b-aa03-b77d71514f31%22%2C%228f34380e-611c-4a29-905d-6303e9d0a7c5%22%5D%7D%5D%7D%2C%7B%22and%22%3A%5B%7B%22field%22%3A%22sys.dataFormat%22%2C%22equalTo%22%3A%22entry%22%7D%2C%7B%22field%22%3A%22sys.contentTypeId%22%2C%22in%22%3A%5B%22pageNews%22%5D%7D%5D%7D%5D",
+      "https://www.cheshirewestandchester.gov.uk/api/delivery/projects/cwcc/entries/search?fields=entryTitle%2CentryDescription%2Csys.contentTypeId%2Csys.slug%2Csys.uri%2Csys.version.published%2Casset%2CmetaImage%2CeventDate%2Csummary%2CentryDescription%2Ctitle%2CeventCategory%2CeventLocation&linkDepth=1&orderBy=%5B%7B%22asc%22%3A%22eventDate%22%7D%5D&pageIndex=0&pageSize=9&where=%5B%7B%22field%22%3A%22sys.versionStatus%22%2C%22equalTo%22%3A%22published%22%7D%2C%7B%22field%22%3A%22eventDate%22%2C%22greaterThanOrEqualTo%22%3A%220d%22%7D%2C%7B%22and%22%3A%5B%7B%22field%22%3A%22sys.dataFormat%22%2C%22equalTo%22%3A%22entry%22%7D%2C%7B%22field%22%3A%22sys.contentTypeId%22%2C%22in%22%3A%5B%22pageEvent%22%5D%7D%5D%7D%5D",
+      "https://cms-qwest.cloud.contensis.com/api/delivery/projects/cwcc/entries/0443f556-0b30-41bf-8b4d-1806735784d0",
+      "https://cms-qwest.cloud.contensis.com/api/delivery/projects/cwcc/entries/0443f556-0b30-41bf-8b4d-1806735784d0",
+      "https://cms-qwest.cloud.contensis.com/api/delivery/projects/cwcc/entries/0443f556-0b30-41bf-8b4d-1806735784d0",
+      "https://cms-qwest.cloud.contensis.com/api/delivery/projects/cwcc/entries/0443f556-0b30-41bf-8b4d-1806735784d0",
+      "https://cms-qwest.cloud.contensis.com/api/delivery/projects/cwcc/entries/0443f556-0b30-41bf-8b4d-1806735784d0",
+      "https://cms-qwest.cloud.contensis.com/api/delivery/projects/cwcc/entries/0443f556-0b30-41bf-8b4d-1806735784d0",
+      "https://cms-qwest.cloud.contensis.com/api/delivery/projects/cwcc/entries/0443f556-0b30-41bf-8b4d-1806735784d0",
+      "https://cms-qwest.cloud.contensis.com/api/delivery/projects/cwcc/entries/0443f556-0b30-41bf-8b4d-1806735784d0",
+      "https://cms-qwest.cloud.contensis.com/api/delivery/projects/cwcc/entries/0443f556-0b30-41bf-8b4d-1806735784d0",
+      "https://cms-qwest.cloud.contensis.com/api/delivery/projects/cwcc/entries/0443f556-0b30-41bf-8b4d-1806735784d0",
+      "https://my.cheshirewestandchester.gov.uk/en/AchieveForms/?form_uri=sandbox-publish://AF-Process-0187a2f6-15cb-413a-8a3f-b6d14d63da57/AF-Stage-e18b38ff-be8a-45f4-ac14-f8821024f0c4/definition.json&redirectlink=%2Fen&cancelRedirectLink=%2Fen&consentMessage=yes",
+      "https://my.cheshirewestandchester.gov.uk/authapi/isauthenticated?uri=https%253A%252F%252Fmy.cheshirewestandchester.gov.uk%252Fen%252FAchieveForms%252F%253Fform_uri%253Dsandbox-publish%253A%252F%252FAF-Process-0187a2f6-15cb-413a-8a3f-b6d14d63da57%252FAF-Stage-e18b38ff-be8a-45f4-ac14-f8821024f0c4%252Fdefinition.json%2526redirectlink%253D%25252Fen%2526cancelRedirectLink%253D%25252Fen%2526consentMessage%253Dyes&hostname=my.cheshirewestandchester.gov.uk&withCredentials=true",
+      "https://maps.googleapis.com/maps/api/mapsjs/gen_204?csp_test=true",
+      "https://my.cheshirewestandchester.gov.uk/api/self/self-content/getByKeyAndApp?language=en&key=FORM_LOADING_TEXT&app=SELF_CORE&_=1753115408146&sid=6d6e03c694f9b9480a1aab60fc96ec8c",
+      "https://my.cheshirewestandchester.gov.uk/api/get-document/json?uri=sandbox-publish%3A%2F%2FAF-Process-0187a2f6-15cb-413a-8a3f-b6d14d63da57%2FAF-Stage-e18b38ff-be8a-45f4-ac14-f8821024f0c4%2Fdefinition.json&_=1753115408196&sid=6d6e03c694f9b9480a1aab60fc96ec8c",
+      "https://my.cheshirewestandchester.gov.uk/api/get-document/json?uri=sandbox-publish%3A%2F%2FAF-Process-0187a2f6-15cb-413a-8a3f-b6d14d63da57%2Fdefinition.json&_=1753115408356&sid=6d6e03c694f9b9480a1aab60fc96ec8c",
+      "https://my.cheshirewestandchester.gov.uk/api/af-configs-list/list?_=1753115408522&sid=6d6e03c694f9b9480a1aab60fc96ec8c",
+      "https://my.cheshirewestandchester.gov.uk/api/queue-processor-config/get?_=1753115408523&sid=6d6e03c694f9b9480a1aab60fc96ec8c",
+      "https://my.cheshirewestandchester.gov.uk/api/nextref?_=1753115408524&sid=6d6e03c694f9b9480a1aab60fc96ec8c",
+      "https://my.cheshirewestandchester.gov.uk/api/get-document/json?uri=sandbox-publish%3A%2F%2FAF-Process-0187a2f6-15cb-413a-8a3f-b6d14d63da57%2FAF-Stage-e18b38ff-be8a-45f4-ac14-f8821024f0c4%2FAF-Form-1ef85aeb-db1f-457f-9e07-812625855273%2Fdefinition.json&_=1753115408636&sid=6d6e03c694f9b9480a1aab60fc96ec8c",
+      "https://my.cheshirewestandchester.gov.uk/api/get-document/json?uri=sandbox-publish%3A%2F%2FAF-Process-0187a2f6-15cb-413a-8a3f-b6d14d63da57%2FAF-Stage-e18b38ff-be8a-45f4-ac14-f8821024f0c4%2FAF-Form-7cfcc845-5180-4a38-a3a6-2af969314b95%2Fdefinition.json&_=1753115408636&sid=6d6e03c694f9b9480a1aab60fc96ec8c"
+    ],
+    "data_extraction_indicators": []
+  },
+  "workflow_steps": [
+    {
+      "action": "goto",
+      "target": "http://www.cheshirewestandchester.gov.uk/default.aspx?page=13582",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e22 >> internal:describe=\"I Accept Cookies\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e151 >> internal:describe=\"Find your collection day\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "fill",
+      "target": "aria-ref=f1e30 >> internal:describe=\"Postcode\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0,
+      "value": "CH1 1AB"
+    },
+    {
+      "action": "selectOption",
+      "target": "aria-ref=f1e61 >> internal:describe=\"Address Select...\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0,
+      "value": null
+    }
+  ],
+  "navigation_events": [
+    {
+      "url": "http://www.cheshirewestandchester.gov.uk/default.aspx?page=13582",
+      "method": "GET",
+      "status": 301,
+      "redirect_url": "http://www.cheshirewestandchester.gov.uk/residents/waste-and-recycling/your-bin-collection/collection-day",
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:55.146Z"
+    },
+    {
+      "url": "http://www.cheshirewestandchester.gov.uk/residents/waste-and-recycling/your-bin-collection/collection-day",
+      "method": "GET",
+      "status": 301,
+      "redirect_url": "https://www.cheshirewestandchester.gov.uk/residents/waste-and-recycling/your-bin-collection/collection-day",
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T16:29:55.175Z"
+    },
+    {
+      "url": "https://www.cheshirewestandchester.gov.uk/residents/waste-and-recycling/your-bin-collection/collection-day",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=utf-8",
+      "size": 349269,
+      "timestamp": "2025-07-21T16:29:55.182Z"
+    },
+    {
+      "url": "https://apikeys.civiccomputing.com/c/v?d=www.cheshirewestandchester.gov.uk&p=CookieControl%20Multi-Site&v=9&k=a9d835f86d25d23d7bc1e8774a7661420c21a9c0&format=json",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 318,
+      "timestamp": "2025-07-21T16:29:56.428Z"
+    },
+    {
+      "url": "https://www.cheshirewestandchester.gov.uk/api/delivery/projects/cwcc/entries/search?orderBy=%5B%7B%22asc%22%3A%22entryTitle%22%7D%5D&pageIndex=0&pageSize=100&where=%5B%7B%22and%22%3A%5B%7B%22field%22%3A%22sys.dataFormat%22%2C%22equalTo%22%3A%22entry%22%7D%2C%7B%22field%22%3A%22sys.contentTypeId%22%2C%22in%22%3A%5B%22category%22%5D%7D%5D%7D%2C%7B%22field%22%3A%22sys.versionStatus%22%2C%22equalTo%22%3A%22published%22%7D%5D",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 41930,
+      "timestamp": "2025-07-21T16:29:56.524Z"
+    },
+    {
+      "url": "https://www.cheshirewestandchester.gov.uk/api/delivery/projects/cwcc/entries/search?linkDepth=2&orderBy=%5B%7B%22desc%22%3A%22sys.version.published%22%7D%2C%7B%22asc%22%3A%22entryTitle%22%7D%5D&pageIndex=0&pageSize=3&where=%5B%7B%22field%22%3A%22sys.versionStatus%22%2C%22equalTo%22%3A%22published%22%7D%2C%7B%22and%22%3A%5B%7B%22or%22%3A%5B%7B%22not%22%3A%5B%7B%22field%22%3A%22sys.contentTypeId%22%2C%22equalTo%22%3A%22pageEvent%22%7D%5D%7D%2C%7B%22field%22%3A%22eventDate%22%2C%22greaterThanOrEqualTo%22%3A%220d%22%7D%5D%7D%2C%7B%22not%22%3A%5B%7B%22field%22%3A%22hideFromSearch%22%2C%22equalTo%22%3Atrue%7D%5D%7D%5D%7D%2C%7B%22and%22%3A%5B%7B%22field%22%3A%22sys.dataFormat%22%2C%22equalTo%22%3A%22entry%22%7D%2C%7B%22field%22%3A%22sys.contentTypeId%22%2C%22in%22%3A%5B%22featureResults%22%5D%7D%5D%7D%5D",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 11538,
+      "timestamp": "2025-07-21T16:29:56.524Z"
+    },
+    {
+      "url": "https://cms-qwest.cloud.contensis.com/api/delivery/projects/cwcc/entries/0443f556-0b30-41bf-8b4d-1806735784d0",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 4928,
+      "timestamp": "2025-07-21T16:29:56.524Z"
+    },
+    {
+      "url": "https://www.cheshirewestandchester.gov.uk/api/delivery/projects/cwcc/entries/search?fields=entryTitle%2CentryDescription%2Csys.contentTypeId%2Csys.slug%2Csys.uri%2Csys.version.published%2Casset%2CmetaImage%2CeventDate%2Csummary%2CentryDescription%2Ctitle%2CpublishDate%2CexternalLink%2Curl%2Ckeywords&linkDepth=2&orderBy=%5B%7B%22desc%22%3A%22sys.version.published%22%7D%2C%7B%22asc%22%3A%22entryTitle%22%7D%5D&pageIndex=0&pageSize=9&where=%5B%7B%22field%22%3A%22sys.versionStatus%22%2C%22equalTo%22%3A%22published%22%7D%2C%7B%22and%22%3A%5B%7B%22or%22%3A%5B%7B%22not%22%3A%5B%7B%22field%22%3A%22sys.contentTypeId%22%2C%22equalTo%22%3A%22pageEvent%22%7D%5D%7D%2C%7B%22field%22%3A%22eventDate%22%2C%22greaterThanOrEqualTo%22%3A%220d%22%7D%5D%7D%2C%7B%22not%22%3A%5B%7B%22field%22%3A%22hideFromSearch%22%2C%22equalTo%22%3Atrue%7D%5D%7D%5D%7D%2C%7B%22not%22%3A%5B%7B%22field%22%3A%22sys.id%22%2C%22in%22%3A%5B%22daa3df59-fbbd-459b-aa03-b77d71514f31%22%2C%226f51b581-7404-4ab8-a6f1-02a0a3232aa5%22%2C%228f34380e-611c-4a29-905d-6303e9d0a7c5%22%5D%7D%5D%7D%2C%7B%22and%22%3A%5B%7B%22field%22%3A%22sys.dataFormat%22%2C%22equalTo%22%3A%22entry%22%7D%2C%7B%22field%22%3A%22sys.contentTypeId%22%2C%22in%22%3A%5B%22pageContent%22%2C%22pageEvent%22%2C%22pageLanding%22%2C%22pageNews%22%2C%22asset%22%2C%22parishCouncil%22%2C%22pageInformation1%22%5D%7D%5D%7D%5D",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 7974,
+      "timestamp": "2025-07-21T16:29:56.552Z"
+    },
+    {
+      "url": "https://www.cheshirewestandchester.gov.uk/api/delivery/projects/cwcc/entries/search?linkDepth=1&orderBy=%5B%7B%22desc%22%3A%22publishDate%22%7D%5D&pageIndex=0&pageSize=3&where=%5B%7B%22field%22%3A%22sys.versionStatus%22%2C%22equalTo%22%3A%22published%22%7D%2C%7B%22and%22%3A%5B%7B%22field%22%3A%22sys.dataFormat%22%2C%22equalTo%22%3A%22entry%22%7D%2C%7B%22field%22%3A%22sys.contentTypeId%22%2C%22in%22%3A%5B%22featureResults%22%5D%7D%5D%7D%5D",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 9030,
+      "timestamp": "2025-07-21T16:29:56.568Z"
+    },
+    {
+      "url": "https://www.cheshirewestandchester.gov.uk/api/delivery/projects/cwcc/entries/search?fields=entryTitle%2CentryDescription%2Csys.contentTypeId%2Csys.slug%2Csys.uri%2Csys.version.published%2Casset%2CmetaImage%2CeventDate%2Csummary%2CentryDescription%2Ctitle&linkDepth=1&pageIndex=0&pageSize=9&where=%5B%7B%22field%22%3A%22sys.versionStatus%22%2C%22equalTo%22%3A%22published%22%7D%2C%7B%22or%22%3A%5B%7B%22field%22%3A%22sys.uri%22%2C%22startsWith%22%3A%22%2Fdocuments%2F%22%7D%2C%7B%22field%22%3A%22sys.uri%22%2C%22startsWith%22%3A%22%2Fnews-and-views%2F%22%7D%2C%7B%22field%22%3A%22sys.uri%22%2C%22startsWith%22%3A%22%2Fyour-council%2F%22%7D%2C%7B%22field%22%3A%22sys.uri%22%2C%22startsWith%22%3A%22%2Fresidents%2F%22%7D%5D%7D%2C%7B%22and%22%3A%5B%7B%22field%22%3A%22sys.dataFormat%22%2C%22equalTo%22%3A%22asset%22%7D%2C%7B%22field%22%3A%22sys.contentTypeId%22%2C%22in%22%3A%5B%22pdf%22%5D%7D%5D%7D%5D",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 4402,
+      "timestamp": "2025-07-21T16:29:56.569Z"
+    },
+    {
+      "url": "https://www.cheshirewestandchester.gov.uk/api/delivery/projects/cwcc/entries/search?linkDepth=1&orderBy=%5B%7B%22asc%22%3A%22eventDate%22%7D%5D&pageIndex=0&pageSize=3&where=%5B%7B%22field%22%3A%22sys.versionStatus%22%2C%22equalTo%22%3A%22published%22%7D%2C%7B%22field%22%3A%22eventDate%22%2C%22greaterThanOrEqualTo%22%3A%220d%22%7D%2C%7B%22and%22%3A%5B%7B%22field%22%3A%22sys.dataFormat%22%2C%22equalTo%22%3A%22entry%22%7D%2C%7B%22field%22%3A%22sys.contentTypeId%22%2C%22in%22%3A%5B%22featureResults%22%5D%7D%5D%7D%5D",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 68,
+      "timestamp": "2025-07-21T16:29:56.569Z"
+    },
+    {
+      "url": "https://www.cheshirewestandchester.gov.uk/api/delivery/projects/cwcc/entries/search?linkDepth=2&pageIndex=0&pageSize=1&where=%5B%7B%22field%22%3A%22sys.versionStatus%22%2C%22equalTo%22%3A%22published%22%7D%2C%7B%22field%22%3A%22sys.contentTypeId%22%2C%22in%22%3A%5B%22siteSettings%22%5D%7D%5D",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 1906037,
+      "timestamp": "2025-07-21T16:29:56.569Z"
+    },
+    {
+      "url": "https://cms-qwest.cloud.contensis.com/api/delivery/projects/cwcc/entries/0443f556-0b30-41bf-8b4d-1806735784d0",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 4928,
+      "timestamp": "2025-07-21T16:29:56.569Z"
+    },
+    {
+      "url": "https://cms-qwest.cloud.contensis.com/api/delivery/projects/cwcc/entries/0443f556-0b30-41bf-8b4d-1806735784d0",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 4928,
+      "timestamp": "2025-07-21T16:29:56.583Z"
+    },
+    {
+      "url": "https://cms-qwest.cloud.contensis.com/api/delivery/projects/cwcc/entries/0443f556-0b30-41bf-8b4d-1806735784d0",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 4928,
+      "timestamp": "2025-07-21T16:29:56.585Z"
+    },
+    {
+      "url": "https://cms-qwest.cloud.contensis.com/api/delivery/projects/cwcc/entries/0443f556-0b30-41bf-8b4d-1806735784d0",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 4928,
+      "timestamp": "2025-07-21T16:29:56.586Z"
+    },
+    {
+      "url": "https://www.cheshirewestandchester.gov.uk/api/delivery/projects/cwcc/entries/search?fields=entryTitle%2CentryDescription%2Csys.contentTypeId%2Csys.slug%2Csys.uri%2Csys.version.published%2Casset%2CmetaImage%2CeventDate%2Csummary%2CentryDescription%2Ctitle%2CpublishDate%2CisHide%2CreadingTime%2CexternalLink%2Curl&linkDepth=1&orderBy=%5B%7B%22desc%22%3A%22publishDate%22%7D%5D&pageIndex=0&pageSize=9&where=%5B%7B%22field%22%3A%22sys.versionStatus%22%2C%22equalTo%22%3A%22published%22%7D%2C%7B%22not%22%3A%5B%7B%22field%22%3A%22sys.id%22%2C%22in%22%3A%5B%226f51b581-7404-4ab8-a6f1-02a0a3232aa5%22%2C%22daa3df59-fbbd-459b-aa03-b77d71514f31%22%2C%228f34380e-611c-4a29-905d-6303e9d0a7c5%22%5D%7D%5D%7D%2C%7B%22and%22%3A%5B%7B%22field%22%3A%22sys.dataFormat%22%2C%22equalTo%22%3A%22entry%22%7D%2C%7B%22field%22%3A%22sys.contentTypeId%22%2C%22in%22%3A%5B%22pageNews%22%5D%7D%5D%7D%5D",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 13247,
+      "timestamp": "2025-07-21T16:29:56.589Z"
+    },
+    {
+      "url": "https://www.cheshirewestandchester.gov.uk/api/delivery/projects/cwcc/entries/search?fields=entryTitle%2CentryDescription%2Csys.contentTypeId%2Csys.slug%2Csys.uri%2Csys.version.published%2Casset%2CmetaImage%2CeventDate%2Csummary%2CentryDescription%2Ctitle%2CeventCategory%2CeventLocation&linkDepth=1&orderBy=%5B%7B%22asc%22%3A%22eventDate%22%7D%5D&pageIndex=0&pageSize=9&where=%5B%7B%22field%22%3A%22sys.versionStatus%22%2C%22equalTo%22%3A%22published%22%7D%2C%7B%22field%22%3A%22eventDate%22%2C%22greaterThanOrEqualTo%22%3A%220d%22%7D%2C%7B%22and%22%3A%5B%7B%22field%22%3A%22sys.dataFormat%22%2C%22equalTo%22%3A%22entry%22%7D%2C%7B%22field%22%3A%22sys.contentTypeId%22%2C%22in%22%3A%5B%22pageEvent%22%5D%7D%5D%7D%5D",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 15428,
+      "timestamp": "2025-07-21T16:29:56.591Z"
+    },
+    {
+      "url": "https://cms-qwest.cloud.contensis.com/api/delivery/projects/cwcc/entries/0443f556-0b30-41bf-8b4d-1806735784d0",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 4928,
+      "timestamp": "2025-07-21T16:29:56.592Z"
+    },
+    {
+      "url": "https://cms-qwest.cloud.contensis.com/api/delivery/projects/cwcc/entries/0443f556-0b30-41bf-8b4d-1806735784d0",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 4928,
+      "timestamp": "2025-07-21T16:29:56.640Z"
+    },
+    {
+      "url": "https://cms-qwest.cloud.contensis.com/api/delivery/projects/cwcc/entries/0443f556-0b30-41bf-8b4d-1806735784d0",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 4928,
+      "timestamp": "2025-07-21T16:29:56.640Z"
+    },
+    {
+      "url": "https://www.cheshirewestandchester.gov.uk/_Nl7gMQ_11bd8981-e00b-42b6-985d-dde3addd4143/static/manifest.webmanifest",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/manifest+json",
+      "size": 1657,
+      "timestamp": "2025-07-21T16:29:56.651Z"
+    },
+    {
+      "url": "https://cms-qwest.cloud.contensis.com/api/delivery/projects/cwcc/entries/0443f556-0b30-41bf-8b4d-1806735784d0",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 4928,
+      "timestamp": "2025-07-21T16:29:56.654Z"
+    },
+    {
+      "url": "https://cms-qwest.cloud.contensis.com/api/delivery/projects/cwcc/entries/0443f556-0b30-41bf-8b4d-1806735784d0",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 4928,
+      "timestamp": "2025-07-21T16:29:56.655Z"
+    },
+    {
+      "url": "https://cms-qwest.cloud.contensis.com/api/delivery/projects/cwcc/entries/0443f556-0b30-41bf-8b4d-1806735784d0",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 4928,
+      "timestamp": "2025-07-21T16:29:58.141Z"
+    },
+    {
+      "url": "https://cms-qwest.cloud.contensis.com/api/delivery/projects/cwcc/entries/0443f556-0b30-41bf-8b4d-1806735784d0",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 4928,
+      "timestamp": "2025-07-21T16:29:58.141Z"
+    },
+    {
+      "url": "https://cms-qwest.cloud.contensis.com/api/delivery/projects/cwcc/entries/0443f556-0b30-41bf-8b4d-1806735784d0",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 4928,
+      "timestamp": "2025-07-21T16:29:58.141Z"
+    },
+    {
+      "url": "https://cms-qwest.cloud.contensis.com/api/delivery/projects/cwcc/entries/0443f556-0b30-41bf-8b4d-1806735784d0",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 4928,
+      "timestamp": "2025-07-21T16:29:58.141Z"
+    },
+    {
+      "url": "https://cms-qwest.cloud.contensis.com/api/delivery/projects/cwcc/entries/0443f556-0b30-41bf-8b4d-1806735784d0",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 4928,
+      "timestamp": "2025-07-21T16:29:58.141Z"
+    },
+    {
+      "url": "https://my.cheshirewestandchester.gov.uk/en/AchieveForms/?form_uri=sandbox-publish://AF-Process-0187a2f6-15cb-413a-8a3f-b6d14d63da57/AF-Stage-e18b38ff-be8a-45f4-ac14-f8821024f0c4/definition.json&redirectlink=%2Fen&cancelRedirectLink=%2Fen&consentMessage=yes",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=UTF-8",
+      "size": 147771,
+      "timestamp": "2025-07-21T16:30:00.216Z"
+    },
+    {
+      "url": "https://www.google.com/jsapi",
+      "method": "GET",
+      "status": 301,
+      "redirect_url": "https://www.gstatic.com/charts/loader.js",
+      "mime_type": "text/html; charset=UTF-8",
+      "size": -1,
+      "timestamp": "2025-07-21T16:30:04.174Z"
+    },
+    {
+      "url": "https://my.cheshirewestandchester.gov.uk/authapi/isauthenticated?uri=https%253A%252F%252Fmy.cheshirewestandchester.gov.uk%252Fen%252FAchieveForms%252F%253Fform_uri%253Dsandbox-publish%253A%252F%252FAF-Process-0187a2f6-15cb-413a-8a3f-b6d14d63da57%252FAF-Stage-e18b38ff-be8a-45f4-ac14-f8821024f0c4%252Fdefinition.json%2526redirectlink%253D%25252Fen%2526cancelRedirectLink%253D%25252Fen%2526consentMessage%253Dyes&hostname=my.cheshirewestandchester.gov.uk&withCredentials=true",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=utf-8",
+      "size": 4764,
+      "timestamp": "2025-07-21T16:30:05.799Z"
+    },
+    {
+      "url": "https://apikeys.civiccomputing.com/c/v?d=my.cheshirewestandchester.gov.uk&p=CookieControl%20Multi-Site&v=9&k=a9d835f86d25d23d7bc1e8774a7661420c21a9c0&format=json",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 317,
+      "timestamp": "2025-07-21T16:30:05.808Z"
+    },
+    {
+      "url": "https://my.cheshirewestandchester.gov.uk/apibroker/domain/my.cheshirewestandchester.gov.uk?_=1753115405791&sid=6d6e03c694f9b9480a1aab60fc96ec8c",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 225,
+      "timestamp": "2025-07-21T16:30:06.253Z"
+    },
+    {
+      "url": "https://my.cheshirewestandchester.gov.uk/apibroker/domain/my.cheshirewestandchester.gov.uk?_=1753115405807&sid=6d6e03c694f9b9480a1aab60fc96ec8c",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 225,
+      "timestamp": "2025-07-21T16:30:06.254Z"
+    },
+    {
+      "url": "https://my.cheshirewestandchester.gov.uk/apibroker/self-settings?keys=CustomIFrameCss%2CCustomCssInline&app_name=Self&_=1753115406250&sid=6d6e03c694f9b9480a1aab60fc96ec8c",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=UTF-8",
+      "size": 297,
+      "timestamp": "2025-07-21T16:30:06.254Z"
+    },
+    {
+      "url": "https://my.cheshirewestandchester.gov.uk/fillform/?iframe_id=fillform-frame-1&db_id=",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=UTF-8",
+      "size": 4319,
+      "timestamp": "2025-07-21T16:30:06.402Z"
+    },
+    {
+      "url": "https://www.google.com/jsapi?key=AIzaSyDMYR3xNkRwUG-OsKEC4WVi1ptWIPzybMs",
+      "method": "GET",
+      "status": 301,
+      "redirect_url": "https://www.gstatic.com/charts/loader.js?key=AIzaSyDMYR3xNkRwUG-OsKEC4WVi1ptWIPzybMs",
+      "mime_type": "text/html; charset=UTF-8",
+      "size": -1,
+      "timestamp": "2025-07-21T16:30:07.859Z"
+    },
+    {
+      "url": "https://maps.googleapis.com/maps/api/mapsjs/gen_204?csp_test=true",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=UTF-8",
+      "size": 3,
+      "timestamp": "2025-07-21T16:30:08.159Z"
+    },
+    {
+      "url": "https://my.cheshirewestandchester.gov.uk/api/self/self-content/getByKeyAndApp?language=en&key=FORM_LOADING_TEXT&app=SELF_CORE&_=1753115408146&sid=6d6e03c694f9b9480a1aab60fc96ec8c",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 169,
+      "timestamp": "2025-07-21T16:30:08.161Z"
+    },
+    {
+      "url": "https://my.cheshirewestandchester.gov.uk/api/get-document/json?uri=sandbox-publish%3A%2F%2FAF-Process-0187a2f6-15cb-413a-8a3f-b6d14d63da57%2FAF-Stage-e18b38ff-be8a-45f4-ac14-f8821024f0c4%2Fdefinition.json&_=1753115408196&sid=6d6e03c694f9b9480a1aab60fc96ec8c",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 29699,
+      "timestamp": "2025-07-21T16:30:08.198Z"
+    },
+    {
+      "url": "https://my.cheshirewestandchester.gov.uk/api/get-document/json?uri=sandbox-publish%3A%2F%2FAF-Process-0187a2f6-15cb-413a-8a3f-b6d14d63da57%2Fdefinition.json&_=1753115408356&sid=6d6e03c694f9b9480a1aab60fc96ec8c",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 6598,
+      "timestamp": "2025-07-21T16:30:08.357Z"
+    },
+    {
+      "url": "https://my.cheshirewestandchester.gov.uk/api/af-configs-list/list?_=1753115408522&sid=6d6e03c694f9b9480a1aab60fc96ec8c",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 1212,
+      "timestamp": "2025-07-21T16:30:08.530Z"
+    },
+    {
+      "url": "https://my.cheshirewestandchester.gov.uk/api/queue-processor-config/get?_=1753115408523&sid=6d6e03c694f9b9480a1aab60fc96ec8c",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 39,
+      "timestamp": "2025-07-21T16:30:08.530Z"
+    },
+    {
+      "url": "https://my.cheshirewestandchester.gov.uk/api/nextref?_=1753115408524&sid=6d6e03c694f9b9480a1aab60fc96ec8c",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 116,
+      "timestamp": "2025-07-21T16:30:08.531Z"
+    },
+    {
+      "url": "https://my.cheshirewestandchester.gov.uk/apibroker/environment-tokens-public?app_name=AF-Renderer::Self&_=1753115408525&sid=6d6e03c694f9b9480a1aab60fc96ec8c",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=UTF-8",
+      "size": 10560,
+      "timestamp": "2025-07-21T16:30:08.531Z"
+    },
+    {
+      "url": "https://my.cheshirewestandchester.gov.uk/apibroker/location?app_name=AF-Renderer::Self&_=1753115408526&sid=6d6e03c694f9b9480a1aab60fc96ec8c",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=UTF-8",
+      "size": 272,
+      "timestamp": "2025-07-21T16:30:08.531Z"
+    },
+    {
+      "url": "https://my.cheshirewestandchester.gov.uk/api/get-document/json?uri=sandbox-publish%3A%2F%2FAF-Process-0187a2f6-15cb-413a-8a3f-b6d14d63da57%2FAF-Stage-e18b38ff-be8a-45f4-ac14-f8821024f0c4%2FAF-Form-1ef85aeb-db1f-457f-9e07-812625855273%2Fdefinition.json&_=1753115408636&sid=6d6e03c694f9b9480a1aab60fc96ec8c",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 19146,
+      "timestamp": "2025-07-21T16:30:08.640Z"
+    },
+    {
+      "url": "https://my.cheshirewestandchester.gov.uk/api/get-document/json?uri=sandbox-publish%3A%2F%2FAF-Process-0187a2f6-15cb-413a-8a3f-b6d14d63da57%2FAF-Stage-e18b38ff-be8a-45f4-ac14-f8821024f0c4%2FAF-Form-7cfcc845-5180-4a38-a3a6-2af969314b95%2Fdefinition.json&_=1753115408636&sid=6d6e03c694f9b9480a1aab60fc96ec8c",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 42636,
+      "timestamp": "2025-07-21T16:30:08.640Z"
+    },
+    {
+      "url": "https://my.cheshirewestandchester.gov.uk/apibroker/runLookup?id=580f214c7f5b5&repeat_against=&noRetry=false&getOnlyTokens=undefined&log_id=&app_name=AF-Renderer::Self&_=1753115408638&sid=6d6e03c694f9b9480a1aab60fc96ec8c",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=UTF-8",
+      "size": 2522,
+      "timestamp": "2025-07-21T16:30:08.640Z"
+    },
+    {
+      "url": "https://my.cheshirewestandchester.gov.uk/apibroker/runLookup?id=580f214c7f5b5&repeat_against=&noRetry=false&getOnlyTokens=undefined&log_id=&app_name=AF-Renderer::Self&_=1753115408876&sid=6d6e03c694f9b9480a1aab60fc96ec8c",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=UTF-8",
+      "size": 2520,
+      "timestamp": "2025-07-21T16:30:08.879Z"
+    },
+    {
+      "url": "https://my.cheshirewestandchester.gov.uk/authapi/isauthenticated?uri=https://my.cheshirewestandchester.gov.uk/fillform/?iframe_id=fillform-frame-1&db_id=&hostname=my.cheshirewestandchester.gov.uk&withCredentials=true",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=utf-8",
+      "size": 2764,
+      "timestamp": "2025-07-21T16:30:08.895Z"
+    },
+    {
+      "url": "https://my.cheshirewestandchester.gov.uk/apibroker/runLookup?id=580f22042a39a&repeat_against=&noRetry=true&getOnlyTokens=undefined&log_id=&app_name=AF-Renderer::Self&_=1753115408924&sid=6d6e03c694f9b9480a1aab60fc96ec8c",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=UTF-8",
+      "size": 2417,
+      "timestamp": "2025-07-21T16:30:08.926Z"
+    },
+    {
+      "url": "https://my.cheshirewestandchester.gov.uk/apibroker/runLookup?id=580f214c7f5b5&repeat_against=&noRetry=false&getOnlyTokens=undefined&log_id=&app_name=AF-Renderer::Self&_=1753115414650&sid=6d6e03c694f9b9480a1aab60fc96ec8c",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=UTF-8",
+      "size": 121141,
+      "timestamp": "2025-07-21T16:30:14.655Z"
+    },
+    {
+      "url": "https://my.cheshirewestandchester.gov.uk/apibroker/runLookup?id=580f22042a39a&repeat_against=&noRetry=true&getOnlyTokens=undefined&log_id=&app_name=AF-Renderer::Self&_=1753115416922&sid=6d6e03c694f9b9480a1aab60fc96ec8c",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=UTF-8",
+      "size": 4534,
+      "timestamp": "2025-07-21T16:30:16.928Z"
+    },
+    {
+      "url": "https://my.cheshirewestandchester.gov.uk/apibroker/runLookup?id=609b918c7dd6d&repeat_against=&noRetry=false&getOnlyTokens=undefined&log_id=&app_name=AchieveForms&_=16e039e966254&sid=6d6e03c694f9b9480a1aab60fc96ec8c",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=UTF-8",
+      "size": 1478,
+      "timestamp": "2025-07-21T16:30:17.276Z"
+    },
+    {
+      "url": "https://my.cheshirewestandchester.gov.uk/apibroker/runLookup?id=6101d1a29ba09&repeat_against=&noRetry=false&getOnlyTokens=undefined&log_id=&app_name=AchieveForms&_=16e039e966254&sid=6d6e03c694f9b9480a1aab60fc96ec8c",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=UTF-8",
+      "size": 17093,
+      "timestamp": "2025-07-21T16:30:17.598Z"
+    },
+    {
+      "url": "https://my.cheshirewestandchester.gov.uk/apibroker/runLookup?id=6101d1ec57644&repeat_against=&noRetry=false&getOnlyTokens=undefined&log_id=&app_name=AchieveForms&_=16e039e966254&sid=6d6e03c694f9b9480a1aab60fc96ec8c",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=UTF-8",
+      "size": 7960,
+      "timestamp": "2025-07-21T16:30:17.599Z"
+    },
+    {
+      "url": "https://my.cheshirewestandchester.gov.uk/apibroker/runLookup?id=6101d23110243&repeat_against=&noRetry=false&getOnlyTokens=undefined&log_id=&app_name=AchieveForms&_=16e039e966254&sid=6d6e03c694f9b9480a1aab60fc96ec8c",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=UTF-8",
+      "size": 801652,
+      "timestamp": "2025-07-21T16:30:17.599Z"
+    },
+    {
+      "url": "https://my.cheshirewestandchester.gov.uk/apibroker/runLookup?id=657850070861d&repeat_against=&noRetry=false&getOnlyTokens=undefined&log_id=&app_name=AchieveForms&_=16e039e966254&sid=6d6e03c694f9b9480a1aab60fc96ec8c",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=UTF-8",
+      "size": 1523,
+      "timestamp": "2025-07-21T16:30:17.600Z"
+    },
+    {
+      "url": "https://my.cheshirewestandchester.gov.uk/apibroker/runLookup?id=611e0a754e66e&repeat_against=&noRetry=false&getOnlyTokens=undefined&log_id=&app_name=AchieveForms&_=16e039e966254&sid=6d6e03c694f9b9480a1aab60fc96ec8c",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=UTF-8",
+      "size": 811,
+      "timestamp": "2025-07-21T16:30:22.035Z"
+    }
+  ]
+}

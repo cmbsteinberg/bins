@@ -1,0 +1,413 @@
+{
+  "metadata": {
+    "trace_name": "elmbridge_borough_council",
+    "processed_at": "2025-08-26 18:44:24",
+    "workflow_steps_count": 8,
+    "navigation_events_count": 35
+  },
+  "scraping_patterns": {
+    "login_detected": false,
+    "form_submissions": 7,
+    "navigation_count": 1,
+    "unique_domains": [
+      "maps.googleapis.com",
+      "www.google.com",
+      "www.elmbridge.gov.uk",
+      "elmbridge-self.achieveservice.com"
+    ],
+    "api_endpoints": [
+      "https://elmbridge-self.achieveservice.com/AchieveForms/?mode=fill&consentMessage=yes&form_uri=sandbox-publish://AF-Process-be7d38c3-325c-4028-95c9-140e896d3ad4/AF-Stage-6ee0ea94-54aa-4c8b-9286-08c91e00b4b0/definition.json&process=1&process_uri=sandbox-processes://AF-Process-be7d38c3-325c-4028-95c9-140e896d3ad4&process_id=AF-Process-be7d38c3-325c-4028-95c9-140e896d3ad4",
+      "https://elmbridge-self.achieveservice.com/authapi/isauthenticated?uri=https%253A%252F%252Felmbridge-self.achieveservice.com%252FAchieveForms%252F%253Fmode%253Dfill%2526consentMessage%253Dyes%2526form_uri%253Dsandbox-publish%253A%252F%252FAF-Process-be7d38c3-325c-4028-95c9-140e896d3ad4%252FAF-Stage-6ee0ea94-54aa-4c8b-9286-08c91e00b4b0%252Fdefinition.json%2526process%253D1%2526process_uri%253Dsandbox-processes%253A%252F%252FAF-Process-be7d38c3-325c-4028-95c9-140e896d3ad4%2526process_id%253DAF-Process-be7d38c3-325c-4028-95c9-140e896d3ad4&hostname=elmbridge-self.achieveservice.com&withCredentials=true",
+      "https://maps.googleapis.com/maps/api/mapsjs/gen_204?csp_test=true",
+      "https://elmbridge-self.achieveservice.com/api/self/self-content/getByKeyAndApp?language=en&key=FORM_LOADING_TEXT&app=SELF_CORE&_=1753096258540&sid=bd1f5f9991767f2bf9a50bf73b55acf6",
+      "https://elmbridge-self.achieveservice.com/api/get-document/json?uri=sandbox-publish%3A%2F%2FAF-Process-be7d38c3-325c-4028-95c9-140e896d3ad4%2FAF-Stage-6ee0ea94-54aa-4c8b-9286-08c91e00b4b0%2Fdefinition.json&_=1753096258588&sid=bd1f5f9991767f2bf9a50bf73b55acf6",
+      "https://elmbridge-self.achieveservice.com/api/get-document/json?uri=sandbox-publish%3A%2F%2FAF-Process-be7d38c3-325c-4028-95c9-140e896d3ad4%2Fdefinition.json&_=1753096258755&sid=bd1f5f9991767f2bf9a50bf73b55acf6",
+      "https://elmbridge-self.achieveservice.com/api/queue-processor-config/get?_=1753096258917&sid=bd1f5f9991767f2bf9a50bf73b55acf6",
+      "https://elmbridge-self.achieveservice.com/api/af-configs-list/list?_=1753096258916&sid=bd1f5f9991767f2bf9a50bf73b55acf6",
+      "https://elmbridge-self.achieveservice.com/api/nextref?_=1753096258917&sid=bd1f5f9991767f2bf9a50bf73b55acf6",
+      "https://elmbridge-self.achieveservice.com/api/get-document/json?uri=sandbox-publish%3A%2F%2FAF-Process-be7d38c3-325c-4028-95c9-140e896d3ad4%2FAF-Stage-6ee0ea94-54aa-4c8b-9286-08c91e00b4b0%2FAF-Form-8f70f094-d0bd-4191-95fc-eddfdc39d386%2Fdefinition.json&_=1753096259016&sid=bd1f5f9991767f2bf9a50bf73b55acf6"
+    ],
+    "data_extraction_indicators": []
+  },
+  "workflow_steps": [
+    {
+      "action": "goto",
+      "target": "https://www.elmbridge.gov.uk/waste-and-recycling/missed-bins/",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e88 >> internal:describe=\"check your bin collection day\"",
+      "status": "Failed",
+      "details": {
+        "error": "Timeout 5000ms exceeded."
+      },
+      "timestamp": 0
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e10 >> internal:describe=\"Accept\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e88 >> internal:describe=\"check your bin collection day\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e64 >> internal:describe=\"Check your collection day\"",
+      "status": "Failed",
+      "details": {
+        "error": "Timeout 5000ms exceeded."
+      },
+      "timestamp": 0
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e9 >> internal:describe=\"Close\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "fill",
+      "target": "aria-ref=f1e29 >> internal:describe=\"Enter your postcode to find your bin collection days and to download your bin calendar:Required\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0,
+      "value": "KT10 0AA"
+    },
+    {
+      "action": "selectOption",
+      "target": "aria-ref=f1e91 >> internal:describe=\"combobox\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0,
+      "value": null
+    }
+  ],
+  "navigation_events": [
+    {
+      "url": "https://www.elmbridge.gov.uk/waste-and-recycling/missed-bins/",
+      "method": "GET",
+      "status": 301,
+      "redirect_url": "https://www.elmbridge.gov.uk/bins-waste-and-recycling/missed-bin-collection",
+      "mime_type": "text/html; charset=utf-8",
+      "size": -1,
+      "timestamp": "2025-07-21T11:10:39.197Z"
+    },
+    {
+      "url": "https://www.elmbridge.gov.uk/bins-waste-and-recycling/missed-bin-collection",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=UTF-8",
+      "size": 33592,
+      "timestamp": "2025-07-21T11:10:39.313Z"
+    },
+    {
+      "url": "https://www.elmbridge.gov.uk/themes/custom/elmbridge/fonts/Lexend-VariableFont_wght.ttf",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/octet-stream",
+      "size": 173916,
+      "timestamp": "2025-07-21T11:10:39.416Z"
+    },
+    {
+      "url": "https://www.elmbridge.gov.uk/themes/custom/elmbridge/assets/images/favicons/site.webmanifest",
+      "method": "GET",
+      "status": 404,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=UTF-8",
+      "size": 27987,
+      "timestamp": "2025-07-21T11:10:39.533Z"
+    },
+    {
+      "url": "https://www.elmbridge.gov.uk/themes/custom/elmbridge/assets/images/favicons/favicon-32x32.png",
+      "method": "GET",
+      "status": 404,
+      "redirect_url": null,
+      "mime_type": "text/html",
+      "size": 146,
+      "timestamp": "2025-07-21T11:10:39.555Z"
+    },
+    {
+      "url": "https://www.elmbridge.gov.uk/bins-waste-and-recycling/bin-collection-days",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=UTF-8",
+      "size": 30522,
+      "timestamp": "2025-07-21T11:10:48.809Z"
+    },
+    {
+      "url": "https://www.elmbridge.gov.uk/themes/custom/elmbridge/fonts/Lexend-VariableFont_wght.ttf",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/octet-stream",
+      "size": -1,
+      "timestamp": "2025-07-21T11:10:48.864Z"
+    },
+    {
+      "url": "https://www.elmbridge.gov.uk/themes/custom/elmbridge/assets/images/favicons/site.webmanifest",
+      "method": "GET",
+      "status": 404,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=UTF-8",
+      "size": 27987,
+      "timestamp": "2025-07-21T11:10:48.888Z"
+    },
+    {
+      "url": "http://elmbridge-self.achieveservice.com/service/Your_bin_collection_days",
+      "method": "GET",
+      "status": 301,
+      "redirect_url": "https://elmbridge-self.achieveservice.com/service/Your_bin_collection_days",
+      "mime_type": "text/html; charset=iso-8859-1",
+      "size": -1,
+      "timestamp": "2025-07-21T11:10:51.269Z"
+    },
+    {
+      "url": "https://elmbridge-self.achieveservice.com/service/Your_bin_collection_days",
+      "method": "GET",
+      "status": 302,
+      "redirect_url": "https://elmbridge-self.achieveservice.com/AchieveForms/?mode=fill&consentMessage=yes&form_uri=sandbox-publish://AF-Process-be7d38c3-325c-4028-95c9-140e896d3ad4/AF-Stage-6ee0ea94-54aa-4c8b-9286-08c91e00b4b0/definition.json&process=1&process_uri=sandbox-processes://AF-Process-be7d38c3-325c-4028-95c9-140e896d3ad4&process_id=AF-Process-be7d38c3-325c-4028-95c9-140e896d3ad4",
+      "mime_type": "text/html; charset=UTF-8",
+      "size": -1,
+      "timestamp": "2025-07-21T11:10:51.304Z"
+    },
+    {
+      "url": "https://elmbridge-self.achieveservice.com/AchieveForms/?mode=fill&consentMessage=yes&form_uri=sandbox-publish://AF-Process-be7d38c3-325c-4028-95c9-140e896d3ad4/AF-Stage-6ee0ea94-54aa-4c8b-9286-08c91e00b4b0/definition.json&process=1&process_uri=sandbox-processes://AF-Process-be7d38c3-325c-4028-95c9-140e896d3ad4&process_id=AF-Process-be7d38c3-325c-4028-95c9-140e896d3ad4",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=UTF-8",
+      "size": 13421,
+      "timestamp": "2025-07-21T11:10:54.555Z"
+    },
+    {
+      "url": "https://www.google.com/jsapi",
+      "method": "GET",
+      "status": 301,
+      "redirect_url": "https://www.gstatic.com/charts/loader.js",
+      "mime_type": "text/html; charset=UTF-8",
+      "size": -1,
+      "timestamp": "2025-07-21T11:10:57.925Z"
+    },
+    {
+      "url": "https://elmbridge-self.achieveservice.com/authapi/isauthenticated?uri=https%253A%252F%252Felmbridge-self.achieveservice.com%252FAchieveForms%252F%253Fmode%253Dfill%2526consentMessage%253Dyes%2526form_uri%253Dsandbox-publish%253A%252F%252FAF-Process-be7d38c3-325c-4028-95c9-140e896d3ad4%252FAF-Stage-6ee0ea94-54aa-4c8b-9286-08c91e00b4b0%252Fdefinition.json%2526process%253D1%2526process_uri%253Dsandbox-processes%253A%252F%252FAF-Process-be7d38c3-325c-4028-95c9-140e896d3ad4%2526process_id%253DAF-Process-be7d38c3-325c-4028-95c9-140e896d3ad4&hostname=elmbridge-self.achieveservice.com&withCredentials=true",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=utf-8",
+      "size": 3544,
+      "timestamp": "2025-07-21T11:10:58.120Z"
+    },
+    {
+      "url": "https://elmbridge-self.achieveservice.com/apibroker/domain/elmbridge-self.achieveservice.com?_=1753096258112&sid=bd1f5f9991767f2bf9a50bf73b55acf6",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 231,
+      "timestamp": "2025-07-21T11:10:58.171Z"
+    },
+    {
+      "url": "https://elmbridge-self.achieveservice.com/apibroker/domain/elmbridge-self.achieveservice.com?_=1753096258125&sid=bd1f5f9991767f2bf9a50bf73b55acf6",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 231,
+      "timestamp": "2025-07-21T11:10:58.171Z"
+    },
+    {
+      "url": "https://elmbridge-self.achieveservice.com/apibroker/self-settings?keys=CustomIFrameCss%2CCustomCssInline&app_name=Self&_=1753096258152&sid=bd1f5f9991767f2bf9a50bf73b55acf6",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=UTF-8",
+      "size": 409,
+      "timestamp": "2025-07-21T11:10:58.171Z"
+    },
+    {
+      "url": "https://elmbridge-self.achieveservice.com/fillform/?iframe_id=fillform-frame-1&db_id=",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=UTF-8",
+      "size": 4319,
+      "timestamp": "2025-07-21T11:10:58.233Z"
+    },
+    {
+      "url": "https://www.google.com/jsapi?key=AIzaSyDMYR3xNkRwUG-OsKEC4WVi1ptWIPzybMs",
+      "method": "GET",
+      "status": 301,
+      "redirect_url": "https://www.gstatic.com/charts/loader.js?key=AIzaSyDMYR3xNkRwUG-OsKEC4WVi1ptWIPzybMs",
+      "mime_type": "text/html; charset=UTF-8",
+      "size": -1,
+      "timestamp": "2025-07-21T11:10:58.283Z"
+    },
+    {
+      "url": "https://maps.googleapis.com/maps/api/mapsjs/gen_204?csp_test=true",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=UTF-8",
+      "size": 3,
+      "timestamp": "2025-07-21T11:10:58.529Z"
+    },
+    {
+      "url": "https://elmbridge-self.achieveservice.com/api/self/self-content/getByKeyAndApp?language=en&key=FORM_LOADING_TEXT&app=SELF_CORE&_=1753096258540&sid=bd1f5f9991767f2bf9a50bf73b55acf6",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 169,
+      "timestamp": "2025-07-21T11:10:58.603Z"
+    },
+    {
+      "url": "https://elmbridge-self.achieveservice.com/api/get-document/json?uri=sandbox-publish%3A%2F%2FAF-Process-be7d38c3-325c-4028-95c9-140e896d3ad4%2FAF-Stage-6ee0ea94-54aa-4c8b-9286-08c91e00b4b0%2Fdefinition.json&_=1753096258588&sid=bd1f5f9991767f2bf9a50bf73b55acf6",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 25609,
+      "timestamp": "2025-07-21T11:10:58.605Z"
+    },
+    {
+      "url": "https://elmbridge-self.achieveservice.com/api/get-document/json?uri=sandbox-publish%3A%2F%2FAF-Process-be7d38c3-325c-4028-95c9-140e896d3ad4%2Fdefinition.json&_=1753096258755&sid=bd1f5f9991767f2bf9a50bf73b55acf6",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 3981,
+      "timestamp": "2025-07-21T11:10:58.757Z"
+    },
+    {
+      "url": "https://elmbridge-self.achieveservice.com/api/queue-processor-config/get?_=1753096258917&sid=bd1f5f9991767f2bf9a50bf73b55acf6",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 39,
+      "timestamp": "2025-07-21T11:10:58.920Z"
+    },
+    {
+      "url": "https://elmbridge-self.achieveservice.com/api/af-configs-list/list?_=1753096258916&sid=bd1f5f9991767f2bf9a50bf73b55acf6",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 1212,
+      "timestamp": "2025-07-21T11:10:58.920Z"
+    },
+    {
+      "url": "https://elmbridge-self.achieveservice.com/apibroker/environment-tokens-public?app_name=AF-Renderer::Self&_=1753096258918&sid=bd1f5f9991767f2bf9a50bf73b55acf6",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=UTF-8",
+      "size": 5288,
+      "timestamp": "2025-07-21T11:10:58.921Z"
+    },
+    {
+      "url": "https://elmbridge-self.achieveservice.com/api/nextref?_=1753096258917&sid=bd1f5f9991767f2bf9a50bf73b55acf6",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 116,
+      "timestamp": "2025-07-21T11:10:58.921Z"
+    },
+    {
+      "url": "https://elmbridge-self.achieveservice.com/apibroker/location?app_name=AF-Renderer::Self&_=1753096258918&sid=bd1f5f9991767f2bf9a50bf73b55acf6",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=UTF-8",
+      "size": 272,
+      "timestamp": "2025-07-21T11:10:58.921Z"
+    },
+    {
+      "url": "https://elmbridge-self.achieveservice.com/apibroker/runLookup?id=673b44613fba3&repeat_against=&noRetry=false&getOnlyTokens=true&log_id=&app_name=AF-Renderer::Self&_=1753096259019&sid=bd1f5f9991767f2bf9a50bf73b55acf6",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=UTF-8",
+      "size": 81,
+      "timestamp": "2025-07-21T11:10:59.021Z"
+    },
+    {
+      "url": "https://elmbridge-self.achieveservice.com/api/get-document/json?uri=sandbox-publish%3A%2F%2FAF-Process-be7d38c3-325c-4028-95c9-140e896d3ad4%2FAF-Stage-6ee0ea94-54aa-4c8b-9286-08c91e00b4b0%2FAF-Form-8f70f094-d0bd-4191-95fc-eddfdc39d386%2Fdefinition.json&_=1753096259016&sid=bd1f5f9991767f2bf9a50bf73b55acf6",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 20606,
+      "timestamp": "2025-07-21T11:10:59.021Z"
+    },
+    {
+      "url": "https://elmbridge-self.achieveservice.com/apibroker/runLookup?id=65c3a5830bfed&repeat_against=&noRetry=true&getOnlyTokens=undefined&log_id=&app_name=AF-Renderer::Self&_=1753096259162&sid=bd1f5f9991767f2bf9a50bf73b55acf6",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=UTF-8",
+      "size": 1079,
+      "timestamp": "2025-07-21T11:10:59.165Z"
+    },
+    {
+      "url": "https://elmbridge-self.achieveservice.com/apibroker/runLookup?id=673481f37cbf1&repeat_against=&noRetry=true&getOnlyTokens=true&log_id=&app_name=AF-Renderer::Self&_=1753096259451&sid=bd1f5f9991767f2bf9a50bf73b55acf6",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=UTF-8",
+      "size": 91,
+      "timestamp": "2025-07-21T11:10:59.455Z"
+    },
+    {
+      "url": "https://elmbridge-self.achieveservice.com/apibroker/runLookup?id=663b557cdaece&repeat_against=&noRetry=false&getOnlyTokens=undefined&log_id=&app_name=AF-Renderer::Self&_=1753096259576&sid=bd1f5f9991767f2bf9a50bf73b55acf6",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=UTF-8",
+      "size": 754,
+      "timestamp": "2025-07-21T11:10:59.583Z"
+    },
+    {
+      "url": "https://elmbridge-self.achieveservice.com/apibroker/runLookup?id=673b44613fba3&repeat_against=&noRetry=false&getOnlyTokens=undefined&log_id=&app_name=AF-Renderer::Self&_=1753096265145&sid=bd1f5f9991767f2bf9a50bf73b55acf6",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=UTF-8",
+      "size": 117259,
+      "timestamp": "2025-07-21T11:11:05.147Z"
+    },
+    {
+      "url": "https://elmbridge-self.achieveservice.com/apibroker/runLookup?id=663b557cdaece&repeat_against=&noRetry=false&getOnlyTokens=undefined&log_id=&app_name=AF-Renderer::Self&_=1753096268396&sid=bd1f5f9991767f2bf9a50bf73b55acf6",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=UTF-8",
+      "size": 5713,
+      "timestamp": "2025-07-21T11:11:08.402Z"
+    },
+    {
+      "url": "https://elmbridge-self.achieveservice.com/apibroker/runLookup?id=673481f37cbf1&repeat_against=&noRetry=true&getOnlyTokens=undefined&log_id=&app_name=AF-Renderer::Self&_=1753096268742&sid=bd1f5f9991767f2bf9a50bf73b55acf6",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=UTF-8",
+      "size": 2048,
+      "timestamp": "2025-07-21T11:11:08.937Z"
+    }
+  ]
+}

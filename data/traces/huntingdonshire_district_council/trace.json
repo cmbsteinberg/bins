@@ -1,0 +1,286 @@
+{
+  "metadata": {
+    "trace_name": "huntingdonshire_district_council",
+    "processed_at": "2025-08-26 18:44:24",
+    "workflow_steps_count": 7,
+    "navigation_events_count": 23
+  },
+  "scraping_patterns": {
+    "login_detected": false,
+    "form_submissions": 10,
+    "navigation_count": 1,
+    "unique_domains": [
+      "www.google.com",
+      "region1.analytics.google.com",
+      "analytics.silktide.com",
+      "dc.services.visualstudio.com",
+      "applications.huntingdonshire.gov.uk",
+      "huntingdonshire.gov.uk",
+      "a.eu.silktide.com"
+    ],
+    "api_endpoints": [],
+    "data_extraction_indicators": []
+  },
+  "workflow_steps": [
+    {
+      "action": "goto",
+      "target": "http://applications.huntingdonshire.gov.uk/applications/RefuseCalendarMVC",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e9 >> internal:describe=\"Accept additional cookies\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e82 >> internal:describe=\"Save and Close\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "fill",
+      "target": "aria-ref=e92 >> internal:describe=\"Enter postcode\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0,
+      "value": "PE19 1AJ"
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e94 >> internal:describe=\"Search\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "selectOption",
+      "target": "aria-ref=e148 >> internal:describe=\"Select address\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0,
+      "value": null
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e228 >> internal:describe=\"View Calendar\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    }
+  ],
+  "navigation_events": [
+    {
+      "url": "http://applications.huntingdonshire.gov.uk/applications/RefuseCalendarMVC",
+      "method": "GET",
+      "status": 302,
+      "redirect_url": "http://applications.huntingdonshire.gov.uk/applications/RefuseCalendarMVC/Home/Search",
+      "mime_type": "text/html; charset=utf-8",
+      "size": -1,
+      "timestamp": "2025-07-21T07:50:55.565Z"
+    },
+    {
+      "url": "http://applications.huntingdonshire.gov.uk/applications/RefuseCalendarMVC/Home/Search",
+      "method": "GET",
+      "status": 301,
+      "redirect_url": "https://huntingdonshire.gov.uk/refuse-calendar",
+      "mime_type": "text/html; charset=UTF-8",
+      "size": -1,
+      "timestamp": "2025-07-21T07:50:55.608Z"
+    },
+    {
+      "url": "https://huntingdonshire.gov.uk/refuse-calendar",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=utf-8",
+      "size": 36363,
+      "timestamp": "2025-07-21T07:50:55.623Z"
+    },
+    {
+      "url": "https://www.google.com/recaptcha/api2/anchor?ar=1&k=6LdI9hIcAAAAAOj7ShwPXshG5GjD_io2AOpC1q8u&co=aHR0cHM6Ly9odW50aW5nZG9uc2hpcmUuZ292LnVrOjQ0Mw..&hl=en&v=3jpV4E_UA9gZWYy11LtggjoU&size=normal&anchor-ms=20000&execute-ms=15000&cb=rrn3du7uc138",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=utf-8",
+      "size": 74268,
+      "timestamp": "2025-07-21T07:50:56.016Z"
+    },
+    {
+      "url": "https://www.google.com/recaptcha/api2/bframe?hl=en&v=3jpV4E_UA9gZWYy11LtggjoU&k=6LdI9hIcAAAAAOj7ShwPXshG5GjD_io2AOpC1q8u",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=utf-8",
+      "size": 7808,
+      "timestamp": "2025-07-21T07:50:56.693Z"
+    },
+    {
+      "url": "https://dc.services.visualstudio.com/v2/track",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=utf-8",
+      "size": 96,
+      "timestamp": "2025-07-21T07:50:57.060Z"
+    },
+    {
+      "url": "https://huntingdonshire.gov.uk/refuse-calendar",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=utf-8",
+      "size": 37117,
+      "timestamp": "2025-07-21T07:50:58.191Z"
+    },
+    {
+      "url": "https://www.google.com/recaptcha/api2/anchor?ar=1&k=6LdI9hIcAAAAAOj7ShwPXshG5GjD_io2AOpC1q8u&co=aHR0cHM6Ly9odW50aW5nZG9uc2hpcmUuZ292LnVrOjQ0Mw..&hl=en&v=3jpV4E_UA9gZWYy11LtggjoU&size=normal&anchor-ms=20000&execute-ms=15000&cb=sl80kmmxxm2q",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=utf-8",
+      "size": 74198,
+      "timestamp": "2025-07-21T07:50:58.293Z"
+    },
+    {
+      "url": "https://a.eu.silktide.com/v1/events",
+      "method": "POST",
+      "status": 202,
+      "redirect_url": null,
+      "mime_type": "text/plain; charset=utf-8",
+      "size": 2,
+      "timestamp": "2025-07-21T07:50:58.329Z"
+    },
+    {
+      "url": "https://region1.analytics.google.com/g/collect?v=2&tid=G-BJFZN9J5RG&gtm=45je57g1v9116867743za200&_p=1753084258217&_gaz=1&gcd=13l3l3l3l2l1&npa=0&dma=0&tag_exp=101509157~103116026~103200004~103233427~104684208~104684211~104952206~104952208&ul=en-gb&sr=800x600&cid=1668241601.1753084258&uaa=arm&uab=64&uafvl=Not)A%253BBrand%3B8.0.0.0%7CChromium%3B138.0.7204.101%7CGoogle%2520Chrome%3B138.0.7204.101&uamb=0&uam=&uap=macOS&uapv=15.5.0&uaw=0&are=1&frm=0&pscdl=noapi&_eu=ABAI&_s=1&dl=https%3A%2F%2Fhuntingdonshire.gov.uk%2Frefuse-calendar&dt=Huntingdonshire.gov.uk&sid=1753084258&sct=1&seg=0&_tu=wAQ&en=page_view&_fv=1&_ss=1&_ee=1&tfd=354",
+      "method": "POST",
+      "status": 204,
+      "redirect_url": null,
+      "mime_type": "text/plain",
+      "size": -1,
+      "timestamp": "2025-07-21T07:50:58.543Z"
+    },
+    {
+      "url": "https://dc.services.visualstudio.com/v2/track",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=utf-8",
+      "size": 96,
+      "timestamp": "2025-07-21T07:50:58.548Z"
+    },
+    {
+      "url": "https://www.google.com/recaptcha/api2/bframe?hl=en&v=3jpV4E_UA9gZWYy11LtggjoU&k=6LdI9hIcAAAAAOj7ShwPXshG5GjD_io2AOpC1q8u",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=utf-8",
+      "size": 7808,
+      "timestamp": "2025-07-21T07:50:58.722Z"
+    },
+    {
+      "url": "https://a.eu.silktide.com/v1/events",
+      "method": "POST",
+      "status": 202,
+      "redirect_url": null,
+      "mime_type": "text/plain; charset=utf-8",
+      "size": 2,
+      "timestamp": "2025-07-21T07:51:00.787Z"
+    },
+    {
+      "url": "https://a.eu.silktide.com/v1/events",
+      "method": "POST",
+      "status": 202,
+      "redirect_url": null,
+      "mime_type": "text/plain; charset=utf-8",
+      "size": 2,
+      "timestamp": "2025-07-21T07:51:05.069Z"
+    },
+    {
+      "url": "https://huntingdonshire.gov.uk/address/search?postcode=PE191AJ&authority=HDC",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=utf-8",
+      "size": 6830,
+      "timestamp": "2025-07-21T07:51:05.069Z"
+    },
+    {
+      "url": "https://a.eu.silktide.com/v1/events/beacon",
+      "method": "POST",
+      "status": 202,
+      "redirect_url": null,
+      "mime_type": "text/plain; charset=utf-8",
+      "size": -1,
+      "timestamp": "2025-07-21T07:51:09.789Z"
+    },
+    {
+      "url": "https://huntingdonshire.gov.uk/refuse-calendar/results?uprn=10090392786",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=utf-8",
+      "size": 45251,
+      "timestamp": "2025-07-21T07:51:09.854Z"
+    },
+    {
+      "url": "https://dc.services.visualstudio.com/v2/track",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=utf-8",
+      "size": -1,
+      "timestamp": "2025-07-21T07:51:09.855Z"
+    },
+    {
+      "url": "https://analytics.silktide.com/92e8471ec4d4335e14448ca27afb0d73.js",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T07:51:11.493Z"
+    },
+    {
+      "url": "https://a.eu.silktide.com/v1/events",
+      "method": "POST",
+      "status": 202,
+      "redirect_url": null,
+      "mime_type": "text/plain; charset=utf-8",
+      "size": 2,
+      "timestamp": "2025-07-21T07:51:11.543Z"
+    },
+    {
+      "url": "https://www.google.com/recaptcha/api2/anchor?ar=1&k=6LdI9hIcAAAAAOj7ShwPXshG5GjD_io2AOpC1q8u&co=aHR0cHM6Ly9odW50aW5nZG9uc2hpcmUuZ292LnVrOjQ0Mw..&hl=en&v=3jpV4E_UA9gZWYy11LtggjoU&size=normal&anchor-ms=20000&execute-ms=15000&cb=6jep46lp7l26",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=utf-8",
+      "size": 74785,
+      "timestamp": "2025-07-21T07:51:11.605Z"
+    },
+    {
+      "url": "https://dc.services.visualstudio.com/v2/track",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=utf-8",
+      "size": 96,
+      "timestamp": "2025-07-21T07:51:11.756Z"
+    },
+    {
+      "url": "https://www.google.com/recaptcha/api2/bframe?hl=en&v=3jpV4E_UA9gZWYy11LtggjoU&k=6LdI9hIcAAAAAOj7ShwPXshG5GjD_io2AOpC1q8u",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=utf-8",
+      "size": 7811,
+      "timestamp": "2025-07-21T07:51:11.928Z"
+    }
+  ]
+}

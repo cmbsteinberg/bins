@@ -1,0 +1,277 @@
+{
+  "metadata": {
+    "trace_name": "north_ayrshire_council",
+    "processed_at": "2025-08-26 18:44:24",
+    "workflow_steps_count": 6,
+    "navigation_events_count": 22
+  },
+  "scraping_patterns": {
+    "login_detected": false,
+    "form_submissions": 6,
+    "navigation_count": 2,
+    "unique_domains": [
+      "www.maps.north-ayrshire.gov.uk",
+      "www.north-ayrshire.gov.uk",
+      "produkswebassistsignalr18.service.signalr.net",
+      "webassistant.onconnect.app",
+      "webassist.onconnect.app"
+    ],
+    "api_endpoints": [
+      "https://www.north-ayrshire.gov.uk/api/delivery/projects/nac/entries/search?linkDepth=4&pageIndex=0&pageSize=20&where=%5B%7B%22and%22%3A%5B%7B%22field%22%3A%22sys.versionStatus%22%2C%22equalTo%22%3A%22published%22%7D%2C%7B%22or%22%3A%5B%7B%22field%22%3A%22sys.contentTypeId%22%2C%22equalTo%22%3A%22siteSettings%22%7D%5D%7D%5D%7D%5D",
+      "https://www.north-ayrshire.gov.uk/api/delivery/projects/nac/entries/search?fields=entryTitle%2CentryDescription%2CentryThumbnail%2Csys.contentTypeId%2Csys.id%2Csys.uri%2Csys.version.published%2CheaderImage%2CpublicationDate&orderBy=%5B%7B%22desc%22%3A%22publicationDate%22%7D%5D&pageIndex=0&pageSize=4&where=%5B%7B%22field%22%3A%22sys.versionStatus%22%2C%22equalTo%22%3A%22published%22%7D%2C%7B%22and%22%3A%5B%7B%22field%22%3A%22sys.dataFormat%22%2C%22equalTo%22%3A%22entry%22%7D%2C%7B%22field%22%3A%22sys.contentTypeId%22%2C%22in%22%3A%5B%22newsPage%22%5D%7D%5D%7D%5D",
+      "https://webassistant.onconnect.app/assets/appConfig.json",
+      "https://www.north-ayrshire.gov.uk/api/delivery/projects/nac/entries/search?linkDepth=4&pageIndex=0&pageSize=20&where=%5B%7B%22and%22%3A%5B%7B%22field%22%3A%22sys.versionStatus%22%2C%22equalTo%22%3A%22published%22%7D%2C%7B%22or%22%3A%5B%7B%22field%22%3A%22sys.contentTypeId%22%2C%22equalTo%22%3A%22siteSettings%22%7D%5D%7D%5D%7D%5D",
+      "https://webassistant.onconnect.app/assets/appConfig.json",
+      "https://www.maps.north-ayrshire.gov.uk/arcgis/rest/services/AGOL/YourLocationLive/MapServer/8/query?f=json&outFields=*&returnDistinctValues=true&returnGeometry=false&spatialRel=esriSpatialRelIntersects&where=1%3D0",
+      "https://www.maps.north-ayrshire.gov.uk/arcgis/rest/services/AGOL/CAG_VIEW/MapServer/0/query?f=json&orderByFields=ADDRESS%20ASC&outFields=ADDRESS%2CUPRN%2CEASTINGS%2CNORTHINGS&returnGeometry=false&spatialRel=esriSpatialRelIntersects&where=UPPER(ADDRESS)%20LIKE%20%27%25KA11%201AJ%25%27",
+      "https://www.maps.north-ayrshire.gov.uk/arcgis/rest/services/AGOL/YourLocationLive/MapServer/8/query?f=json&outFields=*&returnDistinctValues=true&returnGeometry=false&spatialRel=esriSpatialRelIntersects&where=UPRN%20%3D%20%27126042728%27"
+    ],
+    "data_extraction_indicators": []
+  },
+  "workflow_steps": [
+    {
+      "action": "goto",
+      "target": "https://www.north-ayrshire.gov.uk/bins-litter-and-recycling/bins/bin-collection-day.aspx",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "goto",
+      "target": "https://www.north-ayrshire.gov.uk/",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e97 >> internal:describe=\"Bin collection days\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "fill",
+      "target": "aria-ref=e80 >> internal:describe=\"Enter your postcode:\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0,
+      "value": "KA11 1AJ"
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e81 >> internal:describe=\"Search\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "selectOption",
+      "target": "aria-ref=e153 >> internal:describe=\"Select Address:\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0,
+      "value": null
+    }
+  ],
+  "navigation_events": [
+    {
+      "url": "https://www.north-ayrshire.gov.uk/bins-litter-and-recycling/bins/bin-collection-day.aspx",
+      "method": "GET",
+      "status": 404,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=utf-8",
+      "size": 52543,
+      "timestamp": "2025-07-21T16:43:32.023Z"
+    },
+    {
+      "url": "https://www.north-ayrshire.gov.uk/",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=utf-8",
+      "size": 870402,
+      "timestamp": "2025-07-21T16:43:33.718Z"
+    },
+    {
+      "url": "https://webassist.onconnect.app/v1/loader/79a03865-7313-4fae-a3c3-91a9fa9d218d",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=utf-8",
+      "size": 52,
+      "timestamp": "2025-07-21T16:43:33.990Z"
+    },
+    {
+      "url": "https://www.north-ayrshire.gov.uk/api/delivery/projects/nac/entries/search?linkDepth=4&pageIndex=0&pageSize=20&where=%5B%7B%22and%22%3A%5B%7B%22field%22%3A%22sys.versionStatus%22%2C%22equalTo%22%3A%22published%22%7D%2C%7B%22or%22%3A%5B%7B%22field%22%3A%22sys.contentTypeId%22%2C%22equalTo%22%3A%22siteSettings%22%7D%5D%7D%5D%7D%5D",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 69,
+      "timestamp": "2025-07-21T16:43:34.042Z"
+    },
+    {
+      "url": "https://www.north-ayrshire.gov.uk/api/delivery/projects/nac/entries/search?fields=entryTitle%2CentryDescription%2CentryThumbnail%2Csys.contentTypeId%2Csys.id%2Csys.uri%2Csys.version.published%2CheaderImage%2CpublicationDate&orderBy=%5B%7B%22desc%22%3A%22publicationDate%22%7D%5D&pageIndex=0&pageSize=4&where=%5B%7B%22field%22%3A%22sys.versionStatus%22%2C%22equalTo%22%3A%22published%22%7D%2C%7B%22and%22%3A%5B%7B%22field%22%3A%22sys.dataFormat%22%2C%22equalTo%22%3A%22entry%22%7D%2C%7B%22field%22%3A%22sys.contentTypeId%22%2C%22in%22%3A%5B%22newsPage%22%5D%7D%5D%7D%5D",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 4833,
+      "timestamp": "2025-07-21T16:43:34.043Z"
+    },
+    {
+      "url": "https://www.north-ayrshire.gov.uk/_1aq29Q_c78b1f92-9f18-4781-9f8b-c723ba2cdd8b/static/site.webmanifest",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/manifest+json",
+      "size": 489,
+      "timestamp": "2025-07-21T16:43:34.261Z"
+    },
+    {
+      "url": "https://webassistant.onconnect.app/assets/appConfig.json",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 73,
+      "timestamp": "2025-07-21T16:43:34.363Z"
+    },
+    {
+      "url": "https://webassist.onconnect.app/v1/workspaces/79a03865-7313-4fae-a3c3-91a9fa9d218d/init",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=utf-8",
+      "size": 2026,
+      "timestamp": "2025-07-21T16:43:34.433Z"
+    },
+    {
+      "url": "https://produkswebassistsignalr18.service.signalr.net/client/negotiate?hub=webassistant&negotiateVersion=1",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 334,
+      "timestamp": "2025-07-21T16:43:34.511Z"
+    },
+    {
+      "url": "https://webassist.onconnect.app/v1/postback",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": 0,
+      "timestamp": "2025-07-21T16:43:34.511Z"
+    },
+    {
+      "url": "https://www.north-ayrshire.gov.uk/bins-litter-and-recycling/bin-collection-days",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=utf-8",
+      "size": 360111,
+      "timestamp": "2025-07-21T16:43:36.535Z"
+    },
+    {
+      "url": "https://www.north-ayrshire.gov.uk/api/delivery/projects/nac/entries/search?linkDepth=4&pageIndex=0&pageSize=20&where=%5B%7B%22and%22%3A%5B%7B%22field%22%3A%22sys.versionStatus%22%2C%22equalTo%22%3A%22published%22%7D%2C%7B%22or%22%3A%5B%7B%22field%22%3A%22sys.contentTypeId%22%2C%22equalTo%22%3A%22siteSettings%22%7D%5D%7D%5D%7D%5D",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 69,
+      "timestamp": "2025-07-21T16:43:36.623Z"
+    },
+    {
+      "url": "https://webassist.onconnect.app/v1/loader/79a03865-7313-4fae-a3c3-91a9fa9d218d",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=utf-8",
+      "size": 52,
+      "timestamp": "2025-07-21T16:43:36.636Z"
+    },
+    {
+      "url": "https://webassistant.onconnect.app/assets/appConfig.json",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 73,
+      "timestamp": "2025-07-21T16:43:36.749Z"
+    },
+    {
+      "url": "https://www.maps.north-ayrshire.gov.uk/arcgis/rest/services/AGOL/YourLocationLive/MapServer/8/query?f=json&outFields=*&returnDistinctValues=true&returnGeometry=false&spatialRel=esriSpatialRelIntersects&where=1%3D0",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json;charset=UTF-8",
+      "size": 1854,
+      "timestamp": "2025-07-21T16:43:36.800Z"
+    },
+    {
+      "url": "https://www.north-ayrshire.gov.uk/_1aq29Q_c78b1f92-9f18-4781-9f8b-c723ba2cdd8b/static/site.webmanifest",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/manifest+json",
+      "size": 489,
+      "timestamp": "2025-07-21T16:43:36.804Z"
+    },
+    {
+      "url": "https://webassist.onconnect.app/v1/workspaces/79a03865-7313-4fae-a3c3-91a9fa9d218d/init",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=utf-8",
+      "size": 1988,
+      "timestamp": "2025-07-21T16:43:36.829Z"
+    },
+    {
+      "url": "https://produkswebassistsignalr18.service.signalr.net/client/negotiate?hub=webassistant&negotiateVersion=1",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 334,
+      "timestamp": "2025-07-21T16:43:36.933Z"
+    },
+    {
+      "url": "https://webassist.onconnect.app/v1/workspaces/79a03865-7313-4fae-a3c3-91a9fa9d218d/appusers/661faa90-7d1b-45a1-b3d6-cc041442cfa4/messages?continuationToken=",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=utf-8",
+      "size": 40,
+      "timestamp": "2025-07-21T16:43:36.933Z"
+    },
+    {
+      "url": "https://webassist.onconnect.app/v1/postback",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": 0,
+      "timestamp": "2025-07-21T16:43:36.934Z"
+    },
+    {
+      "url": "https://www.maps.north-ayrshire.gov.uk/arcgis/rest/services/AGOL/CAG_VIEW/MapServer/0/query?f=json&orderByFields=ADDRESS%20ASC&outFields=ADDRESS%2CUPRN%2CEASTINGS%2CNORTHINGS&returnGeometry=false&spatialRel=esriSpatialRelIntersects&where=UPPER(ADDRESS)%20LIKE%20%27%25KA11%201AJ%25%27",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json;charset=UTF-8",
+      "size": 5470,
+      "timestamp": "2025-07-21T16:43:41.874Z"
+    },
+    {
+      "url": "https://www.maps.north-ayrshire.gov.uk/arcgis/rest/services/AGOL/YourLocationLive/MapServer/8/query?f=json&outFields=*&returnDistinctValues=true&returnGeometry=false&spatialRel=esriSpatialRelIntersects&where=UPRN%20%3D%20%27126042728%27",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json;charset=UTF-8",
+      "size": 2426,
+      "timestamp": "2025-07-21T16:43:54.135Z"
+    }
+  ]
+}

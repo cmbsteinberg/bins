@@ -1,0 +1,669 @@
+{
+  "metadata": {
+    "trace_name": "north_west_leicestershire_district_council",
+    "processed_at": "2025-08-26 18:44:24",
+    "workflow_steps_count": 8,
+    "navigation_events_count": 64
+  },
+  "scraping_patterns": {
+    "login_detected": false,
+    "form_submissions": 6,
+    "navigation_count": 1,
+    "unique_domains": [
+      "st.nwl.cgov.cuttlefish.com",
+      "my.nwleics.gov.uk",
+      "www.nwleics.gov.uk"
+    ],
+    "api_endpoints": [
+      "https://st.nwl.cgov.cuttlefish.com/api/event",
+      "https://st.nwl.cgov.cuttlefish.com/api/event",
+      "https://st.nwl.cgov.cuttlefish.com/api/event",
+      "https://st.nwl.cgov.cuttlefish.com/api/event",
+      "https://st.nwl.cgov.cuttlefish.com/api/event",
+      "https://st.nwl.cgov.cuttlefish.com/api/event",
+      "https://my.nwleics.gov.uk/data.json"
+    ],
+    "data_extraction_indicators": []
+  },
+  "workflow_steps": [
+    {
+      "action": "goto",
+      "target": "http://www.nwleics.gov.uk/countyservice_details/home.asp?PID=524",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e14 >> internal:describe=\"Accept additional cookies\"",
+      "status": "Failed",
+      "details": {
+        "error": "Timeout 5000ms exceeded."
+      },
+      "timestamp": 0
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e316 >> internal:describe=\"No Thanks\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e113 >> internal:describe=\"Recycling and Refuse\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "fill",
+      "target": "aria-ref=e267 >> internal:describe=\"Your address:\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0,
+      "value": "DE11 7BY"
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e273 >> internal:describe=\"Look up address\"",
+      "status": "Failed",
+      "details": {
+        "error": "Timeout 5000ms exceeded."
+      },
+      "timestamp": 0
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e443 >> internal:describe=\"110, Ashby Road, Woodville\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e273 >> internal:describe=\"Look up address\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    }
+  ],
+  "navigation_events": [
+    {
+      "url": "http://www.nwleics.gov.uk/countyservice_details/home.asp?PID=524",
+      "method": "GET",
+      "status": 301,
+      "redirect_url": "https://www.nwleics.gov.uk/countyservice_details/home.asp?PID=524",
+      "mime_type": "text/html; charset=UTF-8",
+      "size": -1,
+      "timestamp": "2025-07-21T07:48:17.026Z"
+    },
+    {
+      "url": "https://www.nwleics.gov.uk/countyservice_details/home.asp?PID=524",
+      "method": "GET",
+      "status": 301,
+      "redirect_url": "https://www.nwleics.gov.uk/atoz/524",
+      "mime_type": "text/html; charset=UTF-8",
+      "size": -1,
+      "timestamp": "2025-07-21T07:48:17.077Z"
+    },
+    {
+      "url": "https://www.nwleics.gov.uk/atoz/524",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=UTF-8",
+      "size": 45386,
+      "timestamp": "2025-07-21T07:48:17.140Z"
+    },
+    {
+      "url": "https://st.nwl.cgov.cuttlefish.com/api/event",
+      "method": "POST",
+      "status": 202,
+      "redirect_url": null,
+      "mime_type": "text/plain; charset=utf-8",
+      "size": 2,
+      "timestamp": "2025-07-21T07:48:18.366Z"
+    },
+    {
+      "url": "https://st.nwl.cgov.cuttlefish.com/api/event",
+      "method": "POST",
+      "status": 202,
+      "redirect_url": null,
+      "mime_type": "text/plain; charset=utf-8",
+      "size": 2,
+      "timestamp": "2025-07-21T07:48:18.366Z"
+    },
+    {
+      "url": "https://www.nwleics.gov.uk/site.webmanifest?v=1747237900",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/octet-stream",
+      "size": 411,
+      "timestamp": "2025-07-21T07:48:18.427Z"
+    },
+    {
+      "url": "https://www.nwleics.gov.uk/pages/recycling_and_waste",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=UTF-8",
+      "size": 53213,
+      "timestamp": "2025-07-21T07:48:29.532Z"
+    },
+    {
+      "url": "https://www.nwleics.gov.uk/themes/base/css/master.css?v=3.0.54",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T07:48:29.630Z"
+    },
+    {
+      "url": "https://www.nwleics.gov.uk/themes/base/css/images/top-tasks/white@2x/envelope@2x.png",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T07:48:29.630Z"
+    },
+    {
+      "url": "https://www.nwleics.gov.uk/themes/base/css/images/top-tasks/white@2x/piggy-bank@2x.png",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T07:48:29.631Z"
+    },
+    {
+      "url": "https://www.nwleics.gov.uk/themes/base/css/images/top-tasks/white@2x/spade@2x.png",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T07:48:29.631Z"
+    },
+    {
+      "url": "https://www.nwleics.gov.uk/themes/base/css/images/top-tasks/white@2x/christmas-tree@2x.png",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T07:48:29.631Z"
+    },
+    {
+      "url": "https://www.nwleics.gov.uk/themes/base/css/images/top-tasks/white@2x/tick@2x.png",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T07:48:29.632Z"
+    },
+    {
+      "url": "https://www.nwleics.gov.uk/themes/base/css/images/top-tasks/white@2x/document-stack@2x.png",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T07:48:29.632Z"
+    },
+    {
+      "url": "https://www.nwleics.gov.uk/themes/base/css/images/top-tasks/white@2x/pie-chart@2x.png",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T07:48:29.632Z"
+    },
+    {
+      "url": "https://www.nwleics.gov.uk/themes/base/css/images/top-tasks/white@2x/support@2x.png",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T07:48:29.632Z"
+    },
+    {
+      "url": "https://www.nwleics.gov.uk/themes/base/css/images/top-tasks/white@2x/correct-form@2x.png",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T07:48:29.632Z"
+    },
+    {
+      "url": "https://www.nwleics.gov.uk/themes/base/css/images/top-tasks/white@2x/disabled@2x.png",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T07:48:29.633Z"
+    },
+    {
+      "url": "https://www.nwleics.gov.uk/themes/base/css/images/top-tasks/white@2x/spanner-and-screwdriver@2x.png",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T07:48:29.633Z"
+    },
+    {
+      "url": "https://www.nwleics.gov.uk/themes/base/css/images/top-tasks/white@2x/computer-mouse@2x.png",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T07:48:29.633Z"
+    },
+    {
+      "url": "https://www.nwleics.gov.uk/themes/base/css/images/top-tasks/white@2x/offices@2x.png",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T07:48:29.633Z"
+    },
+    {
+      "url": "https://www.nwleics.gov.uk/themes/base/css/images/top-tasks/white@2x/credit-card@2x.png",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T07:48:29.633Z"
+    },
+    {
+      "url": "https://www.nwleics.gov.uk/themes/base/css/images/top-tasks/white@2x/megaphone@2x.png",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T07:48:29.634Z"
+    },
+    {
+      "url": "https://www.nwleics.gov.uk/themes/base/css/images/top-tasks/white@2x/litter@2x.png",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T07:48:29.634Z"
+    },
+    {
+      "url": "https://www.nwleics.gov.uk/themes/base/css/images/top-tasks/white@2x/wheelie-bin@2x.png",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T07:48:29.634Z"
+    },
+    {
+      "url": "https://www.nwleics.gov.uk/themes/base/css/images/top-tasks/white@2x/house@2x.png",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T07:48:29.635Z"
+    },
+    {
+      "url": "https://www.nwleics.gov.uk/themes/base/css/images/top-tasks/white@2x/broken-wall@2x.png",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T07:48:29.635Z"
+    },
+    {
+      "url": "https://www.nwleics.gov.uk/themes/base/css/images/top-tasks/white@2x/checklist@2x.png",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T07:48:29.635Z"
+    },
+    {
+      "url": "https://www.nwleics.gov.uk/themes/base/css/images/top-tasks/white@2x/ant@2x.png",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T07:48:29.636Z"
+    },
+    {
+      "url": "https://www.nwleics.gov.uk/themes/base/css/images/top-tasks/white@2x/graffiti@2x.png",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T07:48:29.636Z"
+    },
+    {
+      "url": "https://www.nwleics.gov.uk/themes/base/css/images/top-tasks/white@2x/dog@2x.png",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T07:48:29.636Z"
+    },
+    {
+      "url": "https://www.nwleics.gov.uk/themes/base/css/images/top-tasks/white@2x/knife-and-fork@2x.png",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T07:48:29.636Z"
+    },
+    {
+      "url": "https://www.nwleics.gov.uk/themes/base/css/images/top-tasks/white@2x/signpost@2x.png",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T07:48:29.637Z"
+    },
+    {
+      "url": "https://www.nwleics.gov.uk/themes/base/css/images/top-tasks/white@2x/thumbs-down@2x.png",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T07:48:29.637Z"
+    },
+    {
+      "url": "https://www.nwleics.gov.uk/themes/base/css/images/top-tasks/white@2x/padlock-locked@2x.png",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T07:48:29.637Z"
+    },
+    {
+      "url": "https://www.nwleics.gov.uk/themes/base/css/images/top-tasks/white@2x/light-bulb@2x.png",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T07:48:29.638Z"
+    },
+    {
+      "url": "https://www.nwleics.gov.uk/themes/base/css/images/top-tasks/white@2x/recycle@2x.png",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T07:48:29.638Z"
+    },
+    {
+      "url": "https://www.nwleics.gov.uk/themes/base/css/images/top-tasks/white@2x/fridge@2x.png",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T07:48:29.638Z"
+    },
+    {
+      "url": "https://www.nwleics.gov.uk/themes/base/css/new-imgs/iip-silver-logo.png",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T07:48:29.639Z"
+    },
+    {
+      "url": "https://www.nwleics.gov.uk/themes/base/css/new-imgs/shawtrust-accessible.png",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T07:48:29.639Z"
+    },
+    {
+      "url": "https://www.nwleics.gov.uk/javascript/3rdparty/jquery/3.7.1/jquery.min.js",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T07:48:29.640Z"
+    },
+    {
+      "url": "https://www.nwleics.gov.uk/javascript/3rdparty/jquery/jquery-migrate-3.4.1.min.js",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T07:48:29.641Z"
+    },
+    {
+      "url": "https://st.nwl.cgov.cuttlefish.com/api/event",
+      "method": "POST",
+      "status": 202,
+      "redirect_url": null,
+      "mime_type": "text/plain; charset=utf-8",
+      "size": 2,
+      "timestamp": "2025-07-21T07:48:29.654Z"
+    },
+    {
+      "url": "https://st.nwl.cgov.cuttlefish.com/api/event",
+      "method": "POST",
+      "status": 202,
+      "redirect_url": null,
+      "mime_type": "text/plain; charset=utf-8",
+      "size": 2,
+      "timestamp": "2025-07-21T07:48:29.655Z"
+    },
+    {
+      "url": "https://www.nwleics.gov.uk/themes/base/css/new-imgs/nwl-logo.svg",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T07:48:29.660Z"
+    },
+    {
+      "url": "https://www.nwleics.gov.uk/themes/base/css/new-imgs/icons/icon-contact.svg",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T07:48:29.661Z"
+    },
+    {
+      "url": "https://www.nwleics.gov.uk/themes/base/css/new-imgs/home-icons/icon-missing.svg",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T07:48:29.661Z"
+    },
+    {
+      "url": "https://www.nwleics.gov.uk/themes/base/css/new-imgs/icons/icon-list.svg",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T07:48:29.662Z"
+    },
+    {
+      "url": "https://www.nwleics.gov.uk/themes/base/css/new-imgs/icons/icon-contact-w.svg",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T07:48:29.662Z"
+    },
+    {
+      "url": "https://www.nwleics.gov.uk/themes/base/css/new-imgs/social-twitter.png",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T07:48:29.662Z"
+    },
+    {
+      "url": "https://www.nwleics.gov.uk/themes/base/css/new-imgs/icons/icon-chat.svg",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T07:48:29.662Z"
+    },
+    {
+      "url": "https://www.nwleics.gov.uk/themes/base/css/new-imgs/social-facebook.png",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T07:48:29.662Z"
+    },
+    {
+      "url": "https://www.nwleics.gov.uk/themes/base/css/new-imgs/icons/icon-comment.svg",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T07:48:29.663Z"
+    },
+    {
+      "url": "https://www.nwleics.gov.uk/themes/base/css/new-imgs/cep.png?v=2",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T07:48:29.663Z"
+    },
+    {
+      "url": "https://www.nwleics.gov.uk/themes/base/css/new-imgs/social-youtube.png",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T07:48:29.663Z"
+    },
+    {
+      "url": "https://www.nwleics.gov.uk/themes/base/css/new-imgs/cuttlefish.svg",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T07:48:29.663Z"
+    },
+    {
+      "url": "https://www.nwleics.gov.uk/site.webmanifest?v=1747237900",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/octet-stream",
+      "size": 411,
+      "timestamp": "2025-07-21T07:48:29.752Z"
+    },
+    {
+      "url": "https://www.nwleics.gov.uk/location/query?term=DE11%207BY",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=UTF-8",
+      "size": 3560,
+      "timestamp": "2025-07-21T07:48:32.712Z"
+    },
+    {
+      "url": "https://my.nwleics.gov.uk/my-property-finder?address=110%2C+Ashby+Road%2C+Woodville&go=1",
+      "method": "GET",
+      "status": 302,
+      "redirect_url": "https://my.nwleics.gov.uk/location?put=nwl100032000532&rememberme=0&redirect=%2F",
+      "mime_type": "text/html; charset=UTF-8",
+      "size": -1,
+      "timestamp": "2025-07-21T07:48:44.770Z"
+    },
+    {
+      "url": "https://my.nwleics.gov.uk/location?put=nwl100032000532&rememberme=0&redirect=%2F",
+      "method": "GET",
+      "status": 302,
+      "redirect_url": "https://my.nwleics.gov.uk/",
+      "mime_type": "text/html; charset=UTF-8",
+      "size": -1,
+      "timestamp": "2025-07-21T07:48:44.860Z"
+    },
+    {
+      "url": "https://my.nwleics.gov.uk/",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=UTF-8",
+      "size": 30061,
+      "timestamp": "2025-07-21T07:48:44.912Z"
+    },
+    {
+      "url": "https://st.nwl.cgov.cuttlefish.com/api/event",
+      "method": "POST",
+      "status": 202,
+      "redirect_url": null,
+      "mime_type": "text/plain; charset=utf-8",
+      "size": 2,
+      "timestamp": "2025-07-21T07:48:46.133Z"
+    },
+    {
+      "url": "https://st.nwl.cgov.cuttlefish.com/api/event",
+      "method": "POST",
+      "status": 202,
+      "redirect_url": null,
+      "mime_type": "text/plain; charset=utf-8",
+      "size": 2,
+      "timestamp": "2025-07-21T07:48:46.133Z"
+    },
+    {
+      "url": "https://my.nwleics.gov.uk/data.json",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=UTF-8",
+      "size": 3389,
+      "timestamp": "2025-07-21T07:48:46.253Z"
+    }
+  ]
+}

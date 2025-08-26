@@ -1,0 +1,123 @@
+{
+  "metadata": {
+    "trace_name": "basingstoke_and_deane_borough_council",
+    "processed_at": "2025-08-26 18:44:24",
+    "workflow_steps_count": 5,
+    "navigation_events_count": 7
+  },
+  "scraping_patterns": {
+    "login_detected": false,
+    "form_submissions": 3,
+    "navigation_count": 1,
+    "unique_domains": [
+      "www.basingstoke.gov.uk",
+      "translate.googleapis.com"
+    ],
+    "api_endpoints": [],
+    "data_extraction_indicators": []
+  },
+  "workflow_steps": [
+    {
+      "action": "goto",
+      "target": "http://www.basingstoke.gov.uk/bincollections",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e8 >> internal:describe=\"I'm OK with analytics cookies\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "fill",
+      "target": "aria-ref=e61 >> internal:describe=\"Search for address\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0,
+      "value": "GU34 4DL"
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e62 >> internal:describe=\"Search\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "selectOption",
+      "target": "aria-ref=e141 >> internal:describe=\"Select address\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0,
+      "value": null
+    }
+  ],
+  "navigation_events": [
+    {
+      "url": "http://www.basingstoke.gov.uk/bincollections",
+      "method": "GET",
+      "status": 302,
+      "redirect_url": "https://www.basingstoke.gov.uk/bincollections",
+      "mime_type": "text/html",
+      "size": -1,
+      "timestamp": "2025-07-21T16:27:50.388Z"
+    },
+    {
+      "url": "https://www.basingstoke.gov.uk/bincollections",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=utf-8",
+      "size": 43956,
+      "timestamp": "2025-07-21T16:27:50.423Z"
+    },
+    {
+      "url": "https://www.basingstoke.gov.uk/tpls/fonts/2017/icomoon.ttf",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/octet-stream",
+      "size": 33180,
+      "timestamp": "2025-07-21T16:27:50.773Z"
+    },
+    {
+      "url": "https://www.basingstoke.gov.uk/tpls/fonts/2023/IcoMoon-Free.ttf",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/octet-stream",
+      "size": 130416,
+      "timestamp": "2025-07-21T16:27:50.773Z"
+    },
+    {
+      "url": "https://www.basingstoke.gov.uk/rte.aspx?id=1270",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/plain; charset=utf-8",
+      "size": 8854,
+      "timestamp": "2025-07-21T16:27:57.028Z"
+    },
+    {
+      "url": "https://translate.googleapis.com/element/log?format=json&hasfast=true&authuser=0",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/plain; charset=UTF-8",
+      "size": 131,
+      "timestamp": "2025-07-21T16:28:00.852Z"
+    },
+    {
+      "url": "https://www.basingstoke.gov.uk/rte.aspx?id=1270",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/plain; charset=utf-8",
+      "size": 16921,
+      "timestamp": "2025-07-21T16:28:01.228Z"
+    }
+  ]
+}

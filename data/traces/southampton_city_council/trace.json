@@ -1,0 +1,648 @@
+{
+  "metadata": {
+    "trace_name": "southampton_city_council",
+    "processed_at": "2025-08-26 18:44:24",
+    "workflow_steps_count": 7,
+    "navigation_events_count": 62
+  },
+  "scraping_patterns": {
+    "login_detected": false,
+    "form_submissions": 15,
+    "navigation_count": 1,
+    "unique_domains": [
+      "ep1.adtrafficquality.google",
+      "apikeys.civiccomputing.com",
+      "bat.bing.com",
+      "ads.counciladvertising.net",
+      "metrics.hotjar.io",
+      "ep2.adtrafficquality.google",
+      "static.hotjar.com",
+      "www.southampton.gov.uk",
+      "clapi.civiccomputing.com",
+      "google.com",
+      "cdnjs.cloudflare.com"
+    ],
+    "api_endpoints": [
+      "https://www.southampton.gov.uk/favicons/manifest.json",
+      "https://www.southampton.gov.uk/favicons/manifest.json",
+      "https://www.southampton.gov.uk/favicons/manifest.json",
+      "https://www.southampton.gov.uk/favicons/manifest.json"
+    ],
+    "data_extraction_indicators": []
+  },
+  "workflow_steps": [
+    {
+      "action": "goto",
+      "target": "https://www.southampton.gov.uk/bins-recycling/bins/",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e51 >> internal:describe=\"Bin collection calendar\"",
+      "status": "Failed",
+      "details": {
+        "error": "Timeout 5000ms exceeded."
+      },
+      "timestamp": 0
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e182 >> internal:describe=\"I Accept Cookies\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e51 >> internal:describe=\"Bin collection calendar\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "fill",
+      "target": "aria-ref=e58 >> internal:describe=\"Enter postcode or street name\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0,
+      "value": "SO14 0AA"
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e63 >> internal:describe=\"Search button\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "selectOption",
+      "target": "aria-ref=e68 >> internal:describe=\"Select address\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0,
+      "value": null
+    }
+  ],
+  "navigation_events": [
+    {
+      "url": "https://www.southampton.gov.uk/bins-recycling/bins/",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=utf-8",
+      "size": 26430,
+      "timestamp": "2025-07-21T10:44:28.869Z"
+    },
+    {
+      "url": "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/webfonts/fa-solid-900.woff2",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/octet-stream; charset=utf-8",
+      "size": 150020,
+      "timestamp": "2025-07-21T10:44:30.107Z"
+    },
+    {
+      "url": "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/webfonts/fa-brands-400.woff2",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/octet-stream; charset=utf-8",
+      "size": 109808,
+      "timestamp": "2025-07-21T10:44:30.110Z"
+    },
+    {
+      "url": "https://www.southampton.gov.uk/_Incapsula_Resource?SWKMTFSR=1&e=0.3636903922760044",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/plain",
+      "size": 1,
+      "timestamp": "2025-07-21T10:44:30.135Z"
+    },
+    {
+      "url": "https://apikeys.civiccomputing.com/c/v?d=www.southampton.gov.uk&p=CookieControl%20Multi-Site&v=9&k=a766de19521fe0ab41886d8c79be30968f920021&format=json",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 307,
+      "timestamp": "2025-07-21T10:44:30.330Z"
+    },
+    {
+      "url": "https://www.southampton.gov.uk/favicons/manifest.json",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 794,
+      "timestamp": "2025-07-21T10:44:30.353Z"
+    },
+    {
+      "url": "https://clapi.civiccomputing.com/1/log?k=a766de19521fe0ab41886d8c79be30968f920021&d=www.southampton.gov.uk&u=undefined&c=%22%7B%5C%22necessaryCookies%5C%22%3A%5B%5C%22UMB-XSRF-TOKEN%5C%22%2C%5C%22StayConnected%5C%22%2C%5C%22BIGipServerHTTPS-Southampton-Online%5C%22%2C%5C%22_gcl_au%5C%22%2C%5C%22_hjAbsoluteSessionInProgress%5C%22%2C%5C%22_hjFirstSeen%5C%22%2C%5C%22_hjIncludedInSessionSample%5C%22%2C%5C%22_hjSession_*%5C%22%2C%5C%22_hjSessionUser_*%5C%22%2C%5C%22lastaccesstime*%5C%22%2C%5C%22sessionid*%5C%22%2C%5C%22hs_ccp_user*%5C%22%2C%5C%22hs_lastaccesstime*%5C%22%2C%5C%22hs_sessionid*%5C%22%2C%5C%22ccp_user*%5C%22%5D%2C%5C%22optionalCookies%5C%22%3A%7B%5C%22analytics%5C%22%3A%5C%22accepted%5C%22%2C%5C%22personalisation%5C%22%3A%5C%22accepted%5C%22%2C%5C%22marketing%5C%22%3A%5C%22accepted%5C%22%7D%2C%5C%22statement%5C%22%3A%7B%5C%22shown%5C%22%3Atrue%2C%5C%22updated%5C%22%3A%5C%2226%2F01%2F2018%5C%22%7D%2C%5C%22consentDate%5C%22%3A1753094679377%2C%5C%22consentExpiry%5C%22%3A60%2C%5C%22interactedWith%5C%22%3Atrue%2C%5C%22user%5C%22%3A%5C%2238153D23-EFA7-40B6-87D9-265834BC7DAD%5C%22%7D%22",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 13,
+      "timestamp": "2025-07-21T10:44:39.383Z"
+    },
+    {
+      "url": "https://ads.counciladvertising.net/tag/config/audienceplacement/ibar?url=www.southampton.gov.uk%2Fbins-recycling%2Fbins%2F",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 73,
+      "timestamp": "2025-07-21T10:44:39.604Z"
+    },
+    {
+      "url": "https://google.com/ccm/form-data/947187023?gtm=45be57g1h1pfv9102448690za200zb78767102&gcs=G110&gcd=13n3m3l3l5l1&dma=0&tag_exp=101509157~103116026~103200004~103233427~104684208~104684211&npa=0&frm=0&pscdl=noapi&auid=414948988.1753094679&uaa=arm&uab=64&uafvl=Not)A%253BBrand%3B8.0.0.0%7CChromium%3B138.0.7204.101%7CGoogle%2520Chrome%3B138.0.7204.101&uamb=0&uam=&uap=macOS&uapv=15.5.0&uaw=0&ec_mode=a&em=tv.1",
+      "method": "POST",
+      "status": 204,
+      "redirect_url": null,
+      "mime_type": "text/plain",
+      "size": 0,
+      "timestamp": "2025-07-21T10:44:39.803Z"
+    },
+    {
+      "url": "https://ep1.adtrafficquality.google/getconfig/sodar?sv=200&tid=gda&tv=r20250716&st=env",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=UTF-8",
+      "size": 17298,
+      "timestamp": "2025-07-21T10:44:39.961Z"
+    },
+    {
+      "url": "https://bat.bing.com/action/0?ti=355025638&Ver=2&mid=f84c90d8-a16e-44d6-a30e-a41f82bba270&bo=1&sid=b3f817d0661f11f08201d30d545e26dc&vid=b3f80bf0661f11f0bbf3b922b5b61eb2&vids=1&msclkid=N&pi=918639831&lg=en-GB&sw=800&sh=600&sc=24&tl=Bins&p=https%3A%2F%2Fwww.southampton.gov.uk%2Fbins-recycling%2Fbins%2F&r=&lt=1475&evt=pageLoad&sv=1&cdb=AQAQ&rn=761693",
+      "method": "GET",
+      "status": 204,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": 0,
+      "timestamp": "2025-07-21T10:44:39.963Z"
+    },
+    {
+      "url": "https://ep2.adtrafficquality.google/sodar/sodar2/237/runner.html",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html",
+      "size": 13159,
+      "timestamp": "2025-07-21T10:44:40.093Z"
+    },
+    {
+      "url": "https://ep2.adtrafficquality.google/generate_204?akn_AA",
+      "method": "GET",
+      "status": 204,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": 0,
+      "timestamp": "2025-07-21T10:44:40.721Z"
+    },
+    {
+      "url": "https://www.southampton.gov.uk/bins-recycling/bins/collections/",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=utf-8",
+      "size": 24783,
+      "timestamp": "2025-07-21T10:44:51.530Z"
+    },
+    {
+      "url": "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/webfonts/fa-brands-400.woff2",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/octet-stream; charset=utf-8",
+      "size": -1,
+      "timestamp": "2025-07-21T10:44:51.652Z"
+    },
+    {
+      "url": "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/webfonts/fa-solid-900.woff2",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/octet-stream; charset=utf-8",
+      "size": -1,
+      "timestamp": "2025-07-21T10:44:51.653Z"
+    },
+    {
+      "url": "https://www.southampton.gov.uk/media/twbf34bo/stay_connected_0622_051wresized.jpg",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T10:44:51.676Z"
+    },
+    {
+      "url": "https://www.southampton.gov.uk/_Incapsula_Resource?SWKMTFSR=1&e=0.7225628690039495",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/plain",
+      "size": 1,
+      "timestamp": "2025-07-21T10:44:51.682Z"
+    },
+    {
+      "url": "https://apikeys.civiccomputing.com/c/v?d=www.southampton.gov.uk&p=CookieControl%20Multi-Site&v=9&k=a766de19521fe0ab41886d8c79be30968f920021&format=json",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 307,
+      "timestamp": "2025-07-21T10:44:51.690Z"
+    },
+    {
+      "url": "https://static.hotjar.com/c/hotjar-2804591.js?sv=7",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T10:44:51.714Z"
+    },
+    {
+      "url": "https://ads.counciladvertising.net/tag/config/audienceplacement/ibar?url=www.southampton.gov.uk%2Fbins-recycling%2Fbins%2Fcollections%2F",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 73,
+      "timestamp": "2025-07-21T10:44:51.874Z"
+    },
+    {
+      "url": "https://google.com/ccm/form-data/947187023?gtm=45be57h0h2pfv9102448690za200zb78767102&gcs=G111&gcd=13n3n3l3l5l1&dma=0&tag_exp=101509157~103116026~103200004~103233427~104684208~104684211~104948813&npa=0&frm=0&pscdl=noapi&auid=414948988.1753094679&uaa=arm&uab=64&uafvl=Not)A%253BBrand%3B8.0.0.0%7CChromium%3B138.0.7204.101%7CGoogle%2520Chrome%3B138.0.7204.101&uamb=0&uam=&uap=macOS&uapv=15.5.0&uaw=0&ec_mode=a&em=tv.1",
+      "method": "POST",
+      "status": 204,
+      "redirect_url": null,
+      "mime_type": "text/plain",
+      "size": 0,
+      "timestamp": "2025-07-21T10:44:51.921Z"
+    },
+    {
+      "url": "https://bat.bing.com/action/0?ti=355025638&Ver=2&mid=cb80febd-7962-4f34-b5fe-3dc4d27cbc96&bo=1&sid=b3f817d0661f11f08201d30d545e26dc&vid=b3f80bf0661f11f0bbf3b922b5b61eb2&vids=0&msclkid=N&pi=918639831&lg=en-GB&sw=800&sh=600&sc=24&tl=Bin%20collection%20calendar&p=https%3A%2F%2Fwww.southampton.gov.uk%2Fbins-recycling%2Fbins%2Fcollections%2F&r=https%3A%2F%2Fwww.southampton.gov.uk%2Fbins-recycling%2Fbins%2F&lt=189&evt=pageLoad&sv=1&cdb=AQAQ&rn=761897",
+      "method": "GET",
+      "status": 204,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": 0,
+      "timestamp": "2025-07-21T10:44:52.060Z"
+    },
+    {
+      "url": "https://www.southampton.gov.uk/favicons/manifest.json",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 794,
+      "timestamp": "2025-07-21T10:44:52.075Z"
+    },
+    {
+      "url": "https://ep1.adtrafficquality.google/getconfig/sodar?sv=200&tid=gda&tv=r20250716&st=env",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=UTF-8",
+      "size": 17093,
+      "timestamp": "2025-07-21T10:44:52.628Z"
+    },
+    {
+      "url": "https://ep2.adtrafficquality.google/sodar/sodar2/237/runner.html",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html",
+      "size": 13159,
+      "timestamp": "2025-07-21T10:44:52.729Z"
+    },
+    {
+      "url": "https://ep2.adtrafficquality.google/generate_204?4-5udg",
+      "method": "GET",
+      "status": 204,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": 0,
+      "timestamp": "2025-07-21T10:44:53.012Z"
+    },
+    {
+      "url": "https://google.com/pagead/form-data/16775472545?gtm=45be57h0h2v9204346451za200zb78767102&gcs=G111&gcd=13n3n3l3l5l1&dma=0&tag_exp=101509157~103116026~103200004~103233427~104684208~104684211&npa=0&frm=0&pscdl=noapi&auid=414948988.1753094679&uaa=arm&uab=64&uafvl=Not)A%253BBrand%3B8.0.0.0%7CChromium%3B138.0.7204.101%7CGoogle%2520Chrome%3B138.0.7204.101&uamb=0&uam=&uap=macOS&uapv=15.5.0&uaw=0",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T10:44:57.809Z"
+    },
+    {
+      "url": "https://google.com/pagead/form-data/947187023?gtm=45be57h0h2v9102448690za200zb78767102&gcs=G111&gcd=13n3n3l3l5l1&dma=0&tag_exp=101509157~103116026~103200004~103233427~104684208~104684211~104948813&npa=0&frm=0&pscdl=noapi&auid=414948988.1753094679&uaa=arm&uab=64&uafvl=Not)A%253BBrand%3B8.0.0.0%7CChromium%3B138.0.7204.101%7CGoogle%2520Chrome%3B138.0.7204.101&uamb=0&uam=&uap=macOS&uapv=15.5.0&uaw=0",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T10:44:57.875Z"
+    },
+    {
+      "url": "https://google.com/pagead/form-data/16775472545?gtm=45be57h0h2v9204346451za200zb78767102&gcs=G111&gcd=13n3n3l3l5l1&dma=0&tag_exp=101509157~103116026~103200004~103233427~104684208~104684211&npa=0&frm=0&pscdl=noapi&auid=414948988.1753094679&uaa=arm&uab=64&uafvl=Not)A%253BBrand%3B8.0.0.0%7CChromium%3B138.0.7204.101%7CGoogle%2520Chrome%3B138.0.7204.101&uamb=0&uam=&uap=macOS&uapv=15.5.0&uaw=0",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T10:44:57.921Z"
+    },
+    {
+      "url": "https://google.com/pagead/form-data/947187023?gtm=45be57h0h2v9102448690za200zb78767102&gcs=G111&gcd=13n3n3l3l5l1&dma=0&tag_exp=101509157~103116026~103200004~103233427~104684208~104684211~104948813&npa=0&frm=0&pscdl=noapi&auid=414948988.1753094679&uaa=arm&uab=64&uafvl=Not)A%253BBrand%3B8.0.0.0%7CChromium%3B138.0.7204.101%7CGoogle%2520Chrome%3B138.0.7204.101&uamb=0&uam=&uap=macOS&uapv=15.5.0&uaw=0",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T10:44:57.971Z"
+    },
+    {
+      "url": "https://www.southampton.gov.uk/bins-recycling/bins/collections/",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=utf-8",
+      "size": 30669,
+      "timestamp": "2025-07-21T10:44:58.101Z"
+    },
+    {
+      "url": "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/webfonts/fa-brands-400.woff2",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/octet-stream; charset=utf-8",
+      "size": -1,
+      "timestamp": "2025-07-21T10:44:58.938Z"
+    },
+    {
+      "url": "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/webfonts/fa-solid-900.woff2",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/octet-stream; charset=utf-8",
+      "size": -1,
+      "timestamp": "2025-07-21T10:44:58.939Z"
+    },
+    {
+      "url": "https://www.southampton.gov.uk/media/twbf34bo/stay_connected_0622_051wresized.jpg",
+      "method": "GET",
+      "status": 304,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T10:44:58.957Z"
+    },
+    {
+      "url": "https://www.southampton.gov.uk/_Incapsula_Resource?SWKMTFSR=1&e=0.6480929047348066",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/plain",
+      "size": 1,
+      "timestamp": "2025-07-21T10:44:58.978Z"
+    },
+    {
+      "url": "https://apikeys.civiccomputing.com/c/v?d=www.southampton.gov.uk&p=CookieControl%20Multi-Site&v=9&k=a766de19521fe0ab41886d8c79be30968f920021&format=json",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 307,
+      "timestamp": "2025-07-21T10:44:58.986Z"
+    },
+    {
+      "url": "https://ads.counciladvertising.net/tag/config/audienceplacement/ibar?url=www.southampton.gov.uk%2Fbins-recycling%2Fbins%2Fcollections%2F",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 73,
+      "timestamp": "2025-07-21T10:44:59.166Z"
+    },
+    {
+      "url": "https://google.com/ccm/form-data/947187023?gtm=45be57h0h2pfv9102448690za200zb78767102&gcs=G111&gcd=13n3n3l3l5l1&dma=0&tag_exp=101509157~103116026~103200004~103233427~104684208~104684211&npa=0&frm=0&pscdl=noapi&auid=414948988.1753094679&uaa=arm&uab=64&uafvl=Not)A%253BBrand%3B8.0.0.0%7CChromium%3B138.0.7204.101%7CGoogle%2520Chrome%3B138.0.7204.101&uamb=0&uam=&uap=macOS&uapv=15.5.0&uaw=0&ec_mode=a&em=tv.1",
+      "method": "POST",
+      "status": 204,
+      "redirect_url": null,
+      "mime_type": "text/plain",
+      "size": 0,
+      "timestamp": "2025-07-21T10:44:59.200Z"
+    },
+    {
+      "url": "https://bat.bing.com/action/0?ti=355025638&Ver=2&mid=e60cad93-d10c-490f-8da3-90578fcfca8d&bo=1&sid=b3f817d0661f11f08201d30d545e26dc&vid=b3f80bf0661f11f0bbf3b922b5b61eb2&vids=0&msclkid=N&pi=918639831&lg=en-GB&sw=800&sh=600&sc=24&tl=Bin%20collection%20calendar&p=https%3A%2F%2Fwww.southampton.gov.uk%2Fbins-recycling%2Fbins%2Fcollections%2F&r=https%3A%2F%2Fwww.southampton.gov.uk%2Fbins-recycling%2Fbins%2Fcollections%2F&lt=1079&evt=pageLoad&sv=1&cdb=AQAQ&rn=612234",
+      "method": "GET",
+      "status": 204,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": 0,
+      "timestamp": "2025-07-21T10:44:59.333Z"
+    },
+    {
+      "url": "https://www.southampton.gov.uk/favicons/manifest.json",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 794,
+      "timestamp": "2025-07-21T10:44:59.394Z"
+    },
+    {
+      "url": "https://ep1.adtrafficquality.google/getconfig/sodar?sv=200&tid=gda&tv=r20250716&st=env",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=UTF-8",
+      "size": 17102,
+      "timestamp": "2025-07-21T10:44:59.509Z"
+    },
+    {
+      "url": "https://ep2.adtrafficquality.google/sodar/sodar2/237/runner.html",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html",
+      "size": 13159,
+      "timestamp": "2025-07-21T10:44:59.580Z"
+    },
+    {
+      "url": "https://ep2.adtrafficquality.google/generate_204?ksYqXA",
+      "method": "GET",
+      "status": 204,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": 0,
+      "timestamp": "2025-07-21T10:44:59.872Z"
+    },
+    {
+      "url": "https://google.com/pagead/form-data/16775472545?gtm=45be57h0h2v9204346451za200zb78767102&gcs=G111&gcd=13n3n3l3l5l1&dma=0&tag_exp=101509157~103116026~103200004~103233427~104684208~104684211&npa=0&frm=0&pscdl=noapi&auid=414948988.1753094679&uaa=arm&uab=64&uafvl=Not)A%253BBrand%3B8.0.0.0%7CChromium%3B138.0.7204.101%7CGoogle%2520Chrome%3B138.0.7204.101&uamb=0&uam=&uap=macOS&uapv=15.5.0&uaw=0",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T10:45:01.687Z"
+    },
+    {
+      "url": "https://google.com/pagead/form-data/16775472545?gtm=45be57h0h2v9204346451za200zb78767102&gcs=G111&gcd=13n3n3l3l5l1&dma=0&tag_exp=101509157~103116026~103200004~103233427~104684208~104684211&npa=0&frm=0&pscdl=noapi&auid=414948988.1753094679&uaa=arm&uab=64&uafvl=Not)A%253BBrand%3B8.0.0.0%7CChromium%3B138.0.7204.101%7CGoogle%2520Chrome%3B138.0.7204.101&uamb=0&uam=&uap=macOS&uapv=15.5.0&uaw=0",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T10:45:01.748Z"
+    },
+    {
+      "url": "https://google.com/pagead/form-data/947187023?gtm=45be57h0h2v9102448690za200zb78767102&gcs=G111&gcd=13n3n3l3l5l1&dma=0&tag_exp=101509157~103116026~103200004~103233427~104684208~104684211&npa=0&frm=0&pscdl=noapi&auid=414948988.1753094679&uaa=arm&uab=64&uafvl=Not)A%253BBrand%3B8.0.0.0%7CChromium%3B138.0.7204.101%7CGoogle%2520Chrome%3B138.0.7204.101&uamb=0&uam=&uap=macOS&uapv=15.5.0&uaw=0",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T10:45:01.793Z"
+    },
+    {
+      "url": "https://google.com/pagead/form-data/947187023?gtm=45be57h0h2v9102448690za200zb78767102&gcs=G111&gcd=13n3n3l3l5l1&dma=0&tag_exp=101509157~103116026~103200004~103233427~104684208~104684211&npa=0&frm=0&pscdl=noapi&auid=414948988.1753094679&uaa=arm&uab=64&uafvl=Not)A%253BBrand%3B8.0.0.0%7CChromium%3B138.0.7204.101%7CGoogle%2520Chrome%3B138.0.7204.101&uamb=0&uam=&uap=macOS&uapv=15.5.0&uaw=0",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": -1,
+      "timestamp": "2025-07-21T10:45:01.836Z"
+    },
+    {
+      "url": "https://www.southampton.gov.uk/bins-recycling/bins/collections/",
+      "method": "POST",
+      "status": 302,
+      "redirect_url": "https://www.southampton.gov.uk/whereilive/waste-calendar?UPRN=10001310700&PUPRN=100062501106",
+      "mime_type": "text/html; charset=utf-8",
+      "size": -1,
+      "timestamp": "2025-07-21T10:45:01.920Z"
+    },
+    {
+      "url": "https://www.southampton.gov.uk/whereilive/waste-calendar?UPRN=10001310700&PUPRN=100062501106",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=utf-8",
+      "size": 29077,
+      "timestamp": "2025-07-21T10:45:01.948Z"
+    },
+    {
+      "url": "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/webfonts/fa-brands-400.woff2",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/octet-stream; charset=utf-8",
+      "size": -1,
+      "timestamp": "2025-07-21T10:45:03.868Z"
+    },
+    {
+      "url": "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/webfonts/fa-solid-900.woff2",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/octet-stream; charset=utf-8",
+      "size": -1,
+      "timestamp": "2025-07-21T10:45:03.869Z"
+    },
+    {
+      "url": "https://apikeys.civiccomputing.com/c/v?d=www.southampton.gov.uk&p=CookieControl%20Multi-Site&v=9&k=a766de19521fe0ab41886d8c79be30968f920021&format=json",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 307,
+      "timestamp": "2025-07-21T10:45:03.927Z"
+    },
+    {
+      "url": "https://www.southampton.gov.uk/_Incapsula_Resource?SWKMTFSR=1&e=0.9650131410348449",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/plain",
+      "size": 1,
+      "timestamp": "2025-07-21T10:45:03.943Z"
+    },
+    {
+      "url": "https://ads.counciladvertising.net/tag/config/audienceplacement/ibar?url=www.southampton.gov.uk%2Fwhereilive%2Fwaste-calendar",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 73,
+      "timestamp": "2025-07-21T10:45:04.129Z"
+    },
+    {
+      "url": "https://google.com/ccm/form-data/947187023?gtm=45be57h0h2pfv9102448690za200zb78767102&gcs=G111&gcd=13n3n3l3l5l1&dma=0&tag_exp=101509157~103116026~103200004~103233427~104684208~104684211&npa=0&frm=0&pscdl=noapi&auid=414948988.1753094679&uaa=arm&uab=64&uafvl=Not)A%253BBrand%3B8.0.0.0%7CChromium%3B138.0.7204.101%7CGoogle%2520Chrome%3B138.0.7204.101&uamb=0&uam=&uap=macOS&uapv=15.5.0&uaw=0&ec_mode=a&em=tv.1",
+      "method": "POST",
+      "status": 204,
+      "redirect_url": null,
+      "mime_type": "text/plain",
+      "size": 0,
+      "timestamp": "2025-07-21T10:45:04.174Z"
+    },
+    {
+      "url": "https://bat.bing.com/action/0?ti=355025638&Ver=2&mid=f1281938-3c81-4cf4-94bb-e4c4520d4930&bo=1&sid=b3f817d0661f11f08201d30d545e26dc&vid=b3f80bf0661f11f0bbf3b922b5b61eb2&vids=0&msclkid=N&pi=918639831&lg=en-GB&sw=800&sh=600&sc=24&tl=Waste%20Calendar&p=https%3A%2F%2Fwww.southampton.gov.uk%2Fwhereilive%2Fwaste-calendar%3FUPRN%3D10001310700%26PUPRN%3D100062501106&r=https%3A%2F%2Fwww.southampton.gov.uk%2Fbins-recycling%2Fbins%2Fcollections%2F&lt=2161&evt=pageLoad&sv=1&cdb=AQAQ&rn=548468",
+      "method": "GET",
+      "status": 204,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": 0,
+      "timestamp": "2025-07-21T10:45:04.309Z"
+    },
+    {
+      "url": "https://www.southampton.gov.uk/favicons/manifest.json",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 794,
+      "timestamp": "2025-07-21T10:45:04.330Z"
+    },
+    {
+      "url": "https://ep1.adtrafficquality.google/getconfig/sodar?sv=200&tid=gda&tv=r20250716&st=env",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=UTF-8",
+      "size": 16870,
+      "timestamp": "2025-07-21T10:45:04.377Z"
+    },
+    {
+      "url": "https://ep2.adtrafficquality.google/sodar/sodar2/237/runner.html",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html",
+      "size": 13159,
+      "timestamp": "2025-07-21T10:45:04.448Z"
+    },
+    {
+      "url": "https://ep2.adtrafficquality.google/generate_204?8fObPw",
+      "method": "GET",
+      "status": 204,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": 0,
+      "timestamp": "2025-07-21T10:45:04.745Z"
+    },
+    {
+      "url": "https://metrics.hotjar.io/?v=6&site_id=2804591",
+      "method": "POST",
+      "status": 204,
+      "redirect_url": null,
+      "mime_type": "x-unknown",
+      "size": 0,
+      "timestamp": "2025-07-21T10:45:06.975Z"
+    }
+  ]
+}

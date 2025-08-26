@@ -1,0 +1,373 @@
+{
+  "metadata": {
+    "trace_name": "east_cambridgeshire_district_council",
+    "processed_at": "2025-08-26 18:44:24",
+    "workflow_steps_count": 5,
+    "navigation_events_count": 33
+  },
+  "scraping_patterns": {
+    "login_detected": false,
+    "form_submissions": 3,
+    "navigation_count": 1,
+    "unique_domains": [
+      "www.google.com",
+      "maps.googleapis.com",
+      "eastcambs-self.achieveservice.com"
+    ],
+    "api_endpoints": [
+      "https://maps.googleapis.com/maps/api/mapsjs/gen_204?csp_test=true",
+      "https://eastcambs-self.achieveservice.com/api/self/self-content/getByKeyAndApp?language=en&key=FORM_LOADING_TEXT&app=SELF_CORE&_=1753094208425&sid=0e3fb47a415a0c4e9e898f5b6fb58f79",
+      "https://eastcambs-self.achieveservice.com/api/get-document/json?uri=sandbox-shared%3A%2F%2FAF-Process-e38aa672-38b4-4355-a601-0132ab5ef8b7%2Fversions%2F7%2FAF-Stage-361ee725-08c0-49eb-aa18-a44a60cbee92%2Fdefinition.json&_=1753094208529&sid=0e3fb47a415a0c4e9e898f5b6fb58f79",
+      "https://eastcambs-self.achieveservice.com/api/get-document/json?uri=sandbox-shared%3A%2F%2FAF-Process-e38aa672-38b4-4355-a601-0132ab5ef8b7%2Fversions%2F7%2Fdefinition.json&_=1753094208822&sid=0e3fb47a415a0c4e9e898f5b6fb58f79",
+      "https://eastcambs-self.achieveservice.com/api/af-configs-list/list?_=1753094209092&sid=0e3fb47a415a0c4e9e898f5b6fb58f79",
+      "https://eastcambs-self.achieveservice.com/api/queue-processor-config/get?_=1753094209093&sid=0e3fb47a415a0c4e9e898f5b6fb58f79",
+      "https://eastcambs-self.achieveservice.com/api/nextref?_=1753094209095&sid=0e3fb47a415a0c4e9e898f5b6fb58f79",
+      "https://maps.googleapis.com/maps/api/mapsjs/gen_204?csp_test=true",
+      "https://eastcambs-self.achieveservice.com/api/self/self-content/getByKeyAndApp?language=en&key=FORM_LOADING_TEXT&app=SELF_CORE&_=1753094219596&sid=0e3fb47a415a0c4e9e898f5b6fb58f79",
+      "https://eastcambs-self.achieveservice.com/api/get-document/json?uri=sandbox-shared%3A%2F%2FAF-Process-e38aa672-38b4-4355-a601-0132ab5ef8b7%2Fversions%2F7%2FAF-Stage-361ee725-08c0-49eb-aa18-a44a60cbee92%2Fdefinition.json&_=1753094219696&sid=0e3fb47a415a0c4e9e898f5b6fb58f79",
+      "https://eastcambs-self.achieveservice.com/api/get-document/json?uri=sandbox-shared%3A%2F%2FAF-Process-e38aa672-38b4-4355-a601-0132ab5ef8b7%2Fversions%2F7%2Fdefinition.json&_=1753094219945&sid=0e3fb47a415a0c4e9e898f5b6fb58f79",
+      "https://eastcambs-self.achieveservice.com/api/af-configs-list/list?_=1753094220210&sid=0e3fb47a415a0c4e9e898f5b6fb58f79",
+      "https://eastcambs-self.achieveservice.com/api/nextref?_=1753094220212&sid=0e3fb47a415a0c4e9e898f5b6fb58f79",
+      "https://eastcambs-self.achieveservice.com/api/queue-processor-config/get?_=1753094220211&sid=0e3fb47a415a0c4e9e898f5b6fb58f79"
+    ],
+    "data_extraction_indicators": []
+  },
+  "workflow_steps": [
+    {
+      "action": "goto",
+      "target": "https://eastcambs-self.achieveservice.com/bincollections",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=f1e20 >> internal:describe=\"Choose an address\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "fill",
+      "target": "aria-ref=f2e17 >> internal:describe=\"Please enter your postcode or street:Required\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0,
+      "value": "CB25 0AA"
+    },
+    {
+      "action": "selectOption",
+      "target": "aria-ref=f2e31 >> internal:describe=\"combobox\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0,
+      "value": null
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=f2e100 >> internal:describe=\"Choose Address\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    }
+  ],
+  "navigation_events": [
+    {
+      "url": "https://eastcambs-self.achieveservice.com/bincollections",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=UTF-8",
+      "size": 10530,
+      "timestamp": "2025-07-21T10:36:43.279Z"
+    },
+    {
+      "url": "https://www.google.com/jsapi",
+      "method": "GET",
+      "status": 301,
+      "redirect_url": "https://www.gstatic.com/charts/loader.js",
+      "mime_type": "text/html; charset=UTF-8",
+      "size": -1,
+      "timestamp": "2025-07-21T10:36:44.429Z"
+    },
+    {
+      "url": "https://eastcambs-self.achieveservice.com/appshost/firmstep/self/apps/custompage/bincollections?language=en",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=UTF-8",
+      "size": 4698,
+      "timestamp": "2025-07-21T10:36:45.404Z"
+    },
+    {
+      "url": "https://eastcambs-self.achieveservice.com/authapi/isauthenticated?uri=https%253A%252F%252Feastcambs-self.achieveservice.com%252Fbincollections&hostname=eastcambs-self.achieveservice.com&withCredentials=true",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=utf-8",
+      "size": 2107,
+      "timestamp": "2025-07-21T10:36:46.581Z"
+    },
+    {
+      "url": "https://eastcambs-self.achieveservice.com/apibroker/domain/eastcambs-self.achieveservice.com?_=1753094206560&sid=0e3fb47a415a0c4e9e898f5b6fb58f79",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 256,
+      "timestamp": "2025-07-21T10:36:46.769Z"
+    },
+    {
+      "url": "https://eastcambs-self.achieveservice.com/apibroker/self-settings?keys=CustomIFrameCss%2CCustomCssInline&app_name=Self&_=1753094206766&sid=0e3fb47a415a0c4e9e898f5b6fb58f79",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=UTF-8",
+      "size": 206,
+      "timestamp": "2025-07-21T10:36:46.770Z"
+    },
+    {
+      "url": "https://eastcambs-self.achieveservice.com/fillform/?iframe_id=collectionaddress",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=UTF-8",
+      "size": 4333,
+      "timestamp": "2025-07-21T10:36:48.102Z"
+    },
+    {
+      "url": "https://www.google.com/jsapi?key=AIzaSyDMYR3xNkRwUG-OsKEC4WVi1ptWIPzybMs",
+      "method": "GET",
+      "status": 301,
+      "redirect_url": "https://www.gstatic.com/charts/loader.js?key=AIzaSyDMYR3xNkRwUG-OsKEC4WVi1ptWIPzybMs",
+      "mime_type": "text/html; charset=UTF-8",
+      "size": -1,
+      "timestamp": "2025-07-21T10:36:48.155Z"
+    },
+    {
+      "url": "https://maps.googleapis.com/maps/api/mapsjs/gen_204?csp_test=true",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=UTF-8",
+      "size": 3,
+      "timestamp": "2025-07-21T10:36:48.410Z"
+    },
+    {
+      "url": "https://eastcambs-self.achieveservice.com/authapi/isauthenticated?uri=https%253A%252F%252Feastcambs-self.achieveservice.com%252Fbincollections&hostname=eastcambs-self.achieveservice.com",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=utf-8",
+      "size": 2107,
+      "timestamp": "2025-07-21T10:36:48.487Z"
+    },
+    {
+      "url": "https://eastcambs-self.achieveservice.com/api/self/self-content/getByKeyAndApp?language=en&key=FORM_LOADING_TEXT&app=SELF_CORE&_=1753094208425&sid=0e3fb47a415a0c4e9e898f5b6fb58f79",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 169,
+      "timestamp": "2025-07-21T10:36:48.496Z"
+    },
+    {
+      "url": "https://eastcambs-self.achieveservice.com/api/get-document/json?uri=sandbox-shared%3A%2F%2FAF-Process-e38aa672-38b4-4355-a601-0132ab5ef8b7%2Fversions%2F7%2FAF-Stage-361ee725-08c0-49eb-aa18-a44a60cbee92%2Fdefinition.json&_=1753094208529&sid=0e3fb47a415a0c4e9e898f5b6fb58f79",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 9734,
+      "timestamp": "2025-07-21T10:36:48.531Z"
+    },
+    {
+      "url": "https://eastcambs-self.achieveservice.com/api/get-document/json?uri=sandbox-shared%3A%2F%2FAF-Process-e38aa672-38b4-4355-a601-0132ab5ef8b7%2Fversions%2F7%2Fdefinition.json&_=1753094208822&sid=0e3fb47a415a0c4e9e898f5b6fb58f79",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 2653,
+      "timestamp": "2025-07-21T10:36:48.825Z"
+    },
+    {
+      "url": "https://eastcambs-self.achieveservice.com/api/af-configs-list/list?_=1753094209092&sid=0e3fb47a415a0c4e9e898f5b6fb58f79",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 1212,
+      "timestamp": "2025-07-21T10:36:49.100Z"
+    },
+    {
+      "url": "https://eastcambs-self.achieveservice.com/api/queue-processor-config/get?_=1753094209093&sid=0e3fb47a415a0c4e9e898f5b6fb58f79",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 39,
+      "timestamp": "2025-07-21T10:36:49.101Z"
+    },
+    {
+      "url": "https://eastcambs-self.achieveservice.com/api/nextref?_=1753094209095&sid=0e3fb47a415a0c4e9e898f5b6fb58f79",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 116,
+      "timestamp": "2025-07-21T10:36:49.101Z"
+    },
+    {
+      "url": "https://eastcambs-self.achieveservice.com/apibroker/location?app_name=AF-Renderer::Self&_=1753094209096&sid=0e3fb47a415a0c4e9e898f5b6fb58f79",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=UTF-8",
+      "size": 272,
+      "timestamp": "2025-07-21T10:36:49.102Z"
+    },
+    {
+      "url": "https://eastcambs-self.achieveservice.com/apibroker/environment-tokens-public?app_name=AF-Renderer::Self&_=1753094209096&sid=0e3fb47a415a0c4e9e898f5b6fb58f79",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=UTF-8",
+      "size": 266,
+      "timestamp": "2025-07-21T10:36:49.102Z"
+    },
+    {
+      "url": "https://eastcambs-self.achieveservice.com/apibroker/runLookup?id=5a6b2c8861aaf&repeat_against=&noRetry=false&getOnlyTokens=true&log_id=&app_name=AF-Renderer::Self&_=1753094209201&sid=0e3fb47a415a0c4e9e898f5b6fb58f79",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=UTF-8",
+      "size": 125,
+      "timestamp": "2025-07-21T10:36:49.204Z"
+    },
+    {
+      "url": "https://eastcambs-self.achieveservice.com/apibroker/runLookup?id=5a6b2c8861aaf&repeat_against=&noRetry=false&getOnlyTokens=undefined&log_id=&app_name=AF-Renderer::Self&_=1753094213665&sid=0e3fb47a415a0c4e9e898f5b6fb58f79",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=UTF-8",
+      "size": 134202,
+      "timestamp": "2025-07-21T10:36:53.668Z"
+    },
+    {
+      "url": "https://eastcambs-self.achieveservice.com/appshost/firmstep/self/apps/custompage/bincollections?language=en&uprn=100090038566",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=UTF-8",
+      "size": 9518,
+      "timestamp": "2025-07-21T10:36:58.255Z"
+    },
+    {
+      "url": "https://eastcambs-self.achieveservice.com/fillform/?iframe_id=collectionaddress",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=UTF-8",
+      "size": 4333,
+      "timestamp": "2025-07-21T10:36:59.475Z"
+    },
+    {
+      "url": "https://maps.googleapis.com/maps/api/mapsjs/gen_204?csp_test=true",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=UTF-8",
+      "size": 3,
+      "timestamp": "2025-07-21T10:36:59.578Z"
+    },
+    {
+      "url": "https://eastcambs-self.achieveservice.com/authapi/isauthenticated?uri=https%253A%252F%252Feastcambs-self.achieveservice.com%252Fbincollections&hostname=eastcambs-self.achieveservice.com",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=utf-8",
+      "size": 2107,
+      "timestamp": "2025-07-21T10:36:59.667Z"
+    },
+    {
+      "url": "https://eastcambs-self.achieveservice.com/api/self/self-content/getByKeyAndApp?language=en&key=FORM_LOADING_TEXT&app=SELF_CORE&_=1753094219596&sid=0e3fb47a415a0c4e9e898f5b6fb58f79",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 169,
+      "timestamp": "2025-07-21T10:36:59.669Z"
+    },
+    {
+      "url": "https://eastcambs-self.achieveservice.com/api/get-document/json?uri=sandbox-shared%3A%2F%2FAF-Process-e38aa672-38b4-4355-a601-0132ab5ef8b7%2Fversions%2F7%2FAF-Stage-361ee725-08c0-49eb-aa18-a44a60cbee92%2Fdefinition.json&_=1753094219696&sid=0e3fb47a415a0c4e9e898f5b6fb58f79",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 9734,
+      "timestamp": "2025-07-21T10:36:59.701Z"
+    },
+    {
+      "url": "https://eastcambs-self.achieveservice.com/api/get-document/json?uri=sandbox-shared%3A%2F%2FAF-Process-e38aa672-38b4-4355-a601-0132ab5ef8b7%2Fversions%2F7%2Fdefinition.json&_=1753094219945&sid=0e3fb47a415a0c4e9e898f5b6fb58f79",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 2653,
+      "timestamp": "2025-07-21T10:36:59.949Z"
+    },
+    {
+      "url": "https://eastcambs-self.achieveservice.com/api/af-configs-list/list?_=1753094220210&sid=0e3fb47a415a0c4e9e898f5b6fb58f79",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 1212,
+      "timestamp": "2025-07-21T10:37:00.216Z"
+    },
+    {
+      "url": "https://eastcambs-self.achieveservice.com/api/nextref?_=1753094220212&sid=0e3fb47a415a0c4e9e898f5b6fb58f79",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 116,
+      "timestamp": "2025-07-21T10:37:00.217Z"
+    },
+    {
+      "url": "https://eastcambs-self.achieveservice.com/api/queue-processor-config/get?_=1753094220211&sid=0e3fb47a415a0c4e9e898f5b6fb58f79",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json",
+      "size": 39,
+      "timestamp": "2025-07-21T10:37:00.217Z"
+    },
+    {
+      "url": "https://eastcambs-self.achieveservice.com/apibroker/location?app_name=AF-Renderer::Self&_=1753094220213&sid=0e3fb47a415a0c4e9e898f5b6fb58f79",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=UTF-8",
+      "size": 272,
+      "timestamp": "2025-07-21T10:37:00.218Z"
+    },
+    {
+      "url": "https://eastcambs-self.achieveservice.com/apibroker/environment-tokens-public?app_name=AF-Renderer::Self&_=1753094220212&sid=0e3fb47a415a0c4e9e898f5b6fb58f79",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=UTF-8",
+      "size": 266,
+      "timestamp": "2025-07-21T10:37:00.218Z"
+    },
+    {
+      "url": "https://eastcambs-self.achieveservice.com/apibroker/runLookup?id=5a6b2c8861aaf&repeat_against=&noRetry=false&getOnlyTokens=true&log_id=&app_name=AF-Renderer::Self&_=1753094220293&sid=0e3fb47a415a0c4e9e898f5b6fb58f79",
+      "method": "POST",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/json; charset=UTF-8",
+      "size": 125,
+      "timestamp": "2025-07-21T10:37:00.295Z"
+    }
+  ]
+}

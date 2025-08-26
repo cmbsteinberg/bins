@@ -1,0 +1,257 @@
+{
+  "metadata": {
+    "trace_name": "gwynedd_council",
+    "processed_at": "2025-08-26 18:44:24",
+    "workflow_steps_count": 10,
+    "navigation_events_count": 16
+  },
+  "scraping_patterns": {
+    "login_detected": false,
+    "form_submissions": 1,
+    "navigation_count": 1,
+    "unique_domains": [
+      "play.google.com",
+      "www.gwynedd.llyw.cymru",
+      "diogel.gwynedd.llyw.cymru"
+    ],
+    "api_endpoints": [],
+    "data_extraction_indicators": []
+  },
+  "workflow_steps": [
+    {
+      "action": "goto",
+      "target": "https://www.gwynedd.llyw.cymru/en/Residents/Bins-and-recycling/When-is-my-waste-collected.aspx",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e166 >> internal:describe=\"Accept all cookies\"",
+      "status": "Failed",
+      "details": {
+        "error": "Timeout 5000ms exceeded."
+      },
+      "timestamp": 0
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e165 >> internal:describe=\"No thanks\"",
+      "status": "Failed",
+      "details": {
+        "error": "Timeout 5000ms exceeded."
+      },
+      "timestamp": 0
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e166 >> internal:describe=\"Accept all cookies\"",
+      "status": "Failed",
+      "details": {
+        "error": "Timeout 5000ms exceeded."
+      },
+      "timestamp": 0
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e186 >> internal:describe=\"No thanks\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e166 >> internal:describe=\"Accept all cookies\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "fill",
+      "target": "aria-ref=e53 >> internal:describe=\"Post code\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0,
+      "value": "LL21 0HG"
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e54 >> internal:describe=\"Search\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e47 >> internal:describe=\"PLOT OF LAND, GWERN GWALIA, GLAN YR AFON, LL21 0HG\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    },
+    {
+      "action": "click",
+      "target": "aria-ref=e51 >> internal:describe=\"DERLWYN, 1 GWERN GWALIA, GLAN YR AFON, LL21 0HG\"",
+      "status": "Success",
+      "details": {},
+      "timestamp": 0
+    }
+  ],
+  "navigation_events": [
+    {
+      "url": "https://www.gwynedd.llyw.cymru/en/Residents/Bins-and-recycling/When-is-my-waste-collected.aspx",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=utf-8",
+      "size": 32087,
+      "timestamp": "2025-07-21T08:04:22.346Z"
+    },
+    {
+      "url": "https://www.gwynedd.llyw.cymru/SiteElements/fonts/gwynedd-ttf.ttf",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/octet-stream",
+      "size": 163992,
+      "timestamp": "2025-07-21T08:04:22.552Z"
+    },
+    {
+      "url": "https://www.gwynedd.llyw.cymru/en/Residents/Bins-and-recycling/When-is-my-waste-collected.aspx",
+      "method": "POST",
+      "status": 302,
+      "redirect_url": "https://diogel.gwynedd.llyw.cymru/Daearyddol/en/ChwilioCyfeiriad/Index/LleDwinByw/?CodPost=LL21+0HG",
+      "mime_type": "text/html; charset=utf-8",
+      "size": -1,
+      "timestamp": "2025-07-21T08:05:04.116Z",
+      "form_data": {
+        "ScriptManager_HiddenField": "",
+        "__EVENTTARGET": "",
+        "__EVENTARGUMENT": "",
+        "__VIEWSTATE": "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",
+        "ctl00$ctl00$PageContent$SiteSearch_SearchTextBox": "",
+        "ctl00$ctl00$PageContent$generalContentsub_generalContentsub_generalcontent$ctl00$LleDwinBywChwilioTextboxWithRedirect_redirectTextBox": "LL21 0HG",
+        "ctl00$ctl00$PageContent$generalContentsub_generalContentsub_generalcontent$ctl00$LleDwinBywChwilioTextboxWithRedirect_redirectButton": "Search",
+        "__VIEWSTATEGENERATOR": "14C474C0",
+        "__VIEWSTATEENCRYPTED": "",
+        "__EVENTVALIDATION": "h6AMmvGIpkM2XaNd4HwrtxvlgcmF7KRrB83mzkn/xi9n9Fn9oFyt9p86962U8gEogrNF1wNn0AA3DbcbIIX36w3FwIrXK95d4bPa/TE2O5uPSwIZGN6uZGlMxWdnuKcUFtbbiWU2XsSXiOrlCVyeOsqZezCIq6EK/UuzniHIBbodPtvS"
+      }
+    },
+    {
+      "url": "https://diogel.gwynedd.llyw.cymru/Daearyddol/en/ChwilioCyfeiriad/Index/LleDwinByw/?CodPost=LL21+0HG",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=utf-8",
+      "size": 15683,
+      "timestamp": "2025-07-21T08:05:04.240Z"
+    },
+    {
+      "url": "https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png",
+      "method": "GET",
+      "status": 302,
+      "redirect_url": "https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png",
+      "mime_type": "text/html; charset=UTF-8",
+      "size": -1,
+      "timestamp": "2025-07-21T08:05:04.386Z"
+    },
+    {
+      "url": "https://diogel.gwynedd.llyw.cymru/Templed/fonts/gwynedd-ttf.ttf",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/octet-stream",
+      "size": 163732,
+      "timestamp": "2025-07-21T08:05:04.455Z"
+    },
+    {
+      "url": "https://diogel.gwynedd.llyw.cymru/Daearyddol/en/ChwilioCyfeiriad/Dewis/LleDwinByw/10070275325",
+      "method": "GET",
+      "status": 302,
+      "redirect_url": "https://diogel.gwynedd.llyw.cymru/Daearyddol/en/LleDwinByw/Index/10070275325",
+      "mime_type": "text/html; charset=utf-8",
+      "size": -1,
+      "timestamp": "2025-07-21T08:05:06.704Z"
+    },
+    {
+      "url": "https://diogel.gwynedd.llyw.cymru/Daearyddol/en/LleDwinByw/Index/10070275325",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=utf-8",
+      "size": 20958,
+      "timestamp": "2025-07-21T08:05:06.725Z"
+    },
+    {
+      "url": "https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png",
+      "method": "GET",
+      "status": 302,
+      "redirect_url": "https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png",
+      "mime_type": "text/html; charset=UTF-8",
+      "size": -1,
+      "timestamp": "2025-07-21T08:05:07.003Z"
+    },
+    {
+      "url": "https://diogel.gwynedd.llyw.cymru/Templed/fonts/gwynedd-ttf.ttf",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/octet-stream",
+      "size": -1,
+      "timestamp": "2025-07-21T08:05:07.009Z"
+    },
+    {
+      "url": "https://diogel.gwynedd.llyw.cymru/Daearyddol/en/ChwilioCyfeiriad/Index/LleDwinByw/?CodPost=LL21+0HG",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=utf-8",
+      "size": 15683,
+      "timestamp": "2025-07-21T08:05:09.394Z"
+    },
+    {
+      "url": "https://diogel.gwynedd.llyw.cymru/Templed/fonts/gwynedd-ttf.ttf",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/octet-stream",
+      "size": -1,
+      "timestamp": "2025-07-21T08:05:09.420Z"
+    },
+    {
+      "url": "https://diogel.gwynedd.llyw.cymru/Daearyddol/en/ChwilioCyfeiriad/Dewis/LleDwinByw/100100021315",
+      "method": "GET",
+      "status": 302,
+      "redirect_url": "https://diogel.gwynedd.llyw.cymru/Daearyddol/en/LleDwinByw/Index/100100021315",
+      "mime_type": "text/html; charset=utf-8",
+      "size": -1,
+      "timestamp": "2025-07-21T08:05:11.596Z"
+    },
+    {
+      "url": "https://diogel.gwynedd.llyw.cymru/Daearyddol/en/LleDwinByw/Index/100100021315",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "text/html; charset=utf-8",
+      "size": 22558,
+      "timestamp": "2025-07-21T08:05:11.619Z"
+    },
+    {
+      "url": "https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png",
+      "method": "GET",
+      "status": 302,
+      "redirect_url": "https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png",
+      "mime_type": "text/html; charset=UTF-8",
+      "size": -1,
+      "timestamp": "2025-07-21T08:05:11.881Z"
+    },
+    {
+      "url": "https://diogel.gwynedd.llyw.cymru/Templed/fonts/gwynedd-ttf.ttf",
+      "method": "GET",
+      "status": 200,
+      "redirect_url": null,
+      "mime_type": "application/octet-stream",
+      "size": -1,
+      "timestamp": "2025-07-21T08:05:11.885Z"
+    }
+  ]
+}

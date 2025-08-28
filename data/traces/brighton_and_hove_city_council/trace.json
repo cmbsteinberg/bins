@@ -1,311 +1,2967 @@
 {
-  "metadata": {
-    "trace_name": "brighton_and_hove_city_council",
-    "processed_at": "2025-08-26 18:44:24",
-    "workflow_steps_count": 8,
-    "navigation_events_count": 25
-  },
-  "scraping_patterns": {
-    "login_detected": false,
-    "form_submissions": 14,
-    "navigation_count": 1,
-    "unique_domains": [
-      "region1.analytics.google.com",
-      "brightonhovegovuk.matomo.cloud",
-      "enviroservices.brighton-hove.gov.uk",
-      "www.brighton-hove.gov.uk"
-    ],
-    "api_endpoints": [
-      "https://enviroservices.brighton-hove.gov.uk/metamodel.json?638847126975978638",
-      "https://enviroservices.brighton-hove.gov.uk/manifest.json"
-    ],
-    "data_extraction_indicators": []
-  },
-  "workflow_steps": [
+  "entries": [
     {
-      "action": "goto",
-      "target": "https://www.brighton-hove.gov.uk/node/321871",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
-    },
-    {
-      "action": "click",
-      "target": "aria-ref=e249 >> internal:describe=\"Accept all cookies\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
-    },
-    {
-      "action": "click",
-      "target": "aria-ref=e82 >> internal:describe=\"Check collection days and download calendars\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
-    },
-    {
-      "action": "click",
-      "target": "aria-ref=e130 >> internal:describe=\"Start (opens in a new tab)\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
-    },
-    {
-      "action": "fill",
-      "target": "aria-ref=e46 >> internal:describe=\"Postcode or street\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0,
-      "value": "BN1 1AL"
-    },
-    {
-      "action": "click",
-      "target": "aria-ref=e49 >> internal:describe=\"Find address\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
-    },
-    {
-      "action": "selectOption",
-      "target": "aria-ref=e102 >> internal:describe=\"Select your address\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0,
-      "value": null
-    },
-    {
-      "action": "click",
-      "target": "aria-ref=e232 >> internal:describe=\"Next collections\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
-    }
-  ],
-  "navigation_events": [
-    {
-      "url": "https://www.brighton-hove.gov.uk/node/321871",
+      "timestamp": "2025-07-21T16:44:06.325Z",
+      "duration_ms": 104.83,
+      "endpoint": "/node/{id}",
+      "host": "www.brighton-hove.gov.uk",
       "method": "GET",
       "status": 301,
-      "redirect_url": "https://www.brighton-hove.gov.uk/rubbish-recycling-and-streets",
-      "mime_type": "text/html; charset=utf-8",
-      "size": -1,
-      "timestamp": "2025-07-21T16:44:06.325Z"
+      "path_params": [
+        "321871"
+      ],
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7"
+      },
+      "response_headers": {
+        "cache-control": "max-age=604800, public",
+        "content-type": "text/html; charset=utf-8",
+        "location": "https://www.brighton-hove.gov.uk/rubbish-recycling-and-streets",
+        "set-cookie": "[cookies present]",
+        "x-ah-environment": "prod",
+        "x-cache": "HIT",
+        "x-cache-hits": "22",
+        "x-cdn": "Imperva",
+        "x-content-type-options": "nosniff",
+        "x-drupal-cache": "MISS",
+        "x-frame-options": "SAMEORIGIN",
+        "x-generator": "Drupal 10 (https://www.drupal.org)",
+        "x-iinfo": "12-109251820-109251826 NNNN CT(16 15 0) RT(1753116246393 15) q(0 0 0 7) r(1 1) U11",
+        "x-redirect-id": "132036",
+        "x-request-id": "v-2d188256-6512-11f0-8406-af7c3b52de90"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": -1
+      },
+      "redirect_to": "https://www.brighton-hove.gov.uk/rubbish-recycling-and-streets"
     },
     {
-      "url": "https://www.brighton-hove.gov.uk/rubbish-recycling-and-streets",
+      "timestamp": "2025-07-21T16:44:06.420Z",
+      "duration_ms": 67.782,
+      "endpoint": "/{id}",
+      "host": "www.brighton-hove.gov.uk",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "text/html; charset=UTF-8",
-      "size": 189606,
-      "timestamp": "2025-07-21T16:44:06.420Z"
+      "path_params": [
+        "rubbish-recycling-and-streets"
+      ],
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+        "cookie": "[cookies present]"
+      },
+      "response_headers": {
+        "cache-control": "max-age=604800, public",
+        "content-type": "text/html; charset=UTF-8",
+        "x-ah-environment": "prod",
+        "x-cache": "HIT",
+        "x-cache-hits": "8",
+        "x-cdn": "Imperva",
+        "x-content-type-options": "nosniff",
+        "x-drupal-cache": "MISS",
+        "x-drupal-dynamic-cache": "MISS",
+        "x-frame-options": "SAMEORIGIN",
+        "x-generator": "Drupal 10 (https://www.drupal.org)",
+        "x-iinfo": "12-109251820-109251826 PNNN RT(1753116246393 78) q(0 0 0 -1) r(0 0) U18",
+        "x-request-id": "v-7dd2c272-664f-11f0-8b78-0f6a508f1b8f"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 189606,
+        "compressed": true,
+        "content_ref": "d80a625e1c76b02428d57d1793841a5f79687b44.html"
+      }
     },
     {
-      "url": "https://www.brighton-hove.gov.uk/_Incapsula_Resource?SWKMTFSR=1&e=0.5554009994584245",
+      "timestamp": "2025-07-21T16:44:06.540Z",
+      "duration_ms": 11.292,
+      "endpoint": "/_Incapsula_Resource",
+      "host": "www.brighton-hove.gov.uk",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "text/plain",
-      "size": 1,
-      "timestamp": "2025-07-21T16:44:06.540Z"
+      "query_params": {
+        "SWKMTFSR": [
+          "1"
+        ],
+        "e": [
+          "0.5554009994584245"
+        ]
+      },
+      "request_headers": {
+        "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+        "cookie": "[cookies present]",
+        "referer": "https://www.brighton-hove.gov.uk/rubbish-recycling-and-streets"
+      },
+      "response_headers": {
+        "cache-control": "no-cache, no-store",
+        "content-type": "text/plain",
+        "x-robots-tag": "noindex"
+      }
     },
     {
-      "url": "https://brightonhovegovuk.matomo.cloud/matomo.php?action_name=Rubbish%2C%20recycling%20and%20streets&idsite=1&rec=1&r=934112&h=17&m=44&s=6&url=https%3A%2F%2Fwww.brighton-hove.gov.uk%2Frubbish-recycling-and-streets&_id=9eaefb46304f9ad0&_idn=1&send_image=0&_refts=0&pv_id=z0Hu5P&fa_pv=1&fa_fp[0][fa_vid]=tGGHII&fa_fp[0][fa_id]=search-block-form&fa_fp[0][fa_fv]=1&fa_fp[1][fa_vid]=E0vgHI&fa_fp[1][fa_id]=mobile-search-block-form&fa_fp[1][fa_fv]=1&pf_net=0&pf_srv=51&pf_tfr=17&pf_dm1=66&uadata=%7B%22formFactors%22%3A%5B%22Desktop%22%5D%2C%22fullVersionList%22%3A%5B%7B%22brand%22%3A%22Not)A%3BBrand%22%2C%22version%22%3A%228.0.0.0%22%7D%2C%7B%22brand%22%3A%22Chromium%22%2C%22version%22%3A%22138.0.7204.101%22%7D%2C%7B%22brand%22%3A%22Google%20Chrome%22%2C%22version%22%3A%22138.0.7204.101%22%7D%5D%2C%22mobile%22%3Afalse%2C%22model%22%3A%22%22%2C%22platform%22%3A%22macOS%22%2C%22platformVersion%22%3A%2215.5.0%22%7D&pdf=1&qt=0&realp=0&wma=0&fla=0&java=0&ag=0&cookie=1&res=800x600",
+      "timestamp": "2025-07-21T16:44:06.606Z",
+      "duration_ms": 107.06700000000001,
+      "endpoint": "/matomo.php",
+      "host": "brightonhovegovuk.matomo.cloud",
       "method": "POST",
       "status": 204,
-      "redirect_url": null,
-      "mime_type": "x-unknown",
-      "size": 0,
-      "timestamp": "2025-07-21T16:44:06.606Z"
+      "query_params": {
+        "action_name": [
+          "Rubbish, recycling and streets"
+        ],
+        "idsite": [
+          "1"
+        ],
+        "rec": [
+          "1"
+        ],
+        "r": [
+          "934112"
+        ],
+        "h": [
+          "17"
+        ],
+        "m": [
+          "44"
+        ],
+        "s": [
+          "6"
+        ],
+        "url": [
+          "https://www.brighton-hove.gov.uk/rubbish-recycling-and-streets"
+        ],
+        "_id": [
+          "9eaefb46304f9ad0"
+        ],
+        "_idn": [
+          "1"
+        ],
+        "send_image": [
+          "0"
+        ],
+        "_refts": [
+          "0"
+        ],
+        "pv_id": [
+          "z0Hu5P"
+        ],
+        "fa_pv": [
+          "1"
+        ],
+        "fa_fp[0][fa_vid]": [
+          "tGGHII"
+        ],
+        "fa_fp[0][fa_id]": [
+          "search-block-form"
+        ],
+        "fa_fp[0][fa_fv]": [
+          "1"
+        ],
+        "fa_fp[1][fa_vid]": [
+          "E0vgHI"
+        ],
+        "fa_fp[1][fa_id]": [
+          "mobile-search-block-form"
+        ],
+        "fa_fp[1][fa_fv]": [
+          "1"
+        ],
+        "pf_net": [
+          "0"
+        ],
+        "pf_srv": [
+          "51"
+        ],
+        "pf_tfr": [
+          "17"
+        ],
+        "pf_dm1": [
+          "66"
+        ],
+        "uadata": [
+          "{\"formFactors\":[\"Desktop\"],\"fullVersionList\":[{\"brand\":\"Not)A;Brand\",\"version\":\"8.0.0.0\"},{\"brand\":\"Chromium\",\"version\":\"138.0.7204.101\"},{\"brand\":\"Google Chrome\",\"version\":\"138.0.7204.101\"}],\"mobile\":false,\"model\":\"\",\"platform\":\"macOS\",\"platformVersion\":\"15.5.0\"}"
+        ],
+        "pdf": [
+          "1"
+        ],
+        "qt": [
+          "0"
+        ],
+        "realp": [
+          "0"
+        ],
+        "wma": [
+          "0"
+        ],
+        "fla": [
+          "0"
+        ],
+        "java": [
+          "0"
+        ],
+        "ag": [
+          "0"
+        ],
+        "cookie": [
+          "1"
+        ],
+        "res": [
+          "800x600"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "content-type": "application/x-www-form-urlencoded; charset=utf-8",
+        "origin": "https://www.brighton-hove.gov.uk",
+        "referer": "https://www.brighton-hove.gov.uk/rubbish-recycling-and-streets"
+      }
     },
     {
-      "url": "https://region1.analytics.google.com/g/collect?v=2&tid=G-3RDEYZNL16&gtm=45je57h0v9121318228za200&_p=1753116246477&_gaz=1&gcd=13l3l3l3l3l1&npa=1&dma=0&tag_exp=101509157~103116026~103200004~103233427~104684208~104684211&gdid=dMDhkMT&cid=553627569.1753116248&ul=en-gb&sr=800x600&uaa=arm&uab=64&uafvl=Not)A%253BBrand%3B8.0.0.0%7CChromium%3B138.0.7204.101%7CGoogle%2520Chrome%3B138.0.7204.101&uamb=0&uam=&uap=macOS&uapv=15.5.0&uaw=0&are=1&frm=0&pscdl=noapi&_s=1&sid=1753116248&sct=1&seg=0&dl=https%3A%2F%2Fwww.brighton-hove.gov.uk%2Frubbish-recycling-and-streets&dt=Rubbish%2C%20recycling%20and%20streets&en=page_view&_fv=1&_nsi=1&_ss=1&_ee=1&ep.page_placeholder=PLACEHOLDER_page_location&tfd=1963",
+      "timestamp": "2025-07-21T16:44:08.288Z",
+      "duration_ms": 65.664,
+      "endpoint": "/g/collect",
+      "host": "region1.analytics.google.com",
       "method": "POST",
       "status": 204,
-      "redirect_url": null,
-      "mime_type": "text/plain",
-      "size": -1,
-      "timestamp": "2025-07-21T16:44:08.288Z"
+      "query_params": {
+        "v": [
+          "2"
+        ],
+        "tid": [
+          "G-3RDEYZNL16"
+        ],
+        "gtm": [
+          "45je57h0v9121318228za200"
+        ],
+        "_p": [
+          "1753116246477"
+        ],
+        "_gaz": [
+          "1"
+        ],
+        "gcd": [
+          "13l3l3l3l3l1"
+        ],
+        "npa": [
+          "1"
+        ],
+        "dma": [
+          "0"
+        ],
+        "tag_exp": [
+          "101509157~103116026~103200004~103233427~104684208~104684211"
+        ],
+        "gdid": [
+          "dMDhkMT"
+        ],
+        "cid": [
+          "553627569.1753116248"
+        ],
+        "ul": [
+          "en-gb"
+        ],
+        "sr": [
+          "800x600"
+        ],
+        "uaa": [
+          "arm"
+        ],
+        "uab": [
+          "64"
+        ],
+        "uafvl": [
+          "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+        ],
+        "uamb": [
+          "0"
+        ],
+        "uap": [
+          "macOS"
+        ],
+        "uapv": [
+          "15.5.0"
+        ],
+        "uaw": [
+          "0"
+        ],
+        "are": [
+          "1"
+        ],
+        "frm": [
+          "0"
+        ],
+        "pscdl": [
+          "noapi"
+        ],
+        "_s": [
+          "1"
+        ],
+        "sid": [
+          "1753116248"
+        ],
+        "sct": [
+          "1"
+        ],
+        "seg": [
+          "0"
+        ],
+        "dl": [
+          "https://www.brighton-hove.gov.uk/rubbish-recycling-and-streets"
+        ],
+        "dt": [
+          "Rubbish, recycling and streets"
+        ],
+        "en": [
+          "page_view"
+        ],
+        "_fv": [
+          "1"
+        ],
+        "_nsi": [
+          "1"
+        ],
+        "_ss": [
+          "1"
+        ],
+        "_ee": [
+          "1"
+        ],
+        "ep.page_placeholder": [
+          "PLACEHOLDER_page_location"
+        ],
+        "tfd": [
+          "1963"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "origin": "https://www.brighton-hove.gov.uk",
+        "referer": "https://www.brighton-hove.gov.uk/rubbish-recycling-and-streets",
+        "x-browser-copyright": "Copyright 2025 Google LLC. All rights reserved.",
+        "x-browser-validation": "qvLgIVtG4U8GgiRPSI9IJ22mUlI=",
+        "x-browser-year": "2025",
+        "x-client-data": "CMiXywE="
+      },
+      "response_headers": {
+        "cache-control": "no-cache, no-store, must-revalidate",
+        "content-type": "text/plain"
+      }
     },
     {
-      "url": "https://www.brighton-hove.gov.uk/node/2006716",
+      "timestamp": "2025-07-21T16:44:08.288Z",
+      "duration_ms": 1078.778,
+      "endpoint": "/g/collect",
+      "host": "stats.g.doubleclick.net",
+      "method": "POST",
+      "status": 204,
+      "query_params": {
+        "v": [
+          "2"
+        ],
+        "tid": [
+          "G-3RDEYZNL16"
+        ],
+        "cid": [
+          "553627569.1753116248"
+        ],
+        "gtm": [
+          "45je57h0v9121318228za200"
+        ],
+        "aip": [
+          "1"
+        ],
+        "dma": [
+          "0"
+        ],
+        "gcd": [
+          "13l3l3l3l3l1"
+        ],
+        "npa": [
+          "1"
+        ],
+        "frm": [
+          "0"
+        ],
+        "tag_exp": [
+          "101509157~103116026~103200004~103233427~104684208~104684211"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "cookie": "[cookies present]",
+        "origin": "https://www.brighton-hove.gov.uk",
+        "referer": "https://www.brighton-hove.gov.uk/rubbish-recycling-and-streets",
+        "x-browser-copyright": "Copyright 2025 Google LLC. All rights reserved.",
+        "x-browser-validation": "qvLgIVtG4U8GgiRPSI9IJ22mUlI=",
+        "x-browser-year": "2025",
+        "x-client-data": "CMiXywE="
+      },
+      "response_headers": {
+        "cache-control": "no-cache, no-store, must-revalidate",
+        "content-type": "text/plain"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T16:44:20.661Z",
+      "duration_ms": 23.432,
+      "endpoint": "/node/{id}",
+      "host": "www.brighton-hove.gov.uk",
       "method": "GET",
       "status": 301,
-      "redirect_url": "https://www.brighton-hove.gov.uk/rubbish-recycling-and-streets/bins-and-collections/check-your-bin-and-box-collection-days",
-      "mime_type": "text/html; charset=utf-8",
-      "size": -1,
-      "timestamp": "2025-07-21T16:44:20.661Z"
+      "path_params": [
+        "2006716"
+      ],
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+        "cookie": "[cookies present]",
+        "referer": "https://www.brighton-hove.gov.uk/rubbish-recycling-and-streets"
+      },
+      "response_headers": {
+        "cache-control": "max-age=604800, public",
+        "content-type": "text/html; charset=utf-8",
+        "location": "/rubbish-recycling-and-streets/bins-and-collections/check-your-bin-and-box-collection-days",
+        "x-ah-environment": "prod",
+        "x-cache": "HIT",
+        "x-cache-hits": "680",
+        "x-cdn": "Imperva",
+        "x-content-type-options": "nosniff",
+        "x-drupal-cache": "MISS",
+        "x-frame-options": "SAMEORIGIN",
+        "x-generator": "Drupal 10 (https://www.drupal.org)",
+        "x-iinfo": "12-109251820-109251826 PNNN RT(1753116246393 14322) q(0 0 0 -1) r(0 0) U11",
+        "x-request-id": "v-59786f7c-6239-11f0-8336-3bb6bb95e309"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": -1
+      },
+      "redirect_to": "/rubbish-recycling-and-streets/bins-and-collections/check-your-bin-and-box-collection-days"
     },
     {
-      "url": "https://www.brighton-hove.gov.uk/rubbish-recycling-and-streets/bins-and-collections/check-your-bin-and-box-collection-days",
+      "timestamp": "2025-07-21T16:44:20.734Z",
+      "duration_ms": -1,
+      "endpoint": "/g/collect",
+      "host": "region1.analytics.google.com",
+      "method": "POST",
+      "status": -1,
+      "query_params": {
+        "v": [
+          "2"
+        ],
+        "tid": [
+          "G-3RDEYZNL16"
+        ],
+        "gtm": [
+          "45je57h0v9121318228za200"
+        ],
+        "_p": [
+          "1753116246477"
+        ],
+        "gcd": [
+          "13l3l3l3l3l1"
+        ],
+        "npa": [
+          "1"
+        ],
+        "dma": [
+          "0"
+        ],
+        "tag_exp": [
+          "101509157~103116026~103200004~103233427~104684208~104684211"
+        ],
+        "gdid": [
+          "dMDhkMT"
+        ],
+        "cid": [
+          "553627569.1753116248"
+        ],
+        "ul": [
+          "en-gb"
+        ],
+        "sr": [
+          "800x600"
+        ],
+        "uaa": [
+          "arm"
+        ],
+        "uab": [
+          "64"
+        ],
+        "uafvl": [
+          "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+        ],
+        "uamb": [
+          "0"
+        ],
+        "uap": [
+          "macOS"
+        ],
+        "uapv": [
+          "15.5.0"
+        ],
+        "uaw": [
+          "0"
+        ],
+        "are": [
+          "1"
+        ],
+        "frm": [
+          "0"
+        ],
+        "pscdl": [
+          "noapi"
+        ],
+        "_eu": [
+          "AAAAAAQ"
+        ],
+        "_s": [
+          "2"
+        ],
+        "sid": [
+          "1753116248"
+        ],
+        "sct": [
+          "1"
+        ],
+        "seg": [
+          "1"
+        ],
+        "dl": [
+          "https://www.brighton-hove.gov.uk/rubbish-recycling-and-streets"
+        ],
+        "dt": [
+          "Rubbish, recycling and streets"
+        ],
+        "en": [
+          "user_engagement"
+        ],
+        "ep.page_placeholder": [
+          "PLACEHOLDER_page_location"
+        ],
+        "_et": [
+          "12445"
+        ],
+        "tfd": [
+          "14411"
+        ]
+      },
+      "request_headers": {
+        "referer": "https://www.brighton-hove.gov.uk/rubbish-recycling-and-streets"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T16:44:20.685Z",
+      "duration_ms": 54.277,
+      "endpoint": "/{id}/bins-and-collections/{id}",
+      "host": "www.brighton-hove.gov.uk",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "text/html; charset=UTF-8",
-      "size": 178787,
-      "timestamp": "2025-07-21T16:44:20.685Z"
+      "path_params": [
+        "rubbish-recycling-and-streets",
+        "check-your-bin-and-box-collection-days"
+      ],
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+        "cookie": "[cookies present]",
+        "referer": "https://www.brighton-hove.gov.uk/rubbish-recycling-and-streets"
+      },
+      "response_headers": {
+        "cache-control": "max-age=604800, public",
+        "content-type": "text/html; charset=UTF-8",
+        "x-ah-environment": "prod",
+        "x-cache": "HIT",
+        "x-cache-hits": "16",
+        "x-cdn": "Imperva",
+        "x-content-type-options": "nosniff",
+        "x-drupal-cache": "MISS",
+        "x-drupal-dynamic-cache": "MISS",
+        "x-frame-options": "SAMEORIGIN",
+        "x-generator": "Drupal 10 (https://www.drupal.org)",
+        "x-iinfo": "12-109251820-109251826 PNNN RT(1753116246393 14351) q(0 0 0 -1) r(1 1) U18",
+        "x-request-id": "v-86503128-664f-11f0-8ffe-ffa7bd546afc"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 178787,
+        "compressed": true,
+        "content_ref": "eb070eb2910460d1d715a5034e4bd416d5623fe8.html"
+      }
     },
     {
-      "url": "https://brightonhovegovuk.matomo.cloud/matomo.php?action_name=Check%20your%20bin%20and%20box%20collection%20days&idsite=1&rec=1&r=481802&h=17&m=44&s=20&url=https%3A%2F%2Fwww.brighton-hove.gov.uk%2Frubbish-recycling-and-streets%2Fbins-and-collections%2Fcheck-your-bin-and-box-collection-days&urlref=https%3A%2F%2Fwww.brighton-hove.gov.uk%2Frubbish-recycling-and-streets&_id=9eaefb46304f9ad0&_idn=0&send_image=0&_refts=0&pv_id=Voq93o&pf_net=0&pf_srv=42&uadata=%7B%22formFactors%22%3A%5B%22Desktop%22%5D%2C%22fullVersionList%22%3A%5B%7B%22brand%22%3A%22Not)A%3BBrand%22%2C%22version%22%3A%228.0.0.0%22%7D%2C%7B%22brand%22%3A%22Chromium%22%2C%22version%22%3A%22138.0.7204.101%22%7D%2C%7B%22brand%22%3A%22Google%20Chrome%22%2C%22version%22%3A%22138.0.7204.101%22%7D%5D%2C%22mobile%22%3Afalse%2C%22model%22%3A%22%22%2C%22platform%22%3A%22macOS%22%2C%22platformVersion%22%3A%2215.5.0%22%7D&pdf=1&qt=0&realp=0&wma=0&fla=0&java=0&ag=0&cookie=1&res=800x600",
+      "timestamp": "2025-07-21T16:44:20.748Z",
+      "duration_ms": 112.975,
+      "endpoint": "/matomo.php",
+      "host": "brightonhovegovuk.matomo.cloud",
       "method": "POST",
       "status": 204,
-      "redirect_url": null,
-      "mime_type": "x-unknown",
-      "size": 0,
-      "timestamp": "2025-07-21T16:44:20.748Z"
+      "query_params": {
+        "action_name": [
+          "Check your bin and box collection days"
+        ],
+        "idsite": [
+          "1"
+        ],
+        "rec": [
+          "1"
+        ],
+        "r": [
+          "481802"
+        ],
+        "h": [
+          "17"
+        ],
+        "m": [
+          "44"
+        ],
+        "s": [
+          "20"
+        ],
+        "url": [
+          "https://www.brighton-hove.gov.uk/rubbish-recycling-and-streets/bins-and-collections/check-your-bin-and-box-collection-days"
+        ],
+        "urlref": [
+          "https://www.brighton-hove.gov.uk/rubbish-recycling-and-streets"
+        ],
+        "_id": [
+          "9eaefb46304f9ad0"
+        ],
+        "_idn": [
+          "0"
+        ],
+        "send_image": [
+          "0"
+        ],
+        "_refts": [
+          "0"
+        ],
+        "pv_id": [
+          "Voq93o"
+        ],
+        "pf_net": [
+          "0"
+        ],
+        "pf_srv": [
+          "42"
+        ],
+        "uadata": [
+          "{\"formFactors\":[\"Desktop\"],\"fullVersionList\":[{\"brand\":\"Not)A;Brand\",\"version\":\"8.0.0.0\"},{\"brand\":\"Chromium\",\"version\":\"138.0.7204.101\"},{\"brand\":\"Google Chrome\",\"version\":\"138.0.7204.101\"}],\"mobile\":false,\"model\":\"\",\"platform\":\"macOS\",\"platformVersion\":\"15.5.0\"}"
+        ],
+        "pdf": [
+          "1"
+        ],
+        "qt": [
+          "0"
+        ],
+        "realp": [
+          "0"
+        ],
+        "wma": [
+          "0"
+        ],
+        "fla": [
+          "0"
+        ],
+        "java": [
+          "0"
+        ],
+        "ag": [
+          "0"
+        ],
+        "cookie": [
+          "1"
+        ],
+        "res": [
+          "800x600"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "content-type": "application/x-www-form-urlencoded; charset=utf-8",
+        "origin": "https://www.brighton-hove.gov.uk",
+        "referer": "https://www.brighton-hove.gov.uk/rubbish-recycling-and-streets/bins-and-collections/check-your-bin-and-box-collection-days"
+      }
     },
     {
-      "url": "https://brightonhovegovuk.matomo.cloud/matomo.php?link=https%3A%2F%2Fenviroservices.brighton-hove.gov.uk%2Flink%2Fcollections&idsite=1&rec=1&r=325060&h=17&m=44&s=23&url=https%3A%2F%2Fwww.brighton-hove.gov.uk%2Frubbish-recycling-and-streets%2Fbins-and-collections%2Fcheck-your-bin-and-box-collection-days&urlref=https%3A%2F%2Fwww.brighton-hove.gov.uk%2Frubbish-recycling-and-streets&_id=9eaefb46304f9ad0&_idn=0&send_image=0&_refts=0&pf_net=0&pf_srv=42&pf_tfr=12&pf_dm1=43&pf_dm2=37&pf_onl=0&pv_id=Voq93o&uadata=%7B%22formFactors%22%3A%5B%22Desktop%22%5D%2C%22fullVersionList%22%3A%5B%7B%22brand%22%3A%22Not)A%3BBrand%22%2C%22version%22%3A%228.0.0.0%22%7D%2C%7B%22brand%22%3A%22Chromium%22%2C%22version%22%3A%22138.0.7204.101%22%7D%2C%7B%22brand%22%3A%22Google%20Chrome%22%2C%22version%22%3A%22138.0.7204.101%22%7D%5D%2C%22mobile%22%3Afalse%2C%22model%22%3A%22%22%2C%22platform%22%3A%22macOS%22%2C%22platformVersion%22%3A%2215.5.0%22%7D&pdf=1&qt=0&realp=0&wma=0&fla=0&java=0&ag=0&cookie=1&res=800x600",
+      "timestamp": "2025-07-21T16:44:23.022Z",
+      "duration_ms": 96.666,
+      "endpoint": "/matomo.php",
+      "host": "brightonhovegovuk.matomo.cloud",
       "method": "POST",
       "status": 204,
-      "redirect_url": null,
-      "mime_type": "x-unknown",
-      "size": 0,
-      "timestamp": "2025-07-21T16:44:23.022Z"
+      "query_params": {
+        "link": [
+          "https://enviroservices.brighton-hove.gov.uk/link/collections"
+        ],
+        "idsite": [
+          "1"
+        ],
+        "rec": [
+          "1"
+        ],
+        "r": [
+          "325060"
+        ],
+        "h": [
+          "17"
+        ],
+        "m": [
+          "44"
+        ],
+        "s": [
+          "23"
+        ],
+        "url": [
+          "https://www.brighton-hove.gov.uk/rubbish-recycling-and-streets/bins-and-collections/check-your-bin-and-box-collection-days"
+        ],
+        "urlref": [
+          "https://www.brighton-hove.gov.uk/rubbish-recycling-and-streets"
+        ],
+        "_id": [
+          "9eaefb46304f9ad0"
+        ],
+        "_idn": [
+          "0"
+        ],
+        "send_image": [
+          "0"
+        ],
+        "_refts": [
+          "0"
+        ],
+        "pf_net": [
+          "0"
+        ],
+        "pf_srv": [
+          "42"
+        ],
+        "pf_tfr": [
+          "12"
+        ],
+        "pf_dm1": [
+          "43"
+        ],
+        "pf_dm2": [
+          "37"
+        ],
+        "pf_onl": [
+          "0"
+        ],
+        "pv_id": [
+          "Voq93o"
+        ],
+        "uadata": [
+          "{\"formFactors\":[\"Desktop\"],\"fullVersionList\":[{\"brand\":\"Not)A;Brand\",\"version\":\"8.0.0.0\"},{\"brand\":\"Chromium\",\"version\":\"138.0.7204.101\"},{\"brand\":\"Google Chrome\",\"version\":\"138.0.7204.101\"}],\"mobile\":false,\"model\":\"\",\"platform\":\"macOS\",\"platformVersion\":\"15.5.0\"}"
+        ],
+        "pdf": [
+          "1"
+        ],
+        "qt": [
+          "0"
+        ],
+        "realp": [
+          "0"
+        ],
+        "wma": [
+          "0"
+        ],
+        "fla": [
+          "0"
+        ],
+        "java": [
+          "0"
+        ],
+        "ag": [
+          "0"
+        ],
+        "cookie": [
+          "1"
+        ],
+        "res": [
+          "800x600"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "content-type": "application/x-www-form-urlencoded; charset=utf-8",
+        "origin": "https://www.brighton-hove.gov.uk",
+        "referer": "https://www.brighton-hove.gov.uk/rubbish-recycling-and-streets/bins-and-collections/check-your-bin-and-box-collection-days"
+      }
     },
     {
-      "url": "https://enviroservices.brighton-hove.gov.uk/link/collections",
+      "timestamp": "2025-07-21T16:44:23.077Z",
+      "duration_ms": 185.951,
+      "endpoint": "/link/collections",
+      "host": "enviroservices.brighton-hove.gov.uk",
       "method": "GET",
       "status": 303,
-      "redirect_url": "https://enviroservices.brighton-hove.gov.uk/index.html",
-      "mime_type": "x-unknown",
-      "size": -1,
-      "timestamp": "2025-07-21T16:44:23.077Z"
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+        "cookie": "[cookies present]",
+        "referer": "https://www.brighton-hove.gov.uk/rubbish-recycling-and-streets/bins-and-collections/check-your-bin-and-box-collection-days"
+      },
+      "response_headers": {
+        "location": "/index.html",
+        "set-cookie": "[cookies present]",
+        "x-frame-options": "sameorigin"
+      },
+      "redirect_to": "/index.html"
     },
     {
-      "url": "https://enviroservices.brighton-hove.gov.uk/index.html",
+      "timestamp": "2025-07-21T16:44:23.237Z",
+      "duration_ms": 25.609,
+      "endpoint": "/index.html",
+      "host": "enviroservices.brighton-hove.gov.uk",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "text/html",
-      "size": 2831,
-      "timestamp": "2025-07-21T16:44:23.237Z"
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+        "cookie": "[cookies present]",
+        "referer": "https://www.brighton-hove.gov.uk/rubbish-recycling-and-streets/bins-and-collections/check-your-bin-and-box-collection-days"
+      },
+      "response_headers": {
+        "cache-control": "no-cache",
+        "content-type": "text/html",
+        "x-frame-options": "sameorigin"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 2831,
+        "compressed": true,
+        "content_ref": "619e06744483be6f807d7ace075ed3784bdb172b.html"
+      }
     },
     {
-      "url": "https://brightonhovegovuk.matomo.cloud/matomo.php",
+      "timestamp": "2025-07-21T16:44:23.282Z",
+      "duration_ms": 117.377,
+      "endpoint": "/matomo.php",
+      "host": "brightonhovegovuk.matomo.cloud",
       "method": "POST",
       "status": 204,
-      "redirect_url": null,
-      "mime_type": "x-unknown",
-      "size": 0,
-      "timestamp": "2025-07-21T16:44:23.282Z"
+      "request_headers": {
+        "accept": "*/*",
+        "content-type": "application/x-www-form-urlencoded; charset=utf-8",
+        "origin": "https://www.brighton-hove.gov.uk",
+        "referer": "https://www.brighton-hove.gov.uk/rubbish-recycling-and-streets/bins-and-collections/check-your-bin-and-box-collection-days"
+      }
     },
     {
-      "url": "https://enviroservices.brighton-hove.gov.uk/metamodel.json?638847126975978638",
+      "timestamp": "2025-07-21T16:44:23.525Z",
+      "duration_ms": 26.256,
+      "endpoint": "/metamodel.json",
+      "host": "enviroservices.brighton-hove.gov.uk",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json",
-      "size": 5126,
-      "timestamp": "2025-07-21T16:44:23.525Z"
+      "request_headers": {
+        "accept": "*/*",
+        "cookie": "[cookies present]",
+        "referer": "https://enviroservices.brighton-hove.gov.uk/index.html",
+        "x-mx-reqtoken": "1753116263515-0"
+      },
+      "response_headers": {
+        "content-type": "application/json",
+        "x-frame-options": "sameorigin"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 5126,
+        "compressed": true,
+        "content_ref": "b3f79c61f789df8cbfceeee41a9ceb4deca64b81.json"
+      }
     },
     {
-      "url": "https://enviroservices.brighton-hove.gov.uk/xas/",
+      "timestamp": "2025-07-21T16:44:23.526Z",
+      "duration_ms": 69.611,
+      "endpoint": "/xas",
+      "host": "enviroservices.brighton-hove.gov.uk",
       "method": "POST",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json;charset=utf-8",
-      "size": 240521,
-      "timestamp": "2025-07-21T16:44:23.526Z"
+      "request_headers": {
+        "accept": "application/json",
+        "content-type": "application/json",
+        "cookie": "[cookies present]",
+        "origin": "https://enviroservices.brighton-hove.gov.uk",
+        "referer": "https://enviroservices.brighton-hove.gov.uk/index.html",
+        "x-mx-reqtoken": "1753116263524-1"
+      },
+      "response_headers": {
+        "cache-control": "no-store",
+        "content-type": "application/json;charset=utf-8",
+        "set-cookie": "[cookies present]",
+        "x-frame-options": "sameorigin"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 240521,
+        "compressed": true,
+        "content_ref": "2516c7f0517174e1ee57a65c31b793cfc0cd91d7.json"
+      }
     },
     {
-      "url": "https://enviroservices.brighton-hove.gov.uk/manifest.json",
+      "timestamp": "2025-07-21T16:44:23.573Z",
+      "duration_ms": 90.31499999999998,
+      "endpoint": "/manifest.json",
+      "host": "enviroservices.brighton-hove.gov.uk",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json",
-      "size": 403,
-      "timestamp": "2025-07-21T16:44:23.573Z"
+      "request_headers": {
+        "accept": "*/*",
+        "referer": "https://enviroservices.brighton-hove.gov.uk/index.html"
+      },
+      "response_headers": {
+        "content-type": "application/json",
+        "x-frame-options": "sameorigin"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 403,
+        "compressed": true,
+        "content_ref": "e8fec2b76286ddf07a2498cee0c4743d5310b77e.json"
+      }
     },
     {
-      "url": "https://enviroservices.brighton-hove.gov.uk/pages/en_GB/Collections/Collection_1_Address.page.xml?638847126975978638",
+      "timestamp": "2025-07-21T16:44:23.840Z",
+      "duration_ms": 25.97,
+      "endpoint": "/pages/en_GB/Collections/{id}",
+      "host": "enviroservices.brighton-hove.gov.uk",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/xml",
-      "size": 46818,
-      "timestamp": "2025-07-21T16:44:23.840Z"
+      "path_params": [
+        "Collection_1_Address.page.xml"
+      ],
+      "request_headers": {
+        "accept": "*/*",
+        "cookie": "[cookies present]",
+        "referer": "https://enviroservices.brighton-hove.gov.uk/index.html",
+        "x-csrf-token": "0635b201-943e-449a-af6a-ccba4ec460fb",
+        "x-mx-reqtoken": "1753116263793-2"
+      },
+      "response_headers": {
+        "cache-control": "max-age=31536000",
+        "content-type": "application/xml"
+      }
     },
     {
-      "url": "https://enviroservices.brighton-hove.gov.uk/pages/en_GB/NavigationLayouts/Public_Responsive.layout.xml?638847126975978638",
+      "timestamp": "2025-07-21T16:44:23.841Z",
+      "duration_ms": 25.554,
+      "endpoint": "/pages/en_GB/NavigationLayouts/{id}",
+      "host": "enviroservices.brighton-hove.gov.uk",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/xml",
-      "size": 7692,
-      "timestamp": "2025-07-21T16:44:23.841Z"
+      "path_params": [
+        "Public_Responsive.layout.xml"
+      ],
+      "request_headers": {
+        "accept": "*/*",
+        "cookie": "[cookies present]",
+        "referer": "https://enviroservices.brighton-hove.gov.uk/index.html",
+        "x-csrf-token": "0635b201-943e-449a-af6a-ccba4ec460fb",
+        "x-mx-reqtoken": "1753116263821-3"
+      },
+      "response_headers": {
+        "cache-control": "max-age=31536000",
+        "content-type": "application/xml"
+      }
     },
     {
-      "url": "https://region1.analytics.google.com/g/collect?v=2&tid=G-3RDEYZNL16&gtm=45je57h0v9121318228za200&_p=1753116260737&gcd=13l3l3l3l3l1&npa=1&dma=0&tag_exp=101509157~103116026~103200004~103233427~104684208~104684211&gdid=dMDhkMT&cid=553627569.1753116248&ul=en-gb&sr=800x600&uaa=arm&uab=64&uafvl=Not)A%253BBrand%3B8.0.0.0%7CChromium%3B138.0.7204.101%7CGoogle%2520Chrome%3B138.0.7204.101&uamb=0&uam=&uap=macOS&uapv=15.5.0&uaw=0&are=1&frm=0&pscdl=noapi&_eu=AAAAAAQ&sid=1753116248&sct=1&seg=1&dl=https%3A%2F%2Fwww.brighton-hove.gov.uk%2Frubbish-recycling-and-streets%2Fbins-and-collections%2Fcheck-your-bin-and-box-collection-days&dr=https%3A%2F%2Fwww.brighton-hove.gov.uk%2Frubbish-recycling-and-streets&dt=Check%20your%20bin%20and%20box%20collection%20days&_s=1&tfd=5200",
+      "timestamp": "2025-07-21T16:44:25.808Z",
+      "duration_ms": 13.59,
+      "endpoint": "/g/collect",
+      "host": "region1.analytics.google.com",
       "method": "POST",
       "status": 204,
-      "redirect_url": null,
-      "mime_type": "text/plain",
-      "size": -1,
-      "timestamp": "2025-07-21T16:44:25.808Z"
+      "query_params": {
+        "v": [
+          "2"
+        ],
+        "tid": [
+          "G-3RDEYZNL16"
+        ],
+        "gtm": [
+          "45je57h0v9121318228za200"
+        ],
+        "_p": [
+          "1753116260737"
+        ],
+        "gcd": [
+          "13l3l3l3l3l1"
+        ],
+        "npa": [
+          "1"
+        ],
+        "dma": [
+          "0"
+        ],
+        "tag_exp": [
+          "101509157~103116026~103200004~103233427~104684208~104684211"
+        ],
+        "gdid": [
+          "dMDhkMT"
+        ],
+        "cid": [
+          "553627569.1753116248"
+        ],
+        "ul": [
+          "en-gb"
+        ],
+        "sr": [
+          "800x600"
+        ],
+        "uaa": [
+          "arm"
+        ],
+        "uab": [
+          "64"
+        ],
+        "uafvl": [
+          "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+        ],
+        "uamb": [
+          "0"
+        ],
+        "uap": [
+          "macOS"
+        ],
+        "uapv": [
+          "15.5.0"
+        ],
+        "uaw": [
+          "0"
+        ],
+        "are": [
+          "1"
+        ],
+        "frm": [
+          "0"
+        ],
+        "pscdl": [
+          "noapi"
+        ],
+        "_eu": [
+          "AAAAAAQ"
+        ],
+        "sid": [
+          "1753116248"
+        ],
+        "sct": [
+          "1"
+        ],
+        "seg": [
+          "1"
+        ],
+        "dl": [
+          "https://www.brighton-hove.gov.uk/rubbish-recycling-and-streets/bins-and-collections/check-your-bin-and-box-collection-days"
+        ],
+        "dr": [
+          "https://www.brighton-hove.gov.uk/rubbish-recycling-and-streets"
+        ],
+        "dt": [
+          "Check your bin and box collection days"
+        ],
+        "_s": [
+          "1"
+        ],
+        "tfd": [
+          "5200"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "content-type": "text/plain;charset=UTF-8",
+        "origin": "https://www.brighton-hove.gov.uk",
+        "referer": "https://www.brighton-hove.gov.uk/rubbish-recycling-and-streets/bins-and-collections/check-your-bin-and-box-collection-days",
+        "x-browser-copyright": "Copyright 2025 Google LLC. All rights reserved.",
+        "x-browser-validation": "qvLgIVtG4U8GgiRPSI9IJ22mUlI=",
+        "x-browser-year": "2025",
+        "x-client-data": "CMiXywE="
+      },
+      "response_headers": {
+        "cache-control": "no-cache, no-store, must-revalidate",
+        "content-type": "text/plain"
+      }
     },
     {
-      "url": "https://enviroservices.brighton-hove.gov.uk/xas/",
+      "timestamp": "2025-07-21T16:44:30.561Z",
+      "duration_ms": 580.8710000000001,
+      "endpoint": "/xas",
+      "host": "enviroservices.brighton-hove.gov.uk",
       "method": "POST",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json;charset=utf-8",
-      "size": 459251,
-      "timestamp": "2025-07-21T16:44:30.561Z"
+      "request_headers": {
+        "accept": "application/json",
+        "content-type": "application/json",
+        "cookie": "[cookies present]",
+        "origin": "https://enviroservices.brighton-hove.gov.uk",
+        "referer": "https://enviroservices.brighton-hove.gov.uk/link/collections",
+        "x-csrf-token": "0635b201-943e-449a-af6a-ccba4ec460fb",
+        "x-mx-reqtoken": "1753116270559-4"
+      },
+      "response_headers": {
+        "cache-control": "no-store",
+        "content-type": "application/json;charset=utf-8",
+        "x-frame-options": "sameorigin"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 459251,
+        "compressed": true,
+        "content_ref": "e744061707f881efd0ce17d21ee55fcbc150693e.json"
+      }
     },
     {
-      "url": "https://enviroservices.brighton-hove.gov.uk/xas/",
+      "timestamp": "2025-07-21T16:44:31.205Z",
+      "duration_ms": 261.096,
+      "endpoint": "/xas",
+      "host": "enviroservices.brighton-hove.gov.uk",
       "method": "POST",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json;charset=utf-8",
-      "size": 43094,
-      "timestamp": "2025-07-21T16:44:31.205Z"
+      "request_headers": {
+        "accept": "application/json",
+        "content-type": "application/json",
+        "cookie": "[cookies present]",
+        "origin": "https://enviroservices.brighton-hove.gov.uk",
+        "referer": "https://enviroservices.brighton-hove.gov.uk/link/collections",
+        "x-csrf-token": "0635b201-943e-449a-af6a-ccba4ec460fb",
+        "x-mx-reqtoken": "1753116271177-5"
+      },
+      "response_headers": {
+        "cache-control": "no-store",
+        "content-type": "application/json;charset=utf-8",
+        "x-frame-options": "sameorigin"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 43094,
+        "compressed": true,
+        "content_ref": "783a6aec84140b9aa1a01bb2f581b18d2f4717a8.json"
+      }
     },
     {
-      "url": "https://enviroservices.brighton-hove.gov.uk/xas/",
+      "timestamp": "2025-07-21T16:44:34.011Z",
+      "duration_ms": 28.878999999999998,
+      "endpoint": "/xas",
+      "host": "enviroservices.brighton-hove.gov.uk",
       "method": "POST",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json;charset=utf-8",
-      "size": 5138,
-      "timestamp": "2025-07-21T16:44:34.011Z"
+      "request_headers": {
+        "accept": "application/json",
+        "content-type": "application/json",
+        "cookie": "[cookies present]",
+        "origin": "https://enviroservices.brighton-hove.gov.uk",
+        "referer": "https://enviroservices.brighton-hove.gov.uk/link/collections",
+        "x-csrf-token": "0635b201-943e-449a-af6a-ccba4ec460fb",
+        "x-mx-reqtoken": "1753116274009-6"
+      },
+      "response_headers": {
+        "cache-control": "no-store",
+        "content-type": "application/json;charset=utf-8",
+        "x-frame-options": "sameorigin"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 5138,
+        "compressed": true,
+        "content_ref": "fcddd87050c26e2907956b1f35f53f7e2ff3a54b.json"
+      }
     },
     {
-      "url": "https://enviroservices.brighton-hove.gov.uk/xas/",
+      "timestamp": "2025-07-21T16:44:34.079Z",
+      "duration_ms": 280.68600000000004,
+      "endpoint": "/xas",
+      "host": "enviroservices.brighton-hove.gov.uk",
       "method": "POST",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json;charset=utf-8",
-      "size": 43094,
-      "timestamp": "2025-07-21T16:44:34.079Z"
+      "request_headers": {
+        "accept": "application/json",
+        "content-type": "application/json",
+        "cookie": "[cookies present]",
+        "origin": "https://enviroservices.brighton-hove.gov.uk",
+        "referer": "https://enviroservices.brighton-hove.gov.uk/link/collections",
+        "x-csrf-token": "0635b201-943e-449a-af6a-ccba4ec460fb",
+        "x-mx-reqtoken": "1753116274047-7"
+      },
+      "response_headers": {
+        "cache-control": "no-store",
+        "content-type": "application/json;charset=utf-8",
+        "x-frame-options": "sameorigin"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 43094,
+        "compressed": true,
+        "content_ref": "e7c083432373f1f48ce75914b8dbe7597487cb49.json"
+      }
     },
     {
-      "url": "https://enviroservices.brighton-hove.gov.uk/xas/",
+      "timestamp": "2025-07-21T16:44:36.613Z",
+      "duration_ms": 1327.366,
+      "endpoint": "/xas",
+      "host": "enviroservices.brighton-hove.gov.uk",
       "method": "POST",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json;charset=utf-8",
-      "size": 10330,
-      "timestamp": "2025-07-21T16:44:36.613Z"
+      "request_headers": {
+        "accept": "application/json",
+        "content-type": "application/json",
+        "cookie": "[cookies present]",
+        "origin": "https://enviroservices.brighton-hove.gov.uk",
+        "referer": "https://enviroservices.brighton-hove.gov.uk/link/collections",
+        "x-csrf-token": "0635b201-943e-449a-af6a-ccba4ec460fb",
+        "x-mx-reqtoken": "1753116276609-8"
+      },
+      "response_headers": {
+        "cache-control": "no-store",
+        "content-type": "application/json;charset=utf-8",
+        "x-frame-options": "sameorigin"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 10330,
+        "compressed": true,
+        "content_ref": "fd159af9b2d336081a2255bed2e53410cccaca17.json"
+      }
     },
     {
-      "url": "https://enviroservices.brighton-hove.gov.uk/xas/",
+      "timestamp": "2025-07-21T16:44:37.999Z",
+      "duration_ms": 44.095,
+      "endpoint": "/xas",
+      "host": "enviroservices.brighton-hove.gov.uk",
       "method": "POST",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json;charset=utf-8",
-      "size": 17914,
-      "timestamp": "2025-07-21T16:44:37.998Z"
+      "request_headers": {
+        "accept": "application/json",
+        "content-type": "application/json",
+        "cookie": "[cookies present]",
+        "origin": "https://enviroservices.brighton-hove.gov.uk",
+        "referer": "https://enviroservices.brighton-hove.gov.uk/link/collections",
+        "x-csrf-token": "0635b201-943e-449a-af6a-ccba4ec460fb",
+        "x-mx-reqtoken": "1753116277974-10"
+      },
+      "response_headers": {
+        "cache-control": "no-store",
+        "content-type": "application/json;charset=utf-8",
+        "x-frame-options": "sameorigin"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 649,
+        "compressed": true,
+        "content_ref": "9df8a4bb4ffae9f0cdd61b202c0cf1575feb615f.json"
+      }
     },
     {
-      "url": "https://enviroservices.brighton-hove.gov.uk/xas/",
+      "timestamp": "2025-07-21T16:44:37.998Z",
+      "duration_ms": 188.427,
+      "endpoint": "/xas",
+      "host": "enviroservices.brighton-hove.gov.uk",
       "method": "POST",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json;charset=utf-8",
-      "size": 649,
-      "timestamp": "2025-07-21T16:44:37.999Z"
+      "request_headers": {
+        "accept": "application/json",
+        "content-type": "application/json",
+        "cookie": "[cookies present]",
+        "origin": "https://enviroservices.brighton-hove.gov.uk",
+        "referer": "https://enviroservices.brighton-hove.gov.uk/link/collections",
+        "x-csrf-token": "0635b201-943e-449a-af6a-ccba4ec460fb",
+        "x-mx-reqtoken": "1753116277963-9"
+      },
+      "response_headers": {
+        "cache-control": "no-store",
+        "content-type": "application/json;charset=utf-8",
+        "x-frame-options": "sameorigin"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 17914,
+        "compressed": true,
+        "content_ref": "d13a9b827fe126870b2d1c6fa0c67f45ad98d82d.json"
+      }
     }
-  ]
+  ],
+  "analysis": {
+    "total_requests": 27,
+    "unique_endpoints": 13,
+    "methods_used": [
+      "GET",
+      "POST"
+    ],
+    "status_codes": {
+      "301": 2,
+      "200": 16,
+      "204": 7,
+      "-1": 1,
+      "303": 1
+    },
+    "endpoints_with_params": [
+      {
+        "endpoint": "/node/{id}",
+        "method": "GET",
+        "query_params": [],
+        "path_params": true
+      },
+      {
+        "endpoint": "/{id}",
+        "method": "GET",
+        "query_params": [],
+        "path_params": true
+      },
+      {
+        "endpoint": "/_Incapsula_Resource",
+        "method": "GET",
+        "query_params": [
+          "SWKMTFSR",
+          "e"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/matomo.php",
+        "method": "POST",
+        "query_params": [
+          "action_name",
+          "idsite",
+          "rec",
+          "r",
+          "h",
+          "m",
+          "s",
+          "url",
+          "_id",
+          "_idn",
+          "send_image",
+          "_refts",
+          "pv_id",
+          "fa_pv",
+          "fa_fp[0][fa_vid]",
+          "fa_fp[0][fa_id]",
+          "fa_fp[0][fa_fv]",
+          "fa_fp[1][fa_vid]",
+          "fa_fp[1][fa_id]",
+          "fa_fp[1][fa_fv]",
+          "pf_net",
+          "pf_srv",
+          "pf_tfr",
+          "pf_dm1",
+          "uadata",
+          "pdf",
+          "qt",
+          "realp",
+          "wma",
+          "fla",
+          "java",
+          "ag",
+          "cookie",
+          "res"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/g/collect",
+        "method": "POST",
+        "query_params": [
+          "v",
+          "tid",
+          "gtm",
+          "_p",
+          "_gaz",
+          "gcd",
+          "npa",
+          "dma",
+          "tag_exp",
+          "gdid",
+          "cid",
+          "ul",
+          "sr",
+          "uaa",
+          "uab",
+          "uafvl",
+          "uamb",
+          "uap",
+          "uapv",
+          "uaw",
+          "are",
+          "frm",
+          "pscdl",
+          "_s",
+          "sid",
+          "sct",
+          "seg",
+          "dl",
+          "dt",
+          "en",
+          "_fv",
+          "_nsi",
+          "_ss",
+          "_ee",
+          "ep.page_placeholder",
+          "tfd"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/g/collect",
+        "method": "POST",
+        "query_params": [
+          "v",
+          "tid",
+          "cid",
+          "gtm",
+          "aip",
+          "dma",
+          "gcd",
+          "npa",
+          "frm",
+          "tag_exp"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/g/collect",
+        "method": "POST",
+        "query_params": [
+          "v",
+          "tid",
+          "gtm",
+          "_p",
+          "gcd",
+          "npa",
+          "dma",
+          "tag_exp",
+          "gdid",
+          "cid",
+          "ul",
+          "sr",
+          "uaa",
+          "uab",
+          "uafvl",
+          "uamb",
+          "uap",
+          "uapv",
+          "uaw",
+          "are",
+          "frm",
+          "pscdl",
+          "_eu",
+          "_s",
+          "sid",
+          "sct",
+          "seg",
+          "dl",
+          "dt",
+          "en",
+          "ep.page_placeholder",
+          "_et",
+          "tfd"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/{id}/bins-and-collections/{id}",
+        "method": "GET",
+        "query_params": [],
+        "path_params": true
+      },
+      {
+        "endpoint": "/matomo.php",
+        "method": "POST",
+        "query_params": [
+          "action_name",
+          "idsite",
+          "rec",
+          "r",
+          "h",
+          "m",
+          "s",
+          "url",
+          "urlref",
+          "_id",
+          "_idn",
+          "send_image",
+          "_refts",
+          "pv_id",
+          "pf_net",
+          "pf_srv",
+          "uadata",
+          "pdf",
+          "qt",
+          "realp",
+          "wma",
+          "fla",
+          "java",
+          "ag",
+          "cookie",
+          "res"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/matomo.php",
+        "method": "POST",
+        "query_params": [
+          "link",
+          "idsite",
+          "rec",
+          "r",
+          "h",
+          "m",
+          "s",
+          "url",
+          "urlref",
+          "_id",
+          "_idn",
+          "send_image",
+          "_refts",
+          "pf_net",
+          "pf_srv",
+          "pf_tfr",
+          "pf_dm1",
+          "pf_dm2",
+          "pf_onl",
+          "pv_id",
+          "uadata",
+          "pdf",
+          "qt",
+          "realp",
+          "wma",
+          "fla",
+          "java",
+          "ag",
+          "cookie",
+          "res"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/pages/en_GB/Collections/{id}",
+        "method": "GET",
+        "query_params": [],
+        "path_params": true
+      },
+      {
+        "endpoint": "/pages/en_GB/NavigationLayouts/{id}",
+        "method": "GET",
+        "query_params": [],
+        "path_params": true
+      },
+      {
+        "endpoint": "/g/collect",
+        "method": "POST",
+        "query_params": [
+          "v",
+          "tid",
+          "gtm",
+          "_p",
+          "gcd",
+          "npa",
+          "dma",
+          "tag_exp",
+          "gdid",
+          "cid",
+          "ul",
+          "sr",
+          "uaa",
+          "uab",
+          "uafvl",
+          "uamb",
+          "uap",
+          "uapv",
+          "uaw",
+          "are",
+          "frm",
+          "pscdl",
+          "_eu",
+          "sid",
+          "sct",
+          "seg",
+          "dl",
+          "dr",
+          "dt",
+          "_s",
+          "tfd"
+        ],
+        "path_params": false
+      }
+    ],
+    "redirects": [
+      {
+        "from": "/node/{id}",
+        "to": "https://www.brighton-hove.gov.uk/rubbish-recycling-and-streets",
+        "status": 301
+      },
+      {
+        "from": "/node/{id}",
+        "to": "/rubbish-recycling-and-streets/bins-and-collections/check-your-bin-and-box-collection-days",
+        "status": 301
+      },
+      {
+        "from": "/link/collections",
+        "to": "/index.html",
+        "status": 303
+      }
+    ],
+    "api_calls": [
+      {
+        "endpoint": "/metamodel.json",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": []
+      },
+      {
+        "endpoint": "/xas",
+        "method": "POST",
+        "response_type": "application/json",
+        "params": []
+      },
+      {
+        "endpoint": "/manifest.json",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": []
+      },
+      {
+        "endpoint": "/xas",
+        "method": "POST",
+        "response_type": "application/json",
+        "params": []
+      },
+      {
+        "endpoint": "/xas",
+        "method": "POST",
+        "response_type": "application/json",
+        "params": []
+      },
+      {
+        "endpoint": "/xas",
+        "method": "POST",
+        "response_type": "application/json",
+        "params": []
+      },
+      {
+        "endpoint": "/xas",
+        "method": "POST",
+        "response_type": "application/json",
+        "params": []
+      },
+      {
+        "endpoint": "/xas",
+        "method": "POST",
+        "response_type": "application/json",
+        "params": []
+      },
+      {
+        "endpoint": "/xas",
+        "method": "POST",
+        "response_type": "application/json",
+        "params": []
+      },
+      {
+        "endpoint": "/xas",
+        "method": "POST",
+        "response_type": "application/json",
+        "params": []
+      }
+    ],
+    "form_submissions": []
+  },
+  "grouped_by_endpoint": {
+    "/node/{id}": [
+      {
+        "timestamp": "2025-07-21T16:44:06.325Z",
+        "duration_ms": 104.83,
+        "endpoint": "/node/{id}",
+        "host": "www.brighton-hove.gov.uk",
+        "method": "GET",
+        "status": 301,
+        "path_params": [
+          "321871"
+        ],
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7"
+        },
+        "response_headers": {
+          "cache-control": "max-age=604800, public",
+          "content-type": "text/html; charset=utf-8",
+          "location": "https://www.brighton-hove.gov.uk/rubbish-recycling-and-streets",
+          "set-cookie": "[cookies present]",
+          "x-ah-environment": "prod",
+          "x-cache": "HIT",
+          "x-cache-hits": "22",
+          "x-cdn": "Imperva",
+          "x-content-type-options": "nosniff",
+          "x-drupal-cache": "MISS",
+          "x-frame-options": "SAMEORIGIN",
+          "x-generator": "Drupal 10 (https://www.drupal.org)",
+          "x-iinfo": "12-109251820-109251826 NNNN CT(16 15 0) RT(1753116246393 15) q(0 0 0 7) r(1 1) U11",
+          "x-redirect-id": "132036",
+          "x-request-id": "v-2d188256-6512-11f0-8406-af7c3b52de90"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": -1
+        },
+        "redirect_to": "https://www.brighton-hove.gov.uk/rubbish-recycling-and-streets"
+      },
+      {
+        "timestamp": "2025-07-21T16:44:20.661Z",
+        "duration_ms": 23.432,
+        "endpoint": "/node/{id}",
+        "host": "www.brighton-hove.gov.uk",
+        "method": "GET",
+        "status": 301,
+        "path_params": [
+          "2006716"
+        ],
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+          "cookie": "[cookies present]",
+          "referer": "https://www.brighton-hove.gov.uk/rubbish-recycling-and-streets"
+        },
+        "response_headers": {
+          "cache-control": "max-age=604800, public",
+          "content-type": "text/html; charset=utf-8",
+          "location": "/rubbish-recycling-and-streets/bins-and-collections/check-your-bin-and-box-collection-days",
+          "x-ah-environment": "prod",
+          "x-cache": "HIT",
+          "x-cache-hits": "680",
+          "x-cdn": "Imperva",
+          "x-content-type-options": "nosniff",
+          "x-drupal-cache": "MISS",
+          "x-frame-options": "SAMEORIGIN",
+          "x-generator": "Drupal 10 (https://www.drupal.org)",
+          "x-iinfo": "12-109251820-109251826 PNNN RT(1753116246393 14322) q(0 0 0 -1) r(0 0) U11",
+          "x-request-id": "v-59786f7c-6239-11f0-8336-3bb6bb95e309"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": -1
+        },
+        "redirect_to": "/rubbish-recycling-and-streets/bins-and-collections/check-your-bin-and-box-collection-days"
+      }
+    ],
+    "/{id}": [
+      {
+        "timestamp": "2025-07-21T16:44:06.420Z",
+        "duration_ms": 67.782,
+        "endpoint": "/{id}",
+        "host": "www.brighton-hove.gov.uk",
+        "method": "GET",
+        "status": 200,
+        "path_params": [
+          "rubbish-recycling-and-streets"
+        ],
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+          "cookie": "[cookies present]"
+        },
+        "response_headers": {
+          "cache-control": "max-age=604800, public",
+          "content-type": "text/html; charset=UTF-8",
+          "x-ah-environment": "prod",
+          "x-cache": "HIT",
+          "x-cache-hits": "8",
+          "x-cdn": "Imperva",
+          "x-content-type-options": "nosniff",
+          "x-drupal-cache": "MISS",
+          "x-drupal-dynamic-cache": "MISS",
+          "x-frame-options": "SAMEORIGIN",
+          "x-generator": "Drupal 10 (https://www.drupal.org)",
+          "x-iinfo": "12-109251820-109251826 PNNN RT(1753116246393 78) q(0 0 0 -1) r(0 0) U18",
+          "x-request-id": "v-7dd2c272-664f-11f0-8b78-0f6a508f1b8f"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 189606,
+          "compressed": true,
+          "content_ref": "d80a625e1c76b02428d57d1793841a5f79687b44.html"
+        }
+      }
+    ],
+    "/_Incapsula_Resource": [
+      {
+        "timestamp": "2025-07-21T16:44:06.540Z",
+        "duration_ms": 11.292,
+        "endpoint": "/_Incapsula_Resource",
+        "host": "www.brighton-hove.gov.uk",
+        "method": "GET",
+        "status": 200,
+        "query_params": {
+          "SWKMTFSR": [
+            "1"
+          ],
+          "e": [
+            "0.5554009994584245"
+          ]
+        },
+        "request_headers": {
+          "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+          "cookie": "[cookies present]",
+          "referer": "https://www.brighton-hove.gov.uk/rubbish-recycling-and-streets"
+        },
+        "response_headers": {
+          "cache-control": "no-cache, no-store",
+          "content-type": "text/plain",
+          "x-robots-tag": "noindex"
+        }
+      }
+    ],
+    "/matomo.php": [
+      {
+        "timestamp": "2025-07-21T16:44:06.606Z",
+        "duration_ms": 107.06700000000001,
+        "endpoint": "/matomo.php",
+        "host": "brightonhovegovuk.matomo.cloud",
+        "method": "POST",
+        "status": 204,
+        "query_params": {
+          "action_name": [
+            "Rubbish, recycling and streets"
+          ],
+          "idsite": [
+            "1"
+          ],
+          "rec": [
+            "1"
+          ],
+          "r": [
+            "934112"
+          ],
+          "h": [
+            "17"
+          ],
+          "m": [
+            "44"
+          ],
+          "s": [
+            "6"
+          ],
+          "url": [
+            "https://www.brighton-hove.gov.uk/rubbish-recycling-and-streets"
+          ],
+          "_id": [
+            "9eaefb46304f9ad0"
+          ],
+          "_idn": [
+            "1"
+          ],
+          "send_image": [
+            "0"
+          ],
+          "_refts": [
+            "0"
+          ],
+          "pv_id": [
+            "z0Hu5P"
+          ],
+          "fa_pv": [
+            "1"
+          ],
+          "fa_fp[0][fa_vid]": [
+            "tGGHII"
+          ],
+          "fa_fp[0][fa_id]": [
+            "search-block-form"
+          ],
+          "fa_fp[0][fa_fv]": [
+            "1"
+          ],
+          "fa_fp[1][fa_vid]": [
+            "E0vgHI"
+          ],
+          "fa_fp[1][fa_id]": [
+            "mobile-search-block-form"
+          ],
+          "fa_fp[1][fa_fv]": [
+            "1"
+          ],
+          "pf_net": [
+            "0"
+          ],
+          "pf_srv": [
+            "51"
+          ],
+          "pf_tfr": [
+            "17"
+          ],
+          "pf_dm1": [
+            "66"
+          ],
+          "uadata": [
+            "{\"formFactors\":[\"Desktop\"],\"fullVersionList\":[{\"brand\":\"Not)A;Brand\",\"version\":\"8.0.0.0\"},{\"brand\":\"Chromium\",\"version\":\"138.0.7204.101\"},{\"brand\":\"Google Chrome\",\"version\":\"138.0.7204.101\"}],\"mobile\":false,\"model\":\"\",\"platform\":\"macOS\",\"platformVersion\":\"15.5.0\"}"
+          ],
+          "pdf": [
+            "1"
+          ],
+          "qt": [
+            "0"
+          ],
+          "realp": [
+            "0"
+          ],
+          "wma": [
+            "0"
+          ],
+          "fla": [
+            "0"
+          ],
+          "java": [
+            "0"
+          ],
+          "ag": [
+            "0"
+          ],
+          "cookie": [
+            "1"
+          ],
+          "res": [
+            "800x600"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "content-type": "application/x-www-form-urlencoded; charset=utf-8",
+          "origin": "https://www.brighton-hove.gov.uk",
+          "referer": "https://www.brighton-hove.gov.uk/rubbish-recycling-and-streets"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T16:44:20.748Z",
+        "duration_ms": 112.975,
+        "endpoint": "/matomo.php",
+        "host": "brightonhovegovuk.matomo.cloud",
+        "method": "POST",
+        "status": 204,
+        "query_params": {
+          "action_name": [
+            "Check your bin and box collection days"
+          ],
+          "idsite": [
+            "1"
+          ],
+          "rec": [
+            "1"
+          ],
+          "r": [
+            "481802"
+          ],
+          "h": [
+            "17"
+          ],
+          "m": [
+            "44"
+          ],
+          "s": [
+            "20"
+          ],
+          "url": [
+            "https://www.brighton-hove.gov.uk/rubbish-recycling-and-streets/bins-and-collections/check-your-bin-and-box-collection-days"
+          ],
+          "urlref": [
+            "https://www.brighton-hove.gov.uk/rubbish-recycling-and-streets"
+          ],
+          "_id": [
+            "9eaefb46304f9ad0"
+          ],
+          "_idn": [
+            "0"
+          ],
+          "send_image": [
+            "0"
+          ],
+          "_refts": [
+            "0"
+          ],
+          "pv_id": [
+            "Voq93o"
+          ],
+          "pf_net": [
+            "0"
+          ],
+          "pf_srv": [
+            "42"
+          ],
+          "uadata": [
+            "{\"formFactors\":[\"Desktop\"],\"fullVersionList\":[{\"brand\":\"Not)A;Brand\",\"version\":\"8.0.0.0\"},{\"brand\":\"Chromium\",\"version\":\"138.0.7204.101\"},{\"brand\":\"Google Chrome\",\"version\":\"138.0.7204.101\"}],\"mobile\":false,\"model\":\"\",\"platform\":\"macOS\",\"platformVersion\":\"15.5.0\"}"
+          ],
+          "pdf": [
+            "1"
+          ],
+          "qt": [
+            "0"
+          ],
+          "realp": [
+            "0"
+          ],
+          "wma": [
+            "0"
+          ],
+          "fla": [
+            "0"
+          ],
+          "java": [
+            "0"
+          ],
+          "ag": [
+            "0"
+          ],
+          "cookie": [
+            "1"
+          ],
+          "res": [
+            "800x600"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "content-type": "application/x-www-form-urlencoded; charset=utf-8",
+          "origin": "https://www.brighton-hove.gov.uk",
+          "referer": "https://www.brighton-hove.gov.uk/rubbish-recycling-and-streets/bins-and-collections/check-your-bin-and-box-collection-days"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T16:44:23.022Z",
+        "duration_ms": 96.666,
+        "endpoint": "/matomo.php",
+        "host": "brightonhovegovuk.matomo.cloud",
+        "method": "POST",
+        "status": 204,
+        "query_params": {
+          "link": [
+            "https://enviroservices.brighton-hove.gov.uk/link/collections"
+          ],
+          "idsite": [
+            "1"
+          ],
+          "rec": [
+            "1"
+          ],
+          "r": [
+            "325060"
+          ],
+          "h": [
+            "17"
+          ],
+          "m": [
+            "44"
+          ],
+          "s": [
+            "23"
+          ],
+          "url": [
+            "https://www.brighton-hove.gov.uk/rubbish-recycling-and-streets/bins-and-collections/check-your-bin-and-box-collection-days"
+          ],
+          "urlref": [
+            "https://www.brighton-hove.gov.uk/rubbish-recycling-and-streets"
+          ],
+          "_id": [
+            "9eaefb46304f9ad0"
+          ],
+          "_idn": [
+            "0"
+          ],
+          "send_image": [
+            "0"
+          ],
+          "_refts": [
+            "0"
+          ],
+          "pf_net": [
+            "0"
+          ],
+          "pf_srv": [
+            "42"
+          ],
+          "pf_tfr": [
+            "12"
+          ],
+          "pf_dm1": [
+            "43"
+          ],
+          "pf_dm2": [
+            "37"
+          ],
+          "pf_onl": [
+            "0"
+          ],
+          "pv_id": [
+            "Voq93o"
+          ],
+          "uadata": [
+            "{\"formFactors\":[\"Desktop\"],\"fullVersionList\":[{\"brand\":\"Not)A;Brand\",\"version\":\"8.0.0.0\"},{\"brand\":\"Chromium\",\"version\":\"138.0.7204.101\"},{\"brand\":\"Google Chrome\",\"version\":\"138.0.7204.101\"}],\"mobile\":false,\"model\":\"\",\"platform\":\"macOS\",\"platformVersion\":\"15.5.0\"}"
+          ],
+          "pdf": [
+            "1"
+          ],
+          "qt": [
+            "0"
+          ],
+          "realp": [
+            "0"
+          ],
+          "wma": [
+            "0"
+          ],
+          "fla": [
+            "0"
+          ],
+          "java": [
+            "0"
+          ],
+          "ag": [
+            "0"
+          ],
+          "cookie": [
+            "1"
+          ],
+          "res": [
+            "800x600"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "content-type": "application/x-www-form-urlencoded; charset=utf-8",
+          "origin": "https://www.brighton-hove.gov.uk",
+          "referer": "https://www.brighton-hove.gov.uk/rubbish-recycling-and-streets/bins-and-collections/check-your-bin-and-box-collection-days"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T16:44:23.282Z",
+        "duration_ms": 117.377,
+        "endpoint": "/matomo.php",
+        "host": "brightonhovegovuk.matomo.cloud",
+        "method": "POST",
+        "status": 204,
+        "request_headers": {
+          "accept": "*/*",
+          "content-type": "application/x-www-form-urlencoded; charset=utf-8",
+          "origin": "https://www.brighton-hove.gov.uk",
+          "referer": "https://www.brighton-hove.gov.uk/rubbish-recycling-and-streets/bins-and-collections/check-your-bin-and-box-collection-days"
+        }
+      }
+    ],
+    "/g/collect": [
+      {
+        "timestamp": "2025-07-21T16:44:08.288Z",
+        "duration_ms": 65.664,
+        "endpoint": "/g/collect",
+        "host": "region1.analytics.google.com",
+        "method": "POST",
+        "status": 204,
+        "query_params": {
+          "v": [
+            "2"
+          ],
+          "tid": [
+            "G-3RDEYZNL16"
+          ],
+          "gtm": [
+            "45je57h0v9121318228za200"
+          ],
+          "_p": [
+            "1753116246477"
+          ],
+          "_gaz": [
+            "1"
+          ],
+          "gcd": [
+            "13l3l3l3l3l1"
+          ],
+          "npa": [
+            "1"
+          ],
+          "dma": [
+            "0"
+          ],
+          "tag_exp": [
+            "101509157~103116026~103200004~103233427~104684208~104684211"
+          ],
+          "gdid": [
+            "dMDhkMT"
+          ],
+          "cid": [
+            "553627569.1753116248"
+          ],
+          "ul": [
+            "en-gb"
+          ],
+          "sr": [
+            "800x600"
+          ],
+          "uaa": [
+            "arm"
+          ],
+          "uab": [
+            "64"
+          ],
+          "uafvl": [
+            "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+          ],
+          "uamb": [
+            "0"
+          ],
+          "uap": [
+            "macOS"
+          ],
+          "uapv": [
+            "15.5.0"
+          ],
+          "uaw": [
+            "0"
+          ],
+          "are": [
+            "1"
+          ],
+          "frm": [
+            "0"
+          ],
+          "pscdl": [
+            "noapi"
+          ],
+          "_s": [
+            "1"
+          ],
+          "sid": [
+            "1753116248"
+          ],
+          "sct": [
+            "1"
+          ],
+          "seg": [
+            "0"
+          ],
+          "dl": [
+            "https://www.brighton-hove.gov.uk/rubbish-recycling-and-streets"
+          ],
+          "dt": [
+            "Rubbish, recycling and streets"
+          ],
+          "en": [
+            "page_view"
+          ],
+          "_fv": [
+            "1"
+          ],
+          "_nsi": [
+            "1"
+          ],
+          "_ss": [
+            "1"
+          ],
+          "_ee": [
+            "1"
+          ],
+          "ep.page_placeholder": [
+            "PLACEHOLDER_page_location"
+          ],
+          "tfd": [
+            "1963"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "origin": "https://www.brighton-hove.gov.uk",
+          "referer": "https://www.brighton-hove.gov.uk/rubbish-recycling-and-streets",
+          "x-browser-copyright": "Copyright 2025 Google LLC. All rights reserved.",
+          "x-browser-validation": "qvLgIVtG4U8GgiRPSI9IJ22mUlI=",
+          "x-browser-year": "2025",
+          "x-client-data": "CMiXywE="
+        },
+        "response_headers": {
+          "cache-control": "no-cache, no-store, must-revalidate",
+          "content-type": "text/plain"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T16:44:08.288Z",
+        "duration_ms": 1078.778,
+        "endpoint": "/g/collect",
+        "host": "stats.g.doubleclick.net",
+        "method": "POST",
+        "status": 204,
+        "query_params": {
+          "v": [
+            "2"
+          ],
+          "tid": [
+            "G-3RDEYZNL16"
+          ],
+          "cid": [
+            "553627569.1753116248"
+          ],
+          "gtm": [
+            "45je57h0v9121318228za200"
+          ],
+          "aip": [
+            "1"
+          ],
+          "dma": [
+            "0"
+          ],
+          "gcd": [
+            "13l3l3l3l3l1"
+          ],
+          "npa": [
+            "1"
+          ],
+          "frm": [
+            "0"
+          ],
+          "tag_exp": [
+            "101509157~103116026~103200004~103233427~104684208~104684211"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "cookie": "[cookies present]",
+          "origin": "https://www.brighton-hove.gov.uk",
+          "referer": "https://www.brighton-hove.gov.uk/rubbish-recycling-and-streets",
+          "x-browser-copyright": "Copyright 2025 Google LLC. All rights reserved.",
+          "x-browser-validation": "qvLgIVtG4U8GgiRPSI9IJ22mUlI=",
+          "x-browser-year": "2025",
+          "x-client-data": "CMiXywE="
+        },
+        "response_headers": {
+          "cache-control": "no-cache, no-store, must-revalidate",
+          "content-type": "text/plain"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T16:44:20.734Z",
+        "duration_ms": -1,
+        "endpoint": "/g/collect",
+        "host": "region1.analytics.google.com",
+        "method": "POST",
+        "status": -1,
+        "query_params": {
+          "v": [
+            "2"
+          ],
+          "tid": [
+            "G-3RDEYZNL16"
+          ],
+          "gtm": [
+            "45je57h0v9121318228za200"
+          ],
+          "_p": [
+            "1753116246477"
+          ],
+          "gcd": [
+            "13l3l3l3l3l1"
+          ],
+          "npa": [
+            "1"
+          ],
+          "dma": [
+            "0"
+          ],
+          "tag_exp": [
+            "101509157~103116026~103200004~103233427~104684208~104684211"
+          ],
+          "gdid": [
+            "dMDhkMT"
+          ],
+          "cid": [
+            "553627569.1753116248"
+          ],
+          "ul": [
+            "en-gb"
+          ],
+          "sr": [
+            "800x600"
+          ],
+          "uaa": [
+            "arm"
+          ],
+          "uab": [
+            "64"
+          ],
+          "uafvl": [
+            "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+          ],
+          "uamb": [
+            "0"
+          ],
+          "uap": [
+            "macOS"
+          ],
+          "uapv": [
+            "15.5.0"
+          ],
+          "uaw": [
+            "0"
+          ],
+          "are": [
+            "1"
+          ],
+          "frm": [
+            "0"
+          ],
+          "pscdl": [
+            "noapi"
+          ],
+          "_eu": [
+            "AAAAAAQ"
+          ],
+          "_s": [
+            "2"
+          ],
+          "sid": [
+            "1753116248"
+          ],
+          "sct": [
+            "1"
+          ],
+          "seg": [
+            "1"
+          ],
+          "dl": [
+            "https://www.brighton-hove.gov.uk/rubbish-recycling-and-streets"
+          ],
+          "dt": [
+            "Rubbish, recycling and streets"
+          ],
+          "en": [
+            "user_engagement"
+          ],
+          "ep.page_placeholder": [
+            "PLACEHOLDER_page_location"
+          ],
+          "_et": [
+            "12445"
+          ],
+          "tfd": [
+            "14411"
+          ]
+        },
+        "request_headers": {
+          "referer": "https://www.brighton-hove.gov.uk/rubbish-recycling-and-streets"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T16:44:25.808Z",
+        "duration_ms": 13.59,
+        "endpoint": "/g/collect",
+        "host": "region1.analytics.google.com",
+        "method": "POST",
+        "status": 204,
+        "query_params": {
+          "v": [
+            "2"
+          ],
+          "tid": [
+            "G-3RDEYZNL16"
+          ],
+          "gtm": [
+            "45je57h0v9121318228za200"
+          ],
+          "_p": [
+            "1753116260737"
+          ],
+          "gcd": [
+            "13l3l3l3l3l1"
+          ],
+          "npa": [
+            "1"
+          ],
+          "dma": [
+            "0"
+          ],
+          "tag_exp": [
+            "101509157~103116026~103200004~103233427~104684208~104684211"
+          ],
+          "gdid": [
+            "dMDhkMT"
+          ],
+          "cid": [
+            "553627569.1753116248"
+          ],
+          "ul": [
+            "en-gb"
+          ],
+          "sr": [
+            "800x600"
+          ],
+          "uaa": [
+            "arm"
+          ],
+          "uab": [
+            "64"
+          ],
+          "uafvl": [
+            "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+          ],
+          "uamb": [
+            "0"
+          ],
+          "uap": [
+            "macOS"
+          ],
+          "uapv": [
+            "15.5.0"
+          ],
+          "uaw": [
+            "0"
+          ],
+          "are": [
+            "1"
+          ],
+          "frm": [
+            "0"
+          ],
+          "pscdl": [
+            "noapi"
+          ],
+          "_eu": [
+            "AAAAAAQ"
+          ],
+          "sid": [
+            "1753116248"
+          ],
+          "sct": [
+            "1"
+          ],
+          "seg": [
+            "1"
+          ],
+          "dl": [
+            "https://www.brighton-hove.gov.uk/rubbish-recycling-and-streets/bins-and-collections/check-your-bin-and-box-collection-days"
+          ],
+          "dr": [
+            "https://www.brighton-hove.gov.uk/rubbish-recycling-and-streets"
+          ],
+          "dt": [
+            "Check your bin and box collection days"
+          ],
+          "_s": [
+            "1"
+          ],
+          "tfd": [
+            "5200"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "content-type": "text/plain;charset=UTF-8",
+          "origin": "https://www.brighton-hove.gov.uk",
+          "referer": "https://www.brighton-hove.gov.uk/rubbish-recycling-and-streets/bins-and-collections/check-your-bin-and-box-collection-days",
+          "x-browser-copyright": "Copyright 2025 Google LLC. All rights reserved.",
+          "x-browser-validation": "qvLgIVtG4U8GgiRPSI9IJ22mUlI=",
+          "x-browser-year": "2025",
+          "x-client-data": "CMiXywE="
+        },
+        "response_headers": {
+          "cache-control": "no-cache, no-store, must-revalidate",
+          "content-type": "text/plain"
+        }
+      }
+    ],
+    "/{id}/bins-and-collections/{id}": [
+      {
+        "timestamp": "2025-07-21T16:44:20.685Z",
+        "duration_ms": 54.277,
+        "endpoint": "/{id}/bins-and-collections/{id}",
+        "host": "www.brighton-hove.gov.uk",
+        "method": "GET",
+        "status": 200,
+        "path_params": [
+          "rubbish-recycling-and-streets",
+          "check-your-bin-and-box-collection-days"
+        ],
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+          "cookie": "[cookies present]",
+          "referer": "https://www.brighton-hove.gov.uk/rubbish-recycling-and-streets"
+        },
+        "response_headers": {
+          "cache-control": "max-age=604800, public",
+          "content-type": "text/html; charset=UTF-8",
+          "x-ah-environment": "prod",
+          "x-cache": "HIT",
+          "x-cache-hits": "16",
+          "x-cdn": "Imperva",
+          "x-content-type-options": "nosniff",
+          "x-drupal-cache": "MISS",
+          "x-drupal-dynamic-cache": "MISS",
+          "x-frame-options": "SAMEORIGIN",
+          "x-generator": "Drupal 10 (https://www.drupal.org)",
+          "x-iinfo": "12-109251820-109251826 PNNN RT(1753116246393 14351) q(0 0 0 -1) r(1 1) U18",
+          "x-request-id": "v-86503128-664f-11f0-8ffe-ffa7bd546afc"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 178787,
+          "compressed": true,
+          "content_ref": "eb070eb2910460d1d715a5034e4bd416d5623fe8.html"
+        }
+      }
+    ],
+    "/link/collections": [
+      {
+        "timestamp": "2025-07-21T16:44:23.077Z",
+        "duration_ms": 185.951,
+        "endpoint": "/link/collections",
+        "host": "enviroservices.brighton-hove.gov.uk",
+        "method": "GET",
+        "status": 303,
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+          "cookie": "[cookies present]",
+          "referer": "https://www.brighton-hove.gov.uk/rubbish-recycling-and-streets/bins-and-collections/check-your-bin-and-box-collection-days"
+        },
+        "response_headers": {
+          "location": "/index.html",
+          "set-cookie": "[cookies present]",
+          "x-frame-options": "sameorigin"
+        },
+        "redirect_to": "/index.html"
+      }
+    ],
+    "/index.html": [
+      {
+        "timestamp": "2025-07-21T16:44:23.237Z",
+        "duration_ms": 25.609,
+        "endpoint": "/index.html",
+        "host": "enviroservices.brighton-hove.gov.uk",
+        "method": "GET",
+        "status": 200,
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+          "cookie": "[cookies present]",
+          "referer": "https://www.brighton-hove.gov.uk/rubbish-recycling-and-streets/bins-and-collections/check-your-bin-and-box-collection-days"
+        },
+        "response_headers": {
+          "cache-control": "no-cache",
+          "content-type": "text/html",
+          "x-frame-options": "sameorigin"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 2831,
+          "compressed": true,
+          "content_ref": "619e06744483be6f807d7ace075ed3784bdb172b.html"
+        }
+      }
+    ],
+    "/metamodel.json": [
+      {
+        "timestamp": "2025-07-21T16:44:23.525Z",
+        "duration_ms": 26.256,
+        "endpoint": "/metamodel.json",
+        "host": "enviroservices.brighton-hove.gov.uk",
+        "method": "GET",
+        "status": 200,
+        "request_headers": {
+          "accept": "*/*",
+          "cookie": "[cookies present]",
+          "referer": "https://enviroservices.brighton-hove.gov.uk/index.html",
+          "x-mx-reqtoken": "1753116263515-0"
+        },
+        "response_headers": {
+          "content-type": "application/json",
+          "x-frame-options": "sameorigin"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 5126,
+          "compressed": true,
+          "content_ref": "b3f79c61f789df8cbfceeee41a9ceb4deca64b81.json"
+        }
+      }
+    ],
+    "/xas": [
+      {
+        "timestamp": "2025-07-21T16:44:23.526Z",
+        "duration_ms": 69.611,
+        "endpoint": "/xas",
+        "host": "enviroservices.brighton-hove.gov.uk",
+        "method": "POST",
+        "status": 200,
+        "request_headers": {
+          "accept": "application/json",
+          "content-type": "application/json",
+          "cookie": "[cookies present]",
+          "origin": "https://enviroservices.brighton-hove.gov.uk",
+          "referer": "https://enviroservices.brighton-hove.gov.uk/index.html",
+          "x-mx-reqtoken": "1753116263524-1"
+        },
+        "response_headers": {
+          "cache-control": "no-store",
+          "content-type": "application/json;charset=utf-8",
+          "set-cookie": "[cookies present]",
+          "x-frame-options": "sameorigin"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 240521,
+          "compressed": true,
+          "content_ref": "2516c7f0517174e1ee57a65c31b793cfc0cd91d7.json"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T16:44:30.561Z",
+        "duration_ms": 580.8710000000001,
+        "endpoint": "/xas",
+        "host": "enviroservices.brighton-hove.gov.uk",
+        "method": "POST",
+        "status": 200,
+        "request_headers": {
+          "accept": "application/json",
+          "content-type": "application/json",
+          "cookie": "[cookies present]",
+          "origin": "https://enviroservices.brighton-hove.gov.uk",
+          "referer": "https://enviroservices.brighton-hove.gov.uk/link/collections",
+          "x-csrf-token": "0635b201-943e-449a-af6a-ccba4ec460fb",
+          "x-mx-reqtoken": "1753116270559-4"
+        },
+        "response_headers": {
+          "cache-control": "no-store",
+          "content-type": "application/json;charset=utf-8",
+          "x-frame-options": "sameorigin"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 459251,
+          "compressed": true,
+          "content_ref": "e744061707f881efd0ce17d21ee55fcbc150693e.json"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T16:44:31.205Z",
+        "duration_ms": 261.096,
+        "endpoint": "/xas",
+        "host": "enviroservices.brighton-hove.gov.uk",
+        "method": "POST",
+        "status": 200,
+        "request_headers": {
+          "accept": "application/json",
+          "content-type": "application/json",
+          "cookie": "[cookies present]",
+          "origin": "https://enviroservices.brighton-hove.gov.uk",
+          "referer": "https://enviroservices.brighton-hove.gov.uk/link/collections",
+          "x-csrf-token": "0635b201-943e-449a-af6a-ccba4ec460fb",
+          "x-mx-reqtoken": "1753116271177-5"
+        },
+        "response_headers": {
+          "cache-control": "no-store",
+          "content-type": "application/json;charset=utf-8",
+          "x-frame-options": "sameorigin"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 43094,
+          "compressed": true,
+          "content_ref": "783a6aec84140b9aa1a01bb2f581b18d2f4717a8.json"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T16:44:34.011Z",
+        "duration_ms": 28.878999999999998,
+        "endpoint": "/xas",
+        "host": "enviroservices.brighton-hove.gov.uk",
+        "method": "POST",
+        "status": 200,
+        "request_headers": {
+          "accept": "application/json",
+          "content-type": "application/json",
+          "cookie": "[cookies present]",
+          "origin": "https://enviroservices.brighton-hove.gov.uk",
+          "referer": "https://enviroservices.brighton-hove.gov.uk/link/collections",
+          "x-csrf-token": "0635b201-943e-449a-af6a-ccba4ec460fb",
+          "x-mx-reqtoken": "1753116274009-6"
+        },
+        "response_headers": {
+          "cache-control": "no-store",
+          "content-type": "application/json;charset=utf-8",
+          "x-frame-options": "sameorigin"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 5138,
+          "compressed": true,
+          "content_ref": "fcddd87050c26e2907956b1f35f53f7e2ff3a54b.json"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T16:44:34.079Z",
+        "duration_ms": 280.68600000000004,
+        "endpoint": "/xas",
+        "host": "enviroservices.brighton-hove.gov.uk",
+        "method": "POST",
+        "status": 200,
+        "request_headers": {
+          "accept": "application/json",
+          "content-type": "application/json",
+          "cookie": "[cookies present]",
+          "origin": "https://enviroservices.brighton-hove.gov.uk",
+          "referer": "https://enviroservices.brighton-hove.gov.uk/link/collections",
+          "x-csrf-token": "0635b201-943e-449a-af6a-ccba4ec460fb",
+          "x-mx-reqtoken": "1753116274047-7"
+        },
+        "response_headers": {
+          "cache-control": "no-store",
+          "content-type": "application/json;charset=utf-8",
+          "x-frame-options": "sameorigin"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 43094,
+          "compressed": true,
+          "content_ref": "e7c083432373f1f48ce75914b8dbe7597487cb49.json"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T16:44:36.613Z",
+        "duration_ms": 1327.366,
+        "endpoint": "/xas",
+        "host": "enviroservices.brighton-hove.gov.uk",
+        "method": "POST",
+        "status": 200,
+        "request_headers": {
+          "accept": "application/json",
+          "content-type": "application/json",
+          "cookie": "[cookies present]",
+          "origin": "https://enviroservices.brighton-hove.gov.uk",
+          "referer": "https://enviroservices.brighton-hove.gov.uk/link/collections",
+          "x-csrf-token": "0635b201-943e-449a-af6a-ccba4ec460fb",
+          "x-mx-reqtoken": "1753116276609-8"
+        },
+        "response_headers": {
+          "cache-control": "no-store",
+          "content-type": "application/json;charset=utf-8",
+          "x-frame-options": "sameorigin"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 10330,
+          "compressed": true,
+          "content_ref": "fd159af9b2d336081a2255bed2e53410cccaca17.json"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T16:44:37.999Z",
+        "duration_ms": 44.095,
+        "endpoint": "/xas",
+        "host": "enviroservices.brighton-hove.gov.uk",
+        "method": "POST",
+        "status": 200,
+        "request_headers": {
+          "accept": "application/json",
+          "content-type": "application/json",
+          "cookie": "[cookies present]",
+          "origin": "https://enviroservices.brighton-hove.gov.uk",
+          "referer": "https://enviroservices.brighton-hove.gov.uk/link/collections",
+          "x-csrf-token": "0635b201-943e-449a-af6a-ccba4ec460fb",
+          "x-mx-reqtoken": "1753116277974-10"
+        },
+        "response_headers": {
+          "cache-control": "no-store",
+          "content-type": "application/json;charset=utf-8",
+          "x-frame-options": "sameorigin"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 649,
+          "compressed": true,
+          "content_ref": "9df8a4bb4ffae9f0cdd61b202c0cf1575feb615f.json"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T16:44:37.998Z",
+        "duration_ms": 188.427,
+        "endpoint": "/xas",
+        "host": "enviroservices.brighton-hove.gov.uk",
+        "method": "POST",
+        "status": 200,
+        "request_headers": {
+          "accept": "application/json",
+          "content-type": "application/json",
+          "cookie": "[cookies present]",
+          "origin": "https://enviroservices.brighton-hove.gov.uk",
+          "referer": "https://enviroservices.brighton-hove.gov.uk/link/collections",
+          "x-csrf-token": "0635b201-943e-449a-af6a-ccba4ec460fb",
+          "x-mx-reqtoken": "1753116277963-9"
+        },
+        "response_headers": {
+          "cache-control": "no-store",
+          "content-type": "application/json;charset=utf-8",
+          "x-frame-options": "sameorigin"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 17914,
+          "compressed": true,
+          "content_ref": "d13a9b827fe126870b2d1c6fa0c67f45ad98d82d.json"
+        }
+      }
+    ],
+    "/manifest.json": [
+      {
+        "timestamp": "2025-07-21T16:44:23.573Z",
+        "duration_ms": 90.31499999999998,
+        "endpoint": "/manifest.json",
+        "host": "enviroservices.brighton-hove.gov.uk",
+        "method": "GET",
+        "status": 200,
+        "request_headers": {
+          "accept": "*/*",
+          "referer": "https://enviroservices.brighton-hove.gov.uk/index.html"
+        },
+        "response_headers": {
+          "content-type": "application/json",
+          "x-frame-options": "sameorigin"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 403,
+          "compressed": true,
+          "content_ref": "e8fec2b76286ddf07a2498cee0c4743d5310b77e.json"
+        }
+      }
+    ],
+    "/pages/en_GB/Collections/{id}": [
+      {
+        "timestamp": "2025-07-21T16:44:23.840Z",
+        "duration_ms": 25.97,
+        "endpoint": "/pages/en_GB/Collections/{id}",
+        "host": "enviroservices.brighton-hove.gov.uk",
+        "method": "GET",
+        "status": 200,
+        "path_params": [
+          "Collection_1_Address.page.xml"
+        ],
+        "request_headers": {
+          "accept": "*/*",
+          "cookie": "[cookies present]",
+          "referer": "https://enviroservices.brighton-hove.gov.uk/index.html",
+          "x-csrf-token": "0635b201-943e-449a-af6a-ccba4ec460fb",
+          "x-mx-reqtoken": "1753116263793-2"
+        },
+        "response_headers": {
+          "cache-control": "max-age=31536000",
+          "content-type": "application/xml"
+        }
+      }
+    ],
+    "/pages/en_GB/NavigationLayouts/{id}": [
+      {
+        "timestamp": "2025-07-21T16:44:23.841Z",
+        "duration_ms": 25.554,
+        "endpoint": "/pages/en_GB/NavigationLayouts/{id}",
+        "host": "enviroservices.brighton-hove.gov.uk",
+        "method": "GET",
+        "status": 200,
+        "path_params": [
+          "Public_Responsive.layout.xml"
+        ],
+        "request_headers": {
+          "accept": "*/*",
+          "cookie": "[cookies present]",
+          "referer": "https://enviroservices.brighton-hove.gov.uk/index.html",
+          "x-csrf-token": "0635b201-943e-449a-af6a-ccba4ec460fb",
+          "x-mx-reqtoken": "1753116263821-3"
+        },
+        "response_headers": {
+          "cache-control": "max-age=31536000",
+          "content-type": "application/xml"
+        }
+      }
+    ]
+  }
 }

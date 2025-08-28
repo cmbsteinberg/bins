@@ -1,275 +1,3178 @@
 {
-  "metadata": {
-    "trace_name": "barnsley_metropolitan_borough_council",
-    "processed_at": "2025-08-26 18:44:24",
-    "workflow_steps_count": 7,
-    "navigation_events_count": 20
-  },
-  "scraping_patterns": {
-    "login_detected": false,
-    "form_submissions": 8,
-    "navigation_count": 1,
-    "unique_domains": [
-      "apikeys.civiccomputing.com",
-      "oc-cdn-public-gbr.azureedge.net",
-      "waste.barnsley.gov.uk",
-      "m-a06f0de9-31e3-ee11-9046-6045bdf13ea0.uk.omnichannelengagementhub.com",
-      "eu-mobile.events.data.microsoft.com",
-      "ukwest-0.in.applicationinsights.azure.com",
-      "www.barnsley.gov.uk",
-      "a.eu.silktide.com"
-    ],
-    "api_endpoints": [
-      "https://www.barnsley.gov.uk/manifest.json"
-    ],
-    "data_extraction_indicators": []
-  },
-  "workflow_steps": [
+  "entries": [
     {
-      "action": "goto",
-      "target": "https://www.barnsley.gov.uk/pid524",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
+      "timestamp": "2025-07-21T11:05:39.592Z",
+      "duration_ms": 95.498,
+      "endpoint": "/pid524",
+      "host": "www.barnsley.gov.uk",
+      "method": "GET",
+      "status": 200,
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7"
+      },
+      "response_headers": {
+        "content-type": "text/html; charset=utf-8",
+        "set-cookie": "[cookies present]",
+        "x-powered-by": "ASP.NET"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 56959,
+        "compressed": true,
+        "content_ref": "e8133bdd897012eaa940cd7c6de4e4c09d0623da.html"
+      }
     },
     {
-      "action": "click",
-      "target": "aria-ref=e15 >> internal:describe=\"I Accept Cookies\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
+      "timestamp": "2025-07-21T11:05:40.222Z",
+      "duration_ms": 93.557,
+      "endpoint": "/v1/events",
+      "host": "a.eu.silktide.com",
+      "method": "POST",
+      "status": 202,
+      "request_headers": {
+        "accept": "application/json",
+        "content-type": "application/json",
+        "origin": "https://www.barnsley.gov.uk",
+        "referer": "https://www.barnsley.gov.uk/"
+      },
+      "response_headers": {
+        "content-type": "text/plain; charset=utf-8",
+        "x-powered-by": "Silktide"
+      }
     },
     {
-      "action": "click",
-      "target": "aria-ref=e96 >> internal:describe=\"Check your bin day\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
+      "timestamp": "2025-07-21T11:05:40.273Z",
+      "duration_ms": 102.42,
+      "endpoint": "/livechatwidget/v2public/htmls/chatv2.html",
+      "host": "oc-cdn-public-gbr.azureedge.net",
+      "method": "GET",
+      "status": 200,
+      "query_params": {
+        "data-app-id": [
+          "91ac734d-d8ca-4052-8ed0-006b4bff52aa"
+        ],
+        "data-org-id": [
+          "a06f0de9-31e3-ee11-9046-6045bdf13ea0"
+        ],
+        "data-org-url": [
+          "https://m-a06f0de9-31e3-ee11-9046-6045bdf13ea0.uk.omnichannelengagementhub.com"
+        ],
+        "hostname": [
+          "www.barnsley.gov.uk"
+        ],
+        "data-lcw-version": [
+          "prod"
+        ],
+        "data-color-override": [
+          "#283483"
+        ],
+        "data-customization-callback": [
+          "{\"chatButtonProps\":{\"controlProps\":{\"hideChatTextContainer\":\"true\"},\"styleProps\":{\"iconStyleProps\":{\"backgroundImage\":\"url(https://www.barnsley.gov.uk/media/rrtlbpts/chat-bubbles.png)\"},\"generalStyleProps\":{\"minWidth\":\"60px\",\"width\":\"60px\",\"height\":\"60px\"}}},\"styleProps\":{\"generalStyles\":{\"borderRadius\":\"15px 15px 15px 15px\"}},\"loadingPaneProps\":{\"controlProps\":{\"titleText\":\"Chat to B-Bot\",\"hideSubtitle\":\"true\"},\"styleProps\":{\"generalStyleProps\":{\"borderRadius\":\"0 0 15px 15px\"},\"iconImageProps\":{\"src\":\"https://www.barnsley.gov.uk/media/rrtlbpts/chat-bubbles.png\"}}},\"headerProps\":{\"controlProps\":{\"headerIconProps\":{\"src\":\"https://www.barnsley.gov.uk/media/rrtlbpts/chat-bubbles.png\"}},\"styleProps\":{\"generalStyleProps\":{\"borderRadius\":\"15px 15px 0 0\"}}},\"footerProps\":{\"styleProps\":{\"generalStyleProps\":{\"borderRadius\":\"0 0 15px 15px\"}}},\"webChatContainerProps\":{\"webChatStyles\":{\"backgroundColor\":\"white\",\"bubbleBackground\":\"#F2F3F6\",\"bubbleFromUserBackground\":\"#bbe4f8\",\"bubbleBorderWidth\":0,\"bubbleFromUserBorderWidth\":0,\"bubbleBorderRadius\":\"0 10px 10px 10px !important\",\"bubbleFromUserBorderRadius\":\"10px 0 10px 10px\",\"bubbleTextColor\":\"black\",\"bubbleFromUserTextColor\":\"black\",\"suggestedActionLayout\":\"flow\",\"suggestedActionHeight\":30,\"suggestedActionBackgroundColor\":\"white\",\"suggestedActionBackgroundColorOnHover\":\"#bbe4f8\",\"suggestedActionTextColor\":\"black\",\"suggestedActionBorderWidth\":1,\"suggestedActionBorderRadius\":\"10px 0 10px 10px\",\"suggestedActionBorderColor\":\"#bbe4f8\",\"paddingWide\":10},\"adaptiveCardStyles\":{\"background\":\"#F2F3F6\",\"color\":\"black\"},\"renderingMiddlewareProps\":{\"avatarStyleProps\":{\"backgroundImage\":\"url('https://www.barnsley.gov.uk/media/hwhjgyf4/barnsley-council-coat-of-arms-blue-background.png')\",\"backgroundSize\":\"cover\"},\"avatarTextStyleProps\":{\"display\":\"none\"},\"receivedMessageAnchorStyles\":{\"color\":\"blue\",\"filter\":\"invert(100%)\"}}}}"
+        ]
+      },
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+        "referer": "https://www.barnsley.gov.uk/"
+      },
+      "response_headers": {
+        "cache-control": "public, max-age=60",
+        "content-type": "text/html",
+        "x-azure-ref": "20250721T110540Z-16896f46f997v4xphC1LTSmeu400000009g000000000mapq",
+        "x-cache": "TCP_HIT",
+        "x-cache-info": "L1_T2",
+        "x-fd-int-roxy-purgeid": "0",
+        "x-ms-blob-type": "BlockBlob",
+        "x-ms-lease-status": "unlocked",
+        "x-ms-request-id": "7a1174d3-901e-0003-612c-fabd2b000000",
+        "x-ms-version": "2009-09-19"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 10014,
+        "compressed": true,
+        "content_ref": "9024669f1dac8d7409b9d433045f36cb703439bf.html"
+      }
     },
     {
-      "action": "fill",
-      "target": "aria-ref=e32 >> internal:describe=\"Postcode\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0,
-      "value": "DN5 7HR"
+      "timestamp": "2025-07-21T11:05:41.016Z",
+      "duration_ms": 56.29,
+      "endpoint": "/c/v",
+      "host": "apikeys.civiccomputing.com",
+      "method": "GET",
+      "status": 200,
+      "query_params": {
+        "d": [
+          "www.barnsley.gov.uk"
+        ],
+        "p": [
+          "CookieControl Multi-Site"
+        ],
+        "v": [
+          "9"
+        ],
+        "k": [
+          "adac88dfc01f638c9dbfbf62164b90dec2e40c77"
+        ],
+        "format": [
+          "json"
+        ]
+      },
+      "request_headers": {
+        "accept": "application/json, text/plain, */*",
+        "origin": "https://www.barnsley.gov.uk",
+        "referer": "https://www.barnsley.gov.uk/"
+      },
+      "response_headers": {
+        "cache-control": "max-age=3600, private, no-store",
+        "content-type": "application/json",
+        "x-apikeys": "hit",
+        "x-cf-test": "true",
+        "x-content-type-options": "nosniff",
+        "x-xss-protection": "1"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 304,
+        "content_ref": "a259512eb944f4576768dae9874e7d106516b387.json"
+      }
     },
     {
-      "action": "click",
-      "target": "aria-ref=e34 >> internal:describe=\"Find address\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
+      "timestamp": "2025-07-21T11:05:41.694Z",
+      "duration_ms": 45.734,
+      "endpoint": "/manifest.json",
+      "host": "www.barnsley.gov.uk",
+      "method": "GET",
+      "status": 200,
+      "request_headers": {
+        "referer": "https://www.barnsley.gov.uk/pid524"
+      },
+      "response_headers": {
+        "x-powered-by": "ASP.NET",
+        "content-type": "application/json"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 1106,
+        "compressed": true,
+        "content_ref": "a80c1360af9e75ada7c44760b78954126bcd083e.json"
+      }
     },
     {
-      "action": "selectOption",
-      "target": "aria-ref=e37 >> internal:describe=\"combobox\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0,
-      "value": null
+      "timestamp": "2025-07-21T11:05:41.571Z",
+      "duration_ms": 100.36099999999999,
+      "endpoint": "/livechatconnector/config/{id}/{id}",
+      "host": "m-a06f0de9-31e3-ee11-9046-6045bdf13ea0.uk.omnichannelengagementhub.com",
+      "method": "GET",
+      "status": 200,
+      "path_params": [
+        "a06f0de9-31e3-ee11-9046-6045bdf13ea0",
+        "91ac734d-d8ca-4052-8ed0-006b4bff52aa"
+      ],
+      "query_params": {
+        "requestId": [
+          "9adb15eb-8fcb-49bb-81d0-556a4b2a61dd"
+        ],
+        "channelId": [
+          "lcw"
+        ]
+      },
+      "request_headers": {
+        "accept": "application/json, text/plain, */*",
+        "origin": "https://oc-cdn-public-gbr.azureedge.net",
+        "referer": "https://oc-cdn-public-gbr.azureedge.net/",
+        "x-ms-client-request-id": "9adb15eb-8fcb-49bb-81d0-556a4b2a61dd"
+      },
+      "response_headers": {
+        "cache-control": "no-cache, no-store",
+        "content-type": "application/json",
+        "x-content-type-options": "nosniff",
+        "x-ms-activity-vector": "00.00.00",
+        "x-ms-correlation-id": "61cb6193-67d8-4063-bfa3-6b238830994f",
+        "x-ms-gateway-clusters": "prdil102wuk",
+        "x-ms-islandgateway": "_prdil102wukgb0_2",
+        "x-ms-messagingruntime": "ZB000000I",
+        "x-ms-ppapigateway": "_prdil102wukgb0_2",
+        "x-ms-service-request-id": "85e82b99-9990-4102-9b29-08d0c18f339f",
+        "x-servicefabric": "NoRetry"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 12752,
+        "content_ref": "15da5b7884ea5712c7a0b353743bfc395bd5ff3f.json"
+      }
     },
     {
-      "action": "click",
-      "target": "aria-ref=e80 >> internal:describe=\"Select address\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
+      "timestamp": "2025-07-21T11:05:41.703Z",
+      "duration_ms": 14.736,
+      "endpoint": "/livechatconnector/v2/lcwfcsdetails/{id}",
+      "host": "m-a06f0de9-31e3-ee11-9046-6045bdf13ea0.uk.omnichannelengagementhub.com",
+      "method": "GET",
+      "status": 200,
+      "path_params": [
+        "a06f0de9-31e3-ee11-9046-6045bdf13ea0"
+      ],
+      "request_headers": {
+        "accept": "*/*",
+        "origin": "https://oc-cdn-public-gbr.azureedge.net",
+        "referer": "https://oc-cdn-public-gbr.azureedge.net/"
+      },
+      "response_headers": {
+        "cache-control": "no-cache, no-store",
+        "content-type": "application/json; charset=utf-8",
+        "x-content-type-options": "nosniff",
+        "x-ms-activity-vector": "00.00.00",
+        "x-ms-correlation-id": "f9b9c67c-73cd-451f-b126-829b11f3da20",
+        "x-ms-gateway-clusters": "prdil102wuk",
+        "x-ms-islandgateway": "_prdil102wukgb0_2",
+        "x-ms-messagingruntime": "PI0000002",
+        "x-ms-ppapigateway": "_prdil102wukgb0_1",
+        "x-ms-service-request-id": "5d08782a-5a6c-46cf-8f80-e8303381d23e",
+        "x-servicefabric": "NoRetry"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 314,
+        "content_ref": "b360e756dea96fc563ca568cc65572f16a793e83.json"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T11:05:41.699Z",
+      "duration_ms": 96.26,
+      "endpoint": "/v2/track",
+      "host": "ukwest-0.in.applicationinsights.azure.com",
+      "method": "POST",
+      "status": 400,
+      "request_headers": {
+        "accept": "*/*",
+        "content-type": "application/json",
+        "origin": "https://www.barnsley.gov.uk",
+        "referer": "https://www.barnsley.gov.uk/"
+      },
+      "response_headers": {
+        "content-type": "application/json; charset=utf-8",
+        "x-content-type-options": "nosniff"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 297,
+        "content_ref": "c80779d79b8408ecfc675436fd4ac617f2e0bfe5.json"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T11:05:41.767Z",
+      "duration_ms": 273.405,
+      "endpoint": "/Collector/3.0",
+      "host": "eu-mobile.events.data.microsoft.com",
+      "method": "POST",
+      "status": 200,
+      "query_params": {
+        "qsp": [
+          "true"
+        ],
+        "content-type": [
+          "application/bond-compact-binary"
+        ],
+        "client-id": [
+          "NO_AUTH"
+        ],
+        "sdk-version": [
+          "AWT-Web-JS-1.8.7"
+        ],
+        "x-apikey": [
+          "c7655518acf1403f93ff6b9f77942f0a-d01a02fd-6b50-4de3-a566-62eda11f93bc-7083"
+        ],
+        "client-time-epoch-millis": [
+          "1753095941765"
+        ],
+        "time-delta-to-apply-millis": [
+          "use-collector-delta"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "origin": "https://oc-cdn-public-gbr.azureedge.net",
+        "referer": "https://oc-cdn-public-gbr.azureedge.net/"
+      },
+      "response_headers": {
+        "content-type": "application/json"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 0,
+        "content_ref": "da39a3ee5e6b4b0d3255bfef95601890afd80709.json"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T11:05:42.657Z",
+      "duration_ms": 64.63799999999999,
+      "endpoint": "/g/collect",
+      "host": "region1.google-analytics.com",
+      "method": "POST",
+      "status": 204,
+      "query_params": {
+        "v": [
+          "2"
+        ],
+        "tid": [
+          "G-4FR8X0E6WX"
+        ],
+        "gtm": [
+          "45Pe57g1v9102376018z89195947602za200zb9195947602"
+        ],
+        "_p": [
+          "1753095939722"
+        ],
+        "gcd": [
+          "13l3l3l3l1l1"
+        ],
+        "npa": [
+          "0"
+        ],
+        "dma": [
+          "0"
+        ],
+        "tag_exp": [
+          "101509157~102015666~103116026~103200004~103233427~104684208~104684211"
+        ],
+        "cid": [
+          "1292390203.1753095943"
+        ],
+        "ul": [
+          "en-gb"
+        ],
+        "sr": [
+          "800x600"
+        ],
+        "uaa": [
+          "arm"
+        ],
+        "uab": [
+          "64"
+        ],
+        "uafvl": [
+          "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+        ],
+        "uamb": [
+          "0"
+        ],
+        "uap": [
+          "macOS"
+        ],
+        "uapv": [
+          "15.5.0"
+        ],
+        "uaw": [
+          "0"
+        ],
+        "are": [
+          "1"
+        ],
+        "frm": [
+          "0"
+        ],
+        "pscdl": [
+          "noapi"
+        ],
+        "_s": [
+          "1"
+        ],
+        "sid": [
+          "1753095942"
+        ],
+        "sct": [
+          "1"
+        ],
+        "seg": [
+          "0"
+        ],
+        "dl": [
+          "https://www.barnsley.gov.uk/pid524"
+        ],
+        "dt": [
+          "Bins, rubbish and recycling"
+        ],
+        "en": [
+          "page_view"
+        ],
+        "_fv": [
+          "1"
+        ],
+        "_nsi": [
+          "1"
+        ],
+        "_ss": [
+          "1"
+        ],
+        "tfd": [
+          "3066"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "cookie": "[cookies present]",
+        "origin": "https://www.barnsley.gov.uk",
+        "referer": "https://www.barnsley.gov.uk/"
+      },
+      "response_headers": {
+        "cache-control": "no-cache, no-store, must-revalidate",
+        "content-type": "text/plain"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T11:05:42.690Z",
+      "duration_ms": 15.006,
+      "endpoint": "/g/collect",
+      "host": "region1.google-analytics.com",
+      "method": "POST",
+      "status": 204,
+      "query_params": {
+        "v": [
+          "2"
+        ],
+        "tid": [
+          "G-5E94ZYFC73"
+        ],
+        "gtm": [
+          "45je57g1v9102378646z89195947602za200zb9195947602"
+        ],
+        "_p": [
+          "1753095939722"
+        ],
+        "gcd": [
+          "13l3l3l3l1l1"
+        ],
+        "npa": [
+          "0"
+        ],
+        "dma": [
+          "0"
+        ],
+        "tag_exp": [
+          "101509157~103116026~103200004~103233427~104684208~104684211"
+        ],
+        "cid": [
+          "1292390203.1753095943"
+        ],
+        "ul": [
+          "en-gb"
+        ],
+        "sr": [
+          "800x600"
+        ],
+        "uaa": [
+          "arm"
+        ],
+        "uab": [
+          "64"
+        ],
+        "uafvl": [
+          "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+        ],
+        "uamb": [
+          "0"
+        ],
+        "uap": [
+          "macOS"
+        ],
+        "uapv": [
+          "15.5.0"
+        ],
+        "uaw": [
+          "0"
+        ],
+        "are": [
+          "1"
+        ],
+        "frm": [
+          "0"
+        ],
+        "pscdl": [
+          "noapi"
+        ],
+        "_s": [
+          "1"
+        ],
+        "sid": [
+          "1753095942"
+        ],
+        "sct": [
+          "1"
+        ],
+        "seg": [
+          "0"
+        ],
+        "dl": [
+          "https://www.barnsley.gov.uk/pid524"
+        ],
+        "dt": [
+          "Bins, rubbish and recycling"
+        ],
+        "en": [
+          "page_view"
+        ],
+        "_fv": [
+          "1"
+        ],
+        "_ss": [
+          "1"
+        ],
+        "tfd": [
+          "3087"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "cookie": "[cookies present]",
+        "origin": "https://www.barnsley.gov.uk",
+        "referer": "https://www.barnsley.gov.uk/"
+      },
+      "response_headers": {
+        "cache-control": "no-cache, no-store, must-revalidate",
+        "content-type": "text/plain"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T11:05:42.719Z",
+      "duration_ms": 14.094,
+      "endpoint": "/g/collect",
+      "host": "region1.google-analytics.com",
+      "method": "POST",
+      "status": 204,
+      "query_params": {
+        "v": [
+          "2"
+        ],
+        "tid": [
+          "G-33610E8BVS"
+        ],
+        "gtm": [
+          "45Pe57g1v9102377703z89195947602za200zb9195947602"
+        ],
+        "_p": [
+          "1753095939722"
+        ],
+        "gcd": [
+          "13l3l3l3l1l1"
+        ],
+        "npa": [
+          "0"
+        ],
+        "dma": [
+          "0"
+        ],
+        "tag_exp": [
+          "101509157~103116026~103200004~103233427~104684208~104684211~104921712~104921714"
+        ],
+        "cid": [
+          "1292390203.1753095943"
+        ],
+        "ul": [
+          "en-gb"
+        ],
+        "sr": [
+          "800x600"
+        ],
+        "uaa": [
+          "arm"
+        ],
+        "uab": [
+          "64"
+        ],
+        "uafvl": [
+          "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+        ],
+        "uamb": [
+          "0"
+        ],
+        "uap": [
+          "macOS"
+        ],
+        "uapv": [
+          "15.5.0"
+        ],
+        "uaw": [
+          "0"
+        ],
+        "are": [
+          "1"
+        ],
+        "frm": [
+          "0"
+        ],
+        "pscdl": [
+          "noapi"
+        ],
+        "_s": [
+          "1"
+        ],
+        "sid": [
+          "1753095942"
+        ],
+        "sct": [
+          "1"
+        ],
+        "seg": [
+          "0"
+        ],
+        "dl": [
+          "https://www.barnsley.gov.uk/pid524"
+        ],
+        "dt": [
+          "Bins, rubbish and recycling"
+        ],
+        "en": [
+          "page_view"
+        ],
+        "_fv": [
+          "1"
+        ],
+        "_ss": [
+          "1"
+        ],
+        "tfd": [
+          "3116"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "cookie": "[cookies present]",
+        "origin": "https://www.barnsley.gov.uk",
+        "referer": "https://www.barnsley.gov.uk/"
+      },
+      "response_headers": {
+        "cache-control": "no-cache, no-store, must-revalidate",
+        "content-type": "text/plain"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T11:05:42.750Z",
+      "duration_ms": 13.583,
+      "endpoint": "/g/collect",
+      "host": "region1.google-analytics.com",
+      "method": "POST",
+      "status": 204,
+      "query_params": {
+        "v": [
+          "2"
+        ],
+        "tid": [
+          "G-JC2NJLCR9C"
+        ],
+        "gtm": [
+          "45je57g1v9102377807z89195947602za200zb9195947602"
+        ],
+        "_p": [
+          "1753095939722"
+        ],
+        "gcd": [
+          "13l3l3l3l1l1"
+        ],
+        "npa": [
+          "0"
+        ],
+        "dma": [
+          "0"
+        ],
+        "tag_exp": [
+          "101509157~103116026~103200004~103233427~104684208~104684211"
+        ],
+        "cid": [
+          "1292390203.1753095943"
+        ],
+        "ul": [
+          "en-gb"
+        ],
+        "sr": [
+          "800x600"
+        ],
+        "uaa": [
+          "arm"
+        ],
+        "uab": [
+          "64"
+        ],
+        "uafvl": [
+          "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+        ],
+        "uamb": [
+          "0"
+        ],
+        "uap": [
+          "macOS"
+        ],
+        "uapv": [
+          "15.5.0"
+        ],
+        "uaw": [
+          "0"
+        ],
+        "are": [
+          "1"
+        ],
+        "frm": [
+          "0"
+        ],
+        "pscdl": [
+          "noapi"
+        ],
+        "_s": [
+          "1"
+        ],
+        "sid": [
+          "1753095942"
+        ],
+        "sct": [
+          "1"
+        ],
+        "seg": [
+          "0"
+        ],
+        "dl": [
+          "https://www.barnsley.gov.uk/pid524"
+        ],
+        "dt": [
+          "Bins, rubbish and recycling"
+        ],
+        "en": [
+          "page_view"
+        ],
+        "_fv": [
+          "1"
+        ],
+        "_ss": [
+          "1"
+        ],
+        "tfd": [
+          "3147"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "cookie": "[cookies present]",
+        "origin": "https://www.barnsley.gov.uk",
+        "referer": "https://www.barnsley.gov.uk/"
+      },
+      "response_headers": {
+        "cache-control": "no-cache, no-store, must-revalidate",
+        "content-type": "text/plain"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T11:05:44.033Z",
+      "duration_ms": 73.131,
+      "endpoint": "/Collector/3.0",
+      "host": "eu-mobile.events.data.microsoft.com",
+      "method": "POST",
+      "status": 200,
+      "query_params": {
+        "qsp": [
+          "true"
+        ],
+        "content-type": [
+          "application/bond-compact-binary"
+        ],
+        "client-id": [
+          "NO_AUTH"
+        ],
+        "sdk-version": [
+          "AWT-Web-JS-1.8.7"
+        ],
+        "x-apikey": [
+          "c7655518acf1403f93ff6b9f77942f0a-d01a02fd-6b50-4de3-a566-62eda11f93bc-7083"
+        ],
+        "client-time-epoch-millis": [
+          "1753095944027"
+        ],
+        "time-delta-to-apply-millis": [
+          "221"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "origin": "https://oc-cdn-public-gbr.azureedge.net",
+        "referer": "https://oc-cdn-public-gbr.azureedge.net/"
+      },
+      "response_headers": {
+        "content-type": "application/json"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 0,
+        "content_ref": "da39a3ee5e6b4b0d3255bfef95601890afd80709.json"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T11:05:55.560Z",
+      "duration_ms": 46.787,
+      "endpoint": "/ViewCollection/SelectAddress",
+      "host": "waste.barnsley.gov.uk",
+      "method": "GET",
+      "status": 302,
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+        "cookie": "[cookies present]",
+        "referer": "https://www.barnsley.gov.uk/"
+      },
+      "response_headers": {
+        "cache-control": "no-cache,no-store",
+        "location": "/ViewCollection/BeforeYouBegin",
+        "set-cookie": "[cookies present]",
+        "x-powered-by": "ASP.NET"
+      },
+      "redirect_to": "/ViewCollection/BeforeYouBegin"
+    },
+    {
+      "timestamp": "2025-07-21T11:05:55.595Z",
+      "duration_ms": 13.401,
+      "endpoint": "/ViewCollection/BeforeYouBegin",
+      "host": "waste.barnsley.gov.uk",
+      "method": "GET",
+      "status": 302,
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+        "cookie": "[cookies present]",
+        "referer": "https://www.barnsley.gov.uk/"
+      },
+      "response_headers": {
+        "location": "/ViewCollection/SelectAddress",
+        "x-powered-by": "ASP.NET"
+      },
+      "redirect_to": "/ViewCollection/SelectAddress"
+    },
+    {
+      "timestamp": "2025-07-21T11:05:55.643Z",
+      "duration_ms": -1,
+      "endpoint": "/g/collect",
+      "host": "region1.google-analytics.com",
+      "method": "POST",
+      "status": -1,
+      "query_params": {
+        "v": [
+          "2"
+        ],
+        "tid": [
+          "G-33610E8BVS"
+        ],
+        "gtm": [
+          "45Pe57g1v9102377703za200zb9195947602"
+        ],
+        "_p": [
+          "1753095939722"
+        ],
+        "gcd": [
+          "13l3l3l3l1l1"
+        ],
+        "npa": [
+          "0"
+        ],
+        "dma": [
+          "0"
+        ],
+        "tag_exp": [
+          "101509157~103116026~103200004~103233427~104684208~104684211~104921712~104921714"
+        ],
+        "cid": [
+          "1292390203.1753095943"
+        ],
+        "ul": [
+          "en-gb"
+        ],
+        "sr": [
+          "800x600"
+        ],
+        "uaa": [
+          "arm"
+        ],
+        "uab": [
+          "64"
+        ],
+        "uafvl": [
+          "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+        ],
+        "uamb": [
+          "0"
+        ],
+        "uap": [
+          "macOS"
+        ],
+        "uapv": [
+          "15.5.0"
+        ],
+        "uaw": [
+          "0"
+        ],
+        "are": [
+          "1"
+        ],
+        "frm": [
+          "0"
+        ],
+        "pscdl": [
+          "noapi"
+        ],
+        "_eu": [
+          "AAAAAAQ"
+        ],
+        "_s": [
+          "2"
+        ],
+        "sid": [
+          "1753095942"
+        ],
+        "sct": [
+          "1"
+        ],
+        "seg": [
+          "1"
+        ],
+        "dl": [
+          "https://www.barnsley.gov.uk/pid524"
+        ],
+        "dt": [
+          "Bins, rubbish and recycling"
+        ],
+        "en": [
+          "user_engagement"
+        ],
+        "_et": [
+          "12925"
+        ],
+        "tfd": [
+          "16043"
+        ]
+      },
+      "request_headers": {
+        "referer": "https://www.barnsley.gov.uk/"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T11:05:55.642Z",
+      "duration_ms": -1,
+      "endpoint": "/g/collect",
+      "host": "region1.google-analytics.com",
+      "method": "POST",
+      "status": -1,
+      "query_params": {
+        "v": [
+          "2"
+        ],
+        "tid": [
+          "G-5E94ZYFC73"
+        ],
+        "gtm": [
+          "45je57g1v9102378646za200zb9195947602"
+        ],
+        "_p": [
+          "1753095939722"
+        ],
+        "gcd": [
+          "13l3l3l3l1l1"
+        ],
+        "npa": [
+          "0"
+        ],
+        "dma": [
+          "0"
+        ],
+        "tag_exp": [
+          "101509157~103116026~103200004~103233427~104684208~104684211"
+        ],
+        "cid": [
+          "1292390203.1753095943"
+        ],
+        "ul": [
+          "en-gb"
+        ],
+        "sr": [
+          "800x600"
+        ],
+        "uaa": [
+          "arm"
+        ],
+        "uab": [
+          "64"
+        ],
+        "uafvl": [
+          "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+        ],
+        "uamb": [
+          "0"
+        ],
+        "uap": [
+          "macOS"
+        ],
+        "uapv": [
+          "15.5.0"
+        ],
+        "uaw": [
+          "0"
+        ],
+        "are": [
+          "1"
+        ],
+        "frm": [
+          "0"
+        ],
+        "pscdl": [
+          "noapi"
+        ],
+        "_eu": [
+          "AAAAAAQ"
+        ],
+        "_s": [
+          "2"
+        ],
+        "sid": [
+          "1753095942"
+        ],
+        "sct": [
+          "1"
+        ],
+        "seg": [
+          "1"
+        ],
+        "dl": [
+          "https://www.barnsley.gov.uk/pid524"
+        ],
+        "dt": [
+          "Bins, rubbish and recycling"
+        ],
+        "en": [
+          "user_engagement"
+        ],
+        "_et": [
+          "12951"
+        ],
+        "tfd": [
+          "16040"
+        ]
+      },
+      "request_headers": {
+        "referer": "https://www.barnsley.gov.uk/"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T11:05:55.644Z",
+      "duration_ms": -1,
+      "endpoint": "/v1/events/beacon",
+      "host": "a.eu.silktide.com",
+      "method": "POST",
+      "status": -1,
+      "request_headers": {
+        "referer": "https://www.barnsley.gov.uk/",
+        "content-type": "text/plain;charset=UTF-8"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T11:05:55.641Z",
+      "duration_ms": -1,
+      "endpoint": "/g/collect",
+      "host": "region1.google-analytics.com",
+      "method": "POST",
+      "status": -1,
+      "query_params": {
+        "v": [
+          "2"
+        ],
+        "tid": [
+          "G-4FR8X0E6WX"
+        ],
+        "gtm": [
+          "45Pe57g1v9102376018za200zb9195947602"
+        ],
+        "_p": [
+          "1753095939722"
+        ],
+        "gcd": [
+          "13l3l3l3l1l1"
+        ],
+        "npa": [
+          "0"
+        ],
+        "dma": [
+          "0"
+        ],
+        "tag_exp": [
+          "101509157~102015666~103116026~103200004~103233427~104684208~104684211"
+        ],
+        "cid": [
+          "1292390203.1753095943"
+        ],
+        "ul": [
+          "en-gb"
+        ],
+        "sr": [
+          "800x600"
+        ],
+        "uaa": [
+          "arm"
+        ],
+        "uab": [
+          "64"
+        ],
+        "uafvl": [
+          "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+        ],
+        "uamb": [
+          "0"
+        ],
+        "uap": [
+          "macOS"
+        ],
+        "uapv": [
+          "15.5.0"
+        ],
+        "uaw": [
+          "0"
+        ],
+        "are": [
+          "1"
+        ],
+        "frm": [
+          "0"
+        ],
+        "pscdl": [
+          "noapi"
+        ],
+        "_eu": [
+          "AAAAAAQ"
+        ],
+        "_s": [
+          "2"
+        ],
+        "sid": [
+          "1753095942"
+        ],
+        "sct": [
+          "1"
+        ],
+        "seg": [
+          "1"
+        ],
+        "dl": [
+          "https://www.barnsley.gov.uk/pid524"
+        ],
+        "dt": [
+          "Bins, rubbish and recycling"
+        ],
+        "en": [
+          "user_engagement"
+        ],
+        "_et": [
+          "12970"
+        ],
+        "tfd": [
+          "16037"
+        ]
+      },
+      "request_headers": {
+        "referer": "https://www.barnsley.gov.uk/"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T11:05:55.644Z",
+      "duration_ms": -1,
+      "endpoint": "/g/collect",
+      "host": "region1.google-analytics.com",
+      "method": "POST",
+      "status": -1,
+      "query_params": {
+        "v": [
+          "2"
+        ],
+        "tid": [
+          "G-JC2NJLCR9C"
+        ],
+        "gtm": [
+          "45je57g1v9102377807za200zb9195947602"
+        ],
+        "_p": [
+          "1753095939722"
+        ],
+        "gcd": [
+          "13l3l3l3l1l1"
+        ],
+        "npa": [
+          "0"
+        ],
+        "dma": [
+          "0"
+        ],
+        "tag_exp": [
+          "101509157~103116026~103200004~103233427~104684208~104684211"
+        ],
+        "cid": [
+          "1292390203.1753095943"
+        ],
+        "ul": [
+          "en-gb"
+        ],
+        "sr": [
+          "800x600"
+        ],
+        "uaa": [
+          "arm"
+        ],
+        "uab": [
+          "64"
+        ],
+        "uafvl": [
+          "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+        ],
+        "uamb": [
+          "0"
+        ],
+        "uap": [
+          "macOS"
+        ],
+        "uapv": [
+          "15.5.0"
+        ],
+        "uaw": [
+          "0"
+        ],
+        "are": [
+          "1"
+        ],
+        "frm": [
+          "0"
+        ],
+        "pscdl": [
+          "noapi"
+        ],
+        "_eu": [
+          "AAAAAAQ"
+        ],
+        "_s": [
+          "2"
+        ],
+        "sid": [
+          "1753095942"
+        ],
+        "sct": [
+          "1"
+        ],
+        "seg": [
+          "1"
+        ],
+        "dl": [
+          "https://www.barnsley.gov.uk/pid524"
+        ],
+        "dt": [
+          "Bins, rubbish and recycling"
+        ],
+        "en": [
+          "user_engagement"
+        ],
+        "_et": [
+          "12896"
+        ],
+        "tfd": [
+          "16046"
+        ]
+      },
+      "request_headers": {
+        "referer": "https://www.barnsley.gov.uk/"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T11:05:55.501Z",
+      "duration_ms": 72.55399999999999,
+      "endpoint": "/v1/events/beacon",
+      "host": "a.eu.silktide.com",
+      "method": "POST",
+      "status": 202,
+      "request_headers": {
+        "accept": "*/*",
+        "content-type": "text/plain;charset=UTF-8",
+        "origin": "https://www.barnsley.gov.uk",
+        "referer": "https://www.barnsley.gov.uk/"
+      },
+      "response_headers": {
+        "content-type": "text/plain; charset=utf-8",
+        "x-powered-by": "Silktide"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T11:05:55.560Z",
+      "duration_ms": 68.339,
+      "endpoint": "/v2/track",
+      "host": "ukwest-0.in.applicationinsights.azure.com",
+      "method": "POST",
+      "status": 400,
+      "request_headers": {
+        "accept": "*/*",
+        "content-type": "application/json",
+        "origin": "https://www.barnsley.gov.uk",
+        "referer": "https://www.barnsley.gov.uk/"
+      },
+      "response_headers": {
+        "content-type": "application/json; charset=utf-8",
+        "x-content-type-options": "nosniff"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": -1
+      }
+    },
+    {
+      "timestamp": "2025-07-21T11:05:55.608Z",
+      "duration_ms": 14.336,
+      "endpoint": "/ViewCollection/SelectAddress",
+      "host": "waste.barnsley.gov.uk",
+      "method": "GET",
+      "status": 200,
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+        "cookie": "[cookies present]",
+        "referer": "https://www.barnsley.gov.uk/"
+      },
+      "response_headers": {
+        "cache-control": "no-cache, no-store",
+        "content-type": "text/html; charset=utf-8",
+        "set-cookie": "[cookies present]",
+        "x-frame-options": "SAMEORIGIN",
+        "x-powered-by": "ASP.NET"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 5369,
+        "compressed": true,
+        "content_ref": "e0d37c942ad9a630a55b188aaa99c3d77a08455b.html"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T11:06:00.890Z",
+      "duration_ms": 193.173,
+      "endpoint": "/ViewCollection/SelectAddress",
+      "host": "waste.barnsley.gov.uk",
+      "method": "POST",
+      "status": 302,
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+        "content-type": "application/x-www-form-urlencoded",
+        "cookie": "[cookies present]",
+        "origin": "https://waste.barnsley.gov.uk",
+        "referer": "https://waste.barnsley.gov.uk/ViewCollection/SelectAddress"
+      },
+      "response_headers": {
+        "location": "/ViewCollection/SelectAddress#person1_address",
+        "x-powered-by": "ASP.NET"
+      },
+      "redirect_to": "/ViewCollection/SelectAddress#person1_address"
+    },
+    {
+      "timestamp": "2025-07-21T11:06:01.085Z",
+      "duration_ms": 16.347,
+      "endpoint": "/ViewCollection/SelectAddress",
+      "host": "waste.barnsley.gov.uk",
+      "method": "GET",
+      "status": 200,
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+        "cookie": "[cookies present]",
+        "referer": "https://waste.barnsley.gov.uk/ViewCollection/SelectAddress"
+      },
+      "response_headers": {
+        "cache-control": "no-cache, no-store",
+        "content-type": "text/html; charset=utf-8",
+        "x-powered-by": "ASP.NET"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 9221,
+        "compressed": true,
+        "content_ref": "ca35095684b480c0c9bcf1b858aad2c0a9c39a4a.html"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T11:06:06.267Z",
+      "duration_ms": 130.179,
+      "endpoint": "/ViewCollection/SelectAddress",
+      "host": "waste.barnsley.gov.uk",
+      "method": "POST",
+      "status": 302,
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+        "content-type": "application/x-www-form-urlencoded",
+        "cookie": "[cookies present]",
+        "origin": "https://waste.barnsley.gov.uk",
+        "referer": "https://waste.barnsley.gov.uk/ViewCollection/SelectAddress"
+      },
+      "response_headers": {
+        "location": "/ViewCollection/Collections",
+        "x-powered-by": "ASP.NET"
+      },
+      "redirect_to": "/ViewCollection/Collections"
+    },
+    {
+      "timestamp": "2025-07-21T11:06:06.398Z",
+      "duration_ms": 154.167,
+      "endpoint": "/ViewCollection/Collections",
+      "host": "waste.barnsley.gov.uk",
+      "method": "GET",
+      "status": 200,
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+        "cookie": "[cookies present]",
+        "referer": "https://waste.barnsley.gov.uk/ViewCollection/SelectAddress"
+      },
+      "response_headers": {
+        "cache-control": "no-cache, no-store",
+        "content-type": "text/html; charset=utf-8",
+        "x-powered-by": "ASP.NET"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 7951,
+        "compressed": true,
+        "content_ref": "cca729af72af93effdf00a6a965effb7a7b9d21b.html"
+      }
     }
   ],
-  "navigation_events": [
-    {
-      "url": "https://www.barnsley.gov.uk/pid524",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "text/html; charset=utf-8",
-      "size": 56959,
-      "timestamp": "2025-07-21T11:05:39.592Z"
+  "analysis": {
+    "total_requests": 28,
+    "unique_endpoints": 14,
+    "methods_used": [
+      "GET",
+      "POST"
+    ],
+    "status_codes": {
+      "200": 11,
+      "202": 2,
+      "400": 2,
+      "204": 4,
+      "302": 4,
+      "-1": 5
     },
-    {
-      "url": "https://www.barnsley.gov.uk/css/assets/bmbc-icons.ttf",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/x-font-ttf",
-      "size": 49364,
-      "timestamp": "2025-07-21T11:05:40.215Z"
-    },
-    {
-      "url": "https://a.eu.silktide.com/v1/events",
-      "method": "POST",
-      "status": 202,
-      "redirect_url": null,
-      "mime_type": "text/plain; charset=utf-8",
-      "size": 2,
-      "timestamp": "2025-07-21T11:05:40.222Z"
-    },
-    {
-      "url": "https://oc-cdn-public-gbr.azureedge.net/livechatwidget/v2public/htmls/chatv2.html?data-app-id=91ac734d-d8ca-4052-8ed0-006b4bff52aa&data-org-id=a06f0de9-31e3-ee11-9046-6045bdf13ea0&data-org-url=https://m-a06f0de9-31e3-ee11-9046-6045bdf13ea0.uk.omnichannelengagementhub.com&hostname=www.barnsley.gov.uk&data-lcw-version=prod&data-color-override=%23283483&data-customization-callback=%7B%22chatButtonProps%22%3A%7B%22controlProps%22%3A%7B%22hideChatTextContainer%22%3A%22true%22%7D%2C%22styleProps%22%3A%7B%22iconStyleProps%22%3A%7B%22backgroundImage%22%3A%22url(https%3A%2F%2Fwww.barnsley.gov.uk%2Fmedia%2Frrtlbpts%2Fchat-bubbles.png)%22%7D%2C%22generalStyleProps%22%3A%7B%22minWidth%22%3A%2260px%22%2C%22width%22%3A%2260px%22%2C%22height%22%3A%2260px%22%7D%7D%7D%2C%22styleProps%22%3A%7B%22generalStyles%22%3A%7B%22borderRadius%22%3A%2215px%2015px%2015px%2015px%22%7D%7D%2C%22loadingPaneProps%22%3A%7B%22controlProps%22%3A%7B%22titleText%22%3A%22Chat%20to%20B-Bot%22%2C%22hideSubtitle%22%3A%22true%22%7D%2C%22styleProps%22%3A%7B%22generalStyleProps%22%3A%7B%22borderRadius%22%3A%220%200%2015px%2015px%22%7D%2C%22iconImageProps%22%3A%7B%22src%22%3A%22https%3A%2F%2Fwww.barnsley.gov.uk%2Fmedia%2Frrtlbpts%2Fchat-bubbles.png%22%7D%7D%7D%2C%22headerProps%22%3A%7B%22controlProps%22%3A%7B%22headerIconProps%22%3A%7B%22src%22%3A%22https%3A%2F%2Fwww.barnsley.gov.uk%2Fmedia%2Frrtlbpts%2Fchat-bubbles.png%22%7D%7D%2C%22styleProps%22%3A%7B%22generalStyleProps%22%3A%7B%22borderRadius%22%3A%2215px%2015px%200%200%22%7D%7D%7D%2C%22footerProps%22%3A%7B%22styleProps%22%3A%7B%22generalStyleProps%22%3A%7B%22borderRadius%22%3A%220%200%2015px%2015px%22%7D%7D%7D%2C%22webChatContainerProps%22%3A%7B%22webChatStyles%22%3A%7B%22backgroundColor%22%3A%22white%22%2C%22bubbleBackground%22%3A%22%23F2F3F6%22%2C%22bubbleFromUserBackground%22%3A%22%23bbe4f8%22%2C%22bubbleBorderWidth%22%3A0%2C%22bubbleFromUserBorderWidth%22%3A0%2C%22bubbleBorderRadius%22%3A%220%2010px%2010px%2010px%20!important%22%2C%22bubbleFromUserBorderRadius%22%3A%2210px%200%2010px%2010px%22%2C%22bubbleTextColor%22%3A%22black%22%2C%22bubbleFromUserTextColor%22%3A%22black%22%2C%22suggestedActionLayout%22%3A%22flow%22%2C%22suggestedActionHeight%22%3A30%2C%22suggestedActionBackgroundColor%22%3A%22white%22%2C%22suggestedActionBackgroundColorOnHover%22%3A%22%23bbe4f8%22%2C%22suggestedActionTextColor%22%3A%22black%22%2C%22suggestedActionBorderWidth%22%3A1%2C%22suggestedActionBorderRadius%22%3A%2210px%200%2010px%2010px%22%2C%22suggestedActionBorderColor%22%3A%22%23bbe4f8%22%2C%22paddingWide%22%3A10%7D%2C%22adaptiveCardStyles%22%3A%7B%22background%22%3A%22%23F2F3F6%22%2C%22color%22%3A%22black%22%7D%2C%22renderingMiddlewareProps%22%3A%7B%22avatarStyleProps%22%3A%7B%22backgroundImage%22%3A%22url(%27https%3A%2F%2Fwww.barnsley.gov.uk%2Fmedia%2Fhwhjgyf4%2Fbarnsley-council-coat-of-arms-blue-background.png%27)%22%2C%22backgroundSize%22%3A%22cover%22%7D%2C%22avatarTextStyleProps%22%3A%7B%22display%22%3A%22none%22%7D%2C%22receivedMessageAnchorStyles%22%3A%7B%22color%22%3A%22blue%22%2C%22filter%22%3A%22invert(100%25)%22%7D%7D%7D%7D",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "text/html",
-      "size": 10014,
-      "timestamp": "2025-07-21T11:05:40.273Z"
-    },
-    {
-      "url": "https://apikeys.civiccomputing.com/c/v?d=www.barnsley.gov.uk&p=CookieControl%20Multi-Site&v=9&k=adac88dfc01f638c9dbfbf62164b90dec2e40c77&format=json",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json",
-      "size": 304,
-      "timestamp": "2025-07-21T11:05:41.016Z"
-    },
-    {
-      "url": "https://m-a06f0de9-31e3-ee11-9046-6045bdf13ea0.uk.omnichannelengagementhub.com/livechatconnector/config/a06f0de9-31e3-ee11-9046-6045bdf13ea0/91ac734d-d8ca-4052-8ed0-006b4bff52aa?requestId=9adb15eb-8fcb-49bb-81d0-556a4b2a61dd&channelId=lcw",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json",
-      "size": 12752,
-      "timestamp": "2025-07-21T11:05:41.571Z"
-    },
-    {
-      "url": "https://www.barnsley.gov.uk/manifest.json",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json",
-      "size": 1106,
-      "timestamp": "2025-07-21T11:05:41.694Z"
-    },
-    {
-      "url": "https://ukwest-0.in.applicationinsights.azure.com//v2/track",
-      "method": "POST",
-      "status": 400,
-      "redirect_url": null,
-      "mime_type": "application/json; charset=utf-8",
-      "size": 297,
-      "timestamp": "2025-07-21T11:05:41.699Z"
-    },
-    {
-      "url": "https://m-a06f0de9-31e3-ee11-9046-6045bdf13ea0.uk.omnichannelengagementhub.com/livechatconnector/v2/lcwfcsdetails/a06f0de9-31e3-ee11-9046-6045bdf13ea0",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json; charset=utf-8",
-      "size": 314,
-      "timestamp": "2025-07-21T11:05:41.703Z"
-    },
-    {
-      "url": "https://eu-mobile.events.data.microsoft.com/Collector/3.0/?qsp=true&content-type=application%2Fbond-compact-binary&client-id=NO_AUTH&sdk-version=AWT-Web-JS-1.8.7&x-apikey=c7655518acf1403f93ff6b9f77942f0a-d01a02fd-6b50-4de3-a566-62eda11f93bc-7083&client-time-epoch-millis=1753095941765&time-delta-to-apply-millis=use-collector-delta",
-      "method": "POST",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json",
-      "size": 0,
-      "timestamp": "2025-07-21T11:05:41.767Z"
-    },
-    {
-      "url": "https://eu-mobile.events.data.microsoft.com/Collector/3.0/?qsp=true&content-type=application%2Fbond-compact-binary&client-id=NO_AUTH&sdk-version=AWT-Web-JS-1.8.7&x-apikey=c7655518acf1403f93ff6b9f77942f0a-d01a02fd-6b50-4de3-a566-62eda11f93bc-7083&client-time-epoch-millis=1753095944027&time-delta-to-apply-millis=221",
-      "method": "POST",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json",
-      "size": 0,
-      "timestamp": "2025-07-21T11:05:44.033Z"
-    },
-    {
-      "url": "https://a.eu.silktide.com/v1/events/beacon",
-      "method": "POST",
-      "status": 202,
-      "redirect_url": null,
-      "mime_type": "text/plain; charset=utf-8",
-      "size": -1,
-      "timestamp": "2025-07-21T11:05:55.501Z"
-    },
-    {
-      "url": "https://waste.barnsley.gov.uk/ViewCollection/SelectAddress",
-      "method": "GET",
-      "status": 302,
-      "redirect_url": "https://waste.barnsley.gov.uk/ViewCollection/BeforeYouBegin",
-      "mime_type": "x-unknown",
-      "size": -1,
-      "timestamp": "2025-07-21T11:05:55.560Z"
-    },
-    {
-      "url": "https://ukwest-0.in.applicationinsights.azure.com//v2/track",
-      "method": "POST",
-      "status": 400,
-      "redirect_url": null,
-      "mime_type": "application/json; charset=utf-8",
-      "size": -1,
-      "timestamp": "2025-07-21T11:05:55.560Z"
-    },
-    {
-      "url": "https://waste.barnsley.gov.uk/ViewCollection/BeforeYouBegin",
-      "method": "GET",
-      "status": 302,
-      "redirect_url": "https://waste.barnsley.gov.uk/ViewCollection/SelectAddress",
-      "mime_type": "x-unknown",
-      "size": -1,
-      "timestamp": "2025-07-21T11:05:55.595Z"
-    },
-    {
-      "url": "https://waste.barnsley.gov.uk/ViewCollection/SelectAddress",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "text/html; charset=utf-8",
-      "size": 5369,
-      "timestamp": "2025-07-21T11:05:55.608Z"
-    },
-    {
-      "url": "https://waste.barnsley.gov.uk/ViewCollection/SelectAddress",
-      "method": "POST",
-      "status": 302,
-      "redirect_url": "https://waste.barnsley.gov.uk/ViewCollection/SelectAddress",
-      "mime_type": "x-unknown",
-      "size": -1,
-      "timestamp": "2025-07-21T11:06:00.890Z",
-      "form_data": {
-        "personInfo.person1.HouseNumberOrName": "",
-        "personInfo.person1.Postcode": "DN5 7HR",
-        "person1_FindAddress": "Find address",
-        "__RequestVerificationToken": "CfDJ8E4OdDPj3lFOpsr7flXtyOA1ONF0c-p2b2PAuKRWn9wRL5or5cbBOS5setA53_dXvwQcjNHpzUIG_mD5L4T7yK6D8WRiVazWCiqVR1HFYjZUTsq2O_IKdQj0siDRnvWZ6JuZAle7UwsjjV6DR_TGOtw"
+    "endpoints_with_params": [
+      {
+        "endpoint": "/livechatwidget/v2public/htmls/chatv2.html",
+        "method": "GET",
+        "query_params": [
+          "data-app-id",
+          "data-org-id",
+          "data-org-url",
+          "hostname",
+          "data-lcw-version",
+          "data-color-override",
+          "data-customization-callback"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/c/v",
+        "method": "GET",
+        "query_params": [
+          "d",
+          "p",
+          "v",
+          "k",
+          "format"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/livechatconnector/config/{id}/{id}",
+        "method": "GET",
+        "query_params": [
+          "requestId",
+          "channelId"
+        ],
+        "path_params": true
+      },
+      {
+        "endpoint": "/livechatconnector/v2/lcwfcsdetails/{id}",
+        "method": "GET",
+        "query_params": [],
+        "path_params": true
+      },
+      {
+        "endpoint": "/Collector/3.0",
+        "method": "POST",
+        "query_params": [
+          "qsp",
+          "content-type",
+          "client-id",
+          "sdk-version",
+          "x-apikey",
+          "client-time-epoch-millis",
+          "time-delta-to-apply-millis"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/g/collect",
+        "method": "POST",
+        "query_params": [
+          "v",
+          "tid",
+          "gtm",
+          "_p",
+          "gcd",
+          "npa",
+          "dma",
+          "tag_exp",
+          "cid",
+          "ul",
+          "sr",
+          "uaa",
+          "uab",
+          "uafvl",
+          "uamb",
+          "uap",
+          "uapv",
+          "uaw",
+          "are",
+          "frm",
+          "pscdl",
+          "_s",
+          "sid",
+          "sct",
+          "seg",
+          "dl",
+          "dt",
+          "en",
+          "_fv",
+          "_nsi",
+          "_ss",
+          "tfd"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/g/collect",
+        "method": "POST",
+        "query_params": [
+          "v",
+          "tid",
+          "gtm",
+          "_p",
+          "gcd",
+          "npa",
+          "dma",
+          "tag_exp",
+          "cid",
+          "ul",
+          "sr",
+          "uaa",
+          "uab",
+          "uafvl",
+          "uamb",
+          "uap",
+          "uapv",
+          "uaw",
+          "are",
+          "frm",
+          "pscdl",
+          "_s",
+          "sid",
+          "sct",
+          "seg",
+          "dl",
+          "dt",
+          "en",
+          "_fv",
+          "_ss",
+          "tfd"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/g/collect",
+        "method": "POST",
+        "query_params": [
+          "v",
+          "tid",
+          "gtm",
+          "_p",
+          "gcd",
+          "npa",
+          "dma",
+          "tag_exp",
+          "cid",
+          "ul",
+          "sr",
+          "uaa",
+          "uab",
+          "uafvl",
+          "uamb",
+          "uap",
+          "uapv",
+          "uaw",
+          "are",
+          "frm",
+          "pscdl",
+          "_eu",
+          "_s",
+          "sid",
+          "sct",
+          "seg",
+          "dl",
+          "dt",
+          "en",
+          "_et",
+          "tfd"
+        ],
+        "path_params": false
       }
-    },
-    {
-      "url": "https://waste.barnsley.gov.uk/ViewCollection/SelectAddress",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "text/html; charset=utf-8",
-      "size": 9221,
-      "timestamp": "2025-07-21T11:06:01.085Z"
-    },
-    {
-      "url": "https://waste.barnsley.gov.uk/ViewCollection/SelectAddress",
-      "method": "POST",
-      "status": 302,
-      "redirect_url": "https://waste.barnsley.gov.uk/ViewCollection/Collections",
-      "mime_type": "x-unknown",
-      "size": -1,
-      "timestamp": "2025-07-21T11:06:06.267Z",
-      "form_data": {
-        "personInfo.person1.HouseNumberOrName": "",
-        "personInfo.person1.Postcode": "DN57HR",
-        "personInfo.person1.UPRN": "100050674316",
-        "person1_SelectAddress": "Select address",
-        "__RequestVerificationToken": "CfDJ8E4OdDPj3lFOpsr7flXtyODPvgY_QrDhl1L10Er6lR6pXJxGqZD0Uhfx1sndtJsqVZnalML6CjPcII-bVqMcdCNDCPFlud1SxOW5--GCGwkR6ZnPUiu6KqJVnw20zWMg-3sasjCmqRoMLGRM12LOMGg"
+    ],
+    "redirects": [
+      {
+        "from": "/ViewCollection/SelectAddress",
+        "to": "/ViewCollection/BeforeYouBegin",
+        "status": 302
+      },
+      {
+        "from": "/ViewCollection/BeforeYouBegin",
+        "to": "/ViewCollection/SelectAddress",
+        "status": 302
+      },
+      {
+        "from": "/ViewCollection/SelectAddress",
+        "to": "/ViewCollection/SelectAddress#person1_address",
+        "status": 302
+      },
+      {
+        "from": "/ViewCollection/SelectAddress",
+        "to": "/ViewCollection/Collections",
+        "status": 302
       }
-    },
-    {
-      "url": "https://waste.barnsley.gov.uk/ViewCollection/Collections",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "text/html; charset=utf-8",
-      "size": 7951,
-      "timestamp": "2025-07-21T11:06:06.398Z"
-    }
-  ]
+    ],
+    "api_calls": [
+      {
+        "endpoint": "/c/v",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": [
+          "d",
+          "p",
+          "v",
+          "k",
+          "format"
+        ]
+      },
+      {
+        "endpoint": "/manifest.json",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": []
+      },
+      {
+        "endpoint": "/livechatconnector/config/{id}/{id}",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": [
+          "requestId",
+          "channelId"
+        ]
+      },
+      {
+        "endpoint": "/livechatconnector/v2/lcwfcsdetails/{id}",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": []
+      },
+      {
+        "endpoint": "/v2/track",
+        "method": "POST",
+        "response_type": "application/json",
+        "params": []
+      },
+      {
+        "endpoint": "/Collector/3.0",
+        "method": "POST",
+        "response_type": "application/json",
+        "params": [
+          "qsp",
+          "content-type",
+          "client-id",
+          "sdk-version",
+          "x-apikey",
+          "client-time-epoch-millis",
+          "time-delta-to-apply-millis"
+        ]
+      },
+      {
+        "endpoint": "/Collector/3.0",
+        "method": "POST",
+        "response_type": "application/json",
+        "params": [
+          "qsp",
+          "content-type",
+          "client-id",
+          "sdk-version",
+          "x-apikey",
+          "client-time-epoch-millis",
+          "time-delta-to-apply-millis"
+        ]
+      },
+      {
+        "endpoint": "/v2/track",
+        "method": "POST",
+        "response_type": "application/json",
+        "params": []
+      }
+    ],
+    "form_submissions": []
+  },
+  "grouped_by_endpoint": {
+    "/pid524": [
+      {
+        "timestamp": "2025-07-21T11:05:39.592Z",
+        "duration_ms": 95.498,
+        "endpoint": "/pid524",
+        "host": "www.barnsley.gov.uk",
+        "method": "GET",
+        "status": 200,
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7"
+        },
+        "response_headers": {
+          "content-type": "text/html; charset=utf-8",
+          "set-cookie": "[cookies present]",
+          "x-powered-by": "ASP.NET"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 56959,
+          "compressed": true,
+          "content_ref": "e8133bdd897012eaa940cd7c6de4e4c09d0623da.html"
+        }
+      }
+    ],
+    "/v1/events": [
+      {
+        "timestamp": "2025-07-21T11:05:40.222Z",
+        "duration_ms": 93.557,
+        "endpoint": "/v1/events",
+        "host": "a.eu.silktide.com",
+        "method": "POST",
+        "status": 202,
+        "request_headers": {
+          "accept": "application/json",
+          "content-type": "application/json",
+          "origin": "https://www.barnsley.gov.uk",
+          "referer": "https://www.barnsley.gov.uk/"
+        },
+        "response_headers": {
+          "content-type": "text/plain; charset=utf-8",
+          "x-powered-by": "Silktide"
+        }
+      }
+    ],
+    "/livechatwidget/v2public/htmls/chatv2.html": [
+      {
+        "timestamp": "2025-07-21T11:05:40.273Z",
+        "duration_ms": 102.42,
+        "endpoint": "/livechatwidget/v2public/htmls/chatv2.html",
+        "host": "oc-cdn-public-gbr.azureedge.net",
+        "method": "GET",
+        "status": 200,
+        "query_params": {
+          "data-app-id": [
+            "91ac734d-d8ca-4052-8ed0-006b4bff52aa"
+          ],
+          "data-org-id": [
+            "a06f0de9-31e3-ee11-9046-6045bdf13ea0"
+          ],
+          "data-org-url": [
+            "https://m-a06f0de9-31e3-ee11-9046-6045bdf13ea0.uk.omnichannelengagementhub.com"
+          ],
+          "hostname": [
+            "www.barnsley.gov.uk"
+          ],
+          "data-lcw-version": [
+            "prod"
+          ],
+          "data-color-override": [
+            "#283483"
+          ],
+          "data-customization-callback": [
+            "{\"chatButtonProps\":{\"controlProps\":{\"hideChatTextContainer\":\"true\"},\"styleProps\":{\"iconStyleProps\":{\"backgroundImage\":\"url(https://www.barnsley.gov.uk/media/rrtlbpts/chat-bubbles.png)\"},\"generalStyleProps\":{\"minWidth\":\"60px\",\"width\":\"60px\",\"height\":\"60px\"}}},\"styleProps\":{\"generalStyles\":{\"borderRadius\":\"15px 15px 15px 15px\"}},\"loadingPaneProps\":{\"controlProps\":{\"titleText\":\"Chat to B-Bot\",\"hideSubtitle\":\"true\"},\"styleProps\":{\"generalStyleProps\":{\"borderRadius\":\"0 0 15px 15px\"},\"iconImageProps\":{\"src\":\"https://www.barnsley.gov.uk/media/rrtlbpts/chat-bubbles.png\"}}},\"headerProps\":{\"controlProps\":{\"headerIconProps\":{\"src\":\"https://www.barnsley.gov.uk/media/rrtlbpts/chat-bubbles.png\"}},\"styleProps\":{\"generalStyleProps\":{\"borderRadius\":\"15px 15px 0 0\"}}},\"footerProps\":{\"styleProps\":{\"generalStyleProps\":{\"borderRadius\":\"0 0 15px 15px\"}}},\"webChatContainerProps\":{\"webChatStyles\":{\"backgroundColor\":\"white\",\"bubbleBackground\":\"#F2F3F6\",\"bubbleFromUserBackground\":\"#bbe4f8\",\"bubbleBorderWidth\":0,\"bubbleFromUserBorderWidth\":0,\"bubbleBorderRadius\":\"0 10px 10px 10px !important\",\"bubbleFromUserBorderRadius\":\"10px 0 10px 10px\",\"bubbleTextColor\":\"black\",\"bubbleFromUserTextColor\":\"black\",\"suggestedActionLayout\":\"flow\",\"suggestedActionHeight\":30,\"suggestedActionBackgroundColor\":\"white\",\"suggestedActionBackgroundColorOnHover\":\"#bbe4f8\",\"suggestedActionTextColor\":\"black\",\"suggestedActionBorderWidth\":1,\"suggestedActionBorderRadius\":\"10px 0 10px 10px\",\"suggestedActionBorderColor\":\"#bbe4f8\",\"paddingWide\":10},\"adaptiveCardStyles\":{\"background\":\"#F2F3F6\",\"color\":\"black\"},\"renderingMiddlewareProps\":{\"avatarStyleProps\":{\"backgroundImage\":\"url('https://www.barnsley.gov.uk/media/hwhjgyf4/barnsley-council-coat-of-arms-blue-background.png')\",\"backgroundSize\":\"cover\"},\"avatarTextStyleProps\":{\"display\":\"none\"},\"receivedMessageAnchorStyles\":{\"color\":\"blue\",\"filter\":\"invert(100%)\"}}}}"
+          ]
+        },
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+          "referer": "https://www.barnsley.gov.uk/"
+        },
+        "response_headers": {
+          "cache-control": "public, max-age=60",
+          "content-type": "text/html",
+          "x-azure-ref": "20250721T110540Z-16896f46f997v4xphC1LTSmeu400000009g000000000mapq",
+          "x-cache": "TCP_HIT",
+          "x-cache-info": "L1_T2",
+          "x-fd-int-roxy-purgeid": "0",
+          "x-ms-blob-type": "BlockBlob",
+          "x-ms-lease-status": "unlocked",
+          "x-ms-request-id": "7a1174d3-901e-0003-612c-fabd2b000000",
+          "x-ms-version": "2009-09-19"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 10014,
+          "compressed": true,
+          "content_ref": "9024669f1dac8d7409b9d433045f36cb703439bf.html"
+        }
+      }
+    ],
+    "/c/v": [
+      {
+        "timestamp": "2025-07-21T11:05:41.016Z",
+        "duration_ms": 56.29,
+        "endpoint": "/c/v",
+        "host": "apikeys.civiccomputing.com",
+        "method": "GET",
+        "status": 200,
+        "query_params": {
+          "d": [
+            "www.barnsley.gov.uk"
+          ],
+          "p": [
+            "CookieControl Multi-Site"
+          ],
+          "v": [
+            "9"
+          ],
+          "k": [
+            "adac88dfc01f638c9dbfbf62164b90dec2e40c77"
+          ],
+          "format": [
+            "json"
+          ]
+        },
+        "request_headers": {
+          "accept": "application/json, text/plain, */*",
+          "origin": "https://www.barnsley.gov.uk",
+          "referer": "https://www.barnsley.gov.uk/"
+        },
+        "response_headers": {
+          "cache-control": "max-age=3600, private, no-store",
+          "content-type": "application/json",
+          "x-apikeys": "hit",
+          "x-cf-test": "true",
+          "x-content-type-options": "nosniff",
+          "x-xss-protection": "1"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 304,
+          "content_ref": "a259512eb944f4576768dae9874e7d106516b387.json"
+        }
+      }
+    ],
+    "/manifest.json": [
+      {
+        "timestamp": "2025-07-21T11:05:41.694Z",
+        "duration_ms": 45.734,
+        "endpoint": "/manifest.json",
+        "host": "www.barnsley.gov.uk",
+        "method": "GET",
+        "status": 200,
+        "request_headers": {
+          "referer": "https://www.barnsley.gov.uk/pid524"
+        },
+        "response_headers": {
+          "x-powered-by": "ASP.NET",
+          "content-type": "application/json"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 1106,
+          "compressed": true,
+          "content_ref": "a80c1360af9e75ada7c44760b78954126bcd083e.json"
+        }
+      }
+    ],
+    "/livechatconnector/config/{id}/{id}": [
+      {
+        "timestamp": "2025-07-21T11:05:41.571Z",
+        "duration_ms": 100.36099999999999,
+        "endpoint": "/livechatconnector/config/{id}/{id}",
+        "host": "m-a06f0de9-31e3-ee11-9046-6045bdf13ea0.uk.omnichannelengagementhub.com",
+        "method": "GET",
+        "status": 200,
+        "path_params": [
+          "a06f0de9-31e3-ee11-9046-6045bdf13ea0",
+          "91ac734d-d8ca-4052-8ed0-006b4bff52aa"
+        ],
+        "query_params": {
+          "requestId": [
+            "9adb15eb-8fcb-49bb-81d0-556a4b2a61dd"
+          ],
+          "channelId": [
+            "lcw"
+          ]
+        },
+        "request_headers": {
+          "accept": "application/json, text/plain, */*",
+          "origin": "https://oc-cdn-public-gbr.azureedge.net",
+          "referer": "https://oc-cdn-public-gbr.azureedge.net/",
+          "x-ms-client-request-id": "9adb15eb-8fcb-49bb-81d0-556a4b2a61dd"
+        },
+        "response_headers": {
+          "cache-control": "no-cache, no-store",
+          "content-type": "application/json",
+          "x-content-type-options": "nosniff",
+          "x-ms-activity-vector": "00.00.00",
+          "x-ms-correlation-id": "61cb6193-67d8-4063-bfa3-6b238830994f",
+          "x-ms-gateway-clusters": "prdil102wuk",
+          "x-ms-islandgateway": "_prdil102wukgb0_2",
+          "x-ms-messagingruntime": "ZB000000I",
+          "x-ms-ppapigateway": "_prdil102wukgb0_2",
+          "x-ms-service-request-id": "85e82b99-9990-4102-9b29-08d0c18f339f",
+          "x-servicefabric": "NoRetry"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 12752,
+          "content_ref": "15da5b7884ea5712c7a0b353743bfc395bd5ff3f.json"
+        }
+      }
+    ],
+    "/livechatconnector/v2/lcwfcsdetails/{id}": [
+      {
+        "timestamp": "2025-07-21T11:05:41.703Z",
+        "duration_ms": 14.736,
+        "endpoint": "/livechatconnector/v2/lcwfcsdetails/{id}",
+        "host": "m-a06f0de9-31e3-ee11-9046-6045bdf13ea0.uk.omnichannelengagementhub.com",
+        "method": "GET",
+        "status": 200,
+        "path_params": [
+          "a06f0de9-31e3-ee11-9046-6045bdf13ea0"
+        ],
+        "request_headers": {
+          "accept": "*/*",
+          "origin": "https://oc-cdn-public-gbr.azureedge.net",
+          "referer": "https://oc-cdn-public-gbr.azureedge.net/"
+        },
+        "response_headers": {
+          "cache-control": "no-cache, no-store",
+          "content-type": "application/json; charset=utf-8",
+          "x-content-type-options": "nosniff",
+          "x-ms-activity-vector": "00.00.00",
+          "x-ms-correlation-id": "f9b9c67c-73cd-451f-b126-829b11f3da20",
+          "x-ms-gateway-clusters": "prdil102wuk",
+          "x-ms-islandgateway": "_prdil102wukgb0_2",
+          "x-ms-messagingruntime": "PI0000002",
+          "x-ms-ppapigateway": "_prdil102wukgb0_1",
+          "x-ms-service-request-id": "5d08782a-5a6c-46cf-8f80-e8303381d23e",
+          "x-servicefabric": "NoRetry"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 314,
+          "content_ref": "b360e756dea96fc563ca568cc65572f16a793e83.json"
+        }
+      }
+    ],
+    "/v2/track": [
+      {
+        "timestamp": "2025-07-21T11:05:41.699Z",
+        "duration_ms": 96.26,
+        "endpoint": "/v2/track",
+        "host": "ukwest-0.in.applicationinsights.azure.com",
+        "method": "POST",
+        "status": 400,
+        "request_headers": {
+          "accept": "*/*",
+          "content-type": "application/json",
+          "origin": "https://www.barnsley.gov.uk",
+          "referer": "https://www.barnsley.gov.uk/"
+        },
+        "response_headers": {
+          "content-type": "application/json; charset=utf-8",
+          "x-content-type-options": "nosniff"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 297,
+          "content_ref": "c80779d79b8408ecfc675436fd4ac617f2e0bfe5.json"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T11:05:55.560Z",
+        "duration_ms": 68.339,
+        "endpoint": "/v2/track",
+        "host": "ukwest-0.in.applicationinsights.azure.com",
+        "method": "POST",
+        "status": 400,
+        "request_headers": {
+          "accept": "*/*",
+          "content-type": "application/json",
+          "origin": "https://www.barnsley.gov.uk",
+          "referer": "https://www.barnsley.gov.uk/"
+        },
+        "response_headers": {
+          "content-type": "application/json; charset=utf-8",
+          "x-content-type-options": "nosniff"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": -1
+        }
+      }
+    ],
+    "/Collector/3.0": [
+      {
+        "timestamp": "2025-07-21T11:05:41.767Z",
+        "duration_ms": 273.405,
+        "endpoint": "/Collector/3.0",
+        "host": "eu-mobile.events.data.microsoft.com",
+        "method": "POST",
+        "status": 200,
+        "query_params": {
+          "qsp": [
+            "true"
+          ],
+          "content-type": [
+            "application/bond-compact-binary"
+          ],
+          "client-id": [
+            "NO_AUTH"
+          ],
+          "sdk-version": [
+            "AWT-Web-JS-1.8.7"
+          ],
+          "x-apikey": [
+            "c7655518acf1403f93ff6b9f77942f0a-d01a02fd-6b50-4de3-a566-62eda11f93bc-7083"
+          ],
+          "client-time-epoch-millis": [
+            "1753095941765"
+          ],
+          "time-delta-to-apply-millis": [
+            "use-collector-delta"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "origin": "https://oc-cdn-public-gbr.azureedge.net",
+          "referer": "https://oc-cdn-public-gbr.azureedge.net/"
+        },
+        "response_headers": {
+          "content-type": "application/json"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 0,
+          "content_ref": "da39a3ee5e6b4b0d3255bfef95601890afd80709.json"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T11:05:44.033Z",
+        "duration_ms": 73.131,
+        "endpoint": "/Collector/3.0",
+        "host": "eu-mobile.events.data.microsoft.com",
+        "method": "POST",
+        "status": 200,
+        "query_params": {
+          "qsp": [
+            "true"
+          ],
+          "content-type": [
+            "application/bond-compact-binary"
+          ],
+          "client-id": [
+            "NO_AUTH"
+          ],
+          "sdk-version": [
+            "AWT-Web-JS-1.8.7"
+          ],
+          "x-apikey": [
+            "c7655518acf1403f93ff6b9f77942f0a-d01a02fd-6b50-4de3-a566-62eda11f93bc-7083"
+          ],
+          "client-time-epoch-millis": [
+            "1753095944027"
+          ],
+          "time-delta-to-apply-millis": [
+            "221"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "origin": "https://oc-cdn-public-gbr.azureedge.net",
+          "referer": "https://oc-cdn-public-gbr.azureedge.net/"
+        },
+        "response_headers": {
+          "content-type": "application/json"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 0,
+          "content_ref": "da39a3ee5e6b4b0d3255bfef95601890afd80709.json"
+        }
+      }
+    ],
+    "/g/collect": [
+      {
+        "timestamp": "2025-07-21T11:05:42.657Z",
+        "duration_ms": 64.63799999999999,
+        "endpoint": "/g/collect",
+        "host": "region1.google-analytics.com",
+        "method": "POST",
+        "status": 204,
+        "query_params": {
+          "v": [
+            "2"
+          ],
+          "tid": [
+            "G-4FR8X0E6WX"
+          ],
+          "gtm": [
+            "45Pe57g1v9102376018z89195947602za200zb9195947602"
+          ],
+          "_p": [
+            "1753095939722"
+          ],
+          "gcd": [
+            "13l3l3l3l1l1"
+          ],
+          "npa": [
+            "0"
+          ],
+          "dma": [
+            "0"
+          ],
+          "tag_exp": [
+            "101509157~102015666~103116026~103200004~103233427~104684208~104684211"
+          ],
+          "cid": [
+            "1292390203.1753095943"
+          ],
+          "ul": [
+            "en-gb"
+          ],
+          "sr": [
+            "800x600"
+          ],
+          "uaa": [
+            "arm"
+          ],
+          "uab": [
+            "64"
+          ],
+          "uafvl": [
+            "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+          ],
+          "uamb": [
+            "0"
+          ],
+          "uap": [
+            "macOS"
+          ],
+          "uapv": [
+            "15.5.0"
+          ],
+          "uaw": [
+            "0"
+          ],
+          "are": [
+            "1"
+          ],
+          "frm": [
+            "0"
+          ],
+          "pscdl": [
+            "noapi"
+          ],
+          "_s": [
+            "1"
+          ],
+          "sid": [
+            "1753095942"
+          ],
+          "sct": [
+            "1"
+          ],
+          "seg": [
+            "0"
+          ],
+          "dl": [
+            "https://www.barnsley.gov.uk/pid524"
+          ],
+          "dt": [
+            "Bins, rubbish and recycling"
+          ],
+          "en": [
+            "page_view"
+          ],
+          "_fv": [
+            "1"
+          ],
+          "_nsi": [
+            "1"
+          ],
+          "_ss": [
+            "1"
+          ],
+          "tfd": [
+            "3066"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "cookie": "[cookies present]",
+          "origin": "https://www.barnsley.gov.uk",
+          "referer": "https://www.barnsley.gov.uk/"
+        },
+        "response_headers": {
+          "cache-control": "no-cache, no-store, must-revalidate",
+          "content-type": "text/plain"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T11:05:42.690Z",
+        "duration_ms": 15.006,
+        "endpoint": "/g/collect",
+        "host": "region1.google-analytics.com",
+        "method": "POST",
+        "status": 204,
+        "query_params": {
+          "v": [
+            "2"
+          ],
+          "tid": [
+            "G-5E94ZYFC73"
+          ],
+          "gtm": [
+            "45je57g1v9102378646z89195947602za200zb9195947602"
+          ],
+          "_p": [
+            "1753095939722"
+          ],
+          "gcd": [
+            "13l3l3l3l1l1"
+          ],
+          "npa": [
+            "0"
+          ],
+          "dma": [
+            "0"
+          ],
+          "tag_exp": [
+            "101509157~103116026~103200004~103233427~104684208~104684211"
+          ],
+          "cid": [
+            "1292390203.1753095943"
+          ],
+          "ul": [
+            "en-gb"
+          ],
+          "sr": [
+            "800x600"
+          ],
+          "uaa": [
+            "arm"
+          ],
+          "uab": [
+            "64"
+          ],
+          "uafvl": [
+            "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+          ],
+          "uamb": [
+            "0"
+          ],
+          "uap": [
+            "macOS"
+          ],
+          "uapv": [
+            "15.5.0"
+          ],
+          "uaw": [
+            "0"
+          ],
+          "are": [
+            "1"
+          ],
+          "frm": [
+            "0"
+          ],
+          "pscdl": [
+            "noapi"
+          ],
+          "_s": [
+            "1"
+          ],
+          "sid": [
+            "1753095942"
+          ],
+          "sct": [
+            "1"
+          ],
+          "seg": [
+            "0"
+          ],
+          "dl": [
+            "https://www.barnsley.gov.uk/pid524"
+          ],
+          "dt": [
+            "Bins, rubbish and recycling"
+          ],
+          "en": [
+            "page_view"
+          ],
+          "_fv": [
+            "1"
+          ],
+          "_ss": [
+            "1"
+          ],
+          "tfd": [
+            "3087"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "cookie": "[cookies present]",
+          "origin": "https://www.barnsley.gov.uk",
+          "referer": "https://www.barnsley.gov.uk/"
+        },
+        "response_headers": {
+          "cache-control": "no-cache, no-store, must-revalidate",
+          "content-type": "text/plain"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T11:05:42.719Z",
+        "duration_ms": 14.094,
+        "endpoint": "/g/collect",
+        "host": "region1.google-analytics.com",
+        "method": "POST",
+        "status": 204,
+        "query_params": {
+          "v": [
+            "2"
+          ],
+          "tid": [
+            "G-33610E8BVS"
+          ],
+          "gtm": [
+            "45Pe57g1v9102377703z89195947602za200zb9195947602"
+          ],
+          "_p": [
+            "1753095939722"
+          ],
+          "gcd": [
+            "13l3l3l3l1l1"
+          ],
+          "npa": [
+            "0"
+          ],
+          "dma": [
+            "0"
+          ],
+          "tag_exp": [
+            "101509157~103116026~103200004~103233427~104684208~104684211~104921712~104921714"
+          ],
+          "cid": [
+            "1292390203.1753095943"
+          ],
+          "ul": [
+            "en-gb"
+          ],
+          "sr": [
+            "800x600"
+          ],
+          "uaa": [
+            "arm"
+          ],
+          "uab": [
+            "64"
+          ],
+          "uafvl": [
+            "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+          ],
+          "uamb": [
+            "0"
+          ],
+          "uap": [
+            "macOS"
+          ],
+          "uapv": [
+            "15.5.0"
+          ],
+          "uaw": [
+            "0"
+          ],
+          "are": [
+            "1"
+          ],
+          "frm": [
+            "0"
+          ],
+          "pscdl": [
+            "noapi"
+          ],
+          "_s": [
+            "1"
+          ],
+          "sid": [
+            "1753095942"
+          ],
+          "sct": [
+            "1"
+          ],
+          "seg": [
+            "0"
+          ],
+          "dl": [
+            "https://www.barnsley.gov.uk/pid524"
+          ],
+          "dt": [
+            "Bins, rubbish and recycling"
+          ],
+          "en": [
+            "page_view"
+          ],
+          "_fv": [
+            "1"
+          ],
+          "_ss": [
+            "1"
+          ],
+          "tfd": [
+            "3116"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "cookie": "[cookies present]",
+          "origin": "https://www.barnsley.gov.uk",
+          "referer": "https://www.barnsley.gov.uk/"
+        },
+        "response_headers": {
+          "cache-control": "no-cache, no-store, must-revalidate",
+          "content-type": "text/plain"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T11:05:42.750Z",
+        "duration_ms": 13.583,
+        "endpoint": "/g/collect",
+        "host": "region1.google-analytics.com",
+        "method": "POST",
+        "status": 204,
+        "query_params": {
+          "v": [
+            "2"
+          ],
+          "tid": [
+            "G-JC2NJLCR9C"
+          ],
+          "gtm": [
+            "45je57g1v9102377807z89195947602za200zb9195947602"
+          ],
+          "_p": [
+            "1753095939722"
+          ],
+          "gcd": [
+            "13l3l3l3l1l1"
+          ],
+          "npa": [
+            "0"
+          ],
+          "dma": [
+            "0"
+          ],
+          "tag_exp": [
+            "101509157~103116026~103200004~103233427~104684208~104684211"
+          ],
+          "cid": [
+            "1292390203.1753095943"
+          ],
+          "ul": [
+            "en-gb"
+          ],
+          "sr": [
+            "800x600"
+          ],
+          "uaa": [
+            "arm"
+          ],
+          "uab": [
+            "64"
+          ],
+          "uafvl": [
+            "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+          ],
+          "uamb": [
+            "0"
+          ],
+          "uap": [
+            "macOS"
+          ],
+          "uapv": [
+            "15.5.0"
+          ],
+          "uaw": [
+            "0"
+          ],
+          "are": [
+            "1"
+          ],
+          "frm": [
+            "0"
+          ],
+          "pscdl": [
+            "noapi"
+          ],
+          "_s": [
+            "1"
+          ],
+          "sid": [
+            "1753095942"
+          ],
+          "sct": [
+            "1"
+          ],
+          "seg": [
+            "0"
+          ],
+          "dl": [
+            "https://www.barnsley.gov.uk/pid524"
+          ],
+          "dt": [
+            "Bins, rubbish and recycling"
+          ],
+          "en": [
+            "page_view"
+          ],
+          "_fv": [
+            "1"
+          ],
+          "_ss": [
+            "1"
+          ],
+          "tfd": [
+            "3147"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "cookie": "[cookies present]",
+          "origin": "https://www.barnsley.gov.uk",
+          "referer": "https://www.barnsley.gov.uk/"
+        },
+        "response_headers": {
+          "cache-control": "no-cache, no-store, must-revalidate",
+          "content-type": "text/plain"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T11:05:55.643Z",
+        "duration_ms": -1,
+        "endpoint": "/g/collect",
+        "host": "region1.google-analytics.com",
+        "method": "POST",
+        "status": -1,
+        "query_params": {
+          "v": [
+            "2"
+          ],
+          "tid": [
+            "G-33610E8BVS"
+          ],
+          "gtm": [
+            "45Pe57g1v9102377703za200zb9195947602"
+          ],
+          "_p": [
+            "1753095939722"
+          ],
+          "gcd": [
+            "13l3l3l3l1l1"
+          ],
+          "npa": [
+            "0"
+          ],
+          "dma": [
+            "0"
+          ],
+          "tag_exp": [
+            "101509157~103116026~103200004~103233427~104684208~104684211~104921712~104921714"
+          ],
+          "cid": [
+            "1292390203.1753095943"
+          ],
+          "ul": [
+            "en-gb"
+          ],
+          "sr": [
+            "800x600"
+          ],
+          "uaa": [
+            "arm"
+          ],
+          "uab": [
+            "64"
+          ],
+          "uafvl": [
+            "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+          ],
+          "uamb": [
+            "0"
+          ],
+          "uap": [
+            "macOS"
+          ],
+          "uapv": [
+            "15.5.0"
+          ],
+          "uaw": [
+            "0"
+          ],
+          "are": [
+            "1"
+          ],
+          "frm": [
+            "0"
+          ],
+          "pscdl": [
+            "noapi"
+          ],
+          "_eu": [
+            "AAAAAAQ"
+          ],
+          "_s": [
+            "2"
+          ],
+          "sid": [
+            "1753095942"
+          ],
+          "sct": [
+            "1"
+          ],
+          "seg": [
+            "1"
+          ],
+          "dl": [
+            "https://www.barnsley.gov.uk/pid524"
+          ],
+          "dt": [
+            "Bins, rubbish and recycling"
+          ],
+          "en": [
+            "user_engagement"
+          ],
+          "_et": [
+            "12925"
+          ],
+          "tfd": [
+            "16043"
+          ]
+        },
+        "request_headers": {
+          "referer": "https://www.barnsley.gov.uk/"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T11:05:55.642Z",
+        "duration_ms": -1,
+        "endpoint": "/g/collect",
+        "host": "region1.google-analytics.com",
+        "method": "POST",
+        "status": -1,
+        "query_params": {
+          "v": [
+            "2"
+          ],
+          "tid": [
+            "G-5E94ZYFC73"
+          ],
+          "gtm": [
+            "45je57g1v9102378646za200zb9195947602"
+          ],
+          "_p": [
+            "1753095939722"
+          ],
+          "gcd": [
+            "13l3l3l3l1l1"
+          ],
+          "npa": [
+            "0"
+          ],
+          "dma": [
+            "0"
+          ],
+          "tag_exp": [
+            "101509157~103116026~103200004~103233427~104684208~104684211"
+          ],
+          "cid": [
+            "1292390203.1753095943"
+          ],
+          "ul": [
+            "en-gb"
+          ],
+          "sr": [
+            "800x600"
+          ],
+          "uaa": [
+            "arm"
+          ],
+          "uab": [
+            "64"
+          ],
+          "uafvl": [
+            "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+          ],
+          "uamb": [
+            "0"
+          ],
+          "uap": [
+            "macOS"
+          ],
+          "uapv": [
+            "15.5.0"
+          ],
+          "uaw": [
+            "0"
+          ],
+          "are": [
+            "1"
+          ],
+          "frm": [
+            "0"
+          ],
+          "pscdl": [
+            "noapi"
+          ],
+          "_eu": [
+            "AAAAAAQ"
+          ],
+          "_s": [
+            "2"
+          ],
+          "sid": [
+            "1753095942"
+          ],
+          "sct": [
+            "1"
+          ],
+          "seg": [
+            "1"
+          ],
+          "dl": [
+            "https://www.barnsley.gov.uk/pid524"
+          ],
+          "dt": [
+            "Bins, rubbish and recycling"
+          ],
+          "en": [
+            "user_engagement"
+          ],
+          "_et": [
+            "12951"
+          ],
+          "tfd": [
+            "16040"
+          ]
+        },
+        "request_headers": {
+          "referer": "https://www.barnsley.gov.uk/"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T11:05:55.641Z",
+        "duration_ms": -1,
+        "endpoint": "/g/collect",
+        "host": "region1.google-analytics.com",
+        "method": "POST",
+        "status": -1,
+        "query_params": {
+          "v": [
+            "2"
+          ],
+          "tid": [
+            "G-4FR8X0E6WX"
+          ],
+          "gtm": [
+            "45Pe57g1v9102376018za200zb9195947602"
+          ],
+          "_p": [
+            "1753095939722"
+          ],
+          "gcd": [
+            "13l3l3l3l1l1"
+          ],
+          "npa": [
+            "0"
+          ],
+          "dma": [
+            "0"
+          ],
+          "tag_exp": [
+            "101509157~102015666~103116026~103200004~103233427~104684208~104684211"
+          ],
+          "cid": [
+            "1292390203.1753095943"
+          ],
+          "ul": [
+            "en-gb"
+          ],
+          "sr": [
+            "800x600"
+          ],
+          "uaa": [
+            "arm"
+          ],
+          "uab": [
+            "64"
+          ],
+          "uafvl": [
+            "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+          ],
+          "uamb": [
+            "0"
+          ],
+          "uap": [
+            "macOS"
+          ],
+          "uapv": [
+            "15.5.0"
+          ],
+          "uaw": [
+            "0"
+          ],
+          "are": [
+            "1"
+          ],
+          "frm": [
+            "0"
+          ],
+          "pscdl": [
+            "noapi"
+          ],
+          "_eu": [
+            "AAAAAAQ"
+          ],
+          "_s": [
+            "2"
+          ],
+          "sid": [
+            "1753095942"
+          ],
+          "sct": [
+            "1"
+          ],
+          "seg": [
+            "1"
+          ],
+          "dl": [
+            "https://www.barnsley.gov.uk/pid524"
+          ],
+          "dt": [
+            "Bins, rubbish and recycling"
+          ],
+          "en": [
+            "user_engagement"
+          ],
+          "_et": [
+            "12970"
+          ],
+          "tfd": [
+            "16037"
+          ]
+        },
+        "request_headers": {
+          "referer": "https://www.barnsley.gov.uk/"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T11:05:55.644Z",
+        "duration_ms": -1,
+        "endpoint": "/g/collect",
+        "host": "region1.google-analytics.com",
+        "method": "POST",
+        "status": -1,
+        "query_params": {
+          "v": [
+            "2"
+          ],
+          "tid": [
+            "G-JC2NJLCR9C"
+          ],
+          "gtm": [
+            "45je57g1v9102377807za200zb9195947602"
+          ],
+          "_p": [
+            "1753095939722"
+          ],
+          "gcd": [
+            "13l3l3l3l1l1"
+          ],
+          "npa": [
+            "0"
+          ],
+          "dma": [
+            "0"
+          ],
+          "tag_exp": [
+            "101509157~103116026~103200004~103233427~104684208~104684211"
+          ],
+          "cid": [
+            "1292390203.1753095943"
+          ],
+          "ul": [
+            "en-gb"
+          ],
+          "sr": [
+            "800x600"
+          ],
+          "uaa": [
+            "arm"
+          ],
+          "uab": [
+            "64"
+          ],
+          "uafvl": [
+            "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+          ],
+          "uamb": [
+            "0"
+          ],
+          "uap": [
+            "macOS"
+          ],
+          "uapv": [
+            "15.5.0"
+          ],
+          "uaw": [
+            "0"
+          ],
+          "are": [
+            "1"
+          ],
+          "frm": [
+            "0"
+          ],
+          "pscdl": [
+            "noapi"
+          ],
+          "_eu": [
+            "AAAAAAQ"
+          ],
+          "_s": [
+            "2"
+          ],
+          "sid": [
+            "1753095942"
+          ],
+          "sct": [
+            "1"
+          ],
+          "seg": [
+            "1"
+          ],
+          "dl": [
+            "https://www.barnsley.gov.uk/pid524"
+          ],
+          "dt": [
+            "Bins, rubbish and recycling"
+          ],
+          "en": [
+            "user_engagement"
+          ],
+          "_et": [
+            "12896"
+          ],
+          "tfd": [
+            "16046"
+          ]
+        },
+        "request_headers": {
+          "referer": "https://www.barnsley.gov.uk/"
+        }
+      }
+    ],
+    "/ViewCollection/SelectAddress": [
+      {
+        "timestamp": "2025-07-21T11:05:55.560Z",
+        "duration_ms": 46.787,
+        "endpoint": "/ViewCollection/SelectAddress",
+        "host": "waste.barnsley.gov.uk",
+        "method": "GET",
+        "status": 302,
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+          "cookie": "[cookies present]",
+          "referer": "https://www.barnsley.gov.uk/"
+        },
+        "response_headers": {
+          "cache-control": "no-cache,no-store",
+          "location": "/ViewCollection/BeforeYouBegin",
+          "set-cookie": "[cookies present]",
+          "x-powered-by": "ASP.NET"
+        },
+        "redirect_to": "/ViewCollection/BeforeYouBegin"
+      },
+      {
+        "timestamp": "2025-07-21T11:05:55.608Z",
+        "duration_ms": 14.336,
+        "endpoint": "/ViewCollection/SelectAddress",
+        "host": "waste.barnsley.gov.uk",
+        "method": "GET",
+        "status": 200,
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+          "cookie": "[cookies present]",
+          "referer": "https://www.barnsley.gov.uk/"
+        },
+        "response_headers": {
+          "cache-control": "no-cache, no-store",
+          "content-type": "text/html; charset=utf-8",
+          "set-cookie": "[cookies present]",
+          "x-frame-options": "SAMEORIGIN",
+          "x-powered-by": "ASP.NET"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 5369,
+          "compressed": true,
+          "content_ref": "e0d37c942ad9a630a55b188aaa99c3d77a08455b.html"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T11:06:00.890Z",
+        "duration_ms": 193.173,
+        "endpoint": "/ViewCollection/SelectAddress",
+        "host": "waste.barnsley.gov.uk",
+        "method": "POST",
+        "status": 302,
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+          "content-type": "application/x-www-form-urlencoded",
+          "cookie": "[cookies present]",
+          "origin": "https://waste.barnsley.gov.uk",
+          "referer": "https://waste.barnsley.gov.uk/ViewCollection/SelectAddress"
+        },
+        "response_headers": {
+          "location": "/ViewCollection/SelectAddress#person1_address",
+          "x-powered-by": "ASP.NET"
+        },
+        "redirect_to": "/ViewCollection/SelectAddress#person1_address"
+      },
+      {
+        "timestamp": "2025-07-21T11:06:01.085Z",
+        "duration_ms": 16.347,
+        "endpoint": "/ViewCollection/SelectAddress",
+        "host": "waste.barnsley.gov.uk",
+        "method": "GET",
+        "status": 200,
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+          "cookie": "[cookies present]",
+          "referer": "https://waste.barnsley.gov.uk/ViewCollection/SelectAddress"
+        },
+        "response_headers": {
+          "cache-control": "no-cache, no-store",
+          "content-type": "text/html; charset=utf-8",
+          "x-powered-by": "ASP.NET"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 9221,
+          "compressed": true,
+          "content_ref": "ca35095684b480c0c9bcf1b858aad2c0a9c39a4a.html"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T11:06:06.267Z",
+        "duration_ms": 130.179,
+        "endpoint": "/ViewCollection/SelectAddress",
+        "host": "waste.barnsley.gov.uk",
+        "method": "POST",
+        "status": 302,
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+          "content-type": "application/x-www-form-urlencoded",
+          "cookie": "[cookies present]",
+          "origin": "https://waste.barnsley.gov.uk",
+          "referer": "https://waste.barnsley.gov.uk/ViewCollection/SelectAddress"
+        },
+        "response_headers": {
+          "location": "/ViewCollection/Collections",
+          "x-powered-by": "ASP.NET"
+        },
+        "redirect_to": "/ViewCollection/Collections"
+      }
+    ],
+    "/ViewCollection/BeforeYouBegin": [
+      {
+        "timestamp": "2025-07-21T11:05:55.595Z",
+        "duration_ms": 13.401,
+        "endpoint": "/ViewCollection/BeforeYouBegin",
+        "host": "waste.barnsley.gov.uk",
+        "method": "GET",
+        "status": 302,
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+          "cookie": "[cookies present]",
+          "referer": "https://www.barnsley.gov.uk/"
+        },
+        "response_headers": {
+          "location": "/ViewCollection/SelectAddress",
+          "x-powered-by": "ASP.NET"
+        },
+        "redirect_to": "/ViewCollection/SelectAddress"
+      }
+    ],
+    "/v1/events/beacon": [
+      {
+        "timestamp": "2025-07-21T11:05:55.644Z",
+        "duration_ms": -1,
+        "endpoint": "/v1/events/beacon",
+        "host": "a.eu.silktide.com",
+        "method": "POST",
+        "status": -1,
+        "request_headers": {
+          "referer": "https://www.barnsley.gov.uk/",
+          "content-type": "text/plain;charset=UTF-8"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T11:05:55.501Z",
+        "duration_ms": 72.55399999999999,
+        "endpoint": "/v1/events/beacon",
+        "host": "a.eu.silktide.com",
+        "method": "POST",
+        "status": 202,
+        "request_headers": {
+          "accept": "*/*",
+          "content-type": "text/plain;charset=UTF-8",
+          "origin": "https://www.barnsley.gov.uk",
+          "referer": "https://www.barnsley.gov.uk/"
+        },
+        "response_headers": {
+          "content-type": "text/plain; charset=utf-8",
+          "x-powered-by": "Silktide"
+        }
+      }
+    ],
+    "/ViewCollection/Collections": [
+      {
+        "timestamp": "2025-07-21T11:06:06.398Z",
+        "duration_ms": 154.167,
+        "endpoint": "/ViewCollection/Collections",
+        "host": "waste.barnsley.gov.uk",
+        "method": "GET",
+        "status": 200,
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+          "cookie": "[cookies present]",
+          "referer": "https://waste.barnsley.gov.uk/ViewCollection/SelectAddress"
+        },
+        "response_headers": {
+          "cache-control": "no-cache, no-store",
+          "content-type": "text/html; charset=utf-8",
+          "x-powered-by": "ASP.NET"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 7951,
+          "compressed": true,
+          "content_ref": "cca729af72af93effdf00a6a965effb7a7b9d21b.html"
+        }
+      }
+    ]
+  }
 }

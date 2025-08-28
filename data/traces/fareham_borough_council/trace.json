@@ -1,122 +1,1881 @@
 {
-  "metadata": {
-    "trace_name": "fareham_borough_council",
-    "processed_at": "2025-08-26 18:44:24",
-    "workflow_steps_count": 5,
-    "navigation_events_count": 7
-  },
-  "scraping_patterns": {
-    "login_detected": false,
-    "form_submissions": 1,
-    "navigation_count": 1,
-    "unique_domains": [
-      "clients1.google.com",
-      "www.fareham.gov.uk"
-    ],
-    "api_endpoints": [],
-    "data_extraction_indicators": []
-  },
-  "workflow_steps": [
+  "entries": [
     {
-      "action": "goto",
-      "target": "https://www.fareham.gov.uk/waste_collection_and_recycling/bincalendar.aspx",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
-    },
-    {
-      "action": "click",
-      "target": "aria-ref=e15 >> internal:describe=\"I Accept\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
-    },
-    {
-      "action": "click",
-      "target": "aria-ref=e154 >> internal:describe=\"Check which area you fall under\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
-    },
-    {
-      "action": "fill",
-      "target": "aria-ref=e170 >> internal:describe=\"Postcode\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0,
-      "value": "PO14 1AB"
-    },
-    {
-      "action": "click",
-      "target": "aria-ref=e174 >> internal:describe=\"Search\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
-    }
-  ],
-  "navigation_events": [
-    {
-      "url": "https://www.fareham.gov.uk/waste_collection_and_recycling/bincalendar.aspx",
+      "timestamp": "2025-07-21T07:51:20.625Z",
+      "duration_ms": 158.062,
+      "endpoint": "/{id}/bincalendar.aspx",
+      "host": "www.fareham.gov.uk",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "text/html; charset=utf-8",
-      "size": 27187,
-      "timestamp": "2025-07-21T07:51:20.625Z"
+      "path_params": [
+        "waste_collection_and_recycling"
+      ],
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7"
+      },
+      "response_headers": {
+        "cache-control": "private",
+        "content-type": "text/html; charset=utf-8",
+        "set-cookie": "[cookies present]",
+        "x-aspnet-version": "4.0.30319",
+        "x-powered-by": "ASP.NET"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 27187,
+        "content_ref": "70a1a6ebd5da359c6ac846ac072829aa7e19a87a.html"
+      }
     },
     {
-      "url": "https://www.fareham.gov.uk/resources/acceptcookies.aspx?mode=all",
+      "timestamp": "2025-07-21T07:51:21.955Z",
+      "duration_ms": 146.80700000000002,
+      "endpoint": "/resources/acceptcookies.aspx",
+      "host": "www.fareham.gov.uk",
       "method": "GET",
       "status": 302,
-      "redirect_url": "https://www.fareham.gov.uk/waste_collection_and_recycling/bincalendar.aspx?close=True",
-      "mime_type": "text/html; charset=utf-8",
-      "size": -1,
-      "timestamp": "2025-07-21T07:51:21.955Z"
+      "query_params": {
+        "mode": [
+          "all"
+        ]
+      },
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+        "cookie": "[cookies present]",
+        "referer": "https://www.fareham.gov.uk/waste_collection_and_recycling/bincalendar.aspx"
+      },
+      "response_headers": {
+        "cache-control": "private",
+        "content-type": "text/html; charset=utf-8",
+        "location": "https://www.fareham.gov.uk/waste_collection_and_recycling/bincalendar.aspx?close=True",
+        "set-cookie": "[cookies present]",
+        "x-aspnet-version": "4.0.30319",
+        "x-powered-by": "ASP.NET"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": -1
+      },
+      "redirect_to": "https://www.fareham.gov.uk/waste_collection_and_recycling/bincalendar.aspx?close=True"
     },
     {
-      "url": "https://www.fareham.gov.uk/waste_collection_and_recycling/bincalendar.aspx?close=True",
+      "timestamp": "2025-07-21T07:51:22.103Z",
+      "duration_ms": 58.912,
+      "endpoint": "/{id}/bincalendar.aspx",
+      "host": "www.fareham.gov.uk",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "text/html; charset=utf-8",
-      "size": 25146,
-      "timestamp": "2025-07-21T07:51:22.103Z"
+      "path_params": [
+        "waste_collection_and_recycling"
+      ],
+      "query_params": {
+        "close": [
+          "True"
+        ]
+      },
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+        "cookie": "[cookies present]",
+        "referer": "https://www.fareham.gov.uk/waste_collection_and_recycling/bincalendar.aspx"
+      },
+      "response_headers": {
+        "cache-control": "private",
+        "content-type": "text/html; charset=utf-8",
+        "x-aspnet-version": "4.0.30319",
+        "x-powered-by": "ASP.NET"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 25146,
+        "content_ref": "e0ecc68ccc7b2daea3a8cd24deb4ed47d5c0e6f6.html"
+      }
     },
     {
-      "url": "https://clients1.google.com/generate_204",
+      "timestamp": "2025-07-21T07:51:22.278Z",
+      "duration_ms": 65.50299999999999,
+      "endpoint": "/g/collect",
+      "host": "region1.google-analytics.com",
+      "method": "POST",
+      "status": 204,
+      "query_params": {
+        "v": [
+          "2"
+        ],
+        "tid": [
+          "G-QT5XCY8YQS"
+        ],
+        "gtm": [
+          "45je57g1v898302915za200"
+        ],
+        "_p": [
+          "1753084282174"
+        ],
+        "gcs": [
+          "G101"
+        ],
+        "gcd": [
+          "13m3n3l3l5l1"
+        ],
+        "npa": [
+          "0"
+        ],
+        "dma": [
+          "0"
+        ],
+        "tag_exp": [
+          "101509157~103116026~103200004~103233427~104684208~104684211~104952206~104952208"
+        ],
+        "cid": [
+          "1073972447.1753084282"
+        ],
+        "ul": [
+          "en-gb"
+        ],
+        "sr": [
+          "800x600"
+        ],
+        "uaa": [
+          "arm"
+        ],
+        "uab": [
+          "64"
+        ],
+        "uafvl": [
+          "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+        ],
+        "uamb": [
+          "0"
+        ],
+        "uap": [
+          "macOS"
+        ],
+        "uapv": [
+          "15.5.0"
+        ],
+        "uaw": [
+          "0"
+        ],
+        "are": [
+          "1"
+        ],
+        "frm": [
+          "0"
+        ],
+        "pscdl": [
+          "denied"
+        ],
+        "_s": [
+          "1"
+        ],
+        "sid": [
+          "1753084282"
+        ],
+        "sct": [
+          "1"
+        ],
+        "seg": [
+          "0"
+        ],
+        "dl": [
+          "https://www.fareham.gov.uk/waste_collection_and_recycling/bincalendar.aspx?close=True"
+        ],
+        "dr": [
+          "https://www.fareham.gov.uk/waste_collection_and_recycling/bincalendar.aspx"
+        ],
+        "dt": [
+          "Bin Calendar"
+        ],
+        "en": [
+          "page_view"
+        ],
+        "_fv": [
+          "1"
+        ],
+        "_nsi": [
+          "1"
+        ],
+        "_ss": [
+          "1"
+        ],
+        "_ee": [
+          "1"
+        ],
+        "tfd": [
+          "376"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "cookie": "[cookies present]",
+        "origin": "https://www.fareham.gov.uk",
+        "referer": "https://www.fareham.gov.uk/"
+      },
+      "response_headers": {
+        "cache-control": "no-cache, no-store, must-revalidate",
+        "content-type": "text/plain"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T07:51:22.396Z",
+      "duration_ms": 58.507999999999996,
+      "endpoint": "/generate_204",
+      "host": "clients1.google.com",
       "method": "GET",
       "status": 204,
-      "redirect_url": null,
-      "mime_type": "x-unknown",
-      "size": 0,
-      "timestamp": "2025-07-21T07:51:22.396Z"
+      "request_headers": {
+        "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+        "referer": "https://www.fareham.gov.uk/",
+        "x-browser-copyright": "Copyright 2025 Google LLC. All rights reserved.",
+        "x-browser-validation": "qvLgIVtG4U8GgiRPSI9IJ22mUlI=",
+        "x-browser-year": "2025",
+        "x-client-data": "CMiXywE="
+      }
     },
     {
-      "url": "https://www.fareham.gov.uk/internetlookups/search.aspx?list=DomesticBinCollections",
+      "timestamp": "2025-07-21T07:51:24.958Z",
+      "duration_ms": -1,
+      "endpoint": "/g/collect",
+      "host": "region1.google-analytics.com",
+      "method": "POST",
+      "status": -1,
+      "query_params": {
+        "v": [
+          "2"
+        ],
+        "tid": [
+          "G-QT5XCY8YQS"
+        ],
+        "gtm": [
+          "45je57g1v898302915za200"
+        ],
+        "_p": [
+          "1753084282174"
+        ],
+        "gcs": [
+          "G101"
+        ],
+        "gcd": [
+          "13m3n3l3l5l1"
+        ],
+        "npa": [
+          "0"
+        ],
+        "dma": [
+          "0"
+        ],
+        "tag_exp": [
+          "101509157~103116026~103200004~103233427~104684208~104684211~104952206~104952208"
+        ],
+        "cid": [
+          "1073972447.1753084282"
+        ],
+        "ul": [
+          "en-gb"
+        ],
+        "sr": [
+          "800x600"
+        ],
+        "uaa": [
+          "arm"
+        ],
+        "uab": [
+          "64"
+        ],
+        "uafvl": [
+          "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+        ],
+        "uamb": [
+          "0"
+        ],
+        "uap": [
+          "macOS"
+        ],
+        "uapv": [
+          "15.5.0"
+        ],
+        "uaw": [
+          "0"
+        ],
+        "are": [
+          "1"
+        ],
+        "frm": [
+          "0"
+        ],
+        "pscdl": [
+          "denied"
+        ],
+        "_eu": [
+          "AAAAAAQ"
+        ],
+        "_s": [
+          "2"
+        ],
+        "sid": [
+          "1753084282"
+        ],
+        "sct": [
+          "1"
+        ],
+        "seg": [
+          "0"
+        ],
+        "dl": [
+          "https://www.fareham.gov.uk/waste_collection_and_recycling/bincalendar.aspx?close=True"
+        ],
+        "dr": [
+          "https://www.fareham.gov.uk/waste_collection_and_recycling/bincalendar.aspx"
+        ],
+        "dt": [
+          "Bin Calendar"
+        ],
+        "en": [
+          "user_engagement"
+        ],
+        "_et": [
+          "2675"
+        ],
+        "tfd": [
+          "3055"
+        ]
+      },
+      "request_headers": {
+        "referer": "https://www.fareham.gov.uk/"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T07:51:24.842Z",
+      "duration_ms": 108.19200000000001,
+      "endpoint": "/internetlookups/search.aspx",
+      "host": "www.fareham.gov.uk",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "text/html; charset=utf-8",
-      "size": 34461,
-      "timestamp": "2025-07-21T07:51:24.842Z"
+      "query_params": {
+        "list": [
+          "DomesticBinCollections"
+        ]
+      },
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+        "cookie": "[cookies present]",
+        "referer": "https://www.fareham.gov.uk/waste_collection_and_recycling/bincalendar.aspx?close=True"
+      },
+      "response_headers": {
+        "cache-control": "private",
+        "content-type": "text/html; charset=utf-8",
+        "x-aspnet-version": "4.0.30319",
+        "x-powered-by": "ASP.NET"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 34461,
+        "content_ref": "dd3509ec2e0275eccb928c059b6f13def1426e34.html"
+      }
     },
     {
-      "url": "https://clients1.google.com/generate_204",
+      "timestamp": "2025-07-21T07:51:25.026Z",
+      "duration_ms": 14.227,
+      "endpoint": "/g/collect",
+      "host": "region1.google-analytics.com",
+      "method": "POST",
+      "status": 204,
+      "query_params": {
+        "v": [
+          "2"
+        ],
+        "tid": [
+          "G-QT5XCY8YQS"
+        ],
+        "gtm": [
+          "45je57g1v898302915za200"
+        ],
+        "_p": [
+          "1753084284963"
+        ],
+        "gcs": [
+          "G101"
+        ],
+        "gcd": [
+          "13m3n3l3l5l1"
+        ],
+        "npa": [
+          "0"
+        ],
+        "dma": [
+          "0"
+        ],
+        "tag_exp": [
+          "101509157~103116026~103200004~103233427~104684208~104684211~104952206~104952208"
+        ],
+        "cid": [
+          "1073972447.1753084282"
+        ],
+        "ul": [
+          "en-gb"
+        ],
+        "sr": [
+          "800x600"
+        ],
+        "uaa": [
+          "arm"
+        ],
+        "uab": [
+          "64"
+        ],
+        "uafvl": [
+          "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+        ],
+        "uamb": [
+          "0"
+        ],
+        "uap": [
+          "macOS"
+        ],
+        "uapv": [
+          "15.5.0"
+        ],
+        "uaw": [
+          "0"
+        ],
+        "are": [
+          "1"
+        ],
+        "frm": [
+          "0"
+        ],
+        "pscdl": [
+          "denied"
+        ],
+        "_eu": [
+          "AAAAAAQ"
+        ],
+        "_s": [
+          "1"
+        ],
+        "sid": [
+          "1753084282"
+        ],
+        "sct": [
+          "1"
+        ],
+        "seg": [
+          "1"
+        ],
+        "dl": [
+          "https://www.fareham.gov.uk/internetlookups/search.aspx?list=DomesticBinCollections"
+        ],
+        "dr": [
+          "https://www.fareham.gov.uk/waste_collection_and_recycling/bincalendar.aspx?close=True"
+        ],
+        "dt": [
+          "Domestic Refuse and Recycling Collection Search"
+        ],
+        "en": [
+          "page_view"
+        ],
+        "_ee": [
+          "1"
+        ],
+        "tfd": [
+          "225"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "cookie": "[cookies present]",
+        "origin": "https://www.fareham.gov.uk",
+        "referer": "https://www.fareham.gov.uk/"
+      },
+      "response_headers": {
+        "cache-control": "no-cache, no-store, must-revalidate",
+        "content-type": "text/plain"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T07:51:25.067Z",
+      "duration_ms": 8.685,
+      "endpoint": "/generate_204",
+      "host": "clients1.google.com",
       "method": "GET",
       "status": 204,
-      "redirect_url": null,
-      "mime_type": "x-unknown",
-      "size": 0,
-      "timestamp": "2025-07-21T07:51:25.067Z"
+      "request_headers": {
+        "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+        "referer": "https://www.fareham.gov.uk/",
+        "x-browser-copyright": "Copyright 2025 Google LLC. All rights reserved.",
+        "x-browser-validation": "qvLgIVtG4U8GgiRPSI9IJ22mUlI=",
+        "x-browser-year": "2025",
+        "x-client-data": "CMiXywE="
+      }
     },
     {
-      "url": "https://www.fareham.gov.uk/internetlookups/search.aspx?list=DomesticBinCollections",
+      "timestamp": "2025-07-21T07:51:29.532Z",
+      "duration_ms": 14.942,
+      "endpoint": "/g/collect",
+      "host": "region1.google-analytics.com",
+      "method": "POST",
+      "status": 204,
+      "query_params": {
+        "v": [
+          "2"
+        ],
+        "tid": [
+          "G-QT5XCY8YQS"
+        ],
+        "gtm": [
+          "45je57g1v898302915za200"
+        ],
+        "_p": [
+          "1753084284963"
+        ],
+        "gcs": [
+          "G101"
+        ],
+        "gcd": [
+          "13m3n3l3l5l1"
+        ],
+        "npa": [
+          "0"
+        ],
+        "dma": [
+          "0"
+        ],
+        "tag_exp": [
+          "101509157~103116026~103200004~103233427~104684208~104684211~104952206~104952208"
+        ],
+        "cid": [
+          "1073972447.1753084282"
+        ],
+        "ul": [
+          "en-gb"
+        ],
+        "sr": [
+          "800x600"
+        ],
+        "uaa": [
+          "arm"
+        ],
+        "uab": [
+          "64"
+        ],
+        "uafvl": [
+          "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+        ],
+        "uamb": [
+          "0"
+        ],
+        "uap": [
+          "macOS"
+        ],
+        "uapv": [
+          "15.5.0"
+        ],
+        "uaw": [
+          "0"
+        ],
+        "are": [
+          "1"
+        ],
+        "frm": [
+          "0"
+        ],
+        "pscdl": [
+          "denied"
+        ],
+        "_eu": [
+          "AEAAAAQ"
+        ],
+        "_s": [
+          "2"
+        ],
+        "sid": [
+          "1753084282"
+        ],
+        "sct": [
+          "1"
+        ],
+        "seg": [
+          "1"
+        ],
+        "dl": [
+          "https://www.fareham.gov.uk/internetlookups/search.aspx?list=DomesticBinCollections"
+        ],
+        "dr": [
+          "https://www.fareham.gov.uk/waste_collection_and_recycling/bincalendar.aspx?close=True"
+        ],
+        "dt": [
+          "Domestic Refuse and Recycling Collection Search"
+        ],
+        "en": [
+          "scroll"
+        ],
+        "epn.percent_scrolled": [
+          "90"
+        ],
+        "_et": [
+          "6"
+        ],
+        "tfd": [
+          "4748"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "cookie": "[cookies present]",
+        "origin": "https://www.fareham.gov.uk",
+        "referer": "https://www.fareham.gov.uk/"
+      },
+      "response_headers": {
+        "cache-control": "no-cache, no-store, must-revalidate",
+        "content-type": "text/plain"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T07:51:29.523Z",
+      "duration_ms": 107.51,
+      "endpoint": "/internetlookups/search.aspx",
+      "host": "www.fareham.gov.uk",
       "method": "POST",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "text/plain; charset=utf-8",
-      "size": 14303,
-      "timestamp": "2025-07-21T07:51:29.523Z"
+      "query_params": {
+        "list": [
+          "DomesticBinCollections"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "content-type": "application/x-www-form-urlencoded; charset=UTF-8",
+        "cookie": "[cookies present]",
+        "origin": "https://www.fareham.gov.uk",
+        "referer": "https://www.fareham.gov.uk/internetlookups/search.aspx?list=DomesticBinCollections",
+        "x-microsoftajax": "Delta=true",
+        "x-requested-with": "XMLHttpRequest"
+      },
+      "response_headers": {
+        "cache-control": "private",
+        "content-type": "text/plain; charset=utf-8",
+        "x-aspnet-version": "4.0.30319",
+        "x-powered-by": "ASP.NET"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T07:51:34.536Z",
+      "duration_ms": 15.062,
+      "endpoint": "/g/collect",
+      "host": "region1.google-analytics.com",
+      "method": "POST",
+      "status": 204,
+      "query_params": {
+        "v": [
+          "2"
+        ],
+        "tid": [
+          "G-QT5XCY8YQS"
+        ],
+        "gtm": [
+          "45je57g1v898302915za200"
+        ],
+        "_p": [
+          "1753084284963"
+        ],
+        "gcs": [
+          "G101"
+        ],
+        "gcd": [
+          "13m3n3l3l5l1"
+        ],
+        "npa": [
+          "0"
+        ],
+        "dma": [
+          "0"
+        ],
+        "tag_exp": [
+          "101509157~103116026~103200004~103233427~104684208~104684211~104952206~104952208"
+        ],
+        "cid": [
+          "1073972447.1753084282"
+        ],
+        "ul": [
+          "en-gb"
+        ],
+        "sr": [
+          "800x600"
+        ],
+        "uaa": [
+          "arm"
+        ],
+        "uab": [
+          "64"
+        ],
+        "uafvl": [
+          "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+        ],
+        "uamb": [
+          "0"
+        ],
+        "uap": [
+          "macOS"
+        ],
+        "uapv": [
+          "15.5.0"
+        ],
+        "uaw": [
+          "0"
+        ],
+        "are": [
+          "1"
+        ],
+        "frm": [
+          "0"
+        ],
+        "pscdl": [
+          "denied"
+        ],
+        "_eu": [
+          "AEEAAAQ"
+        ],
+        "_s": [
+          "3"
+        ],
+        "sid": [
+          "1753084282"
+        ],
+        "sct": [
+          "1"
+        ],
+        "seg": [
+          "1"
+        ],
+        "dl": [
+          "https://www.fareham.gov.uk/internetlookups/search.aspx?list=DomesticBinCollections"
+        ],
+        "dr": [
+          "https://www.fareham.gov.uk/waste_collection_and_recycling/bincalendar.aspx?close=True"
+        ],
+        "dt": [
+          "Domestic Refuse and Recycling Collection Search"
+        ],
+        "en": [
+          "form_start"
+        ],
+        "ep.form_id": [
+          "ctl00"
+        ],
+        "ep.form_destination": [
+          "https://www.fareham.gov.uk/internetlookups/search.aspx?list=DomesticBinCollections"
+        ],
+        "epn.form_length": [
+          "10"
+        ],
+        "ep.first_field_id": [
+          "uxSearchCriteria_[Postcodes]"
+        ],
+        "ep.first_field_name": [
+          "ctl00$BodyPlaceHolder$uxSearchCriteria_[Postcodes]"
+        ],
+        "ep.first_field_type": [
+          "text"
+        ],
+        "epn.first_field_position": [
+          "2"
+        ],
+        "_et": [
+          "4520"
+        ],
+        "tfd": [
+          "9751"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "cookie": "[cookies present]",
+        "origin": "https://www.fareham.gov.uk",
+        "referer": "https://www.fareham.gov.uk/"
+      },
+      "response_headers": {
+        "cache-control": "no-cache, no-store, must-revalidate",
+        "content-type": "text/plain"
+      }
     }
-  ]
+  ],
+  "analysis": {
+    "total_requests": 12,
+    "unique_endpoints": 5,
+    "methods_used": [
+      "GET",
+      "POST"
+    ],
+    "status_codes": {
+      "200": 4,
+      "302": 1,
+      "204": 6,
+      "-1": 1
+    },
+    "endpoints_with_params": [
+      {
+        "endpoint": "/{id}/bincalendar.aspx",
+        "method": "GET",
+        "query_params": [],
+        "path_params": true
+      },
+      {
+        "endpoint": "/resources/acceptcookies.aspx",
+        "method": "GET",
+        "query_params": [
+          "mode"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/{id}/bincalendar.aspx",
+        "method": "GET",
+        "query_params": [
+          "close"
+        ],
+        "path_params": true
+      },
+      {
+        "endpoint": "/g/collect",
+        "method": "POST",
+        "query_params": [
+          "v",
+          "tid",
+          "gtm",
+          "_p",
+          "gcs",
+          "gcd",
+          "npa",
+          "dma",
+          "tag_exp",
+          "cid",
+          "ul",
+          "sr",
+          "uaa",
+          "uab",
+          "uafvl",
+          "uamb",
+          "uap",
+          "uapv",
+          "uaw",
+          "are",
+          "frm",
+          "pscdl",
+          "_s",
+          "sid",
+          "sct",
+          "seg",
+          "dl",
+          "dr",
+          "dt",
+          "en",
+          "_fv",
+          "_nsi",
+          "_ss",
+          "_ee",
+          "tfd"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/g/collect",
+        "method": "POST",
+        "query_params": [
+          "v",
+          "tid",
+          "gtm",
+          "_p",
+          "gcs",
+          "gcd",
+          "npa",
+          "dma",
+          "tag_exp",
+          "cid",
+          "ul",
+          "sr",
+          "uaa",
+          "uab",
+          "uafvl",
+          "uamb",
+          "uap",
+          "uapv",
+          "uaw",
+          "are",
+          "frm",
+          "pscdl",
+          "_eu",
+          "_s",
+          "sid",
+          "sct",
+          "seg",
+          "dl",
+          "dr",
+          "dt",
+          "en",
+          "_et",
+          "tfd"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/internetlookups/search.aspx",
+        "method": "GET",
+        "query_params": [
+          "list"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/g/collect",
+        "method": "POST",
+        "query_params": [
+          "v",
+          "tid",
+          "gtm",
+          "_p",
+          "gcs",
+          "gcd",
+          "npa",
+          "dma",
+          "tag_exp",
+          "cid",
+          "ul",
+          "sr",
+          "uaa",
+          "uab",
+          "uafvl",
+          "uamb",
+          "uap",
+          "uapv",
+          "uaw",
+          "are",
+          "frm",
+          "pscdl",
+          "_eu",
+          "_s",
+          "sid",
+          "sct",
+          "seg",
+          "dl",
+          "dr",
+          "dt",
+          "en",
+          "_ee",
+          "tfd"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/g/collect",
+        "method": "POST",
+        "query_params": [
+          "v",
+          "tid",
+          "gtm",
+          "_p",
+          "gcs",
+          "gcd",
+          "npa",
+          "dma",
+          "tag_exp",
+          "cid",
+          "ul",
+          "sr",
+          "uaa",
+          "uab",
+          "uafvl",
+          "uamb",
+          "uap",
+          "uapv",
+          "uaw",
+          "are",
+          "frm",
+          "pscdl",
+          "_eu",
+          "_s",
+          "sid",
+          "sct",
+          "seg",
+          "dl",
+          "dr",
+          "dt",
+          "en",
+          "epn.percent_scrolled",
+          "_et",
+          "tfd"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/internetlookups/search.aspx",
+        "method": "POST",
+        "query_params": [
+          "list"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/g/collect",
+        "method": "POST",
+        "query_params": [
+          "v",
+          "tid",
+          "gtm",
+          "_p",
+          "gcs",
+          "gcd",
+          "npa",
+          "dma",
+          "tag_exp",
+          "cid",
+          "ul",
+          "sr",
+          "uaa",
+          "uab",
+          "uafvl",
+          "uamb",
+          "uap",
+          "uapv",
+          "uaw",
+          "are",
+          "frm",
+          "pscdl",
+          "_eu",
+          "_s",
+          "sid",
+          "sct",
+          "seg",
+          "dl",
+          "dr",
+          "dt",
+          "en",
+          "ep.form_id",
+          "ep.form_destination",
+          "epn.form_length",
+          "ep.first_field_id",
+          "ep.first_field_name",
+          "ep.first_field_type",
+          "epn.first_field_position",
+          "_et",
+          "tfd"
+        ],
+        "path_params": false
+      }
+    ],
+    "redirects": [
+      {
+        "from": "/resources/acceptcookies.aspx",
+        "to": "https://www.fareham.gov.uk/waste_collection_and_recycling/bincalendar.aspx?close=True",
+        "status": 302
+      }
+    ],
+    "api_calls": [],
+    "form_submissions": []
+  },
+  "grouped_by_endpoint": {
+    "/{id}/bincalendar.aspx": [
+      {
+        "timestamp": "2025-07-21T07:51:20.625Z",
+        "duration_ms": 158.062,
+        "endpoint": "/{id}/bincalendar.aspx",
+        "host": "www.fareham.gov.uk",
+        "method": "GET",
+        "status": 200,
+        "path_params": [
+          "waste_collection_and_recycling"
+        ],
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7"
+        },
+        "response_headers": {
+          "cache-control": "private",
+          "content-type": "text/html; charset=utf-8",
+          "set-cookie": "[cookies present]",
+          "x-aspnet-version": "4.0.30319",
+          "x-powered-by": "ASP.NET"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 27187,
+          "content_ref": "70a1a6ebd5da359c6ac846ac072829aa7e19a87a.html"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T07:51:22.103Z",
+        "duration_ms": 58.912,
+        "endpoint": "/{id}/bincalendar.aspx",
+        "host": "www.fareham.gov.uk",
+        "method": "GET",
+        "status": 200,
+        "path_params": [
+          "waste_collection_and_recycling"
+        ],
+        "query_params": {
+          "close": [
+            "True"
+          ]
+        },
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+          "cookie": "[cookies present]",
+          "referer": "https://www.fareham.gov.uk/waste_collection_and_recycling/bincalendar.aspx"
+        },
+        "response_headers": {
+          "cache-control": "private",
+          "content-type": "text/html; charset=utf-8",
+          "x-aspnet-version": "4.0.30319",
+          "x-powered-by": "ASP.NET"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 25146,
+          "content_ref": "e0ecc68ccc7b2daea3a8cd24deb4ed47d5c0e6f6.html"
+        }
+      }
+    ],
+    "/resources/acceptcookies.aspx": [
+      {
+        "timestamp": "2025-07-21T07:51:21.955Z",
+        "duration_ms": 146.80700000000002,
+        "endpoint": "/resources/acceptcookies.aspx",
+        "host": "www.fareham.gov.uk",
+        "method": "GET",
+        "status": 302,
+        "query_params": {
+          "mode": [
+            "all"
+          ]
+        },
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+          "cookie": "[cookies present]",
+          "referer": "https://www.fareham.gov.uk/waste_collection_and_recycling/bincalendar.aspx"
+        },
+        "response_headers": {
+          "cache-control": "private",
+          "content-type": "text/html; charset=utf-8",
+          "location": "https://www.fareham.gov.uk/waste_collection_and_recycling/bincalendar.aspx?close=True",
+          "set-cookie": "[cookies present]",
+          "x-aspnet-version": "4.0.30319",
+          "x-powered-by": "ASP.NET"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": -1
+        },
+        "redirect_to": "https://www.fareham.gov.uk/waste_collection_and_recycling/bincalendar.aspx?close=True"
+      }
+    ],
+    "/g/collect": [
+      {
+        "timestamp": "2025-07-21T07:51:22.278Z",
+        "duration_ms": 65.50299999999999,
+        "endpoint": "/g/collect",
+        "host": "region1.google-analytics.com",
+        "method": "POST",
+        "status": 204,
+        "query_params": {
+          "v": [
+            "2"
+          ],
+          "tid": [
+            "G-QT5XCY8YQS"
+          ],
+          "gtm": [
+            "45je57g1v898302915za200"
+          ],
+          "_p": [
+            "1753084282174"
+          ],
+          "gcs": [
+            "G101"
+          ],
+          "gcd": [
+            "13m3n3l3l5l1"
+          ],
+          "npa": [
+            "0"
+          ],
+          "dma": [
+            "0"
+          ],
+          "tag_exp": [
+            "101509157~103116026~103200004~103233427~104684208~104684211~104952206~104952208"
+          ],
+          "cid": [
+            "1073972447.1753084282"
+          ],
+          "ul": [
+            "en-gb"
+          ],
+          "sr": [
+            "800x600"
+          ],
+          "uaa": [
+            "arm"
+          ],
+          "uab": [
+            "64"
+          ],
+          "uafvl": [
+            "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+          ],
+          "uamb": [
+            "0"
+          ],
+          "uap": [
+            "macOS"
+          ],
+          "uapv": [
+            "15.5.0"
+          ],
+          "uaw": [
+            "0"
+          ],
+          "are": [
+            "1"
+          ],
+          "frm": [
+            "0"
+          ],
+          "pscdl": [
+            "denied"
+          ],
+          "_s": [
+            "1"
+          ],
+          "sid": [
+            "1753084282"
+          ],
+          "sct": [
+            "1"
+          ],
+          "seg": [
+            "0"
+          ],
+          "dl": [
+            "https://www.fareham.gov.uk/waste_collection_and_recycling/bincalendar.aspx?close=True"
+          ],
+          "dr": [
+            "https://www.fareham.gov.uk/waste_collection_and_recycling/bincalendar.aspx"
+          ],
+          "dt": [
+            "Bin Calendar"
+          ],
+          "en": [
+            "page_view"
+          ],
+          "_fv": [
+            "1"
+          ],
+          "_nsi": [
+            "1"
+          ],
+          "_ss": [
+            "1"
+          ],
+          "_ee": [
+            "1"
+          ],
+          "tfd": [
+            "376"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "cookie": "[cookies present]",
+          "origin": "https://www.fareham.gov.uk",
+          "referer": "https://www.fareham.gov.uk/"
+        },
+        "response_headers": {
+          "cache-control": "no-cache, no-store, must-revalidate",
+          "content-type": "text/plain"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T07:51:24.958Z",
+        "duration_ms": -1,
+        "endpoint": "/g/collect",
+        "host": "region1.google-analytics.com",
+        "method": "POST",
+        "status": -1,
+        "query_params": {
+          "v": [
+            "2"
+          ],
+          "tid": [
+            "G-QT5XCY8YQS"
+          ],
+          "gtm": [
+            "45je57g1v898302915za200"
+          ],
+          "_p": [
+            "1753084282174"
+          ],
+          "gcs": [
+            "G101"
+          ],
+          "gcd": [
+            "13m3n3l3l5l1"
+          ],
+          "npa": [
+            "0"
+          ],
+          "dma": [
+            "0"
+          ],
+          "tag_exp": [
+            "101509157~103116026~103200004~103233427~104684208~104684211~104952206~104952208"
+          ],
+          "cid": [
+            "1073972447.1753084282"
+          ],
+          "ul": [
+            "en-gb"
+          ],
+          "sr": [
+            "800x600"
+          ],
+          "uaa": [
+            "arm"
+          ],
+          "uab": [
+            "64"
+          ],
+          "uafvl": [
+            "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+          ],
+          "uamb": [
+            "0"
+          ],
+          "uap": [
+            "macOS"
+          ],
+          "uapv": [
+            "15.5.0"
+          ],
+          "uaw": [
+            "0"
+          ],
+          "are": [
+            "1"
+          ],
+          "frm": [
+            "0"
+          ],
+          "pscdl": [
+            "denied"
+          ],
+          "_eu": [
+            "AAAAAAQ"
+          ],
+          "_s": [
+            "2"
+          ],
+          "sid": [
+            "1753084282"
+          ],
+          "sct": [
+            "1"
+          ],
+          "seg": [
+            "0"
+          ],
+          "dl": [
+            "https://www.fareham.gov.uk/waste_collection_and_recycling/bincalendar.aspx?close=True"
+          ],
+          "dr": [
+            "https://www.fareham.gov.uk/waste_collection_and_recycling/bincalendar.aspx"
+          ],
+          "dt": [
+            "Bin Calendar"
+          ],
+          "en": [
+            "user_engagement"
+          ],
+          "_et": [
+            "2675"
+          ],
+          "tfd": [
+            "3055"
+          ]
+        },
+        "request_headers": {
+          "referer": "https://www.fareham.gov.uk/"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T07:51:25.026Z",
+        "duration_ms": 14.227,
+        "endpoint": "/g/collect",
+        "host": "region1.google-analytics.com",
+        "method": "POST",
+        "status": 204,
+        "query_params": {
+          "v": [
+            "2"
+          ],
+          "tid": [
+            "G-QT5XCY8YQS"
+          ],
+          "gtm": [
+            "45je57g1v898302915za200"
+          ],
+          "_p": [
+            "1753084284963"
+          ],
+          "gcs": [
+            "G101"
+          ],
+          "gcd": [
+            "13m3n3l3l5l1"
+          ],
+          "npa": [
+            "0"
+          ],
+          "dma": [
+            "0"
+          ],
+          "tag_exp": [
+            "101509157~103116026~103200004~103233427~104684208~104684211~104952206~104952208"
+          ],
+          "cid": [
+            "1073972447.1753084282"
+          ],
+          "ul": [
+            "en-gb"
+          ],
+          "sr": [
+            "800x600"
+          ],
+          "uaa": [
+            "arm"
+          ],
+          "uab": [
+            "64"
+          ],
+          "uafvl": [
+            "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+          ],
+          "uamb": [
+            "0"
+          ],
+          "uap": [
+            "macOS"
+          ],
+          "uapv": [
+            "15.5.0"
+          ],
+          "uaw": [
+            "0"
+          ],
+          "are": [
+            "1"
+          ],
+          "frm": [
+            "0"
+          ],
+          "pscdl": [
+            "denied"
+          ],
+          "_eu": [
+            "AAAAAAQ"
+          ],
+          "_s": [
+            "1"
+          ],
+          "sid": [
+            "1753084282"
+          ],
+          "sct": [
+            "1"
+          ],
+          "seg": [
+            "1"
+          ],
+          "dl": [
+            "https://www.fareham.gov.uk/internetlookups/search.aspx?list=DomesticBinCollections"
+          ],
+          "dr": [
+            "https://www.fareham.gov.uk/waste_collection_and_recycling/bincalendar.aspx?close=True"
+          ],
+          "dt": [
+            "Domestic Refuse and Recycling Collection Search"
+          ],
+          "en": [
+            "page_view"
+          ],
+          "_ee": [
+            "1"
+          ],
+          "tfd": [
+            "225"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "cookie": "[cookies present]",
+          "origin": "https://www.fareham.gov.uk",
+          "referer": "https://www.fareham.gov.uk/"
+        },
+        "response_headers": {
+          "cache-control": "no-cache, no-store, must-revalidate",
+          "content-type": "text/plain"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T07:51:29.532Z",
+        "duration_ms": 14.942,
+        "endpoint": "/g/collect",
+        "host": "region1.google-analytics.com",
+        "method": "POST",
+        "status": 204,
+        "query_params": {
+          "v": [
+            "2"
+          ],
+          "tid": [
+            "G-QT5XCY8YQS"
+          ],
+          "gtm": [
+            "45je57g1v898302915za200"
+          ],
+          "_p": [
+            "1753084284963"
+          ],
+          "gcs": [
+            "G101"
+          ],
+          "gcd": [
+            "13m3n3l3l5l1"
+          ],
+          "npa": [
+            "0"
+          ],
+          "dma": [
+            "0"
+          ],
+          "tag_exp": [
+            "101509157~103116026~103200004~103233427~104684208~104684211~104952206~104952208"
+          ],
+          "cid": [
+            "1073972447.1753084282"
+          ],
+          "ul": [
+            "en-gb"
+          ],
+          "sr": [
+            "800x600"
+          ],
+          "uaa": [
+            "arm"
+          ],
+          "uab": [
+            "64"
+          ],
+          "uafvl": [
+            "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+          ],
+          "uamb": [
+            "0"
+          ],
+          "uap": [
+            "macOS"
+          ],
+          "uapv": [
+            "15.5.0"
+          ],
+          "uaw": [
+            "0"
+          ],
+          "are": [
+            "1"
+          ],
+          "frm": [
+            "0"
+          ],
+          "pscdl": [
+            "denied"
+          ],
+          "_eu": [
+            "AEAAAAQ"
+          ],
+          "_s": [
+            "2"
+          ],
+          "sid": [
+            "1753084282"
+          ],
+          "sct": [
+            "1"
+          ],
+          "seg": [
+            "1"
+          ],
+          "dl": [
+            "https://www.fareham.gov.uk/internetlookups/search.aspx?list=DomesticBinCollections"
+          ],
+          "dr": [
+            "https://www.fareham.gov.uk/waste_collection_and_recycling/bincalendar.aspx?close=True"
+          ],
+          "dt": [
+            "Domestic Refuse and Recycling Collection Search"
+          ],
+          "en": [
+            "scroll"
+          ],
+          "epn.percent_scrolled": [
+            "90"
+          ],
+          "_et": [
+            "6"
+          ],
+          "tfd": [
+            "4748"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "cookie": "[cookies present]",
+          "origin": "https://www.fareham.gov.uk",
+          "referer": "https://www.fareham.gov.uk/"
+        },
+        "response_headers": {
+          "cache-control": "no-cache, no-store, must-revalidate",
+          "content-type": "text/plain"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T07:51:34.536Z",
+        "duration_ms": 15.062,
+        "endpoint": "/g/collect",
+        "host": "region1.google-analytics.com",
+        "method": "POST",
+        "status": 204,
+        "query_params": {
+          "v": [
+            "2"
+          ],
+          "tid": [
+            "G-QT5XCY8YQS"
+          ],
+          "gtm": [
+            "45je57g1v898302915za200"
+          ],
+          "_p": [
+            "1753084284963"
+          ],
+          "gcs": [
+            "G101"
+          ],
+          "gcd": [
+            "13m3n3l3l5l1"
+          ],
+          "npa": [
+            "0"
+          ],
+          "dma": [
+            "0"
+          ],
+          "tag_exp": [
+            "101509157~103116026~103200004~103233427~104684208~104684211~104952206~104952208"
+          ],
+          "cid": [
+            "1073972447.1753084282"
+          ],
+          "ul": [
+            "en-gb"
+          ],
+          "sr": [
+            "800x600"
+          ],
+          "uaa": [
+            "arm"
+          ],
+          "uab": [
+            "64"
+          ],
+          "uafvl": [
+            "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+          ],
+          "uamb": [
+            "0"
+          ],
+          "uap": [
+            "macOS"
+          ],
+          "uapv": [
+            "15.5.0"
+          ],
+          "uaw": [
+            "0"
+          ],
+          "are": [
+            "1"
+          ],
+          "frm": [
+            "0"
+          ],
+          "pscdl": [
+            "denied"
+          ],
+          "_eu": [
+            "AEEAAAQ"
+          ],
+          "_s": [
+            "3"
+          ],
+          "sid": [
+            "1753084282"
+          ],
+          "sct": [
+            "1"
+          ],
+          "seg": [
+            "1"
+          ],
+          "dl": [
+            "https://www.fareham.gov.uk/internetlookups/search.aspx?list=DomesticBinCollections"
+          ],
+          "dr": [
+            "https://www.fareham.gov.uk/waste_collection_and_recycling/bincalendar.aspx?close=True"
+          ],
+          "dt": [
+            "Domestic Refuse and Recycling Collection Search"
+          ],
+          "en": [
+            "form_start"
+          ],
+          "ep.form_id": [
+            "ctl00"
+          ],
+          "ep.form_destination": [
+            "https://www.fareham.gov.uk/internetlookups/search.aspx?list=DomesticBinCollections"
+          ],
+          "epn.form_length": [
+            "10"
+          ],
+          "ep.first_field_id": [
+            "uxSearchCriteria_[Postcodes]"
+          ],
+          "ep.first_field_name": [
+            "ctl00$BodyPlaceHolder$uxSearchCriteria_[Postcodes]"
+          ],
+          "ep.first_field_type": [
+            "text"
+          ],
+          "epn.first_field_position": [
+            "2"
+          ],
+          "_et": [
+            "4520"
+          ],
+          "tfd": [
+            "9751"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "cookie": "[cookies present]",
+          "origin": "https://www.fareham.gov.uk",
+          "referer": "https://www.fareham.gov.uk/"
+        },
+        "response_headers": {
+          "cache-control": "no-cache, no-store, must-revalidate",
+          "content-type": "text/plain"
+        }
+      }
+    ],
+    "/generate_204": [
+      {
+        "timestamp": "2025-07-21T07:51:22.396Z",
+        "duration_ms": 58.507999999999996,
+        "endpoint": "/generate_204",
+        "host": "clients1.google.com",
+        "method": "GET",
+        "status": 204,
+        "request_headers": {
+          "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+          "referer": "https://www.fareham.gov.uk/",
+          "x-browser-copyright": "Copyright 2025 Google LLC. All rights reserved.",
+          "x-browser-validation": "qvLgIVtG4U8GgiRPSI9IJ22mUlI=",
+          "x-browser-year": "2025",
+          "x-client-data": "CMiXywE="
+        }
+      },
+      {
+        "timestamp": "2025-07-21T07:51:25.067Z",
+        "duration_ms": 8.685,
+        "endpoint": "/generate_204",
+        "host": "clients1.google.com",
+        "method": "GET",
+        "status": 204,
+        "request_headers": {
+          "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+          "referer": "https://www.fareham.gov.uk/",
+          "x-browser-copyright": "Copyright 2025 Google LLC. All rights reserved.",
+          "x-browser-validation": "qvLgIVtG4U8GgiRPSI9IJ22mUlI=",
+          "x-browser-year": "2025",
+          "x-client-data": "CMiXywE="
+        }
+      }
+    ],
+    "/internetlookups/search.aspx": [
+      {
+        "timestamp": "2025-07-21T07:51:24.842Z",
+        "duration_ms": 108.19200000000001,
+        "endpoint": "/internetlookups/search.aspx",
+        "host": "www.fareham.gov.uk",
+        "method": "GET",
+        "status": 200,
+        "query_params": {
+          "list": [
+            "DomesticBinCollections"
+          ]
+        },
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+          "cookie": "[cookies present]",
+          "referer": "https://www.fareham.gov.uk/waste_collection_and_recycling/bincalendar.aspx?close=True"
+        },
+        "response_headers": {
+          "cache-control": "private",
+          "content-type": "text/html; charset=utf-8",
+          "x-aspnet-version": "4.0.30319",
+          "x-powered-by": "ASP.NET"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 34461,
+          "content_ref": "dd3509ec2e0275eccb928c059b6f13def1426e34.html"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T07:51:29.523Z",
+        "duration_ms": 107.51,
+        "endpoint": "/internetlookups/search.aspx",
+        "host": "www.fareham.gov.uk",
+        "method": "POST",
+        "status": 200,
+        "query_params": {
+          "list": [
+            "DomesticBinCollections"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "content-type": "application/x-www-form-urlencoded; charset=UTF-8",
+          "cookie": "[cookies present]",
+          "origin": "https://www.fareham.gov.uk",
+          "referer": "https://www.fareham.gov.uk/internetlookups/search.aspx?list=DomesticBinCollections",
+          "x-microsoftajax": "Delta=true",
+          "x-requested-with": "XMLHttpRequest"
+        },
+        "response_headers": {
+          "cache-control": "private",
+          "content-type": "text/plain; charset=utf-8",
+          "x-aspnet-version": "4.0.30319",
+          "x-powered-by": "ASP.NET"
+        }
+      }
+    ]
+  }
 }

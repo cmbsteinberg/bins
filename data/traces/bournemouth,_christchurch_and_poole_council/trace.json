@@ -1,388 +1,2834 @@
 {
-  "metadata": {
-    "trace_name": "bournemouth,_christchurch_and_poole_council",
-    "processed_at": "2025-08-26 18:44:24",
-    "workflow_steps_count": 9,
-    "navigation_events_count": 31
-  },
-  "scraping_patterns": {
-    "login_detected": false,
-    "form_submissions": 5,
-    "navigation_count": 1,
-    "unique_domains": [
-      "apikeys.civiccomputing.com",
-      "content.powerapps.com",
-      "bcpportal.bcpcouncil.gov.uk",
-      "www.bcpcouncil.gov.uk",
-      "dc.services.visualstudio.com",
-      "apim-uks-cepprod-int-01.azure-api.net",
-      "eu-mobile.events.data.microsoft.com",
-      "prod-17.uksouth.logic.azure.com"
-    ],
-    "api_endpoints": [
-      "https://www.bcpcouncil.gov.uk/api/delivery/projects/bcpWebsite/nodes/bins-waste-and-recycling/check-your-bin-day?entryFields=sys.contentTypeId%2Csys.id&entryLinkDepth=2&language=en-GB",
-      "https://www.bcpcouncil.gov.uk/api/delivery/projects/bcpWebsite/entries/search?linkDepth=2&pageIndex=0&pageSize=20&where=%5B%7B%22field%22%3A%22sys.id%22%2C%22equalTo%22%3A%2256bc95c8-a0f3-4b98-b640-48e6c08221b7%22%7D%2C%7B%22field%22%3A%22sys.language%22%2C%22equalTo%22%3A%22en-GB%22%7D%2C%7B%22field%22%3A%22sys.contentTypeId%22%2C%22equalTo%22%3A%22pageContent%22%7D%2C%7B%22field%22%3A%22sys.versionStatus%22%2C%22equalTo%22%3A%22published%22%7D%5D",
-      "https://www.bcpcouncil.gov.uk/api/delivery/projects/bcpWebsite/nodes/bins-waste-and-recycling/check-your-bin-day?depth=1&entryFields=entryDescription%2Curl%2CoverviewTitleOverride&language=en-GB",
-      "https://www.bcpcouncil.gov.uk/api/delivery/projects/bcpWebsite/nodes/bf7f9e51-80db-464c-b836-f0c6be9e89dc/ancestors?language=en-GB",
-      "https://www.bcpcouncil.gov.uk/api/delivery/projects/bcpWebsite/nodes/bf7f9e51-80db-464c-b836-f0c6be9e89dc/siblings?language=en-GB",
-      "https://www.bcpcouncil.gov.uk/api/delivery/projects/bcpWebsite/nodes/373db907-5687-4949-847a-b1a1df191eec/children",
-      "https://content.powerapps.com/resource/powerappsportal/controls/pcf_controls/manifest-3.21.14.json",
-      "https://content.powerapps.com/resource/powerappsportal/controls/mf_shared/manifest-0.2.20.json",
-      "https://content.powerapps.com/resource/powerappsportal/controls/host/manifest-0.9.27.json",
-      "https://content.powerapps.com/resource/powerappsportal/controls/pcf_loader/manifest-0.0.40.json",
-      "https://content.powerapps.com/resource/powerappsportal/controls/data_grid/manifest-1.10.16.json",
-      "https://content.powerapps.com/resource/powerappsportal/controls/controls_fluent_v9/manifest-0.0.43.json"
-    ],
-    "data_extraction_indicators": []
-  },
-  "workflow_steps": [
+  "entries": [
     {
-      "action": "goto",
-      "target": "https://www.bcpcouncil.gov.uk/bins-waste-and-recycling/household-bins",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
-    },
-    {
-      "action": "click",
-      "target": "aria-ref=e54 >> internal:describe=\"Check your bin day\"",
-      "status": "Failed",
-      "details": {
-        "error": "Timeout 5000ms exceeded."
+      "timestamp": "2025-07-21T11:11:20.236Z",
+      "duration_ms": 142.894,
+      "endpoint": "/{id}/household-bins",
+      "host": "www.bcpcouncil.gov.uk",
+      "method": "GET",
+      "status": 200,
+      "path_params": [
+        "bins-waste-and-recycling"
+      ],
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7"
       },
-      "timestamp": 0
+      "response_headers": {
+        "cache-control": "no-cache, no-store",
+        "content-type": "text/html; charset=utf-8",
+        "x-age": "423",
+        "x-backend-ttl": "3600.000",
+        "x-contensis-viewer-groups": "",
+        "x-content-type-options": "nosniff",
+        "x-geoip-country-code": "GB",
+        "x-grace": "72h",
+        "x-host": "live-bcpwebsite-bournemouth.cloud.contensis.com",
+        "x-is-iis-fallback": "false",
+        "x-origin-server": "backend-coordinator",
+        "x-server-name": "z-bournemouth-CACHE1",
+        "x-varnish": "587915738 587984715",
+        "x-varnish-authentication": "skip",
+        "x-version-no": "460"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 135542,
+        "compressed": true,
+        "content_ref": "949b4e749236908a0c0bb5a9f4e30be37edd5806.html"
+      }
     },
     {
-      "action": "click",
-      "target": "aria-ref=e231 >> internal:describe=\"I Accept Cookies\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
-    },
-    {
-      "action": "click",
-      "target": "aria-ref=e54 >> internal:describe=\"Check your bin day\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
-    },
-    {
-      "action": "click",
-      "target": "aria-ref=e303 >> internal:describe=\"Start now\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
-    },
-    {
-      "action": "click",
-      "target": "aria-ref=e31 >> internal:describe=\"Okay\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
-    },
-    {
-      "action": "fill",
-      "target": "aria-ref=e66 >> internal:describe=\"Type the postcode here or part of address\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0,
-      "value": "BH1 1AR"
-    },
-    {
-      "action": "click",
-      "target": "aria-ref=e67 >> internal:describe=\"Search\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
-    },
-    {
-      "action": "selectOption",
-      "target": "aria-ref=e112 >> internal:describe=\"combobox\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0,
-      "value": null
-    }
-  ],
-  "navigation_events": [
-    {
-      "url": "https://www.bcpcouncil.gov.uk/bins-waste-and-recycling/household-bins",
+      "timestamp": "2025-07-21T11:11:20.576Z",
+      "duration_ms": 71.19200000000001,
+      "endpoint": "/{id}/static/manifest.webmanifest",
+      "host": "www.bcpcouncil.gov.uk",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "text/html; charset=utf-8",
-      "size": 135542,
-      "timestamp": "2025-07-21T11:11:20.236Z"
+      "path_params": [
+        "_mk7dvA_75b218ad-cba9-4605-9f19-47d215f7d722"
+      ],
+      "request_headers": {
+        "accept": "*/*",
+        "referer": "https://www.bcpcouncil.gov.uk/bins-waste-and-recycling/household-bins"
+      },
+      "response_headers": {
+        "cache-control": "public, max-age=31536000",
+        "content-type": "application/manifest+json",
+        "x-age": "501755",
+        "x-backend-ttl": "31536000.000",
+        "x-content-type-options": "nosniff",
+        "x-geoip-country-code": "GB",
+        "x-grace": "72h",
+        "x-host": "live-bcpwebsite-bournemouth.cloud.contensis.com",
+        "x-is-iis-fallback": "false",
+        "x-origin-server": "backend-coordinator",
+        "x-server-name": "z-bournemouth-CACHE1",
+        "x-varnish": "585590522 557079",
+        "x-varnish-authentication": "skip"
+      },
+      "response_info": {
+        "type": "application/manifest+json",
+        "size": 739,
+        "content_ref": "99b25978ddb5b136ebdbdc7dac1badfbbe42fe1a.webmanifest"
+      }
     },
     {
-      "url": "https://www.bcpcouncil.gov.uk/_mk7dvA_75b218ad-cba9-4605-9f19-47d215f7d722/static/manifest.webmanifest",
+      "timestamp": "2025-07-21T11:11:21.179Z",
+      "duration_ms": 54.623999999999995,
+      "endpoint": "/c/v",
+      "host": "apikeys.civiccomputing.com",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/manifest+json",
-      "size": 739,
-      "timestamp": "2025-07-21T11:11:20.576Z"
+      "query_params": {
+        "d": [
+          "www.bcpcouncil.gov.uk"
+        ],
+        "p": [
+          "CookieControl Multi-Site"
+        ],
+        "v": [
+          "9"
+        ],
+        "k": [
+          "eefc7d1c007cbd6498ca0c628151460d120018a0"
+        ],
+        "format": [
+          "json"
+        ]
+      },
+      "request_headers": {
+        "accept": "application/json, text/plain, */*",
+        "origin": "https://www.bcpcouncil.gov.uk",
+        "referer": "https://www.bcpcouncil.gov.uk/"
+      },
+      "response_headers": {
+        "cache-control": "max-age=3600, private, no-store",
+        "content-type": "application/json",
+        "x-apikeys": "hit",
+        "x-cf-test": "true",
+        "x-content-type-options": "nosniff",
+        "x-xss-protection": "1"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 306,
+        "content_ref": "e7e6a010ac7954422906d2b7309e40b8fe40f042.json"
+      }
     },
     {
-      "url": "https://apikeys.civiccomputing.com/c/v?d=www.bcpcouncil.gov.uk&p=CookieControl%20Multi-Site&v=9&k=eefc7d1c007cbd6498ca0c628151460d120018a0&format=json",
+      "timestamp": "2025-07-21T11:11:29.454Z",
+      "duration_ms": 60.727000000000004,
+      "endpoint": "/g/collect",
+      "host": "region1.google-analytics.com",
+      "method": "POST",
+      "status": 204,
+      "query_params": {
+        "v": [
+          "2"
+        ],
+        "tid": [
+          "G-EQQ7L08Q2Y"
+        ],
+        "gtm": [
+          "45je57g1v9169432782za200"
+        ],
+        "_p": [
+          "1753096289352"
+        ],
+        "gcd": [
+          "13l3l3l3l1l1"
+        ],
+        "npa": [
+          "0"
+        ],
+        "dma": [
+          "0"
+        ],
+        "tag_exp": [
+          "101509157~103116026~103200004~103233427~104684208~104684211~104921715~104921717"
+        ],
+        "cid": [
+          "191002641.1753096289"
+        ],
+        "ul": [
+          "en-gb"
+        ],
+        "sr": [
+          "800x600"
+        ],
+        "uaa": [
+          "arm"
+        ],
+        "uab": [
+          "64"
+        ],
+        "uafvl": [
+          "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+        ],
+        "uamb": [
+          "0"
+        ],
+        "uap": [
+          "macOS"
+        ],
+        "uapv": [
+          "15.5.0"
+        ],
+        "uaw": [
+          "0"
+        ],
+        "are": [
+          "1"
+        ],
+        "frm": [
+          "0"
+        ],
+        "pscdl": [
+          "noapi"
+        ],
+        "_s": [
+          "1"
+        ],
+        "sid": [
+          "1753096289"
+        ],
+        "sct": [
+          "1"
+        ],
+        "seg": [
+          "0"
+        ],
+        "dl": [
+          "https://www.bcpcouncil.gov.uk/bins-waste-and-recycling/household-bins"
+        ],
+        "dt": [
+          "Household bins | BCP"
+        ],
+        "en": [
+          "page_view"
+        ],
+        "_fv": [
+          "1"
+        ],
+        "_nsi": [
+          "1"
+        ],
+        "_ss": [
+          "1"
+        ],
+        "_ee": [
+          "1"
+        ],
+        "tfd": [
+          "9218"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "cookie": "[cookies present]",
+        "origin": "https://www.bcpcouncil.gov.uk",
+        "referer": "https://www.bcpcouncil.gov.uk/"
+      },
+      "response_headers": {
+        "cache-control": "no-cache, no-store, must-revalidate",
+        "content-type": "text/plain"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T11:11:31.626Z",
+      "duration_ms": 22.217,
+      "endpoint": "/api/delivery/projects/bcpWebsite/nodes/{id}/check-your-bin-day",
+      "host": "www.bcpcouncil.gov.uk",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json",
-      "size": 306,
-      "timestamp": "2025-07-21T11:11:21.179Z"
+      "path_params": [
+        "bins-waste-and-recycling"
+      ],
+      "query_params": {
+        "entryFields": [
+          "sys.contentTypeId,sys.id"
+        ],
+        "entryLinkDepth": [
+          "2"
+        ],
+        "language": [
+          "en-GB"
+        ]
+      },
+      "request_headers": {
+        "accept": "application/json",
+        "content-type": "application/json",
+        "cookie": "[cookies present]",
+        "referer": "https://www.bcpcouncil.gov.uk/bins-waste-and-recycling/check-your-bin-day"
+      },
+      "response_headers": {
+        "cache-control": "no-cache",
+        "content-type": "application/json; charset=utf-8",
+        "x-age": "2636",
+        "x-backend-ttl": "3600.000",
+        "x-content-type-options": "nosniff",
+        "x-geoip-country-code": "GB",
+        "x-grace": "72h",
+        "x-host": "cms-bournemouth.cloud.contensis.com",
+        "x-varnish": "587942133 579924599",
+        "x-varnish-authentication": "skip"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 568,
+        "content_ref": "bdf6b6cd69a5fdc88727e3526fcce708fd8e9d97.json"
+      }
     },
     {
-      "url": "https://www.bcpcouncil.gov.uk/api/delivery/projects/bcpWebsite/nodes/bins-waste-and-recycling/check-your-bin-day?entryFields=sys.contentTypeId%2Csys.id&entryLinkDepth=2&language=en-GB",
+      "timestamp": "2025-07-21T11:11:31.627Z",
+      "duration_ms": 21.06,
+      "endpoint": "/api/delivery/projects/bcpWebsite/entries/search",
+      "host": "www.bcpcouncil.gov.uk",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json; charset=utf-8",
-      "size": 568,
-      "timestamp": "2025-07-21T11:11:31.626Z"
+      "query_params": {
+        "linkDepth": [
+          "2"
+        ],
+        "pageIndex": [
+          "0"
+        ],
+        "pageSize": [
+          "20"
+        ],
+        "where": [
+          "[{\"field\":\"sys.id\",\"equalTo\":\"56bc95c8-a0f3-4b98-b640-48e6c08221b7\"},{\"field\":\"sys.language\",\"equalTo\":\"en-GB\"},{\"field\":\"sys.contentTypeId\",\"equalTo\":\"pageContent\"},{\"field\":\"sys.versionStatus\",\"equalTo\":\"published\"}]"
+        ]
+      },
+      "request_headers": {
+        "accept": "application/json",
+        "content-type": "application/json; charset=utf-8",
+        "cookie": "[cookies present]",
+        "referer": "https://www.bcpcouncil.gov.uk/bins-waste-and-recycling/check-your-bin-day"
+      },
+      "response_headers": {
+        "cache-control": "no-cache",
+        "content-type": "application/json",
+        "x-age": "1407",
+        "x-backend-ttl": "3600.000",
+        "x-content-type-options": "nosniff",
+        "x-geoip-country-code": "GB",
+        "x-grace": "72h",
+        "x-host": "cms-bournemouth.cloud.contensis.com",
+        "x-varnish": "589020399 587582177",
+        "x-varnish-authentication": "skip"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 5126,
+        "compressed": true,
+        "content_ref": "20281d25ca49d09fd9cfc665fb3dfd78b1854de9.json"
+      }
     },
     {
-      "url": "https://www.bcpcouncil.gov.uk/api/delivery/projects/bcpWebsite/entries/search?linkDepth=2&pageIndex=0&pageSize=20&where=%5B%7B%22field%22%3A%22sys.id%22%2C%22equalTo%22%3A%2256bc95c8-a0f3-4b98-b640-48e6c08221b7%22%7D%2C%7B%22field%22%3A%22sys.language%22%2C%22equalTo%22%3A%22en-GB%22%7D%2C%7B%22field%22%3A%22sys.contentTypeId%22%2C%22equalTo%22%3A%22pageContent%22%7D%2C%7B%22field%22%3A%22sys.versionStatus%22%2C%22equalTo%22%3A%22published%22%7D%5D",
+      "timestamp": "2025-07-21T11:11:31.679Z",
+      "duration_ms": 28.251,
+      "endpoint": "/api/delivery/projects/bcpWebsite/nodes/{id}/check-your-bin-day",
+      "host": "www.bcpcouncil.gov.uk",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json",
-      "size": 5126,
-      "timestamp": "2025-07-21T11:11:31.627Z"
+      "path_params": [
+        "bins-waste-and-recycling"
+      ],
+      "query_params": {
+        "depth": [
+          "1"
+        ],
+        "entryFields": [
+          "entryDescription,url,overviewTitleOverride"
+        ],
+        "language": [
+          "en-GB"
+        ]
+      },
+      "request_headers": {
+        "accept": "application/json",
+        "content-type": "application/json",
+        "cookie": "[cookies present]",
+        "referer": "https://www.bcpcouncil.gov.uk/bins-waste-and-recycling/check-your-bin-day"
+      },
+      "response_headers": {
+        "cache-control": "no-cache",
+        "content-type": "application/json; charset=utf-8",
+        "x-age": "2635",
+        "x-backend-ttl": "3600.000",
+        "x-content-type-options": "nosniff",
+        "x-geoip-country-code": "GB",
+        "x-grace": "72h",
+        "x-host": "cms-bournemouth.cloud.contensis.com",
+        "x-varnish": "589760739 587997005",
+        "x-varnish-authentication": "skip"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 702,
+        "content_ref": "0a8504de960b6960635d28e5b31400244e90f571.json"
+      }
     },
     {
-      "url": "https://www.bcpcouncil.gov.uk/api/delivery/projects/bcpWebsite/nodes/bins-waste-and-recycling/check-your-bin-day?depth=1&entryFields=entryDescription%2Curl%2CoverviewTitleOverride&language=en-GB",
+      "timestamp": "2025-07-21T11:11:31.679Z",
+      "duration_ms": 28.509,
+      "endpoint": "/api/delivery/projects/bcpWebsite/nodes/{id}/ancestors",
+      "host": "www.bcpcouncil.gov.uk",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json; charset=utf-8",
-      "size": 702,
-      "timestamp": "2025-07-21T11:11:31.679Z"
+      "path_params": [
+        "bf7f9e51-80db-464c-b836-f0c6be9e89dc"
+      ],
+      "query_params": {
+        "language": [
+          "en-GB"
+        ]
+      },
+      "request_headers": {
+        "accept": "application/json",
+        "content-type": "application/json",
+        "cookie": "[cookies present]",
+        "referer": "https://www.bcpcouncil.gov.uk/bins-waste-and-recycling/check-your-bin-day"
+      },
+      "response_headers": {
+        "cache-control": "no-cache",
+        "content-type": "application/json; charset=utf-8",
+        "x-age": "2635",
+        "x-backend-ttl": "3600.000",
+        "x-content-type-options": "nosniff",
+        "x-geoip-country-code": "GB",
+        "x-grace": "72h",
+        "x-host": "cms-bournemouth.cloud.contensis.com",
+        "x-varnish": "585356572 587485181",
+        "x-varnish-authentication": "skip"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 862,
+        "content_ref": "3fb884681a8046128471f0277db4681f38727544.json"
+      }
     },
     {
-      "url": "https://www.bcpcouncil.gov.uk/api/delivery/projects/bcpWebsite/nodes/bf7f9e51-80db-464c-b836-f0c6be9e89dc/ancestors?language=en-GB",
+      "timestamp": "2025-07-21T11:11:31.679Z",
+      "duration_ms": 28.860000000000003,
+      "endpoint": "/api/delivery/projects/bcpWebsite/nodes/{id}/siblings",
+      "host": "www.bcpcouncil.gov.uk",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json; charset=utf-8",
-      "size": 862,
-      "timestamp": "2025-07-21T11:11:31.679Z"
+      "path_params": [
+        "bf7f9e51-80db-464c-b836-f0c6be9e89dc"
+      ],
+      "query_params": {
+        "language": [
+          "en-GB"
+        ]
+      },
+      "request_headers": {
+        "accept": "application/json",
+        "content-type": "application/json",
+        "cookie": "[cookies present]",
+        "referer": "https://www.bcpcouncil.gov.uk/bins-waste-and-recycling/check-your-bin-day"
+      },
+      "response_headers": {
+        "cache-control": "no-cache",
+        "content-type": "application/json; charset=utf-8",
+        "x-age": "2635",
+        "x-backend-ttl": "3600.000",
+        "x-content-type-options": "nosniff",
+        "x-geoip-country-code": "GB",
+        "x-grace": "72h",
+        "x-host": "cms-bournemouth.cloud.contensis.com",
+        "x-varnish": "589795060 579924614",
+        "x-varnish-authentication": "skip"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 6556,
+        "compressed": true,
+        "content_ref": "f73ab20063991d5a137c9795305bd3a542346041.json"
+      }
     },
     {
-      "url": "https://www.bcpcouncil.gov.uk/api/delivery/projects/bcpWebsite/nodes/bf7f9e51-80db-464c-b836-f0c6be9e89dc/siblings?language=en-GB",
+      "timestamp": "2025-07-21T11:11:31.699Z",
+      "duration_ms": 30.208000000000002,
+      "endpoint": "/api/delivery/projects/bcpWebsite/nodes/{id}/children",
+      "host": "www.bcpcouncil.gov.uk",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json; charset=utf-8",
-      "size": 6556,
-      "timestamp": "2025-07-21T11:11:31.679Z"
+      "path_params": [
+        "373db907-5687-4949-847a-b1a1df191eec"
+      ],
+      "request_headers": {
+        "accept": "application/json",
+        "content-type": "application/json",
+        "cookie": "[cookies present]",
+        "referer": "https://www.bcpcouncil.gov.uk/bins-waste-and-recycling/check-your-bin-day"
+      },
+      "response_headers": {
+        "cache-control": "no-cache",
+        "content-type": "application/json; charset=utf-8",
+        "x-age": "1740",
+        "x-backend-ttl": "3600.000",
+        "x-content-type-options": "nosniff",
+        "x-geoip-country-code": "GB",
+        "x-grace": "72h",
+        "x-host": "cms-bournemouth.cloud.contensis.com",
+        "x-varnish": "589760741 586236069",
+        "x-varnish-authentication": "skip"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 6556,
+        "compressed": true,
+        "content_ref": "f73ab20063991d5a137c9795305bd3a542346041.json"
+      }
     },
     {
-      "url": "https://www.bcpcouncil.gov.uk/api/delivery/projects/bcpWebsite/nodes/373db907-5687-4949-847a-b1a1df191eec/children",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json; charset=utf-8",
-      "size": 6556,
-      "timestamp": "2025-07-21T11:11:31.699Z"
-    },
-    {
-      "url": "https://bcpportal.bcpcouncil.gov.uk/checkyourbincollection",
+      "timestamp": "2025-07-21T11:11:34.315Z",
+      "duration_ms": 90.72,
+      "endpoint": "/{id}",
+      "host": "bcpportal.bcpcouncil.gov.uk",
       "method": "GET",
       "status": 301,
-      "redirect_url": "https://bcpportal.bcpcouncil.gov.uk/checkyourbincollection/",
-      "mime_type": "x-unknown",
-      "size": -1,
-      "timestamp": "2025-07-21T11:11:34.315Z"
+      "path_params": [
+        "checkyourbincollection"
+      ],
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+        "cookie": "[cookies present]"
+      },
+      "response_headers": {
+        "cache-control": "no-cache, no-store, must-revalidate",
+        "location": "/checkyourbincollection/",
+        "set-cookie": "[cookies present]",
+        "x-frame-options": "SAMEORIGIN",
+        "x-ms-portal-app": "site-58035987-4412-4874-ae62-997402bad775-UKs",
+        "x-ms-request-id": "1732f47b-62f6-4c54-871f-2d4824b4f8e5"
+      },
+      "redirect_to": "/checkyourbincollection/"
     },
     {
-      "url": "https://bcpportal.bcpcouncil.gov.uk/checkyourbincollection/",
+      "timestamp": "2025-07-21T11:11:34.382Z",
+      "duration_ms": 247.371,
+      "endpoint": "/{id}",
+      "host": "bcpportal.bcpcouncil.gov.uk",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "text/html; charset=utf-8",
-      "size": 222891,
-      "timestamp": "2025-07-21T11:11:34.382Z"
+      "path_params": [
+        "checkyourbincollection"
+      ],
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+        "cookie": "[cookies present]"
+      },
+      "response_headers": {
+        "cache-control": "no-cache, no-store, must-revalidate",
+        "content-type": "text/html; charset=utf-8",
+        "x-frame-options": "SAMEORIGIN",
+        "x-ms-portal-app": "site-58035987-4412-4874-ae62-997402bad775-UKs",
+        "x-ms-request-id": "d8d4242b-760e-4eb7-9d50-986d4dac63af"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 222891,
+        "compressed": true,
+        "content_ref": "5c2d192f0505f7b434b1bde0e5d933a37a97cbfe.html"
+      }
     },
     {
-      "url": "https://bcpportal.bcpcouncil.gov.uk/thumbnail.css?1706557284000",
+      "timestamp": "2025-07-21T11:11:34.640Z",
+      "duration_ms": 113.373,
+      "endpoint": "/thumbnail.css",
+      "host": "bcpportal.bcpcouncil.gov.uk",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "text/html; charset=utf-8",
-      "size": 920725,
-      "timestamp": "2025-07-21T11:11:34.640Z"
+      "request_headers": {
+        "accept": "text/css,*/*;q=0.1",
+        "cookie": "[cookies present]",
+        "referer": "https://bcpportal.bcpcouncil.gov.uk/checkyourbincollection/"
+      },
+      "response_headers": {
+        "cache-control": "no-cache, no-store, must-revalidate",
+        "content-type": "text/html; charset=utf-8",
+        "x-frame-options": "SAMEORIGIN",
+        "x-ms-portal-app": "site-58035987-4412-4874-ae62-997402bad775-UKs",
+        "x-ms-request-id": "a8e48faf-6169-4706-ae74-901feb74f472"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 920725,
+        "compressed": true,
+        "content_ref": "356dcba4356e38c839aa09f8b2df6247694b859b.html"
+      }
     },
     {
-      "url": "https://bcpportal.bcpcouncil.gov.uk/assets/static/bold-b542beb274-v2-35bf540bb39615b6a517986f3aa83f7fefa1efd1878603eeeb196488078542d1.woff2",
-      "method": "GET",
-      "status": 404,
-      "redirect_url": null,
-      "mime_type": "x-unknown",
-      "size": -1,
-      "timestamp": "2025-07-21T11:11:34.830Z"
-    },
-    {
-      "url": "https://bcpportal.bcpcouncil.gov.uk/assets/static/light-94a07e06a1-v2-01565b0034e61d4609689bbb7ae0be844701f3812c8fe029fa1659b7ef3aa94f.woff2",
-      "method": "GET",
-      "status": 404,
-      "redirect_url": null,
-      "mime_type": "x-unknown",
-      "size": -1,
-      "timestamp": "2025-07-21T11:11:34.831Z"
-    },
-    {
-      "url": "https://bcpportal.bcpcouncil.gov.uk/assets/static/bold-affa96571d-v2-088c8da9d0319b63b23ac19791f37a33ec0d4b61f884ab56123bfd96d8312153.woff",
-      "method": "GET",
-      "status": 404,
-      "redirect_url": null,
-      "mime_type": "x-unknown",
-      "size": -1,
-      "timestamp": "2025-07-21T11:11:34.853Z"
-    },
-    {
-      "url": "https://bcpportal.bcpcouncil.gov.uk/assets/static/light-f591b13f7d-v2-369b1da7f442cafca0e8ac0faf1bb64df8170f9c3c7015da1195c8529df5837e.woff",
-      "method": "GET",
-      "status": 404,
-      "redirect_url": null,
-      "mime_type": "x-unknown",
-      "size": -1,
-      "timestamp": "2025-07-21T11:11:34.853Z"
-    },
-    {
-      "url": "https://bcpportal.bcpcouncil.gov.uk/bcpglobalapis/?api=GetservieSettings&productId=b372bfc3-a62c-f011-8c4e-7c1e522e5b1a",
+      "timestamp": "2025-07-21T11:11:34.917Z",
+      "duration_ms": 59.514,
+      "endpoint": "/bcpglobalapis",
+      "host": "bcpportal.bcpcouncil.gov.uk",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "text/html; charset=utf-8",
-      "size": 443,
-      "timestamp": "2025-07-21T11:11:34.917Z"
+      "query_params": {
+        "api": [
+          "GetservieSettings"
+        ],
+        "productId": [
+          "b372bfc3-a62c-f011-8c4e-7c1e522e5b1a"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "cookie": "[cookies present]",
+        "referer": "https://bcpportal.bcpcouncil.gov.uk/checkyourbincollection/",
+        "x-requested-with": "XMLHttpRequest"
+      },
+      "response_headers": {
+        "cache-control": "no-cache, no-store, must-revalidate",
+        "content-type": "text/html; charset=utf-8",
+        "x-frame-options": "SAMEORIGIN",
+        "x-ms-portal-app": "site-58035987-4412-4874-ae62-997402bad775-UKs",
+        "x-ms-request-id": "2c7972c8-5181-4fd0-9d22-66a7b75da54e"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 443,
+        "compressed": true,
+        "content_ref": "fe4d00b98bcd59778060ebd02543396a22501590.html"
+      }
     },
     {
-      "url": "https://content.powerapps.com/resource/powerappsportal/controls/pcf_controls/manifest-3.21.14.json",
+      "timestamp": "2025-07-21T11:11:35.020Z",
+      "duration_ms": 16.278,
+      "endpoint": "/resource/powerappsportal/controls/pcf_controls/{id}",
+      "host": "content.powerapps.com",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json",
-      "size": 2054,
-      "timestamp": "2025-07-21T11:11:35.020Z"
+      "path_params": [
+        "manifest-3.21.14.json"
+      ],
+      "request_headers": {
+        "accept": "application/json, text/plain, */*",
+        "origin": "https://bcpportal.bcpcouncil.gov.uk",
+        "referer": "https://bcpportal.bcpcouncil.gov.uk/"
+      },
+      "response_headers": {
+        "cache-control": "public, max-age=31536000",
+        "content-type": "application/json",
+        "x-azure-ref": "20250721T111135Z-16896f46f99llcpfhC1LTSp5vn00000008c000000000bm4m",
+        "x-cache": "TCP_HIT",
+        "x-content-type-options": "nosniff",
+        "x-fd-int-roxy-purgeid": "74730419",
+        "x-ms-activity-vector": "00.00.00",
+        "x-ms-correlation-id": "34a99c3b-606b-42c6-8d08-614279d73de0",
+        "x-ms-islandgateway": "_prdil101sukgb0_5",
+        "x-ms-service-request-id": "fd526bdb-9851-412b-8978-1de15bd45a9e",
+        "x-ms-static-content": "ZB000000I",
+        "x-servicefabric": "NoRetry"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 2054,
+        "compressed": true,
+        "content_ref": "2753cf93fd8c0ac35a4b85772b201a439e61e22c.json"
+      }
     },
     {
-      "url": "https://content.powerapps.com/resource/powerappsportal/controls/mf_shared/manifest-0.2.20.json",
+      "timestamp": "2025-07-21T11:11:35.020Z",
+      "duration_ms": 16.518,
+      "endpoint": "/resource/powerappsportal/controls/mf_shared/manifest-0.2.20.json",
+      "host": "content.powerapps.com",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json",
-      "size": 332,
-      "timestamp": "2025-07-21T11:11:35.020Z"
+      "request_headers": {
+        "accept": "application/json, text/plain, */*",
+        "origin": "https://bcpportal.bcpcouncil.gov.uk",
+        "referer": "https://bcpportal.bcpcouncil.gov.uk/"
+      },
+      "response_headers": {
+        "cache-control": "public, max-age=31536000",
+        "content-type": "application/json",
+        "x-azure-ref": "20250721T111135Z-16896f46f99llcpfhC1LTSp5vn00000008c000000000bm4n",
+        "x-cache": "TCP_HIT",
+        "x-content-type-options": "nosniff",
+        "x-fd-int-roxy-purgeid": "74730419",
+        "x-ms-activity-vector": "00.00.00",
+        "x-ms-correlation-id": "bd5d26e6-ba05-4f03-aa8c-94c735299681",
+        "x-ms-islandgateway": "_prdil101sukgb0_7",
+        "x-ms-service-request-id": "ea0f2528-f3c3-44b7-bd89-69cedfd8f17f",
+        "x-ms-static-content": "ZB0000004",
+        "x-servicefabric": "NoRetry"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 332,
+        "content_ref": "0ebc64bca7f613a1b9016679598f318974ea8be0.json"
+      }
     },
     {
-      "url": "https://content.powerapps.com/resource/powerappsportal/controls/host/manifest-0.9.27.json",
+      "timestamp": "2025-07-21T11:11:35.020Z",
+      "duration_ms": 16.691,
+      "endpoint": "/resource/powerappsportal/controls/host/manifest-0.9.27.json",
+      "host": "content.powerapps.com",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json",
-      "size": 48,
-      "timestamp": "2025-07-21T11:11:35.020Z"
+      "request_headers": {
+        "accept": "application/json, text/plain, */*",
+        "origin": "https://bcpportal.bcpcouncil.gov.uk",
+        "referer": "https://bcpportal.bcpcouncil.gov.uk/"
+      },
+      "response_headers": {
+        "cache-control": "public, max-age=31536000",
+        "content-type": "application/json",
+        "x-azure-ref": "20250721T111135Z-16896f46f99llcpfhC1LTSp5vn00000008c000000000bm4p",
+        "x-cache": "TCP_HIT",
+        "x-content-type-options": "nosniff",
+        "x-fd-int-roxy-purgeid": "74730419",
+        "x-ms-activity-vector": "00.00.00",
+        "x-ms-correlation-id": "d1235aef-973c-495d-b196-00a1ef69f10b",
+        "x-ms-islandgateway": "_prdil102sukgb0_0",
+        "x-ms-service-request-id": "f5192df3-9f7c-4576-8cc8-530769d815f0",
+        "x-ms-static-content": "PI000000Y",
+        "x-servicefabric": "NoRetry"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 48,
+        "content_ref": "7fc9fff3821984818667afda53e19353506cb8c6.json"
+      }
     },
     {
-      "url": "https://content.powerapps.com/resource/powerappsportal/controls/pcf_loader/manifest-0.0.40.json",
+      "timestamp": "2025-07-21T11:11:35.020Z",
+      "duration_ms": 64.841,
+      "endpoint": "/resource/powerappsportal/controls/pcf_loader/manifest-0.0.40.json",
+      "host": "content.powerapps.com",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json",
-      "size": 170,
-      "timestamp": "2025-07-21T11:11:35.020Z"
+      "request_headers": {
+        "accept": "application/json, text/plain, */*",
+        "origin": "https://bcpportal.bcpcouncil.gov.uk",
+        "referer": "https://bcpportal.bcpcouncil.gov.uk/"
+      },
+      "response_headers": {
+        "cache-control": "public, max-age=31536000",
+        "content-type": "application/json",
+        "x-azure-ref": "20250721T111135Z-16896f46f99llcpfhC1LTSp5vn00000008c000000000bm4k",
+        "x-cache": "TCP_HIT",
+        "x-content-type-options": "nosniff",
+        "x-fd-int-roxy-purgeid": "74730419",
+        "x-ms-activity-vector": "00.00.00",
+        "x-ms-correlation-id": "fb9380b0-9755-40e8-9f65-73408c2819a1",
+        "x-ms-islandgateway": "_prdil101sukgb0_2",
+        "x-ms-service-request-id": "b5b63adc-f2a9-4a7f-a237-dddedb8e461a",
+        "x-ms-static-content": "ZB000000M",
+        "x-servicefabric": "NoRetry"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 170,
+        "content_ref": "a55cbcb028a7cff05d56a30860372d3b3b4e56a9.json"
+      }
     },
     {
-      "url": "https://content.powerapps.com/resource/powerappsportal/controls/data_grid/manifest-1.10.16.json",
+      "timestamp": "2025-07-21T11:11:35.021Z",
+      "duration_ms": 18.346,
+      "endpoint": "/resource/powerappsportal/controls/data_grid/{id}",
+      "host": "content.powerapps.com",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json",
-      "size": 290,
-      "timestamp": "2025-07-21T11:11:35.021Z"
+      "path_params": [
+        "manifest-1.10.16.json"
+      ],
+      "request_headers": {
+        "accept": "application/json, text/plain, */*",
+        "origin": "https://bcpportal.bcpcouncil.gov.uk",
+        "referer": "https://bcpportal.bcpcouncil.gov.uk/"
+      },
+      "response_headers": {
+        "cache-control": "public, max-age=31536000",
+        "content-type": "application/json",
+        "x-azure-ref": "20250721T111135Z-16896f46f99llcpfhC1LTSp5vn00000008c000000000bm4q",
+        "x-cache": "TCP_HIT",
+        "x-content-type-options": "nosniff",
+        "x-fd-int-roxy-purgeid": "74730419",
+        "x-ms-activity-vector": "00.00.00",
+        "x-ms-correlation-id": "f84247a8-29eb-42f9-854b-0c60bf2d40ef",
+        "x-ms-islandgateway": "_prdil102sukgb0_3",
+        "x-ms-service-request-id": "e2d789ca-18ac-4558-825a-5a6c579428f4",
+        "x-ms-static-content": "pi000000U",
+        "x-servicefabric": "NoRetry"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 290,
+        "content_ref": "8d1bc2ff8f3f9fb9a1fd5d82a7a77c78dc9a71b1.json"
+      }
     },
     {
-      "url": "https://content.powerapps.com/resource/powerappsportal/controls/controls_fluent_v9/manifest-0.0.43.json",
+      "timestamp": "2025-07-21T11:11:35.021Z",
+      "duration_ms": 18.546,
+      "endpoint": "/resource/powerappsportal/controls/controls_fluent_v9/manifest-0.0.43.json",
+      "host": "content.powerapps.com",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json",
-      "size": 8462,
-      "timestamp": "2025-07-21T11:11:35.021Z"
+      "request_headers": {
+        "accept": "application/json, text/plain, */*",
+        "origin": "https://bcpportal.bcpcouncil.gov.uk",
+        "referer": "https://bcpportal.bcpcouncil.gov.uk/"
+      },
+      "response_headers": {
+        "cache-control": "public, max-age=31536000",
+        "content-type": "application/json",
+        "x-azure-ref": "20250721T111135Z-16896f46f99llcpfhC1LTSp5vn00000008c000000000bm4r",
+        "x-cache": "TCP_HIT",
+        "x-content-type-options": "nosniff",
+        "x-fd-int-roxy-purgeid": "74730419",
+        "x-ms-activity-vector": "00.00.00",
+        "x-ms-correlation-id": "54695e4f-0a7b-4b0f-9e9c-28b30de18fef",
+        "x-ms-islandgateway": "_prdil101sukgb0_6",
+        "x-ms-service-request-id": "a0756290-2150-47c8-8a59-fadf9bf0f80c",
+        "x-ms-static-content": "ZB0000008",
+        "x-servicefabric": "NoRetry"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 8462,
+        "compressed": true,
+        "content_ref": "3cab316c87138a47cdf1f52bcbfedce1cb28e0da.json"
+      }
     },
     {
-      "url": "https://dc.services.visualstudio.com/v2/track",
+      "timestamp": "2025-07-21T11:11:35.121Z",
+      "duration_ms": 123.376,
+      "endpoint": "/v2/track",
+      "host": "dc.services.visualstudio.com",
       "method": "POST",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json; charset=utf-8",
-      "size": 96,
-      "timestamp": "2025-07-21T11:11:35.121Z"
+      "request_headers": {
+        "accept": "*/*",
+        "content-type": "application/json",
+        "origin": "https://bcpportal.bcpcouncil.gov.uk",
+        "referer": "https://bcpportal.bcpcouncil.gov.uk/"
+      },
+      "response_headers": {
+        "content-type": "application/json; charset=utf-8",
+        "x-content-type-options": "nosniff"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 96,
+        "content_ref": "512cc38e9ed871f33c875c163a9b0e75d4233465.json"
+      }
     },
     {
-      "url": "https://eu-mobile.events.data.microsoft.com/OneCollector/1.0/?cors=true&content-type=application/x-json-stream&w=2",
+      "timestamp": "2025-07-21T11:11:37.578Z",
+      "duration_ms": 14.939,
+      "endpoint": "/g/collect",
+      "host": "region1.google-analytics.com",
+      "method": "POST",
+      "status": 204,
+      "query_params": {
+        "v": [
+          "2"
+        ],
+        "tid": [
+          "G-EQQ7L08Q2Y"
+        ],
+        "gtm": [
+          "45je57g1v9169432782za200"
+        ],
+        "_p": [
+          "1753096289352"
+        ],
+        "gcd": [
+          "13l3l3l3l1l1"
+        ],
+        "npa": [
+          "0"
+        ],
+        "dma": [
+          "0"
+        ],
+        "tag_exp": [
+          "101509157~103116026~103200004~103233427~104684208~104684211~104921715~104921717"
+        ],
+        "cid": [
+          "191002641.1753096289"
+        ],
+        "ul": [
+          "en-gb"
+        ],
+        "sr": [
+          "800x600"
+        ],
+        "uaa": [
+          "arm"
+        ],
+        "uab": [
+          "64"
+        ],
+        "uafvl": [
+          "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+        ],
+        "uamb": [
+          "0"
+        ],
+        "uap": [
+          "macOS"
+        ],
+        "uapv": [
+          "15.5.0"
+        ],
+        "uaw": [
+          "0"
+        ],
+        "are": [
+          "1"
+        ],
+        "frm": [
+          "0"
+        ],
+        "pscdl": [
+          "noapi"
+        ],
+        "_eu": [
+          "AEAAAAQ"
+        ],
+        "_s": [
+          "2"
+        ],
+        "dl": [
+          "https://www.bcpcouncil.gov.uk/bins-waste-and-recycling/check-your-bin-day"
+        ],
+        "dr": [
+          "https://www.bcpcouncil.gov.uk/bins-waste-and-recycling/household-bins"
+        ],
+        "sid": [
+          "1753096289"
+        ],
+        "sct": [
+          "1"
+        ],
+        "seg": [
+          "1"
+        ],
+        "dt": [
+          "Check your bin day | BCP"
+        ],
+        "en": [
+          "page_view"
+        ],
+        "_et": [
+          "3111"
+        ],
+        "tfd": [
+          "17341"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "cookie": "[cookies present]",
+        "origin": "https://www.bcpcouncil.gov.uk",
+        "referer": "https://www.bcpcouncil.gov.uk/"
+      },
+      "response_headers": {
+        "cache-control": "no-cache, no-store, must-revalidate",
+        "content-type": "text/plain"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T11:11:37.819Z",
+      "duration_ms": 758.15,
+      "endpoint": "/OneCollector/1.0",
+      "host": "eu-mobile.events.data.microsoft.com",
       "method": "POST",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json",
-      "size": 24,
-      "timestamp": "2025-07-21T11:11:37.819Z"
+      "query_params": {
+        "cors": [
+          "true"
+        ],
+        "content-type": [
+          "application/x-json-stream"
+        ],
+        "w": [
+          "2"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "content-type": "application/x-json-stream",
+        "origin": "https://bcpportal.bcpcouncil.gov.uk",
+        "referer": "https://bcpportal.bcpcouncil.gov.uk/"
+      },
+      "response_headers": {
+        "content-type": "application/json"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 24,
+        "content_ref": "ac7cf704563b3e32cc67770ea72a3873cc6fc146.json"
+      }
     },
     {
-      "url": "https://eu-mobile.events.data.microsoft.com/OneCollector/1.0/?cors=true&content-type=application/x-json-stream&w=2",
+      "timestamp": "2025-07-21T11:11:40.839Z",
+      "duration_ms": 1778.71,
+      "endpoint": "/OneCollector/1.0",
+      "host": "eu-mobile.events.data.microsoft.com",
       "method": "POST",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json",
-      "size": 25,
-      "timestamp": "2025-07-21T11:11:40.839Z"
+      "query_params": {
+        "cors": [
+          "true"
+        ],
+        "content-type": [
+          "application/x-json-stream"
+        ],
+        "w": [
+          "2"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "content-type": "application/x-json-stream",
+        "origin": "https://bcpportal.bcpcouncil.gov.uk",
+        "referer": "https://bcpportal.bcpcouncil.gov.uk/"
+      },
+      "response_headers": {
+        "content-type": "application/json"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 25,
+        "content_ref": "8024a3be03f8e8dc6b897fec9084e03e477c238a.json"
+      }
     },
     {
-      "url": "https://apim-uks-cepprod-int-01.azure-api.net/LLPGSearch?searchText=BH1%201AR&Subscription-Key=f5a8f110545e4d009411c908b25b7596",
+      "timestamp": "2025-07-21T11:11:42.794Z",
+      "duration_ms": 847.8850000000001,
+      "endpoint": "/LLPGSearch",
+      "host": "apim-uks-cepprod-int-01.azure-api.net",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json",
-      "size": 89949,
-      "timestamp": "2025-07-21T11:11:42.794Z"
+      "query_params": {
+        "searchText": [
+          "BH1 1AR"
+        ],
+        "Subscription-Key": [
+          "f5a8f110545e4d009411c908b25b7596"
+        ]
+      },
+      "request_headers": {
+        "accept": "application/json, text/javascript, */*; q=0.01",
+        "origin": "https://bcpportal.bcpcouncil.gov.uk",
+        "referer": "https://bcpportal.bcpcouncil.gov.uk/"
+      },
+      "response_headers": {
+        "cache-control": "private, max-age=0",
+        "content-type": "application/json"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 89949,
+        "content_ref": "834b2cdd2909e76c65bf182ccb0d056db5fe1506.json"
+      }
     },
     {
-      "url": "https://bcpportal.bcpcouncil.gov.uk/_api/bcp_addresses?$filter=statecode%20eq%200%20and%20bcp_uprn%20eq%20%2710090819773%27",
+      "timestamp": "2025-07-21T11:11:46.508Z",
+      "duration_ms": 136.12800000000001,
+      "endpoint": "/_api/bcp_addresses",
+      "host": "bcpportal.bcpcouncil.gov.uk",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json; charset=utf-8",
-      "size": 4330,
-      "timestamp": "2025-07-21T11:11:46.508Z"
+      "query_params": {
+        "$filter": [
+          "statecode eq 0 and bcp_uprn eq '10090819773'"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "cookie": "[cookies present]",
+        "referer": "https://bcpportal.bcpcouncil.gov.uk/checkyourbincollection/",
+        "x-requested-with": "XMLHttpRequest"
+      },
+      "response_headers": {
+        "cache-control": "no-cache",
+        "content-type": "application/json; charset=utf-8",
+        "x-frame-options": "SAMEORIGIN",
+        "x-ms-cds-service-request-id": "c52ba9b0-5e12-475b-9daf-46fcaa9cd090",
+        "x-ms-portal-app": "site-58035987-4412-4874-ae62-997402bad775-UKs",
+        "x-ms-request-id": "bb139ecf-c585-4c22-a7af-58388c8cb8d9"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 4330,
+        "compressed": true,
+        "content_ref": "b4a9d6ee6c95f4110dd824a472c4dd1675553e0a.json"
+      }
     },
     {
-      "url": "https://apim-uks-cepprod-int-01.azure-api.net/NLPGSearch?searchText=10090819773&Subscription-Key=f5a8f110545e4d009411c908b25b7596",
+      "timestamp": "2025-07-21T11:11:46.647Z",
+      "duration_ms": 733.0740000000001,
+      "endpoint": "/NLPGSearch",
+      "host": "apim-uks-cepprod-int-01.azure-api.net",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json",
-      "size": 6344,
-      "timestamp": "2025-07-21T11:11:46.647Z"
+      "query_params": {
+        "searchText": [
+          "10090819773"
+        ],
+        "Subscription-Key": [
+          "f5a8f110545e4d009411c908b25b7596"
+        ]
+      },
+      "request_headers": {
+        "accept": "application/json, text/javascript, */*; q=0.01",
+        "origin": "https://bcpportal.bcpcouncil.gov.uk",
+        "referer": "https://bcpportal.bcpcouncil.gov.uk/"
+      },
+      "response_headers": {
+        "cache-control": "private, max-age=0",
+        "content-type": "application/json"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 6344,
+        "content_ref": "d8b041fdad8ddcee7735b2bbd8ff8d4c07a6d693.json"
+      }
     },
     {
-      "url": "https://prod-17.uksouth.logic.azure.com/workflows/58253d7b7d754447acf9fe5fcf76f493/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=TAvYIUFj6dzaP90XQCm2ElY6Cd34ze05I3ba7LKTiBs",
+      "timestamp": "2025-07-21T11:11:46.931Z",
+      "duration_ms": 811.42,
+      "endpoint": "/workflows/{id}/triggers/manual/paths/invoke",
+      "host": "prod-17.uksouth.logic.azure.com",
       "method": "POST",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "text/plain; charset=utf-8",
-      "size": 2587,
-      "timestamp": "2025-07-21T11:11:46.931Z"
+      "path_params": [
+        "58253d7b7d754447acf9fe5fcf76f493"
+      ],
+      "query_params": {
+        "api-version": [
+          "2016-06-01"
+        ],
+        "sp": [
+          "/triggers/manual/run"
+        ],
+        "sv": [
+          "1.0"
+        ],
+        "sig": [
+          "TAvYIUFj6dzaP90XQCm2ElY6Cd34ze05I3ba7LKTiBs"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "content-type": "application/json",
+        "origin": "https://bcpportal.bcpcouncil.gov.uk",
+        "referer": "https://bcpportal.bcpcouncil.gov.uk/"
+      },
+      "response_headers": {
+        "cache-control": "no-cache",
+        "content-type": "text/plain; charset=utf-8",
+        "x-ms-client-tracking-id": "08584485105784129565556751383CU31",
+        "x-ms-correlation-id": "8aff9ad9-68e8-4585-a1cf-794e24271507",
+        "x-ms-execution-location": "uksouth",
+        "x-ms-ratelimit-burst-remaining-workflow-writes": "1727",
+        "x-ms-ratelimit-remaining-workflow-download-contentsize": "123884901",
+        "x-ms-ratelimit-remaining-workflow-upload-contentsize": "123892672",
+        "x-ms-ratelimit-time-remaining-directapirequests": "11536321",
+        "x-ms-request-id": "uksouth:8aff9ad9-68e8-4585-a1cf-794e24271507",
+        "x-ms-tracking-id": "8aff9ad9-68e8-4585-a1cf-794e24271507",
+        "x-ms-trigger-history-name": "08584485105784129565556751383CU31",
+        "x-ms-workflow-id": "58253d7b7d754447acf9fe5fcf76f493",
+        "x-ms-workflow-name": "04f55797-e891-459d-5969-13e3efdb16b4",
+        "x-ms-workflow-run-id": "08584485105784129565556751383CU31",
+        "x-ms-workflow-system-id": "/locations/uksouth/scaleunits/prod-17/workflows/58253d7b7d754447acf9fe5fcf76f493",
+        "x-ms-workflow-version": "08584520493197261033"
+      }
     },
     {
-      "url": "https://eu-mobile.events.data.microsoft.com/OneCollector/1.0/?cors=true&content-type=application/x-json-stream&w=2",
+      "timestamp": "2025-07-21T11:11:49.678Z",
+      "duration_ms": 52.211,
+      "endpoint": "/OneCollector/1.0",
+      "host": "eu-mobile.events.data.microsoft.com",
       "method": "POST",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json",
-      "size": 24,
-      "timestamp": "2025-07-21T11:11:49.678Z"
+      "query_params": {
+        "cors": [
+          "true"
+        ],
+        "content-type": [
+          "application/x-json-stream"
+        ],
+        "w": [
+          "2"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "content-type": "application/x-json-stream",
+        "origin": "https://bcpportal.bcpcouncil.gov.uk",
+        "referer": "https://bcpportal.bcpcouncil.gov.uk/"
+      },
+      "response_headers": {
+        "content-type": "application/json"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 24,
+        "content_ref": "3b183124d6780838cd323c78d3dfe744a13fd626.json"
+      }
     }
-  ]
+  ],
+  "analysis": {
+    "total_requests": 29,
+    "unique_endpoints": 24,
+    "methods_used": [
+      "GET",
+      "POST"
+    ],
+    "status_codes": {
+      "200": 26,
+      "204": 2,
+      "301": 1
+    },
+    "endpoints_with_params": [
+      {
+        "endpoint": "/{id}/household-bins",
+        "method": "GET",
+        "query_params": [],
+        "path_params": true
+      },
+      {
+        "endpoint": "/{id}/static/manifest.webmanifest",
+        "method": "GET",
+        "query_params": [],
+        "path_params": true
+      },
+      {
+        "endpoint": "/c/v",
+        "method": "GET",
+        "query_params": [
+          "d",
+          "p",
+          "v",
+          "k",
+          "format"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/g/collect",
+        "method": "POST",
+        "query_params": [
+          "v",
+          "tid",
+          "gtm",
+          "_p",
+          "gcd",
+          "npa",
+          "dma",
+          "tag_exp",
+          "cid",
+          "ul",
+          "sr",
+          "uaa",
+          "uab",
+          "uafvl",
+          "uamb",
+          "uap",
+          "uapv",
+          "uaw",
+          "are",
+          "frm",
+          "pscdl",
+          "_s",
+          "sid",
+          "sct",
+          "seg",
+          "dl",
+          "dt",
+          "en",
+          "_fv",
+          "_nsi",
+          "_ss",
+          "_ee",
+          "tfd"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/api/delivery/projects/bcpWebsite/nodes/{id}/check-your-bin-day",
+        "method": "GET",
+        "query_params": [
+          "entryFields",
+          "entryLinkDepth",
+          "language"
+        ],
+        "path_params": true
+      },
+      {
+        "endpoint": "/api/delivery/projects/bcpWebsite/entries/search",
+        "method": "GET",
+        "query_params": [
+          "linkDepth",
+          "pageIndex",
+          "pageSize",
+          "where"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/api/delivery/projects/bcpWebsite/nodes/{id}/check-your-bin-day",
+        "method": "GET",
+        "query_params": [
+          "depth",
+          "entryFields",
+          "language"
+        ],
+        "path_params": true
+      },
+      {
+        "endpoint": "/api/delivery/projects/bcpWebsite/nodes/{id}/ancestors",
+        "method": "GET",
+        "query_params": [
+          "language"
+        ],
+        "path_params": true
+      },
+      {
+        "endpoint": "/api/delivery/projects/bcpWebsite/nodes/{id}/siblings",
+        "method": "GET",
+        "query_params": [
+          "language"
+        ],
+        "path_params": true
+      },
+      {
+        "endpoint": "/api/delivery/projects/bcpWebsite/nodes/{id}/children",
+        "method": "GET",
+        "query_params": [],
+        "path_params": true
+      },
+      {
+        "endpoint": "/{id}",
+        "method": "GET",
+        "query_params": [],
+        "path_params": true
+      },
+      {
+        "endpoint": "/bcpglobalapis",
+        "method": "GET",
+        "query_params": [
+          "api",
+          "productId"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/resource/powerappsportal/controls/pcf_controls/{id}",
+        "method": "GET",
+        "query_params": [],
+        "path_params": true
+      },
+      {
+        "endpoint": "/resource/powerappsportal/controls/data_grid/{id}",
+        "method": "GET",
+        "query_params": [],
+        "path_params": true
+      },
+      {
+        "endpoint": "/g/collect",
+        "method": "POST",
+        "query_params": [
+          "v",
+          "tid",
+          "gtm",
+          "_p",
+          "gcd",
+          "npa",
+          "dma",
+          "tag_exp",
+          "cid",
+          "ul",
+          "sr",
+          "uaa",
+          "uab",
+          "uafvl",
+          "uamb",
+          "uap",
+          "uapv",
+          "uaw",
+          "are",
+          "frm",
+          "pscdl",
+          "_eu",
+          "_s",
+          "dl",
+          "dr",
+          "sid",
+          "sct",
+          "seg",
+          "dt",
+          "en",
+          "_et",
+          "tfd"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/OneCollector/1.0",
+        "method": "POST",
+        "query_params": [
+          "cors",
+          "content-type",
+          "w"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/LLPGSearch",
+        "method": "GET",
+        "query_params": [
+          "searchText",
+          "Subscription-Key"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/_api/bcp_addresses",
+        "method": "GET",
+        "query_params": [
+          "$filter"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/NLPGSearch",
+        "method": "GET",
+        "query_params": [
+          "searchText",
+          "Subscription-Key"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/workflows/{id}/triggers/manual/paths/invoke",
+        "method": "POST",
+        "query_params": [
+          "api-version",
+          "sp",
+          "sv",
+          "sig"
+        ],
+        "path_params": true
+      }
+    ],
+    "redirects": [
+      {
+        "from": "/{id}",
+        "to": "/checkyourbincollection/",
+        "status": 301
+      }
+    ],
+    "api_calls": [
+      {
+        "endpoint": "/{id}/static/manifest.webmanifest",
+        "method": "GET",
+        "response_type": "application/manifest+json",
+        "params": []
+      },
+      {
+        "endpoint": "/c/v",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": [
+          "d",
+          "p",
+          "v",
+          "k",
+          "format"
+        ]
+      },
+      {
+        "endpoint": "/api/delivery/projects/bcpWebsite/nodes/{id}/check-your-bin-day",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": [
+          "entryFields",
+          "entryLinkDepth",
+          "language"
+        ]
+      },
+      {
+        "endpoint": "/api/delivery/projects/bcpWebsite/entries/search",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": [
+          "linkDepth",
+          "pageIndex",
+          "pageSize",
+          "where"
+        ]
+      },
+      {
+        "endpoint": "/api/delivery/projects/bcpWebsite/nodes/{id}/check-your-bin-day",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": [
+          "depth",
+          "entryFields",
+          "language"
+        ]
+      },
+      {
+        "endpoint": "/api/delivery/projects/bcpWebsite/nodes/{id}/ancestors",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": [
+          "language"
+        ]
+      },
+      {
+        "endpoint": "/api/delivery/projects/bcpWebsite/nodes/{id}/siblings",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": [
+          "language"
+        ]
+      },
+      {
+        "endpoint": "/api/delivery/projects/bcpWebsite/nodes/{id}/children",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": []
+      },
+      {
+        "endpoint": "/resource/powerappsportal/controls/pcf_controls/{id}",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": []
+      },
+      {
+        "endpoint": "/resource/powerappsportal/controls/mf_shared/manifest-0.2.20.json",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": []
+      },
+      {
+        "endpoint": "/resource/powerappsportal/controls/host/manifest-0.9.27.json",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": []
+      },
+      {
+        "endpoint": "/resource/powerappsportal/controls/pcf_loader/manifest-0.0.40.json",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": []
+      },
+      {
+        "endpoint": "/resource/powerappsportal/controls/data_grid/{id}",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": []
+      },
+      {
+        "endpoint": "/resource/powerappsportal/controls/controls_fluent_v9/manifest-0.0.43.json",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": []
+      },
+      {
+        "endpoint": "/v2/track",
+        "method": "POST",
+        "response_type": "application/json",
+        "params": []
+      },
+      {
+        "endpoint": "/OneCollector/1.0",
+        "method": "POST",
+        "response_type": "application/json",
+        "params": [
+          "cors",
+          "content-type",
+          "w"
+        ]
+      },
+      {
+        "endpoint": "/OneCollector/1.0",
+        "method": "POST",
+        "response_type": "application/json",
+        "params": [
+          "cors",
+          "content-type",
+          "w"
+        ]
+      },
+      {
+        "endpoint": "/LLPGSearch",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": [
+          "searchText",
+          "Subscription-Key"
+        ]
+      },
+      {
+        "endpoint": "/_api/bcp_addresses",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": [
+          "$filter"
+        ]
+      },
+      {
+        "endpoint": "/NLPGSearch",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": [
+          "searchText",
+          "Subscription-Key"
+        ]
+      },
+      {
+        "endpoint": "/OneCollector/1.0",
+        "method": "POST",
+        "response_type": "application/json",
+        "params": [
+          "cors",
+          "content-type",
+          "w"
+        ]
+      }
+    ],
+    "form_submissions": []
+  },
+  "grouped_by_endpoint": {
+    "/{id}/household-bins": [
+      {
+        "timestamp": "2025-07-21T11:11:20.236Z",
+        "duration_ms": 142.894,
+        "endpoint": "/{id}/household-bins",
+        "host": "www.bcpcouncil.gov.uk",
+        "method": "GET",
+        "status": 200,
+        "path_params": [
+          "bins-waste-and-recycling"
+        ],
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7"
+        },
+        "response_headers": {
+          "cache-control": "no-cache, no-store",
+          "content-type": "text/html; charset=utf-8",
+          "x-age": "423",
+          "x-backend-ttl": "3600.000",
+          "x-contensis-viewer-groups": "",
+          "x-content-type-options": "nosniff",
+          "x-geoip-country-code": "GB",
+          "x-grace": "72h",
+          "x-host": "live-bcpwebsite-bournemouth.cloud.contensis.com",
+          "x-is-iis-fallback": "false",
+          "x-origin-server": "backend-coordinator",
+          "x-server-name": "z-bournemouth-CACHE1",
+          "x-varnish": "587915738 587984715",
+          "x-varnish-authentication": "skip",
+          "x-version-no": "460"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 135542,
+          "compressed": true,
+          "content_ref": "949b4e749236908a0c0bb5a9f4e30be37edd5806.html"
+        }
+      }
+    ],
+    "/{id}/static/manifest.webmanifest": [
+      {
+        "timestamp": "2025-07-21T11:11:20.576Z",
+        "duration_ms": 71.19200000000001,
+        "endpoint": "/{id}/static/manifest.webmanifest",
+        "host": "www.bcpcouncil.gov.uk",
+        "method": "GET",
+        "status": 200,
+        "path_params": [
+          "_mk7dvA_75b218ad-cba9-4605-9f19-47d215f7d722"
+        ],
+        "request_headers": {
+          "accept": "*/*",
+          "referer": "https://www.bcpcouncil.gov.uk/bins-waste-and-recycling/household-bins"
+        },
+        "response_headers": {
+          "cache-control": "public, max-age=31536000",
+          "content-type": "application/manifest+json",
+          "x-age": "501755",
+          "x-backend-ttl": "31536000.000",
+          "x-content-type-options": "nosniff",
+          "x-geoip-country-code": "GB",
+          "x-grace": "72h",
+          "x-host": "live-bcpwebsite-bournemouth.cloud.contensis.com",
+          "x-is-iis-fallback": "false",
+          "x-origin-server": "backend-coordinator",
+          "x-server-name": "z-bournemouth-CACHE1",
+          "x-varnish": "585590522 557079",
+          "x-varnish-authentication": "skip"
+        },
+        "response_info": {
+          "type": "application/manifest+json",
+          "size": 739,
+          "content_ref": "99b25978ddb5b136ebdbdc7dac1badfbbe42fe1a.webmanifest"
+        }
+      }
+    ],
+    "/c/v": [
+      {
+        "timestamp": "2025-07-21T11:11:21.179Z",
+        "duration_ms": 54.623999999999995,
+        "endpoint": "/c/v",
+        "host": "apikeys.civiccomputing.com",
+        "method": "GET",
+        "status": 200,
+        "query_params": {
+          "d": [
+            "www.bcpcouncil.gov.uk"
+          ],
+          "p": [
+            "CookieControl Multi-Site"
+          ],
+          "v": [
+            "9"
+          ],
+          "k": [
+            "eefc7d1c007cbd6498ca0c628151460d120018a0"
+          ],
+          "format": [
+            "json"
+          ]
+        },
+        "request_headers": {
+          "accept": "application/json, text/plain, */*",
+          "origin": "https://www.bcpcouncil.gov.uk",
+          "referer": "https://www.bcpcouncil.gov.uk/"
+        },
+        "response_headers": {
+          "cache-control": "max-age=3600, private, no-store",
+          "content-type": "application/json",
+          "x-apikeys": "hit",
+          "x-cf-test": "true",
+          "x-content-type-options": "nosniff",
+          "x-xss-protection": "1"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 306,
+          "content_ref": "e7e6a010ac7954422906d2b7309e40b8fe40f042.json"
+        }
+      }
+    ],
+    "/g/collect": [
+      {
+        "timestamp": "2025-07-21T11:11:29.454Z",
+        "duration_ms": 60.727000000000004,
+        "endpoint": "/g/collect",
+        "host": "region1.google-analytics.com",
+        "method": "POST",
+        "status": 204,
+        "query_params": {
+          "v": [
+            "2"
+          ],
+          "tid": [
+            "G-EQQ7L08Q2Y"
+          ],
+          "gtm": [
+            "45je57g1v9169432782za200"
+          ],
+          "_p": [
+            "1753096289352"
+          ],
+          "gcd": [
+            "13l3l3l3l1l1"
+          ],
+          "npa": [
+            "0"
+          ],
+          "dma": [
+            "0"
+          ],
+          "tag_exp": [
+            "101509157~103116026~103200004~103233427~104684208~104684211~104921715~104921717"
+          ],
+          "cid": [
+            "191002641.1753096289"
+          ],
+          "ul": [
+            "en-gb"
+          ],
+          "sr": [
+            "800x600"
+          ],
+          "uaa": [
+            "arm"
+          ],
+          "uab": [
+            "64"
+          ],
+          "uafvl": [
+            "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+          ],
+          "uamb": [
+            "0"
+          ],
+          "uap": [
+            "macOS"
+          ],
+          "uapv": [
+            "15.5.0"
+          ],
+          "uaw": [
+            "0"
+          ],
+          "are": [
+            "1"
+          ],
+          "frm": [
+            "0"
+          ],
+          "pscdl": [
+            "noapi"
+          ],
+          "_s": [
+            "1"
+          ],
+          "sid": [
+            "1753096289"
+          ],
+          "sct": [
+            "1"
+          ],
+          "seg": [
+            "0"
+          ],
+          "dl": [
+            "https://www.bcpcouncil.gov.uk/bins-waste-and-recycling/household-bins"
+          ],
+          "dt": [
+            "Household bins | BCP"
+          ],
+          "en": [
+            "page_view"
+          ],
+          "_fv": [
+            "1"
+          ],
+          "_nsi": [
+            "1"
+          ],
+          "_ss": [
+            "1"
+          ],
+          "_ee": [
+            "1"
+          ],
+          "tfd": [
+            "9218"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "cookie": "[cookies present]",
+          "origin": "https://www.bcpcouncil.gov.uk",
+          "referer": "https://www.bcpcouncil.gov.uk/"
+        },
+        "response_headers": {
+          "cache-control": "no-cache, no-store, must-revalidate",
+          "content-type": "text/plain"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T11:11:37.578Z",
+        "duration_ms": 14.939,
+        "endpoint": "/g/collect",
+        "host": "region1.google-analytics.com",
+        "method": "POST",
+        "status": 204,
+        "query_params": {
+          "v": [
+            "2"
+          ],
+          "tid": [
+            "G-EQQ7L08Q2Y"
+          ],
+          "gtm": [
+            "45je57g1v9169432782za200"
+          ],
+          "_p": [
+            "1753096289352"
+          ],
+          "gcd": [
+            "13l3l3l3l1l1"
+          ],
+          "npa": [
+            "0"
+          ],
+          "dma": [
+            "0"
+          ],
+          "tag_exp": [
+            "101509157~103116026~103200004~103233427~104684208~104684211~104921715~104921717"
+          ],
+          "cid": [
+            "191002641.1753096289"
+          ],
+          "ul": [
+            "en-gb"
+          ],
+          "sr": [
+            "800x600"
+          ],
+          "uaa": [
+            "arm"
+          ],
+          "uab": [
+            "64"
+          ],
+          "uafvl": [
+            "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+          ],
+          "uamb": [
+            "0"
+          ],
+          "uap": [
+            "macOS"
+          ],
+          "uapv": [
+            "15.5.0"
+          ],
+          "uaw": [
+            "0"
+          ],
+          "are": [
+            "1"
+          ],
+          "frm": [
+            "0"
+          ],
+          "pscdl": [
+            "noapi"
+          ],
+          "_eu": [
+            "AEAAAAQ"
+          ],
+          "_s": [
+            "2"
+          ],
+          "dl": [
+            "https://www.bcpcouncil.gov.uk/bins-waste-and-recycling/check-your-bin-day"
+          ],
+          "dr": [
+            "https://www.bcpcouncil.gov.uk/bins-waste-and-recycling/household-bins"
+          ],
+          "sid": [
+            "1753096289"
+          ],
+          "sct": [
+            "1"
+          ],
+          "seg": [
+            "1"
+          ],
+          "dt": [
+            "Check your bin day | BCP"
+          ],
+          "en": [
+            "page_view"
+          ],
+          "_et": [
+            "3111"
+          ],
+          "tfd": [
+            "17341"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "cookie": "[cookies present]",
+          "origin": "https://www.bcpcouncil.gov.uk",
+          "referer": "https://www.bcpcouncil.gov.uk/"
+        },
+        "response_headers": {
+          "cache-control": "no-cache, no-store, must-revalidate",
+          "content-type": "text/plain"
+        }
+      }
+    ],
+    "/api/delivery/projects/bcpWebsite/nodes/{id}/check-your-bin-day": [
+      {
+        "timestamp": "2025-07-21T11:11:31.626Z",
+        "duration_ms": 22.217,
+        "endpoint": "/api/delivery/projects/bcpWebsite/nodes/{id}/check-your-bin-day",
+        "host": "www.bcpcouncil.gov.uk",
+        "method": "GET",
+        "status": 200,
+        "path_params": [
+          "bins-waste-and-recycling"
+        ],
+        "query_params": {
+          "entryFields": [
+            "sys.contentTypeId,sys.id"
+          ],
+          "entryLinkDepth": [
+            "2"
+          ],
+          "language": [
+            "en-GB"
+          ]
+        },
+        "request_headers": {
+          "accept": "application/json",
+          "content-type": "application/json",
+          "cookie": "[cookies present]",
+          "referer": "https://www.bcpcouncil.gov.uk/bins-waste-and-recycling/check-your-bin-day"
+        },
+        "response_headers": {
+          "cache-control": "no-cache",
+          "content-type": "application/json; charset=utf-8",
+          "x-age": "2636",
+          "x-backend-ttl": "3600.000",
+          "x-content-type-options": "nosniff",
+          "x-geoip-country-code": "GB",
+          "x-grace": "72h",
+          "x-host": "cms-bournemouth.cloud.contensis.com",
+          "x-varnish": "587942133 579924599",
+          "x-varnish-authentication": "skip"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 568,
+          "content_ref": "bdf6b6cd69a5fdc88727e3526fcce708fd8e9d97.json"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T11:11:31.679Z",
+        "duration_ms": 28.251,
+        "endpoint": "/api/delivery/projects/bcpWebsite/nodes/{id}/check-your-bin-day",
+        "host": "www.bcpcouncil.gov.uk",
+        "method": "GET",
+        "status": 200,
+        "path_params": [
+          "bins-waste-and-recycling"
+        ],
+        "query_params": {
+          "depth": [
+            "1"
+          ],
+          "entryFields": [
+            "entryDescription,url,overviewTitleOverride"
+          ],
+          "language": [
+            "en-GB"
+          ]
+        },
+        "request_headers": {
+          "accept": "application/json",
+          "content-type": "application/json",
+          "cookie": "[cookies present]",
+          "referer": "https://www.bcpcouncil.gov.uk/bins-waste-and-recycling/check-your-bin-day"
+        },
+        "response_headers": {
+          "cache-control": "no-cache",
+          "content-type": "application/json; charset=utf-8",
+          "x-age": "2635",
+          "x-backend-ttl": "3600.000",
+          "x-content-type-options": "nosniff",
+          "x-geoip-country-code": "GB",
+          "x-grace": "72h",
+          "x-host": "cms-bournemouth.cloud.contensis.com",
+          "x-varnish": "589760739 587997005",
+          "x-varnish-authentication": "skip"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 702,
+          "content_ref": "0a8504de960b6960635d28e5b31400244e90f571.json"
+        }
+      }
+    ],
+    "/api/delivery/projects/bcpWebsite/entries/search": [
+      {
+        "timestamp": "2025-07-21T11:11:31.627Z",
+        "duration_ms": 21.06,
+        "endpoint": "/api/delivery/projects/bcpWebsite/entries/search",
+        "host": "www.bcpcouncil.gov.uk",
+        "method": "GET",
+        "status": 200,
+        "query_params": {
+          "linkDepth": [
+            "2"
+          ],
+          "pageIndex": [
+            "0"
+          ],
+          "pageSize": [
+            "20"
+          ],
+          "where": [
+            "[{\"field\":\"sys.id\",\"equalTo\":\"56bc95c8-a0f3-4b98-b640-48e6c08221b7\"},{\"field\":\"sys.language\",\"equalTo\":\"en-GB\"},{\"field\":\"sys.contentTypeId\",\"equalTo\":\"pageContent\"},{\"field\":\"sys.versionStatus\",\"equalTo\":\"published\"}]"
+          ]
+        },
+        "request_headers": {
+          "accept": "application/json",
+          "content-type": "application/json; charset=utf-8",
+          "cookie": "[cookies present]",
+          "referer": "https://www.bcpcouncil.gov.uk/bins-waste-and-recycling/check-your-bin-day"
+        },
+        "response_headers": {
+          "cache-control": "no-cache",
+          "content-type": "application/json",
+          "x-age": "1407",
+          "x-backend-ttl": "3600.000",
+          "x-content-type-options": "nosniff",
+          "x-geoip-country-code": "GB",
+          "x-grace": "72h",
+          "x-host": "cms-bournemouth.cloud.contensis.com",
+          "x-varnish": "589020399 587582177",
+          "x-varnish-authentication": "skip"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 5126,
+          "compressed": true,
+          "content_ref": "20281d25ca49d09fd9cfc665fb3dfd78b1854de9.json"
+        }
+      }
+    ],
+    "/api/delivery/projects/bcpWebsite/nodes/{id}/ancestors": [
+      {
+        "timestamp": "2025-07-21T11:11:31.679Z",
+        "duration_ms": 28.509,
+        "endpoint": "/api/delivery/projects/bcpWebsite/nodes/{id}/ancestors",
+        "host": "www.bcpcouncil.gov.uk",
+        "method": "GET",
+        "status": 200,
+        "path_params": [
+          "bf7f9e51-80db-464c-b836-f0c6be9e89dc"
+        ],
+        "query_params": {
+          "language": [
+            "en-GB"
+          ]
+        },
+        "request_headers": {
+          "accept": "application/json",
+          "content-type": "application/json",
+          "cookie": "[cookies present]",
+          "referer": "https://www.bcpcouncil.gov.uk/bins-waste-and-recycling/check-your-bin-day"
+        },
+        "response_headers": {
+          "cache-control": "no-cache",
+          "content-type": "application/json; charset=utf-8",
+          "x-age": "2635",
+          "x-backend-ttl": "3600.000",
+          "x-content-type-options": "nosniff",
+          "x-geoip-country-code": "GB",
+          "x-grace": "72h",
+          "x-host": "cms-bournemouth.cloud.contensis.com",
+          "x-varnish": "585356572 587485181",
+          "x-varnish-authentication": "skip"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 862,
+          "content_ref": "3fb884681a8046128471f0277db4681f38727544.json"
+        }
+      }
+    ],
+    "/api/delivery/projects/bcpWebsite/nodes/{id}/siblings": [
+      {
+        "timestamp": "2025-07-21T11:11:31.679Z",
+        "duration_ms": 28.860000000000003,
+        "endpoint": "/api/delivery/projects/bcpWebsite/nodes/{id}/siblings",
+        "host": "www.bcpcouncil.gov.uk",
+        "method": "GET",
+        "status": 200,
+        "path_params": [
+          "bf7f9e51-80db-464c-b836-f0c6be9e89dc"
+        ],
+        "query_params": {
+          "language": [
+            "en-GB"
+          ]
+        },
+        "request_headers": {
+          "accept": "application/json",
+          "content-type": "application/json",
+          "cookie": "[cookies present]",
+          "referer": "https://www.bcpcouncil.gov.uk/bins-waste-and-recycling/check-your-bin-day"
+        },
+        "response_headers": {
+          "cache-control": "no-cache",
+          "content-type": "application/json; charset=utf-8",
+          "x-age": "2635",
+          "x-backend-ttl": "3600.000",
+          "x-content-type-options": "nosniff",
+          "x-geoip-country-code": "GB",
+          "x-grace": "72h",
+          "x-host": "cms-bournemouth.cloud.contensis.com",
+          "x-varnish": "589795060 579924614",
+          "x-varnish-authentication": "skip"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 6556,
+          "compressed": true,
+          "content_ref": "f73ab20063991d5a137c9795305bd3a542346041.json"
+        }
+      }
+    ],
+    "/api/delivery/projects/bcpWebsite/nodes/{id}/children": [
+      {
+        "timestamp": "2025-07-21T11:11:31.699Z",
+        "duration_ms": 30.208000000000002,
+        "endpoint": "/api/delivery/projects/bcpWebsite/nodes/{id}/children",
+        "host": "www.bcpcouncil.gov.uk",
+        "method": "GET",
+        "status": 200,
+        "path_params": [
+          "373db907-5687-4949-847a-b1a1df191eec"
+        ],
+        "request_headers": {
+          "accept": "application/json",
+          "content-type": "application/json",
+          "cookie": "[cookies present]",
+          "referer": "https://www.bcpcouncil.gov.uk/bins-waste-and-recycling/check-your-bin-day"
+        },
+        "response_headers": {
+          "cache-control": "no-cache",
+          "content-type": "application/json; charset=utf-8",
+          "x-age": "1740",
+          "x-backend-ttl": "3600.000",
+          "x-content-type-options": "nosniff",
+          "x-geoip-country-code": "GB",
+          "x-grace": "72h",
+          "x-host": "cms-bournemouth.cloud.contensis.com",
+          "x-varnish": "589760741 586236069",
+          "x-varnish-authentication": "skip"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 6556,
+          "compressed": true,
+          "content_ref": "f73ab20063991d5a137c9795305bd3a542346041.json"
+        }
+      }
+    ],
+    "/{id}": [
+      {
+        "timestamp": "2025-07-21T11:11:34.315Z",
+        "duration_ms": 90.72,
+        "endpoint": "/{id}",
+        "host": "bcpportal.bcpcouncil.gov.uk",
+        "method": "GET",
+        "status": 301,
+        "path_params": [
+          "checkyourbincollection"
+        ],
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+          "cookie": "[cookies present]"
+        },
+        "response_headers": {
+          "cache-control": "no-cache, no-store, must-revalidate",
+          "location": "/checkyourbincollection/",
+          "set-cookie": "[cookies present]",
+          "x-frame-options": "SAMEORIGIN",
+          "x-ms-portal-app": "site-58035987-4412-4874-ae62-997402bad775-UKs",
+          "x-ms-request-id": "1732f47b-62f6-4c54-871f-2d4824b4f8e5"
+        },
+        "redirect_to": "/checkyourbincollection/"
+      },
+      {
+        "timestamp": "2025-07-21T11:11:34.382Z",
+        "duration_ms": 247.371,
+        "endpoint": "/{id}",
+        "host": "bcpportal.bcpcouncil.gov.uk",
+        "method": "GET",
+        "status": 200,
+        "path_params": [
+          "checkyourbincollection"
+        ],
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+          "cookie": "[cookies present]"
+        },
+        "response_headers": {
+          "cache-control": "no-cache, no-store, must-revalidate",
+          "content-type": "text/html; charset=utf-8",
+          "x-frame-options": "SAMEORIGIN",
+          "x-ms-portal-app": "site-58035987-4412-4874-ae62-997402bad775-UKs",
+          "x-ms-request-id": "d8d4242b-760e-4eb7-9d50-986d4dac63af"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 222891,
+          "compressed": true,
+          "content_ref": "5c2d192f0505f7b434b1bde0e5d933a37a97cbfe.html"
+        }
+      }
+    ],
+    "/thumbnail.css": [
+      {
+        "timestamp": "2025-07-21T11:11:34.640Z",
+        "duration_ms": 113.373,
+        "endpoint": "/thumbnail.css",
+        "host": "bcpportal.bcpcouncil.gov.uk",
+        "method": "GET",
+        "status": 200,
+        "request_headers": {
+          "accept": "text/css,*/*;q=0.1",
+          "cookie": "[cookies present]",
+          "referer": "https://bcpportal.bcpcouncil.gov.uk/checkyourbincollection/"
+        },
+        "response_headers": {
+          "cache-control": "no-cache, no-store, must-revalidate",
+          "content-type": "text/html; charset=utf-8",
+          "x-frame-options": "SAMEORIGIN",
+          "x-ms-portal-app": "site-58035987-4412-4874-ae62-997402bad775-UKs",
+          "x-ms-request-id": "a8e48faf-6169-4706-ae74-901feb74f472"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 920725,
+          "compressed": true,
+          "content_ref": "356dcba4356e38c839aa09f8b2df6247694b859b.html"
+        }
+      }
+    ],
+    "/bcpglobalapis": [
+      {
+        "timestamp": "2025-07-21T11:11:34.917Z",
+        "duration_ms": 59.514,
+        "endpoint": "/bcpglobalapis",
+        "host": "bcpportal.bcpcouncil.gov.uk",
+        "method": "GET",
+        "status": 200,
+        "query_params": {
+          "api": [
+            "GetservieSettings"
+          ],
+          "productId": [
+            "b372bfc3-a62c-f011-8c4e-7c1e522e5b1a"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "cookie": "[cookies present]",
+          "referer": "https://bcpportal.bcpcouncil.gov.uk/checkyourbincollection/",
+          "x-requested-with": "XMLHttpRequest"
+        },
+        "response_headers": {
+          "cache-control": "no-cache, no-store, must-revalidate",
+          "content-type": "text/html; charset=utf-8",
+          "x-frame-options": "SAMEORIGIN",
+          "x-ms-portal-app": "site-58035987-4412-4874-ae62-997402bad775-UKs",
+          "x-ms-request-id": "2c7972c8-5181-4fd0-9d22-66a7b75da54e"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 443,
+          "compressed": true,
+          "content_ref": "fe4d00b98bcd59778060ebd02543396a22501590.html"
+        }
+      }
+    ],
+    "/resource/powerappsportal/controls/pcf_controls/{id}": [
+      {
+        "timestamp": "2025-07-21T11:11:35.020Z",
+        "duration_ms": 16.278,
+        "endpoint": "/resource/powerappsportal/controls/pcf_controls/{id}",
+        "host": "content.powerapps.com",
+        "method": "GET",
+        "status": 200,
+        "path_params": [
+          "manifest-3.21.14.json"
+        ],
+        "request_headers": {
+          "accept": "application/json, text/plain, */*",
+          "origin": "https://bcpportal.bcpcouncil.gov.uk",
+          "referer": "https://bcpportal.bcpcouncil.gov.uk/"
+        },
+        "response_headers": {
+          "cache-control": "public, max-age=31536000",
+          "content-type": "application/json",
+          "x-azure-ref": "20250721T111135Z-16896f46f99llcpfhC1LTSp5vn00000008c000000000bm4m",
+          "x-cache": "TCP_HIT",
+          "x-content-type-options": "nosniff",
+          "x-fd-int-roxy-purgeid": "74730419",
+          "x-ms-activity-vector": "00.00.00",
+          "x-ms-correlation-id": "34a99c3b-606b-42c6-8d08-614279d73de0",
+          "x-ms-islandgateway": "_prdil101sukgb0_5",
+          "x-ms-service-request-id": "fd526bdb-9851-412b-8978-1de15bd45a9e",
+          "x-ms-static-content": "ZB000000I",
+          "x-servicefabric": "NoRetry"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 2054,
+          "compressed": true,
+          "content_ref": "2753cf93fd8c0ac35a4b85772b201a439e61e22c.json"
+        }
+      }
+    ],
+    "/resource/powerappsportal/controls/mf_shared/manifest-0.2.20.json": [
+      {
+        "timestamp": "2025-07-21T11:11:35.020Z",
+        "duration_ms": 16.518,
+        "endpoint": "/resource/powerappsportal/controls/mf_shared/manifest-0.2.20.json",
+        "host": "content.powerapps.com",
+        "method": "GET",
+        "status": 200,
+        "request_headers": {
+          "accept": "application/json, text/plain, */*",
+          "origin": "https://bcpportal.bcpcouncil.gov.uk",
+          "referer": "https://bcpportal.bcpcouncil.gov.uk/"
+        },
+        "response_headers": {
+          "cache-control": "public, max-age=31536000",
+          "content-type": "application/json",
+          "x-azure-ref": "20250721T111135Z-16896f46f99llcpfhC1LTSp5vn00000008c000000000bm4n",
+          "x-cache": "TCP_HIT",
+          "x-content-type-options": "nosniff",
+          "x-fd-int-roxy-purgeid": "74730419",
+          "x-ms-activity-vector": "00.00.00",
+          "x-ms-correlation-id": "bd5d26e6-ba05-4f03-aa8c-94c735299681",
+          "x-ms-islandgateway": "_prdil101sukgb0_7",
+          "x-ms-service-request-id": "ea0f2528-f3c3-44b7-bd89-69cedfd8f17f",
+          "x-ms-static-content": "ZB0000004",
+          "x-servicefabric": "NoRetry"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 332,
+          "content_ref": "0ebc64bca7f613a1b9016679598f318974ea8be0.json"
+        }
+      }
+    ],
+    "/resource/powerappsportal/controls/host/manifest-0.9.27.json": [
+      {
+        "timestamp": "2025-07-21T11:11:35.020Z",
+        "duration_ms": 16.691,
+        "endpoint": "/resource/powerappsportal/controls/host/manifest-0.9.27.json",
+        "host": "content.powerapps.com",
+        "method": "GET",
+        "status": 200,
+        "request_headers": {
+          "accept": "application/json, text/plain, */*",
+          "origin": "https://bcpportal.bcpcouncil.gov.uk",
+          "referer": "https://bcpportal.bcpcouncil.gov.uk/"
+        },
+        "response_headers": {
+          "cache-control": "public, max-age=31536000",
+          "content-type": "application/json",
+          "x-azure-ref": "20250721T111135Z-16896f46f99llcpfhC1LTSp5vn00000008c000000000bm4p",
+          "x-cache": "TCP_HIT",
+          "x-content-type-options": "nosniff",
+          "x-fd-int-roxy-purgeid": "74730419",
+          "x-ms-activity-vector": "00.00.00",
+          "x-ms-correlation-id": "d1235aef-973c-495d-b196-00a1ef69f10b",
+          "x-ms-islandgateway": "_prdil102sukgb0_0",
+          "x-ms-service-request-id": "f5192df3-9f7c-4576-8cc8-530769d815f0",
+          "x-ms-static-content": "PI000000Y",
+          "x-servicefabric": "NoRetry"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 48,
+          "content_ref": "7fc9fff3821984818667afda53e19353506cb8c6.json"
+        }
+      }
+    ],
+    "/resource/powerappsportal/controls/pcf_loader/manifest-0.0.40.json": [
+      {
+        "timestamp": "2025-07-21T11:11:35.020Z",
+        "duration_ms": 64.841,
+        "endpoint": "/resource/powerappsportal/controls/pcf_loader/manifest-0.0.40.json",
+        "host": "content.powerapps.com",
+        "method": "GET",
+        "status": 200,
+        "request_headers": {
+          "accept": "application/json, text/plain, */*",
+          "origin": "https://bcpportal.bcpcouncil.gov.uk",
+          "referer": "https://bcpportal.bcpcouncil.gov.uk/"
+        },
+        "response_headers": {
+          "cache-control": "public, max-age=31536000",
+          "content-type": "application/json",
+          "x-azure-ref": "20250721T111135Z-16896f46f99llcpfhC1LTSp5vn00000008c000000000bm4k",
+          "x-cache": "TCP_HIT",
+          "x-content-type-options": "nosniff",
+          "x-fd-int-roxy-purgeid": "74730419",
+          "x-ms-activity-vector": "00.00.00",
+          "x-ms-correlation-id": "fb9380b0-9755-40e8-9f65-73408c2819a1",
+          "x-ms-islandgateway": "_prdil101sukgb0_2",
+          "x-ms-service-request-id": "b5b63adc-f2a9-4a7f-a237-dddedb8e461a",
+          "x-ms-static-content": "ZB000000M",
+          "x-servicefabric": "NoRetry"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 170,
+          "content_ref": "a55cbcb028a7cff05d56a30860372d3b3b4e56a9.json"
+        }
+      }
+    ],
+    "/resource/powerappsportal/controls/data_grid/{id}": [
+      {
+        "timestamp": "2025-07-21T11:11:35.021Z",
+        "duration_ms": 18.346,
+        "endpoint": "/resource/powerappsportal/controls/data_grid/{id}",
+        "host": "content.powerapps.com",
+        "method": "GET",
+        "status": 200,
+        "path_params": [
+          "manifest-1.10.16.json"
+        ],
+        "request_headers": {
+          "accept": "application/json, text/plain, */*",
+          "origin": "https://bcpportal.bcpcouncil.gov.uk",
+          "referer": "https://bcpportal.bcpcouncil.gov.uk/"
+        },
+        "response_headers": {
+          "cache-control": "public, max-age=31536000",
+          "content-type": "application/json",
+          "x-azure-ref": "20250721T111135Z-16896f46f99llcpfhC1LTSp5vn00000008c000000000bm4q",
+          "x-cache": "TCP_HIT",
+          "x-content-type-options": "nosniff",
+          "x-fd-int-roxy-purgeid": "74730419",
+          "x-ms-activity-vector": "00.00.00",
+          "x-ms-correlation-id": "f84247a8-29eb-42f9-854b-0c60bf2d40ef",
+          "x-ms-islandgateway": "_prdil102sukgb0_3",
+          "x-ms-service-request-id": "e2d789ca-18ac-4558-825a-5a6c579428f4",
+          "x-ms-static-content": "pi000000U",
+          "x-servicefabric": "NoRetry"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 290,
+          "content_ref": "8d1bc2ff8f3f9fb9a1fd5d82a7a77c78dc9a71b1.json"
+        }
+      }
+    ],
+    "/resource/powerappsportal/controls/controls_fluent_v9/manifest-0.0.43.json": [
+      {
+        "timestamp": "2025-07-21T11:11:35.021Z",
+        "duration_ms": 18.546,
+        "endpoint": "/resource/powerappsportal/controls/controls_fluent_v9/manifest-0.0.43.json",
+        "host": "content.powerapps.com",
+        "method": "GET",
+        "status": 200,
+        "request_headers": {
+          "accept": "application/json, text/plain, */*",
+          "origin": "https://bcpportal.bcpcouncil.gov.uk",
+          "referer": "https://bcpportal.bcpcouncil.gov.uk/"
+        },
+        "response_headers": {
+          "cache-control": "public, max-age=31536000",
+          "content-type": "application/json",
+          "x-azure-ref": "20250721T111135Z-16896f46f99llcpfhC1LTSp5vn00000008c000000000bm4r",
+          "x-cache": "TCP_HIT",
+          "x-content-type-options": "nosniff",
+          "x-fd-int-roxy-purgeid": "74730419",
+          "x-ms-activity-vector": "00.00.00",
+          "x-ms-correlation-id": "54695e4f-0a7b-4b0f-9e9c-28b30de18fef",
+          "x-ms-islandgateway": "_prdil101sukgb0_6",
+          "x-ms-service-request-id": "a0756290-2150-47c8-8a59-fadf9bf0f80c",
+          "x-ms-static-content": "ZB0000008",
+          "x-servicefabric": "NoRetry"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 8462,
+          "compressed": true,
+          "content_ref": "3cab316c87138a47cdf1f52bcbfedce1cb28e0da.json"
+        }
+      }
+    ],
+    "/v2/track": [
+      {
+        "timestamp": "2025-07-21T11:11:35.121Z",
+        "duration_ms": 123.376,
+        "endpoint": "/v2/track",
+        "host": "dc.services.visualstudio.com",
+        "method": "POST",
+        "status": 200,
+        "request_headers": {
+          "accept": "*/*",
+          "content-type": "application/json",
+          "origin": "https://bcpportal.bcpcouncil.gov.uk",
+          "referer": "https://bcpportal.bcpcouncil.gov.uk/"
+        },
+        "response_headers": {
+          "content-type": "application/json; charset=utf-8",
+          "x-content-type-options": "nosniff"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 96,
+          "content_ref": "512cc38e9ed871f33c875c163a9b0e75d4233465.json"
+        }
+      }
+    ],
+    "/OneCollector/1.0": [
+      {
+        "timestamp": "2025-07-21T11:11:37.819Z",
+        "duration_ms": 758.15,
+        "endpoint": "/OneCollector/1.0",
+        "host": "eu-mobile.events.data.microsoft.com",
+        "method": "POST",
+        "status": 200,
+        "query_params": {
+          "cors": [
+            "true"
+          ],
+          "content-type": [
+            "application/x-json-stream"
+          ],
+          "w": [
+            "2"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "content-type": "application/x-json-stream",
+          "origin": "https://bcpportal.bcpcouncil.gov.uk",
+          "referer": "https://bcpportal.bcpcouncil.gov.uk/"
+        },
+        "response_headers": {
+          "content-type": "application/json"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 24,
+          "content_ref": "ac7cf704563b3e32cc67770ea72a3873cc6fc146.json"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T11:11:40.839Z",
+        "duration_ms": 1778.71,
+        "endpoint": "/OneCollector/1.0",
+        "host": "eu-mobile.events.data.microsoft.com",
+        "method": "POST",
+        "status": 200,
+        "query_params": {
+          "cors": [
+            "true"
+          ],
+          "content-type": [
+            "application/x-json-stream"
+          ],
+          "w": [
+            "2"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "content-type": "application/x-json-stream",
+          "origin": "https://bcpportal.bcpcouncil.gov.uk",
+          "referer": "https://bcpportal.bcpcouncil.gov.uk/"
+        },
+        "response_headers": {
+          "content-type": "application/json"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 25,
+          "content_ref": "8024a3be03f8e8dc6b897fec9084e03e477c238a.json"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T11:11:49.678Z",
+        "duration_ms": 52.211,
+        "endpoint": "/OneCollector/1.0",
+        "host": "eu-mobile.events.data.microsoft.com",
+        "method": "POST",
+        "status": 200,
+        "query_params": {
+          "cors": [
+            "true"
+          ],
+          "content-type": [
+            "application/x-json-stream"
+          ],
+          "w": [
+            "2"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "content-type": "application/x-json-stream",
+          "origin": "https://bcpportal.bcpcouncil.gov.uk",
+          "referer": "https://bcpportal.bcpcouncil.gov.uk/"
+        },
+        "response_headers": {
+          "content-type": "application/json"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 24,
+          "content_ref": "3b183124d6780838cd323c78d3dfe744a13fd626.json"
+        }
+      }
+    ],
+    "/LLPGSearch": [
+      {
+        "timestamp": "2025-07-21T11:11:42.794Z",
+        "duration_ms": 847.8850000000001,
+        "endpoint": "/LLPGSearch",
+        "host": "apim-uks-cepprod-int-01.azure-api.net",
+        "method": "GET",
+        "status": 200,
+        "query_params": {
+          "searchText": [
+            "BH1 1AR"
+          ],
+          "Subscription-Key": [
+            "f5a8f110545e4d009411c908b25b7596"
+          ]
+        },
+        "request_headers": {
+          "accept": "application/json, text/javascript, */*; q=0.01",
+          "origin": "https://bcpportal.bcpcouncil.gov.uk",
+          "referer": "https://bcpportal.bcpcouncil.gov.uk/"
+        },
+        "response_headers": {
+          "cache-control": "private, max-age=0",
+          "content-type": "application/json"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 89949,
+          "content_ref": "834b2cdd2909e76c65bf182ccb0d056db5fe1506.json"
+        }
+      }
+    ],
+    "/_api/bcp_addresses": [
+      {
+        "timestamp": "2025-07-21T11:11:46.508Z",
+        "duration_ms": 136.12800000000001,
+        "endpoint": "/_api/bcp_addresses",
+        "host": "bcpportal.bcpcouncil.gov.uk",
+        "method": "GET",
+        "status": 200,
+        "query_params": {
+          "$filter": [
+            "statecode eq 0 and bcp_uprn eq '10090819773'"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "cookie": "[cookies present]",
+          "referer": "https://bcpportal.bcpcouncil.gov.uk/checkyourbincollection/",
+          "x-requested-with": "XMLHttpRequest"
+        },
+        "response_headers": {
+          "cache-control": "no-cache",
+          "content-type": "application/json; charset=utf-8",
+          "x-frame-options": "SAMEORIGIN",
+          "x-ms-cds-service-request-id": "c52ba9b0-5e12-475b-9daf-46fcaa9cd090",
+          "x-ms-portal-app": "site-58035987-4412-4874-ae62-997402bad775-UKs",
+          "x-ms-request-id": "bb139ecf-c585-4c22-a7af-58388c8cb8d9"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 4330,
+          "compressed": true,
+          "content_ref": "b4a9d6ee6c95f4110dd824a472c4dd1675553e0a.json"
+        }
+      }
+    ],
+    "/NLPGSearch": [
+      {
+        "timestamp": "2025-07-21T11:11:46.647Z",
+        "duration_ms": 733.0740000000001,
+        "endpoint": "/NLPGSearch",
+        "host": "apim-uks-cepprod-int-01.azure-api.net",
+        "method": "GET",
+        "status": 200,
+        "query_params": {
+          "searchText": [
+            "10090819773"
+          ],
+          "Subscription-Key": [
+            "f5a8f110545e4d009411c908b25b7596"
+          ]
+        },
+        "request_headers": {
+          "accept": "application/json, text/javascript, */*; q=0.01",
+          "origin": "https://bcpportal.bcpcouncil.gov.uk",
+          "referer": "https://bcpportal.bcpcouncil.gov.uk/"
+        },
+        "response_headers": {
+          "cache-control": "private, max-age=0",
+          "content-type": "application/json"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 6344,
+          "content_ref": "d8b041fdad8ddcee7735b2bbd8ff8d4c07a6d693.json"
+        }
+      }
+    ],
+    "/workflows/{id}/triggers/manual/paths/invoke": [
+      {
+        "timestamp": "2025-07-21T11:11:46.931Z",
+        "duration_ms": 811.42,
+        "endpoint": "/workflows/{id}/triggers/manual/paths/invoke",
+        "host": "prod-17.uksouth.logic.azure.com",
+        "method": "POST",
+        "status": 200,
+        "path_params": [
+          "58253d7b7d754447acf9fe5fcf76f493"
+        ],
+        "query_params": {
+          "api-version": [
+            "2016-06-01"
+          ],
+          "sp": [
+            "/triggers/manual/run"
+          ],
+          "sv": [
+            "1.0"
+          ],
+          "sig": [
+            "TAvYIUFj6dzaP90XQCm2ElY6Cd34ze05I3ba7LKTiBs"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "content-type": "application/json",
+          "origin": "https://bcpportal.bcpcouncil.gov.uk",
+          "referer": "https://bcpportal.bcpcouncil.gov.uk/"
+        },
+        "response_headers": {
+          "cache-control": "no-cache",
+          "content-type": "text/plain; charset=utf-8",
+          "x-ms-client-tracking-id": "08584485105784129565556751383CU31",
+          "x-ms-correlation-id": "8aff9ad9-68e8-4585-a1cf-794e24271507",
+          "x-ms-execution-location": "uksouth",
+          "x-ms-ratelimit-burst-remaining-workflow-writes": "1727",
+          "x-ms-ratelimit-remaining-workflow-download-contentsize": "123884901",
+          "x-ms-ratelimit-remaining-workflow-upload-contentsize": "123892672",
+          "x-ms-ratelimit-time-remaining-directapirequests": "11536321",
+          "x-ms-request-id": "uksouth:8aff9ad9-68e8-4585-a1cf-794e24271507",
+          "x-ms-tracking-id": "8aff9ad9-68e8-4585-a1cf-794e24271507",
+          "x-ms-trigger-history-name": "08584485105784129565556751383CU31",
+          "x-ms-workflow-id": "58253d7b7d754447acf9fe5fcf76f493",
+          "x-ms-workflow-name": "04f55797-e891-459d-5969-13e3efdb16b4",
+          "x-ms-workflow-run-id": "08584485105784129565556751383CU31",
+          "x-ms-workflow-system-id": "/locations/uksouth/scaleunits/prod-17/workflows/58253d7b7d754447acf9fe5fcf76f493",
+          "x-ms-workflow-version": "08584520493197261033"
+        }
+      }
+    ]
+  }
 }

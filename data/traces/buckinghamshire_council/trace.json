@@ -1,179 +1,589 @@
 {
-  "metadata": {
-    "trace_name": "buckinghamshire_council",
-    "processed_at": "2025-08-26 18:44:24",
-    "workflow_steps_count": 6,
-    "navigation_events_count": 12
-  },
-  "scraping_patterns": {
-    "login_detected": false,
-    "form_submissions": 4,
-    "navigation_count": 1,
-    "unique_domains": [
-      "iapp.itouchvision.com",
-      "www.buckinghamshire.gov.uk",
-      "itouchvision.app",
-      "v4in1-si.click4assistance.co.uk"
-    ],
-    "api_endpoints": [
-      "https://iapp.itouchvision.com/iappcollectionday/collection-day/%PUBLIC_URL%/manifest.json"
-    ],
-    "data_extraction_indicators": []
-  },
-  "workflow_steps": [
+  "entries": [
     {
-      "action": "goto",
-      "target": "https://www.buckinghamshire.gov.uk/waste-and-recycling/household-bins-and-recycling/",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
-    },
-    {
-      "action": "click",
-      "target": "aria-ref=e144 >> internal:describe=\"Check your bin collection day\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
-    },
-    {
-      "action": "click",
-      "target": "aria-ref=e54 >> internal:describe=\"Check now\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
-    },
-    {
-      "action": "fill",
-      "target": "aria-ref=e28 >> internal:describe=\"Enter a postcode\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0,
-      "value": "HP10 0AA"
-    },
-    {
-      "action": "click",
-      "target": "aria-ref=e30 >> internal:describe=\"Find\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
-    },
-    {
-      "action": "selectOption",
-      "target": "aria-ref=e61 >> internal:describe=\"Select an address\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0,
-      "value": null
-    }
-  ],
-  "navigation_events": [
-    {
-      "url": "https://www.buckinghamshire.gov.uk/waste-and-recycling/household-bins-and-recycling/",
+      "timestamp": "2025-07-21T10:35:40.966Z",
+      "duration_ms": 80.23,
+      "endpoint": "/waste-and-recycling/{id}",
+      "host": "www.buckinghamshire.gov.uk",
       "method": "GET",
       "status": 301,
-      "redirect_url": "https://www.buckinghamshire.gov.uk/waste-and-recycling/check-what-you-can-put-in-your-bins/",
-      "mime_type": "text/html; charset=utf-8",
-      "size": -1,
-      "timestamp": "2025-07-21T10:35:40.966Z"
+      "path_params": [
+        "household-bins-and-recycling"
+      ],
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7"
+      },
+      "response_headers": {
+        "cache-control": "max-age=14400",
+        "content-type": "text/html; charset=utf-8",
+        "location": "https://www.buckinghamshire.gov.uk/waste-and-recycling/check-what-you-can-put-in-your-bins/",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "DENY"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": -1
+      },
+      "redirect_to": "https://www.buckinghamshire.gov.uk/waste-and-recycling/check-what-you-can-put-in-your-bins/"
     },
     {
-      "url": "https://www.buckinghamshire.gov.uk/waste-and-recycling/check-what-you-can-put-in-your-bins/",
+      "timestamp": "2025-07-21T10:35:41.034Z",
+      "duration_ms": 205.19400000000002,
+      "endpoint": "/waste-and-recycling/{id}",
+      "host": "www.buckinghamshire.gov.uk",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "text/html; charset=utf-8",
-      "size": 79144,
-      "timestamp": "2025-07-21T10:35:41.034Z"
+      "path_params": [
+        "check-what-you-can-put-in-your-bins"
+      ],
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7"
+      },
+      "response_headers": {
+        "cache-control": "s-maxage=600, stale-while-revalidate=30, max-age=0, no-cache, no-store, must-revalidate, private",
+        "content-type": "text/html; charset=utf-8",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "DENY"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 79144,
+        "compressed": true,
+        "content_ref": "209d8fbe1ce3b75395bba89a876131b45d16585a.html"
+      }
     },
     {
-      "url": "https://www.buckinghamshire.gov.uk/site.webmanifest",
+      "timestamp": "2025-07-21T10:35:41.523Z",
+      "duration_ms": 59.695,
+      "endpoint": "/site.webmanifest",
+      "host": "www.buckinghamshire.gov.uk",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/octet-stream",
-      "size": 426,
-      "timestamp": "2025-07-21T10:35:41.523Z"
+      "request_headers": {
+        "accept": "*/*",
+        "referer": "https://www.buckinghamshire.gov.uk/waste-and-recycling/check-what-you-can-put-in-your-bins/"
+      },
+      "response_headers": {
+        "cache-control": "public, max-age=14400",
+        "content-type": "application/octet-stream",
+        "x-content-type-options": "nosniff"
+      }
     },
     {
-      "url": "https://www.buckinghamshire.gov.uk/waste-and-recycling/find-out-when-its-your-bin-collection/",
+      "timestamp": "2025-07-21T10:35:42.495Z",
+      "duration_ms": 26.377000000000002,
+      "endpoint": "/waste-and-recycling/{id}",
+      "host": "www.buckinghamshire.gov.uk",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "text/html; charset=utf-8",
-      "size": 53823,
-      "timestamp": "2025-07-21T10:35:42.495Z"
+      "path_params": [
+        "find-out-when-its-your-bin-collection"
+      ],
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+        "referer": "https://www.buckinghamshire.gov.uk/waste-and-recycling/check-what-you-can-put-in-your-bins/"
+      },
+      "response_headers": {
+        "cache-control": "public, max-age=14400, s-maxage=600, stale-while-revalidate=30",
+        "content-type": "text/html; charset=utf-8",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "DENY"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 53823,
+        "compressed": true,
+        "content_ref": "a6d2ff7e6ec521c692d4a6bee4fa2a7fa857be05.html"
+      }
     },
     {
-      "url": "https://v4in1-si.click4assistance.co.uk/SI.js",
-      "method": "GET",
-      "status": 304,
-      "redirect_url": null,
-      "mime_type": "x-unknown",
-      "size": -1,
-      "timestamp": "2025-07-21T10:35:42.579Z"
-    },
-    {
-      "url": "https://www.buckinghamshire.gov.uk/site.webmanifest",
+      "timestamp": "2025-07-21T10:35:42.580Z",
+      "duration_ms": 0.8220000000000001,
+      "endpoint": "/site.webmanifest",
+      "host": "www.buckinghamshire.gov.uk",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/octet-stream",
-      "size": 426,
-      "timestamp": "2025-07-21T10:35:42.580Z"
+      "request_headers": {
+        "referer": "https://www.buckinghamshire.gov.uk/waste-and-recycling/find-out-when-its-your-bin-collection/"
+      },
+      "response_headers": {
+        "x-content-type-options": "nosniff",
+        "content-type": "application/octet-stream",
+        "cache-control": "public, max-age=14400"
+      }
     },
     {
-      "url": "https://iapp.itouchvision.com/iappcollectionday/collection-day/?uuid=FA353FC74600CBE61BE409534D00A8EC09BDA3AC&lang=en",
+      "timestamp": "2025-07-21T10:35:44.750Z",
+      "duration_ms": 42.52499999999999,
+      "endpoint": "/iappcollectionday/collection-day",
+      "host": "iapp.itouchvision.com",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "text/html; charset=UTF-8",
-      "size": 795,
-      "timestamp": "2025-07-21T10:35:44.750Z"
+      "query_params": {
+        "uuid": [
+          "FA353FC74600CBE61BE409534D00A8EC09BDA3AC"
+        ],
+        "lang": [
+          "en"
+        ]
+      },
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7"
+      },
+      "response_headers": {
+        "content-type": "text/html; charset=UTF-8",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "SAMEORIGIN",
+        "x-xss-protection": "1; mode=block"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 795,
+        "content_ref": "851c59f9da628be16601528219f2f73e6cb74282.html"
+      }
     },
     {
-      "url": "https://itouchvision.app/portal/itouchvision/gdsv5/util/igetclientdetails",
-      "method": "POST",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "text/html; charset=UTF-8",
-      "size": 576,
-      "timestamp": "2025-07-21T10:35:45.022Z"
-    },
-    {
-      "url": "https://iapp.itouchvision.com/iappcollectionday/collection-day/%PUBLIC_URL%/manifest.json",
+      "timestamp": "2025-07-21T10:35:45.023Z",
+      "duration_ms": 40.79,
+      "endpoint": "/iappcollectionday/collection-day/%PUBLIC_URL%/manifest.json",
+      "host": "iapp.itouchvision.com",
       "method": "GET",
       "status": 400,
-      "redirect_url": null,
-      "mime_type": "text/html; charset=iso-8859-1",
-      "size": 226,
-      "timestamp": "2025-07-21T10:35:45.023Z"
+      "request_headers": {
+        "accept": "*/*"
+      },
+      "response_headers": {
+        "content-type": "text/html; charset=iso-8859-1",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "SAMEORIGIN",
+        "x-xss-protection": "1; mode=block"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 226,
+        "content_ref": "4a785571983375e723ec42e3748d6a0fdfa1716e.html"
+      }
     },
     {
-      "url": "https://itouchvision.app/portal/itouchvision/gdsv5/theme/getthemesettings",
+      "timestamp": "2025-07-21T10:35:45.022Z",
+      "duration_ms": 309.462,
+      "endpoint": "/portal/itouchvision/gdsv5/util/igetclientdetails",
+      "host": "itouchvision.app",
       "method": "POST",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "text/html; charset=UTF-8",
-      "size": 3936,
-      "timestamp": "2025-07-21T10:35:45.298Z"
+      "request_headers": {
+        "accept": "*/*",
+        "content-type": "application/json; charset=UTF-8",
+        "origin": "https://iapp.itouchvision.com"
+      },
+      "response_headers": {
+        "content-type": "text/html; charset=UTF-8",
+        "x-content-type-options": "nosniff",
+        "x-oracle-dms-ecid": "1faddc39-2873-419a-b042-bb915767f581-01a08bdf",
+        "x-oracle-dms-rid": "0",
+        "x-xss-protection": "1; mode=block"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 576,
+        "content_ref": "658a6ea325d11c4c6dd1df4bd1383caa524fe181.html"
+      }
     },
     {
-      "url": "https://itouchvision.app/portal/itouchvision/kmbd/address",
+      "timestamp": "2025-07-21T10:35:45.298Z",
+      "duration_ms": 252.564,
+      "endpoint": "/portal/itouchvision/gdsv5/theme/getthemesettings",
+      "host": "itouchvision.app",
       "method": "POST",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "text/html; charset=UTF-8",
-      "size": 7840,
-      "timestamp": "2025-07-21T10:35:49.407Z"
+      "request_headers": {
+        "accept": "*/*",
+        "content-type": "application/json; charset=UTF-8",
+        "origin": "https://iapp.itouchvision.com"
+      },
+      "response_headers": {
+        "content-type": "text/html; charset=UTF-8",
+        "x-content-type-options": "nosniff",
+        "x-oracle-dms-ecid": "1faddc39-2873-419a-b042-bb915767f581-01a08be2",
+        "x-oracle-dms-rid": "0",
+        "x-xss-protection": "1; mode=block"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 3936,
+        "content_ref": "f8a84cced3eb91ac03ceb2b2d85663edacaa875a.html"
+      }
     },
     {
-      "url": "https://itouchvision.app/portal/itouchvision/kmbd/collectionDay",
+      "timestamp": "2025-07-21T10:35:49.407Z",
+      "duration_ms": 108.996,
+      "endpoint": "/portal/itouchvision/kmbd/address",
+      "host": "itouchvision.app",
       "method": "POST",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "text/html; charset=UTF-8",
-      "size": 1344,
-      "timestamp": "2025-07-21T10:35:52.107Z"
+      "request_headers": {
+        "accept": "*/*",
+        "content-type": "application/json; charset=UTF-8",
+        "origin": "https://iapp.itouchvision.com"
+      },
+      "response_headers": {
+        "content-type": "text/html; charset=UTF-8",
+        "x-content-type-options": "nosniff",
+        "x-oracle-dms-ecid": "1faddc39-2873-419a-b042-bb915767f581-01a08c28",
+        "x-oracle-dms-rid": "0",
+        "x-xss-protection": "1; mode=block"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 7840,
+        "content_ref": "d6f53317c07264b93bd1ae4a33248f29ed6e1fd3.html"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T10:35:52.107Z",
+      "duration_ms": 393.846,
+      "endpoint": "/portal/itouchvision/kmbd/collectionDay",
+      "host": "itouchvision.app",
+      "method": "POST",
+      "status": 200,
+      "request_headers": {
+        "accept": "*/*",
+        "content-type": "application/json; charset=UTF-8",
+        "origin": "https://iapp.itouchvision.com"
+      },
+      "response_headers": {
+        "content-type": "text/html; charset=UTF-8",
+        "x-content-type-options": "nosniff",
+        "x-oracle-dms-ecid": "1faddc39-2873-419a-b042-bb915767f581-01a08c5f",
+        "x-oracle-dms-rid": "0",
+        "x-xss-protection": "1; mode=block"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 1344,
+        "content_ref": "cdb3ca0697bf972bcf0b6abb7191f35166649bd6.html"
+      }
     }
-  ]
+  ],
+  "analysis": {
+    "total_requests": 11,
+    "unique_endpoints": 8,
+    "methods_used": [
+      "GET",
+      "POST"
+    ],
+    "status_codes": {
+      "301": 1,
+      "200": 9,
+      "400": 1
+    },
+    "endpoints_with_params": [
+      {
+        "endpoint": "/waste-and-recycling/{id}",
+        "method": "GET",
+        "query_params": [],
+        "path_params": true
+      },
+      {
+        "endpoint": "/iappcollectionday/collection-day",
+        "method": "GET",
+        "query_params": [
+          "uuid",
+          "lang"
+        ],
+        "path_params": false
+      }
+    ],
+    "redirects": [
+      {
+        "from": "/waste-and-recycling/{id}",
+        "to": "https://www.buckinghamshire.gov.uk/waste-and-recycling/check-what-you-can-put-in-your-bins/",
+        "status": 301
+      }
+    ],
+    "api_calls": [],
+    "form_submissions": []
+  },
+  "grouped_by_endpoint": {
+    "/waste-and-recycling/{id}": [
+      {
+        "timestamp": "2025-07-21T10:35:40.966Z",
+        "duration_ms": 80.23,
+        "endpoint": "/waste-and-recycling/{id}",
+        "host": "www.buckinghamshire.gov.uk",
+        "method": "GET",
+        "status": 301,
+        "path_params": [
+          "household-bins-and-recycling"
+        ],
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7"
+        },
+        "response_headers": {
+          "cache-control": "max-age=14400",
+          "content-type": "text/html; charset=utf-8",
+          "location": "https://www.buckinghamshire.gov.uk/waste-and-recycling/check-what-you-can-put-in-your-bins/",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "DENY"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": -1
+        },
+        "redirect_to": "https://www.buckinghamshire.gov.uk/waste-and-recycling/check-what-you-can-put-in-your-bins/"
+      },
+      {
+        "timestamp": "2025-07-21T10:35:41.034Z",
+        "duration_ms": 205.19400000000002,
+        "endpoint": "/waste-and-recycling/{id}",
+        "host": "www.buckinghamshire.gov.uk",
+        "method": "GET",
+        "status": 200,
+        "path_params": [
+          "check-what-you-can-put-in-your-bins"
+        ],
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7"
+        },
+        "response_headers": {
+          "cache-control": "s-maxage=600, stale-while-revalidate=30, max-age=0, no-cache, no-store, must-revalidate, private",
+          "content-type": "text/html; charset=utf-8",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "DENY"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 79144,
+          "compressed": true,
+          "content_ref": "209d8fbe1ce3b75395bba89a876131b45d16585a.html"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T10:35:42.495Z",
+        "duration_ms": 26.377000000000002,
+        "endpoint": "/waste-and-recycling/{id}",
+        "host": "www.buckinghamshire.gov.uk",
+        "method": "GET",
+        "status": 200,
+        "path_params": [
+          "find-out-when-its-your-bin-collection"
+        ],
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+          "referer": "https://www.buckinghamshire.gov.uk/waste-and-recycling/check-what-you-can-put-in-your-bins/"
+        },
+        "response_headers": {
+          "cache-control": "public, max-age=14400, s-maxage=600, stale-while-revalidate=30",
+          "content-type": "text/html; charset=utf-8",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "DENY"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 53823,
+          "compressed": true,
+          "content_ref": "a6d2ff7e6ec521c692d4a6bee4fa2a7fa857be05.html"
+        }
+      }
+    ],
+    "/site.webmanifest": [
+      {
+        "timestamp": "2025-07-21T10:35:41.523Z",
+        "duration_ms": 59.695,
+        "endpoint": "/site.webmanifest",
+        "host": "www.buckinghamshire.gov.uk",
+        "method": "GET",
+        "status": 200,
+        "request_headers": {
+          "accept": "*/*",
+          "referer": "https://www.buckinghamshire.gov.uk/waste-and-recycling/check-what-you-can-put-in-your-bins/"
+        },
+        "response_headers": {
+          "cache-control": "public, max-age=14400",
+          "content-type": "application/octet-stream",
+          "x-content-type-options": "nosniff"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T10:35:42.580Z",
+        "duration_ms": 0.8220000000000001,
+        "endpoint": "/site.webmanifest",
+        "host": "www.buckinghamshire.gov.uk",
+        "method": "GET",
+        "status": 200,
+        "request_headers": {
+          "referer": "https://www.buckinghamshire.gov.uk/waste-and-recycling/find-out-when-its-your-bin-collection/"
+        },
+        "response_headers": {
+          "x-content-type-options": "nosniff",
+          "content-type": "application/octet-stream",
+          "cache-control": "public, max-age=14400"
+        }
+      }
+    ],
+    "/iappcollectionday/collection-day": [
+      {
+        "timestamp": "2025-07-21T10:35:44.750Z",
+        "duration_ms": 42.52499999999999,
+        "endpoint": "/iappcollectionday/collection-day",
+        "host": "iapp.itouchvision.com",
+        "method": "GET",
+        "status": 200,
+        "query_params": {
+          "uuid": [
+            "FA353FC74600CBE61BE409534D00A8EC09BDA3AC"
+          ],
+          "lang": [
+            "en"
+          ]
+        },
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7"
+        },
+        "response_headers": {
+          "content-type": "text/html; charset=UTF-8",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "SAMEORIGIN",
+          "x-xss-protection": "1; mode=block"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 795,
+          "content_ref": "851c59f9da628be16601528219f2f73e6cb74282.html"
+        }
+      }
+    ],
+    "/iappcollectionday/collection-day/%PUBLIC_URL%/manifest.json": [
+      {
+        "timestamp": "2025-07-21T10:35:45.023Z",
+        "duration_ms": 40.79,
+        "endpoint": "/iappcollectionday/collection-day/%PUBLIC_URL%/manifest.json",
+        "host": "iapp.itouchvision.com",
+        "method": "GET",
+        "status": 400,
+        "request_headers": {
+          "accept": "*/*"
+        },
+        "response_headers": {
+          "content-type": "text/html; charset=iso-8859-1",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "SAMEORIGIN",
+          "x-xss-protection": "1; mode=block"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 226,
+          "content_ref": "4a785571983375e723ec42e3748d6a0fdfa1716e.html"
+        }
+      }
+    ],
+    "/portal/itouchvision/gdsv5/util/igetclientdetails": [
+      {
+        "timestamp": "2025-07-21T10:35:45.022Z",
+        "duration_ms": 309.462,
+        "endpoint": "/portal/itouchvision/gdsv5/util/igetclientdetails",
+        "host": "itouchvision.app",
+        "method": "POST",
+        "status": 200,
+        "request_headers": {
+          "accept": "*/*",
+          "content-type": "application/json; charset=UTF-8",
+          "origin": "https://iapp.itouchvision.com"
+        },
+        "response_headers": {
+          "content-type": "text/html; charset=UTF-8",
+          "x-content-type-options": "nosniff",
+          "x-oracle-dms-ecid": "1faddc39-2873-419a-b042-bb915767f581-01a08bdf",
+          "x-oracle-dms-rid": "0",
+          "x-xss-protection": "1; mode=block"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 576,
+          "content_ref": "658a6ea325d11c4c6dd1df4bd1383caa524fe181.html"
+        }
+      }
+    ],
+    "/portal/itouchvision/gdsv5/theme/getthemesettings": [
+      {
+        "timestamp": "2025-07-21T10:35:45.298Z",
+        "duration_ms": 252.564,
+        "endpoint": "/portal/itouchvision/gdsv5/theme/getthemesettings",
+        "host": "itouchvision.app",
+        "method": "POST",
+        "status": 200,
+        "request_headers": {
+          "accept": "*/*",
+          "content-type": "application/json; charset=UTF-8",
+          "origin": "https://iapp.itouchvision.com"
+        },
+        "response_headers": {
+          "content-type": "text/html; charset=UTF-8",
+          "x-content-type-options": "nosniff",
+          "x-oracle-dms-ecid": "1faddc39-2873-419a-b042-bb915767f581-01a08be2",
+          "x-oracle-dms-rid": "0",
+          "x-xss-protection": "1; mode=block"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 3936,
+          "content_ref": "f8a84cced3eb91ac03ceb2b2d85663edacaa875a.html"
+        }
+      }
+    ],
+    "/portal/itouchvision/kmbd/address": [
+      {
+        "timestamp": "2025-07-21T10:35:49.407Z",
+        "duration_ms": 108.996,
+        "endpoint": "/portal/itouchvision/kmbd/address",
+        "host": "itouchvision.app",
+        "method": "POST",
+        "status": 200,
+        "request_headers": {
+          "accept": "*/*",
+          "content-type": "application/json; charset=UTF-8",
+          "origin": "https://iapp.itouchvision.com"
+        },
+        "response_headers": {
+          "content-type": "text/html; charset=UTF-8",
+          "x-content-type-options": "nosniff",
+          "x-oracle-dms-ecid": "1faddc39-2873-419a-b042-bb915767f581-01a08c28",
+          "x-oracle-dms-rid": "0",
+          "x-xss-protection": "1; mode=block"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 7840,
+          "content_ref": "d6f53317c07264b93bd1ae4a33248f29ed6e1fd3.html"
+        }
+      }
+    ],
+    "/portal/itouchvision/kmbd/collectionDay": [
+      {
+        "timestamp": "2025-07-21T10:35:52.107Z",
+        "duration_ms": 393.846,
+        "endpoint": "/portal/itouchvision/kmbd/collectionDay",
+        "host": "itouchvision.app",
+        "method": "POST",
+        "status": 200,
+        "request_headers": {
+          "accept": "*/*",
+          "content-type": "application/json; charset=UTF-8",
+          "origin": "https://iapp.itouchvision.com"
+        },
+        "response_headers": {
+          "content-type": "text/html; charset=UTF-8",
+          "x-content-type-options": "nosniff",
+          "x-oracle-dms-ecid": "1faddc39-2873-419a-b042-bb915767f581-01a08c5f",
+          "x-oracle-dms-rid": "0",
+          "x-xss-protection": "1; mode=block"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 1344,
+          "content_ref": "cdb3ca0697bf972bcf0b6abb7191f35166649bd6.html"
+        }
+      }
+    ]
+  }
 }

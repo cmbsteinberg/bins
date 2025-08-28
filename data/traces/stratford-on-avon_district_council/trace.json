@@ -1,470 +1,362 @@
 {
-  "metadata": {
-    "trace_name": "stratford-on-avon_district_council",
-    "processed_at": "2025-08-26 18:44:24",
-    "workflow_steps_count": 6,
-    "navigation_events_count": 44
-  },
-  "scraping_patterns": {
-    "login_detected": false,
-    "form_submissions": 1,
-    "navigation_count": 1,
-    "unique_domains": [
-      "www.stratford.gov.uk",
-      "api.stratford.gov.uk"
-    ],
-    "api_endpoints": [],
-    "data_extraction_indicators": []
-  },
-  "workflow_steps": [
+  "entries": [
     {
-      "action": "goto",
-      "target": "https://www.stratford.gov.uk/waste-recycling/help-with-your-collection.cfm",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
-    },
-    {
-      "action": "click",
-      "target": "aria-ref=e89 >> internal:describe=\"Bin calendar \uf054\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
-    },
-    {
-      "action": "fill",
-      "target": "aria-ref=e89 >> internal:describe=\"textbox\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0,
-      "value": "B49 5AE"
-    },
-    {
-      "action": "click",
-      "target": "aria-ref=e91 >> internal:describe=\"Search \uf002\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
-    },
-    {
-      "action": "click",
-      "target": "aria-ref=e189 >> internal:describe=\"1B MARKET PLACE HIGH STREET ALCESTER WARWICKSHIRE B49 5AE\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
-    },
-    {
-      "action": "click",
-      "target": "aria-ref=e96 >> internal:describe=\"View your bin collections \uf073\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
-    }
-  ],
-  "navigation_events": [
-    {
-      "url": "https://www.stratford.gov.uk/waste-recycling/help-with-your-collection.cfm",
+      "timestamp": "2025-07-21T08:03:56.628Z",
+      "duration_ms": 146.512,
+      "endpoint": "/waste-recycling/{id}",
+      "host": "www.stratford.gov.uk",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "text/html;charset=UTF-8",
-      "size": 28362,
-      "timestamp": "2025-07-21T08:03:56.628Z"
-    },
-    {
-      "url": "https://www.stratford.gov.uk/css/fa/webfonts/fa-solid-900.woff2",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/font-woff2",
-      "size": 352752,
-      "timestamp": "2025-07-21T08:03:56.830Z"
-    },
-    {
-      "url": "https://www.stratford.gov.uk/css/fa/webfonts/fa-regular-400.woff2",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/font-woff2",
-      "size": 423964,
-      "timestamp": "2025-07-21T08:03:56.830Z"
-    },
-    {
-      "url": "https://www.stratford.gov.uk/css/fa/webfonts/fa-brands-400.woff2",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/font-woff2",
-      "size": 118976,
-      "timestamp": "2025-07-21T08:03:56.831Z"
-    },
-    {
-      "url": "https://www.stratford.gov.uk/css/fa/webfonts/fa-duotone-900.woff2",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/font-woff2",
-      "size": 468556,
-      "timestamp": "2025-07-21T08:03:56.831Z"
-    },
-    {
-      "url": "https://www.stratford.gov.uk/bins/",
-      "method": "GET",
-      "status": 302,
-      "redirect_url": "https://www.stratford.gov.uk/waste-recycling/when-we-collect.cfm?frmAlias=/bins/",
-      "mime_type": "text/html;charset=UTF-8",
-      "size": -1,
-      "timestamp": "2025-07-21T08:03:58.325Z"
-    },
-    {
-      "url": "https://www.stratford.gov.uk/waste-recycling/when-we-collect.cfm?frmAlias=/bins/",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "text/html;charset=UTF-8",
-      "size": 29750,
-      "timestamp": "2025-07-21T08:03:58.360Z"
-    },
-    {
-      "url": "https://www.stratford.gov.uk/css/bootstrap5.min.css",
-      "method": "GET",
-      "status": 304,
-      "redirect_url": null,
-      "mime_type": "x-unknown",
-      "size": -1,
-      "timestamp": "2025-07-21T08:03:58.434Z"
-    },
-    {
-      "url": "https://www.stratford.gov.uk/css/fa/css/v6-all.css",
-      "method": "GET",
-      "status": 304,
-      "redirect_url": null,
-      "mime_type": "x-unknown",
-      "size": -1,
-      "timestamp": "2025-07-21T08:03:58.434Z"
-    },
-    {
-      "url": "https://www.stratford.gov.uk/css/main.css",
-      "method": "GET",
-      "status": 304,
-      "redirect_url": null,
-      "mime_type": "x-unknown",
-      "size": -1,
-      "timestamp": "2025-07-21T08:03:58.434Z"
-    },
-    {
-      "url": "https://www.stratford.gov.uk/css/accessibility-modal.min.css",
-      "method": "GET",
-      "status": 304,
-      "redirect_url": null,
-      "mime_type": "x-unknown",
-      "size": -1,
-      "timestamp": "2025-07-21T08:03:58.435Z"
-    },
-    {
-      "url": "https://www.stratford.gov.uk/css/print.min.css",
-      "method": "GET",
-      "status": 304,
-      "redirect_url": null,
-      "mime_type": "x-unknown",
-      "size": -1,
-      "timestamp": "2025-07-21T08:03:58.435Z"
-    },
-    {
-      "url": "https://www.stratford.gov.uk/img/sdc-round-logo-white-small.png",
-      "method": "GET",
-      "status": 304,
-      "redirect_url": null,
-      "mime_type": "x-unknown",
-      "size": -1,
-      "timestamp": "2025-07-21T08:03:58.435Z"
-    },
-    {
-      "url": "https://www.stratford.gov.uk/js/jquery-3.7.1.min.js",
-      "method": "GET",
-      "status": 304,
-      "redirect_url": null,
-      "mime_type": "x-unknown",
-      "size": -1,
-      "timestamp": "2025-07-21T08:03:58.435Z"
-    },
-    {
-      "url": "https://www.stratford.gov.uk/js/slick/slick.min.js",
-      "method": "GET",
-      "status": 304,
-      "redirect_url": null,
-      "mime_type": "x-unknown",
-      "size": -1,
-      "timestamp": "2025-07-21T08:03:58.435Z"
-    },
-    {
-      "url": "https://www.stratford.gov.uk/js/jquery-ui.min.js",
-      "method": "GET",
-      "status": 304,
-      "redirect_url": null,
-      "mime_type": "x-unknown",
-      "size": -1,
-      "timestamp": "2025-07-21T08:03:58.435Z"
-    },
-    {
-      "url": "https://www.stratford.gov.uk/js/main.js",
-      "method": "GET",
-      "status": 304,
-      "redirect_url": null,
-      "mime_type": "x-unknown",
-      "size": -1,
-      "timestamp": "2025-07-21T08:03:58.436Z"
-    },
-    {
-      "url": "https://www.stratford.gov.uk/js/search.min.js",
-      "method": "GET",
-      "status": 304,
-      "redirect_url": null,
-      "mime_type": "x-unknown",
-      "size": -1,
-      "timestamp": "2025-07-21T08:03:58.436Z"
-    },
-    {
-      "url": "https://www.stratford.gov.uk/js/bootstrap5.min.js",
-      "method": "GET",
-      "status": 304,
-      "redirect_url": null,
-      "mime_type": "x-unknown",
-      "size": -1,
-      "timestamp": "2025-07-21T08:03:58.436Z"
-    },
-    {
-      "url": "https://www.stratford.gov.uk/js/chatbot.js",
-      "method": "GET",
-      "status": 304,
-      "redirect_url": null,
-      "mime_type": "x-unknown",
-      "size": -1,
-      "timestamp": "2025-07-21T08:03:58.436Z"
-    },
-    {
-      "url": "https://www.stratford.gov.uk/js/content.min.js",
-      "method": "GET",
-      "status": 304,
-      "redirect_url": null,
-      "mime_type": "x-unknown",
-      "size": -1,
-      "timestamp": "2025-07-21T08:03:58.436Z"
-    },
-    {
-      "url": "https://www.stratford.gov.uk/css/fa/webfonts/fa-brands-400.woff2",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/font-woff2",
-      "size": -1,
-      "timestamp": "2025-07-21T08:03:58.462Z"
-    },
-    {
-      "url": "https://www.stratford.gov.uk/css/fa/webfonts/fa-duotone-900.woff2",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/font-woff2",
-      "size": -1,
-      "timestamp": "2025-07-21T08:03:58.463Z"
-    },
-    {
-      "url": "https://www.stratford.gov.uk/css/fa/webfonts/fa-regular-400.woff2",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/font-woff2",
-      "size": -1,
-      "timestamp": "2025-07-21T08:03:58.464Z"
-    },
-    {
-      "url": "https://www.stratford.gov.uk/css/fa/webfonts/fa-solid-900.woff2",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/font-woff2",
-      "size": -1,
-      "timestamp": "2025-07-21T08:03:58.464Z"
-    },
-    {
-      "url": "https://api.stratford.gov.uk/v1/addresses/postcode/B49%205AE?nationalSearch=false&includeNonPostal=false&firstLine=",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json;charset=utf-8",
-      "size": 19350,
-      "timestamp": "2025-07-21T08:04:03.009Z"
-    },
-    {
-      "url": "https://www.stratford.gov.uk/waste-recycling/when-we-collect.cfm/part/calendar",
-      "method": "POST",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "text/html;charset=UTF-8",
-      "size": 40209,
-      "timestamp": "2025-07-21T08:04:09.625Z",
-      "form_data": {
-        "frmAddress1": "1B MARKET PLACE",
-        "frmAddress2": "HIGH STREET",
-        "frmAddress3": "ALCESTER",
-        "frmAddress4": "WARWICKSHIRE",
-        "frmPostcode": "B49 5AE",
-        "frmUPRN": "100071467374"
+      "path_params": [
+        "help-with-your-collection.cfm"
+      ],
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7"
+      },
+      "response_headers": {
+        "content-type": "text/html;charset=UTF-8",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "SAMEORIGIN",
+        "x-xss-protection": "1; mode=block"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 28362,
+        "content_ref": "efe6bd0e55942f830e3475899d4ba7cd4b826ceb.html"
       }
     },
     {
-      "url": "https://www.stratford.gov.uk/css/main.css",
+      "timestamp": "2025-07-21T08:03:58.325Z",
+      "duration_ms": 33.958,
+      "endpoint": "/bins",
+      "host": "www.stratford.gov.uk",
       "method": "GET",
-      "status": 304,
-      "redirect_url": null,
-      "mime_type": "x-unknown",
-      "size": -1,
-      "timestamp": "2025-07-21T08:04:10.753Z"
+      "status": 302,
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+        "referer": "https://www.stratford.gov.uk/"
+      },
+      "response_headers": {
+        "cache-control": "no-cache",
+        "content-type": "text/html;charset=UTF-8",
+        "location": "https://www.stratford.gov.uk/waste-recycling/when-we-collect.cfm?frmAlias=/bins/",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "SAMEORIGIN",
+        "x-xss-protection": "1; mode=block"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": -1
+      },
+      "redirect_to": "https://www.stratford.gov.uk/waste-recycling/when-we-collect.cfm?frmAlias=/bins/"
     },
     {
-      "url": "https://www.stratford.gov.uk/css/fa/css/v6-all.css",
-      "method": "GET",
-      "status": 304,
-      "redirect_url": null,
-      "mime_type": "x-unknown",
-      "size": -1,
-      "timestamp": "2025-07-21T08:04:10.753Z"
-    },
-    {
-      "url": "https://www.stratford.gov.uk/css/accessibility-modal.min.css",
-      "method": "GET",
-      "status": 304,
-      "redirect_url": null,
-      "mime_type": "x-unknown",
-      "size": -1,
-      "timestamp": "2025-07-21T08:04:10.754Z"
-    },
-    {
-      "url": "https://www.stratford.gov.uk/css/print.min.css",
-      "method": "GET",
-      "status": 304,
-      "redirect_url": null,
-      "mime_type": "x-unknown",
-      "size": -1,
-      "timestamp": "2025-07-21T08:04:10.754Z"
-    },
-    {
-      "url": "https://www.stratford.gov.uk/img/sdc-round-logo-white-small.png",
-      "method": "GET",
-      "status": 304,
-      "redirect_url": null,
-      "mime_type": "x-unknown",
-      "size": -1,
-      "timestamp": "2025-07-21T08:04:10.754Z"
-    },
-    {
-      "url": "https://www.stratford.gov.uk/js/jquery-3.7.1.min.js",
-      "method": "GET",
-      "status": 304,
-      "redirect_url": null,
-      "mime_type": "x-unknown",
-      "size": -1,
-      "timestamp": "2025-07-21T08:04:10.754Z"
-    },
-    {
-      "url": "https://www.stratford.gov.uk/js/jquery-ui.min.js",
-      "method": "GET",
-      "status": 304,
-      "redirect_url": null,
-      "mime_type": "x-unknown",
-      "size": -1,
-      "timestamp": "2025-07-21T08:04:10.755Z"
-    },
-    {
-      "url": "https://www.stratford.gov.uk/js/slick/slick.min.js",
-      "method": "GET",
-      "status": 304,
-      "redirect_url": null,
-      "mime_type": "x-unknown",
-      "size": -1,
-      "timestamp": "2025-07-21T08:04:10.756Z"
-    },
-    {
-      "url": "https://www.stratford.gov.uk/js/main.js",
-      "method": "GET",
-      "status": 304,
-      "redirect_url": null,
-      "mime_type": "x-unknown",
-      "size": -1,
-      "timestamp": "2025-07-21T08:04:10.756Z"
-    },
-    {
-      "url": "https://www.stratford.gov.uk/js/search.min.js",
-      "method": "GET",
-      "status": 304,
-      "redirect_url": null,
-      "mime_type": "x-unknown",
-      "size": -1,
-      "timestamp": "2025-07-21T08:04:10.756Z"
-    },
-    {
-      "url": "https://www.stratford.gov.uk/js/bootstrap5.min.js",
-      "method": "GET",
-      "status": 304,
-      "redirect_url": null,
-      "mime_type": "x-unknown",
-      "size": -1,
-      "timestamp": "2025-07-21T08:04:10.756Z"
-    },
-    {
-      "url": "https://www.stratford.gov.uk/js/chatbot.js",
-      "method": "GET",
-      "status": 304,
-      "redirect_url": null,
-      "mime_type": "x-unknown",
-      "size": -1,
-      "timestamp": "2025-07-21T08:04:10.756Z"
-    },
-    {
-      "url": "https://www.stratford.gov.uk/js/content.min.js",
-      "method": "GET",
-      "status": 304,
-      "redirect_url": null,
-      "mime_type": "x-unknown",
-      "size": -1,
-      "timestamp": "2025-07-21T08:04:10.756Z"
-    },
-    {
-      "url": "https://www.stratford.gov.uk/css/fa/webfonts/fa-brands-400.woff2",
+      "timestamp": "2025-07-21T08:03:58.360Z",
+      "duration_ms": 68.602,
+      "endpoint": "/waste-recycling/when-we-collect.cfm",
+      "host": "www.stratford.gov.uk",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/font-woff2",
-      "size": -1,
-      "timestamp": "2025-07-21T08:04:10.777Z"
+      "query_params": {
+        "frmAlias": [
+          "/bins/"
+        ]
+      },
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+        "referer": "https://www.stratford.gov.uk/"
+      },
+      "response_headers": {
+        "content-type": "text/html;charset=UTF-8",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "SAMEORIGIN",
+        "x-xss-protection": "1; mode=block"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 29750,
+        "content_ref": "97c07b86cad919a9c5844f8fcb3fb985fef939e5.html"
+      }
     },
     {
-      "url": "https://www.stratford.gov.uk/css/fa/webfonts/fa-duotone-900.woff2",
+      "timestamp": "2025-07-21T08:04:03.009Z",
+      "duration_ms": 227.48499999999996,
+      "endpoint": "/v1/addresses/postcode/B49%205AE",
+      "host": "api.stratford.gov.uk",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/font-woff2",
-      "size": -1,
-      "timestamp": "2025-07-21T08:04:10.777Z"
+      "query_params": {
+        "nationalSearch": [
+          "false"
+        ],
+        "includeNonPostal": [
+          "false"
+        ]
+      },
+      "request_headers": {
+        "accept": "text/plain, */*; q=0.01",
+        "origin": "https://www.stratford.gov.uk",
+        "referer": "https://www.stratford.gov.uk/"
+      },
+      "response_headers": {
+        "content-type": "application/json;charset=utf-8",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "SAMEORIGIN",
+        "x-taffy-reloaded": "true",
+        "x-time-in-cache-check": "0",
+        "x-time-in-cache-save": "0",
+        "x-time-in-ontaffyrequest": "0",
+        "x-time-in-ontaffyrequestend": "0",
+        "x-time-in-parse": "0",
+        "x-time-in-resource": "109",
+        "x-time-in-serialize": "0",
+        "x-time-in-taffy": "0",
+        "x-time-to-reload": "16",
+        "x-xss-protection": "1; mode=block"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 19350,
+        "content_ref": "72545277a58a37e9a3e8858aa6533d1a2d641523.json"
+      }
     },
     {
-      "url": "https://www.stratford.gov.uk/css/fa/webfonts/fa-regular-400.woff2",
-      "method": "GET",
+      "timestamp": "2025-07-21T08:04:09.625Z",
+      "duration_ms": 1108.436,
+      "endpoint": "/waste-recycling/when-we-collect.cfm/part/calendar",
+      "host": "www.stratford.gov.uk",
+      "method": "POST",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/font-woff2",
-      "size": -1,
-      "timestamp": "2025-07-21T08:04:10.778Z"
-    },
-    {
-      "url": "https://www.stratford.gov.uk/css/fa/webfonts/fa-solid-900.woff2",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/font-woff2",
-      "size": -1,
-      "timestamp": "2025-07-21T08:04:10.778Z"
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+        "content-type": "application/x-www-form-urlencoded",
+        "origin": "https://www.stratford.gov.uk",
+        "referer": "https://www.stratford.gov.uk/"
+      },
+      "response_headers": {
+        "content-type": "text/html;charset=UTF-8",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "SAMEORIGIN",
+        "x-xss-protection": "1; mode=block"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 40209,
+        "content_ref": "a49317946ae63166dbf9f56bc0651171b590edfd.html"
+      }
     }
-  ]
+  ],
+  "analysis": {
+    "total_requests": 5,
+    "unique_endpoints": 5,
+    "methods_used": [
+      "GET",
+      "POST"
+    ],
+    "status_codes": {
+      "200": 4,
+      "302": 1
+    },
+    "endpoints_with_params": [
+      {
+        "endpoint": "/waste-recycling/{id}",
+        "method": "GET",
+        "query_params": [],
+        "path_params": true
+      },
+      {
+        "endpoint": "/waste-recycling/when-we-collect.cfm",
+        "method": "GET",
+        "query_params": [
+          "frmAlias"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/v1/addresses/postcode/B49%205AE",
+        "method": "GET",
+        "query_params": [
+          "nationalSearch",
+          "includeNonPostal"
+        ],
+        "path_params": false
+      }
+    ],
+    "redirects": [
+      {
+        "from": "/bins",
+        "to": "https://www.stratford.gov.uk/waste-recycling/when-we-collect.cfm?frmAlias=/bins/",
+        "status": 302
+      }
+    ],
+    "api_calls": [
+      {
+        "endpoint": "/v1/addresses/postcode/B49%205AE",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": [
+          "nationalSearch",
+          "includeNonPostal"
+        ]
+      }
+    ],
+    "form_submissions": []
+  },
+  "grouped_by_endpoint": {
+    "/waste-recycling/{id}": [
+      {
+        "timestamp": "2025-07-21T08:03:56.628Z",
+        "duration_ms": 146.512,
+        "endpoint": "/waste-recycling/{id}",
+        "host": "www.stratford.gov.uk",
+        "method": "GET",
+        "status": 200,
+        "path_params": [
+          "help-with-your-collection.cfm"
+        ],
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7"
+        },
+        "response_headers": {
+          "content-type": "text/html;charset=UTF-8",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "SAMEORIGIN",
+          "x-xss-protection": "1; mode=block"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 28362,
+          "content_ref": "efe6bd0e55942f830e3475899d4ba7cd4b826ceb.html"
+        }
+      }
+    ],
+    "/bins": [
+      {
+        "timestamp": "2025-07-21T08:03:58.325Z",
+        "duration_ms": 33.958,
+        "endpoint": "/bins",
+        "host": "www.stratford.gov.uk",
+        "method": "GET",
+        "status": 302,
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+          "referer": "https://www.stratford.gov.uk/"
+        },
+        "response_headers": {
+          "cache-control": "no-cache",
+          "content-type": "text/html;charset=UTF-8",
+          "location": "https://www.stratford.gov.uk/waste-recycling/when-we-collect.cfm?frmAlias=/bins/",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "SAMEORIGIN",
+          "x-xss-protection": "1; mode=block"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": -1
+        },
+        "redirect_to": "https://www.stratford.gov.uk/waste-recycling/when-we-collect.cfm?frmAlias=/bins/"
+      }
+    ],
+    "/waste-recycling/when-we-collect.cfm": [
+      {
+        "timestamp": "2025-07-21T08:03:58.360Z",
+        "duration_ms": 68.602,
+        "endpoint": "/waste-recycling/when-we-collect.cfm",
+        "host": "www.stratford.gov.uk",
+        "method": "GET",
+        "status": 200,
+        "query_params": {
+          "frmAlias": [
+            "/bins/"
+          ]
+        },
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+          "referer": "https://www.stratford.gov.uk/"
+        },
+        "response_headers": {
+          "content-type": "text/html;charset=UTF-8",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "SAMEORIGIN",
+          "x-xss-protection": "1; mode=block"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 29750,
+          "content_ref": "97c07b86cad919a9c5844f8fcb3fb985fef939e5.html"
+        }
+      }
+    ],
+    "/v1/addresses/postcode/B49%205AE": [
+      {
+        "timestamp": "2025-07-21T08:04:03.009Z",
+        "duration_ms": 227.48499999999996,
+        "endpoint": "/v1/addresses/postcode/B49%205AE",
+        "host": "api.stratford.gov.uk",
+        "method": "GET",
+        "status": 200,
+        "query_params": {
+          "nationalSearch": [
+            "false"
+          ],
+          "includeNonPostal": [
+            "false"
+          ]
+        },
+        "request_headers": {
+          "accept": "text/plain, */*; q=0.01",
+          "origin": "https://www.stratford.gov.uk",
+          "referer": "https://www.stratford.gov.uk/"
+        },
+        "response_headers": {
+          "content-type": "application/json;charset=utf-8",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "SAMEORIGIN",
+          "x-taffy-reloaded": "true",
+          "x-time-in-cache-check": "0",
+          "x-time-in-cache-save": "0",
+          "x-time-in-ontaffyrequest": "0",
+          "x-time-in-ontaffyrequestend": "0",
+          "x-time-in-parse": "0",
+          "x-time-in-resource": "109",
+          "x-time-in-serialize": "0",
+          "x-time-in-taffy": "0",
+          "x-time-to-reload": "16",
+          "x-xss-protection": "1; mode=block"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 19350,
+          "content_ref": "72545277a58a37e9a3e8858aa6533d1a2d641523.json"
+        }
+      }
+    ],
+    "/waste-recycling/when-we-collect.cfm/part/calendar": [
+      {
+        "timestamp": "2025-07-21T08:04:09.625Z",
+        "duration_ms": 1108.436,
+        "endpoint": "/waste-recycling/when-we-collect.cfm/part/calendar",
+        "host": "www.stratford.gov.uk",
+        "method": "POST",
+        "status": 200,
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+          "content-type": "application/x-www-form-urlencoded",
+          "origin": "https://www.stratford.gov.uk",
+          "referer": "https://www.stratford.gov.uk/"
+        },
+        "response_headers": {
+          "content-type": "text/html;charset=UTF-8",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "SAMEORIGIN",
+          "x-xss-protection": "1; mode=block"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 40209,
+          "content_ref": "a49317946ae63166dbf9f56bc0651171b590edfd.html"
+        }
+      }
+    ]
+  }
 }

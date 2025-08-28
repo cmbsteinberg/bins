@@ -1,273 +1,5413 @@
 {
-  "metadata": {
-    "trace_name": "london_borough_of_sutton",
-    "processed_at": "2025-08-26 18:44:24",
-    "workflow_steps_count": 8,
-    "navigation_events_count": 20
-  },
-  "scraping_patterns": {
-    "login_detected": false,
-    "form_submissions": 2,
-    "navigation_count": 1,
-    "unique_domains": [
-      "waste-services.sutton.gov.uk",
-      "www.sutton.gov.uk",
-      "consent.cookie-script.com",
-      "heatmaps.monsido.com"
-    ],
-    "api_endpoints": [
-      "https://heatmaps.monsido.com/v1/settings/Z8Gph02yPUtbYY2UMLuxPQ.json",
-      "https://heatmaps.monsido.com/v1/settings/Z8Gph02yPUtbYY2UMLuxPQ.json",
-      "https://heatmaps.monsido.com/v1/settings/Z8Gph02yPUtbYY2UMLuxPQ.json",
-      "https://heatmaps.monsido.com/v1/settings/Z8Gph02yPUtbYY2UMLuxPQ.json"
-    ],
-    "data_extraction_indicators": []
-  },
-  "workflow_steps": [
+  "entries": [
     {
-      "action": "goto",
-      "target": "https://www.sutton.gov.uk/info/200449/waste_and_recycling/1578/when_are_my_bins_collected",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
-    },
-    {
-      "action": "click",
-      "target": "aria-ref=e202 >> internal:describe=\"Accept all button\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
-    },
-    {
-      "action": "click",
-      "target": "aria-ref=e74 >> internal:describe=\"Check your next bin collection day button\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
-    },
-    {
-      "action": "fill",
-      "target": "aria-ref=e25 >> internal:describe=\"Postcode textbox\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0,
-      "value": "CR0 4FA"
-    },
-    {
-      "action": "click",
-      "target": "aria-ref=e26 >> internal:describe=\"Go button\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
-    },
-    {
-      "action": "click",
-      "target": "aria-ref=e30 >> internal:describe=\"Select an address combobox\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
-    },
-    {
-      "action": "click",
-      "target": "aria-ref=e127 >> internal:describe=\"Flat 1, Waddon House, 283 Stafford Road, Wallington, Croydon, CR0 4FA option\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
-    },
-    {
-      "action": "click",
-      "target": "aria-ref=e35 >> internal:describe=\"Continue button\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
-    }
-  ],
-  "navigation_events": [
-    {
-      "url": "https://www.sutton.gov.uk/info/200449/waste_and_recycling/1578/when_are_my_bins_collected",
+      "timestamp": "2025-07-21T10:23:21.197Z",
+      "duration_ms": 48.354000000000006,
+      "endpoint": "/info/{id}/waste_and_recycling/{id}/{id}",
+      "host": "www.sutton.gov.uk",
       "method": "GET",
       "status": 301,
-      "redirect_url": "https://www.sutton.gov.uk/-/check-your-bin-collection-days",
-      "mime_type": "text/html",
-      "size": -1,
-      "timestamp": "2025-07-21T10:23:21.197Z"
+      "path_params": [
+        "200449",
+        "1578",
+        "when_are_my_bins_collected"
+      ],
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7"
+      },
+      "response_headers": {
+        "cache-control": "private, no-cache, no-store, must-revalidate",
+        "content-type": "text/html",
+        "location": "https://www.sutton.gov.uk/-/check-your-bin-collection-days",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "SAMEORIGIN",
+        "x-permitted-cross-domain-policies": "none"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": -1
+      },
+      "redirect_to": "https://www.sutton.gov.uk/-/check-your-bin-collection-days"
     },
     {
-      "url": "https://www.sutton.gov.uk/-/check-your-bin-collection-days",
+      "timestamp": "2025-07-21T10:23:21.234Z",
+      "duration_ms": 14.732999999999999,
+      "endpoint": "/-/{id}",
+      "host": "www.sutton.gov.uk",
       "method": "GET",
       "status": 302,
-      "redirect_url": "https://www.sutton.gov.uk/w/check-your-bin-collection-days",
-      "mime_type": "x-unknown",
-      "size": -1,
-      "timestamp": "2025-07-21T10:23:21.234Z"
+      "path_params": [
+        "check-your-bin-collection-days"
+      ],
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7"
+      },
+      "response_headers": {
+        "cache-control": "private, no-cache, no-store, must-revalidate",
+        "location": "https://www.sutton.gov.uk/w/check-your-bin-collection-days",
+        "set-cookie": "[cookies present]",
+        "x-backend": "liferay-5bf44dcc8d-9q8qm",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "SAMEORIGIN",
+        "x-permitted-cross-domain-policies": "none"
+      },
+      "redirect_to": "https://www.sutton.gov.uk/w/check-your-bin-collection-days"
     },
     {
-      "url": "https://www.sutton.gov.uk/w/check-your-bin-collection-days",
+      "timestamp": "2025-07-21T10:23:21.248Z",
+      "duration_ms": 221.063,
+      "endpoint": "/w/{id}",
+      "host": "www.sutton.gov.uk",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "text/html;charset=UTF-8",
-      "size": 121518,
-      "timestamp": "2025-07-21T10:23:21.248Z"
+      "path_params": [
+        "check-your-bin-collection-days"
+      ],
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+        "cookie": "[cookies present]"
+      },
+      "response_headers": {
+        "cache-control": "private, no-cache, no-store, must-revalidate",
+        "content-type": "text/html;charset=UTF-8",
+        "set-cookie": "[cookies present]",
+        "x-backend": "liferay-5bf44dcc8d-9q8qm",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "SAMEORIGIN",
+        "x-permitted-cross-domain-policies": "none"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 121518,
+        "compressed": true,
+        "content_ref": "5243eb8fe84e1a622a43feb52dd28f1085172315.html"
+      }
     },
     {
-      "url": "https://www.sutton.gov.uk/c/portal/layout?p_l_id=647&p_p_cacheability=cacheLevelPage&p_p_id=com_placecube_digitalplace_announcements_banner_web_AnnouncementsBannerPortlet&p_p_lifecycle=2&p_p_resource_id=%2Fannouncements-banner%2Fget-configuration",
+      "timestamp": "2025-07-21T10:23:21.710Z",
+      "duration_ms": 22.595,
+      "endpoint": "/c/portal/layout",
+      "host": "www.sutton.gov.uk",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "text/html;charset=UTF-8",
-      "size": 58,
-      "timestamp": "2025-07-21T10:23:21.710Z"
+      "query_params": {
+        "p_l_id": [
+          "647"
+        ],
+        "p_p_cacheability": [
+          "cacheLevelPage"
+        ],
+        "p_p_id": [
+          "com_placecube_digitalplace_announcements_banner_web_AnnouncementsBannerPortlet"
+        ],
+        "p_p_lifecycle": [
+          "2"
+        ],
+        "p_p_resource_id": [
+          "/announcements-banner/get-configuration"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "cookie": "[cookies present]",
+        "referer": "https://www.sutton.gov.uk/w/check-your-bin-collection-days",
+        "x-requested-with": "XMLHttpRequest"
+      },
+      "response_headers": {
+        "cache-control": "private, no-cache, no-store, must-revalidate",
+        "content-type": "text/html;charset=UTF-8",
+        "x-backend": "liferay-5bf44dcc8d-9q8qm",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "SAMEORIGIN",
+        "x-permitted-cross-domain-policies": "none"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 58,
+        "content_ref": "da62416622bf283936c8e4a0a0336c0faa7c5d79.html"
+      }
     },
     {
-      "url": "https://consent.cookie-script.com/analytics?action=firstshown&time=1753093401848&script=a7ba59044d04a1624a4e3db9dbf7b7b0&category=",
+      "timestamp": "2025-07-21T10:23:21.856Z",
+      "duration_ms": 414,
+      "endpoint": "/analytics",
+      "host": "consent.cookie-script.com",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json",
-      "size": 47,
-      "timestamp": "2025-07-21T10:23:21.856Z"
+      "query_params": {
+        "action": [
+          "firstshown"
+        ],
+        "time": [
+          "1753093401848"
+        ],
+        "script": [
+          "a7ba59044d04a1624a4e3db9dbf7b7b0"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "origin": "https://www.sutton.gov.uk",
+        "referer": "https://www.sutton.gov.uk/"
+      },
+      "response_headers": {
+        "content-type": "application/json"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 47,
+        "content_ref": "07a12d41325d6ee13fe53df61212583fb699c7cf.json"
+      }
     },
     {
-      "url": "https://consent.cookie-script.com/collect?action=accept&time=1753093403308&page=https%3A%2F%2Fwww.sutton.gov.uk%2Fw%2Fcheck-your-bin-collection-days&dnt=false&script=a7ba59044d04a1624a4e3db9dbf7b7b0&consenttext=This%20website%20uses%20cookies%20to%20improve%20user%20experience.%20By%20using%20our%20website%20you%20consent%20to%20all%20cookies%20in%20accordance%20with%20our%20Cookie%20Policy.&category=unclassified,performance,targeting,functionality",
+      "timestamp": "2025-07-21T10:23:23.416Z",
+      "duration_ms": 32.392,
+      "endpoint": "/v1/settings/{id}",
+      "host": "heatmaps.monsido.com",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json",
-      "size": 47,
-      "timestamp": "2025-07-21T10:23:23.328Z"
+      "path_params": [
+        "Z8Gph02yPUtbYY2UMLuxPQ.json"
+      ],
+      "request_headers": {
+        "accept": "*/*",
+        "origin": "https://www.sutton.gov.uk",
+        "referer": "https://www.sutton.gov.uk/"
+      },
+      "response_headers": {
+        "cache-control": "public, max-age=300",
+        "content-type": "application/json",
+        "x-goog-generation": "1684751175644001",
+        "x-goog-hash": "md5=hroxTcpoI0/6ADxfQ22uHQ==",
+        "x-goog-metageneration": "1",
+        "x-goog-storage-class": "MULTI_REGIONAL",
+        "x-goog-stored-content-encoding": "identity",
+        "x-goog-stored-content-length": "245",
+        "x-guploader-uploadid": "ABgVH8_A_i_WFhto974xvKETI9-IOahkUzRLxAvFJuAEUaW9oU2gYCw9fJF4PJJNqcNbXIonXAQUUzg"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 245,
+        "content_ref": "b51ab706afa3ce356242463240edbfdffd7f2de8.json"
+      }
     },
     {
-      "url": "https://consent.cookie-script.com/analytics?action=firstacceptall&time=1753093403308&script=a7ba59044d04a1624a4e3db9dbf7b7b0&category=",
+      "timestamp": "2025-07-21T10:23:23.371Z",
+      "duration_ms": -1,
+      "endpoint": "/",
+      "host": "tracking.monsido.com",
+      "method": "GET",
+      "status": -1,
+      "query_params": {
+        "a": [
+          "Z8Gph02yPUtbYY2UMLuxPQ"
+        ],
+        "b": [
+          "https://www.sutton.gov.uk/w/check-your-bin-collection-days"
+        ],
+        "c": [
+          "3A91753093403369"
+        ],
+        "d": [
+          "800x600"
+        ],
+        "f": [
+          "C071753093403369"
+        ],
+        "h": [
+          "2"
+        ]
+      },
+      "request_headers": {
+        "referer": "https://www.sutton.gov.uk/"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T10:23:23.328Z",
+      "duration_ms": 302.54999999999995,
+      "endpoint": "/collect",
+      "host": "consent.cookie-script.com",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json",
-      "size": 47,
-      "timestamp": "2025-07-21T10:23:23.329Z"
+      "query_params": {
+        "action": [
+          "accept"
+        ],
+        "time": [
+          "1753093403308"
+        ],
+        "page": [
+          "https://www.sutton.gov.uk/w/check-your-bin-collection-days"
+        ],
+        "dnt": [
+          "false"
+        ],
+        "script": [
+          "a7ba59044d04a1624a4e3db9dbf7b7b0"
+        ],
+        "consenttext": [
+          "This website uses cookies to improve user experience. By using our website you consent to all cookies in accordance with our Cookie Policy."
+        ],
+        "category": [
+          "unclassified,performance,targeting,functionality"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "origin": "https://www.sutton.gov.uk",
+        "referer": "https://www.sutton.gov.uk/"
+      },
+      "response_headers": {
+        "content-type": "application/json"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 47,
+        "content_ref": "2b047dd43f7386b5b70eb28de0318a1bee445d84.json"
+      }
     },
     {
-      "url": "https://heatmaps.monsido.com/v1/settings/Z8Gph02yPUtbYY2UMLuxPQ.json",
+      "timestamp": "2025-07-21T10:23:23.329Z",
+      "duration_ms": 313.53999999999996,
+      "endpoint": "/analytics",
+      "host": "consent.cookie-script.com",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json",
-      "size": 245,
-      "timestamp": "2025-07-21T10:23:23.416Z"
+      "query_params": {
+        "action": [
+          "firstacceptall"
+        ],
+        "time": [
+          "1753093403308"
+        ],
+        "script": [
+          "a7ba59044d04a1624a4e3db9dbf7b7b0"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "origin": "https://www.sutton.gov.uk",
+        "referer": "https://www.sutton.gov.uk/"
+      },
+      "response_headers": {
+        "content-type": "application/json"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 47,
+        "content_ref": "2d926ec628ab08e2eaff3a4ed7f4d274804b6e83.json"
+      }
     },
     {
-      "url": "https://waste-services.sutton.gov.uk/waste",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "text/html; charset=utf-8",
-      "size": 20240,
-      "timestamp": "2025-07-21T10:23:35.858Z"
-    },
-    {
-      "url": "https://waste-services.sutton.gov.uk/.well-known/manifest-waste.webmanifest",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/manifest+json",
-      "size": 295,
-      "timestamp": "2025-07-21T10:23:36.205Z"
-    },
-    {
-      "url": "https://heatmaps.monsido.com/v1/settings/Z8Gph02yPUtbYY2UMLuxPQ.json",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json",
-      "size": 245,
-      "timestamp": "2025-07-21T10:23:36.231Z"
-    },
-    {
-      "url": "https://waste-services.sutton.gov.uk/waste",
+      "timestamp": "2025-07-21T10:23:23.637Z",
+      "duration_ms": 60.882000000000005,
+      "endpoint": "/g/collect",
+      "host": "region1.google-analytics.com",
       "method": "POST",
+      "status": 204,
+      "query_params": {
+        "v": [
+          "2"
+        ],
+        "tid": [
+          "G-YCD2M22SKH"
+        ],
+        "gtm": [
+          "45je57g1v9191261943z8855049748za200zb855049748"
+        ],
+        "_p": [
+          "1753093401480"
+        ],
+        "gcs": [
+          "G111"
+        ],
+        "gcd": [
+          "13r3r3r3r5l1"
+        ],
+        "npa": [
+          "0"
+        ],
+        "dma": [
+          "0"
+        ],
+        "tag_exp": [
+          "101509157~103116026~103200004~103233427~104573694~104684208~104684211"
+        ],
+        "gdid": [
+          "dMmY1Mm"
+        ],
+        "cid": [
+          "421760622.1753093404"
+        ],
+        "ul": [
+          "en-gb"
+        ],
+        "sr": [
+          "800x600"
+        ],
+        "uaa": [
+          "arm"
+        ],
+        "uab": [
+          "64"
+        ],
+        "uafvl": [
+          "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+        ],
+        "uamb": [
+          "0"
+        ],
+        "uap": [
+          "macOS"
+        ],
+        "uapv": [
+          "15.5.0"
+        ],
+        "uaw": [
+          "0"
+        ],
+        "are": [
+          "1"
+        ],
+        "frm": [
+          "0"
+        ],
+        "pscdl": [
+          "noapi"
+        ],
+        "_s": [
+          "1"
+        ],
+        "sid": [
+          "1753093403"
+        ],
+        "sct": [
+          "1"
+        ],
+        "seg": [
+          "0"
+        ],
+        "dl": [
+          "https://www.sutton.gov.uk/w/check-your-bin-collection-days"
+        ],
+        "dt": [
+          "Check your bin collection days - sutton.gov.uk"
+        ],
+        "_tu": [
+          "CA"
+        ],
+        "en": [
+          "page_view"
+        ],
+        "_fv": [
+          "1"
+        ],
+        "_nsi": [
+          "1"
+        ],
+        "_ss": [
+          "1"
+        ],
+        "tfd": [
+          "2424"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "cookie": "[cookies present]",
+        "origin": "https://www.sutton.gov.uk",
+        "referer": "https://www.sutton.gov.uk/"
+      },
+      "response_headers": {
+        "cache-control": "no-cache, no-store, must-revalidate",
+        "content-type": "text/plain"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T10:23:23.679Z",
+      "duration_ms": 13.222,
+      "endpoint": "/g/collect",
+      "host": "region1.google-analytics.com",
+      "method": "POST",
+      "status": 204,
+      "query_params": {
+        "v": [
+          "2"
+        ],
+        "tid": [
+          "G-P9PHBCZ1BC"
+        ],
+        "gtm": [
+          "45je57g1v871881453z8855049748za200zb855049748"
+        ],
+        "_p": [
+          "1753093401480"
+        ],
+        "gcs": [
+          "G111"
+        ],
+        "gcd": [
+          "13r3r3r3r5l1"
+        ],
+        "npa": [
+          "0"
+        ],
+        "dma": [
+          "0"
+        ],
+        "tag_exp": [
+          "101509157~103116026~103200004~103233427~104684208~104684211~104921712~104921714"
+        ],
+        "gdid": [
+          "dMmY1Mm"
+        ],
+        "cid": [
+          "421760622.1753093404"
+        ],
+        "ul": [
+          "en-gb"
+        ],
+        "sr": [
+          "800x600"
+        ],
+        "uaa": [
+          "arm"
+        ],
+        "uab": [
+          "64"
+        ],
+        "uafvl": [
+          "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+        ],
+        "uamb": [
+          "0"
+        ],
+        "uap": [
+          "macOS"
+        ],
+        "uapv": [
+          "15.5.0"
+        ],
+        "uaw": [
+          "0"
+        ],
+        "are": [
+          "1"
+        ],
+        "frm": [
+          "0"
+        ],
+        "pscdl": [
+          "noapi"
+        ],
+        "_s": [
+          "1"
+        ],
+        "sid": [
+          "1753093403"
+        ],
+        "sct": [
+          "1"
+        ],
+        "seg": [
+          "0"
+        ],
+        "dl": [
+          "https://www.sutton.gov.uk/w/check-your-bin-collection-days"
+        ],
+        "dt": [
+          "Check your bin collection days - sutton.gov.uk"
+        ],
+        "_tu": [
+          "CA"
+        ],
+        "en": [
+          "page_view"
+        ],
+        "_fv": [
+          "1"
+        ],
+        "_ss": [
+          "1"
+        ],
+        "tfd": [
+          "2467"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "cookie": "[cookies present]",
+        "origin": "https://www.sutton.gov.uk",
+        "referer": "https://www.sutton.gov.uk/"
+      },
+      "response_headers": {
+        "cache-control": "no-cache, no-store, must-revalidate",
+        "content-type": "text/plain"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T10:23:36.061Z",
+      "duration_ms": -1,
+      "endpoint": "/g/collect",
+      "host": "region1.google-analytics.com",
+      "method": "POST",
+      "status": -1,
+      "query_params": {
+        "v": [
+          "2"
+        ],
+        "tid": [
+          "G-P9PHBCZ1BC"
+        ],
+        "gtm": [
+          "45je57g1v871881453z8855049748za200zb855049748"
+        ],
+        "_p": [
+          "1753093401480"
+        ],
+        "gcs": [
+          "G111"
+        ],
+        "gcd": [
+          "13r3r3r3r5l1"
+        ],
+        "npa": [
+          "0"
+        ],
+        "dma": [
+          "0"
+        ],
+        "tag_exp": [
+          "101509157~103116026~103200004~103233427~104684208~104684211~104921712~104921714"
+        ],
+        "gdid": [
+          "dMmY1Mm"
+        ],
+        "cid": [
+          "421760622.1753093404"
+        ],
+        "ul": [
+          "en-gb"
+        ],
+        "sr": [
+          "800x600"
+        ],
+        "uaa": [
+          "arm"
+        ],
+        "uab": [
+          "64"
+        ],
+        "uafvl": [
+          "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+        ],
+        "uamb": [
+          "0"
+        ],
+        "uap": [
+          "macOS"
+        ],
+        "uapv": [
+          "15.5.0"
+        ],
+        "uaw": [
+          "0"
+        ],
+        "are": [
+          "1"
+        ],
+        "frm": [
+          "0"
+        ],
+        "pscdl": [
+          "noapi"
+        ],
+        "_eu": [
+          "AAAAAAQ"
+        ],
+        "_s": [
+          "2"
+        ],
+        "sid": [
+          "1753093403"
+        ],
+        "sct": [
+          "1"
+        ],
+        "seg": [
+          "1"
+        ],
+        "dl": [
+          "https://www.sutton.gov.uk/w/check-your-bin-collection-days"
+        ],
+        "dt": [
+          "Check your bin collection days - sutton.gov.uk"
+        ],
+        "_tu": [
+          "CA"
+        ],
+        "en": [
+          "button_click"
+        ],
+        "ep.link_url": [
+          "https://waste-services.sutton.gov.uk/waste"
+        ],
+        "ep.link_text": [
+          "Check your next bin collection day"
+        ],
+        "ep.link_classes": [
+          "lbs-button govuk-button lbs-button--primary"
+        ],
+        "_et": [
+          "12134"
+        ],
+        "tfd": [
+          "14862"
+        ]
+      },
+      "request_headers": {
+        "referer": "https://www.sutton.gov.uk/"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T10:23:36.060Z",
+      "duration_ms": -1,
+      "endpoint": "/g/collect",
+      "host": "region1.google-analytics.com",
+      "method": "POST",
+      "status": -1,
+      "query_params": {
+        "v": [
+          "2"
+        ],
+        "tid": [
+          "G-YCD2M22SKH"
+        ],
+        "gtm": [
+          "45je57g1v9191261943za200zb855049748"
+        ],
+        "_p": [
+          "1753093401480"
+        ],
+        "gcs": [
+          "G111"
+        ],
+        "gcd": [
+          "13r3r3r3r5l1"
+        ],
+        "npa": [
+          "0"
+        ],
+        "dma": [
+          "0"
+        ],
+        "tag_exp": [
+          "101509157~103116026~103200004~103233427~104573694~104684208~104684211"
+        ],
+        "gdid": [
+          "dMmY1Mm"
+        ],
+        "cid": [
+          "421760622.1753093404"
+        ],
+        "ul": [
+          "en-gb"
+        ],
+        "sr": [
+          "800x600"
+        ],
+        "uaa": [
+          "arm"
+        ],
+        "uab": [
+          "64"
+        ],
+        "uafvl": [
+          "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+        ],
+        "uamb": [
+          "0"
+        ],
+        "uap": [
+          "macOS"
+        ],
+        "uapv": [
+          "15.5.0"
+        ],
+        "uaw": [
+          "0"
+        ],
+        "are": [
+          "1"
+        ],
+        "frm": [
+          "0"
+        ],
+        "pscdl": [
+          "noapi"
+        ],
+        "_eu": [
+          "AAAAAAQ"
+        ],
+        "_s": [
+          "2"
+        ],
+        "sid": [
+          "1753093403"
+        ],
+        "sct": [
+          "1"
+        ],
+        "seg": [
+          "1"
+        ],
+        "dl": [
+          "https://www.sutton.gov.uk/w/check-your-bin-collection-days"
+        ],
+        "dt": [
+          "Check your bin collection days - sutton.gov.uk"
+        ],
+        "_tu": [
+          "CA"
+        ],
+        "en": [
+          "user_engagement"
+        ],
+        "_et": [
+          "12429"
+        ],
+        "tfd": [
+          "14861"
+        ]
+      },
+      "request_headers": {
+        "referer": "https://www.sutton.gov.uk/"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T10:23:35.858Z",
+      "duration_ms": 211.97299999999998,
+      "endpoint": "/waste",
+      "host": "waste-services.sutton.gov.uk",
+      "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "text/html; charset=utf-8",
-      "size": 33441,
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+        "cookie": "[cookies present]",
+        "referer": "https://www.sutton.gov.uk/"
+      },
+      "response_headers": {
+        "content-type": "text/html; charset=utf-8",
+        "set-cookie": "[cookies present]",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "SAMEORIGIN",
+        "x-host": "waste-services.sutton.gov.uk",
+        "x-url": "/waste",
+        "x-xss-protection": "1"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 20240,
+        "compressed": true,
+        "content_ref": "29e95e031f3b699610a3cba47ba4faddbdc0e0e9.html"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T10:23:36.231Z",
+      "duration_ms": 1.2690000000000001,
+      "endpoint": "/v1/settings/{id}",
+      "host": "heatmaps.monsido.com",
+      "method": "GET",
+      "status": 200,
+      "path_params": [
+        "Z8Gph02yPUtbYY2UMLuxPQ.json"
+      ],
+      "request_headers": {
+        "referer": "https://waste-services.sutton.gov.uk/waste"
+      },
+      "response_headers": {
+        "x-goog-metageneration": "1",
+        "x-goog-hash": "crc32c=F534nA==, md5=hroxTcpoI0/6ADxfQ22uHQ==",
+        "x-goog-stored-content-encoding": "identity",
+        "x-goog-stored-content-length": "245",
+        "content-type": "application/json",
+        "x-guploader-uploadid": "ABgVH8_A_i_WFhto974xvKETI9-IOahkUzRLxAvFJuAEUaW9oU2gYCw9fJF4PJJNqcNbXIonXAQUUzg",
+        "cache-control": "public, max-age=300",
+        "x-goog-storage-class": "MULTI_REGIONAL",
+        "x-goog-generation": "1684751175644001"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 245,
+        "compressed": true,
+        "content_ref": "b51ab706afa3ce356242463240edbfdffd7f2de8.json"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T10:23:36.261Z",
+      "duration_ms": 13.142,
+      "endpoint": "/g/collect",
+      "host": "region1.google-analytics.com",
+      "method": "POST",
+      "status": 204,
+      "query_params": {
+        "v": [
+          "2"
+        ],
+        "tid": [
+          "G-DTJ3X33F09"
+        ],
+        "gtm": [
+          "45je57g1v9203624117z8855049748za200zb855049748"
+        ],
+        "_p": [
+          "1753093416100"
+        ],
+        "gcs": [
+          "G111"
+        ],
+        "gcd": [
+          "13r3r3r3r5l1"
+        ],
+        "npa": [
+          "0"
+        ],
+        "dma": [
+          "0"
+        ],
+        "tag_exp": [
+          "101509157~103116026~103200004~103233427~104684208~104684211"
+        ],
+        "gdid": [
+          "dMmY1Mm"
+        ],
+        "cid": [
+          "421760622.1753093404"
+        ],
+        "ul": [
+          "en-gb"
+        ],
+        "sr": [
+          "800x600"
+        ],
+        "uaa": [
+          "arm"
+        ],
+        "uab": [
+          "64"
+        ],
+        "uafvl": [
+          "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+        ],
+        "uamb": [
+          "0"
+        ],
+        "uap": [
+          "macOS"
+        ],
+        "uapv": [
+          "15.5.0"
+        ],
+        "uaw": [
+          "0"
+        ],
+        "are": [
+          "1"
+        ],
+        "frm": [
+          "0"
+        ],
+        "pscdl": [
+          "noapi"
+        ],
+        "_s": [
+          "1"
+        ],
+        "sid": [
+          "1753093416"
+        ],
+        "sct": [
+          "1"
+        ],
+        "seg": [
+          "0"
+        ],
+        "dl": [
+          "https://waste-services.sutton.gov.uk/waste"
+        ],
+        "dr": [
+          "https://www.sutton.gov.uk/"
+        ],
+        "dt": [
+          "What is your address? :: WasteWorks"
+        ],
+        "_tu": [
+          "CA"
+        ],
+        "en": [
+          "page_view"
+        ],
+        "_fv": [
+          "1"
+        ],
+        "_ss": [
+          "1"
+        ],
+        "tfd": [
+          "445"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "cookie": "[cookies present]",
+        "origin": "https://waste-services.sutton.gov.uk",
+        "referer": "https://waste-services.sutton.gov.uk/waste"
+      },
+      "response_headers": {
+        "cache-control": "no-cache, no-store, must-revalidate",
+        "content-type": "text/plain"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T10:23:36.205Z",
+      "duration_ms": 82.15599999999999,
+      "endpoint": "/.well-known/{id}",
+      "host": "waste-services.sutton.gov.uk",
+      "method": "GET",
+      "status": 200,
+      "path_params": [
+        "manifest-waste.webmanifest"
+      ],
+      "request_headers": {
+        "accept": "*/*",
+        "referer": "https://waste-services.sutton.gov.uk/waste"
+      },
+      "response_headers": {
+        "content-type": "application/manifest+json",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "SAMEORIGIN",
+        "x-host": "waste-services.sutton.gov.uk",
+        "x-url": "/.well-known/manifest-waste.webmanifest",
+        "x-xss-protection": "1"
+      },
+      "response_info": {
+        "type": "application/manifest+json",
+        "size": 295,
+        "content_ref": "638bc72c446d76ebca4f2247a3321c9721566e8b.webmanifest"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T10:23:36.203Z",
+      "duration_ms": -1,
+      "endpoint": "/",
+      "host": "tracking.monsido.com",
+      "method": "GET",
+      "status": -1,
+      "query_params": {
+        "a": [
+          "Z8Gph02yPUtbYY2UMLuxPQ"
+        ],
+        "b": [
+          "https://waste-services.sutton.gov.uk/waste"
+        ],
+        "c": [
+          "6C51753093416186"
+        ],
+        "d": [
+          "800x600"
+        ],
+        "e": [
+          "https://www.sutton.gov.uk/"
+        ],
+        "f": [
+          "3AA1753093416186"
+        ],
+        "h": [
+          "2"
+        ]
+      },
+      "request_headers": {
+        "referer": "https://waste-services.sutton.gov.uk/waste"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T10:23:40.511Z",
+      "duration_ms": 14.239,
+      "endpoint": "/g/collect",
+      "host": "region1.google-analytics.com",
+      "method": "POST",
+      "status": 204,
+      "query_params": {
+        "v": [
+          "2"
+        ],
+        "tid": [
+          "G-YCD2M22SKH"
+        ],
+        "gtm": [
+          "45je57g1v9191261943z8855049748za200zb855049748"
+        ],
+        "_p": [
+          "1753093416100"
+        ],
+        "gcs": [
+          "G111"
+        ],
+        "gcd": [
+          "13r3r3r3r5l1"
+        ],
+        "npa": [
+          "0"
+        ],
+        "dma": [
+          "0"
+        ],
+        "tag_exp": [
+          "101509157~103116026~103200004~103233427~104573694~104684208~104684211"
+        ],
+        "gdid": [
+          "dMmY1Mm"
+        ],
+        "cid": [
+          "421760622.1753093404"
+        ],
+        "ul": [
+          "en-gb"
+        ],
+        "sr": [
+          "800x600"
+        ],
+        "uaa": [
+          "arm"
+        ],
+        "uab": [
+          "64"
+        ],
+        "uafvl": [
+          "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+        ],
+        "uamb": [
+          "0"
+        ],
+        "uap": [
+          "macOS"
+        ],
+        "uapv": [
+          "15.5.0"
+        ],
+        "uaw": [
+          "0"
+        ],
+        "are": [
+          "1"
+        ],
+        "frm": [
+          "0"
+        ],
+        "pscdl": [
+          "noapi"
+        ],
+        "_eu": [
+          "AAAAAAQ"
+        ],
+        "_s": [
+          "1"
+        ],
+        "sid": [
+          "1753093403"
+        ],
+        "sct": [
+          "1"
+        ],
+        "seg": [
+          "1"
+        ],
+        "dl": [
+          "https://waste-services.sutton.gov.uk/waste"
+        ],
+        "dr": [
+          "https://www.sutton.gov.uk/"
+        ],
+        "dt": [
+          "What is your address? :: WasteWorks"
+        ],
+        "_tu": [
+          "CA"
+        ],
+        "en": [
+          "page_view"
+        ],
+        "tfd": [
+          "4701"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "cookie": "[cookies present]",
+        "origin": "https://waste-services.sutton.gov.uk",
+        "referer": "https://waste-services.sutton.gov.uk/waste"
+      },
+      "response_headers": {
+        "cache-control": "no-cache, no-store, must-revalidate",
+        "content-type": "text/plain"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T10:23:41.139Z",
+      "duration_ms": -1,
+      "endpoint": "/g/collect",
+      "host": "region1.google-analytics.com",
+      "method": "POST",
+      "status": -1,
+      "query_params": {
+        "v": [
+          "2"
+        ],
+        "tid": [
+          "G-YCD2M22SKH"
+        ],
+        "gtm": [
+          "45je57g1v9191261943za200zb855049748"
+        ],
+        "_p": [
+          "1753093416100"
+        ],
+        "gcs": [
+          "G111"
+        ],
+        "gcd": [
+          "13r3r3r3r5l1"
+        ],
+        "npa": [
+          "0"
+        ],
+        "dma": [
+          "0"
+        ],
+        "tag_exp": [
+          "101509157~103116026~103200004~103233427~104573694~104684208~104684211"
+        ],
+        "gdid": [
+          "dMmY1Mm"
+        ],
+        "cid": [
+          "421760622.1753093404"
+        ],
+        "ul": [
+          "en-gb"
+        ],
+        "sr": [
+          "800x600"
+        ],
+        "uaa": [
+          "arm"
+        ],
+        "uab": [
+          "64"
+        ],
+        "uafvl": [
+          "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+        ],
+        "uamb": [
+          "0"
+        ],
+        "uap": [
+          "macOS"
+        ],
+        "uapv": [
+          "15.5.0"
+        ],
+        "uaw": [
+          "0"
+        ],
+        "are": [
+          "1"
+        ],
+        "frm": [
+          "0"
+        ],
+        "pscdl": [
+          "noapi"
+        ],
+        "_eu": [
+          "AEEAAAQ"
+        ],
+        "sid": [
+          "1753093403"
+        ],
+        "sct": [
+          "1"
+        ],
+        "seg": [
+          "1"
+        ],
+        "dl": [
+          "https://waste-services.sutton.gov.uk/waste"
+        ],
+        "dr": [
+          "https://www.sutton.gov.uk/"
+        ],
+        "dt": [
+          "What is your address? :: WasteWorks"
+        ],
+        "_tu": [
+          "CA"
+        ],
+        "_s": [
+          "2"
+        ],
+        "tfd": [
+          "5331"
+        ]
+      },
+      "request_headers": {
+        "referer": "https://waste-services.sutton.gov.uk/waste",
+        "content-type": "text/plain;charset=UTF-8"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T10:23:41.143Z",
+      "duration_ms": -1,
+      "endpoint": "/g/collect",
+      "host": "region1.google-analytics.com",
+      "method": "POST",
+      "status": -1,
+      "query_params": {
+        "v": [
+          "2"
+        ],
+        "tid": [
+          "G-DTJ3X33F09"
+        ],
+        "gtm": [
+          "45je57g1v9203624117za200zb855049748"
+        ],
+        "_p": [
+          "1753093416100"
+        ],
+        "gcs": [
+          "G111"
+        ],
+        "gcd": [
+          "13r3r3r3r5l1"
+        ],
+        "npa": [
+          "0"
+        ],
+        "dma": [
+          "0"
+        ],
+        "tag_exp": [
+          "101509157~103116026~103200004~103233427~104684208~104684211"
+        ],
+        "gdid": [
+          "dMmY1Mm"
+        ],
+        "cid": [
+          "421760622.1753093404"
+        ],
+        "ul": [
+          "en-gb"
+        ],
+        "sr": [
+          "800x600"
+        ],
+        "uaa": [
+          "arm"
+        ],
+        "uab": [
+          "64"
+        ],
+        "uafvl": [
+          "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+        ],
+        "uamb": [
+          "0"
+        ],
+        "uap": [
+          "macOS"
+        ],
+        "uapv": [
+          "15.5.0"
+        ],
+        "uaw": [
+          "0"
+        ],
+        "are": [
+          "1"
+        ],
+        "frm": [
+          "0"
+        ],
+        "pscdl": [
+          "noapi"
+        ],
+        "_eu": [
+          "AEEAAAQ"
+        ],
+        "sid": [
+          "1753093416"
+        ],
+        "sct": [
+          "1"
+        ],
+        "seg": [
+          "0"
+        ],
+        "dl": [
+          "https://waste-services.sutton.gov.uk/waste"
+        ],
+        "dr": [
+          "https://www.sutton.gov.uk/"
+        ],
+        "dt": [
+          "What is your address? :: WasteWorks"
+        ],
+        "_tu": [
+          "CA"
+        ],
+        "_s": [
+          "2"
+        ],
+        "tfd": [
+          "5332"
+        ]
+      },
+      "request_headers": {
+        "referer": "https://waste-services.sutton.gov.uk/waste",
+        "content-type": "text/plain;charset=UTF-8"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T10:23:41.691Z",
+      "duration_ms": -1,
+      "endpoint": "/",
+      "host": "tracking.monsido.com",
+      "method": "GET",
+      "status": -1,
+      "query_params": {
+        "a": [
+          "Z8Gph02yPUtbYY2UMLuxPQ"
+        ],
+        "b": [
+          "https://waste-services.sutton.gov.uk/waste"
+        ],
+        "c": [
+          "6C51753093416186"
+        ],
+        "d": [
+          "800x600"
+        ],
+        "e": [
+          "https://waste-services.sutton.gov.uk/waste"
+        ],
+        "f": [
+          "2351753093421201"
+        ],
+        "h": [
+          "2"
+        ]
+      },
+      "request_headers": {
+        "referer": "https://waste-services.sutton.gov.uk/waste"
+      }
+    },
+    {
       "timestamp": "2025-07-21T10:23:40.573Z",
-      "form_data": {
-        "postcode": "CR0 4FA"
+      "duration_ms": 554.313,
+      "endpoint": "/waste",
+      "host": "waste-services.sutton.gov.uk",
+      "method": "POST",
+      "status": 200,
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+        "content-type": "application/x-www-form-urlencoded",
+        "cookie": "[cookies present]",
+        "origin": "https://waste-services.sutton.gov.uk",
+        "referer": "https://waste-services.sutton.gov.uk/waste"
+      },
+      "response_headers": {
+        "content-type": "text/html; charset=utf-8",
+        "set-cookie": "[cookies present]",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "SAMEORIGIN",
+        "x-host": "waste-services.sutton.gov.uk",
+        "x-url": "/waste",
+        "x-xss-protection": "1"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 33441,
+        "compressed": true,
+        "content_ref": "8de065da98bc8221edd784b4ff7f3ca85c9a108e.html"
       }
     },
     {
-      "url": "https://heatmaps.monsido.com/v1/settings/Z8Gph02yPUtbYY2UMLuxPQ.json",
+      "timestamp": "2025-07-21T10:23:41.693Z",
+      "duration_ms": 0.567,
+      "endpoint": "/v1/settings/{id}",
+      "host": "heatmaps.monsido.com",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json",
-      "size": 245,
-      "timestamp": "2025-07-21T10:23:41.693Z"
+      "path_params": [
+        "Z8Gph02yPUtbYY2UMLuxPQ.json"
+      ],
+      "request_headers": {
+        "referer": "https://waste-services.sutton.gov.uk/waste"
+      },
+      "response_headers": {
+        "x-goog-metageneration": "1",
+        "x-goog-hash": "crc32c=F534nA==, md5=hroxTcpoI0/6ADxfQ22uHQ==",
+        "x-goog-stored-content-encoding": "identity",
+        "x-goog-stored-content-length": "245",
+        "content-type": "application/json",
+        "x-guploader-uploadid": "ABgVH8_A_i_WFhto974xvKETI9-IOahkUzRLxAvFJuAEUaW9oU2gYCw9fJF4PJJNqcNbXIonXAQUUzg",
+        "cache-control": "public, max-age=300",
+        "x-goog-storage-class": "MULTI_REGIONAL",
+        "x-goog-generation": "1684751175644001"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 245,
+        "compressed": true,
+        "content_ref": "b51ab706afa3ce356242463240edbfdffd7f2de8.json"
+      }
     },
     {
-      "url": "https://waste-services.sutton.gov.uk/.well-known/manifest-waste.webmanifest",
+      "timestamp": "2025-07-21T10:23:41.697Z",
+      "duration_ms": 17.246000000000002,
+      "endpoint": "/.well-known/{id}",
+      "host": "waste-services.sutton.gov.uk",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/manifest+json",
-      "size": 295,
-      "timestamp": "2025-07-21T10:23:41.697Z"
+      "path_params": [
+        "manifest-waste.webmanifest"
+      ],
+      "request_headers": {
+        "referer": "https://waste-services.sutton.gov.uk/waste"
+      },
+      "response_headers": {
+        "x-host": "waste-services.sutton.gov.uk",
+        "x-content-type-options": "nosniff",
+        "x-url": "/.well-known/manifest-waste.webmanifest",
+        "x-xss-protection": "1",
+        "content-type": "application/manifest+json",
+        "x-frame-options": "SAMEORIGIN"
+      },
+      "response_info": {
+        "type": "application/manifest+json",
+        "size": 295,
+        "compressed": true,
+        "content_ref": "638bc72c446d76ebca4f2247a3321c9721566e8b.webmanifest"
+      }
     },
     {
-      "url": "https://waste-services.sutton.gov.uk/waste",
+      "timestamp": "2025-07-21T10:23:46.219Z",
+      "duration_ms": 17.491,
+      "endpoint": "/g/collect",
+      "host": "region1.google-analytics.com",
+      "method": "POST",
+      "status": 204,
+      "query_params": {
+        "v": [
+          "2"
+        ],
+        "tid": [
+          "G-YCD2M22SKH"
+        ],
+        "gtm": [
+          "45je57g1v9191261943z8855049748za200zb855049748"
+        ],
+        "_p": [
+          "1753093421151"
+        ],
+        "gcs": [
+          "G111"
+        ],
+        "gcd": [
+          "13r3r3r3r5l1"
+        ],
+        "npa": [
+          "0"
+        ],
+        "dma": [
+          "0"
+        ],
+        "tag_exp": [
+          "101509157~103116026~103200004~103233427~104573694~104684208~104684211"
+        ],
+        "gdid": [
+          "dMmY1Mm"
+        ],
+        "cid": [
+          "421760622.1753093404"
+        ],
+        "ul": [
+          "en-gb"
+        ],
+        "sr": [
+          "800x600"
+        ],
+        "uaa": [
+          "arm"
+        ],
+        "uab": [
+          "64"
+        ],
+        "uafvl": [
+          "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+        ],
+        "uamb": [
+          "0"
+        ],
+        "uap": [
+          "macOS"
+        ],
+        "uapv": [
+          "15.5.0"
+        ],
+        "uaw": [
+          "0"
+        ],
+        "are": [
+          "1"
+        ],
+        "frm": [
+          "0"
+        ],
+        "pscdl": [
+          "noapi"
+        ],
+        "_eu": [
+          "AAAAAAQ"
+        ],
+        "_s": [
+          "1"
+        ],
+        "sid": [
+          "1753093403"
+        ],
+        "sct": [
+          "1"
+        ],
+        "seg": [
+          "1"
+        ],
+        "dl": [
+          "https://waste-services.sutton.gov.uk/waste"
+        ],
+        "dr": [
+          "https://waste-services.sutton.gov.uk/waste"
+        ],
+        "dt": [
+          "WasteWorks"
+        ],
+        "_tu": [
+          "CA"
+        ],
+        "en": [
+          "page_view"
+        ],
+        "tfd": [
+          "5692"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "cookie": "[cookies present]",
+        "origin": "https://waste-services.sutton.gov.uk",
+        "referer": "https://waste-services.sutton.gov.uk/waste"
+      },
+      "response_headers": {
+        "cache-control": "no-cache, no-store, must-revalidate",
+        "content-type": "text/plain"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T10:23:46.228Z",
+      "duration_ms": 14.364,
+      "endpoint": "/g/collect",
+      "host": "region1.google-analytics.com",
+      "method": "POST",
+      "status": 204,
+      "query_params": {
+        "v": [
+          "2"
+        ],
+        "tid": [
+          "G-DTJ3X33F09"
+        ],
+        "gtm": [
+          "45je57g1v9203624117z8855049748za200zb855049748"
+        ],
+        "_p": [
+          "1753093421151"
+        ],
+        "gcs": [
+          "G111"
+        ],
+        "gcd": [
+          "13r3r3r3r5l1"
+        ],
+        "npa": [
+          "0"
+        ],
+        "dma": [
+          "0"
+        ],
+        "tag_exp": [
+          "101509157~103116026~103200004~103233427~104684208~104684211"
+        ],
+        "gdid": [
+          "dMmY1Mm"
+        ],
+        "cid": [
+          "421760622.1753093404"
+        ],
+        "ul": [
+          "en-gb"
+        ],
+        "sr": [
+          "800x600"
+        ],
+        "uaa": [
+          "arm"
+        ],
+        "uab": [
+          "64"
+        ],
+        "uafvl": [
+          "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+        ],
+        "uamb": [
+          "0"
+        ],
+        "uap": [
+          "macOS"
+        ],
+        "uapv": [
+          "15.5.0"
+        ],
+        "uaw": [
+          "0"
+        ],
+        "are": [
+          "1"
+        ],
+        "frm": [
+          "0"
+        ],
+        "pscdl": [
+          "noapi"
+        ],
+        "_eu": [
+          "AAAAAAQ"
+        ],
+        "_s": [
+          "1"
+        ],
+        "sid": [
+          "1753093416"
+        ],
+        "sct": [
+          "1"
+        ],
+        "seg": [
+          "1"
+        ],
+        "dl": [
+          "https://waste-services.sutton.gov.uk/waste"
+        ],
+        "dr": [
+          "https://waste-services.sutton.gov.uk/waste"
+        ],
+        "dt": [
+          "WasteWorks"
+        ],
+        "_tu": [
+          "CA"
+        ],
+        "en": [
+          "page_view"
+        ],
+        "tfd": [
+          "5703"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "cookie": "[cookies present]",
+        "origin": "https://waste-services.sutton.gov.uk",
+        "referer": "https://waste-services.sutton.gov.uk/waste"
+      },
+      "response_headers": {
+        "cache-control": "no-cache, no-store, must-revalidate",
+        "content-type": "text/plain"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T10:23:49.108Z",
+      "duration_ms": 107.435,
+      "endpoint": "/waste",
+      "host": "waste-services.sutton.gov.uk",
       "method": "POST",
       "status": 302,
-      "redirect_url": "https://waste-services.sutton.gov.uk/waste/4502216",
-      "mime_type": "text/html; charset=utf-8",
-      "size": -1,
-      "timestamp": "2025-07-21T10:23:49.108Z",
-      "form_data": {
-        "address": "4502216"
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+        "content-type": "application/x-www-form-urlencoded",
+        "cookie": "[cookies present]",
+        "origin": "https://waste-services.sutton.gov.uk",
+        "referer": "https://waste-services.sutton.gov.uk/waste"
+      },
+      "response_headers": {
+        "content-type": "text/html; charset=utf-8",
+        "location": "/waste/4502216",
+        "set-cookie": "[cookies present]",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "SAMEORIGIN",
+        "x-host": "waste-services.sutton.gov.uk",
+        "x-url": "/waste",
+        "x-xss-protection": "1"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": -1
+      },
+      "redirect_to": "/waste/4502216"
+    },
+    {
+      "timestamp": "2025-07-21T10:23:49.398Z",
+      "duration_ms": -1,
+      "endpoint": "/g/collect",
+      "host": "region1.google-analytics.com",
+      "method": "POST",
+      "status": -1,
+      "query_params": {
+        "v": [
+          "2"
+        ],
+        "tid": [
+          "G-YCD2M22SKH"
+        ],
+        "gtm": [
+          "45je57g1v9191261943za200zb855049748"
+        ],
+        "_p": [
+          "1753093421151"
+        ],
+        "gcs": [
+          "G111"
+        ],
+        "gcd": [
+          "13r3r3r3r5l1"
+        ],
+        "npa": [
+          "0"
+        ],
+        "dma": [
+          "0"
+        ],
+        "tag_exp": [
+          "101509157~103116026~103200004~103233427~104573694~104684208~104684211"
+        ],
+        "gdid": [
+          "dMmY1Mm"
+        ],
+        "cid": [
+          "421760622.1753093404"
+        ],
+        "ul": [
+          "en-gb"
+        ],
+        "sr": [
+          "800x600"
+        ],
+        "uaa": [
+          "arm"
+        ],
+        "uab": [
+          "64"
+        ],
+        "uafvl": [
+          "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+        ],
+        "uamb": [
+          "0"
+        ],
+        "uap": [
+          "macOS"
+        ],
+        "uapv": [
+          "15.5.0"
+        ],
+        "uaw": [
+          "0"
+        ],
+        "are": [
+          "1"
+        ],
+        "frm": [
+          "0"
+        ],
+        "pscdl": [
+          "noapi"
+        ],
+        "_eu": [
+          "AEEAAAQ"
+        ],
+        "sid": [
+          "1753093403"
+        ],
+        "sct": [
+          "1"
+        ],
+        "seg": [
+          "1"
+        ],
+        "dl": [
+          "https://waste-services.sutton.gov.uk/waste"
+        ],
+        "dr": [
+          "https://waste-services.sutton.gov.uk/waste"
+        ],
+        "dt": [
+          "WasteWorks"
+        ],
+        "_tu": [
+          "CA"
+        ],
+        "_s": [
+          "2"
+        ],
+        "tfd": [
+          "8871"
+        ]
+      },
+      "request_headers": {
+        "referer": "https://waste-services.sutton.gov.uk/waste",
+        "content-type": "text/plain;charset=UTF-8"
       }
     },
     {
-      "url": "https://waste-services.sutton.gov.uk/waste/4502216",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "text/html; charset=utf-8",
-      "size": 20069,
-      "timestamp": "2025-07-21T10:23:49.217Z"
+      "timestamp": "2025-07-21T10:23:49.400Z",
+      "duration_ms": -1,
+      "endpoint": "/g/collect",
+      "host": "region1.google-analytics.com",
+      "method": "POST",
+      "status": -1,
+      "query_params": {
+        "v": [
+          "2"
+        ],
+        "tid": [
+          "G-DTJ3X33F09"
+        ],
+        "gtm": [
+          "45je57g1v9203624117za200zb855049748"
+        ],
+        "_p": [
+          "1753093421151"
+        ],
+        "gcs": [
+          "G111"
+        ],
+        "gcd": [
+          "13r3r3r3r5l1"
+        ],
+        "npa": [
+          "0"
+        ],
+        "dma": [
+          "0"
+        ],
+        "tag_exp": [
+          "101509157~103116026~103200004~103233427~104684208~104684211"
+        ],
+        "gdid": [
+          "dMmY1Mm"
+        ],
+        "cid": [
+          "421760622.1753093404"
+        ],
+        "ul": [
+          "en-gb"
+        ],
+        "sr": [
+          "800x600"
+        ],
+        "uaa": [
+          "arm"
+        ],
+        "uab": [
+          "64"
+        ],
+        "uafvl": [
+          "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+        ],
+        "uamb": [
+          "0"
+        ],
+        "uap": [
+          "macOS"
+        ],
+        "uapv": [
+          "15.5.0"
+        ],
+        "uaw": [
+          "0"
+        ],
+        "are": [
+          "1"
+        ],
+        "frm": [
+          "0"
+        ],
+        "pscdl": [
+          "noapi"
+        ],
+        "_eu": [
+          "AEEAAAQ"
+        ],
+        "sid": [
+          "1753093416"
+        ],
+        "sct": [
+          "1"
+        ],
+        "seg": [
+          "1"
+        ],
+        "dl": [
+          "https://waste-services.sutton.gov.uk/waste"
+        ],
+        "dr": [
+          "https://waste-services.sutton.gov.uk/waste"
+        ],
+        "dt": [
+          "WasteWorks"
+        ],
+        "_tu": [
+          "CA"
+        ],
+        "_s": [
+          "2"
+        ],
+        "tfd": [
+          "8872"
+        ]
+      },
+      "request_headers": {
+        "referer": "https://waste-services.sutton.gov.uk/waste",
+        "content-type": "text/plain;charset=UTF-8"
+      }
     },
     {
-      "url": "https://heatmaps.monsido.com/v1/settings/Z8Gph02yPUtbYY2UMLuxPQ.json",
+      "timestamp": "2025-07-21T10:23:49.217Z",
+      "duration_ms": 175.495,
+      "endpoint": "/waste/{id}",
+      "host": "waste-services.sutton.gov.uk",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json",
-      "size": 245,
-      "timestamp": "2025-07-21T10:23:49.508Z"
+      "path_params": [
+        "4502216"
+      ],
+      "request_headers": {
+        "content-type": "application/x-www-form-urlencoded",
+        "origin": "https://waste-services.sutton.gov.uk",
+        "referer": "https://waste-services.sutton.gov.uk/waste"
+      },
+      "response_headers": {
+        "content-type": "text/html; charset=utf-8",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "SAMEORIGIN",
+        "x-host": "waste-services.sutton.gov.uk",
+        "x-url": "/waste/4502216",
+        "x-xss-protection": "1"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 20069,
+        "compressed": true,
+        "content_ref": "33d3b044ba5d31965026e590a77ca0e4ccb1673b.html"
+      }
     },
     {
-      "url": "https://waste-services.sutton.gov.uk/.well-known/manifest-waste.webmanifest",
+      "timestamp": "2025-07-21T10:23:49.508Z",
+      "duration_ms": 1.458,
+      "endpoint": "/v1/settings/{id}",
+      "host": "heatmaps.monsido.com",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/manifest+json",
-      "size": 295,
-      "timestamp": "2025-07-21T10:23:49.508Z"
+      "path_params": [
+        "Z8Gph02yPUtbYY2UMLuxPQ.json"
+      ],
+      "request_headers": {
+        "referer": "https://waste-services.sutton.gov.uk/waste/4502216"
+      },
+      "response_headers": {
+        "x-goog-metageneration": "1",
+        "x-goog-hash": "crc32c=F534nA==, md5=hroxTcpoI0/6ADxfQ22uHQ==",
+        "x-goog-stored-content-encoding": "identity",
+        "x-goog-stored-content-length": "245",
+        "content-type": "application/json",
+        "x-guploader-uploadid": "ABgVH8_A_i_WFhto974xvKETI9-IOahkUzRLxAvFJuAEUaW9oU2gYCw9fJF4PJJNqcNbXIonXAQUUzg",
+        "cache-control": "public, max-age=300",
+        "x-goog-storage-class": "MULTI_REGIONAL",
+        "x-goog-generation": "1684751175644001"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 245,
+        "compressed": true,
+        "content_ref": "b51ab706afa3ce356242463240edbfdffd7f2de8.json"
+      }
     },
     {
-      "url": "https://waste-services.sutton.gov.uk/waste/4502216?page_loading=1",
+      "timestamp": "2025-07-21T10:23:49.508Z",
+      "duration_ms": 26.803,
+      "endpoint": "/.well-known/{id}",
+      "host": "waste-services.sutton.gov.uk",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "text/html; charset=utf-8",
-      "size": 299,
-      "timestamp": "2025-07-21T10:23:51.446Z"
+      "path_params": [
+        "manifest-waste.webmanifest"
+      ],
+      "request_headers": {
+        "referer": "https://waste-services.sutton.gov.uk/waste/4502216"
+      },
+      "response_headers": {
+        "x-host": "waste-services.sutton.gov.uk",
+        "x-content-type-options": "nosniff",
+        "x-url": "/.well-known/manifest-waste.webmanifest",
+        "x-xss-protection": "1",
+        "content-type": "application/manifest+json",
+        "x-frame-options": "SAMEORIGIN"
+      },
+      "response_info": {
+        "type": "application/manifest+json",
+        "size": 295,
+        "compressed": true,
+        "content_ref": "0a5dd37000455eb5a58984acb5fda9ce52ad22ca.webmanifest"
+      }
     },
     {
-      "url": "https://waste-services.sutton.gov.uk/waste/4502216?page_loading=1",
+      "timestamp": "2025-07-21T10:23:49.487Z",
+      "duration_ms": -1,
+      "endpoint": "/",
+      "host": "tracking.monsido.com",
+      "method": "GET",
+      "status": -1,
+      "query_params": {
+        "a": [
+          "Z8Gph02yPUtbYY2UMLuxPQ"
+        ],
+        "b": [
+          "https://waste-services.sutton.gov.uk/waste/4502216"
+        ],
+        "c": [
+          "6C51753093416186"
+        ],
+        "d": [
+          "800x600"
+        ],
+        "e": [
+          "https://waste-services.sutton.gov.uk/waste"
+        ],
+        "f": [
+          "6841753093429480"
+        ],
+        "h": [
+          "2"
+        ]
+      },
+      "request_headers": {
+        "referer": "https://waste-services.sutton.gov.uk/waste/4502216"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T10:23:51.446Z",
+      "duration_ms": 774.612,
+      "endpoint": "/waste/{id}",
+      "host": "waste-services.sutton.gov.uk",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "text/html; charset=utf-8",
-      "size": 27823,
-      "timestamp": "2025-07-21T10:23:54.220Z"
+      "path_params": [
+        "4502216"
+      ],
+      "query_params": {
+        "page_loading": [
+          "1"
+        ]
+      },
+      "request_headers": {
+        "referer": "https://waste-services.sutton.gov.uk/waste/4502216",
+        "x-requested-with": "fetch"
+      },
+      "response_headers": {
+        "x-host": "waste-services.sutton.gov.uk",
+        "x-content-type-options": "nosniff",
+        "x-url": "/waste/4502216?page_loading=1",
+        "x-xss-protection": "1",
+        "content-type": "text/html; charset=utf-8",
+        "x-frame-options": "SAMEORIGIN"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 299,
+        "compressed": true,
+        "content_ref": "6359ed17aa5500e15059d4c8ef2ca65cb8b1db91.html"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T10:23:54.474Z",
+      "duration_ms": 14.017,
+      "endpoint": "/g/collect",
+      "host": "region1.google-analytics.com",
+      "method": "POST",
+      "status": 204,
+      "query_params": {
+        "v": [
+          "2"
+        ],
+        "tid": [
+          "G-DTJ3X33F09"
+        ],
+        "gtm": [
+          "45je57g1v9203624117z8855049748za200zb855049748"
+        ],
+        "_p": [
+          "1753093429409"
+        ],
+        "gcs": [
+          "G111"
+        ],
+        "gcd": [
+          "13r3r3r3r5l1"
+        ],
+        "npa": [
+          "0"
+        ],
+        "dma": [
+          "0"
+        ],
+        "tag_exp": [
+          "101509157~103116026~103200004~103233427~104684208~104684211"
+        ],
+        "gdid": [
+          "dMmY1Mm"
+        ],
+        "cid": [
+          "421760622.1753093404"
+        ],
+        "ul": [
+          "en-gb"
+        ],
+        "sr": [
+          "800x600"
+        ],
+        "uaa": [
+          "arm"
+        ],
+        "uab": [
+          "64"
+        ],
+        "uafvl": [
+          "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+        ],
+        "uamb": [
+          "0"
+        ],
+        "uap": [
+          "macOS"
+        ],
+        "uapv": [
+          "15.5.0"
+        ],
+        "uaw": [
+          "0"
+        ],
+        "are": [
+          "1"
+        ],
+        "frm": [
+          "0"
+        ],
+        "pscdl": [
+          "noapi"
+        ],
+        "_eu": [
+          "AAAAAAQ"
+        ],
+        "_s": [
+          "1"
+        ],
+        "sid": [
+          "1753093416"
+        ],
+        "sct": [
+          "1"
+        ],
+        "seg": [
+          "1"
+        ],
+        "dl": [
+          "https://waste-services.sutton.gov.uk/waste/4502216"
+        ],
+        "dr": [
+          "https://waste-services.sutton.gov.uk/waste"
+        ],
+        "dt": [
+          "WasteWorks"
+        ],
+        "_tu": [
+          "CA"
+        ],
+        "en": [
+          "page_view"
+        ],
+        "tfd": [
+          "5417"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "cookie": "[cookies present]",
+        "origin": "https://waste-services.sutton.gov.uk",
+        "referer": "https://waste-services.sutton.gov.uk/waste/4502216"
+      },
+      "response_headers": {
+        "cache-control": "no-cache, no-store, must-revalidate",
+        "content-type": "text/plain"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T10:23:54.483Z",
+      "duration_ms": 13.834,
+      "endpoint": "/g/collect",
+      "host": "region1.google-analytics.com",
+      "method": "POST",
+      "status": 204,
+      "query_params": {
+        "v": [
+          "2"
+        ],
+        "tid": [
+          "G-YCD2M22SKH"
+        ],
+        "gtm": [
+          "45je57g1v9191261943z8855049748za200zb855049748"
+        ],
+        "_p": [
+          "1753093429409"
+        ],
+        "gcs": [
+          "G111"
+        ],
+        "gcd": [
+          "13r3r3r3r5l1"
+        ],
+        "npa": [
+          "0"
+        ],
+        "dma": [
+          "0"
+        ],
+        "tag_exp": [
+          "101509157~103116026~103200004~103233427~104573694~104684208~104684211"
+        ],
+        "gdid": [
+          "dMmY1Mm"
+        ],
+        "cid": [
+          "421760622.1753093404"
+        ],
+        "ul": [
+          "en-gb"
+        ],
+        "sr": [
+          "800x600"
+        ],
+        "uaa": [
+          "arm"
+        ],
+        "uab": [
+          "64"
+        ],
+        "uafvl": [
+          "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+        ],
+        "uamb": [
+          "0"
+        ],
+        "uap": [
+          "macOS"
+        ],
+        "uapv": [
+          "15.5.0"
+        ],
+        "uaw": [
+          "0"
+        ],
+        "are": [
+          "1"
+        ],
+        "frm": [
+          "0"
+        ],
+        "pscdl": [
+          "noapi"
+        ],
+        "_eu": [
+          "AAAAAAQ"
+        ],
+        "_s": [
+          "1"
+        ],
+        "sid": [
+          "1753093403"
+        ],
+        "sct": [
+          "1"
+        ],
+        "seg": [
+          "1"
+        ],
+        "dl": [
+          "https://waste-services.sutton.gov.uk/waste/4502216"
+        ],
+        "dr": [
+          "https://waste-services.sutton.gov.uk/waste"
+        ],
+        "dt": [
+          "WasteWorks"
+        ],
+        "_tu": [
+          "CA"
+        ],
+        "en": [
+          "page_view"
+        ],
+        "tfd": [
+          "5427"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "cookie": "[cookies present]",
+        "origin": "https://waste-services.sutton.gov.uk",
+        "referer": "https://waste-services.sutton.gov.uk/waste/4502216"
+      },
+      "response_headers": {
+        "cache-control": "no-cache, no-store, must-revalidate",
+        "content-type": "text/plain"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T10:23:54.220Z",
+      "duration_ms": 2378.866,
+      "endpoint": "/waste/{id}",
+      "host": "waste-services.sutton.gov.uk",
+      "method": "GET",
+      "status": 200,
+      "path_params": [
+        "4502216"
+      ],
+      "query_params": {
+        "page_loading": [
+          "1"
+        ]
+      },
+      "request_headers": {
+        "referer": "https://waste-services.sutton.gov.uk/waste/4502216",
+        "x-requested-with": "fetch"
+      },
+      "response_headers": {
+        "x-host": "waste-services.sutton.gov.uk",
+        "x-content-type-options": "nosniff",
+        "x-url": "/waste/4502216?page_loading=1",
+        "x-xss-protection": "1",
+        "content-type": "text/html; charset=utf-8",
+        "x-frame-options": "SAMEORIGIN"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 27823,
+        "compressed": true,
+        "content_ref": "94dfd5001cb999fb8752e9f9dd6ffcf09a2cfbf9.html"
+      }
     }
-  ]
+  ],
+  "analysis": {
+    "total_requests": 38,
+    "unique_endpoints": 12,
+    "methods_used": [
+      "GET",
+      "POST"
+    ],
+    "status_codes": {
+      "301": 1,
+      "302": 2,
+      "200": 17,
+      "-1": 10,
+      "204": 8
+    },
+    "endpoints_with_params": [
+      {
+        "endpoint": "/info/{id}/waste_and_recycling/{id}/{id}",
+        "method": "GET",
+        "query_params": [],
+        "path_params": true
+      },
+      {
+        "endpoint": "/-/{id}",
+        "method": "GET",
+        "query_params": [],
+        "path_params": true
+      },
+      {
+        "endpoint": "/w/{id}",
+        "method": "GET",
+        "query_params": [],
+        "path_params": true
+      },
+      {
+        "endpoint": "/c/portal/layout",
+        "method": "GET",
+        "query_params": [
+          "p_l_id",
+          "p_p_cacheability",
+          "p_p_id",
+          "p_p_lifecycle",
+          "p_p_resource_id"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/analytics",
+        "method": "GET",
+        "query_params": [
+          "action",
+          "time",
+          "script"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/v1/settings/{id}",
+        "method": "GET",
+        "query_params": [],
+        "path_params": true
+      },
+      {
+        "endpoint": "/",
+        "method": "GET",
+        "query_params": [
+          "a",
+          "b",
+          "c",
+          "d",
+          "f",
+          "h"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/collect",
+        "method": "GET",
+        "query_params": [
+          "action",
+          "time",
+          "page",
+          "dnt",
+          "script",
+          "consenttext",
+          "category"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/g/collect",
+        "method": "POST",
+        "query_params": [
+          "v",
+          "tid",
+          "gtm",
+          "_p",
+          "gcs",
+          "gcd",
+          "npa",
+          "dma",
+          "tag_exp",
+          "gdid",
+          "cid",
+          "ul",
+          "sr",
+          "uaa",
+          "uab",
+          "uafvl",
+          "uamb",
+          "uap",
+          "uapv",
+          "uaw",
+          "are",
+          "frm",
+          "pscdl",
+          "_s",
+          "sid",
+          "sct",
+          "seg",
+          "dl",
+          "dt",
+          "_tu",
+          "en",
+          "_fv",
+          "_nsi",
+          "_ss",
+          "tfd"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/g/collect",
+        "method": "POST",
+        "query_params": [
+          "v",
+          "tid",
+          "gtm",
+          "_p",
+          "gcs",
+          "gcd",
+          "npa",
+          "dma",
+          "tag_exp",
+          "gdid",
+          "cid",
+          "ul",
+          "sr",
+          "uaa",
+          "uab",
+          "uafvl",
+          "uamb",
+          "uap",
+          "uapv",
+          "uaw",
+          "are",
+          "frm",
+          "pscdl",
+          "_s",
+          "sid",
+          "sct",
+          "seg",
+          "dl",
+          "dt",
+          "_tu",
+          "en",
+          "_fv",
+          "_ss",
+          "tfd"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/g/collect",
+        "method": "POST",
+        "query_params": [
+          "v",
+          "tid",
+          "gtm",
+          "_p",
+          "gcs",
+          "gcd",
+          "npa",
+          "dma",
+          "tag_exp",
+          "gdid",
+          "cid",
+          "ul",
+          "sr",
+          "uaa",
+          "uab",
+          "uafvl",
+          "uamb",
+          "uap",
+          "uapv",
+          "uaw",
+          "are",
+          "frm",
+          "pscdl",
+          "_eu",
+          "_s",
+          "sid",
+          "sct",
+          "seg",
+          "dl",
+          "dt",
+          "_tu",
+          "en",
+          "ep.link_url",
+          "ep.link_text",
+          "ep.link_classes",
+          "_et",
+          "tfd"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/g/collect",
+        "method": "POST",
+        "query_params": [
+          "v",
+          "tid",
+          "gtm",
+          "_p",
+          "gcs",
+          "gcd",
+          "npa",
+          "dma",
+          "tag_exp",
+          "gdid",
+          "cid",
+          "ul",
+          "sr",
+          "uaa",
+          "uab",
+          "uafvl",
+          "uamb",
+          "uap",
+          "uapv",
+          "uaw",
+          "are",
+          "frm",
+          "pscdl",
+          "_eu",
+          "_s",
+          "sid",
+          "sct",
+          "seg",
+          "dl",
+          "dt",
+          "_tu",
+          "en",
+          "_et",
+          "tfd"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/g/collect",
+        "method": "POST",
+        "query_params": [
+          "v",
+          "tid",
+          "gtm",
+          "_p",
+          "gcs",
+          "gcd",
+          "npa",
+          "dma",
+          "tag_exp",
+          "gdid",
+          "cid",
+          "ul",
+          "sr",
+          "uaa",
+          "uab",
+          "uafvl",
+          "uamb",
+          "uap",
+          "uapv",
+          "uaw",
+          "are",
+          "frm",
+          "pscdl",
+          "_s",
+          "sid",
+          "sct",
+          "seg",
+          "dl",
+          "dr",
+          "dt",
+          "_tu",
+          "en",
+          "_fv",
+          "_ss",
+          "tfd"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/.well-known/{id}",
+        "method": "GET",
+        "query_params": [],
+        "path_params": true
+      },
+      {
+        "endpoint": "/",
+        "method": "GET",
+        "query_params": [
+          "a",
+          "b",
+          "c",
+          "d",
+          "e",
+          "f",
+          "h"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/g/collect",
+        "method": "POST",
+        "query_params": [
+          "v",
+          "tid",
+          "gtm",
+          "_p",
+          "gcs",
+          "gcd",
+          "npa",
+          "dma",
+          "tag_exp",
+          "gdid",
+          "cid",
+          "ul",
+          "sr",
+          "uaa",
+          "uab",
+          "uafvl",
+          "uamb",
+          "uap",
+          "uapv",
+          "uaw",
+          "are",
+          "frm",
+          "pscdl",
+          "_eu",
+          "_s",
+          "sid",
+          "sct",
+          "seg",
+          "dl",
+          "dr",
+          "dt",
+          "_tu",
+          "en",
+          "tfd"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/g/collect",
+        "method": "POST",
+        "query_params": [
+          "v",
+          "tid",
+          "gtm",
+          "_p",
+          "gcs",
+          "gcd",
+          "npa",
+          "dma",
+          "tag_exp",
+          "gdid",
+          "cid",
+          "ul",
+          "sr",
+          "uaa",
+          "uab",
+          "uafvl",
+          "uamb",
+          "uap",
+          "uapv",
+          "uaw",
+          "are",
+          "frm",
+          "pscdl",
+          "_eu",
+          "sid",
+          "sct",
+          "seg",
+          "dl",
+          "dr",
+          "dt",
+          "_tu",
+          "_s",
+          "tfd"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/waste/{id}",
+        "method": "GET",
+        "query_params": [],
+        "path_params": true
+      },
+      {
+        "endpoint": "/waste/{id}",
+        "method": "GET",
+        "query_params": [
+          "page_loading"
+        ],
+        "path_params": true
+      }
+    ],
+    "redirects": [
+      {
+        "from": "/info/{id}/waste_and_recycling/{id}/{id}",
+        "to": "https://www.sutton.gov.uk/-/check-your-bin-collection-days",
+        "status": 301
+      },
+      {
+        "from": "/-/{id}",
+        "to": "https://www.sutton.gov.uk/w/check-your-bin-collection-days",
+        "status": 302
+      },
+      {
+        "from": "/waste",
+        "to": "/waste/4502216",
+        "status": 302
+      }
+    ],
+    "api_calls": [
+      {
+        "endpoint": "/analytics",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": [
+          "action",
+          "time",
+          "script"
+        ]
+      },
+      {
+        "endpoint": "/v1/settings/{id}",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": []
+      },
+      {
+        "endpoint": "/collect",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": [
+          "action",
+          "time",
+          "page",
+          "dnt",
+          "script",
+          "consenttext",
+          "category"
+        ]
+      },
+      {
+        "endpoint": "/analytics",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": [
+          "action",
+          "time",
+          "script"
+        ]
+      },
+      {
+        "endpoint": "/v1/settings/{id}",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": []
+      },
+      {
+        "endpoint": "/.well-known/{id}",
+        "method": "GET",
+        "response_type": "application/manifest+json",
+        "params": []
+      },
+      {
+        "endpoint": "/v1/settings/{id}",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": []
+      },
+      {
+        "endpoint": "/.well-known/{id}",
+        "method": "GET",
+        "response_type": "application/manifest+json",
+        "params": []
+      },
+      {
+        "endpoint": "/v1/settings/{id}",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": []
+      },
+      {
+        "endpoint": "/.well-known/{id}",
+        "method": "GET",
+        "response_type": "application/manifest+json",
+        "params": []
+      }
+    ],
+    "form_submissions": []
+  },
+  "grouped_by_endpoint": {
+    "/info/{id}/waste_and_recycling/{id}/{id}": [
+      {
+        "timestamp": "2025-07-21T10:23:21.197Z",
+        "duration_ms": 48.354000000000006,
+        "endpoint": "/info/{id}/waste_and_recycling/{id}/{id}",
+        "host": "www.sutton.gov.uk",
+        "method": "GET",
+        "status": 301,
+        "path_params": [
+          "200449",
+          "1578",
+          "when_are_my_bins_collected"
+        ],
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7"
+        },
+        "response_headers": {
+          "cache-control": "private, no-cache, no-store, must-revalidate",
+          "content-type": "text/html",
+          "location": "https://www.sutton.gov.uk/-/check-your-bin-collection-days",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "SAMEORIGIN",
+          "x-permitted-cross-domain-policies": "none"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": -1
+        },
+        "redirect_to": "https://www.sutton.gov.uk/-/check-your-bin-collection-days"
+      }
+    ],
+    "/-/{id}": [
+      {
+        "timestamp": "2025-07-21T10:23:21.234Z",
+        "duration_ms": 14.732999999999999,
+        "endpoint": "/-/{id}",
+        "host": "www.sutton.gov.uk",
+        "method": "GET",
+        "status": 302,
+        "path_params": [
+          "check-your-bin-collection-days"
+        ],
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7"
+        },
+        "response_headers": {
+          "cache-control": "private, no-cache, no-store, must-revalidate",
+          "location": "https://www.sutton.gov.uk/w/check-your-bin-collection-days",
+          "set-cookie": "[cookies present]",
+          "x-backend": "liferay-5bf44dcc8d-9q8qm",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "SAMEORIGIN",
+          "x-permitted-cross-domain-policies": "none"
+        },
+        "redirect_to": "https://www.sutton.gov.uk/w/check-your-bin-collection-days"
+      }
+    ],
+    "/w/{id}": [
+      {
+        "timestamp": "2025-07-21T10:23:21.248Z",
+        "duration_ms": 221.063,
+        "endpoint": "/w/{id}",
+        "host": "www.sutton.gov.uk",
+        "method": "GET",
+        "status": 200,
+        "path_params": [
+          "check-your-bin-collection-days"
+        ],
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+          "cookie": "[cookies present]"
+        },
+        "response_headers": {
+          "cache-control": "private, no-cache, no-store, must-revalidate",
+          "content-type": "text/html;charset=UTF-8",
+          "set-cookie": "[cookies present]",
+          "x-backend": "liferay-5bf44dcc8d-9q8qm",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "SAMEORIGIN",
+          "x-permitted-cross-domain-policies": "none"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 121518,
+          "compressed": true,
+          "content_ref": "5243eb8fe84e1a622a43feb52dd28f1085172315.html"
+        }
+      }
+    ],
+    "/c/portal/layout": [
+      {
+        "timestamp": "2025-07-21T10:23:21.710Z",
+        "duration_ms": 22.595,
+        "endpoint": "/c/portal/layout",
+        "host": "www.sutton.gov.uk",
+        "method": "GET",
+        "status": 200,
+        "query_params": {
+          "p_l_id": [
+            "647"
+          ],
+          "p_p_cacheability": [
+            "cacheLevelPage"
+          ],
+          "p_p_id": [
+            "com_placecube_digitalplace_announcements_banner_web_AnnouncementsBannerPortlet"
+          ],
+          "p_p_lifecycle": [
+            "2"
+          ],
+          "p_p_resource_id": [
+            "/announcements-banner/get-configuration"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "cookie": "[cookies present]",
+          "referer": "https://www.sutton.gov.uk/w/check-your-bin-collection-days",
+          "x-requested-with": "XMLHttpRequest"
+        },
+        "response_headers": {
+          "cache-control": "private, no-cache, no-store, must-revalidate",
+          "content-type": "text/html;charset=UTF-8",
+          "x-backend": "liferay-5bf44dcc8d-9q8qm",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "SAMEORIGIN",
+          "x-permitted-cross-domain-policies": "none"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 58,
+          "content_ref": "da62416622bf283936c8e4a0a0336c0faa7c5d79.html"
+        }
+      }
+    ],
+    "/analytics": [
+      {
+        "timestamp": "2025-07-21T10:23:21.856Z",
+        "duration_ms": 414,
+        "endpoint": "/analytics",
+        "host": "consent.cookie-script.com",
+        "method": "GET",
+        "status": 200,
+        "query_params": {
+          "action": [
+            "firstshown"
+          ],
+          "time": [
+            "1753093401848"
+          ],
+          "script": [
+            "a7ba59044d04a1624a4e3db9dbf7b7b0"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "origin": "https://www.sutton.gov.uk",
+          "referer": "https://www.sutton.gov.uk/"
+        },
+        "response_headers": {
+          "content-type": "application/json"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 47,
+          "content_ref": "07a12d41325d6ee13fe53df61212583fb699c7cf.json"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T10:23:23.329Z",
+        "duration_ms": 313.53999999999996,
+        "endpoint": "/analytics",
+        "host": "consent.cookie-script.com",
+        "method": "GET",
+        "status": 200,
+        "query_params": {
+          "action": [
+            "firstacceptall"
+          ],
+          "time": [
+            "1753093403308"
+          ],
+          "script": [
+            "a7ba59044d04a1624a4e3db9dbf7b7b0"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "origin": "https://www.sutton.gov.uk",
+          "referer": "https://www.sutton.gov.uk/"
+        },
+        "response_headers": {
+          "content-type": "application/json"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 47,
+          "content_ref": "2d926ec628ab08e2eaff3a4ed7f4d274804b6e83.json"
+        }
+      }
+    ],
+    "/v1/settings/{id}": [
+      {
+        "timestamp": "2025-07-21T10:23:23.416Z",
+        "duration_ms": 32.392,
+        "endpoint": "/v1/settings/{id}",
+        "host": "heatmaps.monsido.com",
+        "method": "GET",
+        "status": 200,
+        "path_params": [
+          "Z8Gph02yPUtbYY2UMLuxPQ.json"
+        ],
+        "request_headers": {
+          "accept": "*/*",
+          "origin": "https://www.sutton.gov.uk",
+          "referer": "https://www.sutton.gov.uk/"
+        },
+        "response_headers": {
+          "cache-control": "public, max-age=300",
+          "content-type": "application/json",
+          "x-goog-generation": "1684751175644001",
+          "x-goog-hash": "md5=hroxTcpoI0/6ADxfQ22uHQ==",
+          "x-goog-metageneration": "1",
+          "x-goog-storage-class": "MULTI_REGIONAL",
+          "x-goog-stored-content-encoding": "identity",
+          "x-goog-stored-content-length": "245",
+          "x-guploader-uploadid": "ABgVH8_A_i_WFhto974xvKETI9-IOahkUzRLxAvFJuAEUaW9oU2gYCw9fJF4PJJNqcNbXIonXAQUUzg"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 245,
+          "content_ref": "b51ab706afa3ce356242463240edbfdffd7f2de8.json"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T10:23:36.231Z",
+        "duration_ms": 1.2690000000000001,
+        "endpoint": "/v1/settings/{id}",
+        "host": "heatmaps.monsido.com",
+        "method": "GET",
+        "status": 200,
+        "path_params": [
+          "Z8Gph02yPUtbYY2UMLuxPQ.json"
+        ],
+        "request_headers": {
+          "referer": "https://waste-services.sutton.gov.uk/waste"
+        },
+        "response_headers": {
+          "x-goog-metageneration": "1",
+          "x-goog-hash": "crc32c=F534nA==, md5=hroxTcpoI0/6ADxfQ22uHQ==",
+          "x-goog-stored-content-encoding": "identity",
+          "x-goog-stored-content-length": "245",
+          "content-type": "application/json",
+          "x-guploader-uploadid": "ABgVH8_A_i_WFhto974xvKETI9-IOahkUzRLxAvFJuAEUaW9oU2gYCw9fJF4PJJNqcNbXIonXAQUUzg",
+          "cache-control": "public, max-age=300",
+          "x-goog-storage-class": "MULTI_REGIONAL",
+          "x-goog-generation": "1684751175644001"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 245,
+          "compressed": true,
+          "content_ref": "b51ab706afa3ce356242463240edbfdffd7f2de8.json"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T10:23:41.693Z",
+        "duration_ms": 0.567,
+        "endpoint": "/v1/settings/{id}",
+        "host": "heatmaps.monsido.com",
+        "method": "GET",
+        "status": 200,
+        "path_params": [
+          "Z8Gph02yPUtbYY2UMLuxPQ.json"
+        ],
+        "request_headers": {
+          "referer": "https://waste-services.sutton.gov.uk/waste"
+        },
+        "response_headers": {
+          "x-goog-metageneration": "1",
+          "x-goog-hash": "crc32c=F534nA==, md5=hroxTcpoI0/6ADxfQ22uHQ==",
+          "x-goog-stored-content-encoding": "identity",
+          "x-goog-stored-content-length": "245",
+          "content-type": "application/json",
+          "x-guploader-uploadid": "ABgVH8_A_i_WFhto974xvKETI9-IOahkUzRLxAvFJuAEUaW9oU2gYCw9fJF4PJJNqcNbXIonXAQUUzg",
+          "cache-control": "public, max-age=300",
+          "x-goog-storage-class": "MULTI_REGIONAL",
+          "x-goog-generation": "1684751175644001"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 245,
+          "compressed": true,
+          "content_ref": "b51ab706afa3ce356242463240edbfdffd7f2de8.json"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T10:23:49.508Z",
+        "duration_ms": 1.458,
+        "endpoint": "/v1/settings/{id}",
+        "host": "heatmaps.monsido.com",
+        "method": "GET",
+        "status": 200,
+        "path_params": [
+          "Z8Gph02yPUtbYY2UMLuxPQ.json"
+        ],
+        "request_headers": {
+          "referer": "https://waste-services.sutton.gov.uk/waste/4502216"
+        },
+        "response_headers": {
+          "x-goog-metageneration": "1",
+          "x-goog-hash": "crc32c=F534nA==, md5=hroxTcpoI0/6ADxfQ22uHQ==",
+          "x-goog-stored-content-encoding": "identity",
+          "x-goog-stored-content-length": "245",
+          "content-type": "application/json",
+          "x-guploader-uploadid": "ABgVH8_A_i_WFhto974xvKETI9-IOahkUzRLxAvFJuAEUaW9oU2gYCw9fJF4PJJNqcNbXIonXAQUUzg",
+          "cache-control": "public, max-age=300",
+          "x-goog-storage-class": "MULTI_REGIONAL",
+          "x-goog-generation": "1684751175644001"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 245,
+          "compressed": true,
+          "content_ref": "b51ab706afa3ce356242463240edbfdffd7f2de8.json"
+        }
+      }
+    ],
+    "/": [
+      {
+        "timestamp": "2025-07-21T10:23:23.371Z",
+        "duration_ms": -1,
+        "endpoint": "/",
+        "host": "tracking.monsido.com",
+        "method": "GET",
+        "status": -1,
+        "query_params": {
+          "a": [
+            "Z8Gph02yPUtbYY2UMLuxPQ"
+          ],
+          "b": [
+            "https://www.sutton.gov.uk/w/check-your-bin-collection-days"
+          ],
+          "c": [
+            "3A91753093403369"
+          ],
+          "d": [
+            "800x600"
+          ],
+          "f": [
+            "C071753093403369"
+          ],
+          "h": [
+            "2"
+          ]
+        },
+        "request_headers": {
+          "referer": "https://www.sutton.gov.uk/"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T10:23:36.203Z",
+        "duration_ms": -1,
+        "endpoint": "/",
+        "host": "tracking.monsido.com",
+        "method": "GET",
+        "status": -1,
+        "query_params": {
+          "a": [
+            "Z8Gph02yPUtbYY2UMLuxPQ"
+          ],
+          "b": [
+            "https://waste-services.sutton.gov.uk/waste"
+          ],
+          "c": [
+            "6C51753093416186"
+          ],
+          "d": [
+            "800x600"
+          ],
+          "e": [
+            "https://www.sutton.gov.uk/"
+          ],
+          "f": [
+            "3AA1753093416186"
+          ],
+          "h": [
+            "2"
+          ]
+        },
+        "request_headers": {
+          "referer": "https://waste-services.sutton.gov.uk/waste"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T10:23:41.691Z",
+        "duration_ms": -1,
+        "endpoint": "/",
+        "host": "tracking.monsido.com",
+        "method": "GET",
+        "status": -1,
+        "query_params": {
+          "a": [
+            "Z8Gph02yPUtbYY2UMLuxPQ"
+          ],
+          "b": [
+            "https://waste-services.sutton.gov.uk/waste"
+          ],
+          "c": [
+            "6C51753093416186"
+          ],
+          "d": [
+            "800x600"
+          ],
+          "e": [
+            "https://waste-services.sutton.gov.uk/waste"
+          ],
+          "f": [
+            "2351753093421201"
+          ],
+          "h": [
+            "2"
+          ]
+        },
+        "request_headers": {
+          "referer": "https://waste-services.sutton.gov.uk/waste"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T10:23:49.487Z",
+        "duration_ms": -1,
+        "endpoint": "/",
+        "host": "tracking.monsido.com",
+        "method": "GET",
+        "status": -1,
+        "query_params": {
+          "a": [
+            "Z8Gph02yPUtbYY2UMLuxPQ"
+          ],
+          "b": [
+            "https://waste-services.sutton.gov.uk/waste/4502216"
+          ],
+          "c": [
+            "6C51753093416186"
+          ],
+          "d": [
+            "800x600"
+          ],
+          "e": [
+            "https://waste-services.sutton.gov.uk/waste"
+          ],
+          "f": [
+            "6841753093429480"
+          ],
+          "h": [
+            "2"
+          ]
+        },
+        "request_headers": {
+          "referer": "https://waste-services.sutton.gov.uk/waste/4502216"
+        }
+      }
+    ],
+    "/collect": [
+      {
+        "timestamp": "2025-07-21T10:23:23.328Z",
+        "duration_ms": 302.54999999999995,
+        "endpoint": "/collect",
+        "host": "consent.cookie-script.com",
+        "method": "GET",
+        "status": 200,
+        "query_params": {
+          "action": [
+            "accept"
+          ],
+          "time": [
+            "1753093403308"
+          ],
+          "page": [
+            "https://www.sutton.gov.uk/w/check-your-bin-collection-days"
+          ],
+          "dnt": [
+            "false"
+          ],
+          "script": [
+            "a7ba59044d04a1624a4e3db9dbf7b7b0"
+          ],
+          "consenttext": [
+            "This website uses cookies to improve user experience. By using our website you consent to all cookies in accordance with our Cookie Policy."
+          ],
+          "category": [
+            "unclassified,performance,targeting,functionality"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "origin": "https://www.sutton.gov.uk",
+          "referer": "https://www.sutton.gov.uk/"
+        },
+        "response_headers": {
+          "content-type": "application/json"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 47,
+          "content_ref": "2b047dd43f7386b5b70eb28de0318a1bee445d84.json"
+        }
+      }
+    ],
+    "/g/collect": [
+      {
+        "timestamp": "2025-07-21T10:23:23.637Z",
+        "duration_ms": 60.882000000000005,
+        "endpoint": "/g/collect",
+        "host": "region1.google-analytics.com",
+        "method": "POST",
+        "status": 204,
+        "query_params": {
+          "v": [
+            "2"
+          ],
+          "tid": [
+            "G-YCD2M22SKH"
+          ],
+          "gtm": [
+            "45je57g1v9191261943z8855049748za200zb855049748"
+          ],
+          "_p": [
+            "1753093401480"
+          ],
+          "gcs": [
+            "G111"
+          ],
+          "gcd": [
+            "13r3r3r3r5l1"
+          ],
+          "npa": [
+            "0"
+          ],
+          "dma": [
+            "0"
+          ],
+          "tag_exp": [
+            "101509157~103116026~103200004~103233427~104573694~104684208~104684211"
+          ],
+          "gdid": [
+            "dMmY1Mm"
+          ],
+          "cid": [
+            "421760622.1753093404"
+          ],
+          "ul": [
+            "en-gb"
+          ],
+          "sr": [
+            "800x600"
+          ],
+          "uaa": [
+            "arm"
+          ],
+          "uab": [
+            "64"
+          ],
+          "uafvl": [
+            "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+          ],
+          "uamb": [
+            "0"
+          ],
+          "uap": [
+            "macOS"
+          ],
+          "uapv": [
+            "15.5.0"
+          ],
+          "uaw": [
+            "0"
+          ],
+          "are": [
+            "1"
+          ],
+          "frm": [
+            "0"
+          ],
+          "pscdl": [
+            "noapi"
+          ],
+          "_s": [
+            "1"
+          ],
+          "sid": [
+            "1753093403"
+          ],
+          "sct": [
+            "1"
+          ],
+          "seg": [
+            "0"
+          ],
+          "dl": [
+            "https://www.sutton.gov.uk/w/check-your-bin-collection-days"
+          ],
+          "dt": [
+            "Check your bin collection days - sutton.gov.uk"
+          ],
+          "_tu": [
+            "CA"
+          ],
+          "en": [
+            "page_view"
+          ],
+          "_fv": [
+            "1"
+          ],
+          "_nsi": [
+            "1"
+          ],
+          "_ss": [
+            "1"
+          ],
+          "tfd": [
+            "2424"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "cookie": "[cookies present]",
+          "origin": "https://www.sutton.gov.uk",
+          "referer": "https://www.sutton.gov.uk/"
+        },
+        "response_headers": {
+          "cache-control": "no-cache, no-store, must-revalidate",
+          "content-type": "text/plain"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T10:23:23.679Z",
+        "duration_ms": 13.222,
+        "endpoint": "/g/collect",
+        "host": "region1.google-analytics.com",
+        "method": "POST",
+        "status": 204,
+        "query_params": {
+          "v": [
+            "2"
+          ],
+          "tid": [
+            "G-P9PHBCZ1BC"
+          ],
+          "gtm": [
+            "45je57g1v871881453z8855049748za200zb855049748"
+          ],
+          "_p": [
+            "1753093401480"
+          ],
+          "gcs": [
+            "G111"
+          ],
+          "gcd": [
+            "13r3r3r3r5l1"
+          ],
+          "npa": [
+            "0"
+          ],
+          "dma": [
+            "0"
+          ],
+          "tag_exp": [
+            "101509157~103116026~103200004~103233427~104684208~104684211~104921712~104921714"
+          ],
+          "gdid": [
+            "dMmY1Mm"
+          ],
+          "cid": [
+            "421760622.1753093404"
+          ],
+          "ul": [
+            "en-gb"
+          ],
+          "sr": [
+            "800x600"
+          ],
+          "uaa": [
+            "arm"
+          ],
+          "uab": [
+            "64"
+          ],
+          "uafvl": [
+            "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+          ],
+          "uamb": [
+            "0"
+          ],
+          "uap": [
+            "macOS"
+          ],
+          "uapv": [
+            "15.5.0"
+          ],
+          "uaw": [
+            "0"
+          ],
+          "are": [
+            "1"
+          ],
+          "frm": [
+            "0"
+          ],
+          "pscdl": [
+            "noapi"
+          ],
+          "_s": [
+            "1"
+          ],
+          "sid": [
+            "1753093403"
+          ],
+          "sct": [
+            "1"
+          ],
+          "seg": [
+            "0"
+          ],
+          "dl": [
+            "https://www.sutton.gov.uk/w/check-your-bin-collection-days"
+          ],
+          "dt": [
+            "Check your bin collection days - sutton.gov.uk"
+          ],
+          "_tu": [
+            "CA"
+          ],
+          "en": [
+            "page_view"
+          ],
+          "_fv": [
+            "1"
+          ],
+          "_ss": [
+            "1"
+          ],
+          "tfd": [
+            "2467"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "cookie": "[cookies present]",
+          "origin": "https://www.sutton.gov.uk",
+          "referer": "https://www.sutton.gov.uk/"
+        },
+        "response_headers": {
+          "cache-control": "no-cache, no-store, must-revalidate",
+          "content-type": "text/plain"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T10:23:36.061Z",
+        "duration_ms": -1,
+        "endpoint": "/g/collect",
+        "host": "region1.google-analytics.com",
+        "method": "POST",
+        "status": -1,
+        "query_params": {
+          "v": [
+            "2"
+          ],
+          "tid": [
+            "G-P9PHBCZ1BC"
+          ],
+          "gtm": [
+            "45je57g1v871881453z8855049748za200zb855049748"
+          ],
+          "_p": [
+            "1753093401480"
+          ],
+          "gcs": [
+            "G111"
+          ],
+          "gcd": [
+            "13r3r3r3r5l1"
+          ],
+          "npa": [
+            "0"
+          ],
+          "dma": [
+            "0"
+          ],
+          "tag_exp": [
+            "101509157~103116026~103200004~103233427~104684208~104684211~104921712~104921714"
+          ],
+          "gdid": [
+            "dMmY1Mm"
+          ],
+          "cid": [
+            "421760622.1753093404"
+          ],
+          "ul": [
+            "en-gb"
+          ],
+          "sr": [
+            "800x600"
+          ],
+          "uaa": [
+            "arm"
+          ],
+          "uab": [
+            "64"
+          ],
+          "uafvl": [
+            "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+          ],
+          "uamb": [
+            "0"
+          ],
+          "uap": [
+            "macOS"
+          ],
+          "uapv": [
+            "15.5.0"
+          ],
+          "uaw": [
+            "0"
+          ],
+          "are": [
+            "1"
+          ],
+          "frm": [
+            "0"
+          ],
+          "pscdl": [
+            "noapi"
+          ],
+          "_eu": [
+            "AAAAAAQ"
+          ],
+          "_s": [
+            "2"
+          ],
+          "sid": [
+            "1753093403"
+          ],
+          "sct": [
+            "1"
+          ],
+          "seg": [
+            "1"
+          ],
+          "dl": [
+            "https://www.sutton.gov.uk/w/check-your-bin-collection-days"
+          ],
+          "dt": [
+            "Check your bin collection days - sutton.gov.uk"
+          ],
+          "_tu": [
+            "CA"
+          ],
+          "en": [
+            "button_click"
+          ],
+          "ep.link_url": [
+            "https://waste-services.sutton.gov.uk/waste"
+          ],
+          "ep.link_text": [
+            "Check your next bin collection day"
+          ],
+          "ep.link_classes": [
+            "lbs-button govuk-button lbs-button--primary"
+          ],
+          "_et": [
+            "12134"
+          ],
+          "tfd": [
+            "14862"
+          ]
+        },
+        "request_headers": {
+          "referer": "https://www.sutton.gov.uk/"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T10:23:36.060Z",
+        "duration_ms": -1,
+        "endpoint": "/g/collect",
+        "host": "region1.google-analytics.com",
+        "method": "POST",
+        "status": -1,
+        "query_params": {
+          "v": [
+            "2"
+          ],
+          "tid": [
+            "G-YCD2M22SKH"
+          ],
+          "gtm": [
+            "45je57g1v9191261943za200zb855049748"
+          ],
+          "_p": [
+            "1753093401480"
+          ],
+          "gcs": [
+            "G111"
+          ],
+          "gcd": [
+            "13r3r3r3r5l1"
+          ],
+          "npa": [
+            "0"
+          ],
+          "dma": [
+            "0"
+          ],
+          "tag_exp": [
+            "101509157~103116026~103200004~103233427~104573694~104684208~104684211"
+          ],
+          "gdid": [
+            "dMmY1Mm"
+          ],
+          "cid": [
+            "421760622.1753093404"
+          ],
+          "ul": [
+            "en-gb"
+          ],
+          "sr": [
+            "800x600"
+          ],
+          "uaa": [
+            "arm"
+          ],
+          "uab": [
+            "64"
+          ],
+          "uafvl": [
+            "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+          ],
+          "uamb": [
+            "0"
+          ],
+          "uap": [
+            "macOS"
+          ],
+          "uapv": [
+            "15.5.0"
+          ],
+          "uaw": [
+            "0"
+          ],
+          "are": [
+            "1"
+          ],
+          "frm": [
+            "0"
+          ],
+          "pscdl": [
+            "noapi"
+          ],
+          "_eu": [
+            "AAAAAAQ"
+          ],
+          "_s": [
+            "2"
+          ],
+          "sid": [
+            "1753093403"
+          ],
+          "sct": [
+            "1"
+          ],
+          "seg": [
+            "1"
+          ],
+          "dl": [
+            "https://www.sutton.gov.uk/w/check-your-bin-collection-days"
+          ],
+          "dt": [
+            "Check your bin collection days - sutton.gov.uk"
+          ],
+          "_tu": [
+            "CA"
+          ],
+          "en": [
+            "user_engagement"
+          ],
+          "_et": [
+            "12429"
+          ],
+          "tfd": [
+            "14861"
+          ]
+        },
+        "request_headers": {
+          "referer": "https://www.sutton.gov.uk/"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T10:23:36.261Z",
+        "duration_ms": 13.142,
+        "endpoint": "/g/collect",
+        "host": "region1.google-analytics.com",
+        "method": "POST",
+        "status": 204,
+        "query_params": {
+          "v": [
+            "2"
+          ],
+          "tid": [
+            "G-DTJ3X33F09"
+          ],
+          "gtm": [
+            "45je57g1v9203624117z8855049748za200zb855049748"
+          ],
+          "_p": [
+            "1753093416100"
+          ],
+          "gcs": [
+            "G111"
+          ],
+          "gcd": [
+            "13r3r3r3r5l1"
+          ],
+          "npa": [
+            "0"
+          ],
+          "dma": [
+            "0"
+          ],
+          "tag_exp": [
+            "101509157~103116026~103200004~103233427~104684208~104684211"
+          ],
+          "gdid": [
+            "dMmY1Mm"
+          ],
+          "cid": [
+            "421760622.1753093404"
+          ],
+          "ul": [
+            "en-gb"
+          ],
+          "sr": [
+            "800x600"
+          ],
+          "uaa": [
+            "arm"
+          ],
+          "uab": [
+            "64"
+          ],
+          "uafvl": [
+            "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+          ],
+          "uamb": [
+            "0"
+          ],
+          "uap": [
+            "macOS"
+          ],
+          "uapv": [
+            "15.5.0"
+          ],
+          "uaw": [
+            "0"
+          ],
+          "are": [
+            "1"
+          ],
+          "frm": [
+            "0"
+          ],
+          "pscdl": [
+            "noapi"
+          ],
+          "_s": [
+            "1"
+          ],
+          "sid": [
+            "1753093416"
+          ],
+          "sct": [
+            "1"
+          ],
+          "seg": [
+            "0"
+          ],
+          "dl": [
+            "https://waste-services.sutton.gov.uk/waste"
+          ],
+          "dr": [
+            "https://www.sutton.gov.uk/"
+          ],
+          "dt": [
+            "What is your address? :: WasteWorks"
+          ],
+          "_tu": [
+            "CA"
+          ],
+          "en": [
+            "page_view"
+          ],
+          "_fv": [
+            "1"
+          ],
+          "_ss": [
+            "1"
+          ],
+          "tfd": [
+            "445"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "cookie": "[cookies present]",
+          "origin": "https://waste-services.sutton.gov.uk",
+          "referer": "https://waste-services.sutton.gov.uk/waste"
+        },
+        "response_headers": {
+          "cache-control": "no-cache, no-store, must-revalidate",
+          "content-type": "text/plain"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T10:23:40.511Z",
+        "duration_ms": 14.239,
+        "endpoint": "/g/collect",
+        "host": "region1.google-analytics.com",
+        "method": "POST",
+        "status": 204,
+        "query_params": {
+          "v": [
+            "2"
+          ],
+          "tid": [
+            "G-YCD2M22SKH"
+          ],
+          "gtm": [
+            "45je57g1v9191261943z8855049748za200zb855049748"
+          ],
+          "_p": [
+            "1753093416100"
+          ],
+          "gcs": [
+            "G111"
+          ],
+          "gcd": [
+            "13r3r3r3r5l1"
+          ],
+          "npa": [
+            "0"
+          ],
+          "dma": [
+            "0"
+          ],
+          "tag_exp": [
+            "101509157~103116026~103200004~103233427~104573694~104684208~104684211"
+          ],
+          "gdid": [
+            "dMmY1Mm"
+          ],
+          "cid": [
+            "421760622.1753093404"
+          ],
+          "ul": [
+            "en-gb"
+          ],
+          "sr": [
+            "800x600"
+          ],
+          "uaa": [
+            "arm"
+          ],
+          "uab": [
+            "64"
+          ],
+          "uafvl": [
+            "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+          ],
+          "uamb": [
+            "0"
+          ],
+          "uap": [
+            "macOS"
+          ],
+          "uapv": [
+            "15.5.0"
+          ],
+          "uaw": [
+            "0"
+          ],
+          "are": [
+            "1"
+          ],
+          "frm": [
+            "0"
+          ],
+          "pscdl": [
+            "noapi"
+          ],
+          "_eu": [
+            "AAAAAAQ"
+          ],
+          "_s": [
+            "1"
+          ],
+          "sid": [
+            "1753093403"
+          ],
+          "sct": [
+            "1"
+          ],
+          "seg": [
+            "1"
+          ],
+          "dl": [
+            "https://waste-services.sutton.gov.uk/waste"
+          ],
+          "dr": [
+            "https://www.sutton.gov.uk/"
+          ],
+          "dt": [
+            "What is your address? :: WasteWorks"
+          ],
+          "_tu": [
+            "CA"
+          ],
+          "en": [
+            "page_view"
+          ],
+          "tfd": [
+            "4701"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "cookie": "[cookies present]",
+          "origin": "https://waste-services.sutton.gov.uk",
+          "referer": "https://waste-services.sutton.gov.uk/waste"
+        },
+        "response_headers": {
+          "cache-control": "no-cache, no-store, must-revalidate",
+          "content-type": "text/plain"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T10:23:41.139Z",
+        "duration_ms": -1,
+        "endpoint": "/g/collect",
+        "host": "region1.google-analytics.com",
+        "method": "POST",
+        "status": -1,
+        "query_params": {
+          "v": [
+            "2"
+          ],
+          "tid": [
+            "G-YCD2M22SKH"
+          ],
+          "gtm": [
+            "45je57g1v9191261943za200zb855049748"
+          ],
+          "_p": [
+            "1753093416100"
+          ],
+          "gcs": [
+            "G111"
+          ],
+          "gcd": [
+            "13r3r3r3r5l1"
+          ],
+          "npa": [
+            "0"
+          ],
+          "dma": [
+            "0"
+          ],
+          "tag_exp": [
+            "101509157~103116026~103200004~103233427~104573694~104684208~104684211"
+          ],
+          "gdid": [
+            "dMmY1Mm"
+          ],
+          "cid": [
+            "421760622.1753093404"
+          ],
+          "ul": [
+            "en-gb"
+          ],
+          "sr": [
+            "800x600"
+          ],
+          "uaa": [
+            "arm"
+          ],
+          "uab": [
+            "64"
+          ],
+          "uafvl": [
+            "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+          ],
+          "uamb": [
+            "0"
+          ],
+          "uap": [
+            "macOS"
+          ],
+          "uapv": [
+            "15.5.0"
+          ],
+          "uaw": [
+            "0"
+          ],
+          "are": [
+            "1"
+          ],
+          "frm": [
+            "0"
+          ],
+          "pscdl": [
+            "noapi"
+          ],
+          "_eu": [
+            "AEEAAAQ"
+          ],
+          "sid": [
+            "1753093403"
+          ],
+          "sct": [
+            "1"
+          ],
+          "seg": [
+            "1"
+          ],
+          "dl": [
+            "https://waste-services.sutton.gov.uk/waste"
+          ],
+          "dr": [
+            "https://www.sutton.gov.uk/"
+          ],
+          "dt": [
+            "What is your address? :: WasteWorks"
+          ],
+          "_tu": [
+            "CA"
+          ],
+          "_s": [
+            "2"
+          ],
+          "tfd": [
+            "5331"
+          ]
+        },
+        "request_headers": {
+          "referer": "https://waste-services.sutton.gov.uk/waste",
+          "content-type": "text/plain;charset=UTF-8"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T10:23:41.143Z",
+        "duration_ms": -1,
+        "endpoint": "/g/collect",
+        "host": "region1.google-analytics.com",
+        "method": "POST",
+        "status": -1,
+        "query_params": {
+          "v": [
+            "2"
+          ],
+          "tid": [
+            "G-DTJ3X33F09"
+          ],
+          "gtm": [
+            "45je57g1v9203624117za200zb855049748"
+          ],
+          "_p": [
+            "1753093416100"
+          ],
+          "gcs": [
+            "G111"
+          ],
+          "gcd": [
+            "13r3r3r3r5l1"
+          ],
+          "npa": [
+            "0"
+          ],
+          "dma": [
+            "0"
+          ],
+          "tag_exp": [
+            "101509157~103116026~103200004~103233427~104684208~104684211"
+          ],
+          "gdid": [
+            "dMmY1Mm"
+          ],
+          "cid": [
+            "421760622.1753093404"
+          ],
+          "ul": [
+            "en-gb"
+          ],
+          "sr": [
+            "800x600"
+          ],
+          "uaa": [
+            "arm"
+          ],
+          "uab": [
+            "64"
+          ],
+          "uafvl": [
+            "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+          ],
+          "uamb": [
+            "0"
+          ],
+          "uap": [
+            "macOS"
+          ],
+          "uapv": [
+            "15.5.0"
+          ],
+          "uaw": [
+            "0"
+          ],
+          "are": [
+            "1"
+          ],
+          "frm": [
+            "0"
+          ],
+          "pscdl": [
+            "noapi"
+          ],
+          "_eu": [
+            "AEEAAAQ"
+          ],
+          "sid": [
+            "1753093416"
+          ],
+          "sct": [
+            "1"
+          ],
+          "seg": [
+            "0"
+          ],
+          "dl": [
+            "https://waste-services.sutton.gov.uk/waste"
+          ],
+          "dr": [
+            "https://www.sutton.gov.uk/"
+          ],
+          "dt": [
+            "What is your address? :: WasteWorks"
+          ],
+          "_tu": [
+            "CA"
+          ],
+          "_s": [
+            "2"
+          ],
+          "tfd": [
+            "5332"
+          ]
+        },
+        "request_headers": {
+          "referer": "https://waste-services.sutton.gov.uk/waste",
+          "content-type": "text/plain;charset=UTF-8"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T10:23:46.219Z",
+        "duration_ms": 17.491,
+        "endpoint": "/g/collect",
+        "host": "region1.google-analytics.com",
+        "method": "POST",
+        "status": 204,
+        "query_params": {
+          "v": [
+            "2"
+          ],
+          "tid": [
+            "G-YCD2M22SKH"
+          ],
+          "gtm": [
+            "45je57g1v9191261943z8855049748za200zb855049748"
+          ],
+          "_p": [
+            "1753093421151"
+          ],
+          "gcs": [
+            "G111"
+          ],
+          "gcd": [
+            "13r3r3r3r5l1"
+          ],
+          "npa": [
+            "0"
+          ],
+          "dma": [
+            "0"
+          ],
+          "tag_exp": [
+            "101509157~103116026~103200004~103233427~104573694~104684208~104684211"
+          ],
+          "gdid": [
+            "dMmY1Mm"
+          ],
+          "cid": [
+            "421760622.1753093404"
+          ],
+          "ul": [
+            "en-gb"
+          ],
+          "sr": [
+            "800x600"
+          ],
+          "uaa": [
+            "arm"
+          ],
+          "uab": [
+            "64"
+          ],
+          "uafvl": [
+            "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+          ],
+          "uamb": [
+            "0"
+          ],
+          "uap": [
+            "macOS"
+          ],
+          "uapv": [
+            "15.5.0"
+          ],
+          "uaw": [
+            "0"
+          ],
+          "are": [
+            "1"
+          ],
+          "frm": [
+            "0"
+          ],
+          "pscdl": [
+            "noapi"
+          ],
+          "_eu": [
+            "AAAAAAQ"
+          ],
+          "_s": [
+            "1"
+          ],
+          "sid": [
+            "1753093403"
+          ],
+          "sct": [
+            "1"
+          ],
+          "seg": [
+            "1"
+          ],
+          "dl": [
+            "https://waste-services.sutton.gov.uk/waste"
+          ],
+          "dr": [
+            "https://waste-services.sutton.gov.uk/waste"
+          ],
+          "dt": [
+            "WasteWorks"
+          ],
+          "_tu": [
+            "CA"
+          ],
+          "en": [
+            "page_view"
+          ],
+          "tfd": [
+            "5692"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "cookie": "[cookies present]",
+          "origin": "https://waste-services.sutton.gov.uk",
+          "referer": "https://waste-services.sutton.gov.uk/waste"
+        },
+        "response_headers": {
+          "cache-control": "no-cache, no-store, must-revalidate",
+          "content-type": "text/plain"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T10:23:46.228Z",
+        "duration_ms": 14.364,
+        "endpoint": "/g/collect",
+        "host": "region1.google-analytics.com",
+        "method": "POST",
+        "status": 204,
+        "query_params": {
+          "v": [
+            "2"
+          ],
+          "tid": [
+            "G-DTJ3X33F09"
+          ],
+          "gtm": [
+            "45je57g1v9203624117z8855049748za200zb855049748"
+          ],
+          "_p": [
+            "1753093421151"
+          ],
+          "gcs": [
+            "G111"
+          ],
+          "gcd": [
+            "13r3r3r3r5l1"
+          ],
+          "npa": [
+            "0"
+          ],
+          "dma": [
+            "0"
+          ],
+          "tag_exp": [
+            "101509157~103116026~103200004~103233427~104684208~104684211"
+          ],
+          "gdid": [
+            "dMmY1Mm"
+          ],
+          "cid": [
+            "421760622.1753093404"
+          ],
+          "ul": [
+            "en-gb"
+          ],
+          "sr": [
+            "800x600"
+          ],
+          "uaa": [
+            "arm"
+          ],
+          "uab": [
+            "64"
+          ],
+          "uafvl": [
+            "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+          ],
+          "uamb": [
+            "0"
+          ],
+          "uap": [
+            "macOS"
+          ],
+          "uapv": [
+            "15.5.0"
+          ],
+          "uaw": [
+            "0"
+          ],
+          "are": [
+            "1"
+          ],
+          "frm": [
+            "0"
+          ],
+          "pscdl": [
+            "noapi"
+          ],
+          "_eu": [
+            "AAAAAAQ"
+          ],
+          "_s": [
+            "1"
+          ],
+          "sid": [
+            "1753093416"
+          ],
+          "sct": [
+            "1"
+          ],
+          "seg": [
+            "1"
+          ],
+          "dl": [
+            "https://waste-services.sutton.gov.uk/waste"
+          ],
+          "dr": [
+            "https://waste-services.sutton.gov.uk/waste"
+          ],
+          "dt": [
+            "WasteWorks"
+          ],
+          "_tu": [
+            "CA"
+          ],
+          "en": [
+            "page_view"
+          ],
+          "tfd": [
+            "5703"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "cookie": "[cookies present]",
+          "origin": "https://waste-services.sutton.gov.uk",
+          "referer": "https://waste-services.sutton.gov.uk/waste"
+        },
+        "response_headers": {
+          "cache-control": "no-cache, no-store, must-revalidate",
+          "content-type": "text/plain"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T10:23:49.398Z",
+        "duration_ms": -1,
+        "endpoint": "/g/collect",
+        "host": "region1.google-analytics.com",
+        "method": "POST",
+        "status": -1,
+        "query_params": {
+          "v": [
+            "2"
+          ],
+          "tid": [
+            "G-YCD2M22SKH"
+          ],
+          "gtm": [
+            "45je57g1v9191261943za200zb855049748"
+          ],
+          "_p": [
+            "1753093421151"
+          ],
+          "gcs": [
+            "G111"
+          ],
+          "gcd": [
+            "13r3r3r3r5l1"
+          ],
+          "npa": [
+            "0"
+          ],
+          "dma": [
+            "0"
+          ],
+          "tag_exp": [
+            "101509157~103116026~103200004~103233427~104573694~104684208~104684211"
+          ],
+          "gdid": [
+            "dMmY1Mm"
+          ],
+          "cid": [
+            "421760622.1753093404"
+          ],
+          "ul": [
+            "en-gb"
+          ],
+          "sr": [
+            "800x600"
+          ],
+          "uaa": [
+            "arm"
+          ],
+          "uab": [
+            "64"
+          ],
+          "uafvl": [
+            "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+          ],
+          "uamb": [
+            "0"
+          ],
+          "uap": [
+            "macOS"
+          ],
+          "uapv": [
+            "15.5.0"
+          ],
+          "uaw": [
+            "0"
+          ],
+          "are": [
+            "1"
+          ],
+          "frm": [
+            "0"
+          ],
+          "pscdl": [
+            "noapi"
+          ],
+          "_eu": [
+            "AEEAAAQ"
+          ],
+          "sid": [
+            "1753093403"
+          ],
+          "sct": [
+            "1"
+          ],
+          "seg": [
+            "1"
+          ],
+          "dl": [
+            "https://waste-services.sutton.gov.uk/waste"
+          ],
+          "dr": [
+            "https://waste-services.sutton.gov.uk/waste"
+          ],
+          "dt": [
+            "WasteWorks"
+          ],
+          "_tu": [
+            "CA"
+          ],
+          "_s": [
+            "2"
+          ],
+          "tfd": [
+            "8871"
+          ]
+        },
+        "request_headers": {
+          "referer": "https://waste-services.sutton.gov.uk/waste",
+          "content-type": "text/plain;charset=UTF-8"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T10:23:49.400Z",
+        "duration_ms": -1,
+        "endpoint": "/g/collect",
+        "host": "region1.google-analytics.com",
+        "method": "POST",
+        "status": -1,
+        "query_params": {
+          "v": [
+            "2"
+          ],
+          "tid": [
+            "G-DTJ3X33F09"
+          ],
+          "gtm": [
+            "45je57g1v9203624117za200zb855049748"
+          ],
+          "_p": [
+            "1753093421151"
+          ],
+          "gcs": [
+            "G111"
+          ],
+          "gcd": [
+            "13r3r3r3r5l1"
+          ],
+          "npa": [
+            "0"
+          ],
+          "dma": [
+            "0"
+          ],
+          "tag_exp": [
+            "101509157~103116026~103200004~103233427~104684208~104684211"
+          ],
+          "gdid": [
+            "dMmY1Mm"
+          ],
+          "cid": [
+            "421760622.1753093404"
+          ],
+          "ul": [
+            "en-gb"
+          ],
+          "sr": [
+            "800x600"
+          ],
+          "uaa": [
+            "arm"
+          ],
+          "uab": [
+            "64"
+          ],
+          "uafvl": [
+            "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+          ],
+          "uamb": [
+            "0"
+          ],
+          "uap": [
+            "macOS"
+          ],
+          "uapv": [
+            "15.5.0"
+          ],
+          "uaw": [
+            "0"
+          ],
+          "are": [
+            "1"
+          ],
+          "frm": [
+            "0"
+          ],
+          "pscdl": [
+            "noapi"
+          ],
+          "_eu": [
+            "AEEAAAQ"
+          ],
+          "sid": [
+            "1753093416"
+          ],
+          "sct": [
+            "1"
+          ],
+          "seg": [
+            "1"
+          ],
+          "dl": [
+            "https://waste-services.sutton.gov.uk/waste"
+          ],
+          "dr": [
+            "https://waste-services.sutton.gov.uk/waste"
+          ],
+          "dt": [
+            "WasteWorks"
+          ],
+          "_tu": [
+            "CA"
+          ],
+          "_s": [
+            "2"
+          ],
+          "tfd": [
+            "8872"
+          ]
+        },
+        "request_headers": {
+          "referer": "https://waste-services.sutton.gov.uk/waste",
+          "content-type": "text/plain;charset=UTF-8"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T10:23:54.474Z",
+        "duration_ms": 14.017,
+        "endpoint": "/g/collect",
+        "host": "region1.google-analytics.com",
+        "method": "POST",
+        "status": 204,
+        "query_params": {
+          "v": [
+            "2"
+          ],
+          "tid": [
+            "G-DTJ3X33F09"
+          ],
+          "gtm": [
+            "45je57g1v9203624117z8855049748za200zb855049748"
+          ],
+          "_p": [
+            "1753093429409"
+          ],
+          "gcs": [
+            "G111"
+          ],
+          "gcd": [
+            "13r3r3r3r5l1"
+          ],
+          "npa": [
+            "0"
+          ],
+          "dma": [
+            "0"
+          ],
+          "tag_exp": [
+            "101509157~103116026~103200004~103233427~104684208~104684211"
+          ],
+          "gdid": [
+            "dMmY1Mm"
+          ],
+          "cid": [
+            "421760622.1753093404"
+          ],
+          "ul": [
+            "en-gb"
+          ],
+          "sr": [
+            "800x600"
+          ],
+          "uaa": [
+            "arm"
+          ],
+          "uab": [
+            "64"
+          ],
+          "uafvl": [
+            "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+          ],
+          "uamb": [
+            "0"
+          ],
+          "uap": [
+            "macOS"
+          ],
+          "uapv": [
+            "15.5.0"
+          ],
+          "uaw": [
+            "0"
+          ],
+          "are": [
+            "1"
+          ],
+          "frm": [
+            "0"
+          ],
+          "pscdl": [
+            "noapi"
+          ],
+          "_eu": [
+            "AAAAAAQ"
+          ],
+          "_s": [
+            "1"
+          ],
+          "sid": [
+            "1753093416"
+          ],
+          "sct": [
+            "1"
+          ],
+          "seg": [
+            "1"
+          ],
+          "dl": [
+            "https://waste-services.sutton.gov.uk/waste/4502216"
+          ],
+          "dr": [
+            "https://waste-services.sutton.gov.uk/waste"
+          ],
+          "dt": [
+            "WasteWorks"
+          ],
+          "_tu": [
+            "CA"
+          ],
+          "en": [
+            "page_view"
+          ],
+          "tfd": [
+            "5417"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "cookie": "[cookies present]",
+          "origin": "https://waste-services.sutton.gov.uk",
+          "referer": "https://waste-services.sutton.gov.uk/waste/4502216"
+        },
+        "response_headers": {
+          "cache-control": "no-cache, no-store, must-revalidate",
+          "content-type": "text/plain"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T10:23:54.483Z",
+        "duration_ms": 13.834,
+        "endpoint": "/g/collect",
+        "host": "region1.google-analytics.com",
+        "method": "POST",
+        "status": 204,
+        "query_params": {
+          "v": [
+            "2"
+          ],
+          "tid": [
+            "G-YCD2M22SKH"
+          ],
+          "gtm": [
+            "45je57g1v9191261943z8855049748za200zb855049748"
+          ],
+          "_p": [
+            "1753093429409"
+          ],
+          "gcs": [
+            "G111"
+          ],
+          "gcd": [
+            "13r3r3r3r5l1"
+          ],
+          "npa": [
+            "0"
+          ],
+          "dma": [
+            "0"
+          ],
+          "tag_exp": [
+            "101509157~103116026~103200004~103233427~104573694~104684208~104684211"
+          ],
+          "gdid": [
+            "dMmY1Mm"
+          ],
+          "cid": [
+            "421760622.1753093404"
+          ],
+          "ul": [
+            "en-gb"
+          ],
+          "sr": [
+            "800x600"
+          ],
+          "uaa": [
+            "arm"
+          ],
+          "uab": [
+            "64"
+          ],
+          "uafvl": [
+            "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+          ],
+          "uamb": [
+            "0"
+          ],
+          "uap": [
+            "macOS"
+          ],
+          "uapv": [
+            "15.5.0"
+          ],
+          "uaw": [
+            "0"
+          ],
+          "are": [
+            "1"
+          ],
+          "frm": [
+            "0"
+          ],
+          "pscdl": [
+            "noapi"
+          ],
+          "_eu": [
+            "AAAAAAQ"
+          ],
+          "_s": [
+            "1"
+          ],
+          "sid": [
+            "1753093403"
+          ],
+          "sct": [
+            "1"
+          ],
+          "seg": [
+            "1"
+          ],
+          "dl": [
+            "https://waste-services.sutton.gov.uk/waste/4502216"
+          ],
+          "dr": [
+            "https://waste-services.sutton.gov.uk/waste"
+          ],
+          "dt": [
+            "WasteWorks"
+          ],
+          "_tu": [
+            "CA"
+          ],
+          "en": [
+            "page_view"
+          ],
+          "tfd": [
+            "5427"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "cookie": "[cookies present]",
+          "origin": "https://waste-services.sutton.gov.uk",
+          "referer": "https://waste-services.sutton.gov.uk/waste/4502216"
+        },
+        "response_headers": {
+          "cache-control": "no-cache, no-store, must-revalidate",
+          "content-type": "text/plain"
+        }
+      }
+    ],
+    "/waste": [
+      {
+        "timestamp": "2025-07-21T10:23:35.858Z",
+        "duration_ms": 211.97299999999998,
+        "endpoint": "/waste",
+        "host": "waste-services.sutton.gov.uk",
+        "method": "GET",
+        "status": 200,
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+          "cookie": "[cookies present]",
+          "referer": "https://www.sutton.gov.uk/"
+        },
+        "response_headers": {
+          "content-type": "text/html; charset=utf-8",
+          "set-cookie": "[cookies present]",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "SAMEORIGIN",
+          "x-host": "waste-services.sutton.gov.uk",
+          "x-url": "/waste",
+          "x-xss-protection": "1"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 20240,
+          "compressed": true,
+          "content_ref": "29e95e031f3b699610a3cba47ba4faddbdc0e0e9.html"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T10:23:40.573Z",
+        "duration_ms": 554.313,
+        "endpoint": "/waste",
+        "host": "waste-services.sutton.gov.uk",
+        "method": "POST",
+        "status": 200,
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+          "content-type": "application/x-www-form-urlencoded",
+          "cookie": "[cookies present]",
+          "origin": "https://waste-services.sutton.gov.uk",
+          "referer": "https://waste-services.sutton.gov.uk/waste"
+        },
+        "response_headers": {
+          "content-type": "text/html; charset=utf-8",
+          "set-cookie": "[cookies present]",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "SAMEORIGIN",
+          "x-host": "waste-services.sutton.gov.uk",
+          "x-url": "/waste",
+          "x-xss-protection": "1"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 33441,
+          "compressed": true,
+          "content_ref": "8de065da98bc8221edd784b4ff7f3ca85c9a108e.html"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T10:23:49.108Z",
+        "duration_ms": 107.435,
+        "endpoint": "/waste",
+        "host": "waste-services.sutton.gov.uk",
+        "method": "POST",
+        "status": 302,
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+          "content-type": "application/x-www-form-urlencoded",
+          "cookie": "[cookies present]",
+          "origin": "https://waste-services.sutton.gov.uk",
+          "referer": "https://waste-services.sutton.gov.uk/waste"
+        },
+        "response_headers": {
+          "content-type": "text/html; charset=utf-8",
+          "location": "/waste/4502216",
+          "set-cookie": "[cookies present]",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "SAMEORIGIN",
+          "x-host": "waste-services.sutton.gov.uk",
+          "x-url": "/waste",
+          "x-xss-protection": "1"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": -1
+        },
+        "redirect_to": "/waste/4502216"
+      }
+    ],
+    "/.well-known/{id}": [
+      {
+        "timestamp": "2025-07-21T10:23:36.205Z",
+        "duration_ms": 82.15599999999999,
+        "endpoint": "/.well-known/{id}",
+        "host": "waste-services.sutton.gov.uk",
+        "method": "GET",
+        "status": 200,
+        "path_params": [
+          "manifest-waste.webmanifest"
+        ],
+        "request_headers": {
+          "accept": "*/*",
+          "referer": "https://waste-services.sutton.gov.uk/waste"
+        },
+        "response_headers": {
+          "content-type": "application/manifest+json",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "SAMEORIGIN",
+          "x-host": "waste-services.sutton.gov.uk",
+          "x-url": "/.well-known/manifest-waste.webmanifest",
+          "x-xss-protection": "1"
+        },
+        "response_info": {
+          "type": "application/manifest+json",
+          "size": 295,
+          "content_ref": "638bc72c446d76ebca4f2247a3321c9721566e8b.webmanifest"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T10:23:41.697Z",
+        "duration_ms": 17.246000000000002,
+        "endpoint": "/.well-known/{id}",
+        "host": "waste-services.sutton.gov.uk",
+        "method": "GET",
+        "status": 200,
+        "path_params": [
+          "manifest-waste.webmanifest"
+        ],
+        "request_headers": {
+          "referer": "https://waste-services.sutton.gov.uk/waste"
+        },
+        "response_headers": {
+          "x-host": "waste-services.sutton.gov.uk",
+          "x-content-type-options": "nosniff",
+          "x-url": "/.well-known/manifest-waste.webmanifest",
+          "x-xss-protection": "1",
+          "content-type": "application/manifest+json",
+          "x-frame-options": "SAMEORIGIN"
+        },
+        "response_info": {
+          "type": "application/manifest+json",
+          "size": 295,
+          "compressed": true,
+          "content_ref": "638bc72c446d76ebca4f2247a3321c9721566e8b.webmanifest"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T10:23:49.508Z",
+        "duration_ms": 26.803,
+        "endpoint": "/.well-known/{id}",
+        "host": "waste-services.sutton.gov.uk",
+        "method": "GET",
+        "status": 200,
+        "path_params": [
+          "manifest-waste.webmanifest"
+        ],
+        "request_headers": {
+          "referer": "https://waste-services.sutton.gov.uk/waste/4502216"
+        },
+        "response_headers": {
+          "x-host": "waste-services.sutton.gov.uk",
+          "x-content-type-options": "nosniff",
+          "x-url": "/.well-known/manifest-waste.webmanifest",
+          "x-xss-protection": "1",
+          "content-type": "application/manifest+json",
+          "x-frame-options": "SAMEORIGIN"
+        },
+        "response_info": {
+          "type": "application/manifest+json",
+          "size": 295,
+          "compressed": true,
+          "content_ref": "0a5dd37000455eb5a58984acb5fda9ce52ad22ca.webmanifest"
+        }
+      }
+    ],
+    "/waste/{id}": [
+      {
+        "timestamp": "2025-07-21T10:23:49.217Z",
+        "duration_ms": 175.495,
+        "endpoint": "/waste/{id}",
+        "host": "waste-services.sutton.gov.uk",
+        "method": "GET",
+        "status": 200,
+        "path_params": [
+          "4502216"
+        ],
+        "request_headers": {
+          "content-type": "application/x-www-form-urlencoded",
+          "origin": "https://waste-services.sutton.gov.uk",
+          "referer": "https://waste-services.sutton.gov.uk/waste"
+        },
+        "response_headers": {
+          "content-type": "text/html; charset=utf-8",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "SAMEORIGIN",
+          "x-host": "waste-services.sutton.gov.uk",
+          "x-url": "/waste/4502216",
+          "x-xss-protection": "1"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 20069,
+          "compressed": true,
+          "content_ref": "33d3b044ba5d31965026e590a77ca0e4ccb1673b.html"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T10:23:51.446Z",
+        "duration_ms": 774.612,
+        "endpoint": "/waste/{id}",
+        "host": "waste-services.sutton.gov.uk",
+        "method": "GET",
+        "status": 200,
+        "path_params": [
+          "4502216"
+        ],
+        "query_params": {
+          "page_loading": [
+            "1"
+          ]
+        },
+        "request_headers": {
+          "referer": "https://waste-services.sutton.gov.uk/waste/4502216",
+          "x-requested-with": "fetch"
+        },
+        "response_headers": {
+          "x-host": "waste-services.sutton.gov.uk",
+          "x-content-type-options": "nosniff",
+          "x-url": "/waste/4502216?page_loading=1",
+          "x-xss-protection": "1",
+          "content-type": "text/html; charset=utf-8",
+          "x-frame-options": "SAMEORIGIN"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 299,
+          "compressed": true,
+          "content_ref": "6359ed17aa5500e15059d4c8ef2ca65cb8b1db91.html"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T10:23:54.220Z",
+        "duration_ms": 2378.866,
+        "endpoint": "/waste/{id}",
+        "host": "waste-services.sutton.gov.uk",
+        "method": "GET",
+        "status": 200,
+        "path_params": [
+          "4502216"
+        ],
+        "query_params": {
+          "page_loading": [
+            "1"
+          ]
+        },
+        "request_headers": {
+          "referer": "https://waste-services.sutton.gov.uk/waste/4502216",
+          "x-requested-with": "fetch"
+        },
+        "response_headers": {
+          "x-host": "waste-services.sutton.gov.uk",
+          "x-content-type-options": "nosniff",
+          "x-url": "/waste/4502216?page_loading=1",
+          "x-xss-protection": "1",
+          "content-type": "text/html; charset=utf-8",
+          "x-frame-options": "SAMEORIGIN"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 27823,
+          "compressed": true,
+          "content_ref": "94dfd5001cb999fb8752e9f9dd6ffcf09a2cfbf9.html"
+        }
+      }
+    ]
+  }
 }

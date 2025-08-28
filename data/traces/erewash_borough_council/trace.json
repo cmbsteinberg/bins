@@ -1,89 +1,452 @@
 {
-  "metadata": {
-    "trace_name": "erewash_borough_council",
-    "processed_at": "2025-08-26 18:44:24",
-    "workflow_steps_count": 3,
-    "navigation_events_count": 5
-  },
-  "scraping_patterns": {
-    "login_detected": false,
-    "form_submissions": 0,
-    "navigation_count": 1,
-    "unique_domains": [
-      "map.erewash.gov.uk"
-    ],
-    "api_endpoints": [],
-    "data_extraction_indicators": []
-  },
-  "workflow_steps": [
+  "entries": [
     {
-      "action": "goto",
-      "target": "https://map.erewash.gov.uk/isharelive.web/myerewash.aspx",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
-    },
-    {
-      "action": "fill",
-      "target": "aria-ref=e48 >> internal:describe=\"textbox \\\"Search for a location:\\\"\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0,
-      "value": "DE21 5AR"
-    },
-    {
-      "action": "click",
-      "target": "aria-ref=e55 >> internal:describe=\"link \\\"5 The Leys, Little Eaton, Derby, DE21 5AR\\\"\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
-    }
-  ],
-  "navigation_events": [
-    {
-      "url": "https://map.erewash.gov.uk/isharelive.web/myerewash.aspx",
+      "timestamp": "2025-07-21T10:22:18.607Z",
+      "duration_ms": 239.82999999999998,
+      "endpoint": "/isharelive.web/myerewash.aspx",
+      "host": "map.erewash.gov.uk",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "text/html; charset=utf-8",
-      "size": 12389,
-      "timestamp": "2025-07-21T10:22:18.607Z"
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7"
+      },
+      "response_headers": {
+        "cache-control": "private",
+        "content-type": "text/html; charset=utf-8",
+        "set-cookie": "[cookies present]",
+        "x-aspnet-version": "2.0.50727",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "SAMEORIGIN",
+        "x-ua-compatible": "IE=Edge",
+        "x-xss-protection": "1; mode=block"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 12389,
+        "content_ref": "ccba2ffa6202e79d74b7debeeaca15b84f55ff8c.html"
+      }
     },
     {
-      "url": "https://map.erewash.gov.uk/isharelive.web/myerewash.aspx?action=SetAddress&UniqueId=100030124852",
+      "timestamp": "2025-07-21T10:22:25.070Z",
+      "duration_ms": 388.678,
+      "endpoint": "/isharelive.web/myerewash.aspx",
+      "host": "map.erewash.gov.uk",
       "method": "GET",
       "status": 302,
-      "redirect_url": "https://map.erewash.gov.uk/isharelive.web/myerewash.aspx",
-      "mime_type": "text/html; charset=utf-8",
-      "size": -1,
-      "timestamp": "2025-07-21T10:22:25.070Z"
+      "query_params": {
+        "action": [
+          "SetAddress"
+        ],
+        "UniqueId": [
+          "100030124852"
+        ]
+      },
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+        "cookie": "[cookies present]",
+        "referer": "https://map.erewash.gov.uk/"
+      },
+      "response_headers": {
+        "cache-control": "private",
+        "content-type": "text/html; charset=utf-8",
+        "location": "/isharelive.web/myerewash.aspx",
+        "set-cookie": "[cookies present]",
+        "x-aspnet-version": "2.0.50727",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "SAMEORIGIN",
+        "x-ua-compatible": "IE=Edge",
+        "x-xss-protection": "1; mode=block"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": -1
+      },
+      "redirect_to": "/isharelive.web/myerewash.aspx"
     },
     {
-      "url": "https://map.erewash.gov.uk/isharelive.web/myerewash.aspx",
+      "timestamp": "2025-07-21T10:22:25.459Z",
+      "duration_ms": 1058.973,
+      "endpoint": "/isharelive.web/myerewash.aspx",
+      "host": "map.erewash.gov.uk",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "text/html; charset=utf-8",
-      "size": 18436,
-      "timestamp": "2025-07-21T10:22:25.459Z"
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+        "cookie": "[cookies present]",
+        "referer": "https://map.erewash.gov.uk/"
+      },
+      "response_headers": {
+        "cache-control": "private",
+        "content-type": "text/html; charset=utf-8",
+        "set-cookie": "[cookies present]",
+        "x-aspnet-version": "2.0.50727",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "SAMEORIGIN",
+        "x-ua-compatible": "IE=Edge",
+        "x-xss-protection": "1; mode=block"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 18436,
+        "content_ref": "f230f14c53900a47383dbda2e352c8f182dc367c.html"
+      }
     },
     {
-      "url": "https://map.erewash.gov.uk/isharelive.web/MapGetImage.aspx?RequestType=Map&MapWidth=400%20&MapHeight=400&MapSource=mapsources/base_ospremium&Easting=436677&Northing=342615&Zoom=100&mapid=-1&ServiceAction=GotoLocation&ZoomPin=1",
+      "timestamp": "2025-07-21T10:22:26.539Z",
+      "duration_ms": 93.021,
+      "endpoint": "/isharelive.web/MapGetImage.aspx",
+      "host": "map.erewash.gov.uk",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "x-unknown",
-      "size": 0,
-      "timestamp": "2025-07-21T10:22:26.539Z"
+      "query_params": {
+        "RequestType": [
+          "Map"
+        ],
+        "MapWidth": [
+          "400 "
+        ],
+        "MapHeight": [
+          "400"
+        ],
+        "MapSource": [
+          "mapsources/base_ospremium"
+        ],
+        "Easting": [
+          "436677"
+        ],
+        "Northing": [
+          "342615"
+        ],
+        "Zoom": [
+          "100"
+        ],
+        "mapid": [
+          "-1"
+        ],
+        "ServiceAction": [
+          "GotoLocation"
+        ],
+        "ZoomPin": [
+          "1"
+        ]
+      },
+      "request_headers": {
+        "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+        "cookie": "[cookies present]",
+        "referer": "https://map.erewash.gov.uk/"
+      },
+      "response_headers": {
+        "cache-control": "private",
+        "x-aspnet-version": "2.0.50727",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "SAMEORIGIN",
+        "x-ua-compatible": "IE=Edge",
+        "x-xss-protection": "1; mode=block"
+      }
     },
     {
-      "url": "https://map.erewash.gov.uk/isharelive.web/MapGetImage.aspx?RequestType=Map&MapWidth=400%20&MapHeight=400&MapSource=mapsources/base_osmapsapi_static_map&Easting=436677&Northing=342615&Zoom=100&mapid=-1&ServiceAction=GotoLocation&ZoomPin=1",
+      "timestamp": "2025-07-21T10:22:26.539Z",
+      "duration_ms": 680.564,
+      "endpoint": "/isharelive.web/MapGetImage.aspx",
+      "host": "map.erewash.gov.uk",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "x-unknown",
-      "size": 0,
-      "timestamp": "2025-07-21T10:22:26.539Z"
+      "query_params": {
+        "RequestType": [
+          "Map"
+        ],
+        "MapWidth": [
+          "400 "
+        ],
+        "MapHeight": [
+          "400"
+        ],
+        "MapSource": [
+          "mapsources/base_osmapsapi_static_map"
+        ],
+        "Easting": [
+          "436677"
+        ],
+        "Northing": [
+          "342615"
+        ],
+        "Zoom": [
+          "100"
+        ],
+        "mapid": [
+          "-1"
+        ],
+        "ServiceAction": [
+          "GotoLocation"
+        ],
+        "ZoomPin": [
+          "1"
+        ]
+      },
+      "request_headers": {
+        "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+        "cookie": "[cookies present]",
+        "referer": "https://map.erewash.gov.uk/"
+      },
+      "response_headers": {
+        "cache-control": "private",
+        "x-aspnet-version": "2.0.50727",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "SAMEORIGIN",
+        "x-ua-compatible": "IE=Edge",
+        "x-xss-protection": "1; mode=block"
+      }
     }
-  ]
+  ],
+  "analysis": {
+    "total_requests": 5,
+    "unique_endpoints": 2,
+    "methods_used": [
+      "GET"
+    ],
+    "status_codes": {
+      "200": 4,
+      "302": 1
+    },
+    "endpoints_with_params": [
+      {
+        "endpoint": "/isharelive.web/myerewash.aspx",
+        "method": "GET",
+        "query_params": [
+          "action",
+          "UniqueId"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/isharelive.web/MapGetImage.aspx",
+        "method": "GET",
+        "query_params": [
+          "RequestType",
+          "MapWidth",
+          "MapHeight",
+          "MapSource",
+          "Easting",
+          "Northing",
+          "Zoom",
+          "mapid",
+          "ServiceAction",
+          "ZoomPin"
+        ],
+        "path_params": false
+      }
+    ],
+    "redirects": [
+      {
+        "from": "/isharelive.web/myerewash.aspx",
+        "to": "/isharelive.web/myerewash.aspx",
+        "status": 302
+      }
+    ],
+    "api_calls": [],
+    "form_submissions": []
+  },
+  "grouped_by_endpoint": {
+    "/isharelive.web/myerewash.aspx": [
+      {
+        "timestamp": "2025-07-21T10:22:18.607Z",
+        "duration_ms": 239.82999999999998,
+        "endpoint": "/isharelive.web/myerewash.aspx",
+        "host": "map.erewash.gov.uk",
+        "method": "GET",
+        "status": 200,
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7"
+        },
+        "response_headers": {
+          "cache-control": "private",
+          "content-type": "text/html; charset=utf-8",
+          "set-cookie": "[cookies present]",
+          "x-aspnet-version": "2.0.50727",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "SAMEORIGIN",
+          "x-ua-compatible": "IE=Edge",
+          "x-xss-protection": "1; mode=block"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 12389,
+          "content_ref": "ccba2ffa6202e79d74b7debeeaca15b84f55ff8c.html"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T10:22:25.070Z",
+        "duration_ms": 388.678,
+        "endpoint": "/isharelive.web/myerewash.aspx",
+        "host": "map.erewash.gov.uk",
+        "method": "GET",
+        "status": 302,
+        "query_params": {
+          "action": [
+            "SetAddress"
+          ],
+          "UniqueId": [
+            "100030124852"
+          ]
+        },
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+          "cookie": "[cookies present]",
+          "referer": "https://map.erewash.gov.uk/"
+        },
+        "response_headers": {
+          "cache-control": "private",
+          "content-type": "text/html; charset=utf-8",
+          "location": "/isharelive.web/myerewash.aspx",
+          "set-cookie": "[cookies present]",
+          "x-aspnet-version": "2.0.50727",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "SAMEORIGIN",
+          "x-ua-compatible": "IE=Edge",
+          "x-xss-protection": "1; mode=block"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": -1
+        },
+        "redirect_to": "/isharelive.web/myerewash.aspx"
+      },
+      {
+        "timestamp": "2025-07-21T10:22:25.459Z",
+        "duration_ms": 1058.973,
+        "endpoint": "/isharelive.web/myerewash.aspx",
+        "host": "map.erewash.gov.uk",
+        "method": "GET",
+        "status": 200,
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+          "cookie": "[cookies present]",
+          "referer": "https://map.erewash.gov.uk/"
+        },
+        "response_headers": {
+          "cache-control": "private",
+          "content-type": "text/html; charset=utf-8",
+          "set-cookie": "[cookies present]",
+          "x-aspnet-version": "2.0.50727",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "SAMEORIGIN",
+          "x-ua-compatible": "IE=Edge",
+          "x-xss-protection": "1; mode=block"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 18436,
+          "content_ref": "f230f14c53900a47383dbda2e352c8f182dc367c.html"
+        }
+      }
+    ],
+    "/isharelive.web/MapGetImage.aspx": [
+      {
+        "timestamp": "2025-07-21T10:22:26.539Z",
+        "duration_ms": 93.021,
+        "endpoint": "/isharelive.web/MapGetImage.aspx",
+        "host": "map.erewash.gov.uk",
+        "method": "GET",
+        "status": 200,
+        "query_params": {
+          "RequestType": [
+            "Map"
+          ],
+          "MapWidth": [
+            "400 "
+          ],
+          "MapHeight": [
+            "400"
+          ],
+          "MapSource": [
+            "mapsources/base_ospremium"
+          ],
+          "Easting": [
+            "436677"
+          ],
+          "Northing": [
+            "342615"
+          ],
+          "Zoom": [
+            "100"
+          ],
+          "mapid": [
+            "-1"
+          ],
+          "ServiceAction": [
+            "GotoLocation"
+          ],
+          "ZoomPin": [
+            "1"
+          ]
+        },
+        "request_headers": {
+          "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+          "cookie": "[cookies present]",
+          "referer": "https://map.erewash.gov.uk/"
+        },
+        "response_headers": {
+          "cache-control": "private",
+          "x-aspnet-version": "2.0.50727",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "SAMEORIGIN",
+          "x-ua-compatible": "IE=Edge",
+          "x-xss-protection": "1; mode=block"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T10:22:26.539Z",
+        "duration_ms": 680.564,
+        "endpoint": "/isharelive.web/MapGetImage.aspx",
+        "host": "map.erewash.gov.uk",
+        "method": "GET",
+        "status": 200,
+        "query_params": {
+          "RequestType": [
+            "Map"
+          ],
+          "MapWidth": [
+            "400 "
+          ],
+          "MapHeight": [
+            "400"
+          ],
+          "MapSource": [
+            "mapsources/base_osmapsapi_static_map"
+          ],
+          "Easting": [
+            "436677"
+          ],
+          "Northing": [
+            "342615"
+          ],
+          "Zoom": [
+            "100"
+          ],
+          "mapid": [
+            "-1"
+          ],
+          "ServiceAction": [
+            "GotoLocation"
+          ],
+          "ZoomPin": [
+            "1"
+          ]
+        },
+        "request_headers": {
+          "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+          "cookie": "[cookies present]",
+          "referer": "https://map.erewash.gov.uk/"
+        },
+        "response_headers": {
+          "cache-control": "private",
+          "x-aspnet-version": "2.0.50727",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "SAMEORIGIN",
+          "x-ua-compatible": "IE=Edge",
+          "x-xss-protection": "1; mode=block"
+        }
+      }
+    ]
+  }
 }

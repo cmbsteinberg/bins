@@ -1,340 +1,5060 @@
 {
-  "metadata": {
-    "trace_name": "bridgend_county_borough_council",
-    "processed_at": "2025-08-26 18:44:24",
-    "workflow_steps_count": 8,
-    "navigation_events_count": 27
-  },
-  "scraping_patterns": {
-    "login_detected": false,
-    "form_submissions": 1,
-    "navigation_count": 2,
-    "unique_domains": [
-      "bridgendportal.azurewebsites.net",
-      "apikeys.civiccomputing.com",
-      "www.bridgend.gov.uk",
-      "backend.logicdialog.ai",
-      "socket-server-input.logicdialog.ai",
-      "use.typekit.net",
-      "www.browsealoud.com"
-    ],
-    "api_endpoints": [
-      "https://www.browsealoud.com/version.json",
-      "https://www.browsealoud.com/modules/3.9.7/sri.json",
-      "https://www.browsealoud.com/version.json",
-      "https://www.browsealoud.com/modules/3.9.7/sri.json",
-      "https://backend.logicdialog.ai/api/user/client-info?client=bridgend",
-      "https://backend.logicdialog.ai/api/user/client-info?language=en&client=bridgend&domain=www.bridgend.gov.uk",
-      "https://socket-server-input.logicdialog.ai/api/user/session?language=en&client=bridgend&domain=www.bridgend.gov.uk&persistBetweenPages=true",
-      "https://www.browsealoud.com/version.json",
-      "https://www.browsealoud.com/modules/3.9.7/sri.json",
-      "https://www.browsealoud.com/version.json",
-      "https://www.browsealoud.com/modules/3.9.7/sri.json"
-    ],
-    "data_extraction_indicators": []
-  },
-  "workflow_steps": [
+  "entries": [
     {
-      "action": "goto",
-      "target": "https://www.bridgend.gov.uk/residents/recycling-waste-and-environment/refuse-collections/",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
-    },
-    {
-      "action": "goto",
-      "target": "https://www.bridgend.gov.uk/residents/",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
-    },
-    {
-      "action": "click",
-      "target": "aria-ref=e52 >> internal:describe=\"Recycling and waste link\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
-    },
-    {
-      "action": "click",
-      "target": "aria-ref=e75 >> internal:describe=\"Refuse collections link\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
-    },
-    {
-      "action": "click",
-      "target": "aria-ref=e76 >> internal:describe=\"Find out your waste and recycling collection day link\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
-    },
-    {
-      "action": "fill",
-      "target": "aria-ref=e39 >> internal:describe=\"textbox \\\"Enter your street name or postcode\\\"\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0,
-      "value": "CF31 1DE"
-    },
-    {
-      "action": "click",
-      "target": "aria-ref=e42 >> internal:describe=\"Look up property button\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
-    },
-    {
-      "action": "click",
-      "target": "aria-ref=e68 >> internal:describe=\"1 Rushfield Gardens, Bridgend, CF31 1DE link\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
-    }
-  ],
-  "navigation_events": [
-    {
-      "url": "https://www.bridgend.gov.uk/residents/recycling-waste-and-environment/refuse-collections/",
+      "timestamp": "2025-07-21T11:04:10.653Z",
+      "duration_ms": 88.161,
+      "endpoint": "/residents/{id}/refuse-collections",
+      "host": "www.bridgend.gov.uk",
       "method": "GET",
       "status": 404,
-      "redirect_url": null,
-      "mime_type": "text/html; charset=utf-8",
-      "size": 12766,
-      "timestamp": "2025-07-21T11:04:10.653Z"
+      "path_params": [
+        "recycling-waste-and-environment"
+      ],
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+        "cookie": "[cookies present]"
+      },
+      "response_headers": {
+        "content-type": "text/html; charset=utf-8",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "SAMEORIGIN"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 12766,
+        "content_ref": "2f091d28966d8e62cd4eedc1534ad1e83dc0ab0a.html"
+      }
     },
     {
-      "url": "https://apikeys.civiccomputing.com/c/v?d=www.bridgend.gov.uk&p=CookieControl%20Multi-Site&v=9&k=d63ecb7d0b1cbe294ab2c0526af4085e6fcdad6c&format=json",
+      "timestamp": "2025-07-21T11:04:10.799Z",
+      "duration_ms": 1.63,
+      "endpoint": "/version.json",
+      "host": "www.browsealoud.com",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json",
-      "size": 304,
-      "timestamp": "2025-07-21T11:04:10.798Z"
+      "request_headers": {
+        "referer": "https://www.bridgend.gov.uk/"
+      },
+      "response_headers": {
+        "x-cache": "Hit from cloudfront",
+        "content-type": "application/json"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 31,
+        "compressed": true,
+        "content_ref": "ff0999f76fabcbe93bb754fb6d0f59af954e7398.json"
+      }
     },
     {
-      "url": "https://www.browsealoud.com/version.json",
+      "timestamp": "2025-07-21T11:04:10.829Z",
+      "duration_ms": 2.177,
+      "endpoint": "/modules/3.9.7/sri.json",
+      "host": "www.browsealoud.com",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json",
-      "size": 31,
-      "timestamp": "2025-07-21T11:04:10.799Z"
+      "request_headers": {
+        "referer": "https://www.bridgend.gov.uk/"
+      },
+      "response_headers": {
+        "x-cache": "Hit from cloudfront",
+        "content-type": "application/json"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 478,
+        "compressed": true,
+        "content_ref": "0a0e783be1cdec71af8786d262d441547912b25b.json"
+      }
     },
     {
-      "url": "https://www.browsealoud.com/modules/3.9.7/sri.json",
+      "timestamp": "2025-07-21T11:04:10.798Z",
+      "duration_ms": 50.375,
+      "endpoint": "/c/v",
+      "host": "apikeys.civiccomputing.com",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json",
-      "size": 478,
-      "timestamp": "2025-07-21T11:04:10.829Z"
+      "query_params": {
+        "d": [
+          "www.bridgend.gov.uk"
+        ],
+        "p": [
+          "CookieControl Multi-Site"
+        ],
+        "v": [
+          "9"
+        ],
+        "k": [
+          "d63ecb7d0b1cbe294ab2c0526af4085e6fcdad6c"
+        ],
+        "format": [
+          "json"
+        ]
+      },
+      "request_headers": {
+        "accept": "application/json, text/plain, */*",
+        "origin": "https://www.bridgend.gov.uk",
+        "referer": "https://www.bridgend.gov.uk/"
+      },
+      "response_headers": {
+        "cache-control": "max-age=3600, private, no-store",
+        "content-type": "application/json",
+        "x-apikeys": "hit",
+        "x-cf-test": "true",
+        "x-content-type-options": "nosniff",
+        "x-xss-protection": "1"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 304,
+        "content_ref": "1378f9d871a04d33299a93f8bb8305a550d6522c.json"
+      }
     },
     {
-      "url": "https://www.bridgend.gov.uk/residents/",
+      "timestamp": "2025-07-21T11:04:10.845Z",
+      "duration_ms": 59.55800000000001,
+      "endpoint": "/g/collect",
+      "host": "region1.google-analytics.com",
+      "method": "POST",
+      "status": 204,
+      "query_params": {
+        "v": [
+          "2"
+        ],
+        "tid": [
+          "G-K498X8WK7V"
+        ],
+        "gtm": [
+          "45je57g1v893042100za200"
+        ],
+        "_p": [
+          "1753095850737"
+        ],
+        "gcs": [
+          "G100"
+        ],
+        "gcd": [
+          "13p3p3l3l5l1"
+        ],
+        "npa": [
+          "0"
+        ],
+        "dma": [
+          "0"
+        ],
+        "tag_exp": [
+          "101509157~103116026~103200004~103233427~104684208~104684211~104952206~104952208"
+        ],
+        "cid": [
+          "1076868849.1753095851"
+        ],
+        "ul": [
+          "en-gb"
+        ],
+        "sr": [
+          "800x600"
+        ],
+        "uaa": [
+          "arm"
+        ],
+        "uab": [
+          "64"
+        ],
+        "uafvl": [
+          "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+        ],
+        "uamb": [
+          "0"
+        ],
+        "uap": [
+          "macOS"
+        ],
+        "uapv": [
+          "15.5.0"
+        ],
+        "uaw": [
+          "0"
+        ],
+        "are": [
+          "1"
+        ],
+        "frm": [
+          "0"
+        ],
+        "pscdl": [
+          "denied"
+        ],
+        "_s": [
+          "1"
+        ],
+        "sid": [
+          "1753095850"
+        ],
+        "sct": [
+          "1"
+        ],
+        "seg": [
+          "0"
+        ],
+        "dl": [
+          "https://www.bridgend.gov.uk/residents/recycling-waste-and-environment/refuse-collections/"
+        ],
+        "dt": [
+          "Page not found"
+        ],
+        "en": [
+          "page_view"
+        ],
+        "_fv": [
+          "1"
+        ],
+        "_nsi": [
+          "1"
+        ],
+        "_ss": [
+          "1"
+        ],
+        "_ee": [
+          "1"
+        ],
+        "tfd": [
+          "193"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "cookie": "[cookies present]",
+        "origin": "https://www.bridgend.gov.uk",
+        "referer": "https://www.bridgend.gov.uk/"
+      },
+      "response_headers": {
+        "cache-control": "no-cache, no-store, must-revalidate",
+        "content-type": "text/plain"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T11:04:12.531Z",
+      "duration_ms": -1,
+      "endpoint": "/g/collect",
+      "host": "region1.google-analytics.com",
+      "method": "POST",
+      "status": -1,
+      "query_params": {
+        "v": [
+          "2"
+        ],
+        "tid": [
+          "G-K498X8WK7V"
+        ],
+        "gtm": [
+          "45je57g1v893042100za200"
+        ],
+        "_p": [
+          "1753095850737"
+        ],
+        "gcs": [
+          "G101"
+        ],
+        "gcd": [
+          "13p3r3l3l5l1"
+        ],
+        "npa": [
+          "0"
+        ],
+        "dma": [
+          "0"
+        ],
+        "tag_exp": [
+          "101509157~103116026~103200004~103233427~104684208~104684211~104952206~104952208"
+        ],
+        "cid": [
+          "1118590570.1753085252"
+        ],
+        "ul": [
+          "en-gb"
+        ],
+        "sr": [
+          "800x600"
+        ],
+        "uaa": [
+          "arm"
+        ],
+        "uab": [
+          "64"
+        ],
+        "uafvl": [
+          "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+        ],
+        "uamb": [
+          "0"
+        ],
+        "uap": [
+          "macOS"
+        ],
+        "uapv": [
+          "15.5.0"
+        ],
+        "uaw": [
+          "0"
+        ],
+        "are": [
+          "1"
+        ],
+        "frm": [
+          "0"
+        ],
+        "pscdl": [
+          "denied"
+        ],
+        "_s": [
+          "3"
+        ],
+        "sid": [
+          "1753095850"
+        ],
+        "sct": [
+          "2"
+        ],
+        "seg": [
+          "0"
+        ],
+        "dl": [
+          "https://www.bridgend.gov.uk/residents/recycling-waste-and-environment/refuse-collections/"
+        ],
+        "dt": [
+          "Page not found"
+        ],
+        "en": [
+          "user_engagement"
+        ],
+        "_et": [
+          "1673"
+        ],
+        "tfd": [
+          "1879"
+        ]
+      },
+      "request_headers": {
+        "referer": "https://www.bridgend.gov.uk/"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T11:04:12.531Z",
+      "duration_ms": -1,
+      "endpoint": "/g/collect",
+      "host": "region1.google-analytics.com",
+      "method": "POST",
+      "status": -1,
+      "query_params": {
+        "v": [
+          "2"
+        ],
+        "tid": [
+          "G-K498X8WK7V"
+        ],
+        "gtm": [
+          "45je57g1v893042100za200"
+        ],
+        "_p": [
+          "1753095850737"
+        ],
+        "gcs": [
+          "G101"
+        ],
+        "gcd": [
+          "13p3r3l3l5l1"
+        ],
+        "npa": [
+          "0"
+        ],
+        "dma": [
+          "0"
+        ],
+        "tag_exp": [
+          "101509157~103116026~103200004~103233427~104684208~104684211~104952206~104952208"
+        ],
+        "cid": [
+          "1118590570.1753085252"
+        ],
+        "ul": [
+          "en-gb"
+        ],
+        "sr": [
+          "800x600"
+        ],
+        "uaa": [
+          "arm"
+        ],
+        "uab": [
+          "64"
+        ],
+        "uafvl": [
+          "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+        ],
+        "uamb": [
+          "0"
+        ],
+        "uap": [
+          "macOS"
+        ],
+        "uapv": [
+          "15.5.0"
+        ],
+        "uaw": [
+          "0"
+        ],
+        "are": [
+          "1"
+        ],
+        "frm": [
+          "0"
+        ],
+        "pscdl": [
+          "denied"
+        ],
+        "_eu": [
+          "AAAAAAQ"
+        ],
+        "_s": [
+          "2"
+        ],
+        "sid": [
+          "1753095850"
+        ],
+        "sct": [
+          "2"
+        ],
+        "seg": [
+          "0"
+        ],
+        "dl": [
+          "https://www.bridgend.gov.uk/residents/recycling-waste-and-environment/refuse-collections/"
+        ],
+        "dt": [
+          "Page not found"
+        ],
+        "en": [
+          "user_engagement"
+        ],
+        "ep.ga_temp_client_id": [
+          "1076868849.1753095851"
+        ],
+        "_et": [
+          "11"
+        ],
+        "tfd": [
+          "1879"
+        ]
+      },
+      "request_headers": {
+        "referer": "https://www.bridgend.gov.uk/"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T11:04:12.503Z",
+      "duration_ms": 35.452,
+      "endpoint": "/residents",
+      "host": "www.bridgend.gov.uk",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "text/html; charset=utf-8",
-      "size": 45779,
-      "timestamp": "2025-07-21T11:04:12.503Z"
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+        "cookie": "[cookies present]"
+      },
+      "response_headers": {
+        "content-type": "text/html; charset=utf-8",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "SAMEORIGIN"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 45779,
+        "content_ref": "5df853307e0bda5c65b78736eccf51597224950b.html"
+      }
     },
     {
-      "url": "https://apikeys.civiccomputing.com/c/v?d=www.bridgend.gov.uk&p=CookieControl%20Multi-Site&v=9&k=d63ecb7d0b1cbe294ab2c0526af4085e6fcdad6c&format=json",
+      "timestamp": "2025-07-21T11:04:12.577Z",
+      "duration_ms": 14.267,
+      "endpoint": "/g/collect",
+      "host": "region1.google-analytics.com",
+      "method": "POST",
+      "status": 204,
+      "query_params": {
+        "v": [
+          "2"
+        ],
+        "tid": [
+          "G-K498X8WK7V"
+        ],
+        "gtm": [
+          "45je57g1v893042100za200"
+        ],
+        "_p": [
+          "1753095852534"
+        ],
+        "gcs": [
+          "G100"
+        ],
+        "gcd": [
+          "13p3p3l3l5l1"
+        ],
+        "npa": [
+          "0"
+        ],
+        "dma": [
+          "0"
+        ],
+        "tag_exp": [
+          "101509157~103116026~103200004~103233427~104684208~104684211~104952206~104952208"
+        ],
+        "cid": [
+          "1523813729.1753095853"
+        ],
+        "ul": [
+          "en-gb"
+        ],
+        "sr": [
+          "800x600"
+        ],
+        "uaa": [
+          "arm"
+        ],
+        "uab": [
+          "64"
+        ],
+        "uafvl": [
+          "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+        ],
+        "uamb": [
+          "0"
+        ],
+        "uap": [
+          "macOS"
+        ],
+        "uapv": [
+          "15.5.0"
+        ],
+        "uaw": [
+          "0"
+        ],
+        "are": [
+          "1"
+        ],
+        "frm": [
+          "0"
+        ],
+        "pscdl": [
+          "denied"
+        ],
+        "_s": [
+          "1"
+        ],
+        "sid": [
+          "1753095852"
+        ],
+        "sct": [
+          "1"
+        ],
+        "seg": [
+          "0"
+        ],
+        "dl": [
+          "https://www.bridgend.gov.uk/residents/"
+        ],
+        "dt": [
+          "Residents"
+        ],
+        "en": [
+          "page_view"
+        ],
+        "_fv": [
+          "1"
+        ],
+        "_nsi": [
+          "1"
+        ],
+        "_ss": [
+          "1"
+        ],
+        "_ee": [
+          "1"
+        ],
+        "tfd": [
+          "56"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "cookie": "[cookies present]",
+        "origin": "https://www.bridgend.gov.uk",
+        "referer": "https://www.bridgend.gov.uk/"
+      },
+      "response_headers": {
+        "cache-control": "no-cache, no-store, must-revalidate",
+        "content-type": "text/plain"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T11:04:12.584Z",
+      "duration_ms": 0.883,
+      "endpoint": "/version.json",
+      "host": "www.browsealoud.com",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json",
-      "size": 304,
-      "timestamp": "2025-07-21T11:04:12.583Z"
+      "request_headers": {
+        "referer": "https://www.bridgend.gov.uk/"
+      },
+      "response_headers": {
+        "x-cache": "Hit from cloudfront",
+        "content-type": "application/json"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 31,
+        "compressed": true,
+        "content_ref": "ff0999f76fabcbe93bb754fb6d0f59af954e7398.json"
+      }
     },
     {
-      "url": "https://www.browsealoud.com/version.json",
+      "timestamp": "2025-07-21T11:04:12.583Z",
+      "duration_ms": 16.715,
+      "endpoint": "/c/v",
+      "host": "apikeys.civiccomputing.com",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json",
-      "size": 31,
-      "timestamp": "2025-07-21T11:04:12.584Z"
+      "query_params": {
+        "d": [
+          "www.bridgend.gov.uk"
+        ],
+        "p": [
+          "CookieControl Multi-Site"
+        ],
+        "v": [
+          "9"
+        ],
+        "k": [
+          "d63ecb7d0b1cbe294ab2c0526af4085e6fcdad6c"
+        ],
+        "format": [
+          "json"
+        ]
+      },
+      "request_headers": {
+        "accept": "application/json, text/plain, */*",
+        "origin": "https://www.bridgend.gov.uk",
+        "referer": "https://www.bridgend.gov.uk/"
+      },
+      "response_headers": {
+        "cache-control": "max-age=3600, private, no-store",
+        "content-type": "application/json",
+        "x-apikeys": "hit",
+        "x-cf-test": "true",
+        "x-content-type-options": "nosniff",
+        "x-xss-protection": "1"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 304,
+        "content_ref": "1378f9d871a04d33299a93f8bb8305a550d6522c.json"
+      }
     },
     {
-      "url": "https://www.browsealoud.com/modules/3.9.7/sri.json",
+      "timestamp": "2025-07-21T11:04:12.648Z",
+      "duration_ms": 0.581,
+      "endpoint": "/modules/3.9.7/sri.json",
+      "host": "www.browsealoud.com",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json",
-      "size": 478,
-      "timestamp": "2025-07-21T11:04:12.648Z"
+      "request_headers": {
+        "referer": "https://www.bridgend.gov.uk/"
+      },
+      "response_headers": {
+        "x-cache": "Hit from cloudfront",
+        "content-type": "application/json"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 478,
+        "compressed": true,
+        "content_ref": "0a0e783be1cdec71af8786d262d441547912b25b.json"
+      }
     },
     {
-      "url": "https://backend.logicdialog.ai/api/user/client-info?client=bridgend",
+      "timestamp": "2025-07-21T11:04:12.749Z",
+      "duration_ms": 68.551,
+      "endpoint": "/api/user/client-info",
+      "host": "backend.logicdialog.ai",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json; charset=utf-8",
-      "size": 7477,
-      "timestamp": "2025-07-21T11:04:12.749Z"
+      "query_params": {
+        "client": [
+          "bridgend"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "origin": "https://www.bridgend.gov.uk",
+        "referer": "https://www.bridgend.gov.uk/"
+      },
+      "response_headers": {
+        "content-type": "application/json; charset=utf-8",
+        "set-cookie": "[cookies present]",
+        "x-content-type-options": "nosniff",
+        "x-dns-prefetch-control": "off",
+        "x-download-options": "noopen",
+        "x-frame-options": "SAMEORIGIN",
+        "x-permitted-cross-domain-policies": "none",
+        "x-xss-protection": "0"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 7477,
+        "compressed": true,
+        "content_ref": "9120822e230ae6dd2b8c6700a162f6c40484cb8b.json"
+      }
     },
     {
-      "url": "https://backend.logicdialog.ai/api/user/client-info?language=en&client=bridgend&domain=www.bridgend.gov.uk",
+      "timestamp": "2025-07-21T11:04:13.117Z",
+      "duration_ms": 14.469,
+      "endpoint": "/api/user/client-info",
+      "host": "backend.logicdialog.ai",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json; charset=utf-8",
-      "size": 7477,
-      "timestamp": "2025-07-21T11:04:13.117Z"
+      "query_params": {
+        "language": [
+          "en"
+        ],
+        "client": [
+          "bridgend"
+        ],
+        "domain": [
+          "www.bridgend.gov.uk"
+        ]
+      },
+      "request_headers": {
+        "accept": "application/json, text/plain, */*",
+        "origin": "https://www.bridgend.gov.uk",
+        "referer": "https://www.bridgend.gov.uk/"
+      },
+      "response_headers": {
+        "content-type": "application/json; charset=utf-8",
+        "set-cookie": "[cookies present]",
+        "x-content-type-options": "nosniff",
+        "x-dns-prefetch-control": "off",
+        "x-download-options": "noopen",
+        "x-frame-options": "SAMEORIGIN",
+        "x-permitted-cross-domain-policies": "none",
+        "x-xss-protection": "0"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 7477,
+        "compressed": true,
+        "content_ref": "9120822e230ae6dd2b8c6700a162f6c40484cb8b.json"
+      }
     },
     {
-      "url": "https://socket-server-input.logicdialog.ai/api/user/session?language=en&client=bridgend&domain=www.bridgend.gov.uk&persistBetweenPages=true",
+      "timestamp": "2025-07-21T11:04:13.220Z",
+      "duration_ms": 30.136,
+      "endpoint": "/api/user/session",
+      "host": "socket-server-input.logicdialog.ai",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json; charset=utf-8",
-      "size": 101,
-      "timestamp": "2025-07-21T11:04:13.220Z"
+      "query_params": {
+        "language": [
+          "en"
+        ],
+        "client": [
+          "bridgend"
+        ],
+        "domain": [
+          "www.bridgend.gov.uk"
+        ],
+        "persistBetweenPages": [
+          "true"
+        ]
+      },
+      "request_headers": {
+        "accept": "application/json, text/plain, */*",
+        "cookie": "[cookies present]",
+        "origin": "https://www.bridgend.gov.uk",
+        "referer": "https://www.bridgend.gov.uk/"
+      },
+      "response_headers": {
+        "content-type": "application/json; charset=utf-8",
+        "set-cookie": "[cookies present]",
+        "x-powered-by": "Express"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 101,
+        "content_ref": "7dc7ead1820ab77e393fc19c01cf895552d2f2b6.json"
+      }
     },
     {
-      "url": "https://www.bridgend.gov.uk/residents/recycling-and-waste/",
+      "timestamp": "2025-07-21T11:04:13.223Z",
+      "duration_ms": -1,
+      "endpoint": "/api/user/header-info",
+      "host": "backend.logicdialog.ai",
+      "method": "GET",
+      "status": -1,
+      "query_params": {
+        "language": [
+          "en"
+        ],
+        "lang": [
+          "en"
+        ],
+        "client": [
+          "bridgend"
+        ],
+        "domain": [
+          "www.bridgend.gov.uk"
+        ],
+        "userId": [
+          "687df330becbc476486bce16"
+        ]
+      },
+      "request_headers": {
+        "referer": "https://www.bridgend.gov.uk/",
+        "accept": "application/json, text/plain, */*"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T11:04:14.375Z",
+      "duration_ms": -1,
+      "endpoint": "/g/collect",
+      "host": "region1.google-analytics.com",
+      "method": "POST",
+      "status": -1,
+      "query_params": {
+        "v": [
+          "2"
+        ],
+        "tid": [
+          "G-K498X8WK7V"
+        ],
+        "gtm": [
+          "45je57g1v893042100za200"
+        ],
+        "_p": [
+          "1753095852534"
+        ],
+        "gcs": [
+          "G101"
+        ],
+        "gcd": [
+          "13p3r3l3l5l1"
+        ],
+        "npa": [
+          "0"
+        ],
+        "dma": [
+          "0"
+        ],
+        "tag_exp": [
+          "101509157~103116026~103200004~103233427~104684208~104684211~104952206~104952208"
+        ],
+        "cid": [
+          "1118590570.1753085252"
+        ],
+        "ul": [
+          "en-gb"
+        ],
+        "sr": [
+          "800x600"
+        ],
+        "uaa": [
+          "arm"
+        ],
+        "uab": [
+          "64"
+        ],
+        "uafvl": [
+          "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+        ],
+        "uamb": [
+          "0"
+        ],
+        "uap": [
+          "macOS"
+        ],
+        "uapv": [
+          "15.5.0"
+        ],
+        "uaw": [
+          "0"
+        ],
+        "are": [
+          "1"
+        ],
+        "frm": [
+          "0"
+        ],
+        "pscdl": [
+          "denied"
+        ],
+        "_s": [
+          "3"
+        ],
+        "sid": [
+          "1753095850"
+        ],
+        "sct": [
+          "2"
+        ],
+        "seg": [
+          "0"
+        ],
+        "dl": [
+          "https://www.bridgend.gov.uk/residents/"
+        ],
+        "dt": [
+          "Residents"
+        ],
+        "en": [
+          "user_engagement"
+        ],
+        "_et": [
+          "1773"
+        ],
+        "tfd": [
+          "1870"
+        ]
+      },
+      "request_headers": {
+        "referer": "https://www.bridgend.gov.uk/"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T11:04:14.375Z",
+      "duration_ms": -1,
+      "endpoint": "/g/collect",
+      "host": "region1.google-analytics.com",
+      "method": "POST",
+      "status": -1,
+      "query_params": {
+        "v": [
+          "2"
+        ],
+        "tid": [
+          "G-K498X8WK7V"
+        ],
+        "gtm": [
+          "45je57g1v893042100za200"
+        ],
+        "_p": [
+          "1753095852534"
+        ],
+        "gcs": [
+          "G101"
+        ],
+        "gcd": [
+          "13p3r3l3l5l1"
+        ],
+        "npa": [
+          "0"
+        ],
+        "dma": [
+          "0"
+        ],
+        "tag_exp": [
+          "101509157~103116026~103200004~103233427~104684208~104684211~104952206~104952208"
+        ],
+        "cid": [
+          "1118590570.1753085252"
+        ],
+        "ul": [
+          "en-gb"
+        ],
+        "sr": [
+          "800x600"
+        ],
+        "uaa": [
+          "arm"
+        ],
+        "uab": [
+          "64"
+        ],
+        "uafvl": [
+          "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+        ],
+        "uamb": [
+          "0"
+        ],
+        "uap": [
+          "macOS"
+        ],
+        "uapv": [
+          "15.5.0"
+        ],
+        "uaw": [
+          "0"
+        ],
+        "are": [
+          "1"
+        ],
+        "frm": [
+          "0"
+        ],
+        "pscdl": [
+          "denied"
+        ],
+        "_eu": [
+          "AAAAAAQ"
+        ],
+        "_s": [
+          "2"
+        ],
+        "sid": [
+          "1753095850"
+        ],
+        "sct": [
+          "2"
+        ],
+        "seg": [
+          "0"
+        ],
+        "dl": [
+          "https://www.bridgend.gov.uk/residents/"
+        ],
+        "dt": [
+          "Residents"
+        ],
+        "en": [
+          "user_engagement"
+        ],
+        "ep.ga_temp_client_id": [
+          "1523813729.1753095853"
+        ],
+        "_et": [
+          "39"
+        ],
+        "tfd": [
+          "1870"
+        ]
+      },
+      "request_headers": {
+        "referer": "https://www.bridgend.gov.uk/"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T11:04:14.352Z",
+      "duration_ms": 18.178,
+      "endpoint": "/residents/recycling-and-waste",
+      "host": "www.bridgend.gov.uk",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "text/html; charset=utf-8",
-      "size": 27351,
-      "timestamp": "2025-07-21T11:04:14.352Z"
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+        "cookie": "[cookies present]",
+        "referer": "https://www.bridgend.gov.uk/residents/"
+      },
+      "response_headers": {
+        "content-type": "text/html; charset=utf-8",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "SAMEORIGIN"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 27351,
+        "content_ref": "53b2b5b9244247fa428c0723666321b4b5a48f9a.html"
+      }
     },
     {
-      "url": "https://www.browsealoud.com/version.json",
+      "timestamp": "2025-07-21T11:04:14.386Z",
+      "duration_ms": 0.673,
+      "endpoint": "/version.json",
+      "host": "www.browsealoud.com",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json",
-      "size": 31,
-      "timestamp": "2025-07-21T11:04:14.386Z"
+      "request_headers": {
+        "referer": "https://www.bridgend.gov.uk/"
+      },
+      "response_headers": {
+        "x-cache": "Hit from cloudfront",
+        "content-type": "application/json"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 31,
+        "compressed": true,
+        "content_ref": "ff0999f76fabcbe93bb754fb6d0f59af954e7398.json"
+      }
     },
     {
-      "url": "https://apikeys.civiccomputing.com/c/v?d=www.bridgend.gov.uk&p=CookieControl%20Multi-Site&v=9&k=d63ecb7d0b1cbe294ab2c0526af4085e6fcdad6c&format=json",
+      "timestamp": "2025-07-21T11:04:14.423Z",
+      "duration_ms": 13.966,
+      "endpoint": "/g/collect",
+      "host": "region1.google-analytics.com",
+      "method": "POST",
+      "status": 204,
+      "query_params": {
+        "v": [
+          "2"
+        ],
+        "tid": [
+          "G-K498X8WK7V"
+        ],
+        "gtm": [
+          "45je57g1v893042100za200"
+        ],
+        "_p": [
+          "1753095854377"
+        ],
+        "gcs": [
+          "G100"
+        ],
+        "gcd": [
+          "13p3p3l3l5l1"
+        ],
+        "npa": [
+          "0"
+        ],
+        "dma": [
+          "0"
+        ],
+        "tag_exp": [
+          "101509157~103116026~103200004~103233427~104684208~104684211~104952206~104952208"
+        ],
+        "cid": [
+          "1204874226.1753095854"
+        ],
+        "ul": [
+          "en-gb"
+        ],
+        "sr": [
+          "800x600"
+        ],
+        "uaa": [
+          "arm"
+        ],
+        "uab": [
+          "64"
+        ],
+        "uafvl": [
+          "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+        ],
+        "uamb": [
+          "0"
+        ],
+        "uap": [
+          "macOS"
+        ],
+        "uapv": [
+          "15.5.0"
+        ],
+        "uaw": [
+          "0"
+        ],
+        "are": [
+          "1"
+        ],
+        "frm": [
+          "0"
+        ],
+        "pscdl": [
+          "denied"
+        ],
+        "_s": [
+          "1"
+        ],
+        "sid": [
+          "1753095854"
+        ],
+        "sct": [
+          "1"
+        ],
+        "seg": [
+          "0"
+        ],
+        "dl": [
+          "https://www.bridgend.gov.uk/residents/recycling-and-waste/"
+        ],
+        "dr": [
+          "https://www.bridgend.gov.uk/residents/"
+        ],
+        "dt": [
+          "Recycling and waste"
+        ],
+        "en": [
+          "page_view"
+        ],
+        "_fv": [
+          "1"
+        ],
+        "_nsi": [
+          "1"
+        ],
+        "_ss": [
+          "1"
+        ],
+        "_ee": [
+          "1"
+        ],
+        "tfd": [
+          "102"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "cookie": "[cookies present]",
+        "origin": "https://www.bridgend.gov.uk",
+        "referer": "https://www.bridgend.gov.uk/"
+      },
+      "response_headers": {
+        "cache-control": "no-cache, no-store, must-revalidate",
+        "content-type": "text/plain"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T11:04:14.386Z",
+      "duration_ms": 16.267,
+      "endpoint": "/c/v",
+      "host": "apikeys.civiccomputing.com",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json",
-      "size": 304,
-      "timestamp": "2025-07-21T11:04:14.386Z"
+      "query_params": {
+        "d": [
+          "www.bridgend.gov.uk"
+        ],
+        "p": [
+          "CookieControl Multi-Site"
+        ],
+        "v": [
+          "9"
+        ],
+        "k": [
+          "d63ecb7d0b1cbe294ab2c0526af4085e6fcdad6c"
+        ],
+        "format": [
+          "json"
+        ]
+      },
+      "request_headers": {
+        "accept": "application/json, text/plain, */*",
+        "origin": "https://www.bridgend.gov.uk",
+        "referer": "https://www.bridgend.gov.uk/"
+      },
+      "response_headers": {
+        "cache-control": "max-age=3600, private, no-store",
+        "content-type": "application/json",
+        "x-apikeys": "hit",
+        "x-cf-test": "true",
+        "x-content-type-options": "nosniff",
+        "x-xss-protection": "1"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 304,
+        "content_ref": "1378f9d871a04d33299a93f8bb8305a550d6522c.json"
+      }
     },
     {
-      "url": "https://www.browsealoud.com/modules/3.9.7/sri.json",
+      "timestamp": "2025-07-21T11:04:14.426Z",
+      "duration_ms": 0.7370000000000001,
+      "endpoint": "/modules/3.9.7/sri.json",
+      "host": "www.browsealoud.com",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json",
-      "size": 478,
-      "timestamp": "2025-07-21T11:04:14.426Z"
+      "request_headers": {
+        "referer": "https://www.bridgend.gov.uk/"
+      },
+      "response_headers": {
+        "x-cache": "Hit from cloudfront",
+        "content-type": "application/json"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 478,
+        "compressed": true,
+        "content_ref": "0a0e783be1cdec71af8786d262d441547912b25b.json"
+      }
     },
     {
-      "url": "https://www.bridgend.gov.uk/residents/recycling-and-waste/refuse-collections/",
+      "timestamp": "2025-07-21T11:04:17.035Z",
+      "duration_ms": -1,
+      "endpoint": "/g/collect",
+      "host": "region1.google-analytics.com",
+      "method": "POST",
+      "status": -1,
+      "query_params": {
+        "v": [
+          "2"
+        ],
+        "tid": [
+          "G-K498X8WK7V"
+        ],
+        "gtm": [
+          "45je57g1v893042100za200"
+        ],
+        "_p": [
+          "1753095854377"
+        ],
+        "gcs": [
+          "G101"
+        ],
+        "gcd": [
+          "13p3r3l3l5l1"
+        ],
+        "npa": [
+          "0"
+        ],
+        "dma": [
+          "0"
+        ],
+        "tag_exp": [
+          "101509157~103116026~103200004~103233427~104684208~104684211~104952206~104952208"
+        ],
+        "cid": [
+          "1118590570.1753085252"
+        ],
+        "ul": [
+          "en-gb"
+        ],
+        "sr": [
+          "800x600"
+        ],
+        "uaa": [
+          "arm"
+        ],
+        "uab": [
+          "64"
+        ],
+        "uafvl": [
+          "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+        ],
+        "uamb": [
+          "0"
+        ],
+        "uap": [
+          "macOS"
+        ],
+        "uapv": [
+          "15.5.0"
+        ],
+        "uaw": [
+          "0"
+        ],
+        "are": [
+          "1"
+        ],
+        "frm": [
+          "0"
+        ],
+        "pscdl": [
+          "denied"
+        ],
+        "_s": [
+          "3"
+        ],
+        "sid": [
+          "1753095850"
+        ],
+        "sct": [
+          "2"
+        ],
+        "seg": [
+          "0"
+        ],
+        "dl": [
+          "https://www.bridgend.gov.uk/residents/recycling-and-waste/"
+        ],
+        "dr": [
+          "https://www.bridgend.gov.uk/residents/"
+        ],
+        "dt": [
+          "Recycling and waste"
+        ],
+        "en": [
+          "user_engagement"
+        ],
+        "_et": [
+          "2620"
+        ],
+        "tfd": [
+          "2732"
+        ]
+      },
+      "request_headers": {
+        "referer": "https://www.bridgend.gov.uk/"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T11:04:17.034Z",
+      "duration_ms": -1,
+      "endpoint": "/g/collect",
+      "host": "region1.google-analytics.com",
+      "method": "POST",
+      "status": -1,
+      "query_params": {
+        "v": [
+          "2"
+        ],
+        "tid": [
+          "G-K498X8WK7V"
+        ],
+        "gtm": [
+          "45je57g1v893042100za200"
+        ],
+        "_p": [
+          "1753095854377"
+        ],
+        "gcs": [
+          "G101"
+        ],
+        "gcd": [
+          "13p3r3l3l5l1"
+        ],
+        "npa": [
+          "0"
+        ],
+        "dma": [
+          "0"
+        ],
+        "tag_exp": [
+          "101509157~103116026~103200004~103233427~104684208~104684211~104952206~104952208"
+        ],
+        "cid": [
+          "1118590570.1753085252"
+        ],
+        "ul": [
+          "en-gb"
+        ],
+        "sr": [
+          "800x600"
+        ],
+        "uaa": [
+          "arm"
+        ],
+        "uab": [
+          "64"
+        ],
+        "uafvl": [
+          "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+        ],
+        "uamb": [
+          "0"
+        ],
+        "uap": [
+          "macOS"
+        ],
+        "uapv": [
+          "15.5.0"
+        ],
+        "uaw": [
+          "0"
+        ],
+        "are": [
+          "1"
+        ],
+        "frm": [
+          "0"
+        ],
+        "pscdl": [
+          "denied"
+        ],
+        "_eu": [
+          "AAAAAAQ"
+        ],
+        "_s": [
+          "2"
+        ],
+        "sid": [
+          "1753095850"
+        ],
+        "sct": [
+          "2"
+        ],
+        "seg": [
+          "0"
+        ],
+        "dl": [
+          "https://www.bridgend.gov.uk/residents/recycling-and-waste/"
+        ],
+        "dr": [
+          "https://www.bridgend.gov.uk/residents/"
+        ],
+        "dt": [
+          "Recycling and waste"
+        ],
+        "en": [
+          "user_engagement"
+        ],
+        "ep.ga_temp_client_id": [
+          "1204874226.1753095854"
+        ],
+        "_et": [
+          "7"
+        ],
+        "tfd": [
+          "2732"
+        ]
+      },
+      "request_headers": {
+        "referer": "https://www.bridgend.gov.uk/"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T11:04:17.012Z",
+      "duration_ms": 19.259999999999998,
+      "endpoint": "/residents/recycling-and-waste/refuse-collections",
+      "host": "www.bridgend.gov.uk",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "text/html; charset=utf-8",
-      "size": 21236,
-      "timestamp": "2025-07-21T11:04:17.012Z"
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+        "cookie": "[cookies present]",
+        "referer": "https://www.bridgend.gov.uk/residents/recycling-and-waste/"
+      },
+      "response_headers": {
+        "content-type": "text/html; charset=utf-8",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "SAMEORIGIN"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 21236,
+        "content_ref": "8f2d36fbbbbf1d0c1f1efcbd38ed63d584f2400e.html"
+      }
     },
     {
-      "url": "https://www.browsealoud.com/version.json",
+      "timestamp": "2025-07-21T11:04:17.047Z",
+      "duration_ms": 1.6179999999999999,
+      "endpoint": "/version.json",
+      "host": "www.browsealoud.com",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json",
-      "size": 31,
-      "timestamp": "2025-07-21T11:04:17.047Z"
+      "request_headers": {
+        "referer": "https://www.bridgend.gov.uk/"
+      },
+      "response_headers": {
+        "x-cache": "Hit from cloudfront",
+        "content-type": "application/json"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 31,
+        "compressed": true,
+        "content_ref": "ff0999f76fabcbe93bb754fb6d0f59af954e7398.json"
+      }
     },
     {
-      "url": "https://apikeys.civiccomputing.com/c/v?d=www.bridgend.gov.uk&p=CookieControl%20Multi-Site&v=9&k=d63ecb7d0b1cbe294ab2c0526af4085e6fcdad6c&format=json",
+      "timestamp": "2025-07-21T11:04:17.085Z",
+      "duration_ms": 14.605,
+      "endpoint": "/g/collect",
+      "host": "region1.google-analytics.com",
+      "method": "POST",
+      "status": 204,
+      "query_params": {
+        "v": [
+          "2"
+        ],
+        "tid": [
+          "G-K498X8WK7V"
+        ],
+        "gtm": [
+          "45je57g1v893042100za200"
+        ],
+        "_p": [
+          "1753095857037"
+        ],
+        "gcs": [
+          "G100"
+        ],
+        "gcd": [
+          "13p3p3l3l5l1"
+        ],
+        "npa": [
+          "0"
+        ],
+        "dma": [
+          "0"
+        ],
+        "tag_exp": [
+          "101509157~103116026~103200004~103233427~104684208~104684211~104952206~104952208"
+        ],
+        "cid": [
+          "327412030.1753095857"
+        ],
+        "ul": [
+          "en-gb"
+        ],
+        "sr": [
+          "800x600"
+        ],
+        "uaa": [
+          "arm"
+        ],
+        "uab": [
+          "64"
+        ],
+        "uafvl": [
+          "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+        ],
+        "uamb": [
+          "0"
+        ],
+        "uap": [
+          "macOS"
+        ],
+        "uapv": [
+          "15.5.0"
+        ],
+        "uaw": [
+          "0"
+        ],
+        "are": [
+          "1"
+        ],
+        "frm": [
+          "0"
+        ],
+        "pscdl": [
+          "denied"
+        ],
+        "_s": [
+          "1"
+        ],
+        "sid": [
+          "1753095857"
+        ],
+        "sct": [
+          "1"
+        ],
+        "seg": [
+          "0"
+        ],
+        "dl": [
+          "https://www.bridgend.gov.uk/residents/recycling-and-waste/refuse-collections/"
+        ],
+        "dr": [
+          "https://www.bridgend.gov.uk/residents/recycling-and-waste/"
+        ],
+        "dt": [
+          "Refuse collections"
+        ],
+        "en": [
+          "page_view"
+        ],
+        "_fv": [
+          "1"
+        ],
+        "_nsi": [
+          "1"
+        ],
+        "_ss": [
+          "1"
+        ],
+        "_ee": [
+          "1"
+        ],
+        "tfd": [
+          "107"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "cookie": "[cookies present]",
+        "origin": "https://www.bridgend.gov.uk",
+        "referer": "https://www.bridgend.gov.uk/"
+      },
+      "response_headers": {
+        "cache-control": "no-cache, no-store, must-revalidate",
+        "content-type": "text/plain"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T11:04:17.047Z",
+      "duration_ms": 15.112,
+      "endpoint": "/c/v",
+      "host": "apikeys.civiccomputing.com",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json",
-      "size": 304,
-      "timestamp": "2025-07-21T11:04:17.047Z"
+      "query_params": {
+        "d": [
+          "www.bridgend.gov.uk"
+        ],
+        "p": [
+          "CookieControl Multi-Site"
+        ],
+        "v": [
+          "9"
+        ],
+        "k": [
+          "d63ecb7d0b1cbe294ab2c0526af4085e6fcdad6c"
+        ],
+        "format": [
+          "json"
+        ]
+      },
+      "request_headers": {
+        "accept": "application/json, text/plain, */*",
+        "origin": "https://www.bridgend.gov.uk",
+        "referer": "https://www.bridgend.gov.uk/"
+      },
+      "response_headers": {
+        "cache-control": "max-age=3600, private, no-store",
+        "content-type": "application/json",
+        "x-apikeys": "hit",
+        "x-cf-test": "true",
+        "x-content-type-options": "nosniff",
+        "x-xss-protection": "1"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 304,
+        "content_ref": "1378f9d871a04d33299a93f8bb8305a550d6522c.json"
+      }
     },
     {
-      "url": "https://www.browsealoud.com/modules/3.9.7/sri.json",
+      "timestamp": "2025-07-21T11:04:17.088Z",
+      "duration_ms": 0.822,
+      "endpoint": "/modules/3.9.7/sri.json",
+      "host": "www.browsealoud.com",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json",
-      "size": 478,
-      "timestamp": "2025-07-21T11:04:17.088Z"
+      "request_headers": {
+        "referer": "https://www.bridgend.gov.uk/"
+      },
+      "response_headers": {
+        "x-cache": "Hit from cloudfront",
+        "content-type": "application/json"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 478,
+        "compressed": true,
+        "content_ref": "0a0e783be1cdec71af8786d262d441547912b25b.json"
+      }
     },
     {
-      "url": "https://bridgendportal.azurewebsites.net/",
+      "timestamp": "2025-07-21T11:04:20.250Z",
+      "duration_ms": 12.807,
+      "endpoint": "/g/collect",
+      "host": "region1.google-analytics.com",
+      "method": "POST",
+      "status": 204,
+      "query_params": {
+        "v": [
+          "2"
+        ],
+        "tid": [
+          "G-K498X8WK7V"
+        ],
+        "gtm": [
+          "45je57g1v893042100za200"
+        ],
+        "_p": [
+          "1753095857037"
+        ],
+        "gcs": [
+          "G101"
+        ],
+        "gcd": [
+          "13p3r3l3l5l1"
+        ],
+        "npa": [
+          "0"
+        ],
+        "dma": [
+          "0"
+        ],
+        "tag_exp": [
+          "101509157~103116026~103200004~103233427~104684208~104684211~104952206~104952208"
+        ],
+        "cid": [
+          "1118590570.1753085252"
+        ],
+        "ul": [
+          "en-gb"
+        ],
+        "sr": [
+          "800x600"
+        ],
+        "uaa": [
+          "arm"
+        ],
+        "uab": [
+          "64"
+        ],
+        "uafvl": [
+          "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+        ],
+        "uamb": [
+          "0"
+        ],
+        "uap": [
+          "macOS"
+        ],
+        "uapv": [
+          "15.5.0"
+        ],
+        "uaw": [
+          "0"
+        ],
+        "are": [
+          "1"
+        ],
+        "frm": [
+          "0"
+        ],
+        "pscdl": [
+          "denied"
+        ],
+        "_eu": [
+          "AAAAAAQ"
+        ],
+        "_s": [
+          "2"
+        ],
+        "sid": [
+          "1753095850"
+        ],
+        "sct": [
+          "2"
+        ],
+        "seg": [
+          "0"
+        ],
+        "dl": [
+          "https://www.bridgend.gov.uk/residents/recycling-and-waste/refuse-collections/"
+        ],
+        "dr": [
+          "https://www.bridgend.gov.uk/residents/recycling-and-waste/"
+        ],
+        "dt": [
+          "Refuse collections"
+        ],
+        "en": [
+          "user_engagement"
+        ],
+        "ep.ga_temp_client_id": [
+          "327412030.1753095857"
+        ],
+        "_et": [
+          "5"
+        ],
+        "tfd": [
+          "3287"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "cookie": "[cookies present]",
+        "origin": "https://www.bridgend.gov.uk",
+        "referer": "https://www.bridgend.gov.uk/"
+      },
+      "response_headers": {
+        "cache-control": "no-cache, no-store, must-revalidate",
+        "content-type": "text/plain"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T11:04:20.251Z",
+      "duration_ms": 71.156,
+      "endpoint": "/g/collect",
+      "host": "region1.google-analytics.com",
+      "method": "POST",
+      "status": 302,
+      "query_params": {
+        "v": [
+          "2"
+        ],
+        "tid": [
+          "G-K498X8WK7V"
+        ],
+        "gtm": [
+          "45je57g1v893042100za200"
+        ],
+        "_p": [
+          "1753095857037"
+        ],
+        "gcs": [
+          "G101"
+        ],
+        "gcd": [
+          "13p3r3l3l5l1"
+        ],
+        "npa": [
+          "0"
+        ],
+        "dma": [
+          "0"
+        ],
+        "tag_exp": [
+          "101509157~103116026~103200004~103233427~104684208~104684211~104952206~104952208"
+        ],
+        "cid": [
+          "1118590570.1753085252"
+        ],
+        "ul": [
+          "en-gb"
+        ],
+        "sr": [
+          "800x600"
+        ],
+        "uaa": [
+          "arm"
+        ],
+        "uab": [
+          "64"
+        ],
+        "uafvl": [
+          "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+        ],
+        "uamb": [
+          "0"
+        ],
+        "uap": [
+          "macOS"
+        ],
+        "uapv": [
+          "15.5.0"
+        ],
+        "uaw": [
+          "0"
+        ],
+        "are": [
+          "1"
+        ],
+        "frm": [
+          "0"
+        ],
+        "pscdl": [
+          "denied"
+        ],
+        "_eu": [
+          "AEA"
+        ],
+        "_s": [
+          "3"
+        ],
+        "sid": [
+          "1753095850"
+        ],
+        "sct": [
+          "2"
+        ],
+        "seg": [
+          "0"
+        ],
+        "dl": [
+          "https://www.bridgend.gov.uk/residents/recycling-and-waste/refuse-collections/"
+        ],
+        "dr": [
+          "https://www.bridgend.gov.uk/residents/recycling-and-waste/"
+        ],
+        "dt": [
+          "Refuse collections"
+        ],
+        "en": [
+          "click"
+        ],
+        "_c": [
+          "1"
+        ],
+        "ep.link_classes": [
+          "btn btn-secondary"
+        ],
+        "ep.link_url": [
+          "https://bridgendportal.azurewebsites.net/"
+        ],
+        "ep.link_domain": [
+          "bridgendportal.azurewebsites.net"
+        ],
+        "ep.outbound": [
+          "true"
+        ],
+        "_et": [
+          "3173"
+        ],
+        "tfd": [
+          "3287"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "cookie": "[cookies present]",
+        "origin": "https://www.bridgend.gov.uk",
+        "referer": "https://www.bridgend.gov.uk/"
+      },
+      "response_headers": {
+        "cache-control": "no-cache, no-store, must-revalidate",
+        "content-type": "text/html; charset=UTF-8",
+        "location": "https://region1.google-analytics.com/privacy-sandbox/register-conversion?_c=1&cid=1118590570.1753085252&dbk=7058113725919802444&dma=0&en=click&gcs=G101&gtm=45je57g1v893042100za200&npa=0&tid=G-K498X8WK7V&dl=https%3A%2F%2Fwww.bridgend.gov.uk%3F"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": -1
+      },
+      "redirect_to": "https://region1.google-analytics.com/privacy-sandbox/register-conversion?_c=1&cid=1118590570.1753085252&dbk=7058113725919802444&dma=0&en=click&gcs=G101&gtm=45je57g1v893042100za200&npa=0&tid=G-K498X8WK7V&dl=https%3A%2F%2Fwww.bridgend.gov.uk%3F"
+    },
+    {
+      "timestamp": "2025-07-21T11:04:20.320Z",
+      "duration_ms": 11.857,
+      "endpoint": "/privacy-sandbox/register-conversion",
+      "host": "region1.google-analytics.com",
+      "method": "GET",
+      "status": 204,
+      "query_params": {
+        "_c": [
+          "1"
+        ],
+        "cid": [
+          "1118590570.1753085252"
+        ],
+        "dbk": [
+          "7058113725919802444"
+        ],
+        "dma": [
+          "0"
+        ],
+        "en": [
+          "click"
+        ],
+        "gcs": [
+          "G101"
+        ],
+        "gtm": [
+          "45je57g1v893042100za200"
+        ],
+        "npa": [
+          "0"
+        ],
+        "tid": [
+          "G-K498X8WK7V"
+        ],
+        "dl": [
+          "https://www.bridgend.gov.uk?"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "cookie": "[cookies present]",
+        "referer": "https://www.bridgend.gov.uk/"
+      },
+      "response_headers": {
+        "cache-control": "no-cache, no-store, must-revalidate",
+        "content-type": "text/plain"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T11:04:20.306Z",
+      "duration_ms": 93.121,
+      "endpoint": "/",
+      "host": "bridgendportal.azurewebsites.net",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "text/html; charset=UTF-8",
-      "size": 11372,
-      "timestamp": "2025-07-21T11:04:20.306Z"
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+        "referer": "https://www.bridgend.gov.uk/"
+      },
+      "response_headers": {
+        "content-type": "text/html; charset=UTF-8",
+        "set-cookie": "[cookies present]",
+        "x-powered-by": "PHP/8.2.28"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 11372,
+        "compressed": true,
+        "content_ref": "0ae1d4e3c1a94f5f9c05da801349a8fb4b9e32ac.html"
+      }
     },
     {
-      "url": "https://use.typekit.net/af/9b05f3/000000000000000000013365/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3",
+      "timestamp": "2025-07-21T11:04:20.416Z",
+      "duration_ms": 1.0899999999999999,
+      "endpoint": "/af/9b05f3/{id}/{id}/l",
+      "host": "use.typekit.net",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/font-woff2",
-      "size": 51524,
-      "timestamp": "2025-07-21T11:04:20.416Z"
+      "path_params": [
+        "000000000000000000013365",
+        "27"
+      ],
+      "query_params": {
+        "primer": [
+          "7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191"
+        ],
+        "fvd": [
+          "n4"
+        ],
+        "v": [
+          "3"
+        ]
+      },
+      "request_headers": {
+        "origin": "https://bridgendportal.azurewebsites.net",
+        "referer": "https://use.typekit.net/mtq2tsp.css"
+      },
+      "response_headers": {
+        "cache-control": "public, max-age=31536000",
+        "content-type": "application/font-woff2"
+      }
     },
     {
-      "url": "https://use.typekit.net/af/309dfe/000000000000000000010091/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3",
+      "timestamp": "2025-07-21T11:04:20.416Z",
+      "duration_ms": 0.571,
+      "endpoint": "/af/309dfe/{id}/{id}/l",
+      "host": "use.typekit.net",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/font-woff2",
-      "size": 43076,
-      "timestamp": "2025-07-21T11:04:20.416Z"
+      "path_params": [
+        "000000000000000000010091",
+        "27"
+      ],
+      "query_params": {
+        "primer": [
+          "7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191"
+        ],
+        "fvd": [
+          "n7"
+        ],
+        "v": [
+          "3"
+        ]
+      },
+      "request_headers": {
+        "origin": "https://bridgendportal.azurewebsites.net",
+        "referer": "https://use.typekit.net/mtq2tsp.css"
+      },
+      "response_headers": {
+        "cache-control": "public, max-age=31536000",
+        "content-type": "application/font-woff2"
+      }
     },
     {
-      "url": "https://www.bridgend.gov.uk/website/themes/default/images/favicons/favicon-32x32.png",
-      "method": "GET",
-      "status": 404,
-      "redirect_url": null,
-      "mime_type": "x-unknown",
-      "size": 0,
-      "timestamp": "2025-07-21T11:04:20.434Z"
-    },
-    {
-      "url": "https://bridgendportal.azurewebsites.net/property/",
+      "timestamp": "2025-07-21T11:04:25.371Z",
+      "duration_ms": 175.05700000000002,
+      "endpoint": "/property",
+      "host": "bridgendportal.azurewebsites.net",
       "method": "POST",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json",
-      "size": 3468,
-      "timestamp": "2025-07-21T11:04:25.371Z"
+      "request_headers": {
+        "accept": "*/*",
+        "content-type": "application/x-www-form-urlencoded; charset=UTF-8",
+        "cookie": "[cookies present]",
+        "origin": "https://bridgendportal.azurewebsites.net",
+        "referer": "https://bridgendportal.azurewebsites.net/",
+        "x-requested-with": "XMLHttpRequest"
+      },
+      "response_headers": {
+        "content-type": "application/json",
+        "x-powered-by": "PHP/8.2.28"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 3468,
+        "content_ref": "aac4ceb28b778ca6293616837b601e92205c1dfc.json"
+      }
     },
     {
-      "url": "https://bridgendportal.azurewebsites.net/property/100100485220",
+      "timestamp": "2025-07-21T11:04:27.743Z",
+      "duration_ms": 439.473,
+      "endpoint": "/property/{id}",
+      "host": "bridgendportal.azurewebsites.net",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "text/html; charset=UTF-8",
-      "size": 9658,
-      "timestamp": "2025-07-21T11:04:27.743Z"
+      "path_params": [
+        "100100485220"
+      ],
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+        "cookie": "[cookies present]",
+        "referer": "https://bridgendportal.azurewebsites.net/"
+      },
+      "response_headers": {
+        "content-type": "text/html; charset=UTF-8",
+        "x-powered-by": "PHP/8.2.28"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 9658,
+        "compressed": true,
+        "content_ref": "aca7f6bba487426374bddf289b754d154379e942.html"
+      }
     },
     {
-      "url": "https://use.typekit.net/af/309dfe/000000000000000000010091/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3",
+      "timestamp": "2025-07-21T11:04:28.212Z",
+      "duration_ms": 1.109,
+      "endpoint": "/af/309dfe/{id}/{id}/l",
+      "host": "use.typekit.net",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/font-woff2",
-      "size": -1,
-      "timestamp": "2025-07-21T11:04:28.212Z"
+      "path_params": [
+        "000000000000000000010091",
+        "27"
+      ],
+      "query_params": {
+        "primer": [
+          "7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191"
+        ],
+        "fvd": [
+          "n7"
+        ],
+        "v": [
+          "3"
+        ]
+      },
+      "request_headers": {
+        "origin": "https://bridgendportal.azurewebsites.net",
+        "referer": "https://use.typekit.net/mtq2tsp.css"
+      },
+      "response_headers": {
+        "cache-control": "public, max-age=31536000",
+        "content-type": "application/font-woff2"
+      }
     },
     {
-      "url": "https://use.typekit.net/af/9b05f3/000000000000000000013365/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3",
+      "timestamp": "2025-07-21T11:04:28.214Z",
+      "duration_ms": 1.066,
+      "endpoint": "/af/9b05f3/{id}/{id}/l",
+      "host": "use.typekit.net",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/font-woff2",
-      "size": -1,
-      "timestamp": "2025-07-21T11:04:28.214Z"
+      "path_params": [
+        "000000000000000000013365",
+        "27"
+      ],
+      "query_params": {
+        "primer": [
+          "7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191"
+        ],
+        "fvd": [
+          "n4"
+        ],
+        "v": [
+          "3"
+        ]
+      },
+      "request_headers": {
+        "origin": "https://bridgendportal.azurewebsites.net",
+        "referer": "https://use.typekit.net/mtq2tsp.css"
+      },
+      "response_headers": {
+        "cache-control": "public, max-age=31536000",
+        "content-type": "application/font-woff2"
+      }
     }
-  ]
+  ],
+  "analysis": {
+    "total_requests": 40,
+    "unique_endpoints": 17,
+    "methods_used": [
+      "GET",
+      "POST"
+    ],
+    "status_codes": {
+      "404": 1,
+      "200": 25,
+      "204": 6,
+      "-1": 7,
+      "302": 1
+    },
+    "endpoints_with_params": [
+      {
+        "endpoint": "/residents/{id}/refuse-collections",
+        "method": "GET",
+        "query_params": [],
+        "path_params": true
+      },
+      {
+        "endpoint": "/c/v",
+        "method": "GET",
+        "query_params": [
+          "d",
+          "p",
+          "v",
+          "k",
+          "format"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/g/collect",
+        "method": "POST",
+        "query_params": [
+          "v",
+          "tid",
+          "gtm",
+          "_p",
+          "gcs",
+          "gcd",
+          "npa",
+          "dma",
+          "tag_exp",
+          "cid",
+          "ul",
+          "sr",
+          "uaa",
+          "uab",
+          "uafvl",
+          "uamb",
+          "uap",
+          "uapv",
+          "uaw",
+          "are",
+          "frm",
+          "pscdl",
+          "_s",
+          "sid",
+          "sct",
+          "seg",
+          "dl",
+          "dt",
+          "en",
+          "_fv",
+          "_nsi",
+          "_ss",
+          "_ee",
+          "tfd"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/g/collect",
+        "method": "POST",
+        "query_params": [
+          "v",
+          "tid",
+          "gtm",
+          "_p",
+          "gcs",
+          "gcd",
+          "npa",
+          "dma",
+          "tag_exp",
+          "cid",
+          "ul",
+          "sr",
+          "uaa",
+          "uab",
+          "uafvl",
+          "uamb",
+          "uap",
+          "uapv",
+          "uaw",
+          "are",
+          "frm",
+          "pscdl",
+          "_s",
+          "sid",
+          "sct",
+          "seg",
+          "dl",
+          "dt",
+          "en",
+          "_et",
+          "tfd"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/g/collect",
+        "method": "POST",
+        "query_params": [
+          "v",
+          "tid",
+          "gtm",
+          "_p",
+          "gcs",
+          "gcd",
+          "npa",
+          "dma",
+          "tag_exp",
+          "cid",
+          "ul",
+          "sr",
+          "uaa",
+          "uab",
+          "uafvl",
+          "uamb",
+          "uap",
+          "uapv",
+          "uaw",
+          "are",
+          "frm",
+          "pscdl",
+          "_eu",
+          "_s",
+          "sid",
+          "sct",
+          "seg",
+          "dl",
+          "dt",
+          "en",
+          "ep.ga_temp_client_id",
+          "_et",
+          "tfd"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/api/user/client-info",
+        "method": "GET",
+        "query_params": [
+          "client"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/api/user/client-info",
+        "method": "GET",
+        "query_params": [
+          "language",
+          "client",
+          "domain"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/api/user/session",
+        "method": "GET",
+        "query_params": [
+          "language",
+          "client",
+          "domain",
+          "persistBetweenPages"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/api/user/header-info",
+        "method": "GET",
+        "query_params": [
+          "language",
+          "lang",
+          "client",
+          "domain",
+          "userId"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/g/collect",
+        "method": "POST",
+        "query_params": [
+          "v",
+          "tid",
+          "gtm",
+          "_p",
+          "gcs",
+          "gcd",
+          "npa",
+          "dma",
+          "tag_exp",
+          "cid",
+          "ul",
+          "sr",
+          "uaa",
+          "uab",
+          "uafvl",
+          "uamb",
+          "uap",
+          "uapv",
+          "uaw",
+          "are",
+          "frm",
+          "pscdl",
+          "_s",
+          "sid",
+          "sct",
+          "seg",
+          "dl",
+          "dr",
+          "dt",
+          "en",
+          "_fv",
+          "_nsi",
+          "_ss",
+          "_ee",
+          "tfd"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/g/collect",
+        "method": "POST",
+        "query_params": [
+          "v",
+          "tid",
+          "gtm",
+          "_p",
+          "gcs",
+          "gcd",
+          "npa",
+          "dma",
+          "tag_exp",
+          "cid",
+          "ul",
+          "sr",
+          "uaa",
+          "uab",
+          "uafvl",
+          "uamb",
+          "uap",
+          "uapv",
+          "uaw",
+          "are",
+          "frm",
+          "pscdl",
+          "_s",
+          "sid",
+          "sct",
+          "seg",
+          "dl",
+          "dr",
+          "dt",
+          "en",
+          "_et",
+          "tfd"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/g/collect",
+        "method": "POST",
+        "query_params": [
+          "v",
+          "tid",
+          "gtm",
+          "_p",
+          "gcs",
+          "gcd",
+          "npa",
+          "dma",
+          "tag_exp",
+          "cid",
+          "ul",
+          "sr",
+          "uaa",
+          "uab",
+          "uafvl",
+          "uamb",
+          "uap",
+          "uapv",
+          "uaw",
+          "are",
+          "frm",
+          "pscdl",
+          "_eu",
+          "_s",
+          "sid",
+          "sct",
+          "seg",
+          "dl",
+          "dr",
+          "dt",
+          "en",
+          "ep.ga_temp_client_id",
+          "_et",
+          "tfd"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/g/collect",
+        "method": "POST",
+        "query_params": [
+          "v",
+          "tid",
+          "gtm",
+          "_p",
+          "gcs",
+          "gcd",
+          "npa",
+          "dma",
+          "tag_exp",
+          "cid",
+          "ul",
+          "sr",
+          "uaa",
+          "uab",
+          "uafvl",
+          "uamb",
+          "uap",
+          "uapv",
+          "uaw",
+          "are",
+          "frm",
+          "pscdl",
+          "_eu",
+          "_s",
+          "sid",
+          "sct",
+          "seg",
+          "dl",
+          "dr",
+          "dt",
+          "en",
+          "_c",
+          "ep.link_classes",
+          "ep.link_url",
+          "ep.link_domain",
+          "ep.outbound",
+          "_et",
+          "tfd"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/privacy-sandbox/register-conversion",
+        "method": "GET",
+        "query_params": [
+          "_c",
+          "cid",
+          "dbk",
+          "dma",
+          "en",
+          "gcs",
+          "gtm",
+          "npa",
+          "tid",
+          "dl"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/af/9b05f3/{id}/{id}/l",
+        "method": "GET",
+        "query_params": [
+          "primer",
+          "fvd",
+          "v"
+        ],
+        "path_params": true
+      },
+      {
+        "endpoint": "/af/309dfe/{id}/{id}/l",
+        "method": "GET",
+        "query_params": [
+          "primer",
+          "fvd",
+          "v"
+        ],
+        "path_params": true
+      },
+      {
+        "endpoint": "/property/{id}",
+        "method": "GET",
+        "query_params": [],
+        "path_params": true
+      }
+    ],
+    "redirects": [
+      {
+        "from": "/g/collect",
+        "to": "https://region1.google-analytics.com/privacy-sandbox/register-conversion?_c=1&cid=1118590570.1753085252&dbk=7058113725919802444&dma=0&en=click&gcs=G101&gtm=45je57g1v893042100za200&npa=0&tid=G-K498X8WK7V&dl=https%3A%2F%2Fwww.bridgend.gov.uk%3F",
+        "status": 302
+      }
+    ],
+    "api_calls": [
+      {
+        "endpoint": "/version.json",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": []
+      },
+      {
+        "endpoint": "/modules/3.9.7/sri.json",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": []
+      },
+      {
+        "endpoint": "/c/v",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": [
+          "d",
+          "p",
+          "v",
+          "k",
+          "format"
+        ]
+      },
+      {
+        "endpoint": "/version.json",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": []
+      },
+      {
+        "endpoint": "/c/v",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": [
+          "d",
+          "p",
+          "v",
+          "k",
+          "format"
+        ]
+      },
+      {
+        "endpoint": "/modules/3.9.7/sri.json",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": []
+      },
+      {
+        "endpoint": "/api/user/client-info",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": [
+          "client"
+        ]
+      },
+      {
+        "endpoint": "/api/user/client-info",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": [
+          "language",
+          "client",
+          "domain"
+        ]
+      },
+      {
+        "endpoint": "/api/user/session",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": [
+          "language",
+          "client",
+          "domain",
+          "persistBetweenPages"
+        ]
+      },
+      {
+        "endpoint": "/version.json",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": []
+      },
+      {
+        "endpoint": "/c/v",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": [
+          "d",
+          "p",
+          "v",
+          "k",
+          "format"
+        ]
+      },
+      {
+        "endpoint": "/modules/3.9.7/sri.json",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": []
+      },
+      {
+        "endpoint": "/version.json",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": []
+      },
+      {
+        "endpoint": "/c/v",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": [
+          "d",
+          "p",
+          "v",
+          "k",
+          "format"
+        ]
+      },
+      {
+        "endpoint": "/modules/3.9.7/sri.json",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": []
+      },
+      {
+        "endpoint": "/property",
+        "method": "POST",
+        "response_type": "application/json",
+        "params": []
+      }
+    ],
+    "form_submissions": []
+  },
+  "grouped_by_endpoint": {
+    "/residents/{id}/refuse-collections": [
+      {
+        "timestamp": "2025-07-21T11:04:10.653Z",
+        "duration_ms": 88.161,
+        "endpoint": "/residents/{id}/refuse-collections",
+        "host": "www.bridgend.gov.uk",
+        "method": "GET",
+        "status": 404,
+        "path_params": [
+          "recycling-waste-and-environment"
+        ],
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+          "cookie": "[cookies present]"
+        },
+        "response_headers": {
+          "content-type": "text/html; charset=utf-8",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "SAMEORIGIN"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 12766,
+          "content_ref": "2f091d28966d8e62cd4eedc1534ad1e83dc0ab0a.html"
+        }
+      }
+    ],
+    "/version.json": [
+      {
+        "timestamp": "2025-07-21T11:04:10.799Z",
+        "duration_ms": 1.63,
+        "endpoint": "/version.json",
+        "host": "www.browsealoud.com",
+        "method": "GET",
+        "status": 200,
+        "request_headers": {
+          "referer": "https://www.bridgend.gov.uk/"
+        },
+        "response_headers": {
+          "x-cache": "Hit from cloudfront",
+          "content-type": "application/json"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 31,
+          "compressed": true,
+          "content_ref": "ff0999f76fabcbe93bb754fb6d0f59af954e7398.json"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T11:04:12.584Z",
+        "duration_ms": 0.883,
+        "endpoint": "/version.json",
+        "host": "www.browsealoud.com",
+        "method": "GET",
+        "status": 200,
+        "request_headers": {
+          "referer": "https://www.bridgend.gov.uk/"
+        },
+        "response_headers": {
+          "x-cache": "Hit from cloudfront",
+          "content-type": "application/json"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 31,
+          "compressed": true,
+          "content_ref": "ff0999f76fabcbe93bb754fb6d0f59af954e7398.json"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T11:04:14.386Z",
+        "duration_ms": 0.673,
+        "endpoint": "/version.json",
+        "host": "www.browsealoud.com",
+        "method": "GET",
+        "status": 200,
+        "request_headers": {
+          "referer": "https://www.bridgend.gov.uk/"
+        },
+        "response_headers": {
+          "x-cache": "Hit from cloudfront",
+          "content-type": "application/json"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 31,
+          "compressed": true,
+          "content_ref": "ff0999f76fabcbe93bb754fb6d0f59af954e7398.json"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T11:04:17.047Z",
+        "duration_ms": 1.6179999999999999,
+        "endpoint": "/version.json",
+        "host": "www.browsealoud.com",
+        "method": "GET",
+        "status": 200,
+        "request_headers": {
+          "referer": "https://www.bridgend.gov.uk/"
+        },
+        "response_headers": {
+          "x-cache": "Hit from cloudfront",
+          "content-type": "application/json"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 31,
+          "compressed": true,
+          "content_ref": "ff0999f76fabcbe93bb754fb6d0f59af954e7398.json"
+        }
+      }
+    ],
+    "/modules/3.9.7/sri.json": [
+      {
+        "timestamp": "2025-07-21T11:04:10.829Z",
+        "duration_ms": 2.177,
+        "endpoint": "/modules/3.9.7/sri.json",
+        "host": "www.browsealoud.com",
+        "method": "GET",
+        "status": 200,
+        "request_headers": {
+          "referer": "https://www.bridgend.gov.uk/"
+        },
+        "response_headers": {
+          "x-cache": "Hit from cloudfront",
+          "content-type": "application/json"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 478,
+          "compressed": true,
+          "content_ref": "0a0e783be1cdec71af8786d262d441547912b25b.json"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T11:04:12.648Z",
+        "duration_ms": 0.581,
+        "endpoint": "/modules/3.9.7/sri.json",
+        "host": "www.browsealoud.com",
+        "method": "GET",
+        "status": 200,
+        "request_headers": {
+          "referer": "https://www.bridgend.gov.uk/"
+        },
+        "response_headers": {
+          "x-cache": "Hit from cloudfront",
+          "content-type": "application/json"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 478,
+          "compressed": true,
+          "content_ref": "0a0e783be1cdec71af8786d262d441547912b25b.json"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T11:04:14.426Z",
+        "duration_ms": 0.7370000000000001,
+        "endpoint": "/modules/3.9.7/sri.json",
+        "host": "www.browsealoud.com",
+        "method": "GET",
+        "status": 200,
+        "request_headers": {
+          "referer": "https://www.bridgend.gov.uk/"
+        },
+        "response_headers": {
+          "x-cache": "Hit from cloudfront",
+          "content-type": "application/json"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 478,
+          "compressed": true,
+          "content_ref": "0a0e783be1cdec71af8786d262d441547912b25b.json"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T11:04:17.088Z",
+        "duration_ms": 0.822,
+        "endpoint": "/modules/3.9.7/sri.json",
+        "host": "www.browsealoud.com",
+        "method": "GET",
+        "status": 200,
+        "request_headers": {
+          "referer": "https://www.bridgend.gov.uk/"
+        },
+        "response_headers": {
+          "x-cache": "Hit from cloudfront",
+          "content-type": "application/json"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 478,
+          "compressed": true,
+          "content_ref": "0a0e783be1cdec71af8786d262d441547912b25b.json"
+        }
+      }
+    ],
+    "/c/v": [
+      {
+        "timestamp": "2025-07-21T11:04:10.798Z",
+        "duration_ms": 50.375,
+        "endpoint": "/c/v",
+        "host": "apikeys.civiccomputing.com",
+        "method": "GET",
+        "status": 200,
+        "query_params": {
+          "d": [
+            "www.bridgend.gov.uk"
+          ],
+          "p": [
+            "CookieControl Multi-Site"
+          ],
+          "v": [
+            "9"
+          ],
+          "k": [
+            "d63ecb7d0b1cbe294ab2c0526af4085e6fcdad6c"
+          ],
+          "format": [
+            "json"
+          ]
+        },
+        "request_headers": {
+          "accept": "application/json, text/plain, */*",
+          "origin": "https://www.bridgend.gov.uk",
+          "referer": "https://www.bridgend.gov.uk/"
+        },
+        "response_headers": {
+          "cache-control": "max-age=3600, private, no-store",
+          "content-type": "application/json",
+          "x-apikeys": "hit",
+          "x-cf-test": "true",
+          "x-content-type-options": "nosniff",
+          "x-xss-protection": "1"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 304,
+          "content_ref": "1378f9d871a04d33299a93f8bb8305a550d6522c.json"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T11:04:12.583Z",
+        "duration_ms": 16.715,
+        "endpoint": "/c/v",
+        "host": "apikeys.civiccomputing.com",
+        "method": "GET",
+        "status": 200,
+        "query_params": {
+          "d": [
+            "www.bridgend.gov.uk"
+          ],
+          "p": [
+            "CookieControl Multi-Site"
+          ],
+          "v": [
+            "9"
+          ],
+          "k": [
+            "d63ecb7d0b1cbe294ab2c0526af4085e6fcdad6c"
+          ],
+          "format": [
+            "json"
+          ]
+        },
+        "request_headers": {
+          "accept": "application/json, text/plain, */*",
+          "origin": "https://www.bridgend.gov.uk",
+          "referer": "https://www.bridgend.gov.uk/"
+        },
+        "response_headers": {
+          "cache-control": "max-age=3600, private, no-store",
+          "content-type": "application/json",
+          "x-apikeys": "hit",
+          "x-cf-test": "true",
+          "x-content-type-options": "nosniff",
+          "x-xss-protection": "1"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 304,
+          "content_ref": "1378f9d871a04d33299a93f8bb8305a550d6522c.json"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T11:04:14.386Z",
+        "duration_ms": 16.267,
+        "endpoint": "/c/v",
+        "host": "apikeys.civiccomputing.com",
+        "method": "GET",
+        "status": 200,
+        "query_params": {
+          "d": [
+            "www.bridgend.gov.uk"
+          ],
+          "p": [
+            "CookieControl Multi-Site"
+          ],
+          "v": [
+            "9"
+          ],
+          "k": [
+            "d63ecb7d0b1cbe294ab2c0526af4085e6fcdad6c"
+          ],
+          "format": [
+            "json"
+          ]
+        },
+        "request_headers": {
+          "accept": "application/json, text/plain, */*",
+          "origin": "https://www.bridgend.gov.uk",
+          "referer": "https://www.bridgend.gov.uk/"
+        },
+        "response_headers": {
+          "cache-control": "max-age=3600, private, no-store",
+          "content-type": "application/json",
+          "x-apikeys": "hit",
+          "x-cf-test": "true",
+          "x-content-type-options": "nosniff",
+          "x-xss-protection": "1"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 304,
+          "content_ref": "1378f9d871a04d33299a93f8bb8305a550d6522c.json"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T11:04:17.047Z",
+        "duration_ms": 15.112,
+        "endpoint": "/c/v",
+        "host": "apikeys.civiccomputing.com",
+        "method": "GET",
+        "status": 200,
+        "query_params": {
+          "d": [
+            "www.bridgend.gov.uk"
+          ],
+          "p": [
+            "CookieControl Multi-Site"
+          ],
+          "v": [
+            "9"
+          ],
+          "k": [
+            "d63ecb7d0b1cbe294ab2c0526af4085e6fcdad6c"
+          ],
+          "format": [
+            "json"
+          ]
+        },
+        "request_headers": {
+          "accept": "application/json, text/plain, */*",
+          "origin": "https://www.bridgend.gov.uk",
+          "referer": "https://www.bridgend.gov.uk/"
+        },
+        "response_headers": {
+          "cache-control": "max-age=3600, private, no-store",
+          "content-type": "application/json",
+          "x-apikeys": "hit",
+          "x-cf-test": "true",
+          "x-content-type-options": "nosniff",
+          "x-xss-protection": "1"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 304,
+          "content_ref": "1378f9d871a04d33299a93f8bb8305a550d6522c.json"
+        }
+      }
+    ],
+    "/g/collect": [
+      {
+        "timestamp": "2025-07-21T11:04:10.845Z",
+        "duration_ms": 59.55800000000001,
+        "endpoint": "/g/collect",
+        "host": "region1.google-analytics.com",
+        "method": "POST",
+        "status": 204,
+        "query_params": {
+          "v": [
+            "2"
+          ],
+          "tid": [
+            "G-K498X8WK7V"
+          ],
+          "gtm": [
+            "45je57g1v893042100za200"
+          ],
+          "_p": [
+            "1753095850737"
+          ],
+          "gcs": [
+            "G100"
+          ],
+          "gcd": [
+            "13p3p3l3l5l1"
+          ],
+          "npa": [
+            "0"
+          ],
+          "dma": [
+            "0"
+          ],
+          "tag_exp": [
+            "101509157~103116026~103200004~103233427~104684208~104684211~104952206~104952208"
+          ],
+          "cid": [
+            "1076868849.1753095851"
+          ],
+          "ul": [
+            "en-gb"
+          ],
+          "sr": [
+            "800x600"
+          ],
+          "uaa": [
+            "arm"
+          ],
+          "uab": [
+            "64"
+          ],
+          "uafvl": [
+            "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+          ],
+          "uamb": [
+            "0"
+          ],
+          "uap": [
+            "macOS"
+          ],
+          "uapv": [
+            "15.5.0"
+          ],
+          "uaw": [
+            "0"
+          ],
+          "are": [
+            "1"
+          ],
+          "frm": [
+            "0"
+          ],
+          "pscdl": [
+            "denied"
+          ],
+          "_s": [
+            "1"
+          ],
+          "sid": [
+            "1753095850"
+          ],
+          "sct": [
+            "1"
+          ],
+          "seg": [
+            "0"
+          ],
+          "dl": [
+            "https://www.bridgend.gov.uk/residents/recycling-waste-and-environment/refuse-collections/"
+          ],
+          "dt": [
+            "Page not found"
+          ],
+          "en": [
+            "page_view"
+          ],
+          "_fv": [
+            "1"
+          ],
+          "_nsi": [
+            "1"
+          ],
+          "_ss": [
+            "1"
+          ],
+          "_ee": [
+            "1"
+          ],
+          "tfd": [
+            "193"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "cookie": "[cookies present]",
+          "origin": "https://www.bridgend.gov.uk",
+          "referer": "https://www.bridgend.gov.uk/"
+        },
+        "response_headers": {
+          "cache-control": "no-cache, no-store, must-revalidate",
+          "content-type": "text/plain"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T11:04:12.531Z",
+        "duration_ms": -1,
+        "endpoint": "/g/collect",
+        "host": "region1.google-analytics.com",
+        "method": "POST",
+        "status": -1,
+        "query_params": {
+          "v": [
+            "2"
+          ],
+          "tid": [
+            "G-K498X8WK7V"
+          ],
+          "gtm": [
+            "45je57g1v893042100za200"
+          ],
+          "_p": [
+            "1753095850737"
+          ],
+          "gcs": [
+            "G101"
+          ],
+          "gcd": [
+            "13p3r3l3l5l1"
+          ],
+          "npa": [
+            "0"
+          ],
+          "dma": [
+            "0"
+          ],
+          "tag_exp": [
+            "101509157~103116026~103200004~103233427~104684208~104684211~104952206~104952208"
+          ],
+          "cid": [
+            "1118590570.1753085252"
+          ],
+          "ul": [
+            "en-gb"
+          ],
+          "sr": [
+            "800x600"
+          ],
+          "uaa": [
+            "arm"
+          ],
+          "uab": [
+            "64"
+          ],
+          "uafvl": [
+            "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+          ],
+          "uamb": [
+            "0"
+          ],
+          "uap": [
+            "macOS"
+          ],
+          "uapv": [
+            "15.5.0"
+          ],
+          "uaw": [
+            "0"
+          ],
+          "are": [
+            "1"
+          ],
+          "frm": [
+            "0"
+          ],
+          "pscdl": [
+            "denied"
+          ],
+          "_s": [
+            "3"
+          ],
+          "sid": [
+            "1753095850"
+          ],
+          "sct": [
+            "2"
+          ],
+          "seg": [
+            "0"
+          ],
+          "dl": [
+            "https://www.bridgend.gov.uk/residents/recycling-waste-and-environment/refuse-collections/"
+          ],
+          "dt": [
+            "Page not found"
+          ],
+          "en": [
+            "user_engagement"
+          ],
+          "_et": [
+            "1673"
+          ],
+          "tfd": [
+            "1879"
+          ]
+        },
+        "request_headers": {
+          "referer": "https://www.bridgend.gov.uk/"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T11:04:12.531Z",
+        "duration_ms": -1,
+        "endpoint": "/g/collect",
+        "host": "region1.google-analytics.com",
+        "method": "POST",
+        "status": -1,
+        "query_params": {
+          "v": [
+            "2"
+          ],
+          "tid": [
+            "G-K498X8WK7V"
+          ],
+          "gtm": [
+            "45je57g1v893042100za200"
+          ],
+          "_p": [
+            "1753095850737"
+          ],
+          "gcs": [
+            "G101"
+          ],
+          "gcd": [
+            "13p3r3l3l5l1"
+          ],
+          "npa": [
+            "0"
+          ],
+          "dma": [
+            "0"
+          ],
+          "tag_exp": [
+            "101509157~103116026~103200004~103233427~104684208~104684211~104952206~104952208"
+          ],
+          "cid": [
+            "1118590570.1753085252"
+          ],
+          "ul": [
+            "en-gb"
+          ],
+          "sr": [
+            "800x600"
+          ],
+          "uaa": [
+            "arm"
+          ],
+          "uab": [
+            "64"
+          ],
+          "uafvl": [
+            "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+          ],
+          "uamb": [
+            "0"
+          ],
+          "uap": [
+            "macOS"
+          ],
+          "uapv": [
+            "15.5.0"
+          ],
+          "uaw": [
+            "0"
+          ],
+          "are": [
+            "1"
+          ],
+          "frm": [
+            "0"
+          ],
+          "pscdl": [
+            "denied"
+          ],
+          "_eu": [
+            "AAAAAAQ"
+          ],
+          "_s": [
+            "2"
+          ],
+          "sid": [
+            "1753095850"
+          ],
+          "sct": [
+            "2"
+          ],
+          "seg": [
+            "0"
+          ],
+          "dl": [
+            "https://www.bridgend.gov.uk/residents/recycling-waste-and-environment/refuse-collections/"
+          ],
+          "dt": [
+            "Page not found"
+          ],
+          "en": [
+            "user_engagement"
+          ],
+          "ep.ga_temp_client_id": [
+            "1076868849.1753095851"
+          ],
+          "_et": [
+            "11"
+          ],
+          "tfd": [
+            "1879"
+          ]
+        },
+        "request_headers": {
+          "referer": "https://www.bridgend.gov.uk/"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T11:04:12.577Z",
+        "duration_ms": 14.267,
+        "endpoint": "/g/collect",
+        "host": "region1.google-analytics.com",
+        "method": "POST",
+        "status": 204,
+        "query_params": {
+          "v": [
+            "2"
+          ],
+          "tid": [
+            "G-K498X8WK7V"
+          ],
+          "gtm": [
+            "45je57g1v893042100za200"
+          ],
+          "_p": [
+            "1753095852534"
+          ],
+          "gcs": [
+            "G100"
+          ],
+          "gcd": [
+            "13p3p3l3l5l1"
+          ],
+          "npa": [
+            "0"
+          ],
+          "dma": [
+            "0"
+          ],
+          "tag_exp": [
+            "101509157~103116026~103200004~103233427~104684208~104684211~104952206~104952208"
+          ],
+          "cid": [
+            "1523813729.1753095853"
+          ],
+          "ul": [
+            "en-gb"
+          ],
+          "sr": [
+            "800x600"
+          ],
+          "uaa": [
+            "arm"
+          ],
+          "uab": [
+            "64"
+          ],
+          "uafvl": [
+            "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+          ],
+          "uamb": [
+            "0"
+          ],
+          "uap": [
+            "macOS"
+          ],
+          "uapv": [
+            "15.5.0"
+          ],
+          "uaw": [
+            "0"
+          ],
+          "are": [
+            "1"
+          ],
+          "frm": [
+            "0"
+          ],
+          "pscdl": [
+            "denied"
+          ],
+          "_s": [
+            "1"
+          ],
+          "sid": [
+            "1753095852"
+          ],
+          "sct": [
+            "1"
+          ],
+          "seg": [
+            "0"
+          ],
+          "dl": [
+            "https://www.bridgend.gov.uk/residents/"
+          ],
+          "dt": [
+            "Residents"
+          ],
+          "en": [
+            "page_view"
+          ],
+          "_fv": [
+            "1"
+          ],
+          "_nsi": [
+            "1"
+          ],
+          "_ss": [
+            "1"
+          ],
+          "_ee": [
+            "1"
+          ],
+          "tfd": [
+            "56"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "cookie": "[cookies present]",
+          "origin": "https://www.bridgend.gov.uk",
+          "referer": "https://www.bridgend.gov.uk/"
+        },
+        "response_headers": {
+          "cache-control": "no-cache, no-store, must-revalidate",
+          "content-type": "text/plain"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T11:04:14.375Z",
+        "duration_ms": -1,
+        "endpoint": "/g/collect",
+        "host": "region1.google-analytics.com",
+        "method": "POST",
+        "status": -1,
+        "query_params": {
+          "v": [
+            "2"
+          ],
+          "tid": [
+            "G-K498X8WK7V"
+          ],
+          "gtm": [
+            "45je57g1v893042100za200"
+          ],
+          "_p": [
+            "1753095852534"
+          ],
+          "gcs": [
+            "G101"
+          ],
+          "gcd": [
+            "13p3r3l3l5l1"
+          ],
+          "npa": [
+            "0"
+          ],
+          "dma": [
+            "0"
+          ],
+          "tag_exp": [
+            "101509157~103116026~103200004~103233427~104684208~104684211~104952206~104952208"
+          ],
+          "cid": [
+            "1118590570.1753085252"
+          ],
+          "ul": [
+            "en-gb"
+          ],
+          "sr": [
+            "800x600"
+          ],
+          "uaa": [
+            "arm"
+          ],
+          "uab": [
+            "64"
+          ],
+          "uafvl": [
+            "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+          ],
+          "uamb": [
+            "0"
+          ],
+          "uap": [
+            "macOS"
+          ],
+          "uapv": [
+            "15.5.0"
+          ],
+          "uaw": [
+            "0"
+          ],
+          "are": [
+            "1"
+          ],
+          "frm": [
+            "0"
+          ],
+          "pscdl": [
+            "denied"
+          ],
+          "_s": [
+            "3"
+          ],
+          "sid": [
+            "1753095850"
+          ],
+          "sct": [
+            "2"
+          ],
+          "seg": [
+            "0"
+          ],
+          "dl": [
+            "https://www.bridgend.gov.uk/residents/"
+          ],
+          "dt": [
+            "Residents"
+          ],
+          "en": [
+            "user_engagement"
+          ],
+          "_et": [
+            "1773"
+          ],
+          "tfd": [
+            "1870"
+          ]
+        },
+        "request_headers": {
+          "referer": "https://www.bridgend.gov.uk/"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T11:04:14.375Z",
+        "duration_ms": -1,
+        "endpoint": "/g/collect",
+        "host": "region1.google-analytics.com",
+        "method": "POST",
+        "status": -1,
+        "query_params": {
+          "v": [
+            "2"
+          ],
+          "tid": [
+            "G-K498X8WK7V"
+          ],
+          "gtm": [
+            "45je57g1v893042100za200"
+          ],
+          "_p": [
+            "1753095852534"
+          ],
+          "gcs": [
+            "G101"
+          ],
+          "gcd": [
+            "13p3r3l3l5l1"
+          ],
+          "npa": [
+            "0"
+          ],
+          "dma": [
+            "0"
+          ],
+          "tag_exp": [
+            "101509157~103116026~103200004~103233427~104684208~104684211~104952206~104952208"
+          ],
+          "cid": [
+            "1118590570.1753085252"
+          ],
+          "ul": [
+            "en-gb"
+          ],
+          "sr": [
+            "800x600"
+          ],
+          "uaa": [
+            "arm"
+          ],
+          "uab": [
+            "64"
+          ],
+          "uafvl": [
+            "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+          ],
+          "uamb": [
+            "0"
+          ],
+          "uap": [
+            "macOS"
+          ],
+          "uapv": [
+            "15.5.0"
+          ],
+          "uaw": [
+            "0"
+          ],
+          "are": [
+            "1"
+          ],
+          "frm": [
+            "0"
+          ],
+          "pscdl": [
+            "denied"
+          ],
+          "_eu": [
+            "AAAAAAQ"
+          ],
+          "_s": [
+            "2"
+          ],
+          "sid": [
+            "1753095850"
+          ],
+          "sct": [
+            "2"
+          ],
+          "seg": [
+            "0"
+          ],
+          "dl": [
+            "https://www.bridgend.gov.uk/residents/"
+          ],
+          "dt": [
+            "Residents"
+          ],
+          "en": [
+            "user_engagement"
+          ],
+          "ep.ga_temp_client_id": [
+            "1523813729.1753095853"
+          ],
+          "_et": [
+            "39"
+          ],
+          "tfd": [
+            "1870"
+          ]
+        },
+        "request_headers": {
+          "referer": "https://www.bridgend.gov.uk/"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T11:04:14.423Z",
+        "duration_ms": 13.966,
+        "endpoint": "/g/collect",
+        "host": "region1.google-analytics.com",
+        "method": "POST",
+        "status": 204,
+        "query_params": {
+          "v": [
+            "2"
+          ],
+          "tid": [
+            "G-K498X8WK7V"
+          ],
+          "gtm": [
+            "45je57g1v893042100za200"
+          ],
+          "_p": [
+            "1753095854377"
+          ],
+          "gcs": [
+            "G100"
+          ],
+          "gcd": [
+            "13p3p3l3l5l1"
+          ],
+          "npa": [
+            "0"
+          ],
+          "dma": [
+            "0"
+          ],
+          "tag_exp": [
+            "101509157~103116026~103200004~103233427~104684208~104684211~104952206~104952208"
+          ],
+          "cid": [
+            "1204874226.1753095854"
+          ],
+          "ul": [
+            "en-gb"
+          ],
+          "sr": [
+            "800x600"
+          ],
+          "uaa": [
+            "arm"
+          ],
+          "uab": [
+            "64"
+          ],
+          "uafvl": [
+            "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+          ],
+          "uamb": [
+            "0"
+          ],
+          "uap": [
+            "macOS"
+          ],
+          "uapv": [
+            "15.5.0"
+          ],
+          "uaw": [
+            "0"
+          ],
+          "are": [
+            "1"
+          ],
+          "frm": [
+            "0"
+          ],
+          "pscdl": [
+            "denied"
+          ],
+          "_s": [
+            "1"
+          ],
+          "sid": [
+            "1753095854"
+          ],
+          "sct": [
+            "1"
+          ],
+          "seg": [
+            "0"
+          ],
+          "dl": [
+            "https://www.bridgend.gov.uk/residents/recycling-and-waste/"
+          ],
+          "dr": [
+            "https://www.bridgend.gov.uk/residents/"
+          ],
+          "dt": [
+            "Recycling and waste"
+          ],
+          "en": [
+            "page_view"
+          ],
+          "_fv": [
+            "1"
+          ],
+          "_nsi": [
+            "1"
+          ],
+          "_ss": [
+            "1"
+          ],
+          "_ee": [
+            "1"
+          ],
+          "tfd": [
+            "102"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "cookie": "[cookies present]",
+          "origin": "https://www.bridgend.gov.uk",
+          "referer": "https://www.bridgend.gov.uk/"
+        },
+        "response_headers": {
+          "cache-control": "no-cache, no-store, must-revalidate",
+          "content-type": "text/plain"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T11:04:17.035Z",
+        "duration_ms": -1,
+        "endpoint": "/g/collect",
+        "host": "region1.google-analytics.com",
+        "method": "POST",
+        "status": -1,
+        "query_params": {
+          "v": [
+            "2"
+          ],
+          "tid": [
+            "G-K498X8WK7V"
+          ],
+          "gtm": [
+            "45je57g1v893042100za200"
+          ],
+          "_p": [
+            "1753095854377"
+          ],
+          "gcs": [
+            "G101"
+          ],
+          "gcd": [
+            "13p3r3l3l5l1"
+          ],
+          "npa": [
+            "0"
+          ],
+          "dma": [
+            "0"
+          ],
+          "tag_exp": [
+            "101509157~103116026~103200004~103233427~104684208~104684211~104952206~104952208"
+          ],
+          "cid": [
+            "1118590570.1753085252"
+          ],
+          "ul": [
+            "en-gb"
+          ],
+          "sr": [
+            "800x600"
+          ],
+          "uaa": [
+            "arm"
+          ],
+          "uab": [
+            "64"
+          ],
+          "uafvl": [
+            "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+          ],
+          "uamb": [
+            "0"
+          ],
+          "uap": [
+            "macOS"
+          ],
+          "uapv": [
+            "15.5.0"
+          ],
+          "uaw": [
+            "0"
+          ],
+          "are": [
+            "1"
+          ],
+          "frm": [
+            "0"
+          ],
+          "pscdl": [
+            "denied"
+          ],
+          "_s": [
+            "3"
+          ],
+          "sid": [
+            "1753095850"
+          ],
+          "sct": [
+            "2"
+          ],
+          "seg": [
+            "0"
+          ],
+          "dl": [
+            "https://www.bridgend.gov.uk/residents/recycling-and-waste/"
+          ],
+          "dr": [
+            "https://www.bridgend.gov.uk/residents/"
+          ],
+          "dt": [
+            "Recycling and waste"
+          ],
+          "en": [
+            "user_engagement"
+          ],
+          "_et": [
+            "2620"
+          ],
+          "tfd": [
+            "2732"
+          ]
+        },
+        "request_headers": {
+          "referer": "https://www.bridgend.gov.uk/"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T11:04:17.034Z",
+        "duration_ms": -1,
+        "endpoint": "/g/collect",
+        "host": "region1.google-analytics.com",
+        "method": "POST",
+        "status": -1,
+        "query_params": {
+          "v": [
+            "2"
+          ],
+          "tid": [
+            "G-K498X8WK7V"
+          ],
+          "gtm": [
+            "45je57g1v893042100za200"
+          ],
+          "_p": [
+            "1753095854377"
+          ],
+          "gcs": [
+            "G101"
+          ],
+          "gcd": [
+            "13p3r3l3l5l1"
+          ],
+          "npa": [
+            "0"
+          ],
+          "dma": [
+            "0"
+          ],
+          "tag_exp": [
+            "101509157~103116026~103200004~103233427~104684208~104684211~104952206~104952208"
+          ],
+          "cid": [
+            "1118590570.1753085252"
+          ],
+          "ul": [
+            "en-gb"
+          ],
+          "sr": [
+            "800x600"
+          ],
+          "uaa": [
+            "arm"
+          ],
+          "uab": [
+            "64"
+          ],
+          "uafvl": [
+            "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+          ],
+          "uamb": [
+            "0"
+          ],
+          "uap": [
+            "macOS"
+          ],
+          "uapv": [
+            "15.5.0"
+          ],
+          "uaw": [
+            "0"
+          ],
+          "are": [
+            "1"
+          ],
+          "frm": [
+            "0"
+          ],
+          "pscdl": [
+            "denied"
+          ],
+          "_eu": [
+            "AAAAAAQ"
+          ],
+          "_s": [
+            "2"
+          ],
+          "sid": [
+            "1753095850"
+          ],
+          "sct": [
+            "2"
+          ],
+          "seg": [
+            "0"
+          ],
+          "dl": [
+            "https://www.bridgend.gov.uk/residents/recycling-and-waste/"
+          ],
+          "dr": [
+            "https://www.bridgend.gov.uk/residents/"
+          ],
+          "dt": [
+            "Recycling and waste"
+          ],
+          "en": [
+            "user_engagement"
+          ],
+          "ep.ga_temp_client_id": [
+            "1204874226.1753095854"
+          ],
+          "_et": [
+            "7"
+          ],
+          "tfd": [
+            "2732"
+          ]
+        },
+        "request_headers": {
+          "referer": "https://www.bridgend.gov.uk/"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T11:04:17.085Z",
+        "duration_ms": 14.605,
+        "endpoint": "/g/collect",
+        "host": "region1.google-analytics.com",
+        "method": "POST",
+        "status": 204,
+        "query_params": {
+          "v": [
+            "2"
+          ],
+          "tid": [
+            "G-K498X8WK7V"
+          ],
+          "gtm": [
+            "45je57g1v893042100za200"
+          ],
+          "_p": [
+            "1753095857037"
+          ],
+          "gcs": [
+            "G100"
+          ],
+          "gcd": [
+            "13p3p3l3l5l1"
+          ],
+          "npa": [
+            "0"
+          ],
+          "dma": [
+            "0"
+          ],
+          "tag_exp": [
+            "101509157~103116026~103200004~103233427~104684208~104684211~104952206~104952208"
+          ],
+          "cid": [
+            "327412030.1753095857"
+          ],
+          "ul": [
+            "en-gb"
+          ],
+          "sr": [
+            "800x600"
+          ],
+          "uaa": [
+            "arm"
+          ],
+          "uab": [
+            "64"
+          ],
+          "uafvl": [
+            "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+          ],
+          "uamb": [
+            "0"
+          ],
+          "uap": [
+            "macOS"
+          ],
+          "uapv": [
+            "15.5.0"
+          ],
+          "uaw": [
+            "0"
+          ],
+          "are": [
+            "1"
+          ],
+          "frm": [
+            "0"
+          ],
+          "pscdl": [
+            "denied"
+          ],
+          "_s": [
+            "1"
+          ],
+          "sid": [
+            "1753095857"
+          ],
+          "sct": [
+            "1"
+          ],
+          "seg": [
+            "0"
+          ],
+          "dl": [
+            "https://www.bridgend.gov.uk/residents/recycling-and-waste/refuse-collections/"
+          ],
+          "dr": [
+            "https://www.bridgend.gov.uk/residents/recycling-and-waste/"
+          ],
+          "dt": [
+            "Refuse collections"
+          ],
+          "en": [
+            "page_view"
+          ],
+          "_fv": [
+            "1"
+          ],
+          "_nsi": [
+            "1"
+          ],
+          "_ss": [
+            "1"
+          ],
+          "_ee": [
+            "1"
+          ],
+          "tfd": [
+            "107"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "cookie": "[cookies present]",
+          "origin": "https://www.bridgend.gov.uk",
+          "referer": "https://www.bridgend.gov.uk/"
+        },
+        "response_headers": {
+          "cache-control": "no-cache, no-store, must-revalidate",
+          "content-type": "text/plain"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T11:04:20.250Z",
+        "duration_ms": 12.807,
+        "endpoint": "/g/collect",
+        "host": "region1.google-analytics.com",
+        "method": "POST",
+        "status": 204,
+        "query_params": {
+          "v": [
+            "2"
+          ],
+          "tid": [
+            "G-K498X8WK7V"
+          ],
+          "gtm": [
+            "45je57g1v893042100za200"
+          ],
+          "_p": [
+            "1753095857037"
+          ],
+          "gcs": [
+            "G101"
+          ],
+          "gcd": [
+            "13p3r3l3l5l1"
+          ],
+          "npa": [
+            "0"
+          ],
+          "dma": [
+            "0"
+          ],
+          "tag_exp": [
+            "101509157~103116026~103200004~103233427~104684208~104684211~104952206~104952208"
+          ],
+          "cid": [
+            "1118590570.1753085252"
+          ],
+          "ul": [
+            "en-gb"
+          ],
+          "sr": [
+            "800x600"
+          ],
+          "uaa": [
+            "arm"
+          ],
+          "uab": [
+            "64"
+          ],
+          "uafvl": [
+            "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+          ],
+          "uamb": [
+            "0"
+          ],
+          "uap": [
+            "macOS"
+          ],
+          "uapv": [
+            "15.5.0"
+          ],
+          "uaw": [
+            "0"
+          ],
+          "are": [
+            "1"
+          ],
+          "frm": [
+            "0"
+          ],
+          "pscdl": [
+            "denied"
+          ],
+          "_eu": [
+            "AAAAAAQ"
+          ],
+          "_s": [
+            "2"
+          ],
+          "sid": [
+            "1753095850"
+          ],
+          "sct": [
+            "2"
+          ],
+          "seg": [
+            "0"
+          ],
+          "dl": [
+            "https://www.bridgend.gov.uk/residents/recycling-and-waste/refuse-collections/"
+          ],
+          "dr": [
+            "https://www.bridgend.gov.uk/residents/recycling-and-waste/"
+          ],
+          "dt": [
+            "Refuse collections"
+          ],
+          "en": [
+            "user_engagement"
+          ],
+          "ep.ga_temp_client_id": [
+            "327412030.1753095857"
+          ],
+          "_et": [
+            "5"
+          ],
+          "tfd": [
+            "3287"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "cookie": "[cookies present]",
+          "origin": "https://www.bridgend.gov.uk",
+          "referer": "https://www.bridgend.gov.uk/"
+        },
+        "response_headers": {
+          "cache-control": "no-cache, no-store, must-revalidate",
+          "content-type": "text/plain"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T11:04:20.251Z",
+        "duration_ms": 71.156,
+        "endpoint": "/g/collect",
+        "host": "region1.google-analytics.com",
+        "method": "POST",
+        "status": 302,
+        "query_params": {
+          "v": [
+            "2"
+          ],
+          "tid": [
+            "G-K498X8WK7V"
+          ],
+          "gtm": [
+            "45je57g1v893042100za200"
+          ],
+          "_p": [
+            "1753095857037"
+          ],
+          "gcs": [
+            "G101"
+          ],
+          "gcd": [
+            "13p3r3l3l5l1"
+          ],
+          "npa": [
+            "0"
+          ],
+          "dma": [
+            "0"
+          ],
+          "tag_exp": [
+            "101509157~103116026~103200004~103233427~104684208~104684211~104952206~104952208"
+          ],
+          "cid": [
+            "1118590570.1753085252"
+          ],
+          "ul": [
+            "en-gb"
+          ],
+          "sr": [
+            "800x600"
+          ],
+          "uaa": [
+            "arm"
+          ],
+          "uab": [
+            "64"
+          ],
+          "uafvl": [
+            "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+          ],
+          "uamb": [
+            "0"
+          ],
+          "uap": [
+            "macOS"
+          ],
+          "uapv": [
+            "15.5.0"
+          ],
+          "uaw": [
+            "0"
+          ],
+          "are": [
+            "1"
+          ],
+          "frm": [
+            "0"
+          ],
+          "pscdl": [
+            "denied"
+          ],
+          "_eu": [
+            "AEA"
+          ],
+          "_s": [
+            "3"
+          ],
+          "sid": [
+            "1753095850"
+          ],
+          "sct": [
+            "2"
+          ],
+          "seg": [
+            "0"
+          ],
+          "dl": [
+            "https://www.bridgend.gov.uk/residents/recycling-and-waste/refuse-collections/"
+          ],
+          "dr": [
+            "https://www.bridgend.gov.uk/residents/recycling-and-waste/"
+          ],
+          "dt": [
+            "Refuse collections"
+          ],
+          "en": [
+            "click"
+          ],
+          "_c": [
+            "1"
+          ],
+          "ep.link_classes": [
+            "btn btn-secondary"
+          ],
+          "ep.link_url": [
+            "https://bridgendportal.azurewebsites.net/"
+          ],
+          "ep.link_domain": [
+            "bridgendportal.azurewebsites.net"
+          ],
+          "ep.outbound": [
+            "true"
+          ],
+          "_et": [
+            "3173"
+          ],
+          "tfd": [
+            "3287"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "cookie": "[cookies present]",
+          "origin": "https://www.bridgend.gov.uk",
+          "referer": "https://www.bridgend.gov.uk/"
+        },
+        "response_headers": {
+          "cache-control": "no-cache, no-store, must-revalidate",
+          "content-type": "text/html; charset=UTF-8",
+          "location": "https://region1.google-analytics.com/privacy-sandbox/register-conversion?_c=1&cid=1118590570.1753085252&dbk=7058113725919802444&dma=0&en=click&gcs=G101&gtm=45je57g1v893042100za200&npa=0&tid=G-K498X8WK7V&dl=https%3A%2F%2Fwww.bridgend.gov.uk%3F"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": -1
+        },
+        "redirect_to": "https://region1.google-analytics.com/privacy-sandbox/register-conversion?_c=1&cid=1118590570.1753085252&dbk=7058113725919802444&dma=0&en=click&gcs=G101&gtm=45je57g1v893042100za200&npa=0&tid=G-K498X8WK7V&dl=https%3A%2F%2Fwww.bridgend.gov.uk%3F"
+      }
+    ],
+    "/residents": [
+      {
+        "timestamp": "2025-07-21T11:04:12.503Z",
+        "duration_ms": 35.452,
+        "endpoint": "/residents",
+        "host": "www.bridgend.gov.uk",
+        "method": "GET",
+        "status": 200,
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+          "cookie": "[cookies present]"
+        },
+        "response_headers": {
+          "content-type": "text/html; charset=utf-8",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "SAMEORIGIN"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 45779,
+          "content_ref": "5df853307e0bda5c65b78736eccf51597224950b.html"
+        }
+      }
+    ],
+    "/api/user/client-info": [
+      {
+        "timestamp": "2025-07-21T11:04:12.749Z",
+        "duration_ms": 68.551,
+        "endpoint": "/api/user/client-info",
+        "host": "backend.logicdialog.ai",
+        "method": "GET",
+        "status": 200,
+        "query_params": {
+          "client": [
+            "bridgend"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "origin": "https://www.bridgend.gov.uk",
+          "referer": "https://www.bridgend.gov.uk/"
+        },
+        "response_headers": {
+          "content-type": "application/json; charset=utf-8",
+          "set-cookie": "[cookies present]",
+          "x-content-type-options": "nosniff",
+          "x-dns-prefetch-control": "off",
+          "x-download-options": "noopen",
+          "x-frame-options": "SAMEORIGIN",
+          "x-permitted-cross-domain-policies": "none",
+          "x-xss-protection": "0"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 7477,
+          "compressed": true,
+          "content_ref": "9120822e230ae6dd2b8c6700a162f6c40484cb8b.json"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T11:04:13.117Z",
+        "duration_ms": 14.469,
+        "endpoint": "/api/user/client-info",
+        "host": "backend.logicdialog.ai",
+        "method": "GET",
+        "status": 200,
+        "query_params": {
+          "language": [
+            "en"
+          ],
+          "client": [
+            "bridgend"
+          ],
+          "domain": [
+            "www.bridgend.gov.uk"
+          ]
+        },
+        "request_headers": {
+          "accept": "application/json, text/plain, */*",
+          "origin": "https://www.bridgend.gov.uk",
+          "referer": "https://www.bridgend.gov.uk/"
+        },
+        "response_headers": {
+          "content-type": "application/json; charset=utf-8",
+          "set-cookie": "[cookies present]",
+          "x-content-type-options": "nosniff",
+          "x-dns-prefetch-control": "off",
+          "x-download-options": "noopen",
+          "x-frame-options": "SAMEORIGIN",
+          "x-permitted-cross-domain-policies": "none",
+          "x-xss-protection": "0"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 7477,
+          "compressed": true,
+          "content_ref": "9120822e230ae6dd2b8c6700a162f6c40484cb8b.json"
+        }
+      }
+    ],
+    "/api/user/session": [
+      {
+        "timestamp": "2025-07-21T11:04:13.220Z",
+        "duration_ms": 30.136,
+        "endpoint": "/api/user/session",
+        "host": "socket-server-input.logicdialog.ai",
+        "method": "GET",
+        "status": 200,
+        "query_params": {
+          "language": [
+            "en"
+          ],
+          "client": [
+            "bridgend"
+          ],
+          "domain": [
+            "www.bridgend.gov.uk"
+          ],
+          "persistBetweenPages": [
+            "true"
+          ]
+        },
+        "request_headers": {
+          "accept": "application/json, text/plain, */*",
+          "cookie": "[cookies present]",
+          "origin": "https://www.bridgend.gov.uk",
+          "referer": "https://www.bridgend.gov.uk/"
+        },
+        "response_headers": {
+          "content-type": "application/json; charset=utf-8",
+          "set-cookie": "[cookies present]",
+          "x-powered-by": "Express"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 101,
+          "content_ref": "7dc7ead1820ab77e393fc19c01cf895552d2f2b6.json"
+        }
+      }
+    ],
+    "/api/user/header-info": [
+      {
+        "timestamp": "2025-07-21T11:04:13.223Z",
+        "duration_ms": -1,
+        "endpoint": "/api/user/header-info",
+        "host": "backend.logicdialog.ai",
+        "method": "GET",
+        "status": -1,
+        "query_params": {
+          "language": [
+            "en"
+          ],
+          "lang": [
+            "en"
+          ],
+          "client": [
+            "bridgend"
+          ],
+          "domain": [
+            "www.bridgend.gov.uk"
+          ],
+          "userId": [
+            "687df330becbc476486bce16"
+          ]
+        },
+        "request_headers": {
+          "referer": "https://www.bridgend.gov.uk/",
+          "accept": "application/json, text/plain, */*"
+        }
+      }
+    ],
+    "/residents/recycling-and-waste": [
+      {
+        "timestamp": "2025-07-21T11:04:14.352Z",
+        "duration_ms": 18.178,
+        "endpoint": "/residents/recycling-and-waste",
+        "host": "www.bridgend.gov.uk",
+        "method": "GET",
+        "status": 200,
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+          "cookie": "[cookies present]",
+          "referer": "https://www.bridgend.gov.uk/residents/"
+        },
+        "response_headers": {
+          "content-type": "text/html; charset=utf-8",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "SAMEORIGIN"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 27351,
+          "content_ref": "53b2b5b9244247fa428c0723666321b4b5a48f9a.html"
+        }
+      }
+    ],
+    "/residents/recycling-and-waste/refuse-collections": [
+      {
+        "timestamp": "2025-07-21T11:04:17.012Z",
+        "duration_ms": 19.259999999999998,
+        "endpoint": "/residents/recycling-and-waste/refuse-collections",
+        "host": "www.bridgend.gov.uk",
+        "method": "GET",
+        "status": 200,
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+          "cookie": "[cookies present]",
+          "referer": "https://www.bridgend.gov.uk/residents/recycling-and-waste/"
+        },
+        "response_headers": {
+          "content-type": "text/html; charset=utf-8",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "SAMEORIGIN"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 21236,
+          "content_ref": "8f2d36fbbbbf1d0c1f1efcbd38ed63d584f2400e.html"
+        }
+      }
+    ],
+    "/privacy-sandbox/register-conversion": [
+      {
+        "timestamp": "2025-07-21T11:04:20.320Z",
+        "duration_ms": 11.857,
+        "endpoint": "/privacy-sandbox/register-conversion",
+        "host": "region1.google-analytics.com",
+        "method": "GET",
+        "status": 204,
+        "query_params": {
+          "_c": [
+            "1"
+          ],
+          "cid": [
+            "1118590570.1753085252"
+          ],
+          "dbk": [
+            "7058113725919802444"
+          ],
+          "dma": [
+            "0"
+          ],
+          "en": [
+            "click"
+          ],
+          "gcs": [
+            "G101"
+          ],
+          "gtm": [
+            "45je57g1v893042100za200"
+          ],
+          "npa": [
+            "0"
+          ],
+          "tid": [
+            "G-K498X8WK7V"
+          ],
+          "dl": [
+            "https://www.bridgend.gov.uk?"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "cookie": "[cookies present]",
+          "referer": "https://www.bridgend.gov.uk/"
+        },
+        "response_headers": {
+          "cache-control": "no-cache, no-store, must-revalidate",
+          "content-type": "text/plain"
+        }
+      }
+    ],
+    "/": [
+      {
+        "timestamp": "2025-07-21T11:04:20.306Z",
+        "duration_ms": 93.121,
+        "endpoint": "/",
+        "host": "bridgendportal.azurewebsites.net",
+        "method": "GET",
+        "status": 200,
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+          "referer": "https://www.bridgend.gov.uk/"
+        },
+        "response_headers": {
+          "content-type": "text/html; charset=UTF-8",
+          "set-cookie": "[cookies present]",
+          "x-powered-by": "PHP/8.2.28"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 11372,
+          "compressed": true,
+          "content_ref": "0ae1d4e3c1a94f5f9c05da801349a8fb4b9e32ac.html"
+        }
+      }
+    ],
+    "/af/9b05f3/{id}/{id}/l": [
+      {
+        "timestamp": "2025-07-21T11:04:20.416Z",
+        "duration_ms": 1.0899999999999999,
+        "endpoint": "/af/9b05f3/{id}/{id}/l",
+        "host": "use.typekit.net",
+        "method": "GET",
+        "status": 200,
+        "path_params": [
+          "000000000000000000013365",
+          "27"
+        ],
+        "query_params": {
+          "primer": [
+            "7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191"
+          ],
+          "fvd": [
+            "n4"
+          ],
+          "v": [
+            "3"
+          ]
+        },
+        "request_headers": {
+          "origin": "https://bridgendportal.azurewebsites.net",
+          "referer": "https://use.typekit.net/mtq2tsp.css"
+        },
+        "response_headers": {
+          "cache-control": "public, max-age=31536000",
+          "content-type": "application/font-woff2"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T11:04:28.214Z",
+        "duration_ms": 1.066,
+        "endpoint": "/af/9b05f3/{id}/{id}/l",
+        "host": "use.typekit.net",
+        "method": "GET",
+        "status": 200,
+        "path_params": [
+          "000000000000000000013365",
+          "27"
+        ],
+        "query_params": {
+          "primer": [
+            "7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191"
+          ],
+          "fvd": [
+            "n4"
+          ],
+          "v": [
+            "3"
+          ]
+        },
+        "request_headers": {
+          "origin": "https://bridgendportal.azurewebsites.net",
+          "referer": "https://use.typekit.net/mtq2tsp.css"
+        },
+        "response_headers": {
+          "cache-control": "public, max-age=31536000",
+          "content-type": "application/font-woff2"
+        }
+      }
+    ],
+    "/af/309dfe/{id}/{id}/l": [
+      {
+        "timestamp": "2025-07-21T11:04:20.416Z",
+        "duration_ms": 0.571,
+        "endpoint": "/af/309dfe/{id}/{id}/l",
+        "host": "use.typekit.net",
+        "method": "GET",
+        "status": 200,
+        "path_params": [
+          "000000000000000000010091",
+          "27"
+        ],
+        "query_params": {
+          "primer": [
+            "7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191"
+          ],
+          "fvd": [
+            "n7"
+          ],
+          "v": [
+            "3"
+          ]
+        },
+        "request_headers": {
+          "origin": "https://bridgendportal.azurewebsites.net",
+          "referer": "https://use.typekit.net/mtq2tsp.css"
+        },
+        "response_headers": {
+          "cache-control": "public, max-age=31536000",
+          "content-type": "application/font-woff2"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T11:04:28.212Z",
+        "duration_ms": 1.109,
+        "endpoint": "/af/309dfe/{id}/{id}/l",
+        "host": "use.typekit.net",
+        "method": "GET",
+        "status": 200,
+        "path_params": [
+          "000000000000000000010091",
+          "27"
+        ],
+        "query_params": {
+          "primer": [
+            "7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191"
+          ],
+          "fvd": [
+            "n7"
+          ],
+          "v": [
+            "3"
+          ]
+        },
+        "request_headers": {
+          "origin": "https://bridgendportal.azurewebsites.net",
+          "referer": "https://use.typekit.net/mtq2tsp.css"
+        },
+        "response_headers": {
+          "cache-control": "public, max-age=31536000",
+          "content-type": "application/font-woff2"
+        }
+      }
+    ],
+    "/property": [
+      {
+        "timestamp": "2025-07-21T11:04:25.371Z",
+        "duration_ms": 175.05700000000002,
+        "endpoint": "/property",
+        "host": "bridgendportal.azurewebsites.net",
+        "method": "POST",
+        "status": 200,
+        "request_headers": {
+          "accept": "*/*",
+          "content-type": "application/x-www-form-urlencoded; charset=UTF-8",
+          "cookie": "[cookies present]",
+          "origin": "https://bridgendportal.azurewebsites.net",
+          "referer": "https://bridgendportal.azurewebsites.net/",
+          "x-requested-with": "XMLHttpRequest"
+        },
+        "response_headers": {
+          "content-type": "application/json",
+          "x-powered-by": "PHP/8.2.28"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 3468,
+          "content_ref": "aac4ceb28b778ca6293616837b601e92205c1dfc.json"
+        }
+      }
+    ],
+    "/property/{id}": [
+      {
+        "timestamp": "2025-07-21T11:04:27.743Z",
+        "duration_ms": 439.473,
+        "endpoint": "/property/{id}",
+        "host": "bridgendportal.azurewebsites.net",
+        "method": "GET",
+        "status": 200,
+        "path_params": [
+          "100100485220"
+        ],
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+          "cookie": "[cookies present]",
+          "referer": "https://bridgendportal.azurewebsites.net/"
+        },
+        "response_headers": {
+          "content-type": "text/html; charset=UTF-8",
+          "x-powered-by": "PHP/8.2.28"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 9658,
+          "compressed": true,
+          "content_ref": "aca7f6bba487426374bddf289b754d154379e942.html"
+        }
+      }
+    ]
+  }
 }

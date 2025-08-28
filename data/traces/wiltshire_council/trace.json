@@ -1,150 +1,429 @@
 {
-  "metadata": {
-    "trace_name": "wiltshire_council",
-    "processed_at": "2025-08-26 18:44:24",
-    "workflow_steps_count": 5,
-    "navigation_events_count": 10
-  },
-  "scraping_patterns": {
-    "login_detected": false,
-    "form_submissions": 6,
-    "navigation_count": 1,
-    "unique_domains": [
-      "ilambassadorformsprod.azurewebsites.net",
-      "a.eu.silktide.com"
-    ],
-    "api_endpoints": [],
-    "data_extraction_indicators": []
-  },
-  "workflow_steps": [
+  "entries": [
     {
-      "action": "goto",
-      "target": "https://ilambassadorformsprod.azurewebsites.net/wastecollectiondays/index",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
+      "timestamp": "2025-07-21T10:27:59.830Z",
+      "duration_ms": 96.566,
+      "endpoint": "/wastecollectiondays/index",
+      "host": "ilambassadorformsprod.azurewebsites.net",
+      "method": "GET",
+      "status": 200,
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7"
+      },
+      "response_headers": {
+        "cache-control": "private",
+        "content-type": "text/html; charset=utf-8",
+        "set-cookie": "[cookies present]",
+        "x-aspnet-version": "4.0.30319",
+        "x-aspnetmvc-version": "5.2",
+        "x-powered-by": "ASP.NET"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 14425,
+        "compressed": true,
+        "content_ref": "481f28ceb1b84866a4ffd451109eb962a57881bc.html"
+      }
     },
     {
-      "action": "fill",
-      "target": "aria-ref=e31 >> internal:describe=\"textbox \\\"Postcode of your property\\\"\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0,
-      "value": "BA12 0AB"
+      "timestamp": "2025-07-21T10:27:59.920Z",
+      "duration_ms": -1,
+      "endpoint": "/gtag/js",
+      "host": "www.googletagmanager.com",
+      "method": "GET",
+      "status": -1,
+      "query_params": {
+        "id": [
+          "G-F0J5SLCS9H"
+        ]
+      },
+      "request_headers": {
+        "referer": "https://ilambassadorformsprod.azurewebsites.net/"
+      }
     },
     {
-      "action": "click",
-      "target": "aria-ref=e32 >> internal:describe=\"button \\\"Search and find my address\\\"\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
+      "timestamp": "2025-07-21T10:27:59.961Z",
+      "duration_ms": 124.178,
+      "endpoint": "/v1/events",
+      "host": "a.eu.silktide.com",
+      "method": "POST",
+      "status": 202,
+      "request_headers": {
+        "accept": "application/json",
+        "content-type": "application/json",
+        "origin": "https://ilambassadorformsprod.azurewebsites.net",
+        "referer": "https://ilambassadorformsprod.azurewebsites.net/"
+      },
+      "response_headers": {
+        "content-type": "text/plain; charset=utf-8",
+        "x-powered-by": "Silktide"
+      }
     },
     {
-      "action": "selectOption",
-      "target": "aria-ref=e88 >> internal:describe=\"combobox \\\"We found the following addresses for this postcode\\\"\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0,
-      "value": null
+      "timestamp": "2025-07-21T10:28:04.288Z",
+      "duration_ms": 18.532,
+      "endpoint": "/v1/events",
+      "host": "a.eu.silktide.com",
+      "method": "POST",
+      "status": 202,
+      "request_headers": {
+        "accept": "application/json",
+        "content-type": "application/json",
+        "origin": "https://ilambassadorformsprod.azurewebsites.net",
+        "referer": "https://ilambassadorformsprod.azurewebsites.net/"
+      },
+      "response_headers": {
+        "content-type": "text/plain; charset=utf-8",
+        "x-powered-by": "Silktide"
+      }
     },
     {
-      "action": "click",
-      "target": "aria-ref=e139 >> internal:describe=\"link \\\"Monthly collections\\\"\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
+      "timestamp": "2025-07-21T10:28:04.289Z",
+      "duration_ms": 88.23700000000001,
+      "endpoint": "/wastecollectiondays/addresslist",
+      "host": "ilambassadorformsprod.azurewebsites.net",
+      "method": "POST",
+      "status": 200,
+      "request_headers": {
+        "accept": "application/json, text/javascript, */*; q=0.01",
+        "content-type": "application/x-www-form-urlencoded; charset=UTF-8",
+        "cookie": "[cookies present]",
+        "origin": "https://ilambassadorformsprod.azurewebsites.net",
+        "referer": "https://ilambassadorformsprod.azurewebsites.net/wastecollectiondays/index",
+        "x-requested-with": "XMLHttpRequest"
+      },
+      "response_headers": {
+        "cache-control": "private",
+        "content-type": "application/json; charset=utf-8",
+        "x-aspnet-version": "4.0.30319",
+        "x-aspnetmvc-version": "5.2",
+        "x-powered-by": "ASP.NET"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 31278,
+        "compressed": true,
+        "content_ref": "b46fa7ba39d73edb364effe5cd289e32e0289f30.json"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T10:28:06.489Z",
+      "duration_ms": 375.838,
+      "endpoint": "/wastecollectiondays/{id}",
+      "host": "ilambassadorformsprod.azurewebsites.net",
+      "method": "POST",
+      "status": 200,
+      "path_params": [
+        "wastecollectionupcoming"
+      ],
+      "request_headers": {
+        "accept": "*/*",
+        "content-type": "application/x-www-form-urlencoded; charset=UTF-8",
+        "cookie": "[cookies present]",
+        "origin": "https://ilambassadorformsprod.azurewebsites.net",
+        "referer": "https://ilambassadorformsprod.azurewebsites.net/wastecollectiondays/index",
+        "x-requested-with": "XMLHttpRequest"
+      },
+      "response_headers": {
+        "cache-control": "private",
+        "content-type": "text/html; charset=utf-8",
+        "x-aspnet-version": "4.0.30319",
+        "x-aspnetmvc-version": "5.2",
+        "x-powered-by": "ASP.NET"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 40747,
+        "compressed": true,
+        "content_ref": "258eabc59860967462bb1a5eca6722ad70220c3c.html"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T10:28:11.798Z",
+      "duration_ms": 70.659,
+      "endpoint": "/wastecollectiondays/collectionlist",
+      "host": "ilambassadorformsprod.azurewebsites.net",
+      "method": "POST",
+      "status": 200,
+      "request_headers": {
+        "accept": "*/*",
+        "content-type": "application/x-www-form-urlencoded; charset=UTF-8",
+        "cookie": "[cookies present]",
+        "origin": "https://ilambassadorformsprod.azurewebsites.net",
+        "referer": "https://ilambassadorformsprod.azurewebsites.net/wastecollectiondays/index",
+        "x-requested-with": "XMLHttpRequest"
+      },
+      "response_headers": {
+        "cache-control": "private",
+        "content-type": "text/html; charset=utf-8",
+        "x-aspnet-version": "4.0.30319",
+        "x-aspnetmvc-version": "5.2",
+        "x-powered-by": "ASP.NET"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 44751,
+        "compressed": true,
+        "content_ref": "0cc0f7506a1965eb8167844d4e54f645bd77238b.html"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T10:28:11.795Z",
+      "duration_ms": 97.304,
+      "endpoint": "/v1/events/beacon",
+      "host": "a.eu.silktide.com",
+      "method": "POST",
+      "status": 202,
+      "request_headers": {
+        "accept": "*/*",
+        "content-type": "text/plain;charset=UTF-8",
+        "origin": "https://ilambassadorformsprod.azurewebsites.net",
+        "referer": "https://ilambassadorformsprod.azurewebsites.net/"
+      },
+      "response_headers": {
+        "content-type": "text/plain; charset=utf-8",
+        "x-powered-by": "Silktide"
+      }
     }
   ],
-  "navigation_events": [
-    {
-      "url": "https://ilambassadorformsprod.azurewebsites.net/wastecollectiondays/index",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "text/html; charset=utf-8",
-      "size": 14425,
-      "timestamp": "2025-07-21T10:27:59.830Z"
+  "analysis": {
+    "total_requests": 8,
+    "unique_endpoints": 7,
+    "methods_used": [
+      "GET",
+      "POST"
+    ],
+    "status_codes": {
+      "200": 4,
+      "-1": 1,
+      "202": 3
     },
-    {
-      "url": "https://a.eu.silktide.com/v1/events",
-      "method": "POST",
-      "status": 202,
-      "redirect_url": null,
-      "mime_type": "text/plain; charset=utf-8",
-      "size": 2,
-      "timestamp": "2025-07-21T10:27:59.961Z"
-    },
-    {
-      "url": "https://ilambassadorformsprod.azurewebsites.net/assets/images/govuk-crest.png",
-      "method": "GET",
-      "status": 404,
-      "redirect_url": null,
-      "mime_type": "text/html; charset=utf-8",
-      "size": 1940,
-      "timestamp": "2025-07-21T10:28:01.039Z"
-    },
-    {
-      "url": "https://ilambassadorformsprod.azurewebsites.net/assets/fonts/light-f38ad40456-v1.woff2",
-      "method": "GET",
-      "status": 404,
-      "redirect_url": null,
-      "mime_type": "text/html; charset=utf-8",
-      "size": -1,
-      "timestamp": "2025-07-21T10:28:01.040Z"
-    },
-    {
-      "url": "https://ilambassadorformsprod.azurewebsites.net/assets/fonts/light-458f8ea81c-v1.woff",
-      "method": "GET",
-      "status": 404,
-      "redirect_url": null,
-      "mime_type": "text/html; charset=utf-8",
-      "size": -1,
-      "timestamp": "2025-07-21T10:28:01.052Z"
-    },
-    {
-      "url": "https://a.eu.silktide.com/v1/events",
-      "method": "POST",
-      "status": 202,
-      "redirect_url": null,
-      "mime_type": "text/plain; charset=utf-8",
-      "size": 2,
-      "timestamp": "2025-07-21T10:28:04.288Z"
-    },
-    {
-      "url": "https://ilambassadorformsprod.azurewebsites.net/wastecollectiondays/addresslist",
-      "method": "POST",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json; charset=utf-8",
-      "size": 31278,
-      "timestamp": "2025-07-21T10:28:04.289Z"
-    },
-    {
-      "url": "https://ilambassadorformsprod.azurewebsites.net/wastecollectiondays/wastecollectionupcoming",
-      "method": "POST",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "text/html; charset=utf-8",
-      "size": 40747,
-      "timestamp": "2025-07-21T10:28:06.489Z"
-    },
-    {
-      "url": "https://a.eu.silktide.com/v1/events/beacon",
-      "method": "POST",
-      "status": 202,
-      "redirect_url": null,
-      "mime_type": "text/plain; charset=utf-8",
-      "size": 2,
-      "timestamp": "2025-07-21T10:28:11.795Z"
-    },
-    {
-      "url": "https://ilambassadorformsprod.azurewebsites.net/wastecollectiondays/collectionlist",
-      "method": "POST",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "text/html; charset=utf-8",
-      "size": 44751,
-      "timestamp": "2025-07-21T10:28:11.798Z"
-    }
-  ]
+    "endpoints_with_params": [
+      {
+        "endpoint": "/gtag/js",
+        "method": "GET",
+        "query_params": [
+          "id"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/wastecollectiondays/{id}",
+        "method": "POST",
+        "query_params": [],
+        "path_params": true
+      }
+    ],
+    "redirects": [],
+    "api_calls": [
+      {
+        "endpoint": "/wastecollectiondays/addresslist",
+        "method": "POST",
+        "response_type": "application/json",
+        "params": []
+      }
+    ],
+    "form_submissions": []
+  },
+  "grouped_by_endpoint": {
+    "/wastecollectiondays/index": [
+      {
+        "timestamp": "2025-07-21T10:27:59.830Z",
+        "duration_ms": 96.566,
+        "endpoint": "/wastecollectiondays/index",
+        "host": "ilambassadorformsprod.azurewebsites.net",
+        "method": "GET",
+        "status": 200,
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7"
+        },
+        "response_headers": {
+          "cache-control": "private",
+          "content-type": "text/html; charset=utf-8",
+          "set-cookie": "[cookies present]",
+          "x-aspnet-version": "4.0.30319",
+          "x-aspnetmvc-version": "5.2",
+          "x-powered-by": "ASP.NET"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 14425,
+          "compressed": true,
+          "content_ref": "481f28ceb1b84866a4ffd451109eb962a57881bc.html"
+        }
+      }
+    ],
+    "/gtag/js": [
+      {
+        "timestamp": "2025-07-21T10:27:59.920Z",
+        "duration_ms": -1,
+        "endpoint": "/gtag/js",
+        "host": "www.googletagmanager.com",
+        "method": "GET",
+        "status": -1,
+        "query_params": {
+          "id": [
+            "G-F0J5SLCS9H"
+          ]
+        },
+        "request_headers": {
+          "referer": "https://ilambassadorformsprod.azurewebsites.net/"
+        }
+      }
+    ],
+    "/v1/events": [
+      {
+        "timestamp": "2025-07-21T10:27:59.961Z",
+        "duration_ms": 124.178,
+        "endpoint": "/v1/events",
+        "host": "a.eu.silktide.com",
+        "method": "POST",
+        "status": 202,
+        "request_headers": {
+          "accept": "application/json",
+          "content-type": "application/json",
+          "origin": "https://ilambassadorformsprod.azurewebsites.net",
+          "referer": "https://ilambassadorformsprod.azurewebsites.net/"
+        },
+        "response_headers": {
+          "content-type": "text/plain; charset=utf-8",
+          "x-powered-by": "Silktide"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T10:28:04.288Z",
+        "duration_ms": 18.532,
+        "endpoint": "/v1/events",
+        "host": "a.eu.silktide.com",
+        "method": "POST",
+        "status": 202,
+        "request_headers": {
+          "accept": "application/json",
+          "content-type": "application/json",
+          "origin": "https://ilambassadorformsprod.azurewebsites.net",
+          "referer": "https://ilambassadorformsprod.azurewebsites.net/"
+        },
+        "response_headers": {
+          "content-type": "text/plain; charset=utf-8",
+          "x-powered-by": "Silktide"
+        }
+      }
+    ],
+    "/wastecollectiondays/addresslist": [
+      {
+        "timestamp": "2025-07-21T10:28:04.289Z",
+        "duration_ms": 88.23700000000001,
+        "endpoint": "/wastecollectiondays/addresslist",
+        "host": "ilambassadorformsprod.azurewebsites.net",
+        "method": "POST",
+        "status": 200,
+        "request_headers": {
+          "accept": "application/json, text/javascript, */*; q=0.01",
+          "content-type": "application/x-www-form-urlencoded; charset=UTF-8",
+          "cookie": "[cookies present]",
+          "origin": "https://ilambassadorformsprod.azurewebsites.net",
+          "referer": "https://ilambassadorformsprod.azurewebsites.net/wastecollectiondays/index",
+          "x-requested-with": "XMLHttpRequest"
+        },
+        "response_headers": {
+          "cache-control": "private",
+          "content-type": "application/json; charset=utf-8",
+          "x-aspnet-version": "4.0.30319",
+          "x-aspnetmvc-version": "5.2",
+          "x-powered-by": "ASP.NET"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 31278,
+          "compressed": true,
+          "content_ref": "b46fa7ba39d73edb364effe5cd289e32e0289f30.json"
+        }
+      }
+    ],
+    "/wastecollectiondays/{id}": [
+      {
+        "timestamp": "2025-07-21T10:28:06.489Z",
+        "duration_ms": 375.838,
+        "endpoint": "/wastecollectiondays/{id}",
+        "host": "ilambassadorformsprod.azurewebsites.net",
+        "method": "POST",
+        "status": 200,
+        "path_params": [
+          "wastecollectionupcoming"
+        ],
+        "request_headers": {
+          "accept": "*/*",
+          "content-type": "application/x-www-form-urlencoded; charset=UTF-8",
+          "cookie": "[cookies present]",
+          "origin": "https://ilambassadorformsprod.azurewebsites.net",
+          "referer": "https://ilambassadorformsprod.azurewebsites.net/wastecollectiondays/index",
+          "x-requested-with": "XMLHttpRequest"
+        },
+        "response_headers": {
+          "cache-control": "private",
+          "content-type": "text/html; charset=utf-8",
+          "x-aspnet-version": "4.0.30319",
+          "x-aspnetmvc-version": "5.2",
+          "x-powered-by": "ASP.NET"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 40747,
+          "compressed": true,
+          "content_ref": "258eabc59860967462bb1a5eca6722ad70220c3c.html"
+        }
+      }
+    ],
+    "/wastecollectiondays/collectionlist": [
+      {
+        "timestamp": "2025-07-21T10:28:11.798Z",
+        "duration_ms": 70.659,
+        "endpoint": "/wastecollectiondays/collectionlist",
+        "host": "ilambassadorformsprod.azurewebsites.net",
+        "method": "POST",
+        "status": 200,
+        "request_headers": {
+          "accept": "*/*",
+          "content-type": "application/x-www-form-urlencoded; charset=UTF-8",
+          "cookie": "[cookies present]",
+          "origin": "https://ilambassadorformsprod.azurewebsites.net",
+          "referer": "https://ilambassadorformsprod.azurewebsites.net/wastecollectiondays/index",
+          "x-requested-with": "XMLHttpRequest"
+        },
+        "response_headers": {
+          "cache-control": "private",
+          "content-type": "text/html; charset=utf-8",
+          "x-aspnet-version": "4.0.30319",
+          "x-aspnetmvc-version": "5.2",
+          "x-powered-by": "ASP.NET"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 44751,
+          "compressed": true,
+          "content_ref": "0cc0f7506a1965eb8167844d4e54f645bd77238b.html"
+        }
+      }
+    ],
+    "/v1/events/beacon": [
+      {
+        "timestamp": "2025-07-21T10:28:11.795Z",
+        "duration_ms": 97.304,
+        "endpoint": "/v1/events/beacon",
+        "host": "a.eu.silktide.com",
+        "method": "POST",
+        "status": 202,
+        "request_headers": {
+          "accept": "*/*",
+          "content-type": "text/plain;charset=UTF-8",
+          "origin": "https://ilambassadorformsprod.azurewebsites.net",
+          "referer": "https://ilambassadorformsprod.azurewebsites.net/"
+        },
+        "response_headers": {
+          "content-type": "text/plain; charset=utf-8",
+          "x-powered-by": "Silktide"
+        }
+      }
+    ]
+  }
 }

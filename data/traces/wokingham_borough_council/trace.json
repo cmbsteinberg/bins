@@ -1,421 +1,2107 @@
 {
-  "metadata": {
-    "trace_name": "wokingham_borough_council",
-    "processed_at": "2025-08-26 18:44:24",
-    "workflow_steps_count": 6,
-    "navigation_events_count": 37
-  },
-  "scraping_patterns": {
-    "login_detected": false,
-    "form_submissions": 14,
-    "navigation_count": 1,
-    "unique_domains": [
-      "www.wokingham.gov.uk",
-      "hitcounter.govmetric.com",
-      "produkswebassistsignalr18.service.signalr.net",
-      "webassistant.onconnect.app",
-      "webassist.onconnect.app"
-    ],
-    "api_endpoints": [
-      "https://webassistant.onconnect.app/assets/appConfig.json",
-      "https://webassistant.onconnect.app/assets/appConfig.json",
-      "https://webassistant.onconnect.app/assets/appConfig.json",
-      "https://webassistant.onconnect.app/assets/appConfig.json"
-    ],
-    "data_extraction_indicators": []
-  },
-  "workflow_steps": [
+  "entries": [
     {
-      "action": "goto",
-      "target": "https://www.wokingham.gov.uk/rubbish-and-recycling/collections/",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
-    },
-    {
-      "action": "click",
-      "target": "aria-ref=e68 >> internal:describe=\"Find your bin collection day\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
-    },
-    {
-      "action": "fill",
-      "target": "aria-ref=e87 >> internal:describe=\"Postcode\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0,
-      "value": "RG10 0AE"
-    },
-    {
-      "action": "click",
-      "target": "aria-ref=e88 >> internal:describe=\"Find Address\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
-    },
-    {
-      "action": "selectOption",
-      "target": "aria-ref=e93 >> internal:describe=\"Address\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0,
-      "value": null
-    },
-    {
-      "action": "click",
-      "target": "aria-ref=e122 >> internal:describe=\"Show collection dates\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
-    }
-  ],
-  "navigation_events": [
-    {
-      "url": "https://www.wokingham.gov.uk/rubbish-and-recycling/collections/",
+      "timestamp": "2025-07-21T10:22:38.287Z",
+      "duration_ms": 116.496,
+      "endpoint": "/{id}/collections",
+      "host": "www.wokingham.gov.uk",
       "method": "GET",
       "status": 301,
-      "redirect_url": "https://www.wokingham.gov.uk/rubbish-and-recycling/waste-collection",
-      "mime_type": "text/html; charset=utf-8",
-      "size": -1,
-      "timestamp": "2025-07-21T10:22:38.287Z"
+      "path_params": [
+        "rubbish-and-recycling"
+      ],
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7"
+      },
+      "response_headers": {
+        "cache-control": "max-age=21600, public",
+        "content-type": "text/html; charset=utf-8",
+        "location": "https://www.wokingham.gov.uk/rubbish-and-recycling/waste-collection",
+        "x-cache": "Miss from cloudfront",
+        "x-content-type-options": "nosniff",
+        "x-drupal-cache": "HIT",
+        "x-frame-options": "SAMEORIGIN",
+        "x-generator": "Drupal 10 (https://www.drupal.org)",
+        "x-redirect-id": "935",
+        "x-xss-protection": "1; mode=block"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": -1
+      },
+      "redirect_to": "https://www.wokingham.gov.uk/rubbish-and-recycling/waste-collection"
     },
     {
-      "url": "https://www.wokingham.gov.uk/rubbish-and-recycling/waste-collection",
+      "timestamp": "2025-07-21T10:22:38.394Z",
+      "duration_ms": 53.425999999999995,
+      "endpoint": "/{id}/waste-collection",
+      "host": "www.wokingham.gov.uk",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "text/html; charset=UTF-8",
-      "size": 59814,
-      "timestamp": "2025-07-21T10:22:38.394Z"
+      "path_params": [
+        "rubbish-and-recycling"
+      ],
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7"
+      },
+      "response_headers": {
+        "cache-control": "max-age=21600, public",
+        "content-type": "text/html; charset=UTF-8",
+        "x-cache": "Miss from cloudfront",
+        "x-content-type-options": "nosniff",
+        "x-drupal-cache": "HIT",
+        "x-drupal-dynamic-cache": "MISS",
+        "x-frame-options": "SAMEORIGIN",
+        "x-generator": "Drupal 10 (https://www.drupal.org)",
+        "x-xss-protection": "1; mode=block"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 59814,
+        "compressed": true,
+        "content_ref": "9ac7e5b154adfa64bb730c88a762e5edaf31b7cf.html"
+      }
     },
     {
-      "url": "https://webassist.onconnect.app/v1/loader/3aa261b2-db8a-4bf7-915a-1de3ee57a1ee",
+      "timestamp": "2025-07-21T10:22:39.624Z",
+      "duration_ms": 68.89099999999999,
+      "endpoint": "/Home/Index/{id}",
+      "host": "hitcounter.govmetric.com",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json; charset=utf-8",
-      "size": 52,
-      "timestamp": "2025-07-21T10:22:39.620Z"
+      "path_params": [
+        "2439"
+      ],
+      "query_params": {
+        "override": [
+          "https://www.wokingham.gov.uk/rubbish-and-recycling/waste-collection"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "origin": "https://www.wokingham.gov.uk",
+        "referer": "https://www.wokingham.gov.uk/rubbish-and-recycling/waste-collection"
+      },
+      "response_headers": {
+        "cache-control": "no-store,no-cache",
+        "set-cookie": "[cookies present]",
+        "x-powered-by": "ASP.NET"
+      }
     },
     {
-      "url": "https://hitcounter.govmetric.com/Home/Index/2439?override=https%3A%2F%2Fwww.wokingham.gov.uk%2Frubbish-and-recycling%2Fwaste-collection",
+      "timestamp": "2025-07-21T10:22:39.663Z",
+      "duration_ms": 11.02,
+      "endpoint": "/themes/custom/wok/favicons/site.webmanifest",
+      "host": "www.wokingham.gov.uk",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "x-unknown",
-      "size": 0,
-      "timestamp": "2025-07-21T10:22:39.624Z"
+      "request_headers": {
+        "accept": "*/*",
+        "referer": "https://www.wokingham.gov.uk/rubbish-and-recycling/waste-collection"
+      },
+      "response_headers": {
+        "content-type": "application/octet-stream",
+        "x-cache": "Miss from cloudfront"
+      }
     },
     {
-      "url": "https://www.wokingham.gov.uk/themes/custom/wok/favicons/site.webmanifest",
+      "timestamp": "2025-07-21T10:22:39.620Z",
+      "duration_ms": 94.89099999999999,
+      "endpoint": "/v1/loader/{id}",
+      "host": "webassist.onconnect.app",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/octet-stream",
-      "size": 498,
-      "timestamp": "2025-07-21T10:22:39.663Z"
+      "path_params": [
+        "3aa261b2-db8a-4bf7-915a-1de3ee57a1ee"
+      ],
+      "request_headers": {
+        "accept": "*/*",
+        "origin": "https://www.wokingham.gov.uk",
+        "referer": "https://www.wokingham.gov.uk/rubbish-and-recycling/waste-collection"
+      },
+      "response_headers": {
+        "content-type": "application/json; charset=utf-8",
+        "x-ms-middleware-request-id": "00000000-0000-0000-0000-000000000000"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 52,
+        "content_ref": "3bd0e87f7735a292acfc53909bc55fd480fb94c1.json"
+      }
     },
     {
-      "url": "https://webassistant.onconnect.app/assets/appConfig.json",
+      "timestamp": "2025-07-21T10:22:40.048Z",
+      "duration_ms": 49.775999999999996,
+      "endpoint": "/assets/appConfig.json",
+      "host": "webassistant.onconnect.app",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json",
-      "size": 73,
-      "timestamp": "2025-07-21T10:22:40.048Z"
+      "request_headers": {
+        "accept": "application/json, text/plain, */*",
+        "origin": "https://www.wokingham.gov.uk",
+        "referer": "https://www.wokingham.gov.uk/rubbish-and-recycling/waste-collection"
+      },
+      "response_headers": {
+        "content-type": "application/json",
+        "x-azure-ref": "20250721T102240Z-16896f46f99br9bthC1LTSqgyc00000008wg00000000e0xf",
+        "x-cache": "CONFIG_NOCACHE",
+        "x-ms-request-id": "74bcd7a7-601e-0015-3129-fab334000000",
+        "x-ms-version": "2018-03-28"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 73,
+        "content_ref": "e8551bc0489c1ba948f1631c51732814c12af1e5.json"
+      }
     },
     {
-      "url": "https://webassist.onconnect.app/v1/workspaces/3aa261b2-db8a-4bf7-915a-1de3ee57a1ee/init",
+      "timestamp": "2025-07-21T10:22:40.118Z",
+      "duration_ms": 180.13299999999998,
+      "endpoint": "/v1/workspaces/{id}/init",
+      "host": "webassist.onconnect.app",
       "method": "POST",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json; charset=utf-8",
-      "size": 1452,
-      "timestamp": "2025-07-21T10:22:40.118Z"
+      "path_params": [
+        "3aa261b2-db8a-4bf7-915a-1de3ee57a1ee"
+      ],
+      "request_headers": {
+        "accept": "application/json, text/plain, */*",
+        "content-type": "application/json",
+        "origin": "https://www.wokingham.gov.uk",
+        "referer": "https://www.wokingham.gov.uk/rubbish-and-recycling/waste-collection"
+      },
+      "response_headers": {
+        "content-type": "application/json; charset=utf-8",
+        "x-ms-middleware-request-id": "00000000-0000-0000-0000-000000000000"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 1452,
+        "compressed": true,
+        "content_ref": "d01d25048f9094c412e3df56bfa80440240a3314.json"
+      }
     },
     {
-      "url": "https://produkswebassistsignalr18.service.signalr.net/client/negotiate?hub=webassistant&negotiateVersion=1",
+      "timestamp": "2025-07-21T10:22:40.245Z",
+      "duration_ms": 75.22,
+      "endpoint": "/client/negotiate",
+      "host": "produkswebassistsignalr18.service.signalr.net",
       "method": "POST",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json",
-      "size": 334,
-      "timestamp": "2025-07-21T10:22:40.245Z"
+      "query_params": {
+        "hub": [
+          "webassistant"
+        ],
+        "negotiateVersion": [
+          "1"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ii01NDc4ODMzMTUifQ.eyJuYW1laWQiOiIxMGZkYjIyZS02ZTMxLTQ3MDQtYjE3Yy0yMWFhODEwMDQ5NzkiLCJ3b3Jrc3BhY2UiOiIzYWEyNjFiMi1kYjhhLTRiZjctOTE1YS0xZGUzZWU1N2ExZWUiLCJuYmYiOjE3NTMwOTMzNjAsImV4cCI6MTc1MzA5Njk2MCwiaWF0IjoxNzUzMDkzMzYwLCJhdWQiOiJodHRwczovL3Byb2R1a3N3ZWJhc3Npc3RzaWduYWxyMTguc2VydmljZS5zaWduYWxyLm5ldC9jbGllbnQvP2h1Yj13ZWJhc3Npc3RhbnQifQ.9vymtqd19LPaoxwWscWSt-tH6FZ8h7c1GzNn2C7F_9w",
+        "content-type": "text/plain;charset=UTF-8",
+        "origin": "https://www.wokingham.gov.uk",
+        "referer": "https://www.wokingham.gov.uk/rubbish-and-recycling/waste-collection",
+        "x-requested-with": "XMLHttpRequest",
+        "x-signalr-user-agent": "Microsoft SignalR/6.0 (6.0.22; Unknown OS; Browser; Unknown Runtime Version)"
+      },
+      "response_headers": {
+        "content-type": "application/json"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 334,
+        "content_ref": "0ea13220e4f423c5f399592d64961227f0679a41.json"
+      }
     },
     {
-      "url": "https://webassist.onconnect.app/v1/postback",
+      "timestamp": "2025-07-21T10:22:40.245Z",
+      "duration_ms": 177.586,
+      "endpoint": "/v1/postback",
+      "host": "webassist.onconnect.app",
       "method": "POST",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "x-unknown",
-      "size": 0,
-      "timestamp": "2025-07-21T10:22:40.245Z"
+      "request_headers": {
+        "accept": "application/json, text/plain, */*",
+        "authorization": "Basic MTBmZGIyMmUtNmUzMS00NzA0LWIxN2MtMjFhYTgxMDA0OTc5OlBRT3VyUEx6alU3YWFUU2lrUXBWMmhUcjhyTUxwWXdaZ2kxOTJxc1laSm8=",
+        "content-type": "application/json",
+        "origin": "https://www.wokingham.gov.uk",
+        "referer": "https://www.wokingham.gov.uk/rubbish-and-recycling/waste-collection",
+        "x-connect-auth": "Basic MTBmZGIyMmUtNmUzMS00NzA0LWIxN2MtMjFhYTgxMDA0OTc5OlBRT3VyUEx6alU3YWFUU2lrUXBWMmhUcjhyTUxwWXdaZ2kxOTJxc1laSm8="
+      },
+      "response_headers": {
+        "x-ms-middleware-request-id": "00000000-0000-0000-0000-000000000000"
+      }
     },
     {
-      "url": "https://www.wokingham.gov.uk/rubbish-and-recycling/waste-collection/find-your-bin-collection-day",
+      "timestamp": "2025-07-21T10:22:42.031Z",
+      "duration_ms": 62.848000000000006,
+      "endpoint": "/{id}/waste-collection/{id}",
+      "host": "www.wokingham.gov.uk",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "text/html; charset=UTF-8",
-      "size": 53818,
-      "timestamp": "2025-07-21T10:22:42.031Z"
+      "path_params": [
+        "rubbish-and-recycling",
+        "find-your-bin-collection-day"
+      ],
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+        "referer": "https://www.wokingham.gov.uk/rubbish-and-recycling/waste-collection"
+      },
+      "response_headers": {
+        "cache-control": "max-age=21600, public",
+        "content-type": "text/html; charset=UTF-8",
+        "x-cache": "Miss from cloudfront",
+        "x-content-type-options": "nosniff",
+        "x-drupal-cache": "HIT",
+        "x-drupal-dynamic-cache": "MISS",
+        "x-frame-options": "SAMEORIGIN",
+        "x-generator": "Drupal 10 (https://www.drupal.org)",
+        "x-xss-protection": "1; mode=block"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 53818,
+        "compressed": true,
+        "content_ref": "5cdc7fd483149d96bfc1b7e084322dc85134872c.html"
+      }
     },
     {
-      "url": "https://webassist.onconnect.app/v1/loader/3aa261b2-db8a-4bf7-915a-1de3ee57a1ee",
+      "timestamp": "2025-07-21T10:22:42.140Z",
+      "duration_ms": 22.744,
+      "endpoint": "/v1/loader/{id}",
+      "host": "webassist.onconnect.app",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json; charset=utf-8",
-      "size": 52,
-      "timestamp": "2025-07-21T10:22:42.140Z"
+      "path_params": [
+        "3aa261b2-db8a-4bf7-915a-1de3ee57a1ee"
+      ],
+      "request_headers": {
+        "accept": "*/*",
+        "origin": "https://www.wokingham.gov.uk",
+        "referer": "https://www.wokingham.gov.uk/rubbish-and-recycling/waste-collection/find-your-bin-collection-day"
+      },
+      "response_headers": {
+        "content-type": "application/json; charset=utf-8",
+        "x-ms-middleware-request-id": "00000000-0000-0000-0000-000000000000"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 52,
+        "content_ref": "3bd0e87f7735a292acfc53909bc55fd480fb94c1.json"
+      }
     },
     {
-      "url": "https://hitcounter.govmetric.com/Home/Index/2439?override=https%3A%2F%2Fwww.wokingham.gov.uk%2Frubbish-and-recycling%2Fwaste-collection%2Ffind-your-bin-collection-day",
+      "timestamp": "2025-07-21T10:22:42.182Z",
+      "duration_ms": 16.655,
+      "endpoint": "/Home/Index/{id}",
+      "host": "hitcounter.govmetric.com",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "x-unknown",
-      "size": 0,
-      "timestamp": "2025-07-21T10:22:42.182Z"
+      "path_params": [
+        "2439"
+      ],
+      "query_params": {
+        "override": [
+          "https://www.wokingham.gov.uk/rubbish-and-recycling/waste-collection/find-your-bin-collection-day"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "origin": "https://www.wokingham.gov.uk",
+        "referer": "https://www.wokingham.gov.uk/rubbish-and-recycling/waste-collection/find-your-bin-collection-day"
+      },
+      "response_headers": {
+        "cache-control": "no-store,no-cache",
+        "set-cookie": "[cookies present]",
+        "x-powered-by": "ASP.NET"
+      }
     },
     {
-      "url": "https://webassistant.onconnect.app/assets/appConfig.json",
+      "timestamp": "2025-07-21T10:22:42.315Z",
+      "duration_ms": 0.583,
+      "endpoint": "/themes/custom/wok/favicons/site.webmanifest",
+      "host": "www.wokingham.gov.uk",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json",
-      "size": 73,
-      "timestamp": "2025-07-21T10:22:42.265Z"
+      "request_headers": {
+        "referer": "https://www.wokingham.gov.uk/rubbish-and-recycling/waste-collection/find-your-bin-collection-day"
+      },
+      "response_headers": {
+        "x-cache": "Miss from cloudfront",
+        "content-type": "application/octet-stream"
+      }
     },
     {
-      "url": "https://www.wokingham.gov.uk/themes/custom/wok/favicons/site.webmanifest",
+      "timestamp": "2025-07-21T10:22:42.265Z",
+      "duration_ms": 1.354,
+      "endpoint": "/assets/appConfig.json",
+      "host": "webassistant.onconnect.app",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/octet-stream",
-      "size": 498,
-      "timestamp": "2025-07-21T10:22:42.315Z"
+      "request_headers": {
+        "referer": "https://www.wokingham.gov.uk/rubbish-and-recycling/waste-collection/find-your-bin-collection-day",
+        "accept": "application/json, text/plain, */*"
+      },
+      "response_headers": {
+        "x-ms-version": "2018-03-28",
+        "x-ms-request-id": "74bcd7a7-601e-0015-3129-fab334000000",
+        "x-cache": "CONFIG_NOCACHE",
+        "content-type": "application/json",
+        "x-azure-ref": "20250721T102240Z-16896f46f99br9bthC1LTSqgyc00000008wg00000000e0xf"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 73,
+        "compressed": true,
+        "content_ref": "e8551bc0489c1ba948f1631c51732814c12af1e5.json"
+      }
     },
     {
-      "url": "https://webassist.onconnect.app/v1/workspaces/3aa261b2-db8a-4bf7-915a-1de3ee57a1ee/init",
+      "timestamp": "2025-07-21T10:22:42.353Z",
+      "duration_ms": 149.243,
+      "endpoint": "/v1/workspaces/{id}/init",
+      "host": "webassist.onconnect.app",
       "method": "POST",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json; charset=utf-8",
-      "size": 1409,
-      "timestamp": "2025-07-21T10:22:42.353Z"
+      "path_params": [
+        "3aa261b2-db8a-4bf7-915a-1de3ee57a1ee"
+      ],
+      "request_headers": {
+        "accept": "application/json, text/plain, */*",
+        "authorization": "Basic MTBmZGIyMmUtNmUzMS00NzA0LWIxN2MtMjFhYTgxMDA0OTc5OlBRT3VyUEx6alU3YWFUU2lrUXBWMmhUcjhyTUxwWXdaZ2kxOTJxc1laSm8=",
+        "content-type": "application/json",
+        "origin": "https://www.wokingham.gov.uk",
+        "referer": "https://www.wokingham.gov.uk/rubbish-and-recycling/waste-collection/find-your-bin-collection-day",
+        "x-connect-auth": "Basic MTBmZGIyMmUtNmUzMS00NzA0LWIxN2MtMjFhYTgxMDA0OTc5OlBRT3VyUEx6alU3YWFUU2lrUXBWMmhUcjhyTUxwWXdaZ2kxOTJxc1laSm8="
+      },
+      "response_headers": {
+        "content-type": "application/json; charset=utf-8",
+        "x-ms-middleware-request-id": "00000000-0000-0000-0000-000000000000"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 1409,
+        "compressed": true,
+        "content_ref": "b60fc6d84f133186c4048b33404ad3f74132746d.json"
+      }
     },
     {
-      "url": "https://produkswebassistsignalr18.service.signalr.net/client/negotiate?hub=webassistant&negotiateVersion=1",
+      "timestamp": "2025-07-21T10:22:42.484Z",
+      "duration_ms": 16.703,
+      "endpoint": "/client/negotiate",
+      "host": "produkswebassistsignalr18.service.signalr.net",
       "method": "POST",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json",
-      "size": 334,
-      "timestamp": "2025-07-21T10:22:42.484Z"
+      "query_params": {
+        "hub": [
+          "webassistant"
+        ],
+        "negotiateVersion": [
+          "1"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IjE3Nzg5NzExOSJ9.eyJuYW1laWQiOiIxMGZkYjIyZS02ZTMxLTQ3MDQtYjE3Yy0yMWFhODEwMDQ5NzkiLCJ3b3Jrc3BhY2UiOiIzYWEyNjFiMi1kYjhhLTRiZjctOTE1YS0xZGUzZWU1N2ExZWUiLCJuYmYiOjE3NTMwOTMzNjIsImV4cCI6MTc1MzA5Njk2MiwiaWF0IjoxNzUzMDkzMzYyLCJhdWQiOiJodHRwczovL3Byb2R1a3N3ZWJhc3Npc3RzaWduYWxyMTguc2VydmljZS5zaWduYWxyLm5ldC9jbGllbnQvP2h1Yj13ZWJhc3Npc3RhbnQifQ.Oc7QACMKUdSB4oerWBcXvQQkEhgOGtm3nz5fjEdUNDk",
+        "content-type": "text/plain;charset=UTF-8",
+        "origin": "https://www.wokingham.gov.uk",
+        "referer": "https://www.wokingham.gov.uk/rubbish-and-recycling/waste-collection/find-your-bin-collection-day",
+        "x-requested-with": "XMLHttpRequest",
+        "x-signalr-user-agent": "Microsoft SignalR/6.0 (6.0.22; Unknown OS; Browser; Unknown Runtime Version)"
+      },
+      "response_headers": {
+        "content-type": "application/json"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 334,
+        "content_ref": "8a129d0f6e3b84dc8b0e66a8f9103bf577bbc45e.json"
+      }
     },
     {
-      "url": "https://webassist.onconnect.app/v1/workspaces/3aa261b2-db8a-4bf7-915a-1de3ee57a1ee/appusers/c3801e38-8207-4ee7-aea2-4bc71222c399/messages?continuationToken=",
+      "timestamp": "2025-07-21T10:22:42.484Z",
+      "duration_ms": 81.203,
+      "endpoint": "/v1/workspaces/{id}/appusers/{id}/messages",
+      "host": "webassist.onconnect.app",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json; charset=utf-8",
-      "size": 40,
-      "timestamp": "2025-07-21T10:22:42.484Z"
+      "path_params": [
+        "3aa261b2-db8a-4bf7-915a-1de3ee57a1ee",
+        "c3801e38-8207-4ee7-aea2-4bc71222c399"
+      ],
+      "request_headers": {
+        "accept": "application/json, text/plain, */*",
+        "authorization": "Basic MTBmZGIyMmUtNmUzMS00NzA0LWIxN2MtMjFhYTgxMDA0OTc5OlBRT3VyUEx6alU3YWFUU2lrUXBWMmhUcjhyTUxwWXdaZ2kxOTJxc1laSm8=",
+        "content-type": "application/json",
+        "origin": "https://www.wokingham.gov.uk",
+        "referer": "https://www.wokingham.gov.uk/rubbish-and-recycling/waste-collection/find-your-bin-collection-day",
+        "x-connect-auth": "Basic MTBmZGIyMmUtNmUzMS00NzA0LWIxN2MtMjFhYTgxMDA0OTc5OlBRT3VyUEx6alU3YWFUU2lrUXBWMmhUcjhyTUxwWXdaZ2kxOTJxc1laSm8="
+      },
+      "response_headers": {
+        "content-type": "application/json; charset=utf-8",
+        "x-ms-middleware-request-id": "00000000-0000-0000-0000-000000000000"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 40,
+        "content_ref": "1037334915cdbbe4abf707856b72a38f00349a04.json"
+      }
     },
     {
-      "url": "https://webassist.onconnect.app/v1/postback",
+      "timestamp": "2025-07-21T10:22:42.484Z",
+      "duration_ms": 171.013,
+      "endpoint": "/v1/postback",
+      "host": "webassist.onconnect.app",
       "method": "POST",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "x-unknown",
-      "size": 0,
-      "timestamp": "2025-07-21T10:22:42.484Z"
+      "request_headers": {
+        "accept": "application/json, text/plain, */*",
+        "authorization": "Basic MTBmZGIyMmUtNmUzMS00NzA0LWIxN2MtMjFhYTgxMDA0OTc5OlBRT3VyUEx6alU3YWFUU2lrUXBWMmhUcjhyTUxwWXdaZ2kxOTJxc1laSm8=",
+        "content-type": "application/json",
+        "origin": "https://www.wokingham.gov.uk",
+        "referer": "https://www.wokingham.gov.uk/rubbish-and-recycling/waste-collection/find-your-bin-collection-day",
+        "x-connect-auth": "Basic MTBmZGIyMmUtNmUzMS00NzA0LWIxN2MtMjFhYTgxMDA0OTc5OlBRT3VyUEx6alU3YWFUU2lrUXBWMmhUcjhyTUxwWXdaZ2kxOTJxc1laSm8="
+      },
+      "response_headers": {
+        "x-ms-middleware-request-id": "00000000-0000-0000-0000-000000000000"
+      }
     },
     {
-      "url": "https://www.wokingham.gov.uk/rubbish-and-recycling/waste-collection/find-your-bin-collection-day",
-      "method": "POST",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "text/html; charset=UTF-8",
-      "size": 56101,
       "timestamp": "2025-07-21T10:22:47.044Z",
-      "form_data": {
-        "postcode_search_csv": "RG10 0AE",
-        "op": "Find Address",
-        "form_build_id": "form-27jaum6ZmBZigoypT9XdsXB2yt7o2kBScyQpsBSKDAw",
-        "form_id": "waste_recycling_information"
+      "duration_ms": 1001.039,
+      "endpoint": "/{id}/waste-collection/{id}",
+      "host": "www.wokingham.gov.uk",
+      "method": "POST",
+      "status": 200,
+      "path_params": [
+        "rubbish-and-recycling",
+        "find-your-bin-collection-day"
+      ],
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+        "content-type": "application/x-www-form-urlencoded",
+        "origin": "https://www.wokingham.gov.uk",
+        "referer": "https://www.wokingham.gov.uk/rubbish-and-recycling/waste-collection/find-your-bin-collection-day"
+      },
+      "response_headers": {
+        "cache-control": "must-revalidate, no-cache, private",
+        "content-type": "text/html; charset=UTF-8",
+        "x-cache": "Miss from cloudfront",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "SAMEORIGIN",
+        "x-generator": "Drupal 10 (https://www.drupal.org)",
+        "x-xss-protection": "1; mode=block"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 56101,
+        "compressed": true,
+        "content_ref": "005d735d8ad95e6c67bc151b3769063cfe90a40b.html"
       }
     },
     {
-      "url": "https://webassist.onconnect.app/v1/loader/3aa261b2-db8a-4bf7-915a-1de3ee57a1ee",
+      "timestamp": "2025-07-21T10:22:48.605Z",
+      "duration_ms": 24.787,
+      "endpoint": "/v1/loader/{id}",
+      "host": "webassist.onconnect.app",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json; charset=utf-8",
-      "size": 52,
-      "timestamp": "2025-07-21T10:22:48.605Z"
+      "path_params": [
+        "3aa261b2-db8a-4bf7-915a-1de3ee57a1ee"
+      ],
+      "request_headers": {
+        "accept": "*/*",
+        "origin": "https://www.wokingham.gov.uk",
+        "referer": "https://www.wokingham.gov.uk/rubbish-and-recycling/waste-collection/find-your-bin-collection-day"
+      },
+      "response_headers": {
+        "content-type": "application/json; charset=utf-8",
+        "x-ms-middleware-request-id": "00000000-0000-0000-0000-000000000000"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 52,
+        "content_ref": "3bd0e87f7735a292acfc53909bc55fd480fb94c1.json"
+      }
     },
     {
-      "url": "https://www.wokingham.gov.uk/images/icons/chevron-down.svg",
-      "method": "GET",
-      "status": 404,
-      "redirect_url": null,
-      "mime_type": "text/html; charset=utf-8",
-      "size": 548,
-      "timestamp": "2025-07-21T10:22:48.607Z"
-    },
-    {
-      "url": "https://hitcounter.govmetric.com/Home/Index/2439?override=https%3A%2F%2Fwww.wokingham.gov.uk%2Frubbish-and-recycling%2Fwaste-collection%2Ffind-your-bin-collection-day",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "x-unknown",
-      "size": 0,
-      "timestamp": "2025-07-21T10:22:48.610Z"
-    },
-    {
-      "url": "https://webassistant.onconnect.app/assets/appConfig.json",
+      "timestamp": "2025-07-21T10:22:48.610Z",
+      "duration_ms": 18.325999999999997,
+      "endpoint": "/Home/Index/{id}",
+      "host": "hitcounter.govmetric.com",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json",
-      "size": 73,
-      "timestamp": "2025-07-21T10:22:48.688Z"
+      "path_params": [
+        "2439"
+      ],
+      "query_params": {
+        "override": [
+          "https://www.wokingham.gov.uk/rubbish-and-recycling/waste-collection/find-your-bin-collection-day"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "origin": "https://www.wokingham.gov.uk",
+        "referer": "https://www.wokingham.gov.uk/rubbish-and-recycling/waste-collection/find-your-bin-collection-day"
+      },
+      "response_headers": {
+        "cache-control": "no-store,no-cache",
+        "set-cookie": "[cookies present]",
+        "x-powered-by": "ASP.NET"
+      }
     },
     {
-      "url": "https://www.wokingham.gov.uk/themes/custom/wok/favicons/site.webmanifest",
+      "timestamp": "2025-07-21T10:22:48.734Z",
+      "duration_ms": 1.505,
+      "endpoint": "/themes/custom/wok/favicons/site.webmanifest",
+      "host": "www.wokingham.gov.uk",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/octet-stream",
-      "size": 498,
-      "timestamp": "2025-07-21T10:22:48.734Z"
+      "request_headers": {
+        "referer": "https://www.wokingham.gov.uk/rubbish-and-recycling/waste-collection/find-your-bin-collection-day"
+      },
+      "response_headers": {
+        "x-cache": "Miss from cloudfront",
+        "content-type": "application/octet-stream"
+      }
     },
     {
-      "url": "https://webassist.onconnect.app/v1/workspaces/3aa261b2-db8a-4bf7-915a-1de3ee57a1ee/init",
+      "timestamp": "2025-07-21T10:22:48.688Z",
+      "duration_ms": 0.799,
+      "endpoint": "/assets/appConfig.json",
+      "host": "webassistant.onconnect.app",
+      "method": "GET",
+      "status": 200,
+      "request_headers": {
+        "referer": "https://www.wokingham.gov.uk/rubbish-and-recycling/waste-collection/find-your-bin-collection-day",
+        "accept": "application/json, text/plain, */*"
+      },
+      "response_headers": {
+        "x-ms-version": "2018-03-28",
+        "x-ms-request-id": "74bcd7a7-601e-0015-3129-fab334000000",
+        "x-cache": "CONFIG_NOCACHE",
+        "content-type": "application/json",
+        "x-azure-ref": "20250721T102240Z-16896f46f99br9bthC1LTSqgyc00000008wg00000000e0xf"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 73,
+        "compressed": true,
+        "content_ref": "e8551bc0489c1ba948f1631c51732814c12af1e5.json"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T10:22:48.777Z",
+      "duration_ms": 126.334,
+      "endpoint": "/v1/workspaces/{id}/init",
+      "host": "webassist.onconnect.app",
       "method": "POST",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json; charset=utf-8",
-      "size": 1411,
-      "timestamp": "2025-07-21T10:22:48.777Z"
+      "path_params": [
+        "3aa261b2-db8a-4bf7-915a-1de3ee57a1ee"
+      ],
+      "request_headers": {
+        "accept": "application/json, text/plain, */*",
+        "authorization": "Basic MTBmZGIyMmUtNmUzMS00NzA0LWIxN2MtMjFhYTgxMDA0OTc5OlBRT3VyUEx6alU3YWFUU2lrUXBWMmhUcjhyTUxwWXdaZ2kxOTJxc1laSm8=",
+        "content-type": "application/json",
+        "origin": "https://www.wokingham.gov.uk",
+        "referer": "https://www.wokingham.gov.uk/rubbish-and-recycling/waste-collection/find-your-bin-collection-day",
+        "x-connect-auth": "Basic MTBmZGIyMmUtNmUzMS00NzA0LWIxN2MtMjFhYTgxMDA0OTc5OlBRT3VyUEx6alU3YWFUU2lrUXBWMmhUcjhyTUxwWXdaZ2kxOTJxc1laSm8="
+      },
+      "response_headers": {
+        "content-type": "application/json; charset=utf-8",
+        "x-ms-middleware-request-id": "00000000-0000-0000-0000-000000000000"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 1411,
+        "compressed": true,
+        "content_ref": "22c1a5aa0171aaa8d826ea252aef32bec8cbbb6f.json"
+      }
     },
     {
-      "url": "https://produkswebassistsignalr18.service.signalr.net/client/negotiate?hub=webassistant&negotiateVersion=1",
+      "timestamp": "2025-07-21T10:22:48.884Z",
+      "duration_ms": 19.687,
+      "endpoint": "/client/negotiate",
+      "host": "produkswebassistsignalr18.service.signalr.net",
       "method": "POST",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json",
-      "size": 334,
-      "timestamp": "2025-07-21T10:22:48.884Z"
+      "query_params": {
+        "hub": [
+          "webassistant"
+        ],
+        "negotiateVersion": [
+          "1"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ii01NDc4ODMzMTUifQ.eyJuYW1laWQiOiIxMGZkYjIyZS02ZTMxLTQ3MDQtYjE3Yy0yMWFhODEwMDQ5NzkiLCJ3b3Jrc3BhY2UiOiIzYWEyNjFiMi1kYjhhLTRiZjctOTE1YS0xZGUzZWU1N2ExZWUiLCJuYmYiOjE3NTMwOTMzNjgsImV4cCI6MTc1MzA5Njk2OCwiaWF0IjoxNzUzMDkzMzY4LCJhdWQiOiJodHRwczovL3Byb2R1a3N3ZWJhc3Npc3RzaWduYWxyMTguc2VydmljZS5zaWduYWxyLm5ldC9jbGllbnQvP2h1Yj13ZWJhc3Npc3RhbnQifQ.vtLrhxEshJUy4B31m_GteqKGddD9w94OTu8e9p7nWjw",
+        "content-type": "text/plain;charset=UTF-8",
+        "origin": "https://www.wokingham.gov.uk",
+        "referer": "https://www.wokingham.gov.uk/rubbish-and-recycling/waste-collection/find-your-bin-collection-day",
+        "x-requested-with": "XMLHttpRequest",
+        "x-signalr-user-agent": "Microsoft SignalR/6.0 (6.0.22; Unknown OS; Browser; Unknown Runtime Version)"
+      },
+      "response_headers": {
+        "content-type": "application/json"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 334,
+        "content_ref": "e01c31727731725a7c68f86ab601162364d110d5.json"
+      }
     },
     {
-      "url": "https://webassist.onconnect.app/v1/workspaces/3aa261b2-db8a-4bf7-915a-1de3ee57a1ee/appusers/c3801e38-8207-4ee7-aea2-4bc71222c399/messages?continuationToken=",
+      "timestamp": "2025-07-21T10:22:48.884Z",
+      "duration_ms": 92.68,
+      "endpoint": "/v1/workspaces/{id}/appusers/{id}/messages",
+      "host": "webassist.onconnect.app",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json; charset=utf-8",
-      "size": 40,
-      "timestamp": "2025-07-21T10:22:48.884Z"
+      "path_params": [
+        "3aa261b2-db8a-4bf7-915a-1de3ee57a1ee",
+        "c3801e38-8207-4ee7-aea2-4bc71222c399"
+      ],
+      "request_headers": {
+        "accept": "application/json, text/plain, */*",
+        "authorization": "Basic MTBmZGIyMmUtNmUzMS00NzA0LWIxN2MtMjFhYTgxMDA0OTc5OlBRT3VyUEx6alU3YWFUU2lrUXBWMmhUcjhyTUxwWXdaZ2kxOTJxc1laSm8=",
+        "content-type": "application/json",
+        "origin": "https://www.wokingham.gov.uk",
+        "referer": "https://www.wokingham.gov.uk/rubbish-and-recycling/waste-collection/find-your-bin-collection-day",
+        "x-connect-auth": "Basic MTBmZGIyMmUtNmUzMS00NzA0LWIxN2MtMjFhYTgxMDA0OTc5OlBRT3VyUEx6alU3YWFUU2lrUXBWMmhUcjhyTUxwWXdaZ2kxOTJxc1laSm8="
+      },
+      "response_headers": {
+        "content-type": "application/json; charset=utf-8",
+        "x-ms-middleware-request-id": "00000000-0000-0000-0000-000000000000"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 40,
+        "content_ref": "1037334915cdbbe4abf707856b72a38f00349a04.json"
+      }
     },
     {
-      "url": "https://webassist.onconnect.app/v1/postback",
+      "timestamp": "2025-07-21T10:22:48.884Z",
+      "duration_ms": 196.627,
+      "endpoint": "/v1/postback",
+      "host": "webassist.onconnect.app",
       "method": "POST",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "x-unknown",
-      "size": 0,
-      "timestamp": "2025-07-21T10:22:48.884Z"
+      "request_headers": {
+        "accept": "application/json, text/plain, */*",
+        "authorization": "Basic MTBmZGIyMmUtNmUzMS00NzA0LWIxN2MtMjFhYTgxMDA0OTc5OlBRT3VyUEx6alU3YWFUU2lrUXBWMmhUcjhyTUxwWXdaZ2kxOTJxc1laSm8=",
+        "content-type": "application/json",
+        "origin": "https://www.wokingham.gov.uk",
+        "referer": "https://www.wokingham.gov.uk/rubbish-and-recycling/waste-collection/find-your-bin-collection-day",
+        "x-connect-auth": "Basic MTBmZGIyMmUtNmUzMS00NzA0LWIxN2MtMjFhYTgxMDA0OTc5OlBRT3VyUEx6alU3YWFUU2lrUXBWMmhUcjhyTUxwWXdaZ2kxOTJxc1laSm8="
+      },
+      "response_headers": {
+        "x-ms-middleware-request-id": "00000000-0000-0000-0000-000000000000"
+      }
     },
     {
-      "url": "https://www.wokingham.gov.uk/rubbish-and-recycling/waste-collection/find-your-bin-collection-day",
-      "method": "POST",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "text/html; charset=UTF-8",
-      "size": 59972,
       "timestamp": "2025-07-21T10:22:53.750Z",
-      "form_data": {
-        "postcode_search_csv": "RG10 0AE",
-        "address_options_csv": "76806",
-        "op": "Show collection dates",
-        "form_build_id": "form-xVVvM10hHWPLaR9_C6x-vkemYG_ehHiQGnQ0_W4nLIk",
-        "form_id": "waste_recycling_information"
+      "duration_ms": 831.25,
+      "endpoint": "/{id}/waste-collection/{id}",
+      "host": "www.wokingham.gov.uk",
+      "method": "POST",
+      "status": 200,
+      "path_params": [
+        "rubbish-and-recycling",
+        "find-your-bin-collection-day"
+      ],
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+        "content-type": "application/x-www-form-urlencoded",
+        "origin": "https://www.wokingham.gov.uk",
+        "referer": "https://www.wokingham.gov.uk/rubbish-and-recycling/waste-collection/find-your-bin-collection-day"
+      },
+      "response_headers": {
+        "cache-control": "must-revalidate, no-cache, private",
+        "content-type": "text/html; charset=UTF-8",
+        "x-cache": "Miss from cloudfront",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "SAMEORIGIN",
+        "x-generator": "Drupal 10 (https://www.drupal.org)",
+        "x-xss-protection": "1; mode=block"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 59972,
+        "compressed": true,
+        "content_ref": "b06679fb49d3694f5dea5ebd50d14c30abf0bcdc.html"
       }
     },
     {
-      "url": "https://webassist.onconnect.app/v1/loader/3aa261b2-db8a-4bf7-915a-1de3ee57a1ee",
+      "timestamp": "2025-07-21T10:22:54.642Z",
+      "duration_ms": 40.11,
+      "endpoint": "/v1/loader/{id}",
+      "host": "webassist.onconnect.app",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json; charset=utf-8",
-      "size": 52,
-      "timestamp": "2025-07-21T10:22:54.642Z"
+      "path_params": [
+        "3aa261b2-db8a-4bf7-915a-1de3ee57a1ee"
+      ],
+      "request_headers": {
+        "accept": "*/*",
+        "origin": "https://www.wokingham.gov.uk",
+        "referer": "https://www.wokingham.gov.uk/rubbish-and-recycling/waste-collection/find-your-bin-collection-day"
+      },
+      "response_headers": {
+        "content-type": "application/json; charset=utf-8",
+        "x-ms-middleware-request-id": "00000000-0000-0000-0000-000000000000"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 52,
+        "content_ref": "3bd0e87f7735a292acfc53909bc55fd480fb94c1.json"
+      }
     },
     {
-      "url": "https://hitcounter.govmetric.com/Home/Index/2439?override=https%3A%2F%2Fwww.wokingham.gov.uk%2Frubbish-and-recycling%2Fwaste-collection%2Ffind-your-bin-collection-day",
+      "timestamp": "2025-07-21T10:22:54.666Z",
+      "duration_ms": 18.423,
+      "endpoint": "/Home/Index/{id}",
+      "host": "hitcounter.govmetric.com",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "x-unknown",
-      "size": 0,
-      "timestamp": "2025-07-21T10:22:54.666Z"
+      "path_params": [
+        "2439"
+      ],
+      "query_params": {
+        "override": [
+          "https://www.wokingham.gov.uk/rubbish-and-recycling/waste-collection/find-your-bin-collection-day"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "origin": "https://www.wokingham.gov.uk",
+        "referer": "https://www.wokingham.gov.uk/rubbish-and-recycling/waste-collection/find-your-bin-collection-day"
+      },
+      "response_headers": {
+        "cache-control": "no-store,no-cache",
+        "set-cookie": "[cookies present]",
+        "x-powered-by": "ASP.NET"
+      }
     },
     {
-      "url": "https://webassistant.onconnect.app/assets/appConfig.json",
+      "timestamp": "2025-07-21T10:22:54.788Z",
+      "duration_ms": 0.541,
+      "endpoint": "/themes/custom/wok/favicons/site.webmanifest",
+      "host": "www.wokingham.gov.uk",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json",
-      "size": 73,
-      "timestamp": "2025-07-21T10:22:54.744Z"
+      "request_headers": {
+        "referer": "https://www.wokingham.gov.uk/rubbish-and-recycling/waste-collection/find-your-bin-collection-day"
+      },
+      "response_headers": {
+        "x-cache": "Miss from cloudfront",
+        "content-type": "application/octet-stream"
+      }
     },
     {
-      "url": "https://www.wokingham.gov.uk/themes/custom/wok/favicons/site.webmanifest",
+      "timestamp": "2025-07-21T10:22:54.744Z",
+      "duration_ms": 0.806,
+      "endpoint": "/assets/appConfig.json",
+      "host": "webassistant.onconnect.app",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/octet-stream",
-      "size": 498,
-      "timestamp": "2025-07-21T10:22:54.788Z"
+      "request_headers": {
+        "referer": "https://www.wokingham.gov.uk/rubbish-and-recycling/waste-collection/find-your-bin-collection-day",
+        "accept": "application/json, text/plain, */*"
+      },
+      "response_headers": {
+        "x-ms-version": "2018-03-28",
+        "x-ms-request-id": "74bcd7a7-601e-0015-3129-fab334000000",
+        "x-cache": "CONFIG_NOCACHE",
+        "content-type": "application/json",
+        "x-azure-ref": "20250721T102240Z-16896f46f99br9bthC1LTSqgyc00000008wg00000000e0xf"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 73,
+        "compressed": true,
+        "content_ref": "e8551bc0489c1ba948f1631c51732814c12af1e5.json"
+      }
     },
     {
-      "url": "https://webassist.onconnect.app/v1/workspaces/3aa261b2-db8a-4bf7-915a-1de3ee57a1ee/init",
+      "timestamp": "2025-07-21T10:22:54.790Z",
+      "duration_ms": 133.697,
+      "endpoint": "/v1/workspaces/{id}/init",
+      "host": "webassist.onconnect.app",
       "method": "POST",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json; charset=utf-8",
-      "size": 1412,
-      "timestamp": "2025-07-21T10:22:54.790Z"
+      "path_params": [
+        "3aa261b2-db8a-4bf7-915a-1de3ee57a1ee"
+      ],
+      "request_headers": {
+        "accept": "application/json, text/plain, */*",
+        "authorization": "Basic MTBmZGIyMmUtNmUzMS00NzA0LWIxN2MtMjFhYTgxMDA0OTc5OlBRT3VyUEx6alU3YWFUU2lrUXBWMmhUcjhyTUxwWXdaZ2kxOTJxc1laSm8=",
+        "content-type": "application/json",
+        "origin": "https://www.wokingham.gov.uk",
+        "referer": "https://www.wokingham.gov.uk/rubbish-and-recycling/waste-collection/find-your-bin-collection-day",
+        "x-connect-auth": "Basic MTBmZGIyMmUtNmUzMS00NzA0LWIxN2MtMjFhYTgxMDA0OTc5OlBRT3VyUEx6alU3YWFUU2lrUXBWMmhUcjhyTUxwWXdaZ2kxOTJxc1laSm8="
+      },
+      "response_headers": {
+        "content-type": "application/json; charset=utf-8",
+        "x-ms-middleware-request-id": "00000000-0000-0000-0000-000000000000"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 1412,
+        "compressed": true,
+        "content_ref": "f668e95261442ca44a43333fcb32d07542568bc2.json"
+      }
     },
     {
-      "url": "https://produkswebassistsignalr18.service.signalr.net/client/negotiate?hub=webassistant&negotiateVersion=1",
+      "timestamp": "2025-07-21T10:22:54.929Z",
+      "duration_ms": 20.96,
+      "endpoint": "/client/negotiate",
+      "host": "produkswebassistsignalr18.service.signalr.net",
       "method": "POST",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json",
-      "size": 334,
-      "timestamp": "2025-07-21T10:22:54.929Z"
+      "query_params": {
+        "hub": [
+          "webassistant"
+        ],
+        "negotiateVersion": [
+          "1"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ii0xODMwODc2ODc5In0.eyJuYW1laWQiOiIxMGZkYjIyZS02ZTMxLTQ3MDQtYjE3Yy0yMWFhODEwMDQ5NzkiLCJ3b3Jrc3BhY2UiOiIzYWEyNjFiMi1kYjhhLTRiZjctOTE1YS0xZGUzZWU1N2ExZWUiLCJuYmYiOjE3NTMwOTMzNzQsImV4cCI6MTc1MzA5Njk3NCwiaWF0IjoxNzUzMDkzMzc0LCJhdWQiOiJodHRwczovL3Byb2R1a3N3ZWJhc3Npc3RzaWduYWxyMTguc2VydmljZS5zaWduYWxyLm5ldC9jbGllbnQvP2h1Yj13ZWJhc3Npc3RhbnQifQ._HsvoyQeC8Y-0VcYChb32XSHDSKPRwq-XvMPFQnkK34",
+        "content-type": "text/plain;charset=UTF-8",
+        "origin": "https://www.wokingham.gov.uk",
+        "referer": "https://www.wokingham.gov.uk/rubbish-and-recycling/waste-collection/find-your-bin-collection-day",
+        "x-requested-with": "XMLHttpRequest",
+        "x-signalr-user-agent": "Microsoft SignalR/6.0 (6.0.22; Unknown OS; Browser; Unknown Runtime Version)"
+      },
+      "response_headers": {
+        "content-type": "application/json"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 334,
+        "content_ref": "cd158d6df681c40116a22bf1356e91da0459d24f.json"
+      }
     },
     {
-      "url": "https://webassist.onconnect.app/v1/workspaces/3aa261b2-db8a-4bf7-915a-1de3ee57a1ee/appusers/c3801e38-8207-4ee7-aea2-4bc71222c399/messages?continuationToken=",
+      "timestamp": "2025-07-21T10:22:54.930Z",
+      "duration_ms": 73.061,
+      "endpoint": "/v1/workspaces/{id}/appusers/{id}/messages",
+      "host": "webassist.onconnect.app",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json; charset=utf-8",
-      "size": 40,
-      "timestamp": "2025-07-21T10:22:54.930Z"
+      "path_params": [
+        "3aa261b2-db8a-4bf7-915a-1de3ee57a1ee",
+        "c3801e38-8207-4ee7-aea2-4bc71222c399"
+      ],
+      "request_headers": {
+        "accept": "application/json, text/plain, */*",
+        "authorization": "Basic MTBmZGIyMmUtNmUzMS00NzA0LWIxN2MtMjFhYTgxMDA0OTc5OlBRT3VyUEx6alU3YWFUU2lrUXBWMmhUcjhyTUxwWXdaZ2kxOTJxc1laSm8=",
+        "content-type": "application/json",
+        "origin": "https://www.wokingham.gov.uk",
+        "referer": "https://www.wokingham.gov.uk/rubbish-and-recycling/waste-collection/find-your-bin-collection-day",
+        "x-connect-auth": "Basic MTBmZGIyMmUtNmUzMS00NzA0LWIxN2MtMjFhYTgxMDA0OTc5OlBRT3VyUEx6alU3YWFUU2lrUXBWMmhUcjhyTUxwWXdaZ2kxOTJxc1laSm8="
+      },
+      "response_headers": {
+        "content-type": "application/json; charset=utf-8",
+        "x-ms-middleware-request-id": "00000000-0000-0000-0000-000000000000"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 40,
+        "content_ref": "1037334915cdbbe4abf707856b72a38f00349a04.json"
+      }
     },
     {
-      "url": "https://webassist.onconnect.app/v1/postback",
+      "timestamp": "2025-07-21T10:22:54.930Z",
+      "duration_ms": 190.09300000000002,
+      "endpoint": "/v1/postback",
+      "host": "webassist.onconnect.app",
       "method": "POST",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "x-unknown",
-      "size": 0,
-      "timestamp": "2025-07-21T10:22:54.930Z"
+      "request_headers": {
+        "accept": "application/json, text/plain, */*",
+        "authorization": "Basic MTBmZGIyMmUtNmUzMS00NzA0LWIxN2MtMjFhYTgxMDA0OTc5OlBRT3VyUEx6alU3YWFUU2lrUXBWMmhUcjhyTUxwWXdaZ2kxOTJxc1laSm8=",
+        "content-type": "application/json",
+        "origin": "https://www.wokingham.gov.uk",
+        "referer": "https://www.wokingham.gov.uk/rubbish-and-recycling/waste-collection/find-your-bin-collection-day",
+        "x-connect-auth": "Basic MTBmZGIyMmUtNmUzMS00NzA0LWIxN2MtMjFhYTgxMDA0OTc5OlBRT3VyUEx6alU3YWFUU2lrUXBWMmhUcjhyTUxwWXdaZ2kxOTJxc1laSm8="
+      },
+      "response_headers": {
+        "x-ms-middleware-request-id": "00000000-0000-0000-0000-000000000000"
+      }
     }
-  ]
+  ],
+  "analysis": {
+    "total_requests": 36,
+    "unique_endpoints": 11,
+    "methods_used": [
+      "GET",
+      "POST"
+    ],
+    "status_codes": {
+      "301": 1,
+      "200": 35
+    },
+    "endpoints_with_params": [
+      {
+        "endpoint": "/{id}/collections",
+        "method": "GET",
+        "query_params": [],
+        "path_params": true
+      },
+      {
+        "endpoint": "/{id}/waste-collection",
+        "method": "GET",
+        "query_params": [],
+        "path_params": true
+      },
+      {
+        "endpoint": "/Home/Index/{id}",
+        "method": "GET",
+        "query_params": [
+          "override"
+        ],
+        "path_params": true
+      },
+      {
+        "endpoint": "/v1/loader/{id}",
+        "method": "GET",
+        "query_params": [],
+        "path_params": true
+      },
+      {
+        "endpoint": "/v1/workspaces/{id}/init",
+        "method": "POST",
+        "query_params": [],
+        "path_params": true
+      },
+      {
+        "endpoint": "/client/negotiate",
+        "method": "POST",
+        "query_params": [
+          "hub",
+          "negotiateVersion"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/{id}/waste-collection/{id}",
+        "method": "GET",
+        "query_params": [],
+        "path_params": true
+      },
+      {
+        "endpoint": "/v1/workspaces/{id}/appusers/{id}/messages",
+        "method": "GET",
+        "query_params": [],
+        "path_params": true
+      },
+      {
+        "endpoint": "/{id}/waste-collection/{id}",
+        "method": "POST",
+        "query_params": [],
+        "path_params": true
+      }
+    ],
+    "redirects": [
+      {
+        "from": "/{id}/collections",
+        "to": "https://www.wokingham.gov.uk/rubbish-and-recycling/waste-collection",
+        "status": 301
+      }
+    ],
+    "api_calls": [
+      {
+        "endpoint": "/v1/loader/{id}",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": []
+      },
+      {
+        "endpoint": "/assets/appConfig.json",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": []
+      },
+      {
+        "endpoint": "/v1/workspaces/{id}/init",
+        "method": "POST",
+        "response_type": "application/json",
+        "params": []
+      },
+      {
+        "endpoint": "/client/negotiate",
+        "method": "POST",
+        "response_type": "application/json",
+        "params": [
+          "hub",
+          "negotiateVersion"
+        ]
+      },
+      {
+        "endpoint": "/v1/loader/{id}",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": []
+      },
+      {
+        "endpoint": "/assets/appConfig.json",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": []
+      },
+      {
+        "endpoint": "/v1/workspaces/{id}/init",
+        "method": "POST",
+        "response_type": "application/json",
+        "params": []
+      },
+      {
+        "endpoint": "/client/negotiate",
+        "method": "POST",
+        "response_type": "application/json",
+        "params": [
+          "hub",
+          "negotiateVersion"
+        ]
+      },
+      {
+        "endpoint": "/v1/workspaces/{id}/appusers/{id}/messages",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": []
+      },
+      {
+        "endpoint": "/v1/loader/{id}",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": []
+      },
+      {
+        "endpoint": "/assets/appConfig.json",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": []
+      },
+      {
+        "endpoint": "/v1/workspaces/{id}/init",
+        "method": "POST",
+        "response_type": "application/json",
+        "params": []
+      },
+      {
+        "endpoint": "/client/negotiate",
+        "method": "POST",
+        "response_type": "application/json",
+        "params": [
+          "hub",
+          "negotiateVersion"
+        ]
+      },
+      {
+        "endpoint": "/v1/workspaces/{id}/appusers/{id}/messages",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": []
+      },
+      {
+        "endpoint": "/v1/loader/{id}",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": []
+      },
+      {
+        "endpoint": "/assets/appConfig.json",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": []
+      },
+      {
+        "endpoint": "/v1/workspaces/{id}/init",
+        "method": "POST",
+        "response_type": "application/json",
+        "params": []
+      },
+      {
+        "endpoint": "/client/negotiate",
+        "method": "POST",
+        "response_type": "application/json",
+        "params": [
+          "hub",
+          "negotiateVersion"
+        ]
+      },
+      {
+        "endpoint": "/v1/workspaces/{id}/appusers/{id}/messages",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": []
+      }
+    ],
+    "form_submissions": []
+  },
+  "grouped_by_endpoint": {
+    "/{id}/collections": [
+      {
+        "timestamp": "2025-07-21T10:22:38.287Z",
+        "duration_ms": 116.496,
+        "endpoint": "/{id}/collections",
+        "host": "www.wokingham.gov.uk",
+        "method": "GET",
+        "status": 301,
+        "path_params": [
+          "rubbish-and-recycling"
+        ],
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7"
+        },
+        "response_headers": {
+          "cache-control": "max-age=21600, public",
+          "content-type": "text/html; charset=utf-8",
+          "location": "https://www.wokingham.gov.uk/rubbish-and-recycling/waste-collection",
+          "x-cache": "Miss from cloudfront",
+          "x-content-type-options": "nosniff",
+          "x-drupal-cache": "HIT",
+          "x-frame-options": "SAMEORIGIN",
+          "x-generator": "Drupal 10 (https://www.drupal.org)",
+          "x-redirect-id": "935",
+          "x-xss-protection": "1; mode=block"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": -1
+        },
+        "redirect_to": "https://www.wokingham.gov.uk/rubbish-and-recycling/waste-collection"
+      }
+    ],
+    "/{id}/waste-collection": [
+      {
+        "timestamp": "2025-07-21T10:22:38.394Z",
+        "duration_ms": 53.425999999999995,
+        "endpoint": "/{id}/waste-collection",
+        "host": "www.wokingham.gov.uk",
+        "method": "GET",
+        "status": 200,
+        "path_params": [
+          "rubbish-and-recycling"
+        ],
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7"
+        },
+        "response_headers": {
+          "cache-control": "max-age=21600, public",
+          "content-type": "text/html; charset=UTF-8",
+          "x-cache": "Miss from cloudfront",
+          "x-content-type-options": "nosniff",
+          "x-drupal-cache": "HIT",
+          "x-drupal-dynamic-cache": "MISS",
+          "x-frame-options": "SAMEORIGIN",
+          "x-generator": "Drupal 10 (https://www.drupal.org)",
+          "x-xss-protection": "1; mode=block"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 59814,
+          "compressed": true,
+          "content_ref": "9ac7e5b154adfa64bb730c88a762e5edaf31b7cf.html"
+        }
+      }
+    ],
+    "/Home/Index/{id}": [
+      {
+        "timestamp": "2025-07-21T10:22:39.624Z",
+        "duration_ms": 68.89099999999999,
+        "endpoint": "/Home/Index/{id}",
+        "host": "hitcounter.govmetric.com",
+        "method": "GET",
+        "status": 200,
+        "path_params": [
+          "2439"
+        ],
+        "query_params": {
+          "override": [
+            "https://www.wokingham.gov.uk/rubbish-and-recycling/waste-collection"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "origin": "https://www.wokingham.gov.uk",
+          "referer": "https://www.wokingham.gov.uk/rubbish-and-recycling/waste-collection"
+        },
+        "response_headers": {
+          "cache-control": "no-store,no-cache",
+          "set-cookie": "[cookies present]",
+          "x-powered-by": "ASP.NET"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T10:22:42.182Z",
+        "duration_ms": 16.655,
+        "endpoint": "/Home/Index/{id}",
+        "host": "hitcounter.govmetric.com",
+        "method": "GET",
+        "status": 200,
+        "path_params": [
+          "2439"
+        ],
+        "query_params": {
+          "override": [
+            "https://www.wokingham.gov.uk/rubbish-and-recycling/waste-collection/find-your-bin-collection-day"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "origin": "https://www.wokingham.gov.uk",
+          "referer": "https://www.wokingham.gov.uk/rubbish-and-recycling/waste-collection/find-your-bin-collection-day"
+        },
+        "response_headers": {
+          "cache-control": "no-store,no-cache",
+          "set-cookie": "[cookies present]",
+          "x-powered-by": "ASP.NET"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T10:22:48.610Z",
+        "duration_ms": 18.325999999999997,
+        "endpoint": "/Home/Index/{id}",
+        "host": "hitcounter.govmetric.com",
+        "method": "GET",
+        "status": 200,
+        "path_params": [
+          "2439"
+        ],
+        "query_params": {
+          "override": [
+            "https://www.wokingham.gov.uk/rubbish-and-recycling/waste-collection/find-your-bin-collection-day"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "origin": "https://www.wokingham.gov.uk",
+          "referer": "https://www.wokingham.gov.uk/rubbish-and-recycling/waste-collection/find-your-bin-collection-day"
+        },
+        "response_headers": {
+          "cache-control": "no-store,no-cache",
+          "set-cookie": "[cookies present]",
+          "x-powered-by": "ASP.NET"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T10:22:54.666Z",
+        "duration_ms": 18.423,
+        "endpoint": "/Home/Index/{id}",
+        "host": "hitcounter.govmetric.com",
+        "method": "GET",
+        "status": 200,
+        "path_params": [
+          "2439"
+        ],
+        "query_params": {
+          "override": [
+            "https://www.wokingham.gov.uk/rubbish-and-recycling/waste-collection/find-your-bin-collection-day"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "origin": "https://www.wokingham.gov.uk",
+          "referer": "https://www.wokingham.gov.uk/rubbish-and-recycling/waste-collection/find-your-bin-collection-day"
+        },
+        "response_headers": {
+          "cache-control": "no-store,no-cache",
+          "set-cookie": "[cookies present]",
+          "x-powered-by": "ASP.NET"
+        }
+      }
+    ],
+    "/themes/custom/wok/favicons/site.webmanifest": [
+      {
+        "timestamp": "2025-07-21T10:22:39.663Z",
+        "duration_ms": 11.02,
+        "endpoint": "/themes/custom/wok/favicons/site.webmanifest",
+        "host": "www.wokingham.gov.uk",
+        "method": "GET",
+        "status": 200,
+        "request_headers": {
+          "accept": "*/*",
+          "referer": "https://www.wokingham.gov.uk/rubbish-and-recycling/waste-collection"
+        },
+        "response_headers": {
+          "content-type": "application/octet-stream",
+          "x-cache": "Miss from cloudfront"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T10:22:42.315Z",
+        "duration_ms": 0.583,
+        "endpoint": "/themes/custom/wok/favicons/site.webmanifest",
+        "host": "www.wokingham.gov.uk",
+        "method": "GET",
+        "status": 200,
+        "request_headers": {
+          "referer": "https://www.wokingham.gov.uk/rubbish-and-recycling/waste-collection/find-your-bin-collection-day"
+        },
+        "response_headers": {
+          "x-cache": "Miss from cloudfront",
+          "content-type": "application/octet-stream"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T10:22:48.734Z",
+        "duration_ms": 1.505,
+        "endpoint": "/themes/custom/wok/favicons/site.webmanifest",
+        "host": "www.wokingham.gov.uk",
+        "method": "GET",
+        "status": 200,
+        "request_headers": {
+          "referer": "https://www.wokingham.gov.uk/rubbish-and-recycling/waste-collection/find-your-bin-collection-day"
+        },
+        "response_headers": {
+          "x-cache": "Miss from cloudfront",
+          "content-type": "application/octet-stream"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T10:22:54.788Z",
+        "duration_ms": 0.541,
+        "endpoint": "/themes/custom/wok/favicons/site.webmanifest",
+        "host": "www.wokingham.gov.uk",
+        "method": "GET",
+        "status": 200,
+        "request_headers": {
+          "referer": "https://www.wokingham.gov.uk/rubbish-and-recycling/waste-collection/find-your-bin-collection-day"
+        },
+        "response_headers": {
+          "x-cache": "Miss from cloudfront",
+          "content-type": "application/octet-stream"
+        }
+      }
+    ],
+    "/v1/loader/{id}": [
+      {
+        "timestamp": "2025-07-21T10:22:39.620Z",
+        "duration_ms": 94.89099999999999,
+        "endpoint": "/v1/loader/{id}",
+        "host": "webassist.onconnect.app",
+        "method": "GET",
+        "status": 200,
+        "path_params": [
+          "3aa261b2-db8a-4bf7-915a-1de3ee57a1ee"
+        ],
+        "request_headers": {
+          "accept": "*/*",
+          "origin": "https://www.wokingham.gov.uk",
+          "referer": "https://www.wokingham.gov.uk/rubbish-and-recycling/waste-collection"
+        },
+        "response_headers": {
+          "content-type": "application/json; charset=utf-8",
+          "x-ms-middleware-request-id": "00000000-0000-0000-0000-000000000000"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 52,
+          "content_ref": "3bd0e87f7735a292acfc53909bc55fd480fb94c1.json"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T10:22:42.140Z",
+        "duration_ms": 22.744,
+        "endpoint": "/v1/loader/{id}",
+        "host": "webassist.onconnect.app",
+        "method": "GET",
+        "status": 200,
+        "path_params": [
+          "3aa261b2-db8a-4bf7-915a-1de3ee57a1ee"
+        ],
+        "request_headers": {
+          "accept": "*/*",
+          "origin": "https://www.wokingham.gov.uk",
+          "referer": "https://www.wokingham.gov.uk/rubbish-and-recycling/waste-collection/find-your-bin-collection-day"
+        },
+        "response_headers": {
+          "content-type": "application/json; charset=utf-8",
+          "x-ms-middleware-request-id": "00000000-0000-0000-0000-000000000000"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 52,
+          "content_ref": "3bd0e87f7735a292acfc53909bc55fd480fb94c1.json"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T10:22:48.605Z",
+        "duration_ms": 24.787,
+        "endpoint": "/v1/loader/{id}",
+        "host": "webassist.onconnect.app",
+        "method": "GET",
+        "status": 200,
+        "path_params": [
+          "3aa261b2-db8a-4bf7-915a-1de3ee57a1ee"
+        ],
+        "request_headers": {
+          "accept": "*/*",
+          "origin": "https://www.wokingham.gov.uk",
+          "referer": "https://www.wokingham.gov.uk/rubbish-and-recycling/waste-collection/find-your-bin-collection-day"
+        },
+        "response_headers": {
+          "content-type": "application/json; charset=utf-8",
+          "x-ms-middleware-request-id": "00000000-0000-0000-0000-000000000000"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 52,
+          "content_ref": "3bd0e87f7735a292acfc53909bc55fd480fb94c1.json"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T10:22:54.642Z",
+        "duration_ms": 40.11,
+        "endpoint": "/v1/loader/{id}",
+        "host": "webassist.onconnect.app",
+        "method": "GET",
+        "status": 200,
+        "path_params": [
+          "3aa261b2-db8a-4bf7-915a-1de3ee57a1ee"
+        ],
+        "request_headers": {
+          "accept": "*/*",
+          "origin": "https://www.wokingham.gov.uk",
+          "referer": "https://www.wokingham.gov.uk/rubbish-and-recycling/waste-collection/find-your-bin-collection-day"
+        },
+        "response_headers": {
+          "content-type": "application/json; charset=utf-8",
+          "x-ms-middleware-request-id": "00000000-0000-0000-0000-000000000000"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 52,
+          "content_ref": "3bd0e87f7735a292acfc53909bc55fd480fb94c1.json"
+        }
+      }
+    ],
+    "/assets/appConfig.json": [
+      {
+        "timestamp": "2025-07-21T10:22:40.048Z",
+        "duration_ms": 49.775999999999996,
+        "endpoint": "/assets/appConfig.json",
+        "host": "webassistant.onconnect.app",
+        "method": "GET",
+        "status": 200,
+        "request_headers": {
+          "accept": "application/json, text/plain, */*",
+          "origin": "https://www.wokingham.gov.uk",
+          "referer": "https://www.wokingham.gov.uk/rubbish-and-recycling/waste-collection"
+        },
+        "response_headers": {
+          "content-type": "application/json",
+          "x-azure-ref": "20250721T102240Z-16896f46f99br9bthC1LTSqgyc00000008wg00000000e0xf",
+          "x-cache": "CONFIG_NOCACHE",
+          "x-ms-request-id": "74bcd7a7-601e-0015-3129-fab334000000",
+          "x-ms-version": "2018-03-28"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 73,
+          "content_ref": "e8551bc0489c1ba948f1631c51732814c12af1e5.json"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T10:22:42.265Z",
+        "duration_ms": 1.354,
+        "endpoint": "/assets/appConfig.json",
+        "host": "webassistant.onconnect.app",
+        "method": "GET",
+        "status": 200,
+        "request_headers": {
+          "referer": "https://www.wokingham.gov.uk/rubbish-and-recycling/waste-collection/find-your-bin-collection-day",
+          "accept": "application/json, text/plain, */*"
+        },
+        "response_headers": {
+          "x-ms-version": "2018-03-28",
+          "x-ms-request-id": "74bcd7a7-601e-0015-3129-fab334000000",
+          "x-cache": "CONFIG_NOCACHE",
+          "content-type": "application/json",
+          "x-azure-ref": "20250721T102240Z-16896f46f99br9bthC1LTSqgyc00000008wg00000000e0xf"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 73,
+          "compressed": true,
+          "content_ref": "e8551bc0489c1ba948f1631c51732814c12af1e5.json"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T10:22:48.688Z",
+        "duration_ms": 0.799,
+        "endpoint": "/assets/appConfig.json",
+        "host": "webassistant.onconnect.app",
+        "method": "GET",
+        "status": 200,
+        "request_headers": {
+          "referer": "https://www.wokingham.gov.uk/rubbish-and-recycling/waste-collection/find-your-bin-collection-day",
+          "accept": "application/json, text/plain, */*"
+        },
+        "response_headers": {
+          "x-ms-version": "2018-03-28",
+          "x-ms-request-id": "74bcd7a7-601e-0015-3129-fab334000000",
+          "x-cache": "CONFIG_NOCACHE",
+          "content-type": "application/json",
+          "x-azure-ref": "20250721T102240Z-16896f46f99br9bthC1LTSqgyc00000008wg00000000e0xf"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 73,
+          "compressed": true,
+          "content_ref": "e8551bc0489c1ba948f1631c51732814c12af1e5.json"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T10:22:54.744Z",
+        "duration_ms": 0.806,
+        "endpoint": "/assets/appConfig.json",
+        "host": "webassistant.onconnect.app",
+        "method": "GET",
+        "status": 200,
+        "request_headers": {
+          "referer": "https://www.wokingham.gov.uk/rubbish-and-recycling/waste-collection/find-your-bin-collection-day",
+          "accept": "application/json, text/plain, */*"
+        },
+        "response_headers": {
+          "x-ms-version": "2018-03-28",
+          "x-ms-request-id": "74bcd7a7-601e-0015-3129-fab334000000",
+          "x-cache": "CONFIG_NOCACHE",
+          "content-type": "application/json",
+          "x-azure-ref": "20250721T102240Z-16896f46f99br9bthC1LTSqgyc00000008wg00000000e0xf"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 73,
+          "compressed": true,
+          "content_ref": "e8551bc0489c1ba948f1631c51732814c12af1e5.json"
+        }
+      }
+    ],
+    "/v1/workspaces/{id}/init": [
+      {
+        "timestamp": "2025-07-21T10:22:40.118Z",
+        "duration_ms": 180.13299999999998,
+        "endpoint": "/v1/workspaces/{id}/init",
+        "host": "webassist.onconnect.app",
+        "method": "POST",
+        "status": 200,
+        "path_params": [
+          "3aa261b2-db8a-4bf7-915a-1de3ee57a1ee"
+        ],
+        "request_headers": {
+          "accept": "application/json, text/plain, */*",
+          "content-type": "application/json",
+          "origin": "https://www.wokingham.gov.uk",
+          "referer": "https://www.wokingham.gov.uk/rubbish-and-recycling/waste-collection"
+        },
+        "response_headers": {
+          "content-type": "application/json; charset=utf-8",
+          "x-ms-middleware-request-id": "00000000-0000-0000-0000-000000000000"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 1452,
+          "compressed": true,
+          "content_ref": "d01d25048f9094c412e3df56bfa80440240a3314.json"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T10:22:42.353Z",
+        "duration_ms": 149.243,
+        "endpoint": "/v1/workspaces/{id}/init",
+        "host": "webassist.onconnect.app",
+        "method": "POST",
+        "status": 200,
+        "path_params": [
+          "3aa261b2-db8a-4bf7-915a-1de3ee57a1ee"
+        ],
+        "request_headers": {
+          "accept": "application/json, text/plain, */*",
+          "authorization": "Basic MTBmZGIyMmUtNmUzMS00NzA0LWIxN2MtMjFhYTgxMDA0OTc5OlBRT3VyUEx6alU3YWFUU2lrUXBWMmhUcjhyTUxwWXdaZ2kxOTJxc1laSm8=",
+          "content-type": "application/json",
+          "origin": "https://www.wokingham.gov.uk",
+          "referer": "https://www.wokingham.gov.uk/rubbish-and-recycling/waste-collection/find-your-bin-collection-day",
+          "x-connect-auth": "Basic MTBmZGIyMmUtNmUzMS00NzA0LWIxN2MtMjFhYTgxMDA0OTc5OlBRT3VyUEx6alU3YWFUU2lrUXBWMmhUcjhyTUxwWXdaZ2kxOTJxc1laSm8="
+        },
+        "response_headers": {
+          "content-type": "application/json; charset=utf-8",
+          "x-ms-middleware-request-id": "00000000-0000-0000-0000-000000000000"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 1409,
+          "compressed": true,
+          "content_ref": "b60fc6d84f133186c4048b33404ad3f74132746d.json"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T10:22:48.777Z",
+        "duration_ms": 126.334,
+        "endpoint": "/v1/workspaces/{id}/init",
+        "host": "webassist.onconnect.app",
+        "method": "POST",
+        "status": 200,
+        "path_params": [
+          "3aa261b2-db8a-4bf7-915a-1de3ee57a1ee"
+        ],
+        "request_headers": {
+          "accept": "application/json, text/plain, */*",
+          "authorization": "Basic MTBmZGIyMmUtNmUzMS00NzA0LWIxN2MtMjFhYTgxMDA0OTc5OlBRT3VyUEx6alU3YWFUU2lrUXBWMmhUcjhyTUxwWXdaZ2kxOTJxc1laSm8=",
+          "content-type": "application/json",
+          "origin": "https://www.wokingham.gov.uk",
+          "referer": "https://www.wokingham.gov.uk/rubbish-and-recycling/waste-collection/find-your-bin-collection-day",
+          "x-connect-auth": "Basic MTBmZGIyMmUtNmUzMS00NzA0LWIxN2MtMjFhYTgxMDA0OTc5OlBRT3VyUEx6alU3YWFUU2lrUXBWMmhUcjhyTUxwWXdaZ2kxOTJxc1laSm8="
+        },
+        "response_headers": {
+          "content-type": "application/json; charset=utf-8",
+          "x-ms-middleware-request-id": "00000000-0000-0000-0000-000000000000"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 1411,
+          "compressed": true,
+          "content_ref": "22c1a5aa0171aaa8d826ea252aef32bec8cbbb6f.json"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T10:22:54.790Z",
+        "duration_ms": 133.697,
+        "endpoint": "/v1/workspaces/{id}/init",
+        "host": "webassist.onconnect.app",
+        "method": "POST",
+        "status": 200,
+        "path_params": [
+          "3aa261b2-db8a-4bf7-915a-1de3ee57a1ee"
+        ],
+        "request_headers": {
+          "accept": "application/json, text/plain, */*",
+          "authorization": "Basic MTBmZGIyMmUtNmUzMS00NzA0LWIxN2MtMjFhYTgxMDA0OTc5OlBRT3VyUEx6alU3YWFUU2lrUXBWMmhUcjhyTUxwWXdaZ2kxOTJxc1laSm8=",
+          "content-type": "application/json",
+          "origin": "https://www.wokingham.gov.uk",
+          "referer": "https://www.wokingham.gov.uk/rubbish-and-recycling/waste-collection/find-your-bin-collection-day",
+          "x-connect-auth": "Basic MTBmZGIyMmUtNmUzMS00NzA0LWIxN2MtMjFhYTgxMDA0OTc5OlBRT3VyUEx6alU3YWFUU2lrUXBWMmhUcjhyTUxwWXdaZ2kxOTJxc1laSm8="
+        },
+        "response_headers": {
+          "content-type": "application/json; charset=utf-8",
+          "x-ms-middleware-request-id": "00000000-0000-0000-0000-000000000000"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 1412,
+          "compressed": true,
+          "content_ref": "f668e95261442ca44a43333fcb32d07542568bc2.json"
+        }
+      }
+    ],
+    "/client/negotiate": [
+      {
+        "timestamp": "2025-07-21T10:22:40.245Z",
+        "duration_ms": 75.22,
+        "endpoint": "/client/negotiate",
+        "host": "produkswebassistsignalr18.service.signalr.net",
+        "method": "POST",
+        "status": 200,
+        "query_params": {
+          "hub": [
+            "webassistant"
+          ],
+          "negotiateVersion": [
+            "1"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ii01NDc4ODMzMTUifQ.eyJuYW1laWQiOiIxMGZkYjIyZS02ZTMxLTQ3MDQtYjE3Yy0yMWFhODEwMDQ5NzkiLCJ3b3Jrc3BhY2UiOiIzYWEyNjFiMi1kYjhhLTRiZjctOTE1YS0xZGUzZWU1N2ExZWUiLCJuYmYiOjE3NTMwOTMzNjAsImV4cCI6MTc1MzA5Njk2MCwiaWF0IjoxNzUzMDkzMzYwLCJhdWQiOiJodHRwczovL3Byb2R1a3N3ZWJhc3Npc3RzaWduYWxyMTguc2VydmljZS5zaWduYWxyLm5ldC9jbGllbnQvP2h1Yj13ZWJhc3Npc3RhbnQifQ.9vymtqd19LPaoxwWscWSt-tH6FZ8h7c1GzNn2C7F_9w",
+          "content-type": "text/plain;charset=UTF-8",
+          "origin": "https://www.wokingham.gov.uk",
+          "referer": "https://www.wokingham.gov.uk/rubbish-and-recycling/waste-collection",
+          "x-requested-with": "XMLHttpRequest",
+          "x-signalr-user-agent": "Microsoft SignalR/6.0 (6.0.22; Unknown OS; Browser; Unknown Runtime Version)"
+        },
+        "response_headers": {
+          "content-type": "application/json"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 334,
+          "content_ref": "0ea13220e4f423c5f399592d64961227f0679a41.json"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T10:22:42.484Z",
+        "duration_ms": 16.703,
+        "endpoint": "/client/negotiate",
+        "host": "produkswebassistsignalr18.service.signalr.net",
+        "method": "POST",
+        "status": 200,
+        "query_params": {
+          "hub": [
+            "webassistant"
+          ],
+          "negotiateVersion": [
+            "1"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IjE3Nzg5NzExOSJ9.eyJuYW1laWQiOiIxMGZkYjIyZS02ZTMxLTQ3MDQtYjE3Yy0yMWFhODEwMDQ5NzkiLCJ3b3Jrc3BhY2UiOiIzYWEyNjFiMi1kYjhhLTRiZjctOTE1YS0xZGUzZWU1N2ExZWUiLCJuYmYiOjE3NTMwOTMzNjIsImV4cCI6MTc1MzA5Njk2MiwiaWF0IjoxNzUzMDkzMzYyLCJhdWQiOiJodHRwczovL3Byb2R1a3N3ZWJhc3Npc3RzaWduYWxyMTguc2VydmljZS5zaWduYWxyLm5ldC9jbGllbnQvP2h1Yj13ZWJhc3Npc3RhbnQifQ.Oc7QACMKUdSB4oerWBcXvQQkEhgOGtm3nz5fjEdUNDk",
+          "content-type": "text/plain;charset=UTF-8",
+          "origin": "https://www.wokingham.gov.uk",
+          "referer": "https://www.wokingham.gov.uk/rubbish-and-recycling/waste-collection/find-your-bin-collection-day",
+          "x-requested-with": "XMLHttpRequest",
+          "x-signalr-user-agent": "Microsoft SignalR/6.0 (6.0.22; Unknown OS; Browser; Unknown Runtime Version)"
+        },
+        "response_headers": {
+          "content-type": "application/json"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 334,
+          "content_ref": "8a129d0f6e3b84dc8b0e66a8f9103bf577bbc45e.json"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T10:22:48.884Z",
+        "duration_ms": 19.687,
+        "endpoint": "/client/negotiate",
+        "host": "produkswebassistsignalr18.service.signalr.net",
+        "method": "POST",
+        "status": 200,
+        "query_params": {
+          "hub": [
+            "webassistant"
+          ],
+          "negotiateVersion": [
+            "1"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ii01NDc4ODMzMTUifQ.eyJuYW1laWQiOiIxMGZkYjIyZS02ZTMxLTQ3MDQtYjE3Yy0yMWFhODEwMDQ5NzkiLCJ3b3Jrc3BhY2UiOiIzYWEyNjFiMi1kYjhhLTRiZjctOTE1YS0xZGUzZWU1N2ExZWUiLCJuYmYiOjE3NTMwOTMzNjgsImV4cCI6MTc1MzA5Njk2OCwiaWF0IjoxNzUzMDkzMzY4LCJhdWQiOiJodHRwczovL3Byb2R1a3N3ZWJhc3Npc3RzaWduYWxyMTguc2VydmljZS5zaWduYWxyLm5ldC9jbGllbnQvP2h1Yj13ZWJhc3Npc3RhbnQifQ.vtLrhxEshJUy4B31m_GteqKGddD9w94OTu8e9p7nWjw",
+          "content-type": "text/plain;charset=UTF-8",
+          "origin": "https://www.wokingham.gov.uk",
+          "referer": "https://www.wokingham.gov.uk/rubbish-and-recycling/waste-collection/find-your-bin-collection-day",
+          "x-requested-with": "XMLHttpRequest",
+          "x-signalr-user-agent": "Microsoft SignalR/6.0 (6.0.22; Unknown OS; Browser; Unknown Runtime Version)"
+        },
+        "response_headers": {
+          "content-type": "application/json"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 334,
+          "content_ref": "e01c31727731725a7c68f86ab601162364d110d5.json"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T10:22:54.929Z",
+        "duration_ms": 20.96,
+        "endpoint": "/client/negotiate",
+        "host": "produkswebassistsignalr18.service.signalr.net",
+        "method": "POST",
+        "status": 200,
+        "query_params": {
+          "hub": [
+            "webassistant"
+          ],
+          "negotiateVersion": [
+            "1"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ii0xODMwODc2ODc5In0.eyJuYW1laWQiOiIxMGZkYjIyZS02ZTMxLTQ3MDQtYjE3Yy0yMWFhODEwMDQ5NzkiLCJ3b3Jrc3BhY2UiOiIzYWEyNjFiMi1kYjhhLTRiZjctOTE1YS0xZGUzZWU1N2ExZWUiLCJuYmYiOjE3NTMwOTMzNzQsImV4cCI6MTc1MzA5Njk3NCwiaWF0IjoxNzUzMDkzMzc0LCJhdWQiOiJodHRwczovL3Byb2R1a3N3ZWJhc3Npc3RzaWduYWxyMTguc2VydmljZS5zaWduYWxyLm5ldC9jbGllbnQvP2h1Yj13ZWJhc3Npc3RhbnQifQ._HsvoyQeC8Y-0VcYChb32XSHDSKPRwq-XvMPFQnkK34",
+          "content-type": "text/plain;charset=UTF-8",
+          "origin": "https://www.wokingham.gov.uk",
+          "referer": "https://www.wokingham.gov.uk/rubbish-and-recycling/waste-collection/find-your-bin-collection-day",
+          "x-requested-with": "XMLHttpRequest",
+          "x-signalr-user-agent": "Microsoft SignalR/6.0 (6.0.22; Unknown OS; Browser; Unknown Runtime Version)"
+        },
+        "response_headers": {
+          "content-type": "application/json"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 334,
+          "content_ref": "cd158d6df681c40116a22bf1356e91da0459d24f.json"
+        }
+      }
+    ],
+    "/v1/postback": [
+      {
+        "timestamp": "2025-07-21T10:22:40.245Z",
+        "duration_ms": 177.586,
+        "endpoint": "/v1/postback",
+        "host": "webassist.onconnect.app",
+        "method": "POST",
+        "status": 200,
+        "request_headers": {
+          "accept": "application/json, text/plain, */*",
+          "authorization": "Basic MTBmZGIyMmUtNmUzMS00NzA0LWIxN2MtMjFhYTgxMDA0OTc5OlBRT3VyUEx6alU3YWFUU2lrUXBWMmhUcjhyTUxwWXdaZ2kxOTJxc1laSm8=",
+          "content-type": "application/json",
+          "origin": "https://www.wokingham.gov.uk",
+          "referer": "https://www.wokingham.gov.uk/rubbish-and-recycling/waste-collection",
+          "x-connect-auth": "Basic MTBmZGIyMmUtNmUzMS00NzA0LWIxN2MtMjFhYTgxMDA0OTc5OlBRT3VyUEx6alU3YWFUU2lrUXBWMmhUcjhyTUxwWXdaZ2kxOTJxc1laSm8="
+        },
+        "response_headers": {
+          "x-ms-middleware-request-id": "00000000-0000-0000-0000-000000000000"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T10:22:42.484Z",
+        "duration_ms": 171.013,
+        "endpoint": "/v1/postback",
+        "host": "webassist.onconnect.app",
+        "method": "POST",
+        "status": 200,
+        "request_headers": {
+          "accept": "application/json, text/plain, */*",
+          "authorization": "Basic MTBmZGIyMmUtNmUzMS00NzA0LWIxN2MtMjFhYTgxMDA0OTc5OlBRT3VyUEx6alU3YWFUU2lrUXBWMmhUcjhyTUxwWXdaZ2kxOTJxc1laSm8=",
+          "content-type": "application/json",
+          "origin": "https://www.wokingham.gov.uk",
+          "referer": "https://www.wokingham.gov.uk/rubbish-and-recycling/waste-collection/find-your-bin-collection-day",
+          "x-connect-auth": "Basic MTBmZGIyMmUtNmUzMS00NzA0LWIxN2MtMjFhYTgxMDA0OTc5OlBRT3VyUEx6alU3YWFUU2lrUXBWMmhUcjhyTUxwWXdaZ2kxOTJxc1laSm8="
+        },
+        "response_headers": {
+          "x-ms-middleware-request-id": "00000000-0000-0000-0000-000000000000"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T10:22:48.884Z",
+        "duration_ms": 196.627,
+        "endpoint": "/v1/postback",
+        "host": "webassist.onconnect.app",
+        "method": "POST",
+        "status": 200,
+        "request_headers": {
+          "accept": "application/json, text/plain, */*",
+          "authorization": "Basic MTBmZGIyMmUtNmUzMS00NzA0LWIxN2MtMjFhYTgxMDA0OTc5OlBRT3VyUEx6alU3YWFUU2lrUXBWMmhUcjhyTUxwWXdaZ2kxOTJxc1laSm8=",
+          "content-type": "application/json",
+          "origin": "https://www.wokingham.gov.uk",
+          "referer": "https://www.wokingham.gov.uk/rubbish-and-recycling/waste-collection/find-your-bin-collection-day",
+          "x-connect-auth": "Basic MTBmZGIyMmUtNmUzMS00NzA0LWIxN2MtMjFhYTgxMDA0OTc5OlBRT3VyUEx6alU3YWFUU2lrUXBWMmhUcjhyTUxwWXdaZ2kxOTJxc1laSm8="
+        },
+        "response_headers": {
+          "x-ms-middleware-request-id": "00000000-0000-0000-0000-000000000000"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T10:22:54.930Z",
+        "duration_ms": 190.09300000000002,
+        "endpoint": "/v1/postback",
+        "host": "webassist.onconnect.app",
+        "method": "POST",
+        "status": 200,
+        "request_headers": {
+          "accept": "application/json, text/plain, */*",
+          "authorization": "Basic MTBmZGIyMmUtNmUzMS00NzA0LWIxN2MtMjFhYTgxMDA0OTc5OlBRT3VyUEx6alU3YWFUU2lrUXBWMmhUcjhyTUxwWXdaZ2kxOTJxc1laSm8=",
+          "content-type": "application/json",
+          "origin": "https://www.wokingham.gov.uk",
+          "referer": "https://www.wokingham.gov.uk/rubbish-and-recycling/waste-collection/find-your-bin-collection-day",
+          "x-connect-auth": "Basic MTBmZGIyMmUtNmUzMS00NzA0LWIxN2MtMjFhYTgxMDA0OTc5OlBRT3VyUEx6alU3YWFUU2lrUXBWMmhUcjhyTUxwWXdaZ2kxOTJxc1laSm8="
+        },
+        "response_headers": {
+          "x-ms-middleware-request-id": "00000000-0000-0000-0000-000000000000"
+        }
+      }
+    ],
+    "/{id}/waste-collection/{id}": [
+      {
+        "timestamp": "2025-07-21T10:22:42.031Z",
+        "duration_ms": 62.848000000000006,
+        "endpoint": "/{id}/waste-collection/{id}",
+        "host": "www.wokingham.gov.uk",
+        "method": "GET",
+        "status": 200,
+        "path_params": [
+          "rubbish-and-recycling",
+          "find-your-bin-collection-day"
+        ],
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+          "referer": "https://www.wokingham.gov.uk/rubbish-and-recycling/waste-collection"
+        },
+        "response_headers": {
+          "cache-control": "max-age=21600, public",
+          "content-type": "text/html; charset=UTF-8",
+          "x-cache": "Miss from cloudfront",
+          "x-content-type-options": "nosniff",
+          "x-drupal-cache": "HIT",
+          "x-drupal-dynamic-cache": "MISS",
+          "x-frame-options": "SAMEORIGIN",
+          "x-generator": "Drupal 10 (https://www.drupal.org)",
+          "x-xss-protection": "1; mode=block"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 53818,
+          "compressed": true,
+          "content_ref": "5cdc7fd483149d96bfc1b7e084322dc85134872c.html"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T10:22:47.044Z",
+        "duration_ms": 1001.039,
+        "endpoint": "/{id}/waste-collection/{id}",
+        "host": "www.wokingham.gov.uk",
+        "method": "POST",
+        "status": 200,
+        "path_params": [
+          "rubbish-and-recycling",
+          "find-your-bin-collection-day"
+        ],
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+          "content-type": "application/x-www-form-urlencoded",
+          "origin": "https://www.wokingham.gov.uk",
+          "referer": "https://www.wokingham.gov.uk/rubbish-and-recycling/waste-collection/find-your-bin-collection-day"
+        },
+        "response_headers": {
+          "cache-control": "must-revalidate, no-cache, private",
+          "content-type": "text/html; charset=UTF-8",
+          "x-cache": "Miss from cloudfront",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "SAMEORIGIN",
+          "x-generator": "Drupal 10 (https://www.drupal.org)",
+          "x-xss-protection": "1; mode=block"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 56101,
+          "compressed": true,
+          "content_ref": "005d735d8ad95e6c67bc151b3769063cfe90a40b.html"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T10:22:53.750Z",
+        "duration_ms": 831.25,
+        "endpoint": "/{id}/waste-collection/{id}",
+        "host": "www.wokingham.gov.uk",
+        "method": "POST",
+        "status": 200,
+        "path_params": [
+          "rubbish-and-recycling",
+          "find-your-bin-collection-day"
+        ],
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+          "content-type": "application/x-www-form-urlencoded",
+          "origin": "https://www.wokingham.gov.uk",
+          "referer": "https://www.wokingham.gov.uk/rubbish-and-recycling/waste-collection/find-your-bin-collection-day"
+        },
+        "response_headers": {
+          "cache-control": "must-revalidate, no-cache, private",
+          "content-type": "text/html; charset=UTF-8",
+          "x-cache": "Miss from cloudfront",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "SAMEORIGIN",
+          "x-generator": "Drupal 10 (https://www.drupal.org)",
+          "x-xss-protection": "1; mode=block"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 59972,
+          "compressed": true,
+          "content_ref": "b06679fb49d3694f5dea5ebd50d14c30abf0bcdc.html"
+        }
+      }
+    ],
+    "/v1/workspaces/{id}/appusers/{id}/messages": [
+      {
+        "timestamp": "2025-07-21T10:22:42.484Z",
+        "duration_ms": 81.203,
+        "endpoint": "/v1/workspaces/{id}/appusers/{id}/messages",
+        "host": "webassist.onconnect.app",
+        "method": "GET",
+        "status": 200,
+        "path_params": [
+          "3aa261b2-db8a-4bf7-915a-1de3ee57a1ee",
+          "c3801e38-8207-4ee7-aea2-4bc71222c399"
+        ],
+        "request_headers": {
+          "accept": "application/json, text/plain, */*",
+          "authorization": "Basic MTBmZGIyMmUtNmUzMS00NzA0LWIxN2MtMjFhYTgxMDA0OTc5OlBRT3VyUEx6alU3YWFUU2lrUXBWMmhUcjhyTUxwWXdaZ2kxOTJxc1laSm8=",
+          "content-type": "application/json",
+          "origin": "https://www.wokingham.gov.uk",
+          "referer": "https://www.wokingham.gov.uk/rubbish-and-recycling/waste-collection/find-your-bin-collection-day",
+          "x-connect-auth": "Basic MTBmZGIyMmUtNmUzMS00NzA0LWIxN2MtMjFhYTgxMDA0OTc5OlBRT3VyUEx6alU3YWFUU2lrUXBWMmhUcjhyTUxwWXdaZ2kxOTJxc1laSm8="
+        },
+        "response_headers": {
+          "content-type": "application/json; charset=utf-8",
+          "x-ms-middleware-request-id": "00000000-0000-0000-0000-000000000000"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 40,
+          "content_ref": "1037334915cdbbe4abf707856b72a38f00349a04.json"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T10:22:48.884Z",
+        "duration_ms": 92.68,
+        "endpoint": "/v1/workspaces/{id}/appusers/{id}/messages",
+        "host": "webassist.onconnect.app",
+        "method": "GET",
+        "status": 200,
+        "path_params": [
+          "3aa261b2-db8a-4bf7-915a-1de3ee57a1ee",
+          "c3801e38-8207-4ee7-aea2-4bc71222c399"
+        ],
+        "request_headers": {
+          "accept": "application/json, text/plain, */*",
+          "authorization": "Basic MTBmZGIyMmUtNmUzMS00NzA0LWIxN2MtMjFhYTgxMDA0OTc5OlBRT3VyUEx6alU3YWFUU2lrUXBWMmhUcjhyTUxwWXdaZ2kxOTJxc1laSm8=",
+          "content-type": "application/json",
+          "origin": "https://www.wokingham.gov.uk",
+          "referer": "https://www.wokingham.gov.uk/rubbish-and-recycling/waste-collection/find-your-bin-collection-day",
+          "x-connect-auth": "Basic MTBmZGIyMmUtNmUzMS00NzA0LWIxN2MtMjFhYTgxMDA0OTc5OlBRT3VyUEx6alU3YWFUU2lrUXBWMmhUcjhyTUxwWXdaZ2kxOTJxc1laSm8="
+        },
+        "response_headers": {
+          "content-type": "application/json; charset=utf-8",
+          "x-ms-middleware-request-id": "00000000-0000-0000-0000-000000000000"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 40,
+          "content_ref": "1037334915cdbbe4abf707856b72a38f00349a04.json"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T10:22:54.930Z",
+        "duration_ms": 73.061,
+        "endpoint": "/v1/workspaces/{id}/appusers/{id}/messages",
+        "host": "webassist.onconnect.app",
+        "method": "GET",
+        "status": 200,
+        "path_params": [
+          "3aa261b2-db8a-4bf7-915a-1de3ee57a1ee",
+          "c3801e38-8207-4ee7-aea2-4bc71222c399"
+        ],
+        "request_headers": {
+          "accept": "application/json, text/plain, */*",
+          "authorization": "Basic MTBmZGIyMmUtNmUzMS00NzA0LWIxN2MtMjFhYTgxMDA0OTc5OlBRT3VyUEx6alU3YWFUU2lrUXBWMmhUcjhyTUxwWXdaZ2kxOTJxc1laSm8=",
+          "content-type": "application/json",
+          "origin": "https://www.wokingham.gov.uk",
+          "referer": "https://www.wokingham.gov.uk/rubbish-and-recycling/waste-collection/find-your-bin-collection-day",
+          "x-connect-auth": "Basic MTBmZGIyMmUtNmUzMS00NzA0LWIxN2MtMjFhYTgxMDA0OTc5OlBRT3VyUEx6alU3YWFUU2lrUXBWMmhUcjhyTUxwWXdaZ2kxOTJxc1laSm8="
+        },
+        "response_headers": {
+          "content-type": "application/json; charset=utf-8",
+          "x-ms-middleware-request-id": "00000000-0000-0000-0000-000000000000"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 40,
+          "content_ref": "1037334915cdbbe4abf707856b72a38f00349a04.json"
+        }
+      }
+    ]
+  }
 }

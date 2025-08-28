@@ -1,363 +1,6666 @@
 {
-  "metadata": {
-    "trace_name": "north_kesteven_district_council",
-    "processed_at": "2025-08-26 18:44:24",
-    "workflow_steps_count": 11,
-    "navigation_events_count": 26
-  },
-  "scraping_patterns": {
-    "login_detected": false,
-    "form_submissions": 7,
-    "navigation_count": 1,
-    "unique_domains": [
-      "www.n-kesteven.gov.uk",
-      "apikeys.civiccomputing.com",
-      "www.n-kesteven.org.uk",
-      "translate.googleapis.com",
-      "clapi.civiccomputing.com",
-      "n-kesteven.piwik.pro"
-    ],
-    "api_endpoints": [
-      "https://www.n-kesteven.org.uk/img/manifest.json",
-      "https://www.n-kesteven.org.uk/img/manifest.json",
-      "https://www.n-kesteven.org.uk/img/manifest.json",
-      "https://www.n-kesteven.org.uk/img/manifest.json",
-      "https://www.n-kesteven.org.uk/img/manifest.json",
-      "https://www.n-kesteven.org.uk/img/manifest.json",
-      "https://www.n-kesteven.org.uk/img/manifest.json"
-    ],
-    "data_extraction_indicators": []
-  },
-  "workflow_steps": [
+  "entries": [
     {
-      "action": "goto",
-      "target": "https://www.n-kesteven.gov.uk/residents/waste-recycling-and-environment/find-information-about-the-waste-service/find-your-bin-collection-days/",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
-    },
-    {
-      "action": "click",
-      "target": "aria-ref=e236 >> internal:describe=\"search for your bin days by postcode\"",
-      "status": "Failed",
-      "details": {
-        "error": "Timeout 5000ms exceeded."
-      },
-      "timestamp": 0
-    },
-    {
-      "action": "click",
-      "target": "aria-ref=e15 >> internal:describe=\"I Accept Cookies\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
-    },
-    {
-      "action": "click",
-      "target": "aria-ref=e236 >> internal:describe=\"search for your bin days by postcode\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
-    },
-    {
-      "action": "fill",
-      "target": "aria-ref=e144 >> internal:describe=\"textbox\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0,
-      "value": "LN10 6XY"
-    },
-    {
-      "action": "click",
-      "target": "aria-ref=e145 >> internal:describe=\"Submit button\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
-    },
-    {
-      "action": "selectOption",
-      "target": "aria-ref=e147 >> internal:describe=\"combobox\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0,
-      "value": null
-    },
-    {
-      "action": "click",
-      "target": "aria-ref=e179 >> internal:describe=\"Submit button\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
-    },
-    {
-      "action": "click",
-      "target": "aria-ref=e151 >> internal:describe=\"Full bin collection details\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
-    },
-    {
-      "action": "selectOption",
-      "target": "aria-ref=e147 >> internal:describe=\"combobox\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0,
-      "value": null
-    },
-    {
-      "action": "click",
-      "target": "aria-ref=e179 >> internal:describe=\"Submit button\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
-    }
-  ],
-  "navigation_events": [
-    {
-      "url": "https://www.n-kesteven.gov.uk/residents/waste-recycling-and-environment/find-information-about-the-waste-service/find-your-bin-collection-days/",
+      "timestamp": "2025-07-21T11:06:17.911Z",
+      "duration_ms": 139.029,
+      "endpoint": "/residents/{id}/{id}/{id}",
+      "host": "www.n-kesteven.gov.uk",
       "method": "GET",
       "status": 301,
-      "redirect_url": "https://www.n-kesteven.gov.uk/bins-waste-recycling/information-about-waste-service/find-your-bin-collection-days",
-      "mime_type": "text/html; charset=utf-8",
-      "size": -1,
-      "timestamp": "2025-07-21T11:06:17.911Z"
+      "path_params": [
+        "waste-recycling-and-environment",
+        "find-information-about-the-waste-service",
+        "find-your-bin-collection-days"
+      ],
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7"
+      },
+      "response_headers": {
+        "cache-control": "max-age=1800, public",
+        "content-type": "text/html; charset=utf-8",
+        "location": "https://www.n-kesteven.gov.uk/bins-waste-recycling/information-about-waste-service/find-your-bin-collection-days",
+        "x-cache": "Miss from cloudfront",
+        "x-content-type-options": "nosniff",
+        "x-drupal-cache": "HIT",
+        "x-frame-options": "SAMEORIGIN",
+        "x-redirect-id": "3560",
+        "x-xss-protection": "1; mode=block"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": -1
+      },
+      "redirect_to": "https://www.n-kesteven.gov.uk/bins-waste-recycling/information-about-waste-service/find-your-bin-collection-days"
     },
     {
-      "url": "https://www.n-kesteven.gov.uk/bins-waste-recycling/information-about-waste-service/find-your-bin-collection-days",
+      "timestamp": "2025-07-21T11:06:18.041Z",
+      "duration_ms": 77.708,
+      "endpoint": "/bins-waste-recycling/{id}/{id}",
+      "host": "www.n-kesteven.gov.uk",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "text/html; charset=UTF-8",
-      "size": 68918,
-      "timestamp": "2025-07-21T11:06:18.041Z"
+      "path_params": [
+        "information-about-waste-service",
+        "find-your-bin-collection-days"
+      ],
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7"
+      },
+      "response_headers": {
+        "cache-control": "max-age=1800, public",
+        "content-type": "text/html; charset=UTF-8",
+        "x-cache": "Miss from cloudfront",
+        "x-content-type-options": "nosniff",
+        "x-drupal-cache": "HIT",
+        "x-drupal-dynamic-cache": "UNCACHEABLE (poor cacheability)",
+        "x-frame-options": "SAMEORIGIN",
+        "x-xss-protection": "1; mode=block"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 68918,
+        "compressed": true,
+        "content_ref": "991ea39be4ccf4aab76a849ae952fd312125ac8d.html"
+      }
     },
     {
-      "url": "https://apikeys.civiccomputing.com/c/v?d=www.n-kesteven.gov.uk&p=CookieControl%20Multi-Site&v=9&k=af9130d1f685b6db5519a429b04e2fe3b069ebc5&format=json",
+      "timestamp": "2025-07-21T11:06:19.467Z",
+      "duration_ms": 57.516000000000005,
+      "endpoint": "/c/v",
+      "host": "apikeys.civiccomputing.com",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json",
-      "size": 306,
-      "timestamp": "2025-07-21T11:06:19.467Z"
+      "query_params": {
+        "d": [
+          "www.n-kesteven.gov.uk"
+        ],
+        "p": [
+          "CookieControl Multi-Site"
+        ],
+        "v": [
+          "9"
+        ],
+        "k": [
+          "af9130d1f685b6db5519a429b04e2fe3b069ebc5"
+        ],
+        "format": [
+          "json"
+        ]
+      },
+      "request_headers": {
+        "accept": "application/json, text/plain, */*",
+        "origin": "https://www.n-kesteven.gov.uk",
+        "referer": "https://www.n-kesteven.gov.uk/"
+      },
+      "response_headers": {
+        "cache-control": "max-age=3600, private, no-store",
+        "content-type": "application/json",
+        "x-apikeys": "hit",
+        "x-cf-test": "true",
+        "x-content-type-options": "nosniff",
+        "x-xss-protection": "1"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 306,
+        "content_ref": "1297ba324548f20a6ce75ccaf7826da16ab062cf.json"
+      }
     },
     {
-      "url": "https://clapi.civiccomputing.com/1/log?k=af9130d1f685b6db5519a429b04e2fe3b069ebc5&d=www.n-kesteven.gov.uk&u=undefined&c=%22%7B%5C%22necessaryCookies%5C%22%3A%5B%5C%22%27SSESS*%27%2C%20%27JSESSIONID%27%2C%20%27ASPSESSIONIDSADTTCCA%27%2C%20%27ASPSESSIONIDSGAQCSQQ%27%5C%22%5D%2C%5C%22optionalCookies%5C%22%3A%7B%5C%22analytics%5C%22%3A%5C%22accepted%5C%22%2C%5C%22functional%5C%22%3A%5C%22accepted%5C%22%2C%5C%22third_party%5C%22%3A%5C%22accepted%5C%22%7D%2C%5C%22statement%5C%22%3A%7B%5C%22shown%5C%22%3Atrue%2C%5C%22updated%5C%22%3A%5C%2204%2F05%2F2023%5C%22%7D%2C%5C%22consentDate%5C%22%3A1753095986949%2C%5C%22consentExpiry%5C%22%3A180%2C%5C%22interactedWith%5C%22%3Atrue%2C%5C%22user%5C%22%3A%5C%2216675BE5-73CE-4394-A268-2D803D4326FD%5C%22%7D%22",
+      "timestamp": "2025-07-21T11:06:19.539Z",
+      "duration_ms": -1,
+      "endpoint": "/",
+      "host": "tracking.monsido.com",
+      "method": "GET",
+      "status": -1,
+      "query_params": {
+        "a": [
+          "3j4sW8GuGlcGLY61eeZGpg"
+        ],
+        "b": [
+          "https://www.n-kesteven.gov.uk/bins-waste-recycling/information-about-waste-service/find-your-bin-collection-days"
+        ],
+        "c": [
+          "9691753095979527"
+        ],
+        "d": [
+          "800x600"
+        ],
+        "f": [
+          "8B61753095979527"
+        ],
+        "h": [
+          "2"
+        ]
+      },
+      "request_headers": {
+        "referer": "https://www.n-kesteven.gov.uk/"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T11:06:26.953Z",
+      "duration_ms": 69.53,
+      "endpoint": "/g/collect",
+      "host": "region1.google-analytics.com",
+      "method": "POST",
+      "status": 204,
+      "query_params": {
+        "v": [
+          "2"
+        ],
+        "tid": [
+          "G-463WC0D5S6"
+        ],
+        "gtm": [
+          "45je57g1v9116241798z876142483za200zb76142483"
+        ],
+        "_p": [
+          "1753095978189"
+        ],
+        "gcs": [
+          "G100"
+        ],
+        "gcd": [
+          "13p3p3l3l5l1"
+        ],
+        "npa": [
+          "0"
+        ],
+        "dma": [
+          "0"
+        ],
+        "tag_exp": [
+          "101509157~103116026~103200004~103233427~104684208~104684211~104948813"
+        ],
+        "gdid": [
+          "dMDhkMT"
+        ],
+        "cid": [
+          "2128340571.1753095987"
+        ],
+        "ul": [
+          "en-gb"
+        ],
+        "sr": [
+          "800x600"
+        ],
+        "uaa": [
+          "arm"
+        ],
+        "uab": [
+          "64"
+        ],
+        "uafvl": [
+          "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+        ],
+        "uamb": [
+          "0"
+        ],
+        "uap": [
+          "macOS"
+        ],
+        "uapv": [
+          "15.5.0"
+        ],
+        "uaw": [
+          "0"
+        ],
+        "are": [
+          "1"
+        ],
+        "frm": [
+          "0"
+        ],
+        "pscdl": [
+          "denied"
+        ],
+        "_s": [
+          "1"
+        ],
+        "sid": [
+          "1753095986"
+        ],
+        "sct": [
+          "1"
+        ],
+        "seg": [
+          "0"
+        ],
+        "dl": [
+          "https://www.n-kesteven.gov.uk/bins-waste-recycling/information-about-waste-service/find-your-bin-collection-days"
+        ],
+        "dt": [
+          "Find your bin collection days | North Kesteven District Council"
+        ],
+        "_tu": [
+          "QA"
+        ],
+        "en": [
+          "page_view"
+        ],
+        "_fv": [
+          "1"
+        ],
+        "_nsi": [
+          "1"
+        ],
+        "_ss": [
+          "1"
+        ],
+        "tfd": [
+          "9030"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "cookie": "[cookies present]",
+        "origin": "https://www.n-kesteven.gov.uk",
+        "referer": "https://www.n-kesteven.gov.uk/"
+      },
+      "response_headers": {
+        "cache-control": "no-cache, no-store, must-revalidate",
+        "content-type": "text/plain"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T11:06:26.954Z",
+      "duration_ms": 117.136,
+      "endpoint": "/{id}/log",
+      "host": "clapi.civiccomputing.com",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json",
-      "size": 13,
-      "timestamp": "2025-07-21T11:06:26.954Z"
+      "path_params": [
+        "1"
+      ],
+      "query_params": {
+        "k": [
+          "af9130d1f685b6db5519a429b04e2fe3b069ebc5"
+        ],
+        "d": [
+          "www.n-kesteven.gov.uk"
+        ],
+        "u": [
+          "undefined"
+        ],
+        "c": [
+          "\"{\\\"necessaryCookies\\\":[\\\"'SSESS*', 'JSESSIONID', 'ASPSESSIONIDSADTTCCA', 'ASPSESSIONIDSGAQCSQQ'\\\"],\\\"optionalCookies\\\":{\\\"analytics\\\":\\\"accepted\\\",\\\"functional\\\":\\\"accepted\\\",\\\"third_party\\\":\\\"accepted\\\"},\\\"statement\\\":{\\\"shown\\\":true,\\\"updated\\\":\\\"04/05/2023\\\"},\\\"consentDate\\\":1753095986949,\\\"consentExpiry\\\":180,\\\"interactedWith\\\":true,\\\"user\\\":\\\"16675BE5-73CE-4394-A268-2D803D4326FD\\\"}\""
+        ]
+      },
+      "request_headers": {
+        "accept": "application/json, text/plain, */*",
+        "origin": "https://www.n-kesteven.gov.uk",
+        "referer": "https://www.n-kesteven.gov.uk/"
+      },
+      "response_headers": {
+        "content-type": "application/json",
+        "x-content-type-options": "nosniff",
+        "x-xss-protection": "0"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 13,
+        "content_ref": "a26ad77888189cc5d6973bb818e45f448628c5c1.json"
+      }
     },
     {
-      "url": "https://n-kesteven.piwik.pro/ppms.php",
+      "timestamp": "2025-07-21T11:06:27.137Z",
+      "duration_ms": 110.682,
+      "endpoint": "/ppms.php",
+      "host": "n-kesteven.piwik.pro",
       "method": "POST",
       "status": 202,
-      "redirect_url": null,
-      "mime_type": "x-unknown",
-      "size": 0,
-      "timestamp": "2025-07-21T11:06:27.137Z"
+      "request_headers": {
+        "referer": "https://www.n-kesteven.gov.uk/",
+        "content-type": "application/x-www-form-urlencoded; charset=utf-8"
+      }
     },
     {
-      "url": "https://n-kesteven.piwik.pro/ppms.php",
+      "timestamp": "2025-07-21T11:06:31.953Z",
+      "duration_ms": 14.809,
+      "endpoint": "/g/collect",
+      "host": "region1.google-analytics.com",
+      "method": "POST",
+      "status": 204,
+      "query_params": {
+        "v": [
+          "2"
+        ],
+        "tid": [
+          "G-463WC0D5S6"
+        ],
+        "gtm": [
+          "45je57g1v9116241798za200zb76142483"
+        ],
+        "_p": [
+          "1753095978189"
+        ],
+        "gcs": [
+          "G101"
+        ],
+        "gcd": [
+          "13p3r3l3l5l1"
+        ],
+        "npa": [
+          "0"
+        ],
+        "dma": [
+          "0"
+        ],
+        "tag_exp": [
+          "101509157~103116026~103200004~103233427~104684208~104684211~104948813"
+        ],
+        "gdid": [
+          "dMDhkMT"
+        ],
+        "cid": [
+          "2128340571.1753095987"
+        ],
+        "ul": [
+          "en-gb"
+        ],
+        "sr": [
+          "800x600"
+        ],
+        "uaa": [
+          "arm"
+        ],
+        "uab": [
+          "64"
+        ],
+        "uafvl": [
+          "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+        ],
+        "uamb": [
+          "0"
+        ],
+        "uap": [
+          "macOS"
+        ],
+        "uapv": [
+          "15.5.0"
+        ],
+        "uaw": [
+          "0"
+        ],
+        "are": [
+          "1"
+        ],
+        "frm": [
+          "0"
+        ],
+        "pscdl": [
+          "denied"
+        ],
+        "_eu": [
+          "AAAAAAQ"
+        ],
+        "_s": [
+          "2"
+        ],
+        "sid": [
+          "1753095986"
+        ],
+        "sct": [
+          "1"
+        ],
+        "seg": [
+          "0"
+        ],
+        "dl": [
+          "https://www.n-kesteven.gov.uk/bins-waste-recycling/information-about-waste-service/find-your-bin-collection-days"
+        ],
+        "dt": [
+          "Find your bin collection days | North Kesteven District Council"
+        ],
+        "_tu": [
+          "QA"
+        ],
+        "en": [
+          "user_engagement"
+        ],
+        "ep.ga_temp_client_id": [
+          "2128340571.1753095987"
+        ],
+        "_et": [
+          "8"
+        ],
+        "tfd": [
+          "14041"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "cookie": "[cookies present]",
+        "origin": "https://www.n-kesteven.gov.uk",
+        "referer": "https://www.n-kesteven.gov.uk/"
+      },
+      "response_headers": {
+        "cache-control": "no-cache, no-store, must-revalidate",
+        "content-type": "text/plain"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T11:06:39.445Z",
+      "duration_ms": 94.723,
+      "endpoint": "/ppms.php",
+      "host": "n-kesteven.piwik.pro",
       "method": "POST",
       "status": 202,
-      "redirect_url": null,
-      "mime_type": "x-unknown",
-      "size": -1,
-      "timestamp": "2025-07-21T11:06:39.445Z"
+      "request_headers": {
+        "referer": "https://www.n-kesteven.gov.uk/",
+        "content-type": "application/x-www-form-urlencoded; charset=utf-8"
+      }
     },
     {
-      "url": "https://www.n-kesteven.org.uk/bins",
+      "timestamp": "2025-07-21T11:06:39.502Z",
+      "duration_ms": 145.715,
+      "endpoint": "/bins",
+      "host": "www.n-kesteven.org.uk",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "text/html; charset=UTF-8",
-      "size": 41243,
-      "timestamp": "2025-07-21T11:06:39.502Z"
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+        "referer": "https://www.n-kesteven.gov.uk/"
+      },
+      "response_headers": {
+        "cache-control": "no-store, no-cache, must-revalidate, no-store, max-age=0, no-cache",
+        "content-type": "text/html; charset=UTF-8",
+        "set-cookie": "[cookies present]",
+        "x-powered-by": "PHP/8.1.32"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 41243,
+        "compressed": true,
+        "content_ref": "0fa7d8d9e83001d697eca2150e735def99ae8f99.html"
+      }
     },
     {
-      "url": "https://www.n-kesteven.org.uk/cdn-cgi/challenge-platform/scripts/jsd/main.js",
-      "method": "GET",
-      "status": 302,
-      "redirect_url": "https://www.n-kesteven.org.uk/cdn-cgi/challenge-platform/h/g/scripts/jsd/4d127ba5149d/main.js?",
-      "mime_type": "x-unknown",
-      "size": -1,
-      "timestamp": "2025-07-21T11:06:39.954Z"
-    },
-    {
-      "url": "https://www.n-kesteven.org.uk/cdn-cgi/challenge-platform/h/g/jsd/r/0.9112141073096818:1753093015:iiUHu7jgK0AaQoYlH9Tzk40Da5BVvmJM0QGOFOzWN7E/962a3aed48d576c5",
+      "timestamp": "2025-07-21T11:06:40.266Z",
+      "duration_ms": 18.324,
+      "endpoint": "/cdn-cgi/challenge-platform/h/g/jsd/r/{id}/962a3aed48d576c5",
+      "host": "www.n-kesteven.org.uk",
       "method": "POST",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "text/plain; charset=UTF-8",
-      "size": 0,
-      "timestamp": "2025-07-21T11:06:40.266Z"
+      "path_params": [
+        "0.9112141073096818:1753093015:iiUHu7jgK0AaQoYlH9Tzk40Da5BVvmJM0QGOFOzWN7E"
+      ],
+      "request_headers": {
+        "accept": "*/*",
+        "content-type": "text/plain;charset=UTF-8",
+        "cookie": "[cookies present]",
+        "origin": "https://www.n-kesteven.org.uk"
+      },
+      "response_headers": {
+        "content-type": "text/plain; charset=UTF-8",
+        "set-cookie": "[cookies present]"
+      }
     },
     {
-      "url": "https://www.n-kesteven.org.uk/img/manifest.json",
+      "timestamp": "2025-07-21T11:06:40.275Z",
+      "duration_ms": 128.46,
+      "endpoint": "/img/manifest.json",
+      "host": "www.n-kesteven.org.uk",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json",
-      "size": 720,
-      "timestamp": "2025-07-21T11:06:40.275Z"
+      "request_headers": {
+        "accept": "*/*",
+        "referer": "https://www.n-kesteven.org.uk/bins"
+      },
+      "response_headers": {
+        "content-type": "application/json"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 720,
+        "content_ref": "d11febf9e708a9e11baee37ed7dc5e99902580be.json"
+      }
     },
     {
-      "url": "https://www.n-kesteven.org.uk/bins",
+      "timestamp": "2025-07-21T11:06:40.268Z",
+      "duration_ms": -1,
+      "endpoint": "/",
+      "host": "tracking.monsido.com",
+      "method": "GET",
+      "status": -1,
+      "query_params": {
+        "a": [
+          "3j4sW8GuGlcGLY61eeZGpg"
+        ],
+        "b": [
+          "https://www.n-kesteven.org.uk/bins"
+        ],
+        "c": [
+          "B251753096000262"
+        ],
+        "d": [
+          "800x600"
+        ],
+        "e": [
+          "https://www.n-kesteven.gov.uk/"
+        ],
+        "f": [
+          "9621753096000262"
+        ],
+        "h": [
+          "2"
+        ]
+      },
+      "request_headers": {
+        "referer": "https://www.n-kesteven.org.uk/"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T11:06:44.912Z",
+      "duration_ms": 62.483999999999995,
+      "endpoint": "/g/collect",
+      "host": "region1.google-analytics.com",
       "method": "POST",
-      "status": 303,
-      "redirect_url": "https://www.n-kesteven.org.uk/bins/address",
-      "mime_type": "text/html; charset=UTF-8",
-      "size": -1,
+      "status": 204,
+      "query_params": {
+        "v": [
+          "2"
+        ],
+        "tid": [
+          "G-463WC0D5S6"
+        ],
+        "gtm": [
+          "45je57h0h2v9116241798za200zb76142483"
+        ],
+        "_p": [
+          "1753095999695"
+        ],
+        "gcd": [
+          "13l3l3l3l1l1"
+        ],
+        "npa": [
+          "0"
+        ],
+        "dma": [
+          "0"
+        ],
+        "tag_exp": [
+          "101509157~103116026~103200004~103233427~104573694~104684208~104684211"
+        ],
+        "cid": [
+          "137080779.1753096005"
+        ],
+        "ul": [
+          "en-gb"
+        ],
+        "sr": [
+          "800x600"
+        ],
+        "uaa": [
+          "arm"
+        ],
+        "uab": [
+          "64"
+        ],
+        "uafvl": [
+          "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+        ],
+        "uamb": [
+          "0"
+        ],
+        "uap": [
+          "macOS"
+        ],
+        "uapv": [
+          "15.5.0"
+        ],
+        "uaw": [
+          "0"
+        ],
+        "are": [
+          "1"
+        ],
+        "frm": [
+          "0"
+        ],
+        "pscdl": [
+          "noapi"
+        ],
+        "_eu": [
+          "AEE"
+        ],
+        "_s": [
+          "1"
+        ],
+        "sid": [
+          "1753096004"
+        ],
+        "sct": [
+          "1"
+        ],
+        "seg": [
+          "0"
+        ],
+        "dl": [
+          "https://www.n-kesteven.org.uk/bins"
+        ],
+        "dr": [
+          "https://www.n-kesteven.gov.uk/"
+        ],
+        "dt": [
+          "Find your bin collection day | North Kesteven District Council"
+        ],
+        "_tu": [
+          "QA"
+        ],
+        "en": [
+          "form_start"
+        ],
+        "_fv": [
+          "1"
+        ],
+        "_nsi": [
+          "1"
+        ],
+        "_ss": [
+          "1"
+        ],
+        "ep.form_destination": [
+          "https://www.n-kesteven.org.uk/bins"
+        ],
+        "epn.form_length": [
+          "2"
+        ],
+        "ep.first_field_name": [
+          "postcode"
+        ],
+        "ep.first_field_type": [
+          "postcode"
+        ],
+        "epn.first_field_position": [
+          "1"
+        ],
+        "tfd": [
+          "5461"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "cookie": "[cookies present]",
+        "origin": "https://www.n-kesteven.org.uk",
+        "referer": "https://www.n-kesteven.org.uk/"
+      },
+      "response_headers": {
+        "cache-control": "no-cache, no-store, must-revalidate",
+        "content-type": "text/plain"
+      }
+    },
+    {
       "timestamp": "2025-07-21T11:06:45.005Z",
-      "form_data": {
-        "postcode": "LN10 6XY",
-        "submit": ""
+      "duration_ms": 109.544,
+      "endpoint": "/bins",
+      "host": "www.n-kesteven.org.uk",
+      "method": "POST",
+      "status": 303,
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+        "content-type": "application/x-www-form-urlencoded",
+        "cookie": "[cookies present]",
+        "origin": "https://www.n-kesteven.org.uk",
+        "referer": "https://www.n-kesteven.org.uk/bins"
+      },
+      "response_headers": {
+        "cache-control": "no-store, no-cache, must-revalidate, no-store, max-age=0, no-cache",
+        "content-type": "text/html; charset=UTF-8",
+        "location": "https://www.n-kesteven.org.uk/bins/address",
+        "x-powered-by": "PHP/8.1.32"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": -1
+      },
+      "redirect_to": "https://www.n-kesteven.org.uk/bins/address"
+    },
+    {
+      "timestamp": "2025-07-21T11:06:45.978Z",
+      "duration_ms": -1,
+      "endpoint": "/g/collect",
+      "host": "region1.google-analytics.com",
+      "method": "POST",
+      "status": -1,
+      "query_params": {
+        "v": [
+          "2"
+        ],
+        "tid": [
+          "G-463WC0D5S6"
+        ],
+        "gtm": [
+          "45je57h0h2v9116241798za200zb76142483"
+        ],
+        "_p": [
+          "1753095999695"
+        ],
+        "gcd": [
+          "13l3l3l3l1l1"
+        ],
+        "npa": [
+          "0"
+        ],
+        "dma": [
+          "0"
+        ],
+        "tag_exp": [
+          "101509157~103116026~103200004~103233427~104573694~104684208~104684211"
+        ],
+        "cid": [
+          "137080779.1753096005"
+        ],
+        "ul": [
+          "en-gb"
+        ],
+        "sr": [
+          "800x600"
+        ],
+        "uaa": [
+          "arm"
+        ],
+        "uab": [
+          "64"
+        ],
+        "uafvl": [
+          "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+        ],
+        "uamb": [
+          "0"
+        ],
+        "uap": [
+          "macOS"
+        ],
+        "uapv": [
+          "15.5.0"
+        ],
+        "uaw": [
+          "0"
+        ],
+        "are": [
+          "1"
+        ],
+        "frm": [
+          "0"
+        ],
+        "pscdl": [
+          "noapi"
+        ],
+        "_eu": [
+          "AEEAAAQ"
+        ],
+        "_s": [
+          "2"
+        ],
+        "sid": [
+          "1753096004"
+        ],
+        "sct": [
+          "1"
+        ],
+        "seg": [
+          "0"
+        ],
+        "dl": [
+          "https://www.n-kesteven.org.uk/bins"
+        ],
+        "dr": [
+          "https://www.n-kesteven.gov.uk/"
+        ],
+        "dt": [
+          "Find your bin collection day | North Kesteven District Council"
+        ],
+        "_tu": [
+          "QA"
+        ],
+        "en": [
+          "form_submit"
+        ],
+        "ep.form_destination": [
+          "https://www.n-kesteven.org.uk/bins"
+        ],
+        "epn.form_length": [
+          "2"
+        ],
+        "_et": [
+          "51"
+        ],
+        "tfd": [
+          "6527"
+        ]
+      },
+      "request_headers": {
+        "referer": "https://www.n-kesteven.org.uk/"
       }
     },
     {
-      "url": "https://www.n-kesteven.org.uk/bins/address",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "text/html; charset=UTF-8",
-      "size": 42883,
-      "timestamp": "2025-07-21T11:06:45.115Z"
-    },
-    {
-      "url": "https://www.n-kesteven.org.uk/img/manifest.json",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json",
-      "size": 720,
-      "timestamp": "2025-07-21T11:06:46.105Z"
-    },
-    {
-      "url": "https://www.n-kesteven.org.uk/bins/address",
+      "timestamp": "2025-07-21T11:06:45.979Z",
+      "duration_ms": -1,
+      "endpoint": "/g/collect",
+      "host": "region1.google-analytics.com",
       "method": "POST",
-      "status": 303,
-      "redirect_url": "https://www.n-kesteven.org.uk/bins/display?uprn=90000001096",
-      "mime_type": "text/html; charset=UTF-8",
-      "size": -1,
+      "status": -1,
+      "query_params": {
+        "v": [
+          "2"
+        ],
+        "tid": [
+          "G-463WC0D5S6"
+        ],
+        "gtm": [
+          "45je57h0h2v9116241798za200zb76142483"
+        ],
+        "_p": [
+          "1753095999695"
+        ],
+        "gcd": [
+          "13l3l3l3l1l1"
+        ],
+        "npa": [
+          "0"
+        ],
+        "dma": [
+          "0"
+        ],
+        "tag_exp": [
+          "101509157~103116026~103200004~103233427~104573694~104684208~104684211"
+        ],
+        "cid": [
+          "137080779.1753096005"
+        ],
+        "ul": [
+          "en-gb"
+        ],
+        "sr": [
+          "800x600"
+        ],
+        "uaa": [
+          "arm"
+        ],
+        "uab": [
+          "64"
+        ],
+        "uafvl": [
+          "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+        ],
+        "uamb": [
+          "0"
+        ],
+        "uap": [
+          "macOS"
+        ],
+        "uapv": [
+          "15.5.0"
+        ],
+        "uaw": [
+          "0"
+        ],
+        "are": [
+          "1"
+        ],
+        "frm": [
+          "0"
+        ],
+        "pscdl": [
+          "noapi"
+        ],
+        "_eu": [
+          "AAAAAAQ"
+        ],
+        "_s": [
+          "3"
+        ],
+        "sid": [
+          "1753096004"
+        ],
+        "sct": [
+          "1"
+        ],
+        "seg": [
+          "0"
+        ],
+        "dl": [
+          "https://www.n-kesteven.org.uk/bins"
+        ],
+        "dr": [
+          "https://www.n-kesteven.gov.uk/"
+        ],
+        "dt": [
+          "Find your bin collection day | North Kesteven District Council"
+        ],
+        "_tu": [
+          "QA"
+        ],
+        "en": [
+          "user_engagement"
+        ],
+        "_et": [
+          "1009"
+        ],
+        "tfd": [
+          "6528"
+        ]
+      },
+      "request_headers": {
+        "referer": "https://www.n-kesteven.org.uk/"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T11:06:45.980Z",
+      "duration_ms": -1,
+      "endpoint": "/element/log",
+      "host": "translate.googleapis.com",
+      "method": "POST",
+      "status": -1,
+      "query_params": {
+        "hasfast": [
+          "true"
+        ],
+        "authuser": [
+          "0"
+        ],
+        "format": [
+          "json"
+        ]
+      },
+      "request_headers": {
+        "referer": "https://www.n-kesteven.org.uk/",
+        "content-type": "text/plain;charset=UTF-8"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T11:06:45.115Z",
+      "duration_ms": 848.1800000000001,
+      "endpoint": "/bins/address",
+      "host": "www.n-kesteven.org.uk",
+      "method": "GET",
+      "status": 200,
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+        "cookie": "[cookies present]",
+        "referer": "https://www.n-kesteven.org.uk/bins"
+      },
+      "response_headers": {
+        "cache-control": "no-store, no-cache, must-revalidate, no-store, max-age=0, no-cache",
+        "content-type": "text/html; charset=UTF-8",
+        "x-powered-by": "PHP/8.1.32"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 42883,
+        "compressed": true,
+        "content_ref": "53877047ffa834b32435d4e6d4fdffea9ade6e5c.html"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T11:06:46.105Z",
+      "duration_ms": 0.962,
+      "endpoint": "/img/manifest.json",
+      "host": "www.n-kesteven.org.uk",
+      "method": "GET",
+      "status": 200,
+      "request_headers": {
+        "referer": "https://www.n-kesteven.org.uk/bins/address"
+      },
+      "response_headers": {
+        "content-type": "application/json"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 720,
+        "compressed": true,
+        "content_ref": "d11febf9e708a9e11baee37ed7dc5e99902580be.json"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T11:06:46.104Z",
+      "duration_ms": -1,
+      "endpoint": "/",
+      "host": "tracking.monsido.com",
+      "method": "GET",
+      "status": -1,
+      "query_params": {
+        "a": [
+          "3j4sW8GuGlcGLY61eeZGpg"
+        ],
+        "b": [
+          "https://www.n-kesteven.org.uk/bins/address"
+        ],
+        "c": [
+          "E921753096006089"
+        ],
+        "d": [
+          "800x600"
+        ],
+        "e": [
+          "https://www.n-kesteven.org.uk/bins"
+        ],
+        "f": [
+          "6D61753096006089"
+        ],
+        "h": [
+          "2"
+        ]
+      },
+      "request_headers": {
+        "referer": "https://www.n-kesteven.org.uk/"
+      }
+    },
+    {
       "timestamp": "2025-07-21T11:06:51.370Z",
-      "form_data": {
-        "uprn": "90000001096",
-        "submit": ""
-      }
-    },
-    {
-      "url": "https://www.n-kesteven.org.uk/bins/display?uprn=90000001096",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "text/html; charset=UTF-8",
-      "size": 40665,
-      "timestamp": "2025-07-21T11:06:52.160Z"
-    },
-    {
-      "url": "https://www.n-kesteven.org.uk/img/manifest.json",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json",
-      "size": 720,
-      "timestamp": "2025-07-21T11:06:52.905Z"
-    },
-    {
-      "url": "https://www.n-kesteven.org.uk/bins/details?uprn=90000001096",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "text/html; charset=UTF-8",
-      "size": 40538,
-      "timestamp": "2025-07-21T11:06:55.594Z"
-    },
-    {
-      "url": "https://www.n-kesteven.org.uk/img/manifest.json",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json",
-      "size": 720,
-      "timestamp": "2025-07-21T11:06:56.505Z"
-    },
-    {
-      "url": "https://www.n-kesteven.org.uk/bins/display?uprn=90000001096",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "text/html; charset=UTF-8",
-      "size": 40803,
-      "timestamp": "2025-07-21T11:06:58.872Z"
-    },
-    {
-      "url": "https://www.n-kesteven.org.uk/img/manifest.json",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json",
-      "size": 720,
-      "timestamp": "2025-07-21T11:06:59.248Z"
-    },
-    {
-      "url": "https://www.n-kesteven.org.uk/bins/address",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "text/html; charset=UTF-8",
-      "size": 42883,
-      "timestamp": "2025-07-21T11:07:01.794Z"
-    },
-    {
-      "url": "https://www.n-kesteven.org.uk/img/manifest.json",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json",
-      "size": 720,
-      "timestamp": "2025-07-21T11:07:02.661Z"
-    },
-    {
-      "url": "https://translate.googleapis.com/element/log?format=json&hasfast=true&authuser=0",
-      "method": "POST",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "text/plain; charset=UTF-8",
-      "size": 131,
-      "timestamp": "2025-07-21T11:07:13.127Z"
-    },
-    {
-      "url": "https://www.n-kesteven.org.uk/bins/address",
+      "duration_ms": 787.5590000000001,
+      "endpoint": "/bins/address",
+      "host": "www.n-kesteven.org.uk",
       "method": "POST",
       "status": 303,
-      "redirect_url": "https://www.n-kesteven.org.uk/bins/display?uprn=100030871851",
-      "mime_type": "text/html; charset=UTF-8",
-      "size": -1,
-      "timestamp": "2025-07-21T11:07:18.004Z",
-      "form_data": {
-        "uprn": "100030871851",
-        "submit": ""
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+        "content-type": "application/x-www-form-urlencoded",
+        "cookie": "[cookies present]",
+        "origin": "https://www.n-kesteven.org.uk",
+        "referer": "https://www.n-kesteven.org.uk/bins/address"
+      },
+      "response_headers": {
+        "cache-control": "no-store, no-cache, must-revalidate, no-store, max-age=0, no-cache",
+        "content-type": "text/html; charset=UTF-8",
+        "location": "https://www.n-kesteven.org.uk/bins/display?uprn=90000001096",
+        "x-powered-by": "PHP/8.1.32"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": -1
+      },
+      "redirect_to": "https://www.n-kesteven.org.uk/bins/display?uprn=90000001096"
+    },
+    {
+      "timestamp": "2025-07-21T11:06:52.786Z",
+      "duration_ms": -1,
+      "endpoint": "/element/log",
+      "host": "translate.googleapis.com",
+      "method": "POST",
+      "status": -1,
+      "query_params": {
+        "hasfast": [
+          "true"
+        ],
+        "authuser": [
+          "0"
+        ],
+        "format": [
+          "json"
+        ]
+      },
+      "request_headers": {
+        "referer": "https://www.n-kesteven.org.uk/",
+        "content-type": "text/plain;charset=UTF-8"
       }
     },
     {
-      "url": "https://www.n-kesteven.org.uk/bins/display?uprn=100030871851",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "text/html; charset=UTF-8",
-      "size": 41106,
-      "timestamp": "2025-07-21T11:07:18.600Z"
+      "timestamp": "2025-07-21T11:06:52.785Z",
+      "duration_ms": -1,
+      "endpoint": "/g/collect",
+      "host": "region1.google-analytics.com",
+      "method": "POST",
+      "status": -1,
+      "query_params": {
+        "v": [
+          "2"
+        ],
+        "tid": [
+          "G-463WC0D5S6"
+        ],
+        "gtm": [
+          "45je57h0h2v9116241798za200zb76142483"
+        ],
+        "_p": [
+          "1753096005985"
+        ],
+        "gcd": [
+          "13l3l3l3l1l1"
+        ],
+        "npa": [
+          "0"
+        ],
+        "dma": [
+          "0"
+        ],
+        "tag_exp": [
+          "101509157~103116026~103200004~103233427~104573694~104684208~104684211"
+        ],
+        "cid": [
+          "137080779.1753096005"
+        ],
+        "ul": [
+          "en-gb"
+        ],
+        "sr": [
+          "800x600"
+        ],
+        "uaa": [
+          "arm"
+        ],
+        "uab": [
+          "64"
+        ],
+        "uafvl": [
+          "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+        ],
+        "uamb": [
+          "0"
+        ],
+        "uap": [
+          "macOS"
+        ],
+        "uapv": [
+          "15.5.0"
+        ],
+        "uaw": [
+          "0"
+        ],
+        "are": [
+          "1"
+        ],
+        "frm": [
+          "0"
+        ],
+        "pscdl": [
+          "noapi"
+        ],
+        "_eu": [
+          "AAAAAAQ"
+        ],
+        "_s": [
+          "2"
+        ],
+        "sid": [
+          "1753096004"
+        ],
+        "sct": [
+          "1"
+        ],
+        "seg": [
+          "0"
+        ],
+        "dl": [
+          "https://www.n-kesteven.org.uk/bins/address"
+        ],
+        "dr": [
+          "https://www.n-kesteven.org.uk/bins"
+        ],
+        "dt": [
+          "Find your bin collection day | North Kesteven District Council"
+        ],
+        "_tu": [
+          "QA"
+        ],
+        "en": [
+          "user_engagement"
+        ],
+        "_et": [
+          "1468"
+        ],
+        "tfd": [
+          "7821"
+        ]
+      },
+      "request_headers": {
+        "referer": "https://www.n-kesteven.org.uk/"
+      }
     },
     {
-      "url": "https://www.n-kesteven.org.uk/img/manifest.json",
+      "timestamp": "2025-07-21T11:06:52.783Z",
+      "duration_ms": -1,
+      "endpoint": "/g/collect",
+      "host": "region1.google-analytics.com",
+      "method": "POST",
+      "status": -1,
+      "query_params": {
+        "v": [
+          "2"
+        ],
+        "tid": [
+          "G-463WC0D5S6"
+        ],
+        "gtm": [
+          "45je57h0h2v9116241798za200zb76142483"
+        ],
+        "_p": [
+          "1753096005985"
+        ],
+        "gcd": [
+          "13l3l3l3l1l1"
+        ],
+        "npa": [
+          "0"
+        ],
+        "dma": [
+          "0"
+        ],
+        "tag_exp": [
+          "101509157~103116026~103200004~103233427~104573694~104684208~104684211"
+        ],
+        "cid": [
+          "137080779.1753096005"
+        ],
+        "ul": [
+          "en-gb"
+        ],
+        "sr": [
+          "800x600"
+        ],
+        "uaa": [
+          "arm"
+        ],
+        "uab": [
+          "64"
+        ],
+        "uafvl": [
+          "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+        ],
+        "uamb": [
+          "0"
+        ],
+        "uap": [
+          "macOS"
+        ],
+        "uapv": [
+          "15.5.0"
+        ],
+        "uaw": [
+          "0"
+        ],
+        "are": [
+          "1"
+        ],
+        "frm": [
+          "0"
+        ],
+        "pscdl": [
+          "noapi"
+        ],
+        "_eu": [
+          "AEEAAAQ"
+        ],
+        "sid": [
+          "1753096004"
+        ],
+        "sct": [
+          "1"
+        ],
+        "seg": [
+          "0"
+        ],
+        "dl": [
+          "https://www.n-kesteven.org.uk/bins/address"
+        ],
+        "dr": [
+          "https://www.n-kesteven.org.uk/bins"
+        ],
+        "dt": [
+          "Find your bin collection day | North Kesteven District Council"
+        ],
+        "_tu": [
+          "QA"
+        ],
+        "_s": [
+          "1"
+        ],
+        "tfd": [
+          "7820"
+        ]
+      },
+      "request_headers": {
+        "referer": "https://www.n-kesteven.org.uk/",
+        "content-type": "text/plain;charset=UTF-8"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T11:06:52.160Z",
+      "duration_ms": 613.825,
+      "endpoint": "/bins/display",
+      "host": "www.n-kesteven.org.uk",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json",
-      "size": 720,
-      "timestamp": "2025-07-21T11:07:19.727Z"
+      "query_params": {
+        "uprn": [
+          "90000001096"
+        ]
+      },
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+        "cookie": "[cookies present]",
+        "referer": "https://www.n-kesteven.org.uk/bins/address"
+      },
+      "response_headers": {
+        "cache-control": "no-store, no-cache, must-revalidate, no-store, max-age=0, no-cache",
+        "content-type": "text/html; charset=UTF-8",
+        "x-powered-by": "PHP/8.1.32"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 40665,
+        "compressed": true,
+        "content_ref": "23af717a86d7cb636c26c0f4fb868d28e4e08c48.html"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T11:06:52.905Z",
+      "duration_ms": 1.101,
+      "endpoint": "/img/manifest.json",
+      "host": "www.n-kesteven.org.uk",
+      "method": "GET",
+      "status": 200,
+      "request_headers": {
+        "referer": "https://www.n-kesteven.org.uk/bins/display?uprn=90000001096"
+      },
+      "response_headers": {
+        "content-type": "application/json"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 720,
+        "compressed": true,
+        "content_ref": "d11febf9e708a9e11baee37ed7dc5e99902580be.json"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T11:06:52.905Z",
+      "duration_ms": -1,
+      "endpoint": "/",
+      "host": "tracking.monsido.com",
+      "method": "GET",
+      "status": -1,
+      "query_params": {
+        "a": [
+          "3j4sW8GuGlcGLY61eeZGpg"
+        ],
+        "b": [
+          "https://www.n-kesteven.org.uk/bins/display?uprn=90000001096"
+        ],
+        "c": [
+          "E4E1753096012869"
+        ],
+        "d": [
+          "800x600"
+        ],
+        "e": [
+          "https://www.n-kesteven.org.uk/bins/address"
+        ],
+        "f": [
+          "14B1753096012869"
+        ],
+        "h": [
+          "2"
+        ]
+      },
+      "request_headers": {
+        "referer": "https://www.n-kesteven.org.uk/"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T11:06:56.374Z",
+      "duration_ms": -1,
+      "endpoint": "/element/log",
+      "host": "translate.googleapis.com",
+      "method": "POST",
+      "status": -1,
+      "query_params": {
+        "hasfast": [
+          "true"
+        ],
+        "authuser": [
+          "0"
+        ],
+        "format": [
+          "json"
+        ]
+      },
+      "request_headers": {
+        "referer": "https://www.n-kesteven.org.uk/",
+        "content-type": "text/plain;charset=UTF-8"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T11:06:56.373Z",
+      "duration_ms": -1,
+      "endpoint": "/g/collect",
+      "host": "region1.google-analytics.com",
+      "method": "POST",
+      "status": -1,
+      "query_params": {
+        "v": [
+          "2"
+        ],
+        "tid": [
+          "G-463WC0D5S6"
+        ],
+        "gtm": [
+          "45je57h0h2v9116241798za200zb76142483"
+        ],
+        "_p": [
+          "1753096012790"
+        ],
+        "gcd": [
+          "13l3l3l3l1l1"
+        ],
+        "npa": [
+          "0"
+        ],
+        "dma": [
+          "0"
+        ],
+        "tag_exp": [
+          "101509157~103116026~103200004~103233427~104573694~104684208~104684211"
+        ],
+        "cid": [
+          "137080779.1753096005"
+        ],
+        "ul": [
+          "en-gb"
+        ],
+        "sr": [
+          "800x600"
+        ],
+        "uaa": [
+          "arm"
+        ],
+        "uab": [
+          "64"
+        ],
+        "uafvl": [
+          "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+        ],
+        "uamb": [
+          "0"
+        ],
+        "uap": [
+          "macOS"
+        ],
+        "uapv": [
+          "15.5.0"
+        ],
+        "uaw": [
+          "0"
+        ],
+        "are": [
+          "1"
+        ],
+        "frm": [
+          "0"
+        ],
+        "pscdl": [
+          "noapi"
+        ],
+        "_eu": [
+          "AAAAAAQ"
+        ],
+        "_s": [
+          "2"
+        ],
+        "sid": [
+          "1753096004"
+        ],
+        "sct": [
+          "1"
+        ],
+        "seg": [
+          "0"
+        ],
+        "dl": [
+          "https://www.n-kesteven.org.uk/bins/display?uprn=90000001096"
+        ],
+        "dr": [
+          "https://www.n-kesteven.org.uk/bins/address"
+        ],
+        "dt": [
+          "Find your bin collection day | North Kesteven District Council"
+        ],
+        "_tu": [
+          "QA"
+        ],
+        "en": [
+          "user_engagement"
+        ],
+        "_et": [
+          "3523"
+        ],
+        "tfd": [
+          "5060"
+        ]
+      },
+      "request_headers": {
+        "referer": "https://www.n-kesteven.org.uk/"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T11:06:56.372Z",
+      "duration_ms": -1,
+      "endpoint": "/g/collect",
+      "host": "region1.google-analytics.com",
+      "method": "POST",
+      "status": -1,
+      "query_params": {
+        "v": [
+          "2"
+        ],
+        "tid": [
+          "G-463WC0D5S6"
+        ],
+        "gtm": [
+          "45je57h0h2v9116241798za200zb76142483"
+        ],
+        "_p": [
+          "1753096012790"
+        ],
+        "gcd": [
+          "13l3l3l3l1l1"
+        ],
+        "npa": [
+          "0"
+        ],
+        "dma": [
+          "0"
+        ],
+        "tag_exp": [
+          "101509157~103116026~103200004~103233427~104573694~104684208~104684211"
+        ],
+        "cid": [
+          "137080779.1753096005"
+        ],
+        "ul": [
+          "en-gb"
+        ],
+        "sr": [
+          "800x600"
+        ],
+        "uaa": [
+          "arm"
+        ],
+        "uab": [
+          "64"
+        ],
+        "uafvl": [
+          "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+        ],
+        "uamb": [
+          "0"
+        ],
+        "uap": [
+          "macOS"
+        ],
+        "uapv": [
+          "15.5.0"
+        ],
+        "uaw": [
+          "0"
+        ],
+        "are": [
+          "1"
+        ],
+        "frm": [
+          "0"
+        ],
+        "pscdl": [
+          "noapi"
+        ],
+        "_eu": [
+          "AEAAAAQ"
+        ],
+        "_s": [
+          "1"
+        ],
+        "sid": [
+          "1753096004"
+        ],
+        "sct": [
+          "1"
+        ],
+        "seg": [
+          "0"
+        ],
+        "dl": [
+          "https://www.n-kesteven.org.uk/bins/display?uprn=90000001096"
+        ],
+        "dr": [
+          "https://www.n-kesteven.org.uk/bins/address"
+        ],
+        "dt": [
+          "Find your bin collection day | North Kesteven District Council"
+        ],
+        "_tu": [
+          "QA"
+        ],
+        "en": [
+          "scroll"
+        ],
+        "epn.percent_scrolled": [
+          "90"
+        ],
+        "_et": [
+          "16"
+        ],
+        "tfd": [
+          "5059"
+        ]
+      },
+      "request_headers": {
+        "referer": "https://www.n-kesteven.org.uk/"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T11:06:55.594Z",
+      "duration_ms": 764.485,
+      "endpoint": "/bins/details",
+      "host": "www.n-kesteven.org.uk",
+      "method": "GET",
+      "status": 200,
+      "query_params": {
+        "uprn": [
+          "90000001096"
+        ]
+      },
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+        "cookie": "[cookies present]",
+        "referer": "https://www.n-kesteven.org.uk/bins/display?uprn=90000001096"
+      },
+      "response_headers": {
+        "cache-control": "no-store, no-cache, must-revalidate, no-store, max-age=0, no-cache",
+        "content-type": "text/html; charset=UTF-8",
+        "x-powered-by": "PHP/8.1.32"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 40538,
+        "compressed": true,
+        "content_ref": "6ec16a887a36fd01ef19529a4bdc66958843590b.html"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T11:06:56.505Z",
+      "duration_ms": 0.624,
+      "endpoint": "/img/manifest.json",
+      "host": "www.n-kesteven.org.uk",
+      "method": "GET",
+      "status": 200,
+      "request_headers": {
+        "referer": "https://www.n-kesteven.org.uk/bins/details?uprn=90000001096"
+      },
+      "response_headers": {
+        "content-type": "application/json"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 720,
+        "compressed": true,
+        "content_ref": "d11febf9e708a9e11baee37ed7dc5e99902580be.json"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T11:06:56.505Z",
+      "duration_ms": -1,
+      "endpoint": "/",
+      "host": "tracking.monsido.com",
+      "method": "GET",
+      "status": -1,
+      "query_params": {
+        "a": [
+          "3j4sW8GuGlcGLY61eeZGpg"
+        ],
+        "b": [
+          "https://www.n-kesteven.org.uk/bins/details?uprn=90000001096"
+        ],
+        "c": [
+          "A781753096016491"
+        ],
+        "d": [
+          "800x600"
+        ],
+        "e": [
+          "https://www.n-kesteven.org.uk/bins/display?uprn=90000001096"
+        ],
+        "f": [
+          "85C1753096016491"
+        ],
+        "h": [
+          "2"
+        ]
+      },
+      "request_headers": {
+        "referer": "https://www.n-kesteven.org.uk/"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T11:06:59.130Z",
+      "duration_ms": -1,
+      "endpoint": "/g/collect",
+      "host": "region1.google-analytics.com",
+      "method": "POST",
+      "status": -1,
+      "query_params": {
+        "v": [
+          "2"
+        ],
+        "tid": [
+          "G-463WC0D5S6"
+        ],
+        "gtm": [
+          "45je57h0h2v9116241798za200zb76142483"
+        ],
+        "_p": [
+          "1753096016378"
+        ],
+        "gcd": [
+          "13l3l3l3l1l1"
+        ],
+        "npa": [
+          "0"
+        ],
+        "dma": [
+          "0"
+        ],
+        "tag_exp": [
+          "101509157~103116026~103200004~103233427~104573694~104684208~104684211"
+        ],
+        "cid": [
+          "137080779.1753096005"
+        ],
+        "ul": [
+          "en-gb"
+        ],
+        "sr": [
+          "800x600"
+        ],
+        "uaa": [
+          "arm"
+        ],
+        "uab": [
+          "64"
+        ],
+        "uafvl": [
+          "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+        ],
+        "uamb": [
+          "0"
+        ],
+        "uap": [
+          "macOS"
+        ],
+        "uapv": [
+          "15.5.0"
+        ],
+        "uaw": [
+          "0"
+        ],
+        "are": [
+          "1"
+        ],
+        "frm": [
+          "0"
+        ],
+        "pscdl": [
+          "noapi"
+        ],
+        "_eu": [
+          "AAAAAAQ"
+        ],
+        "_s": [
+          "2"
+        ],
+        "sid": [
+          "1753096004"
+        ],
+        "sct": [
+          "1"
+        ],
+        "seg": [
+          "0"
+        ],
+        "dl": [
+          "https://www.n-kesteven.org.uk/bins/details?uprn=90000001096"
+        ],
+        "dr": [
+          "https://www.n-kesteven.org.uk/bins/display?uprn=90000001096"
+        ],
+        "dt": [
+          "Find your bin collection day | North Kesteven District Council"
+        ],
+        "_tu": [
+          "QA"
+        ],
+        "en": [
+          "user_engagement"
+        ],
+        "_et": [
+          "2695"
+        ],
+        "tfd": [
+          "3587"
+        ]
+      },
+      "request_headers": {
+        "referer": "https://www.n-kesteven.org.uk/"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T11:06:59.132Z",
+      "duration_ms": -1,
+      "endpoint": "/element/log",
+      "host": "translate.googleapis.com",
+      "method": "POST",
+      "status": -1,
+      "query_params": {
+        "hasfast": [
+          "true"
+        ],
+        "authuser": [
+          "0"
+        ],
+        "format": [
+          "json"
+        ]
+      },
+      "request_headers": {
+        "referer": "https://www.n-kesteven.org.uk/",
+        "content-type": "text/plain;charset=UTF-8"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T11:06:59.129Z",
+      "duration_ms": -1,
+      "endpoint": "/g/collect",
+      "host": "region1.google-analytics.com",
+      "method": "POST",
+      "status": -1,
+      "query_params": {
+        "v": [
+          "2"
+        ],
+        "tid": [
+          "G-463WC0D5S6"
+        ],
+        "gtm": [
+          "45je57h0h2v9116241798za200zb76142483"
+        ],
+        "_p": [
+          "1753096016378"
+        ],
+        "gcd": [
+          "13l3l3l3l1l1"
+        ],
+        "npa": [
+          "0"
+        ],
+        "dma": [
+          "0"
+        ],
+        "tag_exp": [
+          "101509157~103116026~103200004~103233427~104573694~104684208~104684211"
+        ],
+        "cid": [
+          "137080779.1753096005"
+        ],
+        "ul": [
+          "en-gb"
+        ],
+        "sr": [
+          "800x600"
+        ],
+        "uaa": [
+          "arm"
+        ],
+        "uab": [
+          "64"
+        ],
+        "uafvl": [
+          "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+        ],
+        "uamb": [
+          "0"
+        ],
+        "uap": [
+          "macOS"
+        ],
+        "uapv": [
+          "15.5.0"
+        ],
+        "uaw": [
+          "0"
+        ],
+        "are": [
+          "1"
+        ],
+        "frm": [
+          "0"
+        ],
+        "pscdl": [
+          "noapi"
+        ],
+        "_eu": [
+          "AEAAAAQ"
+        ],
+        "_s": [
+          "1"
+        ],
+        "sid": [
+          "1753096004"
+        ],
+        "sct": [
+          "1"
+        ],
+        "seg": [
+          "0"
+        ],
+        "dl": [
+          "https://www.n-kesteven.org.uk/bins/details?uprn=90000001096"
+        ],
+        "dr": [
+          "https://www.n-kesteven.org.uk/bins/display?uprn=90000001096"
+        ],
+        "dt": [
+          "Find your bin collection day | North Kesteven District Council"
+        ],
+        "_tu": [
+          "QA"
+        ],
+        "en": [
+          "scroll"
+        ],
+        "epn.percent_scrolled": [
+          "90"
+        ],
+        "_et": [
+          "16"
+        ],
+        "tfd": [
+          "3586"
+        ]
+      },
+      "request_headers": {
+        "referer": "https://www.n-kesteven.org.uk/"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T11:06:58.872Z",
+      "duration_ms": 246.13400000000001,
+      "endpoint": "/bins/display",
+      "host": "www.n-kesteven.org.uk",
+      "method": "GET",
+      "status": 200,
+      "query_params": {
+        "uprn": [
+          "90000001096"
+        ]
+      },
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+        "cookie": "[cookies present]",
+        "referer": "https://www.n-kesteven.org.uk/bins/address"
+      },
+      "response_headers": {
+        "cache-control": "no-store, no-cache, must-revalidate, no-store, max-age=0, no-cache",
+        "content-type": "text/html; charset=UTF-8",
+        "x-powered-by": "PHP/8.1.32"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 40803,
+        "compressed": true,
+        "content_ref": "055f27c65ef25057c0128da2b4150f38eeb62905.html"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T11:06:59.248Z",
+      "duration_ms": 0.501,
+      "endpoint": "/img/manifest.json",
+      "host": "www.n-kesteven.org.uk",
+      "method": "GET",
+      "status": 200,
+      "request_headers": {
+        "referer": "https://www.n-kesteven.org.uk/bins/display?uprn=90000001096"
+      },
+      "response_headers": {
+        "content-type": "application/json"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 720,
+        "compressed": true,
+        "content_ref": "d11febf9e708a9e11baee37ed7dc5e99902580be.json"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T11:06:59.247Z",
+      "duration_ms": -1,
+      "endpoint": "/",
+      "host": "tracking.monsido.com",
+      "method": "GET",
+      "status": -1,
+      "query_params": {
+        "a": [
+          "3j4sW8GuGlcGLY61eeZGpg"
+        ],
+        "b": [
+          "https://www.n-kesteven.org.uk/bins/display?uprn=90000001096"
+        ],
+        "c": [
+          "39E1753096019215"
+        ],
+        "d": [
+          "800x600"
+        ],
+        "e": [
+          "https://www.n-kesteven.org.uk/bins/address"
+        ],
+        "f": [
+          "E201753096019215"
+        ],
+        "h": [
+          "2"
+        ]
+      },
+      "request_headers": {
+        "referer": "https://www.n-kesteven.org.uk/"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T11:07:02.549Z",
+      "duration_ms": -1,
+      "endpoint": "/g/collect",
+      "host": "region1.google-analytics.com",
+      "method": "POST",
+      "status": -1,
+      "query_params": {
+        "v": [
+          "2"
+        ],
+        "tid": [
+          "G-463WC0D5S6"
+        ],
+        "gtm": [
+          "45je57h0h2v9116241798za200zb76142483"
+        ],
+        "_p": [
+          "1753096019135"
+        ],
+        "gcd": [
+          "13l3l3l3l1l1"
+        ],
+        "npa": [
+          "0"
+        ],
+        "dma": [
+          "0"
+        ],
+        "tag_exp": [
+          "101509157~103116026~103200004~103233427~104573694~104684208~104684211"
+        ],
+        "cid": [
+          "137080779.1753096005"
+        ],
+        "ul": [
+          "en-gb"
+        ],
+        "sr": [
+          "800x600"
+        ],
+        "uaa": [
+          "arm"
+        ],
+        "uab": [
+          "64"
+        ],
+        "uafvl": [
+          "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+        ],
+        "uamb": [
+          "0"
+        ],
+        "uap": [
+          "macOS"
+        ],
+        "uapv": [
+          "15.5.0"
+        ],
+        "uaw": [
+          "0"
+        ],
+        "are": [
+          "1"
+        ],
+        "frm": [
+          "0"
+        ],
+        "pscdl": [
+          "noapi"
+        ],
+        "_eu": [
+          "AEAAAAQ"
+        ],
+        "_s": [
+          "1"
+        ],
+        "sid": [
+          "1753096004"
+        ],
+        "sct": [
+          "1"
+        ],
+        "seg": [
+          "0"
+        ],
+        "dl": [
+          "https://www.n-kesteven.org.uk/bins/display?uprn=90000001096"
+        ],
+        "dr": [
+          "https://www.n-kesteven.org.uk/bins/address"
+        ],
+        "dt": [
+          "Find your bin collection day | North Kesteven District Council"
+        ],
+        "_tu": [
+          "QA"
+        ],
+        "en": [
+          "scroll"
+        ],
+        "epn.percent_scrolled": [
+          "90"
+        ],
+        "_et": [
+          "15"
+        ],
+        "tfd": [
+          "3672"
+        ]
+      },
+      "request_headers": {
+        "referer": "https://www.n-kesteven.org.uk/"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T11:07:02.550Z",
+      "duration_ms": -1,
+      "endpoint": "/element/log",
+      "host": "translate.googleapis.com",
+      "method": "POST",
+      "status": -1,
+      "query_params": {
+        "hasfast": [
+          "true"
+        ],
+        "authuser": [
+          "0"
+        ],
+        "format": [
+          "json"
+        ]
+      },
+      "request_headers": {
+        "referer": "https://www.n-kesteven.org.uk/",
+        "content-type": "text/plain;charset=UTF-8"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T11:07:02.549Z",
+      "duration_ms": -1,
+      "endpoint": "/g/collect",
+      "host": "region1.google-analytics.com",
+      "method": "POST",
+      "status": -1,
+      "query_params": {
+        "v": [
+          "2"
+        ],
+        "tid": [
+          "G-463WC0D5S6"
+        ],
+        "gtm": [
+          "45je57h0h2v9116241798za200zb76142483"
+        ],
+        "_p": [
+          "1753096019135"
+        ],
+        "gcd": [
+          "13l3l3l3l1l1"
+        ],
+        "npa": [
+          "0"
+        ],
+        "dma": [
+          "0"
+        ],
+        "tag_exp": [
+          "101509157~103116026~103200004~103233427~104573694~104684208~104684211"
+        ],
+        "cid": [
+          "137080779.1753096005"
+        ],
+        "ul": [
+          "en-gb"
+        ],
+        "sr": [
+          "800x600"
+        ],
+        "uaa": [
+          "arm"
+        ],
+        "uab": [
+          "64"
+        ],
+        "uafvl": [
+          "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+        ],
+        "uamb": [
+          "0"
+        ],
+        "uap": [
+          "macOS"
+        ],
+        "uapv": [
+          "15.5.0"
+        ],
+        "uaw": [
+          "0"
+        ],
+        "are": [
+          "1"
+        ],
+        "frm": [
+          "0"
+        ],
+        "pscdl": [
+          "noapi"
+        ],
+        "_eu": [
+          "AAAAAAQ"
+        ],
+        "_s": [
+          "2"
+        ],
+        "sid": [
+          "1753096004"
+        ],
+        "sct": [
+          "1"
+        ],
+        "seg": [
+          "0"
+        ],
+        "dl": [
+          "https://www.n-kesteven.org.uk/bins/display?uprn=90000001096"
+        ],
+        "dr": [
+          "https://www.n-kesteven.org.uk/bins/address"
+        ],
+        "dt": [
+          "Find your bin collection day | North Kesteven District Council"
+        ],
+        "_tu": [
+          "QA"
+        ],
+        "en": [
+          "user_engagement"
+        ],
+        "_et": [
+          "3356"
+        ],
+        "tfd": [
+          "3673"
+        ]
+      },
+      "request_headers": {
+        "referer": "https://www.n-kesteven.org.uk/"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T11:07:01.794Z",
+      "duration_ms": 740.721,
+      "endpoint": "/bins/address",
+      "host": "www.n-kesteven.org.uk",
+      "method": "GET",
+      "status": 200,
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+        "cookie": "[cookies present]",
+        "referer": "https://www.n-kesteven.org.uk/bins"
+      },
+      "response_headers": {
+        "cache-control": "no-store, no-cache, must-revalidate, no-store, max-age=0, no-cache",
+        "content-type": "text/html; charset=UTF-8",
+        "x-powered-by": "PHP/8.1.32"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 42883,
+        "compressed": true,
+        "content_ref": "53877047ffa834b32435d4e6d4fdffea9ade6e5c.html"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T11:07:02.661Z",
+      "duration_ms": 0.9089999999999999,
+      "endpoint": "/img/manifest.json",
+      "host": "www.n-kesteven.org.uk",
+      "method": "GET",
+      "status": 200,
+      "request_headers": {
+        "referer": "https://www.n-kesteven.org.uk/bins/address"
+      },
+      "response_headers": {
+        "content-type": "application/json"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 720,
+        "compressed": true,
+        "content_ref": "d11febf9e708a9e11baee37ed7dc5e99902580be.json"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T11:07:02.661Z",
+      "duration_ms": -1,
+      "endpoint": "/",
+      "host": "tracking.monsido.com",
+      "method": "GET",
+      "status": -1,
+      "query_params": {
+        "a": [
+          "3j4sW8GuGlcGLY61eeZGpg"
+        ],
+        "b": [
+          "https://www.n-kesteven.org.uk/bins/address"
+        ],
+        "c": [
+          "9581753096022633"
+        ],
+        "d": [
+          "800x600"
+        ],
+        "e": [
+          "https://www.n-kesteven.org.uk/bins"
+        ],
+        "f": [
+          "C341753096022633"
+        ],
+        "h": [
+          "2"
+        ]
+      },
+      "request_headers": {
+        "referer": "https://www.n-kesteven.org.uk/"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T11:07:04.390Z",
+      "duration_ms": 13.133,
+      "endpoint": "/g/collect",
+      "host": "region1.google-analytics.com",
+      "method": "POST",
+      "status": 204,
+      "query_params": {
+        "v": [
+          "2"
+        ],
+        "tid": [
+          "G-463WC0D5S6"
+        ],
+        "gtm": [
+          "45je57h0h2v9116241798za200zb76142483"
+        ],
+        "_p": [
+          "1753096022555"
+        ],
+        "gcd": [
+          "13l3l3l3l1l1"
+        ],
+        "npa": [
+          "0"
+        ],
+        "dma": [
+          "0"
+        ],
+        "tag_exp": [
+          "101509157~103116026~103200004~103233427~104573694~104684208~104684211"
+        ],
+        "cid": [
+          "137080779.1753096005"
+        ],
+        "ul": [
+          "en-gb"
+        ],
+        "sr": [
+          "800x600"
+        ],
+        "uaa": [
+          "arm"
+        ],
+        "uab": [
+          "64"
+        ],
+        "uafvl": [
+          "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+        ],
+        "uamb": [
+          "0"
+        ],
+        "uap": [
+          "macOS"
+        ],
+        "uapv": [
+          "15.5.0"
+        ],
+        "uaw": [
+          "0"
+        ],
+        "are": [
+          "1"
+        ],
+        "frm": [
+          "0"
+        ],
+        "pscdl": [
+          "noapi"
+        ],
+        "_eu": [
+          "AEAAAAQ"
+        ],
+        "_s": [
+          "1"
+        ],
+        "sid": [
+          "1753096004"
+        ],
+        "sct": [
+          "1"
+        ],
+        "seg": [
+          "0"
+        ],
+        "dl": [
+          "https://www.n-kesteven.org.uk/bins/address"
+        ],
+        "dr": [
+          "https://www.n-kesteven.org.uk/bins"
+        ],
+        "dt": [
+          "Find your bin collection day | North Kesteven District Council"
+        ],
+        "_tu": [
+          "QA"
+        ],
+        "en": [
+          "scroll"
+        ],
+        "epn.percent_scrolled": [
+          "90"
+        ],
+        "_et": [
+          "5"
+        ],
+        "tfd": [
+          "2596"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "cookie": "[cookies present]",
+        "origin": "https://www.n-kesteven.org.uk",
+        "referer": "https://www.n-kesteven.org.uk/"
+      },
+      "response_headers": {
+        "cache-control": "no-cache, no-store, must-revalidate",
+        "content-type": "text/plain"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T11:07:09.394Z",
+      "duration_ms": 15.428,
+      "endpoint": "/g/collect",
+      "host": "region1.google-analytics.com",
+      "method": "POST",
+      "status": 204,
+      "query_params": {
+        "v": [
+          "2"
+        ],
+        "tid": [
+          "G-463WC0D5S6"
+        ],
+        "gtm": [
+          "45je57h0h2v9116241798za200zb76142483"
+        ],
+        "_p": [
+          "1753096022555"
+        ],
+        "gcd": [
+          "13l3l3l3l1l1"
+        ],
+        "npa": [
+          "0"
+        ],
+        "dma": [
+          "0"
+        ],
+        "tag_exp": [
+          "101509157~103116026~103200004~103233427~104573694~104684208~104684211"
+        ],
+        "cid": [
+          "137080779.1753096005"
+        ],
+        "ul": [
+          "en-gb"
+        ],
+        "sr": [
+          "800x600"
+        ],
+        "uaa": [
+          "arm"
+        ],
+        "uab": [
+          "64"
+        ],
+        "uafvl": [
+          "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+        ],
+        "uamb": [
+          "0"
+        ],
+        "uap": [
+          "macOS"
+        ],
+        "uapv": [
+          "15.5.0"
+        ],
+        "uaw": [
+          "0"
+        ],
+        "are": [
+          "1"
+        ],
+        "frm": [
+          "0"
+        ],
+        "pscdl": [
+          "noapi"
+        ],
+        "_eu": [
+          "AEEAAAQ"
+        ],
+        "_s": [
+          "2"
+        ],
+        "sid": [
+          "1753096004"
+        ],
+        "sct": [
+          "1"
+        ],
+        "seg": [
+          "0"
+        ],
+        "dl": [
+          "https://www.n-kesteven.org.uk/bins/address"
+        ],
+        "dr": [
+          "https://www.n-kesteven.org.uk/bins"
+        ],
+        "dt": [
+          "Find your bin collection day | North Kesteven District Council"
+        ],
+        "_tu": [
+          "QA"
+        ],
+        "en": [
+          "form_start"
+        ],
+        "ep.form_destination": [
+          "https://www.n-kesteven.org.uk/bins/address"
+        ],
+        "epn.form_length": [
+          "2"
+        ],
+        "ep.first_field_name": [
+          "uprn"
+        ],
+        "epn.first_field_position": [
+          "1"
+        ],
+        "_et": [
+          "1782"
+        ],
+        "tfd": [
+          "7597"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "cookie": "[cookies present]",
+        "origin": "https://www.n-kesteven.org.uk",
+        "referer": "https://www.n-kesteven.org.uk/"
+      },
+      "response_headers": {
+        "cache-control": "no-cache, no-store, must-revalidate",
+        "content-type": "text/plain"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T11:07:13.127Z",
+      "duration_ms": 75.142,
+      "endpoint": "/element/log",
+      "host": "translate.googleapis.com",
+      "method": "POST",
+      "status": 200,
+      "query_params": {
+        "format": [
+          "json"
+        ],
+        "hasfast": [
+          "true"
+        ],
+        "authuser": [
+          "0"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "content-type": "application/binary",
+        "origin": "https://www.n-kesteven.org.uk",
+        "referer": "https://www.n-kesteven.org.uk/",
+        "x-browser-copyright": "Copyright 2025 Google LLC. All rights reserved.",
+        "x-browser-validation": "qvLgIVtG4U8GgiRPSI9IJ22mUlI=",
+        "x-browser-year": "2025",
+        "x-client-data": "CMiXywE=",
+        "x-goog-authuser": "0"
+      },
+      "response_headers": {
+        "content-type": "text/plain; charset=UTF-8",
+        "x-frame-options": "SAMEORIGIN",
+        "x-xss-protection": "0"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T11:07:18.004Z",
+      "duration_ms": 592.7289999999999,
+      "endpoint": "/bins/address",
+      "host": "www.n-kesteven.org.uk",
+      "method": "POST",
+      "status": 303,
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+        "content-type": "application/x-www-form-urlencoded",
+        "cookie": "[cookies present]",
+        "origin": "https://www.n-kesteven.org.uk",
+        "referer": "https://www.n-kesteven.org.uk/bins/address"
+      },
+      "response_headers": {
+        "cache-control": "no-store, no-cache, must-revalidate, no-store, max-age=0, no-cache",
+        "content-type": "text/html; charset=UTF-8",
+        "location": "https://www.n-kesteven.org.uk/bins/display?uprn=100030871851",
+        "x-powered-by": "PHP/8.1.32"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": -1
+      },
+      "redirect_to": "https://www.n-kesteven.org.uk/bins/display?uprn=100030871851"
+    },
+    {
+      "timestamp": "2025-07-21T11:07:19.597Z",
+      "duration_ms": -1,
+      "endpoint": "/g/collect",
+      "host": "region1.google-analytics.com",
+      "method": "POST",
+      "status": -1,
+      "query_params": {
+        "v": [
+          "2"
+        ],
+        "tid": [
+          "G-463WC0D5S6"
+        ],
+        "gtm": [
+          "45je57h0h2v9116241798za200zb76142483"
+        ],
+        "_p": [
+          "1753096022555"
+        ],
+        "gcd": [
+          "13l3l3l3l1l1"
+        ],
+        "npa": [
+          "0"
+        ],
+        "dma": [
+          "0"
+        ],
+        "tag_exp": [
+          "101509157~103116026~103200004~103233427~104573694~104684208~104684211"
+        ],
+        "cid": [
+          "137080779.1753096005"
+        ],
+        "ul": [
+          "en-gb"
+        ],
+        "sr": [
+          "800x600"
+        ],
+        "uaa": [
+          "arm"
+        ],
+        "uab": [
+          "64"
+        ],
+        "uafvl": [
+          "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+        ],
+        "uamb": [
+          "0"
+        ],
+        "uap": [
+          "macOS"
+        ],
+        "uapv": [
+          "15.5.0"
+        ],
+        "uaw": [
+          "0"
+        ],
+        "are": [
+          "1"
+        ],
+        "frm": [
+          "0"
+        ],
+        "pscdl": [
+          "noapi"
+        ],
+        "_eu": [
+          "AEEAAAQ"
+        ],
+        "_s": [
+          "3"
+        ],
+        "sid": [
+          "1753096004"
+        ],
+        "sct": [
+          "1"
+        ],
+        "seg": [
+          "1"
+        ],
+        "dl": [
+          "https://www.n-kesteven.org.uk/bins/address"
+        ],
+        "dr": [
+          "https://www.n-kesteven.org.uk/bins"
+        ],
+        "dt": [
+          "Find your bin collection day | North Kesteven District Council"
+        ],
+        "_tu": [
+          "QA"
+        ],
+        "en": [
+          "form_submit"
+        ],
+        "ep.form_destination": [
+          "https://www.n-kesteven.org.uk/bins/address"
+        ],
+        "epn.form_length": [
+          "2"
+        ],
+        "_et": [
+          "13549"
+        ],
+        "tfd": [
+          "17800"
+        ]
+      },
+      "request_headers": {
+        "referer": "https://www.n-kesteven.org.uk/"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T11:07:19.598Z",
+      "duration_ms": -1,
+      "endpoint": "/element/log",
+      "host": "translate.googleapis.com",
+      "method": "POST",
+      "status": -1,
+      "query_params": {
+        "hasfast": [
+          "true"
+        ],
+        "authuser": [
+          "0"
+        ],
+        "format": [
+          "json"
+        ]
+      },
+      "request_headers": {
+        "referer": "https://www.n-kesteven.org.uk/",
+        "content-type": "text/plain;charset=UTF-8"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T11:07:19.597Z",
+      "duration_ms": -1,
+      "endpoint": "/g/collect",
+      "host": "region1.google-analytics.com",
+      "method": "POST",
+      "status": -1,
+      "query_params": {
+        "v": [
+          "2"
+        ],
+        "tid": [
+          "G-463WC0D5S6"
+        ],
+        "gtm": [
+          "45je57h0h2v9116241798za200zb76142483"
+        ],
+        "_p": [
+          "1753096022555"
+        ],
+        "gcd": [
+          "13l3l3l3l1l1"
+        ],
+        "npa": [
+          "0"
+        ],
+        "dma": [
+          "0"
+        ],
+        "tag_exp": [
+          "101509157~103116026~103200004~103233427~104573694~104684208~104684211"
+        ],
+        "cid": [
+          "137080779.1753096005"
+        ],
+        "ul": [
+          "en-gb"
+        ],
+        "sr": [
+          "800x600"
+        ],
+        "uaa": [
+          "arm"
+        ],
+        "uab": [
+          "64"
+        ],
+        "uafvl": [
+          "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+        ],
+        "uamb": [
+          "0"
+        ],
+        "uap": [
+          "macOS"
+        ],
+        "uapv": [
+          "15.5.0"
+        ],
+        "uaw": [
+          "0"
+        ],
+        "are": [
+          "1"
+        ],
+        "frm": [
+          "0"
+        ],
+        "pscdl": [
+          "noapi"
+        ],
+        "_eu": [
+          "AAAAAAQ"
+        ],
+        "_s": [
+          "4"
+        ],
+        "sid": [
+          "1753096004"
+        ],
+        "sct": [
+          "1"
+        ],
+        "seg": [
+          "1"
+        ],
+        "dl": [
+          "https://www.n-kesteven.org.uk/bins/address"
+        ],
+        "dr": [
+          "https://www.n-kesteven.org.uk/bins"
+        ],
+        "dt": [
+          "Find your bin collection day | North Kesteven District Council"
+        ],
+        "_tu": [
+          "QA"
+        ],
+        "en": [
+          "user_engagement"
+        ],
+        "_et": [
+          "1649"
+        ],
+        "tfd": [
+          "17800"
+        ]
+      },
+      "request_headers": {
+        "referer": "https://www.n-kesteven.org.uk/"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T11:07:18.600Z",
+      "duration_ms": 987.941,
+      "endpoint": "/bins/display",
+      "host": "www.n-kesteven.org.uk",
+      "method": "GET",
+      "status": 200,
+      "query_params": {
+        "uprn": [
+          "100030871851"
+        ]
+      },
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+        "cookie": "[cookies present]",
+        "referer": "https://www.n-kesteven.org.uk/bins/address"
+      },
+      "response_headers": {
+        "cache-control": "no-store, no-cache, must-revalidate, no-store, max-age=0, no-cache",
+        "content-type": "text/html; charset=UTF-8",
+        "x-powered-by": "PHP/8.1.32"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 41106,
+        "compressed": true,
+        "content_ref": "39d9e37720245019b3e6371bf99a76da0961385c.html"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T11:07:19.727Z",
+      "duration_ms": 0.688,
+      "endpoint": "/img/manifest.json",
+      "host": "www.n-kesteven.org.uk",
+      "method": "GET",
+      "status": 200,
+      "request_headers": {
+        "referer": "https://www.n-kesteven.org.uk/bins/display?uprn=100030871851"
+      },
+      "response_headers": {
+        "content-type": "application/json"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 720,
+        "compressed": true,
+        "content_ref": "d11febf9e708a9e11baee37ed7dc5e99902580be.json"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T11:07:19.726Z",
+      "duration_ms": -1,
+      "endpoint": "/",
+      "host": "tracking.monsido.com",
+      "method": "GET",
+      "status": -1,
+      "query_params": {
+        "a": [
+          "3j4sW8GuGlcGLY61eeZGpg"
+        ],
+        "b": [
+          "https://www.n-kesteven.org.uk/bins/display?uprn=100030871851"
+        ],
+        "c": [
+          "A551753096039687"
+        ],
+        "d": [
+          "800x600"
+        ],
+        "e": [
+          "https://www.n-kesteven.org.uk/bins/address"
+        ],
+        "f": [
+          "8D31753096039687"
+        ],
+        "h": [
+          "2"
+        ]
+      },
+      "request_headers": {
+        "referer": "https://www.n-kesteven.org.uk/"
+      }
     }
-  ]
+  ],
+  "analysis": {
+    "total_requests": 56,
+    "unique_endpoints": 14,
+    "methods_used": [
+      "GET",
+      "POST"
+    ],
+    "status_codes": {
+      "301": 1,
+      "200": 19,
+      "-1": 26,
+      "204": 5,
+      "202": 2,
+      "303": 3
+    },
+    "endpoints_with_params": [
+      {
+        "endpoint": "/residents/{id}/{id}/{id}",
+        "method": "GET",
+        "query_params": [],
+        "path_params": true
+      },
+      {
+        "endpoint": "/bins-waste-recycling/{id}/{id}",
+        "method": "GET",
+        "query_params": [],
+        "path_params": true
+      },
+      {
+        "endpoint": "/c/v",
+        "method": "GET",
+        "query_params": [
+          "d",
+          "p",
+          "v",
+          "k",
+          "format"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/",
+        "method": "GET",
+        "query_params": [
+          "a",
+          "b",
+          "c",
+          "d",
+          "f",
+          "h"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/g/collect",
+        "method": "POST",
+        "query_params": [
+          "v",
+          "tid",
+          "gtm",
+          "_p",
+          "gcs",
+          "gcd",
+          "npa",
+          "dma",
+          "tag_exp",
+          "gdid",
+          "cid",
+          "ul",
+          "sr",
+          "uaa",
+          "uab",
+          "uafvl",
+          "uamb",
+          "uap",
+          "uapv",
+          "uaw",
+          "are",
+          "frm",
+          "pscdl",
+          "_s",
+          "sid",
+          "sct",
+          "seg",
+          "dl",
+          "dt",
+          "_tu",
+          "en",
+          "_fv",
+          "_nsi",
+          "_ss",
+          "tfd"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/{id}/log",
+        "method": "GET",
+        "query_params": [
+          "k",
+          "d",
+          "u",
+          "c"
+        ],
+        "path_params": true
+      },
+      {
+        "endpoint": "/g/collect",
+        "method": "POST",
+        "query_params": [
+          "v",
+          "tid",
+          "gtm",
+          "_p",
+          "gcs",
+          "gcd",
+          "npa",
+          "dma",
+          "tag_exp",
+          "gdid",
+          "cid",
+          "ul",
+          "sr",
+          "uaa",
+          "uab",
+          "uafvl",
+          "uamb",
+          "uap",
+          "uapv",
+          "uaw",
+          "are",
+          "frm",
+          "pscdl",
+          "_eu",
+          "_s",
+          "sid",
+          "sct",
+          "seg",
+          "dl",
+          "dt",
+          "_tu",
+          "en",
+          "ep.ga_temp_client_id",
+          "_et",
+          "tfd"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/cdn-cgi/challenge-platform/h/g/jsd/r/{id}/962a3aed48d576c5",
+        "method": "POST",
+        "query_params": [],
+        "path_params": true
+      },
+      {
+        "endpoint": "/",
+        "method": "GET",
+        "query_params": [
+          "a",
+          "b",
+          "c",
+          "d",
+          "e",
+          "f",
+          "h"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/g/collect",
+        "method": "POST",
+        "query_params": [
+          "v",
+          "tid",
+          "gtm",
+          "_p",
+          "gcd",
+          "npa",
+          "dma",
+          "tag_exp",
+          "cid",
+          "ul",
+          "sr",
+          "uaa",
+          "uab",
+          "uafvl",
+          "uamb",
+          "uap",
+          "uapv",
+          "uaw",
+          "are",
+          "frm",
+          "pscdl",
+          "_eu",
+          "_s",
+          "sid",
+          "sct",
+          "seg",
+          "dl",
+          "dr",
+          "dt",
+          "_tu",
+          "en",
+          "_fv",
+          "_nsi",
+          "_ss",
+          "ep.form_destination",
+          "epn.form_length",
+          "ep.first_field_name",
+          "ep.first_field_type",
+          "epn.first_field_position",
+          "tfd"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/g/collect",
+        "method": "POST",
+        "query_params": [
+          "v",
+          "tid",
+          "gtm",
+          "_p",
+          "gcd",
+          "npa",
+          "dma",
+          "tag_exp",
+          "cid",
+          "ul",
+          "sr",
+          "uaa",
+          "uab",
+          "uafvl",
+          "uamb",
+          "uap",
+          "uapv",
+          "uaw",
+          "are",
+          "frm",
+          "pscdl",
+          "_eu",
+          "_s",
+          "sid",
+          "sct",
+          "seg",
+          "dl",
+          "dr",
+          "dt",
+          "_tu",
+          "en",
+          "ep.form_destination",
+          "epn.form_length",
+          "_et",
+          "tfd"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/g/collect",
+        "method": "POST",
+        "query_params": [
+          "v",
+          "tid",
+          "gtm",
+          "_p",
+          "gcd",
+          "npa",
+          "dma",
+          "tag_exp",
+          "cid",
+          "ul",
+          "sr",
+          "uaa",
+          "uab",
+          "uafvl",
+          "uamb",
+          "uap",
+          "uapv",
+          "uaw",
+          "are",
+          "frm",
+          "pscdl",
+          "_eu",
+          "_s",
+          "sid",
+          "sct",
+          "seg",
+          "dl",
+          "dr",
+          "dt",
+          "_tu",
+          "en",
+          "_et",
+          "tfd"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/element/log",
+        "method": "POST",
+        "query_params": [
+          "hasfast",
+          "authuser",
+          "format"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/g/collect",
+        "method": "POST",
+        "query_params": [
+          "v",
+          "tid",
+          "gtm",
+          "_p",
+          "gcd",
+          "npa",
+          "dma",
+          "tag_exp",
+          "cid",
+          "ul",
+          "sr",
+          "uaa",
+          "uab",
+          "uafvl",
+          "uamb",
+          "uap",
+          "uapv",
+          "uaw",
+          "are",
+          "frm",
+          "pscdl",
+          "_eu",
+          "sid",
+          "sct",
+          "seg",
+          "dl",
+          "dr",
+          "dt",
+          "_tu",
+          "_s",
+          "tfd"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/bins/display",
+        "method": "GET",
+        "query_params": [
+          "uprn"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/g/collect",
+        "method": "POST",
+        "query_params": [
+          "v",
+          "tid",
+          "gtm",
+          "_p",
+          "gcd",
+          "npa",
+          "dma",
+          "tag_exp",
+          "cid",
+          "ul",
+          "sr",
+          "uaa",
+          "uab",
+          "uafvl",
+          "uamb",
+          "uap",
+          "uapv",
+          "uaw",
+          "are",
+          "frm",
+          "pscdl",
+          "_eu",
+          "_s",
+          "sid",
+          "sct",
+          "seg",
+          "dl",
+          "dr",
+          "dt",
+          "_tu",
+          "en",
+          "epn.percent_scrolled",
+          "_et",
+          "tfd"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/bins/details",
+        "method": "GET",
+        "query_params": [
+          "uprn"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/g/collect",
+        "method": "POST",
+        "query_params": [
+          "v",
+          "tid",
+          "gtm",
+          "_p",
+          "gcd",
+          "npa",
+          "dma",
+          "tag_exp",
+          "cid",
+          "ul",
+          "sr",
+          "uaa",
+          "uab",
+          "uafvl",
+          "uamb",
+          "uap",
+          "uapv",
+          "uaw",
+          "are",
+          "frm",
+          "pscdl",
+          "_eu",
+          "_s",
+          "sid",
+          "sct",
+          "seg",
+          "dl",
+          "dr",
+          "dt",
+          "_tu",
+          "en",
+          "ep.form_destination",
+          "epn.form_length",
+          "ep.first_field_name",
+          "epn.first_field_position",
+          "_et",
+          "tfd"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/element/log",
+        "method": "POST",
+        "query_params": [
+          "format",
+          "hasfast",
+          "authuser"
+        ],
+        "path_params": false
+      }
+    ],
+    "redirects": [
+      {
+        "from": "/residents/{id}/{id}/{id}",
+        "to": "https://www.n-kesteven.gov.uk/bins-waste-recycling/information-about-waste-service/find-your-bin-collection-days",
+        "status": 301
+      },
+      {
+        "from": "/bins",
+        "to": "https://www.n-kesteven.org.uk/bins/address",
+        "status": 303
+      },
+      {
+        "from": "/bins/address",
+        "to": "https://www.n-kesteven.org.uk/bins/display?uprn=90000001096",
+        "status": 303
+      },
+      {
+        "from": "/bins/address",
+        "to": "https://www.n-kesteven.org.uk/bins/display?uprn=100030871851",
+        "status": 303
+      }
+    ],
+    "api_calls": [
+      {
+        "endpoint": "/c/v",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": [
+          "d",
+          "p",
+          "v",
+          "k",
+          "format"
+        ]
+      },
+      {
+        "endpoint": "/{id}/log",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": [
+          "k",
+          "d",
+          "u",
+          "c"
+        ]
+      },
+      {
+        "endpoint": "/img/manifest.json",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": []
+      },
+      {
+        "endpoint": "/img/manifest.json",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": []
+      },
+      {
+        "endpoint": "/img/manifest.json",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": []
+      },
+      {
+        "endpoint": "/img/manifest.json",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": []
+      },
+      {
+        "endpoint": "/img/manifest.json",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": []
+      },
+      {
+        "endpoint": "/img/manifest.json",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": []
+      },
+      {
+        "endpoint": "/img/manifest.json",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": []
+      }
+    ],
+    "form_submissions": []
+  },
+  "grouped_by_endpoint": {
+    "/residents/{id}/{id}/{id}": [
+      {
+        "timestamp": "2025-07-21T11:06:17.911Z",
+        "duration_ms": 139.029,
+        "endpoint": "/residents/{id}/{id}/{id}",
+        "host": "www.n-kesteven.gov.uk",
+        "method": "GET",
+        "status": 301,
+        "path_params": [
+          "waste-recycling-and-environment",
+          "find-information-about-the-waste-service",
+          "find-your-bin-collection-days"
+        ],
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7"
+        },
+        "response_headers": {
+          "cache-control": "max-age=1800, public",
+          "content-type": "text/html; charset=utf-8",
+          "location": "https://www.n-kesteven.gov.uk/bins-waste-recycling/information-about-waste-service/find-your-bin-collection-days",
+          "x-cache": "Miss from cloudfront",
+          "x-content-type-options": "nosniff",
+          "x-drupal-cache": "HIT",
+          "x-frame-options": "SAMEORIGIN",
+          "x-redirect-id": "3560",
+          "x-xss-protection": "1; mode=block"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": -1
+        },
+        "redirect_to": "https://www.n-kesteven.gov.uk/bins-waste-recycling/information-about-waste-service/find-your-bin-collection-days"
+      }
+    ],
+    "/bins-waste-recycling/{id}/{id}": [
+      {
+        "timestamp": "2025-07-21T11:06:18.041Z",
+        "duration_ms": 77.708,
+        "endpoint": "/bins-waste-recycling/{id}/{id}",
+        "host": "www.n-kesteven.gov.uk",
+        "method": "GET",
+        "status": 200,
+        "path_params": [
+          "information-about-waste-service",
+          "find-your-bin-collection-days"
+        ],
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7"
+        },
+        "response_headers": {
+          "cache-control": "max-age=1800, public",
+          "content-type": "text/html; charset=UTF-8",
+          "x-cache": "Miss from cloudfront",
+          "x-content-type-options": "nosniff",
+          "x-drupal-cache": "HIT",
+          "x-drupal-dynamic-cache": "UNCACHEABLE (poor cacheability)",
+          "x-frame-options": "SAMEORIGIN",
+          "x-xss-protection": "1; mode=block"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 68918,
+          "compressed": true,
+          "content_ref": "991ea39be4ccf4aab76a849ae952fd312125ac8d.html"
+        }
+      }
+    ],
+    "/c/v": [
+      {
+        "timestamp": "2025-07-21T11:06:19.467Z",
+        "duration_ms": 57.516000000000005,
+        "endpoint": "/c/v",
+        "host": "apikeys.civiccomputing.com",
+        "method": "GET",
+        "status": 200,
+        "query_params": {
+          "d": [
+            "www.n-kesteven.gov.uk"
+          ],
+          "p": [
+            "CookieControl Multi-Site"
+          ],
+          "v": [
+            "9"
+          ],
+          "k": [
+            "af9130d1f685b6db5519a429b04e2fe3b069ebc5"
+          ],
+          "format": [
+            "json"
+          ]
+        },
+        "request_headers": {
+          "accept": "application/json, text/plain, */*",
+          "origin": "https://www.n-kesteven.gov.uk",
+          "referer": "https://www.n-kesteven.gov.uk/"
+        },
+        "response_headers": {
+          "cache-control": "max-age=3600, private, no-store",
+          "content-type": "application/json",
+          "x-apikeys": "hit",
+          "x-cf-test": "true",
+          "x-content-type-options": "nosniff",
+          "x-xss-protection": "1"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 306,
+          "content_ref": "1297ba324548f20a6ce75ccaf7826da16ab062cf.json"
+        }
+      }
+    ],
+    "/": [
+      {
+        "timestamp": "2025-07-21T11:06:19.539Z",
+        "duration_ms": -1,
+        "endpoint": "/",
+        "host": "tracking.monsido.com",
+        "method": "GET",
+        "status": -1,
+        "query_params": {
+          "a": [
+            "3j4sW8GuGlcGLY61eeZGpg"
+          ],
+          "b": [
+            "https://www.n-kesteven.gov.uk/bins-waste-recycling/information-about-waste-service/find-your-bin-collection-days"
+          ],
+          "c": [
+            "9691753095979527"
+          ],
+          "d": [
+            "800x600"
+          ],
+          "f": [
+            "8B61753095979527"
+          ],
+          "h": [
+            "2"
+          ]
+        },
+        "request_headers": {
+          "referer": "https://www.n-kesteven.gov.uk/"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T11:06:40.268Z",
+        "duration_ms": -1,
+        "endpoint": "/",
+        "host": "tracking.monsido.com",
+        "method": "GET",
+        "status": -1,
+        "query_params": {
+          "a": [
+            "3j4sW8GuGlcGLY61eeZGpg"
+          ],
+          "b": [
+            "https://www.n-kesteven.org.uk/bins"
+          ],
+          "c": [
+            "B251753096000262"
+          ],
+          "d": [
+            "800x600"
+          ],
+          "e": [
+            "https://www.n-kesteven.gov.uk/"
+          ],
+          "f": [
+            "9621753096000262"
+          ],
+          "h": [
+            "2"
+          ]
+        },
+        "request_headers": {
+          "referer": "https://www.n-kesteven.org.uk/"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T11:06:46.104Z",
+        "duration_ms": -1,
+        "endpoint": "/",
+        "host": "tracking.monsido.com",
+        "method": "GET",
+        "status": -1,
+        "query_params": {
+          "a": [
+            "3j4sW8GuGlcGLY61eeZGpg"
+          ],
+          "b": [
+            "https://www.n-kesteven.org.uk/bins/address"
+          ],
+          "c": [
+            "E921753096006089"
+          ],
+          "d": [
+            "800x600"
+          ],
+          "e": [
+            "https://www.n-kesteven.org.uk/bins"
+          ],
+          "f": [
+            "6D61753096006089"
+          ],
+          "h": [
+            "2"
+          ]
+        },
+        "request_headers": {
+          "referer": "https://www.n-kesteven.org.uk/"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T11:06:52.905Z",
+        "duration_ms": -1,
+        "endpoint": "/",
+        "host": "tracking.monsido.com",
+        "method": "GET",
+        "status": -1,
+        "query_params": {
+          "a": [
+            "3j4sW8GuGlcGLY61eeZGpg"
+          ],
+          "b": [
+            "https://www.n-kesteven.org.uk/bins/display?uprn=90000001096"
+          ],
+          "c": [
+            "E4E1753096012869"
+          ],
+          "d": [
+            "800x600"
+          ],
+          "e": [
+            "https://www.n-kesteven.org.uk/bins/address"
+          ],
+          "f": [
+            "14B1753096012869"
+          ],
+          "h": [
+            "2"
+          ]
+        },
+        "request_headers": {
+          "referer": "https://www.n-kesteven.org.uk/"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T11:06:56.505Z",
+        "duration_ms": -1,
+        "endpoint": "/",
+        "host": "tracking.monsido.com",
+        "method": "GET",
+        "status": -1,
+        "query_params": {
+          "a": [
+            "3j4sW8GuGlcGLY61eeZGpg"
+          ],
+          "b": [
+            "https://www.n-kesteven.org.uk/bins/details?uprn=90000001096"
+          ],
+          "c": [
+            "A781753096016491"
+          ],
+          "d": [
+            "800x600"
+          ],
+          "e": [
+            "https://www.n-kesteven.org.uk/bins/display?uprn=90000001096"
+          ],
+          "f": [
+            "85C1753096016491"
+          ],
+          "h": [
+            "2"
+          ]
+        },
+        "request_headers": {
+          "referer": "https://www.n-kesteven.org.uk/"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T11:06:59.247Z",
+        "duration_ms": -1,
+        "endpoint": "/",
+        "host": "tracking.monsido.com",
+        "method": "GET",
+        "status": -1,
+        "query_params": {
+          "a": [
+            "3j4sW8GuGlcGLY61eeZGpg"
+          ],
+          "b": [
+            "https://www.n-kesteven.org.uk/bins/display?uprn=90000001096"
+          ],
+          "c": [
+            "39E1753096019215"
+          ],
+          "d": [
+            "800x600"
+          ],
+          "e": [
+            "https://www.n-kesteven.org.uk/bins/address"
+          ],
+          "f": [
+            "E201753096019215"
+          ],
+          "h": [
+            "2"
+          ]
+        },
+        "request_headers": {
+          "referer": "https://www.n-kesteven.org.uk/"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T11:07:02.661Z",
+        "duration_ms": -1,
+        "endpoint": "/",
+        "host": "tracking.monsido.com",
+        "method": "GET",
+        "status": -1,
+        "query_params": {
+          "a": [
+            "3j4sW8GuGlcGLY61eeZGpg"
+          ],
+          "b": [
+            "https://www.n-kesteven.org.uk/bins/address"
+          ],
+          "c": [
+            "9581753096022633"
+          ],
+          "d": [
+            "800x600"
+          ],
+          "e": [
+            "https://www.n-kesteven.org.uk/bins"
+          ],
+          "f": [
+            "C341753096022633"
+          ],
+          "h": [
+            "2"
+          ]
+        },
+        "request_headers": {
+          "referer": "https://www.n-kesteven.org.uk/"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T11:07:19.726Z",
+        "duration_ms": -1,
+        "endpoint": "/",
+        "host": "tracking.monsido.com",
+        "method": "GET",
+        "status": -1,
+        "query_params": {
+          "a": [
+            "3j4sW8GuGlcGLY61eeZGpg"
+          ],
+          "b": [
+            "https://www.n-kesteven.org.uk/bins/display?uprn=100030871851"
+          ],
+          "c": [
+            "A551753096039687"
+          ],
+          "d": [
+            "800x600"
+          ],
+          "e": [
+            "https://www.n-kesteven.org.uk/bins/address"
+          ],
+          "f": [
+            "8D31753096039687"
+          ],
+          "h": [
+            "2"
+          ]
+        },
+        "request_headers": {
+          "referer": "https://www.n-kesteven.org.uk/"
+        }
+      }
+    ],
+    "/g/collect": [
+      {
+        "timestamp": "2025-07-21T11:06:26.953Z",
+        "duration_ms": 69.53,
+        "endpoint": "/g/collect",
+        "host": "region1.google-analytics.com",
+        "method": "POST",
+        "status": 204,
+        "query_params": {
+          "v": [
+            "2"
+          ],
+          "tid": [
+            "G-463WC0D5S6"
+          ],
+          "gtm": [
+            "45je57g1v9116241798z876142483za200zb76142483"
+          ],
+          "_p": [
+            "1753095978189"
+          ],
+          "gcs": [
+            "G100"
+          ],
+          "gcd": [
+            "13p3p3l3l5l1"
+          ],
+          "npa": [
+            "0"
+          ],
+          "dma": [
+            "0"
+          ],
+          "tag_exp": [
+            "101509157~103116026~103200004~103233427~104684208~104684211~104948813"
+          ],
+          "gdid": [
+            "dMDhkMT"
+          ],
+          "cid": [
+            "2128340571.1753095987"
+          ],
+          "ul": [
+            "en-gb"
+          ],
+          "sr": [
+            "800x600"
+          ],
+          "uaa": [
+            "arm"
+          ],
+          "uab": [
+            "64"
+          ],
+          "uafvl": [
+            "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+          ],
+          "uamb": [
+            "0"
+          ],
+          "uap": [
+            "macOS"
+          ],
+          "uapv": [
+            "15.5.0"
+          ],
+          "uaw": [
+            "0"
+          ],
+          "are": [
+            "1"
+          ],
+          "frm": [
+            "0"
+          ],
+          "pscdl": [
+            "denied"
+          ],
+          "_s": [
+            "1"
+          ],
+          "sid": [
+            "1753095986"
+          ],
+          "sct": [
+            "1"
+          ],
+          "seg": [
+            "0"
+          ],
+          "dl": [
+            "https://www.n-kesteven.gov.uk/bins-waste-recycling/information-about-waste-service/find-your-bin-collection-days"
+          ],
+          "dt": [
+            "Find your bin collection days | North Kesteven District Council"
+          ],
+          "_tu": [
+            "QA"
+          ],
+          "en": [
+            "page_view"
+          ],
+          "_fv": [
+            "1"
+          ],
+          "_nsi": [
+            "1"
+          ],
+          "_ss": [
+            "1"
+          ],
+          "tfd": [
+            "9030"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "cookie": "[cookies present]",
+          "origin": "https://www.n-kesteven.gov.uk",
+          "referer": "https://www.n-kesteven.gov.uk/"
+        },
+        "response_headers": {
+          "cache-control": "no-cache, no-store, must-revalidate",
+          "content-type": "text/plain"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T11:06:31.953Z",
+        "duration_ms": 14.809,
+        "endpoint": "/g/collect",
+        "host": "region1.google-analytics.com",
+        "method": "POST",
+        "status": 204,
+        "query_params": {
+          "v": [
+            "2"
+          ],
+          "tid": [
+            "G-463WC0D5S6"
+          ],
+          "gtm": [
+            "45je57g1v9116241798za200zb76142483"
+          ],
+          "_p": [
+            "1753095978189"
+          ],
+          "gcs": [
+            "G101"
+          ],
+          "gcd": [
+            "13p3r3l3l5l1"
+          ],
+          "npa": [
+            "0"
+          ],
+          "dma": [
+            "0"
+          ],
+          "tag_exp": [
+            "101509157~103116026~103200004~103233427~104684208~104684211~104948813"
+          ],
+          "gdid": [
+            "dMDhkMT"
+          ],
+          "cid": [
+            "2128340571.1753095987"
+          ],
+          "ul": [
+            "en-gb"
+          ],
+          "sr": [
+            "800x600"
+          ],
+          "uaa": [
+            "arm"
+          ],
+          "uab": [
+            "64"
+          ],
+          "uafvl": [
+            "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+          ],
+          "uamb": [
+            "0"
+          ],
+          "uap": [
+            "macOS"
+          ],
+          "uapv": [
+            "15.5.0"
+          ],
+          "uaw": [
+            "0"
+          ],
+          "are": [
+            "1"
+          ],
+          "frm": [
+            "0"
+          ],
+          "pscdl": [
+            "denied"
+          ],
+          "_eu": [
+            "AAAAAAQ"
+          ],
+          "_s": [
+            "2"
+          ],
+          "sid": [
+            "1753095986"
+          ],
+          "sct": [
+            "1"
+          ],
+          "seg": [
+            "0"
+          ],
+          "dl": [
+            "https://www.n-kesteven.gov.uk/bins-waste-recycling/information-about-waste-service/find-your-bin-collection-days"
+          ],
+          "dt": [
+            "Find your bin collection days | North Kesteven District Council"
+          ],
+          "_tu": [
+            "QA"
+          ],
+          "en": [
+            "user_engagement"
+          ],
+          "ep.ga_temp_client_id": [
+            "2128340571.1753095987"
+          ],
+          "_et": [
+            "8"
+          ],
+          "tfd": [
+            "14041"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "cookie": "[cookies present]",
+          "origin": "https://www.n-kesteven.gov.uk",
+          "referer": "https://www.n-kesteven.gov.uk/"
+        },
+        "response_headers": {
+          "cache-control": "no-cache, no-store, must-revalidate",
+          "content-type": "text/plain"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T11:06:44.912Z",
+        "duration_ms": 62.483999999999995,
+        "endpoint": "/g/collect",
+        "host": "region1.google-analytics.com",
+        "method": "POST",
+        "status": 204,
+        "query_params": {
+          "v": [
+            "2"
+          ],
+          "tid": [
+            "G-463WC0D5S6"
+          ],
+          "gtm": [
+            "45je57h0h2v9116241798za200zb76142483"
+          ],
+          "_p": [
+            "1753095999695"
+          ],
+          "gcd": [
+            "13l3l3l3l1l1"
+          ],
+          "npa": [
+            "0"
+          ],
+          "dma": [
+            "0"
+          ],
+          "tag_exp": [
+            "101509157~103116026~103200004~103233427~104573694~104684208~104684211"
+          ],
+          "cid": [
+            "137080779.1753096005"
+          ],
+          "ul": [
+            "en-gb"
+          ],
+          "sr": [
+            "800x600"
+          ],
+          "uaa": [
+            "arm"
+          ],
+          "uab": [
+            "64"
+          ],
+          "uafvl": [
+            "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+          ],
+          "uamb": [
+            "0"
+          ],
+          "uap": [
+            "macOS"
+          ],
+          "uapv": [
+            "15.5.0"
+          ],
+          "uaw": [
+            "0"
+          ],
+          "are": [
+            "1"
+          ],
+          "frm": [
+            "0"
+          ],
+          "pscdl": [
+            "noapi"
+          ],
+          "_eu": [
+            "AEE"
+          ],
+          "_s": [
+            "1"
+          ],
+          "sid": [
+            "1753096004"
+          ],
+          "sct": [
+            "1"
+          ],
+          "seg": [
+            "0"
+          ],
+          "dl": [
+            "https://www.n-kesteven.org.uk/bins"
+          ],
+          "dr": [
+            "https://www.n-kesteven.gov.uk/"
+          ],
+          "dt": [
+            "Find your bin collection day | North Kesteven District Council"
+          ],
+          "_tu": [
+            "QA"
+          ],
+          "en": [
+            "form_start"
+          ],
+          "_fv": [
+            "1"
+          ],
+          "_nsi": [
+            "1"
+          ],
+          "_ss": [
+            "1"
+          ],
+          "ep.form_destination": [
+            "https://www.n-kesteven.org.uk/bins"
+          ],
+          "epn.form_length": [
+            "2"
+          ],
+          "ep.first_field_name": [
+            "postcode"
+          ],
+          "ep.first_field_type": [
+            "postcode"
+          ],
+          "epn.first_field_position": [
+            "1"
+          ],
+          "tfd": [
+            "5461"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "cookie": "[cookies present]",
+          "origin": "https://www.n-kesteven.org.uk",
+          "referer": "https://www.n-kesteven.org.uk/"
+        },
+        "response_headers": {
+          "cache-control": "no-cache, no-store, must-revalidate",
+          "content-type": "text/plain"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T11:06:45.978Z",
+        "duration_ms": -1,
+        "endpoint": "/g/collect",
+        "host": "region1.google-analytics.com",
+        "method": "POST",
+        "status": -1,
+        "query_params": {
+          "v": [
+            "2"
+          ],
+          "tid": [
+            "G-463WC0D5S6"
+          ],
+          "gtm": [
+            "45je57h0h2v9116241798za200zb76142483"
+          ],
+          "_p": [
+            "1753095999695"
+          ],
+          "gcd": [
+            "13l3l3l3l1l1"
+          ],
+          "npa": [
+            "0"
+          ],
+          "dma": [
+            "0"
+          ],
+          "tag_exp": [
+            "101509157~103116026~103200004~103233427~104573694~104684208~104684211"
+          ],
+          "cid": [
+            "137080779.1753096005"
+          ],
+          "ul": [
+            "en-gb"
+          ],
+          "sr": [
+            "800x600"
+          ],
+          "uaa": [
+            "arm"
+          ],
+          "uab": [
+            "64"
+          ],
+          "uafvl": [
+            "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+          ],
+          "uamb": [
+            "0"
+          ],
+          "uap": [
+            "macOS"
+          ],
+          "uapv": [
+            "15.5.0"
+          ],
+          "uaw": [
+            "0"
+          ],
+          "are": [
+            "1"
+          ],
+          "frm": [
+            "0"
+          ],
+          "pscdl": [
+            "noapi"
+          ],
+          "_eu": [
+            "AEEAAAQ"
+          ],
+          "_s": [
+            "2"
+          ],
+          "sid": [
+            "1753096004"
+          ],
+          "sct": [
+            "1"
+          ],
+          "seg": [
+            "0"
+          ],
+          "dl": [
+            "https://www.n-kesteven.org.uk/bins"
+          ],
+          "dr": [
+            "https://www.n-kesteven.gov.uk/"
+          ],
+          "dt": [
+            "Find your bin collection day | North Kesteven District Council"
+          ],
+          "_tu": [
+            "QA"
+          ],
+          "en": [
+            "form_submit"
+          ],
+          "ep.form_destination": [
+            "https://www.n-kesteven.org.uk/bins"
+          ],
+          "epn.form_length": [
+            "2"
+          ],
+          "_et": [
+            "51"
+          ],
+          "tfd": [
+            "6527"
+          ]
+        },
+        "request_headers": {
+          "referer": "https://www.n-kesteven.org.uk/"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T11:06:45.979Z",
+        "duration_ms": -1,
+        "endpoint": "/g/collect",
+        "host": "region1.google-analytics.com",
+        "method": "POST",
+        "status": -1,
+        "query_params": {
+          "v": [
+            "2"
+          ],
+          "tid": [
+            "G-463WC0D5S6"
+          ],
+          "gtm": [
+            "45je57h0h2v9116241798za200zb76142483"
+          ],
+          "_p": [
+            "1753095999695"
+          ],
+          "gcd": [
+            "13l3l3l3l1l1"
+          ],
+          "npa": [
+            "0"
+          ],
+          "dma": [
+            "0"
+          ],
+          "tag_exp": [
+            "101509157~103116026~103200004~103233427~104573694~104684208~104684211"
+          ],
+          "cid": [
+            "137080779.1753096005"
+          ],
+          "ul": [
+            "en-gb"
+          ],
+          "sr": [
+            "800x600"
+          ],
+          "uaa": [
+            "arm"
+          ],
+          "uab": [
+            "64"
+          ],
+          "uafvl": [
+            "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+          ],
+          "uamb": [
+            "0"
+          ],
+          "uap": [
+            "macOS"
+          ],
+          "uapv": [
+            "15.5.0"
+          ],
+          "uaw": [
+            "0"
+          ],
+          "are": [
+            "1"
+          ],
+          "frm": [
+            "0"
+          ],
+          "pscdl": [
+            "noapi"
+          ],
+          "_eu": [
+            "AAAAAAQ"
+          ],
+          "_s": [
+            "3"
+          ],
+          "sid": [
+            "1753096004"
+          ],
+          "sct": [
+            "1"
+          ],
+          "seg": [
+            "0"
+          ],
+          "dl": [
+            "https://www.n-kesteven.org.uk/bins"
+          ],
+          "dr": [
+            "https://www.n-kesteven.gov.uk/"
+          ],
+          "dt": [
+            "Find your bin collection day | North Kesteven District Council"
+          ],
+          "_tu": [
+            "QA"
+          ],
+          "en": [
+            "user_engagement"
+          ],
+          "_et": [
+            "1009"
+          ],
+          "tfd": [
+            "6528"
+          ]
+        },
+        "request_headers": {
+          "referer": "https://www.n-kesteven.org.uk/"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T11:06:52.785Z",
+        "duration_ms": -1,
+        "endpoint": "/g/collect",
+        "host": "region1.google-analytics.com",
+        "method": "POST",
+        "status": -1,
+        "query_params": {
+          "v": [
+            "2"
+          ],
+          "tid": [
+            "G-463WC0D5S6"
+          ],
+          "gtm": [
+            "45je57h0h2v9116241798za200zb76142483"
+          ],
+          "_p": [
+            "1753096005985"
+          ],
+          "gcd": [
+            "13l3l3l3l1l1"
+          ],
+          "npa": [
+            "0"
+          ],
+          "dma": [
+            "0"
+          ],
+          "tag_exp": [
+            "101509157~103116026~103200004~103233427~104573694~104684208~104684211"
+          ],
+          "cid": [
+            "137080779.1753096005"
+          ],
+          "ul": [
+            "en-gb"
+          ],
+          "sr": [
+            "800x600"
+          ],
+          "uaa": [
+            "arm"
+          ],
+          "uab": [
+            "64"
+          ],
+          "uafvl": [
+            "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+          ],
+          "uamb": [
+            "0"
+          ],
+          "uap": [
+            "macOS"
+          ],
+          "uapv": [
+            "15.5.0"
+          ],
+          "uaw": [
+            "0"
+          ],
+          "are": [
+            "1"
+          ],
+          "frm": [
+            "0"
+          ],
+          "pscdl": [
+            "noapi"
+          ],
+          "_eu": [
+            "AAAAAAQ"
+          ],
+          "_s": [
+            "2"
+          ],
+          "sid": [
+            "1753096004"
+          ],
+          "sct": [
+            "1"
+          ],
+          "seg": [
+            "0"
+          ],
+          "dl": [
+            "https://www.n-kesteven.org.uk/bins/address"
+          ],
+          "dr": [
+            "https://www.n-kesteven.org.uk/bins"
+          ],
+          "dt": [
+            "Find your bin collection day | North Kesteven District Council"
+          ],
+          "_tu": [
+            "QA"
+          ],
+          "en": [
+            "user_engagement"
+          ],
+          "_et": [
+            "1468"
+          ],
+          "tfd": [
+            "7821"
+          ]
+        },
+        "request_headers": {
+          "referer": "https://www.n-kesteven.org.uk/"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T11:06:52.783Z",
+        "duration_ms": -1,
+        "endpoint": "/g/collect",
+        "host": "region1.google-analytics.com",
+        "method": "POST",
+        "status": -1,
+        "query_params": {
+          "v": [
+            "2"
+          ],
+          "tid": [
+            "G-463WC0D5S6"
+          ],
+          "gtm": [
+            "45je57h0h2v9116241798za200zb76142483"
+          ],
+          "_p": [
+            "1753096005985"
+          ],
+          "gcd": [
+            "13l3l3l3l1l1"
+          ],
+          "npa": [
+            "0"
+          ],
+          "dma": [
+            "0"
+          ],
+          "tag_exp": [
+            "101509157~103116026~103200004~103233427~104573694~104684208~104684211"
+          ],
+          "cid": [
+            "137080779.1753096005"
+          ],
+          "ul": [
+            "en-gb"
+          ],
+          "sr": [
+            "800x600"
+          ],
+          "uaa": [
+            "arm"
+          ],
+          "uab": [
+            "64"
+          ],
+          "uafvl": [
+            "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+          ],
+          "uamb": [
+            "0"
+          ],
+          "uap": [
+            "macOS"
+          ],
+          "uapv": [
+            "15.5.0"
+          ],
+          "uaw": [
+            "0"
+          ],
+          "are": [
+            "1"
+          ],
+          "frm": [
+            "0"
+          ],
+          "pscdl": [
+            "noapi"
+          ],
+          "_eu": [
+            "AEEAAAQ"
+          ],
+          "sid": [
+            "1753096004"
+          ],
+          "sct": [
+            "1"
+          ],
+          "seg": [
+            "0"
+          ],
+          "dl": [
+            "https://www.n-kesteven.org.uk/bins/address"
+          ],
+          "dr": [
+            "https://www.n-kesteven.org.uk/bins"
+          ],
+          "dt": [
+            "Find your bin collection day | North Kesteven District Council"
+          ],
+          "_tu": [
+            "QA"
+          ],
+          "_s": [
+            "1"
+          ],
+          "tfd": [
+            "7820"
+          ]
+        },
+        "request_headers": {
+          "referer": "https://www.n-kesteven.org.uk/",
+          "content-type": "text/plain;charset=UTF-8"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T11:06:56.373Z",
+        "duration_ms": -1,
+        "endpoint": "/g/collect",
+        "host": "region1.google-analytics.com",
+        "method": "POST",
+        "status": -1,
+        "query_params": {
+          "v": [
+            "2"
+          ],
+          "tid": [
+            "G-463WC0D5S6"
+          ],
+          "gtm": [
+            "45je57h0h2v9116241798za200zb76142483"
+          ],
+          "_p": [
+            "1753096012790"
+          ],
+          "gcd": [
+            "13l3l3l3l1l1"
+          ],
+          "npa": [
+            "0"
+          ],
+          "dma": [
+            "0"
+          ],
+          "tag_exp": [
+            "101509157~103116026~103200004~103233427~104573694~104684208~104684211"
+          ],
+          "cid": [
+            "137080779.1753096005"
+          ],
+          "ul": [
+            "en-gb"
+          ],
+          "sr": [
+            "800x600"
+          ],
+          "uaa": [
+            "arm"
+          ],
+          "uab": [
+            "64"
+          ],
+          "uafvl": [
+            "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+          ],
+          "uamb": [
+            "0"
+          ],
+          "uap": [
+            "macOS"
+          ],
+          "uapv": [
+            "15.5.0"
+          ],
+          "uaw": [
+            "0"
+          ],
+          "are": [
+            "1"
+          ],
+          "frm": [
+            "0"
+          ],
+          "pscdl": [
+            "noapi"
+          ],
+          "_eu": [
+            "AAAAAAQ"
+          ],
+          "_s": [
+            "2"
+          ],
+          "sid": [
+            "1753096004"
+          ],
+          "sct": [
+            "1"
+          ],
+          "seg": [
+            "0"
+          ],
+          "dl": [
+            "https://www.n-kesteven.org.uk/bins/display?uprn=90000001096"
+          ],
+          "dr": [
+            "https://www.n-kesteven.org.uk/bins/address"
+          ],
+          "dt": [
+            "Find your bin collection day | North Kesteven District Council"
+          ],
+          "_tu": [
+            "QA"
+          ],
+          "en": [
+            "user_engagement"
+          ],
+          "_et": [
+            "3523"
+          ],
+          "tfd": [
+            "5060"
+          ]
+        },
+        "request_headers": {
+          "referer": "https://www.n-kesteven.org.uk/"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T11:06:56.372Z",
+        "duration_ms": -1,
+        "endpoint": "/g/collect",
+        "host": "region1.google-analytics.com",
+        "method": "POST",
+        "status": -1,
+        "query_params": {
+          "v": [
+            "2"
+          ],
+          "tid": [
+            "G-463WC0D5S6"
+          ],
+          "gtm": [
+            "45je57h0h2v9116241798za200zb76142483"
+          ],
+          "_p": [
+            "1753096012790"
+          ],
+          "gcd": [
+            "13l3l3l3l1l1"
+          ],
+          "npa": [
+            "0"
+          ],
+          "dma": [
+            "0"
+          ],
+          "tag_exp": [
+            "101509157~103116026~103200004~103233427~104573694~104684208~104684211"
+          ],
+          "cid": [
+            "137080779.1753096005"
+          ],
+          "ul": [
+            "en-gb"
+          ],
+          "sr": [
+            "800x600"
+          ],
+          "uaa": [
+            "arm"
+          ],
+          "uab": [
+            "64"
+          ],
+          "uafvl": [
+            "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+          ],
+          "uamb": [
+            "0"
+          ],
+          "uap": [
+            "macOS"
+          ],
+          "uapv": [
+            "15.5.0"
+          ],
+          "uaw": [
+            "0"
+          ],
+          "are": [
+            "1"
+          ],
+          "frm": [
+            "0"
+          ],
+          "pscdl": [
+            "noapi"
+          ],
+          "_eu": [
+            "AEAAAAQ"
+          ],
+          "_s": [
+            "1"
+          ],
+          "sid": [
+            "1753096004"
+          ],
+          "sct": [
+            "1"
+          ],
+          "seg": [
+            "0"
+          ],
+          "dl": [
+            "https://www.n-kesteven.org.uk/bins/display?uprn=90000001096"
+          ],
+          "dr": [
+            "https://www.n-kesteven.org.uk/bins/address"
+          ],
+          "dt": [
+            "Find your bin collection day | North Kesteven District Council"
+          ],
+          "_tu": [
+            "QA"
+          ],
+          "en": [
+            "scroll"
+          ],
+          "epn.percent_scrolled": [
+            "90"
+          ],
+          "_et": [
+            "16"
+          ],
+          "tfd": [
+            "5059"
+          ]
+        },
+        "request_headers": {
+          "referer": "https://www.n-kesteven.org.uk/"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T11:06:59.130Z",
+        "duration_ms": -1,
+        "endpoint": "/g/collect",
+        "host": "region1.google-analytics.com",
+        "method": "POST",
+        "status": -1,
+        "query_params": {
+          "v": [
+            "2"
+          ],
+          "tid": [
+            "G-463WC0D5S6"
+          ],
+          "gtm": [
+            "45je57h0h2v9116241798za200zb76142483"
+          ],
+          "_p": [
+            "1753096016378"
+          ],
+          "gcd": [
+            "13l3l3l3l1l1"
+          ],
+          "npa": [
+            "0"
+          ],
+          "dma": [
+            "0"
+          ],
+          "tag_exp": [
+            "101509157~103116026~103200004~103233427~104573694~104684208~104684211"
+          ],
+          "cid": [
+            "137080779.1753096005"
+          ],
+          "ul": [
+            "en-gb"
+          ],
+          "sr": [
+            "800x600"
+          ],
+          "uaa": [
+            "arm"
+          ],
+          "uab": [
+            "64"
+          ],
+          "uafvl": [
+            "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+          ],
+          "uamb": [
+            "0"
+          ],
+          "uap": [
+            "macOS"
+          ],
+          "uapv": [
+            "15.5.0"
+          ],
+          "uaw": [
+            "0"
+          ],
+          "are": [
+            "1"
+          ],
+          "frm": [
+            "0"
+          ],
+          "pscdl": [
+            "noapi"
+          ],
+          "_eu": [
+            "AAAAAAQ"
+          ],
+          "_s": [
+            "2"
+          ],
+          "sid": [
+            "1753096004"
+          ],
+          "sct": [
+            "1"
+          ],
+          "seg": [
+            "0"
+          ],
+          "dl": [
+            "https://www.n-kesteven.org.uk/bins/details?uprn=90000001096"
+          ],
+          "dr": [
+            "https://www.n-kesteven.org.uk/bins/display?uprn=90000001096"
+          ],
+          "dt": [
+            "Find your bin collection day | North Kesteven District Council"
+          ],
+          "_tu": [
+            "QA"
+          ],
+          "en": [
+            "user_engagement"
+          ],
+          "_et": [
+            "2695"
+          ],
+          "tfd": [
+            "3587"
+          ]
+        },
+        "request_headers": {
+          "referer": "https://www.n-kesteven.org.uk/"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T11:06:59.129Z",
+        "duration_ms": -1,
+        "endpoint": "/g/collect",
+        "host": "region1.google-analytics.com",
+        "method": "POST",
+        "status": -1,
+        "query_params": {
+          "v": [
+            "2"
+          ],
+          "tid": [
+            "G-463WC0D5S6"
+          ],
+          "gtm": [
+            "45je57h0h2v9116241798za200zb76142483"
+          ],
+          "_p": [
+            "1753096016378"
+          ],
+          "gcd": [
+            "13l3l3l3l1l1"
+          ],
+          "npa": [
+            "0"
+          ],
+          "dma": [
+            "0"
+          ],
+          "tag_exp": [
+            "101509157~103116026~103200004~103233427~104573694~104684208~104684211"
+          ],
+          "cid": [
+            "137080779.1753096005"
+          ],
+          "ul": [
+            "en-gb"
+          ],
+          "sr": [
+            "800x600"
+          ],
+          "uaa": [
+            "arm"
+          ],
+          "uab": [
+            "64"
+          ],
+          "uafvl": [
+            "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+          ],
+          "uamb": [
+            "0"
+          ],
+          "uap": [
+            "macOS"
+          ],
+          "uapv": [
+            "15.5.0"
+          ],
+          "uaw": [
+            "0"
+          ],
+          "are": [
+            "1"
+          ],
+          "frm": [
+            "0"
+          ],
+          "pscdl": [
+            "noapi"
+          ],
+          "_eu": [
+            "AEAAAAQ"
+          ],
+          "_s": [
+            "1"
+          ],
+          "sid": [
+            "1753096004"
+          ],
+          "sct": [
+            "1"
+          ],
+          "seg": [
+            "0"
+          ],
+          "dl": [
+            "https://www.n-kesteven.org.uk/bins/details?uprn=90000001096"
+          ],
+          "dr": [
+            "https://www.n-kesteven.org.uk/bins/display?uprn=90000001096"
+          ],
+          "dt": [
+            "Find your bin collection day | North Kesteven District Council"
+          ],
+          "_tu": [
+            "QA"
+          ],
+          "en": [
+            "scroll"
+          ],
+          "epn.percent_scrolled": [
+            "90"
+          ],
+          "_et": [
+            "16"
+          ],
+          "tfd": [
+            "3586"
+          ]
+        },
+        "request_headers": {
+          "referer": "https://www.n-kesteven.org.uk/"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T11:07:02.549Z",
+        "duration_ms": -1,
+        "endpoint": "/g/collect",
+        "host": "region1.google-analytics.com",
+        "method": "POST",
+        "status": -1,
+        "query_params": {
+          "v": [
+            "2"
+          ],
+          "tid": [
+            "G-463WC0D5S6"
+          ],
+          "gtm": [
+            "45je57h0h2v9116241798za200zb76142483"
+          ],
+          "_p": [
+            "1753096019135"
+          ],
+          "gcd": [
+            "13l3l3l3l1l1"
+          ],
+          "npa": [
+            "0"
+          ],
+          "dma": [
+            "0"
+          ],
+          "tag_exp": [
+            "101509157~103116026~103200004~103233427~104573694~104684208~104684211"
+          ],
+          "cid": [
+            "137080779.1753096005"
+          ],
+          "ul": [
+            "en-gb"
+          ],
+          "sr": [
+            "800x600"
+          ],
+          "uaa": [
+            "arm"
+          ],
+          "uab": [
+            "64"
+          ],
+          "uafvl": [
+            "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+          ],
+          "uamb": [
+            "0"
+          ],
+          "uap": [
+            "macOS"
+          ],
+          "uapv": [
+            "15.5.0"
+          ],
+          "uaw": [
+            "0"
+          ],
+          "are": [
+            "1"
+          ],
+          "frm": [
+            "0"
+          ],
+          "pscdl": [
+            "noapi"
+          ],
+          "_eu": [
+            "AEAAAAQ"
+          ],
+          "_s": [
+            "1"
+          ],
+          "sid": [
+            "1753096004"
+          ],
+          "sct": [
+            "1"
+          ],
+          "seg": [
+            "0"
+          ],
+          "dl": [
+            "https://www.n-kesteven.org.uk/bins/display?uprn=90000001096"
+          ],
+          "dr": [
+            "https://www.n-kesteven.org.uk/bins/address"
+          ],
+          "dt": [
+            "Find your bin collection day | North Kesteven District Council"
+          ],
+          "_tu": [
+            "QA"
+          ],
+          "en": [
+            "scroll"
+          ],
+          "epn.percent_scrolled": [
+            "90"
+          ],
+          "_et": [
+            "15"
+          ],
+          "tfd": [
+            "3672"
+          ]
+        },
+        "request_headers": {
+          "referer": "https://www.n-kesteven.org.uk/"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T11:07:02.549Z",
+        "duration_ms": -1,
+        "endpoint": "/g/collect",
+        "host": "region1.google-analytics.com",
+        "method": "POST",
+        "status": -1,
+        "query_params": {
+          "v": [
+            "2"
+          ],
+          "tid": [
+            "G-463WC0D5S6"
+          ],
+          "gtm": [
+            "45je57h0h2v9116241798za200zb76142483"
+          ],
+          "_p": [
+            "1753096019135"
+          ],
+          "gcd": [
+            "13l3l3l3l1l1"
+          ],
+          "npa": [
+            "0"
+          ],
+          "dma": [
+            "0"
+          ],
+          "tag_exp": [
+            "101509157~103116026~103200004~103233427~104573694~104684208~104684211"
+          ],
+          "cid": [
+            "137080779.1753096005"
+          ],
+          "ul": [
+            "en-gb"
+          ],
+          "sr": [
+            "800x600"
+          ],
+          "uaa": [
+            "arm"
+          ],
+          "uab": [
+            "64"
+          ],
+          "uafvl": [
+            "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+          ],
+          "uamb": [
+            "0"
+          ],
+          "uap": [
+            "macOS"
+          ],
+          "uapv": [
+            "15.5.0"
+          ],
+          "uaw": [
+            "0"
+          ],
+          "are": [
+            "1"
+          ],
+          "frm": [
+            "0"
+          ],
+          "pscdl": [
+            "noapi"
+          ],
+          "_eu": [
+            "AAAAAAQ"
+          ],
+          "_s": [
+            "2"
+          ],
+          "sid": [
+            "1753096004"
+          ],
+          "sct": [
+            "1"
+          ],
+          "seg": [
+            "0"
+          ],
+          "dl": [
+            "https://www.n-kesteven.org.uk/bins/display?uprn=90000001096"
+          ],
+          "dr": [
+            "https://www.n-kesteven.org.uk/bins/address"
+          ],
+          "dt": [
+            "Find your bin collection day | North Kesteven District Council"
+          ],
+          "_tu": [
+            "QA"
+          ],
+          "en": [
+            "user_engagement"
+          ],
+          "_et": [
+            "3356"
+          ],
+          "tfd": [
+            "3673"
+          ]
+        },
+        "request_headers": {
+          "referer": "https://www.n-kesteven.org.uk/"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T11:07:04.390Z",
+        "duration_ms": 13.133,
+        "endpoint": "/g/collect",
+        "host": "region1.google-analytics.com",
+        "method": "POST",
+        "status": 204,
+        "query_params": {
+          "v": [
+            "2"
+          ],
+          "tid": [
+            "G-463WC0D5S6"
+          ],
+          "gtm": [
+            "45je57h0h2v9116241798za200zb76142483"
+          ],
+          "_p": [
+            "1753096022555"
+          ],
+          "gcd": [
+            "13l3l3l3l1l1"
+          ],
+          "npa": [
+            "0"
+          ],
+          "dma": [
+            "0"
+          ],
+          "tag_exp": [
+            "101509157~103116026~103200004~103233427~104573694~104684208~104684211"
+          ],
+          "cid": [
+            "137080779.1753096005"
+          ],
+          "ul": [
+            "en-gb"
+          ],
+          "sr": [
+            "800x600"
+          ],
+          "uaa": [
+            "arm"
+          ],
+          "uab": [
+            "64"
+          ],
+          "uafvl": [
+            "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+          ],
+          "uamb": [
+            "0"
+          ],
+          "uap": [
+            "macOS"
+          ],
+          "uapv": [
+            "15.5.0"
+          ],
+          "uaw": [
+            "0"
+          ],
+          "are": [
+            "1"
+          ],
+          "frm": [
+            "0"
+          ],
+          "pscdl": [
+            "noapi"
+          ],
+          "_eu": [
+            "AEAAAAQ"
+          ],
+          "_s": [
+            "1"
+          ],
+          "sid": [
+            "1753096004"
+          ],
+          "sct": [
+            "1"
+          ],
+          "seg": [
+            "0"
+          ],
+          "dl": [
+            "https://www.n-kesteven.org.uk/bins/address"
+          ],
+          "dr": [
+            "https://www.n-kesteven.org.uk/bins"
+          ],
+          "dt": [
+            "Find your bin collection day | North Kesteven District Council"
+          ],
+          "_tu": [
+            "QA"
+          ],
+          "en": [
+            "scroll"
+          ],
+          "epn.percent_scrolled": [
+            "90"
+          ],
+          "_et": [
+            "5"
+          ],
+          "tfd": [
+            "2596"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "cookie": "[cookies present]",
+          "origin": "https://www.n-kesteven.org.uk",
+          "referer": "https://www.n-kesteven.org.uk/"
+        },
+        "response_headers": {
+          "cache-control": "no-cache, no-store, must-revalidate",
+          "content-type": "text/plain"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T11:07:09.394Z",
+        "duration_ms": 15.428,
+        "endpoint": "/g/collect",
+        "host": "region1.google-analytics.com",
+        "method": "POST",
+        "status": 204,
+        "query_params": {
+          "v": [
+            "2"
+          ],
+          "tid": [
+            "G-463WC0D5S6"
+          ],
+          "gtm": [
+            "45je57h0h2v9116241798za200zb76142483"
+          ],
+          "_p": [
+            "1753096022555"
+          ],
+          "gcd": [
+            "13l3l3l3l1l1"
+          ],
+          "npa": [
+            "0"
+          ],
+          "dma": [
+            "0"
+          ],
+          "tag_exp": [
+            "101509157~103116026~103200004~103233427~104573694~104684208~104684211"
+          ],
+          "cid": [
+            "137080779.1753096005"
+          ],
+          "ul": [
+            "en-gb"
+          ],
+          "sr": [
+            "800x600"
+          ],
+          "uaa": [
+            "arm"
+          ],
+          "uab": [
+            "64"
+          ],
+          "uafvl": [
+            "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+          ],
+          "uamb": [
+            "0"
+          ],
+          "uap": [
+            "macOS"
+          ],
+          "uapv": [
+            "15.5.0"
+          ],
+          "uaw": [
+            "0"
+          ],
+          "are": [
+            "1"
+          ],
+          "frm": [
+            "0"
+          ],
+          "pscdl": [
+            "noapi"
+          ],
+          "_eu": [
+            "AEEAAAQ"
+          ],
+          "_s": [
+            "2"
+          ],
+          "sid": [
+            "1753096004"
+          ],
+          "sct": [
+            "1"
+          ],
+          "seg": [
+            "0"
+          ],
+          "dl": [
+            "https://www.n-kesteven.org.uk/bins/address"
+          ],
+          "dr": [
+            "https://www.n-kesteven.org.uk/bins"
+          ],
+          "dt": [
+            "Find your bin collection day | North Kesteven District Council"
+          ],
+          "_tu": [
+            "QA"
+          ],
+          "en": [
+            "form_start"
+          ],
+          "ep.form_destination": [
+            "https://www.n-kesteven.org.uk/bins/address"
+          ],
+          "epn.form_length": [
+            "2"
+          ],
+          "ep.first_field_name": [
+            "uprn"
+          ],
+          "epn.first_field_position": [
+            "1"
+          ],
+          "_et": [
+            "1782"
+          ],
+          "tfd": [
+            "7597"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "cookie": "[cookies present]",
+          "origin": "https://www.n-kesteven.org.uk",
+          "referer": "https://www.n-kesteven.org.uk/"
+        },
+        "response_headers": {
+          "cache-control": "no-cache, no-store, must-revalidate",
+          "content-type": "text/plain"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T11:07:19.597Z",
+        "duration_ms": -1,
+        "endpoint": "/g/collect",
+        "host": "region1.google-analytics.com",
+        "method": "POST",
+        "status": -1,
+        "query_params": {
+          "v": [
+            "2"
+          ],
+          "tid": [
+            "G-463WC0D5S6"
+          ],
+          "gtm": [
+            "45je57h0h2v9116241798za200zb76142483"
+          ],
+          "_p": [
+            "1753096022555"
+          ],
+          "gcd": [
+            "13l3l3l3l1l1"
+          ],
+          "npa": [
+            "0"
+          ],
+          "dma": [
+            "0"
+          ],
+          "tag_exp": [
+            "101509157~103116026~103200004~103233427~104573694~104684208~104684211"
+          ],
+          "cid": [
+            "137080779.1753096005"
+          ],
+          "ul": [
+            "en-gb"
+          ],
+          "sr": [
+            "800x600"
+          ],
+          "uaa": [
+            "arm"
+          ],
+          "uab": [
+            "64"
+          ],
+          "uafvl": [
+            "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+          ],
+          "uamb": [
+            "0"
+          ],
+          "uap": [
+            "macOS"
+          ],
+          "uapv": [
+            "15.5.0"
+          ],
+          "uaw": [
+            "0"
+          ],
+          "are": [
+            "1"
+          ],
+          "frm": [
+            "0"
+          ],
+          "pscdl": [
+            "noapi"
+          ],
+          "_eu": [
+            "AEEAAAQ"
+          ],
+          "_s": [
+            "3"
+          ],
+          "sid": [
+            "1753096004"
+          ],
+          "sct": [
+            "1"
+          ],
+          "seg": [
+            "1"
+          ],
+          "dl": [
+            "https://www.n-kesteven.org.uk/bins/address"
+          ],
+          "dr": [
+            "https://www.n-kesteven.org.uk/bins"
+          ],
+          "dt": [
+            "Find your bin collection day | North Kesteven District Council"
+          ],
+          "_tu": [
+            "QA"
+          ],
+          "en": [
+            "form_submit"
+          ],
+          "ep.form_destination": [
+            "https://www.n-kesteven.org.uk/bins/address"
+          ],
+          "epn.form_length": [
+            "2"
+          ],
+          "_et": [
+            "13549"
+          ],
+          "tfd": [
+            "17800"
+          ]
+        },
+        "request_headers": {
+          "referer": "https://www.n-kesteven.org.uk/"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T11:07:19.597Z",
+        "duration_ms": -1,
+        "endpoint": "/g/collect",
+        "host": "region1.google-analytics.com",
+        "method": "POST",
+        "status": -1,
+        "query_params": {
+          "v": [
+            "2"
+          ],
+          "tid": [
+            "G-463WC0D5S6"
+          ],
+          "gtm": [
+            "45je57h0h2v9116241798za200zb76142483"
+          ],
+          "_p": [
+            "1753096022555"
+          ],
+          "gcd": [
+            "13l3l3l3l1l1"
+          ],
+          "npa": [
+            "0"
+          ],
+          "dma": [
+            "0"
+          ],
+          "tag_exp": [
+            "101509157~103116026~103200004~103233427~104573694~104684208~104684211"
+          ],
+          "cid": [
+            "137080779.1753096005"
+          ],
+          "ul": [
+            "en-gb"
+          ],
+          "sr": [
+            "800x600"
+          ],
+          "uaa": [
+            "arm"
+          ],
+          "uab": [
+            "64"
+          ],
+          "uafvl": [
+            "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+          ],
+          "uamb": [
+            "0"
+          ],
+          "uap": [
+            "macOS"
+          ],
+          "uapv": [
+            "15.5.0"
+          ],
+          "uaw": [
+            "0"
+          ],
+          "are": [
+            "1"
+          ],
+          "frm": [
+            "0"
+          ],
+          "pscdl": [
+            "noapi"
+          ],
+          "_eu": [
+            "AAAAAAQ"
+          ],
+          "_s": [
+            "4"
+          ],
+          "sid": [
+            "1753096004"
+          ],
+          "sct": [
+            "1"
+          ],
+          "seg": [
+            "1"
+          ],
+          "dl": [
+            "https://www.n-kesteven.org.uk/bins/address"
+          ],
+          "dr": [
+            "https://www.n-kesteven.org.uk/bins"
+          ],
+          "dt": [
+            "Find your bin collection day | North Kesteven District Council"
+          ],
+          "_tu": [
+            "QA"
+          ],
+          "en": [
+            "user_engagement"
+          ],
+          "_et": [
+            "1649"
+          ],
+          "tfd": [
+            "17800"
+          ]
+        },
+        "request_headers": {
+          "referer": "https://www.n-kesteven.org.uk/"
+        }
+      }
+    ],
+    "/{id}/log": [
+      {
+        "timestamp": "2025-07-21T11:06:26.954Z",
+        "duration_ms": 117.136,
+        "endpoint": "/{id}/log",
+        "host": "clapi.civiccomputing.com",
+        "method": "GET",
+        "status": 200,
+        "path_params": [
+          "1"
+        ],
+        "query_params": {
+          "k": [
+            "af9130d1f685b6db5519a429b04e2fe3b069ebc5"
+          ],
+          "d": [
+            "www.n-kesteven.gov.uk"
+          ],
+          "u": [
+            "undefined"
+          ],
+          "c": [
+            "\"{\\\"necessaryCookies\\\":[\\\"'SSESS*', 'JSESSIONID', 'ASPSESSIONIDSADTTCCA', 'ASPSESSIONIDSGAQCSQQ'\\\"],\\\"optionalCookies\\\":{\\\"analytics\\\":\\\"accepted\\\",\\\"functional\\\":\\\"accepted\\\",\\\"third_party\\\":\\\"accepted\\\"},\\\"statement\\\":{\\\"shown\\\":true,\\\"updated\\\":\\\"04/05/2023\\\"},\\\"consentDate\\\":1753095986949,\\\"consentExpiry\\\":180,\\\"interactedWith\\\":true,\\\"user\\\":\\\"16675BE5-73CE-4394-A268-2D803D4326FD\\\"}\""
+          ]
+        },
+        "request_headers": {
+          "accept": "application/json, text/plain, */*",
+          "origin": "https://www.n-kesteven.gov.uk",
+          "referer": "https://www.n-kesteven.gov.uk/"
+        },
+        "response_headers": {
+          "content-type": "application/json",
+          "x-content-type-options": "nosniff",
+          "x-xss-protection": "0"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 13,
+          "content_ref": "a26ad77888189cc5d6973bb818e45f448628c5c1.json"
+        }
+      }
+    ],
+    "/ppms.php": [
+      {
+        "timestamp": "2025-07-21T11:06:27.137Z",
+        "duration_ms": 110.682,
+        "endpoint": "/ppms.php",
+        "host": "n-kesteven.piwik.pro",
+        "method": "POST",
+        "status": 202,
+        "request_headers": {
+          "referer": "https://www.n-kesteven.gov.uk/",
+          "content-type": "application/x-www-form-urlencoded; charset=utf-8"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T11:06:39.445Z",
+        "duration_ms": 94.723,
+        "endpoint": "/ppms.php",
+        "host": "n-kesteven.piwik.pro",
+        "method": "POST",
+        "status": 202,
+        "request_headers": {
+          "referer": "https://www.n-kesteven.gov.uk/",
+          "content-type": "application/x-www-form-urlencoded; charset=utf-8"
+        }
+      }
+    ],
+    "/bins": [
+      {
+        "timestamp": "2025-07-21T11:06:39.502Z",
+        "duration_ms": 145.715,
+        "endpoint": "/bins",
+        "host": "www.n-kesteven.org.uk",
+        "method": "GET",
+        "status": 200,
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+          "referer": "https://www.n-kesteven.gov.uk/"
+        },
+        "response_headers": {
+          "cache-control": "no-store, no-cache, must-revalidate, no-store, max-age=0, no-cache",
+          "content-type": "text/html; charset=UTF-8",
+          "set-cookie": "[cookies present]",
+          "x-powered-by": "PHP/8.1.32"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 41243,
+          "compressed": true,
+          "content_ref": "0fa7d8d9e83001d697eca2150e735def99ae8f99.html"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T11:06:45.005Z",
+        "duration_ms": 109.544,
+        "endpoint": "/bins",
+        "host": "www.n-kesteven.org.uk",
+        "method": "POST",
+        "status": 303,
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+          "content-type": "application/x-www-form-urlencoded",
+          "cookie": "[cookies present]",
+          "origin": "https://www.n-kesteven.org.uk",
+          "referer": "https://www.n-kesteven.org.uk/bins"
+        },
+        "response_headers": {
+          "cache-control": "no-store, no-cache, must-revalidate, no-store, max-age=0, no-cache",
+          "content-type": "text/html; charset=UTF-8",
+          "location": "https://www.n-kesteven.org.uk/bins/address",
+          "x-powered-by": "PHP/8.1.32"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": -1
+        },
+        "redirect_to": "https://www.n-kesteven.org.uk/bins/address"
+      }
+    ],
+    "/cdn-cgi/challenge-platform/h/g/jsd/r/{id}/962a3aed48d576c5": [
+      {
+        "timestamp": "2025-07-21T11:06:40.266Z",
+        "duration_ms": 18.324,
+        "endpoint": "/cdn-cgi/challenge-platform/h/g/jsd/r/{id}/962a3aed48d576c5",
+        "host": "www.n-kesteven.org.uk",
+        "method": "POST",
+        "status": 200,
+        "path_params": [
+          "0.9112141073096818:1753093015:iiUHu7jgK0AaQoYlH9Tzk40Da5BVvmJM0QGOFOzWN7E"
+        ],
+        "request_headers": {
+          "accept": "*/*",
+          "content-type": "text/plain;charset=UTF-8",
+          "cookie": "[cookies present]",
+          "origin": "https://www.n-kesteven.org.uk"
+        },
+        "response_headers": {
+          "content-type": "text/plain; charset=UTF-8",
+          "set-cookie": "[cookies present]"
+        }
+      }
+    ],
+    "/img/manifest.json": [
+      {
+        "timestamp": "2025-07-21T11:06:40.275Z",
+        "duration_ms": 128.46,
+        "endpoint": "/img/manifest.json",
+        "host": "www.n-kesteven.org.uk",
+        "method": "GET",
+        "status": 200,
+        "request_headers": {
+          "accept": "*/*",
+          "referer": "https://www.n-kesteven.org.uk/bins"
+        },
+        "response_headers": {
+          "content-type": "application/json"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 720,
+          "content_ref": "d11febf9e708a9e11baee37ed7dc5e99902580be.json"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T11:06:46.105Z",
+        "duration_ms": 0.962,
+        "endpoint": "/img/manifest.json",
+        "host": "www.n-kesteven.org.uk",
+        "method": "GET",
+        "status": 200,
+        "request_headers": {
+          "referer": "https://www.n-kesteven.org.uk/bins/address"
+        },
+        "response_headers": {
+          "content-type": "application/json"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 720,
+          "compressed": true,
+          "content_ref": "d11febf9e708a9e11baee37ed7dc5e99902580be.json"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T11:06:52.905Z",
+        "duration_ms": 1.101,
+        "endpoint": "/img/manifest.json",
+        "host": "www.n-kesteven.org.uk",
+        "method": "GET",
+        "status": 200,
+        "request_headers": {
+          "referer": "https://www.n-kesteven.org.uk/bins/display?uprn=90000001096"
+        },
+        "response_headers": {
+          "content-type": "application/json"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 720,
+          "compressed": true,
+          "content_ref": "d11febf9e708a9e11baee37ed7dc5e99902580be.json"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T11:06:56.505Z",
+        "duration_ms": 0.624,
+        "endpoint": "/img/manifest.json",
+        "host": "www.n-kesteven.org.uk",
+        "method": "GET",
+        "status": 200,
+        "request_headers": {
+          "referer": "https://www.n-kesteven.org.uk/bins/details?uprn=90000001096"
+        },
+        "response_headers": {
+          "content-type": "application/json"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 720,
+          "compressed": true,
+          "content_ref": "d11febf9e708a9e11baee37ed7dc5e99902580be.json"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T11:06:59.248Z",
+        "duration_ms": 0.501,
+        "endpoint": "/img/manifest.json",
+        "host": "www.n-kesteven.org.uk",
+        "method": "GET",
+        "status": 200,
+        "request_headers": {
+          "referer": "https://www.n-kesteven.org.uk/bins/display?uprn=90000001096"
+        },
+        "response_headers": {
+          "content-type": "application/json"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 720,
+          "compressed": true,
+          "content_ref": "d11febf9e708a9e11baee37ed7dc5e99902580be.json"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T11:07:02.661Z",
+        "duration_ms": 0.9089999999999999,
+        "endpoint": "/img/manifest.json",
+        "host": "www.n-kesteven.org.uk",
+        "method": "GET",
+        "status": 200,
+        "request_headers": {
+          "referer": "https://www.n-kesteven.org.uk/bins/address"
+        },
+        "response_headers": {
+          "content-type": "application/json"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 720,
+          "compressed": true,
+          "content_ref": "d11febf9e708a9e11baee37ed7dc5e99902580be.json"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T11:07:19.727Z",
+        "duration_ms": 0.688,
+        "endpoint": "/img/manifest.json",
+        "host": "www.n-kesteven.org.uk",
+        "method": "GET",
+        "status": 200,
+        "request_headers": {
+          "referer": "https://www.n-kesteven.org.uk/bins/display?uprn=100030871851"
+        },
+        "response_headers": {
+          "content-type": "application/json"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 720,
+          "compressed": true,
+          "content_ref": "d11febf9e708a9e11baee37ed7dc5e99902580be.json"
+        }
+      }
+    ],
+    "/element/log": [
+      {
+        "timestamp": "2025-07-21T11:06:45.980Z",
+        "duration_ms": -1,
+        "endpoint": "/element/log",
+        "host": "translate.googleapis.com",
+        "method": "POST",
+        "status": -1,
+        "query_params": {
+          "hasfast": [
+            "true"
+          ],
+          "authuser": [
+            "0"
+          ],
+          "format": [
+            "json"
+          ]
+        },
+        "request_headers": {
+          "referer": "https://www.n-kesteven.org.uk/",
+          "content-type": "text/plain;charset=UTF-8"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T11:06:52.786Z",
+        "duration_ms": -1,
+        "endpoint": "/element/log",
+        "host": "translate.googleapis.com",
+        "method": "POST",
+        "status": -1,
+        "query_params": {
+          "hasfast": [
+            "true"
+          ],
+          "authuser": [
+            "0"
+          ],
+          "format": [
+            "json"
+          ]
+        },
+        "request_headers": {
+          "referer": "https://www.n-kesteven.org.uk/",
+          "content-type": "text/plain;charset=UTF-8"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T11:06:56.374Z",
+        "duration_ms": -1,
+        "endpoint": "/element/log",
+        "host": "translate.googleapis.com",
+        "method": "POST",
+        "status": -1,
+        "query_params": {
+          "hasfast": [
+            "true"
+          ],
+          "authuser": [
+            "0"
+          ],
+          "format": [
+            "json"
+          ]
+        },
+        "request_headers": {
+          "referer": "https://www.n-kesteven.org.uk/",
+          "content-type": "text/plain;charset=UTF-8"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T11:06:59.132Z",
+        "duration_ms": -1,
+        "endpoint": "/element/log",
+        "host": "translate.googleapis.com",
+        "method": "POST",
+        "status": -1,
+        "query_params": {
+          "hasfast": [
+            "true"
+          ],
+          "authuser": [
+            "0"
+          ],
+          "format": [
+            "json"
+          ]
+        },
+        "request_headers": {
+          "referer": "https://www.n-kesteven.org.uk/",
+          "content-type": "text/plain;charset=UTF-8"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T11:07:02.550Z",
+        "duration_ms": -1,
+        "endpoint": "/element/log",
+        "host": "translate.googleapis.com",
+        "method": "POST",
+        "status": -1,
+        "query_params": {
+          "hasfast": [
+            "true"
+          ],
+          "authuser": [
+            "0"
+          ],
+          "format": [
+            "json"
+          ]
+        },
+        "request_headers": {
+          "referer": "https://www.n-kesteven.org.uk/",
+          "content-type": "text/plain;charset=UTF-8"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T11:07:13.127Z",
+        "duration_ms": 75.142,
+        "endpoint": "/element/log",
+        "host": "translate.googleapis.com",
+        "method": "POST",
+        "status": 200,
+        "query_params": {
+          "format": [
+            "json"
+          ],
+          "hasfast": [
+            "true"
+          ],
+          "authuser": [
+            "0"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "content-type": "application/binary",
+          "origin": "https://www.n-kesteven.org.uk",
+          "referer": "https://www.n-kesteven.org.uk/",
+          "x-browser-copyright": "Copyright 2025 Google LLC. All rights reserved.",
+          "x-browser-validation": "qvLgIVtG4U8GgiRPSI9IJ22mUlI=",
+          "x-browser-year": "2025",
+          "x-client-data": "CMiXywE=",
+          "x-goog-authuser": "0"
+        },
+        "response_headers": {
+          "content-type": "text/plain; charset=UTF-8",
+          "x-frame-options": "SAMEORIGIN",
+          "x-xss-protection": "0"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T11:07:19.598Z",
+        "duration_ms": -1,
+        "endpoint": "/element/log",
+        "host": "translate.googleapis.com",
+        "method": "POST",
+        "status": -1,
+        "query_params": {
+          "hasfast": [
+            "true"
+          ],
+          "authuser": [
+            "0"
+          ],
+          "format": [
+            "json"
+          ]
+        },
+        "request_headers": {
+          "referer": "https://www.n-kesteven.org.uk/",
+          "content-type": "text/plain;charset=UTF-8"
+        }
+      }
+    ],
+    "/bins/address": [
+      {
+        "timestamp": "2025-07-21T11:06:45.115Z",
+        "duration_ms": 848.1800000000001,
+        "endpoint": "/bins/address",
+        "host": "www.n-kesteven.org.uk",
+        "method": "GET",
+        "status": 200,
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+          "cookie": "[cookies present]",
+          "referer": "https://www.n-kesteven.org.uk/bins"
+        },
+        "response_headers": {
+          "cache-control": "no-store, no-cache, must-revalidate, no-store, max-age=0, no-cache",
+          "content-type": "text/html; charset=UTF-8",
+          "x-powered-by": "PHP/8.1.32"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 42883,
+          "compressed": true,
+          "content_ref": "53877047ffa834b32435d4e6d4fdffea9ade6e5c.html"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T11:06:51.370Z",
+        "duration_ms": 787.5590000000001,
+        "endpoint": "/bins/address",
+        "host": "www.n-kesteven.org.uk",
+        "method": "POST",
+        "status": 303,
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+          "content-type": "application/x-www-form-urlencoded",
+          "cookie": "[cookies present]",
+          "origin": "https://www.n-kesteven.org.uk",
+          "referer": "https://www.n-kesteven.org.uk/bins/address"
+        },
+        "response_headers": {
+          "cache-control": "no-store, no-cache, must-revalidate, no-store, max-age=0, no-cache",
+          "content-type": "text/html; charset=UTF-8",
+          "location": "https://www.n-kesteven.org.uk/bins/display?uprn=90000001096",
+          "x-powered-by": "PHP/8.1.32"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": -1
+        },
+        "redirect_to": "https://www.n-kesteven.org.uk/bins/display?uprn=90000001096"
+      },
+      {
+        "timestamp": "2025-07-21T11:07:01.794Z",
+        "duration_ms": 740.721,
+        "endpoint": "/bins/address",
+        "host": "www.n-kesteven.org.uk",
+        "method": "GET",
+        "status": 200,
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+          "cookie": "[cookies present]",
+          "referer": "https://www.n-kesteven.org.uk/bins"
+        },
+        "response_headers": {
+          "cache-control": "no-store, no-cache, must-revalidate, no-store, max-age=0, no-cache",
+          "content-type": "text/html; charset=UTF-8",
+          "x-powered-by": "PHP/8.1.32"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 42883,
+          "compressed": true,
+          "content_ref": "53877047ffa834b32435d4e6d4fdffea9ade6e5c.html"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T11:07:18.004Z",
+        "duration_ms": 592.7289999999999,
+        "endpoint": "/bins/address",
+        "host": "www.n-kesteven.org.uk",
+        "method": "POST",
+        "status": 303,
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+          "content-type": "application/x-www-form-urlencoded",
+          "cookie": "[cookies present]",
+          "origin": "https://www.n-kesteven.org.uk",
+          "referer": "https://www.n-kesteven.org.uk/bins/address"
+        },
+        "response_headers": {
+          "cache-control": "no-store, no-cache, must-revalidate, no-store, max-age=0, no-cache",
+          "content-type": "text/html; charset=UTF-8",
+          "location": "https://www.n-kesteven.org.uk/bins/display?uprn=100030871851",
+          "x-powered-by": "PHP/8.1.32"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": -1
+        },
+        "redirect_to": "https://www.n-kesteven.org.uk/bins/display?uprn=100030871851"
+      }
+    ],
+    "/bins/display": [
+      {
+        "timestamp": "2025-07-21T11:06:52.160Z",
+        "duration_ms": 613.825,
+        "endpoint": "/bins/display",
+        "host": "www.n-kesteven.org.uk",
+        "method": "GET",
+        "status": 200,
+        "query_params": {
+          "uprn": [
+            "90000001096"
+          ]
+        },
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+          "cookie": "[cookies present]",
+          "referer": "https://www.n-kesteven.org.uk/bins/address"
+        },
+        "response_headers": {
+          "cache-control": "no-store, no-cache, must-revalidate, no-store, max-age=0, no-cache",
+          "content-type": "text/html; charset=UTF-8",
+          "x-powered-by": "PHP/8.1.32"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 40665,
+          "compressed": true,
+          "content_ref": "23af717a86d7cb636c26c0f4fb868d28e4e08c48.html"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T11:06:58.872Z",
+        "duration_ms": 246.13400000000001,
+        "endpoint": "/bins/display",
+        "host": "www.n-kesteven.org.uk",
+        "method": "GET",
+        "status": 200,
+        "query_params": {
+          "uprn": [
+            "90000001096"
+          ]
+        },
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+          "cookie": "[cookies present]",
+          "referer": "https://www.n-kesteven.org.uk/bins/address"
+        },
+        "response_headers": {
+          "cache-control": "no-store, no-cache, must-revalidate, no-store, max-age=0, no-cache",
+          "content-type": "text/html; charset=UTF-8",
+          "x-powered-by": "PHP/8.1.32"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 40803,
+          "compressed": true,
+          "content_ref": "055f27c65ef25057c0128da2b4150f38eeb62905.html"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T11:07:18.600Z",
+        "duration_ms": 987.941,
+        "endpoint": "/bins/display",
+        "host": "www.n-kesteven.org.uk",
+        "method": "GET",
+        "status": 200,
+        "query_params": {
+          "uprn": [
+            "100030871851"
+          ]
+        },
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+          "cookie": "[cookies present]",
+          "referer": "https://www.n-kesteven.org.uk/bins/address"
+        },
+        "response_headers": {
+          "cache-control": "no-store, no-cache, must-revalidate, no-store, max-age=0, no-cache",
+          "content-type": "text/html; charset=UTF-8",
+          "x-powered-by": "PHP/8.1.32"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 41106,
+          "compressed": true,
+          "content_ref": "39d9e37720245019b3e6371bf99a76da0961385c.html"
+        }
+      }
+    ],
+    "/bins/details": [
+      {
+        "timestamp": "2025-07-21T11:06:55.594Z",
+        "duration_ms": 764.485,
+        "endpoint": "/bins/details",
+        "host": "www.n-kesteven.org.uk",
+        "method": "GET",
+        "status": 200,
+        "query_params": {
+          "uprn": [
+            "90000001096"
+          ]
+        },
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+          "cookie": "[cookies present]",
+          "referer": "https://www.n-kesteven.org.uk/bins/display?uprn=90000001096"
+        },
+        "response_headers": {
+          "cache-control": "no-store, no-cache, must-revalidate, no-store, max-age=0, no-cache",
+          "content-type": "text/html; charset=UTF-8",
+          "x-powered-by": "PHP/8.1.32"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 40538,
+          "compressed": true,
+          "content_ref": "6ec16a887a36fd01ef19529a4bdc66958843590b.html"
+        }
+      }
+    ]
+  }
 }

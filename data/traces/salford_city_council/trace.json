@@ -1,257 +1,2305 @@
 {
-  "metadata": {
-    "trace_name": "salford_city_council",
-    "processed_at": "2025-08-26 18:44:24",
-    "workflow_steps_count": 6,
-    "navigation_events_count": 20
-  },
-  "scraping_patterns": {
-    "login_detected": false,
-    "form_submissions": 7,
-    "navigation_count": 1,
-    "unique_domains": [
-      "www.salford.gov.uk",
-      "v4in1-si.click4assistance.co.uk",
-      "browser-update.org",
-      "uksouth-1.in.applicationinsights.azure.com"
-    ],
-    "api_endpoints": [
-      "https://www.salford.gov.uk/manifest.json",
-      "https://www.salford.gov.uk/manifest.json",
-      "https://www.salford.gov.uk/manifest.json",
-      "https://www.salford.gov.uk/umbraco/api/SalfordAPI/AddressSearch",
-      "https://www.salford.gov.uk/manifest.json"
-    ],
-    "data_extraction_indicators": []
-  },
-  "workflow_steps": [
+  "entries": [
     {
-      "action": "goto",
-      "target": "https://www.salford.gov.uk/bins",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
-    },
-    {
-      "action": "click",
-      "target": "aria-ref=e7 >> internal:describe=\"Accept cookies\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
-    },
-    {
-      "action": "click",
-      "target": "aria-ref=e46 >> internal:describe=\"Bin collection days\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
-    },
-    {
-      "action": "fill",
-      "target": "aria-ref=e51 >> internal:describe=\"textbox \\\"Enter your street name OR full Salford postcode\\\"\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0,
-      "value": "M27 0AU"
-    },
-    {
-      "action": "click",
-      "target": "aria-ref=e53 >> internal:describe=\"Search\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
-    },
-    {
-      "action": "click",
-      "target": "aria-ref=e176 >> internal:describe=\"1 Ashley Drive, Swinton, Manchester, M27 0AU\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
-    }
-  ],
-  "navigation_events": [
-    {
-      "url": "https://www.salford.gov.uk/bins",
+      "timestamp": "2025-07-21T11:08:57.579Z",
+      "duration_ms": 70.864,
+      "endpoint": "/bins",
+      "host": "www.salford.gov.uk",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "text/html; charset=utf-8",
-      "size": 27814,
-      "timestamp": "2025-07-21T11:08:57.579Z"
-    },
-    {
-      "url": "https://www.salford.gov.uk/manifest.json",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json",
-      "size": 289,
-      "timestamp": "2025-07-21T11:08:58.886Z"
-    },
-    {
-      "url": "https://uksouth-1.in.applicationinsights.azure.com//v2/track",
-      "method": "POST",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json; charset=utf-8",
-      "size": 62,
-      "timestamp": "2025-07-21T11:08:58.978Z"
-    },
-    {
-      "url": "https://www.salford.gov.uk/bins",
-      "method": "POST",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "text/html; charset=utf-8",
-      "size": 26969,
-      "timestamp": "2025-07-21T11:09:00.004Z",
-      "form_data": {
-        "cookiesubmit": "Accept cookies"
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7"
+      },
+      "response_headers": {
+        "cache-control": "no-cache,no-store",
+        "content-type": "text/html; charset=utf-8",
+        "set-cookie": "[cookies present]",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "SAMEORIGIN",
+        "x-xss-protection": "1; mode=block"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 27814,
+        "compressed": true,
+        "content_ref": "a5bea5424c0082c9ae1068ce0be3e68f9ecbf2cd.html"
       }
     },
     {
-      "url": "https://v4in1-si.click4assistance.co.uk/SI.js",
-      "method": "GET",
-      "status": 304,
-      "redirect_url": null,
-      "mime_type": "x-unknown",
-      "size": -1,
-      "timestamp": "2025-07-21T11:09:00.057Z"
-    },
-    {
-      "url": "https://browser-update.org/update.min.js",
-      "method": "GET",
-      "status": 304,
-      "redirect_url": null,
-      "mime_type": "x-unknown",
-      "size": -1,
-      "timestamp": "2025-07-21T11:09:00.065Z"
-    },
-    {
-      "url": "https://www.salford.gov.uk/manifest.json",
+      "timestamp": "2025-07-21T11:08:58.886Z",
+      "duration_ms": 57.25600000000001,
+      "endpoint": "/manifest.json",
+      "host": "www.salford.gov.uk",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json",
-      "size": 289,
-      "timestamp": "2025-07-21T11:09:00.136Z"
+      "request_headers": {
+        "accept": "*/*",
+        "referer": "https://www.salford.gov.uk/bins"
+      },
+      "response_headers": {
+        "cache-control": "no-cache,no-store",
+        "content-type": "application/json",
+        "set-cookie": "[cookies present]",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "SAMEORIGIN",
+        "x-xss-protection": "1; mode=block"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 289,
+        "content_ref": "69407178ea7a10a8273999d21696eb2205cc6a2b.json"
+      }
     },
     {
-      "url": "https://uksouth-1.in.applicationinsights.azure.com//v2/track",
+      "timestamp": "2025-07-21T11:08:58.978Z",
+      "duration_ms": 63.699,
+      "endpoint": "/v2/track",
+      "host": "uksouth-1.in.applicationinsights.azure.com",
       "method": "POST",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json; charset=utf-8",
-      "size": 62,
-      "timestamp": "2025-07-21T11:09:00.159Z"
+      "request_headers": {
+        "accept": "*/*",
+        "content-type": "application/json",
+        "origin": "https://www.salford.gov.uk"
+      },
+      "response_headers": {
+        "content-type": "application/json; charset=utf-8",
+        "x-content-type-options": "nosniff"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 62,
+        "content_ref": "201da26f2bf2841be68133fc3451e22b2f585702.json"
+      }
     },
     {
-      "url": "https://www.salford.gov.uk/bins-and-recycling/bin-collection-days/",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "text/html; charset=utf-8",
-      "size": 33338,
-      "timestamp": "2025-07-21T11:09:02.163Z"
-    },
-    {
-      "url": "https://v4in1-si.click4assistance.co.uk/SI.js",
-      "method": "GET",
-      "status": 304,
-      "redirect_url": null,
-      "mime_type": "x-unknown",
-      "size": -1,
-      "timestamp": "2025-07-21T11:09:02.203Z"
-    },
-    {
-      "url": "https://browser-update.org/update.min.js",
-      "method": "GET",
-      "status": 304,
-      "redirect_url": null,
-      "mime_type": "x-unknown",
-      "size": -1,
-      "timestamp": "2025-07-21T11:09:02.219Z"
-    },
-    {
-      "url": "https://www.salford.gov.uk/manifest.json",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json",
-      "size": 289,
-      "timestamp": "2025-07-21T11:09:02.293Z"
-    },
-    {
-      "url": "https://uksouth-1.in.applicationinsights.azure.com//v2/track",
+      "timestamp": "2025-07-21T11:09:00.004Z",
+      "duration_ms": 19.776,
+      "endpoint": "/bins",
+      "host": "www.salford.gov.uk",
       "method": "POST",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json; charset=utf-8",
-      "size": 62,
-      "timestamp": "2025-07-21T11:09:02.312Z"
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+        "content-type": "application/x-www-form-urlencoded",
+        "cookie": "[cookies present]",
+        "origin": "https://www.salford.gov.uk",
+        "referer": "https://www.salford.gov.uk/bins"
+      },
+      "response_headers": {
+        "content-type": "text/html; charset=utf-8",
+        "set-cookie": "[cookies present]",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "SAMEORIGIN",
+        "x-xss-protection": "1; mode=block"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 26969,
+        "compressed": true,
+        "content_ref": "c02a5797ed61fa3b08c916657233ee44eb5fc140.html"
+      }
     },
     {
-      "url": "https://www.salford.gov.uk/umbraco/api/SalfordAPI/AddressSearch",
+      "timestamp": "2025-07-21T11:09:00.136Z",
+      "duration_ms": 15.767000000000001,
+      "endpoint": "/manifest.json",
+      "host": "www.salford.gov.uk",
+      "method": "GET",
+      "status": 200,
+      "request_headers": {
+        "accept": "*/*",
+        "referer": "https://www.salford.gov.uk/bins"
+      },
+      "response_headers": {
+        "cache-control": "no-cache,no-store",
+        "content-type": "application/json",
+        "set-cookie": "[cookies present]",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "SAMEORIGIN",
+        "x-xss-protection": "1; mode=block"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 289,
+        "content_ref": "69407178ea7a10a8273999d21696eb2205cc6a2b.json"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T11:09:00.159Z",
+      "duration_ms": 9.052,
+      "endpoint": "/v2/track",
+      "host": "uksouth-1.in.applicationinsights.azure.com",
       "method": "POST",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "text/plain; charset=utf-8",
-      "size": 2520,
-      "timestamp": "2025-07-21T11:09:06.562Z"
+      "request_headers": {
+        "accept": "*/*",
+        "content-type": "application/json",
+        "origin": "https://www.salford.gov.uk"
+      },
+      "response_headers": {
+        "content-type": "application/json; charset=utf-8",
+        "x-content-type-options": "nosniff"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 62,
+        "content_ref": "201da26f2bf2841be68133fc3451e22b2f585702.json"
+      }
     },
     {
-      "url": "https://www.salford.gov.uk/bins-and-recycling/bin-collection-days/your-bin-collections/?UPRN=100011344042",
+      "timestamp": "2025-07-21T11:09:02.163Z",
+      "duration_ms": 25.560000000000002,
+      "endpoint": "/bins-and-recycling/bin-collection-days",
+      "host": "www.salford.gov.uk",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "text/html; charset=utf-8",
-      "size": 26549,
-      "timestamp": "2025-07-21T11:09:08.914Z"
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+        "cookie": "[cookies present]",
+        "referer": "https://www.salford.gov.uk/bins"
+      },
+      "response_headers": {
+        "cache-control": "no-cache, no-store",
+        "content-type": "text/html; charset=utf-8",
+        "set-cookie": "[cookies present]",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "SAMEORIGIN",
+        "x-xss-protection": "1; mode=block"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 33338,
+        "compressed": true,
+        "content_ref": "7a57aa2bb8920ea5c46898fb86010cab84eb6658.html"
+      }
     },
     {
-      "url": "https://uksouth-1.in.applicationinsights.azure.com//v2/track",
+      "timestamp": "2025-07-21T11:09:02.222Z",
+      "duration_ms": 13.867,
+      "endpoint": "/j/collect",
+      "host": "www.google-analytics.com",
       "method": "POST",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json; charset=utf-8",
-      "size": -1,
-      "timestamp": "2025-07-21T11:09:08.915Z"
+      "query_params": {
+        "v": [
+          "1"
+        ],
+        "_v": [
+          "j101"
+        ],
+        "a": [
+          "2081976654"
+        ],
+        "t": [
+          "pageview"
+        ],
+        "_s": [
+          "1"
+        ],
+        "dl": [
+          "https://www.salford.gov.uk/bins-and-recycling/bin-collection-days/"
+        ],
+        "ul": [
+          "en-gb"
+        ],
+        "de": [
+          "UTF-8"
+        ],
+        "dt": [
+          "Bin collections days\u2022Salford City Council"
+        ],
+        "sd": [
+          "24-bit"
+        ],
+        "sr": [
+          "800x600"
+        ],
+        "vp": [
+          "800x461"
+        ],
+        "je": [
+          "0"
+        ],
+        "_u": [
+          "IEBAAEABAAAAACAAI~"
+        ],
+        "jid": [
+          "170990649"
+        ],
+        "gjid": [
+          "1791075385"
+        ],
+        "cid": [
+          "1002909284.1753096142"
+        ],
+        "tid": [
+          "UA-416788-16"
+        ],
+        "_gid": [
+          "1618351133.1753096142"
+        ],
+        "_r": [
+          "1"
+        ],
+        "_slc": [
+          "1"
+        ],
+        "z": [
+          "425483294"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "content-type": "text/plain",
+        "origin": "https://www.salford.gov.uk"
+      },
+      "response_headers": {
+        "cache-control": "no-cache, no-store, must-revalidate",
+        "content-type": "text/plain",
+        "x-content-type-options": "nosniff"
+      }
     },
     {
-      "url": "https://v4in1-si.click4assistance.co.uk/SI.js",
-      "method": "GET",
-      "status": 304,
-      "redirect_url": null,
-      "mime_type": "x-unknown",
-      "size": -1,
-      "timestamp": "2025-07-21T11:09:12.196Z"
-    },
-    {
-      "url": "https://browser-update.org/update.min.js",
-      "method": "GET",
-      "status": 304,
-      "redirect_url": null,
-      "mime_type": "x-unknown",
-      "size": -1,
-      "timestamp": "2025-07-21T11:09:12.221Z"
-    },
-    {
-      "url": "https://www.salford.gov.uk/manifest.json",
+      "timestamp": "2025-07-21T11:09:02.293Z",
+      "duration_ms": 19.923,
+      "endpoint": "/manifest.json",
+      "host": "www.salford.gov.uk",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json",
-      "size": 289,
-      "timestamp": "2025-07-21T11:09:12.257Z"
+      "request_headers": {
+        "accept": "*/*",
+        "referer": "https://www.salford.gov.uk/bins-and-recycling/bin-collection-days/"
+      },
+      "response_headers": {
+        "cache-control": "no-cache,no-store",
+        "content-type": "application/json",
+        "set-cookie": "[cookies present]",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "SAMEORIGIN",
+        "x-xss-protection": "1; mode=block"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 289,
+        "content_ref": "69407178ea7a10a8273999d21696eb2205cc6a2b.json"
+      }
     },
     {
-      "url": "https://uksouth-1.in.applicationinsights.azure.com//v2/track",
+      "timestamp": "2025-07-21T11:09:02.312Z",
+      "duration_ms": 9.552,
+      "endpoint": "/v2/track",
+      "host": "uksouth-1.in.applicationinsights.azure.com",
       "method": "POST",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json; charset=utf-8",
-      "size": 62,
-      "timestamp": "2025-07-21T11:09:12.318Z"
+      "request_headers": {
+        "accept": "*/*",
+        "content-type": "application/json",
+        "origin": "https://www.salford.gov.uk"
+      },
+      "response_headers": {
+        "content-type": "application/json; charset=utf-8",
+        "x-content-type-options": "nosniff"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 62,
+        "content_ref": "22ce4498db63718bc49ecd6746c021c120211c12.json"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T11:09:02.291Z",
+      "duration_ms": 65.026,
+      "endpoint": "/g/collect",
+      "host": "region1.google-analytics.com",
+      "method": "POST",
+      "status": 204,
+      "query_params": {
+        "v": [
+          "2"
+        ],
+        "tid": [
+          "G-7GKP4YM1JK"
+        ],
+        "gtm": [
+          "45je57g1v9115184296za200zd9115184296"
+        ],
+        "_p": [
+          "1753096142188"
+        ],
+        "gcd": [
+          "13l3l3l3l1l1"
+        ],
+        "npa": [
+          "0"
+        ],
+        "dma": [
+          "0"
+        ],
+        "tag_exp": [
+          "101509157~103116026~103200004~103233427~104684208~104684211~104952209~104952211"
+        ],
+        "cid": [
+          "1002909284.1753096142"
+        ],
+        "ul": [
+          "en-gb"
+        ],
+        "sr": [
+          "800x600"
+        ],
+        "uaa": [
+          "arm"
+        ],
+        "uab": [
+          "64"
+        ],
+        "uafvl": [
+          "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+        ],
+        "uamb": [
+          "0"
+        ],
+        "uap": [
+          "macOS"
+        ],
+        "uapv": [
+          "15.5.0"
+        ],
+        "uaw": [
+          "0"
+        ],
+        "are": [
+          "1"
+        ],
+        "frm": [
+          "0"
+        ],
+        "pscdl": [
+          "noapi"
+        ],
+        "_s": [
+          "1"
+        ],
+        "sid": [
+          "1753096142"
+        ],
+        "sct": [
+          "1"
+        ],
+        "seg": [
+          "0"
+        ],
+        "dl": [
+          "https://www.salford.gov.uk/bins-and-recycling/bin-collection-days/"
+        ],
+        "dr": [
+          "https://www.salford.gov.uk/bins"
+        ],
+        "dt": [
+          "Bin collections days\u2022Salford City Council"
+        ],
+        "en": [
+          "page_view"
+        ],
+        "_fv": [
+          "1"
+        ],
+        "_ss": [
+          "1"
+        ],
+        "_ee": [
+          "1"
+        ],
+        "tfd": [
+          "132"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "cookie": "[cookies present]",
+        "origin": "https://www.salford.gov.uk"
+      },
+      "response_headers": {
+        "cache-control": "no-cache, no-store, must-revalidate",
+        "content-type": "text/plain"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T11:09:06.562Z",
+      "duration_ms": 92.414,
+      "endpoint": "/umbraco/api/SalfordAPI/AddressSearch",
+      "host": "www.salford.gov.uk",
+      "method": "POST",
+      "status": 200,
+      "request_headers": {
+        "accept": "*/*",
+        "content-type": "application/x-www-form-urlencoded; charset=UTF-8",
+        "cookie": "[cookies present]",
+        "origin": "https://www.salford.gov.uk",
+        "referer": "https://www.salford.gov.uk/bins-and-recycling/bin-collection-days/",
+        "x-requested-with": "XMLHttpRequest"
+      },
+      "response_headers": {
+        "content-type": "text/plain; charset=utf-8",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "SAMEORIGIN",
+        "x-xss-protection": "1; mode=block"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T11:09:11.578Z",
+      "duration_ms": 24.541,
+      "endpoint": "/g/collect",
+      "host": "region1.google-analytics.com",
+      "method": "POST",
+      "status": 204,
+      "query_params": {
+        "v": [
+          "2"
+        ],
+        "tid": [
+          "G-7GKP4YM1JK"
+        ],
+        "gtm": [
+          "45je57g1v9115184296za200zd9115184296"
+        ],
+        "_p": [
+          "1753096142188"
+        ],
+        "gcd": [
+          "13l3l3l3l1l1"
+        ],
+        "npa": [
+          "0"
+        ],
+        "dma": [
+          "0"
+        ],
+        "tag_exp": [
+          "101509157~103116026~103200004~103233427~104684208~104684211~104952209~104952211"
+        ],
+        "cid": [
+          "1002909284.1753096142"
+        ],
+        "ul": [
+          "en-gb"
+        ],
+        "sr": [
+          "800x600"
+        ],
+        "uaa": [
+          "arm"
+        ],
+        "uab": [
+          "64"
+        ],
+        "uafvl": [
+          "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+        ],
+        "uamb": [
+          "0"
+        ],
+        "uap": [
+          "macOS"
+        ],
+        "uapv": [
+          "15.5.0"
+        ],
+        "uaw": [
+          "0"
+        ],
+        "are": [
+          "1"
+        ],
+        "frm": [
+          "0"
+        ],
+        "pscdl": [
+          "noapi"
+        ],
+        "_eu": [
+          "AEEAAAQ"
+        ],
+        "_s": [
+          "2"
+        ],
+        "sid": [
+          "1753096142"
+        ],
+        "sct": [
+          "1"
+        ],
+        "seg": [
+          "0"
+        ],
+        "dl": [
+          "https://www.salford.gov.uk/bins-and-recycling/bin-collection-days/"
+        ],
+        "dr": [
+          "https://www.salford.gov.uk/bins"
+        ],
+        "dt": [
+          "Bin collections days\u2022Salford City Council"
+        ],
+        "en": [
+          "form_start"
+        ],
+        "ep.form_destination": [
+          "https://www.salford.gov.uk/bins-and-recycling/bin-collection-days/"
+        ],
+        "epn.form_length": [
+          "4"
+        ],
+        "ep.first_field_id": [
+          "AddressQuery"
+        ],
+        "ep.first_field_name": [
+          "AddressQuery"
+        ],
+        "ep.first_field_type": [
+          "text"
+        ],
+        "epn.first_field_position": [
+          "1"
+        ],
+        "_et": [
+          "4282"
+        ],
+        "tfd": [
+          "9417"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "cookie": "[cookies present]",
+        "origin": "https://www.salford.gov.uk"
+      },
+      "response_headers": {
+        "cache-control": "no-cache, no-store, must-revalidate",
+        "content-type": "text/plain"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T11:09:12.154Z",
+      "duration_ms": -1,
+      "endpoint": "/v2/track",
+      "host": "uksouth-1.in.applicationinsights.azure.com",
+      "method": "POST",
+      "status": -1,
+      "request_headers": {
+        "referer": "",
+        "content-type": "application/json"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T11:09:12.155Z",
+      "duration_ms": -1,
+      "endpoint": "/g/collect",
+      "host": "region1.google-analytics.com",
+      "method": "POST",
+      "status": -1,
+      "query_params": {
+        "v": [
+          "2"
+        ],
+        "tid": [
+          "G-7GKP4YM1JK"
+        ],
+        "gtm": [
+          "45je57g1v9115184296za200zd9115184296"
+        ],
+        "_p": [
+          "1753096142188"
+        ],
+        "gcd": [
+          "13l3l3l3l1l1"
+        ],
+        "npa": [
+          "0"
+        ],
+        "dma": [
+          "0"
+        ],
+        "tag_exp": [
+          "101509157~103116026~103200004~103233427~104684208~104684211~104952209~104952211"
+        ],
+        "cid": [
+          "1002909284.1753096142"
+        ],
+        "ul": [
+          "en-gb"
+        ],
+        "sr": [
+          "800x600"
+        ],
+        "uaa": [
+          "arm"
+        ],
+        "uab": [
+          "64"
+        ],
+        "uafvl": [
+          "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+        ],
+        "uamb": [
+          "0"
+        ],
+        "uap": [
+          "macOS"
+        ],
+        "uapv": [
+          "15.5.0"
+        ],
+        "uaw": [
+          "0"
+        ],
+        "are": [
+          "1"
+        ],
+        "frm": [
+          "0"
+        ],
+        "pscdl": [
+          "noapi"
+        ],
+        "_eu": [
+          "AAAAAAQ"
+        ],
+        "_s": [
+          "3"
+        ],
+        "sid": [
+          "1753096142"
+        ],
+        "sct": [
+          "1"
+        ],
+        "seg": [
+          "0"
+        ],
+        "dl": [
+          "https://www.salford.gov.uk/bins-and-recycling/bin-collection-days/"
+        ],
+        "dr": [
+          "https://www.salford.gov.uk/bins"
+        ],
+        "dt": [
+          "Bin collections days\u2022Salford City Council"
+        ],
+        "en": [
+          "user_engagement"
+        ],
+        "_et": [
+          "5574"
+        ],
+        "tfd": [
+          "9993"
+        ]
+      },
+      "request_headers": {
+        "referer": ""
+      }
+    },
+    {
+      "timestamp": "2025-07-21T11:09:08.915Z",
+      "duration_ms": 8.681000000000001,
+      "endpoint": "/v2/track",
+      "host": "uksouth-1.in.applicationinsights.azure.com",
+      "method": "POST",
+      "status": 200,
+      "request_headers": {
+        "accept": "*/*",
+        "content-type": "application/json",
+        "origin": "https://www.salford.gov.uk"
+      },
+      "response_headers": {
+        "content-type": "application/json; charset=utf-8",
+        "x-content-type-options": "nosniff"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": -1
+      }
+    },
+    {
+      "timestamp": "2025-07-21T11:09:08.914Z",
+      "duration_ms": 3225.739,
+      "endpoint": "/bins-and-recycling/bin-collection-days/your-bin-collections",
+      "host": "www.salford.gov.uk",
+      "method": "GET",
+      "status": 200,
+      "query_params": {
+        "UPRN": [
+          "100011344042"
+        ]
+      },
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+        "cookie": "[cookies present]",
+        "referer": "https://www.salford.gov.uk/bins-and-recycling/bin-collection-days/"
+      },
+      "response_headers": {
+        "content-type": "text/html; charset=utf-8",
+        "set-cookie": "[cookies present]",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "SAMEORIGIN",
+        "x-xss-protection": "1; mode=block"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 26549,
+        "compressed": true,
+        "content_ref": "90c93782e4612298e2bfb1df0eda002f79bf1b28.html"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T11:09:12.227Z",
+      "duration_ms": 13.637,
+      "endpoint": "/j/collect",
+      "host": "www.google-analytics.com",
+      "method": "POST",
+      "status": 200,
+      "query_params": {
+        "v": [
+          "1"
+        ],
+        "_v": [
+          "j101"
+        ],
+        "a": [
+          "2000251787"
+        ],
+        "t": [
+          "pageview"
+        ],
+        "_s": [
+          "1"
+        ],
+        "dl": [
+          "https://www.salford.gov.uk/bins-and-recycling/bin-collection-days/your-bin-collections/?UPRN=100011344042"
+        ],
+        "ul": [
+          "en-gb"
+        ],
+        "de": [
+          "UTF-8"
+        ],
+        "dt": [
+          "Your bin collections\u2022Salford City Council"
+        ],
+        "sd": [
+          "24-bit"
+        ],
+        "sr": [
+          "800x600"
+        ],
+        "vp": [
+          "800x461"
+        ],
+        "je": [
+          "0"
+        ],
+        "_u": [
+          "AACAAEABAAAAACAAI~"
+        ],
+        "cid": [
+          "1002909284.1753096142"
+        ],
+        "tid": [
+          "UA-416788-16"
+        ],
+        "_gid": [
+          "1618351133.1753096142"
+        ],
+        "_slc": [
+          "1"
+        ],
+        "z": [
+          "1667248262"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "content-type": "text/plain",
+        "origin": "https://www.salford.gov.uk"
+      },
+      "response_headers": {
+        "cache-control": "no-cache, no-store, must-revalidate",
+        "content-type": "text/plain",
+        "x-content-type-options": "nosniff"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T11:09:12.257Z",
+      "duration_ms": 13.677,
+      "endpoint": "/manifest.json",
+      "host": "www.salford.gov.uk",
+      "method": "GET",
+      "status": 200,
+      "request_headers": {
+        "accept": "*/*",
+        "referer": "https://www.salford.gov.uk/bins-and-recycling/bin-collection-days/your-bin-collections/?UPRN=100011344042"
+      },
+      "response_headers": {
+        "cache-control": "no-cache,no-store",
+        "content-type": "application/json",
+        "set-cookie": "[cookies present]",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "SAMEORIGIN",
+        "x-xss-protection": "1; mode=block"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 289,
+        "content_ref": "69407178ea7a10a8273999d21696eb2205cc6a2b.json"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T11:09:12.318Z",
+      "duration_ms": 8.799,
+      "endpoint": "/v2/track",
+      "host": "uksouth-1.in.applicationinsights.azure.com",
+      "method": "POST",
+      "status": 200,
+      "request_headers": {
+        "accept": "*/*",
+        "content-type": "application/json",
+        "origin": "https://www.salford.gov.uk"
+      },
+      "response_headers": {
+        "content-type": "application/json; charset=utf-8",
+        "x-content-type-options": "nosniff"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 62,
+        "content_ref": "672afa53bb4f0c42109744e70cadf4c7e6f3e783.json"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T11:09:17.216Z",
+      "duration_ms": 14.751,
+      "endpoint": "/g/collect",
+      "host": "region1.google-analytics.com",
+      "method": "POST",
+      "status": 204,
+      "query_params": {
+        "v": [
+          "2"
+        ],
+        "tid": [
+          "G-7GKP4YM1JK"
+        ],
+        "gtm": [
+          "45je57g1v9115184296za200zd9115184296"
+        ],
+        "_p": [
+          "1753096152163"
+        ],
+        "gcd": [
+          "13l3l3l3l1l1"
+        ],
+        "npa": [
+          "0"
+        ],
+        "dma": [
+          "0"
+        ],
+        "tag_exp": [
+          "101509157~103116026~103200004~103233427~104684208~104684211~104952209~104952211"
+        ],
+        "cid": [
+          "1002909284.1753096142"
+        ],
+        "ul": [
+          "en-gb"
+        ],
+        "sr": [
+          "800x600"
+        ],
+        "uaa": [
+          "arm"
+        ],
+        "uab": [
+          "64"
+        ],
+        "uafvl": [
+          "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+        ],
+        "uamb": [
+          "0"
+        ],
+        "uap": [
+          "macOS"
+        ],
+        "uapv": [
+          "15.5.0"
+        ],
+        "uaw": [
+          "0"
+        ],
+        "are": [
+          "1"
+        ],
+        "frm": [
+          "0"
+        ],
+        "pscdl": [
+          "noapi"
+        ],
+        "_eu": [
+          "AAAAAAQ"
+        ],
+        "_s": [
+          "1"
+        ],
+        "sid": [
+          "1753096142"
+        ],
+        "sct": [
+          "1"
+        ],
+        "seg": [
+          "1"
+        ],
+        "dl": [
+          "https://www.salford.gov.uk/bins-and-recycling/bin-collection-days/your-bin-collections/?UPRN=100011344042"
+        ],
+        "dr": [
+          "https://www.salford.gov.uk/bins-and-recycling/bin-collection-days/"
+        ],
+        "dt": [
+          "Your bin collections\u2022Salford City Council"
+        ],
+        "en": [
+          "page_view"
+        ],
+        "_ee": [
+          "1"
+        ],
+        "tfd": [
+          "8302"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "cookie": "[cookies present]",
+        "origin": "https://www.salford.gov.uk"
+      },
+      "response_headers": {
+        "cache-control": "no-cache, no-store, must-revalidate",
+        "content-type": "text/plain"
+      }
     }
-  ]
+  ],
+  "analysis": {
+    "total_requests": 21,
+    "unique_endpoints": 8,
+    "methods_used": [
+      "GET",
+      "POST"
+    ],
+    "status_codes": {
+      "200": 16,
+      "204": 3,
+      "-1": 2
+    },
+    "endpoints_with_params": [
+      {
+        "endpoint": "/j/collect",
+        "method": "POST",
+        "query_params": [
+          "v",
+          "_v",
+          "a",
+          "t",
+          "_s",
+          "dl",
+          "ul",
+          "de",
+          "dt",
+          "sd",
+          "sr",
+          "vp",
+          "je",
+          "_u",
+          "jid",
+          "gjid",
+          "cid",
+          "tid",
+          "_gid",
+          "_r",
+          "_slc",
+          "z"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/g/collect",
+        "method": "POST",
+        "query_params": [
+          "v",
+          "tid",
+          "gtm",
+          "_p",
+          "gcd",
+          "npa",
+          "dma",
+          "tag_exp",
+          "cid",
+          "ul",
+          "sr",
+          "uaa",
+          "uab",
+          "uafvl",
+          "uamb",
+          "uap",
+          "uapv",
+          "uaw",
+          "are",
+          "frm",
+          "pscdl",
+          "_s",
+          "sid",
+          "sct",
+          "seg",
+          "dl",
+          "dr",
+          "dt",
+          "en",
+          "_fv",
+          "_ss",
+          "_ee",
+          "tfd"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/g/collect",
+        "method": "POST",
+        "query_params": [
+          "v",
+          "tid",
+          "gtm",
+          "_p",
+          "gcd",
+          "npa",
+          "dma",
+          "tag_exp",
+          "cid",
+          "ul",
+          "sr",
+          "uaa",
+          "uab",
+          "uafvl",
+          "uamb",
+          "uap",
+          "uapv",
+          "uaw",
+          "are",
+          "frm",
+          "pscdl",
+          "_eu",
+          "_s",
+          "sid",
+          "sct",
+          "seg",
+          "dl",
+          "dr",
+          "dt",
+          "en",
+          "ep.form_destination",
+          "epn.form_length",
+          "ep.first_field_id",
+          "ep.first_field_name",
+          "ep.first_field_type",
+          "epn.first_field_position",
+          "_et",
+          "tfd"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/g/collect",
+        "method": "POST",
+        "query_params": [
+          "v",
+          "tid",
+          "gtm",
+          "_p",
+          "gcd",
+          "npa",
+          "dma",
+          "tag_exp",
+          "cid",
+          "ul",
+          "sr",
+          "uaa",
+          "uab",
+          "uafvl",
+          "uamb",
+          "uap",
+          "uapv",
+          "uaw",
+          "are",
+          "frm",
+          "pscdl",
+          "_eu",
+          "_s",
+          "sid",
+          "sct",
+          "seg",
+          "dl",
+          "dr",
+          "dt",
+          "en",
+          "_et",
+          "tfd"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/bins-and-recycling/bin-collection-days/your-bin-collections",
+        "method": "GET",
+        "query_params": [
+          "UPRN"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/j/collect",
+        "method": "POST",
+        "query_params": [
+          "v",
+          "_v",
+          "a",
+          "t",
+          "_s",
+          "dl",
+          "ul",
+          "de",
+          "dt",
+          "sd",
+          "sr",
+          "vp",
+          "je",
+          "_u",
+          "cid",
+          "tid",
+          "_gid",
+          "_slc",
+          "z"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/g/collect",
+        "method": "POST",
+        "query_params": [
+          "v",
+          "tid",
+          "gtm",
+          "_p",
+          "gcd",
+          "npa",
+          "dma",
+          "tag_exp",
+          "cid",
+          "ul",
+          "sr",
+          "uaa",
+          "uab",
+          "uafvl",
+          "uamb",
+          "uap",
+          "uapv",
+          "uaw",
+          "are",
+          "frm",
+          "pscdl",
+          "_eu",
+          "_s",
+          "sid",
+          "sct",
+          "seg",
+          "dl",
+          "dr",
+          "dt",
+          "en",
+          "_ee",
+          "tfd"
+        ],
+        "path_params": false
+      }
+    ],
+    "redirects": [],
+    "api_calls": [
+      {
+        "endpoint": "/manifest.json",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": []
+      },
+      {
+        "endpoint": "/v2/track",
+        "method": "POST",
+        "response_type": "application/json",
+        "params": []
+      },
+      {
+        "endpoint": "/manifest.json",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": []
+      },
+      {
+        "endpoint": "/v2/track",
+        "method": "POST",
+        "response_type": "application/json",
+        "params": []
+      },
+      {
+        "endpoint": "/manifest.json",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": []
+      },
+      {
+        "endpoint": "/v2/track",
+        "method": "POST",
+        "response_type": "application/json",
+        "params": []
+      },
+      {
+        "endpoint": "/v2/track",
+        "method": "POST",
+        "response_type": "application/json",
+        "params": []
+      },
+      {
+        "endpoint": "/manifest.json",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": []
+      },
+      {
+        "endpoint": "/v2/track",
+        "method": "POST",
+        "response_type": "application/json",
+        "params": []
+      }
+    ],
+    "form_submissions": []
+  },
+  "grouped_by_endpoint": {
+    "/bins": [
+      {
+        "timestamp": "2025-07-21T11:08:57.579Z",
+        "duration_ms": 70.864,
+        "endpoint": "/bins",
+        "host": "www.salford.gov.uk",
+        "method": "GET",
+        "status": 200,
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7"
+        },
+        "response_headers": {
+          "cache-control": "no-cache,no-store",
+          "content-type": "text/html; charset=utf-8",
+          "set-cookie": "[cookies present]",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "SAMEORIGIN",
+          "x-xss-protection": "1; mode=block"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 27814,
+          "compressed": true,
+          "content_ref": "a5bea5424c0082c9ae1068ce0be3e68f9ecbf2cd.html"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T11:09:00.004Z",
+        "duration_ms": 19.776,
+        "endpoint": "/bins",
+        "host": "www.salford.gov.uk",
+        "method": "POST",
+        "status": 200,
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+          "content-type": "application/x-www-form-urlencoded",
+          "cookie": "[cookies present]",
+          "origin": "https://www.salford.gov.uk",
+          "referer": "https://www.salford.gov.uk/bins"
+        },
+        "response_headers": {
+          "content-type": "text/html; charset=utf-8",
+          "set-cookie": "[cookies present]",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "SAMEORIGIN",
+          "x-xss-protection": "1; mode=block"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 26969,
+          "compressed": true,
+          "content_ref": "c02a5797ed61fa3b08c916657233ee44eb5fc140.html"
+        }
+      }
+    ],
+    "/manifest.json": [
+      {
+        "timestamp": "2025-07-21T11:08:58.886Z",
+        "duration_ms": 57.25600000000001,
+        "endpoint": "/manifest.json",
+        "host": "www.salford.gov.uk",
+        "method": "GET",
+        "status": 200,
+        "request_headers": {
+          "accept": "*/*",
+          "referer": "https://www.salford.gov.uk/bins"
+        },
+        "response_headers": {
+          "cache-control": "no-cache,no-store",
+          "content-type": "application/json",
+          "set-cookie": "[cookies present]",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "SAMEORIGIN",
+          "x-xss-protection": "1; mode=block"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 289,
+          "content_ref": "69407178ea7a10a8273999d21696eb2205cc6a2b.json"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T11:09:00.136Z",
+        "duration_ms": 15.767000000000001,
+        "endpoint": "/manifest.json",
+        "host": "www.salford.gov.uk",
+        "method": "GET",
+        "status": 200,
+        "request_headers": {
+          "accept": "*/*",
+          "referer": "https://www.salford.gov.uk/bins"
+        },
+        "response_headers": {
+          "cache-control": "no-cache,no-store",
+          "content-type": "application/json",
+          "set-cookie": "[cookies present]",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "SAMEORIGIN",
+          "x-xss-protection": "1; mode=block"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 289,
+          "content_ref": "69407178ea7a10a8273999d21696eb2205cc6a2b.json"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T11:09:02.293Z",
+        "duration_ms": 19.923,
+        "endpoint": "/manifest.json",
+        "host": "www.salford.gov.uk",
+        "method": "GET",
+        "status": 200,
+        "request_headers": {
+          "accept": "*/*",
+          "referer": "https://www.salford.gov.uk/bins-and-recycling/bin-collection-days/"
+        },
+        "response_headers": {
+          "cache-control": "no-cache,no-store",
+          "content-type": "application/json",
+          "set-cookie": "[cookies present]",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "SAMEORIGIN",
+          "x-xss-protection": "1; mode=block"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 289,
+          "content_ref": "69407178ea7a10a8273999d21696eb2205cc6a2b.json"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T11:09:12.257Z",
+        "duration_ms": 13.677,
+        "endpoint": "/manifest.json",
+        "host": "www.salford.gov.uk",
+        "method": "GET",
+        "status": 200,
+        "request_headers": {
+          "accept": "*/*",
+          "referer": "https://www.salford.gov.uk/bins-and-recycling/bin-collection-days/your-bin-collections/?UPRN=100011344042"
+        },
+        "response_headers": {
+          "cache-control": "no-cache,no-store",
+          "content-type": "application/json",
+          "set-cookie": "[cookies present]",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "SAMEORIGIN",
+          "x-xss-protection": "1; mode=block"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 289,
+          "content_ref": "69407178ea7a10a8273999d21696eb2205cc6a2b.json"
+        }
+      }
+    ],
+    "/v2/track": [
+      {
+        "timestamp": "2025-07-21T11:08:58.978Z",
+        "duration_ms": 63.699,
+        "endpoint": "/v2/track",
+        "host": "uksouth-1.in.applicationinsights.azure.com",
+        "method": "POST",
+        "status": 200,
+        "request_headers": {
+          "accept": "*/*",
+          "content-type": "application/json",
+          "origin": "https://www.salford.gov.uk"
+        },
+        "response_headers": {
+          "content-type": "application/json; charset=utf-8",
+          "x-content-type-options": "nosniff"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 62,
+          "content_ref": "201da26f2bf2841be68133fc3451e22b2f585702.json"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T11:09:00.159Z",
+        "duration_ms": 9.052,
+        "endpoint": "/v2/track",
+        "host": "uksouth-1.in.applicationinsights.azure.com",
+        "method": "POST",
+        "status": 200,
+        "request_headers": {
+          "accept": "*/*",
+          "content-type": "application/json",
+          "origin": "https://www.salford.gov.uk"
+        },
+        "response_headers": {
+          "content-type": "application/json; charset=utf-8",
+          "x-content-type-options": "nosniff"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 62,
+          "content_ref": "201da26f2bf2841be68133fc3451e22b2f585702.json"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T11:09:02.312Z",
+        "duration_ms": 9.552,
+        "endpoint": "/v2/track",
+        "host": "uksouth-1.in.applicationinsights.azure.com",
+        "method": "POST",
+        "status": 200,
+        "request_headers": {
+          "accept": "*/*",
+          "content-type": "application/json",
+          "origin": "https://www.salford.gov.uk"
+        },
+        "response_headers": {
+          "content-type": "application/json; charset=utf-8",
+          "x-content-type-options": "nosniff"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 62,
+          "content_ref": "22ce4498db63718bc49ecd6746c021c120211c12.json"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T11:09:12.154Z",
+        "duration_ms": -1,
+        "endpoint": "/v2/track",
+        "host": "uksouth-1.in.applicationinsights.azure.com",
+        "method": "POST",
+        "status": -1,
+        "request_headers": {
+          "referer": "",
+          "content-type": "application/json"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T11:09:08.915Z",
+        "duration_ms": 8.681000000000001,
+        "endpoint": "/v2/track",
+        "host": "uksouth-1.in.applicationinsights.azure.com",
+        "method": "POST",
+        "status": 200,
+        "request_headers": {
+          "accept": "*/*",
+          "content-type": "application/json",
+          "origin": "https://www.salford.gov.uk"
+        },
+        "response_headers": {
+          "content-type": "application/json; charset=utf-8",
+          "x-content-type-options": "nosniff"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": -1
+        }
+      },
+      {
+        "timestamp": "2025-07-21T11:09:12.318Z",
+        "duration_ms": 8.799,
+        "endpoint": "/v2/track",
+        "host": "uksouth-1.in.applicationinsights.azure.com",
+        "method": "POST",
+        "status": 200,
+        "request_headers": {
+          "accept": "*/*",
+          "content-type": "application/json",
+          "origin": "https://www.salford.gov.uk"
+        },
+        "response_headers": {
+          "content-type": "application/json; charset=utf-8",
+          "x-content-type-options": "nosniff"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 62,
+          "content_ref": "672afa53bb4f0c42109744e70cadf4c7e6f3e783.json"
+        }
+      }
+    ],
+    "/bins-and-recycling/bin-collection-days": [
+      {
+        "timestamp": "2025-07-21T11:09:02.163Z",
+        "duration_ms": 25.560000000000002,
+        "endpoint": "/bins-and-recycling/bin-collection-days",
+        "host": "www.salford.gov.uk",
+        "method": "GET",
+        "status": 200,
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+          "cookie": "[cookies present]",
+          "referer": "https://www.salford.gov.uk/bins"
+        },
+        "response_headers": {
+          "cache-control": "no-cache, no-store",
+          "content-type": "text/html; charset=utf-8",
+          "set-cookie": "[cookies present]",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "SAMEORIGIN",
+          "x-xss-protection": "1; mode=block"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 33338,
+          "compressed": true,
+          "content_ref": "7a57aa2bb8920ea5c46898fb86010cab84eb6658.html"
+        }
+      }
+    ],
+    "/j/collect": [
+      {
+        "timestamp": "2025-07-21T11:09:02.222Z",
+        "duration_ms": 13.867,
+        "endpoint": "/j/collect",
+        "host": "www.google-analytics.com",
+        "method": "POST",
+        "status": 200,
+        "query_params": {
+          "v": [
+            "1"
+          ],
+          "_v": [
+            "j101"
+          ],
+          "a": [
+            "2081976654"
+          ],
+          "t": [
+            "pageview"
+          ],
+          "_s": [
+            "1"
+          ],
+          "dl": [
+            "https://www.salford.gov.uk/bins-and-recycling/bin-collection-days/"
+          ],
+          "ul": [
+            "en-gb"
+          ],
+          "de": [
+            "UTF-8"
+          ],
+          "dt": [
+            "Bin collections days\u2022Salford City Council"
+          ],
+          "sd": [
+            "24-bit"
+          ],
+          "sr": [
+            "800x600"
+          ],
+          "vp": [
+            "800x461"
+          ],
+          "je": [
+            "0"
+          ],
+          "_u": [
+            "IEBAAEABAAAAACAAI~"
+          ],
+          "jid": [
+            "170990649"
+          ],
+          "gjid": [
+            "1791075385"
+          ],
+          "cid": [
+            "1002909284.1753096142"
+          ],
+          "tid": [
+            "UA-416788-16"
+          ],
+          "_gid": [
+            "1618351133.1753096142"
+          ],
+          "_r": [
+            "1"
+          ],
+          "_slc": [
+            "1"
+          ],
+          "z": [
+            "425483294"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "content-type": "text/plain",
+          "origin": "https://www.salford.gov.uk"
+        },
+        "response_headers": {
+          "cache-control": "no-cache, no-store, must-revalidate",
+          "content-type": "text/plain",
+          "x-content-type-options": "nosniff"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T11:09:12.227Z",
+        "duration_ms": 13.637,
+        "endpoint": "/j/collect",
+        "host": "www.google-analytics.com",
+        "method": "POST",
+        "status": 200,
+        "query_params": {
+          "v": [
+            "1"
+          ],
+          "_v": [
+            "j101"
+          ],
+          "a": [
+            "2000251787"
+          ],
+          "t": [
+            "pageview"
+          ],
+          "_s": [
+            "1"
+          ],
+          "dl": [
+            "https://www.salford.gov.uk/bins-and-recycling/bin-collection-days/your-bin-collections/?UPRN=100011344042"
+          ],
+          "ul": [
+            "en-gb"
+          ],
+          "de": [
+            "UTF-8"
+          ],
+          "dt": [
+            "Your bin collections\u2022Salford City Council"
+          ],
+          "sd": [
+            "24-bit"
+          ],
+          "sr": [
+            "800x600"
+          ],
+          "vp": [
+            "800x461"
+          ],
+          "je": [
+            "0"
+          ],
+          "_u": [
+            "AACAAEABAAAAACAAI~"
+          ],
+          "cid": [
+            "1002909284.1753096142"
+          ],
+          "tid": [
+            "UA-416788-16"
+          ],
+          "_gid": [
+            "1618351133.1753096142"
+          ],
+          "_slc": [
+            "1"
+          ],
+          "z": [
+            "1667248262"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "content-type": "text/plain",
+          "origin": "https://www.salford.gov.uk"
+        },
+        "response_headers": {
+          "cache-control": "no-cache, no-store, must-revalidate",
+          "content-type": "text/plain",
+          "x-content-type-options": "nosniff"
+        }
+      }
+    ],
+    "/g/collect": [
+      {
+        "timestamp": "2025-07-21T11:09:02.291Z",
+        "duration_ms": 65.026,
+        "endpoint": "/g/collect",
+        "host": "region1.google-analytics.com",
+        "method": "POST",
+        "status": 204,
+        "query_params": {
+          "v": [
+            "2"
+          ],
+          "tid": [
+            "G-7GKP4YM1JK"
+          ],
+          "gtm": [
+            "45je57g1v9115184296za200zd9115184296"
+          ],
+          "_p": [
+            "1753096142188"
+          ],
+          "gcd": [
+            "13l3l3l3l1l1"
+          ],
+          "npa": [
+            "0"
+          ],
+          "dma": [
+            "0"
+          ],
+          "tag_exp": [
+            "101509157~103116026~103200004~103233427~104684208~104684211~104952209~104952211"
+          ],
+          "cid": [
+            "1002909284.1753096142"
+          ],
+          "ul": [
+            "en-gb"
+          ],
+          "sr": [
+            "800x600"
+          ],
+          "uaa": [
+            "arm"
+          ],
+          "uab": [
+            "64"
+          ],
+          "uafvl": [
+            "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+          ],
+          "uamb": [
+            "0"
+          ],
+          "uap": [
+            "macOS"
+          ],
+          "uapv": [
+            "15.5.0"
+          ],
+          "uaw": [
+            "0"
+          ],
+          "are": [
+            "1"
+          ],
+          "frm": [
+            "0"
+          ],
+          "pscdl": [
+            "noapi"
+          ],
+          "_s": [
+            "1"
+          ],
+          "sid": [
+            "1753096142"
+          ],
+          "sct": [
+            "1"
+          ],
+          "seg": [
+            "0"
+          ],
+          "dl": [
+            "https://www.salford.gov.uk/bins-and-recycling/bin-collection-days/"
+          ],
+          "dr": [
+            "https://www.salford.gov.uk/bins"
+          ],
+          "dt": [
+            "Bin collections days\u2022Salford City Council"
+          ],
+          "en": [
+            "page_view"
+          ],
+          "_fv": [
+            "1"
+          ],
+          "_ss": [
+            "1"
+          ],
+          "_ee": [
+            "1"
+          ],
+          "tfd": [
+            "132"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "cookie": "[cookies present]",
+          "origin": "https://www.salford.gov.uk"
+        },
+        "response_headers": {
+          "cache-control": "no-cache, no-store, must-revalidate",
+          "content-type": "text/plain"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T11:09:11.578Z",
+        "duration_ms": 24.541,
+        "endpoint": "/g/collect",
+        "host": "region1.google-analytics.com",
+        "method": "POST",
+        "status": 204,
+        "query_params": {
+          "v": [
+            "2"
+          ],
+          "tid": [
+            "G-7GKP4YM1JK"
+          ],
+          "gtm": [
+            "45je57g1v9115184296za200zd9115184296"
+          ],
+          "_p": [
+            "1753096142188"
+          ],
+          "gcd": [
+            "13l3l3l3l1l1"
+          ],
+          "npa": [
+            "0"
+          ],
+          "dma": [
+            "0"
+          ],
+          "tag_exp": [
+            "101509157~103116026~103200004~103233427~104684208~104684211~104952209~104952211"
+          ],
+          "cid": [
+            "1002909284.1753096142"
+          ],
+          "ul": [
+            "en-gb"
+          ],
+          "sr": [
+            "800x600"
+          ],
+          "uaa": [
+            "arm"
+          ],
+          "uab": [
+            "64"
+          ],
+          "uafvl": [
+            "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+          ],
+          "uamb": [
+            "0"
+          ],
+          "uap": [
+            "macOS"
+          ],
+          "uapv": [
+            "15.5.0"
+          ],
+          "uaw": [
+            "0"
+          ],
+          "are": [
+            "1"
+          ],
+          "frm": [
+            "0"
+          ],
+          "pscdl": [
+            "noapi"
+          ],
+          "_eu": [
+            "AEEAAAQ"
+          ],
+          "_s": [
+            "2"
+          ],
+          "sid": [
+            "1753096142"
+          ],
+          "sct": [
+            "1"
+          ],
+          "seg": [
+            "0"
+          ],
+          "dl": [
+            "https://www.salford.gov.uk/bins-and-recycling/bin-collection-days/"
+          ],
+          "dr": [
+            "https://www.salford.gov.uk/bins"
+          ],
+          "dt": [
+            "Bin collections days\u2022Salford City Council"
+          ],
+          "en": [
+            "form_start"
+          ],
+          "ep.form_destination": [
+            "https://www.salford.gov.uk/bins-and-recycling/bin-collection-days/"
+          ],
+          "epn.form_length": [
+            "4"
+          ],
+          "ep.first_field_id": [
+            "AddressQuery"
+          ],
+          "ep.first_field_name": [
+            "AddressQuery"
+          ],
+          "ep.first_field_type": [
+            "text"
+          ],
+          "epn.first_field_position": [
+            "1"
+          ],
+          "_et": [
+            "4282"
+          ],
+          "tfd": [
+            "9417"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "cookie": "[cookies present]",
+          "origin": "https://www.salford.gov.uk"
+        },
+        "response_headers": {
+          "cache-control": "no-cache, no-store, must-revalidate",
+          "content-type": "text/plain"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T11:09:12.155Z",
+        "duration_ms": -1,
+        "endpoint": "/g/collect",
+        "host": "region1.google-analytics.com",
+        "method": "POST",
+        "status": -1,
+        "query_params": {
+          "v": [
+            "2"
+          ],
+          "tid": [
+            "G-7GKP4YM1JK"
+          ],
+          "gtm": [
+            "45je57g1v9115184296za200zd9115184296"
+          ],
+          "_p": [
+            "1753096142188"
+          ],
+          "gcd": [
+            "13l3l3l3l1l1"
+          ],
+          "npa": [
+            "0"
+          ],
+          "dma": [
+            "0"
+          ],
+          "tag_exp": [
+            "101509157~103116026~103200004~103233427~104684208~104684211~104952209~104952211"
+          ],
+          "cid": [
+            "1002909284.1753096142"
+          ],
+          "ul": [
+            "en-gb"
+          ],
+          "sr": [
+            "800x600"
+          ],
+          "uaa": [
+            "arm"
+          ],
+          "uab": [
+            "64"
+          ],
+          "uafvl": [
+            "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+          ],
+          "uamb": [
+            "0"
+          ],
+          "uap": [
+            "macOS"
+          ],
+          "uapv": [
+            "15.5.0"
+          ],
+          "uaw": [
+            "0"
+          ],
+          "are": [
+            "1"
+          ],
+          "frm": [
+            "0"
+          ],
+          "pscdl": [
+            "noapi"
+          ],
+          "_eu": [
+            "AAAAAAQ"
+          ],
+          "_s": [
+            "3"
+          ],
+          "sid": [
+            "1753096142"
+          ],
+          "sct": [
+            "1"
+          ],
+          "seg": [
+            "0"
+          ],
+          "dl": [
+            "https://www.salford.gov.uk/bins-and-recycling/bin-collection-days/"
+          ],
+          "dr": [
+            "https://www.salford.gov.uk/bins"
+          ],
+          "dt": [
+            "Bin collections days\u2022Salford City Council"
+          ],
+          "en": [
+            "user_engagement"
+          ],
+          "_et": [
+            "5574"
+          ],
+          "tfd": [
+            "9993"
+          ]
+        },
+        "request_headers": {
+          "referer": ""
+        }
+      },
+      {
+        "timestamp": "2025-07-21T11:09:17.216Z",
+        "duration_ms": 14.751,
+        "endpoint": "/g/collect",
+        "host": "region1.google-analytics.com",
+        "method": "POST",
+        "status": 204,
+        "query_params": {
+          "v": [
+            "2"
+          ],
+          "tid": [
+            "G-7GKP4YM1JK"
+          ],
+          "gtm": [
+            "45je57g1v9115184296za200zd9115184296"
+          ],
+          "_p": [
+            "1753096152163"
+          ],
+          "gcd": [
+            "13l3l3l3l1l1"
+          ],
+          "npa": [
+            "0"
+          ],
+          "dma": [
+            "0"
+          ],
+          "tag_exp": [
+            "101509157~103116026~103200004~103233427~104684208~104684211~104952209~104952211"
+          ],
+          "cid": [
+            "1002909284.1753096142"
+          ],
+          "ul": [
+            "en-gb"
+          ],
+          "sr": [
+            "800x600"
+          ],
+          "uaa": [
+            "arm"
+          ],
+          "uab": [
+            "64"
+          ],
+          "uafvl": [
+            "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+          ],
+          "uamb": [
+            "0"
+          ],
+          "uap": [
+            "macOS"
+          ],
+          "uapv": [
+            "15.5.0"
+          ],
+          "uaw": [
+            "0"
+          ],
+          "are": [
+            "1"
+          ],
+          "frm": [
+            "0"
+          ],
+          "pscdl": [
+            "noapi"
+          ],
+          "_eu": [
+            "AAAAAAQ"
+          ],
+          "_s": [
+            "1"
+          ],
+          "sid": [
+            "1753096142"
+          ],
+          "sct": [
+            "1"
+          ],
+          "seg": [
+            "1"
+          ],
+          "dl": [
+            "https://www.salford.gov.uk/bins-and-recycling/bin-collection-days/your-bin-collections/?UPRN=100011344042"
+          ],
+          "dr": [
+            "https://www.salford.gov.uk/bins-and-recycling/bin-collection-days/"
+          ],
+          "dt": [
+            "Your bin collections\u2022Salford City Council"
+          ],
+          "en": [
+            "page_view"
+          ],
+          "_ee": [
+            "1"
+          ],
+          "tfd": [
+            "8302"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "cookie": "[cookies present]",
+          "origin": "https://www.salford.gov.uk"
+        },
+        "response_headers": {
+          "cache-control": "no-cache, no-store, must-revalidate",
+          "content-type": "text/plain"
+        }
+      }
+    ],
+    "/umbraco/api/SalfordAPI/AddressSearch": [
+      {
+        "timestamp": "2025-07-21T11:09:06.562Z",
+        "duration_ms": 92.414,
+        "endpoint": "/umbraco/api/SalfordAPI/AddressSearch",
+        "host": "www.salford.gov.uk",
+        "method": "POST",
+        "status": 200,
+        "request_headers": {
+          "accept": "*/*",
+          "content-type": "application/x-www-form-urlencoded; charset=UTF-8",
+          "cookie": "[cookies present]",
+          "origin": "https://www.salford.gov.uk",
+          "referer": "https://www.salford.gov.uk/bins-and-recycling/bin-collection-days/",
+          "x-requested-with": "XMLHttpRequest"
+        },
+        "response_headers": {
+          "content-type": "text/plain; charset=utf-8",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "SAMEORIGIN",
+          "x-xss-protection": "1; mode=block"
+        }
+      }
+    ],
+    "/bins-and-recycling/bin-collection-days/your-bin-collections": [
+      {
+        "timestamp": "2025-07-21T11:09:08.914Z",
+        "duration_ms": 3225.739,
+        "endpoint": "/bins-and-recycling/bin-collection-days/your-bin-collections",
+        "host": "www.salford.gov.uk",
+        "method": "GET",
+        "status": 200,
+        "query_params": {
+          "UPRN": [
+            "100011344042"
+          ]
+        },
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+          "cookie": "[cookies present]",
+          "referer": "https://www.salford.gov.uk/bins-and-recycling/bin-collection-days/"
+        },
+        "response_headers": {
+          "content-type": "text/html; charset=utf-8",
+          "set-cookie": "[cookies present]",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "SAMEORIGIN",
+          "x-xss-protection": "1; mode=block"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 26549,
+          "compressed": true,
+          "content_ref": "90c93782e4612298e2bfb1df0eda002f79bf1b28.html"
+        }
+      }
+    ]
+  }
 }

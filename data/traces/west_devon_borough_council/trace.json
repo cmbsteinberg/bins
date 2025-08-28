@@ -1,398 +1,3472 @@
 {
-  "metadata": {
-    "trace_name": "west_devon_borough_council",
-    "processed_at": "2025-08-26 18:44:24",
-    "workflow_steps_count": 7,
-    "navigation_events_count": 35
-  },
-  "scraping_patterns": {
-    "login_detected": false,
-    "form_submissions": 15,
-    "navigation_count": 2,
-    "unique_domains": [
-      "westdevon.fccenvironment.co.uk",
-      "www.westdevon.gov.uk",
-      "westdevon.gov.uk",
-      "produkswebassistsignalr18.service.signalr.net",
-      "webassistant.onconnect.app",
-      "webassist.onconnect.app",
-      "swdevon.innocraft.cloud"
-    ],
-    "api_endpoints": [
-      "https://webassistant.onconnect.app/assets/appConfig.json",
-      "https://webassistant.onconnect.app/assets/appConfig.json",
-      "https://webassistant.onconnect.app/assets/appConfig.json"
-    ],
-    "data_extraction_indicators": []
-  },
-  "workflow_steps": [
+  "entries": [
     {
-      "action": "goto",
-      "target": "https://www.westdevon.gov.uk/article/4526/Find-your-Recycling-Waste-collection-day",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
+      "timestamp": "2025-07-21T10:59:08.415Z",
+      "duration_ms": 425.817,
+      "endpoint": "/article/{id}/{id}",
+      "host": "www.westdevon.gov.uk",
+      "method": "GET",
+      "status": 404,
+      "path_params": [
+        "4526",
+        "Find-your-Recycling-Waste-collection-day"
+      ],
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7"
+      },
+      "response_headers": {
+        "cache-control": "must-revalidate, no-cache, private",
+        "content-type": "text/html; charset=UTF-8",
+        "x-cache": "Error from cloudfront",
+        "x-content-type-options": "nosniff",
+        "x-drupal-cache": "MISS",
+        "x-drupal-dynamic-cache": "HIT",
+        "x-frame-options": "SAMEORIGIN",
+        "x-generator": "Drupal 10 (https://www.drupal.org)"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 36538,
+        "compressed": true,
+        "content_ref": "65dc762a69e7d6a92ae24f43a98b90ae4dcecf7a.html"
+      }
     },
     {
-      "action": "goto",
-      "target": "https://www.westdevon.gov.uk/",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
+      "timestamp": "2025-07-21T10:59:08.921Z",
+      "duration_ms": 106.471,
+      "endpoint": "/v1/loader/{id}",
+      "host": "webassist.onconnect.app",
+      "method": "GET",
+      "status": 200,
+      "path_params": [
+        "a46fce52-ff7a-45bf-ad4f-0923f51c42d6"
+      ],
+      "request_headers": {
+        "accept": "*/*",
+        "origin": "https://www.westdevon.gov.uk",
+        "referer": "https://www.westdevon.gov.uk/"
+      },
+      "response_headers": {
+        "content-type": "application/json; charset=utf-8",
+        "x-ms-middleware-request-id": "00000000-0000-0000-0000-000000000000"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 52,
+        "content_ref": "3bd0e87f7735a292acfc53909bc55fd480fb94c1.json"
+      }
     },
     {
-      "action": "click",
-      "target": "aria-ref=e137 >> internal:describe=\"Check bin day\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
+      "timestamp": "2025-07-21T10:59:09.138Z",
+      "duration_ms": 96.03299999999999,
+      "endpoint": "/themes/custom/localgov_westdevon/assets/images/favicons/site.webmanifest",
+      "host": "www.westdevon.gov.uk",
+      "method": "GET",
+      "status": 404,
+      "request_headers": {
+        "accept": "*/*",
+        "referer": "https://www.westdevon.gov.uk/article/4526/Find-your-Recycling-Waste-collection-day"
+      },
+      "response_headers": {
+        "cache-control": "must-revalidate, no-cache, private",
+        "content-type": "text/html; charset=UTF-8",
+        "x-cache": "Error from cloudfront",
+        "x-content-type-options": "nosniff",
+        "x-drupal-cache": "HIT",
+        "x-drupal-dynamic-cache": "HIT",
+        "x-frame-options": "SAMEORIGIN",
+        "x-generator": "Drupal 10 (https://www.drupal.org)"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 36537,
+        "compressed": true,
+        "content_ref": "cafe7b15eea7fbb94834eb9d4780988c158329d7.html"
+      }
     },
     {
-      "action": "fill",
-      "target": "aria-ref=e55 >> internal:describe=\"Postcode*\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0,
-      "value": "EX17 5AL"
+      "timestamp": "2025-07-21T10:59:09.261Z",
+      "duration_ms": 272.749,
+      "endpoint": "/assets/appConfig.json",
+      "host": "webassistant.onconnect.app",
+      "method": "GET",
+      "status": 200,
+      "request_headers": {
+        "accept": "application/json, text/plain, */*",
+        "origin": "https://www.westdevon.gov.uk",
+        "referer": "https://www.westdevon.gov.uk/"
+      },
+      "response_headers": {
+        "content-type": "application/json",
+        "x-azure-ref": "20250721T105909Z-16896f46f997g999hC1LTSknz40000000a2g00000000a5y3",
+        "x-cache": "CONFIG_NOCACHE",
+        "x-ms-request-id": "1333141c-501e-00b7-3c2e-fa892d000000",
+        "x-ms-version": "2018-03-28"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 73,
+        "content_ref": "e8551bc0489c1ba948f1631c51732814c12af1e5.json"
+      }
     },
     {
-      "action": "click",
-      "target": "aria-ref=e58 >> internal:describe=\"Find address\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
+      "timestamp": "2025-07-21T10:59:09.469Z",
+      "duration_ms": 163.103,
+      "endpoint": "/v1/workspaces/{id}/init",
+      "host": "webassist.onconnect.app",
+      "method": "POST",
+      "status": 200,
+      "path_params": [
+        "a46fce52-ff7a-45bf-ad4f-0923f51c42d6"
+      ],
+      "request_headers": {
+        "accept": "application/json, text/plain, */*",
+        "content-type": "application/json",
+        "origin": "https://www.westdevon.gov.uk",
+        "referer": "https://www.westdevon.gov.uk/"
+      },
+      "response_headers": {
+        "content-type": "application/json; charset=utf-8",
+        "x-ms-middleware-request-id": "00000000-0000-0000-0000-000000000000"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 1460,
+        "compressed": true,
+        "content_ref": "a61115d70d7918642fbfa51c72c776081af74c7f.json"
+      }
     },
     {
-      "action": "selectOption",
-      "target": "aria-ref=e125 >> internal:describe=\"Address\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0,
-      "value": null
+      "timestamp": "2025-07-21T10:59:09.670Z",
+      "duration_ms": 77.072,
+      "endpoint": "/client/negotiate",
+      "host": "produkswebassistsignalr18.service.signalr.net",
+      "method": "POST",
+      "status": 200,
+      "query_params": {
+        "hub": [
+          "webassistant"
+        ],
+        "negotiateVersion": [
+          "1"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IjIwNTE3MDMyNDMifQ.eyJuYW1laWQiOiI4OThhMjAyYy03YWQ0LTQwMTMtYTU0MS0zOTY4YWVhYzlkNDUiLCJ3b3Jrc3BhY2UiOiJhNDZmY2U1Mi1mZjdhLTQ1YmYtYWQ0Zi0wOTIzZjUxYzQyZDYiLCJuYmYiOjE3NTMwOTU1NDksImV4cCI6MTc1MzA5OTE0OSwiaWF0IjoxNzUzMDk1NTQ5LCJhdWQiOiJodHRwczovL3Byb2R1a3N3ZWJhc3Npc3RzaWduYWxyMTguc2VydmljZS5zaWduYWxyLm5ldC9jbGllbnQvP2h1Yj13ZWJhc3Npc3RhbnQifQ.MDGgTqcVb52l6F1fgNprhfOTzsDlqPs4nYh6CcGlxvQ",
+        "content-type": "text/plain;charset=UTF-8",
+        "origin": "https://www.westdevon.gov.uk",
+        "referer": "https://www.westdevon.gov.uk/",
+        "x-requested-with": "XMLHttpRequest",
+        "x-signalr-user-agent": "Microsoft SignalR/6.0 (6.0.22; Unknown OS; Browser; Unknown Runtime Version)"
+      },
+      "response_headers": {
+        "content-type": "application/json"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 334,
+        "content_ref": "c19ce616f9c9f50e10b410a57cb54eea9151e934.json"
+      }
     },
     {
-      "action": "click",
-      "target": "aria-ref=e194 >> internal:describe=\"Read more about the Recycling and Food Collection Service >\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
+      "timestamp": "2025-07-21T10:59:09.671Z",
+      "duration_ms": 171.44299999999998,
+      "endpoint": "/v1/postback",
+      "host": "webassist.onconnect.app",
+      "method": "POST",
+      "status": 200,
+      "request_headers": {
+        "accept": "application/json, text/plain, */*",
+        "authorization": "Basic ODk4YTIwMmMtN2FkNC00MDEzLWE1NDEtMzk2OGFlYWM5ZDQ1OmZBVnRCa3NSeFRBNHRxc0VIMDhHbzlKU2lOWGtLQVYzNEFCMkRHZ2VzMm8=",
+        "content-type": "application/json",
+        "origin": "https://www.westdevon.gov.uk",
+        "referer": "https://www.westdevon.gov.uk/",
+        "x-connect-auth": "Basic ODk4YTIwMmMtN2FkNC00MDEzLWE1NDEtMzk2OGFlYWM5ZDQ1OmZBVnRCa3NSeFRBNHRxc0VIMDhHbzlKU2lOWGtLQVYzNEFCMkRHZ2VzMm8="
+      },
+      "response_headers": {
+        "x-ms-middleware-request-id": "00000000-0000-0000-0000-000000000000"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T10:59:09.989Z",
+      "duration_ms": 189.89299999999997,
+      "endpoint": "/matomo.php",
+      "host": "swdevon.innocraft.cloud",
+      "method": "POST",
+      "status": 204,
+      "query_params": {
+        "action_name": [
+          "Sorry! | West Devon Borough Council"
+        ],
+        "idsite": [
+          "2"
+        ],
+        "rec": [
+          "1"
+        ],
+        "r": [
+          "798460"
+        ],
+        "h": [
+          "11"
+        ],
+        "m": [
+          "59"
+        ],
+        "s": [
+          "9"
+        ],
+        "url": [
+          "https://www.westdevon.gov.uk/article/4526/Find-your-Recycling-Waste-collection-day"
+        ],
+        "_id": [
+          "e45769cbe32affe1"
+        ],
+        "_idn": [
+          "1"
+        ],
+        "send_image": [
+          "0"
+        ],
+        "_refts": [
+          "0"
+        ],
+        "pv_id": [
+          "kHP7FT"
+        ],
+        "fa_pv": [
+          "1"
+        ],
+        "fa_fp[0][fa_vid]": [
+          "UJLbKl"
+        ],
+        "fa_fp[0][fa_id]": [
+          "views-exposed-form-localgov-sitewide-search-sitewide-search-page-block"
+        ],
+        "fa_fp[0][fa_fv]": [
+          "1"
+        ],
+        "pf_net": [
+          "40"
+        ],
+        "pf_srv": [
+          "373"
+        ],
+        "pf_tfr": [
+          "2"
+        ],
+        "pf_dm1": [
+          "137"
+        ],
+        "uadata": [
+          "{\"formFactors\":[\"Desktop\"],\"fullVersionList\":[{\"brand\":\"Not)A;Brand\",\"version\":\"8.0.0.0\"},{\"brand\":\"Chromium\",\"version\":\"138.0.7204.101\"},{\"brand\":\"Google Chrome\",\"version\":\"138.0.7204.101\"}],\"mobile\":false,\"model\":\"\",\"platform\":\"macOS\",\"platformVersion\":\"15.5.0\"}"
+        ],
+        "pdf": [
+          "1"
+        ],
+        "qt": [
+          "0"
+        ],
+        "realp": [
+          "0"
+        ],
+        "wma": [
+          "0"
+        ],
+        "fla": [
+          "0"
+        ],
+        "java": [
+          "0"
+        ],
+        "ag": [
+          "0"
+        ],
+        "cookie": [
+          "1"
+        ],
+        "res": [
+          "800x600"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "content-type": "application/x-www-form-urlencoded; charset=utf-8",
+        "origin": "https://www.westdevon.gov.uk",
+        "referer": "https://www.westdevon.gov.uk/"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T10:59:11.551Z",
+      "duration_ms": 60.193,
+      "endpoint": "/",
+      "host": "www.westdevon.gov.uk",
+      "method": "GET",
+      "status": 200,
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+        "cookie": "[cookies present]"
+      },
+      "response_headers": {
+        "cache-control": "must-revalidate, no-cache, private",
+        "content-type": "text/html; charset=UTF-8",
+        "x-cache": "Miss from cloudfront",
+        "x-content-type-options": "nosniff",
+        "x-drupal-cache": "HIT",
+        "x-drupal-dynamic-cache": "MISS",
+        "x-frame-options": "SAMEORIGIN",
+        "x-generator": "Drupal 10 (https://www.drupal.org)"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 71364,
+        "compressed": true,
+        "content_ref": "18dccfc296a1a52d86b4b55352c919db400b9b84.html"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T10:59:11.644Z",
+      "duration_ms": 28.676000000000002,
+      "endpoint": "/v1/loader/{id}",
+      "host": "webassist.onconnect.app",
+      "method": "GET",
+      "status": 200,
+      "path_params": [
+        "a46fce52-ff7a-45bf-ad4f-0923f51c42d6"
+      ],
+      "request_headers": {
+        "accept": "*/*",
+        "origin": "https://www.westdevon.gov.uk",
+        "referer": "https://www.westdevon.gov.uk/"
+      },
+      "response_headers": {
+        "content-type": "application/json; charset=utf-8",
+        "x-ms-middleware-request-id": "00000000-0000-0000-0000-000000000000"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 52,
+        "content_ref": "3bd0e87f7735a292acfc53909bc55fd480fb94c1.json"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T10:59:11.825Z",
+      "duration_ms": 58.009,
+      "endpoint": "/themes/custom/localgov_westdevon/assets/images/favicons/site.webmanifest",
+      "host": "www.westdevon.gov.uk",
+      "method": "GET",
+      "status": 404,
+      "request_headers": {
+        "accept": "*/*",
+        "referer": "https://www.westdevon.gov.uk/"
+      },
+      "response_headers": {
+        "cache-control": "must-revalidate, no-cache, private",
+        "content-type": "text/html; charset=UTF-8",
+        "x-cache": "Error from cloudfront",
+        "x-content-type-options": "nosniff",
+        "x-drupal-cache": "HIT",
+        "x-drupal-dynamic-cache": "HIT",
+        "x-frame-options": "SAMEORIGIN",
+        "x-generator": "Drupal 10 (https://www.drupal.org)"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 36537,
+        "compressed": true,
+        "content_ref": "cafe7b15eea7fbb94834eb9d4780988c158329d7.html"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T10:59:11.673Z",
+      "duration_ms": 100.903,
+      "endpoint": "/matomo.php",
+      "host": "swdevon.innocraft.cloud",
+      "method": "POST",
+      "status": 204,
+      "query_params": {
+        "action_name": [
+          "West Devon | West Devon Borough Council"
+        ],
+        "idsite": [
+          "2"
+        ],
+        "rec": [
+          "1"
+        ],
+        "r": [
+          "836458"
+        ],
+        "h": [
+          "11"
+        ],
+        "m": [
+          "59"
+        ],
+        "s": [
+          "11"
+        ],
+        "url": [
+          "https://www.westdevon.gov.uk/"
+        ],
+        "_id": [
+          "e45769cbe32affe1"
+        ],
+        "_idn": [
+          "0"
+        ],
+        "send_image": [
+          "0"
+        ],
+        "_refts": [
+          "0"
+        ],
+        "pv_id": [
+          "4BWCIy"
+        ],
+        "fa_pv": [
+          "1"
+        ],
+        "fa_fp[0][fa_vid]": [
+          "NjkzJC"
+        ],
+        "fa_fp[0][fa_id]": [
+          "views-exposed-form-localgov-sitewide-search-sitewide-search-page-block"
+        ],
+        "fa_fp[0][fa_fv]": [
+          "1"
+        ],
+        "fa_fp[1][fa_vid]": [
+          "lin6VS"
+        ],
+        "fa_fp[1][fa_id]": [
+          "views-exposed-form-localgov-sitewide-search-sitewide-search-page-block"
+        ],
+        "fa_fp[1][fa_fv]": [
+          "1"
+        ],
+        "pf_net": [
+          "0"
+        ],
+        "pf_srv": [
+          "59"
+        ],
+        "pf_tfr": [
+          "1"
+        ],
+        "uadata": [
+          "{\"formFactors\":[\"Desktop\"],\"fullVersionList\":[{\"brand\":\"Not)A;Brand\",\"version\":\"8.0.0.0\"},{\"brand\":\"Chromium\",\"version\":\"138.0.7204.101\"},{\"brand\":\"Google Chrome\",\"version\":\"138.0.7204.101\"}],\"mobile\":false,\"model\":\"\",\"platform\":\"macOS\",\"platformVersion\":\"15.5.0\"}"
+        ],
+        "pdf": [
+          "1"
+        ],
+        "qt": [
+          "0"
+        ],
+        "realp": [
+          "0"
+        ],
+        "wma": [
+          "0"
+        ],
+        "fla": [
+          "0"
+        ],
+        "java": [
+          "0"
+        ],
+        "ag": [
+          "0"
+        ],
+        "cookie": [
+          "1"
+        ],
+        "res": [
+          "800x600"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "content-type": "application/x-www-form-urlencoded; charset=utf-8",
+        "origin": "https://www.westdevon.gov.uk",
+        "referer": "https://www.westdevon.gov.uk/"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T10:59:11.776Z",
+      "duration_ms": 1.465,
+      "endpoint": "/assets/appConfig.json",
+      "host": "webassistant.onconnect.app",
+      "method": "GET",
+      "status": 200,
+      "request_headers": {
+        "referer": "https://www.westdevon.gov.uk/",
+        "accept": "application/json, text/plain, */*"
+      },
+      "response_headers": {
+        "x-ms-version": "2018-03-28",
+        "x-ms-request-id": "1333141c-501e-00b7-3c2e-fa892d000000",
+        "x-cache": "CONFIG_NOCACHE",
+        "content-type": "application/json",
+        "x-azure-ref": "20250721T105909Z-16896f46f997g999hC1LTSknz40000000a2g00000000a5y3"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 73,
+        "compressed": true,
+        "content_ref": "e8551bc0489c1ba948f1631c51732814c12af1e5.json"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T10:59:11.861Z",
+      "duration_ms": 145.522,
+      "endpoint": "/v1/workspaces/{id}/init",
+      "host": "webassist.onconnect.app",
+      "method": "POST",
+      "status": 200,
+      "path_params": [
+        "a46fce52-ff7a-45bf-ad4f-0923f51c42d6"
+      ],
+      "request_headers": {
+        "accept": "application/json, text/plain, */*",
+        "authorization": "Basic ODk4YTIwMmMtN2FkNC00MDEzLWE1NDEtMzk2OGFlYWM5ZDQ1OmZBVnRCa3NSeFRBNHRxc0VIMDhHbzlKU2lOWGtLQVYzNEFCMkRHZ2VzMm8=",
+        "content-type": "application/json",
+        "origin": "https://www.westdevon.gov.uk",
+        "referer": "https://www.westdevon.gov.uk/",
+        "x-connect-auth": "Basic ODk4YTIwMmMtN2FkNC00MDEzLWE1NDEtMzk2OGFlYWM5ZDQ1OmZBVnRCa3NSeFRBNHRxc0VIMDhHbzlKU2lOWGtLQVYzNEFCMkRHZ2VzMm8="
+      },
+      "response_headers": {
+        "content-type": "application/json; charset=utf-8",
+        "x-ms-middleware-request-id": "00000000-0000-0000-0000-000000000000"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 1417,
+        "compressed": true,
+        "content_ref": "9f1cde9b33805b3c9134bafbf6a1a1e2ad78418d.json"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T10:59:11.984Z",
+      "duration_ms": 21.844,
+      "endpoint": "/client/negotiate",
+      "host": "produkswebassistsignalr18.service.signalr.net",
+      "method": "POST",
+      "status": 200,
+      "query_params": {
+        "hub": [
+          "webassistant"
+        ],
+        "negotiateVersion": [
+          "1"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IjE3Nzg5NzExOSJ9.eyJuYW1laWQiOiI4OThhMjAyYy03YWQ0LTQwMTMtYTU0MS0zOTY4YWVhYzlkNDUiLCJ3b3Jrc3BhY2UiOiJhNDZmY2U1Mi1mZjdhLTQ1YmYtYWQ0Zi0wOTIzZjUxYzQyZDYiLCJuYmYiOjE3NTMwOTU1NTIsImV4cCI6MTc1MzA5OTE1MiwiaWF0IjoxNzUzMDk1NTUyLCJhdWQiOiJodHRwczovL3Byb2R1a3N3ZWJhc3Npc3RzaWduYWxyMTguc2VydmljZS5zaWduYWxyLm5ldC9jbGllbnQvP2h1Yj13ZWJhc3Npc3RhbnQifQ.6LPtAisklos_-t0oKM1RKErMqfMLOayxLx2wh41irBM",
+        "content-type": "text/plain;charset=UTF-8",
+        "origin": "https://www.westdevon.gov.uk",
+        "referer": "https://www.westdevon.gov.uk/",
+        "x-requested-with": "XMLHttpRequest",
+        "x-signalr-user-agent": "Microsoft SignalR/6.0 (6.0.22; Unknown OS; Browser; Unknown Runtime Version)"
+      },
+      "response_headers": {
+        "content-type": "application/json"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 334,
+        "content_ref": "582064ec13493c3723cdf3f06082eb1f7311c0a2.json"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T10:59:11.984Z",
+      "duration_ms": 93.566,
+      "endpoint": "/v1/workspaces/{id}/appusers/{id}/messages",
+      "host": "webassist.onconnect.app",
+      "method": "GET",
+      "status": 200,
+      "path_params": [
+        "a46fce52-ff7a-45bf-ad4f-0923f51c42d6",
+        "0f7967df-9c88-4923-a0eb-28ff05807a81"
+      ],
+      "request_headers": {
+        "accept": "application/json, text/plain, */*",
+        "authorization": "Basic ODk4YTIwMmMtN2FkNC00MDEzLWE1NDEtMzk2OGFlYWM5ZDQ1OmZBVnRCa3NSeFRBNHRxc0VIMDhHbzlKU2lOWGtLQVYzNEFCMkRHZ2VzMm8=",
+        "content-type": "application/json",
+        "origin": "https://www.westdevon.gov.uk",
+        "referer": "https://www.westdevon.gov.uk/",
+        "x-connect-auth": "Basic ODk4YTIwMmMtN2FkNC00MDEzLWE1NDEtMzk2OGFlYWM5ZDQ1OmZBVnRCa3NSeFRBNHRxc0VIMDhHbzlKU2lOWGtLQVYzNEFCMkRHZ2VzMm8="
+      },
+      "response_headers": {
+        "content-type": "application/json; charset=utf-8",
+        "x-ms-middleware-request-id": "00000000-0000-0000-0000-000000000000"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 40,
+        "content_ref": "1037334915cdbbe4abf707856b72a38f00349a04.json"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T10:59:11.985Z",
+      "duration_ms": 192.411,
+      "endpoint": "/v1/postback",
+      "host": "webassist.onconnect.app",
+      "method": "POST",
+      "status": 200,
+      "request_headers": {
+        "accept": "application/json, text/plain, */*",
+        "authorization": "Basic ODk4YTIwMmMtN2FkNC00MDEzLWE1NDEtMzk2OGFlYWM5ZDQ1OmZBVnRCa3NSeFRBNHRxc0VIMDhHbzlKU2lOWGtLQVYzNEFCMkRHZ2VzMm8=",
+        "content-type": "application/json",
+        "origin": "https://www.westdevon.gov.uk",
+        "referer": "https://www.westdevon.gov.uk/",
+        "x-connect-auth": "Basic ODk4YTIwMmMtN2FkNC00MDEzLWE1NDEtMzk2OGFlYWM5ZDQ1OmZBVnRCa3NSeFRBNHRxc0VIMDhHbzlKU2lOWGtLQVYzNEFCMkRHZ2VzMm8="
+      },
+      "response_headers": {
+        "x-ms-middleware-request-id": "00000000-0000-0000-0000-000000000000"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T10:59:13.903Z",
+      "duration_ms": 98.221,
+      "endpoint": "/matomo.php",
+      "host": "swdevon.innocraft.cloud",
+      "method": "POST",
+      "status": 204,
+      "query_params": {
+        "link": [
+          "https://westdevon.fccenvironment.co.uk/mycollections"
+        ],
+        "idsite": [
+          "2"
+        ],
+        "rec": [
+          "1"
+        ],
+        "r": [
+          "614029"
+        ],
+        "h": [
+          "11"
+        ],
+        "m": [
+          "59"
+        ],
+        "s": [
+          "13"
+        ],
+        "url": [
+          "https://www.westdevon.gov.uk/"
+        ],
+        "_id": [
+          "e45769cbe32affe1"
+        ],
+        "_idn": [
+          "0"
+        ],
+        "send_image": [
+          "0"
+        ],
+        "_refts": [
+          "0"
+        ],
+        "pf_net": [
+          "0"
+        ],
+        "pf_srv": [
+          "59"
+        ],
+        "pf_tfr": [
+          "1"
+        ],
+        "pf_dm1": [
+          "45"
+        ],
+        "pf_dm2": [
+          "62"
+        ],
+        "pf_onl": [
+          "0"
+        ],
+        "pv_id": [
+          "4BWCIy"
+        ],
+        "uadata": [
+          "{\"formFactors\":[\"Desktop\"],\"fullVersionList\":[{\"brand\":\"Not)A;Brand\",\"version\":\"8.0.0.0\"},{\"brand\":\"Chromium\",\"version\":\"138.0.7204.101\"},{\"brand\":\"Google Chrome\",\"version\":\"138.0.7204.101\"}],\"mobile\":false,\"model\":\"\",\"platform\":\"macOS\",\"platformVersion\":\"15.5.0\"}"
+        ],
+        "pdf": [
+          "1"
+        ],
+        "qt": [
+          "0"
+        ],
+        "realp": [
+          "0"
+        ],
+        "wma": [
+          "0"
+        ],
+        "fla": [
+          "0"
+        ],
+        "java": [
+          "0"
+        ],
+        "ag": [
+          "0"
+        ],
+        "cookie": [
+          "1"
+        ],
+        "res": [
+          "800x600"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "content-type": "application/x-www-form-urlencoded; charset=utf-8",
+        "origin": "https://www.westdevon.gov.uk",
+        "referer": "https://www.westdevon.gov.uk/"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T10:59:14.087Z",
+      "duration_ms": 36.606,
+      "endpoint": "/mycollections",
+      "host": "westdevon.fccenvironment.co.uk",
+      "method": "GET",
+      "status": 200,
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+        "referer": "https://www.westdevon.gov.uk/"
+      },
+      "response_headers": {
+        "cache-control": "no-store, no-cache, must-revalidate",
+        "content-type": "text/html; charset=UTF-8",
+        "set-cookie": "[cookies present]",
+        "x-cdn-cache-status": "MISS",
+        "x-cdn-node-is-at-origin": "1",
+        "x-frame-options": "SAMEORIGIN",
+        "x-origin-cache-status": "MISS",
+        "x-powered-by": "PHP/7.4.33",
+        "x-provided-by": "StackCDN",
+        "x-via": "LHR2"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 18297,
+        "compressed": true,
+        "content_ref": "3d22f0510b90f2cc82d4e1e95cf17a3a7de14ff7.html"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T10:59:14.290Z",
+      "duration_ms": 16.603,
+      "endpoint": "/j/collect",
+      "host": "www.google-analytics.com",
+      "method": "POST",
+      "status": 200,
+      "query_params": {
+        "v": [
+          "1"
+        ],
+        "_v": [
+          "j101"
+        ],
+        "aip": [
+          "1"
+        ],
+        "a": [
+          "1433283410"
+        ],
+        "t": [
+          "pageview"
+        ],
+        "_s": [
+          "1"
+        ],
+        "dl": [
+          "https://westdevon.fccenvironment.co.uk/mycollections"
+        ],
+        "dr": [
+          "https://www.westdevon.gov.uk/"
+        ],
+        "ul": [
+          "en-gb"
+        ],
+        "de": [
+          "UTF-8"
+        ],
+        "dt": [
+          "Find your Recycling and Waste collection day - West Devon Borough Council"
+        ],
+        "sd": [
+          "24-bit"
+        ],
+        "sr": [
+          "800x600"
+        ],
+        "vp": [
+          "800x461"
+        ],
+        "je": [
+          "0"
+        ],
+        "_u": [
+          "YEBAAUABAAAAACAAI~"
+        ],
+        "jid": [
+          "773332020"
+        ],
+        "gjid": [
+          "939462297"
+        ],
+        "cid": [
+          "428037189.1753095554"
+        ],
+        "tid": [
+          "UA-132704650-10"
+        ],
+        "_gid": [
+          "1708776054.1753095554"
+        ],
+        "_r": [
+          "1"
+        ],
+        "gtm": [
+          "457e57g1za200"
+        ],
+        "gcd": [
+          "13l3l3l3l1l1"
+        ],
+        "dma": [
+          "0"
+        ],
+        "tag_exp": [
+          "101509157~103116026~103200004~103233427~104684208~104684211~104921712~104921714"
+        ],
+        "jsscut": [
+          "1"
+        ],
+        "z": [
+          "905804517"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "content-type": "text/plain",
+        "origin": "https://westdevon.fccenvironment.co.uk",
+        "referer": "https://westdevon.fccenvironment.co.uk/"
+      },
+      "response_headers": {
+        "cache-control": "no-cache, no-store, must-revalidate",
+        "content-type": "text/plain",
+        "x-content-type-options": "nosniff"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T10:59:14.317Z",
+      "duration_ms": 65.478,
+      "endpoint": "/g/collect",
+      "host": "region1.google-analytics.com",
+      "method": "POST",
+      "status": 204,
+      "query_params": {
+        "v": [
+          "2"
+        ],
+        "tid": [
+          "G-QJSESZZFY9"
+        ],
+        "gtm": [
+          "45je57g1v9108515842za200"
+        ],
+        "_p": [
+          "1753095554133"
+        ],
+        "gcd": [
+          "13l3l3l3l1l1"
+        ],
+        "npa": [
+          "0"
+        ],
+        "dma": [
+          "0"
+        ],
+        "tag_exp": [
+          "101509157~103116026~103200004~103233427~104684208~104684211~104991058"
+        ],
+        "cid": [
+          "428037189.1753095554"
+        ],
+        "ul": [
+          "en-gb"
+        ],
+        "sr": [
+          "800x600"
+        ],
+        "uaa": [
+          "arm"
+        ],
+        "uab": [
+          "64"
+        ],
+        "uafvl": [
+          "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+        ],
+        "uamb": [
+          "0"
+        ],
+        "uap": [
+          "macOS"
+        ],
+        "uapv": [
+          "15.5.0"
+        ],
+        "uaw": [
+          "0"
+        ],
+        "are": [
+          "1"
+        ],
+        "frm": [
+          "0"
+        ],
+        "pscdl": [
+          "noapi"
+        ],
+        "_eu": [
+          "AAAI"
+        ],
+        "_s": [
+          "1"
+        ],
+        "sid": [
+          "1753095554"
+        ],
+        "sct": [
+          "1"
+        ],
+        "seg": [
+          "0"
+        ],
+        "dl": [
+          "https://westdevon.fccenvironment.co.uk/mycollections"
+        ],
+        "dr": [
+          "https://www.westdevon.gov.uk/"
+        ],
+        "dt": [
+          "Find your Recycling and Waste collection day - West Devon Borough Council"
+        ],
+        "en": [
+          "page_view"
+        ],
+        "_fv": [
+          "1"
+        ],
+        "_ss": [
+          "1"
+        ],
+        "tfd": [
+          "315"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "cookie": "[cookies present]",
+        "origin": "https://westdevon.fccenvironment.co.uk",
+        "referer": "https://westdevon.fccenvironment.co.uk/"
+      },
+      "response_headers": {
+        "cache-control": "no-cache, no-store, must-revalidate",
+        "content-type": "text/plain"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T10:59:18.654Z",
+      "duration_ms": 188.31699999999998,
+      "endpoint": "/ajaxprocessor/getaddresses",
+      "host": "westdevon.fccenvironment.co.uk",
+      "method": "POST",
+      "status": 200,
+      "request_headers": {
+        "accept": "application/json, text/javascript, */*; q=0.01",
+        "content-type": "application/x-www-form-urlencoded; charset=UTF-8",
+        "cookie": "[cookies present]",
+        "origin": "https://westdevon.fccenvironment.co.uk",
+        "referer": "https://westdevon.fccenvironment.co.uk/mycollections",
+        "x-requested-with": "XMLHttpRequest"
+      },
+      "response_headers": {
+        "content-type": "text/html; charset=UTF-8",
+        "set-cookie": "[cookies present]",
+        "x-frame-options": "SAMEORIGIN",
+        "x-powered-by": "PHP/7.4.33",
+        "x-provided-by": "StackCDN",
+        "x-via": "LHR2"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 4512,
+        "compressed": true,
+        "content_ref": "6b99cabc3d20e1aed906358b076611bd86ad1151.html"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T10:59:21.530Z",
+      "duration_ms": 477.339,
+      "endpoint": "/ajaxprocessor/getcollectiondetails",
+      "host": "westdevon.fccenvironment.co.uk",
+      "method": "POST",
+      "status": 200,
+      "request_headers": {
+        "accept": "application/json, text/javascript, */*; q=0.01",
+        "content-type": "application/x-www-form-urlencoded; charset=UTF-8",
+        "cookie": "[cookies present]",
+        "origin": "https://westdevon.fccenvironment.co.uk",
+        "referer": "https://westdevon.fccenvironment.co.uk/mycollections",
+        "x-requested-with": "XMLHttpRequest"
+      },
+      "response_headers": {
+        "content-type": "text/html; charset=UTF-8",
+        "set-cookie": "[cookies present]",
+        "x-frame-options": "SAMEORIGIN",
+        "x-powered-by": "PHP/7.4.33",
+        "x-provided-by": "StackCDN",
+        "x-via": "LHR2"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 3494,
+        "compressed": true,
+        "content_ref": "140ad9af9277a63b8db056775b70b69e5480924b.html"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T10:59:26.437Z",
+      "duration_ms": 17.881999999999998,
+      "endpoint": "/recycling",
+      "host": "westdevon.gov.uk",
+      "method": "GET",
+      "status": 301,
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+        "referer": "https://westdevon.fccenvironment.co.uk/"
+      },
+      "response_headers": {
+        "content-type": "text/html",
+        "location": "https://www.westdevon.gov.uk/recycling",
+        "x-cache": "Miss from cloudfront"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": -1
+      },
+      "redirect_to": "https://www.westdevon.gov.uk/recycling"
+    },
+    {
+      "timestamp": "2025-07-21T10:59:26.478Z",
+      "duration_ms": 156.005,
+      "endpoint": "/recycling",
+      "host": "www.westdevon.gov.uk",
+      "method": "GET",
+      "status": 301,
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+        "cookie": "[cookies present]",
+        "referer": "https://westdevon.fccenvironment.co.uk/"
+      },
+      "response_headers": {
+        "cache-control": "must-revalidate, no-cache, private",
+        "content-type": "text/html; charset=utf-8",
+        "location": "https://westdevon.gov.uk/waste-and-recycling/how-your-waste-and-recycling-service-works/recycling-boxes-and-sack",
+        "x-cache": "Miss from cloudfront",
+        "x-content-type-options": "nosniff",
+        "x-drupal-cache": "MISS",
+        "x-frame-options": "SAMEORIGIN",
+        "x-generator": "Drupal 10 (https://www.drupal.org)",
+        "x-redirect-id": "111"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": -1
+      },
+      "redirect_to": "https://westdevon.gov.uk/waste-and-recycling/how-your-waste-and-recycling-service-works/recycling-boxes-and-sack"
+    },
+    {
+      "timestamp": "2025-07-21T10:59:26.634Z",
+      "duration_ms": 44.327000000000005,
+      "endpoint": "/waste-and-recycling/{id}/{id}",
+      "host": "westdevon.gov.uk",
+      "method": "GET",
+      "status": 301,
+      "path_params": [
+        "how-your-waste-and-recycling-service-works",
+        "recycling-boxes-and-sack"
+      ],
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+        "referer": "https://westdevon.fccenvironment.co.uk/"
+      },
+      "response_headers": {
+        "content-type": "text/html",
+        "location": "https://www.westdevon.gov.uk/waste-and-recycling/how-your-waste-and-recycling-service-works/recycling-boxes-and-sack",
+        "x-cache": "Miss from cloudfront"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": -1
+      },
+      "redirect_to": "https://www.westdevon.gov.uk/waste-and-recycling/how-your-waste-and-recycling-service-works/recycling-boxes-and-sack"
+    },
+    {
+      "timestamp": "2025-07-21T10:59:26.679Z",
+      "duration_ms": 346.937,
+      "endpoint": "/waste-and-recycling/{id}/{id}",
+      "host": "www.westdevon.gov.uk",
+      "method": "GET",
+      "status": 301,
+      "path_params": [
+        "how-your-waste-and-recycling-service-works",
+        "recycling-boxes-and-sack"
+      ],
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+        "cookie": "[cookies present]",
+        "referer": "https://westdevon.fccenvironment.co.uk/"
+      },
+      "response_headers": {
+        "cache-control": "must-revalidate, no-cache, private",
+        "content-type": "text/html; charset=utf-8",
+        "location": "https://www.westdevon.gov.uk/waste-and-recycling/guide-waste-and-recycling/recycling-boxes-and-sack",
+        "x-cache": "Miss from cloudfront",
+        "x-content-type-options": "nosniff",
+        "x-drupal-cache": "MISS",
+        "x-frame-options": "SAMEORIGIN",
+        "x-generator": "Drupal 10 (https://www.drupal.org)",
+        "x-redirect-id": "566"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": -1
+      },
+      "redirect_to": "https://www.westdevon.gov.uk/waste-and-recycling/guide-waste-and-recycling/recycling-boxes-and-sack"
+    },
+    {
+      "timestamp": "2025-07-21T10:59:27.028Z",
+      "duration_ms": 50.98,
+      "endpoint": "/waste-and-recycling/{id}/{id}",
+      "host": "www.westdevon.gov.uk",
+      "method": "GET",
+      "status": 200,
+      "path_params": [
+        "guide-waste-and-recycling",
+        "recycling-boxes-and-sack"
+      ],
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+        "cookie": "[cookies present]",
+        "referer": "https://westdevon.fccenvironment.co.uk/"
+      },
+      "response_headers": {
+        "cache-control": "must-revalidate, no-cache, private",
+        "content-type": "text/html; charset=UTF-8",
+        "x-cache": "Miss from cloudfront",
+        "x-content-type-options": "nosniff",
+        "x-drupal-cache": "HIT",
+        "x-drupal-dynamic-cache": "MISS",
+        "x-frame-options": "SAMEORIGIN",
+        "x-generator": "Drupal 10 (https://www.drupal.org)"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 46288,
+        "compressed": true,
+        "content_ref": "2512d6926ae78c15dba03d621cf330c02a413b64.html"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T10:59:27.115Z",
+      "duration_ms": 24.171999999999997,
+      "endpoint": "/v1/loader/{id}",
+      "host": "webassist.onconnect.app",
+      "method": "GET",
+      "status": 200,
+      "path_params": [
+        "a46fce52-ff7a-45bf-ad4f-0923f51c42d6"
+      ],
+      "request_headers": {
+        "accept": "*/*",
+        "origin": "https://www.westdevon.gov.uk",
+        "referer": "https://www.westdevon.gov.uk/"
+      },
+      "response_headers": {
+        "content-type": "application/json; charset=utf-8",
+        "x-ms-middleware-request-id": "00000000-0000-0000-0000-000000000000"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 52,
+        "content_ref": "3bd0e87f7735a292acfc53909bc55fd480fb94c1.json"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T10:59:27.290Z",
+      "duration_ms": 1.35,
+      "endpoint": "/assets/appConfig.json",
+      "host": "webassistant.onconnect.app",
+      "method": "GET",
+      "status": 200,
+      "request_headers": {
+        "referer": "https://www.westdevon.gov.uk/",
+        "accept": "application/json, text/plain, */*"
+      },
+      "response_headers": {
+        "x-ms-version": "2018-03-28",
+        "x-ms-request-id": "1333141c-501e-00b7-3c2e-fa892d000000",
+        "x-cache": "CONFIG_NOCACHE",
+        "content-type": "application/json",
+        "x-azure-ref": "20250721T105909Z-16896f46f997g999hC1LTSknz40000000a2g00000000a5y3"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 73,
+        "compressed": true,
+        "content_ref": "e8551bc0489c1ba948f1631c51732814c12af1e5.json"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T10:59:27.238Z",
+      "duration_ms": 92.06700000000001,
+      "endpoint": "/themes/custom/localgov_westdevon/assets/images/favicons/site.webmanifest",
+      "host": "www.westdevon.gov.uk",
+      "method": "GET",
+      "status": 404,
+      "request_headers": {
+        "accept": "*/*",
+        "referer": "https://www.westdevon.gov.uk/waste-and-recycling/guide-waste-and-recycling/recycling-boxes-and-sack"
+      },
+      "response_headers": {
+        "cache-control": "must-revalidate, no-cache, private",
+        "content-type": "text/html; charset=UTF-8",
+        "x-cache": "Error from cloudfront",
+        "x-content-type-options": "nosniff",
+        "x-drupal-cache": "HIT",
+        "x-drupal-dynamic-cache": "HIT",
+        "x-frame-options": "SAMEORIGIN",
+        "x-generator": "Drupal 10 (https://www.drupal.org)"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 36537,
+        "compressed": true,
+        "content_ref": "cafe7b15eea7fbb94834eb9d4780988c158329d7.html"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T10:59:27.194Z",
+      "duration_ms": 95.395,
+      "endpoint": "/matomo.php",
+      "host": "swdevon.innocraft.cloud",
+      "method": "POST",
+      "status": 204,
+      "query_params": {
+        "action_name": [
+          "Recycling - Boxes and Sack | West Devon Borough Council"
+        ],
+        "idsite": [
+          "2"
+        ],
+        "rec": [
+          "1"
+        ],
+        "r": [
+          "690625"
+        ],
+        "h": [
+          "11"
+        ],
+        "m": [
+          "59"
+        ],
+        "s": [
+          "27"
+        ],
+        "url": [
+          "https://www.westdevon.gov.uk/waste-and-recycling/guide-waste-and-recycling/recycling-boxes-and-sack"
+        ],
+        "urlref": [
+          "https://westdevon.fccenvironment.co.uk/"
+        ],
+        "_id": [
+          "e45769cbe32affe1"
+        ],
+        "_idn": [
+          "0"
+        ],
+        "send_image": [
+          "0"
+        ],
+        "_refts": [
+          "0"
+        ],
+        "pv_id": [
+          "VEVBam"
+        ],
+        "fa_pv": [
+          "1"
+        ],
+        "fa_fp[0][fa_vid]": [
+          "5VCOWh"
+        ],
+        "fa_fp[0][fa_id]": [
+          "views-exposed-form-localgov-sitewide-search-sitewide-search-page-block"
+        ],
+        "fa_fp[0][fa_fv]": [
+          "1"
+        ],
+        "pf_net": [
+          "0"
+        ],
+        "pf_srv": [
+          "49"
+        ],
+        "pf_tfr": [
+          "0"
+        ],
+        "uadata": [
+          "{\"formFactors\":[\"Desktop\"],\"fullVersionList\":[{\"brand\":\"Not)A;Brand\",\"version\":\"8.0.0.0\"},{\"brand\":\"Chromium\",\"version\":\"138.0.7204.101\"},{\"brand\":\"Google Chrome\",\"version\":\"138.0.7204.101\"}],\"mobile\":false,\"model\":\"\",\"platform\":\"macOS\",\"platformVersion\":\"15.5.0\"}"
+        ],
+        "pdf": [
+          "1"
+        ],
+        "qt": [
+          "0"
+        ],
+        "realp": [
+          "0"
+        ],
+        "wma": [
+          "0"
+        ],
+        "fla": [
+          "0"
+        ],
+        "java": [
+          "0"
+        ],
+        "ag": [
+          "0"
+        ],
+        "cookie": [
+          "1"
+        ],
+        "res": [
+          "800x600"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "content-type": "application/x-www-form-urlencoded; charset=utf-8",
+        "origin": "https://www.westdevon.gov.uk",
+        "referer": "https://www.westdevon.gov.uk/"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T10:59:27.332Z",
+      "duration_ms": 119.36,
+      "endpoint": "/v1/workspaces/{id}/init",
+      "host": "webassist.onconnect.app",
+      "method": "POST",
+      "status": 200,
+      "path_params": [
+        "a46fce52-ff7a-45bf-ad4f-0923f51c42d6"
+      ],
+      "request_headers": {
+        "accept": "application/json, text/plain, */*",
+        "authorization": "Basic ODk4YTIwMmMtN2FkNC00MDEzLWE1NDEtMzk2OGFlYWM5ZDQ1OmZBVnRCa3NSeFRBNHRxc0VIMDhHbzlKU2lOWGtLQVYzNEFCMkRHZ2VzMm8=",
+        "content-type": "application/json",
+        "origin": "https://www.westdevon.gov.uk",
+        "referer": "https://www.westdevon.gov.uk/",
+        "x-connect-auth": "Basic ODk4YTIwMmMtN2FkNC00MDEzLWE1NDEtMzk2OGFlYWM5ZDQ1OmZBVnRCa3NSeFRBNHRxc0VIMDhHbzlKU2lOWGtLQVYzNEFCMkRHZ2VzMm8="
+      },
+      "response_headers": {
+        "content-type": "application/json; charset=utf-8",
+        "x-ms-middleware-request-id": "00000000-0000-0000-0000-000000000000"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 1420,
+        "compressed": true,
+        "content_ref": "979b593e0fb138ebc99fc96ad866516d01b03911.json"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T10:59:27.378Z",
+      "duration_ms": 22.79,
+      "endpoint": "/client/negotiate",
+      "host": "produkswebassistsignalr18.service.signalr.net",
+      "method": "POST",
+      "status": 200,
+      "query_params": {
+        "hub": [
+          "webassistant"
+        ],
+        "negotiateVersion": [
+          "1"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ii0xODMwODc2ODc5In0.eyJuYW1laWQiOiI4OThhMjAyYy03YWQ0LTQwMTMtYTU0MS0zOTY4YWVhYzlkNDUiLCJ3b3Jrc3BhY2UiOiJhNDZmY2U1Mi1mZjdhLTQ1YmYtYWQ0Zi0wOTIzZjUxYzQyZDYiLCJuYmYiOjE3NTMwOTU1NjcsImV4cCI6MTc1MzA5OTE2NywiaWF0IjoxNzUzMDk1NTY3LCJhdWQiOiJodHRwczovL3Byb2R1a3N3ZWJhc3Npc3RzaWduYWxyMTguc2VydmljZS5zaWduYWxyLm5ldC9jbGllbnQvP2h1Yj13ZWJhc3Npc3RhbnQifQ.dTwmn2yTy1TVZGyHBOrta36jvOwXLrIy2Qd_Gg23q6w",
+        "content-type": "text/plain;charset=UTF-8",
+        "origin": "https://www.westdevon.gov.uk",
+        "referer": "https://www.westdevon.gov.uk/",
+        "x-requested-with": "XMLHttpRequest",
+        "x-signalr-user-agent": "Microsoft SignalR/6.0 (6.0.22; Unknown OS; Browser; Unknown Runtime Version)"
+      },
+      "response_headers": {
+        "content-type": "application/json"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 334,
+        "content_ref": "a1517d949919b5db808f3d18151bcc130a8f9cb5.json"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T10:59:27.378Z",
+      "duration_ms": 78.713,
+      "endpoint": "/v1/workspaces/{id}/appusers/{id}/messages",
+      "host": "webassist.onconnect.app",
+      "method": "GET",
+      "status": 200,
+      "path_params": [
+        "a46fce52-ff7a-45bf-ad4f-0923f51c42d6",
+        "0f7967df-9c88-4923-a0eb-28ff05807a81"
+      ],
+      "request_headers": {
+        "accept": "application/json, text/plain, */*",
+        "authorization": "Basic ODk4YTIwMmMtN2FkNC00MDEzLWE1NDEtMzk2OGFlYWM5ZDQ1OmZBVnRCa3NSeFRBNHRxc0VIMDhHbzlKU2lOWGtLQVYzNEFCMkRHZ2VzMm8=",
+        "content-type": "application/json",
+        "origin": "https://www.westdevon.gov.uk",
+        "referer": "https://www.westdevon.gov.uk/",
+        "x-connect-auth": "Basic ODk4YTIwMmMtN2FkNC00MDEzLWE1NDEtMzk2OGFlYWM5ZDQ1OmZBVnRCa3NSeFRBNHRxc0VIMDhHbzlKU2lOWGtLQVYzNEFCMkRHZ2VzMm8="
+      },
+      "response_headers": {
+        "content-type": "application/json; charset=utf-8",
+        "x-ms-middleware-request-id": "00000000-0000-0000-0000-000000000000"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 40,
+        "content_ref": "1037334915cdbbe4abf707856b72a38f00349a04.json"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T10:59:27.378Z",
+      "duration_ms": 163.85,
+      "endpoint": "/v1/postback",
+      "host": "webassist.onconnect.app",
+      "method": "POST",
+      "status": 200,
+      "request_headers": {
+        "accept": "application/json, text/plain, */*",
+        "authorization": "Basic ODk4YTIwMmMtN2FkNC00MDEzLWE1NDEtMzk2OGFlYWM5ZDQ1OmZBVnRCa3NSeFRBNHRxc0VIMDhHbzlKU2lOWGtLQVYzNEFCMkRHZ2VzMm8=",
+        "content-type": "application/json",
+        "origin": "https://www.westdevon.gov.uk",
+        "referer": "https://www.westdevon.gov.uk/",
+        "x-connect-auth": "Basic ODk4YTIwMmMtN2FkNC00MDEzLWE1NDEtMzk2OGFlYWM5ZDQ1OmZBVnRCa3NSeFRBNHRxc0VIMDhHbzlKU2lOWGtLQVYzNEFCMkRHZ2VzMm8="
+      },
+      "response_headers": {
+        "x-ms-middleware-request-id": "00000000-0000-0000-0000-000000000000"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T10:59:29.770Z",
+      "duration_ms": 25.674,
+      "endpoint": "/mycollections",
+      "host": "westdevon.fccenvironment.co.uk",
+      "method": "GET",
+      "status": 200,
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+        "cookie": "[cookies present]",
+        "referer": "https://www.westdevon.gov.uk/"
+      },
+      "response_headers": {
+        "cache-control": "no-store, no-cache, must-revalidate",
+        "content-type": "text/html; charset=UTF-8",
+        "set-cookie": "[cookies present]",
+        "x-cdn-cache-status": "MISS",
+        "x-cdn-node-is-at-origin": "1",
+        "x-frame-options": "SAMEORIGIN",
+        "x-origin-cache-status": "MISS",
+        "x-powered-by": "PHP/7.4.33",
+        "x-provided-by": "StackCDN",
+        "x-via": "LHR2"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 18301,
+        "compressed": true,
+        "content_ref": "2c63e203a8c7b7280f89d3dbe96b3920a7207fea.html"
+      }
     }
   ],
-  "navigation_events": [
-    {
-      "url": "https://www.westdevon.gov.uk/article/4526/Find-your-Recycling-Waste-collection-day",
-      "method": "GET",
-      "status": 404,
-      "redirect_url": null,
-      "mime_type": "text/html; charset=UTF-8",
-      "size": 36538,
-      "timestamp": "2025-07-21T10:59:08.415Z"
+  "analysis": {
+    "total_requests": 37,
+    "unique_endpoints": 17,
+    "methods_used": [
+      "GET",
+      "POST"
+    ],
+    "status_codes": {
+      "404": 4,
+      "200": 24,
+      "204": 5,
+      "301": 4
     },
-    {
-      "url": "https://webassist.onconnect.app/v1/loader/a46fce52-ff7a-45bf-ad4f-0923f51c42d6",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json; charset=utf-8",
-      "size": 52,
-      "timestamp": "2025-07-21T10:59:08.921Z"
-    },
-    {
-      "url": "https://www.westdevon.gov.uk/themes/custom/localgov_westdevon/assets/images/favicons/site.webmanifest",
-      "method": "GET",
-      "status": 404,
-      "redirect_url": null,
-      "mime_type": "text/html; charset=UTF-8",
-      "size": 36537,
-      "timestamp": "2025-07-21T10:59:09.138Z"
-    },
-    {
-      "url": "https://webassistant.onconnect.app/assets/appConfig.json",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json",
-      "size": 73,
-      "timestamp": "2025-07-21T10:59:09.261Z"
-    },
-    {
-      "url": "https://webassist.onconnect.app/v1/workspaces/a46fce52-ff7a-45bf-ad4f-0923f51c42d6/init",
-      "method": "POST",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json; charset=utf-8",
-      "size": 1460,
-      "timestamp": "2025-07-21T10:59:09.469Z"
-    },
-    {
-      "url": "https://produkswebassistsignalr18.service.signalr.net/client/negotiate?hub=webassistant&negotiateVersion=1",
-      "method": "POST",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json",
-      "size": 334,
-      "timestamp": "2025-07-21T10:59:09.670Z"
-    },
-    {
-      "url": "https://webassist.onconnect.app/v1/postback",
-      "method": "POST",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "x-unknown",
-      "size": 0,
-      "timestamp": "2025-07-21T10:59:09.671Z"
-    },
-    {
-      "url": "https://swdevon.innocraft.cloud/matomo.php?action_name=Sorry!%20%7C%20West%20Devon%20Borough%20Council&idsite=2&rec=1&r=798460&h=11&m=59&s=9&url=https%3A%2F%2Fwww.westdevon.gov.uk%2Farticle%2F4526%2FFind-your-Recycling-Waste-collection-day&_id=e45769cbe32affe1&_idn=1&send_image=0&_refts=0&pv_id=kHP7FT&fa_pv=1&fa_fp[0][fa_vid]=UJLbKl&fa_fp[0][fa_id]=views-exposed-form-localgov-sitewide-search-sitewide-search-page-block&fa_fp[0][fa_fv]=1&pf_net=40&pf_srv=373&pf_tfr=2&pf_dm1=137&uadata=%7B%22formFactors%22%3A%5B%22Desktop%22%5D%2C%22fullVersionList%22%3A%5B%7B%22brand%22%3A%22Not)A%3BBrand%22%2C%22version%22%3A%228.0.0.0%22%7D%2C%7B%22brand%22%3A%22Chromium%22%2C%22version%22%3A%22138.0.7204.101%22%7D%2C%7B%22brand%22%3A%22Google%20Chrome%22%2C%22version%22%3A%22138.0.7204.101%22%7D%5D%2C%22mobile%22%3Afalse%2C%22model%22%3A%22%22%2C%22platform%22%3A%22macOS%22%2C%22platformVersion%22%3A%2215.5.0%22%7D&pdf=1&qt=0&realp=0&wma=0&fla=0&java=0&ag=0&cookie=1&res=800x600",
-      "method": "POST",
-      "status": 204,
-      "redirect_url": null,
-      "mime_type": "x-unknown",
-      "size": 0,
-      "timestamp": "2025-07-21T10:59:09.989Z"
-    },
-    {
-      "url": "https://www.westdevon.gov.uk/",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "text/html; charset=UTF-8",
-      "size": 71364,
-      "timestamp": "2025-07-21T10:59:11.551Z"
-    },
-    {
-      "url": "https://webassist.onconnect.app/v1/loader/a46fce52-ff7a-45bf-ad4f-0923f51c42d6",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json; charset=utf-8",
-      "size": 52,
-      "timestamp": "2025-07-21T10:59:11.644Z"
-    },
-    {
-      "url": "https://swdevon.innocraft.cloud/matomo.php?action_name=West%20Devon%20%7C%20West%20Devon%20Borough%20Council&idsite=2&rec=1&r=836458&h=11&m=59&s=11&url=https%3A%2F%2Fwww.westdevon.gov.uk%2F&_id=e45769cbe32affe1&_idn=0&send_image=0&_refts=0&pv_id=4BWCIy&fa_pv=1&fa_fp[0][fa_vid]=NjkzJC&fa_fp[0][fa_id]=views-exposed-form-localgov-sitewide-search-sitewide-search-page-block&fa_fp[0][fa_fv]=1&fa_fp[1][fa_vid]=lin6VS&fa_fp[1][fa_id]=views-exposed-form-localgov-sitewide-search-sitewide-search-page-block&fa_fp[1][fa_fv]=1&pf_net=0&pf_srv=59&pf_tfr=1&uadata=%7B%22formFactors%22%3A%5B%22Desktop%22%5D%2C%22fullVersionList%22%3A%5B%7B%22brand%22%3A%22Not)A%3BBrand%22%2C%22version%22%3A%228.0.0.0%22%7D%2C%7B%22brand%22%3A%22Chromium%22%2C%22version%22%3A%22138.0.7204.101%22%7D%2C%7B%22brand%22%3A%22Google%20Chrome%22%2C%22version%22%3A%22138.0.7204.101%22%7D%5D%2C%22mobile%22%3Afalse%2C%22model%22%3A%22%22%2C%22platform%22%3A%22macOS%22%2C%22platformVersion%22%3A%2215.5.0%22%7D&pdf=1&qt=0&realp=0&wma=0&fla=0&java=0&ag=0&cookie=1&res=800x600",
-      "method": "POST",
-      "status": 204,
-      "redirect_url": null,
-      "mime_type": "x-unknown",
-      "size": 0,
-      "timestamp": "2025-07-21T10:59:11.673Z"
-    },
-    {
-      "url": "https://webassistant.onconnect.app/assets/appConfig.json",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json",
-      "size": 73,
-      "timestamp": "2025-07-21T10:59:11.776Z"
-    },
-    {
-      "url": "https://www.westdevon.gov.uk/themes/custom/localgov_westdevon/assets/images/favicons/site.webmanifest",
-      "method": "GET",
-      "status": 404,
-      "redirect_url": null,
-      "mime_type": "text/html; charset=UTF-8",
-      "size": 36537,
-      "timestamp": "2025-07-21T10:59:11.825Z"
-    },
-    {
-      "url": "https://webassist.onconnect.app/v1/workspaces/a46fce52-ff7a-45bf-ad4f-0923f51c42d6/init",
-      "method": "POST",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json; charset=utf-8",
-      "size": 1417,
-      "timestamp": "2025-07-21T10:59:11.861Z"
-    },
-    {
-      "url": "https://produkswebassistsignalr18.service.signalr.net/client/negotiate?hub=webassistant&negotiateVersion=1",
-      "method": "POST",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json",
-      "size": 334,
-      "timestamp": "2025-07-21T10:59:11.984Z"
-    },
-    {
-      "url": "https://webassist.onconnect.app/v1/workspaces/a46fce52-ff7a-45bf-ad4f-0923f51c42d6/appusers/0f7967df-9c88-4923-a0eb-28ff05807a81/messages?continuationToken=",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json; charset=utf-8",
-      "size": 40,
-      "timestamp": "2025-07-21T10:59:11.984Z"
-    },
-    {
-      "url": "https://webassist.onconnect.app/v1/postback",
-      "method": "POST",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "x-unknown",
-      "size": 0,
-      "timestamp": "2025-07-21T10:59:11.985Z"
-    },
-    {
-      "url": "https://swdevon.innocraft.cloud/matomo.php?link=https%3A%2F%2Fwestdevon.fccenvironment.co.uk%2Fmycollections&idsite=2&rec=1&r=614029&h=11&m=59&s=13&url=https%3A%2F%2Fwww.westdevon.gov.uk%2F&_id=e45769cbe32affe1&_idn=0&send_image=0&_refts=0&pf_net=0&pf_srv=59&pf_tfr=1&pf_dm1=45&pf_dm2=62&pf_onl=0&pv_id=4BWCIy&uadata=%7B%22formFactors%22%3A%5B%22Desktop%22%5D%2C%22fullVersionList%22%3A%5B%7B%22brand%22%3A%22Not)A%3BBrand%22%2C%22version%22%3A%228.0.0.0%22%7D%2C%7B%22brand%22%3A%22Chromium%22%2C%22version%22%3A%22138.0.7204.101%22%7D%2C%7B%22brand%22%3A%22Google%20Chrome%22%2C%22version%22%3A%22138.0.7204.101%22%7D%5D%2C%22mobile%22%3Afalse%2C%22model%22%3A%22%22%2C%22platform%22%3A%22macOS%22%2C%22platformVersion%22%3A%2215.5.0%22%7D&pdf=1&qt=0&realp=0&wma=0&fla=0&java=0&ag=0&cookie=1&res=800x600",
-      "method": "POST",
-      "status": 204,
-      "redirect_url": null,
-      "mime_type": "x-unknown",
-      "size": -1,
-      "timestamp": "2025-07-21T10:59:13.903Z"
-    },
-    {
-      "url": "https://westdevon.fccenvironment.co.uk/mycollections",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "text/html; charset=UTF-8",
-      "size": 18297,
-      "timestamp": "2025-07-21T10:59:14.087Z"
-    },
-    {
-      "url": "https://westdevon.fccenvironment.co.uk/ajaxprocessor/getaddresses",
-      "method": "POST",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "text/html; charset=UTF-8",
-      "size": 4512,
-      "timestamp": "2025-07-21T10:59:18.654Z"
-    },
-    {
-      "url": "https://westdevon.fccenvironment.co.uk/ajaxprocessor/getcollectiondetails",
-      "method": "POST",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "text/html; charset=UTF-8",
-      "size": 3494,
-      "timestamp": "2025-07-21T10:59:21.530Z"
-    },
-    {
-      "url": "https://westdevon.gov.uk/recycling",
-      "method": "GET",
-      "status": 301,
-      "redirect_url": "https://www.westdevon.gov.uk/recycling",
-      "mime_type": "text/html",
-      "size": -1,
-      "timestamp": "2025-07-21T10:59:26.437Z"
-    },
-    {
-      "url": "https://www.westdevon.gov.uk/recycling",
-      "method": "GET",
-      "status": 301,
-      "redirect_url": "https://westdevon.gov.uk/waste-and-recycling/how-your-waste-and-recycling-service-works/recycling-boxes-and-sack",
-      "mime_type": "text/html; charset=utf-8",
-      "size": -1,
-      "timestamp": "2025-07-21T10:59:26.478Z"
-    },
-    {
-      "url": "https://westdevon.gov.uk/waste-and-recycling/how-your-waste-and-recycling-service-works/recycling-boxes-and-sack",
-      "method": "GET",
-      "status": 301,
-      "redirect_url": "https://www.westdevon.gov.uk/waste-and-recycling/how-your-waste-and-recycling-service-works/recycling-boxes-and-sack",
-      "mime_type": "text/html",
-      "size": -1,
-      "timestamp": "2025-07-21T10:59:26.634Z"
-    },
-    {
-      "url": "https://www.westdevon.gov.uk/waste-and-recycling/how-your-waste-and-recycling-service-works/recycling-boxes-and-sack",
-      "method": "GET",
-      "status": 301,
-      "redirect_url": "https://www.westdevon.gov.uk/waste-and-recycling/guide-waste-and-recycling/recycling-boxes-and-sack",
-      "mime_type": "text/html; charset=utf-8",
-      "size": -1,
-      "timestamp": "2025-07-21T10:59:26.679Z"
-    },
-    {
-      "url": "https://www.westdevon.gov.uk/waste-and-recycling/guide-waste-and-recycling/recycling-boxes-and-sack",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "text/html; charset=UTF-8",
-      "size": 46288,
-      "timestamp": "2025-07-21T10:59:27.028Z"
-    },
-    {
-      "url": "https://webassist.onconnect.app/v1/loader/a46fce52-ff7a-45bf-ad4f-0923f51c42d6",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json; charset=utf-8",
-      "size": 52,
-      "timestamp": "2025-07-21T10:59:27.115Z"
-    },
-    {
-      "url": "https://swdevon.innocraft.cloud/matomo.php?action_name=Recycling%20-%20Boxes%20and%20Sack%20%7C%20West%20Devon%20Borough%20Council&idsite=2&rec=1&r=690625&h=11&m=59&s=27&url=https%3A%2F%2Fwww.westdevon.gov.uk%2Fwaste-and-recycling%2Fguide-waste-and-recycling%2Frecycling-boxes-and-sack&urlref=https%3A%2F%2Fwestdevon.fccenvironment.co.uk%2F&_id=e45769cbe32affe1&_idn=0&send_image=0&_refts=0&pv_id=VEVBam&fa_pv=1&fa_fp[0][fa_vid]=5VCOWh&fa_fp[0][fa_id]=views-exposed-form-localgov-sitewide-search-sitewide-search-page-block&fa_fp[0][fa_fv]=1&pf_net=0&pf_srv=49&pf_tfr=0&uadata=%7B%22formFactors%22%3A%5B%22Desktop%22%5D%2C%22fullVersionList%22%3A%5B%7B%22brand%22%3A%22Not)A%3BBrand%22%2C%22version%22%3A%228.0.0.0%22%7D%2C%7B%22brand%22%3A%22Chromium%22%2C%22version%22%3A%22138.0.7204.101%22%7D%2C%7B%22brand%22%3A%22Google%20Chrome%22%2C%22version%22%3A%22138.0.7204.101%22%7D%5D%2C%22mobile%22%3Afalse%2C%22model%22%3A%22%22%2C%22platform%22%3A%22macOS%22%2C%22platformVersion%22%3A%2215.5.0%22%7D&pdf=1&qt=0&realp=0&wma=0&fla=0&java=0&ag=0&cookie=1&res=800x600",
-      "method": "POST",
-      "status": 204,
-      "redirect_url": null,
-      "mime_type": "x-unknown",
-      "size": 0,
-      "timestamp": "2025-07-21T10:59:27.194Z"
-    },
-    {
-      "url": "https://www.westdevon.gov.uk/themes/custom/localgov_westdevon/assets/images/favicons/site.webmanifest",
-      "method": "GET",
-      "status": 404,
-      "redirect_url": null,
-      "mime_type": "text/html; charset=UTF-8",
-      "size": 36537,
-      "timestamp": "2025-07-21T10:59:27.238Z"
-    },
-    {
-      "url": "https://webassistant.onconnect.app/assets/appConfig.json",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json",
-      "size": 73,
-      "timestamp": "2025-07-21T10:59:27.290Z"
-    },
-    {
-      "url": "https://webassist.onconnect.app/v1/workspaces/a46fce52-ff7a-45bf-ad4f-0923f51c42d6/init",
-      "method": "POST",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json; charset=utf-8",
-      "size": 1420,
-      "timestamp": "2025-07-21T10:59:27.332Z"
-    },
-    {
-      "url": "https://produkswebassistsignalr18.service.signalr.net/client/negotiate?hub=webassistant&negotiateVersion=1",
-      "method": "POST",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json",
-      "size": 334,
-      "timestamp": "2025-07-21T10:59:27.378Z"
-    },
-    {
-      "url": "https://webassist.onconnect.app/v1/workspaces/a46fce52-ff7a-45bf-ad4f-0923f51c42d6/appusers/0f7967df-9c88-4923-a0eb-28ff05807a81/messages?continuationToken=",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json; charset=utf-8",
-      "size": 40,
-      "timestamp": "2025-07-21T10:59:27.378Z"
-    },
-    {
-      "url": "https://webassist.onconnect.app/v1/postback",
-      "method": "POST",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "x-unknown",
-      "size": 0,
-      "timestamp": "2025-07-21T10:59:27.378Z"
-    },
-    {
-      "url": "https://westdevon.fccenvironment.co.uk/mycollections",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "text/html; charset=UTF-8",
-      "size": 18301,
-      "timestamp": "2025-07-21T10:59:29.770Z"
-    }
-  ]
+    "endpoints_with_params": [
+      {
+        "endpoint": "/article/{id}/{id}",
+        "method": "GET",
+        "query_params": [],
+        "path_params": true
+      },
+      {
+        "endpoint": "/v1/loader/{id}",
+        "method": "GET",
+        "query_params": [],
+        "path_params": true
+      },
+      {
+        "endpoint": "/v1/workspaces/{id}/init",
+        "method": "POST",
+        "query_params": [],
+        "path_params": true
+      },
+      {
+        "endpoint": "/client/negotiate",
+        "method": "POST",
+        "query_params": [
+          "hub",
+          "negotiateVersion"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/matomo.php",
+        "method": "POST",
+        "query_params": [
+          "action_name",
+          "idsite",
+          "rec",
+          "r",
+          "h",
+          "m",
+          "s",
+          "url",
+          "_id",
+          "_idn",
+          "send_image",
+          "_refts",
+          "pv_id",
+          "fa_pv",
+          "fa_fp[0][fa_vid]",
+          "fa_fp[0][fa_id]",
+          "fa_fp[0][fa_fv]",
+          "pf_net",
+          "pf_srv",
+          "pf_tfr",
+          "pf_dm1",
+          "uadata",
+          "pdf",
+          "qt",
+          "realp",
+          "wma",
+          "fla",
+          "java",
+          "ag",
+          "cookie",
+          "res"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/matomo.php",
+        "method": "POST",
+        "query_params": [
+          "action_name",
+          "idsite",
+          "rec",
+          "r",
+          "h",
+          "m",
+          "s",
+          "url",
+          "_id",
+          "_idn",
+          "send_image",
+          "_refts",
+          "pv_id",
+          "fa_pv",
+          "fa_fp[0][fa_vid]",
+          "fa_fp[0][fa_id]",
+          "fa_fp[0][fa_fv]",
+          "fa_fp[1][fa_vid]",
+          "fa_fp[1][fa_id]",
+          "fa_fp[1][fa_fv]",
+          "pf_net",
+          "pf_srv",
+          "pf_tfr",
+          "uadata",
+          "pdf",
+          "qt",
+          "realp",
+          "wma",
+          "fla",
+          "java",
+          "ag",
+          "cookie",
+          "res"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/v1/workspaces/{id}/appusers/{id}/messages",
+        "method": "GET",
+        "query_params": [],
+        "path_params": true
+      },
+      {
+        "endpoint": "/matomo.php",
+        "method": "POST",
+        "query_params": [
+          "link",
+          "idsite",
+          "rec",
+          "r",
+          "h",
+          "m",
+          "s",
+          "url",
+          "_id",
+          "_idn",
+          "send_image",
+          "_refts",
+          "pf_net",
+          "pf_srv",
+          "pf_tfr",
+          "pf_dm1",
+          "pf_dm2",
+          "pf_onl",
+          "pv_id",
+          "uadata",
+          "pdf",
+          "qt",
+          "realp",
+          "wma",
+          "fla",
+          "java",
+          "ag",
+          "cookie",
+          "res"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/j/collect",
+        "method": "POST",
+        "query_params": [
+          "v",
+          "_v",
+          "aip",
+          "a",
+          "t",
+          "_s",
+          "dl",
+          "dr",
+          "ul",
+          "de",
+          "dt",
+          "sd",
+          "sr",
+          "vp",
+          "je",
+          "_u",
+          "jid",
+          "gjid",
+          "cid",
+          "tid",
+          "_gid",
+          "_r",
+          "gtm",
+          "gcd",
+          "dma",
+          "tag_exp",
+          "jsscut",
+          "z"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/g/collect",
+        "method": "POST",
+        "query_params": [
+          "v",
+          "tid",
+          "gtm",
+          "_p",
+          "gcd",
+          "npa",
+          "dma",
+          "tag_exp",
+          "cid",
+          "ul",
+          "sr",
+          "uaa",
+          "uab",
+          "uafvl",
+          "uamb",
+          "uap",
+          "uapv",
+          "uaw",
+          "are",
+          "frm",
+          "pscdl",
+          "_eu",
+          "_s",
+          "sid",
+          "sct",
+          "seg",
+          "dl",
+          "dr",
+          "dt",
+          "en",
+          "_fv",
+          "_ss",
+          "tfd"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/waste-and-recycling/{id}/{id}",
+        "method": "GET",
+        "query_params": [],
+        "path_params": true
+      },
+      {
+        "endpoint": "/matomo.php",
+        "method": "POST",
+        "query_params": [
+          "action_name",
+          "idsite",
+          "rec",
+          "r",
+          "h",
+          "m",
+          "s",
+          "url",
+          "urlref",
+          "_id",
+          "_idn",
+          "send_image",
+          "_refts",
+          "pv_id",
+          "fa_pv",
+          "fa_fp[0][fa_vid]",
+          "fa_fp[0][fa_id]",
+          "fa_fp[0][fa_fv]",
+          "pf_net",
+          "pf_srv",
+          "pf_tfr",
+          "uadata",
+          "pdf",
+          "qt",
+          "realp",
+          "wma",
+          "fla",
+          "java",
+          "ag",
+          "cookie",
+          "res"
+        ],
+        "path_params": false
+      }
+    ],
+    "redirects": [
+      {
+        "from": "/recycling",
+        "to": "https://www.westdevon.gov.uk/recycling",
+        "status": 301
+      },
+      {
+        "from": "/recycling",
+        "to": "https://westdevon.gov.uk/waste-and-recycling/how-your-waste-and-recycling-service-works/recycling-boxes-and-sack",
+        "status": 301
+      },
+      {
+        "from": "/waste-and-recycling/{id}/{id}",
+        "to": "https://www.westdevon.gov.uk/waste-and-recycling/how-your-waste-and-recycling-service-works/recycling-boxes-and-sack",
+        "status": 301
+      },
+      {
+        "from": "/waste-and-recycling/{id}/{id}",
+        "to": "https://www.westdevon.gov.uk/waste-and-recycling/guide-waste-and-recycling/recycling-boxes-and-sack",
+        "status": 301
+      }
+    ],
+    "api_calls": [
+      {
+        "endpoint": "/v1/loader/{id}",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": []
+      },
+      {
+        "endpoint": "/assets/appConfig.json",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": []
+      },
+      {
+        "endpoint": "/v1/workspaces/{id}/init",
+        "method": "POST",
+        "response_type": "application/json",
+        "params": []
+      },
+      {
+        "endpoint": "/client/negotiate",
+        "method": "POST",
+        "response_type": "application/json",
+        "params": [
+          "hub",
+          "negotiateVersion"
+        ]
+      },
+      {
+        "endpoint": "/v1/loader/{id}",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": []
+      },
+      {
+        "endpoint": "/assets/appConfig.json",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": []
+      },
+      {
+        "endpoint": "/v1/workspaces/{id}/init",
+        "method": "POST",
+        "response_type": "application/json",
+        "params": []
+      },
+      {
+        "endpoint": "/client/negotiate",
+        "method": "POST",
+        "response_type": "application/json",
+        "params": [
+          "hub",
+          "negotiateVersion"
+        ]
+      },
+      {
+        "endpoint": "/v1/workspaces/{id}/appusers/{id}/messages",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": []
+      },
+      {
+        "endpoint": "/v1/loader/{id}",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": []
+      },
+      {
+        "endpoint": "/assets/appConfig.json",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": []
+      },
+      {
+        "endpoint": "/v1/workspaces/{id}/init",
+        "method": "POST",
+        "response_type": "application/json",
+        "params": []
+      },
+      {
+        "endpoint": "/client/negotiate",
+        "method": "POST",
+        "response_type": "application/json",
+        "params": [
+          "hub",
+          "negotiateVersion"
+        ]
+      },
+      {
+        "endpoint": "/v1/workspaces/{id}/appusers/{id}/messages",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": []
+      }
+    ],
+    "form_submissions": []
+  },
+  "grouped_by_endpoint": {
+    "/article/{id}/{id}": [
+      {
+        "timestamp": "2025-07-21T10:59:08.415Z",
+        "duration_ms": 425.817,
+        "endpoint": "/article/{id}/{id}",
+        "host": "www.westdevon.gov.uk",
+        "method": "GET",
+        "status": 404,
+        "path_params": [
+          "4526",
+          "Find-your-Recycling-Waste-collection-day"
+        ],
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7"
+        },
+        "response_headers": {
+          "cache-control": "must-revalidate, no-cache, private",
+          "content-type": "text/html; charset=UTF-8",
+          "x-cache": "Error from cloudfront",
+          "x-content-type-options": "nosniff",
+          "x-drupal-cache": "MISS",
+          "x-drupal-dynamic-cache": "HIT",
+          "x-frame-options": "SAMEORIGIN",
+          "x-generator": "Drupal 10 (https://www.drupal.org)"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 36538,
+          "compressed": true,
+          "content_ref": "65dc762a69e7d6a92ae24f43a98b90ae4dcecf7a.html"
+        }
+      }
+    ],
+    "/v1/loader/{id}": [
+      {
+        "timestamp": "2025-07-21T10:59:08.921Z",
+        "duration_ms": 106.471,
+        "endpoint": "/v1/loader/{id}",
+        "host": "webassist.onconnect.app",
+        "method": "GET",
+        "status": 200,
+        "path_params": [
+          "a46fce52-ff7a-45bf-ad4f-0923f51c42d6"
+        ],
+        "request_headers": {
+          "accept": "*/*",
+          "origin": "https://www.westdevon.gov.uk",
+          "referer": "https://www.westdevon.gov.uk/"
+        },
+        "response_headers": {
+          "content-type": "application/json; charset=utf-8",
+          "x-ms-middleware-request-id": "00000000-0000-0000-0000-000000000000"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 52,
+          "content_ref": "3bd0e87f7735a292acfc53909bc55fd480fb94c1.json"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T10:59:11.644Z",
+        "duration_ms": 28.676000000000002,
+        "endpoint": "/v1/loader/{id}",
+        "host": "webassist.onconnect.app",
+        "method": "GET",
+        "status": 200,
+        "path_params": [
+          "a46fce52-ff7a-45bf-ad4f-0923f51c42d6"
+        ],
+        "request_headers": {
+          "accept": "*/*",
+          "origin": "https://www.westdevon.gov.uk",
+          "referer": "https://www.westdevon.gov.uk/"
+        },
+        "response_headers": {
+          "content-type": "application/json; charset=utf-8",
+          "x-ms-middleware-request-id": "00000000-0000-0000-0000-000000000000"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 52,
+          "content_ref": "3bd0e87f7735a292acfc53909bc55fd480fb94c1.json"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T10:59:27.115Z",
+        "duration_ms": 24.171999999999997,
+        "endpoint": "/v1/loader/{id}",
+        "host": "webassist.onconnect.app",
+        "method": "GET",
+        "status": 200,
+        "path_params": [
+          "a46fce52-ff7a-45bf-ad4f-0923f51c42d6"
+        ],
+        "request_headers": {
+          "accept": "*/*",
+          "origin": "https://www.westdevon.gov.uk",
+          "referer": "https://www.westdevon.gov.uk/"
+        },
+        "response_headers": {
+          "content-type": "application/json; charset=utf-8",
+          "x-ms-middleware-request-id": "00000000-0000-0000-0000-000000000000"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 52,
+          "content_ref": "3bd0e87f7735a292acfc53909bc55fd480fb94c1.json"
+        }
+      }
+    ],
+    "/themes/custom/localgov_westdevon/assets/images/favicons/site.webmanifest": [
+      {
+        "timestamp": "2025-07-21T10:59:09.138Z",
+        "duration_ms": 96.03299999999999,
+        "endpoint": "/themes/custom/localgov_westdevon/assets/images/favicons/site.webmanifest",
+        "host": "www.westdevon.gov.uk",
+        "method": "GET",
+        "status": 404,
+        "request_headers": {
+          "accept": "*/*",
+          "referer": "https://www.westdevon.gov.uk/article/4526/Find-your-Recycling-Waste-collection-day"
+        },
+        "response_headers": {
+          "cache-control": "must-revalidate, no-cache, private",
+          "content-type": "text/html; charset=UTF-8",
+          "x-cache": "Error from cloudfront",
+          "x-content-type-options": "nosniff",
+          "x-drupal-cache": "HIT",
+          "x-drupal-dynamic-cache": "HIT",
+          "x-frame-options": "SAMEORIGIN",
+          "x-generator": "Drupal 10 (https://www.drupal.org)"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 36537,
+          "compressed": true,
+          "content_ref": "cafe7b15eea7fbb94834eb9d4780988c158329d7.html"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T10:59:11.825Z",
+        "duration_ms": 58.009,
+        "endpoint": "/themes/custom/localgov_westdevon/assets/images/favicons/site.webmanifest",
+        "host": "www.westdevon.gov.uk",
+        "method": "GET",
+        "status": 404,
+        "request_headers": {
+          "accept": "*/*",
+          "referer": "https://www.westdevon.gov.uk/"
+        },
+        "response_headers": {
+          "cache-control": "must-revalidate, no-cache, private",
+          "content-type": "text/html; charset=UTF-8",
+          "x-cache": "Error from cloudfront",
+          "x-content-type-options": "nosniff",
+          "x-drupal-cache": "HIT",
+          "x-drupal-dynamic-cache": "HIT",
+          "x-frame-options": "SAMEORIGIN",
+          "x-generator": "Drupal 10 (https://www.drupal.org)"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 36537,
+          "compressed": true,
+          "content_ref": "cafe7b15eea7fbb94834eb9d4780988c158329d7.html"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T10:59:27.238Z",
+        "duration_ms": 92.06700000000001,
+        "endpoint": "/themes/custom/localgov_westdevon/assets/images/favicons/site.webmanifest",
+        "host": "www.westdevon.gov.uk",
+        "method": "GET",
+        "status": 404,
+        "request_headers": {
+          "accept": "*/*",
+          "referer": "https://www.westdevon.gov.uk/waste-and-recycling/guide-waste-and-recycling/recycling-boxes-and-sack"
+        },
+        "response_headers": {
+          "cache-control": "must-revalidate, no-cache, private",
+          "content-type": "text/html; charset=UTF-8",
+          "x-cache": "Error from cloudfront",
+          "x-content-type-options": "nosniff",
+          "x-drupal-cache": "HIT",
+          "x-drupal-dynamic-cache": "HIT",
+          "x-frame-options": "SAMEORIGIN",
+          "x-generator": "Drupal 10 (https://www.drupal.org)"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 36537,
+          "compressed": true,
+          "content_ref": "cafe7b15eea7fbb94834eb9d4780988c158329d7.html"
+        }
+      }
+    ],
+    "/assets/appConfig.json": [
+      {
+        "timestamp": "2025-07-21T10:59:09.261Z",
+        "duration_ms": 272.749,
+        "endpoint": "/assets/appConfig.json",
+        "host": "webassistant.onconnect.app",
+        "method": "GET",
+        "status": 200,
+        "request_headers": {
+          "accept": "application/json, text/plain, */*",
+          "origin": "https://www.westdevon.gov.uk",
+          "referer": "https://www.westdevon.gov.uk/"
+        },
+        "response_headers": {
+          "content-type": "application/json",
+          "x-azure-ref": "20250721T105909Z-16896f46f997g999hC1LTSknz40000000a2g00000000a5y3",
+          "x-cache": "CONFIG_NOCACHE",
+          "x-ms-request-id": "1333141c-501e-00b7-3c2e-fa892d000000",
+          "x-ms-version": "2018-03-28"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 73,
+          "content_ref": "e8551bc0489c1ba948f1631c51732814c12af1e5.json"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T10:59:11.776Z",
+        "duration_ms": 1.465,
+        "endpoint": "/assets/appConfig.json",
+        "host": "webassistant.onconnect.app",
+        "method": "GET",
+        "status": 200,
+        "request_headers": {
+          "referer": "https://www.westdevon.gov.uk/",
+          "accept": "application/json, text/plain, */*"
+        },
+        "response_headers": {
+          "x-ms-version": "2018-03-28",
+          "x-ms-request-id": "1333141c-501e-00b7-3c2e-fa892d000000",
+          "x-cache": "CONFIG_NOCACHE",
+          "content-type": "application/json",
+          "x-azure-ref": "20250721T105909Z-16896f46f997g999hC1LTSknz40000000a2g00000000a5y3"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 73,
+          "compressed": true,
+          "content_ref": "e8551bc0489c1ba948f1631c51732814c12af1e5.json"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T10:59:27.290Z",
+        "duration_ms": 1.35,
+        "endpoint": "/assets/appConfig.json",
+        "host": "webassistant.onconnect.app",
+        "method": "GET",
+        "status": 200,
+        "request_headers": {
+          "referer": "https://www.westdevon.gov.uk/",
+          "accept": "application/json, text/plain, */*"
+        },
+        "response_headers": {
+          "x-ms-version": "2018-03-28",
+          "x-ms-request-id": "1333141c-501e-00b7-3c2e-fa892d000000",
+          "x-cache": "CONFIG_NOCACHE",
+          "content-type": "application/json",
+          "x-azure-ref": "20250721T105909Z-16896f46f997g999hC1LTSknz40000000a2g00000000a5y3"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 73,
+          "compressed": true,
+          "content_ref": "e8551bc0489c1ba948f1631c51732814c12af1e5.json"
+        }
+      }
+    ],
+    "/v1/workspaces/{id}/init": [
+      {
+        "timestamp": "2025-07-21T10:59:09.469Z",
+        "duration_ms": 163.103,
+        "endpoint": "/v1/workspaces/{id}/init",
+        "host": "webassist.onconnect.app",
+        "method": "POST",
+        "status": 200,
+        "path_params": [
+          "a46fce52-ff7a-45bf-ad4f-0923f51c42d6"
+        ],
+        "request_headers": {
+          "accept": "application/json, text/plain, */*",
+          "content-type": "application/json",
+          "origin": "https://www.westdevon.gov.uk",
+          "referer": "https://www.westdevon.gov.uk/"
+        },
+        "response_headers": {
+          "content-type": "application/json; charset=utf-8",
+          "x-ms-middleware-request-id": "00000000-0000-0000-0000-000000000000"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 1460,
+          "compressed": true,
+          "content_ref": "a61115d70d7918642fbfa51c72c776081af74c7f.json"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T10:59:11.861Z",
+        "duration_ms": 145.522,
+        "endpoint": "/v1/workspaces/{id}/init",
+        "host": "webassist.onconnect.app",
+        "method": "POST",
+        "status": 200,
+        "path_params": [
+          "a46fce52-ff7a-45bf-ad4f-0923f51c42d6"
+        ],
+        "request_headers": {
+          "accept": "application/json, text/plain, */*",
+          "authorization": "Basic ODk4YTIwMmMtN2FkNC00MDEzLWE1NDEtMzk2OGFlYWM5ZDQ1OmZBVnRCa3NSeFRBNHRxc0VIMDhHbzlKU2lOWGtLQVYzNEFCMkRHZ2VzMm8=",
+          "content-type": "application/json",
+          "origin": "https://www.westdevon.gov.uk",
+          "referer": "https://www.westdevon.gov.uk/",
+          "x-connect-auth": "Basic ODk4YTIwMmMtN2FkNC00MDEzLWE1NDEtMzk2OGFlYWM5ZDQ1OmZBVnRCa3NSeFRBNHRxc0VIMDhHbzlKU2lOWGtLQVYzNEFCMkRHZ2VzMm8="
+        },
+        "response_headers": {
+          "content-type": "application/json; charset=utf-8",
+          "x-ms-middleware-request-id": "00000000-0000-0000-0000-000000000000"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 1417,
+          "compressed": true,
+          "content_ref": "9f1cde9b33805b3c9134bafbf6a1a1e2ad78418d.json"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T10:59:27.332Z",
+        "duration_ms": 119.36,
+        "endpoint": "/v1/workspaces/{id}/init",
+        "host": "webassist.onconnect.app",
+        "method": "POST",
+        "status": 200,
+        "path_params": [
+          "a46fce52-ff7a-45bf-ad4f-0923f51c42d6"
+        ],
+        "request_headers": {
+          "accept": "application/json, text/plain, */*",
+          "authorization": "Basic ODk4YTIwMmMtN2FkNC00MDEzLWE1NDEtMzk2OGFlYWM5ZDQ1OmZBVnRCa3NSeFRBNHRxc0VIMDhHbzlKU2lOWGtLQVYzNEFCMkRHZ2VzMm8=",
+          "content-type": "application/json",
+          "origin": "https://www.westdevon.gov.uk",
+          "referer": "https://www.westdevon.gov.uk/",
+          "x-connect-auth": "Basic ODk4YTIwMmMtN2FkNC00MDEzLWE1NDEtMzk2OGFlYWM5ZDQ1OmZBVnRCa3NSeFRBNHRxc0VIMDhHbzlKU2lOWGtLQVYzNEFCMkRHZ2VzMm8="
+        },
+        "response_headers": {
+          "content-type": "application/json; charset=utf-8",
+          "x-ms-middleware-request-id": "00000000-0000-0000-0000-000000000000"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 1420,
+          "compressed": true,
+          "content_ref": "979b593e0fb138ebc99fc96ad866516d01b03911.json"
+        }
+      }
+    ],
+    "/client/negotiate": [
+      {
+        "timestamp": "2025-07-21T10:59:09.670Z",
+        "duration_ms": 77.072,
+        "endpoint": "/client/negotiate",
+        "host": "produkswebassistsignalr18.service.signalr.net",
+        "method": "POST",
+        "status": 200,
+        "query_params": {
+          "hub": [
+            "webassistant"
+          ],
+          "negotiateVersion": [
+            "1"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IjIwNTE3MDMyNDMifQ.eyJuYW1laWQiOiI4OThhMjAyYy03YWQ0LTQwMTMtYTU0MS0zOTY4YWVhYzlkNDUiLCJ3b3Jrc3BhY2UiOiJhNDZmY2U1Mi1mZjdhLTQ1YmYtYWQ0Zi0wOTIzZjUxYzQyZDYiLCJuYmYiOjE3NTMwOTU1NDksImV4cCI6MTc1MzA5OTE0OSwiaWF0IjoxNzUzMDk1NTQ5LCJhdWQiOiJodHRwczovL3Byb2R1a3N3ZWJhc3Npc3RzaWduYWxyMTguc2VydmljZS5zaWduYWxyLm5ldC9jbGllbnQvP2h1Yj13ZWJhc3Npc3RhbnQifQ.MDGgTqcVb52l6F1fgNprhfOTzsDlqPs4nYh6CcGlxvQ",
+          "content-type": "text/plain;charset=UTF-8",
+          "origin": "https://www.westdevon.gov.uk",
+          "referer": "https://www.westdevon.gov.uk/",
+          "x-requested-with": "XMLHttpRequest",
+          "x-signalr-user-agent": "Microsoft SignalR/6.0 (6.0.22; Unknown OS; Browser; Unknown Runtime Version)"
+        },
+        "response_headers": {
+          "content-type": "application/json"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 334,
+          "content_ref": "c19ce616f9c9f50e10b410a57cb54eea9151e934.json"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T10:59:11.984Z",
+        "duration_ms": 21.844,
+        "endpoint": "/client/negotiate",
+        "host": "produkswebassistsignalr18.service.signalr.net",
+        "method": "POST",
+        "status": 200,
+        "query_params": {
+          "hub": [
+            "webassistant"
+          ],
+          "negotiateVersion": [
+            "1"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IjE3Nzg5NzExOSJ9.eyJuYW1laWQiOiI4OThhMjAyYy03YWQ0LTQwMTMtYTU0MS0zOTY4YWVhYzlkNDUiLCJ3b3Jrc3BhY2UiOiJhNDZmY2U1Mi1mZjdhLTQ1YmYtYWQ0Zi0wOTIzZjUxYzQyZDYiLCJuYmYiOjE3NTMwOTU1NTIsImV4cCI6MTc1MzA5OTE1MiwiaWF0IjoxNzUzMDk1NTUyLCJhdWQiOiJodHRwczovL3Byb2R1a3N3ZWJhc3Npc3RzaWduYWxyMTguc2VydmljZS5zaWduYWxyLm5ldC9jbGllbnQvP2h1Yj13ZWJhc3Npc3RhbnQifQ.6LPtAisklos_-t0oKM1RKErMqfMLOayxLx2wh41irBM",
+          "content-type": "text/plain;charset=UTF-8",
+          "origin": "https://www.westdevon.gov.uk",
+          "referer": "https://www.westdevon.gov.uk/",
+          "x-requested-with": "XMLHttpRequest",
+          "x-signalr-user-agent": "Microsoft SignalR/6.0 (6.0.22; Unknown OS; Browser; Unknown Runtime Version)"
+        },
+        "response_headers": {
+          "content-type": "application/json"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 334,
+          "content_ref": "582064ec13493c3723cdf3f06082eb1f7311c0a2.json"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T10:59:27.378Z",
+        "duration_ms": 22.79,
+        "endpoint": "/client/negotiate",
+        "host": "produkswebassistsignalr18.service.signalr.net",
+        "method": "POST",
+        "status": 200,
+        "query_params": {
+          "hub": [
+            "webassistant"
+          ],
+          "negotiateVersion": [
+            "1"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ii0xODMwODc2ODc5In0.eyJuYW1laWQiOiI4OThhMjAyYy03YWQ0LTQwMTMtYTU0MS0zOTY4YWVhYzlkNDUiLCJ3b3Jrc3BhY2UiOiJhNDZmY2U1Mi1mZjdhLTQ1YmYtYWQ0Zi0wOTIzZjUxYzQyZDYiLCJuYmYiOjE3NTMwOTU1NjcsImV4cCI6MTc1MzA5OTE2NywiaWF0IjoxNzUzMDk1NTY3LCJhdWQiOiJodHRwczovL3Byb2R1a3N3ZWJhc3Npc3RzaWduYWxyMTguc2VydmljZS5zaWduYWxyLm5ldC9jbGllbnQvP2h1Yj13ZWJhc3Npc3RhbnQifQ.dTwmn2yTy1TVZGyHBOrta36jvOwXLrIy2Qd_Gg23q6w",
+          "content-type": "text/plain;charset=UTF-8",
+          "origin": "https://www.westdevon.gov.uk",
+          "referer": "https://www.westdevon.gov.uk/",
+          "x-requested-with": "XMLHttpRequest",
+          "x-signalr-user-agent": "Microsoft SignalR/6.0 (6.0.22; Unknown OS; Browser; Unknown Runtime Version)"
+        },
+        "response_headers": {
+          "content-type": "application/json"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 334,
+          "content_ref": "a1517d949919b5db808f3d18151bcc130a8f9cb5.json"
+        }
+      }
+    ],
+    "/v1/postback": [
+      {
+        "timestamp": "2025-07-21T10:59:09.671Z",
+        "duration_ms": 171.44299999999998,
+        "endpoint": "/v1/postback",
+        "host": "webassist.onconnect.app",
+        "method": "POST",
+        "status": 200,
+        "request_headers": {
+          "accept": "application/json, text/plain, */*",
+          "authorization": "Basic ODk4YTIwMmMtN2FkNC00MDEzLWE1NDEtMzk2OGFlYWM5ZDQ1OmZBVnRCa3NSeFRBNHRxc0VIMDhHbzlKU2lOWGtLQVYzNEFCMkRHZ2VzMm8=",
+          "content-type": "application/json",
+          "origin": "https://www.westdevon.gov.uk",
+          "referer": "https://www.westdevon.gov.uk/",
+          "x-connect-auth": "Basic ODk4YTIwMmMtN2FkNC00MDEzLWE1NDEtMzk2OGFlYWM5ZDQ1OmZBVnRCa3NSeFRBNHRxc0VIMDhHbzlKU2lOWGtLQVYzNEFCMkRHZ2VzMm8="
+        },
+        "response_headers": {
+          "x-ms-middleware-request-id": "00000000-0000-0000-0000-000000000000"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T10:59:11.985Z",
+        "duration_ms": 192.411,
+        "endpoint": "/v1/postback",
+        "host": "webassist.onconnect.app",
+        "method": "POST",
+        "status": 200,
+        "request_headers": {
+          "accept": "application/json, text/plain, */*",
+          "authorization": "Basic ODk4YTIwMmMtN2FkNC00MDEzLWE1NDEtMzk2OGFlYWM5ZDQ1OmZBVnRCa3NSeFRBNHRxc0VIMDhHbzlKU2lOWGtLQVYzNEFCMkRHZ2VzMm8=",
+          "content-type": "application/json",
+          "origin": "https://www.westdevon.gov.uk",
+          "referer": "https://www.westdevon.gov.uk/",
+          "x-connect-auth": "Basic ODk4YTIwMmMtN2FkNC00MDEzLWE1NDEtMzk2OGFlYWM5ZDQ1OmZBVnRCa3NSeFRBNHRxc0VIMDhHbzlKU2lOWGtLQVYzNEFCMkRHZ2VzMm8="
+        },
+        "response_headers": {
+          "x-ms-middleware-request-id": "00000000-0000-0000-0000-000000000000"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T10:59:27.378Z",
+        "duration_ms": 163.85,
+        "endpoint": "/v1/postback",
+        "host": "webassist.onconnect.app",
+        "method": "POST",
+        "status": 200,
+        "request_headers": {
+          "accept": "application/json, text/plain, */*",
+          "authorization": "Basic ODk4YTIwMmMtN2FkNC00MDEzLWE1NDEtMzk2OGFlYWM5ZDQ1OmZBVnRCa3NSeFRBNHRxc0VIMDhHbzlKU2lOWGtLQVYzNEFCMkRHZ2VzMm8=",
+          "content-type": "application/json",
+          "origin": "https://www.westdevon.gov.uk",
+          "referer": "https://www.westdevon.gov.uk/",
+          "x-connect-auth": "Basic ODk4YTIwMmMtN2FkNC00MDEzLWE1NDEtMzk2OGFlYWM5ZDQ1OmZBVnRCa3NSeFRBNHRxc0VIMDhHbzlKU2lOWGtLQVYzNEFCMkRHZ2VzMm8="
+        },
+        "response_headers": {
+          "x-ms-middleware-request-id": "00000000-0000-0000-0000-000000000000"
+        }
+      }
+    ],
+    "/matomo.php": [
+      {
+        "timestamp": "2025-07-21T10:59:09.989Z",
+        "duration_ms": 189.89299999999997,
+        "endpoint": "/matomo.php",
+        "host": "swdevon.innocraft.cloud",
+        "method": "POST",
+        "status": 204,
+        "query_params": {
+          "action_name": [
+            "Sorry! | West Devon Borough Council"
+          ],
+          "idsite": [
+            "2"
+          ],
+          "rec": [
+            "1"
+          ],
+          "r": [
+            "798460"
+          ],
+          "h": [
+            "11"
+          ],
+          "m": [
+            "59"
+          ],
+          "s": [
+            "9"
+          ],
+          "url": [
+            "https://www.westdevon.gov.uk/article/4526/Find-your-Recycling-Waste-collection-day"
+          ],
+          "_id": [
+            "e45769cbe32affe1"
+          ],
+          "_idn": [
+            "1"
+          ],
+          "send_image": [
+            "0"
+          ],
+          "_refts": [
+            "0"
+          ],
+          "pv_id": [
+            "kHP7FT"
+          ],
+          "fa_pv": [
+            "1"
+          ],
+          "fa_fp[0][fa_vid]": [
+            "UJLbKl"
+          ],
+          "fa_fp[0][fa_id]": [
+            "views-exposed-form-localgov-sitewide-search-sitewide-search-page-block"
+          ],
+          "fa_fp[0][fa_fv]": [
+            "1"
+          ],
+          "pf_net": [
+            "40"
+          ],
+          "pf_srv": [
+            "373"
+          ],
+          "pf_tfr": [
+            "2"
+          ],
+          "pf_dm1": [
+            "137"
+          ],
+          "uadata": [
+            "{\"formFactors\":[\"Desktop\"],\"fullVersionList\":[{\"brand\":\"Not)A;Brand\",\"version\":\"8.0.0.0\"},{\"brand\":\"Chromium\",\"version\":\"138.0.7204.101\"},{\"brand\":\"Google Chrome\",\"version\":\"138.0.7204.101\"}],\"mobile\":false,\"model\":\"\",\"platform\":\"macOS\",\"platformVersion\":\"15.5.0\"}"
+          ],
+          "pdf": [
+            "1"
+          ],
+          "qt": [
+            "0"
+          ],
+          "realp": [
+            "0"
+          ],
+          "wma": [
+            "0"
+          ],
+          "fla": [
+            "0"
+          ],
+          "java": [
+            "0"
+          ],
+          "ag": [
+            "0"
+          ],
+          "cookie": [
+            "1"
+          ],
+          "res": [
+            "800x600"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "content-type": "application/x-www-form-urlencoded; charset=utf-8",
+          "origin": "https://www.westdevon.gov.uk",
+          "referer": "https://www.westdevon.gov.uk/"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T10:59:11.673Z",
+        "duration_ms": 100.903,
+        "endpoint": "/matomo.php",
+        "host": "swdevon.innocraft.cloud",
+        "method": "POST",
+        "status": 204,
+        "query_params": {
+          "action_name": [
+            "West Devon | West Devon Borough Council"
+          ],
+          "idsite": [
+            "2"
+          ],
+          "rec": [
+            "1"
+          ],
+          "r": [
+            "836458"
+          ],
+          "h": [
+            "11"
+          ],
+          "m": [
+            "59"
+          ],
+          "s": [
+            "11"
+          ],
+          "url": [
+            "https://www.westdevon.gov.uk/"
+          ],
+          "_id": [
+            "e45769cbe32affe1"
+          ],
+          "_idn": [
+            "0"
+          ],
+          "send_image": [
+            "0"
+          ],
+          "_refts": [
+            "0"
+          ],
+          "pv_id": [
+            "4BWCIy"
+          ],
+          "fa_pv": [
+            "1"
+          ],
+          "fa_fp[0][fa_vid]": [
+            "NjkzJC"
+          ],
+          "fa_fp[0][fa_id]": [
+            "views-exposed-form-localgov-sitewide-search-sitewide-search-page-block"
+          ],
+          "fa_fp[0][fa_fv]": [
+            "1"
+          ],
+          "fa_fp[1][fa_vid]": [
+            "lin6VS"
+          ],
+          "fa_fp[1][fa_id]": [
+            "views-exposed-form-localgov-sitewide-search-sitewide-search-page-block"
+          ],
+          "fa_fp[1][fa_fv]": [
+            "1"
+          ],
+          "pf_net": [
+            "0"
+          ],
+          "pf_srv": [
+            "59"
+          ],
+          "pf_tfr": [
+            "1"
+          ],
+          "uadata": [
+            "{\"formFactors\":[\"Desktop\"],\"fullVersionList\":[{\"brand\":\"Not)A;Brand\",\"version\":\"8.0.0.0\"},{\"brand\":\"Chromium\",\"version\":\"138.0.7204.101\"},{\"brand\":\"Google Chrome\",\"version\":\"138.0.7204.101\"}],\"mobile\":false,\"model\":\"\",\"platform\":\"macOS\",\"platformVersion\":\"15.5.0\"}"
+          ],
+          "pdf": [
+            "1"
+          ],
+          "qt": [
+            "0"
+          ],
+          "realp": [
+            "0"
+          ],
+          "wma": [
+            "0"
+          ],
+          "fla": [
+            "0"
+          ],
+          "java": [
+            "0"
+          ],
+          "ag": [
+            "0"
+          ],
+          "cookie": [
+            "1"
+          ],
+          "res": [
+            "800x600"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "content-type": "application/x-www-form-urlencoded; charset=utf-8",
+          "origin": "https://www.westdevon.gov.uk",
+          "referer": "https://www.westdevon.gov.uk/"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T10:59:13.903Z",
+        "duration_ms": 98.221,
+        "endpoint": "/matomo.php",
+        "host": "swdevon.innocraft.cloud",
+        "method": "POST",
+        "status": 204,
+        "query_params": {
+          "link": [
+            "https://westdevon.fccenvironment.co.uk/mycollections"
+          ],
+          "idsite": [
+            "2"
+          ],
+          "rec": [
+            "1"
+          ],
+          "r": [
+            "614029"
+          ],
+          "h": [
+            "11"
+          ],
+          "m": [
+            "59"
+          ],
+          "s": [
+            "13"
+          ],
+          "url": [
+            "https://www.westdevon.gov.uk/"
+          ],
+          "_id": [
+            "e45769cbe32affe1"
+          ],
+          "_idn": [
+            "0"
+          ],
+          "send_image": [
+            "0"
+          ],
+          "_refts": [
+            "0"
+          ],
+          "pf_net": [
+            "0"
+          ],
+          "pf_srv": [
+            "59"
+          ],
+          "pf_tfr": [
+            "1"
+          ],
+          "pf_dm1": [
+            "45"
+          ],
+          "pf_dm2": [
+            "62"
+          ],
+          "pf_onl": [
+            "0"
+          ],
+          "pv_id": [
+            "4BWCIy"
+          ],
+          "uadata": [
+            "{\"formFactors\":[\"Desktop\"],\"fullVersionList\":[{\"brand\":\"Not)A;Brand\",\"version\":\"8.0.0.0\"},{\"brand\":\"Chromium\",\"version\":\"138.0.7204.101\"},{\"brand\":\"Google Chrome\",\"version\":\"138.0.7204.101\"}],\"mobile\":false,\"model\":\"\",\"platform\":\"macOS\",\"platformVersion\":\"15.5.0\"}"
+          ],
+          "pdf": [
+            "1"
+          ],
+          "qt": [
+            "0"
+          ],
+          "realp": [
+            "0"
+          ],
+          "wma": [
+            "0"
+          ],
+          "fla": [
+            "0"
+          ],
+          "java": [
+            "0"
+          ],
+          "ag": [
+            "0"
+          ],
+          "cookie": [
+            "1"
+          ],
+          "res": [
+            "800x600"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "content-type": "application/x-www-form-urlencoded; charset=utf-8",
+          "origin": "https://www.westdevon.gov.uk",
+          "referer": "https://www.westdevon.gov.uk/"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T10:59:27.194Z",
+        "duration_ms": 95.395,
+        "endpoint": "/matomo.php",
+        "host": "swdevon.innocraft.cloud",
+        "method": "POST",
+        "status": 204,
+        "query_params": {
+          "action_name": [
+            "Recycling - Boxes and Sack | West Devon Borough Council"
+          ],
+          "idsite": [
+            "2"
+          ],
+          "rec": [
+            "1"
+          ],
+          "r": [
+            "690625"
+          ],
+          "h": [
+            "11"
+          ],
+          "m": [
+            "59"
+          ],
+          "s": [
+            "27"
+          ],
+          "url": [
+            "https://www.westdevon.gov.uk/waste-and-recycling/guide-waste-and-recycling/recycling-boxes-and-sack"
+          ],
+          "urlref": [
+            "https://westdevon.fccenvironment.co.uk/"
+          ],
+          "_id": [
+            "e45769cbe32affe1"
+          ],
+          "_idn": [
+            "0"
+          ],
+          "send_image": [
+            "0"
+          ],
+          "_refts": [
+            "0"
+          ],
+          "pv_id": [
+            "VEVBam"
+          ],
+          "fa_pv": [
+            "1"
+          ],
+          "fa_fp[0][fa_vid]": [
+            "5VCOWh"
+          ],
+          "fa_fp[0][fa_id]": [
+            "views-exposed-form-localgov-sitewide-search-sitewide-search-page-block"
+          ],
+          "fa_fp[0][fa_fv]": [
+            "1"
+          ],
+          "pf_net": [
+            "0"
+          ],
+          "pf_srv": [
+            "49"
+          ],
+          "pf_tfr": [
+            "0"
+          ],
+          "uadata": [
+            "{\"formFactors\":[\"Desktop\"],\"fullVersionList\":[{\"brand\":\"Not)A;Brand\",\"version\":\"8.0.0.0\"},{\"brand\":\"Chromium\",\"version\":\"138.0.7204.101\"},{\"brand\":\"Google Chrome\",\"version\":\"138.0.7204.101\"}],\"mobile\":false,\"model\":\"\",\"platform\":\"macOS\",\"platformVersion\":\"15.5.0\"}"
+          ],
+          "pdf": [
+            "1"
+          ],
+          "qt": [
+            "0"
+          ],
+          "realp": [
+            "0"
+          ],
+          "wma": [
+            "0"
+          ],
+          "fla": [
+            "0"
+          ],
+          "java": [
+            "0"
+          ],
+          "ag": [
+            "0"
+          ],
+          "cookie": [
+            "1"
+          ],
+          "res": [
+            "800x600"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "content-type": "application/x-www-form-urlencoded; charset=utf-8",
+          "origin": "https://www.westdevon.gov.uk",
+          "referer": "https://www.westdevon.gov.uk/"
+        }
+      }
+    ],
+    "/": [
+      {
+        "timestamp": "2025-07-21T10:59:11.551Z",
+        "duration_ms": 60.193,
+        "endpoint": "/",
+        "host": "www.westdevon.gov.uk",
+        "method": "GET",
+        "status": 200,
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+          "cookie": "[cookies present]"
+        },
+        "response_headers": {
+          "cache-control": "must-revalidate, no-cache, private",
+          "content-type": "text/html; charset=UTF-8",
+          "x-cache": "Miss from cloudfront",
+          "x-content-type-options": "nosniff",
+          "x-drupal-cache": "HIT",
+          "x-drupal-dynamic-cache": "MISS",
+          "x-frame-options": "SAMEORIGIN",
+          "x-generator": "Drupal 10 (https://www.drupal.org)"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 71364,
+          "compressed": true,
+          "content_ref": "18dccfc296a1a52d86b4b55352c919db400b9b84.html"
+        }
+      }
+    ],
+    "/v1/workspaces/{id}/appusers/{id}/messages": [
+      {
+        "timestamp": "2025-07-21T10:59:11.984Z",
+        "duration_ms": 93.566,
+        "endpoint": "/v1/workspaces/{id}/appusers/{id}/messages",
+        "host": "webassist.onconnect.app",
+        "method": "GET",
+        "status": 200,
+        "path_params": [
+          "a46fce52-ff7a-45bf-ad4f-0923f51c42d6",
+          "0f7967df-9c88-4923-a0eb-28ff05807a81"
+        ],
+        "request_headers": {
+          "accept": "application/json, text/plain, */*",
+          "authorization": "Basic ODk4YTIwMmMtN2FkNC00MDEzLWE1NDEtMzk2OGFlYWM5ZDQ1OmZBVnRCa3NSeFRBNHRxc0VIMDhHbzlKU2lOWGtLQVYzNEFCMkRHZ2VzMm8=",
+          "content-type": "application/json",
+          "origin": "https://www.westdevon.gov.uk",
+          "referer": "https://www.westdevon.gov.uk/",
+          "x-connect-auth": "Basic ODk4YTIwMmMtN2FkNC00MDEzLWE1NDEtMzk2OGFlYWM5ZDQ1OmZBVnRCa3NSeFRBNHRxc0VIMDhHbzlKU2lOWGtLQVYzNEFCMkRHZ2VzMm8="
+        },
+        "response_headers": {
+          "content-type": "application/json; charset=utf-8",
+          "x-ms-middleware-request-id": "00000000-0000-0000-0000-000000000000"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 40,
+          "content_ref": "1037334915cdbbe4abf707856b72a38f00349a04.json"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T10:59:27.378Z",
+        "duration_ms": 78.713,
+        "endpoint": "/v1/workspaces/{id}/appusers/{id}/messages",
+        "host": "webassist.onconnect.app",
+        "method": "GET",
+        "status": 200,
+        "path_params": [
+          "a46fce52-ff7a-45bf-ad4f-0923f51c42d6",
+          "0f7967df-9c88-4923-a0eb-28ff05807a81"
+        ],
+        "request_headers": {
+          "accept": "application/json, text/plain, */*",
+          "authorization": "Basic ODk4YTIwMmMtN2FkNC00MDEzLWE1NDEtMzk2OGFlYWM5ZDQ1OmZBVnRCa3NSeFRBNHRxc0VIMDhHbzlKU2lOWGtLQVYzNEFCMkRHZ2VzMm8=",
+          "content-type": "application/json",
+          "origin": "https://www.westdevon.gov.uk",
+          "referer": "https://www.westdevon.gov.uk/",
+          "x-connect-auth": "Basic ODk4YTIwMmMtN2FkNC00MDEzLWE1NDEtMzk2OGFlYWM5ZDQ1OmZBVnRCa3NSeFRBNHRxc0VIMDhHbzlKU2lOWGtLQVYzNEFCMkRHZ2VzMm8="
+        },
+        "response_headers": {
+          "content-type": "application/json; charset=utf-8",
+          "x-ms-middleware-request-id": "00000000-0000-0000-0000-000000000000"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 40,
+          "content_ref": "1037334915cdbbe4abf707856b72a38f00349a04.json"
+        }
+      }
+    ],
+    "/mycollections": [
+      {
+        "timestamp": "2025-07-21T10:59:14.087Z",
+        "duration_ms": 36.606,
+        "endpoint": "/mycollections",
+        "host": "westdevon.fccenvironment.co.uk",
+        "method": "GET",
+        "status": 200,
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+          "referer": "https://www.westdevon.gov.uk/"
+        },
+        "response_headers": {
+          "cache-control": "no-store, no-cache, must-revalidate",
+          "content-type": "text/html; charset=UTF-8",
+          "set-cookie": "[cookies present]",
+          "x-cdn-cache-status": "MISS",
+          "x-cdn-node-is-at-origin": "1",
+          "x-frame-options": "SAMEORIGIN",
+          "x-origin-cache-status": "MISS",
+          "x-powered-by": "PHP/7.4.33",
+          "x-provided-by": "StackCDN",
+          "x-via": "LHR2"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 18297,
+          "compressed": true,
+          "content_ref": "3d22f0510b90f2cc82d4e1e95cf17a3a7de14ff7.html"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T10:59:29.770Z",
+        "duration_ms": 25.674,
+        "endpoint": "/mycollections",
+        "host": "westdevon.fccenvironment.co.uk",
+        "method": "GET",
+        "status": 200,
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+          "cookie": "[cookies present]",
+          "referer": "https://www.westdevon.gov.uk/"
+        },
+        "response_headers": {
+          "cache-control": "no-store, no-cache, must-revalidate",
+          "content-type": "text/html; charset=UTF-8",
+          "set-cookie": "[cookies present]",
+          "x-cdn-cache-status": "MISS",
+          "x-cdn-node-is-at-origin": "1",
+          "x-frame-options": "SAMEORIGIN",
+          "x-origin-cache-status": "MISS",
+          "x-powered-by": "PHP/7.4.33",
+          "x-provided-by": "StackCDN",
+          "x-via": "LHR2"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 18301,
+          "compressed": true,
+          "content_ref": "2c63e203a8c7b7280f89d3dbe96b3920a7207fea.html"
+        }
+      }
+    ],
+    "/j/collect": [
+      {
+        "timestamp": "2025-07-21T10:59:14.290Z",
+        "duration_ms": 16.603,
+        "endpoint": "/j/collect",
+        "host": "www.google-analytics.com",
+        "method": "POST",
+        "status": 200,
+        "query_params": {
+          "v": [
+            "1"
+          ],
+          "_v": [
+            "j101"
+          ],
+          "aip": [
+            "1"
+          ],
+          "a": [
+            "1433283410"
+          ],
+          "t": [
+            "pageview"
+          ],
+          "_s": [
+            "1"
+          ],
+          "dl": [
+            "https://westdevon.fccenvironment.co.uk/mycollections"
+          ],
+          "dr": [
+            "https://www.westdevon.gov.uk/"
+          ],
+          "ul": [
+            "en-gb"
+          ],
+          "de": [
+            "UTF-8"
+          ],
+          "dt": [
+            "Find your Recycling and Waste collection day - West Devon Borough Council"
+          ],
+          "sd": [
+            "24-bit"
+          ],
+          "sr": [
+            "800x600"
+          ],
+          "vp": [
+            "800x461"
+          ],
+          "je": [
+            "0"
+          ],
+          "_u": [
+            "YEBAAUABAAAAACAAI~"
+          ],
+          "jid": [
+            "773332020"
+          ],
+          "gjid": [
+            "939462297"
+          ],
+          "cid": [
+            "428037189.1753095554"
+          ],
+          "tid": [
+            "UA-132704650-10"
+          ],
+          "_gid": [
+            "1708776054.1753095554"
+          ],
+          "_r": [
+            "1"
+          ],
+          "gtm": [
+            "457e57g1za200"
+          ],
+          "gcd": [
+            "13l3l3l3l1l1"
+          ],
+          "dma": [
+            "0"
+          ],
+          "tag_exp": [
+            "101509157~103116026~103200004~103233427~104684208~104684211~104921712~104921714"
+          ],
+          "jsscut": [
+            "1"
+          ],
+          "z": [
+            "905804517"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "content-type": "text/plain",
+          "origin": "https://westdevon.fccenvironment.co.uk",
+          "referer": "https://westdevon.fccenvironment.co.uk/"
+        },
+        "response_headers": {
+          "cache-control": "no-cache, no-store, must-revalidate",
+          "content-type": "text/plain",
+          "x-content-type-options": "nosniff"
+        }
+      }
+    ],
+    "/g/collect": [
+      {
+        "timestamp": "2025-07-21T10:59:14.317Z",
+        "duration_ms": 65.478,
+        "endpoint": "/g/collect",
+        "host": "region1.google-analytics.com",
+        "method": "POST",
+        "status": 204,
+        "query_params": {
+          "v": [
+            "2"
+          ],
+          "tid": [
+            "G-QJSESZZFY9"
+          ],
+          "gtm": [
+            "45je57g1v9108515842za200"
+          ],
+          "_p": [
+            "1753095554133"
+          ],
+          "gcd": [
+            "13l3l3l3l1l1"
+          ],
+          "npa": [
+            "0"
+          ],
+          "dma": [
+            "0"
+          ],
+          "tag_exp": [
+            "101509157~103116026~103200004~103233427~104684208~104684211~104991058"
+          ],
+          "cid": [
+            "428037189.1753095554"
+          ],
+          "ul": [
+            "en-gb"
+          ],
+          "sr": [
+            "800x600"
+          ],
+          "uaa": [
+            "arm"
+          ],
+          "uab": [
+            "64"
+          ],
+          "uafvl": [
+            "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+          ],
+          "uamb": [
+            "0"
+          ],
+          "uap": [
+            "macOS"
+          ],
+          "uapv": [
+            "15.5.0"
+          ],
+          "uaw": [
+            "0"
+          ],
+          "are": [
+            "1"
+          ],
+          "frm": [
+            "0"
+          ],
+          "pscdl": [
+            "noapi"
+          ],
+          "_eu": [
+            "AAAI"
+          ],
+          "_s": [
+            "1"
+          ],
+          "sid": [
+            "1753095554"
+          ],
+          "sct": [
+            "1"
+          ],
+          "seg": [
+            "0"
+          ],
+          "dl": [
+            "https://westdevon.fccenvironment.co.uk/mycollections"
+          ],
+          "dr": [
+            "https://www.westdevon.gov.uk/"
+          ],
+          "dt": [
+            "Find your Recycling and Waste collection day - West Devon Borough Council"
+          ],
+          "en": [
+            "page_view"
+          ],
+          "_fv": [
+            "1"
+          ],
+          "_ss": [
+            "1"
+          ],
+          "tfd": [
+            "315"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "cookie": "[cookies present]",
+          "origin": "https://westdevon.fccenvironment.co.uk",
+          "referer": "https://westdevon.fccenvironment.co.uk/"
+        },
+        "response_headers": {
+          "cache-control": "no-cache, no-store, must-revalidate",
+          "content-type": "text/plain"
+        }
+      }
+    ],
+    "/ajaxprocessor/getaddresses": [
+      {
+        "timestamp": "2025-07-21T10:59:18.654Z",
+        "duration_ms": 188.31699999999998,
+        "endpoint": "/ajaxprocessor/getaddresses",
+        "host": "westdevon.fccenvironment.co.uk",
+        "method": "POST",
+        "status": 200,
+        "request_headers": {
+          "accept": "application/json, text/javascript, */*; q=0.01",
+          "content-type": "application/x-www-form-urlencoded; charset=UTF-8",
+          "cookie": "[cookies present]",
+          "origin": "https://westdevon.fccenvironment.co.uk",
+          "referer": "https://westdevon.fccenvironment.co.uk/mycollections",
+          "x-requested-with": "XMLHttpRequest"
+        },
+        "response_headers": {
+          "content-type": "text/html; charset=UTF-8",
+          "set-cookie": "[cookies present]",
+          "x-frame-options": "SAMEORIGIN",
+          "x-powered-by": "PHP/7.4.33",
+          "x-provided-by": "StackCDN",
+          "x-via": "LHR2"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 4512,
+          "compressed": true,
+          "content_ref": "6b99cabc3d20e1aed906358b076611bd86ad1151.html"
+        }
+      }
+    ],
+    "/ajaxprocessor/getcollectiondetails": [
+      {
+        "timestamp": "2025-07-21T10:59:21.530Z",
+        "duration_ms": 477.339,
+        "endpoint": "/ajaxprocessor/getcollectiondetails",
+        "host": "westdevon.fccenvironment.co.uk",
+        "method": "POST",
+        "status": 200,
+        "request_headers": {
+          "accept": "application/json, text/javascript, */*; q=0.01",
+          "content-type": "application/x-www-form-urlencoded; charset=UTF-8",
+          "cookie": "[cookies present]",
+          "origin": "https://westdevon.fccenvironment.co.uk",
+          "referer": "https://westdevon.fccenvironment.co.uk/mycollections",
+          "x-requested-with": "XMLHttpRequest"
+        },
+        "response_headers": {
+          "content-type": "text/html; charset=UTF-8",
+          "set-cookie": "[cookies present]",
+          "x-frame-options": "SAMEORIGIN",
+          "x-powered-by": "PHP/7.4.33",
+          "x-provided-by": "StackCDN",
+          "x-via": "LHR2"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 3494,
+          "compressed": true,
+          "content_ref": "140ad9af9277a63b8db056775b70b69e5480924b.html"
+        }
+      }
+    ],
+    "/recycling": [
+      {
+        "timestamp": "2025-07-21T10:59:26.437Z",
+        "duration_ms": 17.881999999999998,
+        "endpoint": "/recycling",
+        "host": "westdevon.gov.uk",
+        "method": "GET",
+        "status": 301,
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+          "referer": "https://westdevon.fccenvironment.co.uk/"
+        },
+        "response_headers": {
+          "content-type": "text/html",
+          "location": "https://www.westdevon.gov.uk/recycling",
+          "x-cache": "Miss from cloudfront"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": -1
+        },
+        "redirect_to": "https://www.westdevon.gov.uk/recycling"
+      },
+      {
+        "timestamp": "2025-07-21T10:59:26.478Z",
+        "duration_ms": 156.005,
+        "endpoint": "/recycling",
+        "host": "www.westdevon.gov.uk",
+        "method": "GET",
+        "status": 301,
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+          "cookie": "[cookies present]",
+          "referer": "https://westdevon.fccenvironment.co.uk/"
+        },
+        "response_headers": {
+          "cache-control": "must-revalidate, no-cache, private",
+          "content-type": "text/html; charset=utf-8",
+          "location": "https://westdevon.gov.uk/waste-and-recycling/how-your-waste-and-recycling-service-works/recycling-boxes-and-sack",
+          "x-cache": "Miss from cloudfront",
+          "x-content-type-options": "nosniff",
+          "x-drupal-cache": "MISS",
+          "x-frame-options": "SAMEORIGIN",
+          "x-generator": "Drupal 10 (https://www.drupal.org)",
+          "x-redirect-id": "111"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": -1
+        },
+        "redirect_to": "https://westdevon.gov.uk/waste-and-recycling/how-your-waste-and-recycling-service-works/recycling-boxes-and-sack"
+      }
+    ],
+    "/waste-and-recycling/{id}/{id}": [
+      {
+        "timestamp": "2025-07-21T10:59:26.634Z",
+        "duration_ms": 44.327000000000005,
+        "endpoint": "/waste-and-recycling/{id}/{id}",
+        "host": "westdevon.gov.uk",
+        "method": "GET",
+        "status": 301,
+        "path_params": [
+          "how-your-waste-and-recycling-service-works",
+          "recycling-boxes-and-sack"
+        ],
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+          "referer": "https://westdevon.fccenvironment.co.uk/"
+        },
+        "response_headers": {
+          "content-type": "text/html",
+          "location": "https://www.westdevon.gov.uk/waste-and-recycling/how-your-waste-and-recycling-service-works/recycling-boxes-and-sack",
+          "x-cache": "Miss from cloudfront"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": -1
+        },
+        "redirect_to": "https://www.westdevon.gov.uk/waste-and-recycling/how-your-waste-and-recycling-service-works/recycling-boxes-and-sack"
+      },
+      {
+        "timestamp": "2025-07-21T10:59:26.679Z",
+        "duration_ms": 346.937,
+        "endpoint": "/waste-and-recycling/{id}/{id}",
+        "host": "www.westdevon.gov.uk",
+        "method": "GET",
+        "status": 301,
+        "path_params": [
+          "how-your-waste-and-recycling-service-works",
+          "recycling-boxes-and-sack"
+        ],
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+          "cookie": "[cookies present]",
+          "referer": "https://westdevon.fccenvironment.co.uk/"
+        },
+        "response_headers": {
+          "cache-control": "must-revalidate, no-cache, private",
+          "content-type": "text/html; charset=utf-8",
+          "location": "https://www.westdevon.gov.uk/waste-and-recycling/guide-waste-and-recycling/recycling-boxes-and-sack",
+          "x-cache": "Miss from cloudfront",
+          "x-content-type-options": "nosniff",
+          "x-drupal-cache": "MISS",
+          "x-frame-options": "SAMEORIGIN",
+          "x-generator": "Drupal 10 (https://www.drupal.org)",
+          "x-redirect-id": "566"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": -1
+        },
+        "redirect_to": "https://www.westdevon.gov.uk/waste-and-recycling/guide-waste-and-recycling/recycling-boxes-and-sack"
+      },
+      {
+        "timestamp": "2025-07-21T10:59:27.028Z",
+        "duration_ms": 50.98,
+        "endpoint": "/waste-and-recycling/{id}/{id}",
+        "host": "www.westdevon.gov.uk",
+        "method": "GET",
+        "status": 200,
+        "path_params": [
+          "guide-waste-and-recycling",
+          "recycling-boxes-and-sack"
+        ],
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+          "cookie": "[cookies present]",
+          "referer": "https://westdevon.fccenvironment.co.uk/"
+        },
+        "response_headers": {
+          "cache-control": "must-revalidate, no-cache, private",
+          "content-type": "text/html; charset=UTF-8",
+          "x-cache": "Miss from cloudfront",
+          "x-content-type-options": "nosniff",
+          "x-drupal-cache": "HIT",
+          "x-drupal-dynamic-cache": "MISS",
+          "x-frame-options": "SAMEORIGIN",
+          "x-generator": "Drupal 10 (https://www.drupal.org)"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 46288,
+          "compressed": true,
+          "content_ref": "2512d6926ae78c15dba03d621cf330c02a413b64.html"
+        }
+      }
+    ]
+  }
 }

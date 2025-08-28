@@ -1,170 +1,505 @@
 {
-  "metadata": {
-    "trace_name": "epsom_and_ewell_borough_council",
-    "processed_at": "2025-08-26 18:44:24",
-    "workflow_steps_count": 9,
-    "navigation_events_count": 9
-  },
-  "scraping_patterns": {
-    "login_detected": false,
-    "form_submissions": 0,
-    "navigation_count": 2,
-    "unique_domains": [
-      "www.epsom-ewell.gov.uk",
-      "maps.epsom-ewell.gov.uk"
-    ],
-    "api_endpoints": [],
-    "data_extraction_indicators": []
-  },
-  "workflow_steps": [
+  "entries": [
     {
-      "action": "goto",
-      "target": "https://www.epsom-ewell.gov.uk/residents/recycling-and-waste",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
-    },
-    {
-      "action": "click",
-      "target": "aria-ref=e11 >> internal:describe=\"OK, I agree\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
-    },
-    {
-      "action": "click",
-      "target": "aria-ref=e9 >> internal:describe=\"Hide\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
-    },
-    {
-      "action": "click",
-      "target": "aria-ref=e949 >> internal:describe=\"Check your collection day\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
-    },
-    {
-      "action": "fill",
-      "target": "aria-ref=e27 >> internal:describe=\"Postcode/house number\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0,
-      "value": "KT17 1AH"
-    },
-    {
-      "action": "click",
-      "target": "aria-ref=e28 >> internal:describe=\"Find\"",
-      "status": "Failed",
-      "details": {
-        "error": "Timeout 5000ms exceeded."
+      "timestamp": "2025-07-21T07:51:51.367Z",
+      "duration_ms": 42.696,
+      "endpoint": "/residents/recycling-and-waste",
+      "host": "www.epsom-ewell.gov.uk",
+      "method": "GET",
+      "status": 200,
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7"
       },
-      "timestamp": 0
+      "response_headers": {
+        "cache-control": "public, max-age=900",
+        "content-type": "text/html; charset=utf-8",
+        "x-cache": "MISS, HIT",
+        "x-cache-hits": "0, 0",
+        "x-content-type-options": "nosniff",
+        "x-drupal-cache": "MISS",
+        "x-frame-options": "DENY",
+        "x-pantheon-styx-hostname": "styx-fe1fe2-c-566bc4cf6-hlj7d",
+        "x-served-by": "cache-ams21040-AMS, cache-lhr-egll1980065-LHR",
+        "x-styx-req-id": "2f2bb0e2-6607-11f0-8703-7e2f35b35865",
+        "x-timer": "S1753084311.429022,VS0,VE5"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 144493,
+        "compressed": true,
+        "content_ref": "0ea55aa8371348c1015766a921cf53720eb7b2bb.html"
+      }
     },
     {
-      "action": "click",
-      "target": "aria-ref=e28 >> internal:describe=\"Find\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
-    },
-    {
-      "action": "click",
-      "target": "aria-ref=e76 >> internal:describe=\"1 Winter Close, Epsom, Surrey, KT17 1AH\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
-    },
-    {
-      "action": "goto",
-      "target": "https://www.epsom-ewell.gov.uk/residents/recycling-and-waste/simply-weekly-recycling/food-waste-recycling-weekly-collection",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
-    }
-  ],
-  "navigation_events": [
-    {
-      "url": "https://www.epsom-ewell.gov.uk/residents/recycling-and-waste",
+      "timestamp": "2025-07-21T07:51:53.188Z",
+      "duration_ms": 8.33,
+      "endpoint": "/residents/recycling-and-waste",
+      "host": "www.epsom-ewell.gov.uk",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "text/html; charset=utf-8",
-      "size": 144493,
-      "timestamp": "2025-07-21T07:51:51.367Z"
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+        "cookie": "[cookies present]",
+        "referer": "https://www.epsom-ewell.gov.uk/residents/recycling-and-waste"
+      },
+      "response_headers": {
+        "cache-control": "public, max-age=900",
+        "x-cache": "HIT",
+        "x-cache-hits": "1",
+        "x-served-by": "cache-lhr-egll1980065-LHR",
+        "x-timer": "S1753084313.231265,VS0,VE2"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 144493,
+        "compressed": true,
+        "content_ref": "0ea55aa8371348c1015766a921cf53720eb7b2bb.html"
+      }
     },
     {
-      "url": "https://www.epsom-ewell.gov.uk/residents/recycling-and-waste",
+      "timestamp": "2025-07-21T07:51:56.551Z",
+      "duration_ms": 7.917,
+      "endpoint": "/residents/recycling-and-waste",
+      "host": "www.epsom-ewell.gov.uk",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "text/html; charset=utf-8",
-      "size": 144493,
-      "timestamp": "2025-07-21T07:51:53.188Z"
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+        "cookie": "[cookies present]",
+        "referer": "https://www.epsom-ewell.gov.uk/residents/recycling-and-waste"
+      },
+      "response_headers": {
+        "cache-control": "public, max-age=900",
+        "x-cache": "HIT",
+        "x-cache-hits": "2",
+        "x-served-by": "cache-lhr-egll1980065-LHR",
+        "x-timer": "S1753084317.593468,VS0,VE1"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 144493,
+        "compressed": true,
+        "content_ref": "0ea55aa8371348c1015766a921cf53720eb7b2bb.html"
+      }
     },
     {
-      "url": "https://www.epsom-ewell.gov.uk/residents/recycling-and-waste",
+      "timestamp": "2025-07-21T07:52:01.194Z",
+      "duration_ms": 259.53,
+      "endpoint": "/myeebc.aspx",
+      "host": "maps.epsom-ewell.gov.uk",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "text/html; charset=utf-8",
-      "size": 144493,
-      "timestamp": "2025-07-21T07:51:56.551Z"
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+        "cookie": "[cookies present]",
+        "referer": "https://www.epsom-ewell.gov.uk/"
+      },
+      "response_headers": {
+        "cache-control": "private",
+        "content-type": "text/html; charset=utf-8",
+        "set-cookie": "[cookies present]",
+        "x-aspnet-version": "2.0.50727",
+        "x-powered-by": "ASP.NET",
+        "x-ua-compatible": "IE=Edge"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 138435,
+        "content_ref": "034391e1a07767d1fa53fc605e8a5a7e76042060.html"
+      }
     },
     {
-      "url": "https://maps.epsom-ewell.gov.uk/myeebc.aspx",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "text/html; charset=utf-8",
-      "size": 138435,
-      "timestamp": "2025-07-21T07:52:01.194Z"
-    },
-    {
-      "url": "https://maps.epsom-ewell.gov.uk/myeebc.aspx?action=SetAddress&UniqueId=010013955442",
+      "timestamp": "2025-07-21T07:52:24.298Z",
+      "duration_ms": 384.37899999999996,
+      "endpoint": "/myeebc.aspx",
+      "host": "maps.epsom-ewell.gov.uk",
       "method": "GET",
       "status": 302,
-      "redirect_url": "https://maps.epsom-ewell.gov.uk/myeebc.aspx",
-      "mime_type": "text/html; charset=utf-8",
-      "size": -1,
-      "timestamp": "2025-07-21T07:52:24.298Z"
+      "query_params": {
+        "action": [
+          "SetAddress"
+        ],
+        "UniqueId": [
+          "010013955442"
+        ]
+      },
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+        "cookie": "[cookies present]",
+        "referer": "https://maps.epsom-ewell.gov.uk/myeebc.aspx"
+      },
+      "response_headers": {
+        "cache-control": "private",
+        "content-type": "text/html; charset=utf-8",
+        "location": "/myeebc.aspx",
+        "set-cookie": "[cookies present]",
+        "x-aspnet-version": "2.0.50727",
+        "x-powered-by": "ASP.NET",
+        "x-ua-compatible": "IE=Edge"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": -1
+      },
+      "redirect_to": "/myeebc.aspx"
     },
     {
-      "url": "https://maps.epsom-ewell.gov.uk/myeebc.aspx",
+      "timestamp": "2025-07-21T07:52:24.685Z",
+      "duration_ms": 1445.225,
+      "endpoint": "/myeebc.aspx",
+      "host": "maps.epsom-ewell.gov.uk",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "text/html; charset=utf-8",
-      "size": 145560,
-      "timestamp": "2025-07-21T07:52:24.685Z"
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+        "cookie": "[cookies present]",
+        "referer": "https://maps.epsom-ewell.gov.uk/myeebc.aspx"
+      },
+      "response_headers": {
+        "cache-control": "private",
+        "content-type": "text/html; charset=utf-8",
+        "set-cookie": "[cookies present]",
+        "x-aspnet-version": "2.0.50727",
+        "x-powered-by": "ASP.NET",
+        "x-ua-compatible": "IE=Edge"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 145560,
+        "content_ref": "212c875f6b5dd64666d9039d5be911fdf3c8ed39.html"
+      }
     },
     {
-      "url": "https://www.epsom-ewell.gov.uk/residents/recycling-and-waste/simply-weekly-recycling/food-waste-recycling-weekly-collection",
+      "timestamp": "2025-07-21T07:52:33.274Z",
+      "duration_ms": 325.877,
+      "endpoint": "/residents/recycling-and-waste/{id}/{id}",
+      "host": "www.epsom-ewell.gov.uk",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "text/html; charset=utf-8",
-      "size": 149211,
-      "timestamp": "2025-07-21T07:52:33.274Z"
+      "path_params": [
+        "simply-weekly-recycling",
+        "food-waste-recycling-weekly-collection"
+      ],
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+        "cookie": "[cookies present]"
+      },
+      "response_headers": {
+        "cache-control": "public, max-age=900",
+        "content-type": "text/html; charset=utf-8",
+        "x-cache": "MISS, MISS",
+        "x-cache-hits": "0, 0",
+        "x-content-type-options": "nosniff",
+        "x-drupal-cache": "MISS",
+        "x-frame-options": "DENY",
+        "x-pantheon-styx-hostname": "styx-fe1fe2-d-5bd5bf8c6c-s4mmn",
+        "x-served-by": "cache-ams2100139-AMS, cache-lhr-egll1980065-LHR",
+        "x-styx-req-id": "a8eb1c4c-6607-11f0-8c43-6a7571a1ec34",
+        "x-timer": "S1753084353.317594,VS0,VE288"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 149211,
+        "compressed": true,
+        "content_ref": "45f24be2d5889e69bac45c3a82615cf19b5220f7.html"
+      }
     },
     {
-      "url": "https://www.epsom-ewell.gov.uk/sites/default/files/FormsIcon.png",
-      "method": "GET",
-      "status": 404,
-      "redirect_url": null,
-      "mime_type": "text/html; charset=utf-8",
-      "size": 316,
-      "timestamp": "2025-07-21T07:52:33.712Z"
-    },
-    {
-      "url": "https://maps.epsom-ewell.gov.uk/myeebc.aspx",
+      "timestamp": "2025-07-21T07:52:36.863Z",
+      "duration_ms": 1.708,
+      "endpoint": "/myeebc.aspx",
+      "host": "maps.epsom-ewell.gov.uk",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "text/html; charset=utf-8",
-      "size": 145560,
-      "timestamp": "2025-07-21T07:52:36.863Z"
+      "request_headers": {
+        "referer": "https://maps.epsom-ewell.gov.uk/myeebc.aspx"
+      },
+      "response_headers": {
+        "cache-control": "private",
+        "content-type": "text/html; charset=utf-8",
+        "x-aspnet-version": "2.0.50727",
+        "x-powered-by": "ASP.NET",
+        "x-ua-compatible": "IE=Edge"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 145560,
+        "compressed": true,
+        "content_ref": "212c875f6b5dd64666d9039d5be911fdf3c8ed39.html"
+      }
     }
-  ]
+  ],
+  "analysis": {
+    "total_requests": 8,
+    "unique_endpoints": 3,
+    "methods_used": [
+      "GET"
+    ],
+    "status_codes": {
+      "200": 7,
+      "302": 1
+    },
+    "endpoints_with_params": [
+      {
+        "endpoint": "/myeebc.aspx",
+        "method": "GET",
+        "query_params": [
+          "action",
+          "UniqueId"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/residents/recycling-and-waste/{id}/{id}",
+        "method": "GET",
+        "query_params": [],
+        "path_params": true
+      }
+    ],
+    "redirects": [
+      {
+        "from": "/myeebc.aspx",
+        "to": "/myeebc.aspx",
+        "status": 302
+      }
+    ],
+    "api_calls": [],
+    "form_submissions": []
+  },
+  "grouped_by_endpoint": {
+    "/residents/recycling-and-waste": [
+      {
+        "timestamp": "2025-07-21T07:51:51.367Z",
+        "duration_ms": 42.696,
+        "endpoint": "/residents/recycling-and-waste",
+        "host": "www.epsom-ewell.gov.uk",
+        "method": "GET",
+        "status": 200,
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7"
+        },
+        "response_headers": {
+          "cache-control": "public, max-age=900",
+          "content-type": "text/html; charset=utf-8",
+          "x-cache": "MISS, HIT",
+          "x-cache-hits": "0, 0",
+          "x-content-type-options": "nosniff",
+          "x-drupal-cache": "MISS",
+          "x-frame-options": "DENY",
+          "x-pantheon-styx-hostname": "styx-fe1fe2-c-566bc4cf6-hlj7d",
+          "x-served-by": "cache-ams21040-AMS, cache-lhr-egll1980065-LHR",
+          "x-styx-req-id": "2f2bb0e2-6607-11f0-8703-7e2f35b35865",
+          "x-timer": "S1753084311.429022,VS0,VE5"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 144493,
+          "compressed": true,
+          "content_ref": "0ea55aa8371348c1015766a921cf53720eb7b2bb.html"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T07:51:53.188Z",
+        "duration_ms": 8.33,
+        "endpoint": "/residents/recycling-and-waste",
+        "host": "www.epsom-ewell.gov.uk",
+        "method": "GET",
+        "status": 200,
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+          "cookie": "[cookies present]",
+          "referer": "https://www.epsom-ewell.gov.uk/residents/recycling-and-waste"
+        },
+        "response_headers": {
+          "cache-control": "public, max-age=900",
+          "x-cache": "HIT",
+          "x-cache-hits": "1",
+          "x-served-by": "cache-lhr-egll1980065-LHR",
+          "x-timer": "S1753084313.231265,VS0,VE2"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 144493,
+          "compressed": true,
+          "content_ref": "0ea55aa8371348c1015766a921cf53720eb7b2bb.html"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T07:51:56.551Z",
+        "duration_ms": 7.917,
+        "endpoint": "/residents/recycling-and-waste",
+        "host": "www.epsom-ewell.gov.uk",
+        "method": "GET",
+        "status": 200,
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+          "cookie": "[cookies present]",
+          "referer": "https://www.epsom-ewell.gov.uk/residents/recycling-and-waste"
+        },
+        "response_headers": {
+          "cache-control": "public, max-age=900",
+          "x-cache": "HIT",
+          "x-cache-hits": "2",
+          "x-served-by": "cache-lhr-egll1980065-LHR",
+          "x-timer": "S1753084317.593468,VS0,VE1"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 144493,
+          "compressed": true,
+          "content_ref": "0ea55aa8371348c1015766a921cf53720eb7b2bb.html"
+        }
+      }
+    ],
+    "/myeebc.aspx": [
+      {
+        "timestamp": "2025-07-21T07:52:01.194Z",
+        "duration_ms": 259.53,
+        "endpoint": "/myeebc.aspx",
+        "host": "maps.epsom-ewell.gov.uk",
+        "method": "GET",
+        "status": 200,
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+          "cookie": "[cookies present]",
+          "referer": "https://www.epsom-ewell.gov.uk/"
+        },
+        "response_headers": {
+          "cache-control": "private",
+          "content-type": "text/html; charset=utf-8",
+          "set-cookie": "[cookies present]",
+          "x-aspnet-version": "2.0.50727",
+          "x-powered-by": "ASP.NET",
+          "x-ua-compatible": "IE=Edge"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 138435,
+          "content_ref": "034391e1a07767d1fa53fc605e8a5a7e76042060.html"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T07:52:24.298Z",
+        "duration_ms": 384.37899999999996,
+        "endpoint": "/myeebc.aspx",
+        "host": "maps.epsom-ewell.gov.uk",
+        "method": "GET",
+        "status": 302,
+        "query_params": {
+          "action": [
+            "SetAddress"
+          ],
+          "UniqueId": [
+            "010013955442"
+          ]
+        },
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+          "cookie": "[cookies present]",
+          "referer": "https://maps.epsom-ewell.gov.uk/myeebc.aspx"
+        },
+        "response_headers": {
+          "cache-control": "private",
+          "content-type": "text/html; charset=utf-8",
+          "location": "/myeebc.aspx",
+          "set-cookie": "[cookies present]",
+          "x-aspnet-version": "2.0.50727",
+          "x-powered-by": "ASP.NET",
+          "x-ua-compatible": "IE=Edge"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": -1
+        },
+        "redirect_to": "/myeebc.aspx"
+      },
+      {
+        "timestamp": "2025-07-21T07:52:24.685Z",
+        "duration_ms": 1445.225,
+        "endpoint": "/myeebc.aspx",
+        "host": "maps.epsom-ewell.gov.uk",
+        "method": "GET",
+        "status": 200,
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+          "cookie": "[cookies present]",
+          "referer": "https://maps.epsom-ewell.gov.uk/myeebc.aspx"
+        },
+        "response_headers": {
+          "cache-control": "private",
+          "content-type": "text/html; charset=utf-8",
+          "set-cookie": "[cookies present]",
+          "x-aspnet-version": "2.0.50727",
+          "x-powered-by": "ASP.NET",
+          "x-ua-compatible": "IE=Edge"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 145560,
+          "content_ref": "212c875f6b5dd64666d9039d5be911fdf3c8ed39.html"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T07:52:36.863Z",
+        "duration_ms": 1.708,
+        "endpoint": "/myeebc.aspx",
+        "host": "maps.epsom-ewell.gov.uk",
+        "method": "GET",
+        "status": 200,
+        "request_headers": {
+          "referer": "https://maps.epsom-ewell.gov.uk/myeebc.aspx"
+        },
+        "response_headers": {
+          "cache-control": "private",
+          "content-type": "text/html; charset=utf-8",
+          "x-aspnet-version": "2.0.50727",
+          "x-powered-by": "ASP.NET",
+          "x-ua-compatible": "IE=Edge"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 145560,
+          "compressed": true,
+          "content_ref": "212c875f6b5dd64666d9039d5be911fdf3c8ed39.html"
+        }
+      }
+    ],
+    "/residents/recycling-and-waste/{id}/{id}": [
+      {
+        "timestamp": "2025-07-21T07:52:33.274Z",
+        "duration_ms": 325.877,
+        "endpoint": "/residents/recycling-and-waste/{id}/{id}",
+        "host": "www.epsom-ewell.gov.uk",
+        "method": "GET",
+        "status": 200,
+        "path_params": [
+          "simply-weekly-recycling",
+          "food-waste-recycling-weekly-collection"
+        ],
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+          "cookie": "[cookies present]"
+        },
+        "response_headers": {
+          "cache-control": "public, max-age=900",
+          "content-type": "text/html; charset=utf-8",
+          "x-cache": "MISS, MISS",
+          "x-cache-hits": "0, 0",
+          "x-content-type-options": "nosniff",
+          "x-drupal-cache": "MISS",
+          "x-frame-options": "DENY",
+          "x-pantheon-styx-hostname": "styx-fe1fe2-d-5bd5bf8c6c-s4mmn",
+          "x-served-by": "cache-ams2100139-AMS, cache-lhr-egll1980065-LHR",
+          "x-styx-req-id": "a8eb1c4c-6607-11f0-8c43-6a7571a1ec34",
+          "x-timer": "S1753084353.317594,VS0,VE288"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 149211,
+          "compressed": true,
+          "content_ref": "45f24be2d5889e69bac45c3a82615cf19b5220f7.html"
+        }
+      }
+    ]
+  }
 }

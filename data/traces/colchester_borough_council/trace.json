@@ -1,670 +1,5819 @@
 {
-  "metadata": {
-    "trace_name": "colchester_borough_council",
-    "processed_at": "2025-08-26 18:44:24",
-    "workflow_steps_count": 10,
-    "navigation_events_count": 62
-  },
-  "scraping_patterns": {
-    "login_detected": false,
-    "form_submissions": 14,
-    "navigation_count": 1,
-    "unique_domains": [
-      "cbccrmdata.blob.core.windows.net",
-      "new-llpg-app.azurewebsites.net",
-      "apikeys.civiccomputing.com",
-      "content.powerapps.com",
-      "www.colchester.gov.uk",
-      "cbc-live-dotgovresources.azurewebsites.net",
-      "westeurope-5.in.applicationinsights.azure.com",
-      "browser-update.org",
-      "eu-mobile.events.data.microsoft.com"
-    ],
-    "api_endpoints": [
-      "https://content.powerapps.com/resource/powerappsportal/controls/pcf_loader/manifest-0.0.30.json",
-      "https://content.powerapps.com/resource/powerappsportal/controls/host/manifest-0.5.0.json",
-      "https://content.powerapps.com/resource/powerappsportal/controls/pcf_controls/manifest-3.3.2.json",
-      "https://content.powerapps.com/resource/powerappsportal/controls/controls_fluent_v9/manifest-0.0.33.json",
-      "https://content.powerapps.com/resource/powerappsportal/controls/data_grid/manifest-1.1.31.json",
-      "https://content.powerapps.com/resource/powerappsportal/controls/mf_shared/manifest-0.2.10.json",
-      "https://new-llpg-app.azurewebsites.net/api/calendar/1e61a332-64a4-ea11-a812-000d3ab2928c"
-    ],
-    "data_extraction_indicators": []
-  },
-  "workflow_steps": [
+  "entries": [
     {
-      "action": "goto",
-      "target": "https://www.colchester.gov.uk/check-my-collection-day/#ValidationSummaryEntityFormView",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
-    },
-    {
-      "action": "click",
-      "target": "aria-ref=e76 >> internal:describe=\"tab \\\"What to put out and when View your recycling calendar to find out what to put out each week for collection. Find out more about the types of recycling and rubbish you can put out.\\\"\"",
-      "status": "Failed",
-      "details": {
-        "error": "Timeout 5000ms exceeded."
+      "timestamp": "2025-07-21T16:34:26.886Z",
+      "duration_ms": 555.4730000000001,
+      "endpoint": "/{id}",
+      "host": "www.colchester.gov.uk",
+      "method": "GET",
+      "status": 200,
+      "path_params": [
+        "check-my-collection-day"
+      ],
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7"
       },
-      "timestamp": 0
+      "response_headers": {
+        "cache-control": "no-cache, no-store, must-revalidate",
+        "content-type": "text/html; charset=utf-8",
+        "set-cookie": "[cookies present]",
+        "x-frame-options": "SAMEORIGIN",
+        "x-ms-portal-app": "site-d40aeee5-a782-45ad-8f5a-540d634ba4ad-EUn",
+        "x-ms-request-id": "ebee64e3-c1c9-4d51-96ce-de25df3b6d40"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 69325,
+        "compressed": true,
+        "content_ref": "6e2a9a62bd706f3cb7a0dbb7337922bad128cab5.html"
+      }
     },
     {
-      "action": "click",
-      "target": "aria-ref=e256 >> internal:describe=\"Accept Cookies\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
+      "timestamp": "2025-07-21T16:34:27.567Z",
+      "duration_ms": 110.675,
+      "endpoint": "/assets/fonts/icomoon.ttf",
+      "host": "cbc-live-dotgovresources.azurewebsites.net",
+      "method": "GET",
+      "status": 200,
+      "request_headers": {
+        "accept": "*/*",
+        "origin": "https://www.colchester.gov.uk",
+        "referer": "https://cbc-live-dotgovresources.azurewebsites.net/assets/css/templates/global.css"
+      },
+      "response_headers": {
+        "content-type": "application/octet-stream",
+        "set-cookie": "[cookies present]",
+        "x-ms-middleware-request-id": "00000000-0000-0000-0000-000000000000",
+        "x-powered-by": "ASP.NET"
+      }
     },
     {
-      "action": "click",
-      "target": "aria-ref=e76 >> internal:describe=\"tab \\\"What to put out and when View your recycling calendar to find out what to put out each week for collection. Find out more about the types of recycling and rubbish you can put out.\\\"\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
+      "timestamp": "2025-07-21T16:34:28.636Z",
+      "duration_ms": 46.935,
+      "endpoint": "/c/v",
+      "host": "apikeys.civiccomputing.com",
+      "method": "GET",
+      "status": 200,
+      "query_params": {
+        "d": [
+          "www.colchester.gov.uk"
+        ],
+        "p": [
+          "CookieControl Single-Site"
+        ],
+        "v": [
+          "9"
+        ],
+        "k": [
+          "6d393ae15905fd6bb7ae8117a9412eecda8b8b4c"
+        ],
+        "format": [
+          "json"
+        ]
+      },
+      "request_headers": {
+        "accept": "application/json, text/plain, */*",
+        "origin": "https://www.colchester.gov.uk",
+        "referer": "https://www.colchester.gov.uk/"
+      },
+      "response_headers": {
+        "cache-control": "max-age=3600, private, no-store",
+        "content-type": "application/json",
+        "x-apikeys": "hit",
+        "x-cf-test": "true",
+        "x-content-type-options": "nosniff",
+        "x-xss-protection": "1"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 307,
+        "content_ref": "2b35364b48029147eccfeac509b4298c9d71eac5.json"
+      }
     },
     {
-      "action": "click",
-      "target": "aria-ref=e274 >> internal:describe=\"View your recycling and rubbish calendar\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
+      "timestamp": "2025-07-21T16:34:28.653Z",
+      "duration_ms": 111.51599999999999,
+      "endpoint": "/g/collect",
+      "host": "region1.google-analytics.com",
+      "method": "POST",
+      "status": 204,
+      "query_params": {
+        "v": [
+          "2"
+        ],
+        "tid": [
+          "G-FCY6R8B21W"
+        ],
+        "gtm": [
+          "45je57h0h2v9112910236za200"
+        ],
+        "_p": [
+          "1753115668622"
+        ],
+        "gcs": [
+          "G100"
+        ],
+        "gcd": [
+          "13p3p3l3l5l1"
+        ],
+        "npa": [
+          "0"
+        ],
+        "dma": [
+          "0"
+        ],
+        "tag_exp": [
+          "101509157~103116026~103200004~103233427~104684208~104684211~104991058"
+        ],
+        "cid": [
+          "1396635008.1753115669"
+        ],
+        "ul": [
+          "en-gb"
+        ],
+        "sr": [
+          "800x600"
+        ],
+        "uaa": [
+          "arm"
+        ],
+        "uab": [
+          "64"
+        ],
+        "uafvl": [
+          "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+        ],
+        "uamb": [
+          "0"
+        ],
+        "uap": [
+          "macOS"
+        ],
+        "uapv": [
+          "15.5.0"
+        ],
+        "uaw": [
+          "0"
+        ],
+        "are": [
+          "1"
+        ],
+        "frm": [
+          "0"
+        ],
+        "pscdl": [
+          "denied"
+        ],
+        "_s": [
+          "1"
+        ],
+        "sid": [
+          "1753115668"
+        ],
+        "sct": [
+          "1"
+        ],
+        "seg": [
+          "0"
+        ],
+        "dl": [
+          "https://www.colchester.gov.uk/check-my-collection-day/"
+        ],
+        "dt": [
+          "Check my Collection Day \u00a0\u00b7 Colchester City Council"
+        ],
+        "en": [
+          "page_view"
+        ],
+        "_fv": [
+          "1"
+        ],
+        "_nsi": [
+          "1"
+        ],
+        "_ss": [
+          "1"
+        ],
+        "_ee": [
+          "1"
+        ],
+        "tfd": [
+          "1767"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "cookie": "[cookies present]",
+        "origin": "https://www.colchester.gov.uk",
+        "referer": "https://www.colchester.gov.uk/"
+      },
+      "response_headers": {
+        "cache-control": "no-cache, no-store, must-revalidate",
+        "content-type": "text/plain"
+      }
     },
     {
-      "action": "click",
-      "target": "aria-ref=e58 >> internal:describe=\"Start Now\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
+      "timestamp": "2025-07-21T16:34:29.245Z",
+      "duration_ms": -1,
+      "endpoint": "/OneCollector/1.0",
+      "host": "eu-mobile.events.data.microsoft.com",
+      "method": "POST",
+      "status": -1,
+      "query_params": {
+        "cors": [
+          "true"
+        ],
+        "content-type": [
+          "application/x-json-stream"
+        ],
+        "client-id": [
+          "NO_AUTH"
+        ],
+        "client-version": [
+          "1DS-Web-JS-3.2.8"
+        ],
+        "apikey": [
+          "197418c5cb8c4426b201f9db2e87b914-87887378-2790-49b0-9295-51f43b6204b1-7172"
+        ],
+        "upload-time": [
+          "1753115669241"
+        ],
+        "w": [
+          "2"
+        ],
+        "NoResponseBody": [
+          "true"
+        ]
+      },
+      "request_headers": {
+        "referer": "https://www.colchester.gov.uk/",
+        "content-type": "text/plain;charset=UTF-8"
+      }
     },
     {
-      "action": "fill",
-      "target": "aria-ref=e55 >> internal:describe=\"textbox\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0,
-      "value": "CM9 8HL"
+      "timestamp": "2025-07-21T16:34:28.641Z",
+      "duration_ms": 247.388,
+      "endpoint": "/{id}",
+      "host": "www.colchester.gov.uk",
+      "method": "GET",
+      "status": 200,
+      "path_params": [
+        "check-my-collection-day"
+      ],
+      "request_headers": {
+        "accept": "application/json, text/javascript, */*; q=0.01",
+        "cookie": "[cookies present]",
+        "referer": "https://www.colchester.gov.uk/check-my-collection-day/",
+        "x-requested-with": "XMLHttpRequest"
+      },
+      "response_headers": {
+        "cache-control": "no-cache, no-store, must-revalidate",
+        "content-type": "text/html; charset=utf-8",
+        "x-frame-options": "SAMEORIGIN",
+        "x-ms-portal-app": "site-d40aeee5-a782-45ad-8f5a-540d634ba4ad-EUn",
+        "x-ms-request-id": "5d285369-c4c5-478d-8fc8-261a8fb66354"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": -1
+      }
     },
     {
-      "action": "click",
-      "target": "aria-ref=e56 >> internal:describe=\"Find address\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
+      "timestamp": "2025-07-21T16:34:28.866Z",
+      "duration_ms": 161.055,
+      "endpoint": "/OneCollector/1.0",
+      "host": "eu-mobile.events.data.microsoft.com",
+      "method": "POST",
+      "status": 204,
+      "query_params": {
+        "cors": [
+          "true"
+        ],
+        "content-type": [
+          "application/x-json-stream"
+        ],
+        "client-id": [
+          "NO_AUTH"
+        ],
+        "client-version": [
+          "1DS-Web-JS-3.2.8"
+        ],
+        "apikey": [
+          "197418c5cb8c4426b201f9db2e87b914-87887378-2790-49b0-9295-51f43b6204b1-7172"
+        ],
+        "upload-time": [
+          "1753115668814"
+        ],
+        "time-delta-to-apply-millis": [
+          "use-collector-delta"
+        ],
+        "w": [
+          "2"
+        ],
+        "NoResponseBody": [
+          "true"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "content-type": "text/plain;charset=UTF-8",
+        "origin": "https://www.colchester.gov.uk",
+        "referer": "https://www.colchester.gov.uk/"
+      }
     },
     {
-      "action": "selectOption",
-      "target": "aria-ref=e145 >> internal:describe=\"combobox\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0,
-      "value": null
+      "timestamp": "2025-07-21T16:34:28.918Z",
+      "duration_ms": 114.456,
+      "endpoint": "/v2/track",
+      "host": "westeurope-5.in.applicationinsights.azure.com",
+      "method": "POST",
+      "status": 200,
+      "request_headers": {
+        "accept": "*/*",
+        "content-type": "application/json",
+        "origin": "https://www.colchester.gov.uk",
+        "referer": "https://www.colchester.gov.uk/"
+      },
+      "response_headers": {
+        "content-type": "application/json; charset=utf-8",
+        "x-content-type-options": "nosniff"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": -1
+      }
     },
     {
-      "action": "click",
-      "target": "aria-ref=e185 >> internal:describe=\"Continue\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
+      "timestamp": "2025-07-21T16:34:28.805Z",
+      "duration_ms": 350.331,
+      "endpoint": "/resource/powerappsportal/controls/pcf_loader/manifest-0.0.30.json",
+      "host": "content.powerapps.com",
+      "method": "GET",
+      "status": 200,
+      "request_headers": {
+        "accept": "application/json, text/plain, */*",
+        "origin": "https://www.colchester.gov.uk",
+        "referer": "https://www.colchester.gov.uk/"
+      },
+      "response_headers": {
+        "cache-control": "public, max-age=31536000",
+        "content-type": "application/json",
+        "x-azure-ref": "20250721T163428Z-16896f46f99llcpfhC1LTSp5vn00000009200000000086bt",
+        "x-cache": "TCP_HIT",
+        "x-cache-info": "L1_T2",
+        "x-content-type-options": "nosniff",
+        "x-fd-int-roxy-purgeid": "74730419",
+        "x-ms-activity-vector": "00.00.00",
+        "x-ms-correlation-id": "79144798-3ff2-4a95-8591-7e4a49a47639",
+        "x-ms-islandgateway": "_prdil102sukgb0_6",
+        "x-ms-service-request-id": "1499194c-6693-49c3-9c51-8031261eaffd",
+        "x-ms-static-content": "PI000000B",
+        "x-servicefabric": "NoRetry"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": -1
+      }
+    },
+    {
+      "timestamp": "2025-07-21T16:34:28.806Z",
+      "duration_ms": 290.65299999999996,
+      "endpoint": "/resource/powerappsportal/controls/host/manifest-0.5.0.json",
+      "host": "content.powerapps.com",
+      "method": "GET",
+      "status": 200,
+      "request_headers": {
+        "accept": "application/json, text/plain, */*",
+        "origin": "https://www.colchester.gov.uk",
+        "referer": "https://www.colchester.gov.uk/"
+      },
+      "response_headers": {
+        "cache-control": "public, max-age=31536000",
+        "content-type": "application/json",
+        "x-azure-ref": "20250721T163428Z-16896f46f99llcpfhC1LTSp5vn00000009200000000086bv",
+        "x-cache": "TCP_HIT",
+        "x-cache-info": "L1_T2",
+        "x-content-type-options": "nosniff",
+        "x-fd-int-roxy-purgeid": "74730419",
+        "x-ms-activity-vector": "00.00.00",
+        "x-ms-correlation-id": "67c0072b-3f6b-449d-8ade-82cb39d0a967",
+        "x-ms-islandgateway": "_prdil101sukgb0_6",
+        "x-ms-service-request-id": "240a8fad-d68c-46a0-a985-ef1394e7f91c",
+        "x-ms-static-content": "PI0000003",
+        "x-servicefabric": "NoRetry"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": -1
+      }
+    },
+    {
+      "timestamp": "2025-07-21T16:34:28.806Z",
+      "duration_ms": 291.253,
+      "endpoint": "/resource/powerappsportal/controls/pcf_controls/manifest-3.3.2.json",
+      "host": "content.powerapps.com",
+      "method": "GET",
+      "status": 200,
+      "request_headers": {
+        "accept": "application/json, text/plain, */*",
+        "origin": "https://www.colchester.gov.uk",
+        "referer": "https://www.colchester.gov.uk/"
+      },
+      "response_headers": {
+        "cache-control": "public, max-age=31536000",
+        "content-type": "application/json",
+        "x-azure-ref": "20250721T163428Z-16896f46f99llcpfhC1LTSp5vn00000009200000000086bu",
+        "x-cache": "TCP_HIT",
+        "x-cache-info": "L1_T2",
+        "x-content-type-options": "nosniff",
+        "x-fd-int-roxy-purgeid": "74730419",
+        "x-ms-activity-vector": "00.00.00",
+        "x-ms-correlation-id": "fc1eb06f-caf8-49ac-bbfd-8157787a3fff",
+        "x-ms-islandgateway": "_prdil101sukgb0_2",
+        "x-ms-service-request-id": "9853dbaf-fa57-4f36-90f4-9f399aaf0878",
+        "x-ms-static-content": "PI0000000",
+        "x-servicefabric": "NoRetry"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": -1
+      }
+    },
+    {
+      "timestamp": "2025-07-21T16:34:28.806Z",
+      "duration_ms": 291.865,
+      "endpoint": "/resource/powerappsportal/controls/controls_fluent_v9/manifest-0.0.33.json",
+      "host": "content.powerapps.com",
+      "method": "GET",
+      "status": 200,
+      "request_headers": {
+        "accept": "application/json, text/plain, */*",
+        "origin": "https://www.colchester.gov.uk",
+        "referer": "https://www.colchester.gov.uk/"
+      },
+      "response_headers": {
+        "cache-control": "public, max-age=31536000",
+        "content-type": "application/json",
+        "x-azure-ref": "20250721T163428Z-16896f46f99llcpfhC1LTSp5vn00000009200000000086by",
+        "x-cache": "TCP_HIT",
+        "x-cache-info": "L1_T2",
+        "x-content-type-options": "nosniff",
+        "x-fd-int-roxy-purgeid": "74730419",
+        "x-ms-activity-vector": "00.00.00",
+        "x-ms-correlation-id": "81a2e115-c5b2-4e2f-b588-55218b14af67",
+        "x-ms-islandgateway": "_prdil102sukgb0_6",
+        "x-ms-service-request-id": "d3087aab-6779-41c1-8990-ee76eb8dd81e",
+        "x-ms-static-content": "PI0000000",
+        "x-servicefabric": "NoRetry"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": -1
+      }
+    },
+    {
+      "timestamp": "2025-07-21T16:34:28.806Z",
+      "duration_ms": 292.42,
+      "endpoint": "/resource/powerappsportal/controls/data_grid/manifest-1.1.31.json",
+      "host": "content.powerapps.com",
+      "method": "GET",
+      "status": 200,
+      "request_headers": {
+        "accept": "application/json, text/plain, */*",
+        "origin": "https://www.colchester.gov.uk",
+        "referer": "https://www.colchester.gov.uk/"
+      },
+      "response_headers": {
+        "cache-control": "public, max-age=31536000",
+        "content-type": "application/json",
+        "x-azure-ref": "20250721T163428Z-16896f46f99llcpfhC1LTSp5vn00000009200000000086bw",
+        "x-cache": "TCP_HIT",
+        "x-cache-info": "L1_T2",
+        "x-content-type-options": "nosniff",
+        "x-fd-int-roxy-purgeid": "74730419",
+        "x-ms-activity-vector": "00.00.00",
+        "x-ms-correlation-id": "466f3a6e-52d6-45be-9f87-48e602901e33",
+        "x-ms-islandgateway": "_prdil101sukgb0_0",
+        "x-ms-service-request-id": "10d8ffcf-3388-4c2a-b5e1-0d9058671649",
+        "x-ms-static-content": "ZB0000007",
+        "x-servicefabric": "NoRetry"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": -1
+      }
+    },
+    {
+      "timestamp": "2025-07-21T16:34:28.806Z",
+      "duration_ms": 292.866,
+      "endpoint": "/resource/powerappsportal/controls/mf_shared/manifest-0.2.10.json",
+      "host": "content.powerapps.com",
+      "method": "GET",
+      "status": 200,
+      "request_headers": {
+        "accept": "application/json, text/plain, */*",
+        "origin": "https://www.colchester.gov.uk",
+        "referer": "https://www.colchester.gov.uk/"
+      },
+      "response_headers": {
+        "cache-control": "public, max-age=31536000",
+        "content-type": "application/json",
+        "x-azure-ref": "20250721T163428Z-16896f46f99llcpfhC1LTSp5vn00000009200000000086bx",
+        "x-cache": "TCP_HIT",
+        "x-cache-info": "L1_T2",
+        "x-content-type-options": "nosniff",
+        "x-fd-int-roxy-purgeid": "74730419",
+        "x-ms-activity-vector": "00.00.00",
+        "x-ms-correlation-id": "48537af0-6b54-4953-8ed7-9c452652cffa",
+        "x-ms-islandgateway": "_prdil101sukgb0_0",
+        "x-ms-service-request-id": "1c02c815-aab9-4953-bb61-9a6b75d04884",
+        "x-ms-static-content": "ZB0000004",
+        "x-servicefabric": "NoRetry"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": -1
+      }
+    },
+    {
+      "timestamp": "2025-07-21T16:34:28.864Z",
+      "duration_ms": 377.04,
+      "endpoint": "/{id}",
+      "host": "www.colchester.gov.uk",
+      "method": "GET",
+      "status": 200,
+      "path_params": [
+        "recycling-and-rubbish"
+      ],
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+        "cookie": "[cookies present]",
+        "referer": "https://www.colchester.gov.uk/check-my-collection-day/"
+      },
+      "response_headers": {
+        "cache-control": "no-cache, no-store, must-revalidate",
+        "content-type": "text/html; charset=utf-8",
+        "x-frame-options": "SAMEORIGIN",
+        "x-ms-portal-app": "site-d40aeee5-a782-45ad-8f5a-540d634ba4ad-EUn",
+        "x-ms-request-id": "636567bc-ce4f-4ded-98ef-e438469da839"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 156634,
+        "compressed": true,
+        "content_ref": "b94869bd7afcf075a6ade0cd755a6471539fa99d.html"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T16:34:29.331Z",
+      "duration_ms": 1.031,
+      "endpoint": "/assets/fonts/icomoon.ttf",
+      "host": "cbc-live-dotgovresources.azurewebsites.net",
+      "method": "GET",
+      "status": 200,
+      "request_headers": {
+        "origin": "https://www.colchester.gov.uk",
+        "referer": "https://cbc-live-dotgovresources.azurewebsites.net/assets/css/templates/global.css"
+      },
+      "response_headers": {
+        "x-ms-middleware-request-id": "00000000-0000-0000-0000-000000000000",
+        "content-type": "application/octet-stream",
+        "x-powered-by": "ASP.NET"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T16:34:29.375Z",
+      "duration_ms": 14.17,
+      "endpoint": "/g/collect",
+      "host": "region1.google-analytics.com",
+      "method": "POST",
+      "status": 204,
+      "query_params": {
+        "v": [
+          "2"
+        ],
+        "tid": [
+          "G-FCY6R8B21W"
+        ],
+        "gtm": [
+          "45je57h0h2v9112910236za200"
+        ],
+        "_p": [
+          "1753115669353"
+        ],
+        "gcs": [
+          "G100"
+        ],
+        "gcd": [
+          "13p3p3l3l5l1"
+        ],
+        "npa": [
+          "0"
+        ],
+        "dma": [
+          "0"
+        ],
+        "tag_exp": [
+          "101509157~103116026~103200004~103233427~104684208~104684211~104991058"
+        ],
+        "cid": [
+          "1143158943.1753115669"
+        ],
+        "ul": [
+          "en-gb"
+        ],
+        "sr": [
+          "800x600"
+        ],
+        "uaa": [
+          "arm"
+        ],
+        "uab": [
+          "64"
+        ],
+        "uafvl": [
+          "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+        ],
+        "uamb": [
+          "0"
+        ],
+        "uap": [
+          "macOS"
+        ],
+        "uapv": [
+          "15.5.0"
+        ],
+        "uaw": [
+          "0"
+        ],
+        "are": [
+          "1"
+        ],
+        "frm": [
+          "0"
+        ],
+        "pscdl": [
+          "denied"
+        ],
+        "_s": [
+          "1"
+        ],
+        "sid": [
+          "1753115669"
+        ],
+        "sct": [
+          "1"
+        ],
+        "seg": [
+          "0"
+        ],
+        "dl": [
+          "https://www.colchester.gov.uk/recycling-and-rubbish/"
+        ],
+        "dr": [
+          "https://www.colchester.gov.uk/check-my-collection-day/"
+        ],
+        "dt": [
+          "Recycling and rubbish \u00a0\u00b7 Colchester City Council"
+        ],
+        "en": [
+          "page_view"
+        ],
+        "_fv": [
+          "1"
+        ],
+        "_nsi": [
+          "1"
+        ],
+        "_ss": [
+          "1"
+        ],
+        "_ee": [
+          "1"
+        ],
+        "tfd": [
+          "553"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "cookie": "[cookies present]",
+        "origin": "https://www.colchester.gov.uk",
+        "referer": "https://www.colchester.gov.uk/"
+      },
+      "response_headers": {
+        "cache-control": "no-cache, no-store, must-revalidate",
+        "content-type": "text/plain"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T16:34:29.355Z",
+      "duration_ms": 19.615000000000002,
+      "endpoint": "/c/v",
+      "host": "apikeys.civiccomputing.com",
+      "method": "GET",
+      "status": 200,
+      "query_params": {
+        "d": [
+          "www.colchester.gov.uk"
+        ],
+        "p": [
+          "CookieControl Single-Site"
+        ],
+        "v": [
+          "9"
+        ],
+        "k": [
+          "6d393ae15905fd6bb7ae8117a9412eecda8b8b4c"
+        ],
+        "format": [
+          "json"
+        ]
+      },
+      "request_headers": {
+        "accept": "application/json, text/plain, */*",
+        "origin": "https://www.colchester.gov.uk",
+        "referer": "https://www.colchester.gov.uk/"
+      },
+      "response_headers": {
+        "cache-control": "max-age=3600, private, no-store",
+        "content-type": "application/json",
+        "x-apikeys": "hit",
+        "x-cf-test": "true",
+        "x-content-type-options": "nosniff",
+        "x-xss-protection": "1"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 307,
+        "content_ref": "2b35364b48029147eccfeac509b4298c9d71eac5.json"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T16:34:29.581Z",
+      "duration_ms": 16.127,
+      "endpoint": "/v2/track",
+      "host": "westeurope-5.in.applicationinsights.azure.com",
+      "method": "POST",
+      "status": 200,
+      "request_headers": {
+        "accept": "*/*",
+        "content-type": "application/json",
+        "origin": "https://www.colchester.gov.uk",
+        "referer": "https://www.colchester.gov.uk/"
+      },
+      "response_headers": {
+        "content-type": "application/json; charset=utf-8",
+        "x-content-type-options": "nosniff"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 62,
+        "content_ref": "201da26f2bf2841be68133fc3451e22b2f585702.json"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T16:34:29.368Z",
+      "duration_ms": 520.092,
+      "endpoint": "/{id}",
+      "host": "www.colchester.gov.uk",
+      "method": "GET",
+      "status": 200,
+      "path_params": [
+        "recycling-and-rubbish"
+      ],
+      "request_headers": {
+        "accept": "application/json, text/javascript, */*; q=0.01",
+        "cookie": "[cookies present]",
+        "referer": "https://www.colchester.gov.uk/recycling-and-rubbish/",
+        "x-requested-with": "XMLHttpRequest"
+      },
+      "response_headers": {
+        "cache-control": "no-cache, no-store, must-revalidate",
+        "content-type": "text/html; charset=utf-8",
+        "x-frame-options": "SAMEORIGIN",
+        "x-ms-portal-app": "site-d40aeee5-a782-45ad-8f5a-540d634ba4ad-EUn",
+        "x-ms-request-id": "04f8d181-d4a1-4808-bbd7-c7de5db5a1f7"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 156634,
+        "compressed": true,
+        "content_ref": "00b73dc05cb0a1bf95884680ff3053cf32eafe4e.html"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T16:34:32.316Z",
+      "duration_ms": 175.063,
+      "endpoint": "/OneCollector/1.0",
+      "host": "eu-mobile.events.data.microsoft.com",
+      "method": "POST",
+      "status": 200,
+      "query_params": {
+        "cors": [
+          "true"
+        ],
+        "content-type": [
+          "application/x-json-stream"
+        ],
+        "w": [
+          "2"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "content-type": "application/x-json-stream",
+        "origin": "https://www.colchester.gov.uk",
+        "referer": "https://www.colchester.gov.uk/"
+      },
+      "response_headers": {
+        "content-type": "application/json"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 24,
+        "content_ref": "ac7cf704563b3e32cc67770ea72a3873cc6fc146.json"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T16:34:35.334Z",
+      "duration_ms": 53.872,
+      "endpoint": "/OneCollector/1.0",
+      "host": "eu-mobile.events.data.microsoft.com",
+      "method": "POST",
+      "status": 200,
+      "query_params": {
+        "cors": [
+          "true"
+        ],
+        "content-type": [
+          "application/x-json-stream"
+        ],
+        "w": [
+          "2"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "content-type": "application/x-json-stream",
+        "origin": "https://www.colchester.gov.uk",
+        "referer": "https://www.colchester.gov.uk/"
+      },
+      "response_headers": {
+        "content-type": "application/json"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 25,
+        "content_ref": "c03a31fc423e4dc4cac2a02c5a7ff8f3dbc45149.json"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T16:34:44.482Z",
+      "duration_ms": 21.832,
+      "endpoint": "/g/collect",
+      "host": "region1.google-analytics.com",
+      "method": "POST",
+      "status": 204,
+      "query_params": {
+        "v": [
+          "2"
+        ],
+        "tid": [
+          "G-FCY6R8B21W"
+        ],
+        "gtm": [
+          "45je57h0h2v9112910236za200"
+        ],
+        "_p": [
+          "1753115669353"
+        ],
+        "gcs": [
+          "G101"
+        ],
+        "gcd": [
+          "13p3r3l3l5l1"
+        ],
+        "npa": [
+          "0"
+        ],
+        "dma": [
+          "0"
+        ],
+        "tag_exp": [
+          "101509157~103116026~103200004~103233427~104684208~104684211~104991058"
+        ],
+        "cid": [
+          "1143158943.1753115669"
+        ],
+        "ul": [
+          "en-gb"
+        ],
+        "sr": [
+          "800x600"
+        ],
+        "uaa": [
+          "arm"
+        ],
+        "uab": [
+          "64"
+        ],
+        "uafvl": [
+          "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+        ],
+        "uamb": [
+          "0"
+        ],
+        "uap": [
+          "macOS"
+        ],
+        "uapv": [
+          "15.5.0"
+        ],
+        "uaw": [
+          "0"
+        ],
+        "are": [
+          "1"
+        ],
+        "frm": [
+          "0"
+        ],
+        "pscdl": [
+          "denied"
+        ],
+        "_eu": [
+          "AAAAAAQ"
+        ],
+        "_s": [
+          "2"
+        ],
+        "sid": [
+          "1753115669"
+        ],
+        "sct": [
+          "1"
+        ],
+        "seg": [
+          "1"
+        ],
+        "dl": [
+          "https://www.colchester.gov.uk/recycling-and-rubbish/"
+        ],
+        "dr": [
+          "https://www.colchester.gov.uk/check-my-collection-day/"
+        ],
+        "dt": [
+          "Recycling and rubbish \u00a0\u00b7 Colchester City Council"
+        ],
+        "en": [
+          "user_engagement"
+        ],
+        "ep.ga_temp_client_id": [
+          "1143158943.1753115669"
+        ],
+        "_et": [
+          "10105"
+        ],
+        "tfd": [
+          "15663"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "cookie": "[cookies present]",
+        "origin": "https://www.colchester.gov.uk",
+        "referer": "https://www.colchester.gov.uk/"
+      },
+      "response_headers": {
+        "cache-control": "no-cache, no-store, must-revalidate",
+        "content-type": "text/plain"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T16:34:47.232Z",
+      "duration_ms": -1,
+      "endpoint": "/OneCollector/1.0",
+      "host": "eu-mobile.events.data.microsoft.com",
+      "method": "POST",
+      "status": -1,
+      "query_params": {
+        "cors": [
+          "true"
+        ],
+        "content-type": [
+          "application/x-json-stream"
+        ],
+        "client-id": [
+          "NO_AUTH"
+        ],
+        "client-version": [
+          "1DS-Web-JS-3.2.8"
+        ],
+        "apikey": [
+          "197418c5cb8c4426b201f9db2e87b914-87887378-2790-49b0-9295-51f43b6204b1-7172"
+        ],
+        "upload-time": [
+          "1753115687220"
+        ],
+        "time-delta-to-apply-millis": [
+          "177"
+        ],
+        "w": [
+          "2"
+        ],
+        "NoResponseBody": [
+          "true"
+        ]
+      },
+      "request_headers": {
+        "referer": "https://www.colchester.gov.uk/",
+        "content-type": "text/plain;charset=UTF-8"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T16:34:47.234Z",
+      "duration_ms": -1,
+      "endpoint": "/g/collect",
+      "host": "region1.google-analytics.com",
+      "method": "POST",
+      "status": -1,
+      "query_params": {
+        "v": [
+          "2"
+        ],
+        "tid": [
+          "G-FCY6R8B21W"
+        ],
+        "gtm": [
+          "45je57h0h2v9112910236za200"
+        ],
+        "_p": [
+          "1753115669353"
+        ],
+        "gcs": [
+          "G101"
+        ],
+        "gcd": [
+          "13p3r3l3l5l1"
+        ],
+        "npa": [
+          "0"
+        ],
+        "dma": [
+          "0"
+        ],
+        "tag_exp": [
+          "101509157~103116026~103200004~103233427~104684208~104684211~104991058"
+        ],
+        "cid": [
+          "1143158943.1753115669"
+        ],
+        "ul": [
+          "en-gb"
+        ],
+        "sr": [
+          "800x600"
+        ],
+        "uaa": [
+          "arm"
+        ],
+        "uab": [
+          "64"
+        ],
+        "uafvl": [
+          "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+        ],
+        "uamb": [
+          "0"
+        ],
+        "uap": [
+          "macOS"
+        ],
+        "uapv": [
+          "15.5.0"
+        ],
+        "uaw": [
+          "0"
+        ],
+        "are": [
+          "1"
+        ],
+        "frm": [
+          "0"
+        ],
+        "pscdl": [
+          "denied"
+        ],
+        "_s": [
+          "3"
+        ],
+        "sid": [
+          "1753115669"
+        ],
+        "sct": [
+          "1"
+        ],
+        "seg": [
+          "1"
+        ],
+        "dl": [
+          "https://www.colchester.gov.uk/recycling-and-rubbish/"
+        ],
+        "dr": [
+          "https://www.colchester.gov.uk/check-my-collection-day/"
+        ],
+        "dt": [
+          "Recycling and rubbish \u00a0\u00b7 Colchester City Council"
+        ],
+        "en": [
+          "user_engagement"
+        ],
+        "_et": [
+          "7745"
+        ],
+        "tfd": [
+          "18410"
+        ]
+      },
+      "request_headers": {
+        "referer": "https://www.colchester.gov.uk/"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T16:34:46.906Z",
+      "duration_ms": 31.242,
+      "endpoint": "/OneCollector/1.0",
+      "host": "eu-mobile.events.data.microsoft.com",
+      "method": "POST",
+      "status": 204,
+      "query_params": {
+        "cors": [
+          "true"
+        ],
+        "content-type": [
+          "application/x-json-stream"
+        ],
+        "client-id": [
+          "NO_AUTH"
+        ],
+        "client-version": [
+          "1DS-Web-JS-3.2.8"
+        ],
+        "apikey": [
+          "197418c5cb8c4426b201f9db2e87b914-87887378-2790-49b0-9295-51f43b6204b1-7172"
+        ],
+        "upload-time": [
+          "1753115686840"
+        ],
+        "time-delta-to-apply-millis": [
+          "177"
+        ],
+        "w": [
+          "2"
+        ],
+        "NoResponseBody": [
+          "true"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "content-type": "text/plain;charset=UTF-8",
+        "origin": "https://www.colchester.gov.uk",
+        "referer": "https://www.colchester.gov.uk/"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T16:34:46.906Z",
+      "duration_ms": 19.999000000000002,
+      "endpoint": "/v2/track",
+      "host": "westeurope-5.in.applicationinsights.azure.com",
+      "method": "POST",
+      "status": 200,
+      "request_headers": {
+        "accept": "*/*",
+        "content-type": "application/json",
+        "origin": "https://www.colchester.gov.uk",
+        "referer": "https://www.colchester.gov.uk/"
+      },
+      "response_headers": {
+        "content-type": "application/json; charset=utf-8",
+        "x-content-type-options": "nosniff"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": -1
+      }
+    },
+    {
+      "timestamp": "2025-07-21T16:34:46.905Z",
+      "duration_ms": 311.94,
+      "endpoint": "/{id}",
+      "host": "www.colchester.gov.uk",
+      "method": "GET",
+      "status": 200,
+      "path_params": [
+        "your-recycling-calendar"
+      ],
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+        "cookie": "[cookies present]",
+        "referer": "https://www.colchester.gov.uk/recycling-and-rubbish/"
+      },
+      "response_headers": {
+        "cache-control": "no-cache, no-store, must-revalidate",
+        "content-type": "text/html; charset=utf-8",
+        "x-frame-options": "SAMEORIGIN",
+        "x-ms-portal-app": "site-d40aeee5-a782-45ad-8f5a-540d634ba4ad-EUn",
+        "x-ms-request-id": "9d74f5b1-f861-4665-8612-0ba439f51f06"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 65044,
+        "compressed": true,
+        "content_ref": "836bbf47a16a32c579571c374d74553ed84034e5.html"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T16:34:47.285Z",
+      "duration_ms": 1.054,
+      "endpoint": "/assets/fonts/icomoon.ttf",
+      "host": "cbc-live-dotgovresources.azurewebsites.net",
+      "method": "GET",
+      "status": 200,
+      "request_headers": {
+        "origin": "https://www.colchester.gov.uk",
+        "referer": "https://cbc-live-dotgovresources.azurewebsites.net/assets/css/templates/global.css"
+      },
+      "response_headers": {
+        "x-ms-middleware-request-id": "00000000-0000-0000-0000-000000000000",
+        "content-type": "application/octet-stream",
+        "x-powered-by": "ASP.NET"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T16:34:47.368Z",
+      "duration_ms": 18.35,
+      "endpoint": "/c/v",
+      "host": "apikeys.civiccomputing.com",
+      "method": "GET",
+      "status": 200,
+      "query_params": {
+        "d": [
+          "www.colchester.gov.uk"
+        ],
+        "p": [
+          "CookieControl Single-Site"
+        ],
+        "v": [
+          "9"
+        ],
+        "k": [
+          "6d393ae15905fd6bb7ae8117a9412eecda8b8b4c"
+        ],
+        "format": [
+          "json"
+        ]
+      },
+      "request_headers": {
+        "accept": "application/json, text/plain, */*",
+        "origin": "https://www.colchester.gov.uk",
+        "referer": "https://www.colchester.gov.uk/"
+      },
+      "response_headers": {
+        "cache-control": "max-age=3600, private, no-store",
+        "content-type": "application/json",
+        "x-apikeys": "hit",
+        "x-cf-test": "true",
+        "x-content-type-options": "nosniff",
+        "x-xss-protection": "1"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 307,
+        "content_ref": "2b35364b48029147eccfeac509b4298c9d71eac5.json"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T16:34:47.380Z",
+      "duration_ms": 25.678,
+      "endpoint": "/g/collect",
+      "host": "region1.google-analytics.com",
+      "method": "POST",
+      "status": 204,
+      "query_params": {
+        "v": [
+          "2"
+        ],
+        "tid": [
+          "G-FCY6R8B21W"
+        ],
+        "gtm": [
+          "45je57h0h2v9112910236za200"
+        ],
+        "_p": [
+          "1753115687337"
+        ],
+        "gcs": [
+          "G100"
+        ],
+        "gcd": [
+          "13p3p3l3l5l1"
+        ],
+        "npa": [
+          "0"
+        ],
+        "dma": [
+          "0"
+        ],
+        "tag_exp": [
+          "101509157~103116026~103200004~103233427~104684208~104684211~104991058"
+        ],
+        "cid": [
+          "1661101507.1753115687"
+        ],
+        "ul": [
+          "en-gb"
+        ],
+        "sr": [
+          "800x600"
+        ],
+        "uaa": [
+          "arm"
+        ],
+        "uab": [
+          "64"
+        ],
+        "uafvl": [
+          "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+        ],
+        "uamb": [
+          "0"
+        ],
+        "uap": [
+          "macOS"
+        ],
+        "uapv": [
+          "15.5.0"
+        ],
+        "uaw": [
+          "0"
+        ],
+        "are": [
+          "1"
+        ],
+        "frm": [
+          "0"
+        ],
+        "pscdl": [
+          "denied"
+        ],
+        "_s": [
+          "1"
+        ],
+        "sid": [
+          "1753115687"
+        ],
+        "sct": [
+          "1"
+        ],
+        "seg": [
+          "0"
+        ],
+        "dl": [
+          "https://www.colchester.gov.uk/your-recycling-calendar/"
+        ],
+        "dr": [
+          "https://www.colchester.gov.uk/recycling-and-rubbish/"
+        ],
+        "dt": [
+          "Your recycling calendar \u00a0\u00b7 Colchester City Council"
+        ],
+        "en": [
+          "page_view"
+        ],
+        "_fv": [
+          "1"
+        ],
+        "_nsi": [
+          "1"
+        ],
+        "_ss": [
+          "1"
+        ],
+        "_ee": [
+          "1"
+        ],
+        "tfd": [
+          "505"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "cookie": "[cookies present]",
+        "origin": "https://www.colchester.gov.uk",
+        "referer": "https://www.colchester.gov.uk/"
+      },
+      "response_headers": {
+        "cache-control": "no-cache, no-store, must-revalidate",
+        "content-type": "text/plain"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T16:34:47.472Z",
+      "duration_ms": 15.077,
+      "endpoint": "/v2/track",
+      "host": "westeurope-5.in.applicationinsights.azure.com",
+      "method": "POST",
+      "status": 200,
+      "request_headers": {
+        "accept": "*/*",
+        "content-type": "application/json",
+        "origin": "https://www.colchester.gov.uk",
+        "referer": "https://www.colchester.gov.uk/"
+      },
+      "response_headers": {
+        "content-type": "application/json; charset=utf-8",
+        "x-content-type-options": "nosniff"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 62,
+        "content_ref": "22ce4498db63718bc49ecd6746c021c120211c12.json"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T16:34:47.377Z",
+      "duration_ms": 263.708,
+      "endpoint": "/{id}",
+      "host": "www.colchester.gov.uk",
+      "method": "GET",
+      "status": 200,
+      "path_params": [
+        "your-recycling-calendar"
+      ],
+      "request_headers": {
+        "accept": "application/json, text/javascript, */*; q=0.01",
+        "cookie": "[cookies present]",
+        "referer": "https://www.colchester.gov.uk/your-recycling-calendar/",
+        "x-requested-with": "XMLHttpRequest"
+      },
+      "response_headers": {
+        "cache-control": "no-cache, no-store, must-revalidate",
+        "content-type": "text/html; charset=utf-8",
+        "x-frame-options": "SAMEORIGIN",
+        "x-ms-portal-app": "site-d40aeee5-a782-45ad-8f5a-540d634ba4ad-EUn",
+        "x-ms-request-id": "bcc69513-66b2-48cc-a842-771c9511c5f0"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 65044,
+        "compressed": true,
+        "content_ref": "d48596978c30eb319b330c4296873abe43ac496e.html"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T16:34:50.051Z",
+      "duration_ms": -1,
+      "endpoint": "/g/collect",
+      "host": "region1.google-analytics.com",
+      "method": "POST",
+      "status": -1,
+      "query_params": {
+        "v": [
+          "2"
+        ],
+        "tid": [
+          "G-FCY6R8B21W"
+        ],
+        "gtm": [
+          "45je57h0h2v9112910236za200"
+        ],
+        "_p": [
+          "1753115687337"
+        ],
+        "gcs": [
+          "G101"
+        ],
+        "gcd": [
+          "13p3r3l3l5l1"
+        ],
+        "npa": [
+          "0"
+        ],
+        "dma": [
+          "0"
+        ],
+        "tag_exp": [
+          "101509157~103116026~103200004~103233427~104684208~104684211~104991058"
+        ],
+        "cid": [
+          "1143158943.1753115669"
+        ],
+        "ul": [
+          "en-gb"
+        ],
+        "sr": [
+          "800x600"
+        ],
+        "uaa": [
+          "arm"
+        ],
+        "uab": [
+          "64"
+        ],
+        "uafvl": [
+          "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+        ],
+        "uamb": [
+          "0"
+        ],
+        "uap": [
+          "macOS"
+        ],
+        "uapv": [
+          "15.5.0"
+        ],
+        "uaw": [
+          "0"
+        ],
+        "are": [
+          "1"
+        ],
+        "frm": [
+          "0"
+        ],
+        "pscdl": [
+          "denied"
+        ],
+        "_eu": [
+          "AAAAAAQ"
+        ],
+        "_s": [
+          "2"
+        ],
+        "sid": [
+          "1753115669"
+        ],
+        "sct": [
+          "1"
+        ],
+        "seg": [
+          "1"
+        ],
+        "dl": [
+          "https://www.colchester.gov.uk/your-recycling-calendar/"
+        ],
+        "dr": [
+          "https://www.colchester.gov.uk/recycling-and-rubbish/"
+        ],
+        "dt": [
+          "Your recycling calendar \u00a0\u00b7 Colchester City Council"
+        ],
+        "en": [
+          "user_engagement"
+        ],
+        "ep.ga_temp_client_id": [
+          "1661101507.1753115687"
+        ],
+        "_et": [
+          "26"
+        ],
+        "tfd": [
+          "3201"
+        ]
+      },
+      "request_headers": {
+        "referer": "https://www.colchester.gov.uk/"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T16:34:50.052Z",
+      "duration_ms": -1,
+      "endpoint": "/g/collect",
+      "host": "region1.google-analytics.com",
+      "method": "POST",
+      "status": -1,
+      "query_params": {
+        "v": [
+          "2"
+        ],
+        "tid": [
+          "G-FCY6R8B21W"
+        ],
+        "gtm": [
+          "45je57h0h2v9112910236za200"
+        ],
+        "_p": [
+          "1753115687337"
+        ],
+        "gcs": [
+          "G101"
+        ],
+        "gcd": [
+          "13p3r3l3l5l1"
+        ],
+        "npa": [
+          "0"
+        ],
+        "dma": [
+          "0"
+        ],
+        "tag_exp": [
+          "101509157~103116026~103200004~103233427~104684208~104684211~104991058"
+        ],
+        "cid": [
+          "1143158943.1753115669"
+        ],
+        "ul": [
+          "en-gb"
+        ],
+        "sr": [
+          "800x600"
+        ],
+        "uaa": [
+          "arm"
+        ],
+        "uab": [
+          "64"
+        ],
+        "uafvl": [
+          "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+        ],
+        "uamb": [
+          "0"
+        ],
+        "uap": [
+          "macOS"
+        ],
+        "uapv": [
+          "15.5.0"
+        ],
+        "uaw": [
+          "0"
+        ],
+        "are": [
+          "1"
+        ],
+        "frm": [
+          "0"
+        ],
+        "pscdl": [
+          "denied"
+        ],
+        "_s": [
+          "3"
+        ],
+        "sid": [
+          "1753115669"
+        ],
+        "sct": [
+          "1"
+        ],
+        "seg": [
+          "1"
+        ],
+        "dl": [
+          "https://www.colchester.gov.uk/your-recycling-calendar/"
+        ],
+        "dr": [
+          "https://www.colchester.gov.uk/recycling-and-rubbish/"
+        ],
+        "dt": [
+          "Your recycling calendar \u00a0\u00b7 Colchester City Council"
+        ],
+        "en": [
+          "user_engagement"
+        ],
+        "_et": [
+          "2665"
+        ],
+        "tfd": [
+          "3202"
+        ]
+      },
+      "request_headers": {
+        "referer": "https://www.colchester.gov.uk/"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T16:34:49.781Z",
+      "duration_ms": 118.24900000000001,
+      "endpoint": "/OneCollector/1.0",
+      "host": "eu-mobile.events.data.microsoft.com",
+      "method": "POST",
+      "status": 204,
+      "query_params": {
+        "cors": [
+          "true"
+        ],
+        "content-type": [
+          "application/x-json-stream"
+        ],
+        "client-id": [
+          "NO_AUTH"
+        ],
+        "client-version": [
+          "1DS-Web-JS-3.2.8"
+        ],
+        "apikey": [
+          "197418c5cb8c4426b201f9db2e87b914-87887378-2790-49b0-9295-51f43b6204b1-7172"
+        ],
+        "upload-time": [
+          "1753115689724"
+        ],
+        "time-delta-to-apply-millis": [
+          "use-collector-delta"
+        ],
+        "w": [
+          "2"
+        ],
+        "NoResponseBody": [
+          "true"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "content-type": "text/plain;charset=UTF-8",
+        "origin": "https://www.colchester.gov.uk",
+        "referer": "https://www.colchester.gov.uk/"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T16:34:50.096Z",
+      "duration_ms": 1.061,
+      "endpoint": "/assets/fonts/icomoon.ttf",
+      "host": "cbc-live-dotgovresources.azurewebsites.net",
+      "method": "GET",
+      "status": 200,
+      "request_headers": {
+        "origin": "https://www.colchester.gov.uk",
+        "referer": "https://cbc-live-dotgovresources.azurewebsites.net/assets/css/templates/global.css"
+      },
+      "response_headers": {
+        "x-ms-middleware-request-id": "00000000-0000-0000-0000-000000000000",
+        "content-type": "application/octet-stream",
+        "x-powered-by": "ASP.NET"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T16:34:49.779Z",
+      "duration_ms": 258.035,
+      "endpoint": "/{id}",
+      "host": "www.colchester.gov.uk",
+      "method": "GET",
+      "status": 200,
+      "path_params": [
+        "your-recycling-calendar"
+      ],
+      "query_params": {
+        "start": [
+          "true"
+        ]
+      },
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+        "cookie": "[cookies present]",
+        "referer": "https://www.colchester.gov.uk/your-recycling-calendar/"
+      },
+      "response_headers": {
+        "cache-control": "no-cache, no-store, must-revalidate",
+        "content-type": "text/html; charset=utf-8",
+        "x-frame-options": "SAMEORIGIN",
+        "x-ms-portal-app": "site-d40aeee5-a782-45ad-8f5a-540d634ba4ad-EUn",
+        "x-ms-request-id": "b1b200d2-1307-497c-8d53-03bb7312f176"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 63189,
+        "compressed": true,
+        "content_ref": "b1a3a5bf59b41fe9a6fb7f22e7945b89465b0ab6.html"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T16:34:50.195Z",
+      "duration_ms": 17.953,
+      "endpoint": "/c/v",
+      "host": "apikeys.civiccomputing.com",
+      "method": "GET",
+      "status": 200,
+      "query_params": {
+        "d": [
+          "www.colchester.gov.uk"
+        ],
+        "p": [
+          "CookieControl Single-Site"
+        ],
+        "v": [
+          "9"
+        ],
+        "k": [
+          "6d393ae15905fd6bb7ae8117a9412eecda8b8b4c"
+        ],
+        "format": [
+          "json"
+        ]
+      },
+      "request_headers": {
+        "accept": "application/json, text/plain, */*",
+        "origin": "https://www.colchester.gov.uk",
+        "referer": "https://www.colchester.gov.uk/"
+      },
+      "response_headers": {
+        "cache-control": "max-age=3600, private, no-store",
+        "content-type": "application/json",
+        "x-apikeys": "hit",
+        "x-cf-test": "true",
+        "x-content-type-options": "nosniff",
+        "x-xss-protection": "1"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 307,
+        "content_ref": "2b35364b48029147eccfeac509b4298c9d71eac5.json"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T16:34:50.201Z",
+      "duration_ms": 12.012,
+      "endpoint": "/g/collect",
+      "host": "region1.google-analytics.com",
+      "method": "POST",
+      "status": 204,
+      "query_params": {
+        "v": [
+          "2"
+        ],
+        "tid": [
+          "G-FCY6R8B21W"
+        ],
+        "gtm": [
+          "45je57h0h2v9112910236za200"
+        ],
+        "_p": [
+          "1753115690158"
+        ],
+        "gcs": [
+          "G100"
+        ],
+        "gcd": [
+          "13p3p3l3l5l1"
+        ],
+        "npa": [
+          "0"
+        ],
+        "dma": [
+          "0"
+        ],
+        "tag_exp": [
+          "101509157~103116026~103200004~103233427~104684208~104684211~104991058"
+        ],
+        "cid": [
+          "1268550262.1753115690"
+        ],
+        "ul": [
+          "en-gb"
+        ],
+        "sr": [
+          "800x600"
+        ],
+        "uaa": [
+          "arm"
+        ],
+        "uab": [
+          "64"
+        ],
+        "uafvl": [
+          "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+        ],
+        "uamb": [
+          "0"
+        ],
+        "uap": [
+          "macOS"
+        ],
+        "uapv": [
+          "15.5.0"
+        ],
+        "uaw": [
+          "0"
+        ],
+        "are": [
+          "1"
+        ],
+        "frm": [
+          "0"
+        ],
+        "pscdl": [
+          "denied"
+        ],
+        "_s": [
+          "1"
+        ],
+        "sid": [
+          "1753115690"
+        ],
+        "sct": [
+          "1"
+        ],
+        "seg": [
+          "0"
+        ],
+        "dl": [
+          "https://www.colchester.gov.uk/your-recycling-calendar/?start=true"
+        ],
+        "dr": [
+          "https://www.colchester.gov.uk/your-recycling-calendar/"
+        ],
+        "dt": [
+          "Your recycling calendar \u00a0\u00b7 Colchester City Council"
+        ],
+        "en": [
+          "page_view"
+        ],
+        "_fv": [
+          "1"
+        ],
+        "_nsi": [
+          "1"
+        ],
+        "_ss": [
+          "1"
+        ],
+        "_ee": [
+          "1"
+        ],
+        "tfd": [
+          "465"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "cookie": "[cookies present]",
+        "origin": "https://www.colchester.gov.uk",
+        "referer": "https://www.colchester.gov.uk/"
+      },
+      "response_headers": {
+        "cache-control": "no-cache, no-store, must-revalidate",
+        "content-type": "text/plain"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T16:34:50.299Z",
+      "duration_ms": 16.729,
+      "endpoint": "/v2/track",
+      "host": "westeurope-5.in.applicationinsights.azure.com",
+      "method": "POST",
+      "status": 200,
+      "request_headers": {
+        "accept": "*/*",
+        "content-type": "application/json",
+        "origin": "https://www.colchester.gov.uk",
+        "referer": "https://www.colchester.gov.uk/"
+      },
+      "response_headers": {
+        "content-type": "application/json; charset=utf-8",
+        "x-content-type-options": "nosniff"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 62,
+        "content_ref": "672afa53bb4f0c42109744e70cadf4c7e6f3e783.json"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T16:34:50.200Z",
+      "duration_ms": 257.966,
+      "endpoint": "/{id}",
+      "host": "www.colchester.gov.uk",
+      "method": "GET",
+      "status": 200,
+      "path_params": [
+        "your-recycling-calendar"
+      ],
+      "query_params": {
+        "start": [
+          "true"
+        ]
+      },
+      "request_headers": {
+        "accept": "application/json, text/javascript, */*; q=0.01",
+        "cookie": "[cookies present]",
+        "referer": "https://www.colchester.gov.uk/your-recycling-calendar/?start=true",
+        "x-requested-with": "XMLHttpRequest"
+      },
+      "response_headers": {
+        "cache-control": "no-cache, no-store, must-revalidate",
+        "content-type": "text/html; charset=utf-8",
+        "x-frame-options": "SAMEORIGIN",
+        "x-ms-portal-app": "site-d40aeee5-a782-45ad-8f5a-540d634ba4ad-EUn",
+        "x-ms-request-id": "68409286-28f6-4220-9c7a-ba44fe8c67a1"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 63189,
+        "compressed": true,
+        "content_ref": "b88aedd57496bfc5f1f7de732bf1ad205641e261.html"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T16:34:53.090Z",
+      "duration_ms": 25.773,
+      "endpoint": "/OneCollector/1.0",
+      "host": "eu-mobile.events.data.microsoft.com",
+      "method": "POST",
+      "status": 200,
+      "query_params": {
+        "cors": [
+          "true"
+        ],
+        "content-type": [
+          "application/x-json-stream"
+        ],
+        "w": [
+          "2"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "content-type": "application/x-json-stream",
+        "origin": "https://www.colchester.gov.uk",
+        "referer": "https://www.colchester.gov.uk/"
+      },
+      "response_headers": {
+        "content-type": "application/json"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 24,
+        "content_ref": "ac7cf704563b3e32cc67770ea72a3873cc6fc146.json"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T16:34:55.202Z",
+      "duration_ms": 14.793,
+      "endpoint": "/g/collect",
+      "host": "region1.google-analytics.com",
+      "method": "POST",
+      "status": 204,
+      "query_params": {
+        "v": [
+          "2"
+        ],
+        "tid": [
+          "G-FCY6R8B21W"
+        ],
+        "gtm": [
+          "45je57h0h2v9112910236za200"
+        ],
+        "_p": [
+          "1753115690158"
+        ],
+        "gcs": [
+          "G101"
+        ],
+        "gcd": [
+          "13p3r3l3l5l1"
+        ],
+        "npa": [
+          "0"
+        ],
+        "dma": [
+          "0"
+        ],
+        "tag_exp": [
+          "101509157~103116026~103200004~103233427~104684208~104684211~104991058"
+        ],
+        "cid": [
+          "1143158943.1753115669"
+        ],
+        "ul": [
+          "en-gb"
+        ],
+        "sr": [
+          "800x600"
+        ],
+        "uaa": [
+          "arm"
+        ],
+        "uab": [
+          "64"
+        ],
+        "uafvl": [
+          "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+        ],
+        "uamb": [
+          "0"
+        ],
+        "uap": [
+          "macOS"
+        ],
+        "uapv": [
+          "15.5.0"
+        ],
+        "uaw": [
+          "0"
+        ],
+        "are": [
+          "1"
+        ],
+        "frm": [
+          "0"
+        ],
+        "pscdl": [
+          "denied"
+        ],
+        "_eu": [
+          "AAAAAAQ"
+        ],
+        "_s": [
+          "2"
+        ],
+        "sid": [
+          "1753115669"
+        ],
+        "sct": [
+          "1"
+        ],
+        "seg": [
+          "1"
+        ],
+        "dl": [
+          "https://www.colchester.gov.uk/your-recycling-calendar/?start=true"
+        ],
+        "dr": [
+          "https://www.colchester.gov.uk/your-recycling-calendar/"
+        ],
+        "dt": [
+          "Your recycling calendar \u00a0\u00b7 Colchester City Council"
+        ],
+        "en": [
+          "user_engagement"
+        ],
+        "ep.ga_temp_client_id": [
+          "1268550262.1753115690"
+        ],
+        "_et": [
+          "5"
+        ],
+        "tfd": [
+          "5472"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "cookie": "[cookies present]",
+        "origin": "https://www.colchester.gov.uk",
+        "referer": "https://www.colchester.gov.uk/"
+      },
+      "response_headers": {
+        "cache-control": "no-cache, no-store, must-revalidate",
+        "content-type": "text/plain"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T16:34:56.108Z",
+      "duration_ms": 46.519,
+      "endpoint": "/OneCollector/1.0",
+      "host": "eu-mobile.events.data.microsoft.com",
+      "method": "POST",
+      "status": 200,
+      "query_params": {
+        "cors": [
+          "true"
+        ],
+        "content-type": [
+          "application/x-json-stream"
+        ],
+        "w": [
+          "2"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "content-type": "application/x-json-stream",
+        "origin": "https://www.colchester.gov.uk",
+        "referer": "https://www.colchester.gov.uk/"
+      },
+      "response_headers": {
+        "content-type": "application/json"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 25,
+        "content_ref": "ced5dae5ff1ed26dc6c9d55cec79b0a2dd3766a9.json"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T16:34:56.314Z",
+      "duration_ms": 350.082,
+      "endpoint": "/_api/new_llpgs",
+      "host": "www.colchester.gov.uk",
+      "method": "GET",
+      "status": 200,
+      "query_params": {
+        "$select": [
+          "new_llpgid,new_saon,new_paon,new_street,new_postcoide,new_name"
+        ],
+        "$filter": [
+          "(new_postcoide eq 'CM9 8HL')"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "cookie": "[cookies present]",
+        "referer": "https://www.colchester.gov.uk/your-recycling-calendar/?start=true",
+        "x-requested-with": "XMLHttpRequest"
+      },
+      "response_headers": {
+        "cache-control": "no-cache",
+        "content-type": "application/json; charset=utf-8",
+        "x-frame-options": "SAMEORIGIN",
+        "x-ms-cds-service-request-id": "15599319-04c8-4a12-adb1-109aae85c9c3",
+        "x-ms-portal-app": "site-d40aeee5-a782-45ad-8f5a-540d634ba4ad-EUn",
+        "x-ms-request-id": "83b7000a-f39e-479c-972f-5f7eeba401b6"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 11129,
+        "content_ref": "136630e2fcd4656fef54b1248c0a09e1464c0ef6.json"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T16:35:01.796Z",
+      "duration_ms": 118.722,
+      "endpoint": "/api/calendar/{id}",
+      "host": "new-llpg-app.azurewebsites.net",
+      "method": "GET",
+      "status": 200,
+      "path_params": [
+        "1e61a332-64a4-ea11-a812-000d3ab2928c"
+      ],
+      "request_headers": {
+        "accept": "*/*",
+        "origin": "https://www.colchester.gov.uk",
+        "referer": "https://www.colchester.gov.uk/"
+      },
+      "response_headers": {
+        "cache-control": "no-cache",
+        "content-type": "application/json; charset=utf-8",
+        "set-cookie": "[cookies present]",
+        "x-aspnet-version": "4.0.30319",
+        "x-powered-by": "ASP.NET"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 741,
+        "content_ref": "91351c73ecc7643799dbb31742eaaab88a23603b.json"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T16:35:02.726Z",
+      "duration_ms": 27.697000000000003,
+      "endpoint": "/OneCollector/1.0",
+      "host": "eu-mobile.events.data.microsoft.com",
+      "method": "POST",
+      "status": 200,
+      "query_params": {
+        "cors": [
+          "true"
+        ],
+        "content-type": [
+          "application/x-json-stream"
+        ],
+        "w": [
+          "2"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "content-type": "application/x-json-stream",
+        "origin": "https://www.colchester.gov.uk",
+        "referer": "https://www.colchester.gov.uk/"
+      },
+      "response_headers": {
+        "content-type": "application/json"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 24,
+        "content_ref": "2aafc13612022c1dda5b77b927176a0b3abdf385.json"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T16:35:10.224Z",
+      "duration_ms": 20.346,
+      "endpoint": "/v2/track",
+      "host": "westeurope-5.in.applicationinsights.azure.com",
+      "method": "POST",
+      "status": 200,
+      "request_headers": {
+        "accept": "*/*",
+        "content-type": "application/json",
+        "origin": "https://www.colchester.gov.uk",
+        "referer": "https://www.colchester.gov.uk/"
+      },
+      "response_headers": {
+        "content-type": "application/json; charset=utf-8",
+        "x-content-type-options": "nosniff"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 62,
+        "content_ref": "672afa53bb4f0c42109744e70cadf4c7e6f3e783.json"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T16:34:28.867Z",
+      "duration_ms": -1,
+      "endpoint": "/OneCollector/1.0",
+      "host": "eu-mobile.events.data.microsoft.com",
+      "method": "POST",
+      "status": -1,
+      "query_params": {
+        "cors": [
+          "true"
+        ],
+        "content-type": [
+          "application/x-json-stream"
+        ],
+        "client-id": [
+          "NO_AUTH"
+        ],
+        "client-version": [
+          "1DS-Web-JS-3.2.8"
+        ],
+        "apikey": [
+          "197418c5cb8c4426b201f9db2e87b914-87887378-2790-49b0-9295-51f43b6204b1-7172"
+        ],
+        "upload-time": [
+          "1753115668815"
+        ],
+        "w": [
+          "2"
+        ],
+        "NoResponseBody": [
+          "true"
+        ]
+      },
+      "request_headers": {
+        "referer": "https://www.colchester.gov.uk/",
+        "content-type": "text/plain;charset=UTF-8"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T16:34:28.867Z",
+      "duration_ms": -1,
+      "endpoint": "/OneCollector/1.0",
+      "host": "eu-mobile.events.data.microsoft.com",
+      "method": "POST",
+      "status": -1,
+      "query_params": {
+        "cors": [
+          "true"
+        ],
+        "content-type": [
+          "application/x-json-stream"
+        ],
+        "client-id": [
+          "NO_AUTH"
+        ],
+        "client-version": [
+          "1DS-Web-JS-3.2.8"
+        ],
+        "apikey": [
+          "197418c5cb8c4426b201f9db2e87b914-87887378-2790-49b0-9295-51f43b6204b1-7172"
+        ],
+        "upload-time": [
+          "1753115668815"
+        ],
+        "w": [
+          "2"
+        ],
+        "NoResponseBody": [
+          "true"
+        ]
+      },
+      "request_headers": {
+        "referer": "https://www.colchester.gov.uk/",
+        "content-type": "text/plain;charset=UTF-8"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T16:34:47.238Z",
+      "duration_ms": -1,
+      "endpoint": "/OneCollector/1.0",
+      "host": "eu-mobile.events.data.microsoft.com",
+      "method": "POST",
+      "status": -1,
+      "query_params": {
+        "cors": [
+          "true"
+        ],
+        "content-type": [
+          "application/x-json-stream"
+        ],
+        "client-id": [
+          "NO_AUTH"
+        ],
+        "client-version": [
+          "1DS-Web-JS-3.2.8"
+        ],
+        "apikey": [
+          "197418c5cb8c4426b201f9db2e87b914-87887378-2790-49b0-9295-51f43b6204b1-7172"
+        ],
+        "upload-time": [
+          "1753115687228"
+        ],
+        "time-delta-to-apply-millis": [
+          "177"
+        ],
+        "w": [
+          "2"
+        ],
+        "NoResponseBody": [
+          "true"
+        ]
+      },
+      "request_headers": {
+        "referer": "https://www.colchester.gov.uk/",
+        "content-type": "text/plain;charset=UTF-8"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T16:34:49.782Z",
+      "duration_ms": -1,
+      "endpoint": "/OneCollector/1.0",
+      "host": "eu-mobile.events.data.microsoft.com",
+      "method": "POST",
+      "status": -1,
+      "query_params": {
+        "cors": [
+          "true"
+        ],
+        "content-type": [
+          "application/x-json-stream"
+        ],
+        "client-id": [
+          "NO_AUTH"
+        ],
+        "client-version": [
+          "1DS-Web-JS-3.2.8"
+        ],
+        "apikey": [
+          "197418c5cb8c4426b201f9db2e87b914-87887378-2790-49b0-9295-51f43b6204b1-7172"
+        ],
+        "upload-time": [
+          "1753115689725"
+        ],
+        "w": [
+          "2"
+        ],
+        "NoResponseBody": [
+          "true"
+        ]
+      },
+      "request_headers": {
+        "referer": "https://www.colchester.gov.uk/",
+        "content-type": "text/plain;charset=UTF-8"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T16:34:49.783Z",
+      "duration_ms": -1,
+      "endpoint": "/OneCollector/1.0",
+      "host": "eu-mobile.events.data.microsoft.com",
+      "method": "POST",
+      "status": -1,
+      "query_params": {
+        "cors": [
+          "true"
+        ],
+        "content-type": [
+          "application/x-json-stream"
+        ],
+        "client-id": [
+          "NO_AUTH"
+        ],
+        "client-version": [
+          "1DS-Web-JS-3.2.8"
+        ],
+        "apikey": [
+          "197418c5cb8c4426b201f9db2e87b914-87887378-2790-49b0-9295-51f43b6204b1-7172"
+        ],
+        "upload-time": [
+          "1753115689725"
+        ],
+        "w": [
+          "2"
+        ],
+        "NoResponseBody": [
+          "true"
+        ]
+      },
+      "request_headers": {
+        "referer": "https://www.colchester.gov.uk/",
+        "content-type": "text/plain;charset=UTF-8"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T16:34:49.783Z",
+      "duration_ms": -1,
+      "endpoint": "/OneCollector/1.0",
+      "host": "eu-mobile.events.data.microsoft.com",
+      "method": "POST",
+      "status": -1,
+      "query_params": {
+        "cors": [
+          "true"
+        ],
+        "content-type": [
+          "application/x-json-stream"
+        ],
+        "client-id": [
+          "NO_AUTH"
+        ],
+        "client-version": [
+          "1DS-Web-JS-3.2.8"
+        ],
+        "apikey": [
+          "197418c5cb8c4426b201f9db2e87b914-87887378-2790-49b0-9295-51f43b6204b1-7172"
+        ],
+        "upload-time": [
+          "1753115689726"
+        ],
+        "w": [
+          "2"
+        ],
+        "NoResponseBody": [
+          "true"
+        ]
+      },
+      "request_headers": {
+        "referer": "https://www.colchester.gov.uk/",
+        "content-type": "text/plain;charset=UTF-8"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T16:34:49.783Z",
+      "duration_ms": -1,
+      "endpoint": "/OneCollector/1.0",
+      "host": "eu-mobile.events.data.microsoft.com",
+      "method": "POST",
+      "status": -1,
+      "query_params": {
+        "cors": [
+          "true"
+        ],
+        "content-type": [
+          "application/x-json-stream"
+        ],
+        "client-id": [
+          "NO_AUTH"
+        ],
+        "client-version": [
+          "1DS-Web-JS-3.2.8"
+        ],
+        "apikey": [
+          "197418c5cb8c4426b201f9db2e87b914-87887378-2790-49b0-9295-51f43b6204b1-7172"
+        ],
+        "upload-time": [
+          "1753115689726"
+        ],
+        "w": [
+          "2"
+        ],
+        "NoResponseBody": [
+          "true"
+        ]
+      },
+      "request_headers": {
+        "referer": "https://www.colchester.gov.uk/",
+        "content-type": "text/plain;charset=UTF-8"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T16:34:50.053Z",
+      "duration_ms": -1,
+      "endpoint": "/OneCollector/1.0",
+      "host": "eu-mobile.events.data.microsoft.com",
+      "method": "POST",
+      "status": -1,
+      "query_params": {
+        "cors": [
+          "true"
+        ],
+        "content-type": [
+          "application/x-json-stream"
+        ],
+        "client-id": [
+          "NO_AUTH"
+        ],
+        "client-version": [
+          "1DS-Web-JS-3.2.8"
+        ],
+        "apikey": [
+          "197418c5cb8c4426b201f9db2e87b914-87887378-2790-49b0-9295-51f43b6204b1-7172"
+        ],
+        "upload-time": [
+          "1753115690046"
+        ],
+        "w": [
+          "2"
+        ],
+        "NoResponseBody": [
+          "true"
+        ]
+      },
+      "request_headers": {
+        "referer": "https://www.colchester.gov.uk/",
+        "content-type": "text/plain;charset=UTF-8"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T16:34:50.055Z",
+      "duration_ms": -1,
+      "endpoint": "/OneCollector/1.0",
+      "host": "eu-mobile.events.data.microsoft.com",
+      "method": "POST",
+      "status": -1,
+      "query_params": {
+        "cors": [
+          "true"
+        ],
+        "content-type": [
+          "application/x-json-stream"
+        ],
+        "client-id": [
+          "NO_AUTH"
+        ],
+        "client-version": [
+          "1DS-Web-JS-3.2.8"
+        ],
+        "apikey": [
+          "197418c5cb8c4426b201f9db2e87b914-87887378-2790-49b0-9295-51f43b6204b1-7172"
+        ],
+        "upload-time": [
+          "1753115690047"
+        ],
+        "w": [
+          "2"
+        ],
+        "NoResponseBody": [
+          "true"
+        ]
+      },
+      "request_headers": {
+        "referer": "https://www.colchester.gov.uk/",
+        "content-type": "text/plain;charset=UTF-8"
+      }
     }
   ],
-  "navigation_events": [
-    {
-      "url": "https://www.colchester.gov.uk/check-my-collection-day/",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "text/html; charset=utf-8",
-      "size": 69325,
-      "timestamp": "2025-07-21T16:34:26.886Z"
+  "analysis": {
+    "total_requests": 58,
+    "unique_endpoints": 14,
+    "methods_used": [
+      "GET",
+      "POST"
+    ],
+    "status_codes": {
+      "200": 35,
+      "204": 9,
+      "-1": 14
     },
-    {
-      "url": "https://cbc-live-dotgovresources.azurewebsites.net/assets/css/templates/new-template.css",
-      "method": "GET",
-      "status": 404,
-      "redirect_url": null,
-      "mime_type": "text/html",
-      "size": -1,
-      "timestamp": "2025-07-21T16:34:27.408Z"
-    },
-    {
-      "url": "https://cbccrmdata.blob.core.windows.net/noteattachment/CBC-null-AFC-Logo-AFC-Logo%20(1).png",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/octet-stream",
-      "size": 6698,
-      "timestamp": "2025-07-21T16:34:27.414Z"
-    },
-    {
-      "url": "https://cbc-live-dotgovresources.azurewebsites.net/assets/fonts/icomoon.ttf?yboenz",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/octet-stream",
-      "size": 113336,
-      "timestamp": "2025-07-21T16:34:27.567Z"
-    },
-    {
-      "url": "https://cbc-live-dotgovresources.azurewebsites.net/assets/fonts/roboto/Roboto-Regular.ttf",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/octet-stream",
-      "size": 162876,
-      "timestamp": "2025-07-21T16:34:27.567Z"
-    },
-    {
-      "url": "https://cbc-live-dotgovresources.azurewebsites.net/assets/fonts/roboto/Roboto-Medium.ttf",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/octet-stream",
-      "size": 162588,
-      "timestamp": "2025-07-21T16:34:27.660Z"
-    },
-    {
-      "url": "https://apikeys.civiccomputing.com/c/v?d=www.colchester.gov.uk&p=CookieControl%20Single-Site&v=9&k=6d393ae15905fd6bb7ae8117a9412eecda8b8b4c&format=json",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json",
-      "size": 307,
-      "timestamp": "2025-07-21T16:34:28.636Z"
-    },
-    {
-      "url": "https://www.colchester.gov.uk/check-my-collection-day/",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "text/html; charset=utf-8",
-      "size": -1,
-      "timestamp": "2025-07-21T16:34:28.641Z"
-    },
-    {
-      "url": "https://cbc-live-dotgovresources.azurewebsites.net/assets/fonts/roboto/Roboto-Bold.ttf",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/octet-stream",
-      "size": 162464,
-      "timestamp": "2025-07-21T16:34:28.643Z"
-    },
-    {
-      "url": "https://content.powerapps.com/resource/powerappsportal/controls/pcf_loader/manifest-0.0.30.json",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json",
-      "size": -1,
-      "timestamp": "2025-07-21T16:34:28.805Z"
-    },
-    {
-      "url": "https://content.powerapps.com/resource/powerappsportal/controls/host/manifest-0.5.0.json",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json",
-      "size": -1,
-      "timestamp": "2025-07-21T16:34:28.806Z"
-    },
-    {
-      "url": "https://content.powerapps.com/resource/powerappsportal/controls/pcf_controls/manifest-3.3.2.json",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json",
-      "size": -1,
-      "timestamp": "2025-07-21T16:34:28.806Z"
-    },
-    {
-      "url": "https://content.powerapps.com/resource/powerappsportal/controls/controls_fluent_v9/manifest-0.0.33.json",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json",
-      "size": -1,
-      "timestamp": "2025-07-21T16:34:28.806Z"
-    },
-    {
-      "url": "https://content.powerapps.com/resource/powerappsportal/controls/data_grid/manifest-1.1.31.json",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json",
-      "size": -1,
-      "timestamp": "2025-07-21T16:34:28.806Z"
-    },
-    {
-      "url": "https://content.powerapps.com/resource/powerappsportal/controls/mf_shared/manifest-0.2.10.json",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json",
-      "size": -1,
-      "timestamp": "2025-07-21T16:34:28.806Z"
-    },
-    {
-      "url": "https://www.colchester.gov.uk/recycling-and-rubbish/",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "text/html; charset=utf-8",
-      "size": 156634,
-      "timestamp": "2025-07-21T16:34:28.864Z"
-    },
-    {
-      "url": "https://eu-mobile.events.data.microsoft.com/OneCollector/1.0/?cors=true&content-type=application/x-json-stream&client-id=NO_AUTH&client-version=1DS-Web-JS-3.2.8&apikey=197418c5cb8c4426b201f9db2e87b914-87887378-2790-49b0-9295-51f43b6204b1-7172&upload-time=1753115668814&time-delta-to-apply-millis=use-collector-delta&w=2&NoResponseBody=true",
-      "method": "POST",
-      "status": 204,
-      "redirect_url": null,
-      "mime_type": "x-unknown",
-      "size": -1,
-      "timestamp": "2025-07-21T16:34:28.866Z"
-    },
-    {
-      "url": "https://westeurope-5.in.applicationinsights.azure.com//v2/track",
-      "method": "POST",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json; charset=utf-8",
-      "size": -1,
-      "timestamp": "2025-07-21T16:34:28.918Z"
-    },
-    {
-      "url": "https://cbccrmdata.blob.core.windows.net/noteattachment/CBC-null-AFC-Logo-AFC-Logo%20(1).png",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/octet-stream",
-      "size": 6698,
-      "timestamp": "2025-07-21T16:34:29.267Z"
-    },
-    {
-      "url": "https://cbc-live-dotgovresources.azurewebsites.net/assets/fonts/roboto/Roboto-Bold.ttf",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/octet-stream",
-      "size": -1,
-      "timestamp": "2025-07-21T16:34:29.329Z"
-    },
-    {
-      "url": "https://cbc-live-dotgovresources.azurewebsites.net/assets/fonts/roboto/Roboto-Medium.ttf",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/octet-stream",
-      "size": -1,
-      "timestamp": "2025-07-21T16:34:29.330Z"
-    },
-    {
-      "url": "https://cbc-live-dotgovresources.azurewebsites.net/assets/fonts/roboto/Roboto-Regular.ttf",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/octet-stream",
-      "size": -1,
-      "timestamp": "2025-07-21T16:34:29.330Z"
-    },
-    {
-      "url": "https://cbc-live-dotgovresources.azurewebsites.net/assets/fonts/icomoon.ttf?yboenz",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/octet-stream",
-      "size": -1,
-      "timestamp": "2025-07-21T16:34:29.331Z"
-    },
-    {
-      "url": "https://cbccrmdata.blob.core.windows.net/noteattachment/CBC-null-Clouds-image-Clouds.png",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/octet-stream",
-      "size": 9368,
-      "timestamp": "2025-07-21T16:34:29.352Z"
-    },
-    {
-      "url": "https://cbccrmdata.blob.core.windows.net/noteattachment/CBC-null-recycling-and-rubbish-home-page-banner-recycling-and-rubbish-home-page-banner.jpg",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/octet-stream",
-      "size": 214503,
-      "timestamp": "2025-07-21T16:34:29.355Z"
-    },
-    {
-      "url": "https://apikeys.civiccomputing.com/c/v?d=www.colchester.gov.uk&p=CookieControl%20Single-Site&v=9&k=6d393ae15905fd6bb7ae8117a9412eecda8b8b4c&format=json",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json",
-      "size": 307,
-      "timestamp": "2025-07-21T16:34:29.355Z"
-    },
-    {
-      "url": "https://browser-update.org/update.min.js",
-      "method": "GET",
-      "status": 304,
-      "redirect_url": null,
-      "mime_type": "x-unknown",
-      "size": -1,
-      "timestamp": "2025-07-21T16:34:29.368Z"
-    },
-    {
-      "url": "https://www.colchester.gov.uk/recycling-and-rubbish/",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "text/html; charset=utf-8",
-      "size": 156634,
-      "timestamp": "2025-07-21T16:34:29.368Z"
-    },
-    {
-      "url": "https://westeurope-5.in.applicationinsights.azure.com//v2/track",
-      "method": "POST",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json; charset=utf-8",
-      "size": 62,
-      "timestamp": "2025-07-21T16:34:29.581Z"
-    },
-    {
-      "url": "https://eu-mobile.events.data.microsoft.com/OneCollector/1.0/?cors=true&content-type=application/x-json-stream&w=2",
-      "method": "POST",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json",
-      "size": 24,
-      "timestamp": "2025-07-21T16:34:32.316Z"
-    },
-    {
-      "url": "https://eu-mobile.events.data.microsoft.com/OneCollector/1.0/?cors=true&content-type=application/x-json-stream&w=2",
-      "method": "POST",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json",
-      "size": 25,
-      "timestamp": "2025-07-21T16:34:35.334Z"
-    },
-    {
-      "url": "https://www.colchester.gov.uk/your-recycling-calendar/",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "text/html; charset=utf-8",
-      "size": 65044,
-      "timestamp": "2025-07-21T16:34:46.905Z"
-    },
-    {
-      "url": "https://eu-mobile.events.data.microsoft.com/OneCollector/1.0/?cors=true&content-type=application/x-json-stream&client-id=NO_AUTH&client-version=1DS-Web-JS-3.2.8&apikey=197418c5cb8c4426b201f9db2e87b914-87887378-2790-49b0-9295-51f43b6204b1-7172&upload-time=1753115686840&time-delta-to-apply-millis=177&w=2&NoResponseBody=true",
-      "method": "POST",
-      "status": 204,
-      "redirect_url": null,
-      "mime_type": "x-unknown",
-      "size": -1,
-      "timestamp": "2025-07-21T16:34:46.906Z"
-    },
-    {
-      "url": "https://westeurope-5.in.applicationinsights.azure.com//v2/track",
-      "method": "POST",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json; charset=utf-8",
-      "size": -1,
-      "timestamp": "2025-07-21T16:34:46.906Z"
-    },
-    {
-      "url": "https://cbccrmdata.blob.core.windows.net/noteattachment/CBC-null-AFC-Logo-AFC-Logo%20(1).png",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/octet-stream",
-      "size": 6698,
-      "timestamp": "2025-07-21T16:34:47.269Z"
-    },
-    {
-      "url": "https://cbc-live-dotgovresources.azurewebsites.net/assets/fonts/roboto/Roboto-Bold.ttf",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/octet-stream",
-      "size": -1,
-      "timestamp": "2025-07-21T16:34:47.284Z"
-    },
-    {
-      "url": "https://cbc-live-dotgovresources.azurewebsites.net/assets/fonts/roboto/Roboto-Medium.ttf",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/octet-stream",
-      "size": -1,
-      "timestamp": "2025-07-21T16:34:47.284Z"
-    },
-    {
-      "url": "https://cbc-live-dotgovresources.azurewebsites.net/assets/fonts/roboto/Roboto-Regular.ttf",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/octet-stream",
-      "size": -1,
-      "timestamp": "2025-07-21T16:34:47.285Z"
-    },
-    {
-      "url": "https://cbc-live-dotgovresources.azurewebsites.net/assets/fonts/icomoon.ttf?yboenz",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/octet-stream",
-      "size": -1,
-      "timestamp": "2025-07-21T16:34:47.285Z"
-    },
-    {
-      "url": "https://cbccrmdata.blob.core.windows.net/noteattachment/CBC-null-business-waste-banner-contentpage-business-waste-content-image.jpg",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/octet-stream",
-      "size": 196785,
-      "timestamp": "2025-07-21T16:34:47.361Z"
-    },
-    {
-      "url": "https://apikeys.civiccomputing.com/c/v?d=www.colchester.gov.uk&p=CookieControl%20Single-Site&v=9&k=6d393ae15905fd6bb7ae8117a9412eecda8b8b4c&format=json",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json",
-      "size": 307,
-      "timestamp": "2025-07-21T16:34:47.368Z"
-    },
-    {
-      "url": "https://browser-update.org/update.min.js",
-      "method": "GET",
-      "status": 304,
-      "redirect_url": null,
-      "mime_type": "x-unknown",
-      "size": -1,
-      "timestamp": "2025-07-21T16:34:47.377Z"
-    },
-    {
-      "url": "https://www.colchester.gov.uk/your-recycling-calendar/",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "text/html; charset=utf-8",
-      "size": 65044,
-      "timestamp": "2025-07-21T16:34:47.377Z"
-    },
-    {
-      "url": "https://westeurope-5.in.applicationinsights.azure.com//v2/track",
-      "method": "POST",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json; charset=utf-8",
-      "size": 62,
-      "timestamp": "2025-07-21T16:34:47.472Z"
-    },
-    {
-      "url": "https://www.colchester.gov.uk/your-recycling-calendar/?start=true",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "text/html; charset=utf-8",
-      "size": 63189,
-      "timestamp": "2025-07-21T16:34:49.779Z"
-    },
-    {
-      "url": "https://eu-mobile.events.data.microsoft.com/OneCollector/1.0/?cors=true&content-type=application/x-json-stream&client-id=NO_AUTH&client-version=1DS-Web-JS-3.2.8&apikey=197418c5cb8c4426b201f9db2e87b914-87887378-2790-49b0-9295-51f43b6204b1-7172&upload-time=1753115689724&time-delta-to-apply-millis=use-collector-delta&w=2&NoResponseBody=true",
-      "method": "POST",
-      "status": 204,
-      "redirect_url": null,
-      "mime_type": "x-unknown",
-      "size": -1,
-      "timestamp": "2025-07-21T16:34:49.781Z"
-    },
-    {
-      "url": "https://cbccrmdata.blob.core.windows.net/noteattachment/CBC-null-AFC-Logo-AFC-Logo%20(1).png",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/octet-stream",
-      "size": 6698,
-      "timestamp": "2025-07-21T16:34:50.086Z"
-    },
-    {
-      "url": "https://cbc-live-dotgovresources.azurewebsites.net/assets/fonts/roboto/Roboto-Bold.ttf",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/octet-stream",
-      "size": -1,
-      "timestamp": "2025-07-21T16:34:50.094Z"
-    },
-    {
-      "url": "https://cbc-live-dotgovresources.azurewebsites.net/assets/fonts/roboto/Roboto-Medium.ttf",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/octet-stream",
-      "size": -1,
-      "timestamp": "2025-07-21T16:34:50.095Z"
-    },
-    {
-      "url": "https://cbc-live-dotgovresources.azurewebsites.net/assets/fonts/roboto/Roboto-Regular.ttf",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/octet-stream",
-      "size": -1,
-      "timestamp": "2025-07-21T16:34:50.095Z"
-    },
-    {
-      "url": "https://cbc-live-dotgovresources.azurewebsites.net/assets/fonts/icomoon.ttf?yboenz",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/octet-stream",
-      "size": -1,
-      "timestamp": "2025-07-21T16:34:50.096Z"
-    },
-    {
-      "url": "https://cbccrmdata.blob.core.windows.net/noteattachment/CBC-null-business-waste-banner-contentpage-business-waste-content-image.jpg",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/octet-stream",
-      "size": 196785,
-      "timestamp": "2025-07-21T16:34:50.194Z"
-    },
-    {
-      "url": "https://apikeys.civiccomputing.com/c/v?d=www.colchester.gov.uk&p=CookieControl%20Single-Site&v=9&k=6d393ae15905fd6bb7ae8117a9412eecda8b8b4c&format=json",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json",
-      "size": 307,
-      "timestamp": "2025-07-21T16:34:50.195Z"
-    },
-    {
-      "url": "https://browser-update.org/update.min.js",
-      "method": "GET",
-      "status": 304,
-      "redirect_url": null,
-      "mime_type": "x-unknown",
-      "size": -1,
-      "timestamp": "2025-07-21T16:34:50.200Z"
-    },
-    {
-      "url": "https://www.colchester.gov.uk/your-recycling-calendar/?start=true",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "text/html; charset=utf-8",
-      "size": 63189,
-      "timestamp": "2025-07-21T16:34:50.200Z"
-    },
-    {
-      "url": "https://westeurope-5.in.applicationinsights.azure.com//v2/track",
-      "method": "POST",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json; charset=utf-8",
-      "size": 62,
-      "timestamp": "2025-07-21T16:34:50.299Z"
-    },
-    {
-      "url": "https://eu-mobile.events.data.microsoft.com/OneCollector/1.0/?cors=true&content-type=application/x-json-stream&w=2",
-      "method": "POST",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json",
-      "size": 24,
-      "timestamp": "2025-07-21T16:34:53.090Z"
-    },
-    {
-      "url": "https://eu-mobile.events.data.microsoft.com/OneCollector/1.0/?cors=true&content-type=application/x-json-stream&w=2",
-      "method": "POST",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json",
-      "size": 25,
-      "timestamp": "2025-07-21T16:34:56.108Z"
-    },
-    {
-      "url": "https://www.colchester.gov.uk/_api/new_llpgs?$select=new_llpgid,new_saon,new_paon,new_street,new_postcoide,new_name&$filter=(new_postcoide%20eq%20%27CM9%208HL%27)",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json; charset=utf-8",
-      "size": 11129,
-      "timestamp": "2025-07-21T16:34:56.314Z"
-    },
-    {
-      "url": "https://new-llpg-app.azurewebsites.net/api/calendar/1e61a332-64a4-ea11-a812-000d3ab2928c",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json; charset=utf-8",
-      "size": 741,
-      "timestamp": "2025-07-21T16:35:01.796Z"
-    },
-    {
-      "url": "https://eu-mobile.events.data.microsoft.com/OneCollector/1.0/?cors=true&content-type=application/x-json-stream&w=2",
-      "method": "POST",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json",
-      "size": 24,
-      "timestamp": "2025-07-21T16:35:02.726Z"
-    },
-    {
-      "url": "https://westeurope-5.in.applicationinsights.azure.com//v2/track",
-      "method": "POST",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json; charset=utf-8",
-      "size": 62,
-      "timestamp": "2025-07-21T16:35:10.224Z"
-    }
-  ]
+    "endpoints_with_params": [
+      {
+        "endpoint": "/{id}",
+        "method": "GET",
+        "query_params": [],
+        "path_params": true
+      },
+      {
+        "endpoint": "/c/v",
+        "method": "GET",
+        "query_params": [
+          "d",
+          "p",
+          "v",
+          "k",
+          "format"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/g/collect",
+        "method": "POST",
+        "query_params": [
+          "v",
+          "tid",
+          "gtm",
+          "_p",
+          "gcs",
+          "gcd",
+          "npa",
+          "dma",
+          "tag_exp",
+          "cid",
+          "ul",
+          "sr",
+          "uaa",
+          "uab",
+          "uafvl",
+          "uamb",
+          "uap",
+          "uapv",
+          "uaw",
+          "are",
+          "frm",
+          "pscdl",
+          "_s",
+          "sid",
+          "sct",
+          "seg",
+          "dl",
+          "dt",
+          "en",
+          "_fv",
+          "_nsi",
+          "_ss",
+          "_ee",
+          "tfd"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/OneCollector/1.0",
+        "method": "POST",
+        "query_params": [
+          "cors",
+          "content-type",
+          "client-id",
+          "client-version",
+          "apikey",
+          "upload-time",
+          "w",
+          "NoResponseBody"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/OneCollector/1.0",
+        "method": "POST",
+        "query_params": [
+          "cors",
+          "content-type",
+          "client-id",
+          "client-version",
+          "apikey",
+          "upload-time",
+          "time-delta-to-apply-millis",
+          "w",
+          "NoResponseBody"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/g/collect",
+        "method": "POST",
+        "query_params": [
+          "v",
+          "tid",
+          "gtm",
+          "_p",
+          "gcs",
+          "gcd",
+          "npa",
+          "dma",
+          "tag_exp",
+          "cid",
+          "ul",
+          "sr",
+          "uaa",
+          "uab",
+          "uafvl",
+          "uamb",
+          "uap",
+          "uapv",
+          "uaw",
+          "are",
+          "frm",
+          "pscdl",
+          "_s",
+          "sid",
+          "sct",
+          "seg",
+          "dl",
+          "dr",
+          "dt",
+          "en",
+          "_fv",
+          "_nsi",
+          "_ss",
+          "_ee",
+          "tfd"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/OneCollector/1.0",
+        "method": "POST",
+        "query_params": [
+          "cors",
+          "content-type",
+          "w"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/g/collect",
+        "method": "POST",
+        "query_params": [
+          "v",
+          "tid",
+          "gtm",
+          "_p",
+          "gcs",
+          "gcd",
+          "npa",
+          "dma",
+          "tag_exp",
+          "cid",
+          "ul",
+          "sr",
+          "uaa",
+          "uab",
+          "uafvl",
+          "uamb",
+          "uap",
+          "uapv",
+          "uaw",
+          "are",
+          "frm",
+          "pscdl",
+          "_eu",
+          "_s",
+          "sid",
+          "sct",
+          "seg",
+          "dl",
+          "dr",
+          "dt",
+          "en",
+          "ep.ga_temp_client_id",
+          "_et",
+          "tfd"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/g/collect",
+        "method": "POST",
+        "query_params": [
+          "v",
+          "tid",
+          "gtm",
+          "_p",
+          "gcs",
+          "gcd",
+          "npa",
+          "dma",
+          "tag_exp",
+          "cid",
+          "ul",
+          "sr",
+          "uaa",
+          "uab",
+          "uafvl",
+          "uamb",
+          "uap",
+          "uapv",
+          "uaw",
+          "are",
+          "frm",
+          "pscdl",
+          "_s",
+          "sid",
+          "sct",
+          "seg",
+          "dl",
+          "dr",
+          "dt",
+          "en",
+          "_et",
+          "tfd"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/{id}",
+        "method": "GET",
+        "query_params": [
+          "start"
+        ],
+        "path_params": true
+      },
+      {
+        "endpoint": "/_api/new_llpgs",
+        "method": "GET",
+        "query_params": [
+          "$select",
+          "$filter"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/api/calendar/{id}",
+        "method": "GET",
+        "query_params": [],
+        "path_params": true
+      }
+    ],
+    "redirects": [],
+    "api_calls": [
+      {
+        "endpoint": "/c/v",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": [
+          "d",
+          "p",
+          "v",
+          "k",
+          "format"
+        ]
+      },
+      {
+        "endpoint": "/v2/track",
+        "method": "POST",
+        "response_type": "application/json",
+        "params": []
+      },
+      {
+        "endpoint": "/resource/powerappsportal/controls/pcf_loader/manifest-0.0.30.json",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": []
+      },
+      {
+        "endpoint": "/resource/powerappsportal/controls/host/manifest-0.5.0.json",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": []
+      },
+      {
+        "endpoint": "/resource/powerappsportal/controls/pcf_controls/manifest-3.3.2.json",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": []
+      },
+      {
+        "endpoint": "/resource/powerappsportal/controls/controls_fluent_v9/manifest-0.0.33.json",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": []
+      },
+      {
+        "endpoint": "/resource/powerappsportal/controls/data_grid/manifest-1.1.31.json",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": []
+      },
+      {
+        "endpoint": "/resource/powerappsportal/controls/mf_shared/manifest-0.2.10.json",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": []
+      },
+      {
+        "endpoint": "/c/v",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": [
+          "d",
+          "p",
+          "v",
+          "k",
+          "format"
+        ]
+      },
+      {
+        "endpoint": "/v2/track",
+        "method": "POST",
+        "response_type": "application/json",
+        "params": []
+      },
+      {
+        "endpoint": "/OneCollector/1.0",
+        "method": "POST",
+        "response_type": "application/json",
+        "params": [
+          "cors",
+          "content-type",
+          "w"
+        ]
+      },
+      {
+        "endpoint": "/OneCollector/1.0",
+        "method": "POST",
+        "response_type": "application/json",
+        "params": [
+          "cors",
+          "content-type",
+          "w"
+        ]
+      },
+      {
+        "endpoint": "/v2/track",
+        "method": "POST",
+        "response_type": "application/json",
+        "params": []
+      },
+      {
+        "endpoint": "/c/v",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": [
+          "d",
+          "p",
+          "v",
+          "k",
+          "format"
+        ]
+      },
+      {
+        "endpoint": "/v2/track",
+        "method": "POST",
+        "response_type": "application/json",
+        "params": []
+      },
+      {
+        "endpoint": "/c/v",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": [
+          "d",
+          "p",
+          "v",
+          "k",
+          "format"
+        ]
+      },
+      {
+        "endpoint": "/v2/track",
+        "method": "POST",
+        "response_type": "application/json",
+        "params": []
+      },
+      {
+        "endpoint": "/OneCollector/1.0",
+        "method": "POST",
+        "response_type": "application/json",
+        "params": [
+          "cors",
+          "content-type",
+          "w"
+        ]
+      },
+      {
+        "endpoint": "/OneCollector/1.0",
+        "method": "POST",
+        "response_type": "application/json",
+        "params": [
+          "cors",
+          "content-type",
+          "w"
+        ]
+      },
+      {
+        "endpoint": "/_api/new_llpgs",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": [
+          "$select",
+          "$filter"
+        ]
+      },
+      {
+        "endpoint": "/api/calendar/{id}",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": []
+      },
+      {
+        "endpoint": "/OneCollector/1.0",
+        "method": "POST",
+        "response_type": "application/json",
+        "params": [
+          "cors",
+          "content-type",
+          "w"
+        ]
+      },
+      {
+        "endpoint": "/v2/track",
+        "method": "POST",
+        "response_type": "application/json",
+        "params": []
+      }
+    ],
+    "form_submissions": []
+  },
+  "grouped_by_endpoint": {
+    "/{id}": [
+      {
+        "timestamp": "2025-07-21T16:34:26.886Z",
+        "duration_ms": 555.4730000000001,
+        "endpoint": "/{id}",
+        "host": "www.colchester.gov.uk",
+        "method": "GET",
+        "status": 200,
+        "path_params": [
+          "check-my-collection-day"
+        ],
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7"
+        },
+        "response_headers": {
+          "cache-control": "no-cache, no-store, must-revalidate",
+          "content-type": "text/html; charset=utf-8",
+          "set-cookie": "[cookies present]",
+          "x-frame-options": "SAMEORIGIN",
+          "x-ms-portal-app": "site-d40aeee5-a782-45ad-8f5a-540d634ba4ad-EUn",
+          "x-ms-request-id": "ebee64e3-c1c9-4d51-96ce-de25df3b6d40"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 69325,
+          "compressed": true,
+          "content_ref": "6e2a9a62bd706f3cb7a0dbb7337922bad128cab5.html"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T16:34:28.641Z",
+        "duration_ms": 247.388,
+        "endpoint": "/{id}",
+        "host": "www.colchester.gov.uk",
+        "method": "GET",
+        "status": 200,
+        "path_params": [
+          "check-my-collection-day"
+        ],
+        "request_headers": {
+          "accept": "application/json, text/javascript, */*; q=0.01",
+          "cookie": "[cookies present]",
+          "referer": "https://www.colchester.gov.uk/check-my-collection-day/",
+          "x-requested-with": "XMLHttpRequest"
+        },
+        "response_headers": {
+          "cache-control": "no-cache, no-store, must-revalidate",
+          "content-type": "text/html; charset=utf-8",
+          "x-frame-options": "SAMEORIGIN",
+          "x-ms-portal-app": "site-d40aeee5-a782-45ad-8f5a-540d634ba4ad-EUn",
+          "x-ms-request-id": "5d285369-c4c5-478d-8fc8-261a8fb66354"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": -1
+        }
+      },
+      {
+        "timestamp": "2025-07-21T16:34:28.864Z",
+        "duration_ms": 377.04,
+        "endpoint": "/{id}",
+        "host": "www.colchester.gov.uk",
+        "method": "GET",
+        "status": 200,
+        "path_params": [
+          "recycling-and-rubbish"
+        ],
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+          "cookie": "[cookies present]",
+          "referer": "https://www.colchester.gov.uk/check-my-collection-day/"
+        },
+        "response_headers": {
+          "cache-control": "no-cache, no-store, must-revalidate",
+          "content-type": "text/html; charset=utf-8",
+          "x-frame-options": "SAMEORIGIN",
+          "x-ms-portal-app": "site-d40aeee5-a782-45ad-8f5a-540d634ba4ad-EUn",
+          "x-ms-request-id": "636567bc-ce4f-4ded-98ef-e438469da839"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 156634,
+          "compressed": true,
+          "content_ref": "b94869bd7afcf075a6ade0cd755a6471539fa99d.html"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T16:34:29.368Z",
+        "duration_ms": 520.092,
+        "endpoint": "/{id}",
+        "host": "www.colchester.gov.uk",
+        "method": "GET",
+        "status": 200,
+        "path_params": [
+          "recycling-and-rubbish"
+        ],
+        "request_headers": {
+          "accept": "application/json, text/javascript, */*; q=0.01",
+          "cookie": "[cookies present]",
+          "referer": "https://www.colchester.gov.uk/recycling-and-rubbish/",
+          "x-requested-with": "XMLHttpRequest"
+        },
+        "response_headers": {
+          "cache-control": "no-cache, no-store, must-revalidate",
+          "content-type": "text/html; charset=utf-8",
+          "x-frame-options": "SAMEORIGIN",
+          "x-ms-portal-app": "site-d40aeee5-a782-45ad-8f5a-540d634ba4ad-EUn",
+          "x-ms-request-id": "04f8d181-d4a1-4808-bbd7-c7de5db5a1f7"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 156634,
+          "compressed": true,
+          "content_ref": "00b73dc05cb0a1bf95884680ff3053cf32eafe4e.html"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T16:34:46.905Z",
+        "duration_ms": 311.94,
+        "endpoint": "/{id}",
+        "host": "www.colchester.gov.uk",
+        "method": "GET",
+        "status": 200,
+        "path_params": [
+          "your-recycling-calendar"
+        ],
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+          "cookie": "[cookies present]",
+          "referer": "https://www.colchester.gov.uk/recycling-and-rubbish/"
+        },
+        "response_headers": {
+          "cache-control": "no-cache, no-store, must-revalidate",
+          "content-type": "text/html; charset=utf-8",
+          "x-frame-options": "SAMEORIGIN",
+          "x-ms-portal-app": "site-d40aeee5-a782-45ad-8f5a-540d634ba4ad-EUn",
+          "x-ms-request-id": "9d74f5b1-f861-4665-8612-0ba439f51f06"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 65044,
+          "compressed": true,
+          "content_ref": "836bbf47a16a32c579571c374d74553ed84034e5.html"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T16:34:47.377Z",
+        "duration_ms": 263.708,
+        "endpoint": "/{id}",
+        "host": "www.colchester.gov.uk",
+        "method": "GET",
+        "status": 200,
+        "path_params": [
+          "your-recycling-calendar"
+        ],
+        "request_headers": {
+          "accept": "application/json, text/javascript, */*; q=0.01",
+          "cookie": "[cookies present]",
+          "referer": "https://www.colchester.gov.uk/your-recycling-calendar/",
+          "x-requested-with": "XMLHttpRequest"
+        },
+        "response_headers": {
+          "cache-control": "no-cache, no-store, must-revalidate",
+          "content-type": "text/html; charset=utf-8",
+          "x-frame-options": "SAMEORIGIN",
+          "x-ms-portal-app": "site-d40aeee5-a782-45ad-8f5a-540d634ba4ad-EUn",
+          "x-ms-request-id": "bcc69513-66b2-48cc-a842-771c9511c5f0"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 65044,
+          "compressed": true,
+          "content_ref": "d48596978c30eb319b330c4296873abe43ac496e.html"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T16:34:49.779Z",
+        "duration_ms": 258.035,
+        "endpoint": "/{id}",
+        "host": "www.colchester.gov.uk",
+        "method": "GET",
+        "status": 200,
+        "path_params": [
+          "your-recycling-calendar"
+        ],
+        "query_params": {
+          "start": [
+            "true"
+          ]
+        },
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+          "cookie": "[cookies present]",
+          "referer": "https://www.colchester.gov.uk/your-recycling-calendar/"
+        },
+        "response_headers": {
+          "cache-control": "no-cache, no-store, must-revalidate",
+          "content-type": "text/html; charset=utf-8",
+          "x-frame-options": "SAMEORIGIN",
+          "x-ms-portal-app": "site-d40aeee5-a782-45ad-8f5a-540d634ba4ad-EUn",
+          "x-ms-request-id": "b1b200d2-1307-497c-8d53-03bb7312f176"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 63189,
+          "compressed": true,
+          "content_ref": "b1a3a5bf59b41fe9a6fb7f22e7945b89465b0ab6.html"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T16:34:50.200Z",
+        "duration_ms": 257.966,
+        "endpoint": "/{id}",
+        "host": "www.colchester.gov.uk",
+        "method": "GET",
+        "status": 200,
+        "path_params": [
+          "your-recycling-calendar"
+        ],
+        "query_params": {
+          "start": [
+            "true"
+          ]
+        },
+        "request_headers": {
+          "accept": "application/json, text/javascript, */*; q=0.01",
+          "cookie": "[cookies present]",
+          "referer": "https://www.colchester.gov.uk/your-recycling-calendar/?start=true",
+          "x-requested-with": "XMLHttpRequest"
+        },
+        "response_headers": {
+          "cache-control": "no-cache, no-store, must-revalidate",
+          "content-type": "text/html; charset=utf-8",
+          "x-frame-options": "SAMEORIGIN",
+          "x-ms-portal-app": "site-d40aeee5-a782-45ad-8f5a-540d634ba4ad-EUn",
+          "x-ms-request-id": "68409286-28f6-4220-9c7a-ba44fe8c67a1"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 63189,
+          "compressed": true,
+          "content_ref": "b88aedd57496bfc5f1f7de732bf1ad205641e261.html"
+        }
+      }
+    ],
+    "/assets/fonts/icomoon.ttf": [
+      {
+        "timestamp": "2025-07-21T16:34:27.567Z",
+        "duration_ms": 110.675,
+        "endpoint": "/assets/fonts/icomoon.ttf",
+        "host": "cbc-live-dotgovresources.azurewebsites.net",
+        "method": "GET",
+        "status": 200,
+        "request_headers": {
+          "accept": "*/*",
+          "origin": "https://www.colchester.gov.uk",
+          "referer": "https://cbc-live-dotgovresources.azurewebsites.net/assets/css/templates/global.css"
+        },
+        "response_headers": {
+          "content-type": "application/octet-stream",
+          "set-cookie": "[cookies present]",
+          "x-ms-middleware-request-id": "00000000-0000-0000-0000-000000000000",
+          "x-powered-by": "ASP.NET"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T16:34:29.331Z",
+        "duration_ms": 1.031,
+        "endpoint": "/assets/fonts/icomoon.ttf",
+        "host": "cbc-live-dotgovresources.azurewebsites.net",
+        "method": "GET",
+        "status": 200,
+        "request_headers": {
+          "origin": "https://www.colchester.gov.uk",
+          "referer": "https://cbc-live-dotgovresources.azurewebsites.net/assets/css/templates/global.css"
+        },
+        "response_headers": {
+          "x-ms-middleware-request-id": "00000000-0000-0000-0000-000000000000",
+          "content-type": "application/octet-stream",
+          "x-powered-by": "ASP.NET"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T16:34:47.285Z",
+        "duration_ms": 1.054,
+        "endpoint": "/assets/fonts/icomoon.ttf",
+        "host": "cbc-live-dotgovresources.azurewebsites.net",
+        "method": "GET",
+        "status": 200,
+        "request_headers": {
+          "origin": "https://www.colchester.gov.uk",
+          "referer": "https://cbc-live-dotgovresources.azurewebsites.net/assets/css/templates/global.css"
+        },
+        "response_headers": {
+          "x-ms-middleware-request-id": "00000000-0000-0000-0000-000000000000",
+          "content-type": "application/octet-stream",
+          "x-powered-by": "ASP.NET"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T16:34:50.096Z",
+        "duration_ms": 1.061,
+        "endpoint": "/assets/fonts/icomoon.ttf",
+        "host": "cbc-live-dotgovresources.azurewebsites.net",
+        "method": "GET",
+        "status": 200,
+        "request_headers": {
+          "origin": "https://www.colchester.gov.uk",
+          "referer": "https://cbc-live-dotgovresources.azurewebsites.net/assets/css/templates/global.css"
+        },
+        "response_headers": {
+          "x-ms-middleware-request-id": "00000000-0000-0000-0000-000000000000",
+          "content-type": "application/octet-stream",
+          "x-powered-by": "ASP.NET"
+        }
+      }
+    ],
+    "/c/v": [
+      {
+        "timestamp": "2025-07-21T16:34:28.636Z",
+        "duration_ms": 46.935,
+        "endpoint": "/c/v",
+        "host": "apikeys.civiccomputing.com",
+        "method": "GET",
+        "status": 200,
+        "query_params": {
+          "d": [
+            "www.colchester.gov.uk"
+          ],
+          "p": [
+            "CookieControl Single-Site"
+          ],
+          "v": [
+            "9"
+          ],
+          "k": [
+            "6d393ae15905fd6bb7ae8117a9412eecda8b8b4c"
+          ],
+          "format": [
+            "json"
+          ]
+        },
+        "request_headers": {
+          "accept": "application/json, text/plain, */*",
+          "origin": "https://www.colchester.gov.uk",
+          "referer": "https://www.colchester.gov.uk/"
+        },
+        "response_headers": {
+          "cache-control": "max-age=3600, private, no-store",
+          "content-type": "application/json",
+          "x-apikeys": "hit",
+          "x-cf-test": "true",
+          "x-content-type-options": "nosniff",
+          "x-xss-protection": "1"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 307,
+          "content_ref": "2b35364b48029147eccfeac509b4298c9d71eac5.json"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T16:34:29.355Z",
+        "duration_ms": 19.615000000000002,
+        "endpoint": "/c/v",
+        "host": "apikeys.civiccomputing.com",
+        "method": "GET",
+        "status": 200,
+        "query_params": {
+          "d": [
+            "www.colchester.gov.uk"
+          ],
+          "p": [
+            "CookieControl Single-Site"
+          ],
+          "v": [
+            "9"
+          ],
+          "k": [
+            "6d393ae15905fd6bb7ae8117a9412eecda8b8b4c"
+          ],
+          "format": [
+            "json"
+          ]
+        },
+        "request_headers": {
+          "accept": "application/json, text/plain, */*",
+          "origin": "https://www.colchester.gov.uk",
+          "referer": "https://www.colchester.gov.uk/"
+        },
+        "response_headers": {
+          "cache-control": "max-age=3600, private, no-store",
+          "content-type": "application/json",
+          "x-apikeys": "hit",
+          "x-cf-test": "true",
+          "x-content-type-options": "nosniff",
+          "x-xss-protection": "1"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 307,
+          "content_ref": "2b35364b48029147eccfeac509b4298c9d71eac5.json"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T16:34:47.368Z",
+        "duration_ms": 18.35,
+        "endpoint": "/c/v",
+        "host": "apikeys.civiccomputing.com",
+        "method": "GET",
+        "status": 200,
+        "query_params": {
+          "d": [
+            "www.colchester.gov.uk"
+          ],
+          "p": [
+            "CookieControl Single-Site"
+          ],
+          "v": [
+            "9"
+          ],
+          "k": [
+            "6d393ae15905fd6bb7ae8117a9412eecda8b8b4c"
+          ],
+          "format": [
+            "json"
+          ]
+        },
+        "request_headers": {
+          "accept": "application/json, text/plain, */*",
+          "origin": "https://www.colchester.gov.uk",
+          "referer": "https://www.colchester.gov.uk/"
+        },
+        "response_headers": {
+          "cache-control": "max-age=3600, private, no-store",
+          "content-type": "application/json",
+          "x-apikeys": "hit",
+          "x-cf-test": "true",
+          "x-content-type-options": "nosniff",
+          "x-xss-protection": "1"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 307,
+          "content_ref": "2b35364b48029147eccfeac509b4298c9d71eac5.json"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T16:34:50.195Z",
+        "duration_ms": 17.953,
+        "endpoint": "/c/v",
+        "host": "apikeys.civiccomputing.com",
+        "method": "GET",
+        "status": 200,
+        "query_params": {
+          "d": [
+            "www.colchester.gov.uk"
+          ],
+          "p": [
+            "CookieControl Single-Site"
+          ],
+          "v": [
+            "9"
+          ],
+          "k": [
+            "6d393ae15905fd6bb7ae8117a9412eecda8b8b4c"
+          ],
+          "format": [
+            "json"
+          ]
+        },
+        "request_headers": {
+          "accept": "application/json, text/plain, */*",
+          "origin": "https://www.colchester.gov.uk",
+          "referer": "https://www.colchester.gov.uk/"
+        },
+        "response_headers": {
+          "cache-control": "max-age=3600, private, no-store",
+          "content-type": "application/json",
+          "x-apikeys": "hit",
+          "x-cf-test": "true",
+          "x-content-type-options": "nosniff",
+          "x-xss-protection": "1"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 307,
+          "content_ref": "2b35364b48029147eccfeac509b4298c9d71eac5.json"
+        }
+      }
+    ],
+    "/g/collect": [
+      {
+        "timestamp": "2025-07-21T16:34:28.653Z",
+        "duration_ms": 111.51599999999999,
+        "endpoint": "/g/collect",
+        "host": "region1.google-analytics.com",
+        "method": "POST",
+        "status": 204,
+        "query_params": {
+          "v": [
+            "2"
+          ],
+          "tid": [
+            "G-FCY6R8B21W"
+          ],
+          "gtm": [
+            "45je57h0h2v9112910236za200"
+          ],
+          "_p": [
+            "1753115668622"
+          ],
+          "gcs": [
+            "G100"
+          ],
+          "gcd": [
+            "13p3p3l3l5l1"
+          ],
+          "npa": [
+            "0"
+          ],
+          "dma": [
+            "0"
+          ],
+          "tag_exp": [
+            "101509157~103116026~103200004~103233427~104684208~104684211~104991058"
+          ],
+          "cid": [
+            "1396635008.1753115669"
+          ],
+          "ul": [
+            "en-gb"
+          ],
+          "sr": [
+            "800x600"
+          ],
+          "uaa": [
+            "arm"
+          ],
+          "uab": [
+            "64"
+          ],
+          "uafvl": [
+            "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+          ],
+          "uamb": [
+            "0"
+          ],
+          "uap": [
+            "macOS"
+          ],
+          "uapv": [
+            "15.5.0"
+          ],
+          "uaw": [
+            "0"
+          ],
+          "are": [
+            "1"
+          ],
+          "frm": [
+            "0"
+          ],
+          "pscdl": [
+            "denied"
+          ],
+          "_s": [
+            "1"
+          ],
+          "sid": [
+            "1753115668"
+          ],
+          "sct": [
+            "1"
+          ],
+          "seg": [
+            "0"
+          ],
+          "dl": [
+            "https://www.colchester.gov.uk/check-my-collection-day/"
+          ],
+          "dt": [
+            "Check my Collection Day \u00a0\u00b7 Colchester City Council"
+          ],
+          "en": [
+            "page_view"
+          ],
+          "_fv": [
+            "1"
+          ],
+          "_nsi": [
+            "1"
+          ],
+          "_ss": [
+            "1"
+          ],
+          "_ee": [
+            "1"
+          ],
+          "tfd": [
+            "1767"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "cookie": "[cookies present]",
+          "origin": "https://www.colchester.gov.uk",
+          "referer": "https://www.colchester.gov.uk/"
+        },
+        "response_headers": {
+          "cache-control": "no-cache, no-store, must-revalidate",
+          "content-type": "text/plain"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T16:34:29.375Z",
+        "duration_ms": 14.17,
+        "endpoint": "/g/collect",
+        "host": "region1.google-analytics.com",
+        "method": "POST",
+        "status": 204,
+        "query_params": {
+          "v": [
+            "2"
+          ],
+          "tid": [
+            "G-FCY6R8B21W"
+          ],
+          "gtm": [
+            "45je57h0h2v9112910236za200"
+          ],
+          "_p": [
+            "1753115669353"
+          ],
+          "gcs": [
+            "G100"
+          ],
+          "gcd": [
+            "13p3p3l3l5l1"
+          ],
+          "npa": [
+            "0"
+          ],
+          "dma": [
+            "0"
+          ],
+          "tag_exp": [
+            "101509157~103116026~103200004~103233427~104684208~104684211~104991058"
+          ],
+          "cid": [
+            "1143158943.1753115669"
+          ],
+          "ul": [
+            "en-gb"
+          ],
+          "sr": [
+            "800x600"
+          ],
+          "uaa": [
+            "arm"
+          ],
+          "uab": [
+            "64"
+          ],
+          "uafvl": [
+            "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+          ],
+          "uamb": [
+            "0"
+          ],
+          "uap": [
+            "macOS"
+          ],
+          "uapv": [
+            "15.5.0"
+          ],
+          "uaw": [
+            "0"
+          ],
+          "are": [
+            "1"
+          ],
+          "frm": [
+            "0"
+          ],
+          "pscdl": [
+            "denied"
+          ],
+          "_s": [
+            "1"
+          ],
+          "sid": [
+            "1753115669"
+          ],
+          "sct": [
+            "1"
+          ],
+          "seg": [
+            "0"
+          ],
+          "dl": [
+            "https://www.colchester.gov.uk/recycling-and-rubbish/"
+          ],
+          "dr": [
+            "https://www.colchester.gov.uk/check-my-collection-day/"
+          ],
+          "dt": [
+            "Recycling and rubbish \u00a0\u00b7 Colchester City Council"
+          ],
+          "en": [
+            "page_view"
+          ],
+          "_fv": [
+            "1"
+          ],
+          "_nsi": [
+            "1"
+          ],
+          "_ss": [
+            "1"
+          ],
+          "_ee": [
+            "1"
+          ],
+          "tfd": [
+            "553"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "cookie": "[cookies present]",
+          "origin": "https://www.colchester.gov.uk",
+          "referer": "https://www.colchester.gov.uk/"
+        },
+        "response_headers": {
+          "cache-control": "no-cache, no-store, must-revalidate",
+          "content-type": "text/plain"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T16:34:44.482Z",
+        "duration_ms": 21.832,
+        "endpoint": "/g/collect",
+        "host": "region1.google-analytics.com",
+        "method": "POST",
+        "status": 204,
+        "query_params": {
+          "v": [
+            "2"
+          ],
+          "tid": [
+            "G-FCY6R8B21W"
+          ],
+          "gtm": [
+            "45je57h0h2v9112910236za200"
+          ],
+          "_p": [
+            "1753115669353"
+          ],
+          "gcs": [
+            "G101"
+          ],
+          "gcd": [
+            "13p3r3l3l5l1"
+          ],
+          "npa": [
+            "0"
+          ],
+          "dma": [
+            "0"
+          ],
+          "tag_exp": [
+            "101509157~103116026~103200004~103233427~104684208~104684211~104991058"
+          ],
+          "cid": [
+            "1143158943.1753115669"
+          ],
+          "ul": [
+            "en-gb"
+          ],
+          "sr": [
+            "800x600"
+          ],
+          "uaa": [
+            "arm"
+          ],
+          "uab": [
+            "64"
+          ],
+          "uafvl": [
+            "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+          ],
+          "uamb": [
+            "0"
+          ],
+          "uap": [
+            "macOS"
+          ],
+          "uapv": [
+            "15.5.0"
+          ],
+          "uaw": [
+            "0"
+          ],
+          "are": [
+            "1"
+          ],
+          "frm": [
+            "0"
+          ],
+          "pscdl": [
+            "denied"
+          ],
+          "_eu": [
+            "AAAAAAQ"
+          ],
+          "_s": [
+            "2"
+          ],
+          "sid": [
+            "1753115669"
+          ],
+          "sct": [
+            "1"
+          ],
+          "seg": [
+            "1"
+          ],
+          "dl": [
+            "https://www.colchester.gov.uk/recycling-and-rubbish/"
+          ],
+          "dr": [
+            "https://www.colchester.gov.uk/check-my-collection-day/"
+          ],
+          "dt": [
+            "Recycling and rubbish \u00a0\u00b7 Colchester City Council"
+          ],
+          "en": [
+            "user_engagement"
+          ],
+          "ep.ga_temp_client_id": [
+            "1143158943.1753115669"
+          ],
+          "_et": [
+            "10105"
+          ],
+          "tfd": [
+            "15663"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "cookie": "[cookies present]",
+          "origin": "https://www.colchester.gov.uk",
+          "referer": "https://www.colchester.gov.uk/"
+        },
+        "response_headers": {
+          "cache-control": "no-cache, no-store, must-revalidate",
+          "content-type": "text/plain"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T16:34:47.234Z",
+        "duration_ms": -1,
+        "endpoint": "/g/collect",
+        "host": "region1.google-analytics.com",
+        "method": "POST",
+        "status": -1,
+        "query_params": {
+          "v": [
+            "2"
+          ],
+          "tid": [
+            "G-FCY6R8B21W"
+          ],
+          "gtm": [
+            "45je57h0h2v9112910236za200"
+          ],
+          "_p": [
+            "1753115669353"
+          ],
+          "gcs": [
+            "G101"
+          ],
+          "gcd": [
+            "13p3r3l3l5l1"
+          ],
+          "npa": [
+            "0"
+          ],
+          "dma": [
+            "0"
+          ],
+          "tag_exp": [
+            "101509157~103116026~103200004~103233427~104684208~104684211~104991058"
+          ],
+          "cid": [
+            "1143158943.1753115669"
+          ],
+          "ul": [
+            "en-gb"
+          ],
+          "sr": [
+            "800x600"
+          ],
+          "uaa": [
+            "arm"
+          ],
+          "uab": [
+            "64"
+          ],
+          "uafvl": [
+            "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+          ],
+          "uamb": [
+            "0"
+          ],
+          "uap": [
+            "macOS"
+          ],
+          "uapv": [
+            "15.5.0"
+          ],
+          "uaw": [
+            "0"
+          ],
+          "are": [
+            "1"
+          ],
+          "frm": [
+            "0"
+          ],
+          "pscdl": [
+            "denied"
+          ],
+          "_s": [
+            "3"
+          ],
+          "sid": [
+            "1753115669"
+          ],
+          "sct": [
+            "1"
+          ],
+          "seg": [
+            "1"
+          ],
+          "dl": [
+            "https://www.colchester.gov.uk/recycling-and-rubbish/"
+          ],
+          "dr": [
+            "https://www.colchester.gov.uk/check-my-collection-day/"
+          ],
+          "dt": [
+            "Recycling and rubbish \u00a0\u00b7 Colchester City Council"
+          ],
+          "en": [
+            "user_engagement"
+          ],
+          "_et": [
+            "7745"
+          ],
+          "tfd": [
+            "18410"
+          ]
+        },
+        "request_headers": {
+          "referer": "https://www.colchester.gov.uk/"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T16:34:47.380Z",
+        "duration_ms": 25.678,
+        "endpoint": "/g/collect",
+        "host": "region1.google-analytics.com",
+        "method": "POST",
+        "status": 204,
+        "query_params": {
+          "v": [
+            "2"
+          ],
+          "tid": [
+            "G-FCY6R8B21W"
+          ],
+          "gtm": [
+            "45je57h0h2v9112910236za200"
+          ],
+          "_p": [
+            "1753115687337"
+          ],
+          "gcs": [
+            "G100"
+          ],
+          "gcd": [
+            "13p3p3l3l5l1"
+          ],
+          "npa": [
+            "0"
+          ],
+          "dma": [
+            "0"
+          ],
+          "tag_exp": [
+            "101509157~103116026~103200004~103233427~104684208~104684211~104991058"
+          ],
+          "cid": [
+            "1661101507.1753115687"
+          ],
+          "ul": [
+            "en-gb"
+          ],
+          "sr": [
+            "800x600"
+          ],
+          "uaa": [
+            "arm"
+          ],
+          "uab": [
+            "64"
+          ],
+          "uafvl": [
+            "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+          ],
+          "uamb": [
+            "0"
+          ],
+          "uap": [
+            "macOS"
+          ],
+          "uapv": [
+            "15.5.0"
+          ],
+          "uaw": [
+            "0"
+          ],
+          "are": [
+            "1"
+          ],
+          "frm": [
+            "0"
+          ],
+          "pscdl": [
+            "denied"
+          ],
+          "_s": [
+            "1"
+          ],
+          "sid": [
+            "1753115687"
+          ],
+          "sct": [
+            "1"
+          ],
+          "seg": [
+            "0"
+          ],
+          "dl": [
+            "https://www.colchester.gov.uk/your-recycling-calendar/"
+          ],
+          "dr": [
+            "https://www.colchester.gov.uk/recycling-and-rubbish/"
+          ],
+          "dt": [
+            "Your recycling calendar \u00a0\u00b7 Colchester City Council"
+          ],
+          "en": [
+            "page_view"
+          ],
+          "_fv": [
+            "1"
+          ],
+          "_nsi": [
+            "1"
+          ],
+          "_ss": [
+            "1"
+          ],
+          "_ee": [
+            "1"
+          ],
+          "tfd": [
+            "505"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "cookie": "[cookies present]",
+          "origin": "https://www.colchester.gov.uk",
+          "referer": "https://www.colchester.gov.uk/"
+        },
+        "response_headers": {
+          "cache-control": "no-cache, no-store, must-revalidate",
+          "content-type": "text/plain"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T16:34:50.051Z",
+        "duration_ms": -1,
+        "endpoint": "/g/collect",
+        "host": "region1.google-analytics.com",
+        "method": "POST",
+        "status": -1,
+        "query_params": {
+          "v": [
+            "2"
+          ],
+          "tid": [
+            "G-FCY6R8B21W"
+          ],
+          "gtm": [
+            "45je57h0h2v9112910236za200"
+          ],
+          "_p": [
+            "1753115687337"
+          ],
+          "gcs": [
+            "G101"
+          ],
+          "gcd": [
+            "13p3r3l3l5l1"
+          ],
+          "npa": [
+            "0"
+          ],
+          "dma": [
+            "0"
+          ],
+          "tag_exp": [
+            "101509157~103116026~103200004~103233427~104684208~104684211~104991058"
+          ],
+          "cid": [
+            "1143158943.1753115669"
+          ],
+          "ul": [
+            "en-gb"
+          ],
+          "sr": [
+            "800x600"
+          ],
+          "uaa": [
+            "arm"
+          ],
+          "uab": [
+            "64"
+          ],
+          "uafvl": [
+            "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+          ],
+          "uamb": [
+            "0"
+          ],
+          "uap": [
+            "macOS"
+          ],
+          "uapv": [
+            "15.5.0"
+          ],
+          "uaw": [
+            "0"
+          ],
+          "are": [
+            "1"
+          ],
+          "frm": [
+            "0"
+          ],
+          "pscdl": [
+            "denied"
+          ],
+          "_eu": [
+            "AAAAAAQ"
+          ],
+          "_s": [
+            "2"
+          ],
+          "sid": [
+            "1753115669"
+          ],
+          "sct": [
+            "1"
+          ],
+          "seg": [
+            "1"
+          ],
+          "dl": [
+            "https://www.colchester.gov.uk/your-recycling-calendar/"
+          ],
+          "dr": [
+            "https://www.colchester.gov.uk/recycling-and-rubbish/"
+          ],
+          "dt": [
+            "Your recycling calendar \u00a0\u00b7 Colchester City Council"
+          ],
+          "en": [
+            "user_engagement"
+          ],
+          "ep.ga_temp_client_id": [
+            "1661101507.1753115687"
+          ],
+          "_et": [
+            "26"
+          ],
+          "tfd": [
+            "3201"
+          ]
+        },
+        "request_headers": {
+          "referer": "https://www.colchester.gov.uk/"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T16:34:50.052Z",
+        "duration_ms": -1,
+        "endpoint": "/g/collect",
+        "host": "region1.google-analytics.com",
+        "method": "POST",
+        "status": -1,
+        "query_params": {
+          "v": [
+            "2"
+          ],
+          "tid": [
+            "G-FCY6R8B21W"
+          ],
+          "gtm": [
+            "45je57h0h2v9112910236za200"
+          ],
+          "_p": [
+            "1753115687337"
+          ],
+          "gcs": [
+            "G101"
+          ],
+          "gcd": [
+            "13p3r3l3l5l1"
+          ],
+          "npa": [
+            "0"
+          ],
+          "dma": [
+            "0"
+          ],
+          "tag_exp": [
+            "101509157~103116026~103200004~103233427~104684208~104684211~104991058"
+          ],
+          "cid": [
+            "1143158943.1753115669"
+          ],
+          "ul": [
+            "en-gb"
+          ],
+          "sr": [
+            "800x600"
+          ],
+          "uaa": [
+            "arm"
+          ],
+          "uab": [
+            "64"
+          ],
+          "uafvl": [
+            "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+          ],
+          "uamb": [
+            "0"
+          ],
+          "uap": [
+            "macOS"
+          ],
+          "uapv": [
+            "15.5.0"
+          ],
+          "uaw": [
+            "0"
+          ],
+          "are": [
+            "1"
+          ],
+          "frm": [
+            "0"
+          ],
+          "pscdl": [
+            "denied"
+          ],
+          "_s": [
+            "3"
+          ],
+          "sid": [
+            "1753115669"
+          ],
+          "sct": [
+            "1"
+          ],
+          "seg": [
+            "1"
+          ],
+          "dl": [
+            "https://www.colchester.gov.uk/your-recycling-calendar/"
+          ],
+          "dr": [
+            "https://www.colchester.gov.uk/recycling-and-rubbish/"
+          ],
+          "dt": [
+            "Your recycling calendar \u00a0\u00b7 Colchester City Council"
+          ],
+          "en": [
+            "user_engagement"
+          ],
+          "_et": [
+            "2665"
+          ],
+          "tfd": [
+            "3202"
+          ]
+        },
+        "request_headers": {
+          "referer": "https://www.colchester.gov.uk/"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T16:34:50.201Z",
+        "duration_ms": 12.012,
+        "endpoint": "/g/collect",
+        "host": "region1.google-analytics.com",
+        "method": "POST",
+        "status": 204,
+        "query_params": {
+          "v": [
+            "2"
+          ],
+          "tid": [
+            "G-FCY6R8B21W"
+          ],
+          "gtm": [
+            "45je57h0h2v9112910236za200"
+          ],
+          "_p": [
+            "1753115690158"
+          ],
+          "gcs": [
+            "G100"
+          ],
+          "gcd": [
+            "13p3p3l3l5l1"
+          ],
+          "npa": [
+            "0"
+          ],
+          "dma": [
+            "0"
+          ],
+          "tag_exp": [
+            "101509157~103116026~103200004~103233427~104684208~104684211~104991058"
+          ],
+          "cid": [
+            "1268550262.1753115690"
+          ],
+          "ul": [
+            "en-gb"
+          ],
+          "sr": [
+            "800x600"
+          ],
+          "uaa": [
+            "arm"
+          ],
+          "uab": [
+            "64"
+          ],
+          "uafvl": [
+            "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+          ],
+          "uamb": [
+            "0"
+          ],
+          "uap": [
+            "macOS"
+          ],
+          "uapv": [
+            "15.5.0"
+          ],
+          "uaw": [
+            "0"
+          ],
+          "are": [
+            "1"
+          ],
+          "frm": [
+            "0"
+          ],
+          "pscdl": [
+            "denied"
+          ],
+          "_s": [
+            "1"
+          ],
+          "sid": [
+            "1753115690"
+          ],
+          "sct": [
+            "1"
+          ],
+          "seg": [
+            "0"
+          ],
+          "dl": [
+            "https://www.colchester.gov.uk/your-recycling-calendar/?start=true"
+          ],
+          "dr": [
+            "https://www.colchester.gov.uk/your-recycling-calendar/"
+          ],
+          "dt": [
+            "Your recycling calendar \u00a0\u00b7 Colchester City Council"
+          ],
+          "en": [
+            "page_view"
+          ],
+          "_fv": [
+            "1"
+          ],
+          "_nsi": [
+            "1"
+          ],
+          "_ss": [
+            "1"
+          ],
+          "_ee": [
+            "1"
+          ],
+          "tfd": [
+            "465"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "cookie": "[cookies present]",
+          "origin": "https://www.colchester.gov.uk",
+          "referer": "https://www.colchester.gov.uk/"
+        },
+        "response_headers": {
+          "cache-control": "no-cache, no-store, must-revalidate",
+          "content-type": "text/plain"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T16:34:55.202Z",
+        "duration_ms": 14.793,
+        "endpoint": "/g/collect",
+        "host": "region1.google-analytics.com",
+        "method": "POST",
+        "status": 204,
+        "query_params": {
+          "v": [
+            "2"
+          ],
+          "tid": [
+            "G-FCY6R8B21W"
+          ],
+          "gtm": [
+            "45je57h0h2v9112910236za200"
+          ],
+          "_p": [
+            "1753115690158"
+          ],
+          "gcs": [
+            "G101"
+          ],
+          "gcd": [
+            "13p3r3l3l5l1"
+          ],
+          "npa": [
+            "0"
+          ],
+          "dma": [
+            "0"
+          ],
+          "tag_exp": [
+            "101509157~103116026~103200004~103233427~104684208~104684211~104991058"
+          ],
+          "cid": [
+            "1143158943.1753115669"
+          ],
+          "ul": [
+            "en-gb"
+          ],
+          "sr": [
+            "800x600"
+          ],
+          "uaa": [
+            "arm"
+          ],
+          "uab": [
+            "64"
+          ],
+          "uafvl": [
+            "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+          ],
+          "uamb": [
+            "0"
+          ],
+          "uap": [
+            "macOS"
+          ],
+          "uapv": [
+            "15.5.0"
+          ],
+          "uaw": [
+            "0"
+          ],
+          "are": [
+            "1"
+          ],
+          "frm": [
+            "0"
+          ],
+          "pscdl": [
+            "denied"
+          ],
+          "_eu": [
+            "AAAAAAQ"
+          ],
+          "_s": [
+            "2"
+          ],
+          "sid": [
+            "1753115669"
+          ],
+          "sct": [
+            "1"
+          ],
+          "seg": [
+            "1"
+          ],
+          "dl": [
+            "https://www.colchester.gov.uk/your-recycling-calendar/?start=true"
+          ],
+          "dr": [
+            "https://www.colchester.gov.uk/your-recycling-calendar/"
+          ],
+          "dt": [
+            "Your recycling calendar \u00a0\u00b7 Colchester City Council"
+          ],
+          "en": [
+            "user_engagement"
+          ],
+          "ep.ga_temp_client_id": [
+            "1268550262.1753115690"
+          ],
+          "_et": [
+            "5"
+          ],
+          "tfd": [
+            "5472"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "cookie": "[cookies present]",
+          "origin": "https://www.colchester.gov.uk",
+          "referer": "https://www.colchester.gov.uk/"
+        },
+        "response_headers": {
+          "cache-control": "no-cache, no-store, must-revalidate",
+          "content-type": "text/plain"
+        }
+      }
+    ],
+    "/OneCollector/1.0": [
+      {
+        "timestamp": "2025-07-21T16:34:29.245Z",
+        "duration_ms": -1,
+        "endpoint": "/OneCollector/1.0",
+        "host": "eu-mobile.events.data.microsoft.com",
+        "method": "POST",
+        "status": -1,
+        "query_params": {
+          "cors": [
+            "true"
+          ],
+          "content-type": [
+            "application/x-json-stream"
+          ],
+          "client-id": [
+            "NO_AUTH"
+          ],
+          "client-version": [
+            "1DS-Web-JS-3.2.8"
+          ],
+          "apikey": [
+            "197418c5cb8c4426b201f9db2e87b914-87887378-2790-49b0-9295-51f43b6204b1-7172"
+          ],
+          "upload-time": [
+            "1753115669241"
+          ],
+          "w": [
+            "2"
+          ],
+          "NoResponseBody": [
+            "true"
+          ]
+        },
+        "request_headers": {
+          "referer": "https://www.colchester.gov.uk/",
+          "content-type": "text/plain;charset=UTF-8"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T16:34:28.866Z",
+        "duration_ms": 161.055,
+        "endpoint": "/OneCollector/1.0",
+        "host": "eu-mobile.events.data.microsoft.com",
+        "method": "POST",
+        "status": 204,
+        "query_params": {
+          "cors": [
+            "true"
+          ],
+          "content-type": [
+            "application/x-json-stream"
+          ],
+          "client-id": [
+            "NO_AUTH"
+          ],
+          "client-version": [
+            "1DS-Web-JS-3.2.8"
+          ],
+          "apikey": [
+            "197418c5cb8c4426b201f9db2e87b914-87887378-2790-49b0-9295-51f43b6204b1-7172"
+          ],
+          "upload-time": [
+            "1753115668814"
+          ],
+          "time-delta-to-apply-millis": [
+            "use-collector-delta"
+          ],
+          "w": [
+            "2"
+          ],
+          "NoResponseBody": [
+            "true"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "content-type": "text/plain;charset=UTF-8",
+          "origin": "https://www.colchester.gov.uk",
+          "referer": "https://www.colchester.gov.uk/"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T16:34:32.316Z",
+        "duration_ms": 175.063,
+        "endpoint": "/OneCollector/1.0",
+        "host": "eu-mobile.events.data.microsoft.com",
+        "method": "POST",
+        "status": 200,
+        "query_params": {
+          "cors": [
+            "true"
+          ],
+          "content-type": [
+            "application/x-json-stream"
+          ],
+          "w": [
+            "2"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "content-type": "application/x-json-stream",
+          "origin": "https://www.colchester.gov.uk",
+          "referer": "https://www.colchester.gov.uk/"
+        },
+        "response_headers": {
+          "content-type": "application/json"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 24,
+          "content_ref": "ac7cf704563b3e32cc67770ea72a3873cc6fc146.json"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T16:34:35.334Z",
+        "duration_ms": 53.872,
+        "endpoint": "/OneCollector/1.0",
+        "host": "eu-mobile.events.data.microsoft.com",
+        "method": "POST",
+        "status": 200,
+        "query_params": {
+          "cors": [
+            "true"
+          ],
+          "content-type": [
+            "application/x-json-stream"
+          ],
+          "w": [
+            "2"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "content-type": "application/x-json-stream",
+          "origin": "https://www.colchester.gov.uk",
+          "referer": "https://www.colchester.gov.uk/"
+        },
+        "response_headers": {
+          "content-type": "application/json"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 25,
+          "content_ref": "c03a31fc423e4dc4cac2a02c5a7ff8f3dbc45149.json"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T16:34:47.232Z",
+        "duration_ms": -1,
+        "endpoint": "/OneCollector/1.0",
+        "host": "eu-mobile.events.data.microsoft.com",
+        "method": "POST",
+        "status": -1,
+        "query_params": {
+          "cors": [
+            "true"
+          ],
+          "content-type": [
+            "application/x-json-stream"
+          ],
+          "client-id": [
+            "NO_AUTH"
+          ],
+          "client-version": [
+            "1DS-Web-JS-3.2.8"
+          ],
+          "apikey": [
+            "197418c5cb8c4426b201f9db2e87b914-87887378-2790-49b0-9295-51f43b6204b1-7172"
+          ],
+          "upload-time": [
+            "1753115687220"
+          ],
+          "time-delta-to-apply-millis": [
+            "177"
+          ],
+          "w": [
+            "2"
+          ],
+          "NoResponseBody": [
+            "true"
+          ]
+        },
+        "request_headers": {
+          "referer": "https://www.colchester.gov.uk/",
+          "content-type": "text/plain;charset=UTF-8"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T16:34:46.906Z",
+        "duration_ms": 31.242,
+        "endpoint": "/OneCollector/1.0",
+        "host": "eu-mobile.events.data.microsoft.com",
+        "method": "POST",
+        "status": 204,
+        "query_params": {
+          "cors": [
+            "true"
+          ],
+          "content-type": [
+            "application/x-json-stream"
+          ],
+          "client-id": [
+            "NO_AUTH"
+          ],
+          "client-version": [
+            "1DS-Web-JS-3.2.8"
+          ],
+          "apikey": [
+            "197418c5cb8c4426b201f9db2e87b914-87887378-2790-49b0-9295-51f43b6204b1-7172"
+          ],
+          "upload-time": [
+            "1753115686840"
+          ],
+          "time-delta-to-apply-millis": [
+            "177"
+          ],
+          "w": [
+            "2"
+          ],
+          "NoResponseBody": [
+            "true"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "content-type": "text/plain;charset=UTF-8",
+          "origin": "https://www.colchester.gov.uk",
+          "referer": "https://www.colchester.gov.uk/"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T16:34:49.781Z",
+        "duration_ms": 118.24900000000001,
+        "endpoint": "/OneCollector/1.0",
+        "host": "eu-mobile.events.data.microsoft.com",
+        "method": "POST",
+        "status": 204,
+        "query_params": {
+          "cors": [
+            "true"
+          ],
+          "content-type": [
+            "application/x-json-stream"
+          ],
+          "client-id": [
+            "NO_AUTH"
+          ],
+          "client-version": [
+            "1DS-Web-JS-3.2.8"
+          ],
+          "apikey": [
+            "197418c5cb8c4426b201f9db2e87b914-87887378-2790-49b0-9295-51f43b6204b1-7172"
+          ],
+          "upload-time": [
+            "1753115689724"
+          ],
+          "time-delta-to-apply-millis": [
+            "use-collector-delta"
+          ],
+          "w": [
+            "2"
+          ],
+          "NoResponseBody": [
+            "true"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "content-type": "text/plain;charset=UTF-8",
+          "origin": "https://www.colchester.gov.uk",
+          "referer": "https://www.colchester.gov.uk/"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T16:34:53.090Z",
+        "duration_ms": 25.773,
+        "endpoint": "/OneCollector/1.0",
+        "host": "eu-mobile.events.data.microsoft.com",
+        "method": "POST",
+        "status": 200,
+        "query_params": {
+          "cors": [
+            "true"
+          ],
+          "content-type": [
+            "application/x-json-stream"
+          ],
+          "w": [
+            "2"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "content-type": "application/x-json-stream",
+          "origin": "https://www.colchester.gov.uk",
+          "referer": "https://www.colchester.gov.uk/"
+        },
+        "response_headers": {
+          "content-type": "application/json"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 24,
+          "content_ref": "ac7cf704563b3e32cc67770ea72a3873cc6fc146.json"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T16:34:56.108Z",
+        "duration_ms": 46.519,
+        "endpoint": "/OneCollector/1.0",
+        "host": "eu-mobile.events.data.microsoft.com",
+        "method": "POST",
+        "status": 200,
+        "query_params": {
+          "cors": [
+            "true"
+          ],
+          "content-type": [
+            "application/x-json-stream"
+          ],
+          "w": [
+            "2"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "content-type": "application/x-json-stream",
+          "origin": "https://www.colchester.gov.uk",
+          "referer": "https://www.colchester.gov.uk/"
+        },
+        "response_headers": {
+          "content-type": "application/json"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 25,
+          "content_ref": "ced5dae5ff1ed26dc6c9d55cec79b0a2dd3766a9.json"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T16:35:02.726Z",
+        "duration_ms": 27.697000000000003,
+        "endpoint": "/OneCollector/1.0",
+        "host": "eu-mobile.events.data.microsoft.com",
+        "method": "POST",
+        "status": 200,
+        "query_params": {
+          "cors": [
+            "true"
+          ],
+          "content-type": [
+            "application/x-json-stream"
+          ],
+          "w": [
+            "2"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "content-type": "application/x-json-stream",
+          "origin": "https://www.colchester.gov.uk",
+          "referer": "https://www.colchester.gov.uk/"
+        },
+        "response_headers": {
+          "content-type": "application/json"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 24,
+          "content_ref": "2aafc13612022c1dda5b77b927176a0b3abdf385.json"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T16:34:28.867Z",
+        "duration_ms": -1,
+        "endpoint": "/OneCollector/1.0",
+        "host": "eu-mobile.events.data.microsoft.com",
+        "method": "POST",
+        "status": -1,
+        "query_params": {
+          "cors": [
+            "true"
+          ],
+          "content-type": [
+            "application/x-json-stream"
+          ],
+          "client-id": [
+            "NO_AUTH"
+          ],
+          "client-version": [
+            "1DS-Web-JS-3.2.8"
+          ],
+          "apikey": [
+            "197418c5cb8c4426b201f9db2e87b914-87887378-2790-49b0-9295-51f43b6204b1-7172"
+          ],
+          "upload-time": [
+            "1753115668815"
+          ],
+          "w": [
+            "2"
+          ],
+          "NoResponseBody": [
+            "true"
+          ]
+        },
+        "request_headers": {
+          "referer": "https://www.colchester.gov.uk/",
+          "content-type": "text/plain;charset=UTF-8"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T16:34:28.867Z",
+        "duration_ms": -1,
+        "endpoint": "/OneCollector/1.0",
+        "host": "eu-mobile.events.data.microsoft.com",
+        "method": "POST",
+        "status": -1,
+        "query_params": {
+          "cors": [
+            "true"
+          ],
+          "content-type": [
+            "application/x-json-stream"
+          ],
+          "client-id": [
+            "NO_AUTH"
+          ],
+          "client-version": [
+            "1DS-Web-JS-3.2.8"
+          ],
+          "apikey": [
+            "197418c5cb8c4426b201f9db2e87b914-87887378-2790-49b0-9295-51f43b6204b1-7172"
+          ],
+          "upload-time": [
+            "1753115668815"
+          ],
+          "w": [
+            "2"
+          ],
+          "NoResponseBody": [
+            "true"
+          ]
+        },
+        "request_headers": {
+          "referer": "https://www.colchester.gov.uk/",
+          "content-type": "text/plain;charset=UTF-8"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T16:34:47.238Z",
+        "duration_ms": -1,
+        "endpoint": "/OneCollector/1.0",
+        "host": "eu-mobile.events.data.microsoft.com",
+        "method": "POST",
+        "status": -1,
+        "query_params": {
+          "cors": [
+            "true"
+          ],
+          "content-type": [
+            "application/x-json-stream"
+          ],
+          "client-id": [
+            "NO_AUTH"
+          ],
+          "client-version": [
+            "1DS-Web-JS-3.2.8"
+          ],
+          "apikey": [
+            "197418c5cb8c4426b201f9db2e87b914-87887378-2790-49b0-9295-51f43b6204b1-7172"
+          ],
+          "upload-time": [
+            "1753115687228"
+          ],
+          "time-delta-to-apply-millis": [
+            "177"
+          ],
+          "w": [
+            "2"
+          ],
+          "NoResponseBody": [
+            "true"
+          ]
+        },
+        "request_headers": {
+          "referer": "https://www.colchester.gov.uk/",
+          "content-type": "text/plain;charset=UTF-8"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T16:34:49.782Z",
+        "duration_ms": -1,
+        "endpoint": "/OneCollector/1.0",
+        "host": "eu-mobile.events.data.microsoft.com",
+        "method": "POST",
+        "status": -1,
+        "query_params": {
+          "cors": [
+            "true"
+          ],
+          "content-type": [
+            "application/x-json-stream"
+          ],
+          "client-id": [
+            "NO_AUTH"
+          ],
+          "client-version": [
+            "1DS-Web-JS-3.2.8"
+          ],
+          "apikey": [
+            "197418c5cb8c4426b201f9db2e87b914-87887378-2790-49b0-9295-51f43b6204b1-7172"
+          ],
+          "upload-time": [
+            "1753115689725"
+          ],
+          "w": [
+            "2"
+          ],
+          "NoResponseBody": [
+            "true"
+          ]
+        },
+        "request_headers": {
+          "referer": "https://www.colchester.gov.uk/",
+          "content-type": "text/plain;charset=UTF-8"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T16:34:49.783Z",
+        "duration_ms": -1,
+        "endpoint": "/OneCollector/1.0",
+        "host": "eu-mobile.events.data.microsoft.com",
+        "method": "POST",
+        "status": -1,
+        "query_params": {
+          "cors": [
+            "true"
+          ],
+          "content-type": [
+            "application/x-json-stream"
+          ],
+          "client-id": [
+            "NO_AUTH"
+          ],
+          "client-version": [
+            "1DS-Web-JS-3.2.8"
+          ],
+          "apikey": [
+            "197418c5cb8c4426b201f9db2e87b914-87887378-2790-49b0-9295-51f43b6204b1-7172"
+          ],
+          "upload-time": [
+            "1753115689725"
+          ],
+          "w": [
+            "2"
+          ],
+          "NoResponseBody": [
+            "true"
+          ]
+        },
+        "request_headers": {
+          "referer": "https://www.colchester.gov.uk/",
+          "content-type": "text/plain;charset=UTF-8"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T16:34:49.783Z",
+        "duration_ms": -1,
+        "endpoint": "/OneCollector/1.0",
+        "host": "eu-mobile.events.data.microsoft.com",
+        "method": "POST",
+        "status": -1,
+        "query_params": {
+          "cors": [
+            "true"
+          ],
+          "content-type": [
+            "application/x-json-stream"
+          ],
+          "client-id": [
+            "NO_AUTH"
+          ],
+          "client-version": [
+            "1DS-Web-JS-3.2.8"
+          ],
+          "apikey": [
+            "197418c5cb8c4426b201f9db2e87b914-87887378-2790-49b0-9295-51f43b6204b1-7172"
+          ],
+          "upload-time": [
+            "1753115689726"
+          ],
+          "w": [
+            "2"
+          ],
+          "NoResponseBody": [
+            "true"
+          ]
+        },
+        "request_headers": {
+          "referer": "https://www.colchester.gov.uk/",
+          "content-type": "text/plain;charset=UTF-8"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T16:34:49.783Z",
+        "duration_ms": -1,
+        "endpoint": "/OneCollector/1.0",
+        "host": "eu-mobile.events.data.microsoft.com",
+        "method": "POST",
+        "status": -1,
+        "query_params": {
+          "cors": [
+            "true"
+          ],
+          "content-type": [
+            "application/x-json-stream"
+          ],
+          "client-id": [
+            "NO_AUTH"
+          ],
+          "client-version": [
+            "1DS-Web-JS-3.2.8"
+          ],
+          "apikey": [
+            "197418c5cb8c4426b201f9db2e87b914-87887378-2790-49b0-9295-51f43b6204b1-7172"
+          ],
+          "upload-time": [
+            "1753115689726"
+          ],
+          "w": [
+            "2"
+          ],
+          "NoResponseBody": [
+            "true"
+          ]
+        },
+        "request_headers": {
+          "referer": "https://www.colchester.gov.uk/",
+          "content-type": "text/plain;charset=UTF-8"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T16:34:50.053Z",
+        "duration_ms": -1,
+        "endpoint": "/OneCollector/1.0",
+        "host": "eu-mobile.events.data.microsoft.com",
+        "method": "POST",
+        "status": -1,
+        "query_params": {
+          "cors": [
+            "true"
+          ],
+          "content-type": [
+            "application/x-json-stream"
+          ],
+          "client-id": [
+            "NO_AUTH"
+          ],
+          "client-version": [
+            "1DS-Web-JS-3.2.8"
+          ],
+          "apikey": [
+            "197418c5cb8c4426b201f9db2e87b914-87887378-2790-49b0-9295-51f43b6204b1-7172"
+          ],
+          "upload-time": [
+            "1753115690046"
+          ],
+          "w": [
+            "2"
+          ],
+          "NoResponseBody": [
+            "true"
+          ]
+        },
+        "request_headers": {
+          "referer": "https://www.colchester.gov.uk/",
+          "content-type": "text/plain;charset=UTF-8"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T16:34:50.055Z",
+        "duration_ms": -1,
+        "endpoint": "/OneCollector/1.0",
+        "host": "eu-mobile.events.data.microsoft.com",
+        "method": "POST",
+        "status": -1,
+        "query_params": {
+          "cors": [
+            "true"
+          ],
+          "content-type": [
+            "application/x-json-stream"
+          ],
+          "client-id": [
+            "NO_AUTH"
+          ],
+          "client-version": [
+            "1DS-Web-JS-3.2.8"
+          ],
+          "apikey": [
+            "197418c5cb8c4426b201f9db2e87b914-87887378-2790-49b0-9295-51f43b6204b1-7172"
+          ],
+          "upload-time": [
+            "1753115690047"
+          ],
+          "w": [
+            "2"
+          ],
+          "NoResponseBody": [
+            "true"
+          ]
+        },
+        "request_headers": {
+          "referer": "https://www.colchester.gov.uk/",
+          "content-type": "text/plain;charset=UTF-8"
+        }
+      }
+    ],
+    "/v2/track": [
+      {
+        "timestamp": "2025-07-21T16:34:28.918Z",
+        "duration_ms": 114.456,
+        "endpoint": "/v2/track",
+        "host": "westeurope-5.in.applicationinsights.azure.com",
+        "method": "POST",
+        "status": 200,
+        "request_headers": {
+          "accept": "*/*",
+          "content-type": "application/json",
+          "origin": "https://www.colchester.gov.uk",
+          "referer": "https://www.colchester.gov.uk/"
+        },
+        "response_headers": {
+          "content-type": "application/json; charset=utf-8",
+          "x-content-type-options": "nosniff"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": -1
+        }
+      },
+      {
+        "timestamp": "2025-07-21T16:34:29.581Z",
+        "duration_ms": 16.127,
+        "endpoint": "/v2/track",
+        "host": "westeurope-5.in.applicationinsights.azure.com",
+        "method": "POST",
+        "status": 200,
+        "request_headers": {
+          "accept": "*/*",
+          "content-type": "application/json",
+          "origin": "https://www.colchester.gov.uk",
+          "referer": "https://www.colchester.gov.uk/"
+        },
+        "response_headers": {
+          "content-type": "application/json; charset=utf-8",
+          "x-content-type-options": "nosniff"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 62,
+          "content_ref": "201da26f2bf2841be68133fc3451e22b2f585702.json"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T16:34:46.906Z",
+        "duration_ms": 19.999000000000002,
+        "endpoint": "/v2/track",
+        "host": "westeurope-5.in.applicationinsights.azure.com",
+        "method": "POST",
+        "status": 200,
+        "request_headers": {
+          "accept": "*/*",
+          "content-type": "application/json",
+          "origin": "https://www.colchester.gov.uk",
+          "referer": "https://www.colchester.gov.uk/"
+        },
+        "response_headers": {
+          "content-type": "application/json; charset=utf-8",
+          "x-content-type-options": "nosniff"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": -1
+        }
+      },
+      {
+        "timestamp": "2025-07-21T16:34:47.472Z",
+        "duration_ms": 15.077,
+        "endpoint": "/v2/track",
+        "host": "westeurope-5.in.applicationinsights.azure.com",
+        "method": "POST",
+        "status": 200,
+        "request_headers": {
+          "accept": "*/*",
+          "content-type": "application/json",
+          "origin": "https://www.colchester.gov.uk",
+          "referer": "https://www.colchester.gov.uk/"
+        },
+        "response_headers": {
+          "content-type": "application/json; charset=utf-8",
+          "x-content-type-options": "nosniff"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 62,
+          "content_ref": "22ce4498db63718bc49ecd6746c021c120211c12.json"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T16:34:50.299Z",
+        "duration_ms": 16.729,
+        "endpoint": "/v2/track",
+        "host": "westeurope-5.in.applicationinsights.azure.com",
+        "method": "POST",
+        "status": 200,
+        "request_headers": {
+          "accept": "*/*",
+          "content-type": "application/json",
+          "origin": "https://www.colchester.gov.uk",
+          "referer": "https://www.colchester.gov.uk/"
+        },
+        "response_headers": {
+          "content-type": "application/json; charset=utf-8",
+          "x-content-type-options": "nosniff"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 62,
+          "content_ref": "672afa53bb4f0c42109744e70cadf4c7e6f3e783.json"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T16:35:10.224Z",
+        "duration_ms": 20.346,
+        "endpoint": "/v2/track",
+        "host": "westeurope-5.in.applicationinsights.azure.com",
+        "method": "POST",
+        "status": 200,
+        "request_headers": {
+          "accept": "*/*",
+          "content-type": "application/json",
+          "origin": "https://www.colchester.gov.uk",
+          "referer": "https://www.colchester.gov.uk/"
+        },
+        "response_headers": {
+          "content-type": "application/json; charset=utf-8",
+          "x-content-type-options": "nosniff"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 62,
+          "content_ref": "672afa53bb4f0c42109744e70cadf4c7e6f3e783.json"
+        }
+      }
+    ],
+    "/resource/powerappsportal/controls/pcf_loader/manifest-0.0.30.json": [
+      {
+        "timestamp": "2025-07-21T16:34:28.805Z",
+        "duration_ms": 350.331,
+        "endpoint": "/resource/powerappsportal/controls/pcf_loader/manifest-0.0.30.json",
+        "host": "content.powerapps.com",
+        "method": "GET",
+        "status": 200,
+        "request_headers": {
+          "accept": "application/json, text/plain, */*",
+          "origin": "https://www.colchester.gov.uk",
+          "referer": "https://www.colchester.gov.uk/"
+        },
+        "response_headers": {
+          "cache-control": "public, max-age=31536000",
+          "content-type": "application/json",
+          "x-azure-ref": "20250721T163428Z-16896f46f99llcpfhC1LTSp5vn00000009200000000086bt",
+          "x-cache": "TCP_HIT",
+          "x-cache-info": "L1_T2",
+          "x-content-type-options": "nosniff",
+          "x-fd-int-roxy-purgeid": "74730419",
+          "x-ms-activity-vector": "00.00.00",
+          "x-ms-correlation-id": "79144798-3ff2-4a95-8591-7e4a49a47639",
+          "x-ms-islandgateway": "_prdil102sukgb0_6",
+          "x-ms-service-request-id": "1499194c-6693-49c3-9c51-8031261eaffd",
+          "x-ms-static-content": "PI000000B",
+          "x-servicefabric": "NoRetry"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": -1
+        }
+      }
+    ],
+    "/resource/powerappsportal/controls/host/manifest-0.5.0.json": [
+      {
+        "timestamp": "2025-07-21T16:34:28.806Z",
+        "duration_ms": 290.65299999999996,
+        "endpoint": "/resource/powerappsportal/controls/host/manifest-0.5.0.json",
+        "host": "content.powerapps.com",
+        "method": "GET",
+        "status": 200,
+        "request_headers": {
+          "accept": "application/json, text/plain, */*",
+          "origin": "https://www.colchester.gov.uk",
+          "referer": "https://www.colchester.gov.uk/"
+        },
+        "response_headers": {
+          "cache-control": "public, max-age=31536000",
+          "content-type": "application/json",
+          "x-azure-ref": "20250721T163428Z-16896f46f99llcpfhC1LTSp5vn00000009200000000086bv",
+          "x-cache": "TCP_HIT",
+          "x-cache-info": "L1_T2",
+          "x-content-type-options": "nosniff",
+          "x-fd-int-roxy-purgeid": "74730419",
+          "x-ms-activity-vector": "00.00.00",
+          "x-ms-correlation-id": "67c0072b-3f6b-449d-8ade-82cb39d0a967",
+          "x-ms-islandgateway": "_prdil101sukgb0_6",
+          "x-ms-service-request-id": "240a8fad-d68c-46a0-a985-ef1394e7f91c",
+          "x-ms-static-content": "PI0000003",
+          "x-servicefabric": "NoRetry"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": -1
+        }
+      }
+    ],
+    "/resource/powerappsportal/controls/pcf_controls/manifest-3.3.2.json": [
+      {
+        "timestamp": "2025-07-21T16:34:28.806Z",
+        "duration_ms": 291.253,
+        "endpoint": "/resource/powerappsportal/controls/pcf_controls/manifest-3.3.2.json",
+        "host": "content.powerapps.com",
+        "method": "GET",
+        "status": 200,
+        "request_headers": {
+          "accept": "application/json, text/plain, */*",
+          "origin": "https://www.colchester.gov.uk",
+          "referer": "https://www.colchester.gov.uk/"
+        },
+        "response_headers": {
+          "cache-control": "public, max-age=31536000",
+          "content-type": "application/json",
+          "x-azure-ref": "20250721T163428Z-16896f46f99llcpfhC1LTSp5vn00000009200000000086bu",
+          "x-cache": "TCP_HIT",
+          "x-cache-info": "L1_T2",
+          "x-content-type-options": "nosniff",
+          "x-fd-int-roxy-purgeid": "74730419",
+          "x-ms-activity-vector": "00.00.00",
+          "x-ms-correlation-id": "fc1eb06f-caf8-49ac-bbfd-8157787a3fff",
+          "x-ms-islandgateway": "_prdil101sukgb0_2",
+          "x-ms-service-request-id": "9853dbaf-fa57-4f36-90f4-9f399aaf0878",
+          "x-ms-static-content": "PI0000000",
+          "x-servicefabric": "NoRetry"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": -1
+        }
+      }
+    ],
+    "/resource/powerappsportal/controls/controls_fluent_v9/manifest-0.0.33.json": [
+      {
+        "timestamp": "2025-07-21T16:34:28.806Z",
+        "duration_ms": 291.865,
+        "endpoint": "/resource/powerappsportal/controls/controls_fluent_v9/manifest-0.0.33.json",
+        "host": "content.powerapps.com",
+        "method": "GET",
+        "status": 200,
+        "request_headers": {
+          "accept": "application/json, text/plain, */*",
+          "origin": "https://www.colchester.gov.uk",
+          "referer": "https://www.colchester.gov.uk/"
+        },
+        "response_headers": {
+          "cache-control": "public, max-age=31536000",
+          "content-type": "application/json",
+          "x-azure-ref": "20250721T163428Z-16896f46f99llcpfhC1LTSp5vn00000009200000000086by",
+          "x-cache": "TCP_HIT",
+          "x-cache-info": "L1_T2",
+          "x-content-type-options": "nosniff",
+          "x-fd-int-roxy-purgeid": "74730419",
+          "x-ms-activity-vector": "00.00.00",
+          "x-ms-correlation-id": "81a2e115-c5b2-4e2f-b588-55218b14af67",
+          "x-ms-islandgateway": "_prdil102sukgb0_6",
+          "x-ms-service-request-id": "d3087aab-6779-41c1-8990-ee76eb8dd81e",
+          "x-ms-static-content": "PI0000000",
+          "x-servicefabric": "NoRetry"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": -1
+        }
+      }
+    ],
+    "/resource/powerappsportal/controls/data_grid/manifest-1.1.31.json": [
+      {
+        "timestamp": "2025-07-21T16:34:28.806Z",
+        "duration_ms": 292.42,
+        "endpoint": "/resource/powerappsportal/controls/data_grid/manifest-1.1.31.json",
+        "host": "content.powerapps.com",
+        "method": "GET",
+        "status": 200,
+        "request_headers": {
+          "accept": "application/json, text/plain, */*",
+          "origin": "https://www.colchester.gov.uk",
+          "referer": "https://www.colchester.gov.uk/"
+        },
+        "response_headers": {
+          "cache-control": "public, max-age=31536000",
+          "content-type": "application/json",
+          "x-azure-ref": "20250721T163428Z-16896f46f99llcpfhC1LTSp5vn00000009200000000086bw",
+          "x-cache": "TCP_HIT",
+          "x-cache-info": "L1_T2",
+          "x-content-type-options": "nosniff",
+          "x-fd-int-roxy-purgeid": "74730419",
+          "x-ms-activity-vector": "00.00.00",
+          "x-ms-correlation-id": "466f3a6e-52d6-45be-9f87-48e602901e33",
+          "x-ms-islandgateway": "_prdil101sukgb0_0",
+          "x-ms-service-request-id": "10d8ffcf-3388-4c2a-b5e1-0d9058671649",
+          "x-ms-static-content": "ZB0000007",
+          "x-servicefabric": "NoRetry"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": -1
+        }
+      }
+    ],
+    "/resource/powerappsportal/controls/mf_shared/manifest-0.2.10.json": [
+      {
+        "timestamp": "2025-07-21T16:34:28.806Z",
+        "duration_ms": 292.866,
+        "endpoint": "/resource/powerappsportal/controls/mf_shared/manifest-0.2.10.json",
+        "host": "content.powerapps.com",
+        "method": "GET",
+        "status": 200,
+        "request_headers": {
+          "accept": "application/json, text/plain, */*",
+          "origin": "https://www.colchester.gov.uk",
+          "referer": "https://www.colchester.gov.uk/"
+        },
+        "response_headers": {
+          "cache-control": "public, max-age=31536000",
+          "content-type": "application/json",
+          "x-azure-ref": "20250721T163428Z-16896f46f99llcpfhC1LTSp5vn00000009200000000086bx",
+          "x-cache": "TCP_HIT",
+          "x-cache-info": "L1_T2",
+          "x-content-type-options": "nosniff",
+          "x-fd-int-roxy-purgeid": "74730419",
+          "x-ms-activity-vector": "00.00.00",
+          "x-ms-correlation-id": "48537af0-6b54-4953-8ed7-9c452652cffa",
+          "x-ms-islandgateway": "_prdil101sukgb0_0",
+          "x-ms-service-request-id": "1c02c815-aab9-4953-bb61-9a6b75d04884",
+          "x-ms-static-content": "ZB0000004",
+          "x-servicefabric": "NoRetry"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": -1
+        }
+      }
+    ],
+    "/_api/new_llpgs": [
+      {
+        "timestamp": "2025-07-21T16:34:56.314Z",
+        "duration_ms": 350.082,
+        "endpoint": "/_api/new_llpgs",
+        "host": "www.colchester.gov.uk",
+        "method": "GET",
+        "status": 200,
+        "query_params": {
+          "$select": [
+            "new_llpgid,new_saon,new_paon,new_street,new_postcoide,new_name"
+          ],
+          "$filter": [
+            "(new_postcoide eq 'CM9 8HL')"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "cookie": "[cookies present]",
+          "referer": "https://www.colchester.gov.uk/your-recycling-calendar/?start=true",
+          "x-requested-with": "XMLHttpRequest"
+        },
+        "response_headers": {
+          "cache-control": "no-cache",
+          "content-type": "application/json; charset=utf-8",
+          "x-frame-options": "SAMEORIGIN",
+          "x-ms-cds-service-request-id": "15599319-04c8-4a12-adb1-109aae85c9c3",
+          "x-ms-portal-app": "site-d40aeee5-a782-45ad-8f5a-540d634ba4ad-EUn",
+          "x-ms-request-id": "83b7000a-f39e-479c-972f-5f7eeba401b6"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 11129,
+          "content_ref": "136630e2fcd4656fef54b1248c0a09e1464c0ef6.json"
+        }
+      }
+    ],
+    "/api/calendar/{id}": [
+      {
+        "timestamp": "2025-07-21T16:35:01.796Z",
+        "duration_ms": 118.722,
+        "endpoint": "/api/calendar/{id}",
+        "host": "new-llpg-app.azurewebsites.net",
+        "method": "GET",
+        "status": 200,
+        "path_params": [
+          "1e61a332-64a4-ea11-a812-000d3ab2928c"
+        ],
+        "request_headers": {
+          "accept": "*/*",
+          "origin": "https://www.colchester.gov.uk",
+          "referer": "https://www.colchester.gov.uk/"
+        },
+        "response_headers": {
+          "cache-control": "no-cache",
+          "content-type": "application/json; charset=utf-8",
+          "set-cookie": "[cookies present]",
+          "x-aspnet-version": "4.0.30319",
+          "x-powered-by": "ASP.NET"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 741,
+          "content_ref": "91351c73ecc7643799dbb31742eaaab88a23603b.json"
+        }
+      }
+    ]
+  }
 }

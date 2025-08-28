@@ -1,226 +1,2943 @@
 {
-  "metadata": {
-    "trace_name": "powys_county_council",
-    "processed_at": "2025-08-26 18:44:24",
-    "workflow_steps_count": 7,
-    "navigation_events_count": 15
-  },
-  "scraping_patterns": {
-    "login_detected": false,
-    "form_submissions": 2,
-    "navigation_count": 1,
-    "unique_domains": [
-      "www.powys.gov.uk",
-      "en.powys.gov.uk"
-    ],
-    "api_endpoints": [
-      "https://en.powys.gov.uk/manifest.json",
-      "https://en.powys.gov.uk/manifest.json",
-      "https://en.powys.gov.uk/manifest.json"
-    ],
-    "data_extraction_indicators": []
-  },
-  "workflow_steps": [
+  "entries": [
     {
-      "action": "goto",
-      "target": "http://www.powys.gov.uk/en/bins-rubbish-recycling/report-a-bin-collection-problem/",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
-    },
-    {
-      "action": "click",
-      "target": "aria-ref=e14 >> internal:describe=\"Accept all button\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
-    },
-    {
-      "action": "click",
-      "target": "aria-ref=e138 >> internal:describe=\"Bin collection day link\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
-    },
-    {
-      "action": "fill",
-      "target": "aria-ref=e63 >> internal:describe=\"Postcode textbox\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0,
-      "value": "CF44 9JE"
-    },
-    {
-      "action": "click",
-      "target": "aria-ref=e66 >> internal:describe=\"Find address button\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
-    },
-    {
-      "action": "selectOption",
-      "target": "aria-ref=e69 >> internal:describe=\"Address combobox\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0,
-      "value": null
-    },
-    {
-      "action": "click",
-      "target": "aria-ref=e162 >> internal:describe=\"Next button\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
-    }
-  ],
-  "navigation_events": [
-    {
-      "url": "http://www.powys.gov.uk/en/bins-rubbish-recycling/report-a-bin-collection-problem/",
+      "timestamp": "2025-07-21T10:26:51.729Z",
+      "duration_ms": 98.55999999999999,
+      "endpoint": "/en/{id}/{id}",
+      "host": "www.powys.gov.uk",
       "method": "GET",
       "status": 301,
-      "redirect_url": "https://www.powys.gov.uk/en/bins-rubbish-recycling/report-a-bin-collection-problem/",
-      "mime_type": "text/html; charset=iso-8859-1",
-      "size": -1,
-      "timestamp": "2025-07-21T10:26:51.729Z"
+      "path_params": [
+        "bins-rubbish-recycling",
+        "report-a-bin-collection-problem"
+      ],
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7"
+      },
+      "response_headers": {
+        "content-type": "text/html; charset=iso-8859-1",
+        "location": "https://www.powys.gov.uk/en/bins-rubbish-recycling/report-a-bin-collection-problem/"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": -1
+      },
+      "redirect_to": "https://www.powys.gov.uk/en/bins-rubbish-recycling/report-a-bin-collection-problem/"
     },
     {
-      "url": "https://www.powys.gov.uk/en/bins-rubbish-recycling/report-a-bin-collection-problem/",
+      "timestamp": "2025-07-21T10:26:51.790Z",
+      "duration_ms": 114.155,
+      "endpoint": "/en/{id}/{id}",
+      "host": "www.powys.gov.uk",
       "method": "GET",
       "status": 301,
-      "redirect_url": "https://en.powys.gov.uk/",
-      "mime_type": "text/html; charset=iso-8859-1",
-      "size": -1,
-      "timestamp": "2025-07-21T10:26:51.790Z"
+      "path_params": [
+        "bins-rubbish-recycling",
+        "report-a-bin-collection-problem"
+      ],
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7"
+      },
+      "response_headers": {
+        "content-type": "text/html; charset=iso-8859-1",
+        "location": "https://en.powys.gov.uk/"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": -1
+      },
+      "redirect_to": "https://en.powys.gov.uk/"
     },
     {
-      "url": "https://en.powys.gov.uk/",
+      "timestamp": "2025-07-21T10:26:51.879Z",
+      "duration_ms": 93.691,
+      "endpoint": "/",
+      "host": "en.powys.gov.uk",
       "method": "GET",
       "status": 302,
-      "redirect_url": "https://en.powys.gov.uk/?ccp=true",
-      "mime_type": "x-unknown",
-      "size": -1,
-      "timestamp": "2025-07-21T10:26:51.879Z"
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7"
+      },
+      "response_headers": {
+        "location": "https://en.powys.gov.uk/?ccp=true#cookie-consent-prompt",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "sameorigin",
+        "x-xss-protection": "1; mode=block"
+      },
+      "redirect_to": "https://en.powys.gov.uk/?ccp=true#cookie-consent-prompt"
     },
     {
-      "url": "https://en.powys.gov.uk/?ccp=true",
+      "timestamp": "2025-07-21T10:26:51.956Z",
+      "duration_ms": 62.239000000000004,
+      "endpoint": "/",
+      "host": "en.powys.gov.uk",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "text/html;charset=UTF-8",
-      "size": 55222,
-      "timestamp": "2025-07-21T10:26:51.956Z"
-    },
-    {
-      "url": "https://en.powys.gov.uk/fonts/icons.woff?m=1750678418000",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/x-font-woff",
-      "size": 50876,
-      "timestamp": "2025-07-21T10:26:52.206Z"
-    },
-    {
-      "url": "https://en.powys.gov.uk/manifest.json",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json;charset=utf-8",
-      "size": 798,
-      "timestamp": "2025-07-21T10:26:52.319Z"
-    },
-    {
-      "url": "https://en.powys.gov.uk/article/10159/Cookie-Consent",
-      "method": "POST",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "x-unknown",
-      "size": 0,
-      "timestamp": "2025-07-21T10:26:53.487Z"
-    },
-    {
-      "url": "https://en.powys.gov.uk/binday",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "text/html;charset=UTF-8",
-      "size": 60177,
-      "timestamp": "2025-07-21T10:26:55.843Z"
-    },
-    {
-      "url": "https://en.powys.gov.uk/fonts/icons.woff?m=1750678418000",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/x-font-woff",
-      "size": 50876,
-      "timestamp": "2025-07-21T10:26:56.347Z"
-    },
-    {
-      "url": "https://en.powys.gov.uk/manifest.json",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json;charset=utf-8",
-      "size": 798,
-      "timestamp": "2025-07-21T10:26:56.350Z"
-    },
-    {
-      "url": "https://en.powys.gov.uk/apiserver/formsservice/http/processsubmission?pageSessionId=8d80eeef-95e4-43a9-ba2b-d073fb05cc45&fsid=39810429-ddd0-4555-95df-61fcc325ad6c&fsn=4b5f95ae-b4bb-4d9c-8939-1f0f4cfa86d0",
-      "method": "POST",
-      "status": 303,
-      "redirect_url": "https://en.powys.gov.uk/apiserver/formsservice/http/verifycookie?pageSessionId=8d80eeef-95e4-43a9-ba2b-d073fb05cc45&fsid=39810429-ddd0-4555-95df-61fcc325ad6c",
-      "mime_type": "x-unknown",
-      "size": -1,
-      "timestamp": "2025-07-21T10:27:15.389Z",
-      "form_data": {
-        "BINDAYLOOKUP_PAGESESSIONID": "8d80eeef-95e4-43a9-ba2b-d073fb05cc45",
-        "BINDAYLOOKUP_SESSIONID": "39810429-ddd0-4555-95df-61fcc325ad6c",
-        "BINDAYLOOKUP_NONCE": "4b5f95ae-b4bb-4d9c-8939-1f0f4cfa86d0",
-        "BINDAYLOOKUP_VARIABLES": "e30=",
-        "BINDAYLOOKUP_PAGENAME": "ADDRESSLOOKUP",
-        "BINDAYLOOKUP_PAGEINSTANCE": "0",
-        "BINDAYLOOKUP_ADDRESSLOOKUP_ADDRESSLOOKUPPOSTCODE": "CF44 9JE",
-        "BINDAYLOOKUP_ADDRESSLOOKUP_ADDRESSLOOKUPADDRESS": "0",
-        "BINDAYLOOKUP_ADDRESSLOOKUP_POSTALADDRESS": "ABERLLIA FARM, YSTRADFELLTE, ABERDARE, CF44 9JE",
-        "BINDAYLOOKUP_ADDRESSLOOKUP_UPRN": "10011806367",
-        "BINDAYLOOKUP_FORMACTION_NEXT": "BINDAYLOOKUP_ADDRESSLOOKUP_ADDRESSLOOKUPBUTTONS"
+      "query_params": {
+        "ccp": [
+          "true"
+        ]
+      },
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7"
+      },
+      "response_headers": {
+        "cache-control": "no-cache, no-store",
+        "content-type": "text/html;charset=UTF-8",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "sameorigin",
+        "x-ua-compatible": "IE=Edge",
+        "x-xss-protection": "1; mode=block"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 55222,
+        "compressed": true,
+        "content_ref": "5c3c406a8e497d318d8c64e19dd7c606e1ef1436.html"
       }
     },
     {
-      "url": "https://en.powys.gov.uk/apiserver/formsservice/http/verifycookie?pageSessionId=8d80eeef-95e4-43a9-ba2b-d073fb05cc45&fsid=39810429-ddd0-4555-95df-61fcc325ad6c",
+      "timestamp": "2025-07-21T10:26:52.206Z",
+      "duration_ms": 28.813000000000002,
+      "endpoint": "/fonts/icons.woff",
+      "host": "en.powys.gov.uk",
+      "method": "GET",
+      "status": 200,
+      "query_params": {
+        "m": [
+          "1750678418000"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "origin": "https://en.powys.gov.uk",
+        "referer": "https://en.powys.gov.uk/themes/dynamic/css/dynamic.css?m=3tjl0e5nd3tli6lk245728d70"
+      },
+      "response_headers": {
+        "cache-control": "private",
+        "content-type": "application/x-font-woff",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "sameorigin",
+        "x-xss-protection": "1; mode=block"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T10:26:52.319Z",
+      "duration_ms": 50.715999999999994,
+      "endpoint": "/manifest.json",
+      "host": "en.powys.gov.uk",
+      "method": "GET",
+      "status": 200,
+      "request_headers": {
+        "accept": "*/*",
+        "referer": "https://en.powys.gov.uk/?ccp=true"
+      },
+      "response_headers": {
+        "content-type": "application/json;charset=utf-8",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "sameorigin",
+        "x-xss-protection": "1; mode=block"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 798,
+        "content_ref": "12f8ce821d6d065d7edc0c64e66432234d8259bb.json"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T10:26:53.487Z",
+      "duration_ms": 12.792000000000002,
+      "endpoint": "/article/{id}/Cookie-Consent",
+      "host": "en.powys.gov.uk",
+      "method": "POST",
+      "status": 200,
+      "path_params": [
+        "10159"
+      ],
+      "request_headers": {
+        "accept": "*/*",
+        "content-type": "multipart/form-data; boundary=----WebKitFormBoundaryrKGgcPt2A72hSIS3",
+        "origin": "https://en.powys.gov.uk",
+        "referer": "https://en.powys.gov.uk/?ccp=true"
+      },
+      "response_headers": {
+        "set-cookie": "[cookies present]",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "sameorigin",
+        "x-xss-protection": "1; mode=block"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T10:26:53.559Z",
+      "duration_ms": 63.743,
+      "endpoint": "/g/collect",
+      "host": "region1.google-analytics.com",
+      "method": "POST",
+      "status": 204,
+      "query_params": {
+        "v": [
+          "2"
+        ],
+        "tid": [
+          "G-EPRX5MLR4T"
+        ],
+        "gtm": [
+          "45je57g1v9104147077za200"
+        ],
+        "_p": [
+          "1753093613500"
+        ],
+        "gcd": [
+          "13l3l3l3l1l1"
+        ],
+        "npa": [
+          "0"
+        ],
+        "dma": [
+          "0"
+        ],
+        "tag_exp": [
+          "101509157~103116026~103200004~103233427~104684208~104684211~104952206~104952208"
+        ],
+        "cid": [
+          "354555218.1753093614"
+        ],
+        "ul": [
+          "en-gb"
+        ],
+        "sr": [
+          "800x600"
+        ],
+        "uaa": [
+          "arm"
+        ],
+        "uab": [
+          "64"
+        ],
+        "uafvl": [
+          "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+        ],
+        "uamb": [
+          "0"
+        ],
+        "uap": [
+          "macOS"
+        ],
+        "uapv": [
+          "15.5.0"
+        ],
+        "uaw": [
+          "0"
+        ],
+        "are": [
+          "1"
+        ],
+        "frm": [
+          "0"
+        ],
+        "pscdl": [
+          "noapi"
+        ],
+        "_s": [
+          "1"
+        ],
+        "sid": [
+          "1753093613"
+        ],
+        "sct": [
+          "1"
+        ],
+        "seg": [
+          "0"
+        ],
+        "dl": [
+          "https://en.powys.gov.uk/"
+        ],
+        "dt": [
+          "Home (English) - Powys County Council"
+        ],
+        "_tu": [
+          "QA"
+        ],
+        "en": [
+          "page_view"
+        ],
+        "_fv": [
+          "1"
+        ],
+        "_nsi": [
+          "1"
+        ],
+        "_ss": [
+          "1"
+        ],
+        "_ee": [
+          "1"
+        ],
+        "ep.anonymizeIp": [
+          "true"
+        ],
+        "ep.location": [
+          "https://en.powys.gov.uk/?ccp=true"
+        ],
+        "tfd": [
+          "1783"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "cookie": "[cookies present]",
+        "origin": "https://en.powys.gov.uk",
+        "referer": "https://en.powys.gov.uk/"
+      },
+      "response_headers": {
+        "cache-control": "no-cache, no-store, must-revalidate",
+        "content-type": "text/plain"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T10:26:56.222Z",
+      "duration_ms": -1,
+      "endpoint": "/g/collect",
+      "host": "region1.google-analytics.com",
+      "method": "POST",
+      "status": -1,
+      "query_params": {
+        "v": [
+          "2"
+        ],
+        "tid": [
+          "G-EPRX5MLR4T"
+        ],
+        "gtm": [
+          "45je57g1v9104147077za200"
+        ],
+        "_p": [
+          "1753093613500"
+        ],
+        "gcd": [
+          "13l3l3l3l1l1"
+        ],
+        "npa": [
+          "0"
+        ],
+        "dma": [
+          "0"
+        ],
+        "tag_exp": [
+          "101509157~103116026~103200004~103233427~104684208~104684211~104952206~104952208"
+        ],
+        "cid": [
+          "354555218.1753093614"
+        ],
+        "ul": [
+          "en-gb"
+        ],
+        "sr": [
+          "800x600"
+        ],
+        "uaa": [
+          "arm"
+        ],
+        "uab": [
+          "64"
+        ],
+        "uafvl": [
+          "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+        ],
+        "uamb": [
+          "0"
+        ],
+        "uap": [
+          "macOS"
+        ],
+        "uapv": [
+          "15.5.0"
+        ],
+        "uaw": [
+          "0"
+        ],
+        "are": [
+          "1"
+        ],
+        "frm": [
+          "0"
+        ],
+        "pscdl": [
+          "noapi"
+        ],
+        "_eu": [
+          "AEAAAAQ"
+        ],
+        "_s": [
+          "2"
+        ],
+        "dl": [
+          "https://en.powys.gov.uk/"
+        ],
+        "dr": [
+          "https://en.powys.gov.uk/?ccp=true"
+        ],
+        "sid": [
+          "1753093613"
+        ],
+        "sct": [
+          "1"
+        ],
+        "seg": [
+          "1"
+        ],
+        "dt": [
+          "Home (English) - Powys County Council"
+        ],
+        "_tu": [
+          "QA"
+        ],
+        "en": [
+          "page_view"
+        ],
+        "ep.anonymizeIp": [
+          "true"
+        ],
+        "ep.location": [
+          "https://en.powys.gov.uk/?ccp=true"
+        ],
+        "_et": [
+          "998"
+        ],
+        "tfd": [
+          "4493"
+        ]
+      },
+      "request_headers": {
+        "referer": "https://en.powys.gov.uk/"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T10:26:56.223Z",
+      "duration_ms": -1,
+      "endpoint": "/g/collect",
+      "host": "region1.google-analytics.com",
+      "method": "POST",
+      "status": -1,
+      "query_params": {
+        "v": [
+          "2"
+        ],
+        "tid": [
+          "G-EPRX5MLR4T"
+        ],
+        "gtm": [
+          "45je57g1v9104147077za200"
+        ],
+        "_p": [
+          "1753093613500"
+        ],
+        "gcd": [
+          "13l3l3l3l1l1"
+        ],
+        "npa": [
+          "0"
+        ],
+        "dma": [
+          "0"
+        ],
+        "tag_exp": [
+          "101509157~103116026~103200004~103233427~104684208~104684211~104952206~104952208"
+        ],
+        "cid": [
+          "354555218.1753093614"
+        ],
+        "ul": [
+          "en-gb"
+        ],
+        "sr": [
+          "800x600"
+        ],
+        "uaa": [
+          "arm"
+        ],
+        "uab": [
+          "64"
+        ],
+        "uafvl": [
+          "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+        ],
+        "uamb": [
+          "0"
+        ],
+        "uap": [
+          "macOS"
+        ],
+        "uapv": [
+          "15.5.0"
+        ],
+        "uaw": [
+          "0"
+        ],
+        "are": [
+          "1"
+        ],
+        "frm": [
+          "0"
+        ],
+        "pscdl": [
+          "noapi"
+        ],
+        "_eu": [
+          "AAAAAAQ"
+        ],
+        "_s": [
+          "3"
+        ],
+        "sid": [
+          "1753093613"
+        ],
+        "sct": [
+          "1"
+        ],
+        "seg": [
+          "1"
+        ],
+        "dl": [
+          "https://en.powys.gov.uk/"
+        ],
+        "dr": [
+          "https://en.powys.gov.uk/?ccp=true"
+        ],
+        "dt": [
+          "Home (English) - Powys County Council"
+        ],
+        "_tu": [
+          "QA"
+        ],
+        "en": [
+          "user_engagement"
+        ],
+        "ep.anonymizeIp": [
+          "true"
+        ],
+        "ep.location": [
+          "https://en.powys.gov.uk/?ccp=true"
+        ],
+        "_et": [
+          "1705"
+        ],
+        "tfd": [
+          "4494"
+        ]
+      },
+      "request_headers": {
+        "referer": "https://en.powys.gov.uk/"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T10:26:55.843Z",
+      "duration_ms": 369.70599999999996,
+      "endpoint": "/binday",
+      "host": "en.powys.gov.uk",
+      "method": "GET",
+      "status": 200,
+      "request_headers": {
+        "referer": "https://en.powys.gov.uk/"
+      },
+      "response_headers": {
+        "cache-control": "no-cache, no-store",
+        "content-type": "text/html;charset=UTF-8",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "sameorigin",
+        "x-ua-compatible": "IE=Edge",
+        "x-xss-protection": "1; mode=block"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 60177,
+        "compressed": true,
+        "content_ref": "d5c6473f18a453122224f89cb7434b3d479651cb.html"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T10:26:56.347Z",
+      "duration_ms": 1.9849999999999999,
+      "endpoint": "/fonts/icons.woff",
+      "host": "en.powys.gov.uk",
+      "method": "GET",
+      "status": 200,
+      "query_params": {
+        "m": [
+          "1750678418000"
+        ]
+      },
+      "request_headers": {
+        "origin": "https://en.powys.gov.uk",
+        "referer": "https://en.powys.gov.uk/themes/dynamic/css/dynamic.css?m=3tjl0e5nd3tli6lk245728d70"
+      },
+      "response_headers": {
+        "x-content-type-options": "nosniff",
+        "content-type": "application/x-font-woff",
+        "x-frame-options": "sameorigin",
+        "cache-control": "private",
+        "x-xss-protection": "1; mode=block"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T10:26:56.350Z",
+      "duration_ms": 17.276,
+      "endpoint": "/manifest.json",
+      "host": "en.powys.gov.uk",
+      "method": "GET",
+      "status": 200,
+      "request_headers": {
+        "referer": "https://en.powys.gov.uk/binday"
+      },
+      "response_headers": {
+        "x-content-type-options": "nosniff",
+        "x-xss-protection": "1; mode=block",
+        "content-type": "application/json;charset=utf-8",
+        "x-frame-options": "sameorigin"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 798,
+        "compressed": true,
+        "content_ref": "12f8ce821d6d065d7edc0c64e66432234d8259bb.json"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T10:27:01.262Z",
+      "duration_ms": 16.022,
+      "endpoint": "/g/collect",
+      "host": "region1.google-analytics.com",
+      "method": "POST",
+      "status": 204,
+      "query_params": {
+        "v": [
+          "2"
+        ],
+        "tid": [
+          "G-EPRX5MLR4T"
+        ],
+        "gtm": [
+          "45je57g1v9104147077za200"
+        ],
+        "_p": [
+          "1753093616327"
+        ],
+        "gcd": [
+          "13l3l3l3l1l1"
+        ],
+        "npa": [
+          "0"
+        ],
+        "dma": [
+          "0"
+        ],
+        "tag_exp": [
+          "101509157~103116026~103200004~103233427~104684208~104684211~104952206~104952208"
+        ],
+        "cid": [
+          "354555218.1753093614"
+        ],
+        "ul": [
+          "en-gb"
+        ],
+        "sr": [
+          "800x600"
+        ],
+        "uaa": [
+          "arm"
+        ],
+        "uab": [
+          "64"
+        ],
+        "uafvl": [
+          "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+        ],
+        "uamb": [
+          "0"
+        ],
+        "uap": [
+          "macOS"
+        ],
+        "uapv": [
+          "15.5.0"
+        ],
+        "uaw": [
+          "0"
+        ],
+        "are": [
+          "1"
+        ],
+        "frm": [
+          "0"
+        ],
+        "pscdl": [
+          "noapi"
+        ],
+        "_eu": [
+          "AAAAAAQ"
+        ],
+        "_s": [
+          "1"
+        ],
+        "sid": [
+          "1753093613"
+        ],
+        "sct": [
+          "1"
+        ],
+        "seg": [
+          "1"
+        ],
+        "dl": [
+          "https://en.powys.gov.uk/binday"
+        ],
+        "dr": [
+          "https://en.powys.gov.uk/"
+        ],
+        "dt": [
+          "Bin collection day - Powys County Council"
+        ],
+        "_tu": [
+          "QA"
+        ],
+        "en": [
+          "page_view"
+        ],
+        "_ee": [
+          "1"
+        ],
+        "ep.anonymizeIp": [
+          "true"
+        ],
+        "ep.location": [
+          "https://en.powys.gov.uk/binday"
+        ],
+        "tfd": [
+          "5479"
+        ]
+      },
+      "request_headers": {
+        "referer": "https://en.powys.gov.uk/"
+      },
+      "response_headers": {
+        "cache-control": "no-cache, no-store, must-revalidate",
+        "content-type": "text/plain"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T10:27:06.266Z",
+      "duration_ms": 26.567,
+      "endpoint": "/g/collect",
+      "host": "region1.google-analytics.com",
+      "method": "POST",
+      "status": 204,
+      "query_params": {
+        "v": [
+          "2"
+        ],
+        "tid": [
+          "G-EPRX5MLR4T"
+        ],
+        "gtm": [
+          "45je57g1v9104147077za200"
+        ],
+        "_p": [
+          "1753093616327"
+        ],
+        "gcd": [
+          "13l3l3l3l1l1"
+        ],
+        "npa": [
+          "0"
+        ],
+        "dma": [
+          "0"
+        ],
+        "tag_exp": [
+          "101509157~103116026~103200004~103233427~104684208~104684211~104952206~104952208"
+        ],
+        "cid": [
+          "354555218.1753093614"
+        ],
+        "ul": [
+          "en-gb"
+        ],
+        "sr": [
+          "800x600"
+        ],
+        "uaa": [
+          "arm"
+        ],
+        "uab": [
+          "64"
+        ],
+        "uafvl": [
+          "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+        ],
+        "uamb": [
+          "0"
+        ],
+        "uap": [
+          "macOS"
+        ],
+        "uapv": [
+          "15.5.0"
+        ],
+        "uaw": [
+          "0"
+        ],
+        "are": [
+          "1"
+        ],
+        "frm": [
+          "0"
+        ],
+        "pscdl": [
+          "noapi"
+        ],
+        "_eu": [
+          "AEEAAAQ"
+        ],
+        "_s": [
+          "2"
+        ],
+        "sid": [
+          "1753093613"
+        ],
+        "sct": [
+          "1"
+        ],
+        "seg": [
+          "1"
+        ],
+        "dl": [
+          "https://en.powys.gov.uk/binday"
+        ],
+        "dr": [
+          "https://en.powys.gov.uk/"
+        ],
+        "dt": [
+          "Bin collection day - Powys County Council"
+        ],
+        "_tu": [
+          "QA"
+        ],
+        "en": [
+          "form_start"
+        ],
+        "ep.anonymizeIp": [
+          "true"
+        ],
+        "ep.location": [
+          "https://en.powys.gov.uk/binday"
+        ],
+        "ep.form_id": [
+          "BINDAYLOOKUP_FORM"
+        ],
+        "ep.form_destination": [
+          "https://en.powys.gov.uk/apiserver/formsservice/http/processsubmission?pageSessionId=8d80eeef-95e4-43a9-ba2b-d073fb05cc45&fsid=39810429-ddd0-4555-95df-61fcc325ad6c&fsn=4b5f95ae-b4bb-4d9c-8939-1f0f4cfa86d0"
+        ],
+        "epn.form_length": [
+          "14"
+        ],
+        "ep.first_field_id": [
+          "BINDAYLOOKUP_ADDRESSLOOKUP_ADDRESSLOOKUPPOSTCODE"
+        ],
+        "ep.first_field_name": [
+          "BINDAYLOOKUP_ADDRESSLOOKUP_ADDRESSLOOKUPPOSTCODE"
+        ],
+        "ep.first_field_type": [
+          "text"
+        ],
+        "epn.first_field_position": [
+          "1"
+        ],
+        "_et": [
+          "4929"
+        ],
+        "tfd": [
+          "10482"
+        ]
+      },
+      "request_headers": {
+        "referer": "https://en.powys.gov.uk/"
+      },
+      "response_headers": {
+        "cache-control": "no-cache, no-store, must-revalidate",
+        "content-type": "text/plain"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T10:27:15.328Z",
+      "duration_ms": 29.393,
+      "endpoint": "/g/collect",
+      "host": "region1.google-analytics.com",
+      "method": "POST",
+      "status": 204,
+      "query_params": {
+        "v": [
+          "2"
+        ],
+        "tid": [
+          "G-EPRX5MLR4T"
+        ],
+        "gtm": [
+          "45je57g1v9104147077za200"
+        ],
+        "_p": [
+          "1753093616327"
+        ],
+        "gcd": [
+          "13l3l3l3l1l1"
+        ],
+        "npa": [
+          "0"
+        ],
+        "dma": [
+          "0"
+        ],
+        "tag_exp": [
+          "101509157~103116026~103200004~103233427~104684208~104684211~104952206~104952208"
+        ],
+        "cid": [
+          "354555218.1753093614"
+        ],
+        "ul": [
+          "en-gb"
+        ],
+        "sr": [
+          "800x600"
+        ],
+        "uaa": [
+          "arm"
+        ],
+        "uab": [
+          "64"
+        ],
+        "uafvl": [
+          "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+        ],
+        "uamb": [
+          "0"
+        ],
+        "uap": [
+          "macOS"
+        ],
+        "uapv": [
+          "15.5.0"
+        ],
+        "uaw": [
+          "0"
+        ],
+        "are": [
+          "1"
+        ],
+        "frm": [
+          "0"
+        ],
+        "pscdl": [
+          "noapi"
+        ],
+        "_eu": [
+          "AEEAAAQ"
+        ],
+        "_s": [
+          "3"
+        ],
+        "sid": [
+          "1753093613"
+        ],
+        "sct": [
+          "1"
+        ],
+        "seg": [
+          "1"
+        ],
+        "dl": [
+          "https://en.powys.gov.uk/binday"
+        ],
+        "dr": [
+          "https://en.powys.gov.uk/"
+        ],
+        "dt": [
+          "Bin collection day - Powys County Council"
+        ],
+        "_tu": [
+          "QA"
+        ],
+        "en": [
+          "form_submit"
+        ],
+        "_c": [
+          "1"
+        ],
+        "ep.anonymizeIp": [
+          "true"
+        ],
+        "ep.location": [
+          "https://en.powys.gov.uk/binday"
+        ],
+        "ep.form_id": [
+          "BINDAYLOOKUP_FORM"
+        ],
+        "ep.form_destination": [
+          "https://en.powys.gov.uk/apiserver/formsservice/http/processsubmission?pageSessionId=8d80eeef-95e4-43a9-ba2b-d073fb05cc45&fsid=39810429-ddd0-4555-95df-61fcc325ad6c&fsn=4b5f95ae-b4bb-4d9c-8939-1f0f4cfa86d0"
+        ],
+        "epn.form_length": [
+          "14"
+        ],
+        "ep.form_submit_text": [
+          "BINDAYLOOKUP_ADDRESSLOOKUP_ADDRESSLOOKUPBUTTONS"
+        ],
+        "_et": [
+          "14063"
+        ],
+        "tfd": [
+          "19545"
+        ]
+      },
+      "request_headers": {
+        "referer": "https://en.powys.gov.uk/"
+      },
+      "response_headers": {
+        "cache-control": "no-cache, no-store, must-revalidate",
+        "content-type": "text/plain"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T10:27:15.389Z",
+      "duration_ms": 210.72099999999998,
+      "endpoint": "/apiserver/formsservice/http/processsubmission",
+      "host": "en.powys.gov.uk",
+      "method": "POST",
+      "status": 303,
+      "query_params": {
+        "pageSessionId": [
+          "8d80eeef-95e4-43a9-ba2b-d073fb05cc45"
+        ],
+        "fsid": [
+          "39810429-ddd0-4555-95df-61fcc325ad6c"
+        ],
+        "fsn": [
+          "4b5f95ae-b4bb-4d9c-8939-1f0f4cfa86d0"
+        ]
+      },
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+        "content-type": "application/x-www-form-urlencoded",
+        "cookie": "[cookies present]",
+        "origin": "https://en.powys.gov.uk",
+        "referer": "https://en.powys.gov.uk/binday"
+      },
+      "response_headers": {
+        "location": "https://en.powys.gov.uk/apiserver/formsservice/http/verifycookie?pageSessionId=8d80eeef-95e4-43a9-ba2b-d073fb05cc45&fsid=39810429-ddd0-4555-95df-61fcc325ad6c",
+        "set-cookie": "[cookies present]",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "sameorigin",
+        "x-xss-protection": "1; mode=block"
+      },
+      "redirect_to": "https://en.powys.gov.uk/apiserver/formsservice/http/verifycookie?pageSessionId=8d80eeef-95e4-43a9-ba2b-d073fb05cc45&fsid=39810429-ddd0-4555-95df-61fcc325ad6c"
+    },
+    {
+      "timestamp": "2025-07-21T10:27:15.601Z",
+      "duration_ms": 42.349,
+      "endpoint": "/apiserver/formsservice/http/verifycookie",
+      "host": "en.powys.gov.uk",
       "method": "GET",
       "status": 303,
-      "redirect_url": "https://en.powys.gov.uk/binday?pageSessionId=8d80eeef-95e4-43a9-ba2b-d073fb05cc45&fsn=3f708130-0ad5-4d8f-9491-738ff207ab96",
-      "mime_type": "x-unknown",
-      "size": -1,
-      "timestamp": "2025-07-21T10:27:15.601Z"
+      "query_params": {
+        "pageSessionId": [
+          "8d80eeef-95e4-43a9-ba2b-d073fb05cc45"
+        ],
+        "fsid": [
+          "39810429-ddd0-4555-95df-61fcc325ad6c"
+        ]
+      },
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+        "cookie": "[cookies present]",
+        "referer": "https://en.powys.gov.uk/binday"
+      },
+      "response_headers": {
+        "location": "https://en.powys.gov.uk/binday?pageSessionId=8d80eeef-95e4-43a9-ba2b-d073fb05cc45&fsn=3f708130-0ad5-4d8f-9491-738ff207ab96",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "sameorigin",
+        "x-xss-protection": "1; mode=block"
+      },
+      "redirect_to": "https://en.powys.gov.uk/binday?pageSessionId=8d80eeef-95e4-43a9-ba2b-d073fb05cc45&fsn=3f708130-0ad5-4d8f-9491-738ff207ab96"
     },
     {
-      "url": "https://en.powys.gov.uk/binday?pageSessionId=8d80eeef-95e4-43a9-ba2b-d073fb05cc45&fsn=3f708130-0ad5-4d8f-9491-738ff207ab96",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "text/html;charset=UTF-8",
-      "size": 57225,
-      "timestamp": "2025-07-21T10:27:15.643Z"
+      "timestamp": "2025-07-21T10:27:16.890Z",
+      "duration_ms": -1,
+      "endpoint": "/g/collect",
+      "host": "region1.google-analytics.com",
+      "method": "POST",
+      "status": -1,
+      "query_params": {
+        "v": [
+          "2"
+        ],
+        "tid": [
+          "G-EPRX5MLR4T"
+        ],
+        "gtm": [
+          "45je57g1v9104147077za200"
+        ],
+        "_p": [
+          "1753093616327"
+        ],
+        "gcd": [
+          "13l3l3l3l1l1"
+        ],
+        "npa": [
+          "0"
+        ],
+        "dma": [
+          "0"
+        ],
+        "tag_exp": [
+          "101509157~103116026~103200004~103233427~104684208~104684211~104952206~104952208"
+        ],
+        "cid": [
+          "354555218.1753093614"
+        ],
+        "ul": [
+          "en-gb"
+        ],
+        "sr": [
+          "800x600"
+        ],
+        "uaa": [
+          "arm"
+        ],
+        "uab": [
+          "64"
+        ],
+        "uafvl": [
+          "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+        ],
+        "uamb": [
+          "0"
+        ],
+        "uap": [
+          "macOS"
+        ],
+        "uapv": [
+          "15.5.0"
+        ],
+        "uaw": [
+          "0"
+        ],
+        "are": [
+          "1"
+        ],
+        "frm": [
+          "0"
+        ],
+        "pscdl": [
+          "noapi"
+        ],
+        "_eu": [
+          "AAAAAAQ"
+        ],
+        "_s": [
+          "4"
+        ],
+        "sid": [
+          "1753093613"
+        ],
+        "sct": [
+          "1"
+        ],
+        "seg": [
+          "1"
+        ],
+        "dl": [
+          "https://en.powys.gov.uk/binday"
+        ],
+        "dr": [
+          "https://en.powys.gov.uk/"
+        ],
+        "dt": [
+          "Bin collection day - Powys County Council"
+        ],
+        "_tu": [
+          "QA"
+        ],
+        "en": [
+          "user_engagement"
+        ],
+        "ep.anonymizeIp": [
+          "true"
+        ],
+        "ep.location": [
+          "https://en.powys.gov.uk/binday"
+        ],
+        "_et": [
+          "1558"
+        ],
+        "tfd": [
+          "21107"
+        ]
+      },
+      "request_headers": {
+        "referer": "https://en.powys.gov.uk/"
+      }
     },
     {
-      "url": "https://en.powys.gov.uk/fonts/icons.woff?m=1750678418000",
+      "timestamp": "2025-07-21T10:27:15.643Z",
+      "duration_ms": 1240.369,
+      "endpoint": "/binday",
+      "host": "en.powys.gov.uk",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/x-font-woff",
-      "size": -1,
-      "timestamp": "2025-07-21T10:27:16.925Z"
+      "query_params": {
+        "pageSessionId": [
+          "8d80eeef-95e4-43a9-ba2b-d073fb05cc45"
+        ],
+        "fsn": [
+          "3f708130-0ad5-4d8f-9491-738ff207ab96"
+        ]
+      },
+      "request_headers": {
+        "content-type": "application/x-www-form-urlencoded",
+        "origin": "https://en.powys.gov.uk",
+        "referer": "https://en.powys.gov.uk/binday"
+      },
+      "response_headers": {
+        "cache-control": "no-cache, no-store",
+        "content-type": "text/html;charset=UTF-8",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "sameorigin",
+        "x-ua-compatible": "IE=Edge",
+        "x-xss-protection": "1; mode=block"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 57225,
+        "compressed": true,
+        "content_ref": "2840f3a32920529e6bfc553cb5e8a9ded50034a2.html"
+      }
     },
     {
-      "url": "https://en.powys.gov.uk/manifest.json",
+      "timestamp": "2025-07-21T10:27:16.925Z",
+      "duration_ms": 1.038,
+      "endpoint": "/fonts/icons.woff",
+      "host": "en.powys.gov.uk",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json;charset=utf-8",
-      "size": 798,
-      "timestamp": "2025-07-21T10:27:16.991Z"
+      "query_params": {
+        "m": [
+          "1750678418000"
+        ]
+      },
+      "request_headers": {
+        "referer": ""
+      },
+      "response_headers": {
+        "x-content-type-options": "nosniff",
+        "content-type": "application/x-font-woff",
+        "x-frame-options": "sameorigin",
+        "cache-control": "private",
+        "x-xss-protection": "1; mode=block"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T10:27:16.991Z",
+      "duration_ms": 47.955,
+      "endpoint": "/manifest.json",
+      "host": "en.powys.gov.uk",
+      "method": "GET",
+      "status": 200,
+      "request_headers": {
+        "referer": "https://en.powys.gov.uk/binday?pageSessionId=8d80eeef-95e4-43a9-ba2b-d073fb05cc45&fsn=3f708130-0ad5-4d8f-9491-738ff207ab96"
+      },
+      "response_headers": {
+        "x-content-type-options": "nosniff",
+        "x-xss-protection": "1; mode=block",
+        "content-type": "application/json;charset=utf-8",
+        "x-frame-options": "sameorigin"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 798,
+        "compressed": true,
+        "content_ref": "12f8ce821d6d065d7edc0c64e66432234d8259bb.json"
+      }
     }
-  ]
+  ],
+  "analysis": {
+    "total_requests": 22,
+    "unique_endpoints": 9,
+    "methods_used": [
+      "GET",
+      "POST"
+    ],
+    "status_codes": {
+      "301": 2,
+      "302": 1,
+      "200": 10,
+      "204": 4,
+      "-1": 3,
+      "303": 2
+    },
+    "endpoints_with_params": [
+      {
+        "endpoint": "/en/{id}/{id}",
+        "method": "GET",
+        "query_params": [],
+        "path_params": true
+      },
+      {
+        "endpoint": "/",
+        "method": "GET",
+        "query_params": [
+          "ccp"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/fonts/icons.woff",
+        "method": "GET",
+        "query_params": [
+          "m"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/article/{id}/Cookie-Consent",
+        "method": "POST",
+        "query_params": [],
+        "path_params": true
+      },
+      {
+        "endpoint": "/g/collect",
+        "method": "POST",
+        "query_params": [
+          "v",
+          "tid",
+          "gtm",
+          "_p",
+          "gcd",
+          "npa",
+          "dma",
+          "tag_exp",
+          "cid",
+          "ul",
+          "sr",
+          "uaa",
+          "uab",
+          "uafvl",
+          "uamb",
+          "uap",
+          "uapv",
+          "uaw",
+          "are",
+          "frm",
+          "pscdl",
+          "_s",
+          "sid",
+          "sct",
+          "seg",
+          "dl",
+          "dt",
+          "_tu",
+          "en",
+          "_fv",
+          "_nsi",
+          "_ss",
+          "_ee",
+          "ep.anonymizeIp",
+          "ep.location",
+          "tfd"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/g/collect",
+        "method": "POST",
+        "query_params": [
+          "v",
+          "tid",
+          "gtm",
+          "_p",
+          "gcd",
+          "npa",
+          "dma",
+          "tag_exp",
+          "cid",
+          "ul",
+          "sr",
+          "uaa",
+          "uab",
+          "uafvl",
+          "uamb",
+          "uap",
+          "uapv",
+          "uaw",
+          "are",
+          "frm",
+          "pscdl",
+          "_eu",
+          "_s",
+          "dl",
+          "dr",
+          "sid",
+          "sct",
+          "seg",
+          "dt",
+          "_tu",
+          "en",
+          "ep.anonymizeIp",
+          "ep.location",
+          "_et",
+          "tfd"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/g/collect",
+        "method": "POST",
+        "query_params": [
+          "v",
+          "tid",
+          "gtm",
+          "_p",
+          "gcd",
+          "npa",
+          "dma",
+          "tag_exp",
+          "cid",
+          "ul",
+          "sr",
+          "uaa",
+          "uab",
+          "uafvl",
+          "uamb",
+          "uap",
+          "uapv",
+          "uaw",
+          "are",
+          "frm",
+          "pscdl",
+          "_eu",
+          "_s",
+          "sid",
+          "sct",
+          "seg",
+          "dl",
+          "dr",
+          "dt",
+          "_tu",
+          "en",
+          "ep.anonymizeIp",
+          "ep.location",
+          "_et",
+          "tfd"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/g/collect",
+        "method": "POST",
+        "query_params": [
+          "v",
+          "tid",
+          "gtm",
+          "_p",
+          "gcd",
+          "npa",
+          "dma",
+          "tag_exp",
+          "cid",
+          "ul",
+          "sr",
+          "uaa",
+          "uab",
+          "uafvl",
+          "uamb",
+          "uap",
+          "uapv",
+          "uaw",
+          "are",
+          "frm",
+          "pscdl",
+          "_eu",
+          "_s",
+          "sid",
+          "sct",
+          "seg",
+          "dl",
+          "dr",
+          "dt",
+          "_tu",
+          "en",
+          "_ee",
+          "ep.anonymizeIp",
+          "ep.location",
+          "tfd"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/g/collect",
+        "method": "POST",
+        "query_params": [
+          "v",
+          "tid",
+          "gtm",
+          "_p",
+          "gcd",
+          "npa",
+          "dma",
+          "tag_exp",
+          "cid",
+          "ul",
+          "sr",
+          "uaa",
+          "uab",
+          "uafvl",
+          "uamb",
+          "uap",
+          "uapv",
+          "uaw",
+          "are",
+          "frm",
+          "pscdl",
+          "_eu",
+          "_s",
+          "sid",
+          "sct",
+          "seg",
+          "dl",
+          "dr",
+          "dt",
+          "_tu",
+          "en",
+          "ep.anonymizeIp",
+          "ep.location",
+          "ep.form_id",
+          "ep.form_destination",
+          "epn.form_length",
+          "ep.first_field_id",
+          "ep.first_field_name",
+          "ep.first_field_type",
+          "epn.first_field_position",
+          "_et",
+          "tfd"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/g/collect",
+        "method": "POST",
+        "query_params": [
+          "v",
+          "tid",
+          "gtm",
+          "_p",
+          "gcd",
+          "npa",
+          "dma",
+          "tag_exp",
+          "cid",
+          "ul",
+          "sr",
+          "uaa",
+          "uab",
+          "uafvl",
+          "uamb",
+          "uap",
+          "uapv",
+          "uaw",
+          "are",
+          "frm",
+          "pscdl",
+          "_eu",
+          "_s",
+          "sid",
+          "sct",
+          "seg",
+          "dl",
+          "dr",
+          "dt",
+          "_tu",
+          "en",
+          "_c",
+          "ep.anonymizeIp",
+          "ep.location",
+          "ep.form_id",
+          "ep.form_destination",
+          "epn.form_length",
+          "ep.form_submit_text",
+          "_et",
+          "tfd"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/apiserver/formsservice/http/processsubmission",
+        "method": "POST",
+        "query_params": [
+          "pageSessionId",
+          "fsid",
+          "fsn"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/apiserver/formsservice/http/verifycookie",
+        "method": "GET",
+        "query_params": [
+          "pageSessionId",
+          "fsid"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/binday",
+        "method": "GET",
+        "query_params": [
+          "pageSessionId",
+          "fsn"
+        ],
+        "path_params": false
+      }
+    ],
+    "redirects": [
+      {
+        "from": "/en/{id}/{id}",
+        "to": "https://www.powys.gov.uk/en/bins-rubbish-recycling/report-a-bin-collection-problem/",
+        "status": 301
+      },
+      {
+        "from": "/en/{id}/{id}",
+        "to": "https://en.powys.gov.uk/",
+        "status": 301
+      },
+      {
+        "from": "/",
+        "to": "https://en.powys.gov.uk/?ccp=true#cookie-consent-prompt",
+        "status": 302
+      },
+      {
+        "from": "/apiserver/formsservice/http/processsubmission",
+        "to": "https://en.powys.gov.uk/apiserver/formsservice/http/verifycookie?pageSessionId=8d80eeef-95e4-43a9-ba2b-d073fb05cc45&fsid=39810429-ddd0-4555-95df-61fcc325ad6c",
+        "status": 303
+      },
+      {
+        "from": "/apiserver/formsservice/http/verifycookie",
+        "to": "https://en.powys.gov.uk/binday?pageSessionId=8d80eeef-95e4-43a9-ba2b-d073fb05cc45&fsn=3f708130-0ad5-4d8f-9491-738ff207ab96",
+        "status": 303
+      }
+    ],
+    "api_calls": [
+      {
+        "endpoint": "/manifest.json",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": []
+      },
+      {
+        "endpoint": "/manifest.json",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": []
+      },
+      {
+        "endpoint": "/manifest.json",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": []
+      }
+    ],
+    "form_submissions": []
+  },
+  "grouped_by_endpoint": {
+    "/en/{id}/{id}": [
+      {
+        "timestamp": "2025-07-21T10:26:51.729Z",
+        "duration_ms": 98.55999999999999,
+        "endpoint": "/en/{id}/{id}",
+        "host": "www.powys.gov.uk",
+        "method": "GET",
+        "status": 301,
+        "path_params": [
+          "bins-rubbish-recycling",
+          "report-a-bin-collection-problem"
+        ],
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7"
+        },
+        "response_headers": {
+          "content-type": "text/html; charset=iso-8859-1",
+          "location": "https://www.powys.gov.uk/en/bins-rubbish-recycling/report-a-bin-collection-problem/"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": -1
+        },
+        "redirect_to": "https://www.powys.gov.uk/en/bins-rubbish-recycling/report-a-bin-collection-problem/"
+      },
+      {
+        "timestamp": "2025-07-21T10:26:51.790Z",
+        "duration_ms": 114.155,
+        "endpoint": "/en/{id}/{id}",
+        "host": "www.powys.gov.uk",
+        "method": "GET",
+        "status": 301,
+        "path_params": [
+          "bins-rubbish-recycling",
+          "report-a-bin-collection-problem"
+        ],
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7"
+        },
+        "response_headers": {
+          "content-type": "text/html; charset=iso-8859-1",
+          "location": "https://en.powys.gov.uk/"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": -1
+        },
+        "redirect_to": "https://en.powys.gov.uk/"
+      }
+    ],
+    "/": [
+      {
+        "timestamp": "2025-07-21T10:26:51.879Z",
+        "duration_ms": 93.691,
+        "endpoint": "/",
+        "host": "en.powys.gov.uk",
+        "method": "GET",
+        "status": 302,
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7"
+        },
+        "response_headers": {
+          "location": "https://en.powys.gov.uk/?ccp=true#cookie-consent-prompt",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "sameorigin",
+          "x-xss-protection": "1; mode=block"
+        },
+        "redirect_to": "https://en.powys.gov.uk/?ccp=true#cookie-consent-prompt"
+      },
+      {
+        "timestamp": "2025-07-21T10:26:51.956Z",
+        "duration_ms": 62.239000000000004,
+        "endpoint": "/",
+        "host": "en.powys.gov.uk",
+        "method": "GET",
+        "status": 200,
+        "query_params": {
+          "ccp": [
+            "true"
+          ]
+        },
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7"
+        },
+        "response_headers": {
+          "cache-control": "no-cache, no-store",
+          "content-type": "text/html;charset=UTF-8",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "sameorigin",
+          "x-ua-compatible": "IE=Edge",
+          "x-xss-protection": "1; mode=block"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 55222,
+          "compressed": true,
+          "content_ref": "5c3c406a8e497d318d8c64e19dd7c606e1ef1436.html"
+        }
+      }
+    ],
+    "/fonts/icons.woff": [
+      {
+        "timestamp": "2025-07-21T10:26:52.206Z",
+        "duration_ms": 28.813000000000002,
+        "endpoint": "/fonts/icons.woff",
+        "host": "en.powys.gov.uk",
+        "method": "GET",
+        "status": 200,
+        "query_params": {
+          "m": [
+            "1750678418000"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "origin": "https://en.powys.gov.uk",
+          "referer": "https://en.powys.gov.uk/themes/dynamic/css/dynamic.css?m=3tjl0e5nd3tli6lk245728d70"
+        },
+        "response_headers": {
+          "cache-control": "private",
+          "content-type": "application/x-font-woff",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "sameorigin",
+          "x-xss-protection": "1; mode=block"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T10:26:56.347Z",
+        "duration_ms": 1.9849999999999999,
+        "endpoint": "/fonts/icons.woff",
+        "host": "en.powys.gov.uk",
+        "method": "GET",
+        "status": 200,
+        "query_params": {
+          "m": [
+            "1750678418000"
+          ]
+        },
+        "request_headers": {
+          "origin": "https://en.powys.gov.uk",
+          "referer": "https://en.powys.gov.uk/themes/dynamic/css/dynamic.css?m=3tjl0e5nd3tli6lk245728d70"
+        },
+        "response_headers": {
+          "x-content-type-options": "nosniff",
+          "content-type": "application/x-font-woff",
+          "x-frame-options": "sameorigin",
+          "cache-control": "private",
+          "x-xss-protection": "1; mode=block"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T10:27:16.925Z",
+        "duration_ms": 1.038,
+        "endpoint": "/fonts/icons.woff",
+        "host": "en.powys.gov.uk",
+        "method": "GET",
+        "status": 200,
+        "query_params": {
+          "m": [
+            "1750678418000"
+          ]
+        },
+        "request_headers": {
+          "referer": ""
+        },
+        "response_headers": {
+          "x-content-type-options": "nosniff",
+          "content-type": "application/x-font-woff",
+          "x-frame-options": "sameorigin",
+          "cache-control": "private",
+          "x-xss-protection": "1; mode=block"
+        }
+      }
+    ],
+    "/manifest.json": [
+      {
+        "timestamp": "2025-07-21T10:26:52.319Z",
+        "duration_ms": 50.715999999999994,
+        "endpoint": "/manifest.json",
+        "host": "en.powys.gov.uk",
+        "method": "GET",
+        "status": 200,
+        "request_headers": {
+          "accept": "*/*",
+          "referer": "https://en.powys.gov.uk/?ccp=true"
+        },
+        "response_headers": {
+          "content-type": "application/json;charset=utf-8",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "sameorigin",
+          "x-xss-protection": "1; mode=block"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 798,
+          "content_ref": "12f8ce821d6d065d7edc0c64e66432234d8259bb.json"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T10:26:56.350Z",
+        "duration_ms": 17.276,
+        "endpoint": "/manifest.json",
+        "host": "en.powys.gov.uk",
+        "method": "GET",
+        "status": 200,
+        "request_headers": {
+          "referer": "https://en.powys.gov.uk/binday"
+        },
+        "response_headers": {
+          "x-content-type-options": "nosniff",
+          "x-xss-protection": "1; mode=block",
+          "content-type": "application/json;charset=utf-8",
+          "x-frame-options": "sameorigin"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 798,
+          "compressed": true,
+          "content_ref": "12f8ce821d6d065d7edc0c64e66432234d8259bb.json"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T10:27:16.991Z",
+        "duration_ms": 47.955,
+        "endpoint": "/manifest.json",
+        "host": "en.powys.gov.uk",
+        "method": "GET",
+        "status": 200,
+        "request_headers": {
+          "referer": "https://en.powys.gov.uk/binday?pageSessionId=8d80eeef-95e4-43a9-ba2b-d073fb05cc45&fsn=3f708130-0ad5-4d8f-9491-738ff207ab96"
+        },
+        "response_headers": {
+          "x-content-type-options": "nosniff",
+          "x-xss-protection": "1; mode=block",
+          "content-type": "application/json;charset=utf-8",
+          "x-frame-options": "sameorigin"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 798,
+          "compressed": true,
+          "content_ref": "12f8ce821d6d065d7edc0c64e66432234d8259bb.json"
+        }
+      }
+    ],
+    "/article/{id}/Cookie-Consent": [
+      {
+        "timestamp": "2025-07-21T10:26:53.487Z",
+        "duration_ms": 12.792000000000002,
+        "endpoint": "/article/{id}/Cookie-Consent",
+        "host": "en.powys.gov.uk",
+        "method": "POST",
+        "status": 200,
+        "path_params": [
+          "10159"
+        ],
+        "request_headers": {
+          "accept": "*/*",
+          "content-type": "multipart/form-data; boundary=----WebKitFormBoundaryrKGgcPt2A72hSIS3",
+          "origin": "https://en.powys.gov.uk",
+          "referer": "https://en.powys.gov.uk/?ccp=true"
+        },
+        "response_headers": {
+          "set-cookie": "[cookies present]",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "sameorigin",
+          "x-xss-protection": "1; mode=block"
+        }
+      }
+    ],
+    "/g/collect": [
+      {
+        "timestamp": "2025-07-21T10:26:53.559Z",
+        "duration_ms": 63.743,
+        "endpoint": "/g/collect",
+        "host": "region1.google-analytics.com",
+        "method": "POST",
+        "status": 204,
+        "query_params": {
+          "v": [
+            "2"
+          ],
+          "tid": [
+            "G-EPRX5MLR4T"
+          ],
+          "gtm": [
+            "45je57g1v9104147077za200"
+          ],
+          "_p": [
+            "1753093613500"
+          ],
+          "gcd": [
+            "13l3l3l3l1l1"
+          ],
+          "npa": [
+            "0"
+          ],
+          "dma": [
+            "0"
+          ],
+          "tag_exp": [
+            "101509157~103116026~103200004~103233427~104684208~104684211~104952206~104952208"
+          ],
+          "cid": [
+            "354555218.1753093614"
+          ],
+          "ul": [
+            "en-gb"
+          ],
+          "sr": [
+            "800x600"
+          ],
+          "uaa": [
+            "arm"
+          ],
+          "uab": [
+            "64"
+          ],
+          "uafvl": [
+            "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+          ],
+          "uamb": [
+            "0"
+          ],
+          "uap": [
+            "macOS"
+          ],
+          "uapv": [
+            "15.5.0"
+          ],
+          "uaw": [
+            "0"
+          ],
+          "are": [
+            "1"
+          ],
+          "frm": [
+            "0"
+          ],
+          "pscdl": [
+            "noapi"
+          ],
+          "_s": [
+            "1"
+          ],
+          "sid": [
+            "1753093613"
+          ],
+          "sct": [
+            "1"
+          ],
+          "seg": [
+            "0"
+          ],
+          "dl": [
+            "https://en.powys.gov.uk/"
+          ],
+          "dt": [
+            "Home (English) - Powys County Council"
+          ],
+          "_tu": [
+            "QA"
+          ],
+          "en": [
+            "page_view"
+          ],
+          "_fv": [
+            "1"
+          ],
+          "_nsi": [
+            "1"
+          ],
+          "_ss": [
+            "1"
+          ],
+          "_ee": [
+            "1"
+          ],
+          "ep.anonymizeIp": [
+            "true"
+          ],
+          "ep.location": [
+            "https://en.powys.gov.uk/?ccp=true"
+          ],
+          "tfd": [
+            "1783"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "cookie": "[cookies present]",
+          "origin": "https://en.powys.gov.uk",
+          "referer": "https://en.powys.gov.uk/"
+        },
+        "response_headers": {
+          "cache-control": "no-cache, no-store, must-revalidate",
+          "content-type": "text/plain"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T10:26:56.222Z",
+        "duration_ms": -1,
+        "endpoint": "/g/collect",
+        "host": "region1.google-analytics.com",
+        "method": "POST",
+        "status": -1,
+        "query_params": {
+          "v": [
+            "2"
+          ],
+          "tid": [
+            "G-EPRX5MLR4T"
+          ],
+          "gtm": [
+            "45je57g1v9104147077za200"
+          ],
+          "_p": [
+            "1753093613500"
+          ],
+          "gcd": [
+            "13l3l3l3l1l1"
+          ],
+          "npa": [
+            "0"
+          ],
+          "dma": [
+            "0"
+          ],
+          "tag_exp": [
+            "101509157~103116026~103200004~103233427~104684208~104684211~104952206~104952208"
+          ],
+          "cid": [
+            "354555218.1753093614"
+          ],
+          "ul": [
+            "en-gb"
+          ],
+          "sr": [
+            "800x600"
+          ],
+          "uaa": [
+            "arm"
+          ],
+          "uab": [
+            "64"
+          ],
+          "uafvl": [
+            "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+          ],
+          "uamb": [
+            "0"
+          ],
+          "uap": [
+            "macOS"
+          ],
+          "uapv": [
+            "15.5.0"
+          ],
+          "uaw": [
+            "0"
+          ],
+          "are": [
+            "1"
+          ],
+          "frm": [
+            "0"
+          ],
+          "pscdl": [
+            "noapi"
+          ],
+          "_eu": [
+            "AEAAAAQ"
+          ],
+          "_s": [
+            "2"
+          ],
+          "dl": [
+            "https://en.powys.gov.uk/"
+          ],
+          "dr": [
+            "https://en.powys.gov.uk/?ccp=true"
+          ],
+          "sid": [
+            "1753093613"
+          ],
+          "sct": [
+            "1"
+          ],
+          "seg": [
+            "1"
+          ],
+          "dt": [
+            "Home (English) - Powys County Council"
+          ],
+          "_tu": [
+            "QA"
+          ],
+          "en": [
+            "page_view"
+          ],
+          "ep.anonymizeIp": [
+            "true"
+          ],
+          "ep.location": [
+            "https://en.powys.gov.uk/?ccp=true"
+          ],
+          "_et": [
+            "998"
+          ],
+          "tfd": [
+            "4493"
+          ]
+        },
+        "request_headers": {
+          "referer": "https://en.powys.gov.uk/"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T10:26:56.223Z",
+        "duration_ms": -1,
+        "endpoint": "/g/collect",
+        "host": "region1.google-analytics.com",
+        "method": "POST",
+        "status": -1,
+        "query_params": {
+          "v": [
+            "2"
+          ],
+          "tid": [
+            "G-EPRX5MLR4T"
+          ],
+          "gtm": [
+            "45je57g1v9104147077za200"
+          ],
+          "_p": [
+            "1753093613500"
+          ],
+          "gcd": [
+            "13l3l3l3l1l1"
+          ],
+          "npa": [
+            "0"
+          ],
+          "dma": [
+            "0"
+          ],
+          "tag_exp": [
+            "101509157~103116026~103200004~103233427~104684208~104684211~104952206~104952208"
+          ],
+          "cid": [
+            "354555218.1753093614"
+          ],
+          "ul": [
+            "en-gb"
+          ],
+          "sr": [
+            "800x600"
+          ],
+          "uaa": [
+            "arm"
+          ],
+          "uab": [
+            "64"
+          ],
+          "uafvl": [
+            "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+          ],
+          "uamb": [
+            "0"
+          ],
+          "uap": [
+            "macOS"
+          ],
+          "uapv": [
+            "15.5.0"
+          ],
+          "uaw": [
+            "0"
+          ],
+          "are": [
+            "1"
+          ],
+          "frm": [
+            "0"
+          ],
+          "pscdl": [
+            "noapi"
+          ],
+          "_eu": [
+            "AAAAAAQ"
+          ],
+          "_s": [
+            "3"
+          ],
+          "sid": [
+            "1753093613"
+          ],
+          "sct": [
+            "1"
+          ],
+          "seg": [
+            "1"
+          ],
+          "dl": [
+            "https://en.powys.gov.uk/"
+          ],
+          "dr": [
+            "https://en.powys.gov.uk/?ccp=true"
+          ],
+          "dt": [
+            "Home (English) - Powys County Council"
+          ],
+          "_tu": [
+            "QA"
+          ],
+          "en": [
+            "user_engagement"
+          ],
+          "ep.anonymizeIp": [
+            "true"
+          ],
+          "ep.location": [
+            "https://en.powys.gov.uk/?ccp=true"
+          ],
+          "_et": [
+            "1705"
+          ],
+          "tfd": [
+            "4494"
+          ]
+        },
+        "request_headers": {
+          "referer": "https://en.powys.gov.uk/"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T10:27:01.262Z",
+        "duration_ms": 16.022,
+        "endpoint": "/g/collect",
+        "host": "region1.google-analytics.com",
+        "method": "POST",
+        "status": 204,
+        "query_params": {
+          "v": [
+            "2"
+          ],
+          "tid": [
+            "G-EPRX5MLR4T"
+          ],
+          "gtm": [
+            "45je57g1v9104147077za200"
+          ],
+          "_p": [
+            "1753093616327"
+          ],
+          "gcd": [
+            "13l3l3l3l1l1"
+          ],
+          "npa": [
+            "0"
+          ],
+          "dma": [
+            "0"
+          ],
+          "tag_exp": [
+            "101509157~103116026~103200004~103233427~104684208~104684211~104952206~104952208"
+          ],
+          "cid": [
+            "354555218.1753093614"
+          ],
+          "ul": [
+            "en-gb"
+          ],
+          "sr": [
+            "800x600"
+          ],
+          "uaa": [
+            "arm"
+          ],
+          "uab": [
+            "64"
+          ],
+          "uafvl": [
+            "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+          ],
+          "uamb": [
+            "0"
+          ],
+          "uap": [
+            "macOS"
+          ],
+          "uapv": [
+            "15.5.0"
+          ],
+          "uaw": [
+            "0"
+          ],
+          "are": [
+            "1"
+          ],
+          "frm": [
+            "0"
+          ],
+          "pscdl": [
+            "noapi"
+          ],
+          "_eu": [
+            "AAAAAAQ"
+          ],
+          "_s": [
+            "1"
+          ],
+          "sid": [
+            "1753093613"
+          ],
+          "sct": [
+            "1"
+          ],
+          "seg": [
+            "1"
+          ],
+          "dl": [
+            "https://en.powys.gov.uk/binday"
+          ],
+          "dr": [
+            "https://en.powys.gov.uk/"
+          ],
+          "dt": [
+            "Bin collection day - Powys County Council"
+          ],
+          "_tu": [
+            "QA"
+          ],
+          "en": [
+            "page_view"
+          ],
+          "_ee": [
+            "1"
+          ],
+          "ep.anonymizeIp": [
+            "true"
+          ],
+          "ep.location": [
+            "https://en.powys.gov.uk/binday"
+          ],
+          "tfd": [
+            "5479"
+          ]
+        },
+        "request_headers": {
+          "referer": "https://en.powys.gov.uk/"
+        },
+        "response_headers": {
+          "cache-control": "no-cache, no-store, must-revalidate",
+          "content-type": "text/plain"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T10:27:06.266Z",
+        "duration_ms": 26.567,
+        "endpoint": "/g/collect",
+        "host": "region1.google-analytics.com",
+        "method": "POST",
+        "status": 204,
+        "query_params": {
+          "v": [
+            "2"
+          ],
+          "tid": [
+            "G-EPRX5MLR4T"
+          ],
+          "gtm": [
+            "45je57g1v9104147077za200"
+          ],
+          "_p": [
+            "1753093616327"
+          ],
+          "gcd": [
+            "13l3l3l3l1l1"
+          ],
+          "npa": [
+            "0"
+          ],
+          "dma": [
+            "0"
+          ],
+          "tag_exp": [
+            "101509157~103116026~103200004~103233427~104684208~104684211~104952206~104952208"
+          ],
+          "cid": [
+            "354555218.1753093614"
+          ],
+          "ul": [
+            "en-gb"
+          ],
+          "sr": [
+            "800x600"
+          ],
+          "uaa": [
+            "arm"
+          ],
+          "uab": [
+            "64"
+          ],
+          "uafvl": [
+            "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+          ],
+          "uamb": [
+            "0"
+          ],
+          "uap": [
+            "macOS"
+          ],
+          "uapv": [
+            "15.5.0"
+          ],
+          "uaw": [
+            "0"
+          ],
+          "are": [
+            "1"
+          ],
+          "frm": [
+            "0"
+          ],
+          "pscdl": [
+            "noapi"
+          ],
+          "_eu": [
+            "AEEAAAQ"
+          ],
+          "_s": [
+            "2"
+          ],
+          "sid": [
+            "1753093613"
+          ],
+          "sct": [
+            "1"
+          ],
+          "seg": [
+            "1"
+          ],
+          "dl": [
+            "https://en.powys.gov.uk/binday"
+          ],
+          "dr": [
+            "https://en.powys.gov.uk/"
+          ],
+          "dt": [
+            "Bin collection day - Powys County Council"
+          ],
+          "_tu": [
+            "QA"
+          ],
+          "en": [
+            "form_start"
+          ],
+          "ep.anonymizeIp": [
+            "true"
+          ],
+          "ep.location": [
+            "https://en.powys.gov.uk/binday"
+          ],
+          "ep.form_id": [
+            "BINDAYLOOKUP_FORM"
+          ],
+          "ep.form_destination": [
+            "https://en.powys.gov.uk/apiserver/formsservice/http/processsubmission?pageSessionId=8d80eeef-95e4-43a9-ba2b-d073fb05cc45&fsid=39810429-ddd0-4555-95df-61fcc325ad6c&fsn=4b5f95ae-b4bb-4d9c-8939-1f0f4cfa86d0"
+          ],
+          "epn.form_length": [
+            "14"
+          ],
+          "ep.first_field_id": [
+            "BINDAYLOOKUP_ADDRESSLOOKUP_ADDRESSLOOKUPPOSTCODE"
+          ],
+          "ep.first_field_name": [
+            "BINDAYLOOKUP_ADDRESSLOOKUP_ADDRESSLOOKUPPOSTCODE"
+          ],
+          "ep.first_field_type": [
+            "text"
+          ],
+          "epn.first_field_position": [
+            "1"
+          ],
+          "_et": [
+            "4929"
+          ],
+          "tfd": [
+            "10482"
+          ]
+        },
+        "request_headers": {
+          "referer": "https://en.powys.gov.uk/"
+        },
+        "response_headers": {
+          "cache-control": "no-cache, no-store, must-revalidate",
+          "content-type": "text/plain"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T10:27:15.328Z",
+        "duration_ms": 29.393,
+        "endpoint": "/g/collect",
+        "host": "region1.google-analytics.com",
+        "method": "POST",
+        "status": 204,
+        "query_params": {
+          "v": [
+            "2"
+          ],
+          "tid": [
+            "G-EPRX5MLR4T"
+          ],
+          "gtm": [
+            "45je57g1v9104147077za200"
+          ],
+          "_p": [
+            "1753093616327"
+          ],
+          "gcd": [
+            "13l3l3l3l1l1"
+          ],
+          "npa": [
+            "0"
+          ],
+          "dma": [
+            "0"
+          ],
+          "tag_exp": [
+            "101509157~103116026~103200004~103233427~104684208~104684211~104952206~104952208"
+          ],
+          "cid": [
+            "354555218.1753093614"
+          ],
+          "ul": [
+            "en-gb"
+          ],
+          "sr": [
+            "800x600"
+          ],
+          "uaa": [
+            "arm"
+          ],
+          "uab": [
+            "64"
+          ],
+          "uafvl": [
+            "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+          ],
+          "uamb": [
+            "0"
+          ],
+          "uap": [
+            "macOS"
+          ],
+          "uapv": [
+            "15.5.0"
+          ],
+          "uaw": [
+            "0"
+          ],
+          "are": [
+            "1"
+          ],
+          "frm": [
+            "0"
+          ],
+          "pscdl": [
+            "noapi"
+          ],
+          "_eu": [
+            "AEEAAAQ"
+          ],
+          "_s": [
+            "3"
+          ],
+          "sid": [
+            "1753093613"
+          ],
+          "sct": [
+            "1"
+          ],
+          "seg": [
+            "1"
+          ],
+          "dl": [
+            "https://en.powys.gov.uk/binday"
+          ],
+          "dr": [
+            "https://en.powys.gov.uk/"
+          ],
+          "dt": [
+            "Bin collection day - Powys County Council"
+          ],
+          "_tu": [
+            "QA"
+          ],
+          "en": [
+            "form_submit"
+          ],
+          "_c": [
+            "1"
+          ],
+          "ep.anonymizeIp": [
+            "true"
+          ],
+          "ep.location": [
+            "https://en.powys.gov.uk/binday"
+          ],
+          "ep.form_id": [
+            "BINDAYLOOKUP_FORM"
+          ],
+          "ep.form_destination": [
+            "https://en.powys.gov.uk/apiserver/formsservice/http/processsubmission?pageSessionId=8d80eeef-95e4-43a9-ba2b-d073fb05cc45&fsid=39810429-ddd0-4555-95df-61fcc325ad6c&fsn=4b5f95ae-b4bb-4d9c-8939-1f0f4cfa86d0"
+          ],
+          "epn.form_length": [
+            "14"
+          ],
+          "ep.form_submit_text": [
+            "BINDAYLOOKUP_ADDRESSLOOKUP_ADDRESSLOOKUPBUTTONS"
+          ],
+          "_et": [
+            "14063"
+          ],
+          "tfd": [
+            "19545"
+          ]
+        },
+        "request_headers": {
+          "referer": "https://en.powys.gov.uk/"
+        },
+        "response_headers": {
+          "cache-control": "no-cache, no-store, must-revalidate",
+          "content-type": "text/plain"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T10:27:16.890Z",
+        "duration_ms": -1,
+        "endpoint": "/g/collect",
+        "host": "region1.google-analytics.com",
+        "method": "POST",
+        "status": -1,
+        "query_params": {
+          "v": [
+            "2"
+          ],
+          "tid": [
+            "G-EPRX5MLR4T"
+          ],
+          "gtm": [
+            "45je57g1v9104147077za200"
+          ],
+          "_p": [
+            "1753093616327"
+          ],
+          "gcd": [
+            "13l3l3l3l1l1"
+          ],
+          "npa": [
+            "0"
+          ],
+          "dma": [
+            "0"
+          ],
+          "tag_exp": [
+            "101509157~103116026~103200004~103233427~104684208~104684211~104952206~104952208"
+          ],
+          "cid": [
+            "354555218.1753093614"
+          ],
+          "ul": [
+            "en-gb"
+          ],
+          "sr": [
+            "800x600"
+          ],
+          "uaa": [
+            "arm"
+          ],
+          "uab": [
+            "64"
+          ],
+          "uafvl": [
+            "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+          ],
+          "uamb": [
+            "0"
+          ],
+          "uap": [
+            "macOS"
+          ],
+          "uapv": [
+            "15.5.0"
+          ],
+          "uaw": [
+            "0"
+          ],
+          "are": [
+            "1"
+          ],
+          "frm": [
+            "0"
+          ],
+          "pscdl": [
+            "noapi"
+          ],
+          "_eu": [
+            "AAAAAAQ"
+          ],
+          "_s": [
+            "4"
+          ],
+          "sid": [
+            "1753093613"
+          ],
+          "sct": [
+            "1"
+          ],
+          "seg": [
+            "1"
+          ],
+          "dl": [
+            "https://en.powys.gov.uk/binday"
+          ],
+          "dr": [
+            "https://en.powys.gov.uk/"
+          ],
+          "dt": [
+            "Bin collection day - Powys County Council"
+          ],
+          "_tu": [
+            "QA"
+          ],
+          "en": [
+            "user_engagement"
+          ],
+          "ep.anonymizeIp": [
+            "true"
+          ],
+          "ep.location": [
+            "https://en.powys.gov.uk/binday"
+          ],
+          "_et": [
+            "1558"
+          ],
+          "tfd": [
+            "21107"
+          ]
+        },
+        "request_headers": {
+          "referer": "https://en.powys.gov.uk/"
+        }
+      }
+    ],
+    "/binday": [
+      {
+        "timestamp": "2025-07-21T10:26:55.843Z",
+        "duration_ms": 369.70599999999996,
+        "endpoint": "/binday",
+        "host": "en.powys.gov.uk",
+        "method": "GET",
+        "status": 200,
+        "request_headers": {
+          "referer": "https://en.powys.gov.uk/"
+        },
+        "response_headers": {
+          "cache-control": "no-cache, no-store",
+          "content-type": "text/html;charset=UTF-8",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "sameorigin",
+          "x-ua-compatible": "IE=Edge",
+          "x-xss-protection": "1; mode=block"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 60177,
+          "compressed": true,
+          "content_ref": "d5c6473f18a453122224f89cb7434b3d479651cb.html"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T10:27:15.643Z",
+        "duration_ms": 1240.369,
+        "endpoint": "/binday",
+        "host": "en.powys.gov.uk",
+        "method": "GET",
+        "status": 200,
+        "query_params": {
+          "pageSessionId": [
+            "8d80eeef-95e4-43a9-ba2b-d073fb05cc45"
+          ],
+          "fsn": [
+            "3f708130-0ad5-4d8f-9491-738ff207ab96"
+          ]
+        },
+        "request_headers": {
+          "content-type": "application/x-www-form-urlencoded",
+          "origin": "https://en.powys.gov.uk",
+          "referer": "https://en.powys.gov.uk/binday"
+        },
+        "response_headers": {
+          "cache-control": "no-cache, no-store",
+          "content-type": "text/html;charset=UTF-8",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "sameorigin",
+          "x-ua-compatible": "IE=Edge",
+          "x-xss-protection": "1; mode=block"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 57225,
+          "compressed": true,
+          "content_ref": "2840f3a32920529e6bfc553cb5e8a9ded50034a2.html"
+        }
+      }
+    ],
+    "/apiserver/formsservice/http/processsubmission": [
+      {
+        "timestamp": "2025-07-21T10:27:15.389Z",
+        "duration_ms": 210.72099999999998,
+        "endpoint": "/apiserver/formsservice/http/processsubmission",
+        "host": "en.powys.gov.uk",
+        "method": "POST",
+        "status": 303,
+        "query_params": {
+          "pageSessionId": [
+            "8d80eeef-95e4-43a9-ba2b-d073fb05cc45"
+          ],
+          "fsid": [
+            "39810429-ddd0-4555-95df-61fcc325ad6c"
+          ],
+          "fsn": [
+            "4b5f95ae-b4bb-4d9c-8939-1f0f4cfa86d0"
+          ]
+        },
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+          "content-type": "application/x-www-form-urlencoded",
+          "cookie": "[cookies present]",
+          "origin": "https://en.powys.gov.uk",
+          "referer": "https://en.powys.gov.uk/binday"
+        },
+        "response_headers": {
+          "location": "https://en.powys.gov.uk/apiserver/formsservice/http/verifycookie?pageSessionId=8d80eeef-95e4-43a9-ba2b-d073fb05cc45&fsid=39810429-ddd0-4555-95df-61fcc325ad6c",
+          "set-cookie": "[cookies present]",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "sameorigin",
+          "x-xss-protection": "1; mode=block"
+        },
+        "redirect_to": "https://en.powys.gov.uk/apiserver/formsservice/http/verifycookie?pageSessionId=8d80eeef-95e4-43a9-ba2b-d073fb05cc45&fsid=39810429-ddd0-4555-95df-61fcc325ad6c"
+      }
+    ],
+    "/apiserver/formsservice/http/verifycookie": [
+      {
+        "timestamp": "2025-07-21T10:27:15.601Z",
+        "duration_ms": 42.349,
+        "endpoint": "/apiserver/formsservice/http/verifycookie",
+        "host": "en.powys.gov.uk",
+        "method": "GET",
+        "status": 303,
+        "query_params": {
+          "pageSessionId": [
+            "8d80eeef-95e4-43a9-ba2b-d073fb05cc45"
+          ],
+          "fsid": [
+            "39810429-ddd0-4555-95df-61fcc325ad6c"
+          ]
+        },
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+          "cookie": "[cookies present]",
+          "referer": "https://en.powys.gov.uk/binday"
+        },
+        "response_headers": {
+          "location": "https://en.powys.gov.uk/binday?pageSessionId=8d80eeef-95e4-43a9-ba2b-d073fb05cc45&fsn=3f708130-0ad5-4d8f-9491-738ff207ab96",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "sameorigin",
+          "x-xss-protection": "1; mode=block"
+        },
+        "redirect_to": "https://en.powys.gov.uk/binday?pageSessionId=8d80eeef-95e4-43a9-ba2b-d073fb05cc45&fsn=3f708130-0ad5-4d8f-9491-738ff207ab96"
+      }
+    ]
+  }
 }

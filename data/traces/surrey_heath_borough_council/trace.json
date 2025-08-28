@@ -1,329 +1,2780 @@
 {
-  "metadata": {
-    "trace_name": "surrey_heath_borough_council",
-    "processed_at": "2025-08-26 18:44:24",
-    "workflow_steps_count": 10,
-    "navigation_events_count": 25
-  },
-  "scraping_patterns": {
-    "login_detected": false,
-    "form_submissions": 8,
-    "navigation_count": 2,
-    "unique_domains": [
-      "www.surreyheath.gov.uk",
-      "www.jointwastesolutions.org",
-      "asjwsw-wrpsurreyheathmunicipal-live.whitespacews.com",
-      "stats.annertech.com",
-      "signup.es-mail.co.uk",
-      "www.webco2.io"
-    ],
-    "api_endpoints": [],
-    "data_extraction_indicators": []
-  },
-  "workflow_steps": [
+  "entries": [
     {
-      "action": "goto",
-      "target": "http://www.surreyheath.gov.uk/node/53",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
-    },
-    {
-      "action": "goto",
-      "target": "http://www.surreyheath.gov.uk/",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
-    },
-    {
-      "action": "click",
-      "target": "aria-ref=e232 >> internal:describe=\"Bins, recycling and waste\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
-    },
-    {
-      "action": "click",
-      "target": "aria-ref=e106 >> internal:describe=\"Check my collection day\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
-    },
-    {
-      "action": "click",
-      "target": "aria-ref=e109 >> internal:describe=\"Surrey Heath\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
-    },
-    {
-      "action": "click",
-      "target": "aria-ref=e27 >> internal:describe=\"View My Collections\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
-    },
-    {
-      "action": "fill",
-      "target": "aria-ref=e34 >> internal:describe=\"Postcode\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0,
-      "value": "GU12 5RJ"
-    },
-    {
-      "action": "click",
-      "target": "aria-ref=e38 >> internal:describe=\"Continue\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
-    },
-    {
-      "action": "click",
-      "target": "aria-ref=e29 >> internal:describe=\"1, KEOGH CLOSE, MYTCHETT, ALDERSHOT, SURREY\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
-    },
-    {
-      "action": "click",
-      "target": "aria-ref=e155 >> internal:describe=\"\u25c0 Back a level\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
-    }
-  ],
-  "navigation_events": [
-    {
-      "url": "http://www.surreyheath.gov.uk/node/53",
+      "timestamp": "2025-07-21T10:49:35.821Z",
+      "duration_ms": 72.311,
+      "endpoint": "/node/{id}",
+      "host": "www.surreyheath.gov.uk",
       "method": "GET",
       "status": 301,
-      "redirect_url": "https://www.surreyheath.gov.uk/node/53",
-      "mime_type": "text/html",
-      "size": -1,
-      "timestamp": "2025-07-21T10:49:35.821Z"
+      "path_params": [
+        "53"
+      ],
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7"
+      },
+      "response_headers": {
+        "content-type": "text/html",
+        "location": "https://www.surreyheath.gov.uk/node/53",
+        "x-cache": "Redirect from cloudfront"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": -1
+      },
+      "redirect_to": "https://www.surreyheath.gov.uk/node/53"
     },
     {
-      "url": "https://www.surreyheath.gov.uk/node/53",
+      "timestamp": "2025-07-21T10:49:35.863Z",
+      "duration_ms": 640.26,
+      "endpoint": "/node/{id}",
+      "host": "www.surreyheath.gov.uk",
       "method": "GET",
       "status": 403,
-      "redirect_url": null,
-      "mime_type": "text/html; charset=UTF-8",
-      "size": 38406,
-      "timestamp": "2025-07-21T10:49:35.863Z"
-    },
-    {
-      "url": "https://www.surreyheath.gov.uk/themes/custom/lgd/fonts/Lexend%5Bwght%5D.ttf",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/octet-stream",
-      "size": 175756,
-      "timestamp": "2025-07-21T10:49:36.573Z"
-    },
-    {
-      "url": "https://signup.es-mail.co.uk/Signup/194d52fb832bb2d871befcdf5b20e658?frameOptions=0",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "text/html; charset=utf-8",
-      "size": 8896,
-      "timestamp": "2025-07-21T10:49:36.648Z"
-    },
-    {
-      "url": "https://www.surreyheath.gov.uk/themes/custom/lgd/assets/images/favicons/site.webmanifest",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/octet-stream",
-      "size": 508,
-      "timestamp": "2025-07-21T10:49:37.417Z"
-    },
-    {
-      "url": "https://stats.annertech.com/matomo.php?action_name=403%2FURL%20%3D%20%252Fnode%252F53%2FFrom%20%3D%20&idsite=85&rec=1&r=562211&h=11&m=49&s=37&url=https%3A%2F%2Fwww.surreyheath.gov.uk%2Fnode%2F53&_id=&_idn=1&send_image=0&_refts=0&pv_id=R6odWv&fa_pv=1&fa_fp[0][fa_vid]=otJ1JH&fa_fp[0][fa_id]=views-exposed-form-localgov-sitewide-search-sitewide-search-page-block&fa_fp[0][fa_fv]=1&pf_net=59&pf_srv=564&pf_tfr=1&pf_dm1=82&uadata=%7B%22formFactors%22%3A%5B%22Desktop%22%5D%2C%22fullVersionList%22%3A%5B%7B%22brand%22%3A%22Not)A%3BBrand%22%2C%22version%22%3A%228.0.0.0%22%7D%2C%7B%22brand%22%3A%22Chromium%22%2C%22version%22%3A%22138.0.7204.101%22%7D%2C%7B%22brand%22%3A%22Google%20Chrome%22%2C%22version%22%3A%22138.0.7204.101%22%7D%5D%2C%22mobile%22%3Afalse%2C%22model%22%3A%22%22%2C%22platform%22%3A%22macOS%22%2C%22platformVersion%22%3A%2215.5.0%22%7D&pdf=1&qt=0&realp=0&wma=0&fla=0&java=0&ag=0&cookie=1&res=800x600",
-      "method": "POST",
-      "status": 204,
-      "redirect_url": null,
-      "mime_type": "x-unknown",
-      "size": 0,
-      "timestamp": "2025-07-21T10:49:37.654Z"
-    },
-    {
-      "url": "http://www.surreyheath.gov.uk/",
-      "method": "GET",
-      "status": 307,
-      "redirect_url": "https://www.surreyheath.gov.uk/",
-      "mime_type": "x-unknown",
-      "size": -1,
-      "timestamp": "2025-07-21T10:49:39.083Z"
-    },
-    {
-      "url": "https://www.surreyheath.gov.uk/",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "text/html; charset=UTF-8",
-      "size": 78604,
-      "timestamp": "2025-07-21T10:49:39.084Z"
-    },
-    {
-      "url": "https://www.surreyheath.gov.uk/themes/custom/lgd/fonts/Lexend%5Bwght%5D.ttf",
-      "method": "GET",
-      "status": 304,
-      "redirect_url": null,
-      "mime_type": "x-unknown",
-      "size": -1,
-      "timestamp": "2025-07-21T10:49:39.141Z"
-    },
-    {
-      "url": "https://www.webco2.io/webco2.php",
-      "method": "POST",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "text/html; charset=UTF-8",
-      "size": 32,
-      "timestamp": "2025-07-21T10:49:39.180Z"
-    },
-    {
-      "url": "https://stats.annertech.com/matomo.php?action_name=Welcome%20to%20surreyheath.gov.uk&idsite=85&rec=1&r=421638&h=11&m=49&s=39&url=https%3A%2F%2Fwww.surreyheath.gov.uk%2F&_id=&_idn=1&send_image=0&_refts=0&pv_id=NNOjP0&fa_pv=1&fa_fp[0][fa_vid]=9ROQ0R&fa_fp[0][fa_id]=views-exposed-form-localgov-sitewide-search-sitewide-search-page-block&fa_fp[0][fa_fv]=1&pf_net=0&pf_srv=11&pf_tfr=0&pf_dm1=60&uadata=%7B%22formFactors%22%3A%5B%22Desktop%22%5D%2C%22fullVersionList%22%3A%5B%7B%22brand%22%3A%22Not)A%3BBrand%22%2C%22version%22%3A%228.0.0.0%22%7D%2C%7B%22brand%22%3A%22Chromium%22%2C%22version%22%3A%22138.0.7204.101%22%7D%2C%7B%22brand%22%3A%22Google%20Chrome%22%2C%22version%22%3A%22138.0.7204.101%22%7D%5D%2C%22mobile%22%3Afalse%2C%22model%22%3A%22%22%2C%22platform%22%3A%22macOS%22%2C%22platformVersion%22%3A%2215.5.0%22%7D&pdf=1&qt=0&realp=0&wma=0&fla=0&java=0&ag=0&cookie=1&res=800x600",
-      "method": "POST",
-      "status": 204,
-      "redirect_url": null,
-      "mime_type": "x-unknown",
-      "size": 0,
-      "timestamp": "2025-07-21T10:49:39.193Z"
-    },
-    {
-      "url": "https://www.surreyheath.gov.uk/themes/custom/lgd/assets/images/favicons/site.webmanifest",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/octet-stream",
-      "size": 508,
-      "timestamp": "2025-07-21T10:49:39.263Z"
-    },
-    {
-      "url": "https://www.surreyheath.gov.uk/bins-recycling-and-waste",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "text/html; charset=UTF-8",
-      "size": 53786,
-      "timestamp": "2025-07-21T10:49:40.719Z"
-    },
-    {
-      "url": "https://www.surreyheath.gov.uk/themes/custom/lgd/fonts/Lexend%5Bwght%5D.ttf",
-      "method": "GET",
-      "status": 304,
-      "redirect_url": null,
-      "mime_type": "x-unknown",
-      "size": -1,
-      "timestamp": "2025-07-21T10:49:40.786Z"
-    },
-    {
-      "url": "https://www.webco2.io/webco2.php",
-      "method": "POST",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "text/html; charset=UTF-8",
-      "size": 32,
-      "timestamp": "2025-07-21T10:49:40.833Z"
-    },
-    {
-      "url": "https://stats.annertech.com/matomo.php?action_name=Bins%2C%20recycling%20and%20waste%20%7C%20Surrey%20Heath%20Borough%20Council&idsite=85&rec=1&r=790036&h=11&m=49&s=40&url=https%3A%2F%2Fwww.surreyheath.gov.uk%2Fbins-recycling-and-waste&urlref=https%3A%2F%2Fwww.surreyheath.gov.uk%2F&_id=&_idn=1&send_image=0&_refts=0&pv_id=gwRvFx&fa_pv=1&fa_fp[0][fa_vid]=jgEfyz&fa_fp[0][fa_id]=views-exposed-form-localgov-sitewide-search-sitewide-search-page-block&fa_fp[0][fa_fv]=1&pf_net=0&pf_srv=40&pf_tfr=3&pf_dm1=63&uadata=%7B%22formFactors%22%3A%5B%22Desktop%22%5D%2C%22fullVersionList%22%3A%5B%7B%22brand%22%3A%22Not)A%3BBrand%22%2C%22version%22%3A%228.0.0.0%22%7D%2C%7B%22brand%22%3A%22Chromium%22%2C%22version%22%3A%22138.0.7204.101%22%7D%2C%7B%22brand%22%3A%22Google%20Chrome%22%2C%22version%22%3A%22138.0.7204.101%22%7D%5D%2C%22mobile%22%3Afalse%2C%22model%22%3A%22%22%2C%22platform%22%3A%22macOS%22%2C%22platformVersion%22%3A%2215.5.0%22%7D&pdf=1&qt=0&realp=0&wma=0&fla=0&java=0&ag=0&cookie=1&res=800x600",
-      "method": "POST",
-      "status": 204,
-      "redirect_url": null,
-      "mime_type": "x-unknown",
-      "size": 0,
-      "timestamp": "2025-07-21T10:49:40.837Z"
-    },
-    {
-      "url": "https://www.surreyheath.gov.uk/themes/custom/lgd/assets/images/favicons/site.webmanifest",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/octet-stream",
-      "size": 508,
-      "timestamp": "2025-07-21T10:49:40.895Z"
-    },
-    {
-      "url": "https://stats.annertech.com/matomo.php?link=https%3A%2F%2Fwww.jointwastesolutions.org%2Fcheck-my-collection-day-2%2F&idsite=85&rec=1&r=452781&h=11&m=49&s=43&url=https%3A%2F%2Fwww.surreyheath.gov.uk%2Fbins-recycling-and-waste&urlref=https%3A%2F%2Fwww.surreyheath.gov.uk%2F&_id=&_idn=1&send_image=0&_refts=0&pf_net=0&pf_srv=40&pf_tfr=3&pf_dm1=63&pf_dm2=21&pf_onl=0&pv_id=gwRvFx&uadata=%7B%22formFactors%22%3A%5B%22Desktop%22%5D%2C%22fullVersionList%22%3A%5B%7B%22brand%22%3A%22Not)A%3BBrand%22%2C%22version%22%3A%228.0.0.0%22%7D%2C%7B%22brand%22%3A%22Chromium%22%2C%22version%22%3A%22138.0.7204.101%22%7D%2C%7B%22brand%22%3A%22Google%20Chrome%22%2C%22version%22%3A%22138.0.7204.101%22%7D%5D%2C%22mobile%22%3Afalse%2C%22model%22%3A%22%22%2C%22platform%22%3A%22macOS%22%2C%22platformVersion%22%3A%2215.5.0%22%7D&pdf=1&qt=0&realp=0&wma=0&fla=0&java=0&ag=0&cookie=1&res=800x600",
-      "method": "POST",
-      "status": 204,
-      "redirect_url": null,
-      "mime_type": "x-unknown",
-      "size": -1,
-      "timestamp": "2025-07-21T10:49:43.427Z"
-    },
-    {
-      "url": "https://www.jointwastesolutions.org/check-my-collection-day-2/",
-      "method": "GET",
-      "status": 301,
-      "redirect_url": "https://www.jointwastesolutions.org/check-my-collection-day-2-2/",
-      "mime_type": "text/html; charset=UTF-8",
-      "size": -1,
-      "timestamp": "2025-07-21T10:49:43.571Z"
-    },
-    {
-      "url": "https://www.jointwastesolutions.org/check-my-collection-day-2-2/",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "text/html; charset=UTF-8",
-      "size": 138593,
-      "timestamp": "2025-07-21T10:49:43.586Z"
-    },
-    {
-      "url": "https://asjwsw-wrpsurreyheathmunicipal-live.whitespacews.com/",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "text/html; charset=UTF-8",
-      "size": 24118,
-      "timestamp": "2025-07-21T10:49:46.617Z"
-    },
-    {
-      "url": "https://asjwsw-wrpsurreyheathmunicipal-live.whitespacews.com/?Track=2025/07/21/KEJE18C5JDE28&serviceID=A&seq=1",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "text/html; charset=UTF-8",
-      "size": 11618,
-      "timestamp": "2025-07-21T10:49:50.478Z"
-    },
-    {
-      "url": "https://asjwsw-wrpsurreyheathmunicipal-live.whitespacews.com/mop.php?serviceID=A&Track=2025/07/21/KEJE18C5JDE28&seq=2",
-      "method": "POST",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "text/html; charset=UTF-8",
-      "size": 24242,
-      "timestamp": "2025-07-21T10:49:56.606Z",
-      "form_data": {
-        "address_name_number": "",
-        "address_street": "",
-        "street_town": "",
-        "address_postcode": "GU12 5RJ"
+      "path_params": [
+        "53"
+      ],
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7"
+      },
+      "response_headers": {
+        "cache-control": "max-age=900, public",
+        "content-type": "text/html; charset=UTF-8",
+        "x-cache": "Error from cloudfront",
+        "x-content-type-options": "nosniff",
+        "x-drupal-cache": "MISS",
+        "x-drupal-dynamic-cache": "MISS",
+        "x-frame-options": "SAMEORIGIN",
+        "x-xss-protection": "1; mode=block"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 38406,
+        "compressed": true,
+        "content_ref": "bc821317ccac40a291dd26f43b2953a61d043661.html"
       }
     },
     {
-      "url": "https://asjwsw-wrpsurreyheathmunicipal-live.whitespacews.com/mop.php?Track=2025/07/21/KEJE18C5JDE28&serviceID=A&seq=3&pIndex=24",
+      "timestamp": "2025-07-21T10:49:36.648Z",
+      "duration_ms": 153.129,
+      "endpoint": "/Signup/{id}",
+      "host": "signup.es-mail.co.uk",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "text/html; charset=UTF-8",
-      "size": 45456,
-      "timestamp": "2025-07-21T10:50:00.308Z"
+      "path_params": [
+        "194d52fb832bb2d871befcdf5b20e658"
+      ],
+      "query_params": {
+        "frameOptions": [
+          "0"
+        ]
+      },
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+        "referer": "https://www.surreyheath.gov.uk/"
+      },
+      "response_headers": {
+        "cache-control": "public, no-store, max-age=0",
+        "content-type": "text/html; charset=utf-8",
+        "set-cookie": "[cookies present]",
+        "x-content-type-options": "nosniff",
+        "x-permitted-cross-domain-policies": "none",
+        "x-ua-compatible": "IE=Edge,chrome=1"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 8896,
+        "compressed": true,
+        "content_ref": "8c7c5be67740b1f946ee838323cf2ca7eb5f4a99.html"
+      }
     },
     {
-      "url": "https://asjwsw-wrpsurreyheathmunicipal-live.whitespacews.com/mop.php?Track=2025/07/21/KEJE18C5JDE28&serviceID=A&oldseq=3&pIndex=24&seq=2",
+      "timestamp": "2025-07-21T10:49:37.417Z",
+      "duration_ms": 45.458,
+      "endpoint": "/themes/custom/lgd/assets/images/favicons/site.webmanifest",
+      "host": "www.surreyheath.gov.uk",
+      "method": "GET",
+      "status": 200,
+      "request_headers": {
+        "accept": "*/*",
+        "referer": "https://www.surreyheath.gov.uk/node/53"
+      },
+      "response_headers": {
+        "content-type": "application/octet-stream",
+        "x-cache": "Hit from cloudfront",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "SAMEORIGIN",
+        "x-xss-protection": "1; mode=block"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T10:49:37.654Z",
+      "duration_ms": 98.665,
+      "endpoint": "/matomo.php",
+      "host": "stats.annertech.com",
+      "method": "POST",
+      "status": 204,
+      "query_params": {
+        "action_name": [
+          "403/URL = %2Fnode%2F53/From = "
+        ],
+        "idsite": [
+          "85"
+        ],
+        "rec": [
+          "1"
+        ],
+        "r": [
+          "562211"
+        ],
+        "h": [
+          "11"
+        ],
+        "m": [
+          "49"
+        ],
+        "s": [
+          "37"
+        ],
+        "url": [
+          "https://www.surreyheath.gov.uk/node/53"
+        ],
+        "_idn": [
+          "1"
+        ],
+        "send_image": [
+          "0"
+        ],
+        "_refts": [
+          "0"
+        ],
+        "pv_id": [
+          "R6odWv"
+        ],
+        "fa_pv": [
+          "1"
+        ],
+        "fa_fp[0][fa_vid]": [
+          "otJ1JH"
+        ],
+        "fa_fp[0][fa_id]": [
+          "views-exposed-form-localgov-sitewide-search-sitewide-search-page-block"
+        ],
+        "fa_fp[0][fa_fv]": [
+          "1"
+        ],
+        "pf_net": [
+          "59"
+        ],
+        "pf_srv": [
+          "564"
+        ],
+        "pf_tfr": [
+          "1"
+        ],
+        "pf_dm1": [
+          "82"
+        ],
+        "uadata": [
+          "{\"formFactors\":[\"Desktop\"],\"fullVersionList\":[{\"brand\":\"Not)A;Brand\",\"version\":\"8.0.0.0\"},{\"brand\":\"Chromium\",\"version\":\"138.0.7204.101\"},{\"brand\":\"Google Chrome\",\"version\":\"138.0.7204.101\"}],\"mobile\":false,\"model\":\"\",\"platform\":\"macOS\",\"platformVersion\":\"15.5.0\"}"
+        ],
+        "pdf": [
+          "1"
+        ],
+        "qt": [
+          "0"
+        ],
+        "realp": [
+          "0"
+        ],
+        "wma": [
+          "0"
+        ],
+        "fla": [
+          "0"
+        ],
+        "java": [
+          "0"
+        ],
+        "ag": [
+          "0"
+        ],
+        "cookie": [
+          "1"
+        ],
+        "res": [
+          "800x600"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "content-type": "application/x-www-form-urlencoded; charset=utf-8",
+        "origin": "https://www.surreyheath.gov.uk",
+        "referer": "https://www.surreyheath.gov.uk/"
+      },
+      "response_headers": {
+        "x-debug-info": "eyJyZXRyaWVzIjowfQ==",
+        "x-platform-cluster": "di5wbxtbuwdeo-master-7rqtwti",
+        "x-platform-processor": "4svcwtabtxpeiyd7btn47gm7s4",
+        "x-platform-router": "ab463rz26pjcgv2p6gaqe6ronm"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T10:49:39.083Z",
+      "duration_ms": 0.947,
+      "endpoint": "/",
+      "host": "www.surreyheath.gov.uk",
+      "method": "GET",
+      "status": 307,
+      "response_headers": {
+        "location": "https://www.surreyheath.gov.uk/"
+      },
+      "redirect_to": "https://www.surreyheath.gov.uk/"
+    },
+    {
+      "timestamp": "2025-07-21T10:49:39.084Z",
+      "duration_ms": 11.811,
+      "endpoint": "/",
+      "host": "www.surreyheath.gov.uk",
+      "method": "GET",
+      "status": 200,
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7"
+      },
+      "response_headers": {
+        "cache-control": "max-age=900, public",
+        "content-type": "text/html; charset=UTF-8",
+        "x-cache": "Hit from cloudfront",
+        "x-content-type-options": "nosniff",
+        "x-drupal-cache": "HIT",
+        "x-drupal-dynamic-cache": "MISS",
+        "x-frame-options": "SAMEORIGIN",
+        "x-xss-protection": "1; mode=block"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 78604,
+        "compressed": true,
+        "content_ref": "2adb4fc14a633c36f65470c017722baedca78229.html"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T10:49:39.259Z",
+      "duration_ms": -1,
+      "endpoint": "/Signup/{id}",
+      "host": "signup.es-mail.co.uk",
+      "method": "GET",
+      "status": -1,
+      "path_params": [
+        "194d52fb832bb2d871befcdf5b20e658"
+      ],
+      "query_params": {
+        "frameOptions": [
+          "0"
+        ]
+      },
+      "request_headers": {
+        "referer": "https://www.surreyheath.gov.uk/"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T10:49:39.180Z",
+      "duration_ms": 57.963,
+      "endpoint": "/webco2.php",
+      "host": "www.webco2.io",
       "method": "POST",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "text/html; charset=UTF-8",
-      "size": 43444,
-      "timestamp": "2025-07-21T10:50:07.486Z"
+      "request_headers": {
+        "accept": "*/*",
+        "content-type": "text/plain",
+        "origin": "https://www.surreyheath.gov.uk",
+        "referer": "https://www.surreyheath.gov.uk/"
+      },
+      "response_headers": {
+        "content-type": "text/html; charset=UTF-8"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 32,
+        "content_ref": "c2c2e79248875c46fb9b76751487c5e7a15106f4.html"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T10:49:39.193Z",
+      "duration_ms": 89.781,
+      "endpoint": "/matomo.php",
+      "host": "stats.annertech.com",
+      "method": "POST",
+      "status": 204,
+      "query_params": {
+        "action_name": [
+          "Welcome to surreyheath.gov.uk"
+        ],
+        "idsite": [
+          "85"
+        ],
+        "rec": [
+          "1"
+        ],
+        "r": [
+          "421638"
+        ],
+        "h": [
+          "11"
+        ],
+        "m": [
+          "49"
+        ],
+        "s": [
+          "39"
+        ],
+        "url": [
+          "https://www.surreyheath.gov.uk/"
+        ],
+        "_idn": [
+          "1"
+        ],
+        "send_image": [
+          "0"
+        ],
+        "_refts": [
+          "0"
+        ],
+        "pv_id": [
+          "NNOjP0"
+        ],
+        "fa_pv": [
+          "1"
+        ],
+        "fa_fp[0][fa_vid]": [
+          "9ROQ0R"
+        ],
+        "fa_fp[0][fa_id]": [
+          "views-exposed-form-localgov-sitewide-search-sitewide-search-page-block"
+        ],
+        "fa_fp[0][fa_fv]": [
+          "1"
+        ],
+        "pf_net": [
+          "0"
+        ],
+        "pf_srv": [
+          "11"
+        ],
+        "pf_tfr": [
+          "0"
+        ],
+        "pf_dm1": [
+          "60"
+        ],
+        "uadata": [
+          "{\"formFactors\":[\"Desktop\"],\"fullVersionList\":[{\"brand\":\"Not)A;Brand\",\"version\":\"8.0.0.0\"},{\"brand\":\"Chromium\",\"version\":\"138.0.7204.101\"},{\"brand\":\"Google Chrome\",\"version\":\"138.0.7204.101\"}],\"mobile\":false,\"model\":\"\",\"platform\":\"macOS\",\"platformVersion\":\"15.5.0\"}"
+        ],
+        "pdf": [
+          "1"
+        ],
+        "qt": [
+          "0"
+        ],
+        "realp": [
+          "0"
+        ],
+        "wma": [
+          "0"
+        ],
+        "fla": [
+          "0"
+        ],
+        "java": [
+          "0"
+        ],
+        "ag": [
+          "0"
+        ],
+        "cookie": [
+          "1"
+        ],
+        "res": [
+          "800x600"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "content-type": "application/x-www-form-urlencoded; charset=utf-8",
+        "origin": "https://www.surreyheath.gov.uk",
+        "referer": "https://www.surreyheath.gov.uk/"
+      },
+      "response_headers": {
+        "x-debug-info": "eyJyZXRyaWVzIjowfQ==",
+        "x-platform-cluster": "di5wbxtbuwdeo-master-7rqtwti",
+        "x-platform-processor": "4svcwtabtxpeiyd7btn47gm7s4",
+        "x-platform-router": "ab463rz26pjcgv2p6gaqe6ronm"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T10:49:39.263Z",
+      "duration_ms": 10.77,
+      "endpoint": "/themes/custom/lgd/assets/images/favicons/site.webmanifest",
+      "host": "www.surreyheath.gov.uk",
+      "method": "GET",
+      "status": 200,
+      "request_headers": {
+        "accept": "*/*",
+        "referer": "https://www.surreyheath.gov.uk/"
+      },
+      "response_headers": {
+        "x-cache": "Hit from cloudfront",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "SAMEORIGIN",
+        "x-xss-protection": "1; mode=block"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T10:49:40.719Z",
+      "duration_ms": 42.574,
+      "endpoint": "/{id}",
+      "host": "www.surreyheath.gov.uk",
+      "method": "GET",
+      "status": 200,
+      "path_params": [
+        "bins-recycling-and-waste"
+      ],
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+        "referer": "https://www.surreyheath.gov.uk/"
+      },
+      "response_headers": {
+        "cache-control": "max-age=900, public",
+        "content-type": "text/html; charset=UTF-8",
+        "x-cache": "Miss from cloudfront",
+        "x-content-type-options": "nosniff",
+        "x-drupal-cache": "HIT",
+        "x-drupal-dynamic-cache": "MISS",
+        "x-frame-options": "SAMEORIGIN",
+        "x-xss-protection": "1; mode=block"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 53786,
+        "compressed": true,
+        "content_ref": "914b7d77b3dac2c0d06dd594757217cf09acbe52.html"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T10:49:40.891Z",
+      "duration_ms": -1,
+      "endpoint": "/Signup/{id}",
+      "host": "signup.es-mail.co.uk",
+      "method": "GET",
+      "status": -1,
+      "path_params": [
+        "194d52fb832bb2d871befcdf5b20e658"
+      ],
+      "query_params": {
+        "frameOptions": [
+          "0"
+        ]
+      },
+      "request_headers": {
+        "referer": "https://www.surreyheath.gov.uk/"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T10:49:40.833Z",
+      "duration_ms": 14.679,
+      "endpoint": "/webco2.php",
+      "host": "www.webco2.io",
+      "method": "POST",
+      "status": 200,
+      "request_headers": {
+        "accept": "*/*",
+        "content-type": "text/plain",
+        "origin": "https://www.surreyheath.gov.uk",
+        "referer": "https://www.surreyheath.gov.uk/"
+      },
+      "response_headers": {
+        "content-type": "text/html; charset=UTF-8"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 32,
+        "content_ref": "436386404c4b42b2104625011785000c91e13e31.html"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T10:49:40.895Z",
+      "duration_ms": 9.91,
+      "endpoint": "/themes/custom/lgd/assets/images/favicons/site.webmanifest",
+      "host": "www.surreyheath.gov.uk",
+      "method": "GET",
+      "status": 200,
+      "request_headers": {
+        "accept": "*/*",
+        "referer": "https://www.surreyheath.gov.uk/bins-recycling-and-waste"
+      },
+      "response_headers": {
+        "x-cache": "Hit from cloudfront",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "SAMEORIGIN",
+        "x-xss-protection": "1; mode=block"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T10:49:40.837Z",
+      "duration_ms": 77.12899999999999,
+      "endpoint": "/matomo.php",
+      "host": "stats.annertech.com",
+      "method": "POST",
+      "status": 204,
+      "query_params": {
+        "action_name": [
+          "Bins, recycling and waste | Surrey Heath Borough Council"
+        ],
+        "idsite": [
+          "85"
+        ],
+        "rec": [
+          "1"
+        ],
+        "r": [
+          "790036"
+        ],
+        "h": [
+          "11"
+        ],
+        "m": [
+          "49"
+        ],
+        "s": [
+          "40"
+        ],
+        "url": [
+          "https://www.surreyheath.gov.uk/bins-recycling-and-waste"
+        ],
+        "urlref": [
+          "https://www.surreyheath.gov.uk/"
+        ],
+        "_idn": [
+          "1"
+        ],
+        "send_image": [
+          "0"
+        ],
+        "_refts": [
+          "0"
+        ],
+        "pv_id": [
+          "gwRvFx"
+        ],
+        "fa_pv": [
+          "1"
+        ],
+        "fa_fp[0][fa_vid]": [
+          "jgEfyz"
+        ],
+        "fa_fp[0][fa_id]": [
+          "views-exposed-form-localgov-sitewide-search-sitewide-search-page-block"
+        ],
+        "fa_fp[0][fa_fv]": [
+          "1"
+        ],
+        "pf_net": [
+          "0"
+        ],
+        "pf_srv": [
+          "40"
+        ],
+        "pf_tfr": [
+          "3"
+        ],
+        "pf_dm1": [
+          "63"
+        ],
+        "uadata": [
+          "{\"formFactors\":[\"Desktop\"],\"fullVersionList\":[{\"brand\":\"Not)A;Brand\",\"version\":\"8.0.0.0\"},{\"brand\":\"Chromium\",\"version\":\"138.0.7204.101\"},{\"brand\":\"Google Chrome\",\"version\":\"138.0.7204.101\"}],\"mobile\":false,\"model\":\"\",\"platform\":\"macOS\",\"platformVersion\":\"15.5.0\"}"
+        ],
+        "pdf": [
+          "1"
+        ],
+        "qt": [
+          "0"
+        ],
+        "realp": [
+          "0"
+        ],
+        "wma": [
+          "0"
+        ],
+        "fla": [
+          "0"
+        ],
+        "java": [
+          "0"
+        ],
+        "ag": [
+          "0"
+        ],
+        "cookie": [
+          "1"
+        ],
+        "res": [
+          "800x600"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "content-type": "application/x-www-form-urlencoded; charset=utf-8",
+        "origin": "https://www.surreyheath.gov.uk",
+        "referer": "https://www.surreyheath.gov.uk/"
+      },
+      "response_headers": {
+        "x-debug-info": "eyJyZXRyaWVzIjowfQ==",
+        "x-platform-cluster": "di5wbxtbuwdeo-master-7rqtwti",
+        "x-platform-processor": "4svcwtabtxpeiyd7btn47gm7s4",
+        "x-platform-router": "ab463rz26pjcgv2p6gaqe6ronm"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T10:49:43.571Z",
+      "duration_ms": 15.078,
+      "endpoint": "/{id}",
+      "host": "www.jointwastesolutions.org",
+      "method": "GET",
+      "status": 301,
+      "path_params": [
+        "check-my-collection-day-2"
+      ],
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+        "referer": "https://www.surreyheath.gov.uk/"
+      },
+      "response_headers": {
+        "cache-control": "max-age=600, must-revalidate",
+        "content-type": "text/html; charset=UTF-8",
+        "location": "https://www.jointwastesolutions.org/check-my-collection-day-2-2/",
+        "x-cache": "HIT: 1",
+        "x-cache-group": "normal",
+        "x-cacheable": "non200",
+        "x-powered-by": "WP Engine",
+        "x-redirect-by": "Yoast SEO Premium"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": -1
+      },
+      "redirect_to": "https://www.jointwastesolutions.org/check-my-collection-day-2-2/"
+    },
+    {
+      "timestamp": "2025-07-21T10:49:43.427Z",
+      "duration_ms": 70.86800000000001,
+      "endpoint": "/matomo.php",
+      "host": "stats.annertech.com",
+      "method": "POST",
+      "status": 204,
+      "query_params": {
+        "link": [
+          "https://www.jointwastesolutions.org/check-my-collection-day-2/"
+        ],
+        "idsite": [
+          "85"
+        ],
+        "rec": [
+          "1"
+        ],
+        "r": [
+          "452781"
+        ],
+        "h": [
+          "11"
+        ],
+        "m": [
+          "49"
+        ],
+        "s": [
+          "43"
+        ],
+        "url": [
+          "https://www.surreyheath.gov.uk/bins-recycling-and-waste"
+        ],
+        "urlref": [
+          "https://www.surreyheath.gov.uk/"
+        ],
+        "_idn": [
+          "1"
+        ],
+        "send_image": [
+          "0"
+        ],
+        "_refts": [
+          "0"
+        ],
+        "pf_net": [
+          "0"
+        ],
+        "pf_srv": [
+          "40"
+        ],
+        "pf_tfr": [
+          "3"
+        ],
+        "pf_dm1": [
+          "63"
+        ],
+        "pf_dm2": [
+          "21"
+        ],
+        "pf_onl": [
+          "0"
+        ],
+        "pv_id": [
+          "gwRvFx"
+        ],
+        "uadata": [
+          "{\"formFactors\":[\"Desktop\"],\"fullVersionList\":[{\"brand\":\"Not)A;Brand\",\"version\":\"8.0.0.0\"},{\"brand\":\"Chromium\",\"version\":\"138.0.7204.101\"},{\"brand\":\"Google Chrome\",\"version\":\"138.0.7204.101\"}],\"mobile\":false,\"model\":\"\",\"platform\":\"macOS\",\"platformVersion\":\"15.5.0\"}"
+        ],
+        "pdf": [
+          "1"
+        ],
+        "qt": [
+          "0"
+        ],
+        "realp": [
+          "0"
+        ],
+        "wma": [
+          "0"
+        ],
+        "fla": [
+          "0"
+        ],
+        "java": [
+          "0"
+        ],
+        "ag": [
+          "0"
+        ],
+        "cookie": [
+          "1"
+        ],
+        "res": [
+          "800x600"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "content-type": "application/x-www-form-urlencoded; charset=utf-8",
+        "origin": "https://www.surreyheath.gov.uk",
+        "referer": "https://www.surreyheath.gov.uk/"
+      },
+      "response_headers": {
+        "x-debug-info": "eyJyZXRyaWVzIjowfQ==",
+        "x-platform-cluster": "di5wbxtbuwdeo-master-7rqtwti",
+        "x-platform-processor": "4svcwtabtxpeiyd7btn47gm7s4",
+        "x-platform-router": "ab463rz26pjcgv2p6gaqe6ronm"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T10:49:43.586Z",
+      "duration_ms": 27.787,
+      "endpoint": "/{id}",
+      "host": "www.jointwastesolutions.org",
+      "method": "GET",
+      "status": 200,
+      "path_params": [
+        "check-my-collection-day-2-2"
+      ],
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+        "referer": "https://www.surreyheath.gov.uk/"
+      },
+      "response_headers": {
+        "cache-control": "max-age=600, must-revalidate",
+        "content-type": "text/html; charset=UTF-8",
+        "x-cache": "HIT: 2",
+        "x-cache-group": "normal",
+        "x-cacheable": "SHORT",
+        "x-powered-by": "WP Engine"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 138593,
+        "compressed": true,
+        "content_ref": "33a5c2b542e253bc1a54f03f3b9a86a6d2ce8f3c.html"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T10:49:43.823Z",
+      "duration_ms": 62.309000000000005,
+      "endpoint": "/g/collect",
+      "host": "region1.google-analytics.com",
+      "method": "POST",
+      "status": 204,
+      "query_params": {
+        "v": [
+          "2"
+        ],
+        "tid": [
+          "G-3LQVWRVCVH"
+        ],
+        "gtm": [
+          "45je57g1v895362542za200"
+        ],
+        "_p": [
+          "1753094983682"
+        ],
+        "gcd": [
+          "13l3l3l3l1l1"
+        ],
+        "npa": [
+          "0"
+        ],
+        "dma": [
+          "0"
+        ],
+        "tag_exp": [
+          "101509157~103116026~103200004~103233427~104684208~104684211"
+        ],
+        "cid": [
+          "453448440.1753094984"
+        ],
+        "ul": [
+          "en-gb"
+        ],
+        "sr": [
+          "800x600"
+        ],
+        "uaa": [
+          "arm"
+        ],
+        "uab": [
+          "64"
+        ],
+        "uafvl": [
+          "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+        ],
+        "uamb": [
+          "0"
+        ],
+        "uap": [
+          "macOS"
+        ],
+        "uapv": [
+          "15.5.0"
+        ],
+        "uaw": [
+          "0"
+        ],
+        "are": [
+          "1"
+        ],
+        "frm": [
+          "0"
+        ],
+        "pscdl": [
+          "noapi"
+        ],
+        "_s": [
+          "1"
+        ],
+        "sid": [
+          "1753094983"
+        ],
+        "sct": [
+          "1"
+        ],
+        "seg": [
+          "0"
+        ],
+        "dl": [
+          "https://www.jointwastesolutions.org/check-my-collection-day-2-2/"
+        ],
+        "dr": [
+          "https://www.surreyheath.gov.uk/"
+        ],
+        "dt": [
+          "Check my collection day - Joint Waste Solutions"
+        ],
+        "en": [
+          "page_view"
+        ],
+        "_fv": [
+          "1"
+        ],
+        "_ss": [
+          "1"
+        ],
+        "_ee": [
+          "1"
+        ],
+        "tfd": [
+          "296"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "cookie": "[cookies present]",
+        "origin": "https://www.jointwastesolutions.org",
+        "referer": "https://www.jointwastesolutions.org/"
+      },
+      "response_headers": {
+        "cache-control": "no-cache, no-store, must-revalidate",
+        "content-type": "text/plain"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T10:49:46.617Z",
+      "duration_ms": 635.316,
+      "endpoint": "/",
+      "host": "asjwsw-wrpsurreyheathmunicipal-live.whitespacews.com",
+      "method": "GET",
+      "status": 200,
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+        "referer": "https://www.jointwastesolutions.org/"
+      },
+      "response_headers": {
+        "content-type": "text/html; charset=UTF-8",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "DENY",
+        "x-permitted-cross-domain-policies": "none",
+        "x-xss-protection": "1;  mode=block"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 24118,
+        "compressed": true,
+        "content_ref": "d5280bfc7d755b4707a6369e7c383dd7220cd028.html"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T10:49:50.478Z",
+      "duration_ms": 959.269,
+      "endpoint": "/",
+      "host": "asjwsw-wrpsurreyheathmunicipal-live.whitespacews.com",
+      "method": "GET",
+      "status": 200,
+      "query_params": {
+        "Track": [
+          "2025/07/21/KEJE18C5JDE28"
+        ],
+        "serviceID": [
+          "A"
+        ],
+        "seq": [
+          "1"
+        ]
+      },
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+        "referer": "https://asjwsw-wrpsurreyheathmunicipal-live.whitespacews.com/"
+      },
+      "response_headers": {
+        "content-type": "text/html; charset=UTF-8",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "DENY",
+        "x-permitted-cross-domain-policies": "none",
+        "x-xss-protection": "1;  mode=block"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 11618,
+        "compressed": true,
+        "content_ref": "89a9705ddcf71aabc6bea7c2f95a3a89d99e167f.html"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T10:49:51.551Z",
+      "duration_ms": 14.205,
+      "endpoint": "/g/collect",
+      "host": "region1.google-analytics.com",
+      "method": "POST",
+      "status": 204,
+      "query_params": {
+        "v": [
+          "2"
+        ],
+        "tid": [
+          "G-3LQVWRVCVH"
+        ],
+        "gtm": [
+          "45je57g1v895362542za200"
+        ],
+        "_p": [
+          "1753094983682"
+        ],
+        "gcd": [
+          "13l3l3l3l1l1"
+        ],
+        "npa": [
+          "0"
+        ],
+        "dma": [
+          "0"
+        ],
+        "tag_exp": [
+          "101509157~103116026~103200004~103233427~104684208~104684211"
+        ],
+        "cid": [
+          "453448440.1753094984"
+        ],
+        "ul": [
+          "en-gb"
+        ],
+        "sr": [
+          "800x600"
+        ],
+        "uaa": [
+          "arm"
+        ],
+        "uab": [
+          "64"
+        ],
+        "uafvl": [
+          "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+        ],
+        "uamb": [
+          "0"
+        ],
+        "uap": [
+          "macOS"
+        ],
+        "uapv": [
+          "15.5.0"
+        ],
+        "uaw": [
+          "0"
+        ],
+        "are": [
+          "1"
+        ],
+        "frm": [
+          "0"
+        ],
+        "pscdl": [
+          "noapi"
+        ],
+        "_eu": [
+          "AEAAAAQ"
+        ],
+        "_s": [
+          "2"
+        ],
+        "sid": [
+          "1753094983"
+        ],
+        "sct": [
+          "1"
+        ],
+        "seg": [
+          "0"
+        ],
+        "dl": [
+          "https://www.jointwastesolutions.org/check-my-collection-day-2-2/"
+        ],
+        "dr": [
+          "https://www.surreyheath.gov.uk/"
+        ],
+        "dt": [
+          "Check my collection day - Joint Waste Solutions"
+        ],
+        "en": [
+          "click"
+        ],
+        "ep.link_classes": [
+          "ubtn-link ult-adjust-bottom-margin ubtn-left ubtn-block "
+        ],
+        "ep.link_url": [
+          "https://asjwsw-wrpsurreyheathmunicipal-live.whitespacews.com/"
+        ],
+        "ep.link_domain": [
+          "asjwsw-wrpsurreyheathmunicipal-live.whitespacews.com"
+        ],
+        "ep.outbound": [
+          "true"
+        ],
+        "_et": [
+          "6"
+        ],
+        "tfd": [
+          "8025"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "cookie": "[cookies present]",
+        "origin": "https://www.jointwastesolutions.org",
+        "referer": "https://www.jointwastesolutions.org/"
+      },
+      "response_headers": {
+        "cache-control": "no-cache, no-store, must-revalidate",
+        "content-type": "text/plain"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T10:49:56.606Z",
+      "duration_ms": 1335.194,
+      "endpoint": "/mop.php",
+      "host": "asjwsw-wrpsurreyheathmunicipal-live.whitespacews.com",
+      "method": "POST",
+      "status": 200,
+      "query_params": {
+        "serviceID": [
+          "A"
+        ],
+        "Track": [
+          "2025/07/21/KEJE18C5JDE28"
+        ],
+        "seq": [
+          "2"
+        ]
+      },
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+        "content-type": "application/x-www-form-urlencoded",
+        "origin": "https://asjwsw-wrpsurreyheathmunicipal-live.whitespacews.com",
+        "referer": "https://asjwsw-wrpsurreyheathmunicipal-live.whitespacews.com/"
+      },
+      "response_headers": {
+        "content-type": "text/html; charset=UTF-8",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "DENY",
+        "x-permitted-cross-domain-policies": "none",
+        "x-xss-protection": "1;  mode=block"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 24242,
+        "compressed": true,
+        "content_ref": "e15ed3c3be17adc3c173f6e51994e99a8d3a8bec.html"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T10:50:00.308Z",
+      "duration_ms": 2291.9550000000004,
+      "endpoint": "/mop.php",
+      "host": "asjwsw-wrpsurreyheathmunicipal-live.whitespacews.com",
+      "method": "GET",
+      "status": 200,
+      "query_params": {
+        "Track": [
+          "2025/07/21/KEJE18C5JDE28"
+        ],
+        "serviceID": [
+          "A"
+        ],
+        "seq": [
+          "3"
+        ],
+        "pIndex": [
+          "24"
+        ]
+      },
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+        "referer": "https://asjwsw-wrpsurreyheathmunicipal-live.whitespacews.com/"
+      },
+      "response_headers": {
+        "content-type": "text/html; charset=UTF-8",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "DENY",
+        "x-permitted-cross-domain-policies": "none",
+        "x-xss-protection": "1;  mode=block"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 45456,
+        "compressed": true,
+        "content_ref": "958331351e4d146abb009e4eb04510093669ff70.html"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T10:50:07.486Z",
+      "duration_ms": 1666.2359999999999,
+      "endpoint": "/mop.php",
+      "host": "asjwsw-wrpsurreyheathmunicipal-live.whitespacews.com",
+      "method": "POST",
+      "status": 200,
+      "query_params": {
+        "Track": [
+          "2025/07/21/KEJE18C5JDE28"
+        ],
+        "serviceID": [
+          "A"
+        ],
+        "oldseq": [
+          "3"
+        ],
+        "pIndex": [
+          "24"
+        ],
+        "seq": [
+          "2"
+        ]
+      },
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+        "content-type": "application/x-www-form-urlencoded",
+        "origin": "https://asjwsw-wrpsurreyheathmunicipal-live.whitespacews.com",
+        "referer": "https://asjwsw-wrpsurreyheathmunicipal-live.whitespacews.com/"
+      },
+      "response_headers": {
+        "content-type": "text/html; charset=UTF-8",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "DENY",
+        "x-permitted-cross-domain-policies": "none",
+        "x-xss-protection": "1;  mode=block"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 43444,
+        "compressed": true,
+        "content_ref": "1479fd62ed997be006a91a45d2bba5bf60325aac.html"
+      }
     }
-  ]
+  ],
+  "analysis": {
+    "total_requests": 26,
+    "unique_endpoints": 9,
+    "methods_used": [
+      "GET",
+      "POST"
+    ],
+    "status_codes": {
+      "301": 2,
+      "403": 1,
+      "200": 14,
+      "204": 6,
+      "307": 1,
+      "-1": 2
+    },
+    "endpoints_with_params": [
+      {
+        "endpoint": "/node/{id}",
+        "method": "GET",
+        "query_params": [],
+        "path_params": true
+      },
+      {
+        "endpoint": "/Signup/{id}",
+        "method": "GET",
+        "query_params": [
+          "frameOptions"
+        ],
+        "path_params": true
+      },
+      {
+        "endpoint": "/matomo.php",
+        "method": "POST",
+        "query_params": [
+          "action_name",
+          "idsite",
+          "rec",
+          "r",
+          "h",
+          "m",
+          "s",
+          "url",
+          "_idn",
+          "send_image",
+          "_refts",
+          "pv_id",
+          "fa_pv",
+          "fa_fp[0][fa_vid]",
+          "fa_fp[0][fa_id]",
+          "fa_fp[0][fa_fv]",
+          "pf_net",
+          "pf_srv",
+          "pf_tfr",
+          "pf_dm1",
+          "uadata",
+          "pdf",
+          "qt",
+          "realp",
+          "wma",
+          "fla",
+          "java",
+          "ag",
+          "cookie",
+          "res"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/{id}",
+        "method": "GET",
+        "query_params": [],
+        "path_params": true
+      },
+      {
+        "endpoint": "/matomo.php",
+        "method": "POST",
+        "query_params": [
+          "action_name",
+          "idsite",
+          "rec",
+          "r",
+          "h",
+          "m",
+          "s",
+          "url",
+          "urlref",
+          "_idn",
+          "send_image",
+          "_refts",
+          "pv_id",
+          "fa_pv",
+          "fa_fp[0][fa_vid]",
+          "fa_fp[0][fa_id]",
+          "fa_fp[0][fa_fv]",
+          "pf_net",
+          "pf_srv",
+          "pf_tfr",
+          "pf_dm1",
+          "uadata",
+          "pdf",
+          "qt",
+          "realp",
+          "wma",
+          "fla",
+          "java",
+          "ag",
+          "cookie",
+          "res"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/matomo.php",
+        "method": "POST",
+        "query_params": [
+          "link",
+          "idsite",
+          "rec",
+          "r",
+          "h",
+          "m",
+          "s",
+          "url",
+          "urlref",
+          "_idn",
+          "send_image",
+          "_refts",
+          "pf_net",
+          "pf_srv",
+          "pf_tfr",
+          "pf_dm1",
+          "pf_dm2",
+          "pf_onl",
+          "pv_id",
+          "uadata",
+          "pdf",
+          "qt",
+          "realp",
+          "wma",
+          "fla",
+          "java",
+          "ag",
+          "cookie",
+          "res"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/g/collect",
+        "method": "POST",
+        "query_params": [
+          "v",
+          "tid",
+          "gtm",
+          "_p",
+          "gcd",
+          "npa",
+          "dma",
+          "tag_exp",
+          "cid",
+          "ul",
+          "sr",
+          "uaa",
+          "uab",
+          "uafvl",
+          "uamb",
+          "uap",
+          "uapv",
+          "uaw",
+          "are",
+          "frm",
+          "pscdl",
+          "_s",
+          "sid",
+          "sct",
+          "seg",
+          "dl",
+          "dr",
+          "dt",
+          "en",
+          "_fv",
+          "_ss",
+          "_ee",
+          "tfd"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/",
+        "method": "GET",
+        "query_params": [
+          "Track",
+          "serviceID",
+          "seq"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/g/collect",
+        "method": "POST",
+        "query_params": [
+          "v",
+          "tid",
+          "gtm",
+          "_p",
+          "gcd",
+          "npa",
+          "dma",
+          "tag_exp",
+          "cid",
+          "ul",
+          "sr",
+          "uaa",
+          "uab",
+          "uafvl",
+          "uamb",
+          "uap",
+          "uapv",
+          "uaw",
+          "are",
+          "frm",
+          "pscdl",
+          "_eu",
+          "_s",
+          "sid",
+          "sct",
+          "seg",
+          "dl",
+          "dr",
+          "dt",
+          "en",
+          "ep.link_classes",
+          "ep.link_url",
+          "ep.link_domain",
+          "ep.outbound",
+          "_et",
+          "tfd"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/mop.php",
+        "method": "POST",
+        "query_params": [
+          "serviceID",
+          "Track",
+          "seq"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/mop.php",
+        "method": "GET",
+        "query_params": [
+          "Track",
+          "serviceID",
+          "seq",
+          "pIndex"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/mop.php",
+        "method": "POST",
+        "query_params": [
+          "Track",
+          "serviceID",
+          "oldseq",
+          "pIndex",
+          "seq"
+        ],
+        "path_params": false
+      }
+    ],
+    "redirects": [
+      {
+        "from": "/node/{id}",
+        "to": "https://www.surreyheath.gov.uk/node/53",
+        "status": 301
+      },
+      {
+        "from": "/",
+        "to": "https://www.surreyheath.gov.uk/",
+        "status": 307
+      },
+      {
+        "from": "/{id}",
+        "to": "https://www.jointwastesolutions.org/check-my-collection-day-2-2/",
+        "status": 301
+      }
+    ],
+    "api_calls": [],
+    "form_submissions": []
+  },
+  "grouped_by_endpoint": {
+    "/node/{id}": [
+      {
+        "timestamp": "2025-07-21T10:49:35.821Z",
+        "duration_ms": 72.311,
+        "endpoint": "/node/{id}",
+        "host": "www.surreyheath.gov.uk",
+        "method": "GET",
+        "status": 301,
+        "path_params": [
+          "53"
+        ],
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7"
+        },
+        "response_headers": {
+          "content-type": "text/html",
+          "location": "https://www.surreyheath.gov.uk/node/53",
+          "x-cache": "Redirect from cloudfront"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": -1
+        },
+        "redirect_to": "https://www.surreyheath.gov.uk/node/53"
+      },
+      {
+        "timestamp": "2025-07-21T10:49:35.863Z",
+        "duration_ms": 640.26,
+        "endpoint": "/node/{id}",
+        "host": "www.surreyheath.gov.uk",
+        "method": "GET",
+        "status": 403,
+        "path_params": [
+          "53"
+        ],
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7"
+        },
+        "response_headers": {
+          "cache-control": "max-age=900, public",
+          "content-type": "text/html; charset=UTF-8",
+          "x-cache": "Error from cloudfront",
+          "x-content-type-options": "nosniff",
+          "x-drupal-cache": "MISS",
+          "x-drupal-dynamic-cache": "MISS",
+          "x-frame-options": "SAMEORIGIN",
+          "x-xss-protection": "1; mode=block"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 38406,
+          "compressed": true,
+          "content_ref": "bc821317ccac40a291dd26f43b2953a61d043661.html"
+        }
+      }
+    ],
+    "/Signup/{id}": [
+      {
+        "timestamp": "2025-07-21T10:49:36.648Z",
+        "duration_ms": 153.129,
+        "endpoint": "/Signup/{id}",
+        "host": "signup.es-mail.co.uk",
+        "method": "GET",
+        "status": 200,
+        "path_params": [
+          "194d52fb832bb2d871befcdf5b20e658"
+        ],
+        "query_params": {
+          "frameOptions": [
+            "0"
+          ]
+        },
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+          "referer": "https://www.surreyheath.gov.uk/"
+        },
+        "response_headers": {
+          "cache-control": "public, no-store, max-age=0",
+          "content-type": "text/html; charset=utf-8",
+          "set-cookie": "[cookies present]",
+          "x-content-type-options": "nosniff",
+          "x-permitted-cross-domain-policies": "none",
+          "x-ua-compatible": "IE=Edge,chrome=1"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 8896,
+          "compressed": true,
+          "content_ref": "8c7c5be67740b1f946ee838323cf2ca7eb5f4a99.html"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T10:49:39.259Z",
+        "duration_ms": -1,
+        "endpoint": "/Signup/{id}",
+        "host": "signup.es-mail.co.uk",
+        "method": "GET",
+        "status": -1,
+        "path_params": [
+          "194d52fb832bb2d871befcdf5b20e658"
+        ],
+        "query_params": {
+          "frameOptions": [
+            "0"
+          ]
+        },
+        "request_headers": {
+          "referer": "https://www.surreyheath.gov.uk/"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T10:49:40.891Z",
+        "duration_ms": -1,
+        "endpoint": "/Signup/{id}",
+        "host": "signup.es-mail.co.uk",
+        "method": "GET",
+        "status": -1,
+        "path_params": [
+          "194d52fb832bb2d871befcdf5b20e658"
+        ],
+        "query_params": {
+          "frameOptions": [
+            "0"
+          ]
+        },
+        "request_headers": {
+          "referer": "https://www.surreyheath.gov.uk/"
+        }
+      }
+    ],
+    "/themes/custom/lgd/assets/images/favicons/site.webmanifest": [
+      {
+        "timestamp": "2025-07-21T10:49:37.417Z",
+        "duration_ms": 45.458,
+        "endpoint": "/themes/custom/lgd/assets/images/favicons/site.webmanifest",
+        "host": "www.surreyheath.gov.uk",
+        "method": "GET",
+        "status": 200,
+        "request_headers": {
+          "accept": "*/*",
+          "referer": "https://www.surreyheath.gov.uk/node/53"
+        },
+        "response_headers": {
+          "content-type": "application/octet-stream",
+          "x-cache": "Hit from cloudfront",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "SAMEORIGIN",
+          "x-xss-protection": "1; mode=block"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T10:49:39.263Z",
+        "duration_ms": 10.77,
+        "endpoint": "/themes/custom/lgd/assets/images/favicons/site.webmanifest",
+        "host": "www.surreyheath.gov.uk",
+        "method": "GET",
+        "status": 200,
+        "request_headers": {
+          "accept": "*/*",
+          "referer": "https://www.surreyheath.gov.uk/"
+        },
+        "response_headers": {
+          "x-cache": "Hit from cloudfront",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "SAMEORIGIN",
+          "x-xss-protection": "1; mode=block"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T10:49:40.895Z",
+        "duration_ms": 9.91,
+        "endpoint": "/themes/custom/lgd/assets/images/favicons/site.webmanifest",
+        "host": "www.surreyheath.gov.uk",
+        "method": "GET",
+        "status": 200,
+        "request_headers": {
+          "accept": "*/*",
+          "referer": "https://www.surreyheath.gov.uk/bins-recycling-and-waste"
+        },
+        "response_headers": {
+          "x-cache": "Hit from cloudfront",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "SAMEORIGIN",
+          "x-xss-protection": "1; mode=block"
+        }
+      }
+    ],
+    "/matomo.php": [
+      {
+        "timestamp": "2025-07-21T10:49:37.654Z",
+        "duration_ms": 98.665,
+        "endpoint": "/matomo.php",
+        "host": "stats.annertech.com",
+        "method": "POST",
+        "status": 204,
+        "query_params": {
+          "action_name": [
+            "403/URL = %2Fnode%2F53/From = "
+          ],
+          "idsite": [
+            "85"
+          ],
+          "rec": [
+            "1"
+          ],
+          "r": [
+            "562211"
+          ],
+          "h": [
+            "11"
+          ],
+          "m": [
+            "49"
+          ],
+          "s": [
+            "37"
+          ],
+          "url": [
+            "https://www.surreyheath.gov.uk/node/53"
+          ],
+          "_idn": [
+            "1"
+          ],
+          "send_image": [
+            "0"
+          ],
+          "_refts": [
+            "0"
+          ],
+          "pv_id": [
+            "R6odWv"
+          ],
+          "fa_pv": [
+            "1"
+          ],
+          "fa_fp[0][fa_vid]": [
+            "otJ1JH"
+          ],
+          "fa_fp[0][fa_id]": [
+            "views-exposed-form-localgov-sitewide-search-sitewide-search-page-block"
+          ],
+          "fa_fp[0][fa_fv]": [
+            "1"
+          ],
+          "pf_net": [
+            "59"
+          ],
+          "pf_srv": [
+            "564"
+          ],
+          "pf_tfr": [
+            "1"
+          ],
+          "pf_dm1": [
+            "82"
+          ],
+          "uadata": [
+            "{\"formFactors\":[\"Desktop\"],\"fullVersionList\":[{\"brand\":\"Not)A;Brand\",\"version\":\"8.0.0.0\"},{\"brand\":\"Chromium\",\"version\":\"138.0.7204.101\"},{\"brand\":\"Google Chrome\",\"version\":\"138.0.7204.101\"}],\"mobile\":false,\"model\":\"\",\"platform\":\"macOS\",\"platformVersion\":\"15.5.0\"}"
+          ],
+          "pdf": [
+            "1"
+          ],
+          "qt": [
+            "0"
+          ],
+          "realp": [
+            "0"
+          ],
+          "wma": [
+            "0"
+          ],
+          "fla": [
+            "0"
+          ],
+          "java": [
+            "0"
+          ],
+          "ag": [
+            "0"
+          ],
+          "cookie": [
+            "1"
+          ],
+          "res": [
+            "800x600"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "content-type": "application/x-www-form-urlencoded; charset=utf-8",
+          "origin": "https://www.surreyheath.gov.uk",
+          "referer": "https://www.surreyheath.gov.uk/"
+        },
+        "response_headers": {
+          "x-debug-info": "eyJyZXRyaWVzIjowfQ==",
+          "x-platform-cluster": "di5wbxtbuwdeo-master-7rqtwti",
+          "x-platform-processor": "4svcwtabtxpeiyd7btn47gm7s4",
+          "x-platform-router": "ab463rz26pjcgv2p6gaqe6ronm"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T10:49:39.193Z",
+        "duration_ms": 89.781,
+        "endpoint": "/matomo.php",
+        "host": "stats.annertech.com",
+        "method": "POST",
+        "status": 204,
+        "query_params": {
+          "action_name": [
+            "Welcome to surreyheath.gov.uk"
+          ],
+          "idsite": [
+            "85"
+          ],
+          "rec": [
+            "1"
+          ],
+          "r": [
+            "421638"
+          ],
+          "h": [
+            "11"
+          ],
+          "m": [
+            "49"
+          ],
+          "s": [
+            "39"
+          ],
+          "url": [
+            "https://www.surreyheath.gov.uk/"
+          ],
+          "_idn": [
+            "1"
+          ],
+          "send_image": [
+            "0"
+          ],
+          "_refts": [
+            "0"
+          ],
+          "pv_id": [
+            "NNOjP0"
+          ],
+          "fa_pv": [
+            "1"
+          ],
+          "fa_fp[0][fa_vid]": [
+            "9ROQ0R"
+          ],
+          "fa_fp[0][fa_id]": [
+            "views-exposed-form-localgov-sitewide-search-sitewide-search-page-block"
+          ],
+          "fa_fp[0][fa_fv]": [
+            "1"
+          ],
+          "pf_net": [
+            "0"
+          ],
+          "pf_srv": [
+            "11"
+          ],
+          "pf_tfr": [
+            "0"
+          ],
+          "pf_dm1": [
+            "60"
+          ],
+          "uadata": [
+            "{\"formFactors\":[\"Desktop\"],\"fullVersionList\":[{\"brand\":\"Not)A;Brand\",\"version\":\"8.0.0.0\"},{\"brand\":\"Chromium\",\"version\":\"138.0.7204.101\"},{\"brand\":\"Google Chrome\",\"version\":\"138.0.7204.101\"}],\"mobile\":false,\"model\":\"\",\"platform\":\"macOS\",\"platformVersion\":\"15.5.0\"}"
+          ],
+          "pdf": [
+            "1"
+          ],
+          "qt": [
+            "0"
+          ],
+          "realp": [
+            "0"
+          ],
+          "wma": [
+            "0"
+          ],
+          "fla": [
+            "0"
+          ],
+          "java": [
+            "0"
+          ],
+          "ag": [
+            "0"
+          ],
+          "cookie": [
+            "1"
+          ],
+          "res": [
+            "800x600"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "content-type": "application/x-www-form-urlencoded; charset=utf-8",
+          "origin": "https://www.surreyheath.gov.uk",
+          "referer": "https://www.surreyheath.gov.uk/"
+        },
+        "response_headers": {
+          "x-debug-info": "eyJyZXRyaWVzIjowfQ==",
+          "x-platform-cluster": "di5wbxtbuwdeo-master-7rqtwti",
+          "x-platform-processor": "4svcwtabtxpeiyd7btn47gm7s4",
+          "x-platform-router": "ab463rz26pjcgv2p6gaqe6ronm"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T10:49:40.837Z",
+        "duration_ms": 77.12899999999999,
+        "endpoint": "/matomo.php",
+        "host": "stats.annertech.com",
+        "method": "POST",
+        "status": 204,
+        "query_params": {
+          "action_name": [
+            "Bins, recycling and waste | Surrey Heath Borough Council"
+          ],
+          "idsite": [
+            "85"
+          ],
+          "rec": [
+            "1"
+          ],
+          "r": [
+            "790036"
+          ],
+          "h": [
+            "11"
+          ],
+          "m": [
+            "49"
+          ],
+          "s": [
+            "40"
+          ],
+          "url": [
+            "https://www.surreyheath.gov.uk/bins-recycling-and-waste"
+          ],
+          "urlref": [
+            "https://www.surreyheath.gov.uk/"
+          ],
+          "_idn": [
+            "1"
+          ],
+          "send_image": [
+            "0"
+          ],
+          "_refts": [
+            "0"
+          ],
+          "pv_id": [
+            "gwRvFx"
+          ],
+          "fa_pv": [
+            "1"
+          ],
+          "fa_fp[0][fa_vid]": [
+            "jgEfyz"
+          ],
+          "fa_fp[0][fa_id]": [
+            "views-exposed-form-localgov-sitewide-search-sitewide-search-page-block"
+          ],
+          "fa_fp[0][fa_fv]": [
+            "1"
+          ],
+          "pf_net": [
+            "0"
+          ],
+          "pf_srv": [
+            "40"
+          ],
+          "pf_tfr": [
+            "3"
+          ],
+          "pf_dm1": [
+            "63"
+          ],
+          "uadata": [
+            "{\"formFactors\":[\"Desktop\"],\"fullVersionList\":[{\"brand\":\"Not)A;Brand\",\"version\":\"8.0.0.0\"},{\"brand\":\"Chromium\",\"version\":\"138.0.7204.101\"},{\"brand\":\"Google Chrome\",\"version\":\"138.0.7204.101\"}],\"mobile\":false,\"model\":\"\",\"platform\":\"macOS\",\"platformVersion\":\"15.5.0\"}"
+          ],
+          "pdf": [
+            "1"
+          ],
+          "qt": [
+            "0"
+          ],
+          "realp": [
+            "0"
+          ],
+          "wma": [
+            "0"
+          ],
+          "fla": [
+            "0"
+          ],
+          "java": [
+            "0"
+          ],
+          "ag": [
+            "0"
+          ],
+          "cookie": [
+            "1"
+          ],
+          "res": [
+            "800x600"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "content-type": "application/x-www-form-urlencoded; charset=utf-8",
+          "origin": "https://www.surreyheath.gov.uk",
+          "referer": "https://www.surreyheath.gov.uk/"
+        },
+        "response_headers": {
+          "x-debug-info": "eyJyZXRyaWVzIjowfQ==",
+          "x-platform-cluster": "di5wbxtbuwdeo-master-7rqtwti",
+          "x-platform-processor": "4svcwtabtxpeiyd7btn47gm7s4",
+          "x-platform-router": "ab463rz26pjcgv2p6gaqe6ronm"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T10:49:43.427Z",
+        "duration_ms": 70.86800000000001,
+        "endpoint": "/matomo.php",
+        "host": "stats.annertech.com",
+        "method": "POST",
+        "status": 204,
+        "query_params": {
+          "link": [
+            "https://www.jointwastesolutions.org/check-my-collection-day-2/"
+          ],
+          "idsite": [
+            "85"
+          ],
+          "rec": [
+            "1"
+          ],
+          "r": [
+            "452781"
+          ],
+          "h": [
+            "11"
+          ],
+          "m": [
+            "49"
+          ],
+          "s": [
+            "43"
+          ],
+          "url": [
+            "https://www.surreyheath.gov.uk/bins-recycling-and-waste"
+          ],
+          "urlref": [
+            "https://www.surreyheath.gov.uk/"
+          ],
+          "_idn": [
+            "1"
+          ],
+          "send_image": [
+            "0"
+          ],
+          "_refts": [
+            "0"
+          ],
+          "pf_net": [
+            "0"
+          ],
+          "pf_srv": [
+            "40"
+          ],
+          "pf_tfr": [
+            "3"
+          ],
+          "pf_dm1": [
+            "63"
+          ],
+          "pf_dm2": [
+            "21"
+          ],
+          "pf_onl": [
+            "0"
+          ],
+          "pv_id": [
+            "gwRvFx"
+          ],
+          "uadata": [
+            "{\"formFactors\":[\"Desktop\"],\"fullVersionList\":[{\"brand\":\"Not)A;Brand\",\"version\":\"8.0.0.0\"},{\"brand\":\"Chromium\",\"version\":\"138.0.7204.101\"},{\"brand\":\"Google Chrome\",\"version\":\"138.0.7204.101\"}],\"mobile\":false,\"model\":\"\",\"platform\":\"macOS\",\"platformVersion\":\"15.5.0\"}"
+          ],
+          "pdf": [
+            "1"
+          ],
+          "qt": [
+            "0"
+          ],
+          "realp": [
+            "0"
+          ],
+          "wma": [
+            "0"
+          ],
+          "fla": [
+            "0"
+          ],
+          "java": [
+            "0"
+          ],
+          "ag": [
+            "0"
+          ],
+          "cookie": [
+            "1"
+          ],
+          "res": [
+            "800x600"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "content-type": "application/x-www-form-urlencoded; charset=utf-8",
+          "origin": "https://www.surreyheath.gov.uk",
+          "referer": "https://www.surreyheath.gov.uk/"
+        },
+        "response_headers": {
+          "x-debug-info": "eyJyZXRyaWVzIjowfQ==",
+          "x-platform-cluster": "di5wbxtbuwdeo-master-7rqtwti",
+          "x-platform-processor": "4svcwtabtxpeiyd7btn47gm7s4",
+          "x-platform-router": "ab463rz26pjcgv2p6gaqe6ronm"
+        }
+      }
+    ],
+    "/": [
+      {
+        "timestamp": "2025-07-21T10:49:39.083Z",
+        "duration_ms": 0.947,
+        "endpoint": "/",
+        "host": "www.surreyheath.gov.uk",
+        "method": "GET",
+        "status": 307,
+        "response_headers": {
+          "location": "https://www.surreyheath.gov.uk/"
+        },
+        "redirect_to": "https://www.surreyheath.gov.uk/"
+      },
+      {
+        "timestamp": "2025-07-21T10:49:39.084Z",
+        "duration_ms": 11.811,
+        "endpoint": "/",
+        "host": "www.surreyheath.gov.uk",
+        "method": "GET",
+        "status": 200,
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7"
+        },
+        "response_headers": {
+          "cache-control": "max-age=900, public",
+          "content-type": "text/html; charset=UTF-8",
+          "x-cache": "Hit from cloudfront",
+          "x-content-type-options": "nosniff",
+          "x-drupal-cache": "HIT",
+          "x-drupal-dynamic-cache": "MISS",
+          "x-frame-options": "SAMEORIGIN",
+          "x-xss-protection": "1; mode=block"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 78604,
+          "compressed": true,
+          "content_ref": "2adb4fc14a633c36f65470c017722baedca78229.html"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T10:49:46.617Z",
+        "duration_ms": 635.316,
+        "endpoint": "/",
+        "host": "asjwsw-wrpsurreyheathmunicipal-live.whitespacews.com",
+        "method": "GET",
+        "status": 200,
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+          "referer": "https://www.jointwastesolutions.org/"
+        },
+        "response_headers": {
+          "content-type": "text/html; charset=UTF-8",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "DENY",
+          "x-permitted-cross-domain-policies": "none",
+          "x-xss-protection": "1;  mode=block"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 24118,
+          "compressed": true,
+          "content_ref": "d5280bfc7d755b4707a6369e7c383dd7220cd028.html"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T10:49:50.478Z",
+        "duration_ms": 959.269,
+        "endpoint": "/",
+        "host": "asjwsw-wrpsurreyheathmunicipal-live.whitespacews.com",
+        "method": "GET",
+        "status": 200,
+        "query_params": {
+          "Track": [
+            "2025/07/21/KEJE18C5JDE28"
+          ],
+          "serviceID": [
+            "A"
+          ],
+          "seq": [
+            "1"
+          ]
+        },
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+          "referer": "https://asjwsw-wrpsurreyheathmunicipal-live.whitespacews.com/"
+        },
+        "response_headers": {
+          "content-type": "text/html; charset=UTF-8",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "DENY",
+          "x-permitted-cross-domain-policies": "none",
+          "x-xss-protection": "1;  mode=block"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 11618,
+          "compressed": true,
+          "content_ref": "89a9705ddcf71aabc6bea7c2f95a3a89d99e167f.html"
+        }
+      }
+    ],
+    "/webco2.php": [
+      {
+        "timestamp": "2025-07-21T10:49:39.180Z",
+        "duration_ms": 57.963,
+        "endpoint": "/webco2.php",
+        "host": "www.webco2.io",
+        "method": "POST",
+        "status": 200,
+        "request_headers": {
+          "accept": "*/*",
+          "content-type": "text/plain",
+          "origin": "https://www.surreyheath.gov.uk",
+          "referer": "https://www.surreyheath.gov.uk/"
+        },
+        "response_headers": {
+          "content-type": "text/html; charset=UTF-8"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 32,
+          "content_ref": "c2c2e79248875c46fb9b76751487c5e7a15106f4.html"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T10:49:40.833Z",
+        "duration_ms": 14.679,
+        "endpoint": "/webco2.php",
+        "host": "www.webco2.io",
+        "method": "POST",
+        "status": 200,
+        "request_headers": {
+          "accept": "*/*",
+          "content-type": "text/plain",
+          "origin": "https://www.surreyheath.gov.uk",
+          "referer": "https://www.surreyheath.gov.uk/"
+        },
+        "response_headers": {
+          "content-type": "text/html; charset=UTF-8"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 32,
+          "content_ref": "436386404c4b42b2104625011785000c91e13e31.html"
+        }
+      }
+    ],
+    "/{id}": [
+      {
+        "timestamp": "2025-07-21T10:49:40.719Z",
+        "duration_ms": 42.574,
+        "endpoint": "/{id}",
+        "host": "www.surreyheath.gov.uk",
+        "method": "GET",
+        "status": 200,
+        "path_params": [
+          "bins-recycling-and-waste"
+        ],
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+          "referer": "https://www.surreyheath.gov.uk/"
+        },
+        "response_headers": {
+          "cache-control": "max-age=900, public",
+          "content-type": "text/html; charset=UTF-8",
+          "x-cache": "Miss from cloudfront",
+          "x-content-type-options": "nosniff",
+          "x-drupal-cache": "HIT",
+          "x-drupal-dynamic-cache": "MISS",
+          "x-frame-options": "SAMEORIGIN",
+          "x-xss-protection": "1; mode=block"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 53786,
+          "compressed": true,
+          "content_ref": "914b7d77b3dac2c0d06dd594757217cf09acbe52.html"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T10:49:43.571Z",
+        "duration_ms": 15.078,
+        "endpoint": "/{id}",
+        "host": "www.jointwastesolutions.org",
+        "method": "GET",
+        "status": 301,
+        "path_params": [
+          "check-my-collection-day-2"
+        ],
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+          "referer": "https://www.surreyheath.gov.uk/"
+        },
+        "response_headers": {
+          "cache-control": "max-age=600, must-revalidate",
+          "content-type": "text/html; charset=UTF-8",
+          "location": "https://www.jointwastesolutions.org/check-my-collection-day-2-2/",
+          "x-cache": "HIT: 1",
+          "x-cache-group": "normal",
+          "x-cacheable": "non200",
+          "x-powered-by": "WP Engine",
+          "x-redirect-by": "Yoast SEO Premium"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": -1
+        },
+        "redirect_to": "https://www.jointwastesolutions.org/check-my-collection-day-2-2/"
+      },
+      {
+        "timestamp": "2025-07-21T10:49:43.586Z",
+        "duration_ms": 27.787,
+        "endpoint": "/{id}",
+        "host": "www.jointwastesolutions.org",
+        "method": "GET",
+        "status": 200,
+        "path_params": [
+          "check-my-collection-day-2-2"
+        ],
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+          "referer": "https://www.surreyheath.gov.uk/"
+        },
+        "response_headers": {
+          "cache-control": "max-age=600, must-revalidate",
+          "content-type": "text/html; charset=UTF-8",
+          "x-cache": "HIT: 2",
+          "x-cache-group": "normal",
+          "x-cacheable": "SHORT",
+          "x-powered-by": "WP Engine"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 138593,
+          "compressed": true,
+          "content_ref": "33a5c2b542e253bc1a54f03f3b9a86a6d2ce8f3c.html"
+        }
+      }
+    ],
+    "/g/collect": [
+      {
+        "timestamp": "2025-07-21T10:49:43.823Z",
+        "duration_ms": 62.309000000000005,
+        "endpoint": "/g/collect",
+        "host": "region1.google-analytics.com",
+        "method": "POST",
+        "status": 204,
+        "query_params": {
+          "v": [
+            "2"
+          ],
+          "tid": [
+            "G-3LQVWRVCVH"
+          ],
+          "gtm": [
+            "45je57g1v895362542za200"
+          ],
+          "_p": [
+            "1753094983682"
+          ],
+          "gcd": [
+            "13l3l3l3l1l1"
+          ],
+          "npa": [
+            "0"
+          ],
+          "dma": [
+            "0"
+          ],
+          "tag_exp": [
+            "101509157~103116026~103200004~103233427~104684208~104684211"
+          ],
+          "cid": [
+            "453448440.1753094984"
+          ],
+          "ul": [
+            "en-gb"
+          ],
+          "sr": [
+            "800x600"
+          ],
+          "uaa": [
+            "arm"
+          ],
+          "uab": [
+            "64"
+          ],
+          "uafvl": [
+            "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+          ],
+          "uamb": [
+            "0"
+          ],
+          "uap": [
+            "macOS"
+          ],
+          "uapv": [
+            "15.5.0"
+          ],
+          "uaw": [
+            "0"
+          ],
+          "are": [
+            "1"
+          ],
+          "frm": [
+            "0"
+          ],
+          "pscdl": [
+            "noapi"
+          ],
+          "_s": [
+            "1"
+          ],
+          "sid": [
+            "1753094983"
+          ],
+          "sct": [
+            "1"
+          ],
+          "seg": [
+            "0"
+          ],
+          "dl": [
+            "https://www.jointwastesolutions.org/check-my-collection-day-2-2/"
+          ],
+          "dr": [
+            "https://www.surreyheath.gov.uk/"
+          ],
+          "dt": [
+            "Check my collection day - Joint Waste Solutions"
+          ],
+          "en": [
+            "page_view"
+          ],
+          "_fv": [
+            "1"
+          ],
+          "_ss": [
+            "1"
+          ],
+          "_ee": [
+            "1"
+          ],
+          "tfd": [
+            "296"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "cookie": "[cookies present]",
+          "origin": "https://www.jointwastesolutions.org",
+          "referer": "https://www.jointwastesolutions.org/"
+        },
+        "response_headers": {
+          "cache-control": "no-cache, no-store, must-revalidate",
+          "content-type": "text/plain"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T10:49:51.551Z",
+        "duration_ms": 14.205,
+        "endpoint": "/g/collect",
+        "host": "region1.google-analytics.com",
+        "method": "POST",
+        "status": 204,
+        "query_params": {
+          "v": [
+            "2"
+          ],
+          "tid": [
+            "G-3LQVWRVCVH"
+          ],
+          "gtm": [
+            "45je57g1v895362542za200"
+          ],
+          "_p": [
+            "1753094983682"
+          ],
+          "gcd": [
+            "13l3l3l3l1l1"
+          ],
+          "npa": [
+            "0"
+          ],
+          "dma": [
+            "0"
+          ],
+          "tag_exp": [
+            "101509157~103116026~103200004~103233427~104684208~104684211"
+          ],
+          "cid": [
+            "453448440.1753094984"
+          ],
+          "ul": [
+            "en-gb"
+          ],
+          "sr": [
+            "800x600"
+          ],
+          "uaa": [
+            "arm"
+          ],
+          "uab": [
+            "64"
+          ],
+          "uafvl": [
+            "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+          ],
+          "uamb": [
+            "0"
+          ],
+          "uap": [
+            "macOS"
+          ],
+          "uapv": [
+            "15.5.0"
+          ],
+          "uaw": [
+            "0"
+          ],
+          "are": [
+            "1"
+          ],
+          "frm": [
+            "0"
+          ],
+          "pscdl": [
+            "noapi"
+          ],
+          "_eu": [
+            "AEAAAAQ"
+          ],
+          "_s": [
+            "2"
+          ],
+          "sid": [
+            "1753094983"
+          ],
+          "sct": [
+            "1"
+          ],
+          "seg": [
+            "0"
+          ],
+          "dl": [
+            "https://www.jointwastesolutions.org/check-my-collection-day-2-2/"
+          ],
+          "dr": [
+            "https://www.surreyheath.gov.uk/"
+          ],
+          "dt": [
+            "Check my collection day - Joint Waste Solutions"
+          ],
+          "en": [
+            "click"
+          ],
+          "ep.link_classes": [
+            "ubtn-link ult-adjust-bottom-margin ubtn-left ubtn-block "
+          ],
+          "ep.link_url": [
+            "https://asjwsw-wrpsurreyheathmunicipal-live.whitespacews.com/"
+          ],
+          "ep.link_domain": [
+            "asjwsw-wrpsurreyheathmunicipal-live.whitespacews.com"
+          ],
+          "ep.outbound": [
+            "true"
+          ],
+          "_et": [
+            "6"
+          ],
+          "tfd": [
+            "8025"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "cookie": "[cookies present]",
+          "origin": "https://www.jointwastesolutions.org",
+          "referer": "https://www.jointwastesolutions.org/"
+        },
+        "response_headers": {
+          "cache-control": "no-cache, no-store, must-revalidate",
+          "content-type": "text/plain"
+        }
+      }
+    ],
+    "/mop.php": [
+      {
+        "timestamp": "2025-07-21T10:49:56.606Z",
+        "duration_ms": 1335.194,
+        "endpoint": "/mop.php",
+        "host": "asjwsw-wrpsurreyheathmunicipal-live.whitespacews.com",
+        "method": "POST",
+        "status": 200,
+        "query_params": {
+          "serviceID": [
+            "A"
+          ],
+          "Track": [
+            "2025/07/21/KEJE18C5JDE28"
+          ],
+          "seq": [
+            "2"
+          ]
+        },
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+          "content-type": "application/x-www-form-urlencoded",
+          "origin": "https://asjwsw-wrpsurreyheathmunicipal-live.whitespacews.com",
+          "referer": "https://asjwsw-wrpsurreyheathmunicipal-live.whitespacews.com/"
+        },
+        "response_headers": {
+          "content-type": "text/html; charset=UTF-8",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "DENY",
+          "x-permitted-cross-domain-policies": "none",
+          "x-xss-protection": "1;  mode=block"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 24242,
+          "compressed": true,
+          "content_ref": "e15ed3c3be17adc3c173f6e51994e99a8d3a8bec.html"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T10:50:00.308Z",
+        "duration_ms": 2291.9550000000004,
+        "endpoint": "/mop.php",
+        "host": "asjwsw-wrpsurreyheathmunicipal-live.whitespacews.com",
+        "method": "GET",
+        "status": 200,
+        "query_params": {
+          "Track": [
+            "2025/07/21/KEJE18C5JDE28"
+          ],
+          "serviceID": [
+            "A"
+          ],
+          "seq": [
+            "3"
+          ],
+          "pIndex": [
+            "24"
+          ]
+        },
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+          "referer": "https://asjwsw-wrpsurreyheathmunicipal-live.whitespacews.com/"
+        },
+        "response_headers": {
+          "content-type": "text/html; charset=UTF-8",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "DENY",
+          "x-permitted-cross-domain-policies": "none",
+          "x-xss-protection": "1;  mode=block"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 45456,
+          "compressed": true,
+          "content_ref": "958331351e4d146abb009e4eb04510093669ff70.html"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T10:50:07.486Z",
+        "duration_ms": 1666.2359999999999,
+        "endpoint": "/mop.php",
+        "host": "asjwsw-wrpsurreyheathmunicipal-live.whitespacews.com",
+        "method": "POST",
+        "status": 200,
+        "query_params": {
+          "Track": [
+            "2025/07/21/KEJE18C5JDE28"
+          ],
+          "serviceID": [
+            "A"
+          ],
+          "oldseq": [
+            "3"
+          ],
+          "pIndex": [
+            "24"
+          ],
+          "seq": [
+            "2"
+          ]
+        },
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+          "content-type": "application/x-www-form-urlencoded",
+          "origin": "https://asjwsw-wrpsurreyheathmunicipal-live.whitespacews.com",
+          "referer": "https://asjwsw-wrpsurreyheathmunicipal-live.whitespacews.com/"
+        },
+        "response_headers": {
+          "content-type": "text/html; charset=UTF-8",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "DENY",
+          "x-permitted-cross-domain-policies": "none",
+          "x-xss-protection": "1;  mode=block"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 43444,
+          "compressed": true,
+          "content_ref": "1479fd62ed997be006a91a45d2bba5bf60325aac.html"
+        }
+      }
+    ]
+  }
 }

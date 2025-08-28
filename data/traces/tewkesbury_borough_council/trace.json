@@ -1,128 +1,607 @@
 {
-  "metadata": {
-    "trace_name": "tewkesbury_borough_council",
-    "processed_at": "2025-08-26 18:44:24",
-    "workflow_steps_count": 4,
-    "navigation_events_count": 8
-  },
-  "scraping_patterns": {
-    "login_detected": false,
-    "form_submissions": 0,
-    "navigation_count": 1,
-    "unique_domains": [
-      "pagecorrect.monsido.com",
-      "tewkesbury.gov.uk",
-      "api-2.tewkesbury.gov.uk",
-      "www.tewkesbury.gov.uk"
-    ],
-    "api_endpoints": [
-      "https://pagecorrect.monsido.com/v1/settings/83gCta66jzbuxq6g3VZpaQ.json"
-    ],
-    "data_extraction_indicators": []
-  },
-  "workflow_steps": [
+  "entries": [
     {
-      "action": "goto",
-      "target": "https://www.tewkesbury.gov.uk/waste-and-recycling?rq=bin%20collection",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
+      "timestamp": "2025-07-21T07:57:53.486Z",
+      "duration_ms": 46.196,
+      "endpoint": "/waste-and-recycling",
+      "host": "www.tewkesbury.gov.uk",
+      "method": "GET",
+      "status": 301,
+      "query_params": {
+        "rq": [
+          "bin collection"
+        ]
+      },
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7"
+      },
+      "response_headers": {
+        "content-type": "text/html",
+        "location": "https://tewkesbury.gov.uk/waste-and-recycling?rq=bin%20collection"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": -1
+      },
+      "redirect_to": "https://tewkesbury.gov.uk/waste-and-recycling?rq=bin%20collection"
     },
     {
-      "action": "fill",
-      "target": "aria-ref=e52 >> internal:describe=\"searchbox \\\"Postcode:\\\"\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0,
-      "value": "GL19 4AG"
+      "timestamp": "2025-07-21T07:57:53.523Z",
+      "duration_ms": 7.945,
+      "endpoint": "/waste-and-recycling",
+      "host": "tewkesbury.gov.uk",
+      "method": "GET",
+      "status": 301,
+      "query_params": {
+        "rq": [
+          "bin collection"
+        ]
+      },
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7"
+      },
+      "response_headers": {
+        "content-type": "text/html; charset=UTF-8",
+        "location": "https://tewkesbury.gov.uk/services/waste-and-recycling",
+        "x-ac": "1.lhr _atomic_ams STALE",
+        "x-hacker": "Want root?  Visit join.a8c.com and mention this header."
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": -1
+      },
+      "redirect_to": "https://tewkesbury.gov.uk/services/waste-and-recycling"
     },
     {
-      "action": "click",
-      "target": "aria-ref=e53 >> internal:describe=\"button \\\"Search\\\"\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
+      "timestamp": "2025-07-21T07:57:53.540Z",
+      "duration_ms": 9.793999999999999,
+      "endpoint": "/services/waste-and-recycling",
+      "host": "tewkesbury.gov.uk",
+      "method": "GET",
+      "status": 301,
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7"
+      },
+      "response_headers": {
+        "cache-control": "max-age=300, must-revalidate",
+        "content-type": "text/html; charset=UTF-8",
+        "location": "https://tewkesbury.gov.uk/services/waste-and-recycling/",
+        "x-ac": "3.lhr _atomic_ams STALE",
+        "x-hacker": "Want root?  Visit join.a8c.com and mention this header.",
+        "x-nananana": "Batcache-Set",
+        "x-redirect-by": "WordPress"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": -1
+      },
+      "redirect_to": "https://tewkesbury.gov.uk/services/waste-and-recycling/"
     },
     {
-      "action": "click",
-      "target": "aria-ref=e258 >> internal:describe=\"link \\\"Woodbine Cottage The Leigh Gloucester GL19 4AG\\\"\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
+      "timestamp": "2025-07-21T07:57:53.550Z",
+      "duration_ms": 8.977,
+      "endpoint": "/services/waste-and-recycling",
+      "host": "tewkesbury.gov.uk",
+      "method": "GET",
+      "status": 200,
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7"
+      },
+      "response_headers": {
+        "content-type": "text/html; charset=UTF-8",
+        "x-ac": "4.lhr _atomic_ams STALE",
+        "x-hacker": "Want root?  Visit join.a8c.com and mention this header."
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 61949,
+        "compressed": true,
+        "content_ref": "1d00c02b4ce50723f833365b1965cedca212fd13.html"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T07:57:54.771Z",
+      "duration_ms": 36.821999999999996,
+      "endpoint": "/v1/settings/{id}",
+      "host": "pagecorrect.monsido.com",
+      "method": "GET",
+      "status": 200,
+      "path_params": [
+        "83gCta66jzbuxq6g3VZpaQ.json"
+      ],
+      "request_headers": {
+        "accept": "*/*",
+        "origin": "https://tewkesbury.gov.uk",
+        "referer": "https://tewkesbury.gov.uk/"
+      },
+      "response_headers": {
+        "cache-control": "public, max-age=300",
+        "content-type": "application/json",
+        "x-goog-generation": "1752099902085450",
+        "x-goog-hash": "md5=rZx4LtF7b8KxXXi0q0rEXw==",
+        "x-goog-metageneration": "1",
+        "x-goog-storage-class": "MULTI_REGIONAL",
+        "x-goog-stored-content-encoding": "identity",
+        "x-goog-stored-content-length": "1409",
+        "x-guploader-uploadid": "ABgVH8_glVFsXq-7M10Ar6sxBoejpLHQWc1M0AeH73LYaw9mfYAYmtdE277-4AXnpML0qiIu9mZfNZg"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 1409,
+        "content_ref": "755cd5cede0a483ebb7d25929ef5b5d90a77daa5.json"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T07:57:54.741Z",
+      "duration_ms": -1,
+      "endpoint": "/",
+      "host": "tracking.monsido.com",
+      "method": "GET",
+      "status": -1,
+      "query_params": {
+        "a": [
+          "83gCta66jzbuxq6g3VZpaQ"
+        ],
+        "b": [
+          "https://tewkesbury.gov.uk/services/waste-and-recycling/"
+        ],
+        "c": [
+          "0111753084674703"
+        ],
+        "d": [
+          "800x600"
+        ],
+        "f": [
+          "C0B1753084674703"
+        ],
+        "h": [
+          "2"
+        ]
+      },
+      "request_headers": {
+        "referer": "https://tewkesbury.gov.uk/"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T07:57:59.588Z",
+      "duration_ms": 9.641,
+      "endpoint": "/services/waste-and-recycling/bulky-collections",
+      "host": "tewkesbury.gov.uk",
+      "method": "GET",
+      "status": 200,
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+        "referer": "https://tewkesbury.gov.uk/services/waste-and-recycling/"
+      },
+      "response_headers": {
+        "cache-control": "max-age=300, must-revalidate",
+        "content-type": "text/html; charset=UTF-8",
+        "x-ac": "3.lhr _atomic_ams STALE",
+        "x-hacker": "Want root?  Visit join.a8c.com and mention this header.",
+        "x-nananana": "Batcache-Set"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 0,
+        "content_ref": "da39a3ee5e6b4b0d3255bfef95601890afd80709.html"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T07:57:59.026Z",
+      "duration_ms": 1309.635,
+      "endpoint": "/incab/properties/GL19%204AG/lookup",
+      "host": "api-2.tewkesbury.gov.uk",
+      "method": "GET",
+      "status": 200,
+      "query_params": {
+        "_": [
+          "1753084674657"
+        ]
+      },
+      "request_headers": {
+        "accept": "application/json, text/javascript, */*; q=0.01",
+        "content-type": "application/json",
+        "origin": "https://tewkesbury.gov.uk",
+        "referer": "https://tewkesbury.gov.uk/"
+      },
+      "response_headers": {
+        "content-type": "application/json; charset=utf-8"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 6604,
+        "content_ref": "3ed1f312a1191a58a1d902e5575f61dae2e39fd4.json"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T07:58:02.777Z",
+      "duration_ms": 258.123,
+      "endpoint": "/incab/rounds/{id}/next-collection",
+      "host": "api-2.tewkesbury.gov.uk",
+      "method": "GET",
+      "status": 200,
+      "path_params": [
+        "200004334842"
+      ],
+      "query_params": {
+        "_": [
+          "1753084674658"
+        ]
+      },
+      "request_headers": {
+        "accept": "application/json, text/javascript, */*; q=0.01",
+        "content-type": "application/json",
+        "origin": "https://tewkesbury.gov.uk",
+        "referer": "https://tewkesbury.gov.uk/",
+        "x-requested-with": "XMLHttpRequest"
+      },
+      "response_headers": {
+        "content-type": "application/json; charset=utf-8"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 733,
+        "content_ref": "f815b31984e9d79597ea093f7d4635c102890e63.json"
+      }
     }
   ],
-  "navigation_events": [
-    {
-      "url": "https://www.tewkesbury.gov.uk/waste-and-recycling?rq=bin%20collection",
-      "method": "GET",
-      "status": 301,
-      "redirect_url": "https://tewkesbury.gov.uk/waste-and-recycling?rq=bin%20collection",
-      "mime_type": "text/html",
-      "size": -1,
-      "timestamp": "2025-07-21T07:57:53.486Z"
+  "analysis": {
+    "total_requests": 9,
+    "unique_endpoints": 7,
+    "methods_used": [
+      "GET"
+    ],
+    "status_codes": {
+      "301": 3,
+      "200": 5,
+      "-1": 1
     },
-    {
-      "url": "https://tewkesbury.gov.uk/waste-and-recycling?rq=bin%20collection",
-      "method": "GET",
-      "status": 301,
-      "redirect_url": "https://tewkesbury.gov.uk/services/waste-and-recycling",
-      "mime_type": "text/html; charset=UTF-8",
-      "size": -1,
-      "timestamp": "2025-07-21T07:57:53.523Z"
-    },
-    {
-      "url": "https://tewkesbury.gov.uk/services/waste-and-recycling",
-      "method": "GET",
-      "status": 301,
-      "redirect_url": "https://tewkesbury.gov.uk/services/waste-and-recycling/",
-      "mime_type": "text/html; charset=UTF-8",
-      "size": -1,
-      "timestamp": "2025-07-21T07:57:53.540Z"
-    },
-    {
-      "url": "https://tewkesbury.gov.uk/services/waste-and-recycling/",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "text/html; charset=UTF-8",
-      "size": 61949,
-      "timestamp": "2025-07-21T07:57:53.550Z"
-    },
-    {
-      "url": "https://pagecorrect.monsido.com/v1/settings/83gCta66jzbuxq6g3VZpaQ.json",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json",
-      "size": 1409,
-      "timestamp": "2025-07-21T07:57:54.771Z"
-    },
-    {
-      "url": "https://api-2.tewkesbury.gov.uk/incab/properties/GL19%204AG/lookup?_=1753084674657",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json; charset=utf-8",
-      "size": 6604,
-      "timestamp": "2025-07-21T07:57:59.026Z"
-    },
-    {
-      "url": "https://tewkesbury.gov.uk/services/waste-and-recycling/bulky-collections/",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "text/html; charset=UTF-8",
-      "size": 0,
-      "timestamp": "2025-07-21T07:57:59.588Z"
-    },
-    {
-      "url": "https://api-2.tewkesbury.gov.uk/incab/rounds/200004334842/next-collection?_=1753084674658",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json; charset=utf-8",
-      "size": 733,
-      "timestamp": "2025-07-21T07:58:02.777Z"
-    }
-  ]
+    "endpoints_with_params": [
+      {
+        "endpoint": "/waste-and-recycling",
+        "method": "GET",
+        "query_params": [
+          "rq"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/v1/settings/{id}",
+        "method": "GET",
+        "query_params": [],
+        "path_params": true
+      },
+      {
+        "endpoint": "/",
+        "method": "GET",
+        "query_params": [
+          "a",
+          "b",
+          "c",
+          "d",
+          "f",
+          "h"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/incab/properties/GL19%204AG/lookup",
+        "method": "GET",
+        "query_params": [
+          "_"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/incab/rounds/{id}/next-collection",
+        "method": "GET",
+        "query_params": [
+          "_"
+        ],
+        "path_params": true
+      }
+    ],
+    "redirects": [
+      {
+        "from": "/waste-and-recycling",
+        "to": "https://tewkesbury.gov.uk/waste-and-recycling?rq=bin%20collection",
+        "status": 301
+      },
+      {
+        "from": "/waste-and-recycling",
+        "to": "https://tewkesbury.gov.uk/services/waste-and-recycling",
+        "status": 301
+      },
+      {
+        "from": "/services/waste-and-recycling",
+        "to": "https://tewkesbury.gov.uk/services/waste-and-recycling/",
+        "status": 301
+      }
+    ],
+    "api_calls": [
+      {
+        "endpoint": "/v1/settings/{id}",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": []
+      },
+      {
+        "endpoint": "/incab/properties/GL19%204AG/lookup",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": [
+          "_"
+        ]
+      },
+      {
+        "endpoint": "/incab/rounds/{id}/next-collection",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": [
+          "_"
+        ]
+      }
+    ],
+    "form_submissions": []
+  },
+  "grouped_by_endpoint": {
+    "/waste-and-recycling": [
+      {
+        "timestamp": "2025-07-21T07:57:53.486Z",
+        "duration_ms": 46.196,
+        "endpoint": "/waste-and-recycling",
+        "host": "www.tewkesbury.gov.uk",
+        "method": "GET",
+        "status": 301,
+        "query_params": {
+          "rq": [
+            "bin collection"
+          ]
+        },
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7"
+        },
+        "response_headers": {
+          "content-type": "text/html",
+          "location": "https://tewkesbury.gov.uk/waste-and-recycling?rq=bin%20collection"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": -1
+        },
+        "redirect_to": "https://tewkesbury.gov.uk/waste-and-recycling?rq=bin%20collection"
+      },
+      {
+        "timestamp": "2025-07-21T07:57:53.523Z",
+        "duration_ms": 7.945,
+        "endpoint": "/waste-and-recycling",
+        "host": "tewkesbury.gov.uk",
+        "method": "GET",
+        "status": 301,
+        "query_params": {
+          "rq": [
+            "bin collection"
+          ]
+        },
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7"
+        },
+        "response_headers": {
+          "content-type": "text/html; charset=UTF-8",
+          "location": "https://tewkesbury.gov.uk/services/waste-and-recycling",
+          "x-ac": "1.lhr _atomic_ams STALE",
+          "x-hacker": "Want root?  Visit join.a8c.com and mention this header."
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": -1
+        },
+        "redirect_to": "https://tewkesbury.gov.uk/services/waste-and-recycling"
+      }
+    ],
+    "/services/waste-and-recycling": [
+      {
+        "timestamp": "2025-07-21T07:57:53.540Z",
+        "duration_ms": 9.793999999999999,
+        "endpoint": "/services/waste-and-recycling",
+        "host": "tewkesbury.gov.uk",
+        "method": "GET",
+        "status": 301,
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7"
+        },
+        "response_headers": {
+          "cache-control": "max-age=300, must-revalidate",
+          "content-type": "text/html; charset=UTF-8",
+          "location": "https://tewkesbury.gov.uk/services/waste-and-recycling/",
+          "x-ac": "3.lhr _atomic_ams STALE",
+          "x-hacker": "Want root?  Visit join.a8c.com and mention this header.",
+          "x-nananana": "Batcache-Set",
+          "x-redirect-by": "WordPress"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": -1
+        },
+        "redirect_to": "https://tewkesbury.gov.uk/services/waste-and-recycling/"
+      },
+      {
+        "timestamp": "2025-07-21T07:57:53.550Z",
+        "duration_ms": 8.977,
+        "endpoint": "/services/waste-and-recycling",
+        "host": "tewkesbury.gov.uk",
+        "method": "GET",
+        "status": 200,
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7"
+        },
+        "response_headers": {
+          "content-type": "text/html; charset=UTF-8",
+          "x-ac": "4.lhr _atomic_ams STALE",
+          "x-hacker": "Want root?  Visit join.a8c.com and mention this header."
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 61949,
+          "compressed": true,
+          "content_ref": "1d00c02b4ce50723f833365b1965cedca212fd13.html"
+        }
+      }
+    ],
+    "/v1/settings/{id}": [
+      {
+        "timestamp": "2025-07-21T07:57:54.771Z",
+        "duration_ms": 36.821999999999996,
+        "endpoint": "/v1/settings/{id}",
+        "host": "pagecorrect.monsido.com",
+        "method": "GET",
+        "status": 200,
+        "path_params": [
+          "83gCta66jzbuxq6g3VZpaQ.json"
+        ],
+        "request_headers": {
+          "accept": "*/*",
+          "origin": "https://tewkesbury.gov.uk",
+          "referer": "https://tewkesbury.gov.uk/"
+        },
+        "response_headers": {
+          "cache-control": "public, max-age=300",
+          "content-type": "application/json",
+          "x-goog-generation": "1752099902085450",
+          "x-goog-hash": "md5=rZx4LtF7b8KxXXi0q0rEXw==",
+          "x-goog-metageneration": "1",
+          "x-goog-storage-class": "MULTI_REGIONAL",
+          "x-goog-stored-content-encoding": "identity",
+          "x-goog-stored-content-length": "1409",
+          "x-guploader-uploadid": "ABgVH8_glVFsXq-7M10Ar6sxBoejpLHQWc1M0AeH73LYaw9mfYAYmtdE277-4AXnpML0qiIu9mZfNZg"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 1409,
+          "content_ref": "755cd5cede0a483ebb7d25929ef5b5d90a77daa5.json"
+        }
+      }
+    ],
+    "/": [
+      {
+        "timestamp": "2025-07-21T07:57:54.741Z",
+        "duration_ms": -1,
+        "endpoint": "/",
+        "host": "tracking.monsido.com",
+        "method": "GET",
+        "status": -1,
+        "query_params": {
+          "a": [
+            "83gCta66jzbuxq6g3VZpaQ"
+          ],
+          "b": [
+            "https://tewkesbury.gov.uk/services/waste-and-recycling/"
+          ],
+          "c": [
+            "0111753084674703"
+          ],
+          "d": [
+            "800x600"
+          ],
+          "f": [
+            "C0B1753084674703"
+          ],
+          "h": [
+            "2"
+          ]
+        },
+        "request_headers": {
+          "referer": "https://tewkesbury.gov.uk/"
+        }
+      }
+    ],
+    "/services/waste-and-recycling/bulky-collections": [
+      {
+        "timestamp": "2025-07-21T07:57:59.588Z",
+        "duration_ms": 9.641,
+        "endpoint": "/services/waste-and-recycling/bulky-collections",
+        "host": "tewkesbury.gov.uk",
+        "method": "GET",
+        "status": 200,
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+          "referer": "https://tewkesbury.gov.uk/services/waste-and-recycling/"
+        },
+        "response_headers": {
+          "cache-control": "max-age=300, must-revalidate",
+          "content-type": "text/html; charset=UTF-8",
+          "x-ac": "3.lhr _atomic_ams STALE",
+          "x-hacker": "Want root?  Visit join.a8c.com and mention this header.",
+          "x-nananana": "Batcache-Set"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 0,
+          "content_ref": "da39a3ee5e6b4b0d3255bfef95601890afd80709.html"
+        }
+      }
+    ],
+    "/incab/properties/GL19%204AG/lookup": [
+      {
+        "timestamp": "2025-07-21T07:57:59.026Z",
+        "duration_ms": 1309.635,
+        "endpoint": "/incab/properties/GL19%204AG/lookup",
+        "host": "api-2.tewkesbury.gov.uk",
+        "method": "GET",
+        "status": 200,
+        "query_params": {
+          "_": [
+            "1753084674657"
+          ]
+        },
+        "request_headers": {
+          "accept": "application/json, text/javascript, */*; q=0.01",
+          "content-type": "application/json",
+          "origin": "https://tewkesbury.gov.uk",
+          "referer": "https://tewkesbury.gov.uk/"
+        },
+        "response_headers": {
+          "content-type": "application/json; charset=utf-8"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 6604,
+          "content_ref": "3ed1f312a1191a58a1d902e5575f61dae2e39fd4.json"
+        }
+      }
+    ],
+    "/incab/rounds/{id}/next-collection": [
+      {
+        "timestamp": "2025-07-21T07:58:02.777Z",
+        "duration_ms": 258.123,
+        "endpoint": "/incab/rounds/{id}/next-collection",
+        "host": "api-2.tewkesbury.gov.uk",
+        "method": "GET",
+        "status": 200,
+        "path_params": [
+          "200004334842"
+        ],
+        "query_params": {
+          "_": [
+            "1753084674658"
+          ]
+        },
+        "request_headers": {
+          "accept": "application/json, text/javascript, */*; q=0.01",
+          "content-type": "application/json",
+          "origin": "https://tewkesbury.gov.uk",
+          "referer": "https://tewkesbury.gov.uk/",
+          "x-requested-with": "XMLHttpRequest"
+        },
+        "response_headers": {
+          "content-type": "application/json; charset=utf-8"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 733,
+          "content_ref": "f815b31984e9d79597ea093f7d4635c102890e63.json"
+        }
+      }
+    ]
+  }
 }

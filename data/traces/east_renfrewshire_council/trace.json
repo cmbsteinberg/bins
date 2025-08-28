@@ -1,337 +1,1673 @@
 {
-  "metadata": {
-    "trace_name": "east_renfrewshire_council",
-    "processed_at": "2025-08-26 18:44:24",
-    "workflow_steps_count": 7,
-    "navigation_events_count": 26
-  },
-  "scraping_patterns": {
-    "login_detected": false,
-    "form_submissions": 11,
-    "navigation_count": 2,
-    "unique_domains": [
-      "webassist.onconnect.app",
-      "webassistant.onconnect.app",
-      "produkswebassistsignalr18.service.signalr.net",
-      "www.eastrenfrewshire.gov.uk"
-    ],
-    "api_endpoints": [
-      "https://webassistant.onconnect.app/assets/appConfig.json",
-      "https://webassistant.onconnect.app/assets/appConfig.json",
-      "https://webassistant.onconnect.app/assets/appConfig.json"
-    ],
-    "data_extraction_indicators": []
-  },
-  "workflow_steps": [
+  "entries": [
     {
-      "action": "goto",
-      "target": "http://www.eastrenfrewshire.gov.uk/article/1555/When-is-my-bin-emptied",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
-    },
-    {
-      "action": "goto",
-      "target": "https://www.eastrenfrewshire.gov.uk/",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
-    },
-    {
-      "action": "click",
-      "target": "aria-ref=e73 >> internal:describe=\"Bin collection days\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
-    },
-    {
-      "action": "fill",
-      "target": "aria-ref=e80 >> internal:describe=\"textbox \\\"Postcode\\\"\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0,
-      "value": "G44 3EN"
-    },
-    {
-      "action": "click",
-      "target": "aria-ref=e85 >> internal:describe=\"Search\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
-    },
-    {
-      "action": "selectOption",
-      "target": "aria-ref=e81 >> internal:describe=\"Addresses\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0,
-      "value": null
-    },
-    {
-      "action": "click",
-      "target": "aria-ref=e127 >> internal:describe=\"Find my collection dates\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
-    }
-  ],
-  "navigation_events": [
-    {
-      "url": "http://www.eastrenfrewshire.gov.uk/article/1555/When-is-my-bin-emptied",
+      "timestamp": "2025-07-21T16:25:21.036Z",
+      "duration_ms": 114.357,
+      "endpoint": "/article/{id}/{id}",
+      "host": "www.eastrenfrewshire.gov.uk",
       "method": "GET",
       "status": 302,
-      "redirect_url": "https://www.eastrenfrewshire.gov.uk/article/1555/When-is-my-bin-emptied",
-      "mime_type": "text/html; charset=utf-8",
-      "size": -1,
-      "timestamp": "2025-07-21T16:25:21.036Z"
+      "path_params": [
+        "1555",
+        "When-is-my-bin-emptied"
+      ],
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7"
+      },
+      "response_headers": {
+        "content-type": "text/html; charset=utf-8",
+        "location": "https://www.eastrenfrewshire.gov.uk/article/1555/When-is-my-bin-emptied",
+        "x-powered-by": ""
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": -1
+      },
+      "redirect_to": "https://www.eastrenfrewshire.gov.uk/article/1555/When-is-my-bin-emptied"
     },
     {
-      "url": "https://www.eastrenfrewshire.gov.uk/article/1555/When-is-my-bin-emptied",
+      "timestamp": "2025-07-21T16:25:21.099Z",
+      "duration_ms": 115.977,
+      "endpoint": "/article/{id}/{id}",
+      "host": "www.eastrenfrewshire.gov.uk",
       "method": "GET",
       "status": 404,
-      "redirect_url": null,
-      "mime_type": "text/html; charset=utf-8",
-      "size": 20539,
-      "timestamp": "2025-07-21T16:25:21.099Z"
+      "path_params": [
+        "1555",
+        "When-is-my-bin-emptied"
+      ],
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7"
+      },
+      "response_headers": {
+        "cache-control": "no-cache, no-store",
+        "content-type": "text/html; charset=utf-8",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "SAMEORIGIN",
+        "x-powered-by": "",
+        "x-ua-compatible": "IE=Edge",
+        "x-xss-protection": "1; mode=block"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 20539,
+        "content_ref": "075553ceb4ecd77ad29cd8fa0fbe86aa5c937ae4.html"
+      }
     },
     {
-      "url": "https://www.eastrenfrewshire.gov.uk/",
+      "timestamp": "2025-07-21T16:25:22.526Z",
+      "duration_ms": 91.62899999999999,
+      "endpoint": "/",
+      "host": "www.eastrenfrewshire.gov.uk",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "text/html; charset=utf-8",
-      "size": 34981,
-      "timestamp": "2025-07-21T16:25:22.526Z"
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7"
+      },
+      "response_headers": {
+        "cache-control": "no-cache, no-store",
+        "content-type": "text/html; charset=utf-8",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "SAMEORIGIN",
+        "x-powered-by": "",
+        "x-ua-compatible": "IE=Edge",
+        "x-xss-protection": "1; mode=block"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 34981,
+        "compressed": true,
+        "content_ref": "7a76379b75e13daa9270e740dcde83feee007b07.html"
+      }
     },
     {
-      "url": "https://www.eastrenfrewshire.gov.uk/bin-days",
+      "timestamp": "2025-07-21T16:25:24.333Z",
+      "duration_ms": 243.76600000000002,
+      "endpoint": "/bin-days",
+      "host": "www.eastrenfrewshire.gov.uk",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "text/html; charset=utf-8",
-      "size": 37454,
-      "timestamp": "2025-07-21T16:25:24.333Z"
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+        "referer": "https://www.eastrenfrewshire.gov.uk/"
+      },
+      "response_headers": {
+        "cache-control": "no-cache, no-store",
+        "content-type": "text/html; charset=utf-8",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "SAMEORIGIN",
+        "x-powered-by": "",
+        "x-ua-compatible": "IE=Edge",
+        "x-xss-protection": "1; mode=block"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 37454,
+        "compressed": true,
+        "content_ref": "2247e0662792a72dda2363f6b481ed1ce499b134.html"
+      }
     },
     {
-      "url": "https://webassist.onconnect.app/v1/loader/1760e1d2-79bb-4dbe-93b0-b3a0165dc012",
+      "timestamp": "2025-07-21T16:25:24.683Z",
+      "duration_ms": 100.442,
+      "endpoint": "/v1/loader/{id}",
+      "host": "webassist.onconnect.app",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json; charset=utf-8",
-      "size": 52,
-      "timestamp": "2025-07-21T16:25:24.683Z"
+      "path_params": [
+        "1760e1d2-79bb-4dbe-93b0-b3a0165dc012"
+      ],
+      "request_headers": {
+        "accept": "*/*",
+        "origin": "https://www.eastrenfrewshire.gov.uk",
+        "referer": "https://www.eastrenfrewshire.gov.uk/"
+      },
+      "response_headers": {
+        "content-type": "application/json; charset=utf-8",
+        "x-ms-middleware-request-id": "00000000-0000-0000-0000-000000000000"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 52,
+        "content_ref": "3bd0e87f7735a292acfc53909bc55fd480fb94c1.json"
+      }
     },
     {
-      "url": "https://webassistant.onconnect.app/assets/appConfig.json",
+      "timestamp": "2025-07-21T16:25:24.936Z",
+      "duration_ms": 40.854,
+      "endpoint": "/assets/appConfig.json",
+      "host": "webassistant.onconnect.app",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json",
-      "size": 73,
-      "timestamp": "2025-07-21T16:25:24.936Z"
+      "request_headers": {
+        "accept": "application/json, text/plain, */*",
+        "origin": "https://www.eastrenfrewshire.gov.uk",
+        "referer": "https://www.eastrenfrewshire.gov.uk/"
+      },
+      "response_headers": {
+        "content-type": "application/json",
+        "x-azure-ref": "20250721T162524Z-16896f46f99rxgcfhC1LTS8utn0000000970000000001c8g",
+        "x-cache": "CONFIG_NOCACHE",
+        "x-ms-request-id": "12f7ceb6-501e-00b7-2c5c-fa892d000000",
+        "x-ms-version": "2018-03-28"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 73,
+        "content_ref": "e8551bc0489c1ba948f1631c51732814c12af1e5.json"
+      }
     },
     {
-      "url": "https://webassist.onconnect.app/v1/workspaces/1760e1d2-79bb-4dbe-93b0-b3a0165dc012/init",
+      "timestamp": "2025-07-21T16:25:25.004Z",
+      "duration_ms": 171.535,
+      "endpoint": "/v1/workspaces/{id}/init",
+      "host": "webassist.onconnect.app",
       "method": "POST",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json; charset=utf-8",
-      "size": 1945,
-      "timestamp": "2025-07-21T16:25:25.004Z"
+      "path_params": [
+        "1760e1d2-79bb-4dbe-93b0-b3a0165dc012"
+      ],
+      "request_headers": {
+        "accept": "application/json, text/plain, */*",
+        "content-type": "application/json",
+        "origin": "https://www.eastrenfrewshire.gov.uk",
+        "referer": "https://www.eastrenfrewshire.gov.uk/"
+      },
+      "response_headers": {
+        "content-type": "application/json; charset=utf-8",
+        "x-ms-middleware-request-id": "00000000-0000-0000-0000-000000000000"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 1945,
+        "compressed": true,
+        "content_ref": "9a7d3c7dee03a0f9af3c07a3d3ed7c073020afb7.json"
+      }
     },
     {
-      "url": "https://produkswebassistsignalr18.service.signalr.net/client/negotiate?hub=webassistant&negotiateVersion=1",
+      "timestamp": "2025-07-21T16:25:25.115Z",
+      "duration_ms": 102.577,
+      "endpoint": "/client/negotiate",
+      "host": "produkswebassistsignalr18.service.signalr.net",
       "method": "POST",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json",
-      "size": 334,
-      "timestamp": "2025-07-21T16:25:25.115Z"
+      "query_params": {
+        "hub": [
+          "webassistant"
+        ],
+        "negotiateVersion": [
+          "1"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IjQ3MTIyNTcyNiJ9.eyJuYW1laWQiOiJkZDA5NDY4Yi04MWM1LTQ5ZDMtOTVhZi01ZDRmZGZiOTVmZGMiLCJ3b3Jrc3BhY2UiOiIxNzYwZTFkMi03OWJiLTRkYmUtOTNiMC1iM2EwMTY1ZGMwMTIiLCJuYmYiOjE3NTMxMTUxMjUsImV4cCI6MTc1MzExODcyNSwiaWF0IjoxNzUzMTE1MTI1LCJhdWQiOiJodHRwczovL3Byb2R1a3N3ZWJhc3Npc3RzaWduYWxyMTguc2VydmljZS5zaWduYWxyLm5ldC9jbGllbnQvP2h1Yj13ZWJhc3Npc3RhbnQifQ.O5rWdYe7WsaJpPeCFP_xMj439aujLDursjVAEcehdBU",
+        "content-type": "text/plain;charset=UTF-8",
+        "origin": "https://www.eastrenfrewshire.gov.uk",
+        "referer": "https://www.eastrenfrewshire.gov.uk/",
+        "x-requested-with": "XMLHttpRequest",
+        "x-signalr-user-agent": "Microsoft SignalR/6.0 (6.0.22; Unknown OS; Browser; Unknown Runtime Version)"
+      },
+      "response_headers": {
+        "content-type": "application/json"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 334,
+        "content_ref": "7499c4bff6e074ffa54f9ff5445827e7a583397e.json"
+      }
     },
     {
-      "url": "https://webassist.onconnect.app/v1/postback",
+      "timestamp": "2025-07-21T16:25:25.115Z",
+      "duration_ms": 183.838,
+      "endpoint": "/v1/postback",
+      "host": "webassist.onconnect.app",
       "method": "POST",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "x-unknown",
-      "size": 0,
-      "timestamp": "2025-07-21T16:25:25.115Z"
+      "request_headers": {
+        "accept": "application/json, text/plain, */*",
+        "authorization": "Basic ZGQwOTQ2OGItODFjNS00OWQzLTk1YWYtNWQ0ZmRmYjk1ZmRjOnFfWWJXalNPaUVQeUV4OUdYZ0JCS1VTeWZwNGtkSGM0b0RWQ19fZTZmQmM=",
+        "content-type": "application/json",
+        "origin": "https://www.eastrenfrewshire.gov.uk",
+        "referer": "https://www.eastrenfrewshire.gov.uk/",
+        "x-connect-auth": "Basic ZGQwOTQ2OGItODFjNS00OWQzLTk1YWYtNWQ0ZmRmYjk1ZmRjOnFfWWJXalNPaUVQeUV4OUdYZ0JCS1VTeWZwNGtkSGM0b0RWQ19fZTZmQmM="
+      },
+      "response_headers": {
+        "x-ms-middleware-request-id": "00000000-0000-0000-0000-000000000000"
+      }
     },
     {
-      "url": "https://www.eastrenfrewshire.gov.uk/apiserver/formsservice/http/processsubmission?pageSessionId=8defd4e2-1757-4785-925f-74f1b9266d49&fsid=88ebe286-fdc9-463d-987c-6e88d065379c&fsn=6d82b378-60e3-4e37-b24b-60805af9861a",
-      "method": "POST",
-      "status": 303,
-      "redirect_url": "https://www.eastrenfrewshire.gov.uk/apiserver/formsservice/http/verifycookie?pageSessionId=8defd4e2-1757-4785-925f-74f1b9266d49&fsid=88ebe286-fdc9-463d-987c-6e88d065379c",
-      "mime_type": "x-unknown",
-      "size": -1,
       "timestamp": "2025-07-21T16:25:30.108Z",
-      "form_data": {
-        "BINDAYSV2_PAGESESSIONID": "8defd4e2-1757-4785-925f-74f1b9266d49",
-        "BINDAYSV2_SESSIONID": "88ebe286-fdc9-463d-987c-6e88d065379c",
-        "BINDAYSV2_NONCE": "6d82b378-60e3-4e37-b24b-60805af9861a",
-        "BINDAYSV2_VARIABLES": "e30=",
-        "BINDAYSV2_PAGENAME": "PAGE1",
-        "BINDAYSV2_PAGEINSTANCE": "0",
-        "BINDAYSV2_PAGE1_POSTCODE": "G44 3EN",
-        "BINDAYSV2_FORMACTION_NEXT": "BINDAYSV2_PAGE1_FIELD290"
+      "duration_ms": 331.815,
+      "endpoint": "/apiserver/formsservice/http/processsubmission",
+      "host": "www.eastrenfrewshire.gov.uk",
+      "method": "POST",
+      "status": 303,
+      "query_params": {
+        "pageSessionId": [
+          "8defd4e2-1757-4785-925f-74f1b9266d49"
+        ],
+        "fsid": [
+          "88ebe286-fdc9-463d-987c-6e88d065379c"
+        ],
+        "fsn": [
+          "6d82b378-60e3-4e37-b24b-60805af9861a"
+        ]
+      },
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+        "content-type": "application/x-www-form-urlencoded",
+        "origin": "https://www.eastrenfrewshire.gov.uk",
+        "referer": "https://www.eastrenfrewshire.gov.uk/bin-days"
+      },
+      "response_headers": {
+        "cache-control": "private",
+        "location": "https://www.eastrenfrewshire.gov.uk/apiserver/formsservice/http/verifycookie?pageSessionId=8defd4e2-1757-4785-925f-74f1b9266d49&fsid=88ebe286-fdc9-463d-987c-6e88d065379c",
+        "set-cookie": "[cookies present]",
+        "x-content-type-options": "nosniff",
+        "x-powered-by": "",
+        "x-xss-protection": "1; mode=block"
+      },
+      "redirect_to": "https://www.eastrenfrewshire.gov.uk/apiserver/formsservice/http/verifycookie?pageSessionId=8defd4e2-1757-4785-925f-74f1b9266d49&fsid=88ebe286-fdc9-463d-987c-6e88d065379c"
+    },
+    {
+      "timestamp": "2025-07-21T16:25:30.441Z",
+      "duration_ms": 49.162,
+      "endpoint": "/apiserver/formsservice/http/verifycookie",
+      "host": "www.eastrenfrewshire.gov.uk",
+      "method": "GET",
+      "status": 303,
+      "query_params": {
+        "pageSessionId": [
+          "8defd4e2-1757-4785-925f-74f1b9266d49"
+        ],
+        "fsid": [
+          "88ebe286-fdc9-463d-987c-6e88d065379c"
+        ]
+      },
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+        "cookie": "[cookies present]",
+        "referer": "https://www.eastrenfrewshire.gov.uk/bin-days"
+      },
+      "response_headers": {
+        "cache-control": "private",
+        "location": "https://www.eastrenfrewshire.gov.uk/bin-days?pageSessionId=8defd4e2-1757-4785-925f-74f1b9266d49&fsn=66ff486d-21cc-40f3-ad3e-36265697d17f",
+        "x-content-type-options": "nosniff",
+        "x-powered-by": "",
+        "x-xss-protection": "1; mode=block"
+      },
+      "redirect_to": "https://www.eastrenfrewshire.gov.uk/bin-days?pageSessionId=8defd4e2-1757-4785-925f-74f1b9266d49&fsn=66ff486d-21cc-40f3-ad3e-36265697d17f"
+    },
+    {
+      "timestamp": "2025-07-21T16:25:30.491Z",
+      "duration_ms": 893.966,
+      "endpoint": "/bin-days",
+      "host": "www.eastrenfrewshire.gov.uk",
+      "method": "GET",
+      "status": 200,
+      "query_params": {
+        "pageSessionId": [
+          "8defd4e2-1757-4785-925f-74f1b9266d49"
+        ],
+        "fsn": [
+          "66ff486d-21cc-40f3-ad3e-36265697d17f"
+        ]
+      },
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+        "cookie": "[cookies present]",
+        "referer": "https://www.eastrenfrewshire.gov.uk/bin-days"
+      },
+      "response_headers": {
+        "cache-control": "no-cache, no-store",
+        "content-type": "text/html; charset=utf-8",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "SAMEORIGIN",
+        "x-powered-by": "",
+        "x-ua-compatible": "IE=Edge",
+        "x-xss-protection": "1; mode=block"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 47137,
+        "compressed": true,
+        "content_ref": "852120a20cc8361b3bfdae9cf3444470ac3d6e67.html"
       }
     },
     {
-      "url": "https://www.eastrenfrewshire.gov.uk/apiserver/formsservice/http/verifycookie?pageSessionId=8defd4e2-1757-4785-925f-74f1b9266d49&fsid=88ebe286-fdc9-463d-987c-6e88d065379c",
-      "method": "GET",
-      "status": 303,
-      "redirect_url": "https://www.eastrenfrewshire.gov.uk/bin-days?pageSessionId=8defd4e2-1757-4785-925f-74f1b9266d49&fsn=66ff486d-21cc-40f3-ad3e-36265697d17f",
-      "mime_type": "x-unknown",
-      "size": -1,
-      "timestamp": "2025-07-21T16:25:30.441Z"
-    },
-    {
-      "url": "https://www.eastrenfrewshire.gov.uk/bin-days?pageSessionId=8defd4e2-1757-4785-925f-74f1b9266d49&fsn=66ff486d-21cc-40f3-ad3e-36265697d17f",
+      "timestamp": "2025-07-21T16:25:31.498Z",
+      "duration_ms": 24.668,
+      "endpoint": "/v1/loader/{id}",
+      "host": "webassist.onconnect.app",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "text/html; charset=utf-8",
-      "size": 47137,
-      "timestamp": "2025-07-21T16:25:30.491Z"
+      "path_params": [
+        "1760e1d2-79bb-4dbe-93b0-b3a0165dc012"
+      ],
+      "request_headers": {
+        "accept": "*/*",
+        "origin": "https://www.eastrenfrewshire.gov.uk",
+        "referer": "https://www.eastrenfrewshire.gov.uk/"
+      },
+      "response_headers": {
+        "content-type": "application/json; charset=utf-8",
+        "x-ms-middleware-request-id": "00000000-0000-0000-0000-000000000000"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 52,
+        "content_ref": "3bd0e87f7735a292acfc53909bc55fd480fb94c1.json"
+      }
     },
     {
-      "url": "https://webassist.onconnect.app/v1/loader/1760e1d2-79bb-4dbe-93b0-b3a0165dc012",
+      "timestamp": "2025-07-21T16:25:31.566Z",
+      "duration_ms": 0.9380000000000001,
+      "endpoint": "/assets/appConfig.json",
+      "host": "webassistant.onconnect.app",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json; charset=utf-8",
-      "size": 52,
-      "timestamp": "2025-07-21T16:25:31.498Z"
+      "request_headers": {
+        "referer": "https://www.eastrenfrewshire.gov.uk/",
+        "accept": "application/json, text/plain, */*"
+      },
+      "response_headers": {
+        "x-ms-version": "2018-03-28",
+        "x-ms-request-id": "12f7ceb6-501e-00b7-2c5c-fa892d000000",
+        "x-cache": "CONFIG_NOCACHE",
+        "content-type": "application/json",
+        "x-azure-ref": "20250721T162524Z-16896f46f99rxgcfhC1LTS8utn0000000970000000001c8g"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 73,
+        "compressed": true,
+        "content_ref": "e8551bc0489c1ba948f1631c51732814c12af1e5.json"
+      }
     },
     {
-      "url": "https://webassistant.onconnect.app/assets/appConfig.json",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json",
-      "size": 73,
-      "timestamp": "2025-07-21T16:25:31.566Z"
-    },
-    {
-      "url": "https://webassist.onconnect.app/v1/workspaces/1760e1d2-79bb-4dbe-93b0-b3a0165dc012/init",
+      "timestamp": "2025-07-21T16:25:31.645Z",
+      "duration_ms": 135.54999999999998,
+      "endpoint": "/v1/workspaces/{id}/init",
+      "host": "webassist.onconnect.app",
       "method": "POST",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json; charset=utf-8",
-      "size": 1904,
-      "timestamp": "2025-07-21T16:25:31.645Z"
+      "path_params": [
+        "1760e1d2-79bb-4dbe-93b0-b3a0165dc012"
+      ],
+      "request_headers": {
+        "accept": "application/json, text/plain, */*",
+        "authorization": "Basic ZGQwOTQ2OGItODFjNS00OWQzLTk1YWYtNWQ0ZmRmYjk1ZmRjOnFfWWJXalNPaUVQeUV4OUdYZ0JCS1VTeWZwNGtkSGM0b0RWQ19fZTZmQmM=",
+        "content-type": "application/json",
+        "origin": "https://www.eastrenfrewshire.gov.uk",
+        "referer": "https://www.eastrenfrewshire.gov.uk/",
+        "x-connect-auth": "Basic ZGQwOTQ2OGItODFjNS00OWQzLTk1YWYtNWQ0ZmRmYjk1ZmRjOnFfWWJXalNPaUVQeUV4OUdYZ0JCS1VTeWZwNGtkSGM0b0RWQ19fZTZmQmM="
+      },
+      "response_headers": {
+        "content-type": "application/json; charset=utf-8",
+        "x-ms-middleware-request-id": "00000000-0000-0000-0000-000000000000"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 1904,
+        "compressed": true,
+        "content_ref": "2548bf2ee38da2c2935a914b6a11b07143635304.json"
+      }
     },
     {
-      "url": "https://produkswebassistsignalr18.service.signalr.net/client/negotiate?hub=webassistant&negotiateVersion=1",
+      "timestamp": "2025-07-21T16:25:31.763Z",
+      "duration_ms": 25.828,
+      "endpoint": "/client/negotiate",
+      "host": "produkswebassistsignalr18.service.signalr.net",
       "method": "POST",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json",
-      "size": 334,
-      "timestamp": "2025-07-21T16:25:31.763Z"
+      "query_params": {
+        "hub": [
+          "webassistant"
+        ],
+        "negotiateVersion": [
+          "1"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IjI2MDAxNDM0NyJ9.eyJuYW1laWQiOiJkZDA5NDY4Yi04MWM1LTQ5ZDMtOTVhZi01ZDRmZGZiOTVmZGMiLCJ3b3Jrc3BhY2UiOiIxNzYwZTFkMi03OWJiLTRkYmUtOTNiMC1iM2EwMTY1ZGMwMTIiLCJuYmYiOjE3NTMxMTUxMzEsImV4cCI6MTc1MzExODczMSwiaWF0IjoxNzUzMTE1MTMxLCJhdWQiOiJodHRwczovL3Byb2R1a3N3ZWJhc3Npc3RzaWduYWxyMTguc2VydmljZS5zaWduYWxyLm5ldC9jbGllbnQvP2h1Yj13ZWJhc3Npc3RhbnQifQ.a7bncA-pmrc9GHwyAp7ScMBgm370gagJf8HEWy3xVTs",
+        "content-type": "text/plain;charset=UTF-8",
+        "origin": "https://www.eastrenfrewshire.gov.uk",
+        "referer": "https://www.eastrenfrewshire.gov.uk/",
+        "x-requested-with": "XMLHttpRequest",
+        "x-signalr-user-agent": "Microsoft SignalR/6.0 (6.0.22; Unknown OS; Browser; Unknown Runtime Version)"
+      },
+      "response_headers": {
+        "content-type": "application/json"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 334,
+        "content_ref": "2706a0d02477ec8202ff9001e960850fb5acc4e7.json"
+      }
     },
     {
-      "url": "https://webassist.onconnect.app/v1/workspaces/1760e1d2-79bb-4dbe-93b0-b3a0165dc012/appusers/f9adca7e-f2bb-4079-a7b9-c54d3f88d620/messages?continuationToken=",
+      "timestamp": "2025-07-21T16:25:31.763Z",
+      "duration_ms": 75.152,
+      "endpoint": "/v1/workspaces/{id}/appusers/{id}/messages",
+      "host": "webassist.onconnect.app",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json; charset=utf-8",
-      "size": 40,
-      "timestamp": "2025-07-21T16:25:31.763Z"
+      "path_params": [
+        "1760e1d2-79bb-4dbe-93b0-b3a0165dc012",
+        "f9adca7e-f2bb-4079-a7b9-c54d3f88d620"
+      ],
+      "request_headers": {
+        "accept": "application/json, text/plain, */*",
+        "authorization": "Basic ZGQwOTQ2OGItODFjNS00OWQzLTk1YWYtNWQ0ZmRmYjk1ZmRjOnFfWWJXalNPaUVQeUV4OUdYZ0JCS1VTeWZwNGtkSGM0b0RWQ19fZTZmQmM=",
+        "content-type": "application/json",
+        "origin": "https://www.eastrenfrewshire.gov.uk",
+        "referer": "https://www.eastrenfrewshire.gov.uk/",
+        "x-connect-auth": "Basic ZGQwOTQ2OGItODFjNS00OWQzLTk1YWYtNWQ0ZmRmYjk1ZmRjOnFfWWJXalNPaUVQeUV4OUdYZ0JCS1VTeWZwNGtkSGM0b0RWQ19fZTZmQmM="
+      },
+      "response_headers": {
+        "content-type": "application/json; charset=utf-8",
+        "x-ms-middleware-request-id": "00000000-0000-0000-0000-000000000000"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 40,
+        "content_ref": "1037334915cdbbe4abf707856b72a38f00349a04.json"
+      }
     },
     {
-      "url": "https://webassist.onconnect.app/v1/postback",
+      "timestamp": "2025-07-21T16:25:31.764Z",
+      "duration_ms": 180.78300000000002,
+      "endpoint": "/v1/postback",
+      "host": "webassist.onconnect.app",
       "method": "POST",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "x-unknown",
-      "size": 0,
-      "timestamp": "2025-07-21T16:25:31.764Z"
+      "request_headers": {
+        "accept": "application/json, text/plain, */*",
+        "authorization": "Basic ZGQwOTQ2OGItODFjNS00OWQzLTk1YWYtNWQ0ZmRmYjk1ZmRjOnFfWWJXalNPaUVQeUV4OUdYZ0JCS1VTeWZwNGtkSGM0b0RWQ19fZTZmQmM=",
+        "content-type": "application/json",
+        "origin": "https://www.eastrenfrewshire.gov.uk",
+        "referer": "https://www.eastrenfrewshire.gov.uk/",
+        "x-connect-auth": "Basic ZGQwOTQ2OGItODFjNS00OWQzLTk1YWYtNWQ0ZmRmYjk1ZmRjOnFfWWJXalNPaUVQeUV4OUdYZ0JCS1VTeWZwNGtkSGM0b0RWQ19fZTZmQmM="
+      },
+      "response_headers": {
+        "x-ms-middleware-request-id": "00000000-0000-0000-0000-000000000000"
+      }
     },
     {
-      "url": "https://www.eastrenfrewshire.gov.uk/apiserver/formsservice/http/processsubmission?pageSessionId=8defd4e2-1757-4785-925f-74f1b9266d49&fsid=88ebe286-fdc9-463d-987c-6e88d065379c&fsn=66ff486d-21cc-40f3-ad3e-36265697d17f",
-      "method": "POST",
-      "status": 303,
-      "redirect_url": "https://www.eastrenfrewshire.gov.uk/bin-days?pageSessionId=8defd4e2-1757-4785-925f-74f1b9266d49&fsn=8f18056f-731d-4340-9e29-70423ba5dcee",
-      "mime_type": "x-unknown",
-      "size": -1,
       "timestamp": "2025-07-21T16:25:37.675Z",
-      "form_data": {
-        "BINDAYSV2_PAGESESSIONID": "8defd4e2-1757-4785-925f-74f1b9266d49",
-        "BINDAYSV2_SESSIONID": "88ebe286-fdc9-463d-987c-6e88d065379c",
-        "BINDAYSV2_NONCE": "66ff486d-21cc-40f3-ad3e-36265697d17f",
-        "BINDAYSV2_VARIABLES": "e30=",
-        "BINDAYSV2_PAGENAME": "PAGE2",
-        "BINDAYSV2_PAGEINSTANCE": "0",
-        "BINDAYSV2_PAGE2_FIELD293": "true",
-        "BINDAYSV2_PAGE2_UPRN": "000131011852",
-        "BINDAYSV2_FORMACTION_NEXT": "BINDAYSV2_PAGE2_FIELD294",
-        "BINDAYSV2_PAGE2_FIELD295": "false",
-        "BINDAYSV2_PAGE2_FIELD297": "false"
+      "duration_ms": 649.01,
+      "endpoint": "/apiserver/formsservice/http/processsubmission",
+      "host": "www.eastrenfrewshire.gov.uk",
+      "method": "POST",
+      "status": 303,
+      "query_params": {
+        "pageSessionId": [
+          "8defd4e2-1757-4785-925f-74f1b9266d49"
+        ],
+        "fsid": [
+          "88ebe286-fdc9-463d-987c-6e88d065379c"
+        ],
+        "fsn": [
+          "66ff486d-21cc-40f3-ad3e-36265697d17f"
+        ]
+      },
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+        "content-type": "application/x-www-form-urlencoded",
+        "cookie": "[cookies present]",
+        "origin": "https://www.eastrenfrewshire.gov.uk",
+        "referer": "https://www.eastrenfrewshire.gov.uk/bin-days?pageSessionId=8defd4e2-1757-4785-925f-74f1b9266d49&fsn=66ff486d-21cc-40f3-ad3e-36265697d17f"
+      },
+      "response_headers": {
+        "cache-control": "private",
+        "location": "https://www.eastrenfrewshire.gov.uk/bin-days?pageSessionId=8defd4e2-1757-4785-925f-74f1b9266d49&fsn=8f18056f-731d-4340-9e29-70423ba5dcee",
+        "x-content-type-options": "nosniff",
+        "x-powered-by": "",
+        "x-xss-protection": "1; mode=block"
+      },
+      "redirect_to": "https://www.eastrenfrewshire.gov.uk/bin-days?pageSessionId=8defd4e2-1757-4785-925f-74f1b9266d49&fsn=8f18056f-731d-4340-9e29-70423ba5dcee"
+    },
+    {
+      "timestamp": "2025-07-21T16:25:38.325Z",
+      "duration_ms": 740.689,
+      "endpoint": "/bin-days",
+      "host": "www.eastrenfrewshire.gov.uk",
+      "method": "GET",
+      "status": 200,
+      "query_params": {
+        "pageSessionId": [
+          "8defd4e2-1757-4785-925f-74f1b9266d49"
+        ],
+        "fsn": [
+          "8f18056f-731d-4340-9e29-70423ba5dcee"
+        ]
+      },
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+        "cookie": "[cookies present]",
+        "referer": "https://www.eastrenfrewshire.gov.uk/bin-days?pageSessionId=8defd4e2-1757-4785-925f-74f1b9266d49&fsn=66ff486d-21cc-40f3-ad3e-36265697d17f"
+      },
+      "response_headers": {
+        "cache-control": "no-cache, no-store",
+        "content-type": "text/html; charset=utf-8",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "SAMEORIGIN",
+        "x-powered-by": "",
+        "x-ua-compatible": "IE=Edge",
+        "x-xss-protection": "1; mode=block"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 61401,
+        "compressed": true,
+        "content_ref": "00510c1a46ca9fc935b6234da5a96294ff45c331.html"
       }
     },
     {
-      "url": "https://www.eastrenfrewshire.gov.uk/bin-days?pageSessionId=8defd4e2-1757-4785-925f-74f1b9266d49&fsn=8f18056f-731d-4340-9e29-70423ba5dcee",
+      "timestamp": "2025-07-21T16:25:39.192Z",
+      "duration_ms": 35.025,
+      "endpoint": "/v1/loader/{id}",
+      "host": "webassist.onconnect.app",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "text/html; charset=utf-8",
-      "size": 61401,
-      "timestamp": "2025-07-21T16:25:38.325Z"
+      "path_params": [
+        "1760e1d2-79bb-4dbe-93b0-b3a0165dc012"
+      ],
+      "request_headers": {
+        "accept": "*/*",
+        "origin": "https://www.eastrenfrewshire.gov.uk",
+        "referer": "https://www.eastrenfrewshire.gov.uk/"
+      },
+      "response_headers": {
+        "content-type": "application/json; charset=utf-8",
+        "x-ms-middleware-request-id": "00000000-0000-0000-0000-000000000000"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 52,
+        "content_ref": "3bd0e87f7735a292acfc53909bc55fd480fb94c1.json"
+      }
     },
     {
-      "url": "https://webassist.onconnect.app/v1/loader/1760e1d2-79bb-4dbe-93b0-b3a0165dc012",
+      "timestamp": "2025-07-21T16:25:39.262Z",
+      "duration_ms": 1.31,
+      "endpoint": "/assets/appConfig.json",
+      "host": "webassistant.onconnect.app",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json; charset=utf-8",
-      "size": 52,
-      "timestamp": "2025-07-21T16:25:39.192Z"
+      "request_headers": {
+        "referer": "https://www.eastrenfrewshire.gov.uk/",
+        "accept": "application/json, text/plain, */*"
+      },
+      "response_headers": {
+        "x-ms-version": "2018-03-28",
+        "x-ms-request-id": "12f7ceb6-501e-00b7-2c5c-fa892d000000",
+        "x-cache": "CONFIG_NOCACHE",
+        "content-type": "application/json",
+        "x-azure-ref": "20250721T162524Z-16896f46f99rxgcfhC1LTS8utn0000000970000000001c8g"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 73,
+        "compressed": true,
+        "content_ref": "e8551bc0489c1ba948f1631c51732814c12af1e5.json"
+      }
     },
     {
-      "url": "https://webassistant.onconnect.app/assets/appConfig.json",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json",
-      "size": 73,
-      "timestamp": "2025-07-21T16:25:39.262Z"
-    },
-    {
-      "url": "https://webassist.onconnect.app/v1/workspaces/1760e1d2-79bb-4dbe-93b0-b3a0165dc012/init",
+      "timestamp": "2025-07-21T16:25:39.307Z",
+      "duration_ms": 115.18,
+      "endpoint": "/v1/workspaces/{id}/init",
+      "host": "webassist.onconnect.app",
       "method": "POST",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json; charset=utf-8",
-      "size": 1906,
-      "timestamp": "2025-07-21T16:25:39.307Z"
+      "path_params": [
+        "1760e1d2-79bb-4dbe-93b0-b3a0165dc012"
+      ],
+      "request_headers": {
+        "accept": "application/json, text/plain, */*",
+        "authorization": "Basic ZGQwOTQ2OGItODFjNS00OWQzLTk1YWYtNWQ0ZmRmYjk1ZmRjOnFfWWJXalNPaUVQeUV4OUdYZ0JCS1VTeWZwNGtkSGM0b0RWQ19fZTZmQmM=",
+        "content-type": "application/json",
+        "origin": "https://www.eastrenfrewshire.gov.uk",
+        "referer": "https://www.eastrenfrewshire.gov.uk/",
+        "x-connect-auth": "Basic ZGQwOTQ2OGItODFjNS00OWQzLTk1YWYtNWQ0ZmRmYjk1ZmRjOnFfWWJXalNPaUVQeUV4OUdYZ0JCS1VTeWZwNGtkSGM0b0RWQ19fZTZmQmM="
+      },
+      "response_headers": {
+        "content-type": "application/json; charset=utf-8",
+        "x-ms-middleware-request-id": "00000000-0000-0000-0000-000000000000"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 1906,
+        "compressed": true,
+        "content_ref": "8288174a48f7628136203989499a703f3031ba14.json"
+      }
     },
     {
-      "url": "https://produkswebassistsignalr18.service.signalr.net/client/negotiate?hub=webassistant&negotiateVersion=1",
+      "timestamp": "2025-07-21T16:25:39.428Z",
+      "duration_ms": 18.987,
+      "endpoint": "/client/negotiate",
+      "host": "produkswebassistsignalr18.service.signalr.net",
       "method": "POST",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json",
-      "size": 334,
-      "timestamp": "2025-07-21T16:25:39.428Z"
+      "query_params": {
+        "hub": [
+          "webassistant"
+        ],
+        "negotiateVersion": [
+          "1"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IjE5MDk1MzUwNDYifQ.eyJuYW1laWQiOiJkZDA5NDY4Yi04MWM1LTQ5ZDMtOTVhZi01ZDRmZGZiOTVmZGMiLCJ3b3Jrc3BhY2UiOiIxNzYwZTFkMi03OWJiLTRkYmUtOTNiMC1iM2EwMTY1ZGMwMTIiLCJuYmYiOjE3NTMxMTUxMzksImV4cCI6MTc1MzExODczOSwiaWF0IjoxNzUzMTE1MTM5LCJhdWQiOiJodHRwczovL3Byb2R1a3N3ZWJhc3Npc3RzaWduYWxyMTguc2VydmljZS5zaWduYWxyLm5ldC9jbGllbnQvP2h1Yj13ZWJhc3Npc3RhbnQifQ._Z4QH7Ud12kxfIm2QKaDaA2nSx7l9TESrQOQeDa13-A",
+        "content-type": "text/plain;charset=UTF-8",
+        "origin": "https://www.eastrenfrewshire.gov.uk",
+        "referer": "https://www.eastrenfrewshire.gov.uk/",
+        "x-requested-with": "XMLHttpRequest",
+        "x-signalr-user-agent": "Microsoft SignalR/6.0 (6.0.22; Unknown OS; Browser; Unknown Runtime Version)"
+      },
+      "response_headers": {
+        "content-type": "application/json"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 334,
+        "content_ref": "cf2c151419e5f63f9c3f83850c603e812a3fe451.json"
+      }
     },
     {
-      "url": "https://webassist.onconnect.app/v1/workspaces/1760e1d2-79bb-4dbe-93b0-b3a0165dc012/appusers/f9adca7e-f2bb-4079-a7b9-c54d3f88d620/messages?continuationToken=",
+      "timestamp": "2025-07-21T16:25:39.428Z",
+      "duration_ms": 74.45,
+      "endpoint": "/v1/workspaces/{id}/appusers/{id}/messages",
+      "host": "webassist.onconnect.app",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json; charset=utf-8",
-      "size": 40,
-      "timestamp": "2025-07-21T16:25:39.428Z"
+      "path_params": [
+        "1760e1d2-79bb-4dbe-93b0-b3a0165dc012",
+        "f9adca7e-f2bb-4079-a7b9-c54d3f88d620"
+      ],
+      "request_headers": {
+        "accept": "application/json, text/plain, */*",
+        "authorization": "Basic ZGQwOTQ2OGItODFjNS00OWQzLTk1YWYtNWQ0ZmRmYjk1ZmRjOnFfWWJXalNPaUVQeUV4OUdYZ0JCS1VTeWZwNGtkSGM0b0RWQ19fZTZmQmM=",
+        "content-type": "application/json",
+        "origin": "https://www.eastrenfrewshire.gov.uk",
+        "referer": "https://www.eastrenfrewshire.gov.uk/",
+        "x-connect-auth": "Basic ZGQwOTQ2OGItODFjNS00OWQzLTk1YWYtNWQ0ZmRmYjk1ZmRjOnFfWWJXalNPaUVQeUV4OUdYZ0JCS1VTeWZwNGtkSGM0b0RWQ19fZTZmQmM="
+      },
+      "response_headers": {
+        "content-type": "application/json; charset=utf-8",
+        "x-ms-middleware-request-id": "00000000-0000-0000-0000-000000000000"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 40,
+        "content_ref": "1037334915cdbbe4abf707856b72a38f00349a04.json"
+      }
     },
     {
-      "url": "https://webassist.onconnect.app/v1/postback",
+      "timestamp": "2025-07-21T16:25:39.428Z",
+      "duration_ms": 213.787,
+      "endpoint": "/v1/postback",
+      "host": "webassist.onconnect.app",
       "method": "POST",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "x-unknown",
-      "size": 0,
-      "timestamp": "2025-07-21T16:25:39.428Z"
+      "request_headers": {
+        "accept": "application/json, text/plain, */*",
+        "authorization": "Basic ZGQwOTQ2OGItODFjNS00OWQzLTk1YWYtNWQ0ZmRmYjk1ZmRjOnFfWWJXalNPaUVQeUV4OUdYZ0JCS1VTeWZwNGtkSGM0b0RWQ19fZTZmQmM=",
+        "content-type": "application/json",
+        "origin": "https://www.eastrenfrewshire.gov.uk",
+        "referer": "https://www.eastrenfrewshire.gov.uk/",
+        "x-connect-auth": "Basic ZGQwOTQ2OGItODFjNS00OWQzLTk1YWYtNWQ0ZmRmYjk1ZmRjOnFfWWJXalNPaUVQeUV4OUdYZ0JCS1VTeWZwNGtkSGM0b0RWQ19fZTZmQmM="
+      },
+      "response_headers": {
+        "x-ms-middleware-request-id": "00000000-0000-0000-0000-000000000000"
+      }
     }
-  ]
+  ],
+  "analysis": {
+    "total_requests": 26,
+    "unique_endpoints": 11,
+    "methods_used": [
+      "GET",
+      "POST"
+    ],
+    "status_codes": {
+      "302": 1,
+      "404": 1,
+      "200": 21,
+      "303": 3
+    },
+    "endpoints_with_params": [
+      {
+        "endpoint": "/article/{id}/{id}",
+        "method": "GET",
+        "query_params": [],
+        "path_params": true
+      },
+      {
+        "endpoint": "/v1/loader/{id}",
+        "method": "GET",
+        "query_params": [],
+        "path_params": true
+      },
+      {
+        "endpoint": "/v1/workspaces/{id}/init",
+        "method": "POST",
+        "query_params": [],
+        "path_params": true
+      },
+      {
+        "endpoint": "/client/negotiate",
+        "method": "POST",
+        "query_params": [
+          "hub",
+          "negotiateVersion"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/apiserver/formsservice/http/processsubmission",
+        "method": "POST",
+        "query_params": [
+          "pageSessionId",
+          "fsid",
+          "fsn"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/apiserver/formsservice/http/verifycookie",
+        "method": "GET",
+        "query_params": [
+          "pageSessionId",
+          "fsid"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/bin-days",
+        "method": "GET",
+        "query_params": [
+          "pageSessionId",
+          "fsn"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/v1/workspaces/{id}/appusers/{id}/messages",
+        "method": "GET",
+        "query_params": [],
+        "path_params": true
+      }
+    ],
+    "redirects": [
+      {
+        "from": "/article/{id}/{id}",
+        "to": "https://www.eastrenfrewshire.gov.uk/article/1555/When-is-my-bin-emptied",
+        "status": 302
+      },
+      {
+        "from": "/apiserver/formsservice/http/processsubmission",
+        "to": "https://www.eastrenfrewshire.gov.uk/apiserver/formsservice/http/verifycookie?pageSessionId=8defd4e2-1757-4785-925f-74f1b9266d49&fsid=88ebe286-fdc9-463d-987c-6e88d065379c",
+        "status": 303
+      },
+      {
+        "from": "/apiserver/formsservice/http/verifycookie",
+        "to": "https://www.eastrenfrewshire.gov.uk/bin-days?pageSessionId=8defd4e2-1757-4785-925f-74f1b9266d49&fsn=66ff486d-21cc-40f3-ad3e-36265697d17f",
+        "status": 303
+      },
+      {
+        "from": "/apiserver/formsservice/http/processsubmission",
+        "to": "https://www.eastrenfrewshire.gov.uk/bin-days?pageSessionId=8defd4e2-1757-4785-925f-74f1b9266d49&fsn=8f18056f-731d-4340-9e29-70423ba5dcee",
+        "status": 303
+      }
+    ],
+    "api_calls": [
+      {
+        "endpoint": "/v1/loader/{id}",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": []
+      },
+      {
+        "endpoint": "/assets/appConfig.json",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": []
+      },
+      {
+        "endpoint": "/v1/workspaces/{id}/init",
+        "method": "POST",
+        "response_type": "application/json",
+        "params": []
+      },
+      {
+        "endpoint": "/client/negotiate",
+        "method": "POST",
+        "response_type": "application/json",
+        "params": [
+          "hub",
+          "negotiateVersion"
+        ]
+      },
+      {
+        "endpoint": "/v1/loader/{id}",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": []
+      },
+      {
+        "endpoint": "/assets/appConfig.json",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": []
+      },
+      {
+        "endpoint": "/v1/workspaces/{id}/init",
+        "method": "POST",
+        "response_type": "application/json",
+        "params": []
+      },
+      {
+        "endpoint": "/client/negotiate",
+        "method": "POST",
+        "response_type": "application/json",
+        "params": [
+          "hub",
+          "negotiateVersion"
+        ]
+      },
+      {
+        "endpoint": "/v1/workspaces/{id}/appusers/{id}/messages",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": []
+      },
+      {
+        "endpoint": "/v1/loader/{id}",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": []
+      },
+      {
+        "endpoint": "/assets/appConfig.json",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": []
+      },
+      {
+        "endpoint": "/v1/workspaces/{id}/init",
+        "method": "POST",
+        "response_type": "application/json",
+        "params": []
+      },
+      {
+        "endpoint": "/client/negotiate",
+        "method": "POST",
+        "response_type": "application/json",
+        "params": [
+          "hub",
+          "negotiateVersion"
+        ]
+      },
+      {
+        "endpoint": "/v1/workspaces/{id}/appusers/{id}/messages",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": []
+      }
+    ],
+    "form_submissions": []
+  },
+  "grouped_by_endpoint": {
+    "/article/{id}/{id}": [
+      {
+        "timestamp": "2025-07-21T16:25:21.036Z",
+        "duration_ms": 114.357,
+        "endpoint": "/article/{id}/{id}",
+        "host": "www.eastrenfrewshire.gov.uk",
+        "method": "GET",
+        "status": 302,
+        "path_params": [
+          "1555",
+          "When-is-my-bin-emptied"
+        ],
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7"
+        },
+        "response_headers": {
+          "content-type": "text/html; charset=utf-8",
+          "location": "https://www.eastrenfrewshire.gov.uk/article/1555/When-is-my-bin-emptied",
+          "x-powered-by": ""
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": -1
+        },
+        "redirect_to": "https://www.eastrenfrewshire.gov.uk/article/1555/When-is-my-bin-emptied"
+      },
+      {
+        "timestamp": "2025-07-21T16:25:21.099Z",
+        "duration_ms": 115.977,
+        "endpoint": "/article/{id}/{id}",
+        "host": "www.eastrenfrewshire.gov.uk",
+        "method": "GET",
+        "status": 404,
+        "path_params": [
+          "1555",
+          "When-is-my-bin-emptied"
+        ],
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7"
+        },
+        "response_headers": {
+          "cache-control": "no-cache, no-store",
+          "content-type": "text/html; charset=utf-8",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "SAMEORIGIN",
+          "x-powered-by": "",
+          "x-ua-compatible": "IE=Edge",
+          "x-xss-protection": "1; mode=block"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 20539,
+          "content_ref": "075553ceb4ecd77ad29cd8fa0fbe86aa5c937ae4.html"
+        }
+      }
+    ],
+    "/": [
+      {
+        "timestamp": "2025-07-21T16:25:22.526Z",
+        "duration_ms": 91.62899999999999,
+        "endpoint": "/",
+        "host": "www.eastrenfrewshire.gov.uk",
+        "method": "GET",
+        "status": 200,
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7"
+        },
+        "response_headers": {
+          "cache-control": "no-cache, no-store",
+          "content-type": "text/html; charset=utf-8",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "SAMEORIGIN",
+          "x-powered-by": "",
+          "x-ua-compatible": "IE=Edge",
+          "x-xss-protection": "1; mode=block"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 34981,
+          "compressed": true,
+          "content_ref": "7a76379b75e13daa9270e740dcde83feee007b07.html"
+        }
+      }
+    ],
+    "/bin-days": [
+      {
+        "timestamp": "2025-07-21T16:25:24.333Z",
+        "duration_ms": 243.76600000000002,
+        "endpoint": "/bin-days",
+        "host": "www.eastrenfrewshire.gov.uk",
+        "method": "GET",
+        "status": 200,
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+          "referer": "https://www.eastrenfrewshire.gov.uk/"
+        },
+        "response_headers": {
+          "cache-control": "no-cache, no-store",
+          "content-type": "text/html; charset=utf-8",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "SAMEORIGIN",
+          "x-powered-by": "",
+          "x-ua-compatible": "IE=Edge",
+          "x-xss-protection": "1; mode=block"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 37454,
+          "compressed": true,
+          "content_ref": "2247e0662792a72dda2363f6b481ed1ce499b134.html"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T16:25:30.491Z",
+        "duration_ms": 893.966,
+        "endpoint": "/bin-days",
+        "host": "www.eastrenfrewshire.gov.uk",
+        "method": "GET",
+        "status": 200,
+        "query_params": {
+          "pageSessionId": [
+            "8defd4e2-1757-4785-925f-74f1b9266d49"
+          ],
+          "fsn": [
+            "66ff486d-21cc-40f3-ad3e-36265697d17f"
+          ]
+        },
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+          "cookie": "[cookies present]",
+          "referer": "https://www.eastrenfrewshire.gov.uk/bin-days"
+        },
+        "response_headers": {
+          "cache-control": "no-cache, no-store",
+          "content-type": "text/html; charset=utf-8",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "SAMEORIGIN",
+          "x-powered-by": "",
+          "x-ua-compatible": "IE=Edge",
+          "x-xss-protection": "1; mode=block"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 47137,
+          "compressed": true,
+          "content_ref": "852120a20cc8361b3bfdae9cf3444470ac3d6e67.html"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T16:25:38.325Z",
+        "duration_ms": 740.689,
+        "endpoint": "/bin-days",
+        "host": "www.eastrenfrewshire.gov.uk",
+        "method": "GET",
+        "status": 200,
+        "query_params": {
+          "pageSessionId": [
+            "8defd4e2-1757-4785-925f-74f1b9266d49"
+          ],
+          "fsn": [
+            "8f18056f-731d-4340-9e29-70423ba5dcee"
+          ]
+        },
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+          "cookie": "[cookies present]",
+          "referer": "https://www.eastrenfrewshire.gov.uk/bin-days?pageSessionId=8defd4e2-1757-4785-925f-74f1b9266d49&fsn=66ff486d-21cc-40f3-ad3e-36265697d17f"
+        },
+        "response_headers": {
+          "cache-control": "no-cache, no-store",
+          "content-type": "text/html; charset=utf-8",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "SAMEORIGIN",
+          "x-powered-by": "",
+          "x-ua-compatible": "IE=Edge",
+          "x-xss-protection": "1; mode=block"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 61401,
+          "compressed": true,
+          "content_ref": "00510c1a46ca9fc935b6234da5a96294ff45c331.html"
+        }
+      }
+    ],
+    "/v1/loader/{id}": [
+      {
+        "timestamp": "2025-07-21T16:25:24.683Z",
+        "duration_ms": 100.442,
+        "endpoint": "/v1/loader/{id}",
+        "host": "webassist.onconnect.app",
+        "method": "GET",
+        "status": 200,
+        "path_params": [
+          "1760e1d2-79bb-4dbe-93b0-b3a0165dc012"
+        ],
+        "request_headers": {
+          "accept": "*/*",
+          "origin": "https://www.eastrenfrewshire.gov.uk",
+          "referer": "https://www.eastrenfrewshire.gov.uk/"
+        },
+        "response_headers": {
+          "content-type": "application/json; charset=utf-8",
+          "x-ms-middleware-request-id": "00000000-0000-0000-0000-000000000000"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 52,
+          "content_ref": "3bd0e87f7735a292acfc53909bc55fd480fb94c1.json"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T16:25:31.498Z",
+        "duration_ms": 24.668,
+        "endpoint": "/v1/loader/{id}",
+        "host": "webassist.onconnect.app",
+        "method": "GET",
+        "status": 200,
+        "path_params": [
+          "1760e1d2-79bb-4dbe-93b0-b3a0165dc012"
+        ],
+        "request_headers": {
+          "accept": "*/*",
+          "origin": "https://www.eastrenfrewshire.gov.uk",
+          "referer": "https://www.eastrenfrewshire.gov.uk/"
+        },
+        "response_headers": {
+          "content-type": "application/json; charset=utf-8",
+          "x-ms-middleware-request-id": "00000000-0000-0000-0000-000000000000"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 52,
+          "content_ref": "3bd0e87f7735a292acfc53909bc55fd480fb94c1.json"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T16:25:39.192Z",
+        "duration_ms": 35.025,
+        "endpoint": "/v1/loader/{id}",
+        "host": "webassist.onconnect.app",
+        "method": "GET",
+        "status": 200,
+        "path_params": [
+          "1760e1d2-79bb-4dbe-93b0-b3a0165dc012"
+        ],
+        "request_headers": {
+          "accept": "*/*",
+          "origin": "https://www.eastrenfrewshire.gov.uk",
+          "referer": "https://www.eastrenfrewshire.gov.uk/"
+        },
+        "response_headers": {
+          "content-type": "application/json; charset=utf-8",
+          "x-ms-middleware-request-id": "00000000-0000-0000-0000-000000000000"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 52,
+          "content_ref": "3bd0e87f7735a292acfc53909bc55fd480fb94c1.json"
+        }
+      }
+    ],
+    "/assets/appConfig.json": [
+      {
+        "timestamp": "2025-07-21T16:25:24.936Z",
+        "duration_ms": 40.854,
+        "endpoint": "/assets/appConfig.json",
+        "host": "webassistant.onconnect.app",
+        "method": "GET",
+        "status": 200,
+        "request_headers": {
+          "accept": "application/json, text/plain, */*",
+          "origin": "https://www.eastrenfrewshire.gov.uk",
+          "referer": "https://www.eastrenfrewshire.gov.uk/"
+        },
+        "response_headers": {
+          "content-type": "application/json",
+          "x-azure-ref": "20250721T162524Z-16896f46f99rxgcfhC1LTS8utn0000000970000000001c8g",
+          "x-cache": "CONFIG_NOCACHE",
+          "x-ms-request-id": "12f7ceb6-501e-00b7-2c5c-fa892d000000",
+          "x-ms-version": "2018-03-28"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 73,
+          "content_ref": "e8551bc0489c1ba948f1631c51732814c12af1e5.json"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T16:25:31.566Z",
+        "duration_ms": 0.9380000000000001,
+        "endpoint": "/assets/appConfig.json",
+        "host": "webassistant.onconnect.app",
+        "method": "GET",
+        "status": 200,
+        "request_headers": {
+          "referer": "https://www.eastrenfrewshire.gov.uk/",
+          "accept": "application/json, text/plain, */*"
+        },
+        "response_headers": {
+          "x-ms-version": "2018-03-28",
+          "x-ms-request-id": "12f7ceb6-501e-00b7-2c5c-fa892d000000",
+          "x-cache": "CONFIG_NOCACHE",
+          "content-type": "application/json",
+          "x-azure-ref": "20250721T162524Z-16896f46f99rxgcfhC1LTS8utn0000000970000000001c8g"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 73,
+          "compressed": true,
+          "content_ref": "e8551bc0489c1ba948f1631c51732814c12af1e5.json"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T16:25:39.262Z",
+        "duration_ms": 1.31,
+        "endpoint": "/assets/appConfig.json",
+        "host": "webassistant.onconnect.app",
+        "method": "GET",
+        "status": 200,
+        "request_headers": {
+          "referer": "https://www.eastrenfrewshire.gov.uk/",
+          "accept": "application/json, text/plain, */*"
+        },
+        "response_headers": {
+          "x-ms-version": "2018-03-28",
+          "x-ms-request-id": "12f7ceb6-501e-00b7-2c5c-fa892d000000",
+          "x-cache": "CONFIG_NOCACHE",
+          "content-type": "application/json",
+          "x-azure-ref": "20250721T162524Z-16896f46f99rxgcfhC1LTS8utn0000000970000000001c8g"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 73,
+          "compressed": true,
+          "content_ref": "e8551bc0489c1ba948f1631c51732814c12af1e5.json"
+        }
+      }
+    ],
+    "/v1/workspaces/{id}/init": [
+      {
+        "timestamp": "2025-07-21T16:25:25.004Z",
+        "duration_ms": 171.535,
+        "endpoint": "/v1/workspaces/{id}/init",
+        "host": "webassist.onconnect.app",
+        "method": "POST",
+        "status": 200,
+        "path_params": [
+          "1760e1d2-79bb-4dbe-93b0-b3a0165dc012"
+        ],
+        "request_headers": {
+          "accept": "application/json, text/plain, */*",
+          "content-type": "application/json",
+          "origin": "https://www.eastrenfrewshire.gov.uk",
+          "referer": "https://www.eastrenfrewshire.gov.uk/"
+        },
+        "response_headers": {
+          "content-type": "application/json; charset=utf-8",
+          "x-ms-middleware-request-id": "00000000-0000-0000-0000-000000000000"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 1945,
+          "compressed": true,
+          "content_ref": "9a7d3c7dee03a0f9af3c07a3d3ed7c073020afb7.json"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T16:25:31.645Z",
+        "duration_ms": 135.54999999999998,
+        "endpoint": "/v1/workspaces/{id}/init",
+        "host": "webassist.onconnect.app",
+        "method": "POST",
+        "status": 200,
+        "path_params": [
+          "1760e1d2-79bb-4dbe-93b0-b3a0165dc012"
+        ],
+        "request_headers": {
+          "accept": "application/json, text/plain, */*",
+          "authorization": "Basic ZGQwOTQ2OGItODFjNS00OWQzLTk1YWYtNWQ0ZmRmYjk1ZmRjOnFfWWJXalNPaUVQeUV4OUdYZ0JCS1VTeWZwNGtkSGM0b0RWQ19fZTZmQmM=",
+          "content-type": "application/json",
+          "origin": "https://www.eastrenfrewshire.gov.uk",
+          "referer": "https://www.eastrenfrewshire.gov.uk/",
+          "x-connect-auth": "Basic ZGQwOTQ2OGItODFjNS00OWQzLTk1YWYtNWQ0ZmRmYjk1ZmRjOnFfWWJXalNPaUVQeUV4OUdYZ0JCS1VTeWZwNGtkSGM0b0RWQ19fZTZmQmM="
+        },
+        "response_headers": {
+          "content-type": "application/json; charset=utf-8",
+          "x-ms-middleware-request-id": "00000000-0000-0000-0000-000000000000"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 1904,
+          "compressed": true,
+          "content_ref": "2548bf2ee38da2c2935a914b6a11b07143635304.json"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T16:25:39.307Z",
+        "duration_ms": 115.18,
+        "endpoint": "/v1/workspaces/{id}/init",
+        "host": "webassist.onconnect.app",
+        "method": "POST",
+        "status": 200,
+        "path_params": [
+          "1760e1d2-79bb-4dbe-93b0-b3a0165dc012"
+        ],
+        "request_headers": {
+          "accept": "application/json, text/plain, */*",
+          "authorization": "Basic ZGQwOTQ2OGItODFjNS00OWQzLTk1YWYtNWQ0ZmRmYjk1ZmRjOnFfWWJXalNPaUVQeUV4OUdYZ0JCS1VTeWZwNGtkSGM0b0RWQ19fZTZmQmM=",
+          "content-type": "application/json",
+          "origin": "https://www.eastrenfrewshire.gov.uk",
+          "referer": "https://www.eastrenfrewshire.gov.uk/",
+          "x-connect-auth": "Basic ZGQwOTQ2OGItODFjNS00OWQzLTk1YWYtNWQ0ZmRmYjk1ZmRjOnFfWWJXalNPaUVQeUV4OUdYZ0JCS1VTeWZwNGtkSGM0b0RWQ19fZTZmQmM="
+        },
+        "response_headers": {
+          "content-type": "application/json; charset=utf-8",
+          "x-ms-middleware-request-id": "00000000-0000-0000-0000-000000000000"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 1906,
+          "compressed": true,
+          "content_ref": "8288174a48f7628136203989499a703f3031ba14.json"
+        }
+      }
+    ],
+    "/client/negotiate": [
+      {
+        "timestamp": "2025-07-21T16:25:25.115Z",
+        "duration_ms": 102.577,
+        "endpoint": "/client/negotiate",
+        "host": "produkswebassistsignalr18.service.signalr.net",
+        "method": "POST",
+        "status": 200,
+        "query_params": {
+          "hub": [
+            "webassistant"
+          ],
+          "negotiateVersion": [
+            "1"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IjQ3MTIyNTcyNiJ9.eyJuYW1laWQiOiJkZDA5NDY4Yi04MWM1LTQ5ZDMtOTVhZi01ZDRmZGZiOTVmZGMiLCJ3b3Jrc3BhY2UiOiIxNzYwZTFkMi03OWJiLTRkYmUtOTNiMC1iM2EwMTY1ZGMwMTIiLCJuYmYiOjE3NTMxMTUxMjUsImV4cCI6MTc1MzExODcyNSwiaWF0IjoxNzUzMTE1MTI1LCJhdWQiOiJodHRwczovL3Byb2R1a3N3ZWJhc3Npc3RzaWduYWxyMTguc2VydmljZS5zaWduYWxyLm5ldC9jbGllbnQvP2h1Yj13ZWJhc3Npc3RhbnQifQ.O5rWdYe7WsaJpPeCFP_xMj439aujLDursjVAEcehdBU",
+          "content-type": "text/plain;charset=UTF-8",
+          "origin": "https://www.eastrenfrewshire.gov.uk",
+          "referer": "https://www.eastrenfrewshire.gov.uk/",
+          "x-requested-with": "XMLHttpRequest",
+          "x-signalr-user-agent": "Microsoft SignalR/6.0 (6.0.22; Unknown OS; Browser; Unknown Runtime Version)"
+        },
+        "response_headers": {
+          "content-type": "application/json"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 334,
+          "content_ref": "7499c4bff6e074ffa54f9ff5445827e7a583397e.json"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T16:25:31.763Z",
+        "duration_ms": 25.828,
+        "endpoint": "/client/negotiate",
+        "host": "produkswebassistsignalr18.service.signalr.net",
+        "method": "POST",
+        "status": 200,
+        "query_params": {
+          "hub": [
+            "webassistant"
+          ],
+          "negotiateVersion": [
+            "1"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IjI2MDAxNDM0NyJ9.eyJuYW1laWQiOiJkZDA5NDY4Yi04MWM1LTQ5ZDMtOTVhZi01ZDRmZGZiOTVmZGMiLCJ3b3Jrc3BhY2UiOiIxNzYwZTFkMi03OWJiLTRkYmUtOTNiMC1iM2EwMTY1ZGMwMTIiLCJuYmYiOjE3NTMxMTUxMzEsImV4cCI6MTc1MzExODczMSwiaWF0IjoxNzUzMTE1MTMxLCJhdWQiOiJodHRwczovL3Byb2R1a3N3ZWJhc3Npc3RzaWduYWxyMTguc2VydmljZS5zaWduYWxyLm5ldC9jbGllbnQvP2h1Yj13ZWJhc3Npc3RhbnQifQ.a7bncA-pmrc9GHwyAp7ScMBgm370gagJf8HEWy3xVTs",
+          "content-type": "text/plain;charset=UTF-8",
+          "origin": "https://www.eastrenfrewshire.gov.uk",
+          "referer": "https://www.eastrenfrewshire.gov.uk/",
+          "x-requested-with": "XMLHttpRequest",
+          "x-signalr-user-agent": "Microsoft SignalR/6.0 (6.0.22; Unknown OS; Browser; Unknown Runtime Version)"
+        },
+        "response_headers": {
+          "content-type": "application/json"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 334,
+          "content_ref": "2706a0d02477ec8202ff9001e960850fb5acc4e7.json"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T16:25:39.428Z",
+        "duration_ms": 18.987,
+        "endpoint": "/client/negotiate",
+        "host": "produkswebassistsignalr18.service.signalr.net",
+        "method": "POST",
+        "status": 200,
+        "query_params": {
+          "hub": [
+            "webassistant"
+          ],
+          "negotiateVersion": [
+            "1"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IjE5MDk1MzUwNDYifQ.eyJuYW1laWQiOiJkZDA5NDY4Yi04MWM1LTQ5ZDMtOTVhZi01ZDRmZGZiOTVmZGMiLCJ3b3Jrc3BhY2UiOiIxNzYwZTFkMi03OWJiLTRkYmUtOTNiMC1iM2EwMTY1ZGMwMTIiLCJuYmYiOjE3NTMxMTUxMzksImV4cCI6MTc1MzExODczOSwiaWF0IjoxNzUzMTE1MTM5LCJhdWQiOiJodHRwczovL3Byb2R1a3N3ZWJhc3Npc3RzaWduYWxyMTguc2VydmljZS5zaWduYWxyLm5ldC9jbGllbnQvP2h1Yj13ZWJhc3Npc3RhbnQifQ._Z4QH7Ud12kxfIm2QKaDaA2nSx7l9TESrQOQeDa13-A",
+          "content-type": "text/plain;charset=UTF-8",
+          "origin": "https://www.eastrenfrewshire.gov.uk",
+          "referer": "https://www.eastrenfrewshire.gov.uk/",
+          "x-requested-with": "XMLHttpRequest",
+          "x-signalr-user-agent": "Microsoft SignalR/6.0 (6.0.22; Unknown OS; Browser; Unknown Runtime Version)"
+        },
+        "response_headers": {
+          "content-type": "application/json"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 334,
+          "content_ref": "cf2c151419e5f63f9c3f83850c603e812a3fe451.json"
+        }
+      }
+    ],
+    "/v1/postback": [
+      {
+        "timestamp": "2025-07-21T16:25:25.115Z",
+        "duration_ms": 183.838,
+        "endpoint": "/v1/postback",
+        "host": "webassist.onconnect.app",
+        "method": "POST",
+        "status": 200,
+        "request_headers": {
+          "accept": "application/json, text/plain, */*",
+          "authorization": "Basic ZGQwOTQ2OGItODFjNS00OWQzLTk1YWYtNWQ0ZmRmYjk1ZmRjOnFfWWJXalNPaUVQeUV4OUdYZ0JCS1VTeWZwNGtkSGM0b0RWQ19fZTZmQmM=",
+          "content-type": "application/json",
+          "origin": "https://www.eastrenfrewshire.gov.uk",
+          "referer": "https://www.eastrenfrewshire.gov.uk/",
+          "x-connect-auth": "Basic ZGQwOTQ2OGItODFjNS00OWQzLTk1YWYtNWQ0ZmRmYjk1ZmRjOnFfWWJXalNPaUVQeUV4OUdYZ0JCS1VTeWZwNGtkSGM0b0RWQ19fZTZmQmM="
+        },
+        "response_headers": {
+          "x-ms-middleware-request-id": "00000000-0000-0000-0000-000000000000"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T16:25:31.764Z",
+        "duration_ms": 180.78300000000002,
+        "endpoint": "/v1/postback",
+        "host": "webassist.onconnect.app",
+        "method": "POST",
+        "status": 200,
+        "request_headers": {
+          "accept": "application/json, text/plain, */*",
+          "authorization": "Basic ZGQwOTQ2OGItODFjNS00OWQzLTk1YWYtNWQ0ZmRmYjk1ZmRjOnFfWWJXalNPaUVQeUV4OUdYZ0JCS1VTeWZwNGtkSGM0b0RWQ19fZTZmQmM=",
+          "content-type": "application/json",
+          "origin": "https://www.eastrenfrewshire.gov.uk",
+          "referer": "https://www.eastrenfrewshire.gov.uk/",
+          "x-connect-auth": "Basic ZGQwOTQ2OGItODFjNS00OWQzLTk1YWYtNWQ0ZmRmYjk1ZmRjOnFfWWJXalNPaUVQeUV4OUdYZ0JCS1VTeWZwNGtkSGM0b0RWQ19fZTZmQmM="
+        },
+        "response_headers": {
+          "x-ms-middleware-request-id": "00000000-0000-0000-0000-000000000000"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T16:25:39.428Z",
+        "duration_ms": 213.787,
+        "endpoint": "/v1/postback",
+        "host": "webassist.onconnect.app",
+        "method": "POST",
+        "status": 200,
+        "request_headers": {
+          "accept": "application/json, text/plain, */*",
+          "authorization": "Basic ZGQwOTQ2OGItODFjNS00OWQzLTk1YWYtNWQ0ZmRmYjk1ZmRjOnFfWWJXalNPaUVQeUV4OUdYZ0JCS1VTeWZwNGtkSGM0b0RWQ19fZTZmQmM=",
+          "content-type": "application/json",
+          "origin": "https://www.eastrenfrewshire.gov.uk",
+          "referer": "https://www.eastrenfrewshire.gov.uk/",
+          "x-connect-auth": "Basic ZGQwOTQ2OGItODFjNS00OWQzLTk1YWYtNWQ0ZmRmYjk1ZmRjOnFfWWJXalNPaUVQeUV4OUdYZ0JCS1VTeWZwNGtkSGM0b0RWQ19fZTZmQmM="
+        },
+        "response_headers": {
+          "x-ms-middleware-request-id": "00000000-0000-0000-0000-000000000000"
+        }
+      }
+    ],
+    "/apiserver/formsservice/http/processsubmission": [
+      {
+        "timestamp": "2025-07-21T16:25:30.108Z",
+        "duration_ms": 331.815,
+        "endpoint": "/apiserver/formsservice/http/processsubmission",
+        "host": "www.eastrenfrewshire.gov.uk",
+        "method": "POST",
+        "status": 303,
+        "query_params": {
+          "pageSessionId": [
+            "8defd4e2-1757-4785-925f-74f1b9266d49"
+          ],
+          "fsid": [
+            "88ebe286-fdc9-463d-987c-6e88d065379c"
+          ],
+          "fsn": [
+            "6d82b378-60e3-4e37-b24b-60805af9861a"
+          ]
+        },
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+          "content-type": "application/x-www-form-urlencoded",
+          "origin": "https://www.eastrenfrewshire.gov.uk",
+          "referer": "https://www.eastrenfrewshire.gov.uk/bin-days"
+        },
+        "response_headers": {
+          "cache-control": "private",
+          "location": "https://www.eastrenfrewshire.gov.uk/apiserver/formsservice/http/verifycookie?pageSessionId=8defd4e2-1757-4785-925f-74f1b9266d49&fsid=88ebe286-fdc9-463d-987c-6e88d065379c",
+          "set-cookie": "[cookies present]",
+          "x-content-type-options": "nosniff",
+          "x-powered-by": "",
+          "x-xss-protection": "1; mode=block"
+        },
+        "redirect_to": "https://www.eastrenfrewshire.gov.uk/apiserver/formsservice/http/verifycookie?pageSessionId=8defd4e2-1757-4785-925f-74f1b9266d49&fsid=88ebe286-fdc9-463d-987c-6e88d065379c"
+      },
+      {
+        "timestamp": "2025-07-21T16:25:37.675Z",
+        "duration_ms": 649.01,
+        "endpoint": "/apiserver/formsservice/http/processsubmission",
+        "host": "www.eastrenfrewshire.gov.uk",
+        "method": "POST",
+        "status": 303,
+        "query_params": {
+          "pageSessionId": [
+            "8defd4e2-1757-4785-925f-74f1b9266d49"
+          ],
+          "fsid": [
+            "88ebe286-fdc9-463d-987c-6e88d065379c"
+          ],
+          "fsn": [
+            "66ff486d-21cc-40f3-ad3e-36265697d17f"
+          ]
+        },
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+          "content-type": "application/x-www-form-urlencoded",
+          "cookie": "[cookies present]",
+          "origin": "https://www.eastrenfrewshire.gov.uk",
+          "referer": "https://www.eastrenfrewshire.gov.uk/bin-days?pageSessionId=8defd4e2-1757-4785-925f-74f1b9266d49&fsn=66ff486d-21cc-40f3-ad3e-36265697d17f"
+        },
+        "response_headers": {
+          "cache-control": "private",
+          "location": "https://www.eastrenfrewshire.gov.uk/bin-days?pageSessionId=8defd4e2-1757-4785-925f-74f1b9266d49&fsn=8f18056f-731d-4340-9e29-70423ba5dcee",
+          "x-content-type-options": "nosniff",
+          "x-powered-by": "",
+          "x-xss-protection": "1; mode=block"
+        },
+        "redirect_to": "https://www.eastrenfrewshire.gov.uk/bin-days?pageSessionId=8defd4e2-1757-4785-925f-74f1b9266d49&fsn=8f18056f-731d-4340-9e29-70423ba5dcee"
+      }
+    ],
+    "/apiserver/formsservice/http/verifycookie": [
+      {
+        "timestamp": "2025-07-21T16:25:30.441Z",
+        "duration_ms": 49.162,
+        "endpoint": "/apiserver/formsservice/http/verifycookie",
+        "host": "www.eastrenfrewshire.gov.uk",
+        "method": "GET",
+        "status": 303,
+        "query_params": {
+          "pageSessionId": [
+            "8defd4e2-1757-4785-925f-74f1b9266d49"
+          ],
+          "fsid": [
+            "88ebe286-fdc9-463d-987c-6e88d065379c"
+          ]
+        },
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+          "cookie": "[cookies present]",
+          "referer": "https://www.eastrenfrewshire.gov.uk/bin-days"
+        },
+        "response_headers": {
+          "cache-control": "private",
+          "location": "https://www.eastrenfrewshire.gov.uk/bin-days?pageSessionId=8defd4e2-1757-4785-925f-74f1b9266d49&fsn=66ff486d-21cc-40f3-ad3e-36265697d17f",
+          "x-content-type-options": "nosniff",
+          "x-powered-by": "",
+          "x-xss-protection": "1; mode=block"
+        },
+        "redirect_to": "https://www.eastrenfrewshire.gov.uk/bin-days?pageSessionId=8defd4e2-1757-4785-925f-74f1b9266d49&fsn=66ff486d-21cc-40f3-ad3e-36265697d17f"
+      }
+    ],
+    "/v1/workspaces/{id}/appusers/{id}/messages": [
+      {
+        "timestamp": "2025-07-21T16:25:31.763Z",
+        "duration_ms": 75.152,
+        "endpoint": "/v1/workspaces/{id}/appusers/{id}/messages",
+        "host": "webassist.onconnect.app",
+        "method": "GET",
+        "status": 200,
+        "path_params": [
+          "1760e1d2-79bb-4dbe-93b0-b3a0165dc012",
+          "f9adca7e-f2bb-4079-a7b9-c54d3f88d620"
+        ],
+        "request_headers": {
+          "accept": "application/json, text/plain, */*",
+          "authorization": "Basic ZGQwOTQ2OGItODFjNS00OWQzLTk1YWYtNWQ0ZmRmYjk1ZmRjOnFfWWJXalNPaUVQeUV4OUdYZ0JCS1VTeWZwNGtkSGM0b0RWQ19fZTZmQmM=",
+          "content-type": "application/json",
+          "origin": "https://www.eastrenfrewshire.gov.uk",
+          "referer": "https://www.eastrenfrewshire.gov.uk/",
+          "x-connect-auth": "Basic ZGQwOTQ2OGItODFjNS00OWQzLTk1YWYtNWQ0ZmRmYjk1ZmRjOnFfWWJXalNPaUVQeUV4OUdYZ0JCS1VTeWZwNGtkSGM0b0RWQ19fZTZmQmM="
+        },
+        "response_headers": {
+          "content-type": "application/json; charset=utf-8",
+          "x-ms-middleware-request-id": "00000000-0000-0000-0000-000000000000"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 40,
+          "content_ref": "1037334915cdbbe4abf707856b72a38f00349a04.json"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T16:25:39.428Z",
+        "duration_ms": 74.45,
+        "endpoint": "/v1/workspaces/{id}/appusers/{id}/messages",
+        "host": "webassist.onconnect.app",
+        "method": "GET",
+        "status": 200,
+        "path_params": [
+          "1760e1d2-79bb-4dbe-93b0-b3a0165dc012",
+          "f9adca7e-f2bb-4079-a7b9-c54d3f88d620"
+        ],
+        "request_headers": {
+          "accept": "application/json, text/plain, */*",
+          "authorization": "Basic ZGQwOTQ2OGItODFjNS00OWQzLTk1YWYtNWQ0ZmRmYjk1ZmRjOnFfWWJXalNPaUVQeUV4OUdYZ0JCS1VTeWZwNGtkSGM0b0RWQ19fZTZmQmM=",
+          "content-type": "application/json",
+          "origin": "https://www.eastrenfrewshire.gov.uk",
+          "referer": "https://www.eastrenfrewshire.gov.uk/",
+          "x-connect-auth": "Basic ZGQwOTQ2OGItODFjNS00OWQzLTk1YWYtNWQ0ZmRmYjk1ZmRjOnFfWWJXalNPaUVQeUV4OUdYZ0JCS1VTeWZwNGtkSGM0b0RWQ19fZTZmQmM="
+        },
+        "response_headers": {
+          "content-type": "application/json; charset=utf-8",
+          "x-ms-middleware-request-id": "00000000-0000-0000-0000-000000000000"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 40,
+          "content_ref": "1037334915cdbbe4abf707856b72a38f00349a04.json"
+        }
+      }
+    ]
+  }
 }

@@ -1,275 +1,2132 @@
 {
-  "metadata": {
-    "trace_name": "new_forest_district_council",
-    "processed_at": "2025-08-26 18:44:24",
-    "workflow_steps_count": 8,
-    "navigation_events_count": 15
-  },
-  "scraping_patterns": {
-    "login_detected": false,
-    "form_submissions": 7,
-    "navigation_count": 1,
-    "unique_domains": [
-      "www.newforest.gov.uk",
-      "apikeys.civiccomputing.com",
-      "metrics.hotjar.io",
-      "clapi.civiccomputing.com",
-      "forms.newforest.gov.uk",
-      "region1.analytics.google.com"
-    ],
-    "api_endpoints": [],
-    "data_extraction_indicators": []
-  },
-  "workflow_steps": [
+  "entries": [
     {
-      "action": "goto",
-      "target": "https://www.newforest.gov.uk/rubbish",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
-    },
-    {
-      "action": "click",
-      "target": "aria-ref=e96 >> internal:describe=\"Find your collection day \ue827\"",
-      "status": "Failed",
-      "details": {
-        "error": "Timeout 5000ms exceeded."
+      "timestamp": "2025-07-21T16:41:07.631Z",
+      "duration_ms": 115.52000000000001,
+      "endpoint": "/rubbish",
+      "host": "www.newforest.gov.uk",
+      "method": "GET",
+      "status": 200,
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7"
       },
-      "timestamp": 0
+      "response_headers": {
+        "cache-control": "no-cache, no-store",
+        "content-type": "text/html; charset=utf-8",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "SAMEORIGIN",
+        "x-powered-by": "",
+        "x-ua-compatible": "IE=Edge",
+        "x-xss-protection": "1; mode=block"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 39086,
+        "compressed": true,
+        "content_ref": "e3a1a2ce9524f221897b163b352e5cb6982dba2e.html"
+      }
     },
     {
-      "action": "click",
-      "target": "aria-ref=e214 >> internal:describe=\"I Accept Cookies\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
+      "timestamp": "2025-07-21T16:41:07.968Z",
+      "duration_ms": 45.898,
+      "endpoint": "/c/v",
+      "host": "apikeys.civiccomputing.com",
+      "method": "GET",
+      "status": 200,
+      "query_params": {
+        "d": [
+          "www.newforest.gov.uk"
+        ],
+        "p": [
+          "CookieControl Multi-Site"
+        ],
+        "v": [
+          "9"
+        ],
+        "k": [
+          "aa7f72f6cfd1b7da9bcd12c56478e839117bbb62"
+        ],
+        "format": [
+          "json"
+        ]
+      },
+      "request_headers": {
+        "accept": "application/json, text/plain, */*",
+        "origin": "https://www.newforest.gov.uk",
+        "referer": "https://www.newforest.gov.uk/"
+      },
+      "response_headers": {
+        "cache-control": "max-age=3600, private, no-store",
+        "content-type": "application/json",
+        "x-apikeys": "hit",
+        "x-cf-test": "true",
+        "x-content-type-options": "nosniff",
+        "x-xss-protection": "1"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 305,
+        "content_ref": "d592e29dfb030a9d494f83d313ee0823a2b42d2f.json"
+      }
     },
     {
-      "action": "click",
-      "target": "aria-ref=e96 >> internal:describe=\"Find your collection day \ue827\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
+      "timestamp": "2025-07-21T16:41:17.345Z",
+      "duration_ms": 16.291,
+      "endpoint": "/j/collect",
+      "host": "www.google-analytics.com",
+      "method": "POST",
+      "status": 200,
+      "query_params": {
+        "v": [
+          "1"
+        ],
+        "_v": [
+          "j101"
+        ],
+        "a": [
+          "1382831417"
+        ],
+        "t": [
+          "pageview"
+        ],
+        "_s": [
+          "1"
+        ],
+        "dl": [
+          "https://www.newforest.gov.uk/rubbish"
+        ],
+        "ul": [
+          "en-gb"
+        ],
+        "de": [
+          "UTF-8"
+        ],
+        "dt": [
+          "Household rubbish - New Forest District Council"
+        ],
+        "sd": [
+          "24-bit"
+        ],
+        "sr": [
+          "800x600"
+        ],
+        "vp": [
+          "800x461"
+        ],
+        "je": [
+          "0"
+        ],
+        "_u": [
+          "IEBAAEABAAAAACAAI~"
+        ],
+        "jid": [
+          "428550196"
+        ],
+        "gjid": [
+          "1076638231"
+        ],
+        "cid": [
+          "297026535.1753116077"
+        ],
+        "tid": [
+          "G-7J42JNJSR4"
+        ],
+        "_gid": [
+          "1597476015.1753116077"
+        ],
+        "_r": [
+          "1"
+        ],
+        "_slc": [
+          "1"
+        ],
+        "z": [
+          "357058526"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "content-type": "text/plain",
+        "origin": "https://www.newforest.gov.uk",
+        "referer": "https://www.newforest.gov.uk/"
+      },
+      "response_headers": {
+        "cache-control": "no-cache, no-store, must-revalidate",
+        "content-type": "text/plain",
+        "x-content-type-options": "nosniff"
+      }
     },
     {
-      "action": "fill",
-      "target": "aria-ref=e28 >> internal:describe=\"Postcode*\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0,
-      "value": "BH23 7AZ"
+      "timestamp": "2025-07-21T16:41:17.397Z",
+      "duration_ms": 14.354,
+      "endpoint": "/j/collect",
+      "host": "www.google-analytics.com",
+      "method": "POST",
+      "status": 200,
+      "query_params": {
+        "v": [
+          "1"
+        ],
+        "_v": [
+          "j101"
+        ],
+        "a": [
+          "1382831417"
+        ],
+        "t": [
+          "pageview"
+        ],
+        "_s": [
+          "1"
+        ],
+        "dl": [
+          "https://www.newforest.gov.uk/rubbish"
+        ],
+        "ul": [
+          "en-gb"
+        ],
+        "de": [
+          "UTF-8"
+        ],
+        "dt": [
+          "Household rubbish - New Forest District Council"
+        ],
+        "sd": [
+          "24-bit"
+        ],
+        "sr": [
+          "800x600"
+        ],
+        "vp": [
+          "800x461"
+        ],
+        "je": [
+          "0"
+        ],
+        "_u": [
+          "aEDAAEABAAAAACAAI~"
+        ],
+        "jid": [
+          "142725867"
+        ],
+        "gjid": [
+          "1024714166"
+        ],
+        "cid": [
+          "297026535.1753116077"
+        ],
+        "tid": [
+          "UA-524935-5"
+        ],
+        "_gid": [
+          "1597476015.1753116077"
+        ],
+        "_r": [
+          "1"
+        ],
+        "_slc": [
+          "1"
+        ],
+        "gtm": [
+          "45He57h0h1n81TVMB7H5v831533855za200"
+        ],
+        "gcd": [
+          "13l3l3l3l1l1"
+        ],
+        "dma": [
+          "0"
+        ],
+        "tag_exp": [
+          "101509157~103116026~103200004~103233427~104684208~104684211"
+        ],
+        "z": [
+          "2075099627"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "content-type": "text/plain",
+        "origin": "https://www.newforest.gov.uk",
+        "referer": "https://www.newforest.gov.uk/"
+      },
+      "response_headers": {
+        "cache-control": "no-cache, no-store, must-revalidate",
+        "content-type": "text/plain",
+        "x-content-type-options": "nosniff"
+      }
     },
     {
-      "action": "click",
-      "target": "aria-ref=e29 >> internal:describe=\"Submit\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
+      "timestamp": "2025-07-21T16:41:17.489Z",
+      "duration_ms": 63.613,
+      "endpoint": "/g/collect",
+      "host": "region1.analytics.google.com",
+      "method": "POST",
+      "status": 204,
+      "query_params": {
+        "v": [
+          "2"
+        ],
+        "tid": [
+          "G-7J42JNJSR4"
+        ],
+        "gtm": [
+          "45je57h0h1v9100501916z8831533855za200zb831533855"
+        ],
+        "_p": [
+          "1753116077288"
+        ],
+        "_gaz": [
+          "1"
+        ],
+        "gcd": [
+          "13l3l3l3l1l1"
+        ],
+        "npa": [
+          "0"
+        ],
+        "dma": [
+          "0"
+        ],
+        "tag_exp": [
+          "101509157~103116026~103200004~103233427~104684208~104684211~104921712~104921714"
+        ],
+        "cid": [
+          "297026535.1753116077"
+        ],
+        "ul": [
+          "en-gb"
+        ],
+        "sr": [
+          "800x600"
+        ],
+        "uaa": [
+          "arm"
+        ],
+        "uab": [
+          "64"
+        ],
+        "uafvl": [
+          "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+        ],
+        "uamb": [
+          "0"
+        ],
+        "uap": [
+          "macOS"
+        ],
+        "uapv": [
+          "15.5.0"
+        ],
+        "uaw": [
+          "0"
+        ],
+        "are": [
+          "1"
+        ],
+        "frm": [
+          "0"
+        ],
+        "pscdl": [
+          "noapi"
+        ],
+        "_s": [
+          "1"
+        ],
+        "sid": [
+          "1753116077"
+        ],
+        "sct": [
+          "1"
+        ],
+        "seg": [
+          "0"
+        ],
+        "dl": [
+          "https://www.newforest.gov.uk/rubbish"
+        ],
+        "dt": [
+          "Household rubbish - New Forest District Council"
+        ],
+        "en": [
+          "page_view"
+        ],
+        "_fv": [
+          "1"
+        ],
+        "_ss": [
+          "1"
+        ],
+        "tfd": [
+          "9845"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "origin": "https://www.newforest.gov.uk",
+        "referer": "https://www.newforest.gov.uk/",
+        "x-browser-copyright": "Copyright 2025 Google LLC. All rights reserved.",
+        "x-browser-validation": "qvLgIVtG4U8GgiRPSI9IJ22mUlI=",
+        "x-browser-year": "2025",
+        "x-client-data": "CMiXywE="
+      },
+      "response_headers": {
+        "cache-control": "no-cache, no-store, must-revalidate",
+        "content-type": "text/plain"
+      }
     },
     {
-      "action": "selectOption",
-      "target": "aria-ref=e30 >> internal:describe=\"Address*\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0,
-      "value": null
+      "timestamp": "2025-07-21T16:41:17.489Z",
+      "duration_ms": 70.973,
+      "endpoint": "/g/collect",
+      "host": "stats.g.doubleclick.net",
+      "method": "POST",
+      "status": 204,
+      "query_params": {
+        "v": [
+          "2"
+        ],
+        "tid": [
+          "G-7J42JNJSR4"
+        ],
+        "cid": [
+          "297026535.1753116077"
+        ],
+        "gtm": [
+          "45je57h0h1v9100501916z8831533855za200zb831533855"
+        ],
+        "aip": [
+          "1"
+        ],
+        "dma": [
+          "0"
+        ],
+        "gcd": [
+          "13l3l3l3l1l1"
+        ],
+        "npa": [
+          "0"
+        ],
+        "frm": [
+          "0"
+        ],
+        "tag_exp": [
+          "101509157~103116026~103200004~103233427~104684208~104684211~104921712~104921714"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "cookie": "[cookies present]",
+        "origin": "https://www.newforest.gov.uk",
+        "referer": "https://www.newforest.gov.uk/",
+        "x-browser-copyright": "Copyright 2025 Google LLC. All rights reserved.",
+        "x-browser-validation": "qvLgIVtG4U8GgiRPSI9IJ22mUlI=",
+        "x-browser-year": "2025",
+        "x-client-data": "CMiXywE="
+      },
+      "response_headers": {
+        "cache-control": "no-cache, no-store, must-revalidate",
+        "content-type": "text/plain"
+      }
     },
     {
-      "action": "click",
-      "target": "aria-ref=e62 >> internal:describe=\"Submit\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
+      "timestamp": "2025-07-21T16:41:17.294Z",
+      "duration_ms": 1138.492,
+      "endpoint": "/{id}/log",
+      "host": "clapi.civiccomputing.com",
+      "method": "GET",
+      "status": 200,
+      "path_params": [
+        "1"
+      ],
+      "query_params": {
+        "k": [
+          "aa7f72f6cfd1b7da9bcd12c56478e839117bbb62"
+        ],
+        "d": [
+          "www.newforest.gov.uk"
+        ],
+        "u": [
+          "undefined"
+        ],
+        "c": [
+          "\"{\\\"necessaryCookies\\\":[],\\\"optionalCookies\\\":{\\\"analytics\\\":\\\"accepted\\\",\\\"personalisation\\\":\\\"accepted\\\",\\\"socialsharing\\\":\\\"accepted\\\"},\\\"statement\\\":{\\\"shown\\\":true,\\\"updated\\\":\\\"30/06/2019\\\"},\\\"consentDate\\\":1753116077288,\\\"consentExpiry\\\":90,\\\"interactedWith\\\":true,\\\"user\\\":\\\"C6380AAA-A5CE-4F8E-B85A-AC4C78D8F1E8\\\"}\""
+        ]
+      },
+      "request_headers": {
+        "accept": "application/json, text/plain, */*",
+        "origin": "https://www.newforest.gov.uk",
+        "referer": "https://www.newforest.gov.uk/"
+      },
+      "response_headers": {
+        "content-type": "application/json",
+        "x-content-type-options": "nosniff",
+        "x-xss-protection": "0"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 13,
+        "content_ref": "a26ad77888189cc5d6973bb818e45f448628c5c1.json"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T16:41:21.363Z",
+      "duration_ms": 93.203,
+      "endpoint": "/",
+      "host": "metrics.hotjar.io",
+      "method": "POST",
+      "status": 204,
+      "query_params": {
+        "v": [
+          "6"
+        ],
+        "site_id": [
+          "1808123"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "content-type": "text/plain;charset=UTF-8",
+        "origin": "https://www.newforest.gov.uk",
+        "referer": "https://www.newforest.gov.uk/"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T16:41:29.343Z",
+      "duration_ms": 67.28,
+      "endpoint": "/ufs/ufsmain",
+      "host": "forms.newforest.gov.uk",
+      "method": "GET",
+      "status": 302,
+      "query_params": {
+        "formid": [
+          "FIND_MY_COLLECTION"
+        ],
+        "ebz": [
+          "1_1586362925470",
+          "1_1586362925470"
+        ],
+        "ebd": [
+          "0"
+        ]
+      },
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+        "cookie": "[cookies present]",
+        "referer": "https://www.newforest.gov.uk/"
+      },
+      "response_headers": {
+        "cache-control": "private",
+        "location": "ufsmain?formid=FIND_MY_COLLECTION&ebz=1_1586362925470&ebd=0",
+        "set-cookie": "[cookies present]",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "SAMEORIGIN"
+      },
+      "redirect_to": "ufsmain?formid=FIND_MY_COLLECTION&ebz=1_1586362925470&ebd=0"
+    },
+    {
+      "timestamp": "2025-07-21T16:41:29.388Z",
+      "duration_ms": 29.205,
+      "endpoint": "/ufs/ufsmain",
+      "host": "forms.newforest.gov.uk",
+      "method": "GET",
+      "status": 302,
+      "query_params": {
+        "formid": [
+          "FIND_MY_COLLECTION"
+        ],
+        "ebz": [
+          "1_1586362925470"
+        ],
+        "ebd": [
+          "0"
+        ]
+      },
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+        "cookie": "[cookies present]",
+        "referer": "https://www.newforest.gov.uk/"
+      },
+      "response_headers": {
+        "cache-control": "no-store, no-cache, must-revalidate",
+        "location": "FIND_MY_COLLECTION.eb?ebd=0&ebz=2_1753116089440",
+        "set-cookie": "[cookies present]",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "SAMEORIGIN"
+      },
+      "redirect_to": "FIND_MY_COLLECTION.eb?ebd=0&ebz=2_1753116089440"
+    },
+    {
+      "timestamp": "2025-07-21T16:41:29.417Z",
+      "duration_ms": 13.336,
+      "endpoint": "/ufs/{id}",
+      "host": "forms.newforest.gov.uk",
+      "method": "GET",
+      "status": 200,
+      "path_params": [
+        "FIND_MY_COLLECTION.eb"
+      ],
+      "query_params": {
+        "ebd": [
+          "0"
+        ],
+        "ebz": [
+          "2_1753116089440"
+        ]
+      },
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+        "cookie": "[cookies present]",
+        "referer": "https://www.newforest.gov.uk/"
+      },
+      "response_headers": {
+        "cache-control": "no-store, no-cache, must-revalidate",
+        "content-type": "text/html;charset=UTF-8",
+        "set-cookie": "[cookies present]",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "SAMEORIGIN"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 13919,
+        "content_ref": "e89a54356f3ff2ceaab9f0570f725372325bbe24.html"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T16:41:34.278Z",
+      "duration_ms": 14.026,
+      "endpoint": "/g/collect",
+      "host": "region1.analytics.google.com",
+      "method": "POST",
+      "status": 204,
+      "query_params": {
+        "v": [
+          "2"
+        ],
+        "tid": [
+          "G-7J42JNJSR4"
+        ],
+        "gtm": [
+          "45je57h0h1v9100501916z8831533855za200zb831533855"
+        ],
+        "_p": [
+          "1753116077288"
+        ],
+        "gcd": [
+          "13l3l3l3l1l1"
+        ],
+        "npa": [
+          "0"
+        ],
+        "dma": [
+          "0"
+        ],
+        "tag_exp": [
+          "101509157~103116026~103200004~103233427~104684208~104684211~104921712~104921714"
+        ],
+        "cid": [
+          "297026535.1753116077"
+        ],
+        "ul": [
+          "en-gb"
+        ],
+        "sr": [
+          "800x600"
+        ],
+        "uaa": [
+          "arm"
+        ],
+        "uab": [
+          "64"
+        ],
+        "uafvl": [
+          "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+        ],
+        "uamb": [
+          "0"
+        ],
+        "uap": [
+          "macOS"
+        ],
+        "uapv": [
+          "15.5.0"
+        ],
+        "uaw": [
+          "0"
+        ],
+        "are": [
+          "1"
+        ],
+        "frm": [
+          "0"
+        ],
+        "pscdl": [
+          "noapi"
+        ],
+        "_eu": [
+          "AAAAAAQ"
+        ],
+        "_s": [
+          "2"
+        ],
+        "sid": [
+          "1753116077"
+        ],
+        "sct": [
+          "1"
+        ],
+        "seg": [
+          "1"
+        ],
+        "dl": [
+          "https://www.newforest.gov.uk/rubbish"
+        ],
+        "dt": [
+          "Household rubbish - New Forest District Council"
+        ],
+        "en": [
+          "CTA"
+        ],
+        "_et": [
+          "11796"
+        ],
+        "tfd": [
+          "26647"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "origin": "https://www.newforest.gov.uk",
+        "referer": "https://www.newforest.gov.uk/",
+        "x-browser-copyright": "Copyright 2025 Google LLC. All rights reserved.",
+        "x-browser-validation": "qvLgIVtG4U8GgiRPSI9IJ22mUlI=",
+        "x-browser-year": "2025",
+        "x-client-data": "CMiXywE="
+      },
+      "response_headers": {
+        "cache-control": "no-cache, no-store, must-revalidate",
+        "content-type": "text/plain"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T16:41:35.268Z",
+      "duration_ms": 10.56,
+      "endpoint": "/ufs/{id}",
+      "host": "forms.newforest.gov.uk",
+      "method": "POST",
+      "status": 302,
+      "path_params": [
+        "FIND_MY_COLLECTION.eb"
+      ],
+      "query_params": {
+        "ebz": [
+          "2_1753116089440"
+        ]
+      },
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+        "content-type": "application/x-www-form-urlencoded",
+        "cookie": "[cookies present]",
+        "origin": "https://forms.newforest.gov.uk",
+        "referer": "https://forms.newforest.gov.uk/ufs/FIND_MY_COLLECTION.eb?ebd=0&ebz=2_1753116089440"
+      },
+      "response_headers": {
+        "cache-control": "no-store, no-cache, must-revalidate",
+        "location": "FIND_MY_COLLECTION.eb?ebd=0&ebz=2_1753116089440",
+        "set-cookie": "[cookies present]",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "SAMEORIGIN"
+      },
+      "redirect_to": "FIND_MY_COLLECTION.eb?ebd=0&ebz=2_1753116089440"
+    },
+    {
+      "timestamp": "2025-07-21T16:41:35.107Z",
+      "duration_ms": 86.49499999999999,
+      "endpoint": "/ufs/ufsajax",
+      "host": "forms.newforest.gov.uk",
+      "method": "POST",
+      "status": 200,
+      "query_params": {
+        "ebz": [
+          "2_1753116089440"
+        ]
+      },
+      "request_headers": {
+        "accept": "application/json, text/javascript, */*; q=0.01",
+        "content-type": "application/x-www-form-urlencoded; charset=UTF-8",
+        "cookie": "[cookies present]",
+        "origin": "https://forms.newforest.gov.uk",
+        "referer": "https://forms.newforest.gov.uk/ufs/FIND_MY_COLLECTION.eb?ebd=0&ebz=2_1753116089440",
+        "x-requested-with": "XMLHttpRequest"
+      },
+      "response_headers": {
+        "content-type": "application/json",
+        "set-cookie": "[cookies present]",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "SAMEORIGIN"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": -1
+      }
+    },
+    {
+      "timestamp": "2025-07-21T16:41:35.279Z",
+      "duration_ms": 342.727,
+      "endpoint": "/ufs/{id}",
+      "host": "forms.newforest.gov.uk",
+      "method": "GET",
+      "status": 200,
+      "path_params": [
+        "FIND_MY_COLLECTION.eb"
+      ],
+      "query_params": {
+        "ebd": [
+          "0"
+        ],
+        "ebz": [
+          "2_1753116089440"
+        ]
+      },
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+        "cookie": "[cookies present]",
+        "referer": "https://forms.newforest.gov.uk/ufs/FIND_MY_COLLECTION.eb?ebd=0&ebz=2_1753116089440"
+      },
+      "response_headers": {
+        "cache-control": "no-store, no-cache, must-revalidate",
+        "content-type": "text/html;charset=UTF-8",
+        "set-cookie": "[cookies present]",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "SAMEORIGIN"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 17856,
+        "content_ref": "b2f99ed59101da63b31ddce7fdd845b059e2ee9a.html"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T16:41:42.781Z",
+      "duration_ms": 12.016,
+      "endpoint": "/ufs/{id}",
+      "host": "forms.newforest.gov.uk",
+      "method": "POST",
+      "status": 302,
+      "path_params": [
+        "FIND_MY_COLLECTION.eb"
+      ],
+      "query_params": {
+        "ebz": [
+          "2_1753116089440"
+        ]
+      },
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+        "content-type": "application/x-www-form-urlencoded",
+        "cookie": "[cookies present]",
+        "origin": "https://forms.newforest.gov.uk",
+        "referer": "https://forms.newforest.gov.uk/ufs/FIND_MY_COLLECTION.eb?ebd=0&ebz=2_1753116089440"
+      },
+      "response_headers": {
+        "cache-control": "no-store, no-cache, must-revalidate",
+        "location": "FIND_MY_COLLECTION.eb?ebd=0&ebz=2_1753116089440",
+        "set-cookie": "[cookies present]",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "SAMEORIGIN"
+      },
+      "redirect_to": "FIND_MY_COLLECTION.eb?ebd=0&ebz=2_1753116089440"
+    },
+    {
+      "timestamp": "2025-07-21T16:41:42.587Z",
+      "duration_ms": 108.36,
+      "endpoint": "/ufs/ufsajax",
+      "host": "forms.newforest.gov.uk",
+      "method": "POST",
+      "status": 200,
+      "query_params": {
+        "ebz": [
+          "2_1753116089440"
+        ]
+      },
+      "request_headers": {
+        "accept": "application/json, text/javascript, */*; q=0.01",
+        "content-type": "application/x-www-form-urlencoded; charset=UTF-8",
+        "cookie": "[cookies present]",
+        "origin": "https://forms.newforest.gov.uk",
+        "referer": "https://forms.newforest.gov.uk/ufs/FIND_MY_COLLECTION.eb?ebd=0&ebz=2_1753116089440",
+        "x-requested-with": "XMLHttpRequest"
+      },
+      "response_headers": {
+        "content-type": "application/json",
+        "set-cookie": "[cookies present]",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "SAMEORIGIN"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": -1
+      }
+    },
+    {
+      "timestamp": "2025-07-21T16:41:42.793Z",
+      "duration_ms": 15.790999999999999,
+      "endpoint": "/ufs/{id}",
+      "host": "forms.newforest.gov.uk",
+      "method": "GET",
+      "status": 200,
+      "path_params": [
+        "FIND_MY_COLLECTION.eb"
+      ],
+      "query_params": {
+        "ebd": [
+          "0"
+        ],
+        "ebz": [
+          "2_1753116089440"
+        ]
+      },
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+        "cookie": "[cookies present]",
+        "referer": "https://forms.newforest.gov.uk/ufs/FIND_MY_COLLECTION.eb?ebd=0&ebz=2_1753116089440"
+      },
+      "response_headers": {
+        "cache-control": "no-store, no-cache, must-revalidate",
+        "content-type": "text/html;charset=UTF-8",
+        "set-cookie": "[cookies present]",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "SAMEORIGIN"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 21921,
+        "content_ref": "54192b7a6a71008acbe22bcb2cfde45217dfc7fb.html"
+      }
     }
   ],
-  "navigation_events": [
-    {
-      "url": "https://www.newforest.gov.uk/rubbish",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "text/html; charset=utf-8",
-      "size": 39086,
-      "timestamp": "2025-07-21T16:41:07.631Z"
+  "analysis": {
+    "total_requests": 18,
+    "unique_endpoints": 9,
+    "methods_used": [
+      "GET",
+      "POST"
+    ],
+    "status_codes": {
+      "200": 10,
+      "204": 4,
+      "302": 4
     },
-    {
-      "url": "https://apikeys.civiccomputing.com/c/v?d=www.newforest.gov.uk&p=CookieControl%20Multi-Site&v=9&k=aa7f72f6cfd1b7da9bcd12c56478e839117bbb62&format=json",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json",
-      "size": 305,
-      "timestamp": "2025-07-21T16:41:07.968Z"
-    },
-    {
-      "url": "https://clapi.civiccomputing.com/1/log?k=aa7f72f6cfd1b7da9bcd12c56478e839117bbb62&d=www.newforest.gov.uk&u=undefined&c=%22%7B%5C%22necessaryCookies%5C%22%3A%5B%5D%2C%5C%22optionalCookies%5C%22%3A%7B%5C%22analytics%5C%22%3A%5C%22accepted%5C%22%2C%5C%22personalisation%5C%22%3A%5C%22accepted%5C%22%2C%5C%22socialsharing%5C%22%3A%5C%22accepted%5C%22%7D%2C%5C%22statement%5C%22%3A%7B%5C%22shown%5C%22%3Atrue%2C%5C%22updated%5C%22%3A%5C%2230%2F06%2F2019%5C%22%7D%2C%5C%22consentDate%5C%22%3A1753116077288%2C%5C%22consentExpiry%5C%22%3A90%2C%5C%22interactedWith%5C%22%3Atrue%2C%5C%22user%5C%22%3A%5C%22C6380AAA-A5CE-4F8E-B85A-AC4C78D8F1E8%5C%22%7D%22",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json",
-      "size": 13,
-      "timestamp": "2025-07-21T16:41:17.294Z"
-    },
-    {
-      "url": "https://region1.analytics.google.com/g/collect?v=2&tid=G-7J42JNJSR4&gtm=45je57h0h1v9100501916z8831533855za200zb831533855&_p=1753116077288&_gaz=1&gcd=13l3l3l3l1l1&npa=0&dma=0&tag_exp=101509157~103116026~103200004~103233427~104684208~104684211~104921712~104921714&cid=297026535.1753116077&ul=en-gb&sr=800x600&uaa=arm&uab=64&uafvl=Not)A%253BBrand%3B8.0.0.0%7CChromium%3B138.0.7204.101%7CGoogle%2520Chrome%3B138.0.7204.101&uamb=0&uam=&uap=macOS&uapv=15.5.0&uaw=0&are=1&frm=0&pscdl=noapi&_s=1&sid=1753116077&sct=1&seg=0&dl=https%3A%2F%2Fwww.newforest.gov.uk%2Frubbish&dt=Household%20rubbish%20-%20New%20Forest%20District%20Council&en=page_view&_fv=1&_ss=1&tfd=9845",
-      "method": "POST",
-      "status": 204,
-      "redirect_url": null,
-      "mime_type": "text/plain",
-      "size": -1,
-      "timestamp": "2025-07-21T16:41:17.489Z"
-    },
-    {
-      "url": "https://metrics.hotjar.io/?v=6&site_id=1808123",
-      "method": "POST",
-      "status": 204,
-      "redirect_url": null,
-      "mime_type": "x-unknown",
-      "size": 0,
-      "timestamp": "2025-07-21T16:41:21.363Z"
-    },
-    {
-      "url": "https://forms.newforest.gov.uk/ufs/ufsmain?formid=FIND_MY_COLLECTION&ebz=1_1586362925470&ebd=0&ebz=1_1586362925470",
-      "method": "GET",
-      "status": 302,
-      "redirect_url": "https://forms.newforest.gov.uk/ufs/ufsmain?formid=FIND_MY_COLLECTION&ebz=1_1586362925470&ebd=0",
-      "mime_type": "x-unknown",
-      "size": -1,
-      "timestamp": "2025-07-21T16:41:29.343Z"
-    },
-    {
-      "url": "https://forms.newforest.gov.uk/ufs/ufsmain?formid=FIND_MY_COLLECTION&ebz=1_1586362925470&ebd=0",
-      "method": "GET",
-      "status": 302,
-      "redirect_url": "https://forms.newforest.gov.uk/ufs/FIND_MY_COLLECTION.eb?ebd=0&ebz=2_1753116089440",
-      "mime_type": "x-unknown",
-      "size": -1,
-      "timestamp": "2025-07-21T16:41:29.388Z"
-    },
-    {
-      "url": "https://forms.newforest.gov.uk/ufs/FIND_MY_COLLECTION.eb?ebd=0&ebz=2_1753116089440",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "text/html;charset=UTF-8",
-      "size": 13919,
-      "timestamp": "2025-07-21T16:41:29.417Z"
-    },
-    {
-      "url": "https://region1.analytics.google.com/g/collect?v=2&tid=G-7J42JNJSR4&gtm=45je57h0h1v9100501916z8831533855za200zb831533855&_p=1753116077288&gcd=13l3l3l3l1l1&npa=0&dma=0&tag_exp=101509157~103116026~103200004~103233427~104684208~104684211~104921712~104921714&cid=297026535.1753116077&ul=en-gb&sr=800x600&uaa=arm&uab=64&uafvl=Not)A%253BBrand%3B8.0.0.0%7CChromium%3B138.0.7204.101%7CGoogle%2520Chrome%3B138.0.7204.101&uamb=0&uam=&uap=macOS&uapv=15.5.0&uaw=0&are=1&frm=0&pscdl=noapi&_eu=AAAAAAQ&_s=2&sid=1753116077&sct=1&seg=1&dl=https%3A%2F%2Fwww.newforest.gov.uk%2Frubbish&dt=Household%20rubbish%20-%20New%20Forest%20District%20Council&en=CTA&_et=11796&tfd=26647",
-      "method": "POST",
-      "status": 204,
-      "redirect_url": null,
-      "mime_type": "text/plain",
-      "size": -1,
-      "timestamp": "2025-07-21T16:41:34.278Z"
-    },
-    {
-      "url": "https://forms.newforest.gov.uk/ufs/ufsajax?ebz=2_1753116089440",
-      "method": "POST",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json",
-      "size": -1,
-      "timestamp": "2025-07-21T16:41:35.107Z"
-    },
-    {
-      "url": "https://forms.newforest.gov.uk/ufs/FIND_MY_COLLECTION.eb?ebz=2_1753116089440",
-      "method": "POST",
-      "status": 302,
-      "redirect_url": "https://forms.newforest.gov.uk/ufs/FIND_MY_COLLECTION.eb?ebd=0&ebz=2_1753116089440",
-      "mime_type": "x-unknown",
-      "size": -1,
-      "timestamp": "2025-07-21T16:41:35.268Z",
-      "form_data": {
-        "formid": "/Forms/FIND_MY_COLLECTION",
-        "ebs": "2_1753116089440",
-        "origrequrl": "https://forms.newforest.gov.uk/ufs/ufsmain?formid=FIND_MY_COLLECTION&ebz=1_1586362925470&ebd=0",
-        "formstack": "FIND_MY_COLLECTION:9e2a32e3-92a6-47f6-bcca-6bb9387afd9a",
-        "PAGE:E.h": "",
-        "PAGE:B.h": "",
-        "PAGE:N.h": "",
-        "PAGE:S.h": "",
-        "PAGE:R.h": "",
-        "PAGE:D": "",
-        "PAGE:H": "",
-        "PAGE:X": "0",
-        "PAGE:Y": "0",
-        "PAGE:F": "CTID-4-_",
-        "ufsEndUser*": "1",
-        "pageSeq": "1",
-        "pageId": "PAGE_1",
-        "formStateId": "1",
-        "$USERVAR1": "",
-        "$USERVAR2": "",
-        "$USERVAR3": "",
-        "CTRL:1:_:A": "BH23 7AZ",
-        "HID:inputs": "ICTRL:1:_:A,ACTRL:4:_,APAGE:E.h,APAGE:B.h,APAGE:N.h,APAGE:S.h,APAGE:R.h",
-        "ebReshow": "true"
+    "endpoints_with_params": [
+      {
+        "endpoint": "/c/v",
+        "method": "GET",
+        "query_params": [
+          "d",
+          "p",
+          "v",
+          "k",
+          "format"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/j/collect",
+        "method": "POST",
+        "query_params": [
+          "v",
+          "_v",
+          "a",
+          "t",
+          "_s",
+          "dl",
+          "ul",
+          "de",
+          "dt",
+          "sd",
+          "sr",
+          "vp",
+          "je",
+          "_u",
+          "jid",
+          "gjid",
+          "cid",
+          "tid",
+          "_gid",
+          "_r",
+          "_slc",
+          "z"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/j/collect",
+        "method": "POST",
+        "query_params": [
+          "v",
+          "_v",
+          "a",
+          "t",
+          "_s",
+          "dl",
+          "ul",
+          "de",
+          "dt",
+          "sd",
+          "sr",
+          "vp",
+          "je",
+          "_u",
+          "jid",
+          "gjid",
+          "cid",
+          "tid",
+          "_gid",
+          "_r",
+          "_slc",
+          "gtm",
+          "gcd",
+          "dma",
+          "tag_exp",
+          "z"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/g/collect",
+        "method": "POST",
+        "query_params": [
+          "v",
+          "tid",
+          "gtm",
+          "_p",
+          "_gaz",
+          "gcd",
+          "npa",
+          "dma",
+          "tag_exp",
+          "cid",
+          "ul",
+          "sr",
+          "uaa",
+          "uab",
+          "uafvl",
+          "uamb",
+          "uap",
+          "uapv",
+          "uaw",
+          "are",
+          "frm",
+          "pscdl",
+          "_s",
+          "sid",
+          "sct",
+          "seg",
+          "dl",
+          "dt",
+          "en",
+          "_fv",
+          "_ss",
+          "tfd"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/g/collect",
+        "method": "POST",
+        "query_params": [
+          "v",
+          "tid",
+          "cid",
+          "gtm",
+          "aip",
+          "dma",
+          "gcd",
+          "npa",
+          "frm",
+          "tag_exp"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/{id}/log",
+        "method": "GET",
+        "query_params": [
+          "k",
+          "d",
+          "u",
+          "c"
+        ],
+        "path_params": true
+      },
+      {
+        "endpoint": "/",
+        "method": "POST",
+        "query_params": [
+          "v",
+          "site_id"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/ufs/ufsmain",
+        "method": "GET",
+        "query_params": [
+          "formid",
+          "ebz",
+          "ebd"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/ufs/{id}",
+        "method": "GET",
+        "query_params": [
+          "ebd",
+          "ebz"
+        ],
+        "path_params": true
+      },
+      {
+        "endpoint": "/g/collect",
+        "method": "POST",
+        "query_params": [
+          "v",
+          "tid",
+          "gtm",
+          "_p",
+          "gcd",
+          "npa",
+          "dma",
+          "tag_exp",
+          "cid",
+          "ul",
+          "sr",
+          "uaa",
+          "uab",
+          "uafvl",
+          "uamb",
+          "uap",
+          "uapv",
+          "uaw",
+          "are",
+          "frm",
+          "pscdl",
+          "_eu",
+          "_s",
+          "sid",
+          "sct",
+          "seg",
+          "dl",
+          "dt",
+          "en",
+          "_et",
+          "tfd"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/ufs/{id}",
+        "method": "POST",
+        "query_params": [
+          "ebz"
+        ],
+        "path_params": true
+      },
+      {
+        "endpoint": "/ufs/ufsajax",
+        "method": "POST",
+        "query_params": [
+          "ebz"
+        ],
+        "path_params": false
       }
-    },
-    {
-      "url": "https://forms.newforest.gov.uk/ufs/FIND_MY_COLLECTION.eb?ebd=0&ebz=2_1753116089440",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "text/html;charset=UTF-8",
-      "size": 17856,
-      "timestamp": "2025-07-21T16:41:35.279Z"
-    },
-    {
-      "url": "https://forms.newforest.gov.uk/ufs/ufsajax?ebz=2_1753116089440",
-      "method": "POST",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json",
-      "size": -1,
-      "timestamp": "2025-07-21T16:41:42.587Z"
-    },
-    {
-      "url": "https://forms.newforest.gov.uk/ufs/FIND_MY_COLLECTION.eb?ebz=2_1753116089440",
-      "method": "POST",
-      "status": 302,
-      "redirect_url": "https://forms.newforest.gov.uk/ufs/FIND_MY_COLLECTION.eb?ebd=0&ebz=2_1753116089440",
-      "mime_type": "x-unknown",
-      "size": -1,
-      "timestamp": "2025-07-21T16:41:42.781Z",
-      "form_data": {
-        "formid": "/Forms/FIND_MY_COLLECTION",
-        "ebs": "2_1753116089440",
-        "origrequrl": "https://forms.newforest.gov.uk/ufs/ufsmain?formid=FIND_MY_COLLECTION&ebz=1_1586362925470&ebd=0",
-        "formstack": "FIND_MY_COLLECTION:9e2a32e3-92a6-47f6-bcca-6bb9387afd9a",
-        "PAGE:E.h": "",
-        "PAGE:B.h": "",
-        "PAGE:N.h": "",
-        "PAGE:P.h": "",
-        "PAGE:S.h": "",
-        "PAGE:R.h": "",
-        "PAGE:D": "",
-        "PAGE:H": "",
-        "PAGE:X": "0",
-        "PAGE:Y": "0",
-        "PAGE:F": "CTID-9-_",
-        "ufsEndUser*": "1",
-        "pageSeq": "2",
-        "pageId": "PAGE_2",
-        "formStateId": "1",
-        "$USERVAR1": "",
-        "$USERVAR2": "",
-        "$USERVAR3": "",
-        "CTRL:6:_:A": "10007459926",
-        "HID:inputs": "ICTRL:6:_:A,ACTRL:9:_,ACTRL:34:_,APAGE:E.h,APAGE:B.h,APAGE:N.h,APAGE:P.h,APAGE:S.h,APAGE:R.h",
-        "ebReshow": "true"
+    ],
+    "redirects": [
+      {
+        "from": "/ufs/ufsmain",
+        "to": "ufsmain?formid=FIND_MY_COLLECTION&ebz=1_1586362925470&ebd=0",
+        "status": 302
+      },
+      {
+        "from": "/ufs/ufsmain",
+        "to": "FIND_MY_COLLECTION.eb?ebd=0&ebz=2_1753116089440",
+        "status": 302
+      },
+      {
+        "from": "/ufs/{id}",
+        "to": "FIND_MY_COLLECTION.eb?ebd=0&ebz=2_1753116089440",
+        "status": 302
+      },
+      {
+        "from": "/ufs/{id}",
+        "to": "FIND_MY_COLLECTION.eb?ebd=0&ebz=2_1753116089440",
+        "status": 302
       }
-    },
-    {
-      "url": "https://forms.newforest.gov.uk/ufs/FIND_MY_COLLECTION.eb?ebd=0&ebz=2_1753116089440",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "text/html;charset=UTF-8",
-      "size": 21921,
-      "timestamp": "2025-07-21T16:41:42.793Z"
-    }
-  ]
+    ],
+    "api_calls": [
+      {
+        "endpoint": "/c/v",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": [
+          "d",
+          "p",
+          "v",
+          "k",
+          "format"
+        ]
+      },
+      {
+        "endpoint": "/{id}/log",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": [
+          "k",
+          "d",
+          "u",
+          "c"
+        ]
+      },
+      {
+        "endpoint": "/ufs/ufsajax",
+        "method": "POST",
+        "response_type": "application/json",
+        "params": [
+          "ebz"
+        ]
+      },
+      {
+        "endpoint": "/ufs/ufsajax",
+        "method": "POST",
+        "response_type": "application/json",
+        "params": [
+          "ebz"
+        ]
+      }
+    ],
+    "form_submissions": []
+  },
+  "grouped_by_endpoint": {
+    "/rubbish": [
+      {
+        "timestamp": "2025-07-21T16:41:07.631Z",
+        "duration_ms": 115.52000000000001,
+        "endpoint": "/rubbish",
+        "host": "www.newforest.gov.uk",
+        "method": "GET",
+        "status": 200,
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7"
+        },
+        "response_headers": {
+          "cache-control": "no-cache, no-store",
+          "content-type": "text/html; charset=utf-8",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "SAMEORIGIN",
+          "x-powered-by": "",
+          "x-ua-compatible": "IE=Edge",
+          "x-xss-protection": "1; mode=block"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 39086,
+          "compressed": true,
+          "content_ref": "e3a1a2ce9524f221897b163b352e5cb6982dba2e.html"
+        }
+      }
+    ],
+    "/c/v": [
+      {
+        "timestamp": "2025-07-21T16:41:07.968Z",
+        "duration_ms": 45.898,
+        "endpoint": "/c/v",
+        "host": "apikeys.civiccomputing.com",
+        "method": "GET",
+        "status": 200,
+        "query_params": {
+          "d": [
+            "www.newforest.gov.uk"
+          ],
+          "p": [
+            "CookieControl Multi-Site"
+          ],
+          "v": [
+            "9"
+          ],
+          "k": [
+            "aa7f72f6cfd1b7da9bcd12c56478e839117bbb62"
+          ],
+          "format": [
+            "json"
+          ]
+        },
+        "request_headers": {
+          "accept": "application/json, text/plain, */*",
+          "origin": "https://www.newforest.gov.uk",
+          "referer": "https://www.newforest.gov.uk/"
+        },
+        "response_headers": {
+          "cache-control": "max-age=3600, private, no-store",
+          "content-type": "application/json",
+          "x-apikeys": "hit",
+          "x-cf-test": "true",
+          "x-content-type-options": "nosniff",
+          "x-xss-protection": "1"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 305,
+          "content_ref": "d592e29dfb030a9d494f83d313ee0823a2b42d2f.json"
+        }
+      }
+    ],
+    "/j/collect": [
+      {
+        "timestamp": "2025-07-21T16:41:17.345Z",
+        "duration_ms": 16.291,
+        "endpoint": "/j/collect",
+        "host": "www.google-analytics.com",
+        "method": "POST",
+        "status": 200,
+        "query_params": {
+          "v": [
+            "1"
+          ],
+          "_v": [
+            "j101"
+          ],
+          "a": [
+            "1382831417"
+          ],
+          "t": [
+            "pageview"
+          ],
+          "_s": [
+            "1"
+          ],
+          "dl": [
+            "https://www.newforest.gov.uk/rubbish"
+          ],
+          "ul": [
+            "en-gb"
+          ],
+          "de": [
+            "UTF-8"
+          ],
+          "dt": [
+            "Household rubbish - New Forest District Council"
+          ],
+          "sd": [
+            "24-bit"
+          ],
+          "sr": [
+            "800x600"
+          ],
+          "vp": [
+            "800x461"
+          ],
+          "je": [
+            "0"
+          ],
+          "_u": [
+            "IEBAAEABAAAAACAAI~"
+          ],
+          "jid": [
+            "428550196"
+          ],
+          "gjid": [
+            "1076638231"
+          ],
+          "cid": [
+            "297026535.1753116077"
+          ],
+          "tid": [
+            "G-7J42JNJSR4"
+          ],
+          "_gid": [
+            "1597476015.1753116077"
+          ],
+          "_r": [
+            "1"
+          ],
+          "_slc": [
+            "1"
+          ],
+          "z": [
+            "357058526"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "content-type": "text/plain",
+          "origin": "https://www.newforest.gov.uk",
+          "referer": "https://www.newforest.gov.uk/"
+        },
+        "response_headers": {
+          "cache-control": "no-cache, no-store, must-revalidate",
+          "content-type": "text/plain",
+          "x-content-type-options": "nosniff"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T16:41:17.397Z",
+        "duration_ms": 14.354,
+        "endpoint": "/j/collect",
+        "host": "www.google-analytics.com",
+        "method": "POST",
+        "status": 200,
+        "query_params": {
+          "v": [
+            "1"
+          ],
+          "_v": [
+            "j101"
+          ],
+          "a": [
+            "1382831417"
+          ],
+          "t": [
+            "pageview"
+          ],
+          "_s": [
+            "1"
+          ],
+          "dl": [
+            "https://www.newforest.gov.uk/rubbish"
+          ],
+          "ul": [
+            "en-gb"
+          ],
+          "de": [
+            "UTF-8"
+          ],
+          "dt": [
+            "Household rubbish - New Forest District Council"
+          ],
+          "sd": [
+            "24-bit"
+          ],
+          "sr": [
+            "800x600"
+          ],
+          "vp": [
+            "800x461"
+          ],
+          "je": [
+            "0"
+          ],
+          "_u": [
+            "aEDAAEABAAAAACAAI~"
+          ],
+          "jid": [
+            "142725867"
+          ],
+          "gjid": [
+            "1024714166"
+          ],
+          "cid": [
+            "297026535.1753116077"
+          ],
+          "tid": [
+            "UA-524935-5"
+          ],
+          "_gid": [
+            "1597476015.1753116077"
+          ],
+          "_r": [
+            "1"
+          ],
+          "_slc": [
+            "1"
+          ],
+          "gtm": [
+            "45He57h0h1n81TVMB7H5v831533855za200"
+          ],
+          "gcd": [
+            "13l3l3l3l1l1"
+          ],
+          "dma": [
+            "0"
+          ],
+          "tag_exp": [
+            "101509157~103116026~103200004~103233427~104684208~104684211"
+          ],
+          "z": [
+            "2075099627"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "content-type": "text/plain",
+          "origin": "https://www.newforest.gov.uk",
+          "referer": "https://www.newforest.gov.uk/"
+        },
+        "response_headers": {
+          "cache-control": "no-cache, no-store, must-revalidate",
+          "content-type": "text/plain",
+          "x-content-type-options": "nosniff"
+        }
+      }
+    ],
+    "/g/collect": [
+      {
+        "timestamp": "2025-07-21T16:41:17.489Z",
+        "duration_ms": 63.613,
+        "endpoint": "/g/collect",
+        "host": "region1.analytics.google.com",
+        "method": "POST",
+        "status": 204,
+        "query_params": {
+          "v": [
+            "2"
+          ],
+          "tid": [
+            "G-7J42JNJSR4"
+          ],
+          "gtm": [
+            "45je57h0h1v9100501916z8831533855za200zb831533855"
+          ],
+          "_p": [
+            "1753116077288"
+          ],
+          "_gaz": [
+            "1"
+          ],
+          "gcd": [
+            "13l3l3l3l1l1"
+          ],
+          "npa": [
+            "0"
+          ],
+          "dma": [
+            "0"
+          ],
+          "tag_exp": [
+            "101509157~103116026~103200004~103233427~104684208~104684211~104921712~104921714"
+          ],
+          "cid": [
+            "297026535.1753116077"
+          ],
+          "ul": [
+            "en-gb"
+          ],
+          "sr": [
+            "800x600"
+          ],
+          "uaa": [
+            "arm"
+          ],
+          "uab": [
+            "64"
+          ],
+          "uafvl": [
+            "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+          ],
+          "uamb": [
+            "0"
+          ],
+          "uap": [
+            "macOS"
+          ],
+          "uapv": [
+            "15.5.0"
+          ],
+          "uaw": [
+            "0"
+          ],
+          "are": [
+            "1"
+          ],
+          "frm": [
+            "0"
+          ],
+          "pscdl": [
+            "noapi"
+          ],
+          "_s": [
+            "1"
+          ],
+          "sid": [
+            "1753116077"
+          ],
+          "sct": [
+            "1"
+          ],
+          "seg": [
+            "0"
+          ],
+          "dl": [
+            "https://www.newforest.gov.uk/rubbish"
+          ],
+          "dt": [
+            "Household rubbish - New Forest District Council"
+          ],
+          "en": [
+            "page_view"
+          ],
+          "_fv": [
+            "1"
+          ],
+          "_ss": [
+            "1"
+          ],
+          "tfd": [
+            "9845"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "origin": "https://www.newforest.gov.uk",
+          "referer": "https://www.newforest.gov.uk/",
+          "x-browser-copyright": "Copyright 2025 Google LLC. All rights reserved.",
+          "x-browser-validation": "qvLgIVtG4U8GgiRPSI9IJ22mUlI=",
+          "x-browser-year": "2025",
+          "x-client-data": "CMiXywE="
+        },
+        "response_headers": {
+          "cache-control": "no-cache, no-store, must-revalidate",
+          "content-type": "text/plain"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T16:41:17.489Z",
+        "duration_ms": 70.973,
+        "endpoint": "/g/collect",
+        "host": "stats.g.doubleclick.net",
+        "method": "POST",
+        "status": 204,
+        "query_params": {
+          "v": [
+            "2"
+          ],
+          "tid": [
+            "G-7J42JNJSR4"
+          ],
+          "cid": [
+            "297026535.1753116077"
+          ],
+          "gtm": [
+            "45je57h0h1v9100501916z8831533855za200zb831533855"
+          ],
+          "aip": [
+            "1"
+          ],
+          "dma": [
+            "0"
+          ],
+          "gcd": [
+            "13l3l3l3l1l1"
+          ],
+          "npa": [
+            "0"
+          ],
+          "frm": [
+            "0"
+          ],
+          "tag_exp": [
+            "101509157~103116026~103200004~103233427~104684208~104684211~104921712~104921714"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "cookie": "[cookies present]",
+          "origin": "https://www.newforest.gov.uk",
+          "referer": "https://www.newforest.gov.uk/",
+          "x-browser-copyright": "Copyright 2025 Google LLC. All rights reserved.",
+          "x-browser-validation": "qvLgIVtG4U8GgiRPSI9IJ22mUlI=",
+          "x-browser-year": "2025",
+          "x-client-data": "CMiXywE="
+        },
+        "response_headers": {
+          "cache-control": "no-cache, no-store, must-revalidate",
+          "content-type": "text/plain"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T16:41:34.278Z",
+        "duration_ms": 14.026,
+        "endpoint": "/g/collect",
+        "host": "region1.analytics.google.com",
+        "method": "POST",
+        "status": 204,
+        "query_params": {
+          "v": [
+            "2"
+          ],
+          "tid": [
+            "G-7J42JNJSR4"
+          ],
+          "gtm": [
+            "45je57h0h1v9100501916z8831533855za200zb831533855"
+          ],
+          "_p": [
+            "1753116077288"
+          ],
+          "gcd": [
+            "13l3l3l3l1l1"
+          ],
+          "npa": [
+            "0"
+          ],
+          "dma": [
+            "0"
+          ],
+          "tag_exp": [
+            "101509157~103116026~103200004~103233427~104684208~104684211~104921712~104921714"
+          ],
+          "cid": [
+            "297026535.1753116077"
+          ],
+          "ul": [
+            "en-gb"
+          ],
+          "sr": [
+            "800x600"
+          ],
+          "uaa": [
+            "arm"
+          ],
+          "uab": [
+            "64"
+          ],
+          "uafvl": [
+            "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+          ],
+          "uamb": [
+            "0"
+          ],
+          "uap": [
+            "macOS"
+          ],
+          "uapv": [
+            "15.5.0"
+          ],
+          "uaw": [
+            "0"
+          ],
+          "are": [
+            "1"
+          ],
+          "frm": [
+            "0"
+          ],
+          "pscdl": [
+            "noapi"
+          ],
+          "_eu": [
+            "AAAAAAQ"
+          ],
+          "_s": [
+            "2"
+          ],
+          "sid": [
+            "1753116077"
+          ],
+          "sct": [
+            "1"
+          ],
+          "seg": [
+            "1"
+          ],
+          "dl": [
+            "https://www.newforest.gov.uk/rubbish"
+          ],
+          "dt": [
+            "Household rubbish - New Forest District Council"
+          ],
+          "en": [
+            "CTA"
+          ],
+          "_et": [
+            "11796"
+          ],
+          "tfd": [
+            "26647"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "origin": "https://www.newforest.gov.uk",
+          "referer": "https://www.newforest.gov.uk/",
+          "x-browser-copyright": "Copyright 2025 Google LLC. All rights reserved.",
+          "x-browser-validation": "qvLgIVtG4U8GgiRPSI9IJ22mUlI=",
+          "x-browser-year": "2025",
+          "x-client-data": "CMiXywE="
+        },
+        "response_headers": {
+          "cache-control": "no-cache, no-store, must-revalidate",
+          "content-type": "text/plain"
+        }
+      }
+    ],
+    "/{id}/log": [
+      {
+        "timestamp": "2025-07-21T16:41:17.294Z",
+        "duration_ms": 1138.492,
+        "endpoint": "/{id}/log",
+        "host": "clapi.civiccomputing.com",
+        "method": "GET",
+        "status": 200,
+        "path_params": [
+          "1"
+        ],
+        "query_params": {
+          "k": [
+            "aa7f72f6cfd1b7da9bcd12c56478e839117bbb62"
+          ],
+          "d": [
+            "www.newforest.gov.uk"
+          ],
+          "u": [
+            "undefined"
+          ],
+          "c": [
+            "\"{\\\"necessaryCookies\\\":[],\\\"optionalCookies\\\":{\\\"analytics\\\":\\\"accepted\\\",\\\"personalisation\\\":\\\"accepted\\\",\\\"socialsharing\\\":\\\"accepted\\\"},\\\"statement\\\":{\\\"shown\\\":true,\\\"updated\\\":\\\"30/06/2019\\\"},\\\"consentDate\\\":1753116077288,\\\"consentExpiry\\\":90,\\\"interactedWith\\\":true,\\\"user\\\":\\\"C6380AAA-A5CE-4F8E-B85A-AC4C78D8F1E8\\\"}\""
+          ]
+        },
+        "request_headers": {
+          "accept": "application/json, text/plain, */*",
+          "origin": "https://www.newforest.gov.uk",
+          "referer": "https://www.newforest.gov.uk/"
+        },
+        "response_headers": {
+          "content-type": "application/json",
+          "x-content-type-options": "nosniff",
+          "x-xss-protection": "0"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 13,
+          "content_ref": "a26ad77888189cc5d6973bb818e45f448628c5c1.json"
+        }
+      }
+    ],
+    "/": [
+      {
+        "timestamp": "2025-07-21T16:41:21.363Z",
+        "duration_ms": 93.203,
+        "endpoint": "/",
+        "host": "metrics.hotjar.io",
+        "method": "POST",
+        "status": 204,
+        "query_params": {
+          "v": [
+            "6"
+          ],
+          "site_id": [
+            "1808123"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "content-type": "text/plain;charset=UTF-8",
+          "origin": "https://www.newforest.gov.uk",
+          "referer": "https://www.newforest.gov.uk/"
+        }
+      }
+    ],
+    "/ufs/ufsmain": [
+      {
+        "timestamp": "2025-07-21T16:41:29.343Z",
+        "duration_ms": 67.28,
+        "endpoint": "/ufs/ufsmain",
+        "host": "forms.newforest.gov.uk",
+        "method": "GET",
+        "status": 302,
+        "query_params": {
+          "formid": [
+            "FIND_MY_COLLECTION"
+          ],
+          "ebz": [
+            "1_1586362925470",
+            "1_1586362925470"
+          ],
+          "ebd": [
+            "0"
+          ]
+        },
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+          "cookie": "[cookies present]",
+          "referer": "https://www.newforest.gov.uk/"
+        },
+        "response_headers": {
+          "cache-control": "private",
+          "location": "ufsmain?formid=FIND_MY_COLLECTION&ebz=1_1586362925470&ebd=0",
+          "set-cookie": "[cookies present]",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "SAMEORIGIN"
+        },
+        "redirect_to": "ufsmain?formid=FIND_MY_COLLECTION&ebz=1_1586362925470&ebd=0"
+      },
+      {
+        "timestamp": "2025-07-21T16:41:29.388Z",
+        "duration_ms": 29.205,
+        "endpoint": "/ufs/ufsmain",
+        "host": "forms.newforest.gov.uk",
+        "method": "GET",
+        "status": 302,
+        "query_params": {
+          "formid": [
+            "FIND_MY_COLLECTION"
+          ],
+          "ebz": [
+            "1_1586362925470"
+          ],
+          "ebd": [
+            "0"
+          ]
+        },
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+          "cookie": "[cookies present]",
+          "referer": "https://www.newforest.gov.uk/"
+        },
+        "response_headers": {
+          "cache-control": "no-store, no-cache, must-revalidate",
+          "location": "FIND_MY_COLLECTION.eb?ebd=0&ebz=2_1753116089440",
+          "set-cookie": "[cookies present]",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "SAMEORIGIN"
+        },
+        "redirect_to": "FIND_MY_COLLECTION.eb?ebd=0&ebz=2_1753116089440"
+      }
+    ],
+    "/ufs/{id}": [
+      {
+        "timestamp": "2025-07-21T16:41:29.417Z",
+        "duration_ms": 13.336,
+        "endpoint": "/ufs/{id}",
+        "host": "forms.newforest.gov.uk",
+        "method": "GET",
+        "status": 200,
+        "path_params": [
+          "FIND_MY_COLLECTION.eb"
+        ],
+        "query_params": {
+          "ebd": [
+            "0"
+          ],
+          "ebz": [
+            "2_1753116089440"
+          ]
+        },
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+          "cookie": "[cookies present]",
+          "referer": "https://www.newforest.gov.uk/"
+        },
+        "response_headers": {
+          "cache-control": "no-store, no-cache, must-revalidate",
+          "content-type": "text/html;charset=UTF-8",
+          "set-cookie": "[cookies present]",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "SAMEORIGIN"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 13919,
+          "content_ref": "e89a54356f3ff2ceaab9f0570f725372325bbe24.html"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T16:41:35.268Z",
+        "duration_ms": 10.56,
+        "endpoint": "/ufs/{id}",
+        "host": "forms.newforest.gov.uk",
+        "method": "POST",
+        "status": 302,
+        "path_params": [
+          "FIND_MY_COLLECTION.eb"
+        ],
+        "query_params": {
+          "ebz": [
+            "2_1753116089440"
+          ]
+        },
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+          "content-type": "application/x-www-form-urlencoded",
+          "cookie": "[cookies present]",
+          "origin": "https://forms.newforest.gov.uk",
+          "referer": "https://forms.newforest.gov.uk/ufs/FIND_MY_COLLECTION.eb?ebd=0&ebz=2_1753116089440"
+        },
+        "response_headers": {
+          "cache-control": "no-store, no-cache, must-revalidate",
+          "location": "FIND_MY_COLLECTION.eb?ebd=0&ebz=2_1753116089440",
+          "set-cookie": "[cookies present]",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "SAMEORIGIN"
+        },
+        "redirect_to": "FIND_MY_COLLECTION.eb?ebd=0&ebz=2_1753116089440"
+      },
+      {
+        "timestamp": "2025-07-21T16:41:35.279Z",
+        "duration_ms": 342.727,
+        "endpoint": "/ufs/{id}",
+        "host": "forms.newforest.gov.uk",
+        "method": "GET",
+        "status": 200,
+        "path_params": [
+          "FIND_MY_COLLECTION.eb"
+        ],
+        "query_params": {
+          "ebd": [
+            "0"
+          ],
+          "ebz": [
+            "2_1753116089440"
+          ]
+        },
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+          "cookie": "[cookies present]",
+          "referer": "https://forms.newforest.gov.uk/ufs/FIND_MY_COLLECTION.eb?ebd=0&ebz=2_1753116089440"
+        },
+        "response_headers": {
+          "cache-control": "no-store, no-cache, must-revalidate",
+          "content-type": "text/html;charset=UTF-8",
+          "set-cookie": "[cookies present]",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "SAMEORIGIN"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 17856,
+          "content_ref": "b2f99ed59101da63b31ddce7fdd845b059e2ee9a.html"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T16:41:42.781Z",
+        "duration_ms": 12.016,
+        "endpoint": "/ufs/{id}",
+        "host": "forms.newforest.gov.uk",
+        "method": "POST",
+        "status": 302,
+        "path_params": [
+          "FIND_MY_COLLECTION.eb"
+        ],
+        "query_params": {
+          "ebz": [
+            "2_1753116089440"
+          ]
+        },
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+          "content-type": "application/x-www-form-urlencoded",
+          "cookie": "[cookies present]",
+          "origin": "https://forms.newforest.gov.uk",
+          "referer": "https://forms.newforest.gov.uk/ufs/FIND_MY_COLLECTION.eb?ebd=0&ebz=2_1753116089440"
+        },
+        "response_headers": {
+          "cache-control": "no-store, no-cache, must-revalidate",
+          "location": "FIND_MY_COLLECTION.eb?ebd=0&ebz=2_1753116089440",
+          "set-cookie": "[cookies present]",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "SAMEORIGIN"
+        },
+        "redirect_to": "FIND_MY_COLLECTION.eb?ebd=0&ebz=2_1753116089440"
+      },
+      {
+        "timestamp": "2025-07-21T16:41:42.793Z",
+        "duration_ms": 15.790999999999999,
+        "endpoint": "/ufs/{id}",
+        "host": "forms.newforest.gov.uk",
+        "method": "GET",
+        "status": 200,
+        "path_params": [
+          "FIND_MY_COLLECTION.eb"
+        ],
+        "query_params": {
+          "ebd": [
+            "0"
+          ],
+          "ebz": [
+            "2_1753116089440"
+          ]
+        },
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+          "cookie": "[cookies present]",
+          "referer": "https://forms.newforest.gov.uk/ufs/FIND_MY_COLLECTION.eb?ebd=0&ebz=2_1753116089440"
+        },
+        "response_headers": {
+          "cache-control": "no-store, no-cache, must-revalidate",
+          "content-type": "text/html;charset=UTF-8",
+          "set-cookie": "[cookies present]",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "SAMEORIGIN"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 21921,
+          "content_ref": "54192b7a6a71008acbe22bcb2cfde45217dfc7fb.html"
+        }
+      }
+    ],
+    "/ufs/ufsajax": [
+      {
+        "timestamp": "2025-07-21T16:41:35.107Z",
+        "duration_ms": 86.49499999999999,
+        "endpoint": "/ufs/ufsajax",
+        "host": "forms.newforest.gov.uk",
+        "method": "POST",
+        "status": 200,
+        "query_params": {
+          "ebz": [
+            "2_1753116089440"
+          ]
+        },
+        "request_headers": {
+          "accept": "application/json, text/javascript, */*; q=0.01",
+          "content-type": "application/x-www-form-urlencoded; charset=UTF-8",
+          "cookie": "[cookies present]",
+          "origin": "https://forms.newforest.gov.uk",
+          "referer": "https://forms.newforest.gov.uk/ufs/FIND_MY_COLLECTION.eb?ebd=0&ebz=2_1753116089440",
+          "x-requested-with": "XMLHttpRequest"
+        },
+        "response_headers": {
+          "content-type": "application/json",
+          "set-cookie": "[cookies present]",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "SAMEORIGIN"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": -1
+        }
+      },
+      {
+        "timestamp": "2025-07-21T16:41:42.587Z",
+        "duration_ms": 108.36,
+        "endpoint": "/ufs/ufsajax",
+        "host": "forms.newforest.gov.uk",
+        "method": "POST",
+        "status": 200,
+        "query_params": {
+          "ebz": [
+            "2_1753116089440"
+          ]
+        },
+        "request_headers": {
+          "accept": "application/json, text/javascript, */*; q=0.01",
+          "content-type": "application/x-www-form-urlencoded; charset=UTF-8",
+          "cookie": "[cookies present]",
+          "origin": "https://forms.newforest.gov.uk",
+          "referer": "https://forms.newforest.gov.uk/ufs/FIND_MY_COLLECTION.eb?ebd=0&ebz=2_1753116089440",
+          "x-requested-with": "XMLHttpRequest"
+        },
+        "response_headers": {
+          "content-type": "application/json",
+          "set-cookie": "[cookies present]",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "SAMEORIGIN"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": -1
+        }
+      }
+    ]
+  }
 }

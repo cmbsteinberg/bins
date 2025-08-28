@@ -13,7 +13,7 @@ from typing import Any, Optional, Union
 from dotenv import load_dotenv
 from enum import Enum
 
-from pydantic import BaseModel, Field, HttpUrl, validator
+from pydantic import BaseModel, Field, HttpUrl, field_validator
 from pydantic_ai import Agent
 from pydantic_ai.models.google import GoogleModel
 from pydantic_ai.providers.google import GoogleProvider
@@ -40,8 +40,6 @@ class HttpMethod(str, Enum):
 
     GET = "GET"
     POST = "POST"
-    PUT = "PUT"
-    DELETE = "DELETE"
 
 
 class AuthConfig(BaseModel):
@@ -52,20 +50,20 @@ class AuthConfig(BaseModel):
     token_patterns: dict[str, str] = Field(default_factory=dict)
     form_data: dict[str, str] = Field(default_factory=dict)
 
-    @validator("landing_page")
-    def landing_page_required_for_auth(cls, v, values):
+    @field_validator("landing_page")
+    def landing_page_required_for_auth(cls, v):
         """Validate that landing_page is provided when auth type requires it."""
-        auth_type = values.get("type")
+        auth_type = cls.type
         if auth_type in [AuthType.TOKEN, AuthType.FORM_TOKEN] and not v:
             raise ValueError(
                 f"landing_page is required when auth type is '{auth_type.value}'"
             )
         return v
 
-    @validator("token_patterns")
-    def token_patterns_required_for_auth(cls, v, values):
+    @field_validator("token_patterns")
+    def token_patterns_required_for_auth(cls, v):
         """Validate that token_patterns are provided when auth type requires them."""
-        auth_type = values.get("type")
+        auth_type = cls.type
         if auth_type in [AuthType.TOKEN, AuthType.FORM_TOKEN] and not v:
             raise ValueError(
                 f"token_patterns are required when auth type is '{auth_type.value}'"
@@ -80,29 +78,12 @@ class EndpointConfig(BaseModel):
     method: HttpMethod = HttpMethod.GET
     params: dict[str, Union[str, int]] = Field(default_factory=dict)
 
-    @validator("params")
-    def validate_params(cls, v):
-        """Ensure all param values are strings or integers."""
-        for key, value in v.items():
-            if not isinstance(value, (str, int)):
-                raise ValueError(
-                    f"Parameter '{key}' must be a string or integer, got {type(value)}"
-                )
-        return v
-
 
 class EndpointsConfig(BaseModel):
     """Collection of endpoints for a council."""
 
     address_search: EndpointConfig
     collection_data: Optional[EndpointConfig] = None
-
-    @validator("collection_data")
-    def collection_data_validation(cls, v, values):
-        """Add any cross-endpoint validation if needed."""
-        # Could add validation here, e.g., ensuring collection_data URL is compatible
-        # with address_search results
-        return v
 
 
 class CouncilConfig(BaseModel):
@@ -115,30 +96,16 @@ class CouncilConfig(BaseModel):
     metadata_endpoint: Optional[HttpUrl] = None
     payload_template: Optional[str] = None
 
-    @validator("name")
-    def name_not_empty(cls, v):
-        """Ensure name is not empty or just whitespace."""
-        if not v or not v.strip():
-            raise ValueError("Council name cannot be empty")
-        return v.strip()
-
-    @validator("payload_template")
+    @field_validator("payload_template")
     def payload_template_for_post(cls, v, values):
         """Validate payload template is provided for POST endpoints if needed."""
-        endpoints = values.get("endpoints")
+        endpoints = cls.endpoints
         if endpoints and hasattr(endpoints, "address_search"):
             if endpoints.address_search.method == HttpMethod.POST and not v:
                 # This is a warning rather than an error, as some POST endpoints
                 # might use form data instead of JSON payload
                 pass
         return v
-
-    class Config:
-        """Pydantic model configuration."""
-
-        use_enum_values = True
-        validate_assignment = True
-        extra = "forbid"  # Prevent additional fields not defined in the model
 
 
 class ConfigGenerationResult(BaseModel):
@@ -161,8 +128,7 @@ scraping data and extract the API configuration needed to programmatically retri
 bin collection information.
 
 You will be provided with:
-1. reduced_results.json - Contains the final structured output from scraping
-2. trace.json - Contains detailed workflow steps, navigation events, and API calls made during scraping
+1. trace.network - Contains detailed navigation events, and API calls made during scraping via Playwright.
 
 From this data, you need to determine:
 - The API endpoints used for address search and collection data
@@ -216,62 +182,15 @@ def create_agent() -> Agent:
 
 async def load_council_data(council_dir: Path) -> dict[str, Any]:
     """Load reduced_results.json and trace.json for a council."""
-    reduced_results_file = council_dir / "reduced_results.json"
     trace_file = council_dir / "trace.json"
 
-    if not reduced_results_file.exists() or not trace_file.exists():
-        raise FileNotFoundError(f"Missing required files in {council_dir}")
-
-    with open(reduced_results_file, "r") as f:
-        reduced_results = json.load(f)
-
-    with open(trace_file, "r") as f:
-        trace_data = json.load(f)
+    with open(trace_file) as f:
+        trace = json.load(f)
 
     return {
-        "reduced_results": reduced_results,
-        "trace": trace_data,
+        "trace": trace,
         "council_name": council_dir.name,
     }
-
-
-def check_scraping_success(council_data: dict[str, Any]) -> tuple[bool, Optional[str]]:
-    """Check if the scraping was successful based on the data."""
-    reduced_results = council_data["reduced_results"]
-
-    # Check for explicit error in reduced_results
-    if "output" in reduced_results and isinstance(reduced_results["output"], dict):
-        if "error" in reduced_results["output"]:
-            return False, f"Scraping failed: {reduced_results['output']['error']}"
-
-    # Check if we have valid output data
-    if "output" in reduced_results:
-        output = reduced_results["output"]
-        if isinstance(output, dict):
-            # Check if we have bin collection data
-            required_fields = [
-                "general_waste",
-                "recycling",
-                "food_waste",
-                "garden_waste",
-            ]
-            if any(field in output for field in required_fields):
-                # Check if any of the bin data has actual information
-                for field in required_fields:
-                    if (
-                        field in output
-                        and output[field]
-                        and isinstance(output[field], dict)
-                    ):
-                        if output[field].get("next_pickup_day") or output[field].get(
-                            "frequency"
-                        ):
-                            return True, None
-
-        # If output exists but doesn't contain meaningful bin data
-        return False, "Scraping completed but no meaningful bin collection data found"
-
-    return False, "No output data found in reduced_results"
 
 
 def check_council_already_processed(council_dir: Path) -> bool:
@@ -290,9 +209,6 @@ async def generate_council_config(
 Analyze the following council scraping data and generate the API configuration:
 
 Council: {council_name}
-
-=== REDUCED RESULTS ===
-{json.dumps(council_data["reduced_results"], indent=2)}
 
 === TRACE DATA ===
 {json.dumps(council_data["trace"], indent=2)}
@@ -341,16 +257,6 @@ async def llm_call(
                     error_type="missing_files",
                 )
 
-            # Check if scraping was successful
-            success, error_msg = check_scraping_success(council_data)
-            if not success:
-                return ConfigGenerationResult(
-                    council_name=council_name,
-                    success=False,
-                    error=error_msg,
-                    error_type="unsuccessful_scraping",
-                )
-
             # Generate config using LLM agent
             agent = create_agent()
             try:
@@ -386,6 +292,7 @@ async def llm_call(
 
 async def for_all_councils(
     traces_dir: Path = None,
+    skip_councils=True,
     max_concurrent: int = 5,
 ) -> dict[str, ConfigGenerationResult]:
     """Generate configurations for all councils in the traces directory."""
@@ -404,7 +311,7 @@ async def for_all_councils(
     council_dirs = []
     skipped_count = 0
     for council_dir in all_council_dirs:
-        if check_council_already_processed(council_dir):
+        if skip_councils and check_council_already_processed(council_dir):
             skipped_count += 1
             logger.info(f"Skipping {council_dir.name} - already processed")
         else:
@@ -467,4 +374,10 @@ async def for_all_councils(
 
 
 if __name__ == "__main__":
-    asyncio.run(for_all_councils(traces_dir=Path("data/traces"), max_concurrent=20))
+    asyncio.run(
+        for_all_councils(
+            traces_dir=Path("data/traces"),
+            max_concurrent=20,
+            skip_councils=True,
+        )
+    )

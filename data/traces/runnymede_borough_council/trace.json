@@ -1,70 +1,157 @@
 {
-  "metadata": {
-    "trace_name": "runnymede_borough_council",
-    "processed_at": "2025-08-26 18:44:24",
-    "workflow_steps_count": 3,
-    "navigation_events_count": 3
-  },
-  "scraping_patterns": {
-    "login_detected": false,
-    "form_submissions": 0,
-    "navigation_count": 3,
-    "unique_domains": [
-      "www.runnymede.gov.uk"
-    ],
-    "api_endpoints": [],
-    "data_extraction_indicators": []
-  },
-  "workflow_steps": [
+  "entries": [
     {
-      "action": "goto",
-      "target": "https://www.runnymede.gov.uk/article/15324/Check-your-bin-day",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
+      "timestamp": "2025-07-22T07:35:59.061Z",
+      "duration_ms": 57.043000000000006,
+      "endpoint": "/article/{id}/Check-your-bin-day",
+      "host": "www.runnymede.gov.uk",
+      "method": "GET",
+      "status": 403,
+      "path_params": [
+        "15324"
+      ],
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7"
+      },
+      "response_headers": {
+        "content-type": "text/html"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 520,
+        "content_ref": "76f70f10f6b6a17b7cec2d17c689f92c80f8bd56.html"
+      }
     },
     {
-      "action": "goto",
-      "target": "https://www.runnymede.gov.uk/",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
+      "timestamp": "2025-07-22T07:36:00.582Z",
+      "duration_ms": 8.514999999999999,
+      "endpoint": "/",
+      "host": "www.runnymede.gov.uk",
+      "method": "GET",
+      "status": 403,
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7"
+      },
+      "response_headers": {
+        "content-type": "text/html"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 520,
+        "content_ref": "76f70f10f6b6a17b7cec2d17c689f92c80f8bd56.html"
+      }
     },
     {
-      "action": "goto",
-      "target": "https://www.runnymede.gov.uk/article/15324/Check-your-bin-day",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
+      "timestamp": "2025-07-22T07:36:02.022Z",
+      "duration_ms": 7.704,
+      "endpoint": "/article/{id}/Check-your-bin-day",
+      "host": "www.runnymede.gov.uk",
+      "method": "GET",
+      "status": 403,
+      "path_params": [
+        "15324"
+      ],
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7"
+      },
+      "response_headers": {
+        "content-type": "text/html"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 520,
+        "content_ref": "76f70f10f6b6a17b7cec2d17c689f92c80f8bd56.html"
+      }
     }
   ],
-  "navigation_events": [
-    {
-      "url": "https://www.runnymede.gov.uk/article/15324/Check-your-bin-day",
-      "method": "GET",
-      "status": 403,
-      "redirect_url": null,
-      "mime_type": "text/html",
-      "size": 520,
-      "timestamp": "2025-07-22T07:35:59.061Z"
+  "analysis": {
+    "total_requests": 3,
+    "unique_endpoints": 2,
+    "methods_used": [
+      "GET"
+    ],
+    "status_codes": {
+      "403": 3
     },
-    {
-      "url": "https://www.runnymede.gov.uk/",
-      "method": "GET",
-      "status": 403,
-      "redirect_url": null,
-      "mime_type": "text/html",
-      "size": 520,
-      "timestamp": "2025-07-22T07:36:00.582Z"
-    },
-    {
-      "url": "https://www.runnymede.gov.uk/article/15324/Check-your-bin-day",
-      "method": "GET",
-      "status": 403,
-      "redirect_url": null,
-      "mime_type": "text/html",
-      "size": 520,
-      "timestamp": "2025-07-22T07:36:02.022Z"
-    }
-  ]
+    "endpoints_with_params": [
+      {
+        "endpoint": "/article/{id}/Check-your-bin-day",
+        "method": "GET",
+        "query_params": [],
+        "path_params": true
+      }
+    ],
+    "redirects": [],
+    "api_calls": [],
+    "form_submissions": []
+  },
+  "grouped_by_endpoint": {
+    "/article/{id}/Check-your-bin-day": [
+      {
+        "timestamp": "2025-07-22T07:35:59.061Z",
+        "duration_ms": 57.043000000000006,
+        "endpoint": "/article/{id}/Check-your-bin-day",
+        "host": "www.runnymede.gov.uk",
+        "method": "GET",
+        "status": 403,
+        "path_params": [
+          "15324"
+        ],
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7"
+        },
+        "response_headers": {
+          "content-type": "text/html"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 520,
+          "content_ref": "76f70f10f6b6a17b7cec2d17c689f92c80f8bd56.html"
+        }
+      },
+      {
+        "timestamp": "2025-07-22T07:36:02.022Z",
+        "duration_ms": 7.704,
+        "endpoint": "/article/{id}/Check-your-bin-day",
+        "host": "www.runnymede.gov.uk",
+        "method": "GET",
+        "status": 403,
+        "path_params": [
+          "15324"
+        ],
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7"
+        },
+        "response_headers": {
+          "content-type": "text/html"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 520,
+          "content_ref": "76f70f10f6b6a17b7cec2d17c689f92c80f8bd56.html"
+        }
+      }
+    ],
+    "/": [
+      {
+        "timestamp": "2025-07-22T07:36:00.582Z",
+        "duration_ms": 8.514999999999999,
+        "endpoint": "/",
+        "host": "www.runnymede.gov.uk",
+        "method": "GET",
+        "status": 403,
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7"
+        },
+        "response_headers": {
+          "content-type": "text/html"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 520,
+          "content_ref": "76f70f10f6b6a17b7cec2d17c689f92c80f8bd56.html"
+        }
+      }
+    ]
+  }
 }

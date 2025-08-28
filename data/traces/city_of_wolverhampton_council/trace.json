@@ -1,218 +1,3129 @@
 {
-  "metadata": {
-    "trace_name": "city_of_wolverhampton_council",
-    "processed_at": "2025-08-26 18:44:24",
-    "workflow_steps_count": 6,
-    "navigation_events_count": 16
-  },
-  "scraping_patterns": {
-    "login_detected": false,
-    "form_submissions": 3,
-    "navigation_count": 1,
-    "unique_domains": [
-      "www.wolverhampton.gov.uk",
-      "cdnjs.cloudflare.com"
-    ],
-    "api_endpoints": [],
-    "data_extraction_indicators": []
-  },
-  "workflow_steps": [
+  "entries": [
     {
-      "action": "goto",
-      "target": "http://www.wolverhampton.gov.uk/bincollections",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
-    },
-    {
-      "action": "click",
-      "target": "aria-ref=e295 >> internal:describe=\"Okay, I agree\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
-    },
-    {
-      "action": "fill",
-      "target": "aria-ref=e119 >> internal:describe=\"Search eg. WV1 1SG\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0,
-      "value": "WV1 1QF"
-    },
-    {
-      "action": "click",
-      "target": "aria-ref=e120 >> internal:describe=\"Look up address\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
-    },
-    {
-      "action": "selectOption",
-      "target": "aria-ref=e303 >> internal:describe=\"combobox\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0,
-      "value": null
-    },
-    {
-      "action": "click",
-      "target": "aria-ref=e350 >> internal:describe=\"Search\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
-    }
-  ],
-  "navigation_events": [
-    {
-      "url": "http://www.wolverhampton.gov.uk/bincollections",
+      "timestamp": "2025-07-21T10:28:58.809Z",
+      "duration_ms": 91.062,
+      "endpoint": "/bincollections",
+      "host": "www.wolverhampton.gov.uk",
       "method": "GET",
       "status": 301,
-      "redirect_url": "https://www.wolverhampton.gov.uk/bincollections",
-      "mime_type": "text/html",
-      "size": -1,
-      "timestamp": "2025-07-21T10:28:58.809Z"
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7"
+      },
+      "response_headers": {
+        "content-type": "text/html",
+        "location": "https://www.wolverhampton.gov.uk/bincollections",
+        "x-cache": "Redirect from cloudfront"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": -1
+      },
+      "redirect_to": "https://www.wolverhampton.gov.uk/bincollections"
     },
     {
-      "url": "https://www.wolverhampton.gov.uk/bincollections",
+      "timestamp": "2025-07-21T10:28:58.859Z",
+      "duration_ms": 109.878,
+      "endpoint": "/bincollections",
+      "host": "www.wolverhampton.gov.uk",
       "method": "GET",
       "status": 301,
-      "redirect_url": "https://www.wolverhampton.gov.uk/waste-and-recycling/bin-collection-dates",
-      "mime_type": "text/html; charset=utf-8",
-      "size": -1,
-      "timestamp": "2025-07-21T10:28:58.859Z"
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7"
+      },
+      "response_headers": {
+        "cache-control": "max-age=300, public",
+        "content-type": "text/html; charset=utf-8",
+        "location": "https://www.wolverhampton.gov.uk/waste-and-recycling/bin-collection-dates",
+        "x-cache": "Miss from cloudfront",
+        "x-content-type-options": "nosniff",
+        "x-drupal-cache": "HIT",
+        "x-frame-options": "SAMEORIGIN",
+        "x-generator": "Drupal 10 (https://www.drupal.org)",
+        "x-redirect-id": "7909",
+        "x-xss-protection": "1; mode=block"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": -1
+      },
+      "redirect_to": "https://www.wolverhampton.gov.uk/waste-and-recycling/bin-collection-dates"
     },
     {
-      "url": "https://www.wolverhampton.gov.uk/waste-and-recycling/bin-collection-dates",
+      "timestamp": "2025-07-21T10:28:58.947Z",
+      "duration_ms": 14.647,
+      "endpoint": "/waste-and-recycling/bin-collection-dates",
+      "host": "www.wolverhampton.gov.uk",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "text/html; charset=UTF-8",
-      "size": 64843,
-      "timestamp": "2025-07-21T10:28:58.947Z"
-    },
-    {
-      "url": "https://www.wolverhampton.gov.uk/themes/custom/omega_bigbluedoor/fonts/font-awesome-4.7.0/fonts/fontawesome-webfont.woff2?v=4.7.0",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/octet-stream",
-      "size": 77160,
-      "timestamp": "2025-07-21T10:28:59.092Z"
-    },
-    {
-      "url": "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/webfonts/fa-brands-400.woff2",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/octet-stream; charset=utf-8",
-      "size": 118072,
-      "timestamp": "2025-07-21T10:28:59.092Z"
-    },
-    {
-      "url": "https://www.wolverhampton.gov.uk/themes/custom/omega_bigbluedoor/fonts/icomoon/fonts/icomoon.ttf?2mv7uj=",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/octet-stream",
-      "size": 2224,
-      "timestamp": "2025-07-21T10:28:59.093Z"
-    },
-    {
-      "url": "https://www.wolverhampton.gov.uk/modules/sandbox/accessibility_tool/fonts/icomoon/fonts/icomoon.ttf?vpgtup=",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/octet-stream",
-      "size": 2372,
-      "timestamp": "2025-07-21T10:28:59.093Z"
-    },
-    {
-      "url": "https://www.wolverhampton.gov.uk/node/hidden-content/10638",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "text/html; charset=UTF-8",
-      "size": 0,
-      "timestamp": "2025-07-21T10:28:59.112Z"
-    },
-    {
-      "url": "https://www.wolverhampton.gov.uk/eu-cookie-compliance/store_consent/banner",
-      "method": "POST",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json",
-      "size": 4,
-      "timestamp": "2025-07-21T10:29:01.684Z"
-    },
-    {
-      "url": "https://www.wolverhampton.gov.uk/waste-and-recycling/bin-collection-dates?ajax_form=1&_wrapper_format=drupal_ajax",
-      "method": "POST",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json",
-      "size": 6729,
-      "timestamp": "2025-07-21T10:29:06.322Z"
-    },
-    {
-      "url": "https://www.wolverhampton.gov.uk/waste-and-recycling/bin-collection-dates",
-      "method": "POST",
-      "status": 303,
-      "redirect_url": "https://www.wolverhampton.gov.uk/find-my-nearest/WV1%201QF/100071351943",
-      "mime_type": "text/html; charset=utf-8",
-      "size": -1,
-      "timestamp": "2025-07-21T10:29:12.717Z",
-      "form_data": {
-        "form_build_id": "form-4mEuWhq6BTsioQ1zbhmkcI8ldQ8PfWA0m3KSsCqGNxU",
-        "form_id": "cwc_find_my_nearest_search",
-        "postcode": "WV1 1QF",
-        "uprn": "100071351943",
-        "op": "Search"
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7"
+      },
+      "response_headers": {
+        "cache-control": "max-age=300, public",
+        "content-type": "text/html; charset=UTF-8",
+        "x-cache": "Hit from cloudfront",
+        "x-content-type-options": "nosniff",
+        "x-drupal-cache": "HIT",
+        "x-drupal-dynamic-cache": "HIT",
+        "x-frame-options": "SAMEORIGIN",
+        "x-generator": "Drupal 10 (https://www.drupal.org)",
+        "x-xss-protection": "1; mode=block"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 64843,
+        "compressed": true,
+        "content_ref": "506e3534dd12eafe313d6637d0ecf5b7e170fc1e.html"
       }
     },
     {
-      "url": "https://www.wolverhampton.gov.uk/find-my-nearest/WV1%201QF/100071351943",
+      "timestamp": "2025-07-21T10:28:59.093Z",
+      "duration_ms": 27.076999999999998,
+      "endpoint": "/themes/custom/omega_bigbluedoor/fonts/icomoon/fonts/icomoon.ttf",
+      "host": "www.wolverhampton.gov.uk",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "text/html; charset=UTF-8",
-      "size": 49366,
-      "timestamp": "2025-07-21T10:29:13.104Z"
+      "request_headers": {
+        "accept": "*/*",
+        "origin": "https://www.wolverhampton.gov.uk",
+        "referer": "https://www.wolverhampton.gov.uk/sites/default/files/css/css_8hjXj9Zsl-WtRTTK7iGiv5qxIx2TS6vzyDfd-z6Rug0.css?delta=3&language=en&theme=omega_bigbluedoor&include=eJx1kmFu5CAMhS_EhF97HsuAJ2EDOMVG09nTrzNt2qbTSijYn62XhwFjJJEccsl6B2UuHp8Q_BUXMK6W2Nr8lxhy5OZCSHBDAV2ywIYzwRC6juJ_K0yi90KmSqrUQThmLCAL9txmCEOVm_i9yXIXC4rc7bdCR1zNosnJkTdOVuNOPvWxYZmSCfL8hhr3iiX_I0cDIvOayba6lYwtkv8JQqIrjqKOXtU8rIfse-q40oz-8YXQsaXd5xkSpthHDXLiV_NyJovWAlSoUtNzpWJuYHh8w8fZv8J9uP2MFMN38MqNq10qfZiAkOdQBiXm7p-I27Dj3HFb5JjAJ5lG20YoWRZK7mXkuFLK6j-i6W3j_ueiVDfu2O-XG_f1gp1HS04Ie1wAtww4lB_TJyX_C3fvz6SaKsJ-DeKv3BRvJOZ82vu42RR_anxGky42cyd3MXePx_UfqbI0ZQ"
+      },
+      "response_headers": {
+        "content-type": "application/octet-stream",
+        "x-cache": "Hit from cloudfront",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "SAMEORIGIN",
+        "x-xss-protection": "1; mode=block"
+      }
     },
     {
-      "url": "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/webfonts/fa-brands-400.woff2",
+      "timestamp": "2025-07-21T10:28:59.093Z",
+      "duration_ms": 28.865000000000002,
+      "endpoint": "/modules/sandbox/accessibility_tool/fonts/icomoon/fonts/icomoon.ttf",
+      "host": "www.wolverhampton.gov.uk",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/octet-stream; charset=utf-8",
-      "size": -1,
-      "timestamp": "2025-07-21T10:29:15.846Z"
+      "request_headers": {
+        "accept": "*/*",
+        "origin": "https://www.wolverhampton.gov.uk",
+        "referer": "https://www.wolverhampton.gov.uk/sites/default/files/css/css_aleCwitUEChOq9M3nicjZ8XSjgzzIkUzkrKcYe0NNOA.css?delta=2&language=en&theme=omega_bigbluedoor&include=eJx1kmFu5CAMhS_EhF97HsuAJ2EDOMVG09nTrzNt2qbTSijYn62XhwFjJJEccsl6B2UuHp8Q_BUXMK6W2Nr8lxhy5OZCSHBDAV2ywIYzwRC6juJ_K0yi90KmSqrUQThmLCAL9txmCEOVm_i9yXIXC4rc7bdCR1zNosnJkTdOVuNOPvWxYZmSCfL8hhr3iiX_I0cDIvOayba6lYwtkv8JQqIrjqKOXtU8rIfse-q40oz-8YXQsaXd5xkSpthHDXLiV_NyJovWAlSoUtNzpWJuYHh8w8fZv8J9uP2MFMN38MqNq10qfZiAkOdQBiXm7p-I27Dj3HFb5JjAJ5lG20YoWRZK7mXkuFLK6j-i6W3j_ueiVDfu2O-XG_f1gp1HS04Ie1wAtww4lB_TJyX_C3fvz6SaKsJ-DeKv3BRvJOZ82vu42RR_anxGky42cyd3MXePx_UfqbI0ZQ"
+      },
+      "response_headers": {
+        "content-type": "application/octet-stream",
+        "x-cache": "Hit from cloudfront",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "SAMEORIGIN",
+        "x-xss-protection": "1; mode=block"
+      }
     },
     {
-      "url": "https://www.wolverhampton.gov.uk/modules/sandbox/accessibility_tool/fonts/icomoon/fonts/icomoon.ttf?vpgtup=",
+      "timestamp": "2025-07-21T10:28:59.092Z",
+      "duration_ms": 28.395,
+      "endpoint": "/themes/custom/omega_bigbluedoor/fonts/font-awesome-4.7.0/fonts/{id}",
+      "host": "www.wolverhampton.gov.uk",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/octet-stream",
-      "size": -1,
-      "timestamp": "2025-07-21T10:29:15.846Z"
+      "path_params": [
+        "fontawesome-webfont.woff2"
+      ],
+      "query_params": {
+        "v": [
+          "4.7.0"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "origin": "https://www.wolverhampton.gov.uk",
+        "referer": "https://www.wolverhampton.gov.uk/sites/default/files/css/css_8hjXj9Zsl-WtRTTK7iGiv5qxIx2TS6vzyDfd-z6Rug0.css?delta=3&language=en&theme=omega_bigbluedoor&include=eJx1kmFu5CAMhS_EhF97HsuAJ2EDOMVG09nTrzNt2qbTSijYn62XhwFjJJEccsl6B2UuHp8Q_BUXMK6W2Nr8lxhy5OZCSHBDAV2ywIYzwRC6juJ_K0yi90KmSqrUQThmLCAL9txmCEOVm_i9yXIXC4rc7bdCR1zNosnJkTdOVuNOPvWxYZmSCfL8hhr3iiX_I0cDIvOayba6lYwtkv8JQqIrjqKOXtU8rIfse-q40oz-8YXQsaXd5xkSpthHDXLiV_NyJovWAlSoUtNzpWJuYHh8w8fZv8J9uP2MFMN38MqNq10qfZiAkOdQBiXm7p-I27Dj3HFb5JjAJ5lG20YoWRZK7mXkuFLK6j-i6W3j_ueiVDfu2O-XG_f1gp1HS04Ie1wAtww4lB_TJyX_C3fvz6SaKsJ-DeKv3BRvJOZ82vu42RR_anxGky42cyd3MXePx_UfqbI0ZQ"
+      },
+      "response_headers": {
+        "content-type": "application/octet-stream",
+        "x-cache": "Hit from cloudfront",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "SAMEORIGIN",
+        "x-xss-protection": "1; mode=block"
+      }
     },
     {
-      "url": "https://www.wolverhampton.gov.uk/themes/custom/omega_bigbluedoor/fonts/font-awesome-4.7.0/fonts/fontawesome-webfont.woff2?v=4.7.0",
+      "timestamp": "2025-07-21T10:28:59.112Z",
+      "duration_ms": 84.197,
+      "endpoint": "/node/hidden-content/{id}",
+      "host": "www.wolverhampton.gov.uk",
+      "method": "GET",
+      "status": 200,
+      "path_params": [
+        "10638"
+      ],
+      "request_headers": {
+        "accept": "text/html, */*; q=0.01",
+        "cookie": "[cookies present]",
+        "referer": "https://www.wolverhampton.gov.uk/waste-and-recycling/bin-collection-dates",
+        "x-requested-with": "XMLHttpRequest"
+      },
+      "response_headers": {
+        "cache-control": "must-revalidate, no-cache, private",
+        "content-type": "text/html; charset=UTF-8",
+        "x-cache": "Miss from cloudfront",
+        "x-content-type-options": "nosniff",
+        "x-drupal-cache": "UNCACHEABLE (no cacheability)",
+        "x-drupal-dynamic-cache": "UNCACHEABLE (no cacheability)",
+        "x-frame-options": "SAMEORIGIN",
+        "x-generator": "Drupal 10 (https://www.drupal.org)",
+        "x-xss-protection": "1; mode=block"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 0,
+        "content_ref": "da39a3ee5e6b4b0d3255bfef95601890afd80709.html"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T10:29:00.210Z",
+      "duration_ms": 229.314,
+      "endpoint": "/ccm/collect",
+      "host": "www.google.com",
+      "method": "POST",
+      "status": 200,
+      "query_params": {
+        "en": [
+          "page_view"
+        ],
+        "dl": [
+          "https://www.wolverhampton.gov.uk/waste-and-recycling/bin-collection-dates"
+        ],
+        "scrsrc": [
+          "www.googletagmanager.com"
+        ],
+        "frm": [
+          "0"
+        ],
+        "rnd": [
+          "1095049538.1753093740"
+        ],
+        "dt": [
+          "Bin collection dates | City Of Wolverhampton Council"
+        ],
+        "auid": [
+          "1983935895.1753093740"
+        ],
+        "navt": [
+          "n"
+        ],
+        "npa": [
+          "0"
+        ],
+        "gtm": [
+          "45He57g1v839367899za200"
+        ],
+        "gcd": [
+          "13l3l3l3l1l1"
+        ],
+        "dma": [
+          "0"
+        ],
+        "tag_exp": [
+          "101509157~103116026~103200004~103233427~104684208~104684211~104921715~104921717"
+        ],
+        "tft": [
+          "1753093740202"
+        ],
+        "tfd": [
+          "1395"
+        ],
+        "apve": [
+          "1"
+        ],
+        "apvf": [
+          "sb"
+        ]
+      },
+      "request_headers": {
+        "referer": "https://www.wolverhampton.gov.uk/"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T10:29:00.336Z",
+      "duration_ms": 13.733,
+      "endpoint": "/j/collect",
+      "host": "www.google-analytics.com",
+      "method": "POST",
+      "status": 200,
+      "query_params": {
+        "v": [
+          "1"
+        ],
+        "_v": [
+          "j101"
+        ],
+        "a": [
+          "1542322717"
+        ],
+        "t": [
+          "pageview"
+        ],
+        "_s": [
+          "1"
+        ],
+        "dl": [
+          "https://www.wolverhampton.gov.uk/waste-and-recycling/bin-collection-dates"
+        ],
+        "ul": [
+          "en-gb"
+        ],
+        "de": [
+          "UTF-8"
+        ],
+        "dt": [
+          "Bin collection dates | City Of Wolverhampton Council"
+        ],
+        "sd": [
+          "24-bit"
+        ],
+        "sr": [
+          "800x600"
+        ],
+        "vp": [
+          "800x461"
+        ],
+        "je": [
+          "0"
+        ],
+        "_u": [
+          "YADAAEABAAAAACAAI~"
+        ],
+        "jid": [
+          "86050513"
+        ],
+        "gjid": [
+          "1179044657"
+        ],
+        "cid": [
+          "1665689636.1753093740"
+        ],
+        "tid": [
+          "UA-28643929-1"
+        ],
+        "_gid": [
+          "1047728858.1753093740"
+        ],
+        "_r": [
+          "1"
+        ],
+        "_slc": [
+          "1"
+        ],
+        "gtm": [
+          "45He57g1n81MSMPZQXv839367899za200"
+        ],
+        "gcd": [
+          "13l3l3l3l1l1"
+        ],
+        "dma": [
+          "0"
+        ],
+        "tag_exp": [
+          "101509157~103116026~103200004~103233427~104684208~104684211~104921715~104921717"
+        ],
+        "z": [
+          "1618905736"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "content-type": "text/plain",
+        "origin": "https://www.wolverhampton.gov.uk",
+        "referer": "https://www.wolverhampton.gov.uk/"
+      },
+      "response_headers": {
+        "cache-control": "no-cache, no-store, must-revalidate",
+        "content-type": "text/plain",
+        "x-content-type-options": "nosniff"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T10:29:00.314Z",
+      "duration_ms": 63.892,
+      "endpoint": "/g/collect",
+      "host": "region1.google-analytics.com",
+      "method": "POST",
+      "status": 204,
+      "query_params": {
+        "v": [
+          "2"
+        ],
+        "tid": [
+          "G-NGDJHT45YN"
+        ],
+        "gtm": [
+          "45je57g1v9105006080z8839367899za200zb839367899"
+        ],
+        "_p": [
+          "1753093739064"
+        ],
+        "gcd": [
+          "13l3l3l3l1l1"
+        ],
+        "npa": [
+          "0"
+        ],
+        "dma": [
+          "0"
+        ],
+        "tag_exp": [
+          "101509157~103116026~103200004~103233427~104684208~104684211~104921712~104921714"
+        ],
+        "cid": [
+          "1665689636.1753093740"
+        ],
+        "ul": [
+          "en-gb"
+        ],
+        "sr": [
+          "800x600"
+        ],
+        "uaa": [
+          "arm"
+        ],
+        "uab": [
+          "64"
+        ],
+        "uafvl": [
+          "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+        ],
+        "uamb": [
+          "0"
+        ],
+        "uap": [
+          "macOS"
+        ],
+        "uapv": [
+          "15.5.0"
+        ],
+        "uaw": [
+          "0"
+        ],
+        "are": [
+          "1"
+        ],
+        "frm": [
+          "0"
+        ],
+        "pscdl": [
+          "noapi"
+        ],
+        "_s": [
+          "1"
+        ],
+        "sid": [
+          "1753093740"
+        ],
+        "sct": [
+          "1"
+        ],
+        "seg": [
+          "0"
+        ],
+        "dl": [
+          "https://www.wolverhampton.gov.uk/waste-and-recycling/bin-collection-dates"
+        ],
+        "dt": [
+          "Bin collection dates | City Of Wolverhampton Council"
+        ],
+        "en": [
+          "page_view"
+        ],
+        "_fv": [
+          "1"
+        ],
+        "_nsi": [
+          "1"
+        ],
+        "_ss": [
+          "1"
+        ],
+        "tfd": [
+          "1463"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "cookie": "[cookies present]",
+        "origin": "https://www.wolverhampton.gov.uk",
+        "referer": "https://www.wolverhampton.gov.uk/"
+      },
+      "response_headers": {
+        "cache-control": "no-cache, no-store, must-revalidate",
+        "content-type": "text/plain"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T10:29:00.313Z",
+      "duration_ms": 52.287,
+      "endpoint": "/static/service_worker/57f0/sw_iframe.html",
+      "host": "www.googletagmanager.com",
+      "method": "GET",
+      "status": 200,
+      "query_params": {
+        "origin": [
+          "https://www.wolverhampton.gov.uk"
+        ]
+      },
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7"
+      },
+      "response_headers": {
+        "cache-control": "public, max-age=31536000",
+        "content-type": "text/html",
+        "x-content-type-options": "nosniff",
+        "x-xss-protection": "0"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 3554,
+        "compressed": true,
+        "content_ref": "880b1afe892ea664f14708206280f3ae96c07a11.html"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T10:29:01.684Z",
+      "duration_ms": 78.372,
+      "endpoint": "/eu-cookie-compliance/store_consent/banner",
+      "host": "www.wolverhampton.gov.uk",
+      "method": "POST",
+      "status": 200,
+      "request_headers": {
+        "accept": "*/*",
+        "cookie": "[cookies present]",
+        "origin": "https://www.wolverhampton.gov.uk",
+        "referer": "https://www.wolverhampton.gov.uk/waste-and-recycling/bin-collection-dates",
+        "x-requested-with": "XMLHttpRequest"
+      },
+      "response_headers": {
+        "cache-control": "must-revalidate, no-cache, private",
+        "content-type": "application/json",
+        "x-cache": "Miss from cloudfront",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "SAMEORIGIN",
+        "x-generator": "Drupal 10 (https://www.drupal.org)",
+        "x-xss-protection": "1; mode=block"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 4,
+        "content_ref": "5ffe533b830f08a0326348a9160afafc8ada44db.json"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T10:29:06.322Z",
+      "duration_ms": 742.821,
+      "endpoint": "/waste-and-recycling/bin-collection-dates",
+      "host": "www.wolverhampton.gov.uk",
+      "method": "POST",
+      "status": 200,
+      "query_params": {
+        "ajax_form": [
+          "1"
+        ],
+        "_wrapper_format": [
+          "drupal_ajax"
+        ]
+      },
+      "request_headers": {
+        "accept": "application/json, text/javascript, */*; q=0.01",
+        "content-type": "application/x-www-form-urlencoded; charset=UTF-8",
+        "cookie": "[cookies present]",
+        "origin": "https://www.wolverhampton.gov.uk",
+        "referer": "https://www.wolverhampton.gov.uk/waste-and-recycling/bin-collection-dates",
+        "x-requested-with": "XMLHttpRequest"
+      },
+      "response_headers": {
+        "cache-control": "must-revalidate, no-cache, private",
+        "content-type": "application/json",
+        "x-cache": "Miss from cloudfront",
+        "x-content-type-options": "nosniff",
+        "x-drupal-ajax-token": "1",
+        "x-frame-options": "SAMEORIGIN",
+        "x-generator": "Drupal 10 (https://www.drupal.org)",
+        "x-xss-protection": "1; mode=block"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 6729,
+        "compressed": true,
+        "content_ref": "bde9a8af7b50718bdec1bfc2b7e545e7a78fc8ce.json"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T10:29:11.321Z",
+      "duration_ms": 72.33600000000001,
+      "endpoint": "/g/collect",
+      "host": "region1.google-analytics.com",
+      "method": "POST",
+      "status": 204,
+      "query_params": {
+        "v": [
+          "2"
+        ],
+        "tid": [
+          "G-NGDJHT45YN"
+        ],
+        "gtm": [
+          "45je57g1v9105006080za200zb839367899"
+        ],
+        "_p": [
+          "1753093739064"
+        ],
+        "gcd": [
+          "13l3l3l3l1l1"
+        ],
+        "npa": [
+          "0"
+        ],
+        "dma": [
+          "0"
+        ],
+        "tag_exp": [
+          "101509157~103116026~103200004~103233427~104684208~104684211~104921712~104921714"
+        ],
+        "gdid": [
+          "dMDhkMT"
+        ],
+        "cid": [
+          "1665689636.1753093740"
+        ],
+        "ul": [
+          "en-gb"
+        ],
+        "sr": [
+          "800x600"
+        ],
+        "uaa": [
+          "arm"
+        ],
+        "uab": [
+          "64"
+        ],
+        "uafvl": [
+          "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+        ],
+        "uamb": [
+          "0"
+        ],
+        "uap": [
+          "macOS"
+        ],
+        "uapv": [
+          "15.5.0"
+        ],
+        "uaw": [
+          "0"
+        ],
+        "are": [
+          "1"
+        ],
+        "frm": [
+          "0"
+        ],
+        "pscdl": [
+          "noapi"
+        ],
+        "_eu": [
+          "AEEAAAQ"
+        ],
+        "_s": [
+          "2"
+        ],
+        "sid": [
+          "1753093740"
+        ],
+        "sct": [
+          "1"
+        ],
+        "seg": [
+          "0"
+        ],
+        "dl": [
+          "https://www.wolverhampton.gov.uk/waste-and-recycling/bin-collection-dates"
+        ],
+        "dt": [
+          "Bin collection dates | City Of Wolverhampton Council"
+        ],
+        "en": [
+          "form_start"
+        ],
+        "ep.form_id": [
+          "cwc-find-my-nearest-search"
+        ],
+        "ep.form_destination": [
+          "https://www.wolverhampton.gov.uk/waste-and-recycling/bin-collection-dates"
+        ],
+        "epn.form_length": [
+          "4"
+        ],
+        "ep.first_field_id": [
+          "edit-postcode"
+        ],
+        "ep.first_field_name": [
+          "postcode"
+        ],
+        "ep.first_field_type": [
+          "text"
+        ],
+        "epn.first_field_position": [
+          "1"
+        ],
+        "_et": [
+          "6044"
+        ],
+        "tfd": [
+          "12512"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "cookie": "[cookies present]",
+        "origin": "https://www.wolverhampton.gov.uk",
+        "referer": "https://www.wolverhampton.gov.uk/"
+      },
+      "response_headers": {
+        "cache-control": "no-cache, no-store, must-revalidate",
+        "content-type": "text/plain"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T10:29:12.717Z",
+      "duration_ms": 384.899,
+      "endpoint": "/waste-and-recycling/bin-collection-dates",
+      "host": "www.wolverhampton.gov.uk",
+      "method": "POST",
+      "status": 303,
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+        "content-type": "application/x-www-form-urlencoded",
+        "cookie": "[cookies present]",
+        "origin": "https://www.wolverhampton.gov.uk",
+        "referer": "https://www.wolverhampton.gov.uk/waste-and-recycling/bin-collection-dates"
+      },
+      "response_headers": {
+        "cache-control": "must-revalidate, no-cache, private",
+        "content-type": "text/html; charset=utf-8",
+        "location": "https://www.wolverhampton.gov.uk/find-my-nearest/WV1%201QF/100071351943",
+        "x-cache": "Miss from cloudfront",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "SAMEORIGIN",
+        "x-generator": "Drupal 10 (https://www.drupal.org)",
+        "x-xss-protection": "1; mode=block"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": -1
+      },
+      "redirect_to": "https://www.wolverhampton.gov.uk/find-my-nearest/WV1%201QF/100071351943"
+    },
+    {
+      "timestamp": "2025-07-21T10:29:15.796Z",
+      "duration_ms": -1,
+      "endpoint": "/g/collect",
+      "host": "region1.google-analytics.com",
+      "method": "POST",
+      "status": -1,
+      "query_params": {
+        "v": [
+          "2"
+        ],
+        "tid": [
+          "G-NGDJHT45YN"
+        ],
+        "gtm": [
+          "45je57g1v9105006080za200zb839367899"
+        ],
+        "_p": [
+          "1753093739064"
+        ],
+        "gcd": [
+          "13l3l3l3l1l1"
+        ],
+        "npa": [
+          "0"
+        ],
+        "dma": [
+          "0"
+        ],
+        "tag_exp": [
+          "101509157~103116026~103200004~103233427~104684208~104684211~104921712~104921714"
+        ],
+        "gdid": [
+          "dMDhkMT"
+        ],
+        "cid": [
+          "1665689636.1753093740"
+        ],
+        "ul": [
+          "en-gb"
+        ],
+        "sr": [
+          "800x600"
+        ],
+        "uaa": [
+          "arm"
+        ],
+        "uab": [
+          "64"
+        ],
+        "uafvl": [
+          "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+        ],
+        "uamb": [
+          "0"
+        ],
+        "uap": [
+          "macOS"
+        ],
+        "uapv": [
+          "15.5.0"
+        ],
+        "uaw": [
+          "0"
+        ],
+        "are": [
+          "1"
+        ],
+        "frm": [
+          "0"
+        ],
+        "pscdl": [
+          "noapi"
+        ],
+        "_eu": [
+          "AAAAAAQ"
+        ],
+        "_s": [
+          "4"
+        ],
+        "sid": [
+          "1753093740"
+        ],
+        "sct": [
+          "1"
+        ],
+        "seg": [
+          "1"
+        ],
+        "dl": [
+          "https://www.wolverhampton.gov.uk/waste-and-recycling/bin-collection-dates"
+        ],
+        "dt": [
+          "Bin collection dates | City Of Wolverhampton Council"
+        ],
+        "en": [
+          "user_engagement"
+        ],
+        "_et": [
+          "3125"
+        ],
+        "tfd": [
+          "16982"
+        ]
+      },
+      "request_headers": {
+        "referer": "https://www.wolverhampton.gov.uk/"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T10:29:15.794Z",
+      "duration_ms": -1,
+      "endpoint": "/g/collect",
+      "host": "region1.google-analytics.com",
+      "method": "POST",
+      "status": -1,
+      "query_params": {
+        "v": [
+          "2"
+        ],
+        "tid": [
+          "G-NGDJHT45YN"
+        ],
+        "gtm": [
+          "45je57g1v9105006080za200zb839367899"
+        ],
+        "_p": [
+          "1753093739064"
+        ],
+        "gcd": [
+          "13l3l3l3l1l1"
+        ],
+        "npa": [
+          "0"
+        ],
+        "dma": [
+          "0"
+        ],
+        "tag_exp": [
+          "101509157~103116026~103200004~103233427~104684208~104684211~104921712~104921714"
+        ],
+        "gdid": [
+          "dMDhkMT"
+        ],
+        "cid": [
+          "1665689636.1753093740"
+        ],
+        "ul": [
+          "en-gb"
+        ],
+        "sr": [
+          "800x600"
+        ],
+        "uaa": [
+          "arm"
+        ],
+        "uab": [
+          "64"
+        ],
+        "uafvl": [
+          "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+        ],
+        "uamb": [
+          "0"
+        ],
+        "uap": [
+          "macOS"
+        ],
+        "uapv": [
+          "15.5.0"
+        ],
+        "uaw": [
+          "0"
+        ],
+        "are": [
+          "1"
+        ],
+        "frm": [
+          "0"
+        ],
+        "pscdl": [
+          "noapi"
+        ],
+        "_eu": [
+          "AEEAAAQ"
+        ],
+        "_s": [
+          "3"
+        ],
+        "sid": [
+          "1753093740"
+        ],
+        "sct": [
+          "1"
+        ],
+        "seg": [
+          "1"
+        ],
+        "dl": [
+          "https://www.wolverhampton.gov.uk/waste-and-recycling/bin-collection-dates"
+        ],
+        "dt": [
+          "Bin collection dates | City Of Wolverhampton Council"
+        ],
+        "en": [
+          "form_submit"
+        ],
+        "ep.form_id": [
+          "cwc-find-my-nearest-search"
+        ],
+        "ep.form_destination": [
+          "https://www.wolverhampton.gov.uk/waste-and-recycling/bin-collection-dates"
+        ],
+        "epn.form_length": [
+          "7"
+        ],
+        "ep.form_submit_text": [
+          "Search"
+        ],
+        "_et": [
+          "6339"
+        ],
+        "tfd": [
+          "16981"
+        ]
+      },
+      "request_headers": {
+        "referer": "https://www.wolverhampton.gov.uk/"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T10:29:15.855Z",
+      "duration_ms": 12.368,
+      "endpoint": "/themes/custom/omega_bigbluedoor/fonts/font-awesome-4.7.0/fonts/{id}",
+      "host": "www.wolverhampton.gov.uk",
       "method": "GET",
       "status": 304,
-      "redirect_url": null,
-      "mime_type": "x-unknown",
-      "size": -1,
-      "timestamp": "2025-07-21T10:29:15.855Z"
+      "path_params": [
+        "fontawesome-webfont.woff2"
+      ],
+      "query_params": {
+        "v": [
+          "4.7.0"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "cookie": "[cookies present]",
+        "origin": "https://www.wolverhampton.gov.uk",
+        "referer": "https://www.wolverhampton.gov.uk/sites/default/files/css/css_Iggz-4_337wMiChtlwh4K8ccCsI21KmrnatcHmK_77Q.css?delta=3&language=en&theme=omega_bigbluedoor&include=eJx1kmFuwyAMhS9Ewq-dBxlwUi-AMwxqs9PPzdaqaTsJYfvDsp6fgBBQhDwlaptrzMnCC3KfYjyERQs9q33IHQUuJiQQ2ZQL3vKsM2BGMYEr2sI1Q6JvNNhdYF4INeQ1EZSA9h10ESfoqRm8tERlsbH2FdL4VxrOOIPdb-crlEhlfoIIMdSevRz4pFqO5NRycpgwY2nHlwxUnOL-hG_LPcJVST2iBv4ZXLhwVlvxLsJ5mn3qGJmrfSHmq1NYMFKz92z8DVw_hoZ55Qp1G85clwEq9xKNINRwcrCSg954NxUb2n-4EQ4ESdeKBO7qrtiJS4Mzigoar31c1Jx3ja9obCe10sgmqm7_FD-zdPIN"
+      },
+      "response_headers": {
+        "x-cache": "Hit from cloudfront",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "SAMEORIGIN",
+        "x-xss-protection": "1; mode=block"
+      }
     },
     {
-      "url": "https://www.wolverhampton.gov.uk/themes/custom/omega_bigbluedoor/fonts/icomoon/fonts/icomoon.ttf?2mv7uj=",
+      "timestamp": "2025-07-21T10:29:15.856Z",
+      "duration_ms": 14.029,
+      "endpoint": "/themes/custom/omega_bigbluedoor/fonts/icomoon/fonts/icomoon.ttf",
+      "host": "www.wolverhampton.gov.uk",
       "method": "GET",
       "status": 304,
-      "redirect_url": null,
-      "mime_type": "x-unknown",
-      "size": -1,
-      "timestamp": "2025-07-21T10:29:15.856Z"
+      "request_headers": {
+        "accept": "*/*",
+        "cookie": "[cookies present]",
+        "origin": "https://www.wolverhampton.gov.uk",
+        "referer": "https://www.wolverhampton.gov.uk/sites/default/files/css/css_Iggz-4_337wMiChtlwh4K8ccCsI21KmrnatcHmK_77Q.css?delta=3&language=en&theme=omega_bigbluedoor&include=eJx1kmFuwyAMhS9Ewq-dBxlwUi-AMwxqs9PPzdaqaTsJYfvDsp6fgBBQhDwlaptrzMnCC3KfYjyERQs9q33IHQUuJiQQ2ZQL3vKsM2BGMYEr2sI1Q6JvNNhdYF4INeQ1EZSA9h10ESfoqRm8tERlsbH2FdL4VxrOOIPdb-crlEhlfoIIMdSevRz4pFqO5NRycpgwY2nHlwxUnOL-hG_LPcJVST2iBv4ZXLhwVlvxLsJ5mn3qGJmrfSHmq1NYMFKz92z8DVw_hoZ55Qp1G85clwEq9xKNINRwcrCSg954NxUb2n-4EQ4ESdeKBO7qrtiJS4Mzigoar31c1Jx3ja9obCe10sgmqm7_FD-zdPIN"
+      },
+      "response_headers": {
+        "x-cache": "Hit from cloudfront",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "SAMEORIGIN",
+        "x-xss-protection": "1; mode=block"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T10:29:13.104Z",
+      "duration_ms": 2677.328,
+      "endpoint": "/find-my-nearest/WV1%201QF/{id}",
+      "host": "www.wolverhampton.gov.uk",
+      "method": "GET",
+      "status": 200,
+      "path_params": [
+        "100071351943"
+      ],
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+        "cookie": "[cookies present]",
+        "referer": "https://www.wolverhampton.gov.uk/waste-and-recycling/bin-collection-dates"
+      },
+      "response_headers": {
+        "cache-control": "max-age=300, public",
+        "content-type": "text/html; charset=UTF-8",
+        "x-cache": "Miss from cloudfront",
+        "x-content-type-options": "nosniff",
+        "x-drupal-cache": "MISS",
+        "x-drupal-dynamic-cache": "MISS",
+        "x-frame-options": "SAMEORIGIN",
+        "x-generator": "Drupal 10 (https://www.drupal.org)",
+        "x-xss-protection": "1; mode=block"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 49366,
+        "compressed": true,
+        "content_ref": "b91d8989072127607283b6e0aaecd9b649a24bc8.html"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T10:29:15.846Z",
+      "duration_ms": 1.065,
+      "endpoint": "/modules/sandbox/accessibility_tool/fonts/icomoon/fonts/icomoon.ttf",
+      "host": "www.wolverhampton.gov.uk",
+      "method": "GET",
+      "status": 200,
+      "request_headers": {
+        "origin": "https://www.wolverhampton.gov.uk",
+        "referer": "https://www.wolverhampton.gov.uk/sites/default/files/css/css_1JAGBM3kR5DVhssKn8Lmw3rGIlbTsd4teC4knmMLvg4.css?delta=2&language=en&theme=omega_bigbluedoor&include=eJx1kmFuwyAMhS9Ewq-dBxlwUi-AMwxqs9PPzdaqaTsJYfvDsp6fgBBQhDwlaptrzMnCC3KfYjyERQs9q33IHQUuJiQQ2ZQL3vKsM2BGMYEr2sI1Q6JvNNhdYF4INeQ1EZSA9h10ESfoqRm8tERlsbH2FdL4VxrOOIPdb-crlEhlfoIIMdSevRz4pFqO5NRycpgwY2nHlwxUnOL-hG_LPcJVST2iBv4ZXLhwVlvxLsJ5mn3qGJmrfSHmq1NYMFKz92z8DVw_hoZ55Qp1G85clwEq9xKNINRwcrCSg954NxUb2n-4EQ4ESdeKBO7qrtiJS4Mzigoar31c1Jx3ja9obCe10sgmqm7_FD-zdPIN"
+      },
+      "response_headers": {
+        "x-content-type-options": "nosniff",
+        "x-cache": "Hit from cloudfront",
+        "content-type": "application/octet-stream",
+        "x-frame-options": "SAMEORIGIN",
+        "x-xss-protection": "1; mode=block"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T10:29:15.884Z",
+      "duration_ms": 18.234,
+      "endpoint": "/ccm/collect",
+      "host": "www.google.com",
+      "method": "POST",
+      "status": 200,
+      "query_params": {
+        "en": [
+          "page_view"
+        ],
+        "dr": [
+          "www.wolverhampton.gov.uk"
+        ],
+        "dl": [
+          "https://www.wolverhampton.gov.uk/find-my-nearest/WV1%201QF/100071351943"
+        ],
+        "scrsrc": [
+          "www.googletagmanager.com"
+        ],
+        "frm": [
+          "0"
+        ],
+        "rnd": [
+          "663821501.1753093756"
+        ],
+        "dt": [
+          "In your area | City Of Wolverhampton Council"
+        ],
+        "auid": [
+          "1983935895.1753093740"
+        ],
+        "navt": [
+          "n"
+        ],
+        "npa": [
+          "0"
+        ],
+        "gtm": [
+          "45He57g1v839367899za200"
+        ],
+        "gcd": [
+          "13l3l3l3l1l1"
+        ],
+        "dma": [
+          "0"
+        ],
+        "tag_exp": [
+          "101509157~103116026~103200004~103233427~104684208~104684211~104921715~104921717"
+        ],
+        "tft": [
+          "1753093755862"
+        ],
+        "tfd": [
+          "3204"
+        ],
+        "apve": [
+          "1"
+        ],
+        "apvf": [
+          "f"
+        ]
+      },
+      "request_headers": {
+        "referer": "https://www.wolverhampton.gov.uk/"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T10:29:15.976Z",
+      "duration_ms": 12.700999999999999,
+      "endpoint": "/j/collect",
+      "host": "www.google-analytics.com",
+      "method": "POST",
+      "status": 200,
+      "query_params": {
+        "v": [
+          "1"
+        ],
+        "_v": [
+          "j101"
+        ],
+        "a": [
+          "524921281"
+        ],
+        "t": [
+          "pageview"
+        ],
+        "_s": [
+          "1"
+        ],
+        "dl": [
+          "https://www.wolverhampton.gov.uk/find-my-nearest/WV1%201QF/100071351943"
+        ],
+        "ul": [
+          "en-gb"
+        ],
+        "de": [
+          "UTF-8"
+        ],
+        "dt": [
+          "In your area | City Of Wolverhampton Council"
+        ],
+        "sd": [
+          "24-bit"
+        ],
+        "sr": [
+          "800x600"
+        ],
+        "vp": [
+          "800x461"
+        ],
+        "je": [
+          "0"
+        ],
+        "_u": [
+          "QACAAEABAAAAACAAI~"
+        ],
+        "cid": [
+          "1665689636.1753093740"
+        ],
+        "tid": [
+          "UA-28643929-1"
+        ],
+        "_gid": [
+          "1047728858.1753093740"
+        ],
+        "_slc": [
+          "1"
+        ],
+        "gtm": [
+          "45He57g1n81MSMPZQXv839367899za200"
+        ],
+        "gcd": [
+          "13l3l3l3l1l1"
+        ],
+        "dma": [
+          "0"
+        ],
+        "tag_exp": [
+          "101509157~103116026~103200004~103233427~104684208~104684211~104921715~104921717"
+        ],
+        "z": [
+          "1202159209"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "content-type": "text/plain",
+        "origin": "https://www.wolverhampton.gov.uk",
+        "referer": "https://www.wolverhampton.gov.uk/"
+      },
+      "response_headers": {
+        "cache-control": "no-cache, no-store, must-revalidate",
+        "content-type": "text/plain",
+        "x-content-type-options": "nosniff"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T10:29:15.974Z",
+      "duration_ms": 833.851,
+      "endpoint": "/static/service_worker/57f0/sw_iframe.html",
+      "host": "www.googletagmanager.com",
+      "method": "GET",
+      "status": 200,
+      "query_params": {
+        "origin": [
+          "https://www.wolverhampton.gov.uk"
+        ]
+      },
+      "response_headers": {
+        "cache-control": "public, max-age=31536000",
+        "content-type": "text/html",
+        "x-content-type-options": "nosniff",
+        "x-xss-protection": "0"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 3554,
+        "compressed": true,
+        "content_ref": "880b1afe892ea664f14708206280f3ae96c07a11.html"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T10:29:20.897Z",
+      "duration_ms": 17.693,
+      "endpoint": "/g/collect",
+      "host": "region1.google-analytics.com",
+      "method": "POST",
+      "status": 204,
+      "query_params": {
+        "v": [
+          "2"
+        ],
+        "tid": [
+          "G-NGDJHT45YN"
+        ],
+        "gtm": [
+          "45je57g1v9105006080z8839367899za200zb839367899"
+        ],
+        "_p": [
+          "1753093755834"
+        ],
+        "gcd": [
+          "13l3l3l3l1l1"
+        ],
+        "npa": [
+          "0"
+        ],
+        "dma": [
+          "0"
+        ],
+        "tag_exp": [
+          "101509157~103116026~103200004~103233427~104684208~104684211~104921712~104921714"
+        ],
+        "cid": [
+          "1665689636.1753093740"
+        ],
+        "ul": [
+          "en-gb"
+        ],
+        "sr": [
+          "800x600"
+        ],
+        "uaa": [
+          "arm"
+        ],
+        "uab": [
+          "64"
+        ],
+        "uafvl": [
+          "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+        ],
+        "uamb": [
+          "0"
+        ],
+        "uap": [
+          "macOS"
+        ],
+        "uapv": [
+          "15.5.0"
+        ],
+        "uaw": [
+          "0"
+        ],
+        "are": [
+          "1"
+        ],
+        "frm": [
+          "0"
+        ],
+        "pscdl": [
+          "noapi"
+        ],
+        "_eu": [
+          "AAAAAAQ"
+        ],
+        "_s": [
+          "1"
+        ],
+        "sid": [
+          "1753093740"
+        ],
+        "sct": [
+          "1"
+        ],
+        "seg": [
+          "1"
+        ],
+        "dl": [
+          "https://www.wolverhampton.gov.uk/find-my-nearest/WV1 1QF/100071351943"
+        ],
+        "dr": [
+          "https://www.wolverhampton.gov.uk/waste-and-recycling/bin-collection-dates"
+        ],
+        "dt": [
+          "In your area | City Of Wolverhampton Council"
+        ],
+        "en": [
+          "page_view"
+        ],
+        "tfd": [
+          "8234"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "cookie": "[cookies present]",
+        "origin": "https://www.wolverhampton.gov.uk",
+        "referer": "https://www.wolverhampton.gov.uk/"
+      },
+      "response_headers": {
+        "cache-control": "no-cache, no-store, must-revalidate",
+        "content-type": "text/plain"
+      }
     }
-  ]
+  ],
+  "analysis": {
+    "total_requests": 25,
+    "unique_endpoints": 12,
+    "methods_used": [
+      "GET",
+      "POST"
+    ],
+    "status_codes": {
+      "301": 2,
+      "200": 15,
+      "204": 3,
+      "303": 1,
+      "-1": 2,
+      "304": 2
+    },
+    "endpoints_with_params": [
+      {
+        "endpoint": "/themes/custom/omega_bigbluedoor/fonts/font-awesome-4.7.0/fonts/{id}",
+        "method": "GET",
+        "query_params": [
+          "v"
+        ],
+        "path_params": true
+      },
+      {
+        "endpoint": "/node/hidden-content/{id}",
+        "method": "GET",
+        "query_params": [],
+        "path_params": true
+      },
+      {
+        "endpoint": "/ccm/collect",
+        "method": "POST",
+        "query_params": [
+          "en",
+          "dl",
+          "scrsrc",
+          "frm",
+          "rnd",
+          "dt",
+          "auid",
+          "navt",
+          "npa",
+          "gtm",
+          "gcd",
+          "dma",
+          "tag_exp",
+          "tft",
+          "tfd",
+          "apve",
+          "apvf"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/j/collect",
+        "method": "POST",
+        "query_params": [
+          "v",
+          "_v",
+          "a",
+          "t",
+          "_s",
+          "dl",
+          "ul",
+          "de",
+          "dt",
+          "sd",
+          "sr",
+          "vp",
+          "je",
+          "_u",
+          "jid",
+          "gjid",
+          "cid",
+          "tid",
+          "_gid",
+          "_r",
+          "_slc",
+          "gtm",
+          "gcd",
+          "dma",
+          "tag_exp",
+          "z"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/g/collect",
+        "method": "POST",
+        "query_params": [
+          "v",
+          "tid",
+          "gtm",
+          "_p",
+          "gcd",
+          "npa",
+          "dma",
+          "tag_exp",
+          "cid",
+          "ul",
+          "sr",
+          "uaa",
+          "uab",
+          "uafvl",
+          "uamb",
+          "uap",
+          "uapv",
+          "uaw",
+          "are",
+          "frm",
+          "pscdl",
+          "_s",
+          "sid",
+          "sct",
+          "seg",
+          "dl",
+          "dt",
+          "en",
+          "_fv",
+          "_nsi",
+          "_ss",
+          "tfd"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/static/service_worker/57f0/sw_iframe.html",
+        "method": "GET",
+        "query_params": [
+          "origin"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/waste-and-recycling/bin-collection-dates",
+        "method": "POST",
+        "query_params": [
+          "ajax_form",
+          "_wrapper_format"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/g/collect",
+        "method": "POST",
+        "query_params": [
+          "v",
+          "tid",
+          "gtm",
+          "_p",
+          "gcd",
+          "npa",
+          "dma",
+          "tag_exp",
+          "gdid",
+          "cid",
+          "ul",
+          "sr",
+          "uaa",
+          "uab",
+          "uafvl",
+          "uamb",
+          "uap",
+          "uapv",
+          "uaw",
+          "are",
+          "frm",
+          "pscdl",
+          "_eu",
+          "_s",
+          "sid",
+          "sct",
+          "seg",
+          "dl",
+          "dt",
+          "en",
+          "ep.form_id",
+          "ep.form_destination",
+          "epn.form_length",
+          "ep.first_field_id",
+          "ep.first_field_name",
+          "ep.first_field_type",
+          "epn.first_field_position",
+          "_et",
+          "tfd"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/g/collect",
+        "method": "POST",
+        "query_params": [
+          "v",
+          "tid",
+          "gtm",
+          "_p",
+          "gcd",
+          "npa",
+          "dma",
+          "tag_exp",
+          "gdid",
+          "cid",
+          "ul",
+          "sr",
+          "uaa",
+          "uab",
+          "uafvl",
+          "uamb",
+          "uap",
+          "uapv",
+          "uaw",
+          "are",
+          "frm",
+          "pscdl",
+          "_eu",
+          "_s",
+          "sid",
+          "sct",
+          "seg",
+          "dl",
+          "dt",
+          "en",
+          "_et",
+          "tfd"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/g/collect",
+        "method": "POST",
+        "query_params": [
+          "v",
+          "tid",
+          "gtm",
+          "_p",
+          "gcd",
+          "npa",
+          "dma",
+          "tag_exp",
+          "gdid",
+          "cid",
+          "ul",
+          "sr",
+          "uaa",
+          "uab",
+          "uafvl",
+          "uamb",
+          "uap",
+          "uapv",
+          "uaw",
+          "are",
+          "frm",
+          "pscdl",
+          "_eu",
+          "_s",
+          "sid",
+          "sct",
+          "seg",
+          "dl",
+          "dt",
+          "en",
+          "ep.form_id",
+          "ep.form_destination",
+          "epn.form_length",
+          "ep.form_submit_text",
+          "_et",
+          "tfd"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/find-my-nearest/WV1%201QF/{id}",
+        "method": "GET",
+        "query_params": [],
+        "path_params": true
+      },
+      {
+        "endpoint": "/ccm/collect",
+        "method": "POST",
+        "query_params": [
+          "en",
+          "dr",
+          "dl",
+          "scrsrc",
+          "frm",
+          "rnd",
+          "dt",
+          "auid",
+          "navt",
+          "npa",
+          "gtm",
+          "gcd",
+          "dma",
+          "tag_exp",
+          "tft",
+          "tfd",
+          "apve",
+          "apvf"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/j/collect",
+        "method": "POST",
+        "query_params": [
+          "v",
+          "_v",
+          "a",
+          "t",
+          "_s",
+          "dl",
+          "ul",
+          "de",
+          "dt",
+          "sd",
+          "sr",
+          "vp",
+          "je",
+          "_u",
+          "cid",
+          "tid",
+          "_gid",
+          "_slc",
+          "gtm",
+          "gcd",
+          "dma",
+          "tag_exp",
+          "z"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/g/collect",
+        "method": "POST",
+        "query_params": [
+          "v",
+          "tid",
+          "gtm",
+          "_p",
+          "gcd",
+          "npa",
+          "dma",
+          "tag_exp",
+          "cid",
+          "ul",
+          "sr",
+          "uaa",
+          "uab",
+          "uafvl",
+          "uamb",
+          "uap",
+          "uapv",
+          "uaw",
+          "are",
+          "frm",
+          "pscdl",
+          "_eu",
+          "_s",
+          "sid",
+          "sct",
+          "seg",
+          "dl",
+          "dr",
+          "dt",
+          "en",
+          "tfd"
+        ],
+        "path_params": false
+      }
+    ],
+    "redirects": [
+      {
+        "from": "/bincollections",
+        "to": "https://www.wolverhampton.gov.uk/bincollections",
+        "status": 301
+      },
+      {
+        "from": "/bincollections",
+        "to": "https://www.wolverhampton.gov.uk/waste-and-recycling/bin-collection-dates",
+        "status": 301
+      },
+      {
+        "from": "/waste-and-recycling/bin-collection-dates",
+        "to": "https://www.wolverhampton.gov.uk/find-my-nearest/WV1%201QF/100071351943",
+        "status": 303
+      }
+    ],
+    "api_calls": [
+      {
+        "endpoint": "/eu-cookie-compliance/store_consent/banner",
+        "method": "POST",
+        "response_type": "application/json",
+        "params": []
+      },
+      {
+        "endpoint": "/waste-and-recycling/bin-collection-dates",
+        "method": "POST",
+        "response_type": "application/json",
+        "params": [
+          "ajax_form",
+          "_wrapper_format"
+        ]
+      }
+    ],
+    "form_submissions": []
+  },
+  "grouped_by_endpoint": {
+    "/bincollections": [
+      {
+        "timestamp": "2025-07-21T10:28:58.809Z",
+        "duration_ms": 91.062,
+        "endpoint": "/bincollections",
+        "host": "www.wolverhampton.gov.uk",
+        "method": "GET",
+        "status": 301,
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7"
+        },
+        "response_headers": {
+          "content-type": "text/html",
+          "location": "https://www.wolverhampton.gov.uk/bincollections",
+          "x-cache": "Redirect from cloudfront"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": -1
+        },
+        "redirect_to": "https://www.wolverhampton.gov.uk/bincollections"
+      },
+      {
+        "timestamp": "2025-07-21T10:28:58.859Z",
+        "duration_ms": 109.878,
+        "endpoint": "/bincollections",
+        "host": "www.wolverhampton.gov.uk",
+        "method": "GET",
+        "status": 301,
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7"
+        },
+        "response_headers": {
+          "cache-control": "max-age=300, public",
+          "content-type": "text/html; charset=utf-8",
+          "location": "https://www.wolverhampton.gov.uk/waste-and-recycling/bin-collection-dates",
+          "x-cache": "Miss from cloudfront",
+          "x-content-type-options": "nosniff",
+          "x-drupal-cache": "HIT",
+          "x-frame-options": "SAMEORIGIN",
+          "x-generator": "Drupal 10 (https://www.drupal.org)",
+          "x-redirect-id": "7909",
+          "x-xss-protection": "1; mode=block"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": -1
+        },
+        "redirect_to": "https://www.wolverhampton.gov.uk/waste-and-recycling/bin-collection-dates"
+      }
+    ],
+    "/waste-and-recycling/bin-collection-dates": [
+      {
+        "timestamp": "2025-07-21T10:28:58.947Z",
+        "duration_ms": 14.647,
+        "endpoint": "/waste-and-recycling/bin-collection-dates",
+        "host": "www.wolverhampton.gov.uk",
+        "method": "GET",
+        "status": 200,
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7"
+        },
+        "response_headers": {
+          "cache-control": "max-age=300, public",
+          "content-type": "text/html; charset=UTF-8",
+          "x-cache": "Hit from cloudfront",
+          "x-content-type-options": "nosniff",
+          "x-drupal-cache": "HIT",
+          "x-drupal-dynamic-cache": "HIT",
+          "x-frame-options": "SAMEORIGIN",
+          "x-generator": "Drupal 10 (https://www.drupal.org)",
+          "x-xss-protection": "1; mode=block"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 64843,
+          "compressed": true,
+          "content_ref": "506e3534dd12eafe313d6637d0ecf5b7e170fc1e.html"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T10:29:06.322Z",
+        "duration_ms": 742.821,
+        "endpoint": "/waste-and-recycling/bin-collection-dates",
+        "host": "www.wolverhampton.gov.uk",
+        "method": "POST",
+        "status": 200,
+        "query_params": {
+          "ajax_form": [
+            "1"
+          ],
+          "_wrapper_format": [
+            "drupal_ajax"
+          ]
+        },
+        "request_headers": {
+          "accept": "application/json, text/javascript, */*; q=0.01",
+          "content-type": "application/x-www-form-urlencoded; charset=UTF-8",
+          "cookie": "[cookies present]",
+          "origin": "https://www.wolverhampton.gov.uk",
+          "referer": "https://www.wolverhampton.gov.uk/waste-and-recycling/bin-collection-dates",
+          "x-requested-with": "XMLHttpRequest"
+        },
+        "response_headers": {
+          "cache-control": "must-revalidate, no-cache, private",
+          "content-type": "application/json",
+          "x-cache": "Miss from cloudfront",
+          "x-content-type-options": "nosniff",
+          "x-drupal-ajax-token": "1",
+          "x-frame-options": "SAMEORIGIN",
+          "x-generator": "Drupal 10 (https://www.drupal.org)",
+          "x-xss-protection": "1; mode=block"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 6729,
+          "compressed": true,
+          "content_ref": "bde9a8af7b50718bdec1bfc2b7e545e7a78fc8ce.json"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T10:29:12.717Z",
+        "duration_ms": 384.899,
+        "endpoint": "/waste-and-recycling/bin-collection-dates",
+        "host": "www.wolverhampton.gov.uk",
+        "method": "POST",
+        "status": 303,
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+          "content-type": "application/x-www-form-urlencoded",
+          "cookie": "[cookies present]",
+          "origin": "https://www.wolverhampton.gov.uk",
+          "referer": "https://www.wolverhampton.gov.uk/waste-and-recycling/bin-collection-dates"
+        },
+        "response_headers": {
+          "cache-control": "must-revalidate, no-cache, private",
+          "content-type": "text/html; charset=utf-8",
+          "location": "https://www.wolverhampton.gov.uk/find-my-nearest/WV1%201QF/100071351943",
+          "x-cache": "Miss from cloudfront",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "SAMEORIGIN",
+          "x-generator": "Drupal 10 (https://www.drupal.org)",
+          "x-xss-protection": "1; mode=block"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": -1
+        },
+        "redirect_to": "https://www.wolverhampton.gov.uk/find-my-nearest/WV1%201QF/100071351943"
+      }
+    ],
+    "/themes/custom/omega_bigbluedoor/fonts/icomoon/fonts/icomoon.ttf": [
+      {
+        "timestamp": "2025-07-21T10:28:59.093Z",
+        "duration_ms": 27.076999999999998,
+        "endpoint": "/themes/custom/omega_bigbluedoor/fonts/icomoon/fonts/icomoon.ttf",
+        "host": "www.wolverhampton.gov.uk",
+        "method": "GET",
+        "status": 200,
+        "request_headers": {
+          "accept": "*/*",
+          "origin": "https://www.wolverhampton.gov.uk",
+          "referer": "https://www.wolverhampton.gov.uk/sites/default/files/css/css_8hjXj9Zsl-WtRTTK7iGiv5qxIx2TS6vzyDfd-z6Rug0.css?delta=3&language=en&theme=omega_bigbluedoor&include=eJx1kmFu5CAMhS_EhF97HsuAJ2EDOMVG09nTrzNt2qbTSijYn62XhwFjJJEccsl6B2UuHp8Q_BUXMK6W2Nr8lxhy5OZCSHBDAV2ywIYzwRC6juJ_K0yi90KmSqrUQThmLCAL9txmCEOVm_i9yXIXC4rc7bdCR1zNosnJkTdOVuNOPvWxYZmSCfL8hhr3iiX_I0cDIvOayba6lYwtkv8JQqIrjqKOXtU8rIfse-q40oz-8YXQsaXd5xkSpthHDXLiV_NyJovWAlSoUtNzpWJuYHh8w8fZv8J9uP2MFMN38MqNq10qfZiAkOdQBiXm7p-I27Dj3HFb5JjAJ5lG20YoWRZK7mXkuFLK6j-i6W3j_ueiVDfu2O-XG_f1gp1HS04Ie1wAtww4lB_TJyX_C3fvz6SaKsJ-DeKv3BRvJOZ82vu42RR_anxGky42cyd3MXePx_UfqbI0ZQ"
+        },
+        "response_headers": {
+          "content-type": "application/octet-stream",
+          "x-cache": "Hit from cloudfront",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "SAMEORIGIN",
+          "x-xss-protection": "1; mode=block"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T10:29:15.856Z",
+        "duration_ms": 14.029,
+        "endpoint": "/themes/custom/omega_bigbluedoor/fonts/icomoon/fonts/icomoon.ttf",
+        "host": "www.wolverhampton.gov.uk",
+        "method": "GET",
+        "status": 304,
+        "request_headers": {
+          "accept": "*/*",
+          "cookie": "[cookies present]",
+          "origin": "https://www.wolverhampton.gov.uk",
+          "referer": "https://www.wolverhampton.gov.uk/sites/default/files/css/css_Iggz-4_337wMiChtlwh4K8ccCsI21KmrnatcHmK_77Q.css?delta=3&language=en&theme=omega_bigbluedoor&include=eJx1kmFuwyAMhS9Ewq-dBxlwUi-AMwxqs9PPzdaqaTsJYfvDsp6fgBBQhDwlaptrzMnCC3KfYjyERQs9q33IHQUuJiQQ2ZQL3vKsM2BGMYEr2sI1Q6JvNNhdYF4INeQ1EZSA9h10ESfoqRm8tERlsbH2FdL4VxrOOIPdb-crlEhlfoIIMdSevRz4pFqO5NRycpgwY2nHlwxUnOL-hG_LPcJVST2iBv4ZXLhwVlvxLsJ5mn3qGJmrfSHmq1NYMFKz92z8DVw_hoZ55Qp1G85clwEq9xKNINRwcrCSg954NxUb2n-4EQ4ESdeKBO7qrtiJS4Mzigoar31c1Jx3ja9obCe10sgmqm7_FD-zdPIN"
+        },
+        "response_headers": {
+          "x-cache": "Hit from cloudfront",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "SAMEORIGIN",
+          "x-xss-protection": "1; mode=block"
+        }
+      }
+    ],
+    "/modules/sandbox/accessibility_tool/fonts/icomoon/fonts/icomoon.ttf": [
+      {
+        "timestamp": "2025-07-21T10:28:59.093Z",
+        "duration_ms": 28.865000000000002,
+        "endpoint": "/modules/sandbox/accessibility_tool/fonts/icomoon/fonts/icomoon.ttf",
+        "host": "www.wolverhampton.gov.uk",
+        "method": "GET",
+        "status": 200,
+        "request_headers": {
+          "accept": "*/*",
+          "origin": "https://www.wolverhampton.gov.uk",
+          "referer": "https://www.wolverhampton.gov.uk/sites/default/files/css/css_aleCwitUEChOq9M3nicjZ8XSjgzzIkUzkrKcYe0NNOA.css?delta=2&language=en&theme=omega_bigbluedoor&include=eJx1kmFu5CAMhS_EhF97HsuAJ2EDOMVG09nTrzNt2qbTSijYn62XhwFjJJEccsl6B2UuHp8Q_BUXMK6W2Nr8lxhy5OZCSHBDAV2ywIYzwRC6juJ_K0yi90KmSqrUQThmLCAL9txmCEOVm_i9yXIXC4rc7bdCR1zNosnJkTdOVuNOPvWxYZmSCfL8hhr3iiX_I0cDIvOayba6lYwtkv8JQqIrjqKOXtU8rIfse-q40oz-8YXQsaXd5xkSpthHDXLiV_NyJovWAlSoUtNzpWJuYHh8w8fZv8J9uP2MFMN38MqNq10qfZiAkOdQBiXm7p-I27Dj3HFb5JjAJ5lG20YoWRZK7mXkuFLK6j-i6W3j_ueiVDfu2O-XG_f1gp1HS04Ie1wAtww4lB_TJyX_C3fvz6SaKsJ-DeKv3BRvJOZ82vu42RR_anxGky42cyd3MXePx_UfqbI0ZQ"
+        },
+        "response_headers": {
+          "content-type": "application/octet-stream",
+          "x-cache": "Hit from cloudfront",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "SAMEORIGIN",
+          "x-xss-protection": "1; mode=block"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T10:29:15.846Z",
+        "duration_ms": 1.065,
+        "endpoint": "/modules/sandbox/accessibility_tool/fonts/icomoon/fonts/icomoon.ttf",
+        "host": "www.wolverhampton.gov.uk",
+        "method": "GET",
+        "status": 200,
+        "request_headers": {
+          "origin": "https://www.wolverhampton.gov.uk",
+          "referer": "https://www.wolverhampton.gov.uk/sites/default/files/css/css_1JAGBM3kR5DVhssKn8Lmw3rGIlbTsd4teC4knmMLvg4.css?delta=2&language=en&theme=omega_bigbluedoor&include=eJx1kmFuwyAMhS9Ewq-dBxlwUi-AMwxqs9PPzdaqaTsJYfvDsp6fgBBQhDwlaptrzMnCC3KfYjyERQs9q33IHQUuJiQQ2ZQL3vKsM2BGMYEr2sI1Q6JvNNhdYF4INeQ1EZSA9h10ESfoqRm8tERlsbH2FdL4VxrOOIPdb-crlEhlfoIIMdSevRz4pFqO5NRycpgwY2nHlwxUnOL-hG_LPcJVST2iBv4ZXLhwVlvxLsJ5mn3qGJmrfSHmq1NYMFKz92z8DVw_hoZ55Qp1G85clwEq9xKNINRwcrCSg954NxUb2n-4EQ4ESdeKBO7qrtiJS4Mzigoar31c1Jx3ja9obCe10sgmqm7_FD-zdPIN"
+        },
+        "response_headers": {
+          "x-content-type-options": "nosniff",
+          "x-cache": "Hit from cloudfront",
+          "content-type": "application/octet-stream",
+          "x-frame-options": "SAMEORIGIN",
+          "x-xss-protection": "1; mode=block"
+        }
+      }
+    ],
+    "/themes/custom/omega_bigbluedoor/fonts/font-awesome-4.7.0/fonts/{id}": [
+      {
+        "timestamp": "2025-07-21T10:28:59.092Z",
+        "duration_ms": 28.395,
+        "endpoint": "/themes/custom/omega_bigbluedoor/fonts/font-awesome-4.7.0/fonts/{id}",
+        "host": "www.wolverhampton.gov.uk",
+        "method": "GET",
+        "status": 200,
+        "path_params": [
+          "fontawesome-webfont.woff2"
+        ],
+        "query_params": {
+          "v": [
+            "4.7.0"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "origin": "https://www.wolverhampton.gov.uk",
+          "referer": "https://www.wolverhampton.gov.uk/sites/default/files/css/css_8hjXj9Zsl-WtRTTK7iGiv5qxIx2TS6vzyDfd-z6Rug0.css?delta=3&language=en&theme=omega_bigbluedoor&include=eJx1kmFu5CAMhS_EhF97HsuAJ2EDOMVG09nTrzNt2qbTSijYn62XhwFjJJEccsl6B2UuHp8Q_BUXMK6W2Nr8lxhy5OZCSHBDAV2ywIYzwRC6juJ_K0yi90KmSqrUQThmLCAL9txmCEOVm_i9yXIXC4rc7bdCR1zNosnJkTdOVuNOPvWxYZmSCfL8hhr3iiX_I0cDIvOayba6lYwtkv8JQqIrjqKOXtU8rIfse-q40oz-8YXQsaXd5xkSpthHDXLiV_NyJovWAlSoUtNzpWJuYHh8w8fZv8J9uP2MFMN38MqNq10qfZiAkOdQBiXm7p-I27Dj3HFb5JjAJ5lG20YoWRZK7mXkuFLK6j-i6W3j_ueiVDfu2O-XG_f1gp1HS04Ie1wAtww4lB_TJyX_C3fvz6SaKsJ-DeKv3BRvJOZ82vu42RR_anxGky42cyd3MXePx_UfqbI0ZQ"
+        },
+        "response_headers": {
+          "content-type": "application/octet-stream",
+          "x-cache": "Hit from cloudfront",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "SAMEORIGIN",
+          "x-xss-protection": "1; mode=block"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T10:29:15.855Z",
+        "duration_ms": 12.368,
+        "endpoint": "/themes/custom/omega_bigbluedoor/fonts/font-awesome-4.7.0/fonts/{id}",
+        "host": "www.wolverhampton.gov.uk",
+        "method": "GET",
+        "status": 304,
+        "path_params": [
+          "fontawesome-webfont.woff2"
+        ],
+        "query_params": {
+          "v": [
+            "4.7.0"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "cookie": "[cookies present]",
+          "origin": "https://www.wolverhampton.gov.uk",
+          "referer": "https://www.wolverhampton.gov.uk/sites/default/files/css/css_Iggz-4_337wMiChtlwh4K8ccCsI21KmrnatcHmK_77Q.css?delta=3&language=en&theme=omega_bigbluedoor&include=eJx1kmFuwyAMhS9Ewq-dBxlwUi-AMwxqs9PPzdaqaTsJYfvDsp6fgBBQhDwlaptrzMnCC3KfYjyERQs9q33IHQUuJiQQ2ZQL3vKsM2BGMYEr2sI1Q6JvNNhdYF4INeQ1EZSA9h10ESfoqRm8tERlsbH2FdL4VxrOOIPdb-crlEhlfoIIMdSevRz4pFqO5NRycpgwY2nHlwxUnOL-hG_LPcJVST2iBv4ZXLhwVlvxLsJ5mn3qGJmrfSHmq1NYMFKz92z8DVw_hoZ55Qp1G85clwEq9xKNINRwcrCSg954NxUb2n-4EQ4ESdeKBO7qrtiJS4Mzigoar31c1Jx3ja9obCe10sgmqm7_FD-zdPIN"
+        },
+        "response_headers": {
+          "x-cache": "Hit from cloudfront",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "SAMEORIGIN",
+          "x-xss-protection": "1; mode=block"
+        }
+      }
+    ],
+    "/node/hidden-content/{id}": [
+      {
+        "timestamp": "2025-07-21T10:28:59.112Z",
+        "duration_ms": 84.197,
+        "endpoint": "/node/hidden-content/{id}",
+        "host": "www.wolverhampton.gov.uk",
+        "method": "GET",
+        "status": 200,
+        "path_params": [
+          "10638"
+        ],
+        "request_headers": {
+          "accept": "text/html, */*; q=0.01",
+          "cookie": "[cookies present]",
+          "referer": "https://www.wolverhampton.gov.uk/waste-and-recycling/bin-collection-dates",
+          "x-requested-with": "XMLHttpRequest"
+        },
+        "response_headers": {
+          "cache-control": "must-revalidate, no-cache, private",
+          "content-type": "text/html; charset=UTF-8",
+          "x-cache": "Miss from cloudfront",
+          "x-content-type-options": "nosniff",
+          "x-drupal-cache": "UNCACHEABLE (no cacheability)",
+          "x-drupal-dynamic-cache": "UNCACHEABLE (no cacheability)",
+          "x-frame-options": "SAMEORIGIN",
+          "x-generator": "Drupal 10 (https://www.drupal.org)",
+          "x-xss-protection": "1; mode=block"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 0,
+          "content_ref": "da39a3ee5e6b4b0d3255bfef95601890afd80709.html"
+        }
+      }
+    ],
+    "/ccm/collect": [
+      {
+        "timestamp": "2025-07-21T10:29:00.210Z",
+        "duration_ms": 229.314,
+        "endpoint": "/ccm/collect",
+        "host": "www.google.com",
+        "method": "POST",
+        "status": 200,
+        "query_params": {
+          "en": [
+            "page_view"
+          ],
+          "dl": [
+            "https://www.wolverhampton.gov.uk/waste-and-recycling/bin-collection-dates"
+          ],
+          "scrsrc": [
+            "www.googletagmanager.com"
+          ],
+          "frm": [
+            "0"
+          ],
+          "rnd": [
+            "1095049538.1753093740"
+          ],
+          "dt": [
+            "Bin collection dates | City Of Wolverhampton Council"
+          ],
+          "auid": [
+            "1983935895.1753093740"
+          ],
+          "navt": [
+            "n"
+          ],
+          "npa": [
+            "0"
+          ],
+          "gtm": [
+            "45He57g1v839367899za200"
+          ],
+          "gcd": [
+            "13l3l3l3l1l1"
+          ],
+          "dma": [
+            "0"
+          ],
+          "tag_exp": [
+            "101509157~103116026~103200004~103233427~104684208~104684211~104921715~104921717"
+          ],
+          "tft": [
+            "1753093740202"
+          ],
+          "tfd": [
+            "1395"
+          ],
+          "apve": [
+            "1"
+          ],
+          "apvf": [
+            "sb"
+          ]
+        },
+        "request_headers": {
+          "referer": "https://www.wolverhampton.gov.uk/"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T10:29:15.884Z",
+        "duration_ms": 18.234,
+        "endpoint": "/ccm/collect",
+        "host": "www.google.com",
+        "method": "POST",
+        "status": 200,
+        "query_params": {
+          "en": [
+            "page_view"
+          ],
+          "dr": [
+            "www.wolverhampton.gov.uk"
+          ],
+          "dl": [
+            "https://www.wolverhampton.gov.uk/find-my-nearest/WV1%201QF/100071351943"
+          ],
+          "scrsrc": [
+            "www.googletagmanager.com"
+          ],
+          "frm": [
+            "0"
+          ],
+          "rnd": [
+            "663821501.1753093756"
+          ],
+          "dt": [
+            "In your area | City Of Wolverhampton Council"
+          ],
+          "auid": [
+            "1983935895.1753093740"
+          ],
+          "navt": [
+            "n"
+          ],
+          "npa": [
+            "0"
+          ],
+          "gtm": [
+            "45He57g1v839367899za200"
+          ],
+          "gcd": [
+            "13l3l3l3l1l1"
+          ],
+          "dma": [
+            "0"
+          ],
+          "tag_exp": [
+            "101509157~103116026~103200004~103233427~104684208~104684211~104921715~104921717"
+          ],
+          "tft": [
+            "1753093755862"
+          ],
+          "tfd": [
+            "3204"
+          ],
+          "apve": [
+            "1"
+          ],
+          "apvf": [
+            "f"
+          ]
+        },
+        "request_headers": {
+          "referer": "https://www.wolverhampton.gov.uk/"
+        }
+      }
+    ],
+    "/j/collect": [
+      {
+        "timestamp": "2025-07-21T10:29:00.336Z",
+        "duration_ms": 13.733,
+        "endpoint": "/j/collect",
+        "host": "www.google-analytics.com",
+        "method": "POST",
+        "status": 200,
+        "query_params": {
+          "v": [
+            "1"
+          ],
+          "_v": [
+            "j101"
+          ],
+          "a": [
+            "1542322717"
+          ],
+          "t": [
+            "pageview"
+          ],
+          "_s": [
+            "1"
+          ],
+          "dl": [
+            "https://www.wolverhampton.gov.uk/waste-and-recycling/bin-collection-dates"
+          ],
+          "ul": [
+            "en-gb"
+          ],
+          "de": [
+            "UTF-8"
+          ],
+          "dt": [
+            "Bin collection dates | City Of Wolverhampton Council"
+          ],
+          "sd": [
+            "24-bit"
+          ],
+          "sr": [
+            "800x600"
+          ],
+          "vp": [
+            "800x461"
+          ],
+          "je": [
+            "0"
+          ],
+          "_u": [
+            "YADAAEABAAAAACAAI~"
+          ],
+          "jid": [
+            "86050513"
+          ],
+          "gjid": [
+            "1179044657"
+          ],
+          "cid": [
+            "1665689636.1753093740"
+          ],
+          "tid": [
+            "UA-28643929-1"
+          ],
+          "_gid": [
+            "1047728858.1753093740"
+          ],
+          "_r": [
+            "1"
+          ],
+          "_slc": [
+            "1"
+          ],
+          "gtm": [
+            "45He57g1n81MSMPZQXv839367899za200"
+          ],
+          "gcd": [
+            "13l3l3l3l1l1"
+          ],
+          "dma": [
+            "0"
+          ],
+          "tag_exp": [
+            "101509157~103116026~103200004~103233427~104684208~104684211~104921715~104921717"
+          ],
+          "z": [
+            "1618905736"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "content-type": "text/plain",
+          "origin": "https://www.wolverhampton.gov.uk",
+          "referer": "https://www.wolverhampton.gov.uk/"
+        },
+        "response_headers": {
+          "cache-control": "no-cache, no-store, must-revalidate",
+          "content-type": "text/plain",
+          "x-content-type-options": "nosniff"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T10:29:15.976Z",
+        "duration_ms": 12.700999999999999,
+        "endpoint": "/j/collect",
+        "host": "www.google-analytics.com",
+        "method": "POST",
+        "status": 200,
+        "query_params": {
+          "v": [
+            "1"
+          ],
+          "_v": [
+            "j101"
+          ],
+          "a": [
+            "524921281"
+          ],
+          "t": [
+            "pageview"
+          ],
+          "_s": [
+            "1"
+          ],
+          "dl": [
+            "https://www.wolverhampton.gov.uk/find-my-nearest/WV1%201QF/100071351943"
+          ],
+          "ul": [
+            "en-gb"
+          ],
+          "de": [
+            "UTF-8"
+          ],
+          "dt": [
+            "In your area | City Of Wolverhampton Council"
+          ],
+          "sd": [
+            "24-bit"
+          ],
+          "sr": [
+            "800x600"
+          ],
+          "vp": [
+            "800x461"
+          ],
+          "je": [
+            "0"
+          ],
+          "_u": [
+            "QACAAEABAAAAACAAI~"
+          ],
+          "cid": [
+            "1665689636.1753093740"
+          ],
+          "tid": [
+            "UA-28643929-1"
+          ],
+          "_gid": [
+            "1047728858.1753093740"
+          ],
+          "_slc": [
+            "1"
+          ],
+          "gtm": [
+            "45He57g1n81MSMPZQXv839367899za200"
+          ],
+          "gcd": [
+            "13l3l3l3l1l1"
+          ],
+          "dma": [
+            "0"
+          ],
+          "tag_exp": [
+            "101509157~103116026~103200004~103233427~104684208~104684211~104921715~104921717"
+          ],
+          "z": [
+            "1202159209"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "content-type": "text/plain",
+          "origin": "https://www.wolverhampton.gov.uk",
+          "referer": "https://www.wolverhampton.gov.uk/"
+        },
+        "response_headers": {
+          "cache-control": "no-cache, no-store, must-revalidate",
+          "content-type": "text/plain",
+          "x-content-type-options": "nosniff"
+        }
+      }
+    ],
+    "/g/collect": [
+      {
+        "timestamp": "2025-07-21T10:29:00.314Z",
+        "duration_ms": 63.892,
+        "endpoint": "/g/collect",
+        "host": "region1.google-analytics.com",
+        "method": "POST",
+        "status": 204,
+        "query_params": {
+          "v": [
+            "2"
+          ],
+          "tid": [
+            "G-NGDJHT45YN"
+          ],
+          "gtm": [
+            "45je57g1v9105006080z8839367899za200zb839367899"
+          ],
+          "_p": [
+            "1753093739064"
+          ],
+          "gcd": [
+            "13l3l3l3l1l1"
+          ],
+          "npa": [
+            "0"
+          ],
+          "dma": [
+            "0"
+          ],
+          "tag_exp": [
+            "101509157~103116026~103200004~103233427~104684208~104684211~104921712~104921714"
+          ],
+          "cid": [
+            "1665689636.1753093740"
+          ],
+          "ul": [
+            "en-gb"
+          ],
+          "sr": [
+            "800x600"
+          ],
+          "uaa": [
+            "arm"
+          ],
+          "uab": [
+            "64"
+          ],
+          "uafvl": [
+            "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+          ],
+          "uamb": [
+            "0"
+          ],
+          "uap": [
+            "macOS"
+          ],
+          "uapv": [
+            "15.5.0"
+          ],
+          "uaw": [
+            "0"
+          ],
+          "are": [
+            "1"
+          ],
+          "frm": [
+            "0"
+          ],
+          "pscdl": [
+            "noapi"
+          ],
+          "_s": [
+            "1"
+          ],
+          "sid": [
+            "1753093740"
+          ],
+          "sct": [
+            "1"
+          ],
+          "seg": [
+            "0"
+          ],
+          "dl": [
+            "https://www.wolverhampton.gov.uk/waste-and-recycling/bin-collection-dates"
+          ],
+          "dt": [
+            "Bin collection dates | City Of Wolverhampton Council"
+          ],
+          "en": [
+            "page_view"
+          ],
+          "_fv": [
+            "1"
+          ],
+          "_nsi": [
+            "1"
+          ],
+          "_ss": [
+            "1"
+          ],
+          "tfd": [
+            "1463"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "cookie": "[cookies present]",
+          "origin": "https://www.wolverhampton.gov.uk",
+          "referer": "https://www.wolverhampton.gov.uk/"
+        },
+        "response_headers": {
+          "cache-control": "no-cache, no-store, must-revalidate",
+          "content-type": "text/plain"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T10:29:11.321Z",
+        "duration_ms": 72.33600000000001,
+        "endpoint": "/g/collect",
+        "host": "region1.google-analytics.com",
+        "method": "POST",
+        "status": 204,
+        "query_params": {
+          "v": [
+            "2"
+          ],
+          "tid": [
+            "G-NGDJHT45YN"
+          ],
+          "gtm": [
+            "45je57g1v9105006080za200zb839367899"
+          ],
+          "_p": [
+            "1753093739064"
+          ],
+          "gcd": [
+            "13l3l3l3l1l1"
+          ],
+          "npa": [
+            "0"
+          ],
+          "dma": [
+            "0"
+          ],
+          "tag_exp": [
+            "101509157~103116026~103200004~103233427~104684208~104684211~104921712~104921714"
+          ],
+          "gdid": [
+            "dMDhkMT"
+          ],
+          "cid": [
+            "1665689636.1753093740"
+          ],
+          "ul": [
+            "en-gb"
+          ],
+          "sr": [
+            "800x600"
+          ],
+          "uaa": [
+            "arm"
+          ],
+          "uab": [
+            "64"
+          ],
+          "uafvl": [
+            "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+          ],
+          "uamb": [
+            "0"
+          ],
+          "uap": [
+            "macOS"
+          ],
+          "uapv": [
+            "15.5.0"
+          ],
+          "uaw": [
+            "0"
+          ],
+          "are": [
+            "1"
+          ],
+          "frm": [
+            "0"
+          ],
+          "pscdl": [
+            "noapi"
+          ],
+          "_eu": [
+            "AEEAAAQ"
+          ],
+          "_s": [
+            "2"
+          ],
+          "sid": [
+            "1753093740"
+          ],
+          "sct": [
+            "1"
+          ],
+          "seg": [
+            "0"
+          ],
+          "dl": [
+            "https://www.wolverhampton.gov.uk/waste-and-recycling/bin-collection-dates"
+          ],
+          "dt": [
+            "Bin collection dates | City Of Wolverhampton Council"
+          ],
+          "en": [
+            "form_start"
+          ],
+          "ep.form_id": [
+            "cwc-find-my-nearest-search"
+          ],
+          "ep.form_destination": [
+            "https://www.wolverhampton.gov.uk/waste-and-recycling/bin-collection-dates"
+          ],
+          "epn.form_length": [
+            "4"
+          ],
+          "ep.first_field_id": [
+            "edit-postcode"
+          ],
+          "ep.first_field_name": [
+            "postcode"
+          ],
+          "ep.first_field_type": [
+            "text"
+          ],
+          "epn.first_field_position": [
+            "1"
+          ],
+          "_et": [
+            "6044"
+          ],
+          "tfd": [
+            "12512"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "cookie": "[cookies present]",
+          "origin": "https://www.wolverhampton.gov.uk",
+          "referer": "https://www.wolverhampton.gov.uk/"
+        },
+        "response_headers": {
+          "cache-control": "no-cache, no-store, must-revalidate",
+          "content-type": "text/plain"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T10:29:15.796Z",
+        "duration_ms": -1,
+        "endpoint": "/g/collect",
+        "host": "region1.google-analytics.com",
+        "method": "POST",
+        "status": -1,
+        "query_params": {
+          "v": [
+            "2"
+          ],
+          "tid": [
+            "G-NGDJHT45YN"
+          ],
+          "gtm": [
+            "45je57g1v9105006080za200zb839367899"
+          ],
+          "_p": [
+            "1753093739064"
+          ],
+          "gcd": [
+            "13l3l3l3l1l1"
+          ],
+          "npa": [
+            "0"
+          ],
+          "dma": [
+            "0"
+          ],
+          "tag_exp": [
+            "101509157~103116026~103200004~103233427~104684208~104684211~104921712~104921714"
+          ],
+          "gdid": [
+            "dMDhkMT"
+          ],
+          "cid": [
+            "1665689636.1753093740"
+          ],
+          "ul": [
+            "en-gb"
+          ],
+          "sr": [
+            "800x600"
+          ],
+          "uaa": [
+            "arm"
+          ],
+          "uab": [
+            "64"
+          ],
+          "uafvl": [
+            "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+          ],
+          "uamb": [
+            "0"
+          ],
+          "uap": [
+            "macOS"
+          ],
+          "uapv": [
+            "15.5.0"
+          ],
+          "uaw": [
+            "0"
+          ],
+          "are": [
+            "1"
+          ],
+          "frm": [
+            "0"
+          ],
+          "pscdl": [
+            "noapi"
+          ],
+          "_eu": [
+            "AAAAAAQ"
+          ],
+          "_s": [
+            "4"
+          ],
+          "sid": [
+            "1753093740"
+          ],
+          "sct": [
+            "1"
+          ],
+          "seg": [
+            "1"
+          ],
+          "dl": [
+            "https://www.wolverhampton.gov.uk/waste-and-recycling/bin-collection-dates"
+          ],
+          "dt": [
+            "Bin collection dates | City Of Wolverhampton Council"
+          ],
+          "en": [
+            "user_engagement"
+          ],
+          "_et": [
+            "3125"
+          ],
+          "tfd": [
+            "16982"
+          ]
+        },
+        "request_headers": {
+          "referer": "https://www.wolverhampton.gov.uk/"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T10:29:15.794Z",
+        "duration_ms": -1,
+        "endpoint": "/g/collect",
+        "host": "region1.google-analytics.com",
+        "method": "POST",
+        "status": -1,
+        "query_params": {
+          "v": [
+            "2"
+          ],
+          "tid": [
+            "G-NGDJHT45YN"
+          ],
+          "gtm": [
+            "45je57g1v9105006080za200zb839367899"
+          ],
+          "_p": [
+            "1753093739064"
+          ],
+          "gcd": [
+            "13l3l3l3l1l1"
+          ],
+          "npa": [
+            "0"
+          ],
+          "dma": [
+            "0"
+          ],
+          "tag_exp": [
+            "101509157~103116026~103200004~103233427~104684208~104684211~104921712~104921714"
+          ],
+          "gdid": [
+            "dMDhkMT"
+          ],
+          "cid": [
+            "1665689636.1753093740"
+          ],
+          "ul": [
+            "en-gb"
+          ],
+          "sr": [
+            "800x600"
+          ],
+          "uaa": [
+            "arm"
+          ],
+          "uab": [
+            "64"
+          ],
+          "uafvl": [
+            "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+          ],
+          "uamb": [
+            "0"
+          ],
+          "uap": [
+            "macOS"
+          ],
+          "uapv": [
+            "15.5.0"
+          ],
+          "uaw": [
+            "0"
+          ],
+          "are": [
+            "1"
+          ],
+          "frm": [
+            "0"
+          ],
+          "pscdl": [
+            "noapi"
+          ],
+          "_eu": [
+            "AEEAAAQ"
+          ],
+          "_s": [
+            "3"
+          ],
+          "sid": [
+            "1753093740"
+          ],
+          "sct": [
+            "1"
+          ],
+          "seg": [
+            "1"
+          ],
+          "dl": [
+            "https://www.wolverhampton.gov.uk/waste-and-recycling/bin-collection-dates"
+          ],
+          "dt": [
+            "Bin collection dates | City Of Wolverhampton Council"
+          ],
+          "en": [
+            "form_submit"
+          ],
+          "ep.form_id": [
+            "cwc-find-my-nearest-search"
+          ],
+          "ep.form_destination": [
+            "https://www.wolverhampton.gov.uk/waste-and-recycling/bin-collection-dates"
+          ],
+          "epn.form_length": [
+            "7"
+          ],
+          "ep.form_submit_text": [
+            "Search"
+          ],
+          "_et": [
+            "6339"
+          ],
+          "tfd": [
+            "16981"
+          ]
+        },
+        "request_headers": {
+          "referer": "https://www.wolverhampton.gov.uk/"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T10:29:20.897Z",
+        "duration_ms": 17.693,
+        "endpoint": "/g/collect",
+        "host": "region1.google-analytics.com",
+        "method": "POST",
+        "status": 204,
+        "query_params": {
+          "v": [
+            "2"
+          ],
+          "tid": [
+            "G-NGDJHT45YN"
+          ],
+          "gtm": [
+            "45je57g1v9105006080z8839367899za200zb839367899"
+          ],
+          "_p": [
+            "1753093755834"
+          ],
+          "gcd": [
+            "13l3l3l3l1l1"
+          ],
+          "npa": [
+            "0"
+          ],
+          "dma": [
+            "0"
+          ],
+          "tag_exp": [
+            "101509157~103116026~103200004~103233427~104684208~104684211~104921712~104921714"
+          ],
+          "cid": [
+            "1665689636.1753093740"
+          ],
+          "ul": [
+            "en-gb"
+          ],
+          "sr": [
+            "800x600"
+          ],
+          "uaa": [
+            "arm"
+          ],
+          "uab": [
+            "64"
+          ],
+          "uafvl": [
+            "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+          ],
+          "uamb": [
+            "0"
+          ],
+          "uap": [
+            "macOS"
+          ],
+          "uapv": [
+            "15.5.0"
+          ],
+          "uaw": [
+            "0"
+          ],
+          "are": [
+            "1"
+          ],
+          "frm": [
+            "0"
+          ],
+          "pscdl": [
+            "noapi"
+          ],
+          "_eu": [
+            "AAAAAAQ"
+          ],
+          "_s": [
+            "1"
+          ],
+          "sid": [
+            "1753093740"
+          ],
+          "sct": [
+            "1"
+          ],
+          "seg": [
+            "1"
+          ],
+          "dl": [
+            "https://www.wolverhampton.gov.uk/find-my-nearest/WV1 1QF/100071351943"
+          ],
+          "dr": [
+            "https://www.wolverhampton.gov.uk/waste-and-recycling/bin-collection-dates"
+          ],
+          "dt": [
+            "In your area | City Of Wolverhampton Council"
+          ],
+          "en": [
+            "page_view"
+          ],
+          "tfd": [
+            "8234"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "cookie": "[cookies present]",
+          "origin": "https://www.wolverhampton.gov.uk",
+          "referer": "https://www.wolverhampton.gov.uk/"
+        },
+        "response_headers": {
+          "cache-control": "no-cache, no-store, must-revalidate",
+          "content-type": "text/plain"
+        }
+      }
+    ],
+    "/static/service_worker/57f0/sw_iframe.html": [
+      {
+        "timestamp": "2025-07-21T10:29:00.313Z",
+        "duration_ms": 52.287,
+        "endpoint": "/static/service_worker/57f0/sw_iframe.html",
+        "host": "www.googletagmanager.com",
+        "method": "GET",
+        "status": 200,
+        "query_params": {
+          "origin": [
+            "https://www.wolverhampton.gov.uk"
+          ]
+        },
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7"
+        },
+        "response_headers": {
+          "cache-control": "public, max-age=31536000",
+          "content-type": "text/html",
+          "x-content-type-options": "nosniff",
+          "x-xss-protection": "0"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 3554,
+          "compressed": true,
+          "content_ref": "880b1afe892ea664f14708206280f3ae96c07a11.html"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T10:29:15.974Z",
+        "duration_ms": 833.851,
+        "endpoint": "/static/service_worker/57f0/sw_iframe.html",
+        "host": "www.googletagmanager.com",
+        "method": "GET",
+        "status": 200,
+        "query_params": {
+          "origin": [
+            "https://www.wolverhampton.gov.uk"
+          ]
+        },
+        "response_headers": {
+          "cache-control": "public, max-age=31536000",
+          "content-type": "text/html",
+          "x-content-type-options": "nosniff",
+          "x-xss-protection": "0"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 3554,
+          "compressed": true,
+          "content_ref": "880b1afe892ea664f14708206280f3ae96c07a11.html"
+        }
+      }
+    ],
+    "/eu-cookie-compliance/store_consent/banner": [
+      {
+        "timestamp": "2025-07-21T10:29:01.684Z",
+        "duration_ms": 78.372,
+        "endpoint": "/eu-cookie-compliance/store_consent/banner",
+        "host": "www.wolverhampton.gov.uk",
+        "method": "POST",
+        "status": 200,
+        "request_headers": {
+          "accept": "*/*",
+          "cookie": "[cookies present]",
+          "origin": "https://www.wolverhampton.gov.uk",
+          "referer": "https://www.wolverhampton.gov.uk/waste-and-recycling/bin-collection-dates",
+          "x-requested-with": "XMLHttpRequest"
+        },
+        "response_headers": {
+          "cache-control": "must-revalidate, no-cache, private",
+          "content-type": "application/json",
+          "x-cache": "Miss from cloudfront",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "SAMEORIGIN",
+          "x-generator": "Drupal 10 (https://www.drupal.org)",
+          "x-xss-protection": "1; mode=block"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 4,
+          "content_ref": "5ffe533b830f08a0326348a9160afafc8ada44db.json"
+        }
+      }
+    ],
+    "/find-my-nearest/WV1%201QF/{id}": [
+      {
+        "timestamp": "2025-07-21T10:29:13.104Z",
+        "duration_ms": 2677.328,
+        "endpoint": "/find-my-nearest/WV1%201QF/{id}",
+        "host": "www.wolverhampton.gov.uk",
+        "method": "GET",
+        "status": 200,
+        "path_params": [
+          "100071351943"
+        ],
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+          "cookie": "[cookies present]",
+          "referer": "https://www.wolverhampton.gov.uk/waste-and-recycling/bin-collection-dates"
+        },
+        "response_headers": {
+          "cache-control": "max-age=300, public",
+          "content-type": "text/html; charset=UTF-8",
+          "x-cache": "Miss from cloudfront",
+          "x-content-type-options": "nosniff",
+          "x-drupal-cache": "MISS",
+          "x-drupal-dynamic-cache": "MISS",
+          "x-frame-options": "SAMEORIGIN",
+          "x-generator": "Drupal 10 (https://www.drupal.org)",
+          "x-xss-protection": "1; mode=block"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 49366,
+          "compressed": true,
+          "content_ref": "b91d8989072127607283b6e0aaecd9b649a24bc8.html"
+        }
+      }
+    ]
+  }
 }

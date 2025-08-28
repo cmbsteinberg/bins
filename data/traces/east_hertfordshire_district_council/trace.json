@@ -1,179 +1,2184 @@
 {
-  "metadata": {
-    "trace_name": "east_hertfordshire_district_council",
-    "processed_at": "2025-08-26 18:44:24",
-    "workflow_steps_count": 7,
-    "navigation_events_count": 11
-  },
-  "scraping_patterns": {
-    "login_detected": false,
-    "form_submissions": 2,
-    "navigation_count": 1,
-    "unique_domains": [
-      "static.addtoany.com",
-      "east-herts.co.uk",
-      "www.eastherts.gov.uk",
-      "hitcounter.govmetric.com",
-      "settings.luckyorange.com",
-      "region1.analytics.google.com"
-    ],
-    "api_endpoints": [
-      "https://east-herts.co.uk/api/addresses/AL60FD",
-      "https://east-herts.co.uk/api/services/10023086655"
-    ],
-    "data_extraction_indicators": []
-  },
-  "workflow_steps": [
+  "entries": [
     {
-      "action": "goto",
-      "target": "https://www.eastherts.gov.uk/bins-waste-recycling",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
-    },
-    {
-      "action": "click",
-      "target": "aria-ref=e330 >> internal:describe=\"Accept all\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
-    },
-    {
-      "action": "click",
-      "target": "aria-ref=e99 >> internal:describe=\"Look up your collection day\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
-    },
-    {
-      "action": "fill",
-      "target": "aria-ref=e39 >> internal:describe=\"Enter postcode (e.g., CM233GN)\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0,
-      "value": "AL6 0FD"
-    },
-    {
-      "action": "click",
-      "target": "aria-ref=e40 >> internal:describe=\"Find My Address\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
-    },
-    {
-      "action": "click",
-      "target": "aria-ref=e67 >> internal:describe=\"Add your property number or select from the list\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
-    },
-    {
-      "action": "click",
-      "target": "aria-ref=e90 >> internal:describe=\"1 SEVENACRES, TEWIN, WELWYN, AL6 0FD\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
-    }
-  ],
-  "navigation_events": [
-    {
-      "url": "https://www.eastherts.gov.uk/bins-waste-recycling",
+      "timestamp": "2025-07-21T16:37:38.159Z",
+      "duration_ms": 58.021,
+      "endpoint": "/bins-waste-recycling",
+      "host": "www.eastherts.gov.uk",
       "method": "GET",
       "status": 301,
-      "redirect_url": "https://www.eastherts.gov.uk/bins-waste-and-recycling",
-      "mime_type": "text/html; charset=utf-8",
-      "size": -1,
-      "timestamp": "2025-07-21T16:37:38.159Z"
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7"
+      },
+      "response_headers": {
+        "cache-control": "public, max-age=900",
+        "content-type": "text/html; charset=utf-8",
+        "location": "https://www.eastherts.gov.uk/bins-waste-and-recycling",
+        "set-cookie": "[cookies present]",
+        "x-content-type-options": "nosniff",
+        "x-drupal-cache": "HIT",
+        "x-drupal-route-normalizer": "1",
+        "x-frame-options": "SAMEORIGIN",
+        "x-varnish": "28160420 28109145",
+        "x-varnish-cache": "HIT"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": -1
+      },
+      "redirect_to": "https://www.eastherts.gov.uk/bins-waste-and-recycling"
     },
     {
-      "url": "https://www.eastherts.gov.uk/bins-waste-and-recycling",
+      "timestamp": "2025-07-21T16:37:38.203Z",
+      "duration_ms": 17.930999999999997,
+      "endpoint": "/{id}",
+      "host": "www.eastherts.gov.uk",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "text/html; charset=UTF-8",
-      "size": 42745,
-      "timestamp": "2025-07-21T16:37:38.203Z"
+      "path_params": [
+        "bins-waste-and-recycling"
+      ],
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+        "cookie": "[cookies present]"
+      },
+      "response_headers": {
+        "cache-control": "public, max-age=900",
+        "content-type": "text/html; charset=UTF-8",
+        "x-content-type-options": "nosniff",
+        "x-drupal-cache": "MISS",
+        "x-drupal-dynamic-cache": "MISS",
+        "x-frame-options": "SAMEORIGIN",
+        "x-varnish": "28160422 28367730",
+        "x-varnish-cache": "HIT"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 42745,
+        "content_ref": "6bf5bd650b31f3fd1d77ca5bc655f5a2630f73d3.html"
+      }
     },
     {
-      "url": "https://region1.analytics.google.com/g/collect?v=2&tid=G-X4RF2BEBQE&gtm=45je57h0v873909827za200&_p=1753115858218&_gaz=1&gcd=13l3l3l3l1l1&npa=0&dma=0&tag_exp=101509157~103116026~103200004~103233427~104684208~104684211~104952206~104952208&gdid=dMDhkMT&cid=1387020945.1753115858&ul=en-gb&sr=800x600&uaa=arm&uab=64&uafvl=Not)A%253BBrand%3B8.0.0.0%7CChromium%3B138.0.7204.101%7CGoogle%2520Chrome%3B138.0.7204.101&uamb=0&uam=&uap=macOS&uapv=15.5.0&uaw=0&are=1&frm=0&pscdl=noapi&_eu=AAAI&_s=1&sid=1753115858&sct=1&seg=0&dl=https%3A%2F%2Fwww.eastherts.gov.uk%2Fbins-waste-and-recycling&dt=Bins%2C%20Waste%20and%20Recycling%20%7C%20East%20Herts%20District%20Council&en=page_view&_fv=1&_ss=1&tfd=260",
+      "timestamp": "2025-07-21T16:37:38.387Z",
+      "duration_ms": 14.453000000000001,
+      "endpoint": "/j/collect",
+      "host": "www.google-analytics.com",
+      "method": "POST",
+      "status": 200,
+      "query_params": {
+        "v": [
+          "1"
+        ],
+        "_v": [
+          "j101"
+        ],
+        "aip": [
+          "1"
+        ],
+        "a": [
+          "779574373"
+        ],
+        "t": [
+          "pageview"
+        ],
+        "_s": [
+          "1"
+        ],
+        "dl": [
+          "https://www.eastherts.gov.uk/bins-waste-and-recycling"
+        ],
+        "ul": [
+          "en-gb"
+        ],
+        "de": [
+          "UTF-8"
+        ],
+        "dt": [
+          "Bins, Waste and Recycling | East Herts District Council"
+        ],
+        "sd": [
+          "24-bit"
+        ],
+        "sr": [
+          "800x600"
+        ],
+        "vp": [
+          "800x461"
+        ],
+        "je": [
+          "0"
+        ],
+        "_u": [
+          "YEBAAUABAAAAACAAI~"
+        ],
+        "jid": [
+          "422364911"
+        ],
+        "gjid": [
+          "1077884398"
+        ],
+        "cid": [
+          "1387020945.1753115858"
+        ],
+        "tid": [
+          "UA-15796910-11"
+        ],
+        "_gid": [
+          "1313196520.1753115858"
+        ],
+        "_r": [
+          "1"
+        ],
+        "gtm": [
+          "457e57h0za200"
+        ],
+        "gcd": [
+          "13l3l3l3l3l1"
+        ],
+        "dma": [
+          "0"
+        ],
+        "tag_exp": [
+          "101509157~103116026~103200004~103233427~104684208~104684211"
+        ],
+        "did": [
+          "dMDhkMT"
+        ],
+        "gdid": [
+          "dMDhkMT"
+        ],
+        "npa": [
+          "1"
+        ],
+        "z": [
+          "85860212"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "content-type": "text/plain",
+        "origin": "https://www.eastherts.gov.uk",
+        "referer": "https://www.eastherts.gov.uk/"
+      },
+      "response_headers": {
+        "cache-control": "no-cache, no-store, must-revalidate",
+        "content-type": "text/plain",
+        "x-content-type-options": "nosniff"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T16:37:38.424Z",
+      "duration_ms": 162.48700000000002,
+      "endpoint": "/g/collect",
+      "host": "region1.analytics.google.com",
       "method": "POST",
       "status": 204,
-      "redirect_url": null,
-      "mime_type": "text/plain",
-      "size": -1,
-      "timestamp": "2025-07-21T16:37:38.424Z"
+      "query_params": {
+        "v": [
+          "2"
+        ],
+        "tid": [
+          "G-X4RF2BEBQE"
+        ],
+        "gtm": [
+          "45je57h0v873909827za200"
+        ],
+        "_p": [
+          "1753115858218"
+        ],
+        "_gaz": [
+          "1"
+        ],
+        "gcd": [
+          "13l3l3l3l1l1"
+        ],
+        "npa": [
+          "0"
+        ],
+        "dma": [
+          "0"
+        ],
+        "tag_exp": [
+          "101509157~103116026~103200004~103233427~104684208~104684211~104952206~104952208"
+        ],
+        "gdid": [
+          "dMDhkMT"
+        ],
+        "cid": [
+          "1387020945.1753115858"
+        ],
+        "ul": [
+          "en-gb"
+        ],
+        "sr": [
+          "800x600"
+        ],
+        "uaa": [
+          "arm"
+        ],
+        "uab": [
+          "64"
+        ],
+        "uafvl": [
+          "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+        ],
+        "uamb": [
+          "0"
+        ],
+        "uap": [
+          "macOS"
+        ],
+        "uapv": [
+          "15.5.0"
+        ],
+        "uaw": [
+          "0"
+        ],
+        "are": [
+          "1"
+        ],
+        "frm": [
+          "0"
+        ],
+        "pscdl": [
+          "noapi"
+        ],
+        "_eu": [
+          "AAAI"
+        ],
+        "_s": [
+          "1"
+        ],
+        "sid": [
+          "1753115858"
+        ],
+        "sct": [
+          "1"
+        ],
+        "seg": [
+          "0"
+        ],
+        "dl": [
+          "https://www.eastherts.gov.uk/bins-waste-and-recycling"
+        ],
+        "dt": [
+          "Bins, Waste and Recycling | East Herts District Council"
+        ],
+        "en": [
+          "page_view"
+        ],
+        "_fv": [
+          "1"
+        ],
+        "_ss": [
+          "1"
+        ],
+        "tfd": [
+          "260"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "origin": "https://www.eastherts.gov.uk",
+        "referer": "https://www.eastherts.gov.uk/",
+        "x-browser-copyright": "Copyright 2025 Google LLC. All rights reserved.",
+        "x-browser-validation": "qvLgIVtG4U8GgiRPSI9IJ22mUlI=",
+        "x-browser-year": "2025",
+        "x-client-data": "CMiXywE="
+      },
+      "response_headers": {
+        "cache-control": "no-cache, no-store, must-revalidate",
+        "content-type": "text/plain"
+      }
     },
     {
-      "url": "https://settings.luckyorange.com/a485b4fc",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json; charset=utf-8",
-      "size": 149,
-      "timestamp": "2025-07-21T16:37:39.293Z"
-    },
-    {
-      "url": "https://hitcounter.govmetric.com/Home/Index/1649?override=https%3A%2F%2Fwww.eastherts.gov.uk%2Fbins-waste-and-recycling",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "x-unknown",
-      "size": 0,
-      "timestamp": "2025-07-21T16:37:39.412Z"
-    },
-    {
-      "url": "https://static.addtoany.com/menu/sm.25.html",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "text/html; charset=utf-8",
-      "size": 716,
-      "timestamp": "2025-07-21T16:37:39.516Z"
-    },
-    {
-      "url": "https://static.addtoany.com/cdn-cgi/speculation",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/speculationrules+json",
-      "size": 128,
-      "timestamp": "2025-07-21T16:37:39.825Z"
-    },
-    {
-      "url": "https://region1.analytics.google.com/g/collect?v=2&tid=G-X4RF2BEBQE&gtm=45je57h0v873909827za200&_p=1753115858218&gcd=13l3l3l3l1l1&npa=0&dma=0&tag_exp=101509157~103116026~103200004~103233427~104684208~104684211~104952206~104952208&gdid=dMDhkMT&cid=1387020945.1753115858&ul=en-gb&sr=800x600&uaa=arm&uab=64&uafvl=Not)A%253BBrand%3B8.0.0.0%7CChromium%3B138.0.7204.101%7CGoogle%2520Chrome%3B138.0.7204.101&uamb=0&uam=&uap=macOS&uapv=15.5.0&uaw=0&are=1&frm=0&pscdl=noapi&_eu=AAAIAAQ&_s=2&sid=1753115858&sct=1&seg=0&dl=https%3A%2F%2Fwww.eastherts.gov.uk%2Fbins-waste-and-recycling&dt=Bins%2C%20Waste%20and%20Recycling%20%7C%20East%20Herts%20District%20Council&en=Click&_ee=1&ep.event_category=Outbound%20links&ep.event_label=https%3A%2F%2Feast-herts.co.uk%2F&ep.transport_type=beacon&_et=4793&tfd=5064",
+      "timestamp": "2025-07-21T16:37:38.424Z",
+      "duration_ms": 174.986,
+      "endpoint": "/g/collect",
+      "host": "stats.g.doubleclick.net",
       "method": "POST",
       "status": 204,
-      "redirect_url": null,
-      "mime_type": "text/plain",
-      "size": -1,
-      "timestamp": "2025-07-21T16:37:43.224Z"
+      "query_params": {
+        "v": [
+          "2"
+        ],
+        "tid": [
+          "G-X4RF2BEBQE"
+        ],
+        "cid": [
+          "1387020945.1753115858"
+        ],
+        "gtm": [
+          "45je57h0v873909827za200"
+        ],
+        "aip": [
+          "1"
+        ],
+        "dma": [
+          "0"
+        ],
+        "gcd": [
+          "13l3l3l3l1l1"
+        ],
+        "npa": [
+          "0"
+        ],
+        "frm": [
+          "0"
+        ],
+        "tag_exp": [
+          "101509157~103116026~103200004~103233427~104684208~104684211~104952206~104952208"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "cookie": "[cookies present]",
+        "origin": "https://www.eastherts.gov.uk",
+        "referer": "https://www.eastherts.gov.uk/",
+        "x-browser-copyright": "Copyright 2025 Google LLC. All rights reserved.",
+        "x-browser-validation": "qvLgIVtG4U8GgiRPSI9IJ22mUlI=",
+        "x-browser-year": "2025",
+        "x-client-data": "CMiXywE="
+      },
+      "response_headers": {
+        "cache-control": "no-cache, no-store, must-revalidate",
+        "content-type": "text/plain"
+      }
     },
     {
-      "url": "https://east-herts.co.uk/",
+      "timestamp": "2025-07-21T16:37:39.467Z",
+      "duration_ms": -1,
+      "endpoint": "/menu/sm.25.html",
+      "host": "static.addtoany.com",
       "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "text/html; charset=UTF-8",
-      "size": 1147,
-      "timestamp": "2025-07-21T16:37:43.282Z"
+      "status": -1,
+      "request_headers": {
+        "referer": "https://www.eastherts.gov.uk/"
+      }
     },
     {
-      "url": "https://east-herts.co.uk/api/addresses/AL60FD",
+      "timestamp": "2025-07-21T16:37:39.412Z",
+      "duration_ms": 86.22,
+      "endpoint": "/Home/Index/{id}",
+      "host": "hitcounter.govmetric.com",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json; charset=utf-8",
-      "size": 5576,
-      "timestamp": "2025-07-21T16:37:48.060Z"
+      "path_params": [
+        "1649"
+      ],
+      "query_params": {
+        "override": [
+          "https://www.eastherts.gov.uk/bins-waste-and-recycling"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "origin": "https://www.eastherts.gov.uk",
+        "referer": "https://www.eastherts.gov.uk/"
+      },
+      "response_headers": {
+        "cache-control": "no-store,no-cache",
+        "set-cookie": "[cookies present]",
+        "x-powered-by": "ASP.NET"
+      }
     },
     {
-      "url": "https://east-herts.co.uk/api/services/10023086655",
+      "timestamp": "2025-07-21T16:37:39.293Z",
+      "duration_ms": 258.039,
+      "endpoint": "/a485b4fc",
+      "host": "settings.luckyorange.com",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json; charset=utf-8",
-      "size": 4449,
-      "timestamp": "2025-07-21T16:37:53.632Z"
+      "request_headers": {
+        "accept": "*/*",
+        "origin": "https://www.eastherts.gov.uk",
+        "referer": "https://www.eastherts.gov.uk/",
+        "x-lucky-referrer": "",
+        "x-lucky-uid": "undefined"
+      },
+      "response_headers": {
+        "content-type": "application/json; charset=utf-8"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 149,
+        "content_ref": "a8e9a225e787aae27c4e1012561da5e26fbe4c9c.json"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T16:37:39.661Z",
+      "duration_ms": 37.58,
+      "endpoint": "/tr",
+      "host": "www.facebook.com",
+      "method": "GET",
+      "status": 200,
+      "query_params": {
+        "id": [
+          "495782278701262"
+        ],
+        "ev": [
+          "PageView"
+        ],
+        "dl": [
+          "https://www.eastherts.gov.uk/bins-waste-and-recycling"
+        ],
+        "if": [
+          "false"
+        ],
+        "ts": [
+          "1753115859658"
+        ],
+        "sw": [
+          "800"
+        ],
+        "sh": [
+          "600"
+        ],
+        "v": [
+          "2.9.217"
+        ],
+        "r": [
+          "stable"
+        ],
+        "ec": [
+          "0"
+        ],
+        "o": [
+          "4254"
+        ],
+        "fbp": [
+          "fb.2.1753115859656.26634712210451453"
+        ],
+        "cs_est": [
+          "true"
+        ],
+        "ler": [
+          "empty"
+        ],
+        "cdl": [
+          "API_unavailable"
+        ],
+        "plt": [
+          "1268"
+        ],
+        "it": [
+          "1753115859560"
+        ],
+        "coo": [
+          "false"
+        ],
+        "exp": [
+          "q1"
+        ],
+        "rqm": [
+          "GET"
+        ]
+      },
+      "request_headers": {
+        "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+        "referer": "https://www.eastherts.gov.uk/"
+      },
+      "response_headers": {
+        "content-type": "text/plain",
+        "x-fb-connection-quality": "EXCELLENT; q=0.9, rtt=7, rtx=0, c=23, mss=1232, tbw=5008, tp=10, tpl=0, uplat=0, ullat=0"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T16:37:39.516Z",
+      "duration_ms": 33.024,
+      "endpoint": "/menu/sm.25.html",
+      "host": "static.addtoany.com",
+      "method": "GET",
+      "status": 200,
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+        "referer": "https://www.eastherts.gov.uk/"
+      },
+      "response_headers": {
+        "cache-control": "max-age=315360000, immutable",
+        "content-type": "text/html; charset=utf-8",
+        "x-content-type-options": "nosniff"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 716,
+        "content_ref": "39acd5fe099974486a1c9ba11ba0fe7be6bc97ca.html"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T16:37:39.825Z",
+      "duration_ms": 17.294,
+      "endpoint": "/cdn-cgi/speculation",
+      "host": "static.addtoany.com",
+      "method": "GET",
+      "status": 200,
+      "request_headers": {
+        "accept": "*/*",
+        "origin": "https://static.addtoany.com",
+        "referer": "https://static.addtoany.com/menu/sm.25.html"
+      },
+      "response_headers": {
+        "content-type": "application/speculationrules+json",
+        "x-content-type-options": "nosniff"
+      },
+      "response_info": {
+        "type": "application/speculationrules+json",
+        "size": 128,
+        "content_ref": "4feb87ea3a922ad07ed998e5cd308778d5ab9a84.dat"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T16:37:40.952Z",
+      "duration_ms": 7.865,
+      "endpoint": "/tr",
+      "host": "www.facebook.com",
+      "method": "GET",
+      "status": 200,
+      "query_params": {
+        "id": [
+          "495782278701262"
+        ],
+        "ev": [
+          "SubscribedButtonClick"
+        ],
+        "dl": [
+          "https://www.eastherts.gov.uk/bins-waste-and-recycling"
+        ],
+        "if": [
+          "false"
+        ],
+        "ts": [
+          "1753115860943"
+        ],
+        "cd[buttonFeatures]": [
+          "{\"classList\":\"cm-btn cm-btn-success cm-btn-accept-all\",\"destination\":\"\",\"id\":\"\",\"imageUrl\":\"\",\"innerText\":\"Accept all\",\"numChildButtons\":0,\"tag\":\"button\",\"type\":\"button\",\"name\":\"\",\"value\":\"\"}"
+        ],
+        "cd[buttonText]": [
+          "Accept all"
+        ],
+        "cd[formFeatures]": [
+          "[]"
+        ],
+        "cd[pageFeatures]": [
+          "{\"title\":\"Bins, Waste and Recycling | East Herts District Council\"}"
+        ],
+        "cd[parameters]": [
+          "[]"
+        ],
+        "sw": [
+          "800"
+        ],
+        "sh": [
+          "600"
+        ],
+        "v": [
+          "2.9.217"
+        ],
+        "r": [
+          "stable"
+        ],
+        "ec": [
+          "1"
+        ],
+        "o": [
+          "4254"
+        ],
+        "fbp": [
+          "fb.2.1753115859656.26634712210451453"
+        ],
+        "cs_est": [
+          "true"
+        ],
+        "ler": [
+          "empty"
+        ],
+        "cdl": [
+          "API_unavailable"
+        ],
+        "plt": [
+          "1268"
+        ],
+        "it": [
+          "1753115859560"
+        ],
+        "coo": [
+          "false"
+        ],
+        "es": [
+          "automatic"
+        ],
+        "tm": [
+          "3"
+        ],
+        "exp": [
+          "q1"
+        ],
+        "rqm": [
+          "GET"
+        ]
+      },
+      "request_headers": {
+        "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+        "referer": "https://www.eastherts.gov.uk/"
+      },
+      "response_headers": {
+        "content-type": "text/plain",
+        "x-fb-connection-quality": "EXCELLENT; q=0.9, rtt=6, rtx=0, c=27, mss=1232, tbw=9515, tp=21, tpl=0, uplat=0, ullat=0"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T16:37:43.224Z",
+      "duration_ms": 14.892,
+      "endpoint": "/g/collect",
+      "host": "region1.analytics.google.com",
+      "method": "POST",
+      "status": 204,
+      "query_params": {
+        "v": [
+          "2"
+        ],
+        "tid": [
+          "G-X4RF2BEBQE"
+        ],
+        "gtm": [
+          "45je57h0v873909827za200"
+        ],
+        "_p": [
+          "1753115858218"
+        ],
+        "gcd": [
+          "13l3l3l3l1l1"
+        ],
+        "npa": [
+          "0"
+        ],
+        "dma": [
+          "0"
+        ],
+        "tag_exp": [
+          "101509157~103116026~103200004~103233427~104684208~104684211~104952206~104952208"
+        ],
+        "gdid": [
+          "dMDhkMT"
+        ],
+        "cid": [
+          "1387020945.1753115858"
+        ],
+        "ul": [
+          "en-gb"
+        ],
+        "sr": [
+          "800x600"
+        ],
+        "uaa": [
+          "arm"
+        ],
+        "uab": [
+          "64"
+        ],
+        "uafvl": [
+          "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+        ],
+        "uamb": [
+          "0"
+        ],
+        "uap": [
+          "macOS"
+        ],
+        "uapv": [
+          "15.5.0"
+        ],
+        "uaw": [
+          "0"
+        ],
+        "are": [
+          "1"
+        ],
+        "frm": [
+          "0"
+        ],
+        "pscdl": [
+          "noapi"
+        ],
+        "_eu": [
+          "AAAIAAQ"
+        ],
+        "_s": [
+          "2"
+        ],
+        "sid": [
+          "1753115858"
+        ],
+        "sct": [
+          "1"
+        ],
+        "seg": [
+          "0"
+        ],
+        "dl": [
+          "https://www.eastherts.gov.uk/bins-waste-and-recycling"
+        ],
+        "dt": [
+          "Bins, Waste and Recycling | East Herts District Council"
+        ],
+        "en": [
+          "Click"
+        ],
+        "_ee": [
+          "1"
+        ],
+        "ep.event_category": [
+          "Outbound links"
+        ],
+        "ep.event_label": [
+          "https://east-herts.co.uk/"
+        ],
+        "ep.transport_type": [
+          "beacon"
+        ],
+        "_et": [
+          "4793"
+        ],
+        "tfd": [
+          "5064"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "origin": "https://www.eastherts.gov.uk",
+        "referer": "https://www.eastherts.gov.uk/",
+        "x-browser-copyright": "Copyright 2025 Google LLC. All rights reserved.",
+        "x-browser-validation": "qvLgIVtG4U8GgiRPSI9IJ22mUlI=",
+        "x-browser-year": "2025",
+        "x-client-data": "CMiXywE="
+      },
+      "response_headers": {
+        "cache-control": "no-cache, no-store, must-revalidate",
+        "content-type": "text/plain"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T16:37:43.223Z",
+      "duration_ms": 5.218,
+      "endpoint": "/tr",
+      "host": "www.facebook.com",
+      "method": "GET",
+      "status": 200,
+      "query_params": {
+        "id": [
+          "495782278701262"
+        ],
+        "ev": [
+          "SubscribedButtonClick"
+        ],
+        "dl": [
+          "https://www.eastherts.gov.uk/bins-waste-and-recycling"
+        ],
+        "if": [
+          "false"
+        ],
+        "ts": [
+          "1753115863215"
+        ],
+        "cd[buttonFeatures]": [
+          "{\"classList\":\"btn btn-primmary btn-green\",\"destination\":\"https://east-herts.co.uk/\",\"id\":\"\",\"imageUrl\":\"\",\"innerText\":\"Look up your collection day\",\"numChildButtons\":0,\"tag\":\"a\",\"type\":null,\"name\":\"\"}"
+        ],
+        "cd[buttonText]": [
+          "Look up your collection day"
+        ],
+        "cd[formFeatures]": [
+          "[]"
+        ],
+        "cd[pageFeatures]": [
+          "{\"title\":\"Bins, Waste and Recycling | East Herts District Council\"}"
+        ],
+        "cd[parameters]": [
+          "[]"
+        ],
+        "sw": [
+          "800"
+        ],
+        "sh": [
+          "600"
+        ],
+        "v": [
+          "2.9.217"
+        ],
+        "r": [
+          "stable"
+        ],
+        "ec": [
+          "2"
+        ],
+        "o": [
+          "4254"
+        ],
+        "fbp": [
+          "fb.2.1753115859656.26634712210451453"
+        ],
+        "cs_est": [
+          "true"
+        ],
+        "ler": [
+          "empty"
+        ],
+        "cdl": [
+          "API_unavailable"
+        ],
+        "plt": [
+          "1268"
+        ],
+        "it": [
+          "1753115859560"
+        ],
+        "coo": [
+          "false"
+        ],
+        "es": [
+          "automatic"
+        ],
+        "tm": [
+          "3"
+        ],
+        "exp": [
+          "q1"
+        ],
+        "rqm": [
+          "GET"
+        ]
+      },
+      "request_headers": {
+        "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+        "referer": "https://www.eastherts.gov.uk/"
+      },
+      "response_headers": {
+        "content-type": "text/plain",
+        "x-fb-connection-quality": "EXCELLENT; q=0.9, rtt=6, rtx=0, c=29, mss=1232, tbw=12203, tp=27, tpl=0, uplat=0, ullat=0"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T16:37:43.282Z",
+      "duration_ms": 184.51899999999998,
+      "endpoint": "/",
+      "host": "east-herts.co.uk",
+      "method": "GET",
+      "status": 200,
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+        "referer": "https://www.eastherts.gov.uk/"
+      },
+      "response_headers": {
+        "cache-control": "public, max-age=0",
+        "content-type": "text/html; charset=UTF-8",
+        "x-cloud-trace-context": "7c6678f91ea521bb10fcc0852ccdfd0a",
+        "x-content-type-options": "nosniff",
+        "x-dns-prefetch-control": "off",
+        "x-download-options": "noopen",
+        "x-frame-options": "DENY",
+        "x-permitted-cross-domain-policies": "none",
+        "x-xss-protection": "1; mode=block"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 1147,
+        "content_ref": "99bf2b58e9bc4e6950c4d61ad689938730733886.html"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T16:37:48.060Z",
+      "duration_ms": 1097.8950000000002,
+      "endpoint": "/api/addresses/AL60FD",
+      "host": "east-herts.co.uk",
+      "method": "GET",
+      "status": 200,
+      "request_headers": {
+        "accept": "application/json",
+        "content-type": "application/json",
+        "referer": "https://east-herts.co.uk/"
+      },
+      "response_headers": {
+        "content-type": "application/json; charset=utf-8",
+        "x-cloud-trace-context": "82e7dcb81753a3a81a49fd4f85320e12",
+        "x-content-type-options": "nosniff",
+        "x-dns-prefetch-control": "off",
+        "x-download-options": "noopen",
+        "x-frame-options": "DENY",
+        "x-permitted-cross-domain-policies": "none",
+        "x-xss-protection": "1; mode=block"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 5576,
+        "content_ref": "998815f96720a4ba3842c3cbb119f364cdcccd75.json"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T16:37:53.632Z",
+      "duration_ms": 1060.488,
+      "endpoint": "/api/services/{id}",
+      "host": "east-herts.co.uk",
+      "method": "GET",
+      "status": 200,
+      "path_params": [
+        "10023086655"
+      ],
+      "request_headers": {
+        "accept": "application/json",
+        "content-type": "application/json",
+        "referer": "https://east-herts.co.uk/"
+      },
+      "response_headers": {
+        "content-type": "application/json; charset=utf-8",
+        "x-cloud-trace-context": "add740ce5472b81e91222ca77a317a56;o=1",
+        "x-content-type-options": "nosniff",
+        "x-dns-prefetch-control": "off",
+        "x-download-options": "noopen",
+        "x-frame-options": "DENY",
+        "x-permitted-cross-domain-policies": "none",
+        "x-xss-protection": "1; mode=block"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 4449,
+        "content_ref": "75c036a9706f3c2b9ad25e3576fd544f6d7daae1.json"
+      }
     }
-  ]
+  ],
+  "analysis": {
+    "total_requests": 17,
+    "unique_endpoints": 12,
+    "methods_used": [
+      "GET",
+      "POST"
+    ],
+    "status_codes": {
+      "301": 1,
+      "200": 12,
+      "204": 3,
+      "-1": 1
+    },
+    "endpoints_with_params": [
+      {
+        "endpoint": "/{id}",
+        "method": "GET",
+        "query_params": [],
+        "path_params": true
+      },
+      {
+        "endpoint": "/j/collect",
+        "method": "POST",
+        "query_params": [
+          "v",
+          "_v",
+          "aip",
+          "a",
+          "t",
+          "_s",
+          "dl",
+          "ul",
+          "de",
+          "dt",
+          "sd",
+          "sr",
+          "vp",
+          "je",
+          "_u",
+          "jid",
+          "gjid",
+          "cid",
+          "tid",
+          "_gid",
+          "_r",
+          "gtm",
+          "gcd",
+          "dma",
+          "tag_exp",
+          "did",
+          "gdid",
+          "npa",
+          "z"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/g/collect",
+        "method": "POST",
+        "query_params": [
+          "v",
+          "tid",
+          "gtm",
+          "_p",
+          "_gaz",
+          "gcd",
+          "npa",
+          "dma",
+          "tag_exp",
+          "gdid",
+          "cid",
+          "ul",
+          "sr",
+          "uaa",
+          "uab",
+          "uafvl",
+          "uamb",
+          "uap",
+          "uapv",
+          "uaw",
+          "are",
+          "frm",
+          "pscdl",
+          "_eu",
+          "_s",
+          "sid",
+          "sct",
+          "seg",
+          "dl",
+          "dt",
+          "en",
+          "_fv",
+          "_ss",
+          "tfd"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/g/collect",
+        "method": "POST",
+        "query_params": [
+          "v",
+          "tid",
+          "cid",
+          "gtm",
+          "aip",
+          "dma",
+          "gcd",
+          "npa",
+          "frm",
+          "tag_exp"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/Home/Index/{id}",
+        "method": "GET",
+        "query_params": [
+          "override"
+        ],
+        "path_params": true
+      },
+      {
+        "endpoint": "/tr",
+        "method": "GET",
+        "query_params": [
+          "id",
+          "ev",
+          "dl",
+          "if",
+          "ts",
+          "sw",
+          "sh",
+          "v",
+          "r",
+          "ec",
+          "o",
+          "fbp",
+          "cs_est",
+          "ler",
+          "cdl",
+          "plt",
+          "it",
+          "coo",
+          "exp",
+          "rqm"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/tr",
+        "method": "GET",
+        "query_params": [
+          "id",
+          "ev",
+          "dl",
+          "if",
+          "ts",
+          "cd[buttonFeatures]",
+          "cd[buttonText]",
+          "cd[formFeatures]",
+          "cd[pageFeatures]",
+          "cd[parameters]",
+          "sw",
+          "sh",
+          "v",
+          "r",
+          "ec",
+          "o",
+          "fbp",
+          "cs_est",
+          "ler",
+          "cdl",
+          "plt",
+          "it",
+          "coo",
+          "es",
+          "tm",
+          "exp",
+          "rqm"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/g/collect",
+        "method": "POST",
+        "query_params": [
+          "v",
+          "tid",
+          "gtm",
+          "_p",
+          "gcd",
+          "npa",
+          "dma",
+          "tag_exp",
+          "gdid",
+          "cid",
+          "ul",
+          "sr",
+          "uaa",
+          "uab",
+          "uafvl",
+          "uamb",
+          "uap",
+          "uapv",
+          "uaw",
+          "are",
+          "frm",
+          "pscdl",
+          "_eu",
+          "_s",
+          "sid",
+          "sct",
+          "seg",
+          "dl",
+          "dt",
+          "en",
+          "_ee",
+          "ep.event_category",
+          "ep.event_label",
+          "ep.transport_type",
+          "_et",
+          "tfd"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/api/services/{id}",
+        "method": "GET",
+        "query_params": [],
+        "path_params": true
+      }
+    ],
+    "redirects": [
+      {
+        "from": "/bins-waste-recycling",
+        "to": "https://www.eastherts.gov.uk/bins-waste-and-recycling",
+        "status": 301
+      }
+    ],
+    "api_calls": [
+      {
+        "endpoint": "/a485b4fc",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": []
+      },
+      {
+        "endpoint": "/cdn-cgi/speculation",
+        "method": "GET",
+        "response_type": "application/speculationrules+json",
+        "params": []
+      },
+      {
+        "endpoint": "/api/addresses/AL60FD",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": []
+      },
+      {
+        "endpoint": "/api/services/{id}",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": []
+      }
+    ],
+    "form_submissions": []
+  },
+  "grouped_by_endpoint": {
+    "/bins-waste-recycling": [
+      {
+        "timestamp": "2025-07-21T16:37:38.159Z",
+        "duration_ms": 58.021,
+        "endpoint": "/bins-waste-recycling",
+        "host": "www.eastherts.gov.uk",
+        "method": "GET",
+        "status": 301,
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7"
+        },
+        "response_headers": {
+          "cache-control": "public, max-age=900",
+          "content-type": "text/html; charset=utf-8",
+          "location": "https://www.eastherts.gov.uk/bins-waste-and-recycling",
+          "set-cookie": "[cookies present]",
+          "x-content-type-options": "nosniff",
+          "x-drupal-cache": "HIT",
+          "x-drupal-route-normalizer": "1",
+          "x-frame-options": "SAMEORIGIN",
+          "x-varnish": "28160420 28109145",
+          "x-varnish-cache": "HIT"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": -1
+        },
+        "redirect_to": "https://www.eastherts.gov.uk/bins-waste-and-recycling"
+      }
+    ],
+    "/{id}": [
+      {
+        "timestamp": "2025-07-21T16:37:38.203Z",
+        "duration_ms": 17.930999999999997,
+        "endpoint": "/{id}",
+        "host": "www.eastherts.gov.uk",
+        "method": "GET",
+        "status": 200,
+        "path_params": [
+          "bins-waste-and-recycling"
+        ],
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+          "cookie": "[cookies present]"
+        },
+        "response_headers": {
+          "cache-control": "public, max-age=900",
+          "content-type": "text/html; charset=UTF-8",
+          "x-content-type-options": "nosniff",
+          "x-drupal-cache": "MISS",
+          "x-drupal-dynamic-cache": "MISS",
+          "x-frame-options": "SAMEORIGIN",
+          "x-varnish": "28160422 28367730",
+          "x-varnish-cache": "HIT"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 42745,
+          "content_ref": "6bf5bd650b31f3fd1d77ca5bc655f5a2630f73d3.html"
+        }
+      }
+    ],
+    "/j/collect": [
+      {
+        "timestamp": "2025-07-21T16:37:38.387Z",
+        "duration_ms": 14.453000000000001,
+        "endpoint": "/j/collect",
+        "host": "www.google-analytics.com",
+        "method": "POST",
+        "status": 200,
+        "query_params": {
+          "v": [
+            "1"
+          ],
+          "_v": [
+            "j101"
+          ],
+          "aip": [
+            "1"
+          ],
+          "a": [
+            "779574373"
+          ],
+          "t": [
+            "pageview"
+          ],
+          "_s": [
+            "1"
+          ],
+          "dl": [
+            "https://www.eastherts.gov.uk/bins-waste-and-recycling"
+          ],
+          "ul": [
+            "en-gb"
+          ],
+          "de": [
+            "UTF-8"
+          ],
+          "dt": [
+            "Bins, Waste and Recycling | East Herts District Council"
+          ],
+          "sd": [
+            "24-bit"
+          ],
+          "sr": [
+            "800x600"
+          ],
+          "vp": [
+            "800x461"
+          ],
+          "je": [
+            "0"
+          ],
+          "_u": [
+            "YEBAAUABAAAAACAAI~"
+          ],
+          "jid": [
+            "422364911"
+          ],
+          "gjid": [
+            "1077884398"
+          ],
+          "cid": [
+            "1387020945.1753115858"
+          ],
+          "tid": [
+            "UA-15796910-11"
+          ],
+          "_gid": [
+            "1313196520.1753115858"
+          ],
+          "_r": [
+            "1"
+          ],
+          "gtm": [
+            "457e57h0za200"
+          ],
+          "gcd": [
+            "13l3l3l3l3l1"
+          ],
+          "dma": [
+            "0"
+          ],
+          "tag_exp": [
+            "101509157~103116026~103200004~103233427~104684208~104684211"
+          ],
+          "did": [
+            "dMDhkMT"
+          ],
+          "gdid": [
+            "dMDhkMT"
+          ],
+          "npa": [
+            "1"
+          ],
+          "z": [
+            "85860212"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "content-type": "text/plain",
+          "origin": "https://www.eastherts.gov.uk",
+          "referer": "https://www.eastherts.gov.uk/"
+        },
+        "response_headers": {
+          "cache-control": "no-cache, no-store, must-revalidate",
+          "content-type": "text/plain",
+          "x-content-type-options": "nosniff"
+        }
+      }
+    ],
+    "/g/collect": [
+      {
+        "timestamp": "2025-07-21T16:37:38.424Z",
+        "duration_ms": 162.48700000000002,
+        "endpoint": "/g/collect",
+        "host": "region1.analytics.google.com",
+        "method": "POST",
+        "status": 204,
+        "query_params": {
+          "v": [
+            "2"
+          ],
+          "tid": [
+            "G-X4RF2BEBQE"
+          ],
+          "gtm": [
+            "45je57h0v873909827za200"
+          ],
+          "_p": [
+            "1753115858218"
+          ],
+          "_gaz": [
+            "1"
+          ],
+          "gcd": [
+            "13l3l3l3l1l1"
+          ],
+          "npa": [
+            "0"
+          ],
+          "dma": [
+            "0"
+          ],
+          "tag_exp": [
+            "101509157~103116026~103200004~103233427~104684208~104684211~104952206~104952208"
+          ],
+          "gdid": [
+            "dMDhkMT"
+          ],
+          "cid": [
+            "1387020945.1753115858"
+          ],
+          "ul": [
+            "en-gb"
+          ],
+          "sr": [
+            "800x600"
+          ],
+          "uaa": [
+            "arm"
+          ],
+          "uab": [
+            "64"
+          ],
+          "uafvl": [
+            "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+          ],
+          "uamb": [
+            "0"
+          ],
+          "uap": [
+            "macOS"
+          ],
+          "uapv": [
+            "15.5.0"
+          ],
+          "uaw": [
+            "0"
+          ],
+          "are": [
+            "1"
+          ],
+          "frm": [
+            "0"
+          ],
+          "pscdl": [
+            "noapi"
+          ],
+          "_eu": [
+            "AAAI"
+          ],
+          "_s": [
+            "1"
+          ],
+          "sid": [
+            "1753115858"
+          ],
+          "sct": [
+            "1"
+          ],
+          "seg": [
+            "0"
+          ],
+          "dl": [
+            "https://www.eastherts.gov.uk/bins-waste-and-recycling"
+          ],
+          "dt": [
+            "Bins, Waste and Recycling | East Herts District Council"
+          ],
+          "en": [
+            "page_view"
+          ],
+          "_fv": [
+            "1"
+          ],
+          "_ss": [
+            "1"
+          ],
+          "tfd": [
+            "260"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "origin": "https://www.eastherts.gov.uk",
+          "referer": "https://www.eastherts.gov.uk/",
+          "x-browser-copyright": "Copyright 2025 Google LLC. All rights reserved.",
+          "x-browser-validation": "qvLgIVtG4U8GgiRPSI9IJ22mUlI=",
+          "x-browser-year": "2025",
+          "x-client-data": "CMiXywE="
+        },
+        "response_headers": {
+          "cache-control": "no-cache, no-store, must-revalidate",
+          "content-type": "text/plain"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T16:37:38.424Z",
+        "duration_ms": 174.986,
+        "endpoint": "/g/collect",
+        "host": "stats.g.doubleclick.net",
+        "method": "POST",
+        "status": 204,
+        "query_params": {
+          "v": [
+            "2"
+          ],
+          "tid": [
+            "G-X4RF2BEBQE"
+          ],
+          "cid": [
+            "1387020945.1753115858"
+          ],
+          "gtm": [
+            "45je57h0v873909827za200"
+          ],
+          "aip": [
+            "1"
+          ],
+          "dma": [
+            "0"
+          ],
+          "gcd": [
+            "13l3l3l3l1l1"
+          ],
+          "npa": [
+            "0"
+          ],
+          "frm": [
+            "0"
+          ],
+          "tag_exp": [
+            "101509157~103116026~103200004~103233427~104684208~104684211~104952206~104952208"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "cookie": "[cookies present]",
+          "origin": "https://www.eastherts.gov.uk",
+          "referer": "https://www.eastherts.gov.uk/",
+          "x-browser-copyright": "Copyright 2025 Google LLC. All rights reserved.",
+          "x-browser-validation": "qvLgIVtG4U8GgiRPSI9IJ22mUlI=",
+          "x-browser-year": "2025",
+          "x-client-data": "CMiXywE="
+        },
+        "response_headers": {
+          "cache-control": "no-cache, no-store, must-revalidate",
+          "content-type": "text/plain"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T16:37:43.224Z",
+        "duration_ms": 14.892,
+        "endpoint": "/g/collect",
+        "host": "region1.analytics.google.com",
+        "method": "POST",
+        "status": 204,
+        "query_params": {
+          "v": [
+            "2"
+          ],
+          "tid": [
+            "G-X4RF2BEBQE"
+          ],
+          "gtm": [
+            "45je57h0v873909827za200"
+          ],
+          "_p": [
+            "1753115858218"
+          ],
+          "gcd": [
+            "13l3l3l3l1l1"
+          ],
+          "npa": [
+            "0"
+          ],
+          "dma": [
+            "0"
+          ],
+          "tag_exp": [
+            "101509157~103116026~103200004~103233427~104684208~104684211~104952206~104952208"
+          ],
+          "gdid": [
+            "dMDhkMT"
+          ],
+          "cid": [
+            "1387020945.1753115858"
+          ],
+          "ul": [
+            "en-gb"
+          ],
+          "sr": [
+            "800x600"
+          ],
+          "uaa": [
+            "arm"
+          ],
+          "uab": [
+            "64"
+          ],
+          "uafvl": [
+            "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+          ],
+          "uamb": [
+            "0"
+          ],
+          "uap": [
+            "macOS"
+          ],
+          "uapv": [
+            "15.5.0"
+          ],
+          "uaw": [
+            "0"
+          ],
+          "are": [
+            "1"
+          ],
+          "frm": [
+            "0"
+          ],
+          "pscdl": [
+            "noapi"
+          ],
+          "_eu": [
+            "AAAIAAQ"
+          ],
+          "_s": [
+            "2"
+          ],
+          "sid": [
+            "1753115858"
+          ],
+          "sct": [
+            "1"
+          ],
+          "seg": [
+            "0"
+          ],
+          "dl": [
+            "https://www.eastherts.gov.uk/bins-waste-and-recycling"
+          ],
+          "dt": [
+            "Bins, Waste and Recycling | East Herts District Council"
+          ],
+          "en": [
+            "Click"
+          ],
+          "_ee": [
+            "1"
+          ],
+          "ep.event_category": [
+            "Outbound links"
+          ],
+          "ep.event_label": [
+            "https://east-herts.co.uk/"
+          ],
+          "ep.transport_type": [
+            "beacon"
+          ],
+          "_et": [
+            "4793"
+          ],
+          "tfd": [
+            "5064"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "origin": "https://www.eastherts.gov.uk",
+          "referer": "https://www.eastherts.gov.uk/",
+          "x-browser-copyright": "Copyright 2025 Google LLC. All rights reserved.",
+          "x-browser-validation": "qvLgIVtG4U8GgiRPSI9IJ22mUlI=",
+          "x-browser-year": "2025",
+          "x-client-data": "CMiXywE="
+        },
+        "response_headers": {
+          "cache-control": "no-cache, no-store, must-revalidate",
+          "content-type": "text/plain"
+        }
+      }
+    ],
+    "/menu/sm.25.html": [
+      {
+        "timestamp": "2025-07-21T16:37:39.467Z",
+        "duration_ms": -1,
+        "endpoint": "/menu/sm.25.html",
+        "host": "static.addtoany.com",
+        "method": "GET",
+        "status": -1,
+        "request_headers": {
+          "referer": "https://www.eastherts.gov.uk/"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T16:37:39.516Z",
+        "duration_ms": 33.024,
+        "endpoint": "/menu/sm.25.html",
+        "host": "static.addtoany.com",
+        "method": "GET",
+        "status": 200,
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+          "referer": "https://www.eastherts.gov.uk/"
+        },
+        "response_headers": {
+          "cache-control": "max-age=315360000, immutable",
+          "content-type": "text/html; charset=utf-8",
+          "x-content-type-options": "nosniff"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 716,
+          "content_ref": "39acd5fe099974486a1c9ba11ba0fe7be6bc97ca.html"
+        }
+      }
+    ],
+    "/Home/Index/{id}": [
+      {
+        "timestamp": "2025-07-21T16:37:39.412Z",
+        "duration_ms": 86.22,
+        "endpoint": "/Home/Index/{id}",
+        "host": "hitcounter.govmetric.com",
+        "method": "GET",
+        "status": 200,
+        "path_params": [
+          "1649"
+        ],
+        "query_params": {
+          "override": [
+            "https://www.eastherts.gov.uk/bins-waste-and-recycling"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "origin": "https://www.eastherts.gov.uk",
+          "referer": "https://www.eastherts.gov.uk/"
+        },
+        "response_headers": {
+          "cache-control": "no-store,no-cache",
+          "set-cookie": "[cookies present]",
+          "x-powered-by": "ASP.NET"
+        }
+      }
+    ],
+    "/a485b4fc": [
+      {
+        "timestamp": "2025-07-21T16:37:39.293Z",
+        "duration_ms": 258.039,
+        "endpoint": "/a485b4fc",
+        "host": "settings.luckyorange.com",
+        "method": "GET",
+        "status": 200,
+        "request_headers": {
+          "accept": "*/*",
+          "origin": "https://www.eastherts.gov.uk",
+          "referer": "https://www.eastherts.gov.uk/",
+          "x-lucky-referrer": "",
+          "x-lucky-uid": "undefined"
+        },
+        "response_headers": {
+          "content-type": "application/json; charset=utf-8"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 149,
+          "content_ref": "a8e9a225e787aae27c4e1012561da5e26fbe4c9c.json"
+        }
+      }
+    ],
+    "/tr": [
+      {
+        "timestamp": "2025-07-21T16:37:39.661Z",
+        "duration_ms": 37.58,
+        "endpoint": "/tr",
+        "host": "www.facebook.com",
+        "method": "GET",
+        "status": 200,
+        "query_params": {
+          "id": [
+            "495782278701262"
+          ],
+          "ev": [
+            "PageView"
+          ],
+          "dl": [
+            "https://www.eastherts.gov.uk/bins-waste-and-recycling"
+          ],
+          "if": [
+            "false"
+          ],
+          "ts": [
+            "1753115859658"
+          ],
+          "sw": [
+            "800"
+          ],
+          "sh": [
+            "600"
+          ],
+          "v": [
+            "2.9.217"
+          ],
+          "r": [
+            "stable"
+          ],
+          "ec": [
+            "0"
+          ],
+          "o": [
+            "4254"
+          ],
+          "fbp": [
+            "fb.2.1753115859656.26634712210451453"
+          ],
+          "cs_est": [
+            "true"
+          ],
+          "ler": [
+            "empty"
+          ],
+          "cdl": [
+            "API_unavailable"
+          ],
+          "plt": [
+            "1268"
+          ],
+          "it": [
+            "1753115859560"
+          ],
+          "coo": [
+            "false"
+          ],
+          "exp": [
+            "q1"
+          ],
+          "rqm": [
+            "GET"
+          ]
+        },
+        "request_headers": {
+          "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+          "referer": "https://www.eastherts.gov.uk/"
+        },
+        "response_headers": {
+          "content-type": "text/plain",
+          "x-fb-connection-quality": "EXCELLENT; q=0.9, rtt=7, rtx=0, c=23, mss=1232, tbw=5008, tp=10, tpl=0, uplat=0, ullat=0"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T16:37:40.952Z",
+        "duration_ms": 7.865,
+        "endpoint": "/tr",
+        "host": "www.facebook.com",
+        "method": "GET",
+        "status": 200,
+        "query_params": {
+          "id": [
+            "495782278701262"
+          ],
+          "ev": [
+            "SubscribedButtonClick"
+          ],
+          "dl": [
+            "https://www.eastherts.gov.uk/bins-waste-and-recycling"
+          ],
+          "if": [
+            "false"
+          ],
+          "ts": [
+            "1753115860943"
+          ],
+          "cd[buttonFeatures]": [
+            "{\"classList\":\"cm-btn cm-btn-success cm-btn-accept-all\",\"destination\":\"\",\"id\":\"\",\"imageUrl\":\"\",\"innerText\":\"Accept all\",\"numChildButtons\":0,\"tag\":\"button\",\"type\":\"button\",\"name\":\"\",\"value\":\"\"}"
+          ],
+          "cd[buttonText]": [
+            "Accept all"
+          ],
+          "cd[formFeatures]": [
+            "[]"
+          ],
+          "cd[pageFeatures]": [
+            "{\"title\":\"Bins, Waste and Recycling | East Herts District Council\"}"
+          ],
+          "cd[parameters]": [
+            "[]"
+          ],
+          "sw": [
+            "800"
+          ],
+          "sh": [
+            "600"
+          ],
+          "v": [
+            "2.9.217"
+          ],
+          "r": [
+            "stable"
+          ],
+          "ec": [
+            "1"
+          ],
+          "o": [
+            "4254"
+          ],
+          "fbp": [
+            "fb.2.1753115859656.26634712210451453"
+          ],
+          "cs_est": [
+            "true"
+          ],
+          "ler": [
+            "empty"
+          ],
+          "cdl": [
+            "API_unavailable"
+          ],
+          "plt": [
+            "1268"
+          ],
+          "it": [
+            "1753115859560"
+          ],
+          "coo": [
+            "false"
+          ],
+          "es": [
+            "automatic"
+          ],
+          "tm": [
+            "3"
+          ],
+          "exp": [
+            "q1"
+          ],
+          "rqm": [
+            "GET"
+          ]
+        },
+        "request_headers": {
+          "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+          "referer": "https://www.eastherts.gov.uk/"
+        },
+        "response_headers": {
+          "content-type": "text/plain",
+          "x-fb-connection-quality": "EXCELLENT; q=0.9, rtt=6, rtx=0, c=27, mss=1232, tbw=9515, tp=21, tpl=0, uplat=0, ullat=0"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T16:37:43.223Z",
+        "duration_ms": 5.218,
+        "endpoint": "/tr",
+        "host": "www.facebook.com",
+        "method": "GET",
+        "status": 200,
+        "query_params": {
+          "id": [
+            "495782278701262"
+          ],
+          "ev": [
+            "SubscribedButtonClick"
+          ],
+          "dl": [
+            "https://www.eastherts.gov.uk/bins-waste-and-recycling"
+          ],
+          "if": [
+            "false"
+          ],
+          "ts": [
+            "1753115863215"
+          ],
+          "cd[buttonFeatures]": [
+            "{\"classList\":\"btn btn-primmary btn-green\",\"destination\":\"https://east-herts.co.uk/\",\"id\":\"\",\"imageUrl\":\"\",\"innerText\":\"Look up your collection day\",\"numChildButtons\":0,\"tag\":\"a\",\"type\":null,\"name\":\"\"}"
+          ],
+          "cd[buttonText]": [
+            "Look up your collection day"
+          ],
+          "cd[formFeatures]": [
+            "[]"
+          ],
+          "cd[pageFeatures]": [
+            "{\"title\":\"Bins, Waste and Recycling | East Herts District Council\"}"
+          ],
+          "cd[parameters]": [
+            "[]"
+          ],
+          "sw": [
+            "800"
+          ],
+          "sh": [
+            "600"
+          ],
+          "v": [
+            "2.9.217"
+          ],
+          "r": [
+            "stable"
+          ],
+          "ec": [
+            "2"
+          ],
+          "o": [
+            "4254"
+          ],
+          "fbp": [
+            "fb.2.1753115859656.26634712210451453"
+          ],
+          "cs_est": [
+            "true"
+          ],
+          "ler": [
+            "empty"
+          ],
+          "cdl": [
+            "API_unavailable"
+          ],
+          "plt": [
+            "1268"
+          ],
+          "it": [
+            "1753115859560"
+          ],
+          "coo": [
+            "false"
+          ],
+          "es": [
+            "automatic"
+          ],
+          "tm": [
+            "3"
+          ],
+          "exp": [
+            "q1"
+          ],
+          "rqm": [
+            "GET"
+          ]
+        },
+        "request_headers": {
+          "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+          "referer": "https://www.eastherts.gov.uk/"
+        },
+        "response_headers": {
+          "content-type": "text/plain",
+          "x-fb-connection-quality": "EXCELLENT; q=0.9, rtt=6, rtx=0, c=29, mss=1232, tbw=12203, tp=27, tpl=0, uplat=0, ullat=0"
+        }
+      }
+    ],
+    "/cdn-cgi/speculation": [
+      {
+        "timestamp": "2025-07-21T16:37:39.825Z",
+        "duration_ms": 17.294,
+        "endpoint": "/cdn-cgi/speculation",
+        "host": "static.addtoany.com",
+        "method": "GET",
+        "status": 200,
+        "request_headers": {
+          "accept": "*/*",
+          "origin": "https://static.addtoany.com",
+          "referer": "https://static.addtoany.com/menu/sm.25.html"
+        },
+        "response_headers": {
+          "content-type": "application/speculationrules+json",
+          "x-content-type-options": "nosniff"
+        },
+        "response_info": {
+          "type": "application/speculationrules+json",
+          "size": 128,
+          "content_ref": "4feb87ea3a922ad07ed998e5cd308778d5ab9a84.dat"
+        }
+      }
+    ],
+    "/": [
+      {
+        "timestamp": "2025-07-21T16:37:43.282Z",
+        "duration_ms": 184.51899999999998,
+        "endpoint": "/",
+        "host": "east-herts.co.uk",
+        "method": "GET",
+        "status": 200,
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+          "referer": "https://www.eastherts.gov.uk/"
+        },
+        "response_headers": {
+          "cache-control": "public, max-age=0",
+          "content-type": "text/html; charset=UTF-8",
+          "x-cloud-trace-context": "7c6678f91ea521bb10fcc0852ccdfd0a",
+          "x-content-type-options": "nosniff",
+          "x-dns-prefetch-control": "off",
+          "x-download-options": "noopen",
+          "x-frame-options": "DENY",
+          "x-permitted-cross-domain-policies": "none",
+          "x-xss-protection": "1; mode=block"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 1147,
+          "content_ref": "99bf2b58e9bc4e6950c4d61ad689938730733886.html"
+        }
+      }
+    ],
+    "/api/addresses/AL60FD": [
+      {
+        "timestamp": "2025-07-21T16:37:48.060Z",
+        "duration_ms": 1097.8950000000002,
+        "endpoint": "/api/addresses/AL60FD",
+        "host": "east-herts.co.uk",
+        "method": "GET",
+        "status": 200,
+        "request_headers": {
+          "accept": "application/json",
+          "content-type": "application/json",
+          "referer": "https://east-herts.co.uk/"
+        },
+        "response_headers": {
+          "content-type": "application/json; charset=utf-8",
+          "x-cloud-trace-context": "82e7dcb81753a3a81a49fd4f85320e12",
+          "x-content-type-options": "nosniff",
+          "x-dns-prefetch-control": "off",
+          "x-download-options": "noopen",
+          "x-frame-options": "DENY",
+          "x-permitted-cross-domain-policies": "none",
+          "x-xss-protection": "1; mode=block"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 5576,
+          "content_ref": "998815f96720a4ba3842c3cbb119f364cdcccd75.json"
+        }
+      }
+    ],
+    "/api/services/{id}": [
+      {
+        "timestamp": "2025-07-21T16:37:53.632Z",
+        "duration_ms": 1060.488,
+        "endpoint": "/api/services/{id}",
+        "host": "east-herts.co.uk",
+        "method": "GET",
+        "status": 200,
+        "path_params": [
+          "10023086655"
+        ],
+        "request_headers": {
+          "accept": "application/json",
+          "content-type": "application/json",
+          "referer": "https://east-herts.co.uk/"
+        },
+        "response_headers": {
+          "content-type": "application/json; charset=utf-8",
+          "x-cloud-trace-context": "add740ce5472b81e91222ca77a317a56;o=1",
+          "x-content-type-options": "nosniff",
+          "x-dns-prefetch-control": "off",
+          "x-download-options": "noopen",
+          "x-frame-options": "DENY",
+          "x-permitted-cross-domain-policies": "none",
+          "x-xss-protection": "1; mode=block"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 4449,
+          "content_ref": "75c036a9706f3c2b9ad25e3576fd544f6d7daae1.json"
+        }
+      }
+    ]
+  }
 }

@@ -1,223 +1,4013 @@
 {
-  "metadata": {
-    "trace_name": "hart_district_council",
-    "processed_at": "2025-08-26 18:44:24",
-    "workflow_steps_count": 6,
-    "navigation_events_count": 17
-  },
-  "scraping_patterns": {
-    "login_detected": false,
-    "form_submissions": 7,
-    "navigation_count": 2,
-    "unique_domains": [
-      "static.addtoany.com",
-      "www.hart.gov.uk",
-      "fast.fonts.net",
-      "maps.hart.gov.uk",
-      "a.eu.silktide.com"
-    ],
-    "api_endpoints": [],
-    "data_extraction_indicators": []
-  },
-  "workflow_steps": [
+  "entries": [
     {
-      "action": "goto",
-      "target": "https://www.hart.gov.uk/your-area",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
+      "timestamp": "2025-07-21T07:39:14.438Z",
+      "duration_ms": 25.322,
+      "endpoint": "/your-area",
+      "host": "www.hart.gov.uk",
+      "method": "GET",
+      "status": 200,
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+        "cookie": "[cookies present]"
+      },
+      "response_headers": {
+        "cache-control": "max-age=1800, public",
+        "x-cache": "Hit from cloudfront",
+        "x-content-type-options": "nosniff",
+        "x-drupal-cache": "HIT",
+        "x-drupal-dynamic-cache": "MISS",
+        "x-frame-options": "SAMEORIGIN",
+        "x-xss-protection": "1; mode=block"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 38034,
+        "compressed": true,
+        "content_ref": "833dcdd367ac8b68c40e3c75ac6b3996fd358417.html"
+      }
     },
     {
-      "action": "click",
-      "target": "aria-ref=e67 >> internal:describe=\"link \\\"(link is external)\\\"\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
+      "timestamp": "2025-07-21T07:39:14.532Z",
+      "duration_ms": 75.347,
+      "endpoint": "/g/collect",
+      "host": "region1.google-analytics.com",
+      "method": "POST",
+      "status": 204,
+      "query_params": {
+        "v": [
+          "2"
+        ],
+        "tid": [
+          "G-CW7J0CEY9Y"
+        ],
+        "gtm": [
+          "45je57h0h2v893155198za200"
+        ],
+        "_p": [
+          "1753083554499"
+        ],
+        "gcd": [
+          "13l3l3l3l1l1"
+        ],
+        "npa": [
+          "0"
+        ],
+        "dma": [
+          "0"
+        ],
+        "tag_exp": [
+          "101509157~103116026~103200004~103233427~104684208~104684211~104921712~104921714"
+        ],
+        "gdid": [
+          "dMDhkMT"
+        ],
+        "cid": [
+          "2059518971.1752685939"
+        ],
+        "ul": [
+          "en-gb"
+        ],
+        "sr": [
+          "800x600"
+        ],
+        "uaa": [
+          "arm"
+        ],
+        "uab": [
+          "64"
+        ],
+        "uafvl": [
+          "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+        ],
+        "uamb": [
+          "0"
+        ],
+        "uap": [
+          "macOS"
+        ],
+        "uapv": [
+          "15.5.0"
+        ],
+        "uaw": [
+          "0"
+        ],
+        "are": [
+          "1"
+        ],
+        "frm": [
+          "0"
+        ],
+        "pscdl": [
+          "noapi"
+        ],
+        "_eu": [
+          "AAAAAAQ"
+        ],
+        "_s": [
+          "1"
+        ],
+        "sid": [
+          "1753082041"
+        ],
+        "sct": [
+          "2"
+        ],
+        "seg": [
+          "1"
+        ],
+        "dl": [
+          "https://www.hart.gov.uk/your-area"
+        ],
+        "dt": [
+          "In your area | Hart District Council"
+        ],
+        "en": [
+          "page_view"
+        ],
+        "_ee": [
+          "1"
+        ],
+        "ep.page_placeholder": [
+          "PLACEHOLDER_page_location"
+        ],
+        "tfd": [
+          "94"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "cookie": "[cookies present]",
+        "origin": "https://www.hart.gov.uk"
+      },
+      "response_headers": {
+        "cache-control": "no-cache, no-store, must-revalidate",
+        "content-type": "text/plain"
+      }
     },
     {
-      "action": "goto",
-      "target": "https://www.hart.gov.uk/waste-and-recycling/when-my-bin-day",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
+      "timestamp": "2025-07-21T07:39:14.560Z",
+      "duration_ms": 84.505,
+      "endpoint": "/v1/events",
+      "host": "a.eu.silktide.com",
+      "method": "POST",
+      "status": 202,
+      "request_headers": {
+        "accept": "application/json",
+        "content-type": "application/json",
+        "origin": "https://www.hart.gov.uk"
+      },
+      "response_headers": {
+        "content-type": "text/plain; charset=utf-8",
+        "x-powered-by": "Silktide"
+      }
     },
     {
-      "action": "fill",
-      "target": "aria-ref=e72 >> internal:describe=\"textbox \\\"e.g. GU51 4AE\\\"\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0,
-      "value": "GU10 5BD"
+      "timestamp": "2025-07-21T07:39:14.526Z",
+      "duration_ms": 1087.1490000000001,
+      "endpoint": "/a",
+      "host": "www.googletagmanager.com",
+      "method": "GET",
+      "status": 200,
+      "query_params": {
+        "id": [
+          "G-CW7J0CEY9Y"
+        ],
+        "v": [
+          "3"
+        ],
+        "t": [
+          "t"
+        ],
+        "pid": [
+          "1767121371"
+        ],
+        "cv": [
+          "2"
+        ],
+        "rv": [
+          "57h0"
+        ],
+        "tc": [
+          "14"
+        ],
+        "x": [
+          "2"
+        ],
+        "tag_exp": [
+          "101509157~103116026~103200004~103233427~104684208~104684211~104921712~104921714"
+        ],
+        "es": [
+          "1"
+        ],
+        "e": [
+          "gtm.js"
+        ],
+        "eid": [
+          "3"
+        ],
+        "u": [
+          "AAAAAAAAAAAAAACA"
+        ],
+        "h": [
+          "Ag"
+        ],
+        "tr": [
+          "1gct"
+        ],
+        "ti": [
+          "1gct"
+        ],
+        "z": [
+          "0"
+        ]
+      },
+      "request_headers": {
+        "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8"
+      },
+      "response_headers": {
+        "content-type": "text/html",
+        "x-xss-protection": "0"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 0,
+        "content_ref": "da39a3ee5e6b4b0d3255bfef95601890afd80709.html"
+      }
     },
     {
-      "action": "click",
-      "target": "aria-ref=e73 >> internal:describe=\"button \\\"Look up address\\\"\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
+      "timestamp": "2025-07-21T07:39:14.526Z",
+      "duration_ms": 44.605000000000004,
+      "endpoint": "/a",
+      "host": "www.googletagmanager.com",
+      "method": "GET",
+      "status": 200,
+      "query_params": {
+        "id": [
+          "G-CW7J0CEY9Y"
+        ],
+        "v": [
+          "3"
+        ],
+        "t": [
+          "t"
+        ],
+        "pid": [
+          "1767121371"
+        ],
+        "cv": [
+          "2"
+        ],
+        "rv": [
+          "57h0"
+        ],
+        "tc": [
+          "14"
+        ],
+        "x": [
+          "2"
+        ],
+        "tag_exp": [
+          "101509157~103116026~103200004~103233427~104684208~104684211~104921712~104921714"
+        ],
+        "es": [
+          "1"
+        ],
+        "e": [
+          "gtm.init"
+        ],
+        "eid": [
+          "2"
+        ],
+        "u": [
+          "AAAAAAAAAAAAAACA"
+        ],
+        "h": [
+          "Ag"
+        ],
+        "tr": [
+          "1ogtipmark.1ogt1pdatav2.1ccdgafirst.1setproductsettings.1ccdgaregscope.1ccdemdownload.1ccdemoutboundclick.1ccdempageview.1ccdemscroll.1ccdemsitesearch.1ccdemvideo.1ccdconversionmarking.1ccdgalast"
+        ],
+        "ti": [
+          "2ogtipmark.2ogt1pdatav2.2ccdgafirst.2setproductsettings.2ccdgaregscope.2ccdemdownload.2ccdemoutboundclick.2ccdempageview.2ccdemscroll.2ccdemsitesearch.2ccdemvideo.2ccdconversionmarking.2ccdgalast"
+        ],
+        "z": [
+          "0"
+        ]
+      },
+      "request_headers": {
+        "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8"
+      },
+      "response_headers": {
+        "content-type": "text/html",
+        "x-xss-protection": "0"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 0,
+        "content_ref": "da39a3ee5e6b4b0d3255bfef95601890afd80709.html"
+      }
     },
     {
-      "action": "selectOption",
-      "target": "aria-ref=e152 >> internal:describe=\"listbox \\\"Select\\\"\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0,
-      "value": null
+      "timestamp": "2025-07-21T07:39:14.527Z",
+      "duration_ms": 1099.672,
+      "endpoint": "/a",
+      "host": "www.googletagmanager.com",
+      "method": "GET",
+      "status": 200,
+      "query_params": {
+        "id": [
+          "G-CW7J0CEY9Y"
+        ],
+        "v": [
+          "3"
+        ],
+        "t": [
+          "t"
+        ],
+        "pid": [
+          "1767121371"
+        ],
+        "cv": [
+          "2"
+        ],
+        "rv": [
+          "57h0"
+        ],
+        "tc": [
+          "14"
+        ],
+        "x": [
+          "2"
+        ],
+        "tag_exp": [
+          "101509157~103116026~103200004~103233427~104684208~104684211~104921712~104921714"
+        ],
+        "es": [
+          "1"
+        ],
+        "e": [
+          "gtag.config"
+        ],
+        "eid": [
+          "10"
+        ],
+        "u": [
+          "AAAAAAAAAAAAACCA"
+        ],
+        "h": [
+          "Ag"
+        ],
+        "epr": [
+          "1G.2G"
+        ],
+        "z": [
+          "0"
+        ]
+      },
+      "request_headers": {
+        "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8"
+      },
+      "response_headers": {
+        "content-type": "text/html",
+        "x-xss-protection": "0"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 0,
+        "content_ref": "da39a3ee5e6b4b0d3255bfef95601890afd80709.html"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T07:39:14.532Z",
+      "duration_ms": 1102.6029999999998,
+      "endpoint": "/a",
+      "host": "www.googletagmanager.com",
+      "method": "GET",
+      "status": 200,
+      "query_params": {
+        "id": [
+          "G-CW7J0CEY9Y"
+        ],
+        "v": [
+          "3"
+        ],
+        "t": [
+          "t"
+        ],
+        "pid": [
+          "1767121371"
+        ],
+        "cv": [
+          "2"
+        ],
+        "rv": [
+          "57h0"
+        ],
+        "tc": [
+          "14"
+        ],
+        "x": [
+          "2"
+        ],
+        "tag_exp": [
+          "101509157~103116026~103200004~103233427~104684208~104684211~104921712~104921714"
+        ],
+        "es": [
+          "1"
+        ],
+        "e": [
+          "*"
+        ],
+        "eid": [
+          "11"
+        ],
+        "u": [
+          "AAAAAAAAAAAAACCA"
+        ],
+        "h": [
+          "Ag"
+        ],
+        "epr": [
+          "1G.2G"
+        ],
+        "z": [
+          "0"
+        ]
+      },
+      "request_headers": {
+        "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8"
+      },
+      "response_headers": {
+        "content-type": "text/html",
+        "x-xss-protection": "0"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 0,
+        "content_ref": "da39a3ee5e6b4b0d3255bfef95601890afd80709.html"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T07:39:14.532Z",
+      "duration_ms": 1103.259,
+      "endpoint": "/a",
+      "host": "www.googletagmanager.com",
+      "method": "GET",
+      "status": 200,
+      "query_params": {
+        "id": [
+          "G-CW7J0CEY9Y"
+        ],
+        "v": [
+          "3"
+        ],
+        "t": [
+          "t"
+        ],
+        "pid": [
+          "1767121371"
+        ],
+        "cv": [
+          "2"
+        ],
+        "rv": [
+          "57h0"
+        ],
+        "tc": [
+          "14"
+        ],
+        "x": [
+          "2"
+        ],
+        "tag_exp": [
+          "101509157~103116026~103200004~103233427~104684208~104684211~104921712~104921714"
+        ],
+        "e": [
+          "gtm.init"
+        ],
+        "eid": [
+          "2"
+        ],
+        "u": [
+          "AAAAAAAAAAAAACCA"
+        ],
+        "h": [
+          "Ag"
+        ],
+        "tr": [
+          "5ogtipmark.5ogt1pdatav2.5ccdgafirst.5setproductsettings.5ccdgaregscope.5ccdemdownload.5ccdemoutboundclick.5ccdempageview"
+        ],
+        "ti": [
+          "2ogtipmark.2ogt1pdatav2.2ccdgafirst.2setproductsettings.2ccdgaregscope.2ccdemdownload.2ccdemoutboundclick.2ccdempageview"
+        ],
+        "z": [
+          "0"
+        ]
+      },
+      "request_headers": {
+        "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8"
+      },
+      "response_headers": {
+        "content-type": "text/html",
+        "x-xss-protection": "0"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 0,
+        "content_ref": "da39a3ee5e6b4b0d3255bfef95601890afd80709.html"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T07:39:15.713Z",
+      "duration_ms": 1.412,
+      "endpoint": "/menu/sm.25.html",
+      "host": "static.addtoany.com",
+      "method": "GET",
+      "status": 200,
+      "response_headers": {
+        "cache-control": "max-age=315360000, immutable",
+        "content-type": "text/html; charset=utf-8",
+        "x-content-type-options": "nosniff"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 716,
+        "compressed": true,
+        "content_ref": "39acd5fe099974486a1c9ba11ba0fe7be6bc97ca.html"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T07:39:15.983Z",
+      "duration_ms": 17.406,
+      "endpoint": "/cdn-cgi/speculation",
+      "host": "static.addtoany.com",
+      "method": "GET",
+      "status": 200,
+      "request_headers": {
+        "accept": "*/*",
+        "origin": "https://static.addtoany.com",
+        "referer": "https://static.addtoany.com/menu/sm.25.html"
+      },
+      "response_headers": {
+        "content-type": "application/speculationrules+json",
+        "x-content-type-options": "nosniff"
+      },
+      "response_info": {
+        "type": "application/speculationrules+json",
+        "size": 128,
+        "content_ref": "4feb87ea3a922ad07ed998e5cd308778d5ab9a84.dat"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T07:39:15.989Z",
+      "duration_ms": 17.579,
+      "endpoint": "/a",
+      "host": "www.googletagmanager.com",
+      "method": "GET",
+      "status": 200,
+      "query_params": {
+        "id": [
+          "G-CW7J0CEY9Y"
+        ],
+        "v": [
+          "3"
+        ],
+        "t": [
+          "t"
+        ],
+        "pid": [
+          "1767121371"
+        ],
+        "cv": [
+          "2"
+        ],
+        "rv": [
+          "57h0"
+        ],
+        "tc": [
+          "14"
+        ],
+        "x": [
+          "2"
+        ],
+        "tag_exp": [
+          "101509157~103116026~103200004~103233427~104684208~104684211~104921712~104921714"
+        ],
+        "es": [
+          "1"
+        ],
+        "e": [
+          "gtm.dom"
+        ],
+        "eid": [
+          "12"
+        ],
+        "u": [
+          "AgAAAAAAAAAAACCA"
+        ],
+        "h": [
+          "Ag"
+        ],
+        "z": [
+          "0"
+        ]
+      },
+      "request_headers": {
+        "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8"
+      },
+      "response_headers": {
+        "content-type": "text/html",
+        "x-xss-protection": "0"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 0,
+        "content_ref": "da39a3ee5e6b4b0d3255bfef95601890afd80709.html"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T07:39:16.490Z",
+      "duration_ms": 20.025000000000002,
+      "endpoint": "/a",
+      "host": "www.googletagmanager.com",
+      "method": "GET",
+      "status": 200,
+      "query_params": {
+        "id": [
+          "G-CW7J0CEY9Y"
+        ],
+        "v": [
+          "3"
+        ],
+        "t": [
+          "t"
+        ],
+        "pid": [
+          "1767121371"
+        ],
+        "cv": [
+          "2"
+        ],
+        "rv": [
+          "57h0"
+        ],
+        "tc": [
+          "14"
+        ],
+        "x": [
+          "2"
+        ],
+        "tag_exp": [
+          "101509157~103116026~103200004~103233427~104684208~104684211~104921712~104921714"
+        ],
+        "es": [
+          "1"
+        ],
+        "e": [
+          "gtm.load"
+        ],
+        "eid": [
+          "13"
+        ],
+        "u": [
+          "AgAAAAAAAAAAACCA"
+        ],
+        "h": [
+          "Ag"
+        ],
+        "z": [
+          "0"
+        ]
+      },
+      "request_headers": {
+        "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8"
+      },
+      "response_headers": {
+        "content-type": "text/html",
+        "x-xss-protection": "0"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 0,
+        "content_ref": "da39a3ee5e6b4b0d3255bfef95601890afd80709.html"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T07:39:17.734Z",
+      "duration_ms": 15.123,
+      "endpoint": "/g/collect",
+      "host": "region1.google-analytics.com",
+      "method": "POST",
+      "status": 204,
+      "query_params": {
+        "v": [
+          "2"
+        ],
+        "tid": [
+          "G-CW7J0CEY9Y"
+        ],
+        "gtm": [
+          "45je57h0h2v893155198za200"
+        ],
+        "_p": [
+          "1753083554499"
+        ],
+        "gcd": [
+          "13l3l3l3l1l1"
+        ],
+        "npa": [
+          "0"
+        ],
+        "dma": [
+          "0"
+        ],
+        "tag_exp": [
+          "101509157~103116026~103200004~103233427~104684208~104684211~104921712~104921714"
+        ],
+        "gdid": [
+          "dMDhkMT"
+        ],
+        "cid": [
+          "2059518971.1752685939"
+        ],
+        "ul": [
+          "en-gb"
+        ],
+        "sr": [
+          "800x600"
+        ],
+        "uaa": [
+          "arm"
+        ],
+        "uab": [
+          "64"
+        ],
+        "uafvl": [
+          "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+        ],
+        "uamb": [
+          "0"
+        ],
+        "uap": [
+          "macOS"
+        ],
+        "uapv": [
+          "15.5.0"
+        ],
+        "uaw": [
+          "0"
+        ],
+        "are": [
+          "1"
+        ],
+        "frm": [
+          "0"
+        ],
+        "pscdl": [
+          "noapi"
+        ],
+        "_eu": [
+          "AEAAAAQ"
+        ],
+        "_s": [
+          "2"
+        ],
+        "sid": [
+          "1753082041"
+        ],
+        "sct": [
+          "2"
+        ],
+        "seg": [
+          "1"
+        ],
+        "dl": [
+          "https://www.hart.gov.uk/your-area"
+        ],
+        "dt": [
+          "In your area | Hart District Council"
+        ],
+        "en": [
+          "scroll"
+        ],
+        "ep.page_placeholder": [
+          "PLACEHOLDER_page_location"
+        ],
+        "epn.percent_scrolled": [
+          "90"
+        ],
+        "_et": [
+          "6"
+        ],
+        "tfd": [
+          "3294"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "cookie": "[cookies present]",
+        "origin": "https://www.hart.gov.uk"
+      },
+      "response_headers": {
+        "cache-control": "no-cache, no-store, must-revalidate",
+        "content-type": "text/plain"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T07:39:17.735Z",
+      "duration_ms": 17.77,
+      "endpoint": "/a",
+      "host": "www.googletagmanager.com",
+      "method": "GET",
+      "status": 200,
+      "query_params": {
+        "id": [
+          "G-CW7J0CEY9Y"
+        ],
+        "v": [
+          "3"
+        ],
+        "t": [
+          "t"
+        ],
+        "pid": [
+          "1767121371"
+        ],
+        "cv": [
+          "2"
+        ],
+        "rv": [
+          "57h0"
+        ],
+        "tc": [
+          "14"
+        ],
+        "x": [
+          "2"
+        ],
+        "tag_exp": [
+          "101509157~103116026~103200004~103233427~104684208~104684211~104921712~104921714"
+        ],
+        "es": [
+          "1"
+        ],
+        "e": [
+          "*"
+        ],
+        "eid": [
+          "14"
+        ],
+        "u": [
+          "AgAAAAAAAAAAACCA"
+        ],
+        "h": [
+          "Ag"
+        ],
+        "epr": [
+          "1G.2G"
+        ],
+        "z": [
+          "0"
+        ]
+      },
+      "request_headers": {
+        "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8"
+      },
+      "response_headers": {
+        "content-type": "text/html",
+        "x-xss-protection": "0"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 0,
+        "content_ref": "da39a3ee5e6b4b0d3255bfef95601890afd80709.html"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T07:39:17.735Z",
+      "duration_ms": 72.10499999999999,
+      "endpoint": "/v1/events/beacon",
+      "host": "a.eu.silktide.com",
+      "method": "POST",
+      "status": 202,
+      "request_headers": {
+        "accept": "*/*",
+        "content-type": "text/plain;charset=UTF-8",
+        "origin": "https://www.hart.gov.uk"
+      },
+      "response_headers": {
+        "content-type": "text/plain; charset=utf-8",
+        "x-powered-by": "Silktide"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T07:39:17.796Z",
+      "duration_ms": 246.554,
+      "endpoint": "/mycouncil.aspx",
+      "host": "maps.hart.gov.uk",
+      "method": "GET",
+      "status": 200,
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+        "cookie": "[cookies present]"
+      },
+      "response_headers": {
+        "cache-control": "private",
+        "content-type": "text/html; charset=utf-8",
+        "set-cookie": "[cookies present]",
+        "x-aspnet-version": "2.0.50727",
+        "x-powered-by": "ASP.NET",
+        "x-ua-compatible": "IE=Edge"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 46048,
+        "compressed": true,
+        "content_ref": "d4649f8729ae76d5f629e0f29a9febbe7bd4417c.html"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T07:39:18.091Z",
+      "duration_ms": 71.798,
+      "endpoint": "/g/collect",
+      "host": "region1.google-analytics.com",
+      "method": "POST",
+      "status": 204,
+      "query_params": {
+        "v": [
+          "2"
+        ],
+        "tid": [
+          "G-CW7J0CEY9Y"
+        ],
+        "gtm": [
+          "45je57g1v893155198za200"
+        ],
+        "_p": [
+          "1753083558023"
+        ],
+        "gcd": [
+          "13l3l3l3l1l1"
+        ],
+        "npa": [
+          "0"
+        ],
+        "dma": [
+          "0"
+        ],
+        "tag_exp": [
+          "101509157~103116026~103200004~103233427~104684208~104684211"
+        ],
+        "gdid": [
+          "dMDhkMT"
+        ],
+        "cid": [
+          "2059518971.1752685939"
+        ],
+        "ul": [
+          "en-gb"
+        ],
+        "sr": [
+          "800x600"
+        ],
+        "are": [
+          "1"
+        ],
+        "frm": [
+          "0"
+        ],
+        "pscdl": [
+          "noapi"
+        ],
+        "_eu": [
+          "AAAAAAQ"
+        ],
+        "_s": [
+          "1"
+        ],
+        "sid": [
+          "1753082041"
+        ],
+        "sct": [
+          "2"
+        ],
+        "seg": [
+          "1"
+        ],
+        "dl": [
+          "http://maps.hart.gov.uk/mycouncil.aspx"
+        ],
+        "dt": [
+          "In your area | Hart District Council"
+        ],
+        "en": [
+          "page_view"
+        ],
+        "_ee": [
+          "1"
+        ],
+        "ep.page_placeholder": [
+          "PLACEHOLDER_page_location"
+        ],
+        "tfd": [
+          "341"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "cookie": "[cookies present]",
+        "origin": "http://maps.hart.gov.uk",
+        "referer": "http://maps.hart.gov.uk/"
+      },
+      "response_headers": {
+        "cache-control": "no-cache, no-store, must-revalidate",
+        "content-type": "text/plain"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T07:39:18.101Z",
+      "duration_ms": 78.906,
+      "endpoint": "/v1/events",
+      "host": "a.eu.silktide.com",
+      "method": "POST",
+      "status": 202,
+      "request_headers": {
+        "accept": "application/json",
+        "content-type": "application/json",
+        "origin": "http://maps.hart.gov.uk",
+        "referer": "http://maps.hart.gov.uk/"
+      },
+      "response_headers": {
+        "content-type": "text/plain; charset=utf-8",
+        "x-powered-by": "Silktide"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T07:39:18.188Z",
+      "duration_ms": 1.0270000000000001,
+      "endpoint": "/menu/sm.25.html",
+      "host": "static.addtoany.com",
+      "method": "GET",
+      "status": 200,
+      "request_headers": {
+        "referer": "http://maps.hart.gov.uk/"
+      },
+      "response_headers": {
+        "cache-control": "max-age=315360000, immutable",
+        "content-type": "text/html; charset=utf-8",
+        "x-content-type-options": "nosniff"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 716,
+        "compressed": true,
+        "content_ref": "39acd5fe099974486a1c9ba11ba0fe7be6bc97ca.html"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T07:39:18.207Z",
+      "duration_ms": 41.084,
+      "endpoint": "/cdn-cgi/speculation",
+      "host": "static.addtoany.com",
+      "method": "GET",
+      "status": 200,
+      "request_headers": {
+        "accept": "*/*",
+        "origin": "https://static.addtoany.com",
+        "referer": "https://static.addtoany.com/menu/sm.25.html"
+      },
+      "response_headers": {
+        "content-type": "application/speculationrules+json",
+        "x-content-type-options": "nosniff"
+      },
+      "response_info": {
+        "type": "application/speculationrules+json",
+        "size": 128,
+        "content_ref": "4feb87ea3a922ad07ed998e5cd308778d5ab9a84.dat"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T07:39:18.234Z",
+      "duration_ms": 16.721,
+      "endpoint": "/a",
+      "host": "www.googletagmanager.com",
+      "method": "GET",
+      "status": 200,
+      "query_params": {
+        "id": [
+          "G-CW7J0CEY9Y"
+        ],
+        "v": [
+          "3"
+        ],
+        "t": [
+          "t"
+        ],
+        "pid": [
+          "1767121371"
+        ],
+        "cv": [
+          "2"
+        ],
+        "rv": [
+          "57h0"
+        ],
+        "tc": [
+          "14"
+        ],
+        "x": [
+          "2"
+        ],
+        "tag_exp": [
+          "101509157~103116026~103200004~103233427~104684208~104684211~104921712~104921714"
+        ],
+        "es": [
+          "1"
+        ],
+        "e": [
+          "gtm.linkClick"
+        ],
+        "eid": [
+          "15"
+        ],
+        "u": [
+          "AgAAAAAAAAAAACCA"
+        ],
+        "h": [
+          "Ag"
+        ],
+        "z": [
+          "0"
+        ]
+      },
+      "request_headers": {
+        "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8"
+      },
+      "response_headers": {
+        "content-type": "text/html",
+        "x-xss-protection": "0"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 0,
+        "content_ref": "da39a3ee5e6b4b0d3255bfef95601890afd80709.html"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T07:39:22.735Z",
+      "duration_ms": 13.874,
+      "endpoint": "/g/collect",
+      "host": "region1.google-analytics.com",
+      "method": "POST",
+      "status": 204,
+      "query_params": {
+        "v": [
+          "2"
+        ],
+        "tid": [
+          "G-CW7J0CEY9Y"
+        ],
+        "gtm": [
+          "45je57h0h2v893155198za200"
+        ],
+        "_p": [
+          "1753083554499"
+        ],
+        "gcd": [
+          "13l3l3l3l1l1"
+        ],
+        "npa": [
+          "0"
+        ],
+        "dma": [
+          "0"
+        ],
+        "tag_exp": [
+          "101509157~103116026~103200004~103233427~104684208~104684211~104921712~104921714"
+        ],
+        "gdid": [
+          "dMDhkMT"
+        ],
+        "cid": [
+          "2059518971.1752685939"
+        ],
+        "ul": [
+          "en-gb"
+        ],
+        "sr": [
+          "800x600"
+        ],
+        "uaa": [
+          "arm"
+        ],
+        "uab": [
+          "64"
+        ],
+        "uafvl": [
+          "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+        ],
+        "uamb": [
+          "0"
+        ],
+        "uap": [
+          "macOS"
+        ],
+        "uapv": [
+          "15.5.0"
+        ],
+        "uaw": [
+          "0"
+        ],
+        "are": [
+          "1"
+        ],
+        "frm": [
+          "0"
+        ],
+        "pscdl": [
+          "noapi"
+        ],
+        "_eu": [
+          "AAAAAAQ"
+        ],
+        "_s": [
+          "3"
+        ],
+        "sid": [
+          "1753082041"
+        ],
+        "sct": [
+          "2"
+        ],
+        "seg": [
+          "1"
+        ],
+        "dl": [
+          "https://www.hart.gov.uk/your-area"
+        ],
+        "dt": [
+          "In your area | Hart District Council"
+        ],
+        "en": [
+          "Click"
+        ],
+        "_ee": [
+          "1"
+        ],
+        "ep.page_placeholder": [
+          "PLACEHOLDER_page_location"
+        ],
+        "ep.event_category": [
+          "Outbound links"
+        ],
+        "ep.event_label": [
+          "http://maps.hart.gov.uk/mycouncil.aspx"
+        ],
+        "ep.transport_type": [
+          "beacon"
+        ],
+        "_et": [
+          "3199"
+        ],
+        "tfd": [
+          "8297"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "cookie": "[cookies present]",
+        "origin": "https://www.hart.gov.uk"
+      },
+      "response_headers": {
+        "cache-control": "no-cache, no-store, must-revalidate",
+        "content-type": "text/plain"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T07:39:23.089Z",
+      "duration_ms": 14.756,
+      "endpoint": "/g/collect",
+      "host": "region1.google-analytics.com",
+      "method": "POST",
+      "status": 204,
+      "query_params": {
+        "v": [
+          "2"
+        ],
+        "tid": [
+          "G-CW7J0CEY9Y"
+        ],
+        "gtm": [
+          "45je57g1v893155198za200"
+        ],
+        "_p": [
+          "1753083558023"
+        ],
+        "gcd": [
+          "13l3l3l3l1l1"
+        ],
+        "npa": [
+          "0"
+        ],
+        "dma": [
+          "0"
+        ],
+        "tag_exp": [
+          "101509157~103116026~103200004~103233427~104684208~104684211"
+        ],
+        "gdid": [
+          "dMDhkMT"
+        ],
+        "cid": [
+          "2059518971.1752685939"
+        ],
+        "ul": [
+          "en-gb"
+        ],
+        "sr": [
+          "800x600"
+        ],
+        "are": [
+          "1"
+        ],
+        "frm": [
+          "0"
+        ],
+        "pscdl": [
+          "noapi"
+        ],
+        "_eu": [
+          "AEAAAAQ"
+        ],
+        "_s": [
+          "2"
+        ],
+        "sid": [
+          "1753082041"
+        ],
+        "sct": [
+          "2"
+        ],
+        "seg": [
+          "1"
+        ],
+        "dl": [
+          "http://maps.hart.gov.uk/mycouncil.aspx"
+        ],
+        "dt": [
+          "In your area | Hart District Council"
+        ],
+        "en": [
+          "scroll"
+        ],
+        "ep.page_placeholder": [
+          "PLACEHOLDER_page_location"
+        ],
+        "epn.percent_scrolled": [
+          "90"
+        ],
+        "_et": [
+          "10"
+        ],
+        "tfd": [
+          "5344"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "cookie": "[cookies present]",
+        "origin": "http://maps.hart.gov.uk",
+        "referer": "http://maps.hart.gov.uk/"
+      },
+      "response_headers": {
+        "cache-control": "no-cache, no-store, must-revalidate",
+        "content-type": "text/plain"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T07:39:31.707Z",
+      "duration_ms": 26.645,
+      "endpoint": "/waste-and-recycling/when-my-bin-day",
+      "host": "www.hart.gov.uk",
+      "method": "GET",
+      "status": 200,
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+        "cookie": "[cookies present]"
+      },
+      "response_headers": {
+        "cache-control": "max-age=1800, public",
+        "content-type": "text/html; charset=UTF-8",
+        "x-cache": "Hit from cloudfront",
+        "x-content-type-options": "nosniff",
+        "x-drupal-cache": "HIT",
+        "x-drupal-dynamic-cache": "MISS",
+        "x-frame-options": "SAMEORIGIN",
+        "x-xss-protection": "1; mode=block"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 37380,
+        "compressed": true,
+        "content_ref": "6587233bb98476cbd6a1b078a7948c60db20f2ae.html"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T07:39:31.800Z",
+      "duration_ms": 14.395,
+      "endpoint": "/g/collect",
+      "host": "region1.google-analytics.com",
+      "method": "POST",
+      "status": 204,
+      "query_params": {
+        "v": [
+          "2"
+        ],
+        "tid": [
+          "G-CW7J0CEY9Y"
+        ],
+        "gtm": [
+          "45je57h0h2v893155198za200"
+        ],
+        "_p": [
+          "1753083571745"
+        ],
+        "gcd": [
+          "13l3l3l3l1l1"
+        ],
+        "npa": [
+          "0"
+        ],
+        "dma": [
+          "0"
+        ],
+        "tag_exp": [
+          "101509157~103116026~103200004~103233427~104684208~104684211~104921712~104921714"
+        ],
+        "gdid": [
+          "dMDhkMT"
+        ],
+        "cid": [
+          "2059518971.1752685939"
+        ],
+        "ul": [
+          "en-gb"
+        ],
+        "sr": [
+          "800x600"
+        ],
+        "uaa": [
+          "arm"
+        ],
+        "uab": [
+          "64"
+        ],
+        "uafvl": [
+          "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+        ],
+        "uamb": [
+          "0"
+        ],
+        "uap": [
+          "macOS"
+        ],
+        "uapv": [
+          "15.5.0"
+        ],
+        "uaw": [
+          "0"
+        ],
+        "are": [
+          "1"
+        ],
+        "frm": [
+          "0"
+        ],
+        "pscdl": [
+          "noapi"
+        ],
+        "_eu": [
+          "AAAAAAQ"
+        ],
+        "_s": [
+          "1"
+        ],
+        "sid": [
+          "1753082041"
+        ],
+        "sct": [
+          "2"
+        ],
+        "seg": [
+          "1"
+        ],
+        "dl": [
+          "https://www.hart.gov.uk/waste-and-recycling/when-my-bin-day"
+        ],
+        "dt": [
+          "When is my bin day? | Hart District Council"
+        ],
+        "en": [
+          "page_view"
+        ],
+        "_ee": [
+          "1"
+        ],
+        "ep.page_placeholder": [
+          "PLACEHOLDER_page_location"
+        ],
+        "tfd": [
+          "90"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "cookie": "[cookies present]",
+        "origin": "https://www.hart.gov.uk"
+      },
+      "response_headers": {
+        "cache-control": "no-cache, no-store, must-revalidate",
+        "content-type": "text/plain"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T07:39:31.830Z",
+      "duration_ms": 35.554,
+      "endpoint": "/v1/events",
+      "host": "a.eu.silktide.com",
+      "method": "POST",
+      "status": 202,
+      "request_headers": {
+        "accept": "application/json",
+        "content-type": "application/json",
+        "origin": "https://www.hart.gov.uk"
+      },
+      "response_headers": {
+        "content-type": "text/plain; charset=utf-8",
+        "x-powered-by": "Silktide"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T07:39:31.920Z",
+      "duration_ms": 1.351,
+      "endpoint": "/menu/sm.25.html",
+      "host": "static.addtoany.com",
+      "method": "GET",
+      "status": 200,
+      "response_headers": {
+        "cache-control": "max-age=315360000, immutable",
+        "content-type": "text/html; charset=utf-8",
+        "x-content-type-options": "nosniff"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 716,
+        "compressed": true,
+        "content_ref": "39acd5fe099974486a1c9ba11ba0fe7be6bc97ca.html"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T07:39:31.944Z",
+      "duration_ms": 16.628,
+      "endpoint": "/cdn-cgi/speculation",
+      "host": "static.addtoany.com",
+      "method": "GET",
+      "status": 200,
+      "request_headers": {
+        "accept": "*/*",
+        "origin": "https://static.addtoany.com",
+        "referer": "https://static.addtoany.com/menu/sm.25.html"
+      },
+      "response_headers": {
+        "content-type": "application/speculationrules+json",
+        "x-content-type-options": "nosniff"
+      },
+      "response_info": {
+        "type": "application/speculationrules+json",
+        "size": 128,
+        "content_ref": "4feb87ea3a922ad07ed998e5cd308778d5ab9a84.dat"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T07:39:35.096Z",
+      "duration_ms": 16.313,
+      "endpoint": "/v1/events",
+      "host": "a.eu.silktide.com",
+      "method": "POST",
+      "status": 202,
+      "request_headers": {
+        "accept": "application/json",
+        "content-type": "application/json",
+        "origin": "https://www.hart.gov.uk"
+      },
+      "response_headers": {
+        "content-type": "text/plain; charset=utf-8",
+        "x-powered-by": "Silktide"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T07:39:35.096Z",
+      "duration_ms": 264.72999999999996,
+      "endpoint": "/bbd-whitespace/list-addresses",
+      "host": "www.hart.gov.uk",
+      "method": "POST",
+      "status": 200,
+      "query_params": {
+        "postalCode": [
+          "GU10 5BD"
+        ],
+        "_wrapper_format": [
+          "drupal_ajax"
+        ]
+      },
+      "request_headers": {
+        "accept": "application/json, text/javascript, */*; q=0.01",
+        "content-type": "application/x-www-form-urlencoded; charset=UTF-8",
+        "cookie": "[cookies present]",
+        "origin": "https://www.hart.gov.uk",
+        "x-requested-with": "XMLHttpRequest"
+      },
+      "response_headers": {
+        "cache-control": "must-revalidate, no-cache, private",
+        "content-type": "application/json",
+        "x-cache": "Miss from cloudfront",
+        "x-content-type-options": "nosniff",
+        "x-drupal-ajax-token": "1",
+        "x-frame-options": "SAMEORIGIN",
+        "x-xss-protection": "1; mode=block"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 12762,
+        "compressed": true,
+        "content_ref": "cb70666b74c6a94d43f0ac28c60f66155a44a460.json"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T07:39:36.802Z",
+      "duration_ms": 13.943,
+      "endpoint": "/g/collect",
+      "host": "region1.google-analytics.com",
+      "method": "POST",
+      "status": 204,
+      "query_params": {
+        "v": [
+          "2"
+        ],
+        "tid": [
+          "G-CW7J0CEY9Y"
+        ],
+        "gtm": [
+          "45je57h0h2v893155198za200"
+        ],
+        "_p": [
+          "1753083571745"
+        ],
+        "gcd": [
+          "13l3l3l3l1l1"
+        ],
+        "npa": [
+          "0"
+        ],
+        "dma": [
+          "0"
+        ],
+        "tag_exp": [
+          "101509157~103116026~103200004~103233427~104684208~104684211~104921712~104921714"
+        ],
+        "gdid": [
+          "dMDhkMT"
+        ],
+        "cid": [
+          "2059518971.1752685939"
+        ],
+        "ul": [
+          "en-gb"
+        ],
+        "sr": [
+          "800x600"
+        ],
+        "uaa": [
+          "arm"
+        ],
+        "uab": [
+          "64"
+        ],
+        "uafvl": [
+          "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+        ],
+        "uamb": [
+          "0"
+        ],
+        "uap": [
+          "macOS"
+        ],
+        "uapv": [
+          "15.5.0"
+        ],
+        "uaw": [
+          "0"
+        ],
+        "are": [
+          "1"
+        ],
+        "frm": [
+          "0"
+        ],
+        "pscdl": [
+          "noapi"
+        ],
+        "_eu": [
+          "AEAAAAQ"
+        ],
+        "_s": [
+          "2"
+        ],
+        "sid": [
+          "1753082041"
+        ],
+        "sct": [
+          "2"
+        ],
+        "seg": [
+          "1"
+        ],
+        "dl": [
+          "https://www.hart.gov.uk/waste-and-recycling/when-my-bin-day"
+        ],
+        "dt": [
+          "When is my bin day? | Hart District Council"
+        ],
+        "en": [
+          "scroll"
+        ],
+        "ep.page_placeholder": [
+          "PLACEHOLDER_page_location"
+        ],
+        "epn.percent_scrolled": [
+          "90"
+        ],
+        "_et": [
+          "6"
+        ],
+        "tfd": [
+          "5093"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "cookie": "[cookies present]",
+        "origin": "https://www.hart.gov.uk"
+      },
+      "response_headers": {
+        "cache-control": "no-cache, no-store, must-revalidate",
+        "content-type": "text/plain"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T07:39:37.667Z",
+      "duration_ms": 303.189,
+      "endpoint": "/bbd-whitespace/{id}",
+      "host": "www.hart.gov.uk",
+      "method": "POST",
+      "status": 200,
+      "path_params": [
+        "next-collection-dates"
+      ],
+      "query_params": {
+        "uprn": [
+          "100060417791"
+        ],
+        "uri": [
+          "entity:node/172"
+        ],
+        "text": [
+          "View the calendar"
+        ],
+        "_wrapper_format": [
+          "drupal_ajax"
+        ]
+      },
+      "request_headers": {
+        "accept": "application/json, text/javascript, */*; q=0.01",
+        "content-type": "application/x-www-form-urlencoded; charset=UTF-8",
+        "cookie": "[cookies present]",
+        "origin": "https://www.hart.gov.uk",
+        "x-requested-with": "XMLHttpRequest"
+      },
+      "response_headers": {
+        "cache-control": "must-revalidate, no-cache, private",
+        "content-type": "application/json",
+        "x-cache": "Miss from cloudfront",
+        "x-content-type-options": "nosniff",
+        "x-drupal-ajax-token": "1",
+        "x-frame-options": "SAMEORIGIN",
+        "x-xss-protection": "1; mode=block"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 4411,
+        "compressed": true,
+        "content_ref": "4d36ac9384c82ad8675416afa7783b9096456611.json"
+      }
     }
   ],
-  "navigation_events": [
-    {
-      "url": "https://www.hart.gov.uk/your-area",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "text/html; charset=UTF-8",
-      "size": 38034,
-      "timestamp": "2025-07-21T07:39:14.438Z"
+  "analysis": {
+    "total_requests": 32,
+    "unique_endpoints": 11,
+    "methods_used": [
+      "GET",
+      "POST"
+    ],
+    "status_codes": {
+      "200": 20,
+      "204": 7,
+      "202": 5
     },
-    {
-      "url": "https://a.eu.silktide.com/v1/events",
-      "method": "POST",
-      "status": 202,
-      "redirect_url": null,
-      "mime_type": "text/plain; charset=utf-8",
-      "size": 2,
-      "timestamp": "2025-07-21T07:39:14.560Z"
-    },
-    {
-      "url": "https://static.addtoany.com/menu/sm.25.html",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "text/html; charset=utf-8",
-      "size": 716,
-      "timestamp": "2025-07-21T07:39:15.713Z"
-    },
-    {
-      "url": "https://static.addtoany.com/cdn-cgi/speculation",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/speculationrules+json",
-      "size": 128,
-      "timestamp": "2025-07-21T07:39:15.983Z"
-    },
-    {
-      "url": "https://a.eu.silktide.com/v1/events/beacon",
-      "method": "POST",
-      "status": 202,
-      "redirect_url": null,
-      "mime_type": "text/plain; charset=utf-8",
-      "size": 2,
-      "timestamp": "2025-07-21T07:39:17.735Z"
-    },
-    {
-      "url": "http://maps.hart.gov.uk/mycouncil.aspx",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "text/html; charset=utf-8",
-      "size": 46048,
-      "timestamp": "2025-07-21T07:39:17.796Z"
-    },
-    {
-      "url": "http://fast.fonts.net/cssapi/56c28163-b5b8-47c5-99be-39d4ad6b964d.css",
-      "method": "GET",
-      "status": 307,
-      "redirect_url": "https://fast.fonts.net/cssapi/56c28163-b5b8-47c5-99be-39d4ad6b964d.css",
-      "mime_type": "x-unknown",
-      "size": -1,
-      "timestamp": "2025-07-21T07:39:18.033Z"
-    },
-    {
-      "url": "https://a.eu.silktide.com/v1/events",
-      "method": "POST",
-      "status": 202,
-      "redirect_url": null,
-      "mime_type": "text/plain; charset=utf-8",
-      "size": 2,
-      "timestamp": "2025-07-21T07:39:18.101Z"
-    },
-    {
-      "url": "https://static.addtoany.com/menu/sm.25.html",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "text/html; charset=utf-8",
-      "size": 716,
-      "timestamp": "2025-07-21T07:39:18.188Z"
-    },
-    {
-      "url": "https://static.addtoany.com/cdn-cgi/speculation",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/speculationrules+json",
-      "size": 128,
-      "timestamp": "2025-07-21T07:39:18.207Z"
-    },
-    {
-      "url": "https://www.hart.gov.uk/waste-and-recycling/when-my-bin-day",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "text/html; charset=UTF-8",
-      "size": 37380,
-      "timestamp": "2025-07-21T07:39:31.707Z"
-    },
-    {
-      "url": "https://a.eu.silktide.com/v1/events",
-      "method": "POST",
-      "status": 202,
-      "redirect_url": null,
-      "mime_type": "text/plain; charset=utf-8",
-      "size": 2,
-      "timestamp": "2025-07-21T07:39:31.830Z"
-    },
-    {
-      "url": "https://static.addtoany.com/menu/sm.25.html",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "text/html; charset=utf-8",
-      "size": 716,
-      "timestamp": "2025-07-21T07:39:31.920Z"
-    },
-    {
-      "url": "https://static.addtoany.com/cdn-cgi/speculation",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/speculationrules+json",
-      "size": 128,
-      "timestamp": "2025-07-21T07:39:31.944Z"
-    },
-    {
-      "url": "https://a.eu.silktide.com/v1/events",
-      "method": "POST",
-      "status": 202,
-      "redirect_url": null,
-      "mime_type": "text/plain; charset=utf-8",
-      "size": 2,
-      "timestamp": "2025-07-21T07:39:35.096Z"
-    },
-    {
-      "url": "https://www.hart.gov.uk/bbd-whitespace/list-addresses?postalCode=GU10%205BD&_wrapper_format=drupal_ajax",
-      "method": "POST",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json",
-      "size": 12762,
-      "timestamp": "2025-07-21T07:39:35.096Z"
-    },
-    {
-      "url": "https://www.hart.gov.uk/bbd-whitespace/next-collection-dates?uprn=100060417791&uri=entity%3Anode%2F172&text=View%20the%20calendar&_wrapper_format=drupal_ajax",
-      "method": "POST",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json",
-      "size": 4411,
-      "timestamp": "2025-07-21T07:39:37.667Z"
-    }
-  ]
+    "endpoints_with_params": [
+      {
+        "endpoint": "/g/collect",
+        "method": "POST",
+        "query_params": [
+          "v",
+          "tid",
+          "gtm",
+          "_p",
+          "gcd",
+          "npa",
+          "dma",
+          "tag_exp",
+          "gdid",
+          "cid",
+          "ul",
+          "sr",
+          "uaa",
+          "uab",
+          "uafvl",
+          "uamb",
+          "uap",
+          "uapv",
+          "uaw",
+          "are",
+          "frm",
+          "pscdl",
+          "_eu",
+          "_s",
+          "sid",
+          "sct",
+          "seg",
+          "dl",
+          "dt",
+          "en",
+          "_ee",
+          "ep.page_placeholder",
+          "tfd"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/a",
+        "method": "GET",
+        "query_params": [
+          "id",
+          "v",
+          "t",
+          "pid",
+          "cv",
+          "rv",
+          "tc",
+          "x",
+          "tag_exp",
+          "es",
+          "e",
+          "eid",
+          "u",
+          "h",
+          "tr",
+          "ti",
+          "z"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/a",
+        "method": "GET",
+        "query_params": [
+          "id",
+          "v",
+          "t",
+          "pid",
+          "cv",
+          "rv",
+          "tc",
+          "x",
+          "tag_exp",
+          "es",
+          "e",
+          "eid",
+          "u",
+          "h",
+          "epr",
+          "z"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/a",
+        "method": "GET",
+        "query_params": [
+          "id",
+          "v",
+          "t",
+          "pid",
+          "cv",
+          "rv",
+          "tc",
+          "x",
+          "tag_exp",
+          "e",
+          "eid",
+          "u",
+          "h",
+          "tr",
+          "ti",
+          "z"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/a",
+        "method": "GET",
+        "query_params": [
+          "id",
+          "v",
+          "t",
+          "pid",
+          "cv",
+          "rv",
+          "tc",
+          "x",
+          "tag_exp",
+          "es",
+          "e",
+          "eid",
+          "u",
+          "h",
+          "z"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/g/collect",
+        "method": "POST",
+        "query_params": [
+          "v",
+          "tid",
+          "gtm",
+          "_p",
+          "gcd",
+          "npa",
+          "dma",
+          "tag_exp",
+          "gdid",
+          "cid",
+          "ul",
+          "sr",
+          "uaa",
+          "uab",
+          "uafvl",
+          "uamb",
+          "uap",
+          "uapv",
+          "uaw",
+          "are",
+          "frm",
+          "pscdl",
+          "_eu",
+          "_s",
+          "sid",
+          "sct",
+          "seg",
+          "dl",
+          "dt",
+          "en",
+          "ep.page_placeholder",
+          "epn.percent_scrolled",
+          "_et",
+          "tfd"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/g/collect",
+        "method": "POST",
+        "query_params": [
+          "v",
+          "tid",
+          "gtm",
+          "_p",
+          "gcd",
+          "npa",
+          "dma",
+          "tag_exp",
+          "gdid",
+          "cid",
+          "ul",
+          "sr",
+          "are",
+          "frm",
+          "pscdl",
+          "_eu",
+          "_s",
+          "sid",
+          "sct",
+          "seg",
+          "dl",
+          "dt",
+          "en",
+          "_ee",
+          "ep.page_placeholder",
+          "tfd"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/g/collect",
+        "method": "POST",
+        "query_params": [
+          "v",
+          "tid",
+          "gtm",
+          "_p",
+          "gcd",
+          "npa",
+          "dma",
+          "tag_exp",
+          "gdid",
+          "cid",
+          "ul",
+          "sr",
+          "uaa",
+          "uab",
+          "uafvl",
+          "uamb",
+          "uap",
+          "uapv",
+          "uaw",
+          "are",
+          "frm",
+          "pscdl",
+          "_eu",
+          "_s",
+          "sid",
+          "sct",
+          "seg",
+          "dl",
+          "dt",
+          "en",
+          "_ee",
+          "ep.page_placeholder",
+          "ep.event_category",
+          "ep.event_label",
+          "ep.transport_type",
+          "_et",
+          "tfd"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/g/collect",
+        "method": "POST",
+        "query_params": [
+          "v",
+          "tid",
+          "gtm",
+          "_p",
+          "gcd",
+          "npa",
+          "dma",
+          "tag_exp",
+          "gdid",
+          "cid",
+          "ul",
+          "sr",
+          "are",
+          "frm",
+          "pscdl",
+          "_eu",
+          "_s",
+          "sid",
+          "sct",
+          "seg",
+          "dl",
+          "dt",
+          "en",
+          "ep.page_placeholder",
+          "epn.percent_scrolled",
+          "_et",
+          "tfd"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/bbd-whitespace/list-addresses",
+        "method": "POST",
+        "query_params": [
+          "postalCode",
+          "_wrapper_format"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/bbd-whitespace/{id}",
+        "method": "POST",
+        "query_params": [
+          "uprn",
+          "uri",
+          "text",
+          "_wrapper_format"
+        ],
+        "path_params": true
+      }
+    ],
+    "redirects": [],
+    "api_calls": [
+      {
+        "endpoint": "/cdn-cgi/speculation",
+        "method": "GET",
+        "response_type": "application/speculationrules+json",
+        "params": []
+      },
+      {
+        "endpoint": "/cdn-cgi/speculation",
+        "method": "GET",
+        "response_type": "application/speculationrules+json",
+        "params": []
+      },
+      {
+        "endpoint": "/cdn-cgi/speculation",
+        "method": "GET",
+        "response_type": "application/speculationrules+json",
+        "params": []
+      },
+      {
+        "endpoint": "/bbd-whitespace/list-addresses",
+        "method": "POST",
+        "response_type": "application/json",
+        "params": [
+          "postalCode",
+          "_wrapper_format"
+        ]
+      },
+      {
+        "endpoint": "/bbd-whitespace/{id}",
+        "method": "POST",
+        "response_type": "application/json",
+        "params": [
+          "uprn",
+          "uri",
+          "text",
+          "_wrapper_format"
+        ]
+      }
+    ],
+    "form_submissions": []
+  },
+  "grouped_by_endpoint": {
+    "/your-area": [
+      {
+        "timestamp": "2025-07-21T07:39:14.438Z",
+        "duration_ms": 25.322,
+        "endpoint": "/your-area",
+        "host": "www.hart.gov.uk",
+        "method": "GET",
+        "status": 200,
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+          "cookie": "[cookies present]"
+        },
+        "response_headers": {
+          "cache-control": "max-age=1800, public",
+          "x-cache": "Hit from cloudfront",
+          "x-content-type-options": "nosniff",
+          "x-drupal-cache": "HIT",
+          "x-drupal-dynamic-cache": "MISS",
+          "x-frame-options": "SAMEORIGIN",
+          "x-xss-protection": "1; mode=block"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 38034,
+          "compressed": true,
+          "content_ref": "833dcdd367ac8b68c40e3c75ac6b3996fd358417.html"
+        }
+      }
+    ],
+    "/g/collect": [
+      {
+        "timestamp": "2025-07-21T07:39:14.532Z",
+        "duration_ms": 75.347,
+        "endpoint": "/g/collect",
+        "host": "region1.google-analytics.com",
+        "method": "POST",
+        "status": 204,
+        "query_params": {
+          "v": [
+            "2"
+          ],
+          "tid": [
+            "G-CW7J0CEY9Y"
+          ],
+          "gtm": [
+            "45je57h0h2v893155198za200"
+          ],
+          "_p": [
+            "1753083554499"
+          ],
+          "gcd": [
+            "13l3l3l3l1l1"
+          ],
+          "npa": [
+            "0"
+          ],
+          "dma": [
+            "0"
+          ],
+          "tag_exp": [
+            "101509157~103116026~103200004~103233427~104684208~104684211~104921712~104921714"
+          ],
+          "gdid": [
+            "dMDhkMT"
+          ],
+          "cid": [
+            "2059518971.1752685939"
+          ],
+          "ul": [
+            "en-gb"
+          ],
+          "sr": [
+            "800x600"
+          ],
+          "uaa": [
+            "arm"
+          ],
+          "uab": [
+            "64"
+          ],
+          "uafvl": [
+            "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+          ],
+          "uamb": [
+            "0"
+          ],
+          "uap": [
+            "macOS"
+          ],
+          "uapv": [
+            "15.5.0"
+          ],
+          "uaw": [
+            "0"
+          ],
+          "are": [
+            "1"
+          ],
+          "frm": [
+            "0"
+          ],
+          "pscdl": [
+            "noapi"
+          ],
+          "_eu": [
+            "AAAAAAQ"
+          ],
+          "_s": [
+            "1"
+          ],
+          "sid": [
+            "1753082041"
+          ],
+          "sct": [
+            "2"
+          ],
+          "seg": [
+            "1"
+          ],
+          "dl": [
+            "https://www.hart.gov.uk/your-area"
+          ],
+          "dt": [
+            "In your area | Hart District Council"
+          ],
+          "en": [
+            "page_view"
+          ],
+          "_ee": [
+            "1"
+          ],
+          "ep.page_placeholder": [
+            "PLACEHOLDER_page_location"
+          ],
+          "tfd": [
+            "94"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "cookie": "[cookies present]",
+          "origin": "https://www.hart.gov.uk"
+        },
+        "response_headers": {
+          "cache-control": "no-cache, no-store, must-revalidate",
+          "content-type": "text/plain"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T07:39:17.734Z",
+        "duration_ms": 15.123,
+        "endpoint": "/g/collect",
+        "host": "region1.google-analytics.com",
+        "method": "POST",
+        "status": 204,
+        "query_params": {
+          "v": [
+            "2"
+          ],
+          "tid": [
+            "G-CW7J0CEY9Y"
+          ],
+          "gtm": [
+            "45je57h0h2v893155198za200"
+          ],
+          "_p": [
+            "1753083554499"
+          ],
+          "gcd": [
+            "13l3l3l3l1l1"
+          ],
+          "npa": [
+            "0"
+          ],
+          "dma": [
+            "0"
+          ],
+          "tag_exp": [
+            "101509157~103116026~103200004~103233427~104684208~104684211~104921712~104921714"
+          ],
+          "gdid": [
+            "dMDhkMT"
+          ],
+          "cid": [
+            "2059518971.1752685939"
+          ],
+          "ul": [
+            "en-gb"
+          ],
+          "sr": [
+            "800x600"
+          ],
+          "uaa": [
+            "arm"
+          ],
+          "uab": [
+            "64"
+          ],
+          "uafvl": [
+            "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+          ],
+          "uamb": [
+            "0"
+          ],
+          "uap": [
+            "macOS"
+          ],
+          "uapv": [
+            "15.5.0"
+          ],
+          "uaw": [
+            "0"
+          ],
+          "are": [
+            "1"
+          ],
+          "frm": [
+            "0"
+          ],
+          "pscdl": [
+            "noapi"
+          ],
+          "_eu": [
+            "AEAAAAQ"
+          ],
+          "_s": [
+            "2"
+          ],
+          "sid": [
+            "1753082041"
+          ],
+          "sct": [
+            "2"
+          ],
+          "seg": [
+            "1"
+          ],
+          "dl": [
+            "https://www.hart.gov.uk/your-area"
+          ],
+          "dt": [
+            "In your area | Hart District Council"
+          ],
+          "en": [
+            "scroll"
+          ],
+          "ep.page_placeholder": [
+            "PLACEHOLDER_page_location"
+          ],
+          "epn.percent_scrolled": [
+            "90"
+          ],
+          "_et": [
+            "6"
+          ],
+          "tfd": [
+            "3294"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "cookie": "[cookies present]",
+          "origin": "https://www.hart.gov.uk"
+        },
+        "response_headers": {
+          "cache-control": "no-cache, no-store, must-revalidate",
+          "content-type": "text/plain"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T07:39:18.091Z",
+        "duration_ms": 71.798,
+        "endpoint": "/g/collect",
+        "host": "region1.google-analytics.com",
+        "method": "POST",
+        "status": 204,
+        "query_params": {
+          "v": [
+            "2"
+          ],
+          "tid": [
+            "G-CW7J0CEY9Y"
+          ],
+          "gtm": [
+            "45je57g1v893155198za200"
+          ],
+          "_p": [
+            "1753083558023"
+          ],
+          "gcd": [
+            "13l3l3l3l1l1"
+          ],
+          "npa": [
+            "0"
+          ],
+          "dma": [
+            "0"
+          ],
+          "tag_exp": [
+            "101509157~103116026~103200004~103233427~104684208~104684211"
+          ],
+          "gdid": [
+            "dMDhkMT"
+          ],
+          "cid": [
+            "2059518971.1752685939"
+          ],
+          "ul": [
+            "en-gb"
+          ],
+          "sr": [
+            "800x600"
+          ],
+          "are": [
+            "1"
+          ],
+          "frm": [
+            "0"
+          ],
+          "pscdl": [
+            "noapi"
+          ],
+          "_eu": [
+            "AAAAAAQ"
+          ],
+          "_s": [
+            "1"
+          ],
+          "sid": [
+            "1753082041"
+          ],
+          "sct": [
+            "2"
+          ],
+          "seg": [
+            "1"
+          ],
+          "dl": [
+            "http://maps.hart.gov.uk/mycouncil.aspx"
+          ],
+          "dt": [
+            "In your area | Hart District Council"
+          ],
+          "en": [
+            "page_view"
+          ],
+          "_ee": [
+            "1"
+          ],
+          "ep.page_placeholder": [
+            "PLACEHOLDER_page_location"
+          ],
+          "tfd": [
+            "341"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "cookie": "[cookies present]",
+          "origin": "http://maps.hart.gov.uk",
+          "referer": "http://maps.hart.gov.uk/"
+        },
+        "response_headers": {
+          "cache-control": "no-cache, no-store, must-revalidate",
+          "content-type": "text/plain"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T07:39:22.735Z",
+        "duration_ms": 13.874,
+        "endpoint": "/g/collect",
+        "host": "region1.google-analytics.com",
+        "method": "POST",
+        "status": 204,
+        "query_params": {
+          "v": [
+            "2"
+          ],
+          "tid": [
+            "G-CW7J0CEY9Y"
+          ],
+          "gtm": [
+            "45je57h0h2v893155198za200"
+          ],
+          "_p": [
+            "1753083554499"
+          ],
+          "gcd": [
+            "13l3l3l3l1l1"
+          ],
+          "npa": [
+            "0"
+          ],
+          "dma": [
+            "0"
+          ],
+          "tag_exp": [
+            "101509157~103116026~103200004~103233427~104684208~104684211~104921712~104921714"
+          ],
+          "gdid": [
+            "dMDhkMT"
+          ],
+          "cid": [
+            "2059518971.1752685939"
+          ],
+          "ul": [
+            "en-gb"
+          ],
+          "sr": [
+            "800x600"
+          ],
+          "uaa": [
+            "arm"
+          ],
+          "uab": [
+            "64"
+          ],
+          "uafvl": [
+            "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+          ],
+          "uamb": [
+            "0"
+          ],
+          "uap": [
+            "macOS"
+          ],
+          "uapv": [
+            "15.5.0"
+          ],
+          "uaw": [
+            "0"
+          ],
+          "are": [
+            "1"
+          ],
+          "frm": [
+            "0"
+          ],
+          "pscdl": [
+            "noapi"
+          ],
+          "_eu": [
+            "AAAAAAQ"
+          ],
+          "_s": [
+            "3"
+          ],
+          "sid": [
+            "1753082041"
+          ],
+          "sct": [
+            "2"
+          ],
+          "seg": [
+            "1"
+          ],
+          "dl": [
+            "https://www.hart.gov.uk/your-area"
+          ],
+          "dt": [
+            "In your area | Hart District Council"
+          ],
+          "en": [
+            "Click"
+          ],
+          "_ee": [
+            "1"
+          ],
+          "ep.page_placeholder": [
+            "PLACEHOLDER_page_location"
+          ],
+          "ep.event_category": [
+            "Outbound links"
+          ],
+          "ep.event_label": [
+            "http://maps.hart.gov.uk/mycouncil.aspx"
+          ],
+          "ep.transport_type": [
+            "beacon"
+          ],
+          "_et": [
+            "3199"
+          ],
+          "tfd": [
+            "8297"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "cookie": "[cookies present]",
+          "origin": "https://www.hart.gov.uk"
+        },
+        "response_headers": {
+          "cache-control": "no-cache, no-store, must-revalidate",
+          "content-type": "text/plain"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T07:39:23.089Z",
+        "duration_ms": 14.756,
+        "endpoint": "/g/collect",
+        "host": "region1.google-analytics.com",
+        "method": "POST",
+        "status": 204,
+        "query_params": {
+          "v": [
+            "2"
+          ],
+          "tid": [
+            "G-CW7J0CEY9Y"
+          ],
+          "gtm": [
+            "45je57g1v893155198za200"
+          ],
+          "_p": [
+            "1753083558023"
+          ],
+          "gcd": [
+            "13l3l3l3l1l1"
+          ],
+          "npa": [
+            "0"
+          ],
+          "dma": [
+            "0"
+          ],
+          "tag_exp": [
+            "101509157~103116026~103200004~103233427~104684208~104684211"
+          ],
+          "gdid": [
+            "dMDhkMT"
+          ],
+          "cid": [
+            "2059518971.1752685939"
+          ],
+          "ul": [
+            "en-gb"
+          ],
+          "sr": [
+            "800x600"
+          ],
+          "are": [
+            "1"
+          ],
+          "frm": [
+            "0"
+          ],
+          "pscdl": [
+            "noapi"
+          ],
+          "_eu": [
+            "AEAAAAQ"
+          ],
+          "_s": [
+            "2"
+          ],
+          "sid": [
+            "1753082041"
+          ],
+          "sct": [
+            "2"
+          ],
+          "seg": [
+            "1"
+          ],
+          "dl": [
+            "http://maps.hart.gov.uk/mycouncil.aspx"
+          ],
+          "dt": [
+            "In your area | Hart District Council"
+          ],
+          "en": [
+            "scroll"
+          ],
+          "ep.page_placeholder": [
+            "PLACEHOLDER_page_location"
+          ],
+          "epn.percent_scrolled": [
+            "90"
+          ],
+          "_et": [
+            "10"
+          ],
+          "tfd": [
+            "5344"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "cookie": "[cookies present]",
+          "origin": "http://maps.hart.gov.uk",
+          "referer": "http://maps.hart.gov.uk/"
+        },
+        "response_headers": {
+          "cache-control": "no-cache, no-store, must-revalidate",
+          "content-type": "text/plain"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T07:39:31.800Z",
+        "duration_ms": 14.395,
+        "endpoint": "/g/collect",
+        "host": "region1.google-analytics.com",
+        "method": "POST",
+        "status": 204,
+        "query_params": {
+          "v": [
+            "2"
+          ],
+          "tid": [
+            "G-CW7J0CEY9Y"
+          ],
+          "gtm": [
+            "45je57h0h2v893155198za200"
+          ],
+          "_p": [
+            "1753083571745"
+          ],
+          "gcd": [
+            "13l3l3l3l1l1"
+          ],
+          "npa": [
+            "0"
+          ],
+          "dma": [
+            "0"
+          ],
+          "tag_exp": [
+            "101509157~103116026~103200004~103233427~104684208~104684211~104921712~104921714"
+          ],
+          "gdid": [
+            "dMDhkMT"
+          ],
+          "cid": [
+            "2059518971.1752685939"
+          ],
+          "ul": [
+            "en-gb"
+          ],
+          "sr": [
+            "800x600"
+          ],
+          "uaa": [
+            "arm"
+          ],
+          "uab": [
+            "64"
+          ],
+          "uafvl": [
+            "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+          ],
+          "uamb": [
+            "0"
+          ],
+          "uap": [
+            "macOS"
+          ],
+          "uapv": [
+            "15.5.0"
+          ],
+          "uaw": [
+            "0"
+          ],
+          "are": [
+            "1"
+          ],
+          "frm": [
+            "0"
+          ],
+          "pscdl": [
+            "noapi"
+          ],
+          "_eu": [
+            "AAAAAAQ"
+          ],
+          "_s": [
+            "1"
+          ],
+          "sid": [
+            "1753082041"
+          ],
+          "sct": [
+            "2"
+          ],
+          "seg": [
+            "1"
+          ],
+          "dl": [
+            "https://www.hart.gov.uk/waste-and-recycling/when-my-bin-day"
+          ],
+          "dt": [
+            "When is my bin day? | Hart District Council"
+          ],
+          "en": [
+            "page_view"
+          ],
+          "_ee": [
+            "1"
+          ],
+          "ep.page_placeholder": [
+            "PLACEHOLDER_page_location"
+          ],
+          "tfd": [
+            "90"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "cookie": "[cookies present]",
+          "origin": "https://www.hart.gov.uk"
+        },
+        "response_headers": {
+          "cache-control": "no-cache, no-store, must-revalidate",
+          "content-type": "text/plain"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T07:39:36.802Z",
+        "duration_ms": 13.943,
+        "endpoint": "/g/collect",
+        "host": "region1.google-analytics.com",
+        "method": "POST",
+        "status": 204,
+        "query_params": {
+          "v": [
+            "2"
+          ],
+          "tid": [
+            "G-CW7J0CEY9Y"
+          ],
+          "gtm": [
+            "45je57h0h2v893155198za200"
+          ],
+          "_p": [
+            "1753083571745"
+          ],
+          "gcd": [
+            "13l3l3l3l1l1"
+          ],
+          "npa": [
+            "0"
+          ],
+          "dma": [
+            "0"
+          ],
+          "tag_exp": [
+            "101509157~103116026~103200004~103233427~104684208~104684211~104921712~104921714"
+          ],
+          "gdid": [
+            "dMDhkMT"
+          ],
+          "cid": [
+            "2059518971.1752685939"
+          ],
+          "ul": [
+            "en-gb"
+          ],
+          "sr": [
+            "800x600"
+          ],
+          "uaa": [
+            "arm"
+          ],
+          "uab": [
+            "64"
+          ],
+          "uafvl": [
+            "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+          ],
+          "uamb": [
+            "0"
+          ],
+          "uap": [
+            "macOS"
+          ],
+          "uapv": [
+            "15.5.0"
+          ],
+          "uaw": [
+            "0"
+          ],
+          "are": [
+            "1"
+          ],
+          "frm": [
+            "0"
+          ],
+          "pscdl": [
+            "noapi"
+          ],
+          "_eu": [
+            "AEAAAAQ"
+          ],
+          "_s": [
+            "2"
+          ],
+          "sid": [
+            "1753082041"
+          ],
+          "sct": [
+            "2"
+          ],
+          "seg": [
+            "1"
+          ],
+          "dl": [
+            "https://www.hart.gov.uk/waste-and-recycling/when-my-bin-day"
+          ],
+          "dt": [
+            "When is my bin day? | Hart District Council"
+          ],
+          "en": [
+            "scroll"
+          ],
+          "ep.page_placeholder": [
+            "PLACEHOLDER_page_location"
+          ],
+          "epn.percent_scrolled": [
+            "90"
+          ],
+          "_et": [
+            "6"
+          ],
+          "tfd": [
+            "5093"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "cookie": "[cookies present]",
+          "origin": "https://www.hart.gov.uk"
+        },
+        "response_headers": {
+          "cache-control": "no-cache, no-store, must-revalidate",
+          "content-type": "text/plain"
+        }
+      }
+    ],
+    "/v1/events": [
+      {
+        "timestamp": "2025-07-21T07:39:14.560Z",
+        "duration_ms": 84.505,
+        "endpoint": "/v1/events",
+        "host": "a.eu.silktide.com",
+        "method": "POST",
+        "status": 202,
+        "request_headers": {
+          "accept": "application/json",
+          "content-type": "application/json",
+          "origin": "https://www.hart.gov.uk"
+        },
+        "response_headers": {
+          "content-type": "text/plain; charset=utf-8",
+          "x-powered-by": "Silktide"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T07:39:18.101Z",
+        "duration_ms": 78.906,
+        "endpoint": "/v1/events",
+        "host": "a.eu.silktide.com",
+        "method": "POST",
+        "status": 202,
+        "request_headers": {
+          "accept": "application/json",
+          "content-type": "application/json",
+          "origin": "http://maps.hart.gov.uk",
+          "referer": "http://maps.hart.gov.uk/"
+        },
+        "response_headers": {
+          "content-type": "text/plain; charset=utf-8",
+          "x-powered-by": "Silktide"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T07:39:31.830Z",
+        "duration_ms": 35.554,
+        "endpoint": "/v1/events",
+        "host": "a.eu.silktide.com",
+        "method": "POST",
+        "status": 202,
+        "request_headers": {
+          "accept": "application/json",
+          "content-type": "application/json",
+          "origin": "https://www.hart.gov.uk"
+        },
+        "response_headers": {
+          "content-type": "text/plain; charset=utf-8",
+          "x-powered-by": "Silktide"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T07:39:35.096Z",
+        "duration_ms": 16.313,
+        "endpoint": "/v1/events",
+        "host": "a.eu.silktide.com",
+        "method": "POST",
+        "status": 202,
+        "request_headers": {
+          "accept": "application/json",
+          "content-type": "application/json",
+          "origin": "https://www.hart.gov.uk"
+        },
+        "response_headers": {
+          "content-type": "text/plain; charset=utf-8",
+          "x-powered-by": "Silktide"
+        }
+      }
+    ],
+    "/a": [
+      {
+        "timestamp": "2025-07-21T07:39:14.526Z",
+        "duration_ms": 1087.1490000000001,
+        "endpoint": "/a",
+        "host": "www.googletagmanager.com",
+        "method": "GET",
+        "status": 200,
+        "query_params": {
+          "id": [
+            "G-CW7J0CEY9Y"
+          ],
+          "v": [
+            "3"
+          ],
+          "t": [
+            "t"
+          ],
+          "pid": [
+            "1767121371"
+          ],
+          "cv": [
+            "2"
+          ],
+          "rv": [
+            "57h0"
+          ],
+          "tc": [
+            "14"
+          ],
+          "x": [
+            "2"
+          ],
+          "tag_exp": [
+            "101509157~103116026~103200004~103233427~104684208~104684211~104921712~104921714"
+          ],
+          "es": [
+            "1"
+          ],
+          "e": [
+            "gtm.js"
+          ],
+          "eid": [
+            "3"
+          ],
+          "u": [
+            "AAAAAAAAAAAAAACA"
+          ],
+          "h": [
+            "Ag"
+          ],
+          "tr": [
+            "1gct"
+          ],
+          "ti": [
+            "1gct"
+          ],
+          "z": [
+            "0"
+          ]
+        },
+        "request_headers": {
+          "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8"
+        },
+        "response_headers": {
+          "content-type": "text/html",
+          "x-xss-protection": "0"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 0,
+          "content_ref": "da39a3ee5e6b4b0d3255bfef95601890afd80709.html"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T07:39:14.526Z",
+        "duration_ms": 44.605000000000004,
+        "endpoint": "/a",
+        "host": "www.googletagmanager.com",
+        "method": "GET",
+        "status": 200,
+        "query_params": {
+          "id": [
+            "G-CW7J0CEY9Y"
+          ],
+          "v": [
+            "3"
+          ],
+          "t": [
+            "t"
+          ],
+          "pid": [
+            "1767121371"
+          ],
+          "cv": [
+            "2"
+          ],
+          "rv": [
+            "57h0"
+          ],
+          "tc": [
+            "14"
+          ],
+          "x": [
+            "2"
+          ],
+          "tag_exp": [
+            "101509157~103116026~103200004~103233427~104684208~104684211~104921712~104921714"
+          ],
+          "es": [
+            "1"
+          ],
+          "e": [
+            "gtm.init"
+          ],
+          "eid": [
+            "2"
+          ],
+          "u": [
+            "AAAAAAAAAAAAAACA"
+          ],
+          "h": [
+            "Ag"
+          ],
+          "tr": [
+            "1ogtipmark.1ogt1pdatav2.1ccdgafirst.1setproductsettings.1ccdgaregscope.1ccdemdownload.1ccdemoutboundclick.1ccdempageview.1ccdemscroll.1ccdemsitesearch.1ccdemvideo.1ccdconversionmarking.1ccdgalast"
+          ],
+          "ti": [
+            "2ogtipmark.2ogt1pdatav2.2ccdgafirst.2setproductsettings.2ccdgaregscope.2ccdemdownload.2ccdemoutboundclick.2ccdempageview.2ccdemscroll.2ccdemsitesearch.2ccdemvideo.2ccdconversionmarking.2ccdgalast"
+          ],
+          "z": [
+            "0"
+          ]
+        },
+        "request_headers": {
+          "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8"
+        },
+        "response_headers": {
+          "content-type": "text/html",
+          "x-xss-protection": "0"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 0,
+          "content_ref": "da39a3ee5e6b4b0d3255bfef95601890afd80709.html"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T07:39:14.527Z",
+        "duration_ms": 1099.672,
+        "endpoint": "/a",
+        "host": "www.googletagmanager.com",
+        "method": "GET",
+        "status": 200,
+        "query_params": {
+          "id": [
+            "G-CW7J0CEY9Y"
+          ],
+          "v": [
+            "3"
+          ],
+          "t": [
+            "t"
+          ],
+          "pid": [
+            "1767121371"
+          ],
+          "cv": [
+            "2"
+          ],
+          "rv": [
+            "57h0"
+          ],
+          "tc": [
+            "14"
+          ],
+          "x": [
+            "2"
+          ],
+          "tag_exp": [
+            "101509157~103116026~103200004~103233427~104684208~104684211~104921712~104921714"
+          ],
+          "es": [
+            "1"
+          ],
+          "e": [
+            "gtag.config"
+          ],
+          "eid": [
+            "10"
+          ],
+          "u": [
+            "AAAAAAAAAAAAACCA"
+          ],
+          "h": [
+            "Ag"
+          ],
+          "epr": [
+            "1G.2G"
+          ],
+          "z": [
+            "0"
+          ]
+        },
+        "request_headers": {
+          "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8"
+        },
+        "response_headers": {
+          "content-type": "text/html",
+          "x-xss-protection": "0"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 0,
+          "content_ref": "da39a3ee5e6b4b0d3255bfef95601890afd80709.html"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T07:39:14.532Z",
+        "duration_ms": 1102.6029999999998,
+        "endpoint": "/a",
+        "host": "www.googletagmanager.com",
+        "method": "GET",
+        "status": 200,
+        "query_params": {
+          "id": [
+            "G-CW7J0CEY9Y"
+          ],
+          "v": [
+            "3"
+          ],
+          "t": [
+            "t"
+          ],
+          "pid": [
+            "1767121371"
+          ],
+          "cv": [
+            "2"
+          ],
+          "rv": [
+            "57h0"
+          ],
+          "tc": [
+            "14"
+          ],
+          "x": [
+            "2"
+          ],
+          "tag_exp": [
+            "101509157~103116026~103200004~103233427~104684208~104684211~104921712~104921714"
+          ],
+          "es": [
+            "1"
+          ],
+          "e": [
+            "*"
+          ],
+          "eid": [
+            "11"
+          ],
+          "u": [
+            "AAAAAAAAAAAAACCA"
+          ],
+          "h": [
+            "Ag"
+          ],
+          "epr": [
+            "1G.2G"
+          ],
+          "z": [
+            "0"
+          ]
+        },
+        "request_headers": {
+          "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8"
+        },
+        "response_headers": {
+          "content-type": "text/html",
+          "x-xss-protection": "0"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 0,
+          "content_ref": "da39a3ee5e6b4b0d3255bfef95601890afd80709.html"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T07:39:14.532Z",
+        "duration_ms": 1103.259,
+        "endpoint": "/a",
+        "host": "www.googletagmanager.com",
+        "method": "GET",
+        "status": 200,
+        "query_params": {
+          "id": [
+            "G-CW7J0CEY9Y"
+          ],
+          "v": [
+            "3"
+          ],
+          "t": [
+            "t"
+          ],
+          "pid": [
+            "1767121371"
+          ],
+          "cv": [
+            "2"
+          ],
+          "rv": [
+            "57h0"
+          ],
+          "tc": [
+            "14"
+          ],
+          "x": [
+            "2"
+          ],
+          "tag_exp": [
+            "101509157~103116026~103200004~103233427~104684208~104684211~104921712~104921714"
+          ],
+          "e": [
+            "gtm.init"
+          ],
+          "eid": [
+            "2"
+          ],
+          "u": [
+            "AAAAAAAAAAAAACCA"
+          ],
+          "h": [
+            "Ag"
+          ],
+          "tr": [
+            "5ogtipmark.5ogt1pdatav2.5ccdgafirst.5setproductsettings.5ccdgaregscope.5ccdemdownload.5ccdemoutboundclick.5ccdempageview"
+          ],
+          "ti": [
+            "2ogtipmark.2ogt1pdatav2.2ccdgafirst.2setproductsettings.2ccdgaregscope.2ccdemdownload.2ccdemoutboundclick.2ccdempageview"
+          ],
+          "z": [
+            "0"
+          ]
+        },
+        "request_headers": {
+          "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8"
+        },
+        "response_headers": {
+          "content-type": "text/html",
+          "x-xss-protection": "0"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 0,
+          "content_ref": "da39a3ee5e6b4b0d3255bfef95601890afd80709.html"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T07:39:15.989Z",
+        "duration_ms": 17.579,
+        "endpoint": "/a",
+        "host": "www.googletagmanager.com",
+        "method": "GET",
+        "status": 200,
+        "query_params": {
+          "id": [
+            "G-CW7J0CEY9Y"
+          ],
+          "v": [
+            "3"
+          ],
+          "t": [
+            "t"
+          ],
+          "pid": [
+            "1767121371"
+          ],
+          "cv": [
+            "2"
+          ],
+          "rv": [
+            "57h0"
+          ],
+          "tc": [
+            "14"
+          ],
+          "x": [
+            "2"
+          ],
+          "tag_exp": [
+            "101509157~103116026~103200004~103233427~104684208~104684211~104921712~104921714"
+          ],
+          "es": [
+            "1"
+          ],
+          "e": [
+            "gtm.dom"
+          ],
+          "eid": [
+            "12"
+          ],
+          "u": [
+            "AgAAAAAAAAAAACCA"
+          ],
+          "h": [
+            "Ag"
+          ],
+          "z": [
+            "0"
+          ]
+        },
+        "request_headers": {
+          "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8"
+        },
+        "response_headers": {
+          "content-type": "text/html",
+          "x-xss-protection": "0"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 0,
+          "content_ref": "da39a3ee5e6b4b0d3255bfef95601890afd80709.html"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T07:39:16.490Z",
+        "duration_ms": 20.025000000000002,
+        "endpoint": "/a",
+        "host": "www.googletagmanager.com",
+        "method": "GET",
+        "status": 200,
+        "query_params": {
+          "id": [
+            "G-CW7J0CEY9Y"
+          ],
+          "v": [
+            "3"
+          ],
+          "t": [
+            "t"
+          ],
+          "pid": [
+            "1767121371"
+          ],
+          "cv": [
+            "2"
+          ],
+          "rv": [
+            "57h0"
+          ],
+          "tc": [
+            "14"
+          ],
+          "x": [
+            "2"
+          ],
+          "tag_exp": [
+            "101509157~103116026~103200004~103233427~104684208~104684211~104921712~104921714"
+          ],
+          "es": [
+            "1"
+          ],
+          "e": [
+            "gtm.load"
+          ],
+          "eid": [
+            "13"
+          ],
+          "u": [
+            "AgAAAAAAAAAAACCA"
+          ],
+          "h": [
+            "Ag"
+          ],
+          "z": [
+            "0"
+          ]
+        },
+        "request_headers": {
+          "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8"
+        },
+        "response_headers": {
+          "content-type": "text/html",
+          "x-xss-protection": "0"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 0,
+          "content_ref": "da39a3ee5e6b4b0d3255bfef95601890afd80709.html"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T07:39:17.735Z",
+        "duration_ms": 17.77,
+        "endpoint": "/a",
+        "host": "www.googletagmanager.com",
+        "method": "GET",
+        "status": 200,
+        "query_params": {
+          "id": [
+            "G-CW7J0CEY9Y"
+          ],
+          "v": [
+            "3"
+          ],
+          "t": [
+            "t"
+          ],
+          "pid": [
+            "1767121371"
+          ],
+          "cv": [
+            "2"
+          ],
+          "rv": [
+            "57h0"
+          ],
+          "tc": [
+            "14"
+          ],
+          "x": [
+            "2"
+          ],
+          "tag_exp": [
+            "101509157~103116026~103200004~103233427~104684208~104684211~104921712~104921714"
+          ],
+          "es": [
+            "1"
+          ],
+          "e": [
+            "*"
+          ],
+          "eid": [
+            "14"
+          ],
+          "u": [
+            "AgAAAAAAAAAAACCA"
+          ],
+          "h": [
+            "Ag"
+          ],
+          "epr": [
+            "1G.2G"
+          ],
+          "z": [
+            "0"
+          ]
+        },
+        "request_headers": {
+          "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8"
+        },
+        "response_headers": {
+          "content-type": "text/html",
+          "x-xss-protection": "0"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 0,
+          "content_ref": "da39a3ee5e6b4b0d3255bfef95601890afd80709.html"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T07:39:18.234Z",
+        "duration_ms": 16.721,
+        "endpoint": "/a",
+        "host": "www.googletagmanager.com",
+        "method": "GET",
+        "status": 200,
+        "query_params": {
+          "id": [
+            "G-CW7J0CEY9Y"
+          ],
+          "v": [
+            "3"
+          ],
+          "t": [
+            "t"
+          ],
+          "pid": [
+            "1767121371"
+          ],
+          "cv": [
+            "2"
+          ],
+          "rv": [
+            "57h0"
+          ],
+          "tc": [
+            "14"
+          ],
+          "x": [
+            "2"
+          ],
+          "tag_exp": [
+            "101509157~103116026~103200004~103233427~104684208~104684211~104921712~104921714"
+          ],
+          "es": [
+            "1"
+          ],
+          "e": [
+            "gtm.linkClick"
+          ],
+          "eid": [
+            "15"
+          ],
+          "u": [
+            "AgAAAAAAAAAAACCA"
+          ],
+          "h": [
+            "Ag"
+          ],
+          "z": [
+            "0"
+          ]
+        },
+        "request_headers": {
+          "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8"
+        },
+        "response_headers": {
+          "content-type": "text/html",
+          "x-xss-protection": "0"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 0,
+          "content_ref": "da39a3ee5e6b4b0d3255bfef95601890afd80709.html"
+        }
+      }
+    ],
+    "/menu/sm.25.html": [
+      {
+        "timestamp": "2025-07-21T07:39:15.713Z",
+        "duration_ms": 1.412,
+        "endpoint": "/menu/sm.25.html",
+        "host": "static.addtoany.com",
+        "method": "GET",
+        "status": 200,
+        "response_headers": {
+          "cache-control": "max-age=315360000, immutable",
+          "content-type": "text/html; charset=utf-8",
+          "x-content-type-options": "nosniff"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 716,
+          "compressed": true,
+          "content_ref": "39acd5fe099974486a1c9ba11ba0fe7be6bc97ca.html"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T07:39:18.188Z",
+        "duration_ms": 1.0270000000000001,
+        "endpoint": "/menu/sm.25.html",
+        "host": "static.addtoany.com",
+        "method": "GET",
+        "status": 200,
+        "request_headers": {
+          "referer": "http://maps.hart.gov.uk/"
+        },
+        "response_headers": {
+          "cache-control": "max-age=315360000, immutable",
+          "content-type": "text/html; charset=utf-8",
+          "x-content-type-options": "nosniff"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 716,
+          "compressed": true,
+          "content_ref": "39acd5fe099974486a1c9ba11ba0fe7be6bc97ca.html"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T07:39:31.920Z",
+        "duration_ms": 1.351,
+        "endpoint": "/menu/sm.25.html",
+        "host": "static.addtoany.com",
+        "method": "GET",
+        "status": 200,
+        "response_headers": {
+          "cache-control": "max-age=315360000, immutable",
+          "content-type": "text/html; charset=utf-8",
+          "x-content-type-options": "nosniff"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 716,
+          "compressed": true,
+          "content_ref": "39acd5fe099974486a1c9ba11ba0fe7be6bc97ca.html"
+        }
+      }
+    ],
+    "/cdn-cgi/speculation": [
+      {
+        "timestamp": "2025-07-21T07:39:15.983Z",
+        "duration_ms": 17.406,
+        "endpoint": "/cdn-cgi/speculation",
+        "host": "static.addtoany.com",
+        "method": "GET",
+        "status": 200,
+        "request_headers": {
+          "accept": "*/*",
+          "origin": "https://static.addtoany.com",
+          "referer": "https://static.addtoany.com/menu/sm.25.html"
+        },
+        "response_headers": {
+          "content-type": "application/speculationrules+json",
+          "x-content-type-options": "nosniff"
+        },
+        "response_info": {
+          "type": "application/speculationrules+json",
+          "size": 128,
+          "content_ref": "4feb87ea3a922ad07ed998e5cd308778d5ab9a84.dat"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T07:39:18.207Z",
+        "duration_ms": 41.084,
+        "endpoint": "/cdn-cgi/speculation",
+        "host": "static.addtoany.com",
+        "method": "GET",
+        "status": 200,
+        "request_headers": {
+          "accept": "*/*",
+          "origin": "https://static.addtoany.com",
+          "referer": "https://static.addtoany.com/menu/sm.25.html"
+        },
+        "response_headers": {
+          "content-type": "application/speculationrules+json",
+          "x-content-type-options": "nosniff"
+        },
+        "response_info": {
+          "type": "application/speculationrules+json",
+          "size": 128,
+          "content_ref": "4feb87ea3a922ad07ed998e5cd308778d5ab9a84.dat"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T07:39:31.944Z",
+        "duration_ms": 16.628,
+        "endpoint": "/cdn-cgi/speculation",
+        "host": "static.addtoany.com",
+        "method": "GET",
+        "status": 200,
+        "request_headers": {
+          "accept": "*/*",
+          "origin": "https://static.addtoany.com",
+          "referer": "https://static.addtoany.com/menu/sm.25.html"
+        },
+        "response_headers": {
+          "content-type": "application/speculationrules+json",
+          "x-content-type-options": "nosniff"
+        },
+        "response_info": {
+          "type": "application/speculationrules+json",
+          "size": 128,
+          "content_ref": "4feb87ea3a922ad07ed998e5cd308778d5ab9a84.dat"
+        }
+      }
+    ],
+    "/v1/events/beacon": [
+      {
+        "timestamp": "2025-07-21T07:39:17.735Z",
+        "duration_ms": 72.10499999999999,
+        "endpoint": "/v1/events/beacon",
+        "host": "a.eu.silktide.com",
+        "method": "POST",
+        "status": 202,
+        "request_headers": {
+          "accept": "*/*",
+          "content-type": "text/plain;charset=UTF-8",
+          "origin": "https://www.hart.gov.uk"
+        },
+        "response_headers": {
+          "content-type": "text/plain; charset=utf-8",
+          "x-powered-by": "Silktide"
+        }
+      }
+    ],
+    "/mycouncil.aspx": [
+      {
+        "timestamp": "2025-07-21T07:39:17.796Z",
+        "duration_ms": 246.554,
+        "endpoint": "/mycouncil.aspx",
+        "host": "maps.hart.gov.uk",
+        "method": "GET",
+        "status": 200,
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+          "cookie": "[cookies present]"
+        },
+        "response_headers": {
+          "cache-control": "private",
+          "content-type": "text/html; charset=utf-8",
+          "set-cookie": "[cookies present]",
+          "x-aspnet-version": "2.0.50727",
+          "x-powered-by": "ASP.NET",
+          "x-ua-compatible": "IE=Edge"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 46048,
+          "compressed": true,
+          "content_ref": "d4649f8729ae76d5f629e0f29a9febbe7bd4417c.html"
+        }
+      }
+    ],
+    "/waste-and-recycling/when-my-bin-day": [
+      {
+        "timestamp": "2025-07-21T07:39:31.707Z",
+        "duration_ms": 26.645,
+        "endpoint": "/waste-and-recycling/when-my-bin-day",
+        "host": "www.hart.gov.uk",
+        "method": "GET",
+        "status": 200,
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+          "cookie": "[cookies present]"
+        },
+        "response_headers": {
+          "cache-control": "max-age=1800, public",
+          "content-type": "text/html; charset=UTF-8",
+          "x-cache": "Hit from cloudfront",
+          "x-content-type-options": "nosniff",
+          "x-drupal-cache": "HIT",
+          "x-drupal-dynamic-cache": "MISS",
+          "x-frame-options": "SAMEORIGIN",
+          "x-xss-protection": "1; mode=block"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 37380,
+          "compressed": true,
+          "content_ref": "6587233bb98476cbd6a1b078a7948c60db20f2ae.html"
+        }
+      }
+    ],
+    "/bbd-whitespace/list-addresses": [
+      {
+        "timestamp": "2025-07-21T07:39:35.096Z",
+        "duration_ms": 264.72999999999996,
+        "endpoint": "/bbd-whitespace/list-addresses",
+        "host": "www.hart.gov.uk",
+        "method": "POST",
+        "status": 200,
+        "query_params": {
+          "postalCode": [
+            "GU10 5BD"
+          ],
+          "_wrapper_format": [
+            "drupal_ajax"
+          ]
+        },
+        "request_headers": {
+          "accept": "application/json, text/javascript, */*; q=0.01",
+          "content-type": "application/x-www-form-urlencoded; charset=UTF-8",
+          "cookie": "[cookies present]",
+          "origin": "https://www.hart.gov.uk",
+          "x-requested-with": "XMLHttpRequest"
+        },
+        "response_headers": {
+          "cache-control": "must-revalidate, no-cache, private",
+          "content-type": "application/json",
+          "x-cache": "Miss from cloudfront",
+          "x-content-type-options": "nosniff",
+          "x-drupal-ajax-token": "1",
+          "x-frame-options": "SAMEORIGIN",
+          "x-xss-protection": "1; mode=block"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 12762,
+          "compressed": true,
+          "content_ref": "cb70666b74c6a94d43f0ac28c60f66155a44a460.json"
+        }
+      }
+    ],
+    "/bbd-whitespace/{id}": [
+      {
+        "timestamp": "2025-07-21T07:39:37.667Z",
+        "duration_ms": 303.189,
+        "endpoint": "/bbd-whitespace/{id}",
+        "host": "www.hart.gov.uk",
+        "method": "POST",
+        "status": 200,
+        "path_params": [
+          "next-collection-dates"
+        ],
+        "query_params": {
+          "uprn": [
+            "100060417791"
+          ],
+          "uri": [
+            "entity:node/172"
+          ],
+          "text": [
+            "View the calendar"
+          ],
+          "_wrapper_format": [
+            "drupal_ajax"
+          ]
+        },
+        "request_headers": {
+          "accept": "application/json, text/javascript, */*; q=0.01",
+          "content-type": "application/x-www-form-urlencoded; charset=UTF-8",
+          "cookie": "[cookies present]",
+          "origin": "https://www.hart.gov.uk",
+          "x-requested-with": "XMLHttpRequest"
+        },
+        "response_headers": {
+          "cache-control": "must-revalidate, no-cache, private",
+          "content-type": "application/json",
+          "x-cache": "Miss from cloudfront",
+          "x-content-type-options": "nosniff",
+          "x-drupal-ajax-token": "1",
+          "x-frame-options": "SAMEORIGIN",
+          "x-xss-protection": "1; mode=block"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 4411,
+          "compressed": true,
+          "content_ref": "4d36ac9384c82ad8675416afa7783b9096456611.json"
+        }
+      }
+    ]
+  }
 }

@@ -1,199 +1,979 @@
 {
-  "metadata": {
-    "trace_name": "bracknell_forest_council",
-    "processed_at": "2025-08-26 18:44:24",
-    "workflow_steps_count": 7,
-    "navigation_events_count": 13
-  },
-  "scraping_patterns": {
-    "login_detected": false,
-    "form_submissions": 9,
-    "navigation_count": 1,
-    "unique_domains": [
-      "policy.cookiereports.com",
-      "www.bracknell-forest.gov.uk",
-      "produkswebassistsignalr18.service.signalr.net",
-      "webassistant.onconnect.app",
-      "webassist.onconnect.app",
-      "selfservice.mybfc.bracknell-forest.gov.uk"
-    ],
-    "api_endpoints": [
-      "https://webassistant.onconnect.app/assets/appConfig.json"
-    ],
-    "data_extraction_indicators": []
-  },
-  "workflow_steps": [
+  "entries": [
     {
-      "action": "goto",
-      "target": "https://www.bracknell-forest.gov.uk/bins-and-recycling/find-your-collection-day",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
+      "timestamp": "2025-07-21T19:00:43.028Z",
+      "duration_ms": 89.63199999999999,
+      "endpoint": "/bins-and-recycling/{id}",
+      "host": "www.bracknell-forest.gov.uk",
+      "method": "GET",
+      "status": 200,
+      "path_params": [
+        "find-your-collection-day"
+      ],
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7"
+      },
+      "response_headers": {
+        "cache-control": "no-store, no-cache, must-revalidate, max-age=0",
+        "content-type": "text/html; charset=UTF-8",
+        "x-cache": "MISS, MISS",
+        "x-cache-hits": "0, 0",
+        "x-content-type-options": "nosniff",
+        "x-drupal-dynamic-cache": "MISS",
+        "x-frame-options": "SAMEORIGIN",
+        "x-served-by": "cache-lon420099-LON, cache-lhr-egll1980055-LHR",
+        "x-timer": "S1753124443.076907,VS0,VE37"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 19955,
+        "compressed": true,
+        "content_ref": "508063ea31506f4c72b7005a3477615065bac5f1.html"
+      }
     },
     {
-      "action": "click",
-      "target": "aria-ref=e120 >> internal:describe=\"Accept all cookies\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
+      "timestamp": "2025-07-21T19:00:44.196Z",
+      "duration_ms": 119.539,
+      "endpoint": "/v1/loader/{id}",
+      "host": "webassist.onconnect.app",
+      "method": "GET",
+      "status": 200,
+      "path_params": [
+        "8b2694e6-a5eb-49a2-ba91-0e8cd01c12cd"
+      ],
+      "request_headers": {
+        "accept": "*/*",
+        "origin": "https://www.bracknell-forest.gov.uk",
+        "referer": "https://www.bracknell-forest.gov.uk/"
+      },
+      "response_headers": {
+        "content-type": "application/json; charset=utf-8",
+        "x-ms-middleware-request-id": "00000000-0000-0000-0000-000000000000"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 52,
+        "content_ref": "3bd0e87f7735a292acfc53909bc55fd480fb94c1.json"
+      }
     },
     {
-      "action": "click",
-      "target": "aria-ref=e59 >> internal:describe=\"Start now\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
+      "timestamp": "2025-07-21T19:00:44.509Z",
+      "duration_ms": 41.381,
+      "endpoint": "/assets/appConfig.json",
+      "host": "webassistant.onconnect.app",
+      "method": "GET",
+      "status": 200,
+      "request_headers": {
+        "accept": "application/json, text/plain, */*",
+        "origin": "https://www.bracknell-forest.gov.uk",
+        "referer": "https://www.bracknell-forest.gov.uk/"
+      },
+      "response_headers": {
+        "content-type": "application/json",
+        "x-azure-ref": "20250721T190044Z-16896f46f99h9vzfhC1LTSu6q80000000560000000009bu8",
+        "x-cache": "CONFIG_NOCACHE",
+        "x-ms-request-id": "ca529787-b01e-0064-5471-fa551f000000",
+        "x-ms-version": "2018-03-28"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 73,
+        "content_ref": "e8551bc0489c1ba948f1631c51732814c12af1e5.json"
+      }
     },
     {
-      "action": "fill",
-      "target": "aria-ref=e39 >> internal:describe=\"Postcode or street name\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0,
-      "value": "GU15 4PA"
+      "timestamp": "2025-07-21T19:00:44.587Z",
+      "duration_ms": 592.753,
+      "endpoint": "/v1/workspaces/{id}/init",
+      "host": "webassist.onconnect.app",
+      "method": "POST",
+      "status": 200,
+      "path_params": [
+        "8b2694e6-a5eb-49a2-ba91-0e8cd01c12cd"
+      ],
+      "request_headers": {
+        "accept": "application/json, text/plain, */*",
+        "content-type": "application/json",
+        "origin": "https://www.bracknell-forest.gov.uk",
+        "referer": "https://www.bracknell-forest.gov.uk/"
+      },
+      "response_headers": {
+        "content-type": "application/json; charset=utf-8",
+        "x-ms-middleware-request-id": "00000000-0000-0000-0000-000000000000"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 1805,
+        "compressed": true,
+        "content_ref": "af26225a9fa32773d90451eb41d80f29089bdbb2.json"
+      }
     },
     {
-      "action": "fill",
-      "target": "aria-ref=e78 >> internal:describe=\"Postcode or street name\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0,
-      "value": "RG12 7PA"
+      "timestamp": "2025-07-21T19:00:45.112Z",
+      "duration_ms": 72.536,
+      "endpoint": "/client/negotiate",
+      "host": "produkswebassistsignalr18.service.signalr.net",
+      "method": "POST",
+      "status": 200,
+      "query_params": {
+        "hub": [
+          "webassistant"
+        ],
+        "negotiateVersion": [
+          "1"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IjE5MDk1MzUwNDYifQ.eyJuYW1laWQiOiI1ZDM2ZjRmMS0zODZiLTRhOGUtYTE0ZC0wYzU5ZjM1NGQ0ODgiLCJ3b3Jrc3BhY2UiOiI4YjI2OTRlNi1hNWViLTQ5YTItYmE5MS0wZThjZDAxYzEyY2QiLCJuYmYiOjE3NTMxMjQ0NDUsImV4cCI6MTc1MzEyODA0NSwiaWF0IjoxNzUzMTI0NDQ1LCJhdWQiOiJodHRwczovL3Byb2R1a3N3ZWJhc3Npc3RzaWduYWxyMTguc2VydmljZS5zaWduYWxyLm5ldC9jbGllbnQvP2h1Yj13ZWJhc3Npc3RhbnQifQ.og_1WK8MKQ0f6w8IlYcbjc5utKaiNpd8X4inbTo6hFM",
+        "content-type": "text/plain;charset=UTF-8",
+        "origin": "https://www.bracknell-forest.gov.uk",
+        "referer": "https://www.bracknell-forest.gov.uk/",
+        "x-requested-with": "XMLHttpRequest",
+        "x-signalr-user-agent": "Microsoft SignalR/6.0 (6.0.22; Unknown OS; Browser; Unknown Runtime Version)"
+      },
+      "response_headers": {
+        "content-type": "application/json"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 334,
+        "content_ref": "848848d6b80399698b6e1e30c64be80ab5dd02e1.json"
+      }
     },
     {
-      "action": "selectOption",
-      "target": "aria-ref=e86 >> internal:describe=\"combobox\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0,
-      "value": null
+      "timestamp": "2025-07-21T19:00:45.112Z",
+      "duration_ms": 185.893,
+      "endpoint": "/v1/postback",
+      "host": "webassist.onconnect.app",
+      "method": "POST",
+      "status": 200,
+      "request_headers": {
+        "accept": "application/json, text/plain, */*",
+        "authorization": "Basic NWQzNmY0ZjEtMzg2Yi00YThlLWExNGQtMGM1OWYzNTRkNDg4OnNheERqRWd5WEY1S0Jjb2RYNW51QTRVX0M3bHI0Smt1bEpsZDhCaTRBeEE=",
+        "content-type": "application/json",
+        "origin": "https://www.bracknell-forest.gov.uk",
+        "referer": "https://www.bracknell-forest.gov.uk/",
+        "x-connect-auth": "Basic NWQzNmY0ZjEtMzg2Yi00YThlLWExNGQtMGM1OWYzNTRkNDg4OnNheERqRWd5WEY1S0Jjb2RYNW51QTRVX0M3bHI0Smt1bEpsZDhCaTRBeEE="
+      },
+      "response_headers": {
+        "x-ms-middleware-request-id": "00000000-0000-0000-0000-000000000000"
+      }
     },
     {
-      "action": "selectOption",
-      "target": "aria-ref=e86 >> internal:describe=\"combobox\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0,
-      "value": null
+      "timestamp": "2025-07-21T19:00:46.108Z",
+      "duration_ms": 87.56899999999999,
+      "endpoint": "/consent",
+      "host": "policy.cookiereports.com",
+      "method": "POST",
+      "status": 200,
+      "request_headers": {
+        "accept": "application/json, text/javascript, */*; q=0.01",
+        "content-type": "application/json",
+        "origin": "https://www.bracknell-forest.gov.uk",
+        "referer": "https://www.bracknell-forest.gov.uk/"
+      },
+      "response_headers": {
+        "cache-control": "public,max-age=3600",
+        "content-type": "application/json",
+        "x-content-type-options": "nosniff"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 51,
+        "content_ref": "ccaa1db07093864b26364ac84a2f90116796b7e3.json"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T19:00:48.523Z",
+      "duration_ms": 141.92100000000002,
+      "endpoint": "/w/webpage/{id}",
+      "host": "selfservice.mybfc.bracknell-forest.gov.uk",
+      "method": "GET",
+      "status": 200,
+      "path_params": [
+        "waste-collection-days"
+      ],
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+        "referer": "https://www.bracknell-forest.gov.uk/"
+      },
+      "response_headers": {
+        "cache-control": "no-store, no-cache, must-revalidate",
+        "content-type": "text/html; charset=utf-8",
+        "set-cookie": "[cookies present]",
+        "x-content-type-options": "nosniff",
+        "x-xss-protection": "0"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 44806,
+        "compressed": true,
+        "content_ref": "088eff5ad07688309c65faedebac3c9f6b43d1c9.html"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T19:00:49.182Z",
+      "duration_ms": 29.71,
+      "endpoint": "/w/webpage/{id}",
+      "host": "selfservice.mybfc.bracknell-forest.gov.uk",
+      "method": "POST",
+      "status": 200,
+      "path_params": [
+        "waste-collection-days"
+      ],
+      "request_headers": {
+        "accept": "application/json, text/javascript, */*; q=0.01",
+        "content-type": "application/x-www-form-urlencoded; charset=UTF-8",
+        "cookie": "[cookies present]",
+        "origin": "https://selfservice.mybfc.bracknell-forest.gov.uk",
+        "x-requested-with": "XMLHttpRequest"
+      },
+      "response_headers": {
+        "cache-control": "no-store, no-cache, must-revalidate, post-check=0, pre-check=0",
+        "content-type": "application/json; Charset=utf-8",
+        "x-content-type-options": "nosniff",
+        "x-xss-protection": "0"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 10430,
+        "compressed": true,
+        "content_ref": "cf000574a78018460a9002d6889b925cbf6a5173.json"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T19:00:52.505Z",
+      "duration_ms": 194.103,
+      "endpoint": "/w/webpage/{id}",
+      "host": "selfservice.mybfc.bracknell-forest.gov.uk",
+      "method": "POST",
+      "status": 200,
+      "path_params": [
+        "waste-collection-days"
+      ],
+      "query_params": {
+        "webpage_subpage_id": [
+          "PAG0000570FEFFB1"
+        ],
+        "webpage_token": [
+          "390170046582b0e3d7ca68ef1d6b4829ccff0b1ae9c531047219c6f9b5295738"
+        ],
+        "widget_action": [
+          "handle_event"
+        ]
+      },
+      "request_headers": {
+        "accept": "application/json, text/javascript, */*; q=0.01",
+        "content-type": "application/x-www-form-urlencoded; charset=UTF-8",
+        "cookie": "[cookies present]",
+        "origin": "https://selfservice.mybfc.bracknell-forest.gov.uk",
+        "x-requested-with": "XMLHttpRequest"
+      },
+      "response_headers": {
+        "cache-control": "no-store, no-cache, must-revalidate",
+        "content-type": "application/json",
+        "x-content-type-options": "nosniff",
+        "x-xss-protection": "0"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 6272,
+        "compressed": true,
+        "content_ref": "baf0b1422dc3d07ea1d7956ad649efb66076d5aa.json"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T19:00:54.923Z",
+      "duration_ms": 199.268,
+      "endpoint": "/w/webpage/{id}",
+      "host": "selfservice.mybfc.bracknell-forest.gov.uk",
+      "method": "POST",
+      "status": 200,
+      "path_params": [
+        "waste-collection-days"
+      ],
+      "query_params": {
+        "webpage_subpage_id": [
+          "PAG0000570FEFFB1"
+        ],
+        "webpage_token": [
+          "390170046582b0e3d7ca68ef1d6b4829ccff0b1ae9c531047219c6f9b5295738"
+        ],
+        "widget_action": [
+          "handle_event"
+        ]
+      },
+      "request_headers": {
+        "accept": "application/json, text/javascript, */*; q=0.01",
+        "content-type": "application/x-www-form-urlencoded; charset=UTF-8",
+        "cookie": "[cookies present]",
+        "origin": "https://selfservice.mybfc.bracknell-forest.gov.uk",
+        "x-requested-with": "XMLHttpRequest"
+      },
+      "response_headers": {
+        "cache-control": "no-store, no-cache, must-revalidate",
+        "content-type": "application/json",
+        "x-content-type-options": "nosniff",
+        "x-xss-protection": "0"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 1036,
+        "compressed": true,
+        "content_ref": "8b21a241ab5ccb29b5e6c43c8033a6230916661a.json"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T19:00:58.814Z",
+      "duration_ms": 209.077,
+      "endpoint": "/w/webpage/{id}",
+      "host": "selfservice.mybfc.bracknell-forest.gov.uk",
+      "method": "POST",
+      "status": 200,
+      "path_params": [
+        "waste-collection-days"
+      ],
+      "query_params": {
+        "webpage_subpage_id": [
+          "PAG0000570FEFFB1"
+        ],
+        "webpage_token": [
+          "390170046582b0e3d7ca68ef1d6b4829ccff0b1ae9c531047219c6f9b5295738"
+        ],
+        "widget_action": [
+          "handle_event"
+        ]
+      },
+      "request_headers": {
+        "accept": "application/json, text/javascript, */*; q=0.01",
+        "content-type": "application/x-www-form-urlencoded; charset=UTF-8",
+        "cookie": "[cookies present]",
+        "origin": "https://selfservice.mybfc.bracknell-forest.gov.uk",
+        "x-requested-with": "XMLHttpRequest"
+      },
+      "response_headers": {
+        "cache-control": "no-store, no-cache, must-revalidate",
+        "content-type": "application/json",
+        "x-content-type-options": "nosniff",
+        "x-xss-protection": "0"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 127,
+        "compressed": true,
+        "content_ref": "0e3778dfd3ff809e6543928551dc2d68e0032e03.json"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T19:01:01.688Z",
+      "duration_ms": 188.57700000000003,
+      "endpoint": "/w/webpage/{id}",
+      "host": "selfservice.mybfc.bracknell-forest.gov.uk",
+      "method": "POST",
+      "status": 200,
+      "path_params": [
+        "waste-collection-days"
+      ],
+      "query_params": {
+        "webpage_subpage_id": [
+          "PAG0000570FEFFB1"
+        ],
+        "webpage_token": [
+          "390170046582b0e3d7ca68ef1d6b4829ccff0b1ae9c531047219c6f9b5295738"
+        ],
+        "widget_action": [
+          "handle_event"
+        ]
+      },
+      "request_headers": {
+        "accept": "application/json, text/javascript, */*; q=0.01",
+        "content-type": "application/x-www-form-urlencoded; charset=UTF-8",
+        "cookie": "[cookies present]",
+        "origin": "https://selfservice.mybfc.bracknell-forest.gov.uk",
+        "x-requested-with": "XMLHttpRequest"
+      },
+      "response_headers": {
+        "cache-control": "no-store, no-cache, must-revalidate",
+        "content-type": "application/json",
+        "x-content-type-options": "nosniff",
+        "x-xss-protection": "0"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 127,
+        "compressed": true,
+        "content_ref": "0e3778dfd3ff809e6543928551dc2d68e0032e03.json"
+      }
     }
   ],
-  "navigation_events": [
-    {
-      "url": "https://www.bracknell-forest.gov.uk/bins-and-recycling/find-your-collection-day",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "text/html; charset=UTF-8",
-      "size": 19955,
-      "timestamp": "2025-07-21T19:00:43.028Z"
+  "analysis": {
+    "total_requests": 13,
+    "unique_endpoints": 8,
+    "methods_used": [
+      "GET",
+      "POST"
+    ],
+    "status_codes": {
+      "200": 13
     },
-    {
-      "url": "https://webassist.onconnect.app/v1/loader/8b2694e6-a5eb-49a2-ba91-0e8cd01c12cd",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json; charset=utf-8",
-      "size": 52,
-      "timestamp": "2025-07-21T19:00:44.196Z"
-    },
-    {
-      "url": "https://webassistant.onconnect.app/assets/appConfig.json",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json",
-      "size": 73,
-      "timestamp": "2025-07-21T19:00:44.509Z"
-    },
-    {
-      "url": "https://webassist.onconnect.app/v1/workspaces/8b2694e6-a5eb-49a2-ba91-0e8cd01c12cd/init",
-      "method": "POST",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json; charset=utf-8",
-      "size": 1805,
-      "timestamp": "2025-07-21T19:00:44.587Z"
-    },
-    {
-      "url": "https://produkswebassistsignalr18.service.signalr.net/client/negotiate?hub=webassistant&negotiateVersion=1",
-      "method": "POST",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json",
-      "size": 334,
-      "timestamp": "2025-07-21T19:00:45.112Z"
-    },
-    {
-      "url": "https://webassist.onconnect.app/v1/postback",
-      "method": "POST",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "x-unknown",
-      "size": 0,
-      "timestamp": "2025-07-21T19:00:45.112Z"
-    },
-    {
-      "url": "https://policy.cookiereports.com/consent/",
-      "method": "POST",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json",
-      "size": 51,
-      "timestamp": "2025-07-21T19:00:46.108Z"
-    },
-    {
-      "url": "https://selfservice.mybfc.bracknell-forest.gov.uk/w/webpage/waste-collection-days",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "text/html; charset=utf-8",
-      "size": 44806,
-      "timestamp": "2025-07-21T19:00:48.523Z"
-    },
-    {
-      "url": "https://selfservice.mybfc.bracknell-forest.gov.uk/w/webpage/waste-collection-days",
-      "method": "POST",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json; Charset=utf-8",
-      "size": 10430,
-      "timestamp": "2025-07-21T19:00:49.182Z"
-    },
-    {
-      "url": "https://selfservice.mybfc.bracknell-forest.gov.uk/w/webpage/waste-collection-days?webpage_subpage_id=PAG0000570FEFFB1&webpage_token=390170046582b0e3d7ca68ef1d6b4829ccff0b1ae9c531047219c6f9b5295738&widget_action=handle_event",
-      "method": "POST",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json",
-      "size": 6272,
-      "timestamp": "2025-07-21T19:00:52.505Z"
-    },
-    {
-      "url": "https://selfservice.mybfc.bracknell-forest.gov.uk/w/webpage/waste-collection-days?webpage_subpage_id=PAG0000570FEFFB1&webpage_token=390170046582b0e3d7ca68ef1d6b4829ccff0b1ae9c531047219c6f9b5295738&widget_action=handle_event",
-      "method": "POST",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json",
-      "size": 1036,
-      "timestamp": "2025-07-21T19:00:54.923Z"
-    },
-    {
-      "url": "https://selfservice.mybfc.bracknell-forest.gov.uk/w/webpage/waste-collection-days?webpage_subpage_id=PAG0000570FEFFB1&webpage_token=390170046582b0e3d7ca68ef1d6b4829ccff0b1ae9c531047219c6f9b5295738&widget_action=handle_event",
-      "method": "POST",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json",
-      "size": 127,
-      "timestamp": "2025-07-21T19:00:58.814Z"
-    },
-    {
-      "url": "https://selfservice.mybfc.bracknell-forest.gov.uk/w/webpage/waste-collection-days?webpage_subpage_id=PAG0000570FEFFB1&webpage_token=390170046582b0e3d7ca68ef1d6b4829ccff0b1ae9c531047219c6f9b5295738&widget_action=handle_event",
-      "method": "POST",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json",
-      "size": 127,
-      "timestamp": "2025-07-21T19:01:01.688Z"
-    }
-  ]
+    "endpoints_with_params": [
+      {
+        "endpoint": "/bins-and-recycling/{id}",
+        "method": "GET",
+        "query_params": [],
+        "path_params": true
+      },
+      {
+        "endpoint": "/v1/loader/{id}",
+        "method": "GET",
+        "query_params": [],
+        "path_params": true
+      },
+      {
+        "endpoint": "/v1/workspaces/{id}/init",
+        "method": "POST",
+        "query_params": [],
+        "path_params": true
+      },
+      {
+        "endpoint": "/client/negotiate",
+        "method": "POST",
+        "query_params": [
+          "hub",
+          "negotiateVersion"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/w/webpage/{id}",
+        "method": "GET",
+        "query_params": [],
+        "path_params": true
+      },
+      {
+        "endpoint": "/w/webpage/{id}",
+        "method": "POST",
+        "query_params": [],
+        "path_params": true
+      },
+      {
+        "endpoint": "/w/webpage/{id}",
+        "method": "POST",
+        "query_params": [
+          "webpage_subpage_id",
+          "webpage_token",
+          "widget_action"
+        ],
+        "path_params": true
+      }
+    ],
+    "redirects": [],
+    "api_calls": [
+      {
+        "endpoint": "/v1/loader/{id}",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": []
+      },
+      {
+        "endpoint": "/assets/appConfig.json",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": []
+      },
+      {
+        "endpoint": "/v1/workspaces/{id}/init",
+        "method": "POST",
+        "response_type": "application/json",
+        "params": []
+      },
+      {
+        "endpoint": "/client/negotiate",
+        "method": "POST",
+        "response_type": "application/json",
+        "params": [
+          "hub",
+          "negotiateVersion"
+        ]
+      },
+      {
+        "endpoint": "/consent",
+        "method": "POST",
+        "response_type": "application/json",
+        "params": []
+      },
+      {
+        "endpoint": "/w/webpage/{id}",
+        "method": "POST",
+        "response_type": "application/json",
+        "params": []
+      },
+      {
+        "endpoint": "/w/webpage/{id}",
+        "method": "POST",
+        "response_type": "application/json",
+        "params": [
+          "webpage_subpage_id",
+          "webpage_token",
+          "widget_action"
+        ]
+      },
+      {
+        "endpoint": "/w/webpage/{id}",
+        "method": "POST",
+        "response_type": "application/json",
+        "params": [
+          "webpage_subpage_id",
+          "webpage_token",
+          "widget_action"
+        ]
+      },
+      {
+        "endpoint": "/w/webpage/{id}",
+        "method": "POST",
+        "response_type": "application/json",
+        "params": [
+          "webpage_subpage_id",
+          "webpage_token",
+          "widget_action"
+        ]
+      },
+      {
+        "endpoint": "/w/webpage/{id}",
+        "method": "POST",
+        "response_type": "application/json",
+        "params": [
+          "webpage_subpage_id",
+          "webpage_token",
+          "widget_action"
+        ]
+      }
+    ],
+    "form_submissions": []
+  },
+  "grouped_by_endpoint": {
+    "/bins-and-recycling/{id}": [
+      {
+        "timestamp": "2025-07-21T19:00:43.028Z",
+        "duration_ms": 89.63199999999999,
+        "endpoint": "/bins-and-recycling/{id}",
+        "host": "www.bracknell-forest.gov.uk",
+        "method": "GET",
+        "status": 200,
+        "path_params": [
+          "find-your-collection-day"
+        ],
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7"
+        },
+        "response_headers": {
+          "cache-control": "no-store, no-cache, must-revalidate, max-age=0",
+          "content-type": "text/html; charset=UTF-8",
+          "x-cache": "MISS, MISS",
+          "x-cache-hits": "0, 0",
+          "x-content-type-options": "nosniff",
+          "x-drupal-dynamic-cache": "MISS",
+          "x-frame-options": "SAMEORIGIN",
+          "x-served-by": "cache-lon420099-LON, cache-lhr-egll1980055-LHR",
+          "x-timer": "S1753124443.076907,VS0,VE37"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 19955,
+          "compressed": true,
+          "content_ref": "508063ea31506f4c72b7005a3477615065bac5f1.html"
+        }
+      }
+    ],
+    "/v1/loader/{id}": [
+      {
+        "timestamp": "2025-07-21T19:00:44.196Z",
+        "duration_ms": 119.539,
+        "endpoint": "/v1/loader/{id}",
+        "host": "webassist.onconnect.app",
+        "method": "GET",
+        "status": 200,
+        "path_params": [
+          "8b2694e6-a5eb-49a2-ba91-0e8cd01c12cd"
+        ],
+        "request_headers": {
+          "accept": "*/*",
+          "origin": "https://www.bracknell-forest.gov.uk",
+          "referer": "https://www.bracknell-forest.gov.uk/"
+        },
+        "response_headers": {
+          "content-type": "application/json; charset=utf-8",
+          "x-ms-middleware-request-id": "00000000-0000-0000-0000-000000000000"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 52,
+          "content_ref": "3bd0e87f7735a292acfc53909bc55fd480fb94c1.json"
+        }
+      }
+    ],
+    "/assets/appConfig.json": [
+      {
+        "timestamp": "2025-07-21T19:00:44.509Z",
+        "duration_ms": 41.381,
+        "endpoint": "/assets/appConfig.json",
+        "host": "webassistant.onconnect.app",
+        "method": "GET",
+        "status": 200,
+        "request_headers": {
+          "accept": "application/json, text/plain, */*",
+          "origin": "https://www.bracknell-forest.gov.uk",
+          "referer": "https://www.bracknell-forest.gov.uk/"
+        },
+        "response_headers": {
+          "content-type": "application/json",
+          "x-azure-ref": "20250721T190044Z-16896f46f99h9vzfhC1LTSu6q80000000560000000009bu8",
+          "x-cache": "CONFIG_NOCACHE",
+          "x-ms-request-id": "ca529787-b01e-0064-5471-fa551f000000",
+          "x-ms-version": "2018-03-28"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 73,
+          "content_ref": "e8551bc0489c1ba948f1631c51732814c12af1e5.json"
+        }
+      }
+    ],
+    "/v1/workspaces/{id}/init": [
+      {
+        "timestamp": "2025-07-21T19:00:44.587Z",
+        "duration_ms": 592.753,
+        "endpoint": "/v1/workspaces/{id}/init",
+        "host": "webassist.onconnect.app",
+        "method": "POST",
+        "status": 200,
+        "path_params": [
+          "8b2694e6-a5eb-49a2-ba91-0e8cd01c12cd"
+        ],
+        "request_headers": {
+          "accept": "application/json, text/plain, */*",
+          "content-type": "application/json",
+          "origin": "https://www.bracknell-forest.gov.uk",
+          "referer": "https://www.bracknell-forest.gov.uk/"
+        },
+        "response_headers": {
+          "content-type": "application/json; charset=utf-8",
+          "x-ms-middleware-request-id": "00000000-0000-0000-0000-000000000000"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 1805,
+          "compressed": true,
+          "content_ref": "af26225a9fa32773d90451eb41d80f29089bdbb2.json"
+        }
+      }
+    ],
+    "/client/negotiate": [
+      {
+        "timestamp": "2025-07-21T19:00:45.112Z",
+        "duration_ms": 72.536,
+        "endpoint": "/client/negotiate",
+        "host": "produkswebassistsignalr18.service.signalr.net",
+        "method": "POST",
+        "status": 200,
+        "query_params": {
+          "hub": [
+            "webassistant"
+          ],
+          "negotiateVersion": [
+            "1"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IjE5MDk1MzUwNDYifQ.eyJuYW1laWQiOiI1ZDM2ZjRmMS0zODZiLTRhOGUtYTE0ZC0wYzU5ZjM1NGQ0ODgiLCJ3b3Jrc3BhY2UiOiI4YjI2OTRlNi1hNWViLTQ5YTItYmE5MS0wZThjZDAxYzEyY2QiLCJuYmYiOjE3NTMxMjQ0NDUsImV4cCI6MTc1MzEyODA0NSwiaWF0IjoxNzUzMTI0NDQ1LCJhdWQiOiJodHRwczovL3Byb2R1a3N3ZWJhc3Npc3RzaWduYWxyMTguc2VydmljZS5zaWduYWxyLm5ldC9jbGllbnQvP2h1Yj13ZWJhc3Npc3RhbnQifQ.og_1WK8MKQ0f6w8IlYcbjc5utKaiNpd8X4inbTo6hFM",
+          "content-type": "text/plain;charset=UTF-8",
+          "origin": "https://www.bracknell-forest.gov.uk",
+          "referer": "https://www.bracknell-forest.gov.uk/",
+          "x-requested-with": "XMLHttpRequest",
+          "x-signalr-user-agent": "Microsoft SignalR/6.0 (6.0.22; Unknown OS; Browser; Unknown Runtime Version)"
+        },
+        "response_headers": {
+          "content-type": "application/json"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 334,
+          "content_ref": "848848d6b80399698b6e1e30c64be80ab5dd02e1.json"
+        }
+      }
+    ],
+    "/v1/postback": [
+      {
+        "timestamp": "2025-07-21T19:00:45.112Z",
+        "duration_ms": 185.893,
+        "endpoint": "/v1/postback",
+        "host": "webassist.onconnect.app",
+        "method": "POST",
+        "status": 200,
+        "request_headers": {
+          "accept": "application/json, text/plain, */*",
+          "authorization": "Basic NWQzNmY0ZjEtMzg2Yi00YThlLWExNGQtMGM1OWYzNTRkNDg4OnNheERqRWd5WEY1S0Jjb2RYNW51QTRVX0M3bHI0Smt1bEpsZDhCaTRBeEE=",
+          "content-type": "application/json",
+          "origin": "https://www.bracknell-forest.gov.uk",
+          "referer": "https://www.bracknell-forest.gov.uk/",
+          "x-connect-auth": "Basic NWQzNmY0ZjEtMzg2Yi00YThlLWExNGQtMGM1OWYzNTRkNDg4OnNheERqRWd5WEY1S0Jjb2RYNW51QTRVX0M3bHI0Smt1bEpsZDhCaTRBeEE="
+        },
+        "response_headers": {
+          "x-ms-middleware-request-id": "00000000-0000-0000-0000-000000000000"
+        }
+      }
+    ],
+    "/consent": [
+      {
+        "timestamp": "2025-07-21T19:00:46.108Z",
+        "duration_ms": 87.56899999999999,
+        "endpoint": "/consent",
+        "host": "policy.cookiereports.com",
+        "method": "POST",
+        "status": 200,
+        "request_headers": {
+          "accept": "application/json, text/javascript, */*; q=0.01",
+          "content-type": "application/json",
+          "origin": "https://www.bracknell-forest.gov.uk",
+          "referer": "https://www.bracknell-forest.gov.uk/"
+        },
+        "response_headers": {
+          "cache-control": "public,max-age=3600",
+          "content-type": "application/json",
+          "x-content-type-options": "nosniff"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 51,
+          "content_ref": "ccaa1db07093864b26364ac84a2f90116796b7e3.json"
+        }
+      }
+    ],
+    "/w/webpage/{id}": [
+      {
+        "timestamp": "2025-07-21T19:00:48.523Z",
+        "duration_ms": 141.92100000000002,
+        "endpoint": "/w/webpage/{id}",
+        "host": "selfservice.mybfc.bracknell-forest.gov.uk",
+        "method": "GET",
+        "status": 200,
+        "path_params": [
+          "waste-collection-days"
+        ],
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+          "referer": "https://www.bracknell-forest.gov.uk/"
+        },
+        "response_headers": {
+          "cache-control": "no-store, no-cache, must-revalidate",
+          "content-type": "text/html; charset=utf-8",
+          "set-cookie": "[cookies present]",
+          "x-content-type-options": "nosniff",
+          "x-xss-protection": "0"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 44806,
+          "compressed": true,
+          "content_ref": "088eff5ad07688309c65faedebac3c9f6b43d1c9.html"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T19:00:49.182Z",
+        "duration_ms": 29.71,
+        "endpoint": "/w/webpage/{id}",
+        "host": "selfservice.mybfc.bracknell-forest.gov.uk",
+        "method": "POST",
+        "status": 200,
+        "path_params": [
+          "waste-collection-days"
+        ],
+        "request_headers": {
+          "accept": "application/json, text/javascript, */*; q=0.01",
+          "content-type": "application/x-www-form-urlencoded; charset=UTF-8",
+          "cookie": "[cookies present]",
+          "origin": "https://selfservice.mybfc.bracknell-forest.gov.uk",
+          "x-requested-with": "XMLHttpRequest"
+        },
+        "response_headers": {
+          "cache-control": "no-store, no-cache, must-revalidate, post-check=0, pre-check=0",
+          "content-type": "application/json; Charset=utf-8",
+          "x-content-type-options": "nosniff",
+          "x-xss-protection": "0"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 10430,
+          "compressed": true,
+          "content_ref": "cf000574a78018460a9002d6889b925cbf6a5173.json"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T19:00:52.505Z",
+        "duration_ms": 194.103,
+        "endpoint": "/w/webpage/{id}",
+        "host": "selfservice.mybfc.bracknell-forest.gov.uk",
+        "method": "POST",
+        "status": 200,
+        "path_params": [
+          "waste-collection-days"
+        ],
+        "query_params": {
+          "webpage_subpage_id": [
+            "PAG0000570FEFFB1"
+          ],
+          "webpage_token": [
+            "390170046582b0e3d7ca68ef1d6b4829ccff0b1ae9c531047219c6f9b5295738"
+          ],
+          "widget_action": [
+            "handle_event"
+          ]
+        },
+        "request_headers": {
+          "accept": "application/json, text/javascript, */*; q=0.01",
+          "content-type": "application/x-www-form-urlencoded; charset=UTF-8",
+          "cookie": "[cookies present]",
+          "origin": "https://selfservice.mybfc.bracknell-forest.gov.uk",
+          "x-requested-with": "XMLHttpRequest"
+        },
+        "response_headers": {
+          "cache-control": "no-store, no-cache, must-revalidate",
+          "content-type": "application/json",
+          "x-content-type-options": "nosniff",
+          "x-xss-protection": "0"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 6272,
+          "compressed": true,
+          "content_ref": "baf0b1422dc3d07ea1d7956ad649efb66076d5aa.json"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T19:00:54.923Z",
+        "duration_ms": 199.268,
+        "endpoint": "/w/webpage/{id}",
+        "host": "selfservice.mybfc.bracknell-forest.gov.uk",
+        "method": "POST",
+        "status": 200,
+        "path_params": [
+          "waste-collection-days"
+        ],
+        "query_params": {
+          "webpage_subpage_id": [
+            "PAG0000570FEFFB1"
+          ],
+          "webpage_token": [
+            "390170046582b0e3d7ca68ef1d6b4829ccff0b1ae9c531047219c6f9b5295738"
+          ],
+          "widget_action": [
+            "handle_event"
+          ]
+        },
+        "request_headers": {
+          "accept": "application/json, text/javascript, */*; q=0.01",
+          "content-type": "application/x-www-form-urlencoded; charset=UTF-8",
+          "cookie": "[cookies present]",
+          "origin": "https://selfservice.mybfc.bracknell-forest.gov.uk",
+          "x-requested-with": "XMLHttpRequest"
+        },
+        "response_headers": {
+          "cache-control": "no-store, no-cache, must-revalidate",
+          "content-type": "application/json",
+          "x-content-type-options": "nosniff",
+          "x-xss-protection": "0"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 1036,
+          "compressed": true,
+          "content_ref": "8b21a241ab5ccb29b5e6c43c8033a6230916661a.json"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T19:00:58.814Z",
+        "duration_ms": 209.077,
+        "endpoint": "/w/webpage/{id}",
+        "host": "selfservice.mybfc.bracknell-forest.gov.uk",
+        "method": "POST",
+        "status": 200,
+        "path_params": [
+          "waste-collection-days"
+        ],
+        "query_params": {
+          "webpage_subpage_id": [
+            "PAG0000570FEFFB1"
+          ],
+          "webpage_token": [
+            "390170046582b0e3d7ca68ef1d6b4829ccff0b1ae9c531047219c6f9b5295738"
+          ],
+          "widget_action": [
+            "handle_event"
+          ]
+        },
+        "request_headers": {
+          "accept": "application/json, text/javascript, */*; q=0.01",
+          "content-type": "application/x-www-form-urlencoded; charset=UTF-8",
+          "cookie": "[cookies present]",
+          "origin": "https://selfservice.mybfc.bracknell-forest.gov.uk",
+          "x-requested-with": "XMLHttpRequest"
+        },
+        "response_headers": {
+          "cache-control": "no-store, no-cache, must-revalidate",
+          "content-type": "application/json",
+          "x-content-type-options": "nosniff",
+          "x-xss-protection": "0"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 127,
+          "compressed": true,
+          "content_ref": "0e3778dfd3ff809e6543928551dc2d68e0032e03.json"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T19:01:01.688Z",
+        "duration_ms": 188.57700000000003,
+        "endpoint": "/w/webpage/{id}",
+        "host": "selfservice.mybfc.bracknell-forest.gov.uk",
+        "method": "POST",
+        "status": 200,
+        "path_params": [
+          "waste-collection-days"
+        ],
+        "query_params": {
+          "webpage_subpage_id": [
+            "PAG0000570FEFFB1"
+          ],
+          "webpage_token": [
+            "390170046582b0e3d7ca68ef1d6b4829ccff0b1ae9c531047219c6f9b5295738"
+          ],
+          "widget_action": [
+            "handle_event"
+          ]
+        },
+        "request_headers": {
+          "accept": "application/json, text/javascript, */*; q=0.01",
+          "content-type": "application/x-www-form-urlencoded; charset=UTF-8",
+          "cookie": "[cookies present]",
+          "origin": "https://selfservice.mybfc.bracknell-forest.gov.uk",
+          "x-requested-with": "XMLHttpRequest"
+        },
+        "response_headers": {
+          "cache-control": "no-store, no-cache, must-revalidate",
+          "content-type": "application/json",
+          "x-content-type-options": "nosniff",
+          "x-xss-protection": "0"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 127,
+          "compressed": true,
+          "content_ref": "0e3778dfd3ff809e6543928551dc2d68e0032e03.json"
+        }
+      }
+    ]
+  }
 }

@@ -1,307 +1,5887 @@
 {
-  "metadata": {
-    "trace_name": "south_staffordshire_council",
-    "processed_at": "2025-08-26 18:44:24",
-    "workflow_steps_count": 9,
-    "navigation_events_count": 23
-  },
-  "scraping_patterns": {
-    "login_detected": false,
-    "form_submissions": 3,
-    "navigation_count": 1,
-    "unique_domains": [
-      "maps.googleapis.com",
-      "www.sstaffs.gov.uk",
-      "cdnjs.cloudflare.com"
-    ],
-    "api_endpoints": [
-      "https://maps.googleapis.com/maps/api/mapsjs/gen_204?csp_test=true"
-    ],
-    "data_extraction_indicators": []
-  },
-  "workflow_steps": [
+  "entries": [
     {
-      "action": "goto",
-      "target": "https://www.sstaffs.gov.uk/bins-recycling/index.cfm",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
-    },
-    {
-      "action": "click",
-      "target": "aria-ref=e11 >> internal:describe=\"Accept button\"",
-      "status": "Failed",
-      "details": {
-        "error": "Timeout 5000ms exceeded."
-      },
-      "timestamp": 0
-    },
-    {
-      "action": "click",
-      "target": "aria-ref=e293 >> internal:describe=\"No thanks button\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
-    },
-    {
-      "action": "click",
-      "target": "aria-ref=e11 >> internal:describe=\"Accept button\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
-    },
-    {
-      "action": "click",
-      "target": "aria-ref=e87 >> internal:describe=\"View your collection calendar link\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
-    },
-    {
-      "action": "fill",
-      "target": "aria-ref=e77 >> internal:describe=\"Postcode textbox\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0,
-      "value": "DY3 4AN"
-    },
-    {
-      "action": "click",
-      "target": "aria-ref=e78 >> internal:describe=\"Look up address button\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
-    },
-    {
-      "action": "selectOption",
-      "target": "aria-ref=e205 >> internal:describe=\"Address dropdown\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0,
-      "value": null
-    },
-    {
-      "action": "click",
-      "target": "aria-ref=e240 >> internal:describe=\"Search button\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
-    }
-  ],
-  "navigation_events": [
-    {
-      "url": "https://www.sstaffs.gov.uk/bins-recycling/index.cfm",
+      "timestamp": "2025-07-21T08:03:09.003Z",
+      "duration_ms": 1013.772,
+      "endpoint": "/bins-recycling/index.cfm",
+      "host": "www.sstaffs.gov.uk",
       "method": "GET",
       "status": 301,
-      "redirect_url": "https://www.sstaffs.gov.uk/bins-and-recycling",
-      "mime_type": "text/html; charset=utf-8",
-      "size": -1,
-      "timestamp": "2025-07-21T08:03:09.003Z"
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7"
+      },
+      "response_headers": {
+        "cache-control": "max-age=1800, public",
+        "content-type": "text/html; charset=utf-8",
+        "location": "https://www.sstaffs.gov.uk/bins-and-recycling",
+        "x-cache": "Miss from cloudfront",
+        "x-content-type-options": "nosniff",
+        "x-drupal-cache": "HIT",
+        "x-frame-options": "SAMEORIGIN",
+        "x-redirect-id": "691",
+        "x-xss-protection": "1; mode=block"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": -1
+      },
+      "redirect_to": "https://www.sstaffs.gov.uk/bins-and-recycling"
     },
     {
-      "url": "https://www.sstaffs.gov.uk/bins-and-recycling",
+      "timestamp": "2025-07-21T08:03:10.009Z",
+      "duration_ms": 64.326,
+      "endpoint": "/bins-and-recycling",
+      "host": "www.sstaffs.gov.uk",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "text/html; charset=UTF-8",
-      "size": 48038,
-      "timestamp": "2025-07-21T08:03:10.009Z"
-    },
-    {
-      "url": "https://www.sstaffs.gov.uk/themes/custom/bbd_localgov/fonts/neris/Neris-Black.otf",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/octet-stream",
-      "size": 206372,
-      "timestamp": "2025-07-21T08:03:10.174Z"
-    },
-    {
-      "url": "https://www.sstaffs.gov.uk/themes/custom/bbd_localgov/fonts/neris/Neris-Light.otf",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/octet-stream",
-      "size": 200408,
-      "timestamp": "2025-07-21T08:03:10.174Z"
-    },
-    {
-      "url": "https://www.sstaffs.gov.uk/themes/custom/bbd_localgov/fonts/neris/Neris-SemiBold.otf",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/octet-stream",
-      "size": 202536,
-      "timestamp": "2025-07-21T08:03:10.175Z"
-    },
-    {
-      "url": "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/webfonts/fa-brands-400.woff2",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/octet-stream; charset=utf-8",
-      "size": 117852,
-      "timestamp": "2025-07-21T08:03:10.175Z"
-    },
-    {
-      "url": "https://www.sstaffs.gov.uk/themes/custom/bbd_localgov/assets/images/favicons/site.webmanifest",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/octet-stream",
-      "size": 428,
-      "timestamp": "2025-07-21T08:03:11.331Z"
-    },
-    {
-      "url": "https://www.sstaffs.gov.uk/bins-and-recycling/view-your-collection-calendar",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "text/html; charset=UTF-8",
-      "size": 42483,
-      "timestamp": "2025-07-21T08:03:23.955Z"
-    },
-    {
-      "url": "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/webfonts/fa-brands-400.woff2",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/octet-stream; charset=utf-8",
-      "size": -1,
-      "timestamp": "2025-07-21T08:03:24.085Z"
-    },
-    {
-      "url": "https://www.sstaffs.gov.uk/themes/custom/bbd_localgov/fonts/neris/Neris-Black.otf",
-      "method": "GET",
-      "status": 304,
-      "redirect_url": null,
-      "mime_type": "x-unknown",
-      "size": -1,
-      "timestamp": "2025-07-21T08:03:24.115Z"
-    },
-    {
-      "url": "https://www.sstaffs.gov.uk/themes/custom/bbd_localgov/fonts/neris/Neris-Light.otf",
-      "method": "GET",
-      "status": 304,
-      "redirect_url": null,
-      "mime_type": "x-unknown",
-      "size": -1,
-      "timestamp": "2025-07-21T08:03:24.115Z"
-    },
-    {
-      "url": "https://www.sstaffs.gov.uk/themes/custom/bbd_localgov/fonts/neris/Neris-SemiBold.otf",
-      "method": "GET",
-      "status": 304,
-      "redirect_url": null,
-      "mime_type": "x-unknown",
-      "size": -1,
-      "timestamp": "2025-07-21T08:03:24.115Z"
-    },
-    {
-      "url": "https://www.sstaffs.gov.uk/themes/custom/bbd_localgov/assets/images/favicons/site.webmanifest",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/octet-stream",
-      "size": 428,
-      "timestamp": "2025-07-21T08:03:24.119Z"
-    },
-    {
-      "url": "https://www.sstaffs.gov.uk/bins-and-recycling/view-your-collection-calendar?ajax_form=1&_wrapper_format=drupal_ajax",
-      "method": "POST",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json",
-      "size": 5363,
-      "timestamp": "2025-07-21T08:03:28.442Z"
-    },
-    {
-      "url": "https://www.sstaffs.gov.uk/bins-and-recycling/view-your-collection-calendar",
-      "method": "POST",
-      "status": 303,
-      "redirect_url": "https://www.sstaffs.gov.uk/where-i-live?uprn=010090089159",
-      "mime_type": "text/html; charset=utf-8",
-      "size": -1,
-      "timestamp": "2025-07-21T08:03:44.050Z",
-      "form_data": {
-        "form_build_id": "form-d7pSrLrOO-G1O36Le_NnI87A4d_C8W314Q8CFcmMQ0c",
-        "form_id": "bbd_bin_lookup_form",
-        "postcode": "DY3 4AN",
-        "uprn": "010090089159",
-        "op": "Search"
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7"
+      },
+      "response_headers": {
+        "cache-control": "max-age=1800, public",
+        "content-type": "text/html; charset=UTF-8",
+        "x-cache": "Miss from cloudfront",
+        "x-content-type-options": "nosniff",
+        "x-drupal-cache": "HIT",
+        "x-drupal-dynamic-cache": "MISS",
+        "x-frame-options": "SAMEORIGIN",
+        "x-xss-protection": "1; mode=block"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 48038,
+        "compressed": true,
+        "content_ref": "d7f59866c6d636c890ce917a22cd19f1d17ae8ab.html"
       }
     },
     {
-      "url": "https://www.sstaffs.gov.uk/where-i-live?uprn=010090089159",
+      "timestamp": "2025-07-21T08:03:10.174Z",
+      "duration_ms": 48.108999999999995,
+      "endpoint": "/themes/custom/bbd_localgov/fonts/neris/Neris-Black.otf",
+      "host": "www.sstaffs.gov.uk",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "text/html; charset=UTF-8",
-      "size": 66967,
-      "timestamp": "2025-07-21T08:03:44.336Z"
+      "request_headers": {
+        "accept": "*/*",
+        "origin": "https://www.sstaffs.gov.uk",
+        "referer": "https://www.sstaffs.gov.uk/sites/default/files/css/css_qJYGS2kVFJe5DfXBIpiiMuxbsnL_6mRV62IIZ50tU_E.css?delta=5&language=en&theme=bbd_localgov&include=eJx9kIGKwyAMhl9I6yNJtP9aqZqisd3e_uzYccONA9Hk-0I0OvKbFe5rN-4vtsFzVs7NNrKnuPBh3pOnOananRbYVnFr0XxhU5VHRFVo1jNvAf1IewyUPcw3aB0VKNwlhryZubSd4vRK1Y2z0InKCeYtnk64K63q93m9S4VxBTT70pIbzY1L0iiFy2iWyI7iABNy04lCHvg1qJYgEdp1sw26ohzBQ3uhf32kPIe86KvdWCLBbw-99kFQBifoe1EVVPxqaQ-WmvDzKyFX969cVfaBok2YA9nrW6v5RJOsSL32UQXJXNepI-CsdiYhi_vORcwH-QHeoecr"
+      },
+      "response_headers": {
+        "content-type": "application/octet-stream",
+        "x-cache": "Hit from cloudfront",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "SAMEORIGIN",
+        "x-xss-protection": "1; mode=block"
+      }
     },
     {
-      "url": "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/webfonts/fa-brands-400.woff2",
+      "timestamp": "2025-07-21T08:03:10.175Z",
+      "duration_ms": 58.131,
+      "endpoint": "/themes/custom/bbd_localgov/fonts/neris/Neris-SemiBold.otf",
+      "host": "www.sstaffs.gov.uk",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/octet-stream; charset=utf-8",
-      "size": -1,
-      "timestamp": "2025-07-21T08:03:45.503Z"
+      "request_headers": {
+        "accept": "*/*",
+        "origin": "https://www.sstaffs.gov.uk",
+        "referer": "https://www.sstaffs.gov.uk/sites/default/files/css/css_qJYGS2kVFJe5DfXBIpiiMuxbsnL_6mRV62IIZ50tU_E.css?delta=5&language=en&theme=bbd_localgov&include=eJx9kIGKwyAMhl9I6yNJtP9aqZqisd3e_uzYccONA9Hk-0I0OvKbFe5rN-4vtsFzVs7NNrKnuPBh3pOnOananRbYVnFr0XxhU5VHRFVo1jNvAf1IewyUPcw3aB0VKNwlhryZubSd4vRK1Y2z0InKCeYtnk64K63q93m9S4VxBTT70pIbzY1L0iiFy2iWyI7iABNy04lCHvg1qJYgEdp1sw26ohzBQ3uhf32kPIe86KvdWCLBbw-99kFQBifoe1EVVPxqaQ-WmvDzKyFX969cVfaBok2YA9nrW6v5RJOsSL32UQXJXNepI-CsdiYhi_vORcwH-QHeoecr"
+      },
+      "response_headers": {
+        "content-type": "application/octet-stream",
+        "x-cache": "Hit from cloudfront",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "SAMEORIGIN",
+        "x-xss-protection": "1; mode=block"
+      }
     },
     {
-      "url": "https://www.sstaffs.gov.uk/themes/custom/bbd_localgov/fonts/neris/Neris-Black.otf",
+      "timestamp": "2025-07-21T08:03:10.174Z",
+      "duration_ms": 58.041000000000004,
+      "endpoint": "/themes/custom/bbd_localgov/fonts/neris/Neris-Light.otf",
+      "host": "www.sstaffs.gov.uk",
+      "method": "GET",
+      "status": 200,
+      "request_headers": {
+        "accept": "*/*",
+        "origin": "https://www.sstaffs.gov.uk",
+        "referer": "https://www.sstaffs.gov.uk/sites/default/files/css/css_qJYGS2kVFJe5DfXBIpiiMuxbsnL_6mRV62IIZ50tU_E.css?delta=5&language=en&theme=bbd_localgov&include=eJx9kIGKwyAMhl9I6yNJtP9aqZqisd3e_uzYccONA9Hk-0I0OvKbFe5rN-4vtsFzVs7NNrKnuPBh3pOnOananRbYVnFr0XxhU5VHRFVo1jNvAf1IewyUPcw3aB0VKNwlhryZubSd4vRK1Y2z0InKCeYtnk64K63q93m9S4VxBTT70pIbzY1L0iiFy2iWyI7iABNy04lCHvg1qJYgEdp1sw26ohzBQ3uhf32kPIe86KvdWCLBbw-99kFQBifoe1EVVPxqaQ-WmvDzKyFX969cVfaBok2YA9nrW6v5RJOsSL32UQXJXNepI-CsdiYhi_vORcwH-QHeoecr"
+      },
+      "response_headers": {
+        "content-type": "application/octet-stream",
+        "x-cache": "Hit from cloudfront",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "SAMEORIGIN",
+        "x-xss-protection": "1; mode=block"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T08:03:10.263Z",
+      "duration_ms": 58.489999999999995,
+      "endpoint": "/g/collect",
+      "host": "region1.google-analytics.com",
+      "method": "POST",
+      "status": 204,
+      "query_params": {
+        "v": [
+          "2"
+        ],
+        "tid": [
+          "G-2RCJ3008T3"
+        ],
+        "gtm": [
+          "45je57g1h1v9185338391za200"
+        ],
+        "_p": [
+          "1753084990082"
+        ],
+        "gcd": [
+          "13l3l3l3l1l1"
+        ],
+        "npa": [
+          "0"
+        ],
+        "dma": [
+          "0"
+        ],
+        "tag_exp": [
+          "101509157~103116026~103200004~103233427~104684208~104684211~104921715~104921717"
+        ],
+        "gdid": [
+          "dMDhkMT"
+        ],
+        "cid": [
+          "169909084.1753084990"
+        ],
+        "ul": [
+          "en-gb"
+        ],
+        "sr": [
+          "800x600"
+        ],
+        "uaa": [
+          "arm"
+        ],
+        "uab": [
+          "64"
+        ],
+        "uafvl": [
+          "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+        ],
+        "uamb": [
+          "0"
+        ],
+        "uap": [
+          "macOS"
+        ],
+        "uapv": [
+          "15.5.0"
+        ],
+        "uaw": [
+          "0"
+        ],
+        "are": [
+          "1"
+        ],
+        "frm": [
+          "0"
+        ],
+        "pscdl": [
+          "noapi"
+        ],
+        "_s": [
+          "1"
+        ],
+        "sid": [
+          "1753084990"
+        ],
+        "sct": [
+          "1"
+        ],
+        "seg": [
+          "0"
+        ],
+        "dl": [
+          "https://www.sstaffs.gov.uk/bins-and-recycling"
+        ],
+        "dt": [
+          "Bins and recycling | South Staffordshire District Council"
+        ],
+        "en": [
+          "page_view"
+        ],
+        "_fv": [
+          "1"
+        ],
+        "_ss": [
+          "1"
+        ],
+        "_ee": [
+          "1"
+        ],
+        "ep.page_placeholder": [
+          "PLACEHOLDER_page_location"
+        ],
+        "tfd": [
+          "1262"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "cookie": "[cookies present]",
+        "origin": "https://www.sstaffs.gov.uk",
+        "referer": "https://www.sstaffs.gov.uk/"
+      },
+      "response_headers": {
+        "cache-control": "no-cache, no-store, must-revalidate",
+        "content-type": "text/plain"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T08:03:10.263Z",
+      "duration_ms": 13.416,
+      "endpoint": "/g/collect",
+      "host": "region1.google-analytics.com",
+      "method": "POST",
+      "status": 204,
+      "query_params": {
+        "v": [
+          "2"
+        ],
+        "tid": [
+          "G-1PR992572G"
+        ],
+        "gtm": [
+          "45je57g1h1v9185338391za200"
+        ],
+        "_p": [
+          "1753084990082"
+        ],
+        "gcd": [
+          "13l3l3l3l1l1"
+        ],
+        "npa": [
+          "0"
+        ],
+        "dma": [
+          "0"
+        ],
+        "tag_exp": [
+          "101509157~103116026~103200004~103233427~104684208~104684211~104921715~104921717"
+        ],
+        "gdid": [
+          "dMDhkMT"
+        ],
+        "cid": [
+          "169909084.1753084990"
+        ],
+        "ul": [
+          "en-gb"
+        ],
+        "sr": [
+          "800x600"
+        ],
+        "uaa": [
+          "arm"
+        ],
+        "uab": [
+          "64"
+        ],
+        "uafvl": [
+          "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+        ],
+        "uamb": [
+          "0"
+        ],
+        "uap": [
+          "macOS"
+        ],
+        "uapv": [
+          "15.5.0"
+        ],
+        "uaw": [
+          "0"
+        ],
+        "are": [
+          "1"
+        ],
+        "frm": [
+          "0"
+        ],
+        "pscdl": [
+          "noapi"
+        ],
+        "_s": [
+          "1"
+        ],
+        "sid": [
+          "1753084990"
+        ],
+        "sct": [
+          "1"
+        ],
+        "seg": [
+          "0"
+        ],
+        "dl": [
+          "https://www.sstaffs.gov.uk/bins-and-recycling"
+        ],
+        "dt": [
+          "Bins and recycling | South Staffordshire District Council"
+        ],
+        "en": [
+          "page_view"
+        ],
+        "_fv": [
+          "1"
+        ],
+        "_nsi": [
+          "1"
+        ],
+        "_ss": [
+          "1"
+        ],
+        "_ee": [
+          "1"
+        ],
+        "ep.page_placeholder": [
+          "PLACEHOLDER_page_location"
+        ],
+        "tfd": [
+          "1257"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "cookie": "[cookies present]",
+        "origin": "https://www.sstaffs.gov.uk",
+        "referer": "https://www.sstaffs.gov.uk/"
+      },
+      "response_headers": {
+        "cache-control": "no-cache, no-store, must-revalidate",
+        "content-type": "text/plain"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T08:03:11.331Z",
+      "duration_ms": 30.740000000000002,
+      "endpoint": "/themes/custom/bbd_localgov/assets/images/favicons/site.webmanifest",
+      "host": "www.sstaffs.gov.uk",
+      "method": "GET",
+      "status": 200,
+      "request_headers": {
+        "accept": "*/*",
+        "referer": "https://www.sstaffs.gov.uk/bins-and-recycling"
+      },
+      "response_headers": {
+        "content-type": "application/octet-stream",
+        "x-cache": "Hit from cloudfront",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "SAMEORIGIN",
+        "x-xss-protection": "1; mode=block"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T08:03:24.037Z",
+      "duration_ms": -1,
+      "endpoint": "/g/collect",
+      "host": "region1.google-analytics.com",
+      "method": "POST",
+      "status": -1,
+      "query_params": {
+        "v": [
+          "2"
+        ],
+        "tid": [
+          "G-1PR992572G"
+        ],
+        "gtm": [
+          "45je57g1h1v9185338391za200"
+        ],
+        "_p": [
+          "1753084990082"
+        ],
+        "gcd": [
+          "13l3l3l3l1l1"
+        ],
+        "npa": [
+          "0"
+        ],
+        "dma": [
+          "0"
+        ],
+        "tag_exp": [
+          "101509157~103116026~103200004~103233427~104684208~104684211~104921715~104921717"
+        ],
+        "gdid": [
+          "dMDhkMT"
+        ],
+        "cid": [
+          "169909084.1753084990"
+        ],
+        "ul": [
+          "en-gb"
+        ],
+        "sr": [
+          "800x600"
+        ],
+        "uaa": [
+          "arm"
+        ],
+        "uab": [
+          "64"
+        ],
+        "uafvl": [
+          "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+        ],
+        "uamb": [
+          "0"
+        ],
+        "uap": [
+          "macOS"
+        ],
+        "uapv": [
+          "15.5.0"
+        ],
+        "uaw": [
+          "0"
+        ],
+        "are": [
+          "1"
+        ],
+        "frm": [
+          "0"
+        ],
+        "pscdl": [
+          "noapi"
+        ],
+        "_eu": [
+          "AAAAAAQ"
+        ],
+        "_s": [
+          "2"
+        ],
+        "sid": [
+          "1753084990"
+        ],
+        "sct": [
+          "1"
+        ],
+        "seg": [
+          "1"
+        ],
+        "dl": [
+          "https://www.sstaffs.gov.uk/bins-and-recycling"
+        ],
+        "dt": [
+          "Bins and recycling | South Staffordshire District Council"
+        ],
+        "en": [
+          "user_engagement"
+        ],
+        "ep.page_placeholder": [
+          "PLACEHOLDER_page_location"
+        ],
+        "_et": [
+          "13772"
+        ],
+        "tfd": [
+          "15032"
+        ]
+      },
+      "request_headers": {
+        "referer": "https://www.sstaffs.gov.uk/"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T08:03:24.037Z",
+      "duration_ms": -1,
+      "endpoint": "/g/collect",
+      "host": "region1.google-analytics.com",
+      "method": "POST",
+      "status": -1,
+      "query_params": {
+        "v": [
+          "2"
+        ],
+        "tid": [
+          "G-2RCJ3008T3"
+        ],
+        "gtm": [
+          "45je57g1h1v9185338391za200"
+        ],
+        "_p": [
+          "1753084990082"
+        ],
+        "gcd": [
+          "13l3l3l3l1l1"
+        ],
+        "npa": [
+          "0"
+        ],
+        "dma": [
+          "0"
+        ],
+        "tag_exp": [
+          "101509157~103116026~103200004~103233427~104684208~104684211~104921715~104921717"
+        ],
+        "gdid": [
+          "dMDhkMT"
+        ],
+        "cid": [
+          "169909084.1753084990"
+        ],
+        "ul": [
+          "en-gb"
+        ],
+        "sr": [
+          "800x600"
+        ],
+        "uaa": [
+          "arm"
+        ],
+        "uab": [
+          "64"
+        ],
+        "uafvl": [
+          "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+        ],
+        "uamb": [
+          "0"
+        ],
+        "uap": [
+          "macOS"
+        ],
+        "uapv": [
+          "15.5.0"
+        ],
+        "uaw": [
+          "0"
+        ],
+        "are": [
+          "1"
+        ],
+        "frm": [
+          "0"
+        ],
+        "pscdl": [
+          "noapi"
+        ],
+        "_eu": [
+          "AAAAAAQ"
+        ],
+        "_s": [
+          "2"
+        ],
+        "sid": [
+          "1753084990"
+        ],
+        "sct": [
+          "1"
+        ],
+        "seg": [
+          "1"
+        ],
+        "dl": [
+          "https://www.sstaffs.gov.uk/bins-and-recycling"
+        ],
+        "dt": [
+          "Bins and recycling | South Staffordshire District Council"
+        ],
+        "en": [
+          "user_engagement"
+        ],
+        "ep.page_placeholder": [
+          "PLACEHOLDER_page_location"
+        ],
+        "_et": [
+          "13770"
+        ],
+        "tfd": [
+          "15035"
+        ]
+      },
+      "request_headers": {
+        "referer": "https://www.sstaffs.gov.uk/"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T08:03:23.955Z",
+      "duration_ms": 73.525,
+      "endpoint": "/bins-and-recycling/{id}",
+      "host": "www.sstaffs.gov.uk",
+      "method": "GET",
+      "status": 200,
+      "path_params": [
+        "view-your-collection-calendar"
+      ],
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+        "cookie": "[cookies present]",
+        "referer": "https://www.sstaffs.gov.uk/bins-and-recycling"
+      },
+      "response_headers": {
+        "cache-control": "max-age=1800, public",
+        "content-type": "text/html; charset=UTF-8",
+        "x-cache": "Miss from cloudfront",
+        "x-content-type-options": "nosniff",
+        "x-drupal-cache": "HIT",
+        "x-drupal-dynamic-cache": "MISS",
+        "x-frame-options": "SAMEORIGIN",
+        "x-xss-protection": "1; mode=block"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 42483,
+        "compressed": true,
+        "content_ref": "f249fcfc5e8a60d8616ee97b2130180fe2efd112.html"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T08:03:24.086Z",
+      "duration_ms": 14.265,
+      "endpoint": "/g/collect",
+      "host": "region1.google-analytics.com",
+      "method": "POST",
+      "status": 204,
+      "query_params": {
+        "v": [
+          "2"
+        ],
+        "tid": [
+          "G-1PR992572G"
+        ],
+        "gtm": [
+          "45je57g1h1v9185338391za200"
+        ],
+        "_p": [
+          "1753085004038"
+        ],
+        "gcd": [
+          "13l3l3l3l1l1"
+        ],
+        "npa": [
+          "0"
+        ],
+        "dma": [
+          "0"
+        ],
+        "tag_exp": [
+          "101509157~103116026~103200004~103233427~104684208~104684211~104921715~104921717"
+        ],
+        "gdid": [
+          "dMDhkMT"
+        ],
+        "cid": [
+          "169909084.1753084990"
+        ],
+        "ul": [
+          "en-gb"
+        ],
+        "sr": [
+          "800x600"
+        ],
+        "uaa": [
+          "arm"
+        ],
+        "uab": [
+          "64"
+        ],
+        "uafvl": [
+          "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+        ],
+        "uamb": [
+          "0"
+        ],
+        "uap": [
+          "macOS"
+        ],
+        "uapv": [
+          "15.5.0"
+        ],
+        "uaw": [
+          "0"
+        ],
+        "are": [
+          "1"
+        ],
+        "frm": [
+          "0"
+        ],
+        "pscdl": [
+          "noapi"
+        ],
+        "_eu": [
+          "AAAAAAQ"
+        ],
+        "_s": [
+          "1"
+        ],
+        "sid": [
+          "1753084990"
+        ],
+        "sct": [
+          "1"
+        ],
+        "seg": [
+          "1"
+        ],
+        "dl": [
+          "https://www.sstaffs.gov.uk/bins-and-recycling/view-your-collection-calendar"
+        ],
+        "dr": [
+          "https://www.sstaffs.gov.uk/bins-and-recycling"
+        ],
+        "dt": [
+          "View your collection calendar | South Staffordshire District Council"
+        ],
+        "en": [
+          "page_view"
+        ],
+        "_ee": [
+          "1"
+        ],
+        "ep.page_placeholder": [
+          "PLACEHOLDER_page_location"
+        ],
+        "tfd": [
+          "183"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "cookie": "[cookies present]",
+        "origin": "https://www.sstaffs.gov.uk",
+        "referer": "https://www.sstaffs.gov.uk/"
+      },
+      "response_headers": {
+        "cache-control": "no-cache, no-store, must-revalidate",
+        "content-type": "text/plain"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T08:03:24.087Z",
+      "duration_ms": 14.98,
+      "endpoint": "/g/collect",
+      "host": "region1.google-analytics.com",
+      "method": "POST",
+      "status": 204,
+      "query_params": {
+        "v": [
+          "2"
+        ],
+        "tid": [
+          "G-2RCJ3008T3"
+        ],
+        "gtm": [
+          "45je57g1h1v9185338391za200"
+        ],
+        "_p": [
+          "1753085004038"
+        ],
+        "gcd": [
+          "13l3l3l3l1l1"
+        ],
+        "npa": [
+          "0"
+        ],
+        "dma": [
+          "0"
+        ],
+        "tag_exp": [
+          "101509157~103116026~103200004~103233427~104684208~104684211~104921715~104921717"
+        ],
+        "gdid": [
+          "dMDhkMT"
+        ],
+        "cid": [
+          "169909084.1753084990"
+        ],
+        "ul": [
+          "en-gb"
+        ],
+        "sr": [
+          "800x600"
+        ],
+        "uaa": [
+          "arm"
+        ],
+        "uab": [
+          "64"
+        ],
+        "uafvl": [
+          "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+        ],
+        "uamb": [
+          "0"
+        ],
+        "uap": [
+          "macOS"
+        ],
+        "uapv": [
+          "15.5.0"
+        ],
+        "uaw": [
+          "0"
+        ],
+        "are": [
+          "1"
+        ],
+        "frm": [
+          "0"
+        ],
+        "pscdl": [
+          "noapi"
+        ],
+        "_eu": [
+          "AAAAAAQ"
+        ],
+        "_s": [
+          "1"
+        ],
+        "sid": [
+          "1753084990"
+        ],
+        "sct": [
+          "1"
+        ],
+        "seg": [
+          "1"
+        ],
+        "dl": [
+          "https://www.sstaffs.gov.uk/bins-and-recycling/view-your-collection-calendar"
+        ],
+        "dr": [
+          "https://www.sstaffs.gov.uk/bins-and-recycling"
+        ],
+        "dt": [
+          "View your collection calendar | South Staffordshire District Council"
+        ],
+        "en": [
+          "page_view"
+        ],
+        "_ee": [
+          "1"
+        ],
+        "ep.page_placeholder": [
+          "PLACEHOLDER_page_location"
+        ],
+        "tfd": [
+          "187"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "cookie": "[cookies present]",
+        "origin": "https://www.sstaffs.gov.uk",
+        "referer": "https://www.sstaffs.gov.uk/"
+      },
+      "response_headers": {
+        "cache-control": "no-cache, no-store, must-revalidate",
+        "content-type": "text/plain"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T08:03:24.115Z",
+      "duration_ms": 8.362,
+      "endpoint": "/themes/custom/bbd_localgov/fonts/neris/Neris-Black.otf",
+      "host": "www.sstaffs.gov.uk",
       "method": "GET",
       "status": 304,
-      "redirect_url": null,
-      "mime_type": "x-unknown",
-      "size": -1,
-      "timestamp": "2025-07-21T08:03:45.549Z"
+      "request_headers": {
+        "accept": "*/*",
+        "cookie": "[cookies present]",
+        "origin": "https://www.sstaffs.gov.uk",
+        "referer": "https://www.sstaffs.gov.uk/sites/default/files/css/css_cn7620vnhw0maTIP1KHThVrptoIUUO0NwCTNlBJo5JY.css?delta=5&language=en&theme=bbd_localgov&include=eJx9kIGqwyAMRX_I1k8K0aatVI2YuK5__-zY2OjGA0FzTpDkOvQbKPdTrHu_IXjOxrkJInuMC9_sZ_EwOwoUXAia0Nyi_cFG0SOSGGrgmbdA_UolBsye7C8IDisZumsMebNTbQXj-CzNzFlxJ-FE9uM97uTOUsxrvP6LkHWVcPK1JXc1M9c0UK1cv0yL8YKWyA6vMFFuQ8KQL_zcfdCgkQbXzXbRosFvx7D2wai-nTQnQemMruJSsaxi_5Pmo--Z0ZuMLZfmYpCVJiOE1a-AJQA25UfQpH2Q39wI-4AREk0B4Qxd7DcadaXUew9RSvZczNwC7QITKgLdC1e1X-QP8tH0ng"
+      },
+      "response_headers": {
+        "x-cache": "Hit from cloudfront",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "SAMEORIGIN",
+        "x-xss-protection": "1; mode=block"
+      }
     },
     {
-      "url": "https://www.sstaffs.gov.uk/themes/custom/bbd_localgov/fonts/neris/Neris-Light.otf",
+      "timestamp": "2025-07-21T08:03:24.115Z",
+      "duration_ms": 8.102,
+      "endpoint": "/themes/custom/bbd_localgov/fonts/neris/Neris-Light.otf",
+      "host": "www.sstaffs.gov.uk",
       "method": "GET",
       "status": 304,
-      "redirect_url": null,
-      "mime_type": "x-unknown",
-      "size": -1,
-      "timestamp": "2025-07-21T08:03:45.549Z"
+      "request_headers": {
+        "accept": "*/*",
+        "cookie": "[cookies present]",
+        "origin": "https://www.sstaffs.gov.uk",
+        "referer": "https://www.sstaffs.gov.uk/sites/default/files/css/css_cn7620vnhw0maTIP1KHThVrptoIUUO0NwCTNlBJo5JY.css?delta=5&language=en&theme=bbd_localgov&include=eJx9kIGqwyAMRX_I1k8K0aatVI2YuK5__-zY2OjGA0FzTpDkOvQbKPdTrHu_IXjOxrkJInuMC9_sZ_EwOwoUXAia0Nyi_cFG0SOSGGrgmbdA_UolBsye7C8IDisZumsMebNTbQXj-CzNzFlxJ-FE9uM97uTOUsxrvP6LkHWVcPK1JXc1M9c0UK1cv0yL8YKWyA6vMFFuQ8KQL_zcfdCgkQbXzXbRosFvx7D2wai-nTQnQemMruJSsaxi_5Pmo--Z0ZuMLZfmYpCVJiOE1a-AJQA25UfQpH2Q39wI-4AREk0B4Qxd7DcadaXUew9RSvZczNwC7QITKgLdC1e1X-QP8tH0ng"
+      },
+      "response_headers": {
+        "x-cache": "Hit from cloudfront",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "SAMEORIGIN",
+        "x-xss-protection": "1; mode=block"
+      }
     },
     {
-      "url": "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/webfonts/fa-solid-900.woff2",
+      "timestamp": "2025-07-21T08:03:24.115Z",
+      "duration_ms": 8.501,
+      "endpoint": "/themes/custom/bbd_localgov/fonts/neris/Neris-SemiBold.otf",
+      "host": "www.sstaffs.gov.uk",
+      "method": "GET",
+      "status": 304,
+      "request_headers": {
+        "accept": "*/*",
+        "cookie": "[cookies present]",
+        "origin": "https://www.sstaffs.gov.uk",
+        "referer": "https://www.sstaffs.gov.uk/sites/default/files/css/css_cn7620vnhw0maTIP1KHThVrptoIUUO0NwCTNlBJo5JY.css?delta=5&language=en&theme=bbd_localgov&include=eJx9kIGqwyAMRX_I1k8K0aatVI2YuK5__-zY2OjGA0FzTpDkOvQbKPdTrHu_IXjOxrkJInuMC9_sZ_EwOwoUXAia0Nyi_cFG0SOSGGrgmbdA_UolBsye7C8IDisZumsMebNTbQXj-CzNzFlxJ-FE9uM97uTOUsxrvP6LkHWVcPK1JXc1M9c0UK1cv0yL8YKWyA6vMFFuQ8KQL_zcfdCgkQbXzXbRosFvx7D2wai-nTQnQemMruJSsaxi_5Pmo--Z0ZuMLZfmYpCVJiOE1a-AJQA25UfQpH2Q39wI-4AREk0B4Qxd7DcadaXUew9RSvZczNwC7QITKgLdC1e1X-QP8tH0ng"
+      },
+      "response_headers": {
+        "x-cache": "Hit from cloudfront",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "SAMEORIGIN",
+        "x-xss-protection": "1; mode=block"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T08:03:24.119Z",
+      "duration_ms": 7.638,
+      "endpoint": "/themes/custom/bbd_localgov/assets/images/favicons/site.webmanifest",
+      "host": "www.sstaffs.gov.uk",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/octet-stream; charset=utf-8",
-      "size": 156400,
-      "timestamp": "2025-07-21T08:03:45.549Z"
+      "request_headers": {
+        "accept": "*/*",
+        "referer": "https://www.sstaffs.gov.uk/bins-and-recycling/view-your-collection-calendar"
+      },
+      "response_headers": {
+        "x-cache": "Hit from cloudfront",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "SAMEORIGIN",
+        "x-xss-protection": "1; mode=block"
+      }
     },
     {
-      "url": "https://maps.googleapis.com/maps/api/mapsjs/gen_204?csp_test=true",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json; charset=UTF-8",
-      "size": 3,
-      "timestamp": "2025-07-21T08:03:45.656Z"
+      "timestamp": "2025-07-21T08:03:28.458Z",
+      "duration_ms": 14.994,
+      "endpoint": "/g/collect",
+      "host": "region1.google-analytics.com",
+      "method": "POST",
+      "status": 204,
+      "query_params": {
+        "v": [
+          "2"
+        ],
+        "tid": [
+          "G-1PR992572G"
+        ],
+        "gtm": [
+          "45je57g1h1v9185338391za200"
+        ],
+        "_p": [
+          "1753085004038"
+        ],
+        "gcd": [
+          "13l3l3l3l1l1"
+        ],
+        "npa": [
+          "0"
+        ],
+        "dma": [
+          "0"
+        ],
+        "tag_exp": [
+          "101509157~103116026~103200004~103233427~104684208~104684211~104921715~104921717"
+        ],
+        "gdid": [
+          "dMDhkMT"
+        ],
+        "cid": [
+          "169909084.1753084990"
+        ],
+        "ul": [
+          "en-gb"
+        ],
+        "sr": [
+          "800x600"
+        ],
+        "uaa": [
+          "arm"
+        ],
+        "uab": [
+          "64"
+        ],
+        "uafvl": [
+          "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+        ],
+        "uamb": [
+          "0"
+        ],
+        "uap": [
+          "macOS"
+        ],
+        "uapv": [
+          "15.5.0"
+        ],
+        "uaw": [
+          "0"
+        ],
+        "are": [
+          "1"
+        ],
+        "frm": [
+          "0"
+        ],
+        "pscdl": [
+          "noapi"
+        ],
+        "_eu": [
+          "AEAAAAQ"
+        ],
+        "_s": [
+          "2"
+        ],
+        "sid": [
+          "1753084990"
+        ],
+        "sct": [
+          "1"
+        ],
+        "seg": [
+          "1"
+        ],
+        "dl": [
+          "https://www.sstaffs.gov.uk/bins-and-recycling/view-your-collection-calendar"
+        ],
+        "dr": [
+          "https://www.sstaffs.gov.uk/bins-and-recycling"
+        ],
+        "dt": [
+          "View your collection calendar | South Staffordshire District Council"
+        ],
+        "en": [
+          "scroll"
+        ],
+        "ep.page_placeholder": [
+          "PLACEHOLDER_page_location"
+        ],
+        "epn.percent_scrolled": [
+          "90"
+        ],
+        "_et": [
+          "13"
+        ],
+        "tfd": [
+          "4563"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "cookie": "[cookies present]",
+        "origin": "https://www.sstaffs.gov.uk",
+        "referer": "https://www.sstaffs.gov.uk/"
+      },
+      "response_headers": {
+        "cache-control": "no-cache, no-store, must-revalidate",
+        "content-type": "text/plain"
+      }
     },
     {
-      "url": "https://www.sstaffs.gov.uk/themes/custom/bbd_localgov/assets/images/favicons/site.webmanifest",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/octet-stream",
-      "size": 428,
-      "timestamp": "2025-07-21T08:03:45.668Z"
+      "timestamp": "2025-07-21T08:03:28.458Z",
+      "duration_ms": 14.044,
+      "endpoint": "/g/collect",
+      "host": "region1.google-analytics.com",
+      "method": "POST",
+      "status": 204,
+      "query_params": {
+        "v": [
+          "2"
+        ],
+        "tid": [
+          "G-2RCJ3008T3"
+        ],
+        "gtm": [
+          "45je57g1h1v9185338391za200"
+        ],
+        "_p": [
+          "1753085004038"
+        ],
+        "gcd": [
+          "13l3l3l3l1l1"
+        ],
+        "npa": [
+          "0"
+        ],
+        "dma": [
+          "0"
+        ],
+        "tag_exp": [
+          "101509157~103116026~103200004~103233427~104684208~104684211~104921715~104921717"
+        ],
+        "gdid": [
+          "dMDhkMT"
+        ],
+        "cid": [
+          "169909084.1753084990"
+        ],
+        "ul": [
+          "en-gb"
+        ],
+        "sr": [
+          "800x600"
+        ],
+        "uaa": [
+          "arm"
+        ],
+        "uab": [
+          "64"
+        ],
+        "uafvl": [
+          "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+        ],
+        "uamb": [
+          "0"
+        ],
+        "uap": [
+          "macOS"
+        ],
+        "uapv": [
+          "15.5.0"
+        ],
+        "uaw": [
+          "0"
+        ],
+        "are": [
+          "1"
+        ],
+        "frm": [
+          "0"
+        ],
+        "pscdl": [
+          "noapi"
+        ],
+        "_eu": [
+          "AEAAAAQ"
+        ],
+        "_s": [
+          "2"
+        ],
+        "sid": [
+          "1753084990"
+        ],
+        "sct": [
+          "1"
+        ],
+        "seg": [
+          "1"
+        ],
+        "dl": [
+          "https://www.sstaffs.gov.uk/bins-and-recycling/view-your-collection-calendar"
+        ],
+        "dr": [
+          "https://www.sstaffs.gov.uk/bins-and-recycling"
+        ],
+        "dt": [
+          "View your collection calendar | South Staffordshire District Council"
+        ],
+        "en": [
+          "scroll"
+        ],
+        "ep.page_placeholder": [
+          "PLACEHOLDER_page_location"
+        ],
+        "epn.percent_scrolled": [
+          "90"
+        ],
+        "_et": [
+          "13"
+        ],
+        "tfd": [
+          "4569"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "cookie": "[cookies present]",
+        "origin": "https://www.sstaffs.gov.uk",
+        "referer": "https://www.sstaffs.gov.uk/"
+      },
+      "response_headers": {
+        "cache-control": "no-cache, no-store, must-revalidate",
+        "content-type": "text/plain"
+      }
     },
     {
-      "url": "https://maps.googleapis.com/$rpc/google.internal.maps.mapsjs.v1.MapsJsInternalService/GetViewportInfo",
+      "timestamp": "2025-07-21T08:03:28.442Z",
+      "duration_ms": 5016.793000000001,
+      "endpoint": "/bins-and-recycling/{id}",
+      "host": "www.sstaffs.gov.uk",
       "method": "POST",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json+protobuf; charset=UTF-8",
-      "size": 47116,
-      "timestamp": "2025-07-21T08:03:45.752Z"
+      "path_params": [
+        "view-your-collection-calendar"
+      ],
+      "query_params": {
+        "ajax_form": [
+          "1"
+        ],
+        "_wrapper_format": [
+          "drupal_ajax"
+        ]
+      },
+      "request_headers": {
+        "accept": "application/json, text/javascript, */*; q=0.01",
+        "content-type": "application/x-www-form-urlencoded; charset=UTF-8",
+        "cookie": "[cookies present]",
+        "origin": "https://www.sstaffs.gov.uk",
+        "referer": "https://www.sstaffs.gov.uk/bins-and-recycling/view-your-collection-calendar",
+        "x-requested-with": "XMLHttpRequest"
+      },
+      "response_headers": {
+        "cache-control": "must-revalidate, no-cache, private",
+        "content-type": "application/json",
+        "x-cache": "Miss from cloudfront",
+        "x-content-type-options": "nosniff",
+        "x-drupal-ajax-token": "1",
+        "x-frame-options": "SAMEORIGIN",
+        "x-xss-protection": "1; mode=block"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 5363,
+        "compressed": true,
+        "content_ref": "3d20ec15f058e461cc8ec1ff2e0ac808517ed05e.json"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T08:03:33.456Z",
+      "duration_ms": 15.114,
+      "endpoint": "/g/collect",
+      "host": "region1.google-analytics.com",
+      "method": "POST",
+      "status": 204,
+      "query_params": {
+        "v": [
+          "2"
+        ],
+        "tid": [
+          "G-1PR992572G"
+        ],
+        "gtm": [
+          "45je57g1h1v9185338391za200"
+        ],
+        "_p": [
+          "1753085004038"
+        ],
+        "gcd": [
+          "13l3l3l3l1l1"
+        ],
+        "npa": [
+          "0"
+        ],
+        "dma": [
+          "0"
+        ],
+        "tag_exp": [
+          "101509157~103116026~103200004~103233427~104684208~104684211~104921715~104921717"
+        ],
+        "gdid": [
+          "dMDhkMT"
+        ],
+        "cid": [
+          "169909084.1753084990"
+        ],
+        "ul": [
+          "en-gb"
+        ],
+        "sr": [
+          "800x600"
+        ],
+        "uaa": [
+          "arm"
+        ],
+        "uab": [
+          "64"
+        ],
+        "uafvl": [
+          "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+        ],
+        "uamb": [
+          "0"
+        ],
+        "uap": [
+          "macOS"
+        ],
+        "uapv": [
+          "15.5.0"
+        ],
+        "uaw": [
+          "0"
+        ],
+        "are": [
+          "1"
+        ],
+        "frm": [
+          "0"
+        ],
+        "pscdl": [
+          "noapi"
+        ],
+        "_eu": [
+          "AEEAAAQ"
+        ],
+        "_s": [
+          "3"
+        ],
+        "sid": [
+          "1753084990"
+        ],
+        "sct": [
+          "1"
+        ],
+        "seg": [
+          "1"
+        ],
+        "dl": [
+          "https://www.sstaffs.gov.uk/bins-and-recycling/view-your-collection-calendar"
+        ],
+        "dr": [
+          "https://www.sstaffs.gov.uk/bins-and-recycling"
+        ],
+        "dt": [
+          "View your collection calendar | South Staffordshire District Council"
+        ],
+        "en": [
+          "form_start"
+        ],
+        "ep.page_placeholder": [
+          "PLACEHOLDER_page_location"
+        ],
+        "ep.form_id": [
+          "bbd-bin-lookup-form"
+        ],
+        "ep.form_destination": [
+          "https://www.sstaffs.gov.uk/bins-and-recycling/view-your-collection-calendar"
+        ],
+        "epn.form_length": [
+          "4"
+        ],
+        "ep.first_field_id": [
+          "edit-postcode"
+        ],
+        "ep.first_field_name": [
+          "postcode"
+        ],
+        "ep.first_field_type": [
+          "text"
+        ],
+        "epn.first_field_position": [
+          "1"
+        ],
+        "_et": [
+          "4375"
+        ],
+        "tfd": [
+          "9565"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "cookie": "[cookies present]",
+        "origin": "https://www.sstaffs.gov.uk",
+        "referer": "https://www.sstaffs.gov.uk/"
+      },
+      "response_headers": {
+        "cache-control": "no-cache, no-store, must-revalidate",
+        "content-type": "text/plain"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T08:03:33.473Z",
+      "duration_ms": 14.257,
+      "endpoint": "/g/collect",
+      "host": "region1.google-analytics.com",
+      "method": "POST",
+      "status": 204,
+      "query_params": {
+        "v": [
+          "2"
+        ],
+        "tid": [
+          "G-2RCJ3008T3"
+        ],
+        "gtm": [
+          "45je57g1h1v9185338391za200"
+        ],
+        "_p": [
+          "1753085004038"
+        ],
+        "gcd": [
+          "13l3l3l3l1l1"
+        ],
+        "npa": [
+          "0"
+        ],
+        "dma": [
+          "0"
+        ],
+        "tag_exp": [
+          "101509157~103116026~103200004~103233427~104684208~104684211~104921715~104921717"
+        ],
+        "gdid": [
+          "dMDhkMT"
+        ],
+        "cid": [
+          "169909084.1753084990"
+        ],
+        "ul": [
+          "en-gb"
+        ],
+        "sr": [
+          "800x600"
+        ],
+        "uaa": [
+          "arm"
+        ],
+        "uab": [
+          "64"
+        ],
+        "uafvl": [
+          "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+        ],
+        "uamb": [
+          "0"
+        ],
+        "uap": [
+          "macOS"
+        ],
+        "uapv": [
+          "15.5.0"
+        ],
+        "uaw": [
+          "0"
+        ],
+        "are": [
+          "1"
+        ],
+        "frm": [
+          "0"
+        ],
+        "pscdl": [
+          "noapi"
+        ],
+        "_eu": [
+          "AEEAAAQ"
+        ],
+        "_s": [
+          "3"
+        ],
+        "sid": [
+          "1753084990"
+        ],
+        "sct": [
+          "1"
+        ],
+        "seg": [
+          "1"
+        ],
+        "dl": [
+          "https://www.sstaffs.gov.uk/bins-and-recycling/view-your-collection-calendar"
+        ],
+        "dr": [
+          "https://www.sstaffs.gov.uk/bins-and-recycling"
+        ],
+        "dt": [
+          "View your collection calendar | South Staffordshire District Council"
+        ],
+        "en": [
+          "form_start"
+        ],
+        "ep.page_placeholder": [
+          "PLACEHOLDER_page_location"
+        ],
+        "ep.form_id": [
+          "bbd-bin-lookup-form"
+        ],
+        "ep.form_destination": [
+          "https://www.sstaffs.gov.uk/bins-and-recycling/view-your-collection-calendar"
+        ],
+        "epn.form_length": [
+          "4"
+        ],
+        "ep.first_field_id": [
+          "edit-postcode"
+        ],
+        "ep.first_field_name": [
+          "postcode"
+        ],
+        "ep.first_field_type": [
+          "text"
+        ],
+        "epn.first_field_position": [
+          "1"
+        ],
+        "_et": [
+          "4377"
+        ],
+        "tfd": [
+          "9584"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "cookie": "[cookies present]",
+        "origin": "https://www.sstaffs.gov.uk",
+        "referer": "https://www.sstaffs.gov.uk/"
+      },
+      "response_headers": {
+        "cache-control": "no-cache, no-store, must-revalidate",
+        "content-type": "text/plain"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T08:03:44.050Z",
+      "duration_ms": 285.44,
+      "endpoint": "/bins-and-recycling/{id}",
+      "host": "www.sstaffs.gov.uk",
+      "method": "POST",
+      "status": 303,
+      "path_params": [
+        "view-your-collection-calendar"
+      ],
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+        "content-type": "application/x-www-form-urlencoded",
+        "cookie": "[cookies present]",
+        "origin": "https://www.sstaffs.gov.uk",
+        "referer": "https://www.sstaffs.gov.uk/bins-and-recycling/view-your-collection-calendar"
+      },
+      "response_headers": {
+        "cache-control": "must-revalidate, no-cache, private",
+        "content-type": "text/html; charset=utf-8",
+        "location": "https://www.sstaffs.gov.uk/where-i-live?uprn=010090089159",
+        "x-cache": "Miss from cloudfront",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "SAMEORIGIN",
+        "x-xss-protection": "1; mode=block"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": -1
+      },
+      "redirect_to": "https://www.sstaffs.gov.uk/where-i-live?uprn=010090089159"
+    },
+    {
+      "timestamp": "2025-07-21T08:03:45.465Z",
+      "duration_ms": -1,
+      "endpoint": "/g/collect",
+      "host": "region1.google-analytics.com",
+      "method": "POST",
+      "status": -1,
+      "query_params": {
+        "v": [
+          "2"
+        ],
+        "tid": [
+          "G-1PR992572G"
+        ],
+        "gtm": [
+          "45je57g1h1v9185338391za200"
+        ],
+        "_p": [
+          "1753085004038"
+        ],
+        "gcd": [
+          "13l3l3l3l1l1"
+        ],
+        "npa": [
+          "0"
+        ],
+        "dma": [
+          "0"
+        ],
+        "tag_exp": [
+          "101509157~103116026~103200004~103233427~104684208~104684211~104921715~104921717"
+        ],
+        "gdid": [
+          "dMDhkMT"
+        ],
+        "cid": [
+          "169909084.1753084990"
+        ],
+        "ul": [
+          "en-gb"
+        ],
+        "sr": [
+          "800x600"
+        ],
+        "uaa": [
+          "arm"
+        ],
+        "uab": [
+          "64"
+        ],
+        "uafvl": [
+          "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+        ],
+        "uamb": [
+          "0"
+        ],
+        "uap": [
+          "macOS"
+        ],
+        "uapv": [
+          "15.5.0"
+        ],
+        "uaw": [
+          "0"
+        ],
+        "are": [
+          "1"
+        ],
+        "frm": [
+          "0"
+        ],
+        "pscdl": [
+          "noapi"
+        ],
+        "_eu": [
+          "AEEAAAQ"
+        ],
+        "_s": [
+          "4"
+        ],
+        "sid": [
+          "1753084990"
+        ],
+        "sct": [
+          "1"
+        ],
+        "seg": [
+          "1"
+        ],
+        "dl": [
+          "https://www.sstaffs.gov.uk/bins-and-recycling/view-your-collection-calendar"
+        ],
+        "dr": [
+          "https://www.sstaffs.gov.uk/bins-and-recycling"
+        ],
+        "dt": [
+          "View your collection calendar | South Staffordshire District Council"
+        ],
+        "en": [
+          "form_submit"
+        ],
+        "ep.page_placeholder": [
+          "PLACEHOLDER_page_location"
+        ],
+        "ep.form_id": [
+          "bbd-bin-lookup-form"
+        ],
+        "ep.form_destination": [
+          "https://www.sstaffs.gov.uk/bins-and-recycling/view-your-collection-calendar"
+        ],
+        "epn.form_length": [
+          "6"
+        ],
+        "ep.form_submit_text": [
+          "Search"
+        ],
+        "_et": [
+          "15528"
+        ],
+        "tfd": [
+          "21569"
+        ]
+      },
+      "request_headers": {
+        "referer": "https://www.sstaffs.gov.uk/"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T08:03:45.466Z",
+      "duration_ms": -1,
+      "endpoint": "/g/collect",
+      "host": "region1.google-analytics.com",
+      "method": "POST",
+      "status": -1,
+      "query_params": {
+        "v": [
+          "2"
+        ],
+        "tid": [
+          "G-1PR992572G"
+        ],
+        "gtm": [
+          "45je57g1h1v9185338391za200"
+        ],
+        "_p": [
+          "1753085004038"
+        ],
+        "gcd": [
+          "13l3l3l3l1l1"
+        ],
+        "npa": [
+          "0"
+        ],
+        "dma": [
+          "0"
+        ],
+        "tag_exp": [
+          "101509157~103116026~103200004~103233427~104684208~104684211~104921715~104921717"
+        ],
+        "gdid": [
+          "dMDhkMT"
+        ],
+        "cid": [
+          "169909084.1753084990"
+        ],
+        "ul": [
+          "en-gb"
+        ],
+        "sr": [
+          "800x600"
+        ],
+        "uaa": [
+          "arm"
+        ],
+        "uab": [
+          "64"
+        ],
+        "uafvl": [
+          "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+        ],
+        "uamb": [
+          "0"
+        ],
+        "uap": [
+          "macOS"
+        ],
+        "uapv": [
+          "15.5.0"
+        ],
+        "uaw": [
+          "0"
+        ],
+        "are": [
+          "1"
+        ],
+        "frm": [
+          "0"
+        ],
+        "pscdl": [
+          "noapi"
+        ],
+        "_eu": [
+          "AAAAAAQ"
+        ],
+        "_s": [
+          "5"
+        ],
+        "sid": [
+          "1753084990"
+        ],
+        "sct": [
+          "1"
+        ],
+        "seg": [
+          "1"
+        ],
+        "dl": [
+          "https://www.sstaffs.gov.uk/bins-and-recycling/view-your-collection-calendar"
+        ],
+        "dr": [
+          "https://www.sstaffs.gov.uk/bins-and-recycling"
+        ],
+        "dt": [
+          "View your collection calendar | South Staffordshire District Council"
+        ],
+        "en": [
+          "user_engagement"
+        ],
+        "ep.page_placeholder": [
+          "PLACEHOLDER_page_location"
+        ],
+        "_et": [
+          "1464"
+        ],
+        "tfd": [
+          "21570"
+        ]
+      },
+      "request_headers": {
+        "referer": "https://www.sstaffs.gov.uk/"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T08:03:45.467Z",
+      "duration_ms": -1,
+      "endpoint": "/g/collect",
+      "host": "region1.google-analytics.com",
+      "method": "POST",
+      "status": -1,
+      "query_params": {
+        "v": [
+          "2"
+        ],
+        "tid": [
+          "G-2RCJ3008T3"
+        ],
+        "gtm": [
+          "45je57g1h1v9185338391za200"
+        ],
+        "_p": [
+          "1753085004038"
+        ],
+        "gcd": [
+          "13l3l3l3l1l1"
+        ],
+        "npa": [
+          "0"
+        ],
+        "dma": [
+          "0"
+        ],
+        "tag_exp": [
+          "101509157~103116026~103200004~103233427~104684208~104684211~104921715~104921717"
+        ],
+        "gdid": [
+          "dMDhkMT"
+        ],
+        "cid": [
+          "169909084.1753084990"
+        ],
+        "ul": [
+          "en-gb"
+        ],
+        "sr": [
+          "800x600"
+        ],
+        "uaa": [
+          "arm"
+        ],
+        "uab": [
+          "64"
+        ],
+        "uafvl": [
+          "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+        ],
+        "uamb": [
+          "0"
+        ],
+        "uap": [
+          "macOS"
+        ],
+        "uapv": [
+          "15.5.0"
+        ],
+        "uaw": [
+          "0"
+        ],
+        "are": [
+          "1"
+        ],
+        "frm": [
+          "0"
+        ],
+        "pscdl": [
+          "noapi"
+        ],
+        "_eu": [
+          "AAAAAAQ"
+        ],
+        "_s": [
+          "5"
+        ],
+        "sid": [
+          "1753084990"
+        ],
+        "sct": [
+          "1"
+        ],
+        "seg": [
+          "1"
+        ],
+        "dl": [
+          "https://www.sstaffs.gov.uk/bins-and-recycling/view-your-collection-calendar"
+        ],
+        "dr": [
+          "https://www.sstaffs.gov.uk/bins-and-recycling"
+        ],
+        "dt": [
+          "View your collection calendar | South Staffordshire District Council"
+        ],
+        "en": [
+          "user_engagement"
+        ],
+        "ep.page_placeholder": [
+          "PLACEHOLDER_page_location"
+        ],
+        "_et": [
+          "1467"
+        ],
+        "tfd": [
+          "21576"
+        ]
+      },
+      "request_headers": {
+        "referer": "https://www.sstaffs.gov.uk/"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T08:03:45.466Z",
+      "duration_ms": -1,
+      "endpoint": "/g/collect",
+      "host": "region1.google-analytics.com",
+      "method": "POST",
+      "status": -1,
+      "query_params": {
+        "v": [
+          "2"
+        ],
+        "tid": [
+          "G-2RCJ3008T3"
+        ],
+        "gtm": [
+          "45je57g1h1v9185338391za200"
+        ],
+        "_p": [
+          "1753085004038"
+        ],
+        "gcd": [
+          "13l3l3l3l1l1"
+        ],
+        "npa": [
+          "0"
+        ],
+        "dma": [
+          "0"
+        ],
+        "tag_exp": [
+          "101509157~103116026~103200004~103233427~104684208~104684211~104921715~104921717"
+        ],
+        "gdid": [
+          "dMDhkMT"
+        ],
+        "cid": [
+          "169909084.1753084990"
+        ],
+        "ul": [
+          "en-gb"
+        ],
+        "sr": [
+          "800x600"
+        ],
+        "uaa": [
+          "arm"
+        ],
+        "uab": [
+          "64"
+        ],
+        "uafvl": [
+          "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+        ],
+        "uamb": [
+          "0"
+        ],
+        "uap": [
+          "macOS"
+        ],
+        "uapv": [
+          "15.5.0"
+        ],
+        "uaw": [
+          "0"
+        ],
+        "are": [
+          "1"
+        ],
+        "frm": [
+          "0"
+        ],
+        "pscdl": [
+          "noapi"
+        ],
+        "_eu": [
+          "AEEAAAQ"
+        ],
+        "_s": [
+          "4"
+        ],
+        "sid": [
+          "1753084990"
+        ],
+        "sct": [
+          "1"
+        ],
+        "seg": [
+          "1"
+        ],
+        "dl": [
+          "https://www.sstaffs.gov.uk/bins-and-recycling/view-your-collection-calendar"
+        ],
+        "dr": [
+          "https://www.sstaffs.gov.uk/bins-and-recycling"
+        ],
+        "dt": [
+          "View your collection calendar | South Staffordshire District Council"
+        ],
+        "en": [
+          "form_submit"
+        ],
+        "ep.page_placeholder": [
+          "PLACEHOLDER_page_location"
+        ],
+        "ep.form_id": [
+          "bbd-bin-lookup-form"
+        ],
+        "ep.form_destination": [
+          "https://www.sstaffs.gov.uk/bins-and-recycling/view-your-collection-calendar"
+        ],
+        "epn.form_length": [
+          "6"
+        ],
+        "ep.form_submit_text": [
+          "Search"
+        ],
+        "_et": [
+          "15528"
+        ],
+        "tfd": [
+          "21576"
+        ]
+      },
+      "request_headers": {
+        "referer": "https://www.sstaffs.gov.uk/"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T08:03:44.336Z",
+      "duration_ms": 1108.247,
+      "endpoint": "/where-i-live",
+      "host": "www.sstaffs.gov.uk",
+      "method": "GET",
+      "status": 200,
+      "query_params": {
+        "uprn": [
+          "010090089159"
+        ]
+      },
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+        "cookie": "[cookies present]",
+        "referer": "https://www.sstaffs.gov.uk/bins-and-recycling/view-your-collection-calendar"
+      },
+      "response_headers": {
+        "cache-control": "max-age=1800, public",
+        "content-type": "text/html; charset=UTF-8",
+        "x-cache": "Miss from cloudfront",
+        "x-content-type-options": "nosniff",
+        "x-drupal-cache": "MISS",
+        "x-drupal-dynamic-cache": "MISS",
+        "x-frame-options": "SAMEORIGIN",
+        "x-xss-protection": "1; mode=block"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 66967,
+        "compressed": true,
+        "content_ref": "4d5a14377c63bba8dd6a4e99e8cbaf6e68f5f5ef.html"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T08:03:45.524Z",
+      "duration_ms": 14.072,
+      "endpoint": "/g/collect",
+      "host": "region1.google-analytics.com",
+      "method": "POST",
+      "status": 204,
+      "query_params": {
+        "v": [
+          "2"
+        ],
+        "tid": [
+          "G-1PR992572G"
+        ],
+        "gtm": [
+          "45je57g1h1v9185338391za200"
+        ],
+        "_p": [
+          "1753085025470"
+        ],
+        "gcd": [
+          "13l3l3l3l1l1"
+        ],
+        "npa": [
+          "0"
+        ],
+        "dma": [
+          "0"
+        ],
+        "tag_exp": [
+          "101509157~103116026~103200004~103233427~104684208~104684211~104921715~104921717"
+        ],
+        "gdid": [
+          "dMDhkMT"
+        ],
+        "cid": [
+          "169909084.1753084990"
+        ],
+        "ul": [
+          "en-gb"
+        ],
+        "sr": [
+          "800x600"
+        ],
+        "uaa": [
+          "arm"
+        ],
+        "uab": [
+          "64"
+        ],
+        "uafvl": [
+          "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+        ],
+        "uamb": [
+          "0"
+        ],
+        "uap": [
+          "macOS"
+        ],
+        "uapv": [
+          "15.5.0"
+        ],
+        "uaw": [
+          "0"
+        ],
+        "are": [
+          "1"
+        ],
+        "frm": [
+          "0"
+        ],
+        "pscdl": [
+          "noapi"
+        ],
+        "_eu": [
+          "AAAAAAQ"
+        ],
+        "_s": [
+          "1"
+        ],
+        "sid": [
+          "1753084990"
+        ],
+        "sct": [
+          "1"
+        ],
+        "seg": [
+          "1"
+        ],
+        "dl": [
+          "https://www.sstaffs.gov.uk/where-i-live?uprn=010090089159"
+        ],
+        "dr": [
+          "https://www.sstaffs.gov.uk/bins-and-recycling/view-your-collection-calendar"
+        ],
+        "dt": [
+          "Where I live | South Staffordshire District Council"
+        ],
+        "en": [
+          "page_view"
+        ],
+        "_ee": [
+          "1"
+        ],
+        "ep.page_placeholder": [
+          "PLACEHOLDER_page_location"
+        ],
+        "tfd": [
+          "1522"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "cookie": "[cookies present]",
+        "origin": "https://www.sstaffs.gov.uk",
+        "referer": "https://www.sstaffs.gov.uk/"
+      },
+      "response_headers": {
+        "cache-control": "no-cache, no-store, must-revalidate",
+        "content-type": "text/plain"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T08:03:45.549Z",
+      "duration_ms": 10.871,
+      "endpoint": "/themes/custom/bbd_localgov/fonts/neris/Neris-Black.otf",
+      "host": "www.sstaffs.gov.uk",
+      "method": "GET",
+      "status": 304,
+      "request_headers": {
+        "accept": "*/*",
+        "cookie": "[cookies present]",
+        "origin": "https://www.sstaffs.gov.uk",
+        "referer": "https://www.sstaffs.gov.uk/sites/default/files/css/css_QTVO7_7Cio4TngMBIkbWYPQXJ3CdIAZbHm7kTMhBFUE.css?delta=5&language=en&theme=bbd_localgov&include=eJxtkAGOxCAIRS9k65EI6m9LqmLUTmduv-1kN9t0JiGB_yD5gGO_UtcjinX_NYnXbJwLFNVznPVhr8JgI6-6Co6UShTOHvYbJMcVBs8eJa821K1wHH-lmTR33tE0wV7qcYc7ZTMzdBLEQImLvQraJczo5m-hw6bBugoOvm7JtVtn0poG1Kr13pmjOo43mJC3IbHkG29d_PoalsMG1TRw9QtxEeKt6_to9GPqOzdNvXCkhCBM5wOa_URjX5CO2VfrSPZ0NQ_B3ihwZ8KzaO32g_wA2Cuzxw"
+      },
+      "response_headers": {
+        "x-cache": "Hit from cloudfront",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "SAMEORIGIN",
+        "x-xss-protection": "1; mode=block"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T08:03:45.549Z",
+      "duration_ms": 13.733,
+      "endpoint": "/themes/custom/bbd_localgov/fonts/neris/Neris-Light.otf",
+      "host": "www.sstaffs.gov.uk",
+      "method": "GET",
+      "status": 304,
+      "request_headers": {
+        "accept": "*/*",
+        "cookie": "[cookies present]",
+        "origin": "https://www.sstaffs.gov.uk",
+        "referer": "https://www.sstaffs.gov.uk/sites/default/files/css/css_QTVO7_7Cio4TngMBIkbWYPQXJ3CdIAZbHm7kTMhBFUE.css?delta=5&language=en&theme=bbd_localgov&include=eJxtkAGOxCAIRS9k65EI6m9LqmLUTmduv-1kN9t0JiGB_yD5gGO_UtcjinX_NYnXbJwLFNVznPVhr8JgI6-6Co6UShTOHvYbJMcVBs8eJa821K1wHH-lmTR33tE0wV7qcYc7ZTMzdBLEQImLvQraJczo5m-hw6bBugoOvm7JtVtn0poG1Kr13pmjOo43mJC3IbHkG29d_PoalsMG1TRw9QtxEeKt6_to9GPqOzdNvXCkhCBM5wOa_URjX5CO2VfrSPZ0NQ_B3ihwZ8KzaO32g_wA2Cuzxw"
+      },
+      "response_headers": {
+        "x-cache": "Hit from cloudfront",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "SAMEORIGIN",
+        "x-xss-protection": "1; mode=block"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T08:03:45.525Z",
+      "duration_ms": 81.871,
+      "endpoint": "/g/collect",
+      "host": "region1.google-analytics.com",
+      "method": "POST",
+      "status": 204,
+      "query_params": {
+        "v": [
+          "2"
+        ],
+        "tid": [
+          "G-2RCJ3008T3"
+        ],
+        "gtm": [
+          "45je57g1h1v9185338391za200"
+        ],
+        "_p": [
+          "1753085025470"
+        ],
+        "gcd": [
+          "13l3l3l3l1l1"
+        ],
+        "npa": [
+          "0"
+        ],
+        "dma": [
+          "0"
+        ],
+        "tag_exp": [
+          "101509157~103116026~103200004~103233427~104684208~104684211~104921715~104921717"
+        ],
+        "gdid": [
+          "dMDhkMT"
+        ],
+        "cid": [
+          "169909084.1753084990"
+        ],
+        "ul": [
+          "en-gb"
+        ],
+        "sr": [
+          "800x600"
+        ],
+        "uaa": [
+          "arm"
+        ],
+        "uab": [
+          "64"
+        ],
+        "uafvl": [
+          "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+        ],
+        "uamb": [
+          "0"
+        ],
+        "uap": [
+          "macOS"
+        ],
+        "uapv": [
+          "15.5.0"
+        ],
+        "uaw": [
+          "0"
+        ],
+        "are": [
+          "1"
+        ],
+        "frm": [
+          "0"
+        ],
+        "pscdl": [
+          "noapi"
+        ],
+        "_eu": [
+          "AAAAAAQ"
+        ],
+        "_s": [
+          "1"
+        ],
+        "sid": [
+          "1753084990"
+        ],
+        "sct": [
+          "1"
+        ],
+        "seg": [
+          "1"
+        ],
+        "dl": [
+          "https://www.sstaffs.gov.uk/where-i-live?uprn=010090089159"
+        ],
+        "dr": [
+          "https://www.sstaffs.gov.uk/bins-and-recycling/view-your-collection-calendar"
+        ],
+        "dt": [
+          "Where I live | South Staffordshire District Council"
+        ],
+        "en": [
+          "page_view"
+        ],
+        "_ee": [
+          "1"
+        ],
+        "ep.page_placeholder": [
+          "PLACEHOLDER_page_location"
+        ],
+        "tfd": [
+          "1525"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "cookie": "[cookies present]",
+        "origin": "https://www.sstaffs.gov.uk",
+        "referer": "https://www.sstaffs.gov.uk/"
+      },
+      "response_headers": {
+        "cache-control": "no-cache, no-store, must-revalidate",
+        "content-type": "text/plain"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T08:03:45.656Z",
+      "duration_ms": 15.576,
+      "endpoint": "/maps/api/mapsjs/gen_204",
+      "host": "maps.googleapis.com",
+      "method": "GET",
+      "status": 200,
+      "query_params": {
+        "csp_test": [
+          "true"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "origin": "https://www.sstaffs.gov.uk",
+        "referer": "https://www.sstaffs.gov.uk/",
+        "x-browser-copyright": "Copyright 2025 Google LLC. All rights reserved.",
+        "x-browser-validation": "qvLgIVtG4U8GgiRPSI9IJ22mUlI=",
+        "x-browser-year": "2025",
+        "x-client-data": "CMiXywE="
+      },
+      "response_headers": {
+        "content-type": "application/json; charset=UTF-8",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "SAMEORIGIN",
+        "x-xss-protection": "0"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 3,
+        "content_ref": "5f36b2ea290645ee34d943220a14b54ee5ea5be5.json"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T08:03:45.668Z",
+      "duration_ms": 8.534,
+      "endpoint": "/themes/custom/bbd_localgov/assets/images/favicons/site.webmanifest",
+      "host": "www.sstaffs.gov.uk",
+      "method": "GET",
+      "status": 200,
+      "request_headers": {
+        "accept": "*/*",
+        "referer": "https://www.sstaffs.gov.uk/where-i-live?uprn=010090089159"
+      },
+      "response_headers": {
+        "x-cache": "Hit from cloudfront",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "SAMEORIGIN",
+        "x-xss-protection": "1; mode=block"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T08:03:45.752Z",
+      "duration_ms": 93.369,
+      "endpoint": "/$rpc/{id}/GetViewportInfo",
+      "host": "maps.googleapis.com",
+      "method": "POST",
+      "status": 200,
+      "path_params": [
+        "google.internal.maps.mapsjs.v1.MapsJsInternalService"
+      ],
+      "request_headers": {
+        "accept": "*/*",
+        "content-type": "application/json+protobuf",
+        "origin": "https://www.sstaffs.gov.uk",
+        "referer": "https://www.sstaffs.gov.uk/",
+        "x-browser-copyright": "Copyright 2025 Google LLC. All rights reserved.",
+        "x-browser-validation": "qvLgIVtG4U8GgiRPSI9IJ22mUlI=",
+        "x-browser-year": "2025",
+        "x-client-data": "CMiXywE=",
+        "x-goog-api-key": "AIzaSyCAk_j6EBIaf3RscmWCAfDy46NkRR0i_G0",
+        "x-goog-gmp-client-signals": "CAIqCDMuNjEuMTBkWg4SDAjh6PfDBhDA0qHOAg==",
+        "x-goog-maps-api-salt": "zEC2cypDT0",
+        "x-goog-maps-api-signature": "89131",
+        "x-goog-maps-session-id": "A3ADA92E-1F7A-4C19-8019-E6F20CAE1547",
+        "x-user-agent": "grpc-web-javascript/0.1"
+      },
+      "response_headers": {
+        "content-type": "application/json+protobuf; charset=UTF-8",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "SAMEORIGIN",
+        "x-xss-protection": "0"
+      },
+      "response_info": {
+        "type": "application/json+protobuf",
+        "size": 47116,
+        "compressed": true,
+        "content_ref": "5f63253e3c940e9e8c0b45a5093aedb255ae9102.dat"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T08:03:50.518Z",
+      "duration_ms": 21.364,
+      "endpoint": "/g/collect",
+      "host": "region1.google-analytics.com",
+      "method": "POST",
+      "status": 204,
+      "query_params": {
+        "v": [
+          "2"
+        ],
+        "tid": [
+          "G-1PR992572G"
+        ],
+        "gtm": [
+          "45je57g1h1v9185338391za200"
+        ],
+        "_p": [
+          "1753085025470"
+        ],
+        "gcd": [
+          "13l3l3l3l1l1"
+        ],
+        "npa": [
+          "0"
+        ],
+        "dma": [
+          "0"
+        ],
+        "tag_exp": [
+          "101509157~103116026~103200004~103233427~104684208~104684211~104921715~104921717"
+        ],
+        "gdid": [
+          "dMDhkMT"
+        ],
+        "cid": [
+          "169909084.1753084990"
+        ],
+        "ul": [
+          "en-gb"
+        ],
+        "sr": [
+          "800x600"
+        ],
+        "uaa": [
+          "arm"
+        ],
+        "uab": [
+          "64"
+        ],
+        "uafvl": [
+          "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+        ],
+        "uamb": [
+          "0"
+        ],
+        "uap": [
+          "macOS"
+        ],
+        "uapv": [
+          "15.5.0"
+        ],
+        "uaw": [
+          "0"
+        ],
+        "are": [
+          "1"
+        ],
+        "frm": [
+          "0"
+        ],
+        "pscdl": [
+          "noapi"
+        ],
+        "_eu": [
+          "AEAAAAQ"
+        ],
+        "_s": [
+          "2"
+        ],
+        "sid": [
+          "1753084990"
+        ],
+        "sct": [
+          "1"
+        ],
+        "seg": [
+          "1"
+        ],
+        "dl": [
+          "https://www.sstaffs.gov.uk/where-i-live?uprn=010090089159"
+        ],
+        "dr": [
+          "https://www.sstaffs.gov.uk/bins-and-recycling/view-your-collection-calendar"
+        ],
+        "dt": [
+          "Where I live | South Staffordshire District Council"
+        ],
+        "en": [
+          "scroll"
+        ],
+        "ep.page_placeholder": [
+          "PLACEHOLDER_page_location"
+        ],
+        "epn.percent_scrolled": [
+          "90"
+        ],
+        "_et": [
+          "8"
+        ],
+        "tfd": [
+          "6524"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "cookie": "[cookies present]",
+        "origin": "https://www.sstaffs.gov.uk",
+        "referer": "https://www.sstaffs.gov.uk/"
+      },
+      "response_headers": {
+        "cache-control": "no-cache, no-store, must-revalidate",
+        "content-type": "text/plain"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T08:03:50.519Z",
+      "duration_ms": 22.866,
+      "endpoint": "/g/collect",
+      "host": "region1.google-analytics.com",
+      "method": "POST",
+      "status": 204,
+      "query_params": {
+        "v": [
+          "2"
+        ],
+        "tid": [
+          "G-2RCJ3008T3"
+        ],
+        "gtm": [
+          "45je57g1h1v9185338391za200"
+        ],
+        "_p": [
+          "1753085025470"
+        ],
+        "gcd": [
+          "13l3l3l3l1l1"
+        ],
+        "npa": [
+          "0"
+        ],
+        "dma": [
+          "0"
+        ],
+        "tag_exp": [
+          "101509157~103116026~103200004~103233427~104684208~104684211~104921715~104921717"
+        ],
+        "gdid": [
+          "dMDhkMT"
+        ],
+        "cid": [
+          "169909084.1753084990"
+        ],
+        "ul": [
+          "en-gb"
+        ],
+        "sr": [
+          "800x600"
+        ],
+        "uaa": [
+          "arm"
+        ],
+        "uab": [
+          "64"
+        ],
+        "uafvl": [
+          "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+        ],
+        "uamb": [
+          "0"
+        ],
+        "uap": [
+          "macOS"
+        ],
+        "uapv": [
+          "15.5.0"
+        ],
+        "uaw": [
+          "0"
+        ],
+        "are": [
+          "1"
+        ],
+        "frm": [
+          "0"
+        ],
+        "pscdl": [
+          "noapi"
+        ],
+        "_eu": [
+          "AEAAAAQ"
+        ],
+        "_s": [
+          "2"
+        ],
+        "sid": [
+          "1753084990"
+        ],
+        "sct": [
+          "1"
+        ],
+        "seg": [
+          "1"
+        ],
+        "dl": [
+          "https://www.sstaffs.gov.uk/where-i-live?uprn=010090089159"
+        ],
+        "dr": [
+          "https://www.sstaffs.gov.uk/bins-and-recycling/view-your-collection-calendar"
+        ],
+        "dt": [
+          "Where I live | South Staffordshire District Council"
+        ],
+        "en": [
+          "scroll"
+        ],
+        "ep.page_placeholder": [
+          "PLACEHOLDER_page_location"
+        ],
+        "epn.percent_scrolled": [
+          "90"
+        ],
+        "_et": [
+          "7"
+        ],
+        "tfd": [
+          "6526"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "cookie": "[cookies present]",
+        "origin": "https://www.sstaffs.gov.uk",
+        "referer": "https://www.sstaffs.gov.uk/"
+      },
+      "response_headers": {
+        "cache-control": "no-cache, no-store, must-revalidate",
+        "content-type": "text/plain"
+      }
     }
-  ]
+  ],
+  "analysis": {
+    "total_requests": 37,
+    "unique_endpoints": 11,
+    "methods_used": [
+      "GET",
+      "POST"
+    ],
+    "status_codes": {
+      "301": 1,
+      "200": 12,
+      "204": 12,
+      "-1": 6,
+      "304": 5,
+      "303": 1
+    },
+    "endpoints_with_params": [
+      {
+        "endpoint": "/g/collect",
+        "method": "POST",
+        "query_params": [
+          "v",
+          "tid",
+          "gtm",
+          "_p",
+          "gcd",
+          "npa",
+          "dma",
+          "tag_exp",
+          "gdid",
+          "cid",
+          "ul",
+          "sr",
+          "uaa",
+          "uab",
+          "uafvl",
+          "uamb",
+          "uap",
+          "uapv",
+          "uaw",
+          "are",
+          "frm",
+          "pscdl",
+          "_s",
+          "sid",
+          "sct",
+          "seg",
+          "dl",
+          "dt",
+          "en",
+          "_fv",
+          "_ss",
+          "_ee",
+          "ep.page_placeholder",
+          "tfd"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/g/collect",
+        "method": "POST",
+        "query_params": [
+          "v",
+          "tid",
+          "gtm",
+          "_p",
+          "gcd",
+          "npa",
+          "dma",
+          "tag_exp",
+          "gdid",
+          "cid",
+          "ul",
+          "sr",
+          "uaa",
+          "uab",
+          "uafvl",
+          "uamb",
+          "uap",
+          "uapv",
+          "uaw",
+          "are",
+          "frm",
+          "pscdl",
+          "_s",
+          "sid",
+          "sct",
+          "seg",
+          "dl",
+          "dt",
+          "en",
+          "_fv",
+          "_nsi",
+          "_ss",
+          "_ee",
+          "ep.page_placeholder",
+          "tfd"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/g/collect",
+        "method": "POST",
+        "query_params": [
+          "v",
+          "tid",
+          "gtm",
+          "_p",
+          "gcd",
+          "npa",
+          "dma",
+          "tag_exp",
+          "gdid",
+          "cid",
+          "ul",
+          "sr",
+          "uaa",
+          "uab",
+          "uafvl",
+          "uamb",
+          "uap",
+          "uapv",
+          "uaw",
+          "are",
+          "frm",
+          "pscdl",
+          "_eu",
+          "_s",
+          "sid",
+          "sct",
+          "seg",
+          "dl",
+          "dt",
+          "en",
+          "ep.page_placeholder",
+          "_et",
+          "tfd"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/bins-and-recycling/{id}",
+        "method": "GET",
+        "query_params": [],
+        "path_params": true
+      },
+      {
+        "endpoint": "/g/collect",
+        "method": "POST",
+        "query_params": [
+          "v",
+          "tid",
+          "gtm",
+          "_p",
+          "gcd",
+          "npa",
+          "dma",
+          "tag_exp",
+          "gdid",
+          "cid",
+          "ul",
+          "sr",
+          "uaa",
+          "uab",
+          "uafvl",
+          "uamb",
+          "uap",
+          "uapv",
+          "uaw",
+          "are",
+          "frm",
+          "pscdl",
+          "_eu",
+          "_s",
+          "sid",
+          "sct",
+          "seg",
+          "dl",
+          "dr",
+          "dt",
+          "en",
+          "_ee",
+          "ep.page_placeholder",
+          "tfd"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/g/collect",
+        "method": "POST",
+        "query_params": [
+          "v",
+          "tid",
+          "gtm",
+          "_p",
+          "gcd",
+          "npa",
+          "dma",
+          "tag_exp",
+          "gdid",
+          "cid",
+          "ul",
+          "sr",
+          "uaa",
+          "uab",
+          "uafvl",
+          "uamb",
+          "uap",
+          "uapv",
+          "uaw",
+          "are",
+          "frm",
+          "pscdl",
+          "_eu",
+          "_s",
+          "sid",
+          "sct",
+          "seg",
+          "dl",
+          "dr",
+          "dt",
+          "en",
+          "ep.page_placeholder",
+          "epn.percent_scrolled",
+          "_et",
+          "tfd"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/bins-and-recycling/{id}",
+        "method": "POST",
+        "query_params": [
+          "ajax_form",
+          "_wrapper_format"
+        ],
+        "path_params": true
+      },
+      {
+        "endpoint": "/g/collect",
+        "method": "POST",
+        "query_params": [
+          "v",
+          "tid",
+          "gtm",
+          "_p",
+          "gcd",
+          "npa",
+          "dma",
+          "tag_exp",
+          "gdid",
+          "cid",
+          "ul",
+          "sr",
+          "uaa",
+          "uab",
+          "uafvl",
+          "uamb",
+          "uap",
+          "uapv",
+          "uaw",
+          "are",
+          "frm",
+          "pscdl",
+          "_eu",
+          "_s",
+          "sid",
+          "sct",
+          "seg",
+          "dl",
+          "dr",
+          "dt",
+          "en",
+          "ep.page_placeholder",
+          "ep.form_id",
+          "ep.form_destination",
+          "epn.form_length",
+          "ep.first_field_id",
+          "ep.first_field_name",
+          "ep.first_field_type",
+          "epn.first_field_position",
+          "_et",
+          "tfd"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/bins-and-recycling/{id}",
+        "method": "POST",
+        "query_params": [],
+        "path_params": true
+      },
+      {
+        "endpoint": "/g/collect",
+        "method": "POST",
+        "query_params": [
+          "v",
+          "tid",
+          "gtm",
+          "_p",
+          "gcd",
+          "npa",
+          "dma",
+          "tag_exp",
+          "gdid",
+          "cid",
+          "ul",
+          "sr",
+          "uaa",
+          "uab",
+          "uafvl",
+          "uamb",
+          "uap",
+          "uapv",
+          "uaw",
+          "are",
+          "frm",
+          "pscdl",
+          "_eu",
+          "_s",
+          "sid",
+          "sct",
+          "seg",
+          "dl",
+          "dr",
+          "dt",
+          "en",
+          "ep.page_placeholder",
+          "ep.form_id",
+          "ep.form_destination",
+          "epn.form_length",
+          "ep.form_submit_text",
+          "_et",
+          "tfd"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/g/collect",
+        "method": "POST",
+        "query_params": [
+          "v",
+          "tid",
+          "gtm",
+          "_p",
+          "gcd",
+          "npa",
+          "dma",
+          "tag_exp",
+          "gdid",
+          "cid",
+          "ul",
+          "sr",
+          "uaa",
+          "uab",
+          "uafvl",
+          "uamb",
+          "uap",
+          "uapv",
+          "uaw",
+          "are",
+          "frm",
+          "pscdl",
+          "_eu",
+          "_s",
+          "sid",
+          "sct",
+          "seg",
+          "dl",
+          "dr",
+          "dt",
+          "en",
+          "ep.page_placeholder",
+          "_et",
+          "tfd"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/where-i-live",
+        "method": "GET",
+        "query_params": [
+          "uprn"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/maps/api/mapsjs/gen_204",
+        "method": "GET",
+        "query_params": [
+          "csp_test"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/$rpc/{id}/GetViewportInfo",
+        "method": "POST",
+        "query_params": [],
+        "path_params": true
+      }
+    ],
+    "redirects": [
+      {
+        "from": "/bins-recycling/index.cfm",
+        "to": "https://www.sstaffs.gov.uk/bins-and-recycling",
+        "status": 301
+      },
+      {
+        "from": "/bins-and-recycling/{id}",
+        "to": "https://www.sstaffs.gov.uk/where-i-live?uprn=010090089159",
+        "status": 303
+      }
+    ],
+    "api_calls": [
+      {
+        "endpoint": "/bins-and-recycling/{id}",
+        "method": "POST",
+        "response_type": "application/json",
+        "params": [
+          "ajax_form",
+          "_wrapper_format"
+        ]
+      },
+      {
+        "endpoint": "/maps/api/mapsjs/gen_204",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": [
+          "csp_test"
+        ]
+      },
+      {
+        "endpoint": "/$rpc/{id}/GetViewportInfo",
+        "method": "POST",
+        "response_type": "application/json+protobuf",
+        "params": []
+      }
+    ],
+    "form_submissions": []
+  },
+  "grouped_by_endpoint": {
+    "/bins-recycling/index.cfm": [
+      {
+        "timestamp": "2025-07-21T08:03:09.003Z",
+        "duration_ms": 1013.772,
+        "endpoint": "/bins-recycling/index.cfm",
+        "host": "www.sstaffs.gov.uk",
+        "method": "GET",
+        "status": 301,
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7"
+        },
+        "response_headers": {
+          "cache-control": "max-age=1800, public",
+          "content-type": "text/html; charset=utf-8",
+          "location": "https://www.sstaffs.gov.uk/bins-and-recycling",
+          "x-cache": "Miss from cloudfront",
+          "x-content-type-options": "nosniff",
+          "x-drupal-cache": "HIT",
+          "x-frame-options": "SAMEORIGIN",
+          "x-redirect-id": "691",
+          "x-xss-protection": "1; mode=block"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": -1
+        },
+        "redirect_to": "https://www.sstaffs.gov.uk/bins-and-recycling"
+      }
+    ],
+    "/bins-and-recycling": [
+      {
+        "timestamp": "2025-07-21T08:03:10.009Z",
+        "duration_ms": 64.326,
+        "endpoint": "/bins-and-recycling",
+        "host": "www.sstaffs.gov.uk",
+        "method": "GET",
+        "status": 200,
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7"
+        },
+        "response_headers": {
+          "cache-control": "max-age=1800, public",
+          "content-type": "text/html; charset=UTF-8",
+          "x-cache": "Miss from cloudfront",
+          "x-content-type-options": "nosniff",
+          "x-drupal-cache": "HIT",
+          "x-drupal-dynamic-cache": "MISS",
+          "x-frame-options": "SAMEORIGIN",
+          "x-xss-protection": "1; mode=block"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 48038,
+          "compressed": true,
+          "content_ref": "d7f59866c6d636c890ce917a22cd19f1d17ae8ab.html"
+        }
+      }
+    ],
+    "/themes/custom/bbd_localgov/fonts/neris/Neris-Black.otf": [
+      {
+        "timestamp": "2025-07-21T08:03:10.174Z",
+        "duration_ms": 48.108999999999995,
+        "endpoint": "/themes/custom/bbd_localgov/fonts/neris/Neris-Black.otf",
+        "host": "www.sstaffs.gov.uk",
+        "method": "GET",
+        "status": 200,
+        "request_headers": {
+          "accept": "*/*",
+          "origin": "https://www.sstaffs.gov.uk",
+          "referer": "https://www.sstaffs.gov.uk/sites/default/files/css/css_qJYGS2kVFJe5DfXBIpiiMuxbsnL_6mRV62IIZ50tU_E.css?delta=5&language=en&theme=bbd_localgov&include=eJx9kIGKwyAMhl9I6yNJtP9aqZqisd3e_uzYccONA9Hk-0I0OvKbFe5rN-4vtsFzVs7NNrKnuPBh3pOnOananRbYVnFr0XxhU5VHRFVo1jNvAf1IewyUPcw3aB0VKNwlhryZubSd4vRK1Y2z0InKCeYtnk64K63q93m9S4VxBTT70pIbzY1L0iiFy2iWyI7iABNy04lCHvg1qJYgEdp1sw26ohzBQ3uhf32kPIe86KvdWCLBbw-99kFQBifoe1EVVPxqaQ-WmvDzKyFX969cVfaBok2YA9nrW6v5RJOsSL32UQXJXNepI-CsdiYhi_vORcwH-QHeoecr"
+        },
+        "response_headers": {
+          "content-type": "application/octet-stream",
+          "x-cache": "Hit from cloudfront",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "SAMEORIGIN",
+          "x-xss-protection": "1; mode=block"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T08:03:24.115Z",
+        "duration_ms": 8.362,
+        "endpoint": "/themes/custom/bbd_localgov/fonts/neris/Neris-Black.otf",
+        "host": "www.sstaffs.gov.uk",
+        "method": "GET",
+        "status": 304,
+        "request_headers": {
+          "accept": "*/*",
+          "cookie": "[cookies present]",
+          "origin": "https://www.sstaffs.gov.uk",
+          "referer": "https://www.sstaffs.gov.uk/sites/default/files/css/css_cn7620vnhw0maTIP1KHThVrptoIUUO0NwCTNlBJo5JY.css?delta=5&language=en&theme=bbd_localgov&include=eJx9kIGqwyAMRX_I1k8K0aatVI2YuK5__-zY2OjGA0FzTpDkOvQbKPdTrHu_IXjOxrkJInuMC9_sZ_EwOwoUXAia0Nyi_cFG0SOSGGrgmbdA_UolBsye7C8IDisZumsMebNTbQXj-CzNzFlxJ-FE9uM97uTOUsxrvP6LkHWVcPK1JXc1M9c0UK1cv0yL8YKWyA6vMFFuQ8KQL_zcfdCgkQbXzXbRosFvx7D2wai-nTQnQemMruJSsaxi_5Pmo--Z0ZuMLZfmYpCVJiOE1a-AJQA25UfQpH2Q39wI-4AREk0B4Qxd7DcadaXUew9RSvZczNwC7QITKgLdC1e1X-QP8tH0ng"
+        },
+        "response_headers": {
+          "x-cache": "Hit from cloudfront",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "SAMEORIGIN",
+          "x-xss-protection": "1; mode=block"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T08:03:45.549Z",
+        "duration_ms": 10.871,
+        "endpoint": "/themes/custom/bbd_localgov/fonts/neris/Neris-Black.otf",
+        "host": "www.sstaffs.gov.uk",
+        "method": "GET",
+        "status": 304,
+        "request_headers": {
+          "accept": "*/*",
+          "cookie": "[cookies present]",
+          "origin": "https://www.sstaffs.gov.uk",
+          "referer": "https://www.sstaffs.gov.uk/sites/default/files/css/css_QTVO7_7Cio4TngMBIkbWYPQXJ3CdIAZbHm7kTMhBFUE.css?delta=5&language=en&theme=bbd_localgov&include=eJxtkAGOxCAIRS9k65EI6m9LqmLUTmduv-1kN9t0JiGB_yD5gGO_UtcjinX_NYnXbJwLFNVznPVhr8JgI6-6Co6UShTOHvYbJMcVBs8eJa821K1wHH-lmTR33tE0wV7qcYc7ZTMzdBLEQImLvQraJczo5m-hw6bBugoOvm7JtVtn0poG1Kr13pmjOo43mJC3IbHkG29d_PoalsMG1TRw9QtxEeKt6_to9GPqOzdNvXCkhCBM5wOa_URjX5CO2VfrSPZ0NQ_B3ihwZ8KzaO32g_wA2Cuzxw"
+        },
+        "response_headers": {
+          "x-cache": "Hit from cloudfront",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "SAMEORIGIN",
+          "x-xss-protection": "1; mode=block"
+        }
+      }
+    ],
+    "/themes/custom/bbd_localgov/fonts/neris/Neris-SemiBold.otf": [
+      {
+        "timestamp": "2025-07-21T08:03:10.175Z",
+        "duration_ms": 58.131,
+        "endpoint": "/themes/custom/bbd_localgov/fonts/neris/Neris-SemiBold.otf",
+        "host": "www.sstaffs.gov.uk",
+        "method": "GET",
+        "status": 200,
+        "request_headers": {
+          "accept": "*/*",
+          "origin": "https://www.sstaffs.gov.uk",
+          "referer": "https://www.sstaffs.gov.uk/sites/default/files/css/css_qJYGS2kVFJe5DfXBIpiiMuxbsnL_6mRV62IIZ50tU_E.css?delta=5&language=en&theme=bbd_localgov&include=eJx9kIGKwyAMhl9I6yNJtP9aqZqisd3e_uzYccONA9Hk-0I0OvKbFe5rN-4vtsFzVs7NNrKnuPBh3pOnOananRbYVnFr0XxhU5VHRFVo1jNvAf1IewyUPcw3aB0VKNwlhryZubSd4vRK1Y2z0InKCeYtnk64K63q93m9S4VxBTT70pIbzY1L0iiFy2iWyI7iABNy04lCHvg1qJYgEdp1sw26ohzBQ3uhf32kPIe86KvdWCLBbw-99kFQBifoe1EVVPxqaQ-WmvDzKyFX969cVfaBok2YA9nrW6v5RJOsSL32UQXJXNepI-CsdiYhi_vORcwH-QHeoecr"
+        },
+        "response_headers": {
+          "content-type": "application/octet-stream",
+          "x-cache": "Hit from cloudfront",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "SAMEORIGIN",
+          "x-xss-protection": "1; mode=block"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T08:03:24.115Z",
+        "duration_ms": 8.501,
+        "endpoint": "/themes/custom/bbd_localgov/fonts/neris/Neris-SemiBold.otf",
+        "host": "www.sstaffs.gov.uk",
+        "method": "GET",
+        "status": 304,
+        "request_headers": {
+          "accept": "*/*",
+          "cookie": "[cookies present]",
+          "origin": "https://www.sstaffs.gov.uk",
+          "referer": "https://www.sstaffs.gov.uk/sites/default/files/css/css_cn7620vnhw0maTIP1KHThVrptoIUUO0NwCTNlBJo5JY.css?delta=5&language=en&theme=bbd_localgov&include=eJx9kIGqwyAMRX_I1k8K0aatVI2YuK5__-zY2OjGA0FzTpDkOvQbKPdTrHu_IXjOxrkJInuMC9_sZ_EwOwoUXAia0Nyi_cFG0SOSGGrgmbdA_UolBsye7C8IDisZumsMebNTbQXj-CzNzFlxJ-FE9uM97uTOUsxrvP6LkHWVcPK1JXc1M9c0UK1cv0yL8YKWyA6vMFFuQ8KQL_zcfdCgkQbXzXbRosFvx7D2wai-nTQnQemMruJSsaxi_5Pmo--Z0ZuMLZfmYpCVJiOE1a-AJQA25UfQpH2Q39wI-4AREk0B4Qxd7DcadaXUew9RSvZczNwC7QITKgLdC1e1X-QP8tH0ng"
+        },
+        "response_headers": {
+          "x-cache": "Hit from cloudfront",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "SAMEORIGIN",
+          "x-xss-protection": "1; mode=block"
+        }
+      }
+    ],
+    "/themes/custom/bbd_localgov/fonts/neris/Neris-Light.otf": [
+      {
+        "timestamp": "2025-07-21T08:03:10.174Z",
+        "duration_ms": 58.041000000000004,
+        "endpoint": "/themes/custom/bbd_localgov/fonts/neris/Neris-Light.otf",
+        "host": "www.sstaffs.gov.uk",
+        "method": "GET",
+        "status": 200,
+        "request_headers": {
+          "accept": "*/*",
+          "origin": "https://www.sstaffs.gov.uk",
+          "referer": "https://www.sstaffs.gov.uk/sites/default/files/css/css_qJYGS2kVFJe5DfXBIpiiMuxbsnL_6mRV62IIZ50tU_E.css?delta=5&language=en&theme=bbd_localgov&include=eJx9kIGKwyAMhl9I6yNJtP9aqZqisd3e_uzYccONA9Hk-0I0OvKbFe5rN-4vtsFzVs7NNrKnuPBh3pOnOananRbYVnFr0XxhU5VHRFVo1jNvAf1IewyUPcw3aB0VKNwlhryZubSd4vRK1Y2z0InKCeYtnk64K63q93m9S4VxBTT70pIbzY1L0iiFy2iWyI7iABNy04lCHvg1qJYgEdp1sw26ohzBQ3uhf32kPIe86KvdWCLBbw-99kFQBifoe1EVVPxqaQ-WmvDzKyFX969cVfaBok2YA9nrW6v5RJOsSL32UQXJXNepI-CsdiYhi_vORcwH-QHeoecr"
+        },
+        "response_headers": {
+          "content-type": "application/octet-stream",
+          "x-cache": "Hit from cloudfront",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "SAMEORIGIN",
+          "x-xss-protection": "1; mode=block"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T08:03:24.115Z",
+        "duration_ms": 8.102,
+        "endpoint": "/themes/custom/bbd_localgov/fonts/neris/Neris-Light.otf",
+        "host": "www.sstaffs.gov.uk",
+        "method": "GET",
+        "status": 304,
+        "request_headers": {
+          "accept": "*/*",
+          "cookie": "[cookies present]",
+          "origin": "https://www.sstaffs.gov.uk",
+          "referer": "https://www.sstaffs.gov.uk/sites/default/files/css/css_cn7620vnhw0maTIP1KHThVrptoIUUO0NwCTNlBJo5JY.css?delta=5&language=en&theme=bbd_localgov&include=eJx9kIGqwyAMRX_I1k8K0aatVI2YuK5__-zY2OjGA0FzTpDkOvQbKPdTrHu_IXjOxrkJInuMC9_sZ_EwOwoUXAia0Nyi_cFG0SOSGGrgmbdA_UolBsye7C8IDisZumsMebNTbQXj-CzNzFlxJ-FE9uM97uTOUsxrvP6LkHWVcPK1JXc1M9c0UK1cv0yL8YKWyA6vMFFuQ8KQL_zcfdCgkQbXzXbRosFvx7D2wai-nTQnQemMruJSsaxi_5Pmo--Z0ZuMLZfmYpCVJiOE1a-AJQA25UfQpH2Q39wI-4AREk0B4Qxd7DcadaXUew9RSvZczNwC7QITKgLdC1e1X-QP8tH0ng"
+        },
+        "response_headers": {
+          "x-cache": "Hit from cloudfront",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "SAMEORIGIN",
+          "x-xss-protection": "1; mode=block"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T08:03:45.549Z",
+        "duration_ms": 13.733,
+        "endpoint": "/themes/custom/bbd_localgov/fonts/neris/Neris-Light.otf",
+        "host": "www.sstaffs.gov.uk",
+        "method": "GET",
+        "status": 304,
+        "request_headers": {
+          "accept": "*/*",
+          "cookie": "[cookies present]",
+          "origin": "https://www.sstaffs.gov.uk",
+          "referer": "https://www.sstaffs.gov.uk/sites/default/files/css/css_QTVO7_7Cio4TngMBIkbWYPQXJ3CdIAZbHm7kTMhBFUE.css?delta=5&language=en&theme=bbd_localgov&include=eJxtkAGOxCAIRS9k65EI6m9LqmLUTmduv-1kN9t0JiGB_yD5gGO_UtcjinX_NYnXbJwLFNVznPVhr8JgI6-6Co6UShTOHvYbJMcVBs8eJa821K1wHH-lmTR33tE0wV7qcYc7ZTMzdBLEQImLvQraJczo5m-hw6bBugoOvm7JtVtn0poG1Kr13pmjOo43mJC3IbHkG29d_PoalsMG1TRw9QtxEeKt6_to9GPqOzdNvXCkhCBM5wOa_URjX5CO2VfrSPZ0NQ_B3ihwZ8KzaO32g_wA2Cuzxw"
+        },
+        "response_headers": {
+          "x-cache": "Hit from cloudfront",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "SAMEORIGIN",
+          "x-xss-protection": "1; mode=block"
+        }
+      }
+    ],
+    "/g/collect": [
+      {
+        "timestamp": "2025-07-21T08:03:10.263Z",
+        "duration_ms": 58.489999999999995,
+        "endpoint": "/g/collect",
+        "host": "region1.google-analytics.com",
+        "method": "POST",
+        "status": 204,
+        "query_params": {
+          "v": [
+            "2"
+          ],
+          "tid": [
+            "G-2RCJ3008T3"
+          ],
+          "gtm": [
+            "45je57g1h1v9185338391za200"
+          ],
+          "_p": [
+            "1753084990082"
+          ],
+          "gcd": [
+            "13l3l3l3l1l1"
+          ],
+          "npa": [
+            "0"
+          ],
+          "dma": [
+            "0"
+          ],
+          "tag_exp": [
+            "101509157~103116026~103200004~103233427~104684208~104684211~104921715~104921717"
+          ],
+          "gdid": [
+            "dMDhkMT"
+          ],
+          "cid": [
+            "169909084.1753084990"
+          ],
+          "ul": [
+            "en-gb"
+          ],
+          "sr": [
+            "800x600"
+          ],
+          "uaa": [
+            "arm"
+          ],
+          "uab": [
+            "64"
+          ],
+          "uafvl": [
+            "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+          ],
+          "uamb": [
+            "0"
+          ],
+          "uap": [
+            "macOS"
+          ],
+          "uapv": [
+            "15.5.0"
+          ],
+          "uaw": [
+            "0"
+          ],
+          "are": [
+            "1"
+          ],
+          "frm": [
+            "0"
+          ],
+          "pscdl": [
+            "noapi"
+          ],
+          "_s": [
+            "1"
+          ],
+          "sid": [
+            "1753084990"
+          ],
+          "sct": [
+            "1"
+          ],
+          "seg": [
+            "0"
+          ],
+          "dl": [
+            "https://www.sstaffs.gov.uk/bins-and-recycling"
+          ],
+          "dt": [
+            "Bins and recycling | South Staffordshire District Council"
+          ],
+          "en": [
+            "page_view"
+          ],
+          "_fv": [
+            "1"
+          ],
+          "_ss": [
+            "1"
+          ],
+          "_ee": [
+            "1"
+          ],
+          "ep.page_placeholder": [
+            "PLACEHOLDER_page_location"
+          ],
+          "tfd": [
+            "1262"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "cookie": "[cookies present]",
+          "origin": "https://www.sstaffs.gov.uk",
+          "referer": "https://www.sstaffs.gov.uk/"
+        },
+        "response_headers": {
+          "cache-control": "no-cache, no-store, must-revalidate",
+          "content-type": "text/plain"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T08:03:10.263Z",
+        "duration_ms": 13.416,
+        "endpoint": "/g/collect",
+        "host": "region1.google-analytics.com",
+        "method": "POST",
+        "status": 204,
+        "query_params": {
+          "v": [
+            "2"
+          ],
+          "tid": [
+            "G-1PR992572G"
+          ],
+          "gtm": [
+            "45je57g1h1v9185338391za200"
+          ],
+          "_p": [
+            "1753084990082"
+          ],
+          "gcd": [
+            "13l3l3l3l1l1"
+          ],
+          "npa": [
+            "0"
+          ],
+          "dma": [
+            "0"
+          ],
+          "tag_exp": [
+            "101509157~103116026~103200004~103233427~104684208~104684211~104921715~104921717"
+          ],
+          "gdid": [
+            "dMDhkMT"
+          ],
+          "cid": [
+            "169909084.1753084990"
+          ],
+          "ul": [
+            "en-gb"
+          ],
+          "sr": [
+            "800x600"
+          ],
+          "uaa": [
+            "arm"
+          ],
+          "uab": [
+            "64"
+          ],
+          "uafvl": [
+            "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+          ],
+          "uamb": [
+            "0"
+          ],
+          "uap": [
+            "macOS"
+          ],
+          "uapv": [
+            "15.5.0"
+          ],
+          "uaw": [
+            "0"
+          ],
+          "are": [
+            "1"
+          ],
+          "frm": [
+            "0"
+          ],
+          "pscdl": [
+            "noapi"
+          ],
+          "_s": [
+            "1"
+          ],
+          "sid": [
+            "1753084990"
+          ],
+          "sct": [
+            "1"
+          ],
+          "seg": [
+            "0"
+          ],
+          "dl": [
+            "https://www.sstaffs.gov.uk/bins-and-recycling"
+          ],
+          "dt": [
+            "Bins and recycling | South Staffordshire District Council"
+          ],
+          "en": [
+            "page_view"
+          ],
+          "_fv": [
+            "1"
+          ],
+          "_nsi": [
+            "1"
+          ],
+          "_ss": [
+            "1"
+          ],
+          "_ee": [
+            "1"
+          ],
+          "ep.page_placeholder": [
+            "PLACEHOLDER_page_location"
+          ],
+          "tfd": [
+            "1257"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "cookie": "[cookies present]",
+          "origin": "https://www.sstaffs.gov.uk",
+          "referer": "https://www.sstaffs.gov.uk/"
+        },
+        "response_headers": {
+          "cache-control": "no-cache, no-store, must-revalidate",
+          "content-type": "text/plain"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T08:03:24.037Z",
+        "duration_ms": -1,
+        "endpoint": "/g/collect",
+        "host": "region1.google-analytics.com",
+        "method": "POST",
+        "status": -1,
+        "query_params": {
+          "v": [
+            "2"
+          ],
+          "tid": [
+            "G-1PR992572G"
+          ],
+          "gtm": [
+            "45je57g1h1v9185338391za200"
+          ],
+          "_p": [
+            "1753084990082"
+          ],
+          "gcd": [
+            "13l3l3l3l1l1"
+          ],
+          "npa": [
+            "0"
+          ],
+          "dma": [
+            "0"
+          ],
+          "tag_exp": [
+            "101509157~103116026~103200004~103233427~104684208~104684211~104921715~104921717"
+          ],
+          "gdid": [
+            "dMDhkMT"
+          ],
+          "cid": [
+            "169909084.1753084990"
+          ],
+          "ul": [
+            "en-gb"
+          ],
+          "sr": [
+            "800x600"
+          ],
+          "uaa": [
+            "arm"
+          ],
+          "uab": [
+            "64"
+          ],
+          "uafvl": [
+            "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+          ],
+          "uamb": [
+            "0"
+          ],
+          "uap": [
+            "macOS"
+          ],
+          "uapv": [
+            "15.5.0"
+          ],
+          "uaw": [
+            "0"
+          ],
+          "are": [
+            "1"
+          ],
+          "frm": [
+            "0"
+          ],
+          "pscdl": [
+            "noapi"
+          ],
+          "_eu": [
+            "AAAAAAQ"
+          ],
+          "_s": [
+            "2"
+          ],
+          "sid": [
+            "1753084990"
+          ],
+          "sct": [
+            "1"
+          ],
+          "seg": [
+            "1"
+          ],
+          "dl": [
+            "https://www.sstaffs.gov.uk/bins-and-recycling"
+          ],
+          "dt": [
+            "Bins and recycling | South Staffordshire District Council"
+          ],
+          "en": [
+            "user_engagement"
+          ],
+          "ep.page_placeholder": [
+            "PLACEHOLDER_page_location"
+          ],
+          "_et": [
+            "13772"
+          ],
+          "tfd": [
+            "15032"
+          ]
+        },
+        "request_headers": {
+          "referer": "https://www.sstaffs.gov.uk/"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T08:03:24.037Z",
+        "duration_ms": -1,
+        "endpoint": "/g/collect",
+        "host": "region1.google-analytics.com",
+        "method": "POST",
+        "status": -1,
+        "query_params": {
+          "v": [
+            "2"
+          ],
+          "tid": [
+            "G-2RCJ3008T3"
+          ],
+          "gtm": [
+            "45je57g1h1v9185338391za200"
+          ],
+          "_p": [
+            "1753084990082"
+          ],
+          "gcd": [
+            "13l3l3l3l1l1"
+          ],
+          "npa": [
+            "0"
+          ],
+          "dma": [
+            "0"
+          ],
+          "tag_exp": [
+            "101509157~103116026~103200004~103233427~104684208~104684211~104921715~104921717"
+          ],
+          "gdid": [
+            "dMDhkMT"
+          ],
+          "cid": [
+            "169909084.1753084990"
+          ],
+          "ul": [
+            "en-gb"
+          ],
+          "sr": [
+            "800x600"
+          ],
+          "uaa": [
+            "arm"
+          ],
+          "uab": [
+            "64"
+          ],
+          "uafvl": [
+            "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+          ],
+          "uamb": [
+            "0"
+          ],
+          "uap": [
+            "macOS"
+          ],
+          "uapv": [
+            "15.5.0"
+          ],
+          "uaw": [
+            "0"
+          ],
+          "are": [
+            "1"
+          ],
+          "frm": [
+            "0"
+          ],
+          "pscdl": [
+            "noapi"
+          ],
+          "_eu": [
+            "AAAAAAQ"
+          ],
+          "_s": [
+            "2"
+          ],
+          "sid": [
+            "1753084990"
+          ],
+          "sct": [
+            "1"
+          ],
+          "seg": [
+            "1"
+          ],
+          "dl": [
+            "https://www.sstaffs.gov.uk/bins-and-recycling"
+          ],
+          "dt": [
+            "Bins and recycling | South Staffordshire District Council"
+          ],
+          "en": [
+            "user_engagement"
+          ],
+          "ep.page_placeholder": [
+            "PLACEHOLDER_page_location"
+          ],
+          "_et": [
+            "13770"
+          ],
+          "tfd": [
+            "15035"
+          ]
+        },
+        "request_headers": {
+          "referer": "https://www.sstaffs.gov.uk/"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T08:03:24.086Z",
+        "duration_ms": 14.265,
+        "endpoint": "/g/collect",
+        "host": "region1.google-analytics.com",
+        "method": "POST",
+        "status": 204,
+        "query_params": {
+          "v": [
+            "2"
+          ],
+          "tid": [
+            "G-1PR992572G"
+          ],
+          "gtm": [
+            "45je57g1h1v9185338391za200"
+          ],
+          "_p": [
+            "1753085004038"
+          ],
+          "gcd": [
+            "13l3l3l3l1l1"
+          ],
+          "npa": [
+            "0"
+          ],
+          "dma": [
+            "0"
+          ],
+          "tag_exp": [
+            "101509157~103116026~103200004~103233427~104684208~104684211~104921715~104921717"
+          ],
+          "gdid": [
+            "dMDhkMT"
+          ],
+          "cid": [
+            "169909084.1753084990"
+          ],
+          "ul": [
+            "en-gb"
+          ],
+          "sr": [
+            "800x600"
+          ],
+          "uaa": [
+            "arm"
+          ],
+          "uab": [
+            "64"
+          ],
+          "uafvl": [
+            "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+          ],
+          "uamb": [
+            "0"
+          ],
+          "uap": [
+            "macOS"
+          ],
+          "uapv": [
+            "15.5.0"
+          ],
+          "uaw": [
+            "0"
+          ],
+          "are": [
+            "1"
+          ],
+          "frm": [
+            "0"
+          ],
+          "pscdl": [
+            "noapi"
+          ],
+          "_eu": [
+            "AAAAAAQ"
+          ],
+          "_s": [
+            "1"
+          ],
+          "sid": [
+            "1753084990"
+          ],
+          "sct": [
+            "1"
+          ],
+          "seg": [
+            "1"
+          ],
+          "dl": [
+            "https://www.sstaffs.gov.uk/bins-and-recycling/view-your-collection-calendar"
+          ],
+          "dr": [
+            "https://www.sstaffs.gov.uk/bins-and-recycling"
+          ],
+          "dt": [
+            "View your collection calendar | South Staffordshire District Council"
+          ],
+          "en": [
+            "page_view"
+          ],
+          "_ee": [
+            "1"
+          ],
+          "ep.page_placeholder": [
+            "PLACEHOLDER_page_location"
+          ],
+          "tfd": [
+            "183"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "cookie": "[cookies present]",
+          "origin": "https://www.sstaffs.gov.uk",
+          "referer": "https://www.sstaffs.gov.uk/"
+        },
+        "response_headers": {
+          "cache-control": "no-cache, no-store, must-revalidate",
+          "content-type": "text/plain"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T08:03:24.087Z",
+        "duration_ms": 14.98,
+        "endpoint": "/g/collect",
+        "host": "region1.google-analytics.com",
+        "method": "POST",
+        "status": 204,
+        "query_params": {
+          "v": [
+            "2"
+          ],
+          "tid": [
+            "G-2RCJ3008T3"
+          ],
+          "gtm": [
+            "45je57g1h1v9185338391za200"
+          ],
+          "_p": [
+            "1753085004038"
+          ],
+          "gcd": [
+            "13l3l3l3l1l1"
+          ],
+          "npa": [
+            "0"
+          ],
+          "dma": [
+            "0"
+          ],
+          "tag_exp": [
+            "101509157~103116026~103200004~103233427~104684208~104684211~104921715~104921717"
+          ],
+          "gdid": [
+            "dMDhkMT"
+          ],
+          "cid": [
+            "169909084.1753084990"
+          ],
+          "ul": [
+            "en-gb"
+          ],
+          "sr": [
+            "800x600"
+          ],
+          "uaa": [
+            "arm"
+          ],
+          "uab": [
+            "64"
+          ],
+          "uafvl": [
+            "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+          ],
+          "uamb": [
+            "0"
+          ],
+          "uap": [
+            "macOS"
+          ],
+          "uapv": [
+            "15.5.0"
+          ],
+          "uaw": [
+            "0"
+          ],
+          "are": [
+            "1"
+          ],
+          "frm": [
+            "0"
+          ],
+          "pscdl": [
+            "noapi"
+          ],
+          "_eu": [
+            "AAAAAAQ"
+          ],
+          "_s": [
+            "1"
+          ],
+          "sid": [
+            "1753084990"
+          ],
+          "sct": [
+            "1"
+          ],
+          "seg": [
+            "1"
+          ],
+          "dl": [
+            "https://www.sstaffs.gov.uk/bins-and-recycling/view-your-collection-calendar"
+          ],
+          "dr": [
+            "https://www.sstaffs.gov.uk/bins-and-recycling"
+          ],
+          "dt": [
+            "View your collection calendar | South Staffordshire District Council"
+          ],
+          "en": [
+            "page_view"
+          ],
+          "_ee": [
+            "1"
+          ],
+          "ep.page_placeholder": [
+            "PLACEHOLDER_page_location"
+          ],
+          "tfd": [
+            "187"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "cookie": "[cookies present]",
+          "origin": "https://www.sstaffs.gov.uk",
+          "referer": "https://www.sstaffs.gov.uk/"
+        },
+        "response_headers": {
+          "cache-control": "no-cache, no-store, must-revalidate",
+          "content-type": "text/plain"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T08:03:28.458Z",
+        "duration_ms": 14.994,
+        "endpoint": "/g/collect",
+        "host": "region1.google-analytics.com",
+        "method": "POST",
+        "status": 204,
+        "query_params": {
+          "v": [
+            "2"
+          ],
+          "tid": [
+            "G-1PR992572G"
+          ],
+          "gtm": [
+            "45je57g1h1v9185338391za200"
+          ],
+          "_p": [
+            "1753085004038"
+          ],
+          "gcd": [
+            "13l3l3l3l1l1"
+          ],
+          "npa": [
+            "0"
+          ],
+          "dma": [
+            "0"
+          ],
+          "tag_exp": [
+            "101509157~103116026~103200004~103233427~104684208~104684211~104921715~104921717"
+          ],
+          "gdid": [
+            "dMDhkMT"
+          ],
+          "cid": [
+            "169909084.1753084990"
+          ],
+          "ul": [
+            "en-gb"
+          ],
+          "sr": [
+            "800x600"
+          ],
+          "uaa": [
+            "arm"
+          ],
+          "uab": [
+            "64"
+          ],
+          "uafvl": [
+            "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+          ],
+          "uamb": [
+            "0"
+          ],
+          "uap": [
+            "macOS"
+          ],
+          "uapv": [
+            "15.5.0"
+          ],
+          "uaw": [
+            "0"
+          ],
+          "are": [
+            "1"
+          ],
+          "frm": [
+            "0"
+          ],
+          "pscdl": [
+            "noapi"
+          ],
+          "_eu": [
+            "AEAAAAQ"
+          ],
+          "_s": [
+            "2"
+          ],
+          "sid": [
+            "1753084990"
+          ],
+          "sct": [
+            "1"
+          ],
+          "seg": [
+            "1"
+          ],
+          "dl": [
+            "https://www.sstaffs.gov.uk/bins-and-recycling/view-your-collection-calendar"
+          ],
+          "dr": [
+            "https://www.sstaffs.gov.uk/bins-and-recycling"
+          ],
+          "dt": [
+            "View your collection calendar | South Staffordshire District Council"
+          ],
+          "en": [
+            "scroll"
+          ],
+          "ep.page_placeholder": [
+            "PLACEHOLDER_page_location"
+          ],
+          "epn.percent_scrolled": [
+            "90"
+          ],
+          "_et": [
+            "13"
+          ],
+          "tfd": [
+            "4563"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "cookie": "[cookies present]",
+          "origin": "https://www.sstaffs.gov.uk",
+          "referer": "https://www.sstaffs.gov.uk/"
+        },
+        "response_headers": {
+          "cache-control": "no-cache, no-store, must-revalidate",
+          "content-type": "text/plain"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T08:03:28.458Z",
+        "duration_ms": 14.044,
+        "endpoint": "/g/collect",
+        "host": "region1.google-analytics.com",
+        "method": "POST",
+        "status": 204,
+        "query_params": {
+          "v": [
+            "2"
+          ],
+          "tid": [
+            "G-2RCJ3008T3"
+          ],
+          "gtm": [
+            "45je57g1h1v9185338391za200"
+          ],
+          "_p": [
+            "1753085004038"
+          ],
+          "gcd": [
+            "13l3l3l3l1l1"
+          ],
+          "npa": [
+            "0"
+          ],
+          "dma": [
+            "0"
+          ],
+          "tag_exp": [
+            "101509157~103116026~103200004~103233427~104684208~104684211~104921715~104921717"
+          ],
+          "gdid": [
+            "dMDhkMT"
+          ],
+          "cid": [
+            "169909084.1753084990"
+          ],
+          "ul": [
+            "en-gb"
+          ],
+          "sr": [
+            "800x600"
+          ],
+          "uaa": [
+            "arm"
+          ],
+          "uab": [
+            "64"
+          ],
+          "uafvl": [
+            "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+          ],
+          "uamb": [
+            "0"
+          ],
+          "uap": [
+            "macOS"
+          ],
+          "uapv": [
+            "15.5.0"
+          ],
+          "uaw": [
+            "0"
+          ],
+          "are": [
+            "1"
+          ],
+          "frm": [
+            "0"
+          ],
+          "pscdl": [
+            "noapi"
+          ],
+          "_eu": [
+            "AEAAAAQ"
+          ],
+          "_s": [
+            "2"
+          ],
+          "sid": [
+            "1753084990"
+          ],
+          "sct": [
+            "1"
+          ],
+          "seg": [
+            "1"
+          ],
+          "dl": [
+            "https://www.sstaffs.gov.uk/bins-and-recycling/view-your-collection-calendar"
+          ],
+          "dr": [
+            "https://www.sstaffs.gov.uk/bins-and-recycling"
+          ],
+          "dt": [
+            "View your collection calendar | South Staffordshire District Council"
+          ],
+          "en": [
+            "scroll"
+          ],
+          "ep.page_placeholder": [
+            "PLACEHOLDER_page_location"
+          ],
+          "epn.percent_scrolled": [
+            "90"
+          ],
+          "_et": [
+            "13"
+          ],
+          "tfd": [
+            "4569"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "cookie": "[cookies present]",
+          "origin": "https://www.sstaffs.gov.uk",
+          "referer": "https://www.sstaffs.gov.uk/"
+        },
+        "response_headers": {
+          "cache-control": "no-cache, no-store, must-revalidate",
+          "content-type": "text/plain"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T08:03:33.456Z",
+        "duration_ms": 15.114,
+        "endpoint": "/g/collect",
+        "host": "region1.google-analytics.com",
+        "method": "POST",
+        "status": 204,
+        "query_params": {
+          "v": [
+            "2"
+          ],
+          "tid": [
+            "G-1PR992572G"
+          ],
+          "gtm": [
+            "45je57g1h1v9185338391za200"
+          ],
+          "_p": [
+            "1753085004038"
+          ],
+          "gcd": [
+            "13l3l3l3l1l1"
+          ],
+          "npa": [
+            "0"
+          ],
+          "dma": [
+            "0"
+          ],
+          "tag_exp": [
+            "101509157~103116026~103200004~103233427~104684208~104684211~104921715~104921717"
+          ],
+          "gdid": [
+            "dMDhkMT"
+          ],
+          "cid": [
+            "169909084.1753084990"
+          ],
+          "ul": [
+            "en-gb"
+          ],
+          "sr": [
+            "800x600"
+          ],
+          "uaa": [
+            "arm"
+          ],
+          "uab": [
+            "64"
+          ],
+          "uafvl": [
+            "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+          ],
+          "uamb": [
+            "0"
+          ],
+          "uap": [
+            "macOS"
+          ],
+          "uapv": [
+            "15.5.0"
+          ],
+          "uaw": [
+            "0"
+          ],
+          "are": [
+            "1"
+          ],
+          "frm": [
+            "0"
+          ],
+          "pscdl": [
+            "noapi"
+          ],
+          "_eu": [
+            "AEEAAAQ"
+          ],
+          "_s": [
+            "3"
+          ],
+          "sid": [
+            "1753084990"
+          ],
+          "sct": [
+            "1"
+          ],
+          "seg": [
+            "1"
+          ],
+          "dl": [
+            "https://www.sstaffs.gov.uk/bins-and-recycling/view-your-collection-calendar"
+          ],
+          "dr": [
+            "https://www.sstaffs.gov.uk/bins-and-recycling"
+          ],
+          "dt": [
+            "View your collection calendar | South Staffordshire District Council"
+          ],
+          "en": [
+            "form_start"
+          ],
+          "ep.page_placeholder": [
+            "PLACEHOLDER_page_location"
+          ],
+          "ep.form_id": [
+            "bbd-bin-lookup-form"
+          ],
+          "ep.form_destination": [
+            "https://www.sstaffs.gov.uk/bins-and-recycling/view-your-collection-calendar"
+          ],
+          "epn.form_length": [
+            "4"
+          ],
+          "ep.first_field_id": [
+            "edit-postcode"
+          ],
+          "ep.first_field_name": [
+            "postcode"
+          ],
+          "ep.first_field_type": [
+            "text"
+          ],
+          "epn.first_field_position": [
+            "1"
+          ],
+          "_et": [
+            "4375"
+          ],
+          "tfd": [
+            "9565"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "cookie": "[cookies present]",
+          "origin": "https://www.sstaffs.gov.uk",
+          "referer": "https://www.sstaffs.gov.uk/"
+        },
+        "response_headers": {
+          "cache-control": "no-cache, no-store, must-revalidate",
+          "content-type": "text/plain"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T08:03:33.473Z",
+        "duration_ms": 14.257,
+        "endpoint": "/g/collect",
+        "host": "region1.google-analytics.com",
+        "method": "POST",
+        "status": 204,
+        "query_params": {
+          "v": [
+            "2"
+          ],
+          "tid": [
+            "G-2RCJ3008T3"
+          ],
+          "gtm": [
+            "45je57g1h1v9185338391za200"
+          ],
+          "_p": [
+            "1753085004038"
+          ],
+          "gcd": [
+            "13l3l3l3l1l1"
+          ],
+          "npa": [
+            "0"
+          ],
+          "dma": [
+            "0"
+          ],
+          "tag_exp": [
+            "101509157~103116026~103200004~103233427~104684208~104684211~104921715~104921717"
+          ],
+          "gdid": [
+            "dMDhkMT"
+          ],
+          "cid": [
+            "169909084.1753084990"
+          ],
+          "ul": [
+            "en-gb"
+          ],
+          "sr": [
+            "800x600"
+          ],
+          "uaa": [
+            "arm"
+          ],
+          "uab": [
+            "64"
+          ],
+          "uafvl": [
+            "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+          ],
+          "uamb": [
+            "0"
+          ],
+          "uap": [
+            "macOS"
+          ],
+          "uapv": [
+            "15.5.0"
+          ],
+          "uaw": [
+            "0"
+          ],
+          "are": [
+            "1"
+          ],
+          "frm": [
+            "0"
+          ],
+          "pscdl": [
+            "noapi"
+          ],
+          "_eu": [
+            "AEEAAAQ"
+          ],
+          "_s": [
+            "3"
+          ],
+          "sid": [
+            "1753084990"
+          ],
+          "sct": [
+            "1"
+          ],
+          "seg": [
+            "1"
+          ],
+          "dl": [
+            "https://www.sstaffs.gov.uk/bins-and-recycling/view-your-collection-calendar"
+          ],
+          "dr": [
+            "https://www.sstaffs.gov.uk/bins-and-recycling"
+          ],
+          "dt": [
+            "View your collection calendar | South Staffordshire District Council"
+          ],
+          "en": [
+            "form_start"
+          ],
+          "ep.page_placeholder": [
+            "PLACEHOLDER_page_location"
+          ],
+          "ep.form_id": [
+            "bbd-bin-lookup-form"
+          ],
+          "ep.form_destination": [
+            "https://www.sstaffs.gov.uk/bins-and-recycling/view-your-collection-calendar"
+          ],
+          "epn.form_length": [
+            "4"
+          ],
+          "ep.first_field_id": [
+            "edit-postcode"
+          ],
+          "ep.first_field_name": [
+            "postcode"
+          ],
+          "ep.first_field_type": [
+            "text"
+          ],
+          "epn.first_field_position": [
+            "1"
+          ],
+          "_et": [
+            "4377"
+          ],
+          "tfd": [
+            "9584"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "cookie": "[cookies present]",
+          "origin": "https://www.sstaffs.gov.uk",
+          "referer": "https://www.sstaffs.gov.uk/"
+        },
+        "response_headers": {
+          "cache-control": "no-cache, no-store, must-revalidate",
+          "content-type": "text/plain"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T08:03:45.465Z",
+        "duration_ms": -1,
+        "endpoint": "/g/collect",
+        "host": "region1.google-analytics.com",
+        "method": "POST",
+        "status": -1,
+        "query_params": {
+          "v": [
+            "2"
+          ],
+          "tid": [
+            "G-1PR992572G"
+          ],
+          "gtm": [
+            "45je57g1h1v9185338391za200"
+          ],
+          "_p": [
+            "1753085004038"
+          ],
+          "gcd": [
+            "13l3l3l3l1l1"
+          ],
+          "npa": [
+            "0"
+          ],
+          "dma": [
+            "0"
+          ],
+          "tag_exp": [
+            "101509157~103116026~103200004~103233427~104684208~104684211~104921715~104921717"
+          ],
+          "gdid": [
+            "dMDhkMT"
+          ],
+          "cid": [
+            "169909084.1753084990"
+          ],
+          "ul": [
+            "en-gb"
+          ],
+          "sr": [
+            "800x600"
+          ],
+          "uaa": [
+            "arm"
+          ],
+          "uab": [
+            "64"
+          ],
+          "uafvl": [
+            "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+          ],
+          "uamb": [
+            "0"
+          ],
+          "uap": [
+            "macOS"
+          ],
+          "uapv": [
+            "15.5.0"
+          ],
+          "uaw": [
+            "0"
+          ],
+          "are": [
+            "1"
+          ],
+          "frm": [
+            "0"
+          ],
+          "pscdl": [
+            "noapi"
+          ],
+          "_eu": [
+            "AEEAAAQ"
+          ],
+          "_s": [
+            "4"
+          ],
+          "sid": [
+            "1753084990"
+          ],
+          "sct": [
+            "1"
+          ],
+          "seg": [
+            "1"
+          ],
+          "dl": [
+            "https://www.sstaffs.gov.uk/bins-and-recycling/view-your-collection-calendar"
+          ],
+          "dr": [
+            "https://www.sstaffs.gov.uk/bins-and-recycling"
+          ],
+          "dt": [
+            "View your collection calendar | South Staffordshire District Council"
+          ],
+          "en": [
+            "form_submit"
+          ],
+          "ep.page_placeholder": [
+            "PLACEHOLDER_page_location"
+          ],
+          "ep.form_id": [
+            "bbd-bin-lookup-form"
+          ],
+          "ep.form_destination": [
+            "https://www.sstaffs.gov.uk/bins-and-recycling/view-your-collection-calendar"
+          ],
+          "epn.form_length": [
+            "6"
+          ],
+          "ep.form_submit_text": [
+            "Search"
+          ],
+          "_et": [
+            "15528"
+          ],
+          "tfd": [
+            "21569"
+          ]
+        },
+        "request_headers": {
+          "referer": "https://www.sstaffs.gov.uk/"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T08:03:45.466Z",
+        "duration_ms": -1,
+        "endpoint": "/g/collect",
+        "host": "region1.google-analytics.com",
+        "method": "POST",
+        "status": -1,
+        "query_params": {
+          "v": [
+            "2"
+          ],
+          "tid": [
+            "G-1PR992572G"
+          ],
+          "gtm": [
+            "45je57g1h1v9185338391za200"
+          ],
+          "_p": [
+            "1753085004038"
+          ],
+          "gcd": [
+            "13l3l3l3l1l1"
+          ],
+          "npa": [
+            "0"
+          ],
+          "dma": [
+            "0"
+          ],
+          "tag_exp": [
+            "101509157~103116026~103200004~103233427~104684208~104684211~104921715~104921717"
+          ],
+          "gdid": [
+            "dMDhkMT"
+          ],
+          "cid": [
+            "169909084.1753084990"
+          ],
+          "ul": [
+            "en-gb"
+          ],
+          "sr": [
+            "800x600"
+          ],
+          "uaa": [
+            "arm"
+          ],
+          "uab": [
+            "64"
+          ],
+          "uafvl": [
+            "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+          ],
+          "uamb": [
+            "0"
+          ],
+          "uap": [
+            "macOS"
+          ],
+          "uapv": [
+            "15.5.0"
+          ],
+          "uaw": [
+            "0"
+          ],
+          "are": [
+            "1"
+          ],
+          "frm": [
+            "0"
+          ],
+          "pscdl": [
+            "noapi"
+          ],
+          "_eu": [
+            "AAAAAAQ"
+          ],
+          "_s": [
+            "5"
+          ],
+          "sid": [
+            "1753084990"
+          ],
+          "sct": [
+            "1"
+          ],
+          "seg": [
+            "1"
+          ],
+          "dl": [
+            "https://www.sstaffs.gov.uk/bins-and-recycling/view-your-collection-calendar"
+          ],
+          "dr": [
+            "https://www.sstaffs.gov.uk/bins-and-recycling"
+          ],
+          "dt": [
+            "View your collection calendar | South Staffordshire District Council"
+          ],
+          "en": [
+            "user_engagement"
+          ],
+          "ep.page_placeholder": [
+            "PLACEHOLDER_page_location"
+          ],
+          "_et": [
+            "1464"
+          ],
+          "tfd": [
+            "21570"
+          ]
+        },
+        "request_headers": {
+          "referer": "https://www.sstaffs.gov.uk/"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T08:03:45.467Z",
+        "duration_ms": -1,
+        "endpoint": "/g/collect",
+        "host": "region1.google-analytics.com",
+        "method": "POST",
+        "status": -1,
+        "query_params": {
+          "v": [
+            "2"
+          ],
+          "tid": [
+            "G-2RCJ3008T3"
+          ],
+          "gtm": [
+            "45je57g1h1v9185338391za200"
+          ],
+          "_p": [
+            "1753085004038"
+          ],
+          "gcd": [
+            "13l3l3l3l1l1"
+          ],
+          "npa": [
+            "0"
+          ],
+          "dma": [
+            "0"
+          ],
+          "tag_exp": [
+            "101509157~103116026~103200004~103233427~104684208~104684211~104921715~104921717"
+          ],
+          "gdid": [
+            "dMDhkMT"
+          ],
+          "cid": [
+            "169909084.1753084990"
+          ],
+          "ul": [
+            "en-gb"
+          ],
+          "sr": [
+            "800x600"
+          ],
+          "uaa": [
+            "arm"
+          ],
+          "uab": [
+            "64"
+          ],
+          "uafvl": [
+            "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+          ],
+          "uamb": [
+            "0"
+          ],
+          "uap": [
+            "macOS"
+          ],
+          "uapv": [
+            "15.5.0"
+          ],
+          "uaw": [
+            "0"
+          ],
+          "are": [
+            "1"
+          ],
+          "frm": [
+            "0"
+          ],
+          "pscdl": [
+            "noapi"
+          ],
+          "_eu": [
+            "AAAAAAQ"
+          ],
+          "_s": [
+            "5"
+          ],
+          "sid": [
+            "1753084990"
+          ],
+          "sct": [
+            "1"
+          ],
+          "seg": [
+            "1"
+          ],
+          "dl": [
+            "https://www.sstaffs.gov.uk/bins-and-recycling/view-your-collection-calendar"
+          ],
+          "dr": [
+            "https://www.sstaffs.gov.uk/bins-and-recycling"
+          ],
+          "dt": [
+            "View your collection calendar | South Staffordshire District Council"
+          ],
+          "en": [
+            "user_engagement"
+          ],
+          "ep.page_placeholder": [
+            "PLACEHOLDER_page_location"
+          ],
+          "_et": [
+            "1467"
+          ],
+          "tfd": [
+            "21576"
+          ]
+        },
+        "request_headers": {
+          "referer": "https://www.sstaffs.gov.uk/"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T08:03:45.466Z",
+        "duration_ms": -1,
+        "endpoint": "/g/collect",
+        "host": "region1.google-analytics.com",
+        "method": "POST",
+        "status": -1,
+        "query_params": {
+          "v": [
+            "2"
+          ],
+          "tid": [
+            "G-2RCJ3008T3"
+          ],
+          "gtm": [
+            "45je57g1h1v9185338391za200"
+          ],
+          "_p": [
+            "1753085004038"
+          ],
+          "gcd": [
+            "13l3l3l3l1l1"
+          ],
+          "npa": [
+            "0"
+          ],
+          "dma": [
+            "0"
+          ],
+          "tag_exp": [
+            "101509157~103116026~103200004~103233427~104684208~104684211~104921715~104921717"
+          ],
+          "gdid": [
+            "dMDhkMT"
+          ],
+          "cid": [
+            "169909084.1753084990"
+          ],
+          "ul": [
+            "en-gb"
+          ],
+          "sr": [
+            "800x600"
+          ],
+          "uaa": [
+            "arm"
+          ],
+          "uab": [
+            "64"
+          ],
+          "uafvl": [
+            "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+          ],
+          "uamb": [
+            "0"
+          ],
+          "uap": [
+            "macOS"
+          ],
+          "uapv": [
+            "15.5.0"
+          ],
+          "uaw": [
+            "0"
+          ],
+          "are": [
+            "1"
+          ],
+          "frm": [
+            "0"
+          ],
+          "pscdl": [
+            "noapi"
+          ],
+          "_eu": [
+            "AEEAAAQ"
+          ],
+          "_s": [
+            "4"
+          ],
+          "sid": [
+            "1753084990"
+          ],
+          "sct": [
+            "1"
+          ],
+          "seg": [
+            "1"
+          ],
+          "dl": [
+            "https://www.sstaffs.gov.uk/bins-and-recycling/view-your-collection-calendar"
+          ],
+          "dr": [
+            "https://www.sstaffs.gov.uk/bins-and-recycling"
+          ],
+          "dt": [
+            "View your collection calendar | South Staffordshire District Council"
+          ],
+          "en": [
+            "form_submit"
+          ],
+          "ep.page_placeholder": [
+            "PLACEHOLDER_page_location"
+          ],
+          "ep.form_id": [
+            "bbd-bin-lookup-form"
+          ],
+          "ep.form_destination": [
+            "https://www.sstaffs.gov.uk/bins-and-recycling/view-your-collection-calendar"
+          ],
+          "epn.form_length": [
+            "6"
+          ],
+          "ep.form_submit_text": [
+            "Search"
+          ],
+          "_et": [
+            "15528"
+          ],
+          "tfd": [
+            "21576"
+          ]
+        },
+        "request_headers": {
+          "referer": "https://www.sstaffs.gov.uk/"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T08:03:45.524Z",
+        "duration_ms": 14.072,
+        "endpoint": "/g/collect",
+        "host": "region1.google-analytics.com",
+        "method": "POST",
+        "status": 204,
+        "query_params": {
+          "v": [
+            "2"
+          ],
+          "tid": [
+            "G-1PR992572G"
+          ],
+          "gtm": [
+            "45je57g1h1v9185338391za200"
+          ],
+          "_p": [
+            "1753085025470"
+          ],
+          "gcd": [
+            "13l3l3l3l1l1"
+          ],
+          "npa": [
+            "0"
+          ],
+          "dma": [
+            "0"
+          ],
+          "tag_exp": [
+            "101509157~103116026~103200004~103233427~104684208~104684211~104921715~104921717"
+          ],
+          "gdid": [
+            "dMDhkMT"
+          ],
+          "cid": [
+            "169909084.1753084990"
+          ],
+          "ul": [
+            "en-gb"
+          ],
+          "sr": [
+            "800x600"
+          ],
+          "uaa": [
+            "arm"
+          ],
+          "uab": [
+            "64"
+          ],
+          "uafvl": [
+            "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+          ],
+          "uamb": [
+            "0"
+          ],
+          "uap": [
+            "macOS"
+          ],
+          "uapv": [
+            "15.5.0"
+          ],
+          "uaw": [
+            "0"
+          ],
+          "are": [
+            "1"
+          ],
+          "frm": [
+            "0"
+          ],
+          "pscdl": [
+            "noapi"
+          ],
+          "_eu": [
+            "AAAAAAQ"
+          ],
+          "_s": [
+            "1"
+          ],
+          "sid": [
+            "1753084990"
+          ],
+          "sct": [
+            "1"
+          ],
+          "seg": [
+            "1"
+          ],
+          "dl": [
+            "https://www.sstaffs.gov.uk/where-i-live?uprn=010090089159"
+          ],
+          "dr": [
+            "https://www.sstaffs.gov.uk/bins-and-recycling/view-your-collection-calendar"
+          ],
+          "dt": [
+            "Where I live | South Staffordshire District Council"
+          ],
+          "en": [
+            "page_view"
+          ],
+          "_ee": [
+            "1"
+          ],
+          "ep.page_placeholder": [
+            "PLACEHOLDER_page_location"
+          ],
+          "tfd": [
+            "1522"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "cookie": "[cookies present]",
+          "origin": "https://www.sstaffs.gov.uk",
+          "referer": "https://www.sstaffs.gov.uk/"
+        },
+        "response_headers": {
+          "cache-control": "no-cache, no-store, must-revalidate",
+          "content-type": "text/plain"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T08:03:45.525Z",
+        "duration_ms": 81.871,
+        "endpoint": "/g/collect",
+        "host": "region1.google-analytics.com",
+        "method": "POST",
+        "status": 204,
+        "query_params": {
+          "v": [
+            "2"
+          ],
+          "tid": [
+            "G-2RCJ3008T3"
+          ],
+          "gtm": [
+            "45je57g1h1v9185338391za200"
+          ],
+          "_p": [
+            "1753085025470"
+          ],
+          "gcd": [
+            "13l3l3l3l1l1"
+          ],
+          "npa": [
+            "0"
+          ],
+          "dma": [
+            "0"
+          ],
+          "tag_exp": [
+            "101509157~103116026~103200004~103233427~104684208~104684211~104921715~104921717"
+          ],
+          "gdid": [
+            "dMDhkMT"
+          ],
+          "cid": [
+            "169909084.1753084990"
+          ],
+          "ul": [
+            "en-gb"
+          ],
+          "sr": [
+            "800x600"
+          ],
+          "uaa": [
+            "arm"
+          ],
+          "uab": [
+            "64"
+          ],
+          "uafvl": [
+            "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+          ],
+          "uamb": [
+            "0"
+          ],
+          "uap": [
+            "macOS"
+          ],
+          "uapv": [
+            "15.5.0"
+          ],
+          "uaw": [
+            "0"
+          ],
+          "are": [
+            "1"
+          ],
+          "frm": [
+            "0"
+          ],
+          "pscdl": [
+            "noapi"
+          ],
+          "_eu": [
+            "AAAAAAQ"
+          ],
+          "_s": [
+            "1"
+          ],
+          "sid": [
+            "1753084990"
+          ],
+          "sct": [
+            "1"
+          ],
+          "seg": [
+            "1"
+          ],
+          "dl": [
+            "https://www.sstaffs.gov.uk/where-i-live?uprn=010090089159"
+          ],
+          "dr": [
+            "https://www.sstaffs.gov.uk/bins-and-recycling/view-your-collection-calendar"
+          ],
+          "dt": [
+            "Where I live | South Staffordshire District Council"
+          ],
+          "en": [
+            "page_view"
+          ],
+          "_ee": [
+            "1"
+          ],
+          "ep.page_placeholder": [
+            "PLACEHOLDER_page_location"
+          ],
+          "tfd": [
+            "1525"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "cookie": "[cookies present]",
+          "origin": "https://www.sstaffs.gov.uk",
+          "referer": "https://www.sstaffs.gov.uk/"
+        },
+        "response_headers": {
+          "cache-control": "no-cache, no-store, must-revalidate",
+          "content-type": "text/plain"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T08:03:50.518Z",
+        "duration_ms": 21.364,
+        "endpoint": "/g/collect",
+        "host": "region1.google-analytics.com",
+        "method": "POST",
+        "status": 204,
+        "query_params": {
+          "v": [
+            "2"
+          ],
+          "tid": [
+            "G-1PR992572G"
+          ],
+          "gtm": [
+            "45je57g1h1v9185338391za200"
+          ],
+          "_p": [
+            "1753085025470"
+          ],
+          "gcd": [
+            "13l3l3l3l1l1"
+          ],
+          "npa": [
+            "0"
+          ],
+          "dma": [
+            "0"
+          ],
+          "tag_exp": [
+            "101509157~103116026~103200004~103233427~104684208~104684211~104921715~104921717"
+          ],
+          "gdid": [
+            "dMDhkMT"
+          ],
+          "cid": [
+            "169909084.1753084990"
+          ],
+          "ul": [
+            "en-gb"
+          ],
+          "sr": [
+            "800x600"
+          ],
+          "uaa": [
+            "arm"
+          ],
+          "uab": [
+            "64"
+          ],
+          "uafvl": [
+            "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+          ],
+          "uamb": [
+            "0"
+          ],
+          "uap": [
+            "macOS"
+          ],
+          "uapv": [
+            "15.5.0"
+          ],
+          "uaw": [
+            "0"
+          ],
+          "are": [
+            "1"
+          ],
+          "frm": [
+            "0"
+          ],
+          "pscdl": [
+            "noapi"
+          ],
+          "_eu": [
+            "AEAAAAQ"
+          ],
+          "_s": [
+            "2"
+          ],
+          "sid": [
+            "1753084990"
+          ],
+          "sct": [
+            "1"
+          ],
+          "seg": [
+            "1"
+          ],
+          "dl": [
+            "https://www.sstaffs.gov.uk/where-i-live?uprn=010090089159"
+          ],
+          "dr": [
+            "https://www.sstaffs.gov.uk/bins-and-recycling/view-your-collection-calendar"
+          ],
+          "dt": [
+            "Where I live | South Staffordshire District Council"
+          ],
+          "en": [
+            "scroll"
+          ],
+          "ep.page_placeholder": [
+            "PLACEHOLDER_page_location"
+          ],
+          "epn.percent_scrolled": [
+            "90"
+          ],
+          "_et": [
+            "8"
+          ],
+          "tfd": [
+            "6524"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "cookie": "[cookies present]",
+          "origin": "https://www.sstaffs.gov.uk",
+          "referer": "https://www.sstaffs.gov.uk/"
+        },
+        "response_headers": {
+          "cache-control": "no-cache, no-store, must-revalidate",
+          "content-type": "text/plain"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T08:03:50.519Z",
+        "duration_ms": 22.866,
+        "endpoint": "/g/collect",
+        "host": "region1.google-analytics.com",
+        "method": "POST",
+        "status": 204,
+        "query_params": {
+          "v": [
+            "2"
+          ],
+          "tid": [
+            "G-2RCJ3008T3"
+          ],
+          "gtm": [
+            "45je57g1h1v9185338391za200"
+          ],
+          "_p": [
+            "1753085025470"
+          ],
+          "gcd": [
+            "13l3l3l3l1l1"
+          ],
+          "npa": [
+            "0"
+          ],
+          "dma": [
+            "0"
+          ],
+          "tag_exp": [
+            "101509157~103116026~103200004~103233427~104684208~104684211~104921715~104921717"
+          ],
+          "gdid": [
+            "dMDhkMT"
+          ],
+          "cid": [
+            "169909084.1753084990"
+          ],
+          "ul": [
+            "en-gb"
+          ],
+          "sr": [
+            "800x600"
+          ],
+          "uaa": [
+            "arm"
+          ],
+          "uab": [
+            "64"
+          ],
+          "uafvl": [
+            "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+          ],
+          "uamb": [
+            "0"
+          ],
+          "uap": [
+            "macOS"
+          ],
+          "uapv": [
+            "15.5.0"
+          ],
+          "uaw": [
+            "0"
+          ],
+          "are": [
+            "1"
+          ],
+          "frm": [
+            "0"
+          ],
+          "pscdl": [
+            "noapi"
+          ],
+          "_eu": [
+            "AEAAAAQ"
+          ],
+          "_s": [
+            "2"
+          ],
+          "sid": [
+            "1753084990"
+          ],
+          "sct": [
+            "1"
+          ],
+          "seg": [
+            "1"
+          ],
+          "dl": [
+            "https://www.sstaffs.gov.uk/where-i-live?uprn=010090089159"
+          ],
+          "dr": [
+            "https://www.sstaffs.gov.uk/bins-and-recycling/view-your-collection-calendar"
+          ],
+          "dt": [
+            "Where I live | South Staffordshire District Council"
+          ],
+          "en": [
+            "scroll"
+          ],
+          "ep.page_placeholder": [
+            "PLACEHOLDER_page_location"
+          ],
+          "epn.percent_scrolled": [
+            "90"
+          ],
+          "_et": [
+            "7"
+          ],
+          "tfd": [
+            "6526"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "cookie": "[cookies present]",
+          "origin": "https://www.sstaffs.gov.uk",
+          "referer": "https://www.sstaffs.gov.uk/"
+        },
+        "response_headers": {
+          "cache-control": "no-cache, no-store, must-revalidate",
+          "content-type": "text/plain"
+        }
+      }
+    ],
+    "/themes/custom/bbd_localgov/assets/images/favicons/site.webmanifest": [
+      {
+        "timestamp": "2025-07-21T08:03:11.331Z",
+        "duration_ms": 30.740000000000002,
+        "endpoint": "/themes/custom/bbd_localgov/assets/images/favicons/site.webmanifest",
+        "host": "www.sstaffs.gov.uk",
+        "method": "GET",
+        "status": 200,
+        "request_headers": {
+          "accept": "*/*",
+          "referer": "https://www.sstaffs.gov.uk/bins-and-recycling"
+        },
+        "response_headers": {
+          "content-type": "application/octet-stream",
+          "x-cache": "Hit from cloudfront",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "SAMEORIGIN",
+          "x-xss-protection": "1; mode=block"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T08:03:24.119Z",
+        "duration_ms": 7.638,
+        "endpoint": "/themes/custom/bbd_localgov/assets/images/favicons/site.webmanifest",
+        "host": "www.sstaffs.gov.uk",
+        "method": "GET",
+        "status": 200,
+        "request_headers": {
+          "accept": "*/*",
+          "referer": "https://www.sstaffs.gov.uk/bins-and-recycling/view-your-collection-calendar"
+        },
+        "response_headers": {
+          "x-cache": "Hit from cloudfront",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "SAMEORIGIN",
+          "x-xss-protection": "1; mode=block"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T08:03:45.668Z",
+        "duration_ms": 8.534,
+        "endpoint": "/themes/custom/bbd_localgov/assets/images/favicons/site.webmanifest",
+        "host": "www.sstaffs.gov.uk",
+        "method": "GET",
+        "status": 200,
+        "request_headers": {
+          "accept": "*/*",
+          "referer": "https://www.sstaffs.gov.uk/where-i-live?uprn=010090089159"
+        },
+        "response_headers": {
+          "x-cache": "Hit from cloudfront",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "SAMEORIGIN",
+          "x-xss-protection": "1; mode=block"
+        }
+      }
+    ],
+    "/bins-and-recycling/{id}": [
+      {
+        "timestamp": "2025-07-21T08:03:23.955Z",
+        "duration_ms": 73.525,
+        "endpoint": "/bins-and-recycling/{id}",
+        "host": "www.sstaffs.gov.uk",
+        "method": "GET",
+        "status": 200,
+        "path_params": [
+          "view-your-collection-calendar"
+        ],
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+          "cookie": "[cookies present]",
+          "referer": "https://www.sstaffs.gov.uk/bins-and-recycling"
+        },
+        "response_headers": {
+          "cache-control": "max-age=1800, public",
+          "content-type": "text/html; charset=UTF-8",
+          "x-cache": "Miss from cloudfront",
+          "x-content-type-options": "nosniff",
+          "x-drupal-cache": "HIT",
+          "x-drupal-dynamic-cache": "MISS",
+          "x-frame-options": "SAMEORIGIN",
+          "x-xss-protection": "1; mode=block"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 42483,
+          "compressed": true,
+          "content_ref": "f249fcfc5e8a60d8616ee97b2130180fe2efd112.html"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T08:03:28.442Z",
+        "duration_ms": 5016.793000000001,
+        "endpoint": "/bins-and-recycling/{id}",
+        "host": "www.sstaffs.gov.uk",
+        "method": "POST",
+        "status": 200,
+        "path_params": [
+          "view-your-collection-calendar"
+        ],
+        "query_params": {
+          "ajax_form": [
+            "1"
+          ],
+          "_wrapper_format": [
+            "drupal_ajax"
+          ]
+        },
+        "request_headers": {
+          "accept": "application/json, text/javascript, */*; q=0.01",
+          "content-type": "application/x-www-form-urlencoded; charset=UTF-8",
+          "cookie": "[cookies present]",
+          "origin": "https://www.sstaffs.gov.uk",
+          "referer": "https://www.sstaffs.gov.uk/bins-and-recycling/view-your-collection-calendar",
+          "x-requested-with": "XMLHttpRequest"
+        },
+        "response_headers": {
+          "cache-control": "must-revalidate, no-cache, private",
+          "content-type": "application/json",
+          "x-cache": "Miss from cloudfront",
+          "x-content-type-options": "nosniff",
+          "x-drupal-ajax-token": "1",
+          "x-frame-options": "SAMEORIGIN",
+          "x-xss-protection": "1; mode=block"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 5363,
+          "compressed": true,
+          "content_ref": "3d20ec15f058e461cc8ec1ff2e0ac808517ed05e.json"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T08:03:44.050Z",
+        "duration_ms": 285.44,
+        "endpoint": "/bins-and-recycling/{id}",
+        "host": "www.sstaffs.gov.uk",
+        "method": "POST",
+        "status": 303,
+        "path_params": [
+          "view-your-collection-calendar"
+        ],
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+          "content-type": "application/x-www-form-urlencoded",
+          "cookie": "[cookies present]",
+          "origin": "https://www.sstaffs.gov.uk",
+          "referer": "https://www.sstaffs.gov.uk/bins-and-recycling/view-your-collection-calendar"
+        },
+        "response_headers": {
+          "cache-control": "must-revalidate, no-cache, private",
+          "content-type": "text/html; charset=utf-8",
+          "location": "https://www.sstaffs.gov.uk/where-i-live?uprn=010090089159",
+          "x-cache": "Miss from cloudfront",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "SAMEORIGIN",
+          "x-xss-protection": "1; mode=block"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": -1
+        },
+        "redirect_to": "https://www.sstaffs.gov.uk/where-i-live?uprn=010090089159"
+      }
+    ],
+    "/where-i-live": [
+      {
+        "timestamp": "2025-07-21T08:03:44.336Z",
+        "duration_ms": 1108.247,
+        "endpoint": "/where-i-live",
+        "host": "www.sstaffs.gov.uk",
+        "method": "GET",
+        "status": 200,
+        "query_params": {
+          "uprn": [
+            "010090089159"
+          ]
+        },
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+          "cookie": "[cookies present]",
+          "referer": "https://www.sstaffs.gov.uk/bins-and-recycling/view-your-collection-calendar"
+        },
+        "response_headers": {
+          "cache-control": "max-age=1800, public",
+          "content-type": "text/html; charset=UTF-8",
+          "x-cache": "Miss from cloudfront",
+          "x-content-type-options": "nosniff",
+          "x-drupal-cache": "MISS",
+          "x-drupal-dynamic-cache": "MISS",
+          "x-frame-options": "SAMEORIGIN",
+          "x-xss-protection": "1; mode=block"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 66967,
+          "compressed": true,
+          "content_ref": "4d5a14377c63bba8dd6a4e99e8cbaf6e68f5f5ef.html"
+        }
+      }
+    ],
+    "/maps/api/mapsjs/gen_204": [
+      {
+        "timestamp": "2025-07-21T08:03:45.656Z",
+        "duration_ms": 15.576,
+        "endpoint": "/maps/api/mapsjs/gen_204",
+        "host": "maps.googleapis.com",
+        "method": "GET",
+        "status": 200,
+        "query_params": {
+          "csp_test": [
+            "true"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "origin": "https://www.sstaffs.gov.uk",
+          "referer": "https://www.sstaffs.gov.uk/",
+          "x-browser-copyright": "Copyright 2025 Google LLC. All rights reserved.",
+          "x-browser-validation": "qvLgIVtG4U8GgiRPSI9IJ22mUlI=",
+          "x-browser-year": "2025",
+          "x-client-data": "CMiXywE="
+        },
+        "response_headers": {
+          "content-type": "application/json; charset=UTF-8",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "SAMEORIGIN",
+          "x-xss-protection": "0"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 3,
+          "content_ref": "5f36b2ea290645ee34d943220a14b54ee5ea5be5.json"
+        }
+      }
+    ],
+    "/$rpc/{id}/GetViewportInfo": [
+      {
+        "timestamp": "2025-07-21T08:03:45.752Z",
+        "duration_ms": 93.369,
+        "endpoint": "/$rpc/{id}/GetViewportInfo",
+        "host": "maps.googleapis.com",
+        "method": "POST",
+        "status": 200,
+        "path_params": [
+          "google.internal.maps.mapsjs.v1.MapsJsInternalService"
+        ],
+        "request_headers": {
+          "accept": "*/*",
+          "content-type": "application/json+protobuf",
+          "origin": "https://www.sstaffs.gov.uk",
+          "referer": "https://www.sstaffs.gov.uk/",
+          "x-browser-copyright": "Copyright 2025 Google LLC. All rights reserved.",
+          "x-browser-validation": "qvLgIVtG4U8GgiRPSI9IJ22mUlI=",
+          "x-browser-year": "2025",
+          "x-client-data": "CMiXywE=",
+          "x-goog-api-key": "AIzaSyCAk_j6EBIaf3RscmWCAfDy46NkRR0i_G0",
+          "x-goog-gmp-client-signals": "CAIqCDMuNjEuMTBkWg4SDAjh6PfDBhDA0qHOAg==",
+          "x-goog-maps-api-salt": "zEC2cypDT0",
+          "x-goog-maps-api-signature": "89131",
+          "x-goog-maps-session-id": "A3ADA92E-1F7A-4C19-8019-E6F20CAE1547",
+          "x-user-agent": "grpc-web-javascript/0.1"
+        },
+        "response_headers": {
+          "content-type": "application/json+protobuf; charset=UTF-8",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "SAMEORIGIN",
+          "x-xss-protection": "0"
+        },
+        "response_info": {
+          "type": "application/json+protobuf",
+          "size": 47116,
+          "compressed": true,
+          "content_ref": "5f63253e3c940e9e8c0b45a5093aedb255ae9102.dat"
+        }
+      }
+    ]
+  }
 }

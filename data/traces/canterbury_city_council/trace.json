@@ -1,193 +1,3166 @@
 {
-  "metadata": {
-    "trace_name": "canterbury_city_council",
-    "processed_at": "2025-08-26 18:44:24",
-    "workflow_steps_count": 6,
-    "navigation_events_count": 14
-  },
-  "scraping_patterns": {
-    "login_detected": false,
-    "form_submissions": 10,
-    "navigation_count": 1,
-    "unique_domains": [
-      "www.canterbury.gov.uk",
-      "region1.analytics.google.com"
-    ],
-    "api_endpoints": [],
-    "data_extraction_indicators": []
-  },
-  "workflow_steps": [
+  "entries": [
     {
-      "action": "goto",
-      "target": "https://www.canterbury.gov.uk/bin-collections",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
-    },
-    {
-      "action": "click",
-      "target": "aria-ref=e15 >> internal:describe=\"Yes, I agree\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
-    },
-    {
-      "action": "fill",
-      "target": "aria-ref=e85 >> internal:describe=\"Postcode\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0,
-      "value": "CT1 1AL"
-    },
-    {
-      "action": "click",
-      "target": "aria-ref=e87 >> internal:describe=\"Search\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
-    },
-    {
-      "action": "selectOption",
-      "target": "aria-ref=e68 >> internal:describe=\"Address\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0,
-      "value": null
-    },
-    {
-      "action": "click",
-      "target": "aria-ref=e106 >> internal:describe=\"Next\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
-    }
-  ],
-  "navigation_events": [
-    {
-      "url": "https://www.canterbury.gov.uk/bin-collections",
+      "timestamp": "2025-07-21T07:54:25.461Z",
+      "duration_ms": 107.53800000000001,
+      "endpoint": "/bin-collections",
+      "host": "www.canterbury.gov.uk",
       "method": "GET",
       "status": 301,
-      "redirect_url": "https://www.canterbury.gov.uk/bins-and-waste/find-your-bin-collection-dates",
-      "mime_type": "text/html; charset=utf-8",
-      "size": -1,
-      "timestamp": "2025-07-21T07:54:25.461Z"
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7"
+      },
+      "response_headers": {
+        "cache-control": "must-revalidate, no-cache, private",
+        "content-type": "text/html; charset=utf-8",
+        "location": "https://www.canterbury.gov.uk/bins-and-waste/find-your-bin-collection-dates",
+        "x-cache": "Miss from cloudfront",
+        "x-content-type-options": "nosniff",
+        "x-drupal-cache": "HIT",
+        "x-drupal-route-normalizer": "1",
+        "x-frame-options": "SAMEORIGIN",
+        "x-generator": "Drupal 10 (https://www.drupal.org)"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": -1
+      },
+      "redirect_to": "https://www.canterbury.gov.uk/bins-and-waste/find-your-bin-collection-dates"
     },
     {
-      "url": "https://www.canterbury.gov.uk/bins-and-waste/find-your-bin-collection-dates",
+      "timestamp": "2025-07-21T07:54:25.560Z",
+      "duration_ms": 47.108,
+      "endpoint": "/bins-and-waste/{id}",
+      "host": "www.canterbury.gov.uk",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "text/html; charset=UTF-8",
-      "size": 34379,
-      "timestamp": "2025-07-21T07:54:25.560Z"
+      "path_params": [
+        "find-your-bin-collection-dates"
+      ],
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7"
+      },
+      "response_headers": {
+        "cache-control": "must-revalidate, no-cache, private",
+        "content-type": "text/html; charset=UTF-8",
+        "x-cache": "Miss from cloudfront",
+        "x-content-type-options": "nosniff",
+        "x-drupal-cache": "HIT",
+        "x-drupal-dynamic-cache": "UNCACHEABLE (poor cacheability)",
+        "x-frame-options": "SAMEORIGIN",
+        "x-generator": "Drupal 10 (https://www.drupal.org)"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 34379,
+        "compressed": true,
+        "content_ref": "03ce42b8dc3b41f671b0f172c2bc6f4687167097.html"
+      }
     },
     {
-      "url": "https://region1.analytics.google.com/g/collect?v=2&tid=G-6MTT8J065V&gtm=45je57g1v9102478788za200&_p=1753084465670&_gaz=1&gcd=13l3l3l3l1l1&npa=0&dma=0&tag_exp=101509157~103116026~103200004~103233427~104684208~104684211~104921715~104921717&gdid=dMDhkMT&cid=654300432.1753084466&ul=en-gb&sr=800x600&uaa=arm&uab=64&uafvl=Not)A%253BBrand%3B8.0.0.0%7CChromium%3B138.0.7204.101%7CGoogle%2520Chrome%3B138.0.7204.101&uamb=0&uam=&uap=macOS&uapv=15.5.0&uaw=0&are=1&frm=0&pscdl=noapi&_s=1&sid=1753084465&sct=1&seg=0&dl=https%3A%2F%2Fwww.canterbury.gov.uk%2Fbins-and-waste%2Ffind-your-bin-collection-dates&dt=Find%20your%20bin%20collection%20dates%20%7C%20Canterbury%20City%20Council&_tu=QA&en=page_view&_fv=1&_nsi=1&_ss=1&_ee=1&tfd=314",
+      "timestamp": "2025-07-21T07:54:25.776Z",
+      "duration_ms": -1,
+      "endpoint": "/ads/ga-audiences",
+      "host": "www.google.co.uk",
+      "method": "GET",
+      "status": -1,
+      "query_params": {
+        "v": [
+          "1"
+        ],
+        "t": [
+          "sr"
+        ],
+        "slf_rd": [
+          "1"
+        ],
+        "_r": [
+          "4"
+        ],
+        "tid": [
+          "G-6MTT8J065V"
+        ],
+        "cid": [
+          "654300432.1753084466"
+        ],
+        "gtm": [
+          "45je57g1v9102478788za200"
+        ],
+        "aip": [
+          "1"
+        ],
+        "dma": [
+          "0"
+        ],
+        "gcd": [
+          "13l3l3l3l1l1"
+        ],
+        "npa": [
+          "0"
+        ],
+        "frm": [
+          "0"
+        ],
+        "tag_exp": [
+          "101509157~103116026~103200004~103233427~104684208~104684211~104921715~104921717",
+          "101509157~103116026~103200004~103233427~104684208~104684211~104921715~104921717"
+        ],
+        "z": [
+          "1405756825"
+        ]
+      },
+      "request_headers": {
+        "referer": "https://www.canterbury.gov.uk/"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T07:54:25.794Z",
+      "duration_ms": -1,
+      "endpoint": "/themes/custom/canterbury_theme/assets/images/favicons/site.webmanifest",
+      "host": "www.canterbury.gov.uk",
+      "method": "GET",
+      "status": -1,
+      "request_headers": {
+        "referer": "https://www.canterbury.gov.uk/bins-and-waste/find-your-bin-collection-dates"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T07:54:25.775Z",
+      "duration_ms": 64.828,
+      "endpoint": "/g/collect",
+      "host": "region1.analytics.google.com",
       "method": "POST",
       "status": 204,
-      "redirect_url": null,
-      "mime_type": "text/plain",
-      "size": -1,
-      "timestamp": "2025-07-21T07:54:25.775Z"
+      "query_params": {
+        "v": [
+          "2"
+        ],
+        "tid": [
+          "G-6MTT8J065V"
+        ],
+        "gtm": [
+          "45je57g1v9102478788za200"
+        ],
+        "_p": [
+          "1753084465670"
+        ],
+        "_gaz": [
+          "1"
+        ],
+        "gcd": [
+          "13l3l3l3l1l1"
+        ],
+        "npa": [
+          "0"
+        ],
+        "dma": [
+          "0"
+        ],
+        "tag_exp": [
+          "101509157~103116026~103200004~103233427~104684208~104684211~104921715~104921717"
+        ],
+        "gdid": [
+          "dMDhkMT"
+        ],
+        "cid": [
+          "654300432.1753084466"
+        ],
+        "ul": [
+          "en-gb"
+        ],
+        "sr": [
+          "800x600"
+        ],
+        "uaa": [
+          "arm"
+        ],
+        "uab": [
+          "64"
+        ],
+        "uafvl": [
+          "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+        ],
+        "uamb": [
+          "0"
+        ],
+        "uap": [
+          "macOS"
+        ],
+        "uapv": [
+          "15.5.0"
+        ],
+        "uaw": [
+          "0"
+        ],
+        "are": [
+          "1"
+        ],
+        "frm": [
+          "0"
+        ],
+        "pscdl": [
+          "noapi"
+        ],
+        "_s": [
+          "1"
+        ],
+        "sid": [
+          "1753084465"
+        ],
+        "sct": [
+          "1"
+        ],
+        "seg": [
+          "0"
+        ],
+        "dl": [
+          "https://www.canterbury.gov.uk/bins-and-waste/find-your-bin-collection-dates"
+        ],
+        "dt": [
+          "Find your bin collection dates | Canterbury City Council"
+        ],
+        "_tu": [
+          "QA"
+        ],
+        "en": [
+          "page_view"
+        ],
+        "_fv": [
+          "1"
+        ],
+        "_nsi": [
+          "1"
+        ],
+        "_ss": [
+          "1"
+        ],
+        "_ee": [
+          "1"
+        ],
+        "tfd": [
+          "314"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "origin": "https://www.canterbury.gov.uk",
+        "referer": "https://www.canterbury.gov.uk/",
+        "x-browser-copyright": "Copyright 2025 Google LLC. All rights reserved.",
+        "x-browser-validation": "qvLgIVtG4U8GgiRPSI9IJ22mUlI=",
+        "x-browser-year": "2025",
+        "x-client-data": "CMiXywE="
+      },
+      "response_headers": {
+        "cache-control": "no-cache, no-store, must-revalidate",
+        "content-type": "text/plain"
+      }
     },
     {
-      "url": "https://www.canterbury.gov.uk/report-csp-violation",
+      "timestamp": "2025-07-21T07:54:25.775Z",
+      "duration_ms": 75.408,
+      "endpoint": "/g/collect",
+      "host": "stats.g.doubleclick.net",
+      "method": "POST",
+      "status": 204,
+      "query_params": {
+        "v": [
+          "2"
+        ],
+        "tid": [
+          "G-6MTT8J065V"
+        ],
+        "cid": [
+          "654300432.1753084466"
+        ],
+        "gtm": [
+          "45je57g1v9102478788za200"
+        ],
+        "aip": [
+          "1"
+        ],
+        "dma": [
+          "0"
+        ],
+        "gcd": [
+          "13l3l3l3l1l1"
+        ],
+        "npa": [
+          "0"
+        ],
+        "frm": [
+          "0"
+        ],
+        "tag_exp": [
+          "101509157~103116026~103200004~103233427~104684208~104684211~104921715~104921717"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "origin": "https://www.canterbury.gov.uk",
+        "referer": "https://www.canterbury.gov.uk/",
+        "x-browser-copyright": "Copyright 2025 Google LLC. All rights reserved.",
+        "x-browser-validation": "qvLgIVtG4U8GgiRPSI9IJ22mUlI=",
+        "x-browser-year": "2025",
+        "x-client-data": "CMiXywE="
+      },
+      "response_headers": {
+        "cache-control": "no-cache, no-store, must-revalidate",
+        "content-type": "text/plain"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T07:54:25.776Z",
+      "duration_ms": 68.079,
+      "endpoint": "/report-csp-violation",
+      "host": "www.canterbury.gov.uk",
       "method": "POST",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "text/html; charset=UTF-8",
-      "size": 0,
-      "timestamp": "2025-07-21T07:54:25.776Z"
+      "request_headers": {
+        "accept": "*/*",
+        "content-type": "application/csp-report",
+        "cookie": "[cookies present]",
+        "origin": "https://www.canterbury.gov.uk",
+        "referer": "https://www.canterbury.gov.uk/bins-and-waste/find-your-bin-collection-dates"
+      },
+      "response_headers": {
+        "cache-control": "must-revalidate, no-cache, private",
+        "content-type": "text/html; charset=UTF-8",
+        "x-cache": "Miss from cloudfront",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "SAMEORIGIN",
+        "x-generator": "Drupal 10 (https://www.drupal.org)"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 0,
+        "content_ref": "da39a3ee5e6b4b0d3255bfef95601890afd80709.html"
+      }
     },
     {
-      "url": "https://www.canterbury.gov.uk/report-csp-violation",
+      "timestamp": "2025-07-21T07:54:25.794Z",
+      "duration_ms": 73.36,
+      "endpoint": "/report-csp-violation",
+      "host": "www.canterbury.gov.uk",
       "method": "POST",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "text/html; charset=UTF-8",
-      "size": 0,
-      "timestamp": "2025-07-21T07:54:25.794Z"
+      "request_headers": {
+        "accept": "*/*",
+        "content-type": "application/csp-report",
+        "cookie": "[cookies present]",
+        "origin": "https://www.canterbury.gov.uk",
+        "referer": "https://www.canterbury.gov.uk/bins-and-waste/find-your-bin-collection-dates"
+      },
+      "response_headers": {
+        "cache-control": "must-revalidate, no-cache, private",
+        "content-type": "text/html; charset=UTF-8",
+        "x-cache": "Miss from cloudfront",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "SAMEORIGIN",
+        "x-generator": "Drupal 10 (https://www.drupal.org)"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 0,
+        "content_ref": "da39a3ee5e6b4b0d3255bfef95601890afd80709.html"
+      }
     },
     {
-      "url": "https://www.canterbury.gov.uk/bins-and-waste/find-your-bin-collection-dates?ajax_form=1&_wrapper_format=drupal_ajax",
+      "timestamp": "2025-07-21T07:54:31.883Z",
+      "duration_ms": -1,
+      "endpoint": "/g/collect",
+      "host": "region1.analytics.google.com",
+      "method": "POST",
+      "status": -1,
+      "query_params": {
+        "v": [
+          "2"
+        ],
+        "tid": [
+          "G-6MTT8J065V"
+        ],
+        "gtm": [
+          "45je57g1v9102478788za200"
+        ],
+        "_p": [
+          "1753084465670"
+        ],
+        "gcd": [
+          "13l3l3l3l1l1"
+        ],
+        "npa": [
+          "0"
+        ],
+        "dma": [
+          "0"
+        ],
+        "tag_exp": [
+          "101509157~103116026~103200004~103233427~104684208~104684211~104921715~104921717"
+        ],
+        "gdid": [
+          "dMDhkMT"
+        ],
+        "cid": [
+          "654300432.1753084466"
+        ],
+        "ul": [
+          "en-gb"
+        ],
+        "sr": [
+          "800x600"
+        ],
+        "uaa": [
+          "arm"
+        ],
+        "uab": [
+          "64"
+        ],
+        "uafvl": [
+          "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+        ],
+        "uamb": [
+          "0"
+        ],
+        "uap": [
+          "macOS"
+        ],
+        "uapv": [
+          "15.5.0"
+        ],
+        "uaw": [
+          "0"
+        ],
+        "are": [
+          "1"
+        ],
+        "frm": [
+          "0"
+        ],
+        "pscdl": [
+          "noapi"
+        ],
+        "_eu": [
+          "AEEAAAQ"
+        ],
+        "_s": [
+          "2"
+        ],
+        "sid": [
+          "1753084465"
+        ],
+        "sct": [
+          "1"
+        ],
+        "seg": [
+          "0"
+        ],
+        "dl": [
+          "https://www.canterbury.gov.uk/bins-and-waste/find-your-bin-collection-dates"
+        ],
+        "dt": [
+          "Find your bin collection dates | Canterbury City Council"
+        ],
+        "_tu": [
+          "QA"
+        ],
+        "en": [
+          "form_start"
+        ],
+        "ep.form_id": [
+          "address-search-form"
+        ],
+        "ep.form_destination": [
+          "https://www.canterbury.gov.uk/bins-and-waste/find-your-bin-collection-dates"
+        ],
+        "epn.form_length": [
+          "4"
+        ],
+        "ep.first_field_id": [
+          "edit-postcode"
+        ],
+        "ep.first_field_name": [
+          "postcode"
+        ],
+        "ep.first_field_type": [
+          "text"
+        ],
+        "epn.first_field_position": [
+          "1"
+        ],
+        "_et": [
+          "5085"
+        ],
+        "tfd": [
+          "6421"
+        ]
+      },
+      "request_headers": {
+        "referer": "https://www.canterbury.gov.uk/"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T07:54:31.884Z",
+      "duration_ms": -1,
+      "endpoint": "/g/collect",
+      "host": "region1.analytics.google.com",
+      "method": "POST",
+      "status": -1,
+      "query_params": {
+        "v": [
+          "2"
+        ],
+        "tid": [
+          "G-6MTT8J065V"
+        ],
+        "gtm": [
+          "45je57g1v9102478788za200"
+        ],
+        "_p": [
+          "1753084465670"
+        ],
+        "gcd": [
+          "13l3l3l3l1l1"
+        ],
+        "npa": [
+          "0"
+        ],
+        "dma": [
+          "0"
+        ],
+        "tag_exp": [
+          "101509157~103116026~103200004~103233427~104684208~104684211~104921715~104921717"
+        ],
+        "gdid": [
+          "dMDhkMT"
+        ],
+        "cid": [
+          "654300432.1753084466"
+        ],
+        "ul": [
+          "en-gb"
+        ],
+        "sr": [
+          "800x600"
+        ],
+        "uaa": [
+          "arm"
+        ],
+        "uab": [
+          "64"
+        ],
+        "uafvl": [
+          "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+        ],
+        "uamb": [
+          "0"
+        ],
+        "uap": [
+          "macOS"
+        ],
+        "uapv": [
+          "15.5.0"
+        ],
+        "uaw": [
+          "0"
+        ],
+        "are": [
+          "1"
+        ],
+        "frm": [
+          "0"
+        ],
+        "pscdl": [
+          "noapi"
+        ],
+        "_eu": [
+          "AAAAAAQ"
+        ],
+        "_s": [
+          "3"
+        ],
+        "sid": [
+          "1753084465"
+        ],
+        "sct": [
+          "1"
+        ],
+        "seg": [
+          "0"
+        ],
+        "dl": [
+          "https://www.canterbury.gov.uk/bins-and-waste/find-your-bin-collection-dates"
+        ],
+        "dt": [
+          "Find your bin collection dates | Canterbury City Council"
+        ],
+        "_tu": [
+          "QA"
+        ],
+        "en": [
+          "user_engagement"
+        ],
+        "_et": [
+          "1016"
+        ],
+        "tfd": [
+          "6421"
+        ]
+      },
+      "request_headers": {
+        "referer": "https://www.canterbury.gov.uk/"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T07:54:30.852Z",
+      "duration_ms": 148.237,
+      "endpoint": "/bins-and-waste/{id}",
+      "host": "www.canterbury.gov.uk",
       "method": "POST",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json",
-      "size": -1,
-      "timestamp": "2025-07-21T07:54:30.852Z"
+      "path_params": [
+        "find-your-bin-collection-dates"
+      ],
+      "query_params": {
+        "ajax_form": [
+          "1"
+        ],
+        "_wrapper_format": [
+          "drupal_ajax"
+        ]
+      },
+      "request_headers": {
+        "accept": "application/json, text/javascript, */*; q=0.01",
+        "content-type": "application/x-www-form-urlencoded; charset=UTF-8",
+        "cookie": "[cookies present]",
+        "origin": "https://www.canterbury.gov.uk",
+        "referer": "https://www.canterbury.gov.uk/bins-and-waste/find-your-bin-collection-dates",
+        "x-requested-with": "XMLHttpRequest"
+      },
+      "response_headers": {
+        "cache-control": "must-revalidate, no-cache, private",
+        "content-type": "application/json",
+        "x-cache": "Miss from cloudfront",
+        "x-content-type-options": "nosniff",
+        "x-drupal-ajax-token": "1",
+        "x-frame-options": "SAMEORIGIN",
+        "x-generator": "Drupal 10 (https://www.drupal.org)"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": -1
+      }
     },
     {
-      "url": "https://www.canterbury.gov.uk/bins-and-waste/find-your-bin-collection-dates?postcode=CT11AL",
+      "timestamp": "2025-07-21T07:54:31.079Z",
+      "duration_ms": 791.4889999999999,
+      "endpoint": "/bins-and-waste/{id}",
+      "host": "www.canterbury.gov.uk",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "text/html; charset=UTF-8",
-      "size": 37710,
-      "timestamp": "2025-07-21T07:54:31.079Z"
+      "path_params": [
+        "find-your-bin-collection-dates"
+      ],
+      "query_params": {
+        "postcode": [
+          "CT11AL"
+        ]
+      },
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+        "cookie": "[cookies present]",
+        "referer": "https://www.canterbury.gov.uk/bins-and-waste/find-your-bin-collection-dates"
+      },
+      "response_headers": {
+        "cache-control": "must-revalidate, no-cache, private",
+        "content-type": "text/html; charset=UTF-8",
+        "x-cache": "Miss from cloudfront",
+        "x-content-type-options": "nosniff",
+        "x-drupal-cache": "MISS",
+        "x-drupal-dynamic-cache": "UNCACHEABLE (poor cacheability)",
+        "x-frame-options": "SAMEORIGIN",
+        "x-generator": "Drupal 10 (https://www.drupal.org)"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 37710,
+        "compressed": true,
+        "content_ref": "b9c11b7228015239f33a74061b1cb04ed578e8bc.html"
+      }
     },
     {
-      "url": "https://www.canterbury.gov.uk/report-csp-violation",
+      "timestamp": "2025-07-21T07:54:31.956Z",
+      "duration_ms": -1,
+      "endpoint": "/themes/custom/canterbury_theme/assets/images/favicons/site.webmanifest",
+      "host": "www.canterbury.gov.uk",
+      "method": "GET",
+      "status": -1,
+      "request_headers": {
+        "referer": "https://www.canterbury.gov.uk/bins-and-waste/find-your-bin-collection-dates?postcode=CT11AL"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T07:54:31.955Z",
+      "duration_ms": 79.128,
+      "endpoint": "/report-csp-violation",
+      "host": "www.canterbury.gov.uk",
       "method": "POST",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "text/html; charset=UTF-8",
-      "size": 0,
-      "timestamp": "2025-07-21T07:54:31.955Z"
+      "request_headers": {
+        "accept": "*/*",
+        "content-type": "application/csp-report",
+        "cookie": "[cookies present]",
+        "origin": "https://www.canterbury.gov.uk",
+        "referer": "https://www.canterbury.gov.uk/bins-and-waste/find-your-bin-collection-dates?postcode=CT11AL"
+      },
+      "response_headers": {
+        "cache-control": "must-revalidate, no-cache, private",
+        "content-type": "text/html; charset=UTF-8",
+        "x-cache": "Miss from cloudfront",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "SAMEORIGIN",
+        "x-generator": "Drupal 10 (https://www.drupal.org)"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 0,
+        "content_ref": "da39a3ee5e6b4b0d3255bfef95601890afd80709.html"
+      }
     },
     {
-      "url": "https://region1.analytics.google.com/g/collect?v=2&tid=G-6MTT8J065V&gtm=45je57g1v9102478788za200&_p=1753084471890&gcd=13l3l3l3l1l1&npa=0&dma=0&tag_exp=101509157~103116026~103200004~103233427~104684208~104684211~104921715~104921717&gdid=dMDhkMT&cid=654300432.1753084466&ul=en-gb&sr=800x600&uaa=arm&uab=64&uafvl=Not)A%253BBrand%3B8.0.0.0%7CChromium%3B138.0.7204.101%7CGoogle%2520Chrome%3B138.0.7204.101&uamb=0&uam=&uap=macOS&uapv=15.5.0&uaw=0&are=1&frm=0&pscdl=noapi&_eu=AAAAAAQ&_s=1&sid=1753084465&sct=1&seg=1&dl=https%3A%2F%2Fwww.canterbury.gov.uk%2Fbins-and-waste%2Ffind-your-bin-collection-dates%3Fpostcode%3DCT11AL&dr=https%3A%2F%2Fwww.canterbury.gov.uk%2Fbins-and-waste%2Ffind-your-bin-collection-dates&dt=Find%20your%20bin%20collection%20dates%20%7C%20Canterbury%20City%20Council&_tu=QA&en=page_view&_ee=1&tfd=3070",
+      "timestamp": "2025-07-21T07:54:34.074Z",
+      "duration_ms": 14.299,
+      "endpoint": "/g/collect",
+      "host": "region1.analytics.google.com",
       "method": "POST",
       "status": 204,
-      "redirect_url": null,
-      "mime_type": "text/plain",
-      "size": -1,
-      "timestamp": "2025-07-21T07:54:34.074Z"
+      "query_params": {
+        "v": [
+          "2"
+        ],
+        "tid": [
+          "G-6MTT8J065V"
+        ],
+        "gtm": [
+          "45je57g1v9102478788za200"
+        ],
+        "_p": [
+          "1753084471890"
+        ],
+        "gcd": [
+          "13l3l3l3l1l1"
+        ],
+        "npa": [
+          "0"
+        ],
+        "dma": [
+          "0"
+        ],
+        "tag_exp": [
+          "101509157~103116026~103200004~103233427~104684208~104684211~104921715~104921717"
+        ],
+        "gdid": [
+          "dMDhkMT"
+        ],
+        "cid": [
+          "654300432.1753084466"
+        ],
+        "ul": [
+          "en-gb"
+        ],
+        "sr": [
+          "800x600"
+        ],
+        "uaa": [
+          "arm"
+        ],
+        "uab": [
+          "64"
+        ],
+        "uafvl": [
+          "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+        ],
+        "uamb": [
+          "0"
+        ],
+        "uap": [
+          "macOS"
+        ],
+        "uapv": [
+          "15.5.0"
+        ],
+        "uaw": [
+          "0"
+        ],
+        "are": [
+          "1"
+        ],
+        "frm": [
+          "0"
+        ],
+        "pscdl": [
+          "noapi"
+        ],
+        "_eu": [
+          "AAAAAAQ"
+        ],
+        "_s": [
+          "1"
+        ],
+        "sid": [
+          "1753084465"
+        ],
+        "sct": [
+          "1"
+        ],
+        "seg": [
+          "1"
+        ],
+        "dl": [
+          "https://www.canterbury.gov.uk/bins-and-waste/find-your-bin-collection-dates?postcode=CT11AL"
+        ],
+        "dr": [
+          "https://www.canterbury.gov.uk/bins-and-waste/find-your-bin-collection-dates"
+        ],
+        "dt": [
+          "Find your bin collection dates | Canterbury City Council"
+        ],
+        "_tu": [
+          "QA"
+        ],
+        "en": [
+          "page_view"
+        ],
+        "_ee": [
+          "1"
+        ],
+        "tfd": [
+          "3070"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "origin": "https://www.canterbury.gov.uk",
+        "referer": "https://www.canterbury.gov.uk/",
+        "x-browser-copyright": "Copyright 2025 Google LLC. All rights reserved.",
+        "x-browser-validation": "qvLgIVtG4U8GgiRPSI9IJ22mUlI=",
+        "x-browser-year": "2025",
+        "x-client-data": "CMiXywE="
+      },
+      "response_headers": {
+        "cache-control": "no-cache, no-store, must-revalidate",
+        "content-type": "text/plain"
+      }
     },
     {
-      "url": "https://region1.analytics.google.com/g/collect?v=2&tid=G-6MTT8J065V&gtm=45je57g1v9102478788za200&_p=1753084471890&gcd=13l3l3l3l1l1&npa=0&dma=0&tag_exp=101509157~103116026~103200004~103233427~104684208~104684211~104921715~104921717&gdid=dMDhkMT&cid=654300432.1753084466&ul=en-gb&sr=800x600&uaa=arm&uab=64&uafvl=Not)A%253BBrand%3B8.0.0.0%7CChromium%3B138.0.7204.101%7CGoogle%2520Chrome%3B138.0.7204.101&uamb=0&uam=&uap=macOS&uapv=15.5.0&uaw=0&are=1&frm=0&pscdl=noapi&_eu=AEEAAAQ&_s=2&sid=1753084465&sct=1&seg=1&dl=https%3A%2F%2Fwww.canterbury.gov.uk%2Fbins-and-waste%2Ffind-your-bin-collection-dates%3Fpostcode%3DCT11AL&dr=https%3A%2F%2Fwww.canterbury.gov.uk%2Fbins-and-waste%2Ffind-your-bin-collection-dates&dt=Find%20your%20bin%20collection%20dates%20%7C%20Canterbury%20City%20Council&_tu=QA&en=form_start&ep.form_id=address-search-form&ep.form_name=&ep.form_destination=https%3A%2F%2Fwww.canterbury.gov.uk%2Fbins-and-waste%2Ffind-your-bin-collection-dates%3Fpostcode%3DCT11AL&epn.form_length=4&ep.first_field_id=edit-address&ep.first_field_name=address&ep.first_field_type=&epn.first_field_position=1&_et=2134&tfd=8075",
+      "timestamp": "2025-07-21T07:54:39.080Z",
+      "duration_ms": 20.897,
+      "endpoint": "/g/collect",
+      "host": "region1.analytics.google.com",
       "method": "POST",
       "status": 204,
-      "redirect_url": null,
-      "mime_type": "text/plain",
-      "size": -1,
-      "timestamp": "2025-07-21T07:54:39.080Z"
+      "query_params": {
+        "v": [
+          "2"
+        ],
+        "tid": [
+          "G-6MTT8J065V"
+        ],
+        "gtm": [
+          "45je57g1v9102478788za200"
+        ],
+        "_p": [
+          "1753084471890"
+        ],
+        "gcd": [
+          "13l3l3l3l1l1"
+        ],
+        "npa": [
+          "0"
+        ],
+        "dma": [
+          "0"
+        ],
+        "tag_exp": [
+          "101509157~103116026~103200004~103233427~104684208~104684211~104921715~104921717"
+        ],
+        "gdid": [
+          "dMDhkMT"
+        ],
+        "cid": [
+          "654300432.1753084466"
+        ],
+        "ul": [
+          "en-gb"
+        ],
+        "sr": [
+          "800x600"
+        ],
+        "uaa": [
+          "arm"
+        ],
+        "uab": [
+          "64"
+        ],
+        "uafvl": [
+          "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+        ],
+        "uamb": [
+          "0"
+        ],
+        "uap": [
+          "macOS"
+        ],
+        "uapv": [
+          "15.5.0"
+        ],
+        "uaw": [
+          "0"
+        ],
+        "are": [
+          "1"
+        ],
+        "frm": [
+          "0"
+        ],
+        "pscdl": [
+          "noapi"
+        ],
+        "_eu": [
+          "AEEAAAQ"
+        ],
+        "_s": [
+          "2"
+        ],
+        "sid": [
+          "1753084465"
+        ],
+        "sct": [
+          "1"
+        ],
+        "seg": [
+          "1"
+        ],
+        "dl": [
+          "https://www.canterbury.gov.uk/bins-and-waste/find-your-bin-collection-dates?postcode=CT11AL"
+        ],
+        "dr": [
+          "https://www.canterbury.gov.uk/bins-and-waste/find-your-bin-collection-dates"
+        ],
+        "dt": [
+          "Find your bin collection dates | Canterbury City Council"
+        ],
+        "_tu": [
+          "QA"
+        ],
+        "en": [
+          "form_start"
+        ],
+        "ep.form_id": [
+          "address-search-form"
+        ],
+        "ep.form_destination": [
+          "https://www.canterbury.gov.uk/bins-and-waste/find-your-bin-collection-dates?postcode=CT11AL"
+        ],
+        "epn.form_length": [
+          "4"
+        ],
+        "ep.first_field_id": [
+          "edit-address"
+        ],
+        "ep.first_field_name": [
+          "address"
+        ],
+        "epn.first_field_position": [
+          "1"
+        ],
+        "_et": [
+          "2134"
+        ],
+        "tfd": [
+          "8075"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "origin": "https://www.canterbury.gov.uk",
+        "referer": "https://www.canterbury.gov.uk/",
+        "x-browser-copyright": "Copyright 2025 Google LLC. All rights reserved.",
+        "x-browser-validation": "qvLgIVtG4U8GgiRPSI9IJ22mUlI=",
+        "x-browser-year": "2025",
+        "x-client-data": "CMiXywE="
+      },
+      "response_headers": {
+        "cache-control": "no-cache, no-store, must-revalidate",
+        "content-type": "text/plain"
+      }
     },
     {
-      "url": "https://www.canterbury.gov.uk/bins-and-waste/find-your-bin-collection-dates?postcode=CT11AL&ajax_form=1&_wrapper_format=drupal_ajax",
+      "timestamp": "2025-07-21T07:54:47.343Z",
+      "duration_ms": -1,
+      "endpoint": "/g/collect",
+      "host": "region1.analytics.google.com",
+      "method": "POST",
+      "status": -1,
+      "query_params": {
+        "v": [
+          "2"
+        ],
+        "tid": [
+          "G-6MTT8J065V"
+        ],
+        "gtm": [
+          "45je57g1v9102478788za200"
+        ],
+        "_p": [
+          "1753084471890"
+        ],
+        "gcd": [
+          "13l3l3l3l1l1"
+        ],
+        "npa": [
+          "0"
+        ],
+        "dma": [
+          "0"
+        ],
+        "tag_exp": [
+          "101509157~103116026~103200004~103233427~104684208~104684211~104921715~104921717"
+        ],
+        "gdid": [
+          "dMDhkMT"
+        ],
+        "cid": [
+          "654300432.1753084466"
+        ],
+        "ul": [
+          "en-gb"
+        ],
+        "sr": [
+          "800x600"
+        ],
+        "uaa": [
+          "arm"
+        ],
+        "uab": [
+          "64"
+        ],
+        "uafvl": [
+          "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+        ],
+        "uamb": [
+          "0"
+        ],
+        "uap": [
+          "macOS"
+        ],
+        "uapv": [
+          "15.5.0"
+        ],
+        "uaw": [
+          "0"
+        ],
+        "are": [
+          "1"
+        ],
+        "frm": [
+          "0"
+        ],
+        "pscdl": [
+          "noapi"
+        ],
+        "_eu": [
+          "AAAAAAQ"
+        ],
+        "_s": [
+          "3"
+        ],
+        "sid": [
+          "1753084465"
+        ],
+        "sct": [
+          "1"
+        ],
+        "seg": [
+          "1"
+        ],
+        "dl": [
+          "https://www.canterbury.gov.uk/bins-and-waste/find-your-bin-collection-dates?postcode=CT11AL"
+        ],
+        "dr": [
+          "https://www.canterbury.gov.uk/bins-and-waste/find-your-bin-collection-dates"
+        ],
+        "dt": [
+          "Find your bin collection dates | Canterbury City Council"
+        ],
+        "_tu": [
+          "QA"
+        ],
+        "en": [
+          "user_engagement"
+        ],
+        "_et": [
+          "13264"
+        ],
+        "tfd": [
+          "16339"
+        ]
+      },
+      "request_headers": {
+        "referer": "https://www.canterbury.gov.uk/"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T07:54:46.263Z",
+      "duration_ms": 595.722,
+      "endpoint": "/bins-and-waste/{id}",
+      "host": "www.canterbury.gov.uk",
       "method": "POST",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json",
-      "size": -1,
-      "timestamp": "2025-07-21T07:54:46.263Z"
+      "path_params": [
+        "find-your-bin-collection-dates"
+      ],
+      "query_params": {
+        "postcode": [
+          "CT11AL"
+        ],
+        "ajax_form": [
+          "1"
+        ],
+        "_wrapper_format": [
+          "drupal_ajax"
+        ]
+      },
+      "request_headers": {
+        "accept": "application/json, text/javascript, */*; q=0.01",
+        "content-type": "application/x-www-form-urlencoded; charset=UTF-8",
+        "cookie": "[cookies present]",
+        "origin": "https://www.canterbury.gov.uk",
+        "referer": "https://www.canterbury.gov.uk/bins-and-waste/find-your-bin-collection-dates?postcode=CT11AL",
+        "x-requested-with": "XMLHttpRequest"
+      },
+      "response_headers": {
+        "cache-control": "must-revalidate, no-cache, private",
+        "content-type": "application/json",
+        "x-cache": "Miss from cloudfront",
+        "x-content-type-options": "nosniff",
+        "x-drupal-ajax-token": "1",
+        "x-frame-options": "SAMEORIGIN",
+        "x-generator": "Drupal 10 (https://www.drupal.org)"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": -1
+      }
     },
     {
-      "url": "https://www.canterbury.gov.uk/bins-and-waste/find-your-bin-collection-dates?uprn=200000678946&usrn=5605297",
+      "timestamp": "2025-07-21T07:54:46.940Z",
+      "duration_ms": 392.465,
+      "endpoint": "/bins-and-waste/{id}",
+      "host": "www.canterbury.gov.uk",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "text/html; charset=UTF-8",
-      "size": 33343,
-      "timestamp": "2025-07-21T07:54:46.940Z"
+      "path_params": [
+        "find-your-bin-collection-dates"
+      ],
+      "query_params": {
+        "uprn": [
+          "200000678946"
+        ],
+        "usrn": [
+          "5605297"
+        ]
+      },
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+        "cookie": "[cookies present]",
+        "referer": "https://www.canterbury.gov.uk/bins-and-waste/find-your-bin-collection-dates?postcode=CT11AL"
+      },
+      "response_headers": {
+        "cache-control": "must-revalidate, no-cache, private",
+        "content-type": "text/html; charset=UTF-8",
+        "x-cache": "Miss from cloudfront",
+        "x-content-type-options": "nosniff",
+        "x-drupal-cache": "MISS",
+        "x-drupal-dynamic-cache": "UNCACHEABLE (poor cacheability)",
+        "x-frame-options": "SAMEORIGIN",
+        "x-generator": "Drupal 10 (https://www.drupal.org)"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 33343,
+        "compressed": true,
+        "content_ref": "5a61da93012dc1d0d3c0e063563b1da5cb36561d.html"
+      }
     },
     {
-      "url": "https://www.canterbury.gov.uk/report-csp-violation",
+      "timestamp": "2025-07-21T07:54:47.533Z",
+      "duration_ms": -1,
+      "endpoint": "/themes/custom/canterbury_theme/assets/images/favicons/site.webmanifest",
+      "host": "www.canterbury.gov.uk",
+      "method": "GET",
+      "status": -1,
+      "request_headers": {
+        "referer": "https://www.canterbury.gov.uk/bins-and-waste/find-your-bin-collection-dates?uprn=200000678946&usrn=5605297"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T07:54:47.531Z",
+      "duration_ms": -1,
+      "endpoint": "/Beta/get-bin-dates",
+      "host": "zbr7r13ke2.execute-api.eu-west-2.amazonaws.com",
+      "method": "POST",
+      "status": -1,
+      "request_headers": {
+        "referer": "https://www.canterbury.gov.uk/",
+        "accept": "*/*",
+        "content-type": "application/json"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T07:54:47.532Z",
+      "duration_ms": -1,
+      "endpoint": "/Beta/get-bin-dates",
+      "host": "zbr7r13ke2.execute-api.eu-west-2.amazonaws.com",
+      "method": "POST",
+      "status": -1,
+      "request_headers": {
+        "referer": "https://www.canterbury.gov.uk/",
+        "accept": "*/*",
+        "content-type": "application/json"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T07:54:47.533Z",
+      "duration_ms": 69.369,
+      "endpoint": "/report-csp-violation",
+      "host": "www.canterbury.gov.uk",
       "method": "POST",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "text/html; charset=UTF-8",
-      "size": 0,
-      "timestamp": "2025-07-21T07:54:47.533Z"
+      "request_headers": {
+        "accept": "*/*",
+        "content-type": "application/csp-report",
+        "cookie": "[cookies present]",
+        "origin": "https://www.canterbury.gov.uk",
+        "referer": "https://www.canterbury.gov.uk/bins-and-waste/find-your-bin-collection-dates?uprn=200000678946&usrn=5605297"
+      },
+      "response_headers": {
+        "cache-control": "must-revalidate, no-cache, private",
+        "content-type": "text/html; charset=UTF-8",
+        "x-cache": "Miss from cloudfront",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "SAMEORIGIN",
+        "x-generator": "Drupal 10 (https://www.drupal.org)"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 0,
+        "content_ref": "da39a3ee5e6b4b0d3255bfef95601890afd80709.html"
+      }
     },
     {
-      "url": "https://region1.analytics.google.com/g/collect?v=2&tid=G-6MTT8J065V&gtm=45je57g1v9102478788za200&_p=1753084487362&gcd=13l3l3l3l1l1&npa=0&dma=0&tag_exp=101509157~103116026~103200004~103233427~104684208~104684211~104921715~104921717&gdid=dMDhkMT&cid=654300432.1753084466&ul=en-gb&sr=800x600&uaa=arm&uab=64&uafvl=Not)A%253BBrand%3B8.0.0.0%7CChromium%3B138.0.7204.101%7CGoogle%2520Chrome%3B138.0.7204.101&uamb=0&uam=&uap=macOS&uapv=15.5.0&uaw=0&are=1&frm=0&pscdl=noapi&_eu=AAAAAAQ&_s=1&sid=1753084465&sct=1&seg=1&dl=https%3A%2F%2Fwww.canterbury.gov.uk%2Fbins-and-waste%2Ffind-your-bin-collection-dates%3Fuprn%3D200000678946%26usrn%3D5605297&dr=https%3A%2F%2Fwww.canterbury.gov.uk%2Fbins-and-waste%2Ffind-your-bin-collection-dates%3Fpostcode%3DCT11AL&dt=Find%20your%20bin%20collection%20dates%20%7C%20Canterbury%20City%20Council&_tu=QA&en=page_view&_ee=1&tfd=5535",
+      "timestamp": "2025-07-21T07:54:52.400Z",
+      "duration_ms": 14.569,
+      "endpoint": "/g/collect",
+      "host": "region1.analytics.google.com",
       "method": "POST",
       "status": 204,
-      "redirect_url": null,
-      "mime_type": "text/plain",
-      "size": -1,
-      "timestamp": "2025-07-21T07:54:52.400Z"
+      "query_params": {
+        "v": [
+          "2"
+        ],
+        "tid": [
+          "G-6MTT8J065V"
+        ],
+        "gtm": [
+          "45je57g1v9102478788za200"
+        ],
+        "_p": [
+          "1753084487362"
+        ],
+        "gcd": [
+          "13l3l3l3l1l1"
+        ],
+        "npa": [
+          "0"
+        ],
+        "dma": [
+          "0"
+        ],
+        "tag_exp": [
+          "101509157~103116026~103200004~103233427~104684208~104684211~104921715~104921717"
+        ],
+        "gdid": [
+          "dMDhkMT"
+        ],
+        "cid": [
+          "654300432.1753084466"
+        ],
+        "ul": [
+          "en-gb"
+        ],
+        "sr": [
+          "800x600"
+        ],
+        "uaa": [
+          "arm"
+        ],
+        "uab": [
+          "64"
+        ],
+        "uafvl": [
+          "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+        ],
+        "uamb": [
+          "0"
+        ],
+        "uap": [
+          "macOS"
+        ],
+        "uapv": [
+          "15.5.0"
+        ],
+        "uaw": [
+          "0"
+        ],
+        "are": [
+          "1"
+        ],
+        "frm": [
+          "0"
+        ],
+        "pscdl": [
+          "noapi"
+        ],
+        "_eu": [
+          "AAAAAAQ"
+        ],
+        "_s": [
+          "1"
+        ],
+        "sid": [
+          "1753084465"
+        ],
+        "sct": [
+          "1"
+        ],
+        "seg": [
+          "1"
+        ],
+        "dl": [
+          "https://www.canterbury.gov.uk/bins-and-waste/find-your-bin-collection-dates?uprn=200000678946&usrn=5605297"
+        ],
+        "dr": [
+          "https://www.canterbury.gov.uk/bins-and-waste/find-your-bin-collection-dates?postcode=CT11AL"
+        ],
+        "dt": [
+          "Find your bin collection dates | Canterbury City Council"
+        ],
+        "_tu": [
+          "QA"
+        ],
+        "en": [
+          "page_view"
+        ],
+        "_ee": [
+          "1"
+        ],
+        "tfd": [
+          "5535"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "origin": "https://www.canterbury.gov.uk",
+        "referer": "https://www.canterbury.gov.uk/",
+        "x-browser-copyright": "Copyright 2025 Google LLC. All rights reserved.",
+        "x-browser-validation": "qvLgIVtG4U8GgiRPSI9IJ22mUlI=",
+        "x-browser-year": "2025",
+        "x-client-data": "CMiXywE="
+      },
+      "response_headers": {
+        "cache-control": "no-cache, no-store, must-revalidate",
+        "content-type": "text/plain"
+      }
     }
-  ]
+  ],
+  "analysis": {
+    "total_requests": 24,
+    "unique_endpoints": 7,
+    "methods_used": [
+      "GET",
+      "POST"
+    ],
+    "status_codes": {
+      "301": 1,
+      "200": 9,
+      "-1": 9,
+      "204": 5
+    },
+    "endpoints_with_params": [
+      {
+        "endpoint": "/bins-and-waste/{id}",
+        "method": "GET",
+        "query_params": [],
+        "path_params": true
+      },
+      {
+        "endpoint": "/ads/ga-audiences",
+        "method": "GET",
+        "query_params": [
+          "v",
+          "t",
+          "slf_rd",
+          "_r",
+          "tid",
+          "cid",
+          "gtm",
+          "aip",
+          "dma",
+          "gcd",
+          "npa",
+          "frm",
+          "tag_exp",
+          "z"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/g/collect",
+        "method": "POST",
+        "query_params": [
+          "v",
+          "tid",
+          "gtm",
+          "_p",
+          "_gaz",
+          "gcd",
+          "npa",
+          "dma",
+          "tag_exp",
+          "gdid",
+          "cid",
+          "ul",
+          "sr",
+          "uaa",
+          "uab",
+          "uafvl",
+          "uamb",
+          "uap",
+          "uapv",
+          "uaw",
+          "are",
+          "frm",
+          "pscdl",
+          "_s",
+          "sid",
+          "sct",
+          "seg",
+          "dl",
+          "dt",
+          "_tu",
+          "en",
+          "_fv",
+          "_nsi",
+          "_ss",
+          "_ee",
+          "tfd"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/g/collect",
+        "method": "POST",
+        "query_params": [
+          "v",
+          "tid",
+          "cid",
+          "gtm",
+          "aip",
+          "dma",
+          "gcd",
+          "npa",
+          "frm",
+          "tag_exp"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/g/collect",
+        "method": "POST",
+        "query_params": [
+          "v",
+          "tid",
+          "gtm",
+          "_p",
+          "gcd",
+          "npa",
+          "dma",
+          "tag_exp",
+          "gdid",
+          "cid",
+          "ul",
+          "sr",
+          "uaa",
+          "uab",
+          "uafvl",
+          "uamb",
+          "uap",
+          "uapv",
+          "uaw",
+          "are",
+          "frm",
+          "pscdl",
+          "_eu",
+          "_s",
+          "sid",
+          "sct",
+          "seg",
+          "dl",
+          "dt",
+          "_tu",
+          "en",
+          "ep.form_id",
+          "ep.form_destination",
+          "epn.form_length",
+          "ep.first_field_id",
+          "ep.first_field_name",
+          "ep.first_field_type",
+          "epn.first_field_position",
+          "_et",
+          "tfd"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/g/collect",
+        "method": "POST",
+        "query_params": [
+          "v",
+          "tid",
+          "gtm",
+          "_p",
+          "gcd",
+          "npa",
+          "dma",
+          "tag_exp",
+          "gdid",
+          "cid",
+          "ul",
+          "sr",
+          "uaa",
+          "uab",
+          "uafvl",
+          "uamb",
+          "uap",
+          "uapv",
+          "uaw",
+          "are",
+          "frm",
+          "pscdl",
+          "_eu",
+          "_s",
+          "sid",
+          "sct",
+          "seg",
+          "dl",
+          "dt",
+          "_tu",
+          "en",
+          "_et",
+          "tfd"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/bins-and-waste/{id}",
+        "method": "POST",
+        "query_params": [
+          "ajax_form",
+          "_wrapper_format"
+        ],
+        "path_params": true
+      },
+      {
+        "endpoint": "/bins-and-waste/{id}",
+        "method": "GET",
+        "query_params": [
+          "postcode"
+        ],
+        "path_params": true
+      },
+      {
+        "endpoint": "/g/collect",
+        "method": "POST",
+        "query_params": [
+          "v",
+          "tid",
+          "gtm",
+          "_p",
+          "gcd",
+          "npa",
+          "dma",
+          "tag_exp",
+          "gdid",
+          "cid",
+          "ul",
+          "sr",
+          "uaa",
+          "uab",
+          "uafvl",
+          "uamb",
+          "uap",
+          "uapv",
+          "uaw",
+          "are",
+          "frm",
+          "pscdl",
+          "_eu",
+          "_s",
+          "sid",
+          "sct",
+          "seg",
+          "dl",
+          "dr",
+          "dt",
+          "_tu",
+          "en",
+          "_ee",
+          "tfd"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/g/collect",
+        "method": "POST",
+        "query_params": [
+          "v",
+          "tid",
+          "gtm",
+          "_p",
+          "gcd",
+          "npa",
+          "dma",
+          "tag_exp",
+          "gdid",
+          "cid",
+          "ul",
+          "sr",
+          "uaa",
+          "uab",
+          "uafvl",
+          "uamb",
+          "uap",
+          "uapv",
+          "uaw",
+          "are",
+          "frm",
+          "pscdl",
+          "_eu",
+          "_s",
+          "sid",
+          "sct",
+          "seg",
+          "dl",
+          "dr",
+          "dt",
+          "_tu",
+          "en",
+          "ep.form_id",
+          "ep.form_destination",
+          "epn.form_length",
+          "ep.first_field_id",
+          "ep.first_field_name",
+          "epn.first_field_position",
+          "_et",
+          "tfd"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/g/collect",
+        "method": "POST",
+        "query_params": [
+          "v",
+          "tid",
+          "gtm",
+          "_p",
+          "gcd",
+          "npa",
+          "dma",
+          "tag_exp",
+          "gdid",
+          "cid",
+          "ul",
+          "sr",
+          "uaa",
+          "uab",
+          "uafvl",
+          "uamb",
+          "uap",
+          "uapv",
+          "uaw",
+          "are",
+          "frm",
+          "pscdl",
+          "_eu",
+          "_s",
+          "sid",
+          "sct",
+          "seg",
+          "dl",
+          "dr",
+          "dt",
+          "_tu",
+          "en",
+          "_et",
+          "tfd"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/bins-and-waste/{id}",
+        "method": "POST",
+        "query_params": [
+          "postcode",
+          "ajax_form",
+          "_wrapper_format"
+        ],
+        "path_params": true
+      },
+      {
+        "endpoint": "/bins-and-waste/{id}",
+        "method": "GET",
+        "query_params": [
+          "uprn",
+          "usrn"
+        ],
+        "path_params": true
+      }
+    ],
+    "redirects": [
+      {
+        "from": "/bin-collections",
+        "to": "https://www.canterbury.gov.uk/bins-and-waste/find-your-bin-collection-dates",
+        "status": 301
+      }
+    ],
+    "api_calls": [
+      {
+        "endpoint": "/bins-and-waste/{id}",
+        "method": "POST",
+        "response_type": "application/json",
+        "params": [
+          "ajax_form",
+          "_wrapper_format"
+        ]
+      },
+      {
+        "endpoint": "/bins-and-waste/{id}",
+        "method": "POST",
+        "response_type": "application/json",
+        "params": [
+          "postcode",
+          "ajax_form",
+          "_wrapper_format"
+        ]
+      }
+    ],
+    "form_submissions": []
+  },
+  "grouped_by_endpoint": {
+    "/bin-collections": [
+      {
+        "timestamp": "2025-07-21T07:54:25.461Z",
+        "duration_ms": 107.53800000000001,
+        "endpoint": "/bin-collections",
+        "host": "www.canterbury.gov.uk",
+        "method": "GET",
+        "status": 301,
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7"
+        },
+        "response_headers": {
+          "cache-control": "must-revalidate, no-cache, private",
+          "content-type": "text/html; charset=utf-8",
+          "location": "https://www.canterbury.gov.uk/bins-and-waste/find-your-bin-collection-dates",
+          "x-cache": "Miss from cloudfront",
+          "x-content-type-options": "nosniff",
+          "x-drupal-cache": "HIT",
+          "x-drupal-route-normalizer": "1",
+          "x-frame-options": "SAMEORIGIN",
+          "x-generator": "Drupal 10 (https://www.drupal.org)"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": -1
+        },
+        "redirect_to": "https://www.canterbury.gov.uk/bins-and-waste/find-your-bin-collection-dates"
+      }
+    ],
+    "/bins-and-waste/{id}": [
+      {
+        "timestamp": "2025-07-21T07:54:25.560Z",
+        "duration_ms": 47.108,
+        "endpoint": "/bins-and-waste/{id}",
+        "host": "www.canterbury.gov.uk",
+        "method": "GET",
+        "status": 200,
+        "path_params": [
+          "find-your-bin-collection-dates"
+        ],
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7"
+        },
+        "response_headers": {
+          "cache-control": "must-revalidate, no-cache, private",
+          "content-type": "text/html; charset=UTF-8",
+          "x-cache": "Miss from cloudfront",
+          "x-content-type-options": "nosniff",
+          "x-drupal-cache": "HIT",
+          "x-drupal-dynamic-cache": "UNCACHEABLE (poor cacheability)",
+          "x-frame-options": "SAMEORIGIN",
+          "x-generator": "Drupal 10 (https://www.drupal.org)"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 34379,
+          "compressed": true,
+          "content_ref": "03ce42b8dc3b41f671b0f172c2bc6f4687167097.html"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T07:54:30.852Z",
+        "duration_ms": 148.237,
+        "endpoint": "/bins-and-waste/{id}",
+        "host": "www.canterbury.gov.uk",
+        "method": "POST",
+        "status": 200,
+        "path_params": [
+          "find-your-bin-collection-dates"
+        ],
+        "query_params": {
+          "ajax_form": [
+            "1"
+          ],
+          "_wrapper_format": [
+            "drupal_ajax"
+          ]
+        },
+        "request_headers": {
+          "accept": "application/json, text/javascript, */*; q=0.01",
+          "content-type": "application/x-www-form-urlencoded; charset=UTF-8",
+          "cookie": "[cookies present]",
+          "origin": "https://www.canterbury.gov.uk",
+          "referer": "https://www.canterbury.gov.uk/bins-and-waste/find-your-bin-collection-dates",
+          "x-requested-with": "XMLHttpRequest"
+        },
+        "response_headers": {
+          "cache-control": "must-revalidate, no-cache, private",
+          "content-type": "application/json",
+          "x-cache": "Miss from cloudfront",
+          "x-content-type-options": "nosniff",
+          "x-drupal-ajax-token": "1",
+          "x-frame-options": "SAMEORIGIN",
+          "x-generator": "Drupal 10 (https://www.drupal.org)"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": -1
+        }
+      },
+      {
+        "timestamp": "2025-07-21T07:54:31.079Z",
+        "duration_ms": 791.4889999999999,
+        "endpoint": "/bins-and-waste/{id}",
+        "host": "www.canterbury.gov.uk",
+        "method": "GET",
+        "status": 200,
+        "path_params": [
+          "find-your-bin-collection-dates"
+        ],
+        "query_params": {
+          "postcode": [
+            "CT11AL"
+          ]
+        },
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+          "cookie": "[cookies present]",
+          "referer": "https://www.canterbury.gov.uk/bins-and-waste/find-your-bin-collection-dates"
+        },
+        "response_headers": {
+          "cache-control": "must-revalidate, no-cache, private",
+          "content-type": "text/html; charset=UTF-8",
+          "x-cache": "Miss from cloudfront",
+          "x-content-type-options": "nosniff",
+          "x-drupal-cache": "MISS",
+          "x-drupal-dynamic-cache": "UNCACHEABLE (poor cacheability)",
+          "x-frame-options": "SAMEORIGIN",
+          "x-generator": "Drupal 10 (https://www.drupal.org)"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 37710,
+          "compressed": true,
+          "content_ref": "b9c11b7228015239f33a74061b1cb04ed578e8bc.html"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T07:54:46.263Z",
+        "duration_ms": 595.722,
+        "endpoint": "/bins-and-waste/{id}",
+        "host": "www.canterbury.gov.uk",
+        "method": "POST",
+        "status": 200,
+        "path_params": [
+          "find-your-bin-collection-dates"
+        ],
+        "query_params": {
+          "postcode": [
+            "CT11AL"
+          ],
+          "ajax_form": [
+            "1"
+          ],
+          "_wrapper_format": [
+            "drupal_ajax"
+          ]
+        },
+        "request_headers": {
+          "accept": "application/json, text/javascript, */*; q=0.01",
+          "content-type": "application/x-www-form-urlencoded; charset=UTF-8",
+          "cookie": "[cookies present]",
+          "origin": "https://www.canterbury.gov.uk",
+          "referer": "https://www.canterbury.gov.uk/bins-and-waste/find-your-bin-collection-dates?postcode=CT11AL",
+          "x-requested-with": "XMLHttpRequest"
+        },
+        "response_headers": {
+          "cache-control": "must-revalidate, no-cache, private",
+          "content-type": "application/json",
+          "x-cache": "Miss from cloudfront",
+          "x-content-type-options": "nosniff",
+          "x-drupal-ajax-token": "1",
+          "x-frame-options": "SAMEORIGIN",
+          "x-generator": "Drupal 10 (https://www.drupal.org)"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": -1
+        }
+      },
+      {
+        "timestamp": "2025-07-21T07:54:46.940Z",
+        "duration_ms": 392.465,
+        "endpoint": "/bins-and-waste/{id}",
+        "host": "www.canterbury.gov.uk",
+        "method": "GET",
+        "status": 200,
+        "path_params": [
+          "find-your-bin-collection-dates"
+        ],
+        "query_params": {
+          "uprn": [
+            "200000678946"
+          ],
+          "usrn": [
+            "5605297"
+          ]
+        },
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+          "cookie": "[cookies present]",
+          "referer": "https://www.canterbury.gov.uk/bins-and-waste/find-your-bin-collection-dates?postcode=CT11AL"
+        },
+        "response_headers": {
+          "cache-control": "must-revalidate, no-cache, private",
+          "content-type": "text/html; charset=UTF-8",
+          "x-cache": "Miss from cloudfront",
+          "x-content-type-options": "nosniff",
+          "x-drupal-cache": "MISS",
+          "x-drupal-dynamic-cache": "UNCACHEABLE (poor cacheability)",
+          "x-frame-options": "SAMEORIGIN",
+          "x-generator": "Drupal 10 (https://www.drupal.org)"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 33343,
+          "compressed": true,
+          "content_ref": "5a61da93012dc1d0d3c0e063563b1da5cb36561d.html"
+        }
+      }
+    ],
+    "/ads/ga-audiences": [
+      {
+        "timestamp": "2025-07-21T07:54:25.776Z",
+        "duration_ms": -1,
+        "endpoint": "/ads/ga-audiences",
+        "host": "www.google.co.uk",
+        "method": "GET",
+        "status": -1,
+        "query_params": {
+          "v": [
+            "1"
+          ],
+          "t": [
+            "sr"
+          ],
+          "slf_rd": [
+            "1"
+          ],
+          "_r": [
+            "4"
+          ],
+          "tid": [
+            "G-6MTT8J065V"
+          ],
+          "cid": [
+            "654300432.1753084466"
+          ],
+          "gtm": [
+            "45je57g1v9102478788za200"
+          ],
+          "aip": [
+            "1"
+          ],
+          "dma": [
+            "0"
+          ],
+          "gcd": [
+            "13l3l3l3l1l1"
+          ],
+          "npa": [
+            "0"
+          ],
+          "frm": [
+            "0"
+          ],
+          "tag_exp": [
+            "101509157~103116026~103200004~103233427~104684208~104684211~104921715~104921717",
+            "101509157~103116026~103200004~103233427~104684208~104684211~104921715~104921717"
+          ],
+          "z": [
+            "1405756825"
+          ]
+        },
+        "request_headers": {
+          "referer": "https://www.canterbury.gov.uk/"
+        }
+      }
+    ],
+    "/themes/custom/canterbury_theme/assets/images/favicons/site.webmanifest": [
+      {
+        "timestamp": "2025-07-21T07:54:25.794Z",
+        "duration_ms": -1,
+        "endpoint": "/themes/custom/canterbury_theme/assets/images/favicons/site.webmanifest",
+        "host": "www.canterbury.gov.uk",
+        "method": "GET",
+        "status": -1,
+        "request_headers": {
+          "referer": "https://www.canterbury.gov.uk/bins-and-waste/find-your-bin-collection-dates"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T07:54:31.956Z",
+        "duration_ms": -1,
+        "endpoint": "/themes/custom/canterbury_theme/assets/images/favicons/site.webmanifest",
+        "host": "www.canterbury.gov.uk",
+        "method": "GET",
+        "status": -1,
+        "request_headers": {
+          "referer": "https://www.canterbury.gov.uk/bins-and-waste/find-your-bin-collection-dates?postcode=CT11AL"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T07:54:47.533Z",
+        "duration_ms": -1,
+        "endpoint": "/themes/custom/canterbury_theme/assets/images/favicons/site.webmanifest",
+        "host": "www.canterbury.gov.uk",
+        "method": "GET",
+        "status": -1,
+        "request_headers": {
+          "referer": "https://www.canterbury.gov.uk/bins-and-waste/find-your-bin-collection-dates?uprn=200000678946&usrn=5605297"
+        }
+      }
+    ],
+    "/g/collect": [
+      {
+        "timestamp": "2025-07-21T07:54:25.775Z",
+        "duration_ms": 64.828,
+        "endpoint": "/g/collect",
+        "host": "region1.analytics.google.com",
+        "method": "POST",
+        "status": 204,
+        "query_params": {
+          "v": [
+            "2"
+          ],
+          "tid": [
+            "G-6MTT8J065V"
+          ],
+          "gtm": [
+            "45je57g1v9102478788za200"
+          ],
+          "_p": [
+            "1753084465670"
+          ],
+          "_gaz": [
+            "1"
+          ],
+          "gcd": [
+            "13l3l3l3l1l1"
+          ],
+          "npa": [
+            "0"
+          ],
+          "dma": [
+            "0"
+          ],
+          "tag_exp": [
+            "101509157~103116026~103200004~103233427~104684208~104684211~104921715~104921717"
+          ],
+          "gdid": [
+            "dMDhkMT"
+          ],
+          "cid": [
+            "654300432.1753084466"
+          ],
+          "ul": [
+            "en-gb"
+          ],
+          "sr": [
+            "800x600"
+          ],
+          "uaa": [
+            "arm"
+          ],
+          "uab": [
+            "64"
+          ],
+          "uafvl": [
+            "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+          ],
+          "uamb": [
+            "0"
+          ],
+          "uap": [
+            "macOS"
+          ],
+          "uapv": [
+            "15.5.0"
+          ],
+          "uaw": [
+            "0"
+          ],
+          "are": [
+            "1"
+          ],
+          "frm": [
+            "0"
+          ],
+          "pscdl": [
+            "noapi"
+          ],
+          "_s": [
+            "1"
+          ],
+          "sid": [
+            "1753084465"
+          ],
+          "sct": [
+            "1"
+          ],
+          "seg": [
+            "0"
+          ],
+          "dl": [
+            "https://www.canterbury.gov.uk/bins-and-waste/find-your-bin-collection-dates"
+          ],
+          "dt": [
+            "Find your bin collection dates | Canterbury City Council"
+          ],
+          "_tu": [
+            "QA"
+          ],
+          "en": [
+            "page_view"
+          ],
+          "_fv": [
+            "1"
+          ],
+          "_nsi": [
+            "1"
+          ],
+          "_ss": [
+            "1"
+          ],
+          "_ee": [
+            "1"
+          ],
+          "tfd": [
+            "314"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "origin": "https://www.canterbury.gov.uk",
+          "referer": "https://www.canterbury.gov.uk/",
+          "x-browser-copyright": "Copyright 2025 Google LLC. All rights reserved.",
+          "x-browser-validation": "qvLgIVtG4U8GgiRPSI9IJ22mUlI=",
+          "x-browser-year": "2025",
+          "x-client-data": "CMiXywE="
+        },
+        "response_headers": {
+          "cache-control": "no-cache, no-store, must-revalidate",
+          "content-type": "text/plain"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T07:54:25.775Z",
+        "duration_ms": 75.408,
+        "endpoint": "/g/collect",
+        "host": "stats.g.doubleclick.net",
+        "method": "POST",
+        "status": 204,
+        "query_params": {
+          "v": [
+            "2"
+          ],
+          "tid": [
+            "G-6MTT8J065V"
+          ],
+          "cid": [
+            "654300432.1753084466"
+          ],
+          "gtm": [
+            "45je57g1v9102478788za200"
+          ],
+          "aip": [
+            "1"
+          ],
+          "dma": [
+            "0"
+          ],
+          "gcd": [
+            "13l3l3l3l1l1"
+          ],
+          "npa": [
+            "0"
+          ],
+          "frm": [
+            "0"
+          ],
+          "tag_exp": [
+            "101509157~103116026~103200004~103233427~104684208~104684211~104921715~104921717"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "origin": "https://www.canterbury.gov.uk",
+          "referer": "https://www.canterbury.gov.uk/",
+          "x-browser-copyright": "Copyright 2025 Google LLC. All rights reserved.",
+          "x-browser-validation": "qvLgIVtG4U8GgiRPSI9IJ22mUlI=",
+          "x-browser-year": "2025",
+          "x-client-data": "CMiXywE="
+        },
+        "response_headers": {
+          "cache-control": "no-cache, no-store, must-revalidate",
+          "content-type": "text/plain"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T07:54:31.883Z",
+        "duration_ms": -1,
+        "endpoint": "/g/collect",
+        "host": "region1.analytics.google.com",
+        "method": "POST",
+        "status": -1,
+        "query_params": {
+          "v": [
+            "2"
+          ],
+          "tid": [
+            "G-6MTT8J065V"
+          ],
+          "gtm": [
+            "45je57g1v9102478788za200"
+          ],
+          "_p": [
+            "1753084465670"
+          ],
+          "gcd": [
+            "13l3l3l3l1l1"
+          ],
+          "npa": [
+            "0"
+          ],
+          "dma": [
+            "0"
+          ],
+          "tag_exp": [
+            "101509157~103116026~103200004~103233427~104684208~104684211~104921715~104921717"
+          ],
+          "gdid": [
+            "dMDhkMT"
+          ],
+          "cid": [
+            "654300432.1753084466"
+          ],
+          "ul": [
+            "en-gb"
+          ],
+          "sr": [
+            "800x600"
+          ],
+          "uaa": [
+            "arm"
+          ],
+          "uab": [
+            "64"
+          ],
+          "uafvl": [
+            "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+          ],
+          "uamb": [
+            "0"
+          ],
+          "uap": [
+            "macOS"
+          ],
+          "uapv": [
+            "15.5.0"
+          ],
+          "uaw": [
+            "0"
+          ],
+          "are": [
+            "1"
+          ],
+          "frm": [
+            "0"
+          ],
+          "pscdl": [
+            "noapi"
+          ],
+          "_eu": [
+            "AEEAAAQ"
+          ],
+          "_s": [
+            "2"
+          ],
+          "sid": [
+            "1753084465"
+          ],
+          "sct": [
+            "1"
+          ],
+          "seg": [
+            "0"
+          ],
+          "dl": [
+            "https://www.canterbury.gov.uk/bins-and-waste/find-your-bin-collection-dates"
+          ],
+          "dt": [
+            "Find your bin collection dates | Canterbury City Council"
+          ],
+          "_tu": [
+            "QA"
+          ],
+          "en": [
+            "form_start"
+          ],
+          "ep.form_id": [
+            "address-search-form"
+          ],
+          "ep.form_destination": [
+            "https://www.canterbury.gov.uk/bins-and-waste/find-your-bin-collection-dates"
+          ],
+          "epn.form_length": [
+            "4"
+          ],
+          "ep.first_field_id": [
+            "edit-postcode"
+          ],
+          "ep.first_field_name": [
+            "postcode"
+          ],
+          "ep.first_field_type": [
+            "text"
+          ],
+          "epn.first_field_position": [
+            "1"
+          ],
+          "_et": [
+            "5085"
+          ],
+          "tfd": [
+            "6421"
+          ]
+        },
+        "request_headers": {
+          "referer": "https://www.canterbury.gov.uk/"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T07:54:31.884Z",
+        "duration_ms": -1,
+        "endpoint": "/g/collect",
+        "host": "region1.analytics.google.com",
+        "method": "POST",
+        "status": -1,
+        "query_params": {
+          "v": [
+            "2"
+          ],
+          "tid": [
+            "G-6MTT8J065V"
+          ],
+          "gtm": [
+            "45je57g1v9102478788za200"
+          ],
+          "_p": [
+            "1753084465670"
+          ],
+          "gcd": [
+            "13l3l3l3l1l1"
+          ],
+          "npa": [
+            "0"
+          ],
+          "dma": [
+            "0"
+          ],
+          "tag_exp": [
+            "101509157~103116026~103200004~103233427~104684208~104684211~104921715~104921717"
+          ],
+          "gdid": [
+            "dMDhkMT"
+          ],
+          "cid": [
+            "654300432.1753084466"
+          ],
+          "ul": [
+            "en-gb"
+          ],
+          "sr": [
+            "800x600"
+          ],
+          "uaa": [
+            "arm"
+          ],
+          "uab": [
+            "64"
+          ],
+          "uafvl": [
+            "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+          ],
+          "uamb": [
+            "0"
+          ],
+          "uap": [
+            "macOS"
+          ],
+          "uapv": [
+            "15.5.0"
+          ],
+          "uaw": [
+            "0"
+          ],
+          "are": [
+            "1"
+          ],
+          "frm": [
+            "0"
+          ],
+          "pscdl": [
+            "noapi"
+          ],
+          "_eu": [
+            "AAAAAAQ"
+          ],
+          "_s": [
+            "3"
+          ],
+          "sid": [
+            "1753084465"
+          ],
+          "sct": [
+            "1"
+          ],
+          "seg": [
+            "0"
+          ],
+          "dl": [
+            "https://www.canterbury.gov.uk/bins-and-waste/find-your-bin-collection-dates"
+          ],
+          "dt": [
+            "Find your bin collection dates | Canterbury City Council"
+          ],
+          "_tu": [
+            "QA"
+          ],
+          "en": [
+            "user_engagement"
+          ],
+          "_et": [
+            "1016"
+          ],
+          "tfd": [
+            "6421"
+          ]
+        },
+        "request_headers": {
+          "referer": "https://www.canterbury.gov.uk/"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T07:54:34.074Z",
+        "duration_ms": 14.299,
+        "endpoint": "/g/collect",
+        "host": "region1.analytics.google.com",
+        "method": "POST",
+        "status": 204,
+        "query_params": {
+          "v": [
+            "2"
+          ],
+          "tid": [
+            "G-6MTT8J065V"
+          ],
+          "gtm": [
+            "45je57g1v9102478788za200"
+          ],
+          "_p": [
+            "1753084471890"
+          ],
+          "gcd": [
+            "13l3l3l3l1l1"
+          ],
+          "npa": [
+            "0"
+          ],
+          "dma": [
+            "0"
+          ],
+          "tag_exp": [
+            "101509157~103116026~103200004~103233427~104684208~104684211~104921715~104921717"
+          ],
+          "gdid": [
+            "dMDhkMT"
+          ],
+          "cid": [
+            "654300432.1753084466"
+          ],
+          "ul": [
+            "en-gb"
+          ],
+          "sr": [
+            "800x600"
+          ],
+          "uaa": [
+            "arm"
+          ],
+          "uab": [
+            "64"
+          ],
+          "uafvl": [
+            "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+          ],
+          "uamb": [
+            "0"
+          ],
+          "uap": [
+            "macOS"
+          ],
+          "uapv": [
+            "15.5.0"
+          ],
+          "uaw": [
+            "0"
+          ],
+          "are": [
+            "1"
+          ],
+          "frm": [
+            "0"
+          ],
+          "pscdl": [
+            "noapi"
+          ],
+          "_eu": [
+            "AAAAAAQ"
+          ],
+          "_s": [
+            "1"
+          ],
+          "sid": [
+            "1753084465"
+          ],
+          "sct": [
+            "1"
+          ],
+          "seg": [
+            "1"
+          ],
+          "dl": [
+            "https://www.canterbury.gov.uk/bins-and-waste/find-your-bin-collection-dates?postcode=CT11AL"
+          ],
+          "dr": [
+            "https://www.canterbury.gov.uk/bins-and-waste/find-your-bin-collection-dates"
+          ],
+          "dt": [
+            "Find your bin collection dates | Canterbury City Council"
+          ],
+          "_tu": [
+            "QA"
+          ],
+          "en": [
+            "page_view"
+          ],
+          "_ee": [
+            "1"
+          ],
+          "tfd": [
+            "3070"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "origin": "https://www.canterbury.gov.uk",
+          "referer": "https://www.canterbury.gov.uk/",
+          "x-browser-copyright": "Copyright 2025 Google LLC. All rights reserved.",
+          "x-browser-validation": "qvLgIVtG4U8GgiRPSI9IJ22mUlI=",
+          "x-browser-year": "2025",
+          "x-client-data": "CMiXywE="
+        },
+        "response_headers": {
+          "cache-control": "no-cache, no-store, must-revalidate",
+          "content-type": "text/plain"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T07:54:39.080Z",
+        "duration_ms": 20.897,
+        "endpoint": "/g/collect",
+        "host": "region1.analytics.google.com",
+        "method": "POST",
+        "status": 204,
+        "query_params": {
+          "v": [
+            "2"
+          ],
+          "tid": [
+            "G-6MTT8J065V"
+          ],
+          "gtm": [
+            "45je57g1v9102478788za200"
+          ],
+          "_p": [
+            "1753084471890"
+          ],
+          "gcd": [
+            "13l3l3l3l1l1"
+          ],
+          "npa": [
+            "0"
+          ],
+          "dma": [
+            "0"
+          ],
+          "tag_exp": [
+            "101509157~103116026~103200004~103233427~104684208~104684211~104921715~104921717"
+          ],
+          "gdid": [
+            "dMDhkMT"
+          ],
+          "cid": [
+            "654300432.1753084466"
+          ],
+          "ul": [
+            "en-gb"
+          ],
+          "sr": [
+            "800x600"
+          ],
+          "uaa": [
+            "arm"
+          ],
+          "uab": [
+            "64"
+          ],
+          "uafvl": [
+            "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+          ],
+          "uamb": [
+            "0"
+          ],
+          "uap": [
+            "macOS"
+          ],
+          "uapv": [
+            "15.5.0"
+          ],
+          "uaw": [
+            "0"
+          ],
+          "are": [
+            "1"
+          ],
+          "frm": [
+            "0"
+          ],
+          "pscdl": [
+            "noapi"
+          ],
+          "_eu": [
+            "AEEAAAQ"
+          ],
+          "_s": [
+            "2"
+          ],
+          "sid": [
+            "1753084465"
+          ],
+          "sct": [
+            "1"
+          ],
+          "seg": [
+            "1"
+          ],
+          "dl": [
+            "https://www.canterbury.gov.uk/bins-and-waste/find-your-bin-collection-dates?postcode=CT11AL"
+          ],
+          "dr": [
+            "https://www.canterbury.gov.uk/bins-and-waste/find-your-bin-collection-dates"
+          ],
+          "dt": [
+            "Find your bin collection dates | Canterbury City Council"
+          ],
+          "_tu": [
+            "QA"
+          ],
+          "en": [
+            "form_start"
+          ],
+          "ep.form_id": [
+            "address-search-form"
+          ],
+          "ep.form_destination": [
+            "https://www.canterbury.gov.uk/bins-and-waste/find-your-bin-collection-dates?postcode=CT11AL"
+          ],
+          "epn.form_length": [
+            "4"
+          ],
+          "ep.first_field_id": [
+            "edit-address"
+          ],
+          "ep.first_field_name": [
+            "address"
+          ],
+          "epn.first_field_position": [
+            "1"
+          ],
+          "_et": [
+            "2134"
+          ],
+          "tfd": [
+            "8075"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "origin": "https://www.canterbury.gov.uk",
+          "referer": "https://www.canterbury.gov.uk/",
+          "x-browser-copyright": "Copyright 2025 Google LLC. All rights reserved.",
+          "x-browser-validation": "qvLgIVtG4U8GgiRPSI9IJ22mUlI=",
+          "x-browser-year": "2025",
+          "x-client-data": "CMiXywE="
+        },
+        "response_headers": {
+          "cache-control": "no-cache, no-store, must-revalidate",
+          "content-type": "text/plain"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T07:54:47.343Z",
+        "duration_ms": -1,
+        "endpoint": "/g/collect",
+        "host": "region1.analytics.google.com",
+        "method": "POST",
+        "status": -1,
+        "query_params": {
+          "v": [
+            "2"
+          ],
+          "tid": [
+            "G-6MTT8J065V"
+          ],
+          "gtm": [
+            "45je57g1v9102478788za200"
+          ],
+          "_p": [
+            "1753084471890"
+          ],
+          "gcd": [
+            "13l3l3l3l1l1"
+          ],
+          "npa": [
+            "0"
+          ],
+          "dma": [
+            "0"
+          ],
+          "tag_exp": [
+            "101509157~103116026~103200004~103233427~104684208~104684211~104921715~104921717"
+          ],
+          "gdid": [
+            "dMDhkMT"
+          ],
+          "cid": [
+            "654300432.1753084466"
+          ],
+          "ul": [
+            "en-gb"
+          ],
+          "sr": [
+            "800x600"
+          ],
+          "uaa": [
+            "arm"
+          ],
+          "uab": [
+            "64"
+          ],
+          "uafvl": [
+            "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+          ],
+          "uamb": [
+            "0"
+          ],
+          "uap": [
+            "macOS"
+          ],
+          "uapv": [
+            "15.5.0"
+          ],
+          "uaw": [
+            "0"
+          ],
+          "are": [
+            "1"
+          ],
+          "frm": [
+            "0"
+          ],
+          "pscdl": [
+            "noapi"
+          ],
+          "_eu": [
+            "AAAAAAQ"
+          ],
+          "_s": [
+            "3"
+          ],
+          "sid": [
+            "1753084465"
+          ],
+          "sct": [
+            "1"
+          ],
+          "seg": [
+            "1"
+          ],
+          "dl": [
+            "https://www.canterbury.gov.uk/bins-and-waste/find-your-bin-collection-dates?postcode=CT11AL"
+          ],
+          "dr": [
+            "https://www.canterbury.gov.uk/bins-and-waste/find-your-bin-collection-dates"
+          ],
+          "dt": [
+            "Find your bin collection dates | Canterbury City Council"
+          ],
+          "_tu": [
+            "QA"
+          ],
+          "en": [
+            "user_engagement"
+          ],
+          "_et": [
+            "13264"
+          ],
+          "tfd": [
+            "16339"
+          ]
+        },
+        "request_headers": {
+          "referer": "https://www.canterbury.gov.uk/"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T07:54:52.400Z",
+        "duration_ms": 14.569,
+        "endpoint": "/g/collect",
+        "host": "region1.analytics.google.com",
+        "method": "POST",
+        "status": 204,
+        "query_params": {
+          "v": [
+            "2"
+          ],
+          "tid": [
+            "G-6MTT8J065V"
+          ],
+          "gtm": [
+            "45je57g1v9102478788za200"
+          ],
+          "_p": [
+            "1753084487362"
+          ],
+          "gcd": [
+            "13l3l3l3l1l1"
+          ],
+          "npa": [
+            "0"
+          ],
+          "dma": [
+            "0"
+          ],
+          "tag_exp": [
+            "101509157~103116026~103200004~103233427~104684208~104684211~104921715~104921717"
+          ],
+          "gdid": [
+            "dMDhkMT"
+          ],
+          "cid": [
+            "654300432.1753084466"
+          ],
+          "ul": [
+            "en-gb"
+          ],
+          "sr": [
+            "800x600"
+          ],
+          "uaa": [
+            "arm"
+          ],
+          "uab": [
+            "64"
+          ],
+          "uafvl": [
+            "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+          ],
+          "uamb": [
+            "0"
+          ],
+          "uap": [
+            "macOS"
+          ],
+          "uapv": [
+            "15.5.0"
+          ],
+          "uaw": [
+            "0"
+          ],
+          "are": [
+            "1"
+          ],
+          "frm": [
+            "0"
+          ],
+          "pscdl": [
+            "noapi"
+          ],
+          "_eu": [
+            "AAAAAAQ"
+          ],
+          "_s": [
+            "1"
+          ],
+          "sid": [
+            "1753084465"
+          ],
+          "sct": [
+            "1"
+          ],
+          "seg": [
+            "1"
+          ],
+          "dl": [
+            "https://www.canterbury.gov.uk/bins-and-waste/find-your-bin-collection-dates?uprn=200000678946&usrn=5605297"
+          ],
+          "dr": [
+            "https://www.canterbury.gov.uk/bins-and-waste/find-your-bin-collection-dates?postcode=CT11AL"
+          ],
+          "dt": [
+            "Find your bin collection dates | Canterbury City Council"
+          ],
+          "_tu": [
+            "QA"
+          ],
+          "en": [
+            "page_view"
+          ],
+          "_ee": [
+            "1"
+          ],
+          "tfd": [
+            "5535"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "origin": "https://www.canterbury.gov.uk",
+          "referer": "https://www.canterbury.gov.uk/",
+          "x-browser-copyright": "Copyright 2025 Google LLC. All rights reserved.",
+          "x-browser-validation": "qvLgIVtG4U8GgiRPSI9IJ22mUlI=",
+          "x-browser-year": "2025",
+          "x-client-data": "CMiXywE="
+        },
+        "response_headers": {
+          "cache-control": "no-cache, no-store, must-revalidate",
+          "content-type": "text/plain"
+        }
+      }
+    ],
+    "/report-csp-violation": [
+      {
+        "timestamp": "2025-07-21T07:54:25.776Z",
+        "duration_ms": 68.079,
+        "endpoint": "/report-csp-violation",
+        "host": "www.canterbury.gov.uk",
+        "method": "POST",
+        "status": 200,
+        "request_headers": {
+          "accept": "*/*",
+          "content-type": "application/csp-report",
+          "cookie": "[cookies present]",
+          "origin": "https://www.canterbury.gov.uk",
+          "referer": "https://www.canterbury.gov.uk/bins-and-waste/find-your-bin-collection-dates"
+        },
+        "response_headers": {
+          "cache-control": "must-revalidate, no-cache, private",
+          "content-type": "text/html; charset=UTF-8",
+          "x-cache": "Miss from cloudfront",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "SAMEORIGIN",
+          "x-generator": "Drupal 10 (https://www.drupal.org)"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 0,
+          "content_ref": "da39a3ee5e6b4b0d3255bfef95601890afd80709.html"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T07:54:25.794Z",
+        "duration_ms": 73.36,
+        "endpoint": "/report-csp-violation",
+        "host": "www.canterbury.gov.uk",
+        "method": "POST",
+        "status": 200,
+        "request_headers": {
+          "accept": "*/*",
+          "content-type": "application/csp-report",
+          "cookie": "[cookies present]",
+          "origin": "https://www.canterbury.gov.uk",
+          "referer": "https://www.canterbury.gov.uk/bins-and-waste/find-your-bin-collection-dates"
+        },
+        "response_headers": {
+          "cache-control": "must-revalidate, no-cache, private",
+          "content-type": "text/html; charset=UTF-8",
+          "x-cache": "Miss from cloudfront",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "SAMEORIGIN",
+          "x-generator": "Drupal 10 (https://www.drupal.org)"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 0,
+          "content_ref": "da39a3ee5e6b4b0d3255bfef95601890afd80709.html"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T07:54:31.955Z",
+        "duration_ms": 79.128,
+        "endpoint": "/report-csp-violation",
+        "host": "www.canterbury.gov.uk",
+        "method": "POST",
+        "status": 200,
+        "request_headers": {
+          "accept": "*/*",
+          "content-type": "application/csp-report",
+          "cookie": "[cookies present]",
+          "origin": "https://www.canterbury.gov.uk",
+          "referer": "https://www.canterbury.gov.uk/bins-and-waste/find-your-bin-collection-dates?postcode=CT11AL"
+        },
+        "response_headers": {
+          "cache-control": "must-revalidate, no-cache, private",
+          "content-type": "text/html; charset=UTF-8",
+          "x-cache": "Miss from cloudfront",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "SAMEORIGIN",
+          "x-generator": "Drupal 10 (https://www.drupal.org)"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 0,
+          "content_ref": "da39a3ee5e6b4b0d3255bfef95601890afd80709.html"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T07:54:47.533Z",
+        "duration_ms": 69.369,
+        "endpoint": "/report-csp-violation",
+        "host": "www.canterbury.gov.uk",
+        "method": "POST",
+        "status": 200,
+        "request_headers": {
+          "accept": "*/*",
+          "content-type": "application/csp-report",
+          "cookie": "[cookies present]",
+          "origin": "https://www.canterbury.gov.uk",
+          "referer": "https://www.canterbury.gov.uk/bins-and-waste/find-your-bin-collection-dates?uprn=200000678946&usrn=5605297"
+        },
+        "response_headers": {
+          "cache-control": "must-revalidate, no-cache, private",
+          "content-type": "text/html; charset=UTF-8",
+          "x-cache": "Miss from cloudfront",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "SAMEORIGIN",
+          "x-generator": "Drupal 10 (https://www.drupal.org)"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 0,
+          "content_ref": "da39a3ee5e6b4b0d3255bfef95601890afd80709.html"
+        }
+      }
+    ],
+    "/Beta/get-bin-dates": [
+      {
+        "timestamp": "2025-07-21T07:54:47.531Z",
+        "duration_ms": -1,
+        "endpoint": "/Beta/get-bin-dates",
+        "host": "zbr7r13ke2.execute-api.eu-west-2.amazonaws.com",
+        "method": "POST",
+        "status": -1,
+        "request_headers": {
+          "referer": "https://www.canterbury.gov.uk/",
+          "accept": "*/*",
+          "content-type": "application/json"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T07:54:47.532Z",
+        "duration_ms": -1,
+        "endpoint": "/Beta/get-bin-dates",
+        "host": "zbr7r13ke2.execute-api.eu-west-2.amazonaws.com",
+        "method": "POST",
+        "status": -1,
+        "request_headers": {
+          "referer": "https://www.canterbury.gov.uk/",
+          "accept": "*/*",
+          "content-type": "application/json"
+        }
+      }
+    ]
+  }
 }

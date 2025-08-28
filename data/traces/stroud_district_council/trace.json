@@ -1,567 +1,5934 @@
 {
-  "metadata": {
-    "trace_name": "stroud_district_council",
-    "processed_at": "2025-08-26 18:44:24",
-    "workflow_steps_count": 6,
-    "navigation_events_count": 54
-  },
-  "scraping_patterns": {
-    "login_detected": false,
-    "form_submissions": 20,
-    "navigation_count": 2,
-    "unique_domains": [
-      "maps.googleapis.com",
-      "webassist.onconnect.app",
-      "apikeys.civiccomputing.com",
-      "produkswebassistsignalr18.service.signalr.net",
-      "webassistant.onconnect.app",
-      "www.stroud.gov.uk",
-      "region1.analytics.google.com",
-      "cdnjs.cloudflare.com"
-    ],
-    "api_endpoints": [
-      "https://webassistant.onconnect.app/assets/appConfig.json",
-      "https://webassistant.onconnect.app/assets/appConfig.json",
-      "https://webassistant.onconnect.app/assets/appConfig.json",
-      "https://maps.googleapis.com/maps/api/mapsjs/gen_204?csp_test=true",
-      "https://maps.googleapis.com/maps/api/mapsjs/gen_204?csp_test=true",
-      "https://webassistant.onconnect.app/assets/appConfig.json",
-      "https://maps.googleapis.com/maps/api/mapsjs/gen_204?csp_test=true",
-      "https://webassistant.onconnect.app/assets/appConfig.json"
-    ],
-    "data_extraction_indicators": []
-  },
-  "workflow_steps": [
+  "entries": [
     {
-      "action": "goto",
-      "target": "https://www.stroud.gov.uk/environment/bins-rubbish-recycling",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
-    },
-    {
-      "action": "goto",
-      "target": "https://www.stroud.gov.uk/environment/bins-rubbish-and-recycling/",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
-    },
-    {
-      "action": "click",
-      "target": "aria-ref=e98 >> internal:describe=\"Check your bin day\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
-    },
-    {
-      "action": "fill",
-      "target": "aria-ref=e51 >> internal:describe=\"Postcode Search\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0,
-      "value": "GL10 2AA"
-    },
-    {
-      "action": "click",
-      "target": "aria-ref=e52 >> internal:describe=\"GO button\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
-    },
-    {
-      "action": "click",
-      "target": "aria-ref=e138 >> internal:describe=\"45 Regent Street, Stonehouse, Gloucestershire, GL10 2AA\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
-    }
-  ],
-  "navigation_events": [
-    {
-      "url": "https://www.stroud.gov.uk/environment/bins-rubbish-recycling",
+      "timestamp": "2025-07-21T07:45:15.894Z",
+      "duration_ms": 181.64000000000001,
+      "endpoint": "/environment/{id}",
+      "host": "www.stroud.gov.uk",
       "method": "GET",
       "status": 404,
-      "redirect_url": null,
-      "mime_type": "text/html; charset=utf-8",
-      "size": 21177,
-      "timestamp": "2025-07-21T07:45:15.894Z"
+      "path_params": [
+        "bins-rubbish-recycling"
+      ],
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7"
+      },
+      "response_headers": {
+        "content-type": "text/html; charset=utf-8",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "sameorigin",
+        "x-xss-protection": "1; mode=block"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 21177,
+        "content_ref": "33231372bb73b29f9408d2a50df0d0c13159af46.html"
+      }
     },
     {
-      "url": "https://region1.analytics.google.com/g/collect?v=2&tid=G-75245M5LD9&gtm=45je57g1v9203548124za200&_p=1753083916021&_gaz=1&gcd=13l3l3l3l1l1&npa=0&dma=0&tag_exp=101509157~103116026~103200004~103233427~104684208~104684211&cid=1449902242.1753083916&ul=en-gb&sr=800x600&uaa=arm&uab=64&uafvl=Not)A%253BBrand%3B8.0.0.0%7CChromium%3B138.0.7204.101%7CGoogle%2520Chrome%3B138.0.7204.101&uamb=0&uam=&uap=macOS&uapv=15.5.0&uaw=0&are=1&frm=0&pscdl=noapi&_s=1&sid=1753083916&sct=1&seg=0&dl=https%3A%2F%2Fwww.stroud.gov.uk%2Fenvironment%2Fbins-rubbish-recycling&dt=HTTP%20404&en=page_view&_fv=1&_nsi=1&_ss=1&_ee=1&tfd=238",
+      "timestamp": "2025-07-21T07:45:16.132Z",
+      "duration_ms": 63.854,
+      "endpoint": "/g/collect",
+      "host": "region1.analytics.google.com",
       "method": "POST",
       "status": 204,
-      "redirect_url": null,
-      "mime_type": "text/plain",
-      "size": -1,
-      "timestamp": "2025-07-21T07:45:16.132Z"
+      "query_params": {
+        "v": [
+          "2"
+        ],
+        "tid": [
+          "G-75245M5LD9"
+        ],
+        "gtm": [
+          "45je57g1v9203548124za200"
+        ],
+        "_p": [
+          "1753083916021"
+        ],
+        "_gaz": [
+          "1"
+        ],
+        "gcd": [
+          "13l3l3l3l1l1"
+        ],
+        "npa": [
+          "0"
+        ],
+        "dma": [
+          "0"
+        ],
+        "tag_exp": [
+          "101509157~103116026~103200004~103233427~104684208~104684211"
+        ],
+        "cid": [
+          "1449902242.1753083916"
+        ],
+        "ul": [
+          "en-gb"
+        ],
+        "sr": [
+          "800x600"
+        ],
+        "uaa": [
+          "arm"
+        ],
+        "uab": [
+          "64"
+        ],
+        "uafvl": [
+          "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+        ],
+        "uamb": [
+          "0"
+        ],
+        "uap": [
+          "macOS"
+        ],
+        "uapv": [
+          "15.5.0"
+        ],
+        "uaw": [
+          "0"
+        ],
+        "are": [
+          "1"
+        ],
+        "frm": [
+          "0"
+        ],
+        "pscdl": [
+          "noapi"
+        ],
+        "_s": [
+          "1"
+        ],
+        "sid": [
+          "1753083916"
+        ],
+        "sct": [
+          "1"
+        ],
+        "seg": [
+          "0"
+        ],
+        "dl": [
+          "https://www.stroud.gov.uk/environment/bins-rubbish-recycling"
+        ],
+        "dt": [
+          "HTTP 404"
+        ],
+        "en": [
+          "page_view"
+        ],
+        "_fv": [
+          "1"
+        ],
+        "_nsi": [
+          "1"
+        ],
+        "_ss": [
+          "1"
+        ],
+        "_ee": [
+          "1"
+        ],
+        "tfd": [
+          "238"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "origin": "https://www.stroud.gov.uk",
+        "x-browser-copyright": "Copyright 2025 Google LLC. All rights reserved.",
+        "x-browser-validation": "qvLgIVtG4U8GgiRPSI9IJ22mUlI=",
+        "x-browser-year": "2025",
+        "x-client-data": "CMiXywE="
+      },
+      "response_headers": {
+        "cache-control": "no-cache, no-store, must-revalidate",
+        "content-type": "text/plain"
+      }
     },
     {
-      "url": "https://webassist.onconnect.app/v1/loader/0ee4eac1-6daf-45b3-9a15-8e659f54a849",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json; charset=utf-8",
-      "size": 52,
-      "timestamp": "2025-07-21T07:45:16.169Z"
-    },
-    {
-      "url": "https://apikeys.civiccomputing.com/c/v?d=www.stroud.gov.uk&p=CookieControl%20Multi-Site&v=9&k=d6e0e1ccd74567e5b7a89e46ae67798d9785a787&format=json",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json",
-      "size": 302,
-      "timestamp": "2025-07-21T07:45:16.218Z"
-    },
-    {
-      "url": "https://webassistant.onconnect.app/assets/appConfig.json",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json",
-      "size": 73,
-      "timestamp": "2025-07-21T07:45:16.503Z"
-    },
-    {
-      "url": "https://webassist.onconnect.app/v1/workspaces/0ee4eac1-6daf-45b3-9a15-8e659f54a849/init",
-      "method": "POST",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json; charset=utf-8",
-      "size": 1872,
-      "timestamp": "2025-07-21T07:45:16.573Z"
-    },
-    {
-      "url": "https://produkswebassistsignalr18.service.signalr.net/client/negotiate?hub=webassistant&negotiateVersion=1",
-      "method": "POST",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json",
-      "size": 334,
-      "timestamp": "2025-07-21T07:45:16.690Z"
-    },
-    {
-      "url": "https://webassist.onconnect.app/v1/postback",
-      "method": "POST",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "x-unknown",
-      "size": 0,
-      "timestamp": "2025-07-21T07:45:16.691Z"
-    },
-    {
-      "url": "https://www.stroud.gov.uk/environment/bins-rubbish-and-recycling/",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "text/html; charset=utf-8",
-      "size": 26242,
-      "timestamp": "2025-07-21T07:45:18.989Z"
-    },
-    {
-      "url": "https://webassist.onconnect.app/v1/loader/0ee4eac1-6daf-45b3-9a15-8e659f54a849",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json; charset=utf-8",
-      "size": 52,
-      "timestamp": "2025-07-21T07:45:19.044Z"
-    },
-    {
-      "url": "https://apikeys.civiccomputing.com/c/v?d=www.stroud.gov.uk&p=CookieControl%20Multi-Site&v=9&k=d6e0e1ccd74567e5b7a89e46ae67798d9785a787&format=json",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json",
-      "size": 302,
-      "timestamp": "2025-07-21T07:45:19.100Z"
-    },
-    {
-      "url": "https://region1.analytics.google.com/g/collect?v=2&tid=G-75245M5LD9&gtm=45je57g1v9203548124za200&_p=1753083919032&_gaz=1&gcd=13l3l3l3l1l1&npa=0&dma=0&tag_exp=101509157~103116026~103200004~103233427~104684208~104684211&cid=1342578375.1753083919&ul=en-gb&sr=800x600&uaa=arm&uab=64&uafvl=Not)A%253BBrand%3B8.0.0.0%7CChromium%3B138.0.7204.101%7CGoogle%2520Chrome%3B138.0.7204.101&uamb=0&uam=&uap=macOS&uapv=15.5.0&uaw=0&are=1&frm=0&pscdl=noapi&_s=1&sid=1753083919&sct=1&seg=0&dl=https%3A%2F%2Fwww.stroud.gov.uk%2Fenvironment%2Fbins-rubbish-and-recycling%2F&dt=Bins%2C%20rubbish%20and%20recycling&en=page_view&_fv=1&_nsi=1&_ss=1&_ee=1&tfd=139",
-      "method": "POST",
-      "status": 204,
-      "redirect_url": null,
-      "mime_type": "text/plain",
-      "size": -1,
-      "timestamp": "2025-07-21T07:45:19.109Z"
-    },
-    {
-      "url": "https://webassistant.onconnect.app/assets/appConfig.json",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json",
-      "size": 73,
-      "timestamp": "2025-07-21T07:45:19.184Z"
-    },
-    {
-      "url": "https://webassist.onconnect.app/v1/workspaces/0ee4eac1-6daf-45b3-9a15-8e659f54a849/init",
-      "method": "POST",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json; charset=utf-8",
-      "size": 1830,
-      "timestamp": "2025-07-21T07:45:19.237Z"
-    },
-    {
-      "url": "https://produkswebassistsignalr18.service.signalr.net/client/negotiate?hub=webassistant&negotiateVersion=1",
-      "method": "POST",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json",
-      "size": 334,
-      "timestamp": "2025-07-21T07:45:19.373Z"
-    },
-    {
-      "url": "https://webassist.onconnect.app/v1/workspaces/0ee4eac1-6daf-45b3-9a15-8e659f54a849/appusers/a51c4df9-3969-4562-b7e2-3042b3a452c7/messages?continuationToken=",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json; charset=utf-8",
-      "size": 40,
-      "timestamp": "2025-07-21T07:45:19.373Z"
-    },
-    {
-      "url": "https://webassist.onconnect.app/v1/postback",
-      "method": "POST",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "x-unknown",
-      "size": 0,
-      "timestamp": "2025-07-21T07:45:19.373Z"
-    },
-    {
-      "url": "https://www.stroud.gov.uk/my-house/",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "text/html; charset=utf-8",
-      "size": 27214,
-      "timestamp": "2025-07-21T07:45:20.878Z"
-    },
-    {
-      "url": "https://webassist.onconnect.app/v1/loader/0ee4eac1-6daf-45b3-9a15-8e659f54a849",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json; charset=utf-8",
-      "size": 52,
-      "timestamp": "2025-07-21T07:45:20.972Z"
-    },
-    {
-      "url": "https://region1.analytics.google.com/g/collect?v=2&tid=G-75245M5LD9&gtm=45je57g1v9203548124za200&_p=1753083920960&gcd=13l3l3l3l1l1&npa=0&dma=0&tag_exp=101509157~103116026~103200004~103233427~104684208~104684211&cid=1342578375.1753083919&ul=en-gb&sr=800x600&uaa=arm&uab=64&uafvl=Not)A%253BBrand%3B8.0.0.0%7CChromium%3B138.0.7204.101%7CGoogle%2520Chrome%3B138.0.7204.101&uamb=0&uam=&uap=macOS&uapv=15.5.0&uaw=0&are=1&frm=0&pscdl=noapi&_eu=AAAAAAQ&_s=1&sid=1753083919&sct=1&seg=1&dl=https%3A%2F%2Fwww.stroud.gov.uk%2Fmy-house%2F&dr=https%3A%2F%2Fwww.stroud.gov.uk%2Fenvironment%2Fbins-rubbish-and-recycling%2F&dt=My%20House&en=page_view&_ee=1&tfd=219",
+      "timestamp": "2025-07-21T07:45:16.133Z",
+      "duration_ms": 66.842,
+      "endpoint": "/g/collect",
+      "host": "stats.g.doubleclick.net",
       "method": "POST",
       "status": 204,
-      "redirect_url": null,
-      "mime_type": "text/plain",
-      "size": -1,
-      "timestamp": "2025-07-21T07:45:21.013Z"
+      "query_params": {
+        "v": [
+          "2"
+        ],
+        "tid": [
+          "G-75245M5LD9"
+        ],
+        "cid": [
+          "1449902242.1753083916"
+        ],
+        "gtm": [
+          "45je57g1v9203548124za200"
+        ],
+        "aip": [
+          "1"
+        ],
+        "dma": [
+          "0"
+        ],
+        "gcd": [
+          "13l3l3l3l1l1"
+        ],
+        "npa": [
+          "0"
+        ],
+        "frm": [
+          "0"
+        ],
+        "tag_exp": [
+          "101509157~103116026~103200004~103233427~104684208~104684211"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "origin": "https://www.stroud.gov.uk",
+        "x-browser-copyright": "Copyright 2025 Google LLC. All rights reserved.",
+        "x-browser-validation": "qvLgIVtG4U8GgiRPSI9IJ22mUlI=",
+        "x-browser-year": "2025",
+        "x-client-data": "CMiXywE="
+      },
+      "response_headers": {
+        "cache-control": "no-cache, no-store, must-revalidate",
+        "content-type": "text/plain"
+      }
     },
     {
-      "url": "https://webassistant.onconnect.app/assets/appConfig.json",
+      "timestamp": "2025-07-21T07:45:16.169Z",
+      "duration_ms": 110.696,
+      "endpoint": "/v1/loader/{id}",
+      "host": "webassist.onconnect.app",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json",
-      "size": 73,
-      "timestamp": "2025-07-21T07:45:21.096Z"
+      "path_params": [
+        "0ee4eac1-6daf-45b3-9a15-8e659f54a849"
+      ],
+      "request_headers": {
+        "accept": "*/*",
+        "origin": "https://www.stroud.gov.uk"
+      },
+      "response_headers": {
+        "content-type": "application/json; charset=utf-8",
+        "x-ms-middleware-request-id": "00000000-0000-0000-0000-000000000000"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 52,
+        "content_ref": "3bd0e87f7735a292acfc53909bc55fd480fb94c1.json"
+      }
     },
     {
-      "url": "https://apikeys.civiccomputing.com/c/v?d=www.stroud.gov.uk&p=CookieControl%20Multi-Site&v=9&k=d6e0e1ccd74567e5b7a89e46ae67798d9785a787&format=json",
+      "timestamp": "2025-07-21T07:45:16.218Z",
+      "duration_ms": 54.519000000000005,
+      "endpoint": "/c/v",
+      "host": "apikeys.civiccomputing.com",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json",
-      "size": 302,
-      "timestamp": "2025-07-21T07:45:21.140Z"
+      "query_params": {
+        "d": [
+          "www.stroud.gov.uk"
+        ],
+        "p": [
+          "CookieControl Multi-Site"
+        ],
+        "v": [
+          "9"
+        ],
+        "k": [
+          "d6e0e1ccd74567e5b7a89e46ae67798d9785a787"
+        ],
+        "format": [
+          "json"
+        ]
+      },
+      "request_headers": {
+        "accept": "application/json, text/plain, */*",
+        "origin": "https://www.stroud.gov.uk"
+      },
+      "response_headers": {
+        "cache-control": "max-age=3600, private, no-store",
+        "content-type": "application/json",
+        "x-apikeys": "hit",
+        "x-cf-test": "true",
+        "x-content-type-options": "nosniff",
+        "x-xss-protection": "1"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 302,
+        "content_ref": "f646d97c46f47fc935b85691d0a0f36b86e56780.json"
+      }
     },
     {
-      "url": "https://www.stroud.gov.uk/webservice/HasGardenWaste?uprn=",
+      "timestamp": "2025-07-21T07:45:16.503Z",
+      "duration_ms": 59,
+      "endpoint": "/assets/appConfig.json",
+      "host": "webassistant.onconnect.app",
+      "method": "GET",
+      "status": 200,
+      "request_headers": {
+        "accept": "application/json, text/plain, */*",
+        "origin": "https://www.stroud.gov.uk"
+      },
+      "response_headers": {
+        "content-type": "application/json",
+        "x-azure-ref": "20250721T074516Z-157cdf4dfd4hsh87hC1LONbr5n00000004x0000000005v50",
+        "x-cache": "CONFIG_NOCACHE",
+        "x-ms-request-id": "b173790b-b01e-00f2-6013-fa5cce000000",
+        "x-ms-version": "2018-03-28"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 73,
+        "content_ref": "e8551bc0489c1ba948f1631c51732814c12af1e5.json"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T07:45:16.573Z",
+      "duration_ms": 169.33,
+      "endpoint": "/v1/workspaces/{id}/init",
+      "host": "webassist.onconnect.app",
+      "method": "POST",
+      "status": 200,
+      "path_params": [
+        "0ee4eac1-6daf-45b3-9a15-8e659f54a849"
+      ],
+      "request_headers": {
+        "accept": "application/json, text/plain, */*",
+        "content-type": "application/json",
+        "origin": "https://www.stroud.gov.uk"
+      },
+      "response_headers": {
+        "content-type": "application/json; charset=utf-8",
+        "x-ms-middleware-request-id": "00000000-0000-0000-0000-000000000000"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 1872,
+        "compressed": true,
+        "content_ref": "bf5a01fc84f1a93f035b891c0c607a5247576444.json"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T07:45:16.690Z",
+      "duration_ms": 69.884,
+      "endpoint": "/client/negotiate",
+      "host": "produkswebassistsignalr18.service.signalr.net",
+      "method": "POST",
+      "status": 200,
+      "query_params": {
+        "hub": [
+          "webassistant"
+        ],
+        "negotiateVersion": [
+          "1"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ii0xODMwODc2ODc5In0.eyJuYW1laWQiOiJiMmRlNmJjNS01YjVmLTQwZjMtYWJmMi00YWJhODVhZmJiZDQiLCJ3b3Jrc3BhY2UiOiIwZWU0ZWFjMS02ZGFmLTQ1YjMtOWExNS04ZTY1OWY1NGE4NDkiLCJuYmYiOjE3NTMwODM5MTYsImV4cCI6MTc1MzA4NzUxNiwiaWF0IjoxNzUzMDgzOTE2LCJhdWQiOiJodHRwczovL3Byb2R1a3N3ZWJhc3Npc3RzaWduYWxyMTguc2VydmljZS5zaWduYWxyLm5ldC9jbGllbnQvP2h1Yj13ZWJhc3Npc3RhbnQifQ.CsVhZdannLfstLaqsaNAszg61Cplk7FUlmxKrAoKilE",
+        "content-type": "text/plain;charset=UTF-8",
+        "origin": "https://www.stroud.gov.uk",
+        "x-requested-with": "XMLHttpRequest",
+        "x-signalr-user-agent": "Microsoft SignalR/6.0 (6.0.22; Unknown OS; Browser; Unknown Runtime Version)"
+      },
+      "response_headers": {
+        "content-type": "application/json"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 334,
+        "content_ref": "d8cd14b99078cf2b659d731c7b1262202c54e561.json"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T07:45:16.691Z",
+      "duration_ms": 229.43800000000002,
+      "endpoint": "/v1/postback",
+      "host": "webassist.onconnect.app",
+      "method": "POST",
+      "status": 200,
+      "request_headers": {
+        "accept": "application/json, text/plain, */*",
+        "authorization": "Basic YjJkZTZiYzUtNWI1Zi00MGYzLWFiZjItNGFiYTg1YWZiYmQ0OjF1MHFLcEdiUmpNVkprUjVtdTVKdkZDVE1McVVCbi13ejRXbWpqTGZLLU0=",
+        "content-type": "application/json",
+        "origin": "https://www.stroud.gov.uk",
+        "x-connect-auth": "Basic YjJkZTZiYzUtNWI1Zi00MGYzLWFiZjItNGFiYTg1YWZiYmQ0OjF1MHFLcEdiUmpNVkprUjVtdTVKdkZDVE1McVVCbi13ejRXbWpqTGZLLU0="
+      },
+      "response_headers": {
+        "x-ms-middleware-request-id": "00000000-0000-0000-0000-000000000000"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T07:45:19.031Z",
+      "duration_ms": -1,
+      "endpoint": "/g/collect",
+      "host": "region1.analytics.google.com",
+      "method": "POST",
+      "status": -1,
+      "query_params": {
+        "v": [
+          "2"
+        ],
+        "tid": [
+          "G-75245M5LD9"
+        ],
+        "gtm": [
+          "45je57g1v9203548124za200"
+        ],
+        "_p": [
+          "1753083916021"
+        ],
+        "gcd": [
+          "13l3l3l3l1l1"
+        ],
+        "npa": [
+          "0"
+        ],
+        "dma": [
+          "0"
+        ],
+        "tag_exp": [
+          "101509157~103116026~103200004~103233427~104684208~104684211"
+        ],
+        "cid": [
+          "1449902242.1753083916"
+        ],
+        "ul": [
+          "en-gb"
+        ],
+        "sr": [
+          "800x600"
+        ],
+        "uaa": [
+          "arm"
+        ],
+        "uab": [
+          "64"
+        ],
+        "uafvl": [
+          "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+        ],
+        "uamb": [
+          "0"
+        ],
+        "uap": [
+          "macOS"
+        ],
+        "uapv": [
+          "15.5.0"
+        ],
+        "uaw": [
+          "0"
+        ],
+        "are": [
+          "1"
+        ],
+        "frm": [
+          "0"
+        ],
+        "pscdl": [
+          "noapi"
+        ],
+        "_s": [
+          "3"
+        ],
+        "sid": [
+          "1753083916"
+        ],
+        "sct": [
+          "1"
+        ],
+        "seg": [
+          "0"
+        ],
+        "dl": [
+          "https://www.stroud.gov.uk/environment/bins-rubbish-recycling"
+        ],
+        "dt": [
+          "HTTP 404"
+        ],
+        "en": [
+          "user_engagement"
+        ],
+        "_et": [
+          "2887"
+        ],
+        "tfd": [
+          "3136"
+        ]
+      },
+      "request_headers": {
+        "referer": ""
+      }
+    },
+    {
+      "timestamp": "2025-07-21T07:45:19.030Z",
+      "duration_ms": -1,
+      "endpoint": "/g/collect",
+      "host": "region1.analytics.google.com",
+      "method": "POST",
+      "status": -1,
+      "query_params": {
+        "v": [
+          "2"
+        ],
+        "tid": [
+          "G-75245M5LD9"
+        ],
+        "gtm": [
+          "45je57g1v9203548124za200"
+        ],
+        "_p": [
+          "1753083916021"
+        ],
+        "gcd": [
+          "13l3l3l3l1l1"
+        ],
+        "npa": [
+          "0"
+        ],
+        "dma": [
+          "0"
+        ],
+        "tag_exp": [
+          "101509157~103116026~103200004~103233427~104684208~104684211"
+        ],
+        "cid": [
+          "1449902242.1753083916"
+        ],
+        "ul": [
+          "en-gb"
+        ],
+        "sr": [
+          "800x600"
+        ],
+        "uaa": [
+          "arm"
+        ],
+        "uab": [
+          "64"
+        ],
+        "uafvl": [
+          "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+        ],
+        "uamb": [
+          "0"
+        ],
+        "uap": [
+          "macOS"
+        ],
+        "uapv": [
+          "15.5.0"
+        ],
+        "uaw": [
+          "0"
+        ],
+        "are": [
+          "1"
+        ],
+        "frm": [
+          "0"
+        ],
+        "pscdl": [
+          "noapi"
+        ],
+        "_eu": [
+          "AEAAAAQ"
+        ],
+        "_s": [
+          "2"
+        ],
+        "sid": [
+          "1753083916"
+        ],
+        "sct": [
+          "1"
+        ],
+        "seg": [
+          "0"
+        ],
+        "dl": [
+          "https://www.stroud.gov.uk/environment/bins-rubbish-recycling"
+        ],
+        "dt": [
+          "HTTP 404"
+        ],
+        "en": [
+          "scroll"
+        ],
+        "epn.percent_scrolled": [
+          "90"
+        ],
+        "_et": [
+          "5"
+        ],
+        "tfd": [
+          "3136"
+        ]
+      },
+      "request_headers": {
+        "referer": ""
+      }
+    },
+    {
+      "timestamp": "2025-07-21T07:45:18.989Z",
+      "duration_ms": 34.707,
+      "endpoint": "/environment/{id}",
+      "host": "www.stroud.gov.uk",
+      "method": "GET",
+      "status": 200,
+      "path_params": [
+        "bins-rubbish-and-recycling"
+      ],
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+        "cookie": "[cookies present]"
+      },
+      "response_headers": {
+        "content-type": "text/html; charset=utf-8",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "sameorigin",
+        "x-xss-protection": "1; mode=block"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 26242,
+        "compressed": true,
+        "content_ref": "c0ab7d895f7e44d4fe0bfcc429687f370780fc88.html"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T07:45:19.109Z",
+      "duration_ms": 14.947,
+      "endpoint": "/g/collect",
+      "host": "region1.analytics.google.com",
+      "method": "POST",
+      "status": 204,
+      "query_params": {
+        "v": [
+          "2"
+        ],
+        "tid": [
+          "G-75245M5LD9"
+        ],
+        "gtm": [
+          "45je57g1v9203548124za200"
+        ],
+        "_p": [
+          "1753083919032"
+        ],
+        "_gaz": [
+          "1"
+        ],
+        "gcd": [
+          "13l3l3l3l1l1"
+        ],
+        "npa": [
+          "0"
+        ],
+        "dma": [
+          "0"
+        ],
+        "tag_exp": [
+          "101509157~103116026~103200004~103233427~104684208~104684211"
+        ],
+        "cid": [
+          "1342578375.1753083919"
+        ],
+        "ul": [
+          "en-gb"
+        ],
+        "sr": [
+          "800x600"
+        ],
+        "uaa": [
+          "arm"
+        ],
+        "uab": [
+          "64"
+        ],
+        "uafvl": [
+          "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+        ],
+        "uamb": [
+          "0"
+        ],
+        "uap": [
+          "macOS"
+        ],
+        "uapv": [
+          "15.5.0"
+        ],
+        "uaw": [
+          "0"
+        ],
+        "are": [
+          "1"
+        ],
+        "frm": [
+          "0"
+        ],
+        "pscdl": [
+          "noapi"
+        ],
+        "_s": [
+          "1"
+        ],
+        "sid": [
+          "1753083919"
+        ],
+        "sct": [
+          "1"
+        ],
+        "seg": [
+          "0"
+        ],
+        "dl": [
+          "https://www.stroud.gov.uk/environment/bins-rubbish-and-recycling/"
+        ],
+        "dt": [
+          "Bins, rubbish and recycling"
+        ],
+        "en": [
+          "page_view"
+        ],
+        "_fv": [
+          "1"
+        ],
+        "_nsi": [
+          "1"
+        ],
+        "_ss": [
+          "1"
+        ],
+        "_ee": [
+          "1"
+        ],
+        "tfd": [
+          "139"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "origin": "https://www.stroud.gov.uk",
+        "x-browser-copyright": "Copyright 2025 Google LLC. All rights reserved.",
+        "x-browser-validation": "qvLgIVtG4U8GgiRPSI9IJ22mUlI=",
+        "x-browser-year": "2025",
+        "x-client-data": "CMiXywE="
+      },
+      "response_headers": {
+        "cache-control": "no-cache, no-store, must-revalidate",
+        "content-type": "text/plain"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T07:45:19.044Z",
+      "duration_ms": 27.968,
+      "endpoint": "/v1/loader/{id}",
+      "host": "webassist.onconnect.app",
+      "method": "GET",
+      "status": 200,
+      "path_params": [
+        "0ee4eac1-6daf-45b3-9a15-8e659f54a849"
+      ],
+      "request_headers": {
+        "accept": "*/*",
+        "origin": "https://www.stroud.gov.uk"
+      },
+      "response_headers": {
+        "content-type": "application/json; charset=utf-8",
+        "x-ms-middleware-request-id": "00000000-0000-0000-0000-000000000000"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 52,
+        "content_ref": "3bd0e87f7735a292acfc53909bc55fd480fb94c1.json"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T07:45:19.100Z",
+      "duration_ms": 20.148,
+      "endpoint": "/c/v",
+      "host": "apikeys.civiccomputing.com",
+      "method": "GET",
+      "status": 200,
+      "query_params": {
+        "d": [
+          "www.stroud.gov.uk"
+        ],
+        "p": [
+          "CookieControl Multi-Site"
+        ],
+        "v": [
+          "9"
+        ],
+        "k": [
+          "d6e0e1ccd74567e5b7a89e46ae67798d9785a787"
+        ],
+        "format": [
+          "json"
+        ]
+      },
+      "request_headers": {
+        "accept": "application/json, text/plain, */*",
+        "origin": "https://www.stroud.gov.uk"
+      },
+      "response_headers": {
+        "cache-control": "max-age=3600, private, no-store",
+        "content-type": "application/json",
+        "x-apikeys": "hit",
+        "x-cf-test": "true",
+        "x-content-type-options": "nosniff",
+        "x-xss-protection": "1"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 302,
+        "content_ref": "f646d97c46f47fc935b85691d0a0f36b86e56780.json"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T07:45:19.109Z",
+      "duration_ms": 14.402000000000001,
+      "endpoint": "/g/collect",
+      "host": "stats.g.doubleclick.net",
+      "method": "POST",
+      "status": 204,
+      "query_params": {
+        "v": [
+          "2"
+        ],
+        "tid": [
+          "G-75245M5LD9"
+        ],
+        "cid": [
+          "1342578375.1753083919"
+        ],
+        "gtm": [
+          "45je57g1v9203548124za200"
+        ],
+        "aip": [
+          "1"
+        ],
+        "dma": [
+          "0"
+        ],
+        "gcd": [
+          "13l3l3l3l1l1"
+        ],
+        "npa": [
+          "0"
+        ],
+        "frm": [
+          "0"
+        ],
+        "tag_exp": [
+          "101509157~103116026~103200004~103233427~104684208~104684211"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "origin": "https://www.stroud.gov.uk",
+        "x-browser-copyright": "Copyright 2025 Google LLC. All rights reserved.",
+        "x-browser-validation": "qvLgIVtG4U8GgiRPSI9IJ22mUlI=",
+        "x-browser-year": "2025",
+        "x-client-data": "CMiXywE="
+      },
+      "response_headers": {
+        "cache-control": "no-cache, no-store, must-revalidate",
+        "content-type": "text/plain"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T07:45:19.184Z",
+      "duration_ms": 0.598,
+      "endpoint": "/assets/appConfig.json",
+      "host": "webassistant.onconnect.app",
+      "method": "GET",
+      "status": 200,
+      "request_headers": {
+        "referer": "",
+        "accept": "application/json, text/plain, */*"
+      },
+      "response_headers": {
+        "x-ms-version": "2018-03-28",
+        "x-ms-request-id": "b173790b-b01e-00f2-6013-fa5cce000000",
+        "x-cache": "CONFIG_NOCACHE",
+        "content-type": "application/json",
+        "x-azure-ref": "20250721T074516Z-157cdf4dfd4hsh87hC1LONbr5n00000004x0000000005v50"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 73,
+        "compressed": true,
+        "content_ref": "e8551bc0489c1ba948f1631c51732814c12af1e5.json"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T07:45:19.237Z",
+      "duration_ms": 134.082,
+      "endpoint": "/v1/workspaces/{id}/init",
+      "host": "webassist.onconnect.app",
+      "method": "POST",
+      "status": 200,
+      "path_params": [
+        "0ee4eac1-6daf-45b3-9a15-8e659f54a849"
+      ],
+      "request_headers": {
+        "accept": "application/json, text/plain, */*",
+        "authorization": "Basic YjJkZTZiYzUtNWI1Zi00MGYzLWFiZjItNGFiYTg1YWZiYmQ0OjF1MHFLcEdiUmpNVkprUjVtdTVKdkZDVE1McVVCbi13ejRXbWpqTGZLLU0=",
+        "content-type": "application/json",
+        "origin": "https://www.stroud.gov.uk",
+        "x-connect-auth": "Basic YjJkZTZiYzUtNWI1Zi00MGYzLWFiZjItNGFiYTg1YWZiYmQ0OjF1MHFLcEdiUmpNVkprUjVtdTVKdkZDVE1McVVCbi13ejRXbWpqTGZLLU0="
+      },
+      "response_headers": {
+        "content-type": "application/json; charset=utf-8",
+        "x-ms-middleware-request-id": "00000000-0000-0000-0000-000000000000"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 1830,
+        "compressed": true,
+        "content_ref": "310f0a04abacf8149a0d54002fd68b4ac53e5132.json"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T07:45:19.373Z",
+      "duration_ms": 18.791,
+      "endpoint": "/client/negotiate",
+      "host": "produkswebassistsignalr18.service.signalr.net",
+      "method": "POST",
+      "status": 200,
+      "query_params": {
+        "hub": [
+          "webassistant"
+        ],
+        "negotiateVersion": [
+          "1"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IjIwNTE3MDMyNDMifQ.eyJuYW1laWQiOiJiMmRlNmJjNS01YjVmLTQwZjMtYWJmMi00YWJhODVhZmJiZDQiLCJ3b3Jrc3BhY2UiOiIwZWU0ZWFjMS02ZGFmLTQ1YjMtOWExNS04ZTY1OWY1NGE4NDkiLCJuYmYiOjE3NTMwODM5MTksImV4cCI6MTc1MzA4NzUxOSwiaWF0IjoxNzUzMDgzOTE5LCJhdWQiOiJodHRwczovL3Byb2R1a3N3ZWJhc3Npc3RzaWduYWxyMTguc2VydmljZS5zaWduYWxyLm5ldC9jbGllbnQvP2h1Yj13ZWJhc3Npc3RhbnQifQ.HB7xhV_vkkf55oVvxXHoNPX-B379CYbq8hbXJR4e0Tk",
+        "content-type": "text/plain;charset=UTF-8",
+        "origin": "https://www.stroud.gov.uk",
+        "x-requested-with": "XMLHttpRequest",
+        "x-signalr-user-agent": "Microsoft SignalR/6.0 (6.0.22; Unknown OS; Browser; Unknown Runtime Version)"
+      },
+      "response_headers": {
+        "content-type": "application/json"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 334,
+        "content_ref": "55d0c503b326af0b700e91ff49a57308d62f1874.json"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T07:45:19.373Z",
+      "duration_ms": 83.256,
+      "endpoint": "/v1/workspaces/{id}/appusers/{id}/messages",
+      "host": "webassist.onconnect.app",
+      "method": "GET",
+      "status": 200,
+      "path_params": [
+        "0ee4eac1-6daf-45b3-9a15-8e659f54a849",
+        "a51c4df9-3969-4562-b7e2-3042b3a452c7"
+      ],
+      "request_headers": {
+        "accept": "application/json, text/plain, */*",
+        "authorization": "Basic YjJkZTZiYzUtNWI1Zi00MGYzLWFiZjItNGFiYTg1YWZiYmQ0OjF1MHFLcEdiUmpNVkprUjVtdTVKdkZDVE1McVVCbi13ejRXbWpqTGZLLU0=",
+        "content-type": "application/json",
+        "origin": "https://www.stroud.gov.uk",
+        "x-connect-auth": "Basic YjJkZTZiYzUtNWI1Zi00MGYzLWFiZjItNGFiYTg1YWZiYmQ0OjF1MHFLcEdiUmpNVkprUjVtdTVKdkZDVE1McVVCbi13ejRXbWpqTGZLLU0="
+      },
+      "response_headers": {
+        "content-type": "application/json; charset=utf-8",
+        "x-ms-middleware-request-id": "00000000-0000-0000-0000-000000000000"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 40,
+        "content_ref": "1037334915cdbbe4abf707856b72a38f00349a04.json"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T07:45:19.373Z",
+      "duration_ms": 160.20399999999998,
+      "endpoint": "/v1/postback",
+      "host": "webassist.onconnect.app",
+      "method": "POST",
+      "status": 200,
+      "request_headers": {
+        "accept": "application/json, text/plain, */*",
+        "authorization": "Basic YjJkZTZiYzUtNWI1Zi00MGYzLWFiZjItNGFiYTg1YWZiYmQ0OjF1MHFLcEdiUmpNVkprUjVtdTVKdkZDVE1McVVCbi13ejRXbWpqTGZLLU0=",
+        "content-type": "application/json",
+        "origin": "https://www.stroud.gov.uk",
+        "x-connect-auth": "Basic YjJkZTZiYzUtNWI1Zi00MGYzLWFiZjItNGFiYTg1YWZiYmQ0OjF1MHFLcEdiUmpNVkprUjVtdTVKdkZDVE1McVVCbi13ejRXbWpqTGZLLU0="
+      },
+      "response_headers": {
+        "x-ms-middleware-request-id": "00000000-0000-0000-0000-000000000000"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T07:45:20.958Z",
+      "duration_ms": -1,
+      "endpoint": "/g/collect",
+      "host": "region1.analytics.google.com",
+      "method": "POST",
+      "status": -1,
+      "query_params": {
+        "v": [
+          "2"
+        ],
+        "tid": [
+          "G-75245M5LD9"
+        ],
+        "gtm": [
+          "45je57g1v9203548124za200"
+        ],
+        "_p": [
+          "1753083919032"
+        ],
+        "gcd": [
+          "13l3l3l3l1l1"
+        ],
+        "npa": [
+          "0"
+        ],
+        "dma": [
+          "0"
+        ],
+        "tag_exp": [
+          "101509157~103116026~103200004~103233427~104684208~104684211"
+        ],
+        "cid": [
+          "1342578375.1753083919"
+        ],
+        "ul": [
+          "en-gb"
+        ],
+        "sr": [
+          "800x600"
+        ],
+        "uaa": [
+          "arm"
+        ],
+        "uab": [
+          "64"
+        ],
+        "uafvl": [
+          "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+        ],
+        "uamb": [
+          "0"
+        ],
+        "uap": [
+          "macOS"
+        ],
+        "uapv": [
+          "15.5.0"
+        ],
+        "uaw": [
+          "0"
+        ],
+        "are": [
+          "1"
+        ],
+        "frm": [
+          "0"
+        ],
+        "pscdl": [
+          "noapi"
+        ],
+        "_eu": [
+          "AAAAAAQ"
+        ],
+        "_s": [
+          "2"
+        ],
+        "sid": [
+          "1753083919"
+        ],
+        "sct": [
+          "1"
+        ],
+        "seg": [
+          "0"
+        ],
+        "dl": [
+          "https://www.stroud.gov.uk/environment/bins-rubbish-and-recycling/"
+        ],
+        "dt": [
+          "Bins, rubbish and recycling"
+        ],
+        "en": [
+          "user_engagement"
+        ],
+        "_et": [
+          "1868"
+        ],
+        "tfd": [
+          "2010"
+        ]
+      },
+      "request_headers": {
+        "referer": ""
+      }
+    },
+    {
+      "timestamp": "2025-07-21T07:45:20.878Z",
+      "duration_ms": 87.768,
+      "endpoint": "/my-house",
+      "host": "www.stroud.gov.uk",
+      "method": "GET",
+      "status": 200,
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+        "cookie": "[cookies present]",
+        "referer": "https://www.stroud.gov.uk/environment/bins-rubbish-and-recycling/"
+      },
+      "response_headers": {
+        "content-type": "text/html; charset=utf-8",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "sameorigin",
+        "x-xss-protection": "1; mode=block"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 27214,
+        "compressed": true,
+        "content_ref": "a7d292fb96a32432eaf997fa95b17f01c319e151.html"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T07:45:21.013Z",
+      "duration_ms": 14.384,
+      "endpoint": "/g/collect",
+      "host": "region1.analytics.google.com",
+      "method": "POST",
+      "status": 204,
+      "query_params": {
+        "v": [
+          "2"
+        ],
+        "tid": [
+          "G-75245M5LD9"
+        ],
+        "gtm": [
+          "45je57g1v9203548124za200"
+        ],
+        "_p": [
+          "1753083920960"
+        ],
+        "gcd": [
+          "13l3l3l3l1l1"
+        ],
+        "npa": [
+          "0"
+        ],
+        "dma": [
+          "0"
+        ],
+        "tag_exp": [
+          "101509157~103116026~103200004~103233427~104684208~104684211"
+        ],
+        "cid": [
+          "1342578375.1753083919"
+        ],
+        "ul": [
+          "en-gb"
+        ],
+        "sr": [
+          "800x600"
+        ],
+        "uaa": [
+          "arm"
+        ],
+        "uab": [
+          "64"
+        ],
+        "uafvl": [
+          "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+        ],
+        "uamb": [
+          "0"
+        ],
+        "uap": [
+          "macOS"
+        ],
+        "uapv": [
+          "15.5.0"
+        ],
+        "uaw": [
+          "0"
+        ],
+        "are": [
+          "1"
+        ],
+        "frm": [
+          "0"
+        ],
+        "pscdl": [
+          "noapi"
+        ],
+        "_eu": [
+          "AAAAAAQ"
+        ],
+        "_s": [
+          "1"
+        ],
+        "sid": [
+          "1753083919"
+        ],
+        "sct": [
+          "1"
+        ],
+        "seg": [
+          "1"
+        ],
+        "dl": [
+          "https://www.stroud.gov.uk/my-house/"
+        ],
+        "dr": [
+          "https://www.stroud.gov.uk/environment/bins-rubbish-and-recycling/"
+        ],
+        "dt": [
+          "My House"
+        ],
+        "en": [
+          "page_view"
+        ],
+        "_ee": [
+          "1"
+        ],
+        "tfd": [
+          "219"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "origin": "https://www.stroud.gov.uk",
+        "x-browser-copyright": "Copyright 2025 Google LLC. All rights reserved.",
+        "x-browser-validation": "qvLgIVtG4U8GgiRPSI9IJ22mUlI=",
+        "x-browser-year": "2025",
+        "x-client-data": "CMiXywE="
+      },
+      "response_headers": {
+        "cache-control": "no-cache, no-store, must-revalidate",
+        "content-type": "text/plain"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T07:45:20.972Z",
+      "duration_ms": 30.024,
+      "endpoint": "/v1/loader/{id}",
+      "host": "webassist.onconnect.app",
+      "method": "GET",
+      "status": 200,
+      "path_params": [
+        "0ee4eac1-6daf-45b3-9a15-8e659f54a849"
+      ],
+      "request_headers": {
+        "accept": "*/*",
+        "origin": "https://www.stroud.gov.uk"
+      },
+      "response_headers": {
+        "content-type": "application/json; charset=utf-8",
+        "x-ms-middleware-request-id": "00000000-0000-0000-0000-000000000000"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 52,
+        "content_ref": "3bd0e87f7735a292acfc53909bc55fd480fb94c1.json"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T07:45:21.140Z",
+      "duration_ms": 19.207,
+      "endpoint": "/c/v",
+      "host": "apikeys.civiccomputing.com",
+      "method": "GET",
+      "status": 200,
+      "query_params": {
+        "d": [
+          "www.stroud.gov.uk"
+        ],
+        "p": [
+          "CookieControl Multi-Site"
+        ],
+        "v": [
+          "9"
+        ],
+        "k": [
+          "d6e0e1ccd74567e5b7a89e46ae67798d9785a787"
+        ],
+        "format": [
+          "json"
+        ]
+      },
+      "request_headers": {
+        "accept": "application/json, text/plain, */*",
+        "origin": "https://www.stroud.gov.uk"
+      },
+      "response_headers": {
+        "cache-control": "max-age=3600, private, no-store",
+        "content-type": "application/json",
+        "x-apikeys": "hit",
+        "x-cf-test": "true",
+        "x-content-type-options": "nosniff",
+        "x-xss-protection": "1"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 302,
+        "content_ref": "f646d97c46f47fc935b85691d0a0f36b86e56780.json"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T07:45:21.141Z",
+      "duration_ms": 49.474000000000004,
+      "endpoint": "/webservice/HasGardenWaste",
+      "host": "www.stroud.gov.uk",
       "method": "GET",
       "status": 400,
-      "redirect_url": null,
-      "mime_type": "application/problem+json; charset=utf-8",
-      "size": 241,
-      "timestamp": "2025-07-21T07:45:21.141Z"
+      "request_headers": {
+        "accept": "application/json, text/javascript, */*; q=0.01",
+        "cookie": "[cookies present]",
+        "referer": "https://www.stroud.gov.uk/my-house/",
+        "x-requested-with": "XMLHttpRequest"
+      },
+      "response_headers": {
+        "content-type": "application/problem+json; charset=utf-8",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "sameorigin",
+        "x-powered-by": "ARR/3.0",
+        "x-xss-protection": "1; mode=block"
+      },
+      "response_info": {
+        "type": "application/problem+json",
+        "size": 241,
+        "content_ref": "67c516d16bc30a006c779db0a50f5eeaa03b141b.dat"
+      }
     },
     {
-      "url": "https://webassist.onconnect.app/v1/workspaces/0ee4eac1-6daf-45b3-9a15-8e659f54a849/init",
+      "timestamp": "2025-07-21T07:45:21.096Z",
+      "duration_ms": 0.849,
+      "endpoint": "/assets/appConfig.json",
+      "host": "webassistant.onconnect.app",
+      "method": "GET",
+      "status": 200,
+      "request_headers": {
+        "referer": "",
+        "accept": "application/json, text/plain, */*"
+      },
+      "response_headers": {
+        "x-ms-version": "2018-03-28",
+        "x-ms-request-id": "b173790b-b01e-00f2-6013-fa5cce000000",
+        "x-cache": "CONFIG_NOCACHE",
+        "content-type": "application/json",
+        "x-azure-ref": "20250721T074516Z-157cdf4dfd4hsh87hC1LONbr5n00000004x0000000005v50"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 73,
+        "compressed": true,
+        "content_ref": "e8551bc0489c1ba948f1631c51732814c12af1e5.json"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T07:45:21.217Z",
+      "duration_ms": 42.818,
+      "endpoint": "/maps/api/mapsjs/gen_204",
+      "host": "maps.googleapis.com",
+      "method": "GET",
+      "status": 200,
+      "query_params": {
+        "csp_test": [
+          "true"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "origin": "https://www.stroud.gov.uk",
+        "x-browser-copyright": "Copyright 2025 Google LLC. All rights reserved.",
+        "x-browser-validation": "qvLgIVtG4U8GgiRPSI9IJ22mUlI=",
+        "x-browser-year": "2025",
+        "x-client-data": "CMiXywE="
+      },
+      "response_headers": {
+        "content-type": "application/json; charset=UTF-8",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "SAMEORIGIN",
+        "x-xss-protection": "0"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 3,
+        "content_ref": "5f36b2ea290645ee34d943220a14b54ee5ea5be5.json"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T07:45:21.145Z",
+      "duration_ms": 123.79799999999999,
+      "endpoint": "/v1/workspaces/{id}/init",
+      "host": "webassist.onconnect.app",
       "method": "POST",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json; charset=utf-8",
-      "size": 1830,
-      "timestamp": "2025-07-21T07:45:21.145Z"
+      "path_params": [
+        "0ee4eac1-6daf-45b3-9a15-8e659f54a849"
+      ],
+      "request_headers": {
+        "accept": "application/json, text/plain, */*",
+        "authorization": "Basic YjJkZTZiYzUtNWI1Zi00MGYzLWFiZjItNGFiYTg1YWZiYmQ0OjF1MHFLcEdiUmpNVkprUjVtdTVKdkZDVE1McVVCbi13ejRXbWpqTGZLLU0=",
+        "content-type": "application/json",
+        "origin": "https://www.stroud.gov.uk",
+        "x-connect-auth": "Basic YjJkZTZiYzUtNWI1Zi00MGYzLWFiZjItNGFiYTg1YWZiYmQ0OjF1MHFLcEdiUmpNVkprUjVtdTVKdkZDVE1McVVCbi13ejRXbWpqTGZLLU0="
+      },
+      "response_headers": {
+        "content-type": "application/json; charset=utf-8",
+        "x-ms-middleware-request-id": "00000000-0000-0000-0000-000000000000"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 1830,
+        "compressed": true,
+        "content_ref": "5386161a561e73cadb002f4645e827bc05f03c35.json"
+      }
     },
     {
-      "url": "https://maps.googleapis.com/maps/api/mapsjs/gen_204?csp_test=true",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json; charset=UTF-8",
-      "size": 3,
-      "timestamp": "2025-07-21T07:45:21.217Z"
-    },
-    {
-      "url": "https://produkswebassistsignalr18.service.signalr.net/client/negotiate?hub=webassistant&negotiateVersion=1",
+      "timestamp": "2025-07-21T07:45:21.269Z",
+      "duration_ms": 17.837,
+      "endpoint": "/client/negotiate",
+      "host": "produkswebassistsignalr18.service.signalr.net",
       "method": "POST",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json",
-      "size": 334,
-      "timestamp": "2025-07-21T07:45:21.269Z"
+      "query_params": {
+        "hub": [
+          "webassistant"
+        ],
+        "negotiateVersion": [
+          "1"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IjIwNTE3MDMyNDMifQ.eyJuYW1laWQiOiJiMmRlNmJjNS01YjVmLTQwZjMtYWJmMi00YWJhODVhZmJiZDQiLCJ3b3Jrc3BhY2UiOiIwZWU0ZWFjMS02ZGFmLTQ1YjMtOWExNS04ZTY1OWY1NGE4NDkiLCJuYmYiOjE3NTMwODM5MjEsImV4cCI6MTc1MzA4NzUyMSwiaWF0IjoxNzUzMDgzOTIxLCJhdWQiOiJodHRwczovL3Byb2R1a3N3ZWJhc3Npc3RzaWduYWxyMTguc2VydmljZS5zaWduYWxyLm5ldC9jbGllbnQvP2h1Yj13ZWJhc3Npc3RhbnQifQ.uOnv49VmlzHvgju0WeYceldVO7g7OXAdlvlDzHVCeJo",
+        "content-type": "text/plain;charset=UTF-8",
+        "origin": "https://www.stroud.gov.uk",
+        "x-requested-with": "XMLHttpRequest",
+        "x-signalr-user-agent": "Microsoft SignalR/6.0 (6.0.22; Unknown OS; Browser; Unknown Runtime Version)"
+      },
+      "response_headers": {
+        "content-type": "application/json"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 334,
+        "content_ref": "4361af07a5d81bb143a5be3f3658ce3a07bc6b27.json"
+      }
     },
     {
-      "url": "https://webassist.onconnect.app/v1/workspaces/0ee4eac1-6daf-45b3-9a15-8e659f54a849/appusers/a51c4df9-3969-4562-b7e2-3042b3a452c7/messages?continuationToken=",
+      "timestamp": "2025-07-21T07:45:21.269Z",
+      "duration_ms": 83.178,
+      "endpoint": "/v1/workspaces/{id}/appusers/{id}/messages",
+      "host": "webassist.onconnect.app",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json; charset=utf-8",
-      "size": 40,
-      "timestamp": "2025-07-21T07:45:21.269Z"
+      "path_params": [
+        "0ee4eac1-6daf-45b3-9a15-8e659f54a849",
+        "a51c4df9-3969-4562-b7e2-3042b3a452c7"
+      ],
+      "request_headers": {
+        "accept": "application/json, text/plain, */*",
+        "authorization": "Basic YjJkZTZiYzUtNWI1Zi00MGYzLWFiZjItNGFiYTg1YWZiYmQ0OjF1MHFLcEdiUmpNVkprUjVtdTVKdkZDVE1McVVCbi13ejRXbWpqTGZLLU0=",
+        "content-type": "application/json",
+        "origin": "https://www.stroud.gov.uk",
+        "x-connect-auth": "Basic YjJkZTZiYzUtNWI1Zi00MGYzLWFiZjItNGFiYTg1YWZiYmQ0OjF1MHFLcEdiUmpNVkprUjVtdTVKdkZDVE1McVVCbi13ejRXbWpqTGZLLU0="
+      },
+      "response_headers": {
+        "content-type": "application/json; charset=utf-8",
+        "x-ms-middleware-request-id": "00000000-0000-0000-0000-000000000000"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 40,
+        "content_ref": "1037334915cdbbe4abf707856b72a38f00349a04.json"
+      }
     },
     {
-      "url": "https://webassist.onconnect.app/v1/postback",
+      "timestamp": "2025-07-21T07:45:21.269Z",
+      "duration_ms": 173.427,
+      "endpoint": "/v1/postback",
+      "host": "webassist.onconnect.app",
       "method": "POST",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "x-unknown",
-      "size": 0,
-      "timestamp": "2025-07-21T07:45:21.269Z"
+      "request_headers": {
+        "accept": "application/json, text/plain, */*",
+        "authorization": "Basic YjJkZTZiYzUtNWI1Zi00MGYzLWFiZjItNGFiYTg1YWZiYmQ0OjF1MHFLcEdiUmpNVkprUjVtdTVKdkZDVE1McVVCbi13ejRXbWpqTGZLLU0=",
+        "content-type": "application/json",
+        "origin": "https://www.stroud.gov.uk",
+        "x-connect-auth": "Basic YjJkZTZiYzUtNWI1Zi00MGYzLWFiZjItNGFiYTg1YWZiYmQ0OjF1MHFLcEdiUmpNVkprUjVtdTVKdkZDVE1McVVCbi13ejRXbWpqTGZLLU0="
+      },
+      "response_headers": {
+        "x-ms-middleware-request-id": "00000000-0000-0000-0000-000000000000"
+      }
     },
     {
-      "url": "https://www.stroud.gov.uk/webservice/getaddress?postcode=GL10%202AA&page=0",
+      "timestamp": "2025-07-21T07:45:25.928Z",
+      "duration_ms": 47.449,
+      "endpoint": "/ajax/libs/font-awesome/4.0.0/fonts/{id}",
+      "host": "cdnjs.cloudflare.com",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json; charset=utf-8",
-      "size": 9769,
-      "timestamp": "2025-07-21T07:45:25.927Z"
+      "path_params": [
+        "fontawesome-webfont.woff"
+      ],
+      "query_params": {
+        "v": [
+          "4.0.0"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "origin": "https://www.stroud.gov.uk",
+        "referer": "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.0/css/font-awesome.min.css"
+      },
+      "response_headers": {
+        "cache-control": "public, max-age=30672000",
+        "content-type": "application/octet-stream; charset=utf-8",
+        "x-content-type-options": "nosniff"
+      }
     },
     {
-      "url": "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.0/fonts/fontawesome-webfont.woff?v=4.0.0",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/octet-stream; charset=utf-8",
-      "size": 44476,
-      "timestamp": "2025-07-21T07:45:25.928Z"
-    },
-    {
-      "url": "https://region1.analytics.google.com/g/collect?v=2&tid=G-75245M5LD9&gtm=45je57g1v9203548124za200&_p=1753083920960&gcd=13l3l3l3l1l1&npa=0&dma=0&tag_exp=101509157~103116026~103200004~103233427~104684208~104684211&cid=1342578375.1753083919&ul=en-gb&sr=800x600&uaa=arm&uab=64&uafvl=Not)A%253BBrand%3B8.0.0.0%7CChromium%3B138.0.7204.101%7CGoogle%2520Chrome%3B138.0.7204.101&uamb=0&uam=&uap=macOS&uapv=15.5.0&uaw=0&are=1&frm=0&pscdl=noapi&_eu=AEAAAAQ&_s=2&sid=1753083919&sct=1&seg=1&dl=https%3A%2F%2Fwww.stroud.gov.uk%2Fmy-house%2F&dr=https%3A%2F%2Fwww.stroud.gov.uk%2Fenvironment%2Fbins-rubbish-and-recycling%2F&dt=My%20House&en=scroll&epn.percent_scrolled=90&_et=7&tfd=5222",
+      "timestamp": "2025-07-21T07:45:26.002Z",
+      "duration_ms": 14.727,
+      "endpoint": "/g/collect",
+      "host": "region1.analytics.google.com",
       "method": "POST",
       "status": 204,
-      "redirect_url": null,
-      "mime_type": "text/plain",
-      "size": -1,
-      "timestamp": "2025-07-21T07:45:26.002Z"
+      "query_params": {
+        "v": [
+          "2"
+        ],
+        "tid": [
+          "G-75245M5LD9"
+        ],
+        "gtm": [
+          "45je57g1v9203548124za200"
+        ],
+        "_p": [
+          "1753083920960"
+        ],
+        "gcd": [
+          "13l3l3l3l1l1"
+        ],
+        "npa": [
+          "0"
+        ],
+        "dma": [
+          "0"
+        ],
+        "tag_exp": [
+          "101509157~103116026~103200004~103233427~104684208~104684211"
+        ],
+        "cid": [
+          "1342578375.1753083919"
+        ],
+        "ul": [
+          "en-gb"
+        ],
+        "sr": [
+          "800x600"
+        ],
+        "uaa": [
+          "arm"
+        ],
+        "uab": [
+          "64"
+        ],
+        "uafvl": [
+          "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+        ],
+        "uamb": [
+          "0"
+        ],
+        "uap": [
+          "macOS"
+        ],
+        "uapv": [
+          "15.5.0"
+        ],
+        "uaw": [
+          "0"
+        ],
+        "are": [
+          "1"
+        ],
+        "frm": [
+          "0"
+        ],
+        "pscdl": [
+          "noapi"
+        ],
+        "_eu": [
+          "AEAAAAQ"
+        ],
+        "_s": [
+          "2"
+        ],
+        "sid": [
+          "1753083919"
+        ],
+        "sct": [
+          "1"
+        ],
+        "seg": [
+          "1"
+        ],
+        "dl": [
+          "https://www.stroud.gov.uk/my-house/"
+        ],
+        "dr": [
+          "https://www.stroud.gov.uk/environment/bins-rubbish-and-recycling/"
+        ],
+        "dt": [
+          "My House"
+        ],
+        "en": [
+          "scroll"
+        ],
+        "epn.percent_scrolled": [
+          "90"
+        ],
+        "_et": [
+          "7"
+        ],
+        "tfd": [
+          "5222"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "origin": "https://www.stroud.gov.uk",
+        "x-browser-copyright": "Copyright 2025 Google LLC. All rights reserved.",
+        "x-browser-validation": "qvLgIVtG4U8GgiRPSI9IJ22mUlI=",
+        "x-browser-year": "2025",
+        "x-client-data": "CMiXywE="
+      },
+      "response_headers": {
+        "cache-control": "no-cache, no-store, must-revalidate",
+        "content-type": "text/plain"
+      }
     },
     {
-      "url": "https://www.stroud.gov.uk/my-house?uprn=100120511889&postcode=GL10+2AA",
+      "timestamp": "2025-07-21T07:45:25.927Z",
+      "duration_ms": 389.433,
+      "endpoint": "/webservice/getaddress",
+      "host": "www.stroud.gov.uk",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "text/html; charset=utf-8",
-      "size": 39703,
-      "timestamp": "2025-07-21T07:45:38.248Z"
+      "query_params": {
+        "postcode": [
+          "GL10 2AA"
+        ],
+        "page": [
+          "0"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "cookie": "[cookies present]",
+        "referer": "https://www.stroud.gov.uk/my-house/",
+        "x-requested-with": "XMLHttpRequest"
+      },
+      "response_headers": {
+        "content-type": "application/json; charset=utf-8",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "sameorigin",
+        "x-powered-by": "ARR/3.0",
+        "x-xss-protection": "1; mode=block"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 9769,
+        "content_ref": "d81b84d56dfe21722ac9b0b16b94de7f9b46cade.json"
+      }
     },
     {
-      "url": "https://webassist.onconnect.app/v1/loader/0ee4eac1-6daf-45b3-9a15-8e659f54a849",
+      "timestamp": "2025-07-21T07:45:40.043Z",
+      "duration_ms": -1,
+      "endpoint": "/g/collect",
+      "host": "region1.analytics.google.com",
+      "method": "POST",
+      "status": -1,
+      "query_params": {
+        "v": [
+          "2"
+        ],
+        "tid": [
+          "G-75245M5LD9"
+        ],
+        "gtm": [
+          "45je57g1v9203548124za200"
+        ],
+        "_p": [
+          "1753083920960"
+        ],
+        "gcd": [
+          "13l3l3l3l1l1"
+        ],
+        "npa": [
+          "0"
+        ],
+        "dma": [
+          "0"
+        ],
+        "tag_exp": [
+          "101509157~103116026~103200004~103233427~104684208~104684211"
+        ],
+        "cid": [
+          "1342578375.1753083919"
+        ],
+        "ul": [
+          "en-gb"
+        ],
+        "sr": [
+          "800x600"
+        ],
+        "uaa": [
+          "arm"
+        ],
+        "uab": [
+          "64"
+        ],
+        "uafvl": [
+          "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+        ],
+        "uamb": [
+          "0"
+        ],
+        "uap": [
+          "macOS"
+        ],
+        "uapv": [
+          "15.5.0"
+        ],
+        "uaw": [
+          "0"
+        ],
+        "are": [
+          "1"
+        ],
+        "frm": [
+          "0"
+        ],
+        "pscdl": [
+          "noapi"
+        ],
+        "_eu": [
+          "AAAAAAQ"
+        ],
+        "_s": [
+          "3"
+        ],
+        "sid": [
+          "1753083919"
+        ],
+        "sct": [
+          "1"
+        ],
+        "seg": [
+          "1"
+        ],
+        "dl": [
+          "https://www.stroud.gov.uk/my-house/"
+        ],
+        "dr": [
+          "https://www.stroud.gov.uk/environment/bins-rubbish-and-recycling/"
+        ],
+        "dt": [
+          "My House"
+        ],
+        "en": [
+          "user_engagement"
+        ],
+        "_et": [
+          "19032"
+        ],
+        "tfd": [
+          "19264"
+        ]
+      },
+      "request_headers": {
+        "referer": ""
+      }
+    },
+    {
+      "timestamp": "2025-07-21T07:45:38.248Z",
+      "duration_ms": 1793.9019999999998,
+      "endpoint": "/my-house",
+      "host": "www.stroud.gov.uk",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json; charset=utf-8",
-      "size": 52,
-      "timestamp": "2025-07-21T07:45:40.076Z"
+      "query_params": {
+        "uprn": [
+          "100120511889"
+        ],
+        "postcode": [
+          "GL10 2AA"
+        ]
+      },
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+        "cookie": "[cookies present]",
+        "referer": "https://www.stroud.gov.uk/my-house/"
+      },
+      "response_headers": {
+        "content-type": "text/html; charset=utf-8",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "sameorigin",
+        "x-xss-protection": "1; mode=block"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 39703,
+        "compressed": true,
+        "content_ref": "13e768bb40c06e32f3c8a156b9b61da13c772f7c.html"
+      }
     },
     {
-      "url": "https://apikeys.civiccomputing.com/c/v?d=www.stroud.gov.uk&p=CookieControl%20Multi-Site&v=9&k=d6e0e1ccd74567e5b7a89e46ae67798d9785a787&format=json",
+      "timestamp": "2025-07-21T07:45:40.101Z",
+      "duration_ms": 1.064,
+      "endpoint": "/ajax/libs/font-awesome/4.0.0/fonts/{id}",
+      "host": "cdnjs.cloudflare.com",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json",
-      "size": 302,
-      "timestamp": "2025-07-21T07:45:40.099Z"
+      "path_params": [
+        "fontawesome-webfont.woff"
+      ],
+      "query_params": {
+        "v": [
+          "4.0.0"
+        ]
+      },
+      "request_headers": {
+        "referer": ""
+      },
+      "response_headers": {
+        "x-content-type-options": "nosniff",
+        "content-type": "application/octet-stream; charset=utf-8",
+        "cache-control": "public, max-age=30672000"
+      }
     },
     {
-      "url": "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.0/fonts/fontawesome-webfont.woff?v=4.0.0",
+      "timestamp": "2025-07-21T07:45:40.076Z",
+      "duration_ms": 30.715999999999998,
+      "endpoint": "/v1/loader/{id}",
+      "host": "webassist.onconnect.app",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/octet-stream; charset=utf-8",
-      "size": -1,
-      "timestamp": "2025-07-21T07:45:40.101Z"
+      "path_params": [
+        "0ee4eac1-6daf-45b3-9a15-8e659f54a849"
+      ],
+      "request_headers": {
+        "accept": "*/*",
+        "origin": "https://www.stroud.gov.uk"
+      },
+      "response_headers": {
+        "content-type": "application/json; charset=utf-8",
+        "x-ms-middleware-request-id": "00000000-0000-0000-0000-000000000000"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 52,
+        "content_ref": "3bd0e87f7735a292acfc53909bc55fd480fb94c1.json"
+      }
     },
     {
-      "url": "https://maps.googleapis.com/maps/api/mapsjs/gen_204?csp_test=true",
+      "timestamp": "2025-07-21T07:45:40.099Z",
+      "duration_ms": 19.874,
+      "endpoint": "/c/v",
+      "host": "apikeys.civiccomputing.com",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json; charset=UTF-8",
-      "size": 3,
-      "timestamp": "2025-07-21T07:45:40.115Z"
+      "query_params": {
+        "d": [
+          "www.stroud.gov.uk"
+        ],
+        "p": [
+          "CookieControl Multi-Site"
+        ],
+        "v": [
+          "9"
+        ],
+        "k": [
+          "d6e0e1ccd74567e5b7a89e46ae67798d9785a787"
+        ],
+        "format": [
+          "json"
+        ]
+      },
+      "request_headers": {
+        "accept": "application/json, text/plain, */*",
+        "origin": "https://www.stroud.gov.uk"
+      },
+      "response_headers": {
+        "cache-control": "max-age=3600, private, no-store",
+        "content-type": "application/json",
+        "x-apikeys": "hit",
+        "x-cf-test": "true",
+        "x-content-type-options": "nosniff",
+        "x-xss-protection": "1"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 302,
+        "content_ref": "f646d97c46f47fc935b85691d0a0f36b86e56780.json"
+      }
     },
     {
-      "url": "https://www.stroud.gov.uk/webservice/HasGardenWaste?uprn=100120511889",
+      "timestamp": "2025-07-21T07:45:40.115Z",
+      "duration_ms": 13.334000000000001,
+      "endpoint": "/maps/api/mapsjs/gen_204",
+      "host": "maps.googleapis.com",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json; charset=utf-8",
-      "size": 25,
-      "timestamp": "2025-07-21T07:45:40.117Z"
+      "query_params": {
+        "csp_test": [
+          "true"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "origin": "https://www.stroud.gov.uk",
+        "x-browser-copyright": "Copyright 2025 Google LLC. All rights reserved.",
+        "x-browser-validation": "qvLgIVtG4U8GgiRPSI9IJ22mUlI=",
+        "x-browser-year": "2025",
+        "x-client-data": "CMiXywE="
+      },
+      "response_headers": {
+        "content-type": "application/json; charset=UTF-8",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "SAMEORIGIN",
+        "x-xss-protection": "0"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 3,
+        "content_ref": "5f36b2ea290645ee34d943220a14b54ee5ea5be5.json"
+      }
     },
     {
-      "url": "https://webassistant.onconnect.app/assets/appConfig.json",
+      "timestamp": "2025-07-21T07:45:40.219Z",
+      "duration_ms": 0.7929999999999999,
+      "endpoint": "/assets/appConfig.json",
+      "host": "webassistant.onconnect.app",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json",
-      "size": 73,
-      "timestamp": "2025-07-21T07:45:40.219Z"
+      "request_headers": {
+        "referer": "",
+        "accept": "application/json, text/plain, */*"
+      },
+      "response_headers": {
+        "x-ms-version": "2018-03-28",
+        "x-ms-request-id": "b173790b-b01e-00f2-6013-fa5cce000000",
+        "x-cache": "CONFIG_NOCACHE",
+        "content-type": "application/json",
+        "x-azure-ref": "20250721T074516Z-157cdf4dfd4hsh87hC1LONbr5n00000004x0000000005v50"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 73,
+        "compressed": true,
+        "content_ref": "e8551bc0489c1ba948f1631c51732814c12af1e5.json"
+      }
     },
     {
-      "url": "https://webassist.onconnect.app/v1/workspaces/0ee4eac1-6daf-45b3-9a15-8e659f54a849/init",
+      "timestamp": "2025-07-21T07:45:40.117Z",
+      "duration_ms": 183.222,
+      "endpoint": "/webservice/HasGardenWaste",
+      "host": "www.stroud.gov.uk",
+      "method": "GET",
+      "status": 200,
+      "query_params": {
+        "uprn": [
+          "100120511889"
+        ]
+      },
+      "request_headers": {
+        "accept": "application/json, text/javascript, */*; q=0.01",
+        "cookie": "[cookies present]",
+        "referer": "https://www.stroud.gov.uk/my-house?uprn=100120511889&postcode=GL10+2AA",
+        "x-requested-with": "XMLHttpRequest"
+      },
+      "response_headers": {
+        "content-type": "application/json; charset=utf-8",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "sameorigin",
+        "x-powered-by": "ARR/3.0",
+        "x-xss-protection": "1; mode=block"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 25,
+        "content_ref": "ba85353dad0c4e4190392d5453061de309153410.json"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T07:45:40.263Z",
+      "duration_ms": 142.657,
+      "endpoint": "/v1/workspaces/{id}/init",
+      "host": "webassist.onconnect.app",
       "method": "POST",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json; charset=utf-8",
-      "size": 1828,
-      "timestamp": "2025-07-21T07:45:40.263Z"
+      "path_params": [
+        "0ee4eac1-6daf-45b3-9a15-8e659f54a849"
+      ],
+      "request_headers": {
+        "accept": "application/json, text/plain, */*",
+        "authorization": "Basic YjJkZTZiYzUtNWI1Zi00MGYzLWFiZjItNGFiYTg1YWZiYmQ0OjF1MHFLcEdiUmpNVkprUjVtdTVKdkZDVE1McVVCbi13ejRXbWpqTGZLLU0=",
+        "content-type": "application/json",
+        "origin": "https://www.stroud.gov.uk",
+        "x-connect-auth": "Basic YjJkZTZiYzUtNWI1Zi00MGYzLWFiZjItNGFiYTg1YWZiYmQ0OjF1MHFLcEdiUmpNVkprUjVtdTVKdkZDVE1McVVCbi13ejRXbWpqTGZLLU0="
+      },
+      "response_headers": {
+        "content-type": "application/json; charset=utf-8",
+        "x-ms-middleware-request-id": "00000000-0000-0000-0000-000000000000"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 1828,
+        "compressed": true,
+        "content_ref": "1b0bdbf27bab4a2342ff79ebca77b9228268b386.json"
+      }
     },
     {
-      "url": "https://produkswebassistsignalr18.service.signalr.net/client/negotiate?hub=webassistant&negotiateVersion=1",
+      "timestamp": "2025-07-21T07:45:40.412Z",
+      "duration_ms": 21.724,
+      "endpoint": "/client/negotiate",
+      "host": "produkswebassistsignalr18.service.signalr.net",
       "method": "POST",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json",
-      "size": 334,
-      "timestamp": "2025-07-21T07:45:40.412Z"
+      "query_params": {
+        "hub": [
+          "webassistant"
+        ],
+        "negotiateVersion": [
+          "1"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IjE3Nzg5NzExOSJ9.eyJuYW1laWQiOiJiMmRlNmJjNS01YjVmLTQwZjMtYWJmMi00YWJhODVhZmJiZDQiLCJ3b3Jrc3BhY2UiOiIwZWU0ZWFjMS02ZGFmLTQ1YjMtOWExNS04ZTY1OWY1NGE4NDkiLCJuYmYiOjE3NTMwODM5NDAsImV4cCI6MTc1MzA4NzU0MCwiaWF0IjoxNzUzMDgzOTQwLCJhdWQiOiJodHRwczovL3Byb2R1a3N3ZWJhc3Npc3RzaWduYWxyMTguc2VydmljZS5zaWduYWxyLm5ldC9jbGllbnQvP2h1Yj13ZWJhc3Npc3RhbnQifQ.0vf64FWbp851fdehX0JQubJ-0KdCQTaOhtYrbhbG3dk",
+        "content-type": "text/plain;charset=UTF-8",
+        "origin": "https://www.stroud.gov.uk",
+        "x-requested-with": "XMLHttpRequest",
+        "x-signalr-user-agent": "Microsoft SignalR/6.0 (6.0.22; Unknown OS; Browser; Unknown Runtime Version)"
+      },
+      "response_headers": {
+        "content-type": "application/json"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 334,
+        "content_ref": "60c0bbf8e25dc65dea929edf5f92eadc83e9b671.json"
+      }
     },
     {
-      "url": "https://webassist.onconnect.app/v1/workspaces/0ee4eac1-6daf-45b3-9a15-8e659f54a849/appusers/a51c4df9-3969-4562-b7e2-3042b3a452c7/messages?continuationToken=",
+      "timestamp": "2025-07-21T07:45:40.413Z",
+      "duration_ms": 86.857,
+      "endpoint": "/v1/workspaces/{id}/appusers/{id}/messages",
+      "host": "webassist.onconnect.app",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json; charset=utf-8",
-      "size": 40,
-      "timestamp": "2025-07-21T07:45:40.413Z"
+      "path_params": [
+        "0ee4eac1-6daf-45b3-9a15-8e659f54a849",
+        "a51c4df9-3969-4562-b7e2-3042b3a452c7"
+      ],
+      "request_headers": {
+        "accept": "application/json, text/plain, */*",
+        "authorization": "Basic YjJkZTZiYzUtNWI1Zi00MGYzLWFiZjItNGFiYTg1YWZiYmQ0OjF1MHFLcEdiUmpNVkprUjVtdTVKdkZDVE1McVVCbi13ejRXbWpqTGZLLU0=",
+        "content-type": "application/json",
+        "origin": "https://www.stroud.gov.uk",
+        "x-connect-auth": "Basic YjJkZTZiYzUtNWI1Zi00MGYzLWFiZjItNGFiYTg1YWZiYmQ0OjF1MHFLcEdiUmpNVkprUjVtdTVKdkZDVE1McVVCbi13ejRXbWpqTGZLLU0="
+      },
+      "response_headers": {
+        "content-type": "application/json; charset=utf-8",
+        "x-ms-middleware-request-id": "00000000-0000-0000-0000-000000000000"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 40,
+        "content_ref": "1037334915cdbbe4abf707856b72a38f00349a04.json"
+      }
     },
     {
-      "url": "https://webassist.onconnect.app/v1/postback",
+      "timestamp": "2025-07-21T07:45:40.413Z",
+      "duration_ms": 175.099,
+      "endpoint": "/v1/postback",
+      "host": "webassist.onconnect.app",
       "method": "POST",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "x-unknown",
-      "size": 0,
-      "timestamp": "2025-07-21T07:45:40.413Z"
+      "request_headers": {
+        "accept": "application/json, text/plain, */*",
+        "authorization": "Basic YjJkZTZiYzUtNWI1Zi00MGYzLWFiZjItNGFiYTg1YWZiYmQ0OjF1MHFLcEdiUmpNVkprUjVtdTVKdkZDVE1McVVCbi13ejRXbWpqTGZLLU0=",
+        "content-type": "application/json",
+        "origin": "https://www.stroud.gov.uk",
+        "x-connect-auth": "Basic YjJkZTZiYzUtNWI1Zi00MGYzLWFiZjItNGFiYTg1YWZiYmQ0OjF1MHFLcEdiUmpNVkprUjVtdTVKdkZDVE1McVVCbi13ejRXbWpqTGZLLU0="
+      },
+      "response_headers": {
+        "x-ms-middleware-request-id": "00000000-0000-0000-0000-000000000000"
+      }
     },
     {
-      "url": "https://region1.analytics.google.com/g/collect?v=2&tid=G-75245M5LD9&gtm=45je57g1v9203548124za200&_p=1753083940050&gcd=13l3l3l3l1l1&npa=0&dma=0&tag_exp=101509157~103116026~103200004~103233427~104684208~104684211&cid=1342578375.1753083919&ul=en-gb&sr=800x600&uaa=arm&uab=64&uafvl=Not)A%253BBrand%3B8.0.0.0%7CChromium%3B138.0.7204.101%7CGoogle%2520Chrome%3B138.0.7204.101&uamb=0&uam=&uap=macOS&uapv=15.5.0&uaw=0&are=1&frm=0&pscdl=noapi&_eu=AAAAAAQ&_s=1&sid=1753083919&sct=1&seg=1&dl=https%3A%2F%2Fwww.stroud.gov.uk%2Fmy-house%3Fuprn%3D100120511889%26postcode%3DGL10%2B2AA&dr=https%3A%2F%2Fwww.stroud.gov.uk%2Fmy-house%2F&dt=My%20House&en=page_view&_ee=1&tfd=6954",
+      "timestamp": "2025-07-21T07:45:45.102Z",
+      "duration_ms": 13.878,
+      "endpoint": "/g/collect",
+      "host": "region1.analytics.google.com",
       "method": "POST",
       "status": 204,
-      "redirect_url": null,
-      "mime_type": "text/plain",
-      "size": -1,
-      "timestamp": "2025-07-21T07:45:45.102Z"
+      "query_params": {
+        "v": [
+          "2"
+        ],
+        "tid": [
+          "G-75245M5LD9"
+        ],
+        "gtm": [
+          "45je57g1v9203548124za200"
+        ],
+        "_p": [
+          "1753083940050"
+        ],
+        "gcd": [
+          "13l3l3l3l1l1"
+        ],
+        "npa": [
+          "0"
+        ],
+        "dma": [
+          "0"
+        ],
+        "tag_exp": [
+          "101509157~103116026~103200004~103233427~104684208~104684211"
+        ],
+        "cid": [
+          "1342578375.1753083919"
+        ],
+        "ul": [
+          "en-gb"
+        ],
+        "sr": [
+          "800x600"
+        ],
+        "uaa": [
+          "arm"
+        ],
+        "uab": [
+          "64"
+        ],
+        "uafvl": [
+          "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+        ],
+        "uamb": [
+          "0"
+        ],
+        "uap": [
+          "macOS"
+        ],
+        "uapv": [
+          "15.5.0"
+        ],
+        "uaw": [
+          "0"
+        ],
+        "are": [
+          "1"
+        ],
+        "frm": [
+          "0"
+        ],
+        "pscdl": [
+          "noapi"
+        ],
+        "_eu": [
+          "AAAAAAQ"
+        ],
+        "_s": [
+          "1"
+        ],
+        "sid": [
+          "1753083919"
+        ],
+        "sct": [
+          "1"
+        ],
+        "seg": [
+          "1"
+        ],
+        "dl": [
+          "https://www.stroud.gov.uk/my-house?uprn=100120511889&postcode=GL10+2AA"
+        ],
+        "dr": [
+          "https://www.stroud.gov.uk/my-house/"
+        ],
+        "dt": [
+          "My House"
+        ],
+        "en": [
+          "page_view"
+        ],
+        "_ee": [
+          "1"
+        ],
+        "tfd": [
+          "6954"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "origin": "https://www.stroud.gov.uk",
+        "x-browser-copyright": "Copyright 2025 Google LLC. All rights reserved.",
+        "x-browser-validation": "qvLgIVtG4U8GgiRPSI9IJ22mUlI=",
+        "x-browser-year": "2025",
+        "x-client-data": "CMiXywE="
+      },
+      "response_headers": {
+        "cache-control": "no-cache, no-store, must-revalidate",
+        "content-type": "text/plain"
+      }
     },
     {
-      "url": "https://www.stroud.gov.uk/my-house/",
+      "timestamp": "2025-07-21T07:45:48.954Z",
+      "duration_ms": -1,
+      "endpoint": "/g/collect",
+      "host": "region1.analytics.google.com",
+      "method": "POST",
+      "status": -1,
+      "query_params": {
+        "v": [
+          "2"
+        ],
+        "tid": [
+          "G-75245M5LD9"
+        ],
+        "gtm": [
+          "45je57g1v9203548124za200"
+        ],
+        "_p": [
+          "1753083940050"
+        ],
+        "gcd": [
+          "13l3l3l3l1l1"
+        ],
+        "npa": [
+          "0"
+        ],
+        "dma": [
+          "0"
+        ],
+        "tag_exp": [
+          "101509157~103116026~103200004~103233427~104684208~104684211"
+        ],
+        "cid": [
+          "1342578375.1753083919"
+        ],
+        "ul": [
+          "en-gb"
+        ],
+        "sr": [
+          "800x600"
+        ],
+        "uaa": [
+          "arm"
+        ],
+        "uab": [
+          "64"
+        ],
+        "uafvl": [
+          "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+        ],
+        "uamb": [
+          "0"
+        ],
+        "uap": [
+          "macOS"
+        ],
+        "uapv": [
+          "15.5.0"
+        ],
+        "uaw": [
+          "0"
+        ],
+        "are": [
+          "1"
+        ],
+        "frm": [
+          "0"
+        ],
+        "pscdl": [
+          "noapi"
+        ],
+        "_eu": [
+          "AAAAAAQ"
+        ],
+        "_s": [
+          "2"
+        ],
+        "sid": [
+          "1753083919"
+        ],
+        "sct": [
+          "1"
+        ],
+        "seg": [
+          "1"
+        ],
+        "dl": [
+          "https://www.stroud.gov.uk/my-house?uprn=100120511889&postcode=GL10+2AA"
+        ],
+        "dr": [
+          "https://www.stroud.gov.uk/my-house/"
+        ],
+        "dt": [
+          "My House"
+        ],
+        "en": [
+          "user_engagement"
+        ],
+        "_et": [
+          "8848"
+        ],
+        "tfd": [
+          "10812"
+        ]
+      },
+      "request_headers": {
+        "referer": ""
+      }
+    },
+    {
+      "timestamp": "2025-07-21T07:45:48.946Z",
+      "duration_ms": 1.6720000000000002,
+      "endpoint": "/my-house",
+      "host": "www.stroud.gov.uk",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "text/html; charset=utf-8",
-      "size": 27214,
-      "timestamp": "2025-07-21T07:45:48.946Z"
+      "request_headers": {
+        "referer": "https://www.stroud.gov.uk/environment/bins-rubbish-and-recycling/"
+      },
+      "response_headers": {
+        "content-type": "text/html; charset=utf-8",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "sameorigin",
+        "x-xss-protection": "1; mode=block"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 27214,
+        "compressed": true,
+        "content_ref": "a7d292fb96a32432eaf997fa95b17f01c319e151.html"
+      }
     },
     {
-      "url": "https://webassist.onconnect.app/v1/loader/0ee4eac1-6daf-45b3-9a15-8e659f54a849",
+      "timestamp": "2025-07-21T07:45:48.979Z",
+      "duration_ms": 1.043,
+      "endpoint": "/ajax/libs/font-awesome/4.0.0/fonts/{id}",
+      "host": "cdnjs.cloudflare.com",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json; charset=utf-8",
-      "size": 52,
-      "timestamp": "2025-07-21T07:45:48.975Z"
+      "path_params": [
+        "fontawesome-webfont.woff"
+      ],
+      "query_params": {
+        "v": [
+          "4.0.0"
+        ]
+      },
+      "request_headers": {
+        "referer": ""
+      },
+      "response_headers": {
+        "x-content-type-options": "nosniff",
+        "content-type": "application/octet-stream; charset=utf-8",
+        "cache-control": "public, max-age=30672000"
+      }
     },
     {
-      "url": "https://apikeys.civiccomputing.com/c/v?d=www.stroud.gov.uk&p=CookieControl%20Multi-Site&v=9&k=d6e0e1ccd74567e5b7a89e46ae67798d9785a787&format=json",
+      "timestamp": "2025-07-21T07:45:48.975Z",
+      "duration_ms": 1.18,
+      "endpoint": "/v1/loader/{id}",
+      "host": "webassist.onconnect.app",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json",
-      "size": 302,
-      "timestamp": "2025-07-21T07:45:48.975Z"
+      "path_params": [
+        "0ee4eac1-6daf-45b3-9a15-8e659f54a849"
+      ],
+      "request_headers": {
+        "referer": ""
+      },
+      "response_headers": {
+        "x-ms-middleware-request-id": "00000000-0000-0000-0000-000000000000",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 52,
+        "compressed": true,
+        "content_ref": "3bd0e87f7735a292acfc53909bc55fd480fb94c1.json"
+      }
     },
     {
-      "url": "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.0/fonts/fontawesome-webfont.woff?v=4.0.0",
+      "timestamp": "2025-07-21T07:45:48.975Z",
+      "duration_ms": 15.342,
+      "endpoint": "/c/v",
+      "host": "apikeys.civiccomputing.com",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/octet-stream; charset=utf-8",
-      "size": -1,
-      "timestamp": "2025-07-21T07:45:48.979Z"
+      "query_params": {
+        "d": [
+          "www.stroud.gov.uk"
+        ],
+        "p": [
+          "CookieControl Multi-Site"
+        ],
+        "v": [
+          "9"
+        ],
+        "k": [
+          "d6e0e1ccd74567e5b7a89e46ae67798d9785a787"
+        ],
+        "format": [
+          "json"
+        ]
+      },
+      "request_headers": {
+        "accept": "application/json, text/plain, */*",
+        "origin": "https://www.stroud.gov.uk"
+      },
+      "response_headers": {
+        "cache-control": "max-age=3600, private, no-store",
+        "content-type": "application/json",
+        "x-apikeys": "hit",
+        "x-cf-test": "true",
+        "x-content-type-options": "nosniff",
+        "x-xss-protection": "1"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 302,
+        "content_ref": "f646d97c46f47fc935b85691d0a0f36b86e56780.json"
+      }
     },
     {
-      "url": "https://maps.googleapis.com/maps/api/mapsjs/gen_204?csp_test=true",
+      "timestamp": "2025-07-21T07:45:49.001Z",
+      "duration_ms": 0.608,
+      "endpoint": "/maps/api/mapsjs/gen_204",
+      "host": "maps.googleapis.com",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json; charset=UTF-8",
-      "size": 3,
-      "timestamp": "2025-07-21T07:45:49.001Z"
+      "query_params": {
+        "csp_test": [
+          "true"
+        ]
+      },
+      "request_headers": {
+        "referer": ""
+      },
+      "response_headers": {
+        "x-content-type-options": "nosniff",
+        "x-xss-protection": "0",
+        "content-type": "application/json; charset=UTF-8",
+        "x-frame-options": "SAMEORIGIN"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 3,
+        "compressed": true,
+        "content_ref": "5f36b2ea290645ee34d943220a14b54ee5ea5be5.json"
+      }
     },
     {
-      "url": "https://www.stroud.gov.uk/webservice/HasGardenWaste?uprn=",
+      "timestamp": "2025-07-21T07:45:49.002Z",
+      "duration_ms": 0.751,
+      "endpoint": "/webservice/HasGardenWaste",
+      "host": "www.stroud.gov.uk",
       "method": "GET",
       "status": 400,
-      "redirect_url": null,
-      "mime_type": "application/problem+json; charset=utf-8",
-      "size": 241,
-      "timestamp": "2025-07-21T07:45:49.002Z"
+      "request_headers": {
+        "referer": "https://www.stroud.gov.uk/my-house/",
+        "x-requested-with": "XMLHttpRequest",
+        "accept": "application/json, text/javascript, */*; q=0.01"
+      },
+      "response_headers": {
+        "x-content-type-options": "nosniff",
+        "x-xss-protection": "1; mode=block",
+        "content-type": "application/problem+json; charset=utf-8",
+        "x-powered-by": "ARR/3.0",
+        "x-frame-options": "sameorigin"
+      },
+      "response_info": {
+        "type": "application/problem+json",
+        "size": 241,
+        "compressed": true,
+        "content_ref": "67c516d16bc30a006c779db0a50f5eeaa03b141b.dat"
+      }
     },
     {
-      "url": "https://webassistant.onconnect.app/assets/appConfig.json",
+      "timestamp": "2025-07-21T07:45:49.097Z",
+      "duration_ms": 1.479,
+      "endpoint": "/assets/appConfig.json",
+      "host": "webassistant.onconnect.app",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json",
-      "size": 73,
-      "timestamp": "2025-07-21T07:45:49.097Z"
+      "request_headers": {
+        "referer": "",
+        "accept": "application/json, text/plain, */*"
+      },
+      "response_headers": {
+        "x-ms-version": "2018-03-28",
+        "x-ms-request-id": "b173790b-b01e-00f2-6013-fa5cce000000",
+        "x-cache": "CONFIG_NOCACHE",
+        "content-type": "application/json",
+        "x-azure-ref": "20250721T074516Z-157cdf4dfd4hsh87hC1LONbr5n00000004x0000000005v50"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 73,
+        "compressed": true,
+        "content_ref": "e8551bc0489c1ba948f1631c51732814c12af1e5.json"
+      }
     },
     {
-      "url": "https://webassist.onconnect.app/v1/workspaces/0ee4eac1-6daf-45b3-9a15-8e659f54a849/init",
+      "timestamp": "2025-07-21T07:45:49.142Z",
+      "duration_ms": 157.168,
+      "endpoint": "/v1/workspaces/{id}/init",
+      "host": "webassist.onconnect.app",
       "method": "POST",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json; charset=utf-8",
-      "size": 1831,
-      "timestamp": "2025-07-21T07:45:49.142Z"
+      "path_params": [
+        "0ee4eac1-6daf-45b3-9a15-8e659f54a849"
+      ],
+      "request_headers": {
+        "accept": "application/json, text/plain, */*",
+        "authorization": "Basic YjJkZTZiYzUtNWI1Zi00MGYzLWFiZjItNGFiYTg1YWZiYmQ0OjF1MHFLcEdiUmpNVkprUjVtdTVKdkZDVE1McVVCbi13ejRXbWpqTGZLLU0=",
+        "content-type": "application/json",
+        "origin": "https://www.stroud.gov.uk",
+        "x-connect-auth": "Basic YjJkZTZiYzUtNWI1Zi00MGYzLWFiZjItNGFiYTg1YWZiYmQ0OjF1MHFLcEdiUmpNVkprUjVtdTVKdkZDVE1McVVCbi13ejRXbWpqTGZLLU0="
+      },
+      "response_headers": {
+        "content-type": "application/json; charset=utf-8",
+        "x-ms-middleware-request-id": "00000000-0000-0000-0000-000000000000"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 1831,
+        "compressed": true,
+        "content_ref": "62510325a04560e91e5e32afd77b1590ad011dc5.json"
+      }
     },
     {
-      "url": "https://produkswebassistsignalr18.service.signalr.net/client/negotiate?hub=webassistant&negotiateVersion=1",
+      "timestamp": "2025-07-21T07:45:49.306Z",
+      "duration_ms": 20.583,
+      "endpoint": "/client/negotiate",
+      "host": "produkswebassistsignalr18.service.signalr.net",
       "method": "POST",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json",
-      "size": 334,
-      "timestamp": "2025-07-21T07:45:49.306Z"
+      "query_params": {
+        "hub": [
+          "webassistant"
+        ],
+        "negotiateVersion": [
+          "1"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ii0xODMwODc2ODc5In0.eyJuYW1laWQiOiJiMmRlNmJjNS01YjVmLTQwZjMtYWJmMi00YWJhODVhZmJiZDQiLCJ3b3Jrc3BhY2UiOiIwZWU0ZWFjMS02ZGFmLTQ1YjMtOWExNS04ZTY1OWY1NGE4NDkiLCJuYmYiOjE3NTMwODM5NDksImV4cCI6MTc1MzA4NzU0OSwiaWF0IjoxNzUzMDgzOTQ5LCJhdWQiOiJodHRwczovL3Byb2R1a3N3ZWJhc3Npc3RzaWduYWxyMTguc2VydmljZS5zaWduYWxyLm5ldC9jbGllbnQvP2h1Yj13ZWJhc3Npc3RhbnQifQ.-T5E73XJFp-C-EDhEPOgAzbjo7jTXchk1O5TOEJYCYc",
+        "content-type": "text/plain;charset=UTF-8",
+        "origin": "https://www.stroud.gov.uk",
+        "x-requested-with": "XMLHttpRequest",
+        "x-signalr-user-agent": "Microsoft SignalR/6.0 (6.0.22; Unknown OS; Browser; Unknown Runtime Version)"
+      },
+      "response_headers": {
+        "content-type": "application/json"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 334,
+        "content_ref": "068e829175031d67ccbd7a9ab954b80e45dccbca.json"
+      }
     },
     {
-      "url": "https://webassist.onconnect.app/v1/workspaces/0ee4eac1-6daf-45b3-9a15-8e659f54a849/appusers/a51c4df9-3969-4562-b7e2-3042b3a452c7/messages?continuationToken=",
+      "timestamp": "2025-07-21T07:45:49.306Z",
+      "duration_ms": 86.983,
+      "endpoint": "/v1/workspaces/{id}/appusers/{id}/messages",
+      "host": "webassist.onconnect.app",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json; charset=utf-8",
-      "size": 40,
-      "timestamp": "2025-07-21T07:45:49.306Z"
+      "path_params": [
+        "0ee4eac1-6daf-45b3-9a15-8e659f54a849",
+        "a51c4df9-3969-4562-b7e2-3042b3a452c7"
+      ],
+      "request_headers": {
+        "accept": "application/json, text/plain, */*",
+        "authorization": "Basic YjJkZTZiYzUtNWI1Zi00MGYzLWFiZjItNGFiYTg1YWZiYmQ0OjF1MHFLcEdiUmpNVkprUjVtdTVKdkZDVE1McVVCbi13ejRXbWpqTGZLLU0=",
+        "content-type": "application/json",
+        "origin": "https://www.stroud.gov.uk",
+        "x-connect-auth": "Basic YjJkZTZiYzUtNWI1Zi00MGYzLWFiZjItNGFiYTg1YWZiYmQ0OjF1MHFLcEdiUmpNVkprUjVtdTVKdkZDVE1McVVCbi13ejRXbWpqTGZLLU0="
+      },
+      "response_headers": {
+        "content-type": "application/json; charset=utf-8",
+        "x-ms-middleware-request-id": "00000000-0000-0000-0000-000000000000"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 40,
+        "content_ref": "1037334915cdbbe4abf707856b72a38f00349a04.json"
+      }
     },
     {
-      "url": "https://webassist.onconnect.app/v1/postback",
+      "timestamp": "2025-07-21T07:45:49.307Z",
+      "duration_ms": 178.922,
+      "endpoint": "/v1/postback",
+      "host": "webassist.onconnect.app",
       "method": "POST",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "x-unknown",
-      "size": 0,
-      "timestamp": "2025-07-21T07:45:49.307Z"
+      "request_headers": {
+        "accept": "application/json, text/plain, */*",
+        "authorization": "Basic YjJkZTZiYzUtNWI1Zi00MGYzLWFiZjItNGFiYTg1YWZiYmQ0OjF1MHFLcEdiUmpNVkprUjVtdTVKdkZDVE1McVVCbi13ejRXbWpqTGZLLU0=",
+        "content-type": "application/json",
+        "origin": "https://www.stroud.gov.uk",
+        "x-connect-auth": "Basic YjJkZTZiYzUtNWI1Zi00MGYzLWFiZjItNGFiYTg1YWZiYmQ0OjF1MHFLcEdiUmpNVkprUjVtdTVKdkZDVE1McVVCbi13ejRXbWpqTGZLLU0="
+      },
+      "response_headers": {
+        "x-ms-middleware-request-id": "00000000-0000-0000-0000-000000000000"
+      }
     }
-  ]
+  ],
+  "analysis": {
+    "total_requests": 61,
+    "unique_endpoints": 14,
+    "methods_used": [
+      "GET",
+      "POST"
+    ],
+    "status_codes": {
+      "404": 1,
+      "204": 7,
+      "200": 46,
+      "-1": 5,
+      "400": 2
+    },
+    "endpoints_with_params": [
+      {
+        "endpoint": "/environment/{id}",
+        "method": "GET",
+        "query_params": [],
+        "path_params": true
+      },
+      {
+        "endpoint": "/g/collect",
+        "method": "POST",
+        "query_params": [
+          "v",
+          "tid",
+          "gtm",
+          "_p",
+          "_gaz",
+          "gcd",
+          "npa",
+          "dma",
+          "tag_exp",
+          "cid",
+          "ul",
+          "sr",
+          "uaa",
+          "uab",
+          "uafvl",
+          "uamb",
+          "uap",
+          "uapv",
+          "uaw",
+          "are",
+          "frm",
+          "pscdl",
+          "_s",
+          "sid",
+          "sct",
+          "seg",
+          "dl",
+          "dt",
+          "en",
+          "_fv",
+          "_nsi",
+          "_ss",
+          "_ee",
+          "tfd"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/g/collect",
+        "method": "POST",
+        "query_params": [
+          "v",
+          "tid",
+          "cid",
+          "gtm",
+          "aip",
+          "dma",
+          "gcd",
+          "npa",
+          "frm",
+          "tag_exp"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/v1/loader/{id}",
+        "method": "GET",
+        "query_params": [],
+        "path_params": true
+      },
+      {
+        "endpoint": "/c/v",
+        "method": "GET",
+        "query_params": [
+          "d",
+          "p",
+          "v",
+          "k",
+          "format"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/v1/workspaces/{id}/init",
+        "method": "POST",
+        "query_params": [],
+        "path_params": true
+      },
+      {
+        "endpoint": "/client/negotiate",
+        "method": "POST",
+        "query_params": [
+          "hub",
+          "negotiateVersion"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/g/collect",
+        "method": "POST",
+        "query_params": [
+          "v",
+          "tid",
+          "gtm",
+          "_p",
+          "gcd",
+          "npa",
+          "dma",
+          "tag_exp",
+          "cid",
+          "ul",
+          "sr",
+          "uaa",
+          "uab",
+          "uafvl",
+          "uamb",
+          "uap",
+          "uapv",
+          "uaw",
+          "are",
+          "frm",
+          "pscdl",
+          "_s",
+          "sid",
+          "sct",
+          "seg",
+          "dl",
+          "dt",
+          "en",
+          "_et",
+          "tfd"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/g/collect",
+        "method": "POST",
+        "query_params": [
+          "v",
+          "tid",
+          "gtm",
+          "_p",
+          "gcd",
+          "npa",
+          "dma",
+          "tag_exp",
+          "cid",
+          "ul",
+          "sr",
+          "uaa",
+          "uab",
+          "uafvl",
+          "uamb",
+          "uap",
+          "uapv",
+          "uaw",
+          "are",
+          "frm",
+          "pscdl",
+          "_eu",
+          "_s",
+          "sid",
+          "sct",
+          "seg",
+          "dl",
+          "dt",
+          "en",
+          "epn.percent_scrolled",
+          "_et",
+          "tfd"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/v1/workspaces/{id}/appusers/{id}/messages",
+        "method": "GET",
+        "query_params": [],
+        "path_params": true
+      },
+      {
+        "endpoint": "/g/collect",
+        "method": "POST",
+        "query_params": [
+          "v",
+          "tid",
+          "gtm",
+          "_p",
+          "gcd",
+          "npa",
+          "dma",
+          "tag_exp",
+          "cid",
+          "ul",
+          "sr",
+          "uaa",
+          "uab",
+          "uafvl",
+          "uamb",
+          "uap",
+          "uapv",
+          "uaw",
+          "are",
+          "frm",
+          "pscdl",
+          "_eu",
+          "_s",
+          "sid",
+          "sct",
+          "seg",
+          "dl",
+          "dt",
+          "en",
+          "_et",
+          "tfd"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/g/collect",
+        "method": "POST",
+        "query_params": [
+          "v",
+          "tid",
+          "gtm",
+          "_p",
+          "gcd",
+          "npa",
+          "dma",
+          "tag_exp",
+          "cid",
+          "ul",
+          "sr",
+          "uaa",
+          "uab",
+          "uafvl",
+          "uamb",
+          "uap",
+          "uapv",
+          "uaw",
+          "are",
+          "frm",
+          "pscdl",
+          "_eu",
+          "_s",
+          "sid",
+          "sct",
+          "seg",
+          "dl",
+          "dr",
+          "dt",
+          "en",
+          "_ee",
+          "tfd"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/maps/api/mapsjs/gen_204",
+        "method": "GET",
+        "query_params": [
+          "csp_test"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/ajax/libs/font-awesome/4.0.0/fonts/{id}",
+        "method": "GET",
+        "query_params": [
+          "v"
+        ],
+        "path_params": true
+      },
+      {
+        "endpoint": "/g/collect",
+        "method": "POST",
+        "query_params": [
+          "v",
+          "tid",
+          "gtm",
+          "_p",
+          "gcd",
+          "npa",
+          "dma",
+          "tag_exp",
+          "cid",
+          "ul",
+          "sr",
+          "uaa",
+          "uab",
+          "uafvl",
+          "uamb",
+          "uap",
+          "uapv",
+          "uaw",
+          "are",
+          "frm",
+          "pscdl",
+          "_eu",
+          "_s",
+          "sid",
+          "sct",
+          "seg",
+          "dl",
+          "dr",
+          "dt",
+          "en",
+          "epn.percent_scrolled",
+          "_et",
+          "tfd"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/webservice/getaddress",
+        "method": "GET",
+        "query_params": [
+          "postcode",
+          "page"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/g/collect",
+        "method": "POST",
+        "query_params": [
+          "v",
+          "tid",
+          "gtm",
+          "_p",
+          "gcd",
+          "npa",
+          "dma",
+          "tag_exp",
+          "cid",
+          "ul",
+          "sr",
+          "uaa",
+          "uab",
+          "uafvl",
+          "uamb",
+          "uap",
+          "uapv",
+          "uaw",
+          "are",
+          "frm",
+          "pscdl",
+          "_eu",
+          "_s",
+          "sid",
+          "sct",
+          "seg",
+          "dl",
+          "dr",
+          "dt",
+          "en",
+          "_et",
+          "tfd"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/my-house",
+        "method": "GET",
+        "query_params": [
+          "uprn",
+          "postcode"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/webservice/HasGardenWaste",
+        "method": "GET",
+        "query_params": [
+          "uprn"
+        ],
+        "path_params": false
+      }
+    ],
+    "redirects": [],
+    "api_calls": [
+      {
+        "endpoint": "/v1/loader/{id}",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": []
+      },
+      {
+        "endpoint": "/c/v",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": [
+          "d",
+          "p",
+          "v",
+          "k",
+          "format"
+        ]
+      },
+      {
+        "endpoint": "/assets/appConfig.json",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": []
+      },
+      {
+        "endpoint": "/v1/workspaces/{id}/init",
+        "method": "POST",
+        "response_type": "application/json",
+        "params": []
+      },
+      {
+        "endpoint": "/client/negotiate",
+        "method": "POST",
+        "response_type": "application/json",
+        "params": [
+          "hub",
+          "negotiateVersion"
+        ]
+      },
+      {
+        "endpoint": "/v1/loader/{id}",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": []
+      },
+      {
+        "endpoint": "/c/v",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": [
+          "d",
+          "p",
+          "v",
+          "k",
+          "format"
+        ]
+      },
+      {
+        "endpoint": "/assets/appConfig.json",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": []
+      },
+      {
+        "endpoint": "/v1/workspaces/{id}/init",
+        "method": "POST",
+        "response_type": "application/json",
+        "params": []
+      },
+      {
+        "endpoint": "/client/negotiate",
+        "method": "POST",
+        "response_type": "application/json",
+        "params": [
+          "hub",
+          "negotiateVersion"
+        ]
+      },
+      {
+        "endpoint": "/v1/workspaces/{id}/appusers/{id}/messages",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": []
+      },
+      {
+        "endpoint": "/v1/loader/{id}",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": []
+      },
+      {
+        "endpoint": "/c/v",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": [
+          "d",
+          "p",
+          "v",
+          "k",
+          "format"
+        ]
+      },
+      {
+        "endpoint": "/webservice/HasGardenWaste",
+        "method": "GET",
+        "response_type": "application/problem+json",
+        "params": []
+      },
+      {
+        "endpoint": "/assets/appConfig.json",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": []
+      },
+      {
+        "endpoint": "/maps/api/mapsjs/gen_204",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": [
+          "csp_test"
+        ]
+      },
+      {
+        "endpoint": "/v1/workspaces/{id}/init",
+        "method": "POST",
+        "response_type": "application/json",
+        "params": []
+      },
+      {
+        "endpoint": "/client/negotiate",
+        "method": "POST",
+        "response_type": "application/json",
+        "params": [
+          "hub",
+          "negotiateVersion"
+        ]
+      },
+      {
+        "endpoint": "/v1/workspaces/{id}/appusers/{id}/messages",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": []
+      },
+      {
+        "endpoint": "/webservice/getaddress",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": [
+          "postcode",
+          "page"
+        ]
+      },
+      {
+        "endpoint": "/v1/loader/{id}",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": []
+      },
+      {
+        "endpoint": "/c/v",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": [
+          "d",
+          "p",
+          "v",
+          "k",
+          "format"
+        ]
+      },
+      {
+        "endpoint": "/maps/api/mapsjs/gen_204",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": [
+          "csp_test"
+        ]
+      },
+      {
+        "endpoint": "/assets/appConfig.json",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": []
+      },
+      {
+        "endpoint": "/webservice/HasGardenWaste",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": [
+          "uprn"
+        ]
+      },
+      {
+        "endpoint": "/v1/workspaces/{id}/init",
+        "method": "POST",
+        "response_type": "application/json",
+        "params": []
+      },
+      {
+        "endpoint": "/client/negotiate",
+        "method": "POST",
+        "response_type": "application/json",
+        "params": [
+          "hub",
+          "negotiateVersion"
+        ]
+      },
+      {
+        "endpoint": "/v1/workspaces/{id}/appusers/{id}/messages",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": []
+      },
+      {
+        "endpoint": "/v1/loader/{id}",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": []
+      },
+      {
+        "endpoint": "/c/v",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": [
+          "d",
+          "p",
+          "v",
+          "k",
+          "format"
+        ]
+      },
+      {
+        "endpoint": "/maps/api/mapsjs/gen_204",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": [
+          "csp_test"
+        ]
+      },
+      {
+        "endpoint": "/webservice/HasGardenWaste",
+        "method": "GET",
+        "response_type": "application/problem+json",
+        "params": []
+      },
+      {
+        "endpoint": "/assets/appConfig.json",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": []
+      },
+      {
+        "endpoint": "/v1/workspaces/{id}/init",
+        "method": "POST",
+        "response_type": "application/json",
+        "params": []
+      },
+      {
+        "endpoint": "/client/negotiate",
+        "method": "POST",
+        "response_type": "application/json",
+        "params": [
+          "hub",
+          "negotiateVersion"
+        ]
+      },
+      {
+        "endpoint": "/v1/workspaces/{id}/appusers/{id}/messages",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": []
+      }
+    ],
+    "form_submissions": []
+  },
+  "grouped_by_endpoint": {
+    "/environment/{id}": [
+      {
+        "timestamp": "2025-07-21T07:45:15.894Z",
+        "duration_ms": 181.64000000000001,
+        "endpoint": "/environment/{id}",
+        "host": "www.stroud.gov.uk",
+        "method": "GET",
+        "status": 404,
+        "path_params": [
+          "bins-rubbish-recycling"
+        ],
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7"
+        },
+        "response_headers": {
+          "content-type": "text/html; charset=utf-8",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "sameorigin",
+          "x-xss-protection": "1; mode=block"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 21177,
+          "content_ref": "33231372bb73b29f9408d2a50df0d0c13159af46.html"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T07:45:18.989Z",
+        "duration_ms": 34.707,
+        "endpoint": "/environment/{id}",
+        "host": "www.stroud.gov.uk",
+        "method": "GET",
+        "status": 200,
+        "path_params": [
+          "bins-rubbish-and-recycling"
+        ],
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+          "cookie": "[cookies present]"
+        },
+        "response_headers": {
+          "content-type": "text/html; charset=utf-8",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "sameorigin",
+          "x-xss-protection": "1; mode=block"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 26242,
+          "compressed": true,
+          "content_ref": "c0ab7d895f7e44d4fe0bfcc429687f370780fc88.html"
+        }
+      }
+    ],
+    "/g/collect": [
+      {
+        "timestamp": "2025-07-21T07:45:16.132Z",
+        "duration_ms": 63.854,
+        "endpoint": "/g/collect",
+        "host": "region1.analytics.google.com",
+        "method": "POST",
+        "status": 204,
+        "query_params": {
+          "v": [
+            "2"
+          ],
+          "tid": [
+            "G-75245M5LD9"
+          ],
+          "gtm": [
+            "45je57g1v9203548124za200"
+          ],
+          "_p": [
+            "1753083916021"
+          ],
+          "_gaz": [
+            "1"
+          ],
+          "gcd": [
+            "13l3l3l3l1l1"
+          ],
+          "npa": [
+            "0"
+          ],
+          "dma": [
+            "0"
+          ],
+          "tag_exp": [
+            "101509157~103116026~103200004~103233427~104684208~104684211"
+          ],
+          "cid": [
+            "1449902242.1753083916"
+          ],
+          "ul": [
+            "en-gb"
+          ],
+          "sr": [
+            "800x600"
+          ],
+          "uaa": [
+            "arm"
+          ],
+          "uab": [
+            "64"
+          ],
+          "uafvl": [
+            "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+          ],
+          "uamb": [
+            "0"
+          ],
+          "uap": [
+            "macOS"
+          ],
+          "uapv": [
+            "15.5.0"
+          ],
+          "uaw": [
+            "0"
+          ],
+          "are": [
+            "1"
+          ],
+          "frm": [
+            "0"
+          ],
+          "pscdl": [
+            "noapi"
+          ],
+          "_s": [
+            "1"
+          ],
+          "sid": [
+            "1753083916"
+          ],
+          "sct": [
+            "1"
+          ],
+          "seg": [
+            "0"
+          ],
+          "dl": [
+            "https://www.stroud.gov.uk/environment/bins-rubbish-recycling"
+          ],
+          "dt": [
+            "HTTP 404"
+          ],
+          "en": [
+            "page_view"
+          ],
+          "_fv": [
+            "1"
+          ],
+          "_nsi": [
+            "1"
+          ],
+          "_ss": [
+            "1"
+          ],
+          "_ee": [
+            "1"
+          ],
+          "tfd": [
+            "238"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "origin": "https://www.stroud.gov.uk",
+          "x-browser-copyright": "Copyright 2025 Google LLC. All rights reserved.",
+          "x-browser-validation": "qvLgIVtG4U8GgiRPSI9IJ22mUlI=",
+          "x-browser-year": "2025",
+          "x-client-data": "CMiXywE="
+        },
+        "response_headers": {
+          "cache-control": "no-cache, no-store, must-revalidate",
+          "content-type": "text/plain"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T07:45:16.133Z",
+        "duration_ms": 66.842,
+        "endpoint": "/g/collect",
+        "host": "stats.g.doubleclick.net",
+        "method": "POST",
+        "status": 204,
+        "query_params": {
+          "v": [
+            "2"
+          ],
+          "tid": [
+            "G-75245M5LD9"
+          ],
+          "cid": [
+            "1449902242.1753083916"
+          ],
+          "gtm": [
+            "45je57g1v9203548124za200"
+          ],
+          "aip": [
+            "1"
+          ],
+          "dma": [
+            "0"
+          ],
+          "gcd": [
+            "13l3l3l3l1l1"
+          ],
+          "npa": [
+            "0"
+          ],
+          "frm": [
+            "0"
+          ],
+          "tag_exp": [
+            "101509157~103116026~103200004~103233427~104684208~104684211"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "origin": "https://www.stroud.gov.uk",
+          "x-browser-copyright": "Copyright 2025 Google LLC. All rights reserved.",
+          "x-browser-validation": "qvLgIVtG4U8GgiRPSI9IJ22mUlI=",
+          "x-browser-year": "2025",
+          "x-client-data": "CMiXywE="
+        },
+        "response_headers": {
+          "cache-control": "no-cache, no-store, must-revalidate",
+          "content-type": "text/plain"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T07:45:19.031Z",
+        "duration_ms": -1,
+        "endpoint": "/g/collect",
+        "host": "region1.analytics.google.com",
+        "method": "POST",
+        "status": -1,
+        "query_params": {
+          "v": [
+            "2"
+          ],
+          "tid": [
+            "G-75245M5LD9"
+          ],
+          "gtm": [
+            "45je57g1v9203548124za200"
+          ],
+          "_p": [
+            "1753083916021"
+          ],
+          "gcd": [
+            "13l3l3l3l1l1"
+          ],
+          "npa": [
+            "0"
+          ],
+          "dma": [
+            "0"
+          ],
+          "tag_exp": [
+            "101509157~103116026~103200004~103233427~104684208~104684211"
+          ],
+          "cid": [
+            "1449902242.1753083916"
+          ],
+          "ul": [
+            "en-gb"
+          ],
+          "sr": [
+            "800x600"
+          ],
+          "uaa": [
+            "arm"
+          ],
+          "uab": [
+            "64"
+          ],
+          "uafvl": [
+            "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+          ],
+          "uamb": [
+            "0"
+          ],
+          "uap": [
+            "macOS"
+          ],
+          "uapv": [
+            "15.5.0"
+          ],
+          "uaw": [
+            "0"
+          ],
+          "are": [
+            "1"
+          ],
+          "frm": [
+            "0"
+          ],
+          "pscdl": [
+            "noapi"
+          ],
+          "_s": [
+            "3"
+          ],
+          "sid": [
+            "1753083916"
+          ],
+          "sct": [
+            "1"
+          ],
+          "seg": [
+            "0"
+          ],
+          "dl": [
+            "https://www.stroud.gov.uk/environment/bins-rubbish-recycling"
+          ],
+          "dt": [
+            "HTTP 404"
+          ],
+          "en": [
+            "user_engagement"
+          ],
+          "_et": [
+            "2887"
+          ],
+          "tfd": [
+            "3136"
+          ]
+        },
+        "request_headers": {
+          "referer": ""
+        }
+      },
+      {
+        "timestamp": "2025-07-21T07:45:19.030Z",
+        "duration_ms": -1,
+        "endpoint": "/g/collect",
+        "host": "region1.analytics.google.com",
+        "method": "POST",
+        "status": -1,
+        "query_params": {
+          "v": [
+            "2"
+          ],
+          "tid": [
+            "G-75245M5LD9"
+          ],
+          "gtm": [
+            "45je57g1v9203548124za200"
+          ],
+          "_p": [
+            "1753083916021"
+          ],
+          "gcd": [
+            "13l3l3l3l1l1"
+          ],
+          "npa": [
+            "0"
+          ],
+          "dma": [
+            "0"
+          ],
+          "tag_exp": [
+            "101509157~103116026~103200004~103233427~104684208~104684211"
+          ],
+          "cid": [
+            "1449902242.1753083916"
+          ],
+          "ul": [
+            "en-gb"
+          ],
+          "sr": [
+            "800x600"
+          ],
+          "uaa": [
+            "arm"
+          ],
+          "uab": [
+            "64"
+          ],
+          "uafvl": [
+            "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+          ],
+          "uamb": [
+            "0"
+          ],
+          "uap": [
+            "macOS"
+          ],
+          "uapv": [
+            "15.5.0"
+          ],
+          "uaw": [
+            "0"
+          ],
+          "are": [
+            "1"
+          ],
+          "frm": [
+            "0"
+          ],
+          "pscdl": [
+            "noapi"
+          ],
+          "_eu": [
+            "AEAAAAQ"
+          ],
+          "_s": [
+            "2"
+          ],
+          "sid": [
+            "1753083916"
+          ],
+          "sct": [
+            "1"
+          ],
+          "seg": [
+            "0"
+          ],
+          "dl": [
+            "https://www.stroud.gov.uk/environment/bins-rubbish-recycling"
+          ],
+          "dt": [
+            "HTTP 404"
+          ],
+          "en": [
+            "scroll"
+          ],
+          "epn.percent_scrolled": [
+            "90"
+          ],
+          "_et": [
+            "5"
+          ],
+          "tfd": [
+            "3136"
+          ]
+        },
+        "request_headers": {
+          "referer": ""
+        }
+      },
+      {
+        "timestamp": "2025-07-21T07:45:19.109Z",
+        "duration_ms": 14.947,
+        "endpoint": "/g/collect",
+        "host": "region1.analytics.google.com",
+        "method": "POST",
+        "status": 204,
+        "query_params": {
+          "v": [
+            "2"
+          ],
+          "tid": [
+            "G-75245M5LD9"
+          ],
+          "gtm": [
+            "45je57g1v9203548124za200"
+          ],
+          "_p": [
+            "1753083919032"
+          ],
+          "_gaz": [
+            "1"
+          ],
+          "gcd": [
+            "13l3l3l3l1l1"
+          ],
+          "npa": [
+            "0"
+          ],
+          "dma": [
+            "0"
+          ],
+          "tag_exp": [
+            "101509157~103116026~103200004~103233427~104684208~104684211"
+          ],
+          "cid": [
+            "1342578375.1753083919"
+          ],
+          "ul": [
+            "en-gb"
+          ],
+          "sr": [
+            "800x600"
+          ],
+          "uaa": [
+            "arm"
+          ],
+          "uab": [
+            "64"
+          ],
+          "uafvl": [
+            "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+          ],
+          "uamb": [
+            "0"
+          ],
+          "uap": [
+            "macOS"
+          ],
+          "uapv": [
+            "15.5.0"
+          ],
+          "uaw": [
+            "0"
+          ],
+          "are": [
+            "1"
+          ],
+          "frm": [
+            "0"
+          ],
+          "pscdl": [
+            "noapi"
+          ],
+          "_s": [
+            "1"
+          ],
+          "sid": [
+            "1753083919"
+          ],
+          "sct": [
+            "1"
+          ],
+          "seg": [
+            "0"
+          ],
+          "dl": [
+            "https://www.stroud.gov.uk/environment/bins-rubbish-and-recycling/"
+          ],
+          "dt": [
+            "Bins, rubbish and recycling"
+          ],
+          "en": [
+            "page_view"
+          ],
+          "_fv": [
+            "1"
+          ],
+          "_nsi": [
+            "1"
+          ],
+          "_ss": [
+            "1"
+          ],
+          "_ee": [
+            "1"
+          ],
+          "tfd": [
+            "139"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "origin": "https://www.stroud.gov.uk",
+          "x-browser-copyright": "Copyright 2025 Google LLC. All rights reserved.",
+          "x-browser-validation": "qvLgIVtG4U8GgiRPSI9IJ22mUlI=",
+          "x-browser-year": "2025",
+          "x-client-data": "CMiXywE="
+        },
+        "response_headers": {
+          "cache-control": "no-cache, no-store, must-revalidate",
+          "content-type": "text/plain"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T07:45:19.109Z",
+        "duration_ms": 14.402000000000001,
+        "endpoint": "/g/collect",
+        "host": "stats.g.doubleclick.net",
+        "method": "POST",
+        "status": 204,
+        "query_params": {
+          "v": [
+            "2"
+          ],
+          "tid": [
+            "G-75245M5LD9"
+          ],
+          "cid": [
+            "1342578375.1753083919"
+          ],
+          "gtm": [
+            "45je57g1v9203548124za200"
+          ],
+          "aip": [
+            "1"
+          ],
+          "dma": [
+            "0"
+          ],
+          "gcd": [
+            "13l3l3l3l1l1"
+          ],
+          "npa": [
+            "0"
+          ],
+          "frm": [
+            "0"
+          ],
+          "tag_exp": [
+            "101509157~103116026~103200004~103233427~104684208~104684211"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "origin": "https://www.stroud.gov.uk",
+          "x-browser-copyright": "Copyright 2025 Google LLC. All rights reserved.",
+          "x-browser-validation": "qvLgIVtG4U8GgiRPSI9IJ22mUlI=",
+          "x-browser-year": "2025",
+          "x-client-data": "CMiXywE="
+        },
+        "response_headers": {
+          "cache-control": "no-cache, no-store, must-revalidate",
+          "content-type": "text/plain"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T07:45:20.958Z",
+        "duration_ms": -1,
+        "endpoint": "/g/collect",
+        "host": "region1.analytics.google.com",
+        "method": "POST",
+        "status": -1,
+        "query_params": {
+          "v": [
+            "2"
+          ],
+          "tid": [
+            "G-75245M5LD9"
+          ],
+          "gtm": [
+            "45je57g1v9203548124za200"
+          ],
+          "_p": [
+            "1753083919032"
+          ],
+          "gcd": [
+            "13l3l3l3l1l1"
+          ],
+          "npa": [
+            "0"
+          ],
+          "dma": [
+            "0"
+          ],
+          "tag_exp": [
+            "101509157~103116026~103200004~103233427~104684208~104684211"
+          ],
+          "cid": [
+            "1342578375.1753083919"
+          ],
+          "ul": [
+            "en-gb"
+          ],
+          "sr": [
+            "800x600"
+          ],
+          "uaa": [
+            "arm"
+          ],
+          "uab": [
+            "64"
+          ],
+          "uafvl": [
+            "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+          ],
+          "uamb": [
+            "0"
+          ],
+          "uap": [
+            "macOS"
+          ],
+          "uapv": [
+            "15.5.0"
+          ],
+          "uaw": [
+            "0"
+          ],
+          "are": [
+            "1"
+          ],
+          "frm": [
+            "0"
+          ],
+          "pscdl": [
+            "noapi"
+          ],
+          "_eu": [
+            "AAAAAAQ"
+          ],
+          "_s": [
+            "2"
+          ],
+          "sid": [
+            "1753083919"
+          ],
+          "sct": [
+            "1"
+          ],
+          "seg": [
+            "0"
+          ],
+          "dl": [
+            "https://www.stroud.gov.uk/environment/bins-rubbish-and-recycling/"
+          ],
+          "dt": [
+            "Bins, rubbish and recycling"
+          ],
+          "en": [
+            "user_engagement"
+          ],
+          "_et": [
+            "1868"
+          ],
+          "tfd": [
+            "2010"
+          ]
+        },
+        "request_headers": {
+          "referer": ""
+        }
+      },
+      {
+        "timestamp": "2025-07-21T07:45:21.013Z",
+        "duration_ms": 14.384,
+        "endpoint": "/g/collect",
+        "host": "region1.analytics.google.com",
+        "method": "POST",
+        "status": 204,
+        "query_params": {
+          "v": [
+            "2"
+          ],
+          "tid": [
+            "G-75245M5LD9"
+          ],
+          "gtm": [
+            "45je57g1v9203548124za200"
+          ],
+          "_p": [
+            "1753083920960"
+          ],
+          "gcd": [
+            "13l3l3l3l1l1"
+          ],
+          "npa": [
+            "0"
+          ],
+          "dma": [
+            "0"
+          ],
+          "tag_exp": [
+            "101509157~103116026~103200004~103233427~104684208~104684211"
+          ],
+          "cid": [
+            "1342578375.1753083919"
+          ],
+          "ul": [
+            "en-gb"
+          ],
+          "sr": [
+            "800x600"
+          ],
+          "uaa": [
+            "arm"
+          ],
+          "uab": [
+            "64"
+          ],
+          "uafvl": [
+            "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+          ],
+          "uamb": [
+            "0"
+          ],
+          "uap": [
+            "macOS"
+          ],
+          "uapv": [
+            "15.5.0"
+          ],
+          "uaw": [
+            "0"
+          ],
+          "are": [
+            "1"
+          ],
+          "frm": [
+            "0"
+          ],
+          "pscdl": [
+            "noapi"
+          ],
+          "_eu": [
+            "AAAAAAQ"
+          ],
+          "_s": [
+            "1"
+          ],
+          "sid": [
+            "1753083919"
+          ],
+          "sct": [
+            "1"
+          ],
+          "seg": [
+            "1"
+          ],
+          "dl": [
+            "https://www.stroud.gov.uk/my-house/"
+          ],
+          "dr": [
+            "https://www.stroud.gov.uk/environment/bins-rubbish-and-recycling/"
+          ],
+          "dt": [
+            "My House"
+          ],
+          "en": [
+            "page_view"
+          ],
+          "_ee": [
+            "1"
+          ],
+          "tfd": [
+            "219"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "origin": "https://www.stroud.gov.uk",
+          "x-browser-copyright": "Copyright 2025 Google LLC. All rights reserved.",
+          "x-browser-validation": "qvLgIVtG4U8GgiRPSI9IJ22mUlI=",
+          "x-browser-year": "2025",
+          "x-client-data": "CMiXywE="
+        },
+        "response_headers": {
+          "cache-control": "no-cache, no-store, must-revalidate",
+          "content-type": "text/plain"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T07:45:26.002Z",
+        "duration_ms": 14.727,
+        "endpoint": "/g/collect",
+        "host": "region1.analytics.google.com",
+        "method": "POST",
+        "status": 204,
+        "query_params": {
+          "v": [
+            "2"
+          ],
+          "tid": [
+            "G-75245M5LD9"
+          ],
+          "gtm": [
+            "45je57g1v9203548124za200"
+          ],
+          "_p": [
+            "1753083920960"
+          ],
+          "gcd": [
+            "13l3l3l3l1l1"
+          ],
+          "npa": [
+            "0"
+          ],
+          "dma": [
+            "0"
+          ],
+          "tag_exp": [
+            "101509157~103116026~103200004~103233427~104684208~104684211"
+          ],
+          "cid": [
+            "1342578375.1753083919"
+          ],
+          "ul": [
+            "en-gb"
+          ],
+          "sr": [
+            "800x600"
+          ],
+          "uaa": [
+            "arm"
+          ],
+          "uab": [
+            "64"
+          ],
+          "uafvl": [
+            "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+          ],
+          "uamb": [
+            "0"
+          ],
+          "uap": [
+            "macOS"
+          ],
+          "uapv": [
+            "15.5.0"
+          ],
+          "uaw": [
+            "0"
+          ],
+          "are": [
+            "1"
+          ],
+          "frm": [
+            "0"
+          ],
+          "pscdl": [
+            "noapi"
+          ],
+          "_eu": [
+            "AEAAAAQ"
+          ],
+          "_s": [
+            "2"
+          ],
+          "sid": [
+            "1753083919"
+          ],
+          "sct": [
+            "1"
+          ],
+          "seg": [
+            "1"
+          ],
+          "dl": [
+            "https://www.stroud.gov.uk/my-house/"
+          ],
+          "dr": [
+            "https://www.stroud.gov.uk/environment/bins-rubbish-and-recycling/"
+          ],
+          "dt": [
+            "My House"
+          ],
+          "en": [
+            "scroll"
+          ],
+          "epn.percent_scrolled": [
+            "90"
+          ],
+          "_et": [
+            "7"
+          ],
+          "tfd": [
+            "5222"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "origin": "https://www.stroud.gov.uk",
+          "x-browser-copyright": "Copyright 2025 Google LLC. All rights reserved.",
+          "x-browser-validation": "qvLgIVtG4U8GgiRPSI9IJ22mUlI=",
+          "x-browser-year": "2025",
+          "x-client-data": "CMiXywE="
+        },
+        "response_headers": {
+          "cache-control": "no-cache, no-store, must-revalidate",
+          "content-type": "text/plain"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T07:45:40.043Z",
+        "duration_ms": -1,
+        "endpoint": "/g/collect",
+        "host": "region1.analytics.google.com",
+        "method": "POST",
+        "status": -1,
+        "query_params": {
+          "v": [
+            "2"
+          ],
+          "tid": [
+            "G-75245M5LD9"
+          ],
+          "gtm": [
+            "45je57g1v9203548124za200"
+          ],
+          "_p": [
+            "1753083920960"
+          ],
+          "gcd": [
+            "13l3l3l3l1l1"
+          ],
+          "npa": [
+            "0"
+          ],
+          "dma": [
+            "0"
+          ],
+          "tag_exp": [
+            "101509157~103116026~103200004~103233427~104684208~104684211"
+          ],
+          "cid": [
+            "1342578375.1753083919"
+          ],
+          "ul": [
+            "en-gb"
+          ],
+          "sr": [
+            "800x600"
+          ],
+          "uaa": [
+            "arm"
+          ],
+          "uab": [
+            "64"
+          ],
+          "uafvl": [
+            "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+          ],
+          "uamb": [
+            "0"
+          ],
+          "uap": [
+            "macOS"
+          ],
+          "uapv": [
+            "15.5.0"
+          ],
+          "uaw": [
+            "0"
+          ],
+          "are": [
+            "1"
+          ],
+          "frm": [
+            "0"
+          ],
+          "pscdl": [
+            "noapi"
+          ],
+          "_eu": [
+            "AAAAAAQ"
+          ],
+          "_s": [
+            "3"
+          ],
+          "sid": [
+            "1753083919"
+          ],
+          "sct": [
+            "1"
+          ],
+          "seg": [
+            "1"
+          ],
+          "dl": [
+            "https://www.stroud.gov.uk/my-house/"
+          ],
+          "dr": [
+            "https://www.stroud.gov.uk/environment/bins-rubbish-and-recycling/"
+          ],
+          "dt": [
+            "My House"
+          ],
+          "en": [
+            "user_engagement"
+          ],
+          "_et": [
+            "19032"
+          ],
+          "tfd": [
+            "19264"
+          ]
+        },
+        "request_headers": {
+          "referer": ""
+        }
+      },
+      {
+        "timestamp": "2025-07-21T07:45:45.102Z",
+        "duration_ms": 13.878,
+        "endpoint": "/g/collect",
+        "host": "region1.analytics.google.com",
+        "method": "POST",
+        "status": 204,
+        "query_params": {
+          "v": [
+            "2"
+          ],
+          "tid": [
+            "G-75245M5LD9"
+          ],
+          "gtm": [
+            "45je57g1v9203548124za200"
+          ],
+          "_p": [
+            "1753083940050"
+          ],
+          "gcd": [
+            "13l3l3l3l1l1"
+          ],
+          "npa": [
+            "0"
+          ],
+          "dma": [
+            "0"
+          ],
+          "tag_exp": [
+            "101509157~103116026~103200004~103233427~104684208~104684211"
+          ],
+          "cid": [
+            "1342578375.1753083919"
+          ],
+          "ul": [
+            "en-gb"
+          ],
+          "sr": [
+            "800x600"
+          ],
+          "uaa": [
+            "arm"
+          ],
+          "uab": [
+            "64"
+          ],
+          "uafvl": [
+            "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+          ],
+          "uamb": [
+            "0"
+          ],
+          "uap": [
+            "macOS"
+          ],
+          "uapv": [
+            "15.5.0"
+          ],
+          "uaw": [
+            "0"
+          ],
+          "are": [
+            "1"
+          ],
+          "frm": [
+            "0"
+          ],
+          "pscdl": [
+            "noapi"
+          ],
+          "_eu": [
+            "AAAAAAQ"
+          ],
+          "_s": [
+            "1"
+          ],
+          "sid": [
+            "1753083919"
+          ],
+          "sct": [
+            "1"
+          ],
+          "seg": [
+            "1"
+          ],
+          "dl": [
+            "https://www.stroud.gov.uk/my-house?uprn=100120511889&postcode=GL10+2AA"
+          ],
+          "dr": [
+            "https://www.stroud.gov.uk/my-house/"
+          ],
+          "dt": [
+            "My House"
+          ],
+          "en": [
+            "page_view"
+          ],
+          "_ee": [
+            "1"
+          ],
+          "tfd": [
+            "6954"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "origin": "https://www.stroud.gov.uk",
+          "x-browser-copyright": "Copyright 2025 Google LLC. All rights reserved.",
+          "x-browser-validation": "qvLgIVtG4U8GgiRPSI9IJ22mUlI=",
+          "x-browser-year": "2025",
+          "x-client-data": "CMiXywE="
+        },
+        "response_headers": {
+          "cache-control": "no-cache, no-store, must-revalidate",
+          "content-type": "text/plain"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T07:45:48.954Z",
+        "duration_ms": -1,
+        "endpoint": "/g/collect",
+        "host": "region1.analytics.google.com",
+        "method": "POST",
+        "status": -1,
+        "query_params": {
+          "v": [
+            "2"
+          ],
+          "tid": [
+            "G-75245M5LD9"
+          ],
+          "gtm": [
+            "45je57g1v9203548124za200"
+          ],
+          "_p": [
+            "1753083940050"
+          ],
+          "gcd": [
+            "13l3l3l3l1l1"
+          ],
+          "npa": [
+            "0"
+          ],
+          "dma": [
+            "0"
+          ],
+          "tag_exp": [
+            "101509157~103116026~103200004~103233427~104684208~104684211"
+          ],
+          "cid": [
+            "1342578375.1753083919"
+          ],
+          "ul": [
+            "en-gb"
+          ],
+          "sr": [
+            "800x600"
+          ],
+          "uaa": [
+            "arm"
+          ],
+          "uab": [
+            "64"
+          ],
+          "uafvl": [
+            "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+          ],
+          "uamb": [
+            "0"
+          ],
+          "uap": [
+            "macOS"
+          ],
+          "uapv": [
+            "15.5.0"
+          ],
+          "uaw": [
+            "0"
+          ],
+          "are": [
+            "1"
+          ],
+          "frm": [
+            "0"
+          ],
+          "pscdl": [
+            "noapi"
+          ],
+          "_eu": [
+            "AAAAAAQ"
+          ],
+          "_s": [
+            "2"
+          ],
+          "sid": [
+            "1753083919"
+          ],
+          "sct": [
+            "1"
+          ],
+          "seg": [
+            "1"
+          ],
+          "dl": [
+            "https://www.stroud.gov.uk/my-house?uprn=100120511889&postcode=GL10+2AA"
+          ],
+          "dr": [
+            "https://www.stroud.gov.uk/my-house/"
+          ],
+          "dt": [
+            "My House"
+          ],
+          "en": [
+            "user_engagement"
+          ],
+          "_et": [
+            "8848"
+          ],
+          "tfd": [
+            "10812"
+          ]
+        },
+        "request_headers": {
+          "referer": ""
+        }
+      }
+    ],
+    "/v1/loader/{id}": [
+      {
+        "timestamp": "2025-07-21T07:45:16.169Z",
+        "duration_ms": 110.696,
+        "endpoint": "/v1/loader/{id}",
+        "host": "webassist.onconnect.app",
+        "method": "GET",
+        "status": 200,
+        "path_params": [
+          "0ee4eac1-6daf-45b3-9a15-8e659f54a849"
+        ],
+        "request_headers": {
+          "accept": "*/*",
+          "origin": "https://www.stroud.gov.uk"
+        },
+        "response_headers": {
+          "content-type": "application/json; charset=utf-8",
+          "x-ms-middleware-request-id": "00000000-0000-0000-0000-000000000000"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 52,
+          "content_ref": "3bd0e87f7735a292acfc53909bc55fd480fb94c1.json"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T07:45:19.044Z",
+        "duration_ms": 27.968,
+        "endpoint": "/v1/loader/{id}",
+        "host": "webassist.onconnect.app",
+        "method": "GET",
+        "status": 200,
+        "path_params": [
+          "0ee4eac1-6daf-45b3-9a15-8e659f54a849"
+        ],
+        "request_headers": {
+          "accept": "*/*",
+          "origin": "https://www.stroud.gov.uk"
+        },
+        "response_headers": {
+          "content-type": "application/json; charset=utf-8",
+          "x-ms-middleware-request-id": "00000000-0000-0000-0000-000000000000"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 52,
+          "content_ref": "3bd0e87f7735a292acfc53909bc55fd480fb94c1.json"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T07:45:20.972Z",
+        "duration_ms": 30.024,
+        "endpoint": "/v1/loader/{id}",
+        "host": "webassist.onconnect.app",
+        "method": "GET",
+        "status": 200,
+        "path_params": [
+          "0ee4eac1-6daf-45b3-9a15-8e659f54a849"
+        ],
+        "request_headers": {
+          "accept": "*/*",
+          "origin": "https://www.stroud.gov.uk"
+        },
+        "response_headers": {
+          "content-type": "application/json; charset=utf-8",
+          "x-ms-middleware-request-id": "00000000-0000-0000-0000-000000000000"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 52,
+          "content_ref": "3bd0e87f7735a292acfc53909bc55fd480fb94c1.json"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T07:45:40.076Z",
+        "duration_ms": 30.715999999999998,
+        "endpoint": "/v1/loader/{id}",
+        "host": "webassist.onconnect.app",
+        "method": "GET",
+        "status": 200,
+        "path_params": [
+          "0ee4eac1-6daf-45b3-9a15-8e659f54a849"
+        ],
+        "request_headers": {
+          "accept": "*/*",
+          "origin": "https://www.stroud.gov.uk"
+        },
+        "response_headers": {
+          "content-type": "application/json; charset=utf-8",
+          "x-ms-middleware-request-id": "00000000-0000-0000-0000-000000000000"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 52,
+          "content_ref": "3bd0e87f7735a292acfc53909bc55fd480fb94c1.json"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T07:45:48.975Z",
+        "duration_ms": 1.18,
+        "endpoint": "/v1/loader/{id}",
+        "host": "webassist.onconnect.app",
+        "method": "GET",
+        "status": 200,
+        "path_params": [
+          "0ee4eac1-6daf-45b3-9a15-8e659f54a849"
+        ],
+        "request_headers": {
+          "referer": ""
+        },
+        "response_headers": {
+          "x-ms-middleware-request-id": "00000000-0000-0000-0000-000000000000",
+          "content-type": "application/json; charset=utf-8"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 52,
+          "compressed": true,
+          "content_ref": "3bd0e87f7735a292acfc53909bc55fd480fb94c1.json"
+        }
+      }
+    ],
+    "/c/v": [
+      {
+        "timestamp": "2025-07-21T07:45:16.218Z",
+        "duration_ms": 54.519000000000005,
+        "endpoint": "/c/v",
+        "host": "apikeys.civiccomputing.com",
+        "method": "GET",
+        "status": 200,
+        "query_params": {
+          "d": [
+            "www.stroud.gov.uk"
+          ],
+          "p": [
+            "CookieControl Multi-Site"
+          ],
+          "v": [
+            "9"
+          ],
+          "k": [
+            "d6e0e1ccd74567e5b7a89e46ae67798d9785a787"
+          ],
+          "format": [
+            "json"
+          ]
+        },
+        "request_headers": {
+          "accept": "application/json, text/plain, */*",
+          "origin": "https://www.stroud.gov.uk"
+        },
+        "response_headers": {
+          "cache-control": "max-age=3600, private, no-store",
+          "content-type": "application/json",
+          "x-apikeys": "hit",
+          "x-cf-test": "true",
+          "x-content-type-options": "nosniff",
+          "x-xss-protection": "1"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 302,
+          "content_ref": "f646d97c46f47fc935b85691d0a0f36b86e56780.json"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T07:45:19.100Z",
+        "duration_ms": 20.148,
+        "endpoint": "/c/v",
+        "host": "apikeys.civiccomputing.com",
+        "method": "GET",
+        "status": 200,
+        "query_params": {
+          "d": [
+            "www.stroud.gov.uk"
+          ],
+          "p": [
+            "CookieControl Multi-Site"
+          ],
+          "v": [
+            "9"
+          ],
+          "k": [
+            "d6e0e1ccd74567e5b7a89e46ae67798d9785a787"
+          ],
+          "format": [
+            "json"
+          ]
+        },
+        "request_headers": {
+          "accept": "application/json, text/plain, */*",
+          "origin": "https://www.stroud.gov.uk"
+        },
+        "response_headers": {
+          "cache-control": "max-age=3600, private, no-store",
+          "content-type": "application/json",
+          "x-apikeys": "hit",
+          "x-cf-test": "true",
+          "x-content-type-options": "nosniff",
+          "x-xss-protection": "1"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 302,
+          "content_ref": "f646d97c46f47fc935b85691d0a0f36b86e56780.json"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T07:45:21.140Z",
+        "duration_ms": 19.207,
+        "endpoint": "/c/v",
+        "host": "apikeys.civiccomputing.com",
+        "method": "GET",
+        "status": 200,
+        "query_params": {
+          "d": [
+            "www.stroud.gov.uk"
+          ],
+          "p": [
+            "CookieControl Multi-Site"
+          ],
+          "v": [
+            "9"
+          ],
+          "k": [
+            "d6e0e1ccd74567e5b7a89e46ae67798d9785a787"
+          ],
+          "format": [
+            "json"
+          ]
+        },
+        "request_headers": {
+          "accept": "application/json, text/plain, */*",
+          "origin": "https://www.stroud.gov.uk"
+        },
+        "response_headers": {
+          "cache-control": "max-age=3600, private, no-store",
+          "content-type": "application/json",
+          "x-apikeys": "hit",
+          "x-cf-test": "true",
+          "x-content-type-options": "nosniff",
+          "x-xss-protection": "1"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 302,
+          "content_ref": "f646d97c46f47fc935b85691d0a0f36b86e56780.json"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T07:45:40.099Z",
+        "duration_ms": 19.874,
+        "endpoint": "/c/v",
+        "host": "apikeys.civiccomputing.com",
+        "method": "GET",
+        "status": 200,
+        "query_params": {
+          "d": [
+            "www.stroud.gov.uk"
+          ],
+          "p": [
+            "CookieControl Multi-Site"
+          ],
+          "v": [
+            "9"
+          ],
+          "k": [
+            "d6e0e1ccd74567e5b7a89e46ae67798d9785a787"
+          ],
+          "format": [
+            "json"
+          ]
+        },
+        "request_headers": {
+          "accept": "application/json, text/plain, */*",
+          "origin": "https://www.stroud.gov.uk"
+        },
+        "response_headers": {
+          "cache-control": "max-age=3600, private, no-store",
+          "content-type": "application/json",
+          "x-apikeys": "hit",
+          "x-cf-test": "true",
+          "x-content-type-options": "nosniff",
+          "x-xss-protection": "1"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 302,
+          "content_ref": "f646d97c46f47fc935b85691d0a0f36b86e56780.json"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T07:45:48.975Z",
+        "duration_ms": 15.342,
+        "endpoint": "/c/v",
+        "host": "apikeys.civiccomputing.com",
+        "method": "GET",
+        "status": 200,
+        "query_params": {
+          "d": [
+            "www.stroud.gov.uk"
+          ],
+          "p": [
+            "CookieControl Multi-Site"
+          ],
+          "v": [
+            "9"
+          ],
+          "k": [
+            "d6e0e1ccd74567e5b7a89e46ae67798d9785a787"
+          ],
+          "format": [
+            "json"
+          ]
+        },
+        "request_headers": {
+          "accept": "application/json, text/plain, */*",
+          "origin": "https://www.stroud.gov.uk"
+        },
+        "response_headers": {
+          "cache-control": "max-age=3600, private, no-store",
+          "content-type": "application/json",
+          "x-apikeys": "hit",
+          "x-cf-test": "true",
+          "x-content-type-options": "nosniff",
+          "x-xss-protection": "1"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 302,
+          "content_ref": "f646d97c46f47fc935b85691d0a0f36b86e56780.json"
+        }
+      }
+    ],
+    "/assets/appConfig.json": [
+      {
+        "timestamp": "2025-07-21T07:45:16.503Z",
+        "duration_ms": 59,
+        "endpoint": "/assets/appConfig.json",
+        "host": "webassistant.onconnect.app",
+        "method": "GET",
+        "status": 200,
+        "request_headers": {
+          "accept": "application/json, text/plain, */*",
+          "origin": "https://www.stroud.gov.uk"
+        },
+        "response_headers": {
+          "content-type": "application/json",
+          "x-azure-ref": "20250721T074516Z-157cdf4dfd4hsh87hC1LONbr5n00000004x0000000005v50",
+          "x-cache": "CONFIG_NOCACHE",
+          "x-ms-request-id": "b173790b-b01e-00f2-6013-fa5cce000000",
+          "x-ms-version": "2018-03-28"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 73,
+          "content_ref": "e8551bc0489c1ba948f1631c51732814c12af1e5.json"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T07:45:19.184Z",
+        "duration_ms": 0.598,
+        "endpoint": "/assets/appConfig.json",
+        "host": "webassistant.onconnect.app",
+        "method": "GET",
+        "status": 200,
+        "request_headers": {
+          "referer": "",
+          "accept": "application/json, text/plain, */*"
+        },
+        "response_headers": {
+          "x-ms-version": "2018-03-28",
+          "x-ms-request-id": "b173790b-b01e-00f2-6013-fa5cce000000",
+          "x-cache": "CONFIG_NOCACHE",
+          "content-type": "application/json",
+          "x-azure-ref": "20250721T074516Z-157cdf4dfd4hsh87hC1LONbr5n00000004x0000000005v50"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 73,
+          "compressed": true,
+          "content_ref": "e8551bc0489c1ba948f1631c51732814c12af1e5.json"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T07:45:21.096Z",
+        "duration_ms": 0.849,
+        "endpoint": "/assets/appConfig.json",
+        "host": "webassistant.onconnect.app",
+        "method": "GET",
+        "status": 200,
+        "request_headers": {
+          "referer": "",
+          "accept": "application/json, text/plain, */*"
+        },
+        "response_headers": {
+          "x-ms-version": "2018-03-28",
+          "x-ms-request-id": "b173790b-b01e-00f2-6013-fa5cce000000",
+          "x-cache": "CONFIG_NOCACHE",
+          "content-type": "application/json",
+          "x-azure-ref": "20250721T074516Z-157cdf4dfd4hsh87hC1LONbr5n00000004x0000000005v50"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 73,
+          "compressed": true,
+          "content_ref": "e8551bc0489c1ba948f1631c51732814c12af1e5.json"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T07:45:40.219Z",
+        "duration_ms": 0.7929999999999999,
+        "endpoint": "/assets/appConfig.json",
+        "host": "webassistant.onconnect.app",
+        "method": "GET",
+        "status": 200,
+        "request_headers": {
+          "referer": "",
+          "accept": "application/json, text/plain, */*"
+        },
+        "response_headers": {
+          "x-ms-version": "2018-03-28",
+          "x-ms-request-id": "b173790b-b01e-00f2-6013-fa5cce000000",
+          "x-cache": "CONFIG_NOCACHE",
+          "content-type": "application/json",
+          "x-azure-ref": "20250721T074516Z-157cdf4dfd4hsh87hC1LONbr5n00000004x0000000005v50"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 73,
+          "compressed": true,
+          "content_ref": "e8551bc0489c1ba948f1631c51732814c12af1e5.json"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T07:45:49.097Z",
+        "duration_ms": 1.479,
+        "endpoint": "/assets/appConfig.json",
+        "host": "webassistant.onconnect.app",
+        "method": "GET",
+        "status": 200,
+        "request_headers": {
+          "referer": "",
+          "accept": "application/json, text/plain, */*"
+        },
+        "response_headers": {
+          "x-ms-version": "2018-03-28",
+          "x-ms-request-id": "b173790b-b01e-00f2-6013-fa5cce000000",
+          "x-cache": "CONFIG_NOCACHE",
+          "content-type": "application/json",
+          "x-azure-ref": "20250721T074516Z-157cdf4dfd4hsh87hC1LONbr5n00000004x0000000005v50"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 73,
+          "compressed": true,
+          "content_ref": "e8551bc0489c1ba948f1631c51732814c12af1e5.json"
+        }
+      }
+    ],
+    "/v1/workspaces/{id}/init": [
+      {
+        "timestamp": "2025-07-21T07:45:16.573Z",
+        "duration_ms": 169.33,
+        "endpoint": "/v1/workspaces/{id}/init",
+        "host": "webassist.onconnect.app",
+        "method": "POST",
+        "status": 200,
+        "path_params": [
+          "0ee4eac1-6daf-45b3-9a15-8e659f54a849"
+        ],
+        "request_headers": {
+          "accept": "application/json, text/plain, */*",
+          "content-type": "application/json",
+          "origin": "https://www.stroud.gov.uk"
+        },
+        "response_headers": {
+          "content-type": "application/json; charset=utf-8",
+          "x-ms-middleware-request-id": "00000000-0000-0000-0000-000000000000"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 1872,
+          "compressed": true,
+          "content_ref": "bf5a01fc84f1a93f035b891c0c607a5247576444.json"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T07:45:19.237Z",
+        "duration_ms": 134.082,
+        "endpoint": "/v1/workspaces/{id}/init",
+        "host": "webassist.onconnect.app",
+        "method": "POST",
+        "status": 200,
+        "path_params": [
+          "0ee4eac1-6daf-45b3-9a15-8e659f54a849"
+        ],
+        "request_headers": {
+          "accept": "application/json, text/plain, */*",
+          "authorization": "Basic YjJkZTZiYzUtNWI1Zi00MGYzLWFiZjItNGFiYTg1YWZiYmQ0OjF1MHFLcEdiUmpNVkprUjVtdTVKdkZDVE1McVVCbi13ejRXbWpqTGZLLU0=",
+          "content-type": "application/json",
+          "origin": "https://www.stroud.gov.uk",
+          "x-connect-auth": "Basic YjJkZTZiYzUtNWI1Zi00MGYzLWFiZjItNGFiYTg1YWZiYmQ0OjF1MHFLcEdiUmpNVkprUjVtdTVKdkZDVE1McVVCbi13ejRXbWpqTGZLLU0="
+        },
+        "response_headers": {
+          "content-type": "application/json; charset=utf-8",
+          "x-ms-middleware-request-id": "00000000-0000-0000-0000-000000000000"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 1830,
+          "compressed": true,
+          "content_ref": "310f0a04abacf8149a0d54002fd68b4ac53e5132.json"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T07:45:21.145Z",
+        "duration_ms": 123.79799999999999,
+        "endpoint": "/v1/workspaces/{id}/init",
+        "host": "webassist.onconnect.app",
+        "method": "POST",
+        "status": 200,
+        "path_params": [
+          "0ee4eac1-6daf-45b3-9a15-8e659f54a849"
+        ],
+        "request_headers": {
+          "accept": "application/json, text/plain, */*",
+          "authorization": "Basic YjJkZTZiYzUtNWI1Zi00MGYzLWFiZjItNGFiYTg1YWZiYmQ0OjF1MHFLcEdiUmpNVkprUjVtdTVKdkZDVE1McVVCbi13ejRXbWpqTGZLLU0=",
+          "content-type": "application/json",
+          "origin": "https://www.stroud.gov.uk",
+          "x-connect-auth": "Basic YjJkZTZiYzUtNWI1Zi00MGYzLWFiZjItNGFiYTg1YWZiYmQ0OjF1MHFLcEdiUmpNVkprUjVtdTVKdkZDVE1McVVCbi13ejRXbWpqTGZLLU0="
+        },
+        "response_headers": {
+          "content-type": "application/json; charset=utf-8",
+          "x-ms-middleware-request-id": "00000000-0000-0000-0000-000000000000"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 1830,
+          "compressed": true,
+          "content_ref": "5386161a561e73cadb002f4645e827bc05f03c35.json"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T07:45:40.263Z",
+        "duration_ms": 142.657,
+        "endpoint": "/v1/workspaces/{id}/init",
+        "host": "webassist.onconnect.app",
+        "method": "POST",
+        "status": 200,
+        "path_params": [
+          "0ee4eac1-6daf-45b3-9a15-8e659f54a849"
+        ],
+        "request_headers": {
+          "accept": "application/json, text/plain, */*",
+          "authorization": "Basic YjJkZTZiYzUtNWI1Zi00MGYzLWFiZjItNGFiYTg1YWZiYmQ0OjF1MHFLcEdiUmpNVkprUjVtdTVKdkZDVE1McVVCbi13ejRXbWpqTGZLLU0=",
+          "content-type": "application/json",
+          "origin": "https://www.stroud.gov.uk",
+          "x-connect-auth": "Basic YjJkZTZiYzUtNWI1Zi00MGYzLWFiZjItNGFiYTg1YWZiYmQ0OjF1MHFLcEdiUmpNVkprUjVtdTVKdkZDVE1McVVCbi13ejRXbWpqTGZLLU0="
+        },
+        "response_headers": {
+          "content-type": "application/json; charset=utf-8",
+          "x-ms-middleware-request-id": "00000000-0000-0000-0000-000000000000"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 1828,
+          "compressed": true,
+          "content_ref": "1b0bdbf27bab4a2342ff79ebca77b9228268b386.json"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T07:45:49.142Z",
+        "duration_ms": 157.168,
+        "endpoint": "/v1/workspaces/{id}/init",
+        "host": "webassist.onconnect.app",
+        "method": "POST",
+        "status": 200,
+        "path_params": [
+          "0ee4eac1-6daf-45b3-9a15-8e659f54a849"
+        ],
+        "request_headers": {
+          "accept": "application/json, text/plain, */*",
+          "authorization": "Basic YjJkZTZiYzUtNWI1Zi00MGYzLWFiZjItNGFiYTg1YWZiYmQ0OjF1MHFLcEdiUmpNVkprUjVtdTVKdkZDVE1McVVCbi13ejRXbWpqTGZLLU0=",
+          "content-type": "application/json",
+          "origin": "https://www.stroud.gov.uk",
+          "x-connect-auth": "Basic YjJkZTZiYzUtNWI1Zi00MGYzLWFiZjItNGFiYTg1YWZiYmQ0OjF1MHFLcEdiUmpNVkprUjVtdTVKdkZDVE1McVVCbi13ejRXbWpqTGZLLU0="
+        },
+        "response_headers": {
+          "content-type": "application/json; charset=utf-8",
+          "x-ms-middleware-request-id": "00000000-0000-0000-0000-000000000000"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 1831,
+          "compressed": true,
+          "content_ref": "62510325a04560e91e5e32afd77b1590ad011dc5.json"
+        }
+      }
+    ],
+    "/client/negotiate": [
+      {
+        "timestamp": "2025-07-21T07:45:16.690Z",
+        "duration_ms": 69.884,
+        "endpoint": "/client/negotiate",
+        "host": "produkswebassistsignalr18.service.signalr.net",
+        "method": "POST",
+        "status": 200,
+        "query_params": {
+          "hub": [
+            "webassistant"
+          ],
+          "negotiateVersion": [
+            "1"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ii0xODMwODc2ODc5In0.eyJuYW1laWQiOiJiMmRlNmJjNS01YjVmLTQwZjMtYWJmMi00YWJhODVhZmJiZDQiLCJ3b3Jrc3BhY2UiOiIwZWU0ZWFjMS02ZGFmLTQ1YjMtOWExNS04ZTY1OWY1NGE4NDkiLCJuYmYiOjE3NTMwODM5MTYsImV4cCI6MTc1MzA4NzUxNiwiaWF0IjoxNzUzMDgzOTE2LCJhdWQiOiJodHRwczovL3Byb2R1a3N3ZWJhc3Npc3RzaWduYWxyMTguc2VydmljZS5zaWduYWxyLm5ldC9jbGllbnQvP2h1Yj13ZWJhc3Npc3RhbnQifQ.CsVhZdannLfstLaqsaNAszg61Cplk7FUlmxKrAoKilE",
+          "content-type": "text/plain;charset=UTF-8",
+          "origin": "https://www.stroud.gov.uk",
+          "x-requested-with": "XMLHttpRequest",
+          "x-signalr-user-agent": "Microsoft SignalR/6.0 (6.0.22; Unknown OS; Browser; Unknown Runtime Version)"
+        },
+        "response_headers": {
+          "content-type": "application/json"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 334,
+          "content_ref": "d8cd14b99078cf2b659d731c7b1262202c54e561.json"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T07:45:19.373Z",
+        "duration_ms": 18.791,
+        "endpoint": "/client/negotiate",
+        "host": "produkswebassistsignalr18.service.signalr.net",
+        "method": "POST",
+        "status": 200,
+        "query_params": {
+          "hub": [
+            "webassistant"
+          ],
+          "negotiateVersion": [
+            "1"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IjIwNTE3MDMyNDMifQ.eyJuYW1laWQiOiJiMmRlNmJjNS01YjVmLTQwZjMtYWJmMi00YWJhODVhZmJiZDQiLCJ3b3Jrc3BhY2UiOiIwZWU0ZWFjMS02ZGFmLTQ1YjMtOWExNS04ZTY1OWY1NGE4NDkiLCJuYmYiOjE3NTMwODM5MTksImV4cCI6MTc1MzA4NzUxOSwiaWF0IjoxNzUzMDgzOTE5LCJhdWQiOiJodHRwczovL3Byb2R1a3N3ZWJhc3Npc3RzaWduYWxyMTguc2VydmljZS5zaWduYWxyLm5ldC9jbGllbnQvP2h1Yj13ZWJhc3Npc3RhbnQifQ.HB7xhV_vkkf55oVvxXHoNPX-B379CYbq8hbXJR4e0Tk",
+          "content-type": "text/plain;charset=UTF-8",
+          "origin": "https://www.stroud.gov.uk",
+          "x-requested-with": "XMLHttpRequest",
+          "x-signalr-user-agent": "Microsoft SignalR/6.0 (6.0.22; Unknown OS; Browser; Unknown Runtime Version)"
+        },
+        "response_headers": {
+          "content-type": "application/json"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 334,
+          "content_ref": "55d0c503b326af0b700e91ff49a57308d62f1874.json"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T07:45:21.269Z",
+        "duration_ms": 17.837,
+        "endpoint": "/client/negotiate",
+        "host": "produkswebassistsignalr18.service.signalr.net",
+        "method": "POST",
+        "status": 200,
+        "query_params": {
+          "hub": [
+            "webassistant"
+          ],
+          "negotiateVersion": [
+            "1"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IjIwNTE3MDMyNDMifQ.eyJuYW1laWQiOiJiMmRlNmJjNS01YjVmLTQwZjMtYWJmMi00YWJhODVhZmJiZDQiLCJ3b3Jrc3BhY2UiOiIwZWU0ZWFjMS02ZGFmLTQ1YjMtOWExNS04ZTY1OWY1NGE4NDkiLCJuYmYiOjE3NTMwODM5MjEsImV4cCI6MTc1MzA4NzUyMSwiaWF0IjoxNzUzMDgzOTIxLCJhdWQiOiJodHRwczovL3Byb2R1a3N3ZWJhc3Npc3RzaWduYWxyMTguc2VydmljZS5zaWduYWxyLm5ldC9jbGllbnQvP2h1Yj13ZWJhc3Npc3RhbnQifQ.uOnv49VmlzHvgju0WeYceldVO7g7OXAdlvlDzHVCeJo",
+          "content-type": "text/plain;charset=UTF-8",
+          "origin": "https://www.stroud.gov.uk",
+          "x-requested-with": "XMLHttpRequest",
+          "x-signalr-user-agent": "Microsoft SignalR/6.0 (6.0.22; Unknown OS; Browser; Unknown Runtime Version)"
+        },
+        "response_headers": {
+          "content-type": "application/json"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 334,
+          "content_ref": "4361af07a5d81bb143a5be3f3658ce3a07bc6b27.json"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T07:45:40.412Z",
+        "duration_ms": 21.724,
+        "endpoint": "/client/negotiate",
+        "host": "produkswebassistsignalr18.service.signalr.net",
+        "method": "POST",
+        "status": 200,
+        "query_params": {
+          "hub": [
+            "webassistant"
+          ],
+          "negotiateVersion": [
+            "1"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IjE3Nzg5NzExOSJ9.eyJuYW1laWQiOiJiMmRlNmJjNS01YjVmLTQwZjMtYWJmMi00YWJhODVhZmJiZDQiLCJ3b3Jrc3BhY2UiOiIwZWU0ZWFjMS02ZGFmLTQ1YjMtOWExNS04ZTY1OWY1NGE4NDkiLCJuYmYiOjE3NTMwODM5NDAsImV4cCI6MTc1MzA4NzU0MCwiaWF0IjoxNzUzMDgzOTQwLCJhdWQiOiJodHRwczovL3Byb2R1a3N3ZWJhc3Npc3RzaWduYWxyMTguc2VydmljZS5zaWduYWxyLm5ldC9jbGllbnQvP2h1Yj13ZWJhc3Npc3RhbnQifQ.0vf64FWbp851fdehX0JQubJ-0KdCQTaOhtYrbhbG3dk",
+          "content-type": "text/plain;charset=UTF-8",
+          "origin": "https://www.stroud.gov.uk",
+          "x-requested-with": "XMLHttpRequest",
+          "x-signalr-user-agent": "Microsoft SignalR/6.0 (6.0.22; Unknown OS; Browser; Unknown Runtime Version)"
+        },
+        "response_headers": {
+          "content-type": "application/json"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 334,
+          "content_ref": "60c0bbf8e25dc65dea929edf5f92eadc83e9b671.json"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T07:45:49.306Z",
+        "duration_ms": 20.583,
+        "endpoint": "/client/negotiate",
+        "host": "produkswebassistsignalr18.service.signalr.net",
+        "method": "POST",
+        "status": 200,
+        "query_params": {
+          "hub": [
+            "webassistant"
+          ],
+          "negotiateVersion": [
+            "1"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ii0xODMwODc2ODc5In0.eyJuYW1laWQiOiJiMmRlNmJjNS01YjVmLTQwZjMtYWJmMi00YWJhODVhZmJiZDQiLCJ3b3Jrc3BhY2UiOiIwZWU0ZWFjMS02ZGFmLTQ1YjMtOWExNS04ZTY1OWY1NGE4NDkiLCJuYmYiOjE3NTMwODM5NDksImV4cCI6MTc1MzA4NzU0OSwiaWF0IjoxNzUzMDgzOTQ5LCJhdWQiOiJodHRwczovL3Byb2R1a3N3ZWJhc3Npc3RzaWduYWxyMTguc2VydmljZS5zaWduYWxyLm5ldC9jbGllbnQvP2h1Yj13ZWJhc3Npc3RhbnQifQ.-T5E73XJFp-C-EDhEPOgAzbjo7jTXchk1O5TOEJYCYc",
+          "content-type": "text/plain;charset=UTF-8",
+          "origin": "https://www.stroud.gov.uk",
+          "x-requested-with": "XMLHttpRequest",
+          "x-signalr-user-agent": "Microsoft SignalR/6.0 (6.0.22; Unknown OS; Browser; Unknown Runtime Version)"
+        },
+        "response_headers": {
+          "content-type": "application/json"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 334,
+          "content_ref": "068e829175031d67ccbd7a9ab954b80e45dccbca.json"
+        }
+      }
+    ],
+    "/v1/postback": [
+      {
+        "timestamp": "2025-07-21T07:45:16.691Z",
+        "duration_ms": 229.43800000000002,
+        "endpoint": "/v1/postback",
+        "host": "webassist.onconnect.app",
+        "method": "POST",
+        "status": 200,
+        "request_headers": {
+          "accept": "application/json, text/plain, */*",
+          "authorization": "Basic YjJkZTZiYzUtNWI1Zi00MGYzLWFiZjItNGFiYTg1YWZiYmQ0OjF1MHFLcEdiUmpNVkprUjVtdTVKdkZDVE1McVVCbi13ejRXbWpqTGZLLU0=",
+          "content-type": "application/json",
+          "origin": "https://www.stroud.gov.uk",
+          "x-connect-auth": "Basic YjJkZTZiYzUtNWI1Zi00MGYzLWFiZjItNGFiYTg1YWZiYmQ0OjF1MHFLcEdiUmpNVkprUjVtdTVKdkZDVE1McVVCbi13ejRXbWpqTGZLLU0="
+        },
+        "response_headers": {
+          "x-ms-middleware-request-id": "00000000-0000-0000-0000-000000000000"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T07:45:19.373Z",
+        "duration_ms": 160.20399999999998,
+        "endpoint": "/v1/postback",
+        "host": "webassist.onconnect.app",
+        "method": "POST",
+        "status": 200,
+        "request_headers": {
+          "accept": "application/json, text/plain, */*",
+          "authorization": "Basic YjJkZTZiYzUtNWI1Zi00MGYzLWFiZjItNGFiYTg1YWZiYmQ0OjF1MHFLcEdiUmpNVkprUjVtdTVKdkZDVE1McVVCbi13ejRXbWpqTGZLLU0=",
+          "content-type": "application/json",
+          "origin": "https://www.stroud.gov.uk",
+          "x-connect-auth": "Basic YjJkZTZiYzUtNWI1Zi00MGYzLWFiZjItNGFiYTg1YWZiYmQ0OjF1MHFLcEdiUmpNVkprUjVtdTVKdkZDVE1McVVCbi13ejRXbWpqTGZLLU0="
+        },
+        "response_headers": {
+          "x-ms-middleware-request-id": "00000000-0000-0000-0000-000000000000"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T07:45:21.269Z",
+        "duration_ms": 173.427,
+        "endpoint": "/v1/postback",
+        "host": "webassist.onconnect.app",
+        "method": "POST",
+        "status": 200,
+        "request_headers": {
+          "accept": "application/json, text/plain, */*",
+          "authorization": "Basic YjJkZTZiYzUtNWI1Zi00MGYzLWFiZjItNGFiYTg1YWZiYmQ0OjF1MHFLcEdiUmpNVkprUjVtdTVKdkZDVE1McVVCbi13ejRXbWpqTGZLLU0=",
+          "content-type": "application/json",
+          "origin": "https://www.stroud.gov.uk",
+          "x-connect-auth": "Basic YjJkZTZiYzUtNWI1Zi00MGYzLWFiZjItNGFiYTg1YWZiYmQ0OjF1MHFLcEdiUmpNVkprUjVtdTVKdkZDVE1McVVCbi13ejRXbWpqTGZLLU0="
+        },
+        "response_headers": {
+          "x-ms-middleware-request-id": "00000000-0000-0000-0000-000000000000"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T07:45:40.413Z",
+        "duration_ms": 175.099,
+        "endpoint": "/v1/postback",
+        "host": "webassist.onconnect.app",
+        "method": "POST",
+        "status": 200,
+        "request_headers": {
+          "accept": "application/json, text/plain, */*",
+          "authorization": "Basic YjJkZTZiYzUtNWI1Zi00MGYzLWFiZjItNGFiYTg1YWZiYmQ0OjF1MHFLcEdiUmpNVkprUjVtdTVKdkZDVE1McVVCbi13ejRXbWpqTGZLLU0=",
+          "content-type": "application/json",
+          "origin": "https://www.stroud.gov.uk",
+          "x-connect-auth": "Basic YjJkZTZiYzUtNWI1Zi00MGYzLWFiZjItNGFiYTg1YWZiYmQ0OjF1MHFLcEdiUmpNVkprUjVtdTVKdkZDVE1McVVCbi13ejRXbWpqTGZLLU0="
+        },
+        "response_headers": {
+          "x-ms-middleware-request-id": "00000000-0000-0000-0000-000000000000"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T07:45:49.307Z",
+        "duration_ms": 178.922,
+        "endpoint": "/v1/postback",
+        "host": "webassist.onconnect.app",
+        "method": "POST",
+        "status": 200,
+        "request_headers": {
+          "accept": "application/json, text/plain, */*",
+          "authorization": "Basic YjJkZTZiYzUtNWI1Zi00MGYzLWFiZjItNGFiYTg1YWZiYmQ0OjF1MHFLcEdiUmpNVkprUjVtdTVKdkZDVE1McVVCbi13ejRXbWpqTGZLLU0=",
+          "content-type": "application/json",
+          "origin": "https://www.stroud.gov.uk",
+          "x-connect-auth": "Basic YjJkZTZiYzUtNWI1Zi00MGYzLWFiZjItNGFiYTg1YWZiYmQ0OjF1MHFLcEdiUmpNVkprUjVtdTVKdkZDVE1McVVCbi13ejRXbWpqTGZLLU0="
+        },
+        "response_headers": {
+          "x-ms-middleware-request-id": "00000000-0000-0000-0000-000000000000"
+        }
+      }
+    ],
+    "/v1/workspaces/{id}/appusers/{id}/messages": [
+      {
+        "timestamp": "2025-07-21T07:45:19.373Z",
+        "duration_ms": 83.256,
+        "endpoint": "/v1/workspaces/{id}/appusers/{id}/messages",
+        "host": "webassist.onconnect.app",
+        "method": "GET",
+        "status": 200,
+        "path_params": [
+          "0ee4eac1-6daf-45b3-9a15-8e659f54a849",
+          "a51c4df9-3969-4562-b7e2-3042b3a452c7"
+        ],
+        "request_headers": {
+          "accept": "application/json, text/plain, */*",
+          "authorization": "Basic YjJkZTZiYzUtNWI1Zi00MGYzLWFiZjItNGFiYTg1YWZiYmQ0OjF1MHFLcEdiUmpNVkprUjVtdTVKdkZDVE1McVVCbi13ejRXbWpqTGZLLU0=",
+          "content-type": "application/json",
+          "origin": "https://www.stroud.gov.uk",
+          "x-connect-auth": "Basic YjJkZTZiYzUtNWI1Zi00MGYzLWFiZjItNGFiYTg1YWZiYmQ0OjF1MHFLcEdiUmpNVkprUjVtdTVKdkZDVE1McVVCbi13ejRXbWpqTGZLLU0="
+        },
+        "response_headers": {
+          "content-type": "application/json; charset=utf-8",
+          "x-ms-middleware-request-id": "00000000-0000-0000-0000-000000000000"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 40,
+          "content_ref": "1037334915cdbbe4abf707856b72a38f00349a04.json"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T07:45:21.269Z",
+        "duration_ms": 83.178,
+        "endpoint": "/v1/workspaces/{id}/appusers/{id}/messages",
+        "host": "webassist.onconnect.app",
+        "method": "GET",
+        "status": 200,
+        "path_params": [
+          "0ee4eac1-6daf-45b3-9a15-8e659f54a849",
+          "a51c4df9-3969-4562-b7e2-3042b3a452c7"
+        ],
+        "request_headers": {
+          "accept": "application/json, text/plain, */*",
+          "authorization": "Basic YjJkZTZiYzUtNWI1Zi00MGYzLWFiZjItNGFiYTg1YWZiYmQ0OjF1MHFLcEdiUmpNVkprUjVtdTVKdkZDVE1McVVCbi13ejRXbWpqTGZLLU0=",
+          "content-type": "application/json",
+          "origin": "https://www.stroud.gov.uk",
+          "x-connect-auth": "Basic YjJkZTZiYzUtNWI1Zi00MGYzLWFiZjItNGFiYTg1YWZiYmQ0OjF1MHFLcEdiUmpNVkprUjVtdTVKdkZDVE1McVVCbi13ejRXbWpqTGZLLU0="
+        },
+        "response_headers": {
+          "content-type": "application/json; charset=utf-8",
+          "x-ms-middleware-request-id": "00000000-0000-0000-0000-000000000000"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 40,
+          "content_ref": "1037334915cdbbe4abf707856b72a38f00349a04.json"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T07:45:40.413Z",
+        "duration_ms": 86.857,
+        "endpoint": "/v1/workspaces/{id}/appusers/{id}/messages",
+        "host": "webassist.onconnect.app",
+        "method": "GET",
+        "status": 200,
+        "path_params": [
+          "0ee4eac1-6daf-45b3-9a15-8e659f54a849",
+          "a51c4df9-3969-4562-b7e2-3042b3a452c7"
+        ],
+        "request_headers": {
+          "accept": "application/json, text/plain, */*",
+          "authorization": "Basic YjJkZTZiYzUtNWI1Zi00MGYzLWFiZjItNGFiYTg1YWZiYmQ0OjF1MHFLcEdiUmpNVkprUjVtdTVKdkZDVE1McVVCbi13ejRXbWpqTGZLLU0=",
+          "content-type": "application/json",
+          "origin": "https://www.stroud.gov.uk",
+          "x-connect-auth": "Basic YjJkZTZiYzUtNWI1Zi00MGYzLWFiZjItNGFiYTg1YWZiYmQ0OjF1MHFLcEdiUmpNVkprUjVtdTVKdkZDVE1McVVCbi13ejRXbWpqTGZLLU0="
+        },
+        "response_headers": {
+          "content-type": "application/json; charset=utf-8",
+          "x-ms-middleware-request-id": "00000000-0000-0000-0000-000000000000"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 40,
+          "content_ref": "1037334915cdbbe4abf707856b72a38f00349a04.json"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T07:45:49.306Z",
+        "duration_ms": 86.983,
+        "endpoint": "/v1/workspaces/{id}/appusers/{id}/messages",
+        "host": "webassist.onconnect.app",
+        "method": "GET",
+        "status": 200,
+        "path_params": [
+          "0ee4eac1-6daf-45b3-9a15-8e659f54a849",
+          "a51c4df9-3969-4562-b7e2-3042b3a452c7"
+        ],
+        "request_headers": {
+          "accept": "application/json, text/plain, */*",
+          "authorization": "Basic YjJkZTZiYzUtNWI1Zi00MGYzLWFiZjItNGFiYTg1YWZiYmQ0OjF1MHFLcEdiUmpNVkprUjVtdTVKdkZDVE1McVVCbi13ejRXbWpqTGZLLU0=",
+          "content-type": "application/json",
+          "origin": "https://www.stroud.gov.uk",
+          "x-connect-auth": "Basic YjJkZTZiYzUtNWI1Zi00MGYzLWFiZjItNGFiYTg1YWZiYmQ0OjF1MHFLcEdiUmpNVkprUjVtdTVKdkZDVE1McVVCbi13ejRXbWpqTGZLLU0="
+        },
+        "response_headers": {
+          "content-type": "application/json; charset=utf-8",
+          "x-ms-middleware-request-id": "00000000-0000-0000-0000-000000000000"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 40,
+          "content_ref": "1037334915cdbbe4abf707856b72a38f00349a04.json"
+        }
+      }
+    ],
+    "/my-house": [
+      {
+        "timestamp": "2025-07-21T07:45:20.878Z",
+        "duration_ms": 87.768,
+        "endpoint": "/my-house",
+        "host": "www.stroud.gov.uk",
+        "method": "GET",
+        "status": 200,
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+          "cookie": "[cookies present]",
+          "referer": "https://www.stroud.gov.uk/environment/bins-rubbish-and-recycling/"
+        },
+        "response_headers": {
+          "content-type": "text/html; charset=utf-8",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "sameorigin",
+          "x-xss-protection": "1; mode=block"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 27214,
+          "compressed": true,
+          "content_ref": "a7d292fb96a32432eaf997fa95b17f01c319e151.html"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T07:45:38.248Z",
+        "duration_ms": 1793.9019999999998,
+        "endpoint": "/my-house",
+        "host": "www.stroud.gov.uk",
+        "method": "GET",
+        "status": 200,
+        "query_params": {
+          "uprn": [
+            "100120511889"
+          ],
+          "postcode": [
+            "GL10 2AA"
+          ]
+        },
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+          "cookie": "[cookies present]",
+          "referer": "https://www.stroud.gov.uk/my-house/"
+        },
+        "response_headers": {
+          "content-type": "text/html; charset=utf-8",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "sameorigin",
+          "x-xss-protection": "1; mode=block"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 39703,
+          "compressed": true,
+          "content_ref": "13e768bb40c06e32f3c8a156b9b61da13c772f7c.html"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T07:45:48.946Z",
+        "duration_ms": 1.6720000000000002,
+        "endpoint": "/my-house",
+        "host": "www.stroud.gov.uk",
+        "method": "GET",
+        "status": 200,
+        "request_headers": {
+          "referer": "https://www.stroud.gov.uk/environment/bins-rubbish-and-recycling/"
+        },
+        "response_headers": {
+          "content-type": "text/html; charset=utf-8",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "sameorigin",
+          "x-xss-protection": "1; mode=block"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 27214,
+          "compressed": true,
+          "content_ref": "a7d292fb96a32432eaf997fa95b17f01c319e151.html"
+        }
+      }
+    ],
+    "/webservice/HasGardenWaste": [
+      {
+        "timestamp": "2025-07-21T07:45:21.141Z",
+        "duration_ms": 49.474000000000004,
+        "endpoint": "/webservice/HasGardenWaste",
+        "host": "www.stroud.gov.uk",
+        "method": "GET",
+        "status": 400,
+        "request_headers": {
+          "accept": "application/json, text/javascript, */*; q=0.01",
+          "cookie": "[cookies present]",
+          "referer": "https://www.stroud.gov.uk/my-house/",
+          "x-requested-with": "XMLHttpRequest"
+        },
+        "response_headers": {
+          "content-type": "application/problem+json; charset=utf-8",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "sameorigin",
+          "x-powered-by": "ARR/3.0",
+          "x-xss-protection": "1; mode=block"
+        },
+        "response_info": {
+          "type": "application/problem+json",
+          "size": 241,
+          "content_ref": "67c516d16bc30a006c779db0a50f5eeaa03b141b.dat"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T07:45:40.117Z",
+        "duration_ms": 183.222,
+        "endpoint": "/webservice/HasGardenWaste",
+        "host": "www.stroud.gov.uk",
+        "method": "GET",
+        "status": 200,
+        "query_params": {
+          "uprn": [
+            "100120511889"
+          ]
+        },
+        "request_headers": {
+          "accept": "application/json, text/javascript, */*; q=0.01",
+          "cookie": "[cookies present]",
+          "referer": "https://www.stroud.gov.uk/my-house?uprn=100120511889&postcode=GL10+2AA",
+          "x-requested-with": "XMLHttpRequest"
+        },
+        "response_headers": {
+          "content-type": "application/json; charset=utf-8",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "sameorigin",
+          "x-powered-by": "ARR/3.0",
+          "x-xss-protection": "1; mode=block"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 25,
+          "content_ref": "ba85353dad0c4e4190392d5453061de309153410.json"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T07:45:49.002Z",
+        "duration_ms": 0.751,
+        "endpoint": "/webservice/HasGardenWaste",
+        "host": "www.stroud.gov.uk",
+        "method": "GET",
+        "status": 400,
+        "request_headers": {
+          "referer": "https://www.stroud.gov.uk/my-house/",
+          "x-requested-with": "XMLHttpRequest",
+          "accept": "application/json, text/javascript, */*; q=0.01"
+        },
+        "response_headers": {
+          "x-content-type-options": "nosniff",
+          "x-xss-protection": "1; mode=block",
+          "content-type": "application/problem+json; charset=utf-8",
+          "x-powered-by": "ARR/3.0",
+          "x-frame-options": "sameorigin"
+        },
+        "response_info": {
+          "type": "application/problem+json",
+          "size": 241,
+          "compressed": true,
+          "content_ref": "67c516d16bc30a006c779db0a50f5eeaa03b141b.dat"
+        }
+      }
+    ],
+    "/maps/api/mapsjs/gen_204": [
+      {
+        "timestamp": "2025-07-21T07:45:21.217Z",
+        "duration_ms": 42.818,
+        "endpoint": "/maps/api/mapsjs/gen_204",
+        "host": "maps.googleapis.com",
+        "method": "GET",
+        "status": 200,
+        "query_params": {
+          "csp_test": [
+            "true"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "origin": "https://www.stroud.gov.uk",
+          "x-browser-copyright": "Copyright 2025 Google LLC. All rights reserved.",
+          "x-browser-validation": "qvLgIVtG4U8GgiRPSI9IJ22mUlI=",
+          "x-browser-year": "2025",
+          "x-client-data": "CMiXywE="
+        },
+        "response_headers": {
+          "content-type": "application/json; charset=UTF-8",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "SAMEORIGIN",
+          "x-xss-protection": "0"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 3,
+          "content_ref": "5f36b2ea290645ee34d943220a14b54ee5ea5be5.json"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T07:45:40.115Z",
+        "duration_ms": 13.334000000000001,
+        "endpoint": "/maps/api/mapsjs/gen_204",
+        "host": "maps.googleapis.com",
+        "method": "GET",
+        "status": 200,
+        "query_params": {
+          "csp_test": [
+            "true"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "origin": "https://www.stroud.gov.uk",
+          "x-browser-copyright": "Copyright 2025 Google LLC. All rights reserved.",
+          "x-browser-validation": "qvLgIVtG4U8GgiRPSI9IJ22mUlI=",
+          "x-browser-year": "2025",
+          "x-client-data": "CMiXywE="
+        },
+        "response_headers": {
+          "content-type": "application/json; charset=UTF-8",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "SAMEORIGIN",
+          "x-xss-protection": "0"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 3,
+          "content_ref": "5f36b2ea290645ee34d943220a14b54ee5ea5be5.json"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T07:45:49.001Z",
+        "duration_ms": 0.608,
+        "endpoint": "/maps/api/mapsjs/gen_204",
+        "host": "maps.googleapis.com",
+        "method": "GET",
+        "status": 200,
+        "query_params": {
+          "csp_test": [
+            "true"
+          ]
+        },
+        "request_headers": {
+          "referer": ""
+        },
+        "response_headers": {
+          "x-content-type-options": "nosniff",
+          "x-xss-protection": "0",
+          "content-type": "application/json; charset=UTF-8",
+          "x-frame-options": "SAMEORIGIN"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 3,
+          "compressed": true,
+          "content_ref": "5f36b2ea290645ee34d943220a14b54ee5ea5be5.json"
+        }
+      }
+    ],
+    "/ajax/libs/font-awesome/4.0.0/fonts/{id}": [
+      {
+        "timestamp": "2025-07-21T07:45:25.928Z",
+        "duration_ms": 47.449,
+        "endpoint": "/ajax/libs/font-awesome/4.0.0/fonts/{id}",
+        "host": "cdnjs.cloudflare.com",
+        "method": "GET",
+        "status": 200,
+        "path_params": [
+          "fontawesome-webfont.woff"
+        ],
+        "query_params": {
+          "v": [
+            "4.0.0"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "origin": "https://www.stroud.gov.uk",
+          "referer": "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.0/css/font-awesome.min.css"
+        },
+        "response_headers": {
+          "cache-control": "public, max-age=30672000",
+          "content-type": "application/octet-stream; charset=utf-8",
+          "x-content-type-options": "nosniff"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T07:45:40.101Z",
+        "duration_ms": 1.064,
+        "endpoint": "/ajax/libs/font-awesome/4.0.0/fonts/{id}",
+        "host": "cdnjs.cloudflare.com",
+        "method": "GET",
+        "status": 200,
+        "path_params": [
+          "fontawesome-webfont.woff"
+        ],
+        "query_params": {
+          "v": [
+            "4.0.0"
+          ]
+        },
+        "request_headers": {
+          "referer": ""
+        },
+        "response_headers": {
+          "x-content-type-options": "nosniff",
+          "content-type": "application/octet-stream; charset=utf-8",
+          "cache-control": "public, max-age=30672000"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T07:45:48.979Z",
+        "duration_ms": 1.043,
+        "endpoint": "/ajax/libs/font-awesome/4.0.0/fonts/{id}",
+        "host": "cdnjs.cloudflare.com",
+        "method": "GET",
+        "status": 200,
+        "path_params": [
+          "fontawesome-webfont.woff"
+        ],
+        "query_params": {
+          "v": [
+            "4.0.0"
+          ]
+        },
+        "request_headers": {
+          "referer": ""
+        },
+        "response_headers": {
+          "x-content-type-options": "nosniff",
+          "content-type": "application/octet-stream; charset=utf-8",
+          "cache-control": "public, max-age=30672000"
+        }
+      }
+    ],
+    "/webservice/getaddress": [
+      {
+        "timestamp": "2025-07-21T07:45:25.927Z",
+        "duration_ms": 389.433,
+        "endpoint": "/webservice/getaddress",
+        "host": "www.stroud.gov.uk",
+        "method": "GET",
+        "status": 200,
+        "query_params": {
+          "postcode": [
+            "GL10 2AA"
+          ],
+          "page": [
+            "0"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "cookie": "[cookies present]",
+          "referer": "https://www.stroud.gov.uk/my-house/",
+          "x-requested-with": "XMLHttpRequest"
+        },
+        "response_headers": {
+          "content-type": "application/json; charset=utf-8",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "sameorigin",
+          "x-powered-by": "ARR/3.0",
+          "x-xss-protection": "1; mode=block"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 9769,
+          "content_ref": "d81b84d56dfe21722ac9b0b16b94de7f9b46cade.json"
+        }
+      }
+    ]
+  }
 }

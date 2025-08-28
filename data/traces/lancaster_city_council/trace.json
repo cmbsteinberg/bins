@@ -1,427 +1,2804 @@
 {
-  "metadata": {
-    "trace_name": "lancaster_city_council",
-    "processed_at": "2025-08-26 18:44:24",
-    "workflow_steps_count": 13,
-    "navigation_events_count": 32
-  },
-  "scraping_patterns": {
-    "login_detected": false,
-    "form_submissions": 5,
-    "navigation_count": 1,
-    "unique_domains": [
-      "maps.googleapis.com",
-      "www.google.com",
-      "lancastercc-self.achieveservice.com",
-      "www.lancaster.gov.uk",
-      "lcc-wrp.whitespacews.com",
-      "use.typekit.net",
-      "planningdocs.lancaster.gov.uk"
-    ],
-    "api_endpoints": [
-      "https://lancastercc-self.achieveservice.com/en/AchieveForms/?form_uri=sandbox-publish://AF-Process-18b9e65f-d457-4c0e-9a14-0e8bacbfbcce/AF-Stage-278b13e2-cfba-404b-b6ff-2e4816f54bac/definition.json&redirectlink=%2Fen&cancelRedirectLink=%2Fen&consentMessage=yes",
-      "https://lancastercc-self.achieveservice.com/authapi/isauthenticated?uri=https%253A%252F%252Flancastercc-self.achieveservice.com%252Fen%252FAchieveForms%252F%253Fform_uri%253Dsandbox-publish%253A%252F%252FAF-Process-18b9e65f-d457-4c0e-9a14-0e8bacbfbcce%252FAF-Stage-278b13e2-cfba-404b-b6ff-2e4816f54bac%252Fdefinition.json%2526redirectlink%253D%25252Fen%2526cancelRedirectLink%253D%25252Fen%2526consentMessage%253Dyes&hostname=lancastercc-self.achieveservice.com&withCredentials=true",
-      "https://maps.googleapis.com/maps/api/mapsjs/gen_204?csp_test=true",
-      "https://lancastercc-self.achieveservice.com/api/self/self-content/getByKeyAndApp?language=en&key=FORM_LOADING_TEXT&app=SELF_CORE&_=1753115470927&sid=03faabdc1e261cb430d82fddf246521f",
-      "https://lancastercc-self.achieveservice.com/api/get-document/json?uri=sandbox-publish%3A%2F%2FAF-Process-18b9e65f-d457-4c0e-9a14-0e8bacbfbcce%2FAF-Stage-278b13e2-cfba-404b-b6ff-2e4816f54bac%2Fdefinition.json&_=1753115470969&sid=03faabdc1e261cb430d82fddf246521f",
-      "https://lancastercc-self.achieveservice.com/api/get-document/json?uri=sandbox-publish%3A%2F%2FAF-Process-18b9e65f-d457-4c0e-9a14-0e8bacbfbcce%2Fdefinition.json&_=1753115471134&sid=03faabdc1e261cb430d82fddf246521f",
-      "https://lancastercc-self.achieveservice.com/api/queue-processor-config/get?_=1753115471312&sid=03faabdc1e261cb430d82fddf246521f",
-      "https://lancastercc-self.achieveservice.com/api/af-configs-list/list?_=1753115471311&sid=03faabdc1e261cb430d82fddf246521f",
-      "https://lancastercc-self.achieveservice.com/api/nextref?_=1753115471313&sid=03faabdc1e261cb430d82fddf246521f"
-    ],
-    "data_extraction_indicators": []
-  },
-  "workflow_steps": [
+  "entries": [
     {
-      "action": "goto",
-      "target": "http://www.lancaster.gov.uk/bins-recycling/bin-collection-calendar",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
-    },
-    {
-      "action": "click",
-      "target": "aria-ref=e9 >> internal:describe=\"button \\\"Close\\\"\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
-    },
-    {
-      "action": "fill",
-      "target": "aria-ref=f1e29 >> internal:describe=\"textbox \\\"Postcode/StreetRequired\\\"\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0,
-      "value": "LA1 1AD"
-    },
-    {
-      "action": "click",
-      "target": "aria-ref=f1e65 >> internal:describe=\"link \\\"Select...\\\"\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
-    },
-    {
-      "action": "click",
-      "target": "aria-ref=f1e79 >> internal:describe=\"option \\\"1 River Street, Lancaster, LA1 1AD\\\"\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
-    },
-    {
-      "action": "click",
-      "target": "aria-ref=f1e175 >> internal:describe=\"link \\\"Click here to view you collection calendar\\\"\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
-    },
-    {
-      "action": "click",
-      "target": "aria-ref=f1e41 >> internal:describe=\"link \\\"Want to check your next collection date? Click here.\\\"\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
-    },
-    {
-      "action": "click",
-      "target": "aria-ref=e35 >> internal:describe=\"link \\\"View My Collections\\\"\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
-    },
-    {
-      "action": "fill",
-      "target": "aria-ref=e28 >> internal:describe=\"textbox \\\"Property Name or Number\\\"\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0,
-      "value": "1"
-    },
-    {
-      "action": "fill",
-      "target": "aria-ref=e31 >> internal:describe=\"textbox \\\"Street Name\\\"\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0,
-      "value": "River Street"
-    },
-    {
-      "action": "fill",
-      "target": "aria-ref=e34 >> internal:describe=\"textbox \\\"Post Code\\\"\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0,
-      "value": "LA1 1AD"
-    },
-    {
-      "action": "click",
-      "target": "aria-ref=e38 >> internal:describe=\"button \\\"Continue\\\"\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
-    },
-    {
-      "action": "click",
-      "target": "aria-ref=e29 >> internal:describe=\"link \\\"1, RIVER STREET, LANCASTER, LANCASHIRE, ..\\\"\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
-    }
-  ],
-  "navigation_events": [
-    {
-      "url": "http://www.lancaster.gov.uk/bins-recycling/bin-collection-calendar",
+      "timestamp": "2025-07-21T16:31:07.273Z",
+      "duration_ms": 75.462,
+      "endpoint": "/bins-recycling/{id}",
+      "host": "www.lancaster.gov.uk",
       "method": "GET",
       "status": 302,
-      "redirect_url": "https://www.lancaster.gov.uk/bins-recycling/bin-collection-calendar",
-      "mime_type": "text/html; charset=utf-8",
-      "size": -1,
-      "timestamp": "2025-07-21T16:31:07.273Z"
+      "path_params": [
+        "bin-collection-calendar"
+      ],
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7"
+      },
+      "response_headers": {
+        "content-type": "text/html; charset=utf-8",
+        "location": "https://www.lancaster.gov.uk/bins-recycling/bin-collection-calendar"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": -1
+      },
+      "redirect_to": "https://www.lancaster.gov.uk/bins-recycling/bin-collection-calendar"
     },
     {
-      "url": "https://www.lancaster.gov.uk/bins-recycling/bin-collection-calendar",
+      "timestamp": "2025-07-21T16:31:07.329Z",
+      "duration_ms": 126.202,
+      "endpoint": "/bins-recycling/{id}",
+      "host": "www.lancaster.gov.uk",
       "method": "GET",
       "status": 302,
-      "redirect_url": "https://lancastercc-self.achieveservice.com/en/AchieveForms/?form_uri=sandbox-publish://AF-Process-18b9e65f-d457-4c0e-9a14-0e8bacbfbcce/AF-Stage-278b13e2-cfba-404b-b6ff-2e4816f54bac/definition.json&redirectlink=%2Fen&cancelRedirectLink=%2Fen&consentMessage=yes",
-      "mime_type": "text/html; charset=utf-8",
-      "size": -1,
-      "timestamp": "2025-07-21T16:31:07.329Z"
+      "path_params": [
+        "bin-collection-calendar"
+      ],
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7"
+      },
+      "response_headers": {
+        "cache-control": "private",
+        "content-type": "text/html; charset=utf-8",
+        "location": "https://lancastercc-self.achieveservice.com/en/AchieveForms/?form_uri=sandbox-publish://AF-Process-18b9e65f-d457-4c0e-9a14-0e8bacbfbcce/AF-Stage-278b13e2-cfba-404b-b6ff-2e4816f54bac/definition.json&redirectlink=%2Fen&cancelRedirectLink=%2Fen&consentMessage=yes"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": -1
+      },
+      "redirect_to": "https://lancastercc-self.achieveservice.com/en/AchieveForms/?form_uri=sandbox-publish://AF-Process-18b9e65f-d457-4c0e-9a14-0e8bacbfbcce/AF-Stage-278b13e2-cfba-404b-b6ff-2e4816f54bac/definition.json&redirectlink=%2Fen&cancelRedirectLink=%2Fen&consentMessage=yes"
     },
     {
-      "url": "https://lancastercc-self.achieveservice.com/en/AchieveForms/?form_uri=sandbox-publish://AF-Process-18b9e65f-d457-4c0e-9a14-0e8bacbfbcce/AF-Stage-278b13e2-cfba-404b-b6ff-2e4816f54bac/definition.json&redirectlink=%2Fen&cancelRedirectLink=%2Fen&consentMessage=yes",
+      "timestamp": "2025-07-21T16:31:07.425Z",
+      "duration_ms": 1885.031,
+      "endpoint": "/en/AchieveForms",
+      "host": "lancastercc-self.achieveservice.com",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "text/html; charset=UTF-8",
-      "size": 30234,
-      "timestamp": "2025-07-21T16:31:07.425Z"
-    },
-    {
-      "url": "https://www.google.com/jsapi",
-      "method": "GET",
-      "status": 301,
-      "redirect_url": "https://www.gstatic.com/charts/loader.js",
-      "mime_type": "text/html; charset=UTF-8",
-      "size": -1,
-      "timestamp": "2025-07-21T16:31:09.319Z"
-    },
-    {
-      "url": "https://use.typekit.net/af/affdf5/00000000000000003b9b0328/27/l?subset_id=2&fvd=n4&v=3",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/font-woff2",
-      "size": 20404,
-      "timestamp": "2025-07-21T16:31:10.293Z"
-    },
-    {
-      "url": "https://use.typekit.net/af/14d4d5/00000000000000000001721c/27/l?subset_id=2&fvd=n4&v=3",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/font-woff2",
-      "size": 47344,
-      "timestamp": "2025-07-21T16:31:10.294Z"
-    },
-    {
-      "url": "https://use.typekit.net/af/b5ce2a/00000000000000003b9b032d/27/l?subset_id=2&fvd=n7&v=3",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/font-woff2",
-      "size": 20288,
-      "timestamp": "2025-07-21T16:31:10.294Z"
-    },
-    {
-      "url": "https://use.typekit.net/af/2223ac/00000000000000003b9b0326/27/l?subset_id=2&fvd=n3&v=3",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/font-woff2",
-      "size": 20880,
-      "timestamp": "2025-07-21T16:31:10.294Z"
-    },
-    {
-      "url": "https://lancastercc-self.achieveservice.com/authapi/isauthenticated?uri=https%253A%252F%252Flancastercc-self.achieveservice.com%252Fen%252FAchieveForms%252F%253Fform_uri%253Dsandbox-publish%253A%252F%252FAF-Process-18b9e65f-d457-4c0e-9a14-0e8bacbfbcce%252FAF-Stage-278b13e2-cfba-404b-b6ff-2e4816f54bac%252Fdefinition.json%2526redirectlink%253D%25252Fen%2526cancelRedirectLink%253D%25252Fen%2526consentMessage%253Dyes&hostname=lancastercc-self.achieveservice.com&withCredentials=true",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json; charset=utf-8",
-      "size": 3158,
-      "timestamp": "2025-07-21T16:31:10.294Z"
-    },
-    {
-      "url": "https://lancastercc-self.achieveservice.com/apibroker/domain/lancastercc-self.achieveservice.com?_=1753115470281&sid=03faabdc1e261cb430d82fddf246521f",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json",
-      "size": 235,
-      "timestamp": "2025-07-21T16:31:10.466Z"
-    },
-    {
-      "url": "https://lancastercc-self.achieveservice.com/apibroker/domain/lancastercc-self.achieveservice.com?_=1753115470264&sid=03faabdc1e261cb430d82fddf246521f",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json",
-      "size": 235,
-      "timestamp": "2025-07-21T16:31:10.466Z"
-    },
-    {
-      "url": "https://lancastercc-self.achieveservice.com/apibroker/self-settings?keys=CustomIFrameCss%2CCustomCssInline&app_name=Self&_=1753115470464&sid=03faabdc1e261cb430d82fddf246521f",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json; charset=UTF-8",
-      "size": 137,
-      "timestamp": "2025-07-21T16:31:10.466Z"
-    },
-    {
-      "url": "https://lancastercc-self.achieveservice.com/fillform/?iframe_id=fillform-frame-1&db_id=",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "text/html; charset=UTF-8",
-      "size": 4319,
-      "timestamp": "2025-07-21T16:31:10.589Z"
-    },
-    {
-      "url": "https://www.google.com/jsapi?key=AIzaSyDMYR3xNkRwUG-OsKEC4WVi1ptWIPzybMs",
-      "method": "GET",
-      "status": 301,
-      "redirect_url": "https://www.gstatic.com/charts/loader.js?key=AIzaSyDMYR3xNkRwUG-OsKEC4WVi1ptWIPzybMs",
-      "mime_type": "text/html; charset=UTF-8",
-      "size": -1,
-      "timestamp": "2025-07-21T16:31:10.649Z"
-    },
-    {
-      "url": "https://maps.googleapis.com/maps/api/mapsjs/gen_204?csp_test=true",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json; charset=UTF-8",
-      "size": 3,
-      "timestamp": "2025-07-21T16:31:10.949Z"
-    },
-    {
-      "url": "https://lancastercc-self.achieveservice.com/api/self/self-content/getByKeyAndApp?language=en&key=FORM_LOADING_TEXT&app=SELF_CORE&_=1753115470927&sid=03faabdc1e261cb430d82fddf246521f",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json",
-      "size": 169,
-      "timestamp": "2025-07-21T16:31:10.951Z"
-    },
-    {
-      "url": "https://lancastercc-self.achieveservice.com/api/get-document/json?uri=sandbox-publish%3A%2F%2FAF-Process-18b9e65f-d457-4c0e-9a14-0e8bacbfbcce%2FAF-Stage-278b13e2-cfba-404b-b6ff-2e4816f54bac%2Fdefinition.json&_=1753115470969&sid=03faabdc1e261cb430d82fddf246521f",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json",
-      "size": 14182,
-      "timestamp": "2025-07-21T16:31:10.985Z"
-    },
-    {
-      "url": "https://lancastercc-self.achieveservice.com/api/get-document/json?uri=sandbox-publish%3A%2F%2FAF-Process-18b9e65f-d457-4c0e-9a14-0e8bacbfbcce%2Fdefinition.json&_=1753115471134&sid=03faabdc1e261cb430d82fddf246521f",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json",
-      "size": 3073,
-      "timestamp": "2025-07-21T16:31:11.137Z"
-    },
-    {
-      "url": "https://lancastercc-self.achieveservice.com/api/queue-processor-config/get?_=1753115471312&sid=03faabdc1e261cb430d82fddf246521f",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json",
-      "size": 39,
-      "timestamp": "2025-07-21T16:31:11.319Z"
-    },
-    {
-      "url": "https://lancastercc-self.achieveservice.com/api/af-configs-list/list?_=1753115471311&sid=03faabdc1e261cb430d82fddf246521f",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json",
-      "size": 1374,
-      "timestamp": "2025-07-21T16:31:11.319Z"
-    },
-    {
-      "url": "https://lancastercc-self.achieveservice.com/api/nextref?_=1753115471313&sid=03faabdc1e261cb430d82fddf246521f",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json",
-      "size": 116,
-      "timestamp": "2025-07-21T16:31:11.320Z"
-    },
-    {
-      "url": "https://lancastercc-self.achieveservice.com/apibroker/environment-tokens-public?app_name=AF-Renderer::Self&_=1753115471314&sid=03faabdc1e261cb430d82fddf246521f",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json; charset=UTF-8",
-      "size": 19369,
-      "timestamp": "2025-07-21T16:31:11.320Z"
-    },
-    {
-      "url": "https://lancastercc-self.achieveservice.com/apibroker/location?app_name=AF-Renderer::Self&_=1753115471315&sid=03faabdc1e261cb430d82fddf246521f",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json; charset=UTF-8",
-      "size": 272,
-      "timestamp": "2025-07-21T16:31:11.320Z"
-    },
-    {
-      "url": "https://lancastercc-self.achieveservice.com/apibroker/runLookup?id=f143efbb0bb54&repeat_against=&noRetry=false&getOnlyTokens=true&log_id=&app_name=AF-Renderer::Self&_=1753115471449&sid=03faabdc1e261cb430d82fddf246521f",
-      "method": "POST",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json; charset=UTF-8",
-      "size": 128,
-      "timestamp": "2025-07-21T16:31:11.452Z"
-    },
-    {
-      "url": "https://lancastercc-self.achieveservice.com/apibroker/runLookup?id=62fe3cfd2cf02&repeat_against=&noRetry=true&getOnlyTokens=true&log_id=&app_name=AF-Renderer::Self&_=1753115471594&sid=03faabdc1e261cb430d82fddf246521f",
-      "method": "POST",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json; charset=UTF-8",
-      "size": 78,
-      "timestamp": "2025-07-21T16:31:11.598Z"
-    },
-    {
-      "url": "https://lancastercc-self.achieveservice.com/apibroker/runLookup?id=f143efbb0bb54&repeat_against=&noRetry=false&getOnlyTokens=undefined&log_id=&app_name=AF-Renderer::Self&_=1753115474769&sid=03faabdc1e261cb430d82fddf246521f",
-      "method": "POST",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json; charset=UTF-8",
-      "size": 104464,
-      "timestamp": "2025-07-21T16:31:14.772Z"
-    },
-    {
-      "url": "https://lancastercc-self.achieveservice.com/apibroker/runLookup?id=62fe3cfd2cf02&repeat_against=&noRetry=true&getOnlyTokens=undefined&log_id=&app_name=AF-Renderer::Self&_=1753115480874&sid=03faabdc1e261cb430d82fddf246521f",
-      "method": "POST",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json; charset=UTF-8",
-      "size": 1294,
-      "timestamp": "2025-07-21T16:31:20.880Z"
-    },
-    {
-      "url": "https://planningdocs.lancaster.gov.uk/bincalendars/Calendar6.pdf",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/pdf",
-      "size": 345,
-      "timestamp": "2025-07-21T16:31:22.836Z"
-    },
-    {
-      "url": "https://lcc-wrp.whitespacews.com/",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "text/html; charset=UTF-8",
-      "size": 7171,
-      "timestamp": "2025-07-21T16:31:28.349Z"
-    },
-    {
-      "url": "https://lcc-wrp.whitespacews.com/?Track=2025/07/21/QDBF3C3&serviceID=A&seq=1",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "text/html; charset=UTF-8",
-      "size": 10889,
-      "timestamp": "2025-07-21T16:31:32.350Z"
-    },
-    {
-      "url": "https://lcc-wrp.whitespacews.com/mop.php?serviceID=A&Track=2025/07/21/QDBF3C3&seq=2",
-      "method": "POST",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "text/html; charset=UTF-8",
-      "size": 13958,
-      "timestamp": "2025-07-21T16:31:43.794Z",
-      "form_data": {
-        "address_name_number": "1",
-        "address_street": "River Street",
-        "street_town": "",
-        "address_postcode": "LA1 1AD"
+      "query_params": {
+        "form_uri": [
+          "sandbox-publish://AF-Process-18b9e65f-d457-4c0e-9a14-0e8bacbfbcce/AF-Stage-278b13e2-cfba-404b-b6ff-2e4816f54bac/definition.json"
+        ],
+        "redirectlink": [
+          "/en"
+        ],
+        "cancelRedirectLink": [
+          "/en"
+        ],
+        "consentMessage": [
+          "yes"
+        ]
+      },
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+        "cookie": "[cookies present]"
+      },
+      "response_headers": {
+        "cache-control": "no-store, no-cache, must-revalidate",
+        "content-type": "text/html; charset=UTF-8",
+        "set-cookie": "[cookies present]",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "SAMEORIGIN",
+        "x-xss-protection": "0"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 30234,
+        "compressed": true,
+        "content_ref": "c28ebe85fefffa42af36998fc7f69656e2a8ef3d.html"
       }
     },
     {
-      "url": "https://lcc-wrp.whitespacews.com/mop.php?Track=2025/07/21/QDBF3C3&serviceID=A&seq=3&pIndex=1",
+      "timestamp": "2025-07-21T16:31:09.319Z",
+      "duration_ms": 264.539,
+      "endpoint": "/jsapi",
+      "host": "www.google.com",
+      "method": "GET",
+      "status": 301,
+      "request_headers": {
+        "accept": "*/*",
+        "referer": "https://lancastercc-self.achieveservice.com/",
+        "x-browser-copyright": "Copyright 2025 Google LLC. All rights reserved.",
+        "x-browser-validation": "qvLgIVtG4U8GgiRPSI9IJ22mUlI=",
+        "x-browser-year": "2025",
+        "x-client-data": "CMiXywE="
+      },
+      "response_headers": {
+        "cache-control": "public, max-age=1800",
+        "content-type": "text/html; charset=UTF-8",
+        "location": "https://www.gstatic.com/charts/loader.js",
+        "x-content-type-options": "nosniff",
+        "x-xss-protection": "0"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": -1
+      },
+      "redirect_to": "https://www.gstatic.com/charts/loader.js"
+    },
+    {
+      "timestamp": "2025-07-21T16:31:10.293Z",
+      "duration_ms": 50.081999999999994,
+      "endpoint": "/af/affdf5/{id}/{id}/l",
+      "host": "use.typekit.net",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "text/html; charset=UTF-8",
-      "size": 19844,
-      "timestamp": "2025-07-21T16:31:48.433Z"
+      "path_params": [
+        "00000000000000003b9b0328",
+        "27"
+      ],
+      "query_params": {
+        "subset_id": [
+          "2"
+        ],
+        "fvd": [
+          "n4"
+        ],
+        "v": [
+          "3"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "origin": "https://lancastercc-self.achieveservice.com",
+        "referer": "https://use.typekit.net/nzf5lsg.css"
+      },
+      "response_headers": {
+        "cache-control": "public, max-age=31536000",
+        "content-type": "application/font-woff2"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T16:31:10.294Z",
+      "duration_ms": 32.042,
+      "endpoint": "/af/14d4d5/{id}/{id}/l",
+      "host": "use.typekit.net",
+      "method": "GET",
+      "status": 200,
+      "path_params": [
+        "00000000000000000001721c",
+        "27"
+      ],
+      "query_params": {
+        "subset_id": [
+          "2"
+        ],
+        "fvd": [
+          "n4"
+        ],
+        "v": [
+          "3"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "origin": "https://lancastercc-self.achieveservice.com",
+        "referer": "https://use.typekit.net/nzf5lsg.css"
+      },
+      "response_headers": {
+        "cache-control": "public, max-age=31536000",
+        "content-type": "application/font-woff2"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T16:31:10.294Z",
+      "duration_ms": 33.748999999999995,
+      "endpoint": "/af/b5ce2a/{id}/{id}/l",
+      "host": "use.typekit.net",
+      "method": "GET",
+      "status": 200,
+      "path_params": [
+        "00000000000000003b9b032d",
+        "27"
+      ],
+      "query_params": {
+        "subset_id": [
+          "2"
+        ],
+        "fvd": [
+          "n7"
+        ],
+        "v": [
+          "3"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "origin": "https://lancastercc-self.achieveservice.com",
+        "referer": "https://use.typekit.net/nzf5lsg.css"
+      },
+      "response_headers": {
+        "cache-control": "public, max-age=31536000",
+        "content-type": "application/font-woff2"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T16:31:10.294Z",
+      "duration_ms": 35.269,
+      "endpoint": "/af/2223ac/{id}/{id}/l",
+      "host": "use.typekit.net",
+      "method": "GET",
+      "status": 200,
+      "path_params": [
+        "00000000000000003b9b0326",
+        "27"
+      ],
+      "query_params": {
+        "subset_id": [
+          "2"
+        ],
+        "fvd": [
+          "n3"
+        ],
+        "v": [
+          "3"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "origin": "https://lancastercc-self.achieveservice.com",
+        "referer": "https://use.typekit.net/nzf5lsg.css"
+      },
+      "response_headers": {
+        "cache-control": "public, max-age=31536000",
+        "content-type": "application/font-woff2"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T16:31:10.294Z",
+      "duration_ms": 196.22699999999998,
+      "endpoint": "/authapi/isauthenticated",
+      "host": "lancastercc-self.achieveservice.com",
+      "method": "GET",
+      "status": 200,
+      "query_params": {
+        "uri": [
+          "https%3A%2F%2Flancastercc-self.achieveservice.com%2Fen%2FAchieveForms%2F%3Fform_uri%3Dsandbox-publish%3A%2F%2FAF-Process-18b9e65f-d457-4c0e-9a14-0e8bacbfbcce%2FAF-Stage-278b13e2-cfba-404b-b6ff-2e4816f54bac%2Fdefinition.json%26redirectlink%3D%252Fen%26cancelRedirectLink%3D%252Fen%26consentMessage%3Dyes"
+        ],
+        "hostname": [
+          "lancastercc-self.achieveservice.com"
+        ],
+        "withCredentials": [
+          "true"
+        ]
+      },
+      "request_headers": {
+        "accept": "application/json, text/javascript, */*; q=0.01",
+        "cookie": "[cookies present]",
+        "referer": "https://lancastercc-self.achieveservice.com/en/AchieveForms/?form_uri=sandbox-publish://AF-Process-18b9e65f-d457-4c0e-9a14-0e8bacbfbcce/AF-Stage-278b13e2-cfba-404b-b6ff-2e4816f54bac/definition.json&redirectlink=%2Fen&cancelRedirectLink=%2Fen&consentMessage=yes",
+        "x-requested-with": "XMLHttpRequest"
+      },
+      "response_headers": {
+        "cache-control": "no-store, no-cache, must-revalidate",
+        "content-type": "application/json; charset=utf-8",
+        "set-cookie": "[cookies present]",
+        "x-auth-session": "ro6v0mmc2l1tpq1t8ksi6hhkb8",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "SAMEORIGIN",
+        "x-xss-protection": "0"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 3158,
+        "compressed": true,
+        "content_ref": "9bfa314f4db56076df6048166803bfa437800dee.json"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T16:31:10.466Z",
+      "duration_ms": 62.57299999999999,
+      "endpoint": "/apibroker/domain/{id}",
+      "host": "lancastercc-self.achieveservice.com",
+      "method": "GET",
+      "status": 200,
+      "path_params": [
+        "lancastercc-self.achieveservice.com"
+      ],
+      "query_params": {
+        "_": [
+          "1753115470281"
+        ],
+        "sid": [
+          "03faabdc1e261cb430d82fddf246521f"
+        ]
+      },
+      "request_headers": {
+        "accept": "application/json, text/javascript, */*; q=0.01",
+        "cookie": "[cookies present]",
+        "referer": "https://lancastercc-self.achieveservice.com/en/AchieveForms/?form_uri=sandbox-publish://AF-Process-18b9e65f-d457-4c0e-9a14-0e8bacbfbcce/AF-Stage-278b13e2-cfba-404b-b6ff-2e4816f54bac/definition.json&redirectlink=%2Fen&cancelRedirectLink=%2Fen&consentMessage=yes",
+        "x-requested-with": "XMLHttpRequest"
+      },
+      "response_headers": {
+        "content-type": "application/json",
+        "set-cookie": "[cookies present]",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "SAMEORIGIN",
+        "x-xss-protection": "0"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 235,
+        "content_ref": "578bcd0c4e4e569c455c58c875d497ae6e46c9ec.json"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T16:31:10.466Z",
+      "duration_ms": 66.679,
+      "endpoint": "/apibroker/domain/{id}",
+      "host": "lancastercc-self.achieveservice.com",
+      "method": "GET",
+      "status": 200,
+      "path_params": [
+        "lancastercc-self.achieveservice.com"
+      ],
+      "query_params": {
+        "_": [
+          "1753115470264"
+        ],
+        "sid": [
+          "03faabdc1e261cb430d82fddf246521f"
+        ]
+      },
+      "request_headers": {
+        "accept": "application/json, text/javascript, */*; q=0.01",
+        "cookie": "[cookies present]",
+        "referer": "https://lancastercc-self.achieveservice.com/en/AchieveForms/?form_uri=sandbox-publish://AF-Process-18b9e65f-d457-4c0e-9a14-0e8bacbfbcce/AF-Stage-278b13e2-cfba-404b-b6ff-2e4816f54bac/definition.json&redirectlink=%2Fen&cancelRedirectLink=%2Fen&consentMessage=yes",
+        "x-requested-with": "XMLHttpRequest"
+      },
+      "response_headers": {
+        "content-type": "application/json",
+        "set-cookie": "[cookies present]",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "SAMEORIGIN",
+        "x-xss-protection": "0"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 235,
+        "content_ref": "578bcd0c4e4e569c455c58c875d497ae6e46c9ec.json"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T16:31:10.466Z",
+      "duration_ms": 85.679,
+      "endpoint": "/apibroker/self-settings",
+      "host": "lancastercc-self.achieveservice.com",
+      "method": "GET",
+      "status": 200,
+      "query_params": {
+        "keys": [
+          "CustomIFrameCss,CustomCssInline"
+        ],
+        "app_name": [
+          "Self"
+        ],
+        "_": [
+          "1753115470464"
+        ],
+        "sid": [
+          "03faabdc1e261cb430d82fddf246521f"
+        ]
+      },
+      "request_headers": {
+        "accept": "application/json, text/javascript, */*; q=0.01",
+        "cookie": "[cookies present]",
+        "referer": "https://lancastercc-self.achieveservice.com/en/AchieveForms/?form_uri=sandbox-publish://AF-Process-18b9e65f-d457-4c0e-9a14-0e8bacbfbcce/AF-Stage-278b13e2-cfba-404b-b6ff-2e4816f54bac/definition.json&redirectlink=%2Fen&cancelRedirectLink=%2Fen&consentMessage=yes",
+        "x-requested-with": "XMLHttpRequest"
+      },
+      "response_headers": {
+        "cache-control": "no-store, no-cache, must-revalidate",
+        "content-type": "application/json; charset=UTF-8",
+        "set-cookie": "[cookies present]",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "SAMEORIGIN",
+        "x-xss-protection": "0"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 137,
+        "content_ref": "ada46d0a8fcad340065988ffdf4249a027a70457.json"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T16:31:10.589Z",
+      "duration_ms": 52.492999999999995,
+      "endpoint": "/fillform",
+      "host": "lancastercc-self.achieveservice.com",
+      "method": "GET",
+      "status": 200,
+      "query_params": {
+        "iframe_id": [
+          "fillform-frame-1"
+        ]
+      },
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+        "cookie": "[cookies present]",
+        "referer": "https://lancastercc-self.achieveservice.com/en/AchieveForms/?form_uri=sandbox-publish://AF-Process-18b9e65f-d457-4c0e-9a14-0e8bacbfbcce/AF-Stage-278b13e2-cfba-404b-b6ff-2e4816f54bac/definition.json&redirectlink=%2Fen&cancelRedirectLink=%2Fen&consentMessage=yes"
+      },
+      "response_headers": {
+        "cache-control": "no-store, no-cache, must-revalidate",
+        "content-type": "text/html; charset=UTF-8",
+        "set-cookie": "[cookies present]",
+        "x-content-type-options": "nosniff",
+        "x-ua-compatible": "IE=Edge,chrome=1",
+        "x-xss-protection": "0"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 4319,
+        "compressed": true,
+        "content_ref": "ab9ea3b583553a5060470b48290da0023203f46d.html"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T16:31:10.649Z",
+      "duration_ms": 108.95200000000001,
+      "endpoint": "/jsapi",
+      "host": "www.google.com",
+      "method": "GET",
+      "status": 301,
+      "query_params": {
+        "key": [
+          "AIzaSyDMYR3xNkRwUG-OsKEC4WVi1ptWIPzybMs"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "referer": "https://lancastercc-self.achieveservice.com/",
+        "x-browser-copyright": "Copyright 2025 Google LLC. All rights reserved.",
+        "x-browser-validation": "qvLgIVtG4U8GgiRPSI9IJ22mUlI=",
+        "x-browser-year": "2025",
+        "x-client-data": "CMiXywE="
+      },
+      "response_headers": {
+        "cache-control": "public, max-age=1800",
+        "content-type": "text/html; charset=UTF-8",
+        "location": "https://www.gstatic.com/charts/loader.js?key=AIzaSyDMYR3xNkRwUG-OsKEC4WVi1ptWIPzybMs",
+        "x-content-type-options": "nosniff",
+        "x-xss-protection": "0"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": -1
+      },
+      "redirect_to": "https://www.gstatic.com/charts/loader.js?key=AIzaSyDMYR3xNkRwUG-OsKEC4WVi1ptWIPzybMs"
+    },
+    {
+      "timestamp": "2025-07-21T16:31:10.949Z",
+      "duration_ms": 52.05499999999999,
+      "endpoint": "/maps/api/mapsjs/gen_204",
+      "host": "maps.googleapis.com",
+      "method": "GET",
+      "status": 200,
+      "query_params": {
+        "csp_test": [
+          "true"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "origin": "https://lancastercc-self.achieveservice.com",
+        "referer": "https://lancastercc-self.achieveservice.com/",
+        "x-browser-copyright": "Copyright 2025 Google LLC. All rights reserved.",
+        "x-browser-validation": "qvLgIVtG4U8GgiRPSI9IJ22mUlI=",
+        "x-browser-year": "2025",
+        "x-client-data": "CMiXywE="
+      },
+      "response_headers": {
+        "content-type": "application/json; charset=UTF-8",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "SAMEORIGIN",
+        "x-xss-protection": "0"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 3,
+        "content_ref": "5f36b2ea290645ee34d943220a14b54ee5ea5be5.json"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T16:31:10.951Z",
+      "duration_ms": 39.364,
+      "endpoint": "/api/self/self-content/getByKeyAndApp",
+      "host": "lancastercc-self.achieveservice.com",
+      "method": "GET",
+      "status": 200,
+      "query_params": {
+        "language": [
+          "en"
+        ],
+        "key": [
+          "FORM_LOADING_TEXT"
+        ],
+        "app": [
+          "SELF_CORE"
+        ],
+        "_": [
+          "1753115470927"
+        ],
+        "sid": [
+          "03faabdc1e261cb430d82fddf246521f"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "content-type": "application/json",
+        "cookie": "[cookies present]",
+        "referer": "https://lancastercc-self.achieveservice.com/fillform/?iframe_id=fillform-frame-1&db_id=",
+        "x-requested-with": "XMLHttpRequest"
+      },
+      "response_headers": {
+        "cache-control": "no-store, no-cache, must-revalidate",
+        "content-type": "application/json",
+        "set-cookie": "[cookies present]",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "SAMEORIGIN",
+        "x-xss-protection": "0"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 169,
+        "content_ref": "288f60220ea3b8d8ae1376434437f26bab717a6d.json"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T16:31:10.985Z",
+      "duration_ms": 163.58399999999997,
+      "endpoint": "/api/get-document/json",
+      "host": "lancastercc-self.achieveservice.com",
+      "method": "GET",
+      "status": 200,
+      "query_params": {
+        "uri": [
+          "sandbox-publish://AF-Process-18b9e65f-d457-4c0e-9a14-0e8bacbfbcce/AF-Stage-278b13e2-cfba-404b-b6ff-2e4816f54bac/definition.json"
+        ],
+        "_": [
+          "1753115470969"
+        ],
+        "sid": [
+          "03faabdc1e261cb430d82fddf246521f"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "content-type": "application/json",
+        "cookie": "[cookies present]",
+        "referer": "https://lancastercc-self.achieveservice.com/fillform/?iframe_id=fillform-frame-1&db_id=",
+        "x-requested-with": "XMLHttpRequest"
+      },
+      "response_headers": {
+        "cache-control": "no-store, no-cache, must-revalidate",
+        "content-type": "application/json",
+        "set-cookie": "[cookies present]",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "SAMEORIGIN",
+        "x-xss-protection": "0"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 14182,
+        "compressed": true,
+        "content_ref": "aa8531cb07adf127628da43bc577ee44d9f3e023.json"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T16:31:11.137Z",
+      "duration_ms": 168.258,
+      "endpoint": "/api/get-document/json",
+      "host": "lancastercc-self.achieveservice.com",
+      "method": "GET",
+      "status": 200,
+      "query_params": {
+        "uri": [
+          "sandbox-publish://AF-Process-18b9e65f-d457-4c0e-9a14-0e8bacbfbcce/definition.json"
+        ],
+        "_": [
+          "1753115471134"
+        ],
+        "sid": [
+          "03faabdc1e261cb430d82fddf246521f"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "content-type": "application/json",
+        "cookie": "[cookies present]",
+        "referer": "https://lancastercc-self.achieveservice.com/fillform/?iframe_id=fillform-frame-1&db_id=",
+        "x-requested-with": "XMLHttpRequest"
+      },
+      "response_headers": {
+        "cache-control": "no-store, no-cache, must-revalidate",
+        "content-type": "application/json",
+        "set-cookie": "[cookies present]",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "SAMEORIGIN",
+        "x-xss-protection": "0"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 3073,
+        "compressed": true,
+        "content_ref": "7e29d854b92f9c45d6581b3a96ce9e7f29f262a7.json"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T16:31:11.319Z",
+      "duration_ms": 52.583,
+      "endpoint": "/api/{id}/get",
+      "host": "lancastercc-self.achieveservice.com",
+      "method": "GET",
+      "status": 200,
+      "path_params": [
+        "queue-processor-config"
+      ],
+      "query_params": {
+        "_": [
+          "1753115471312"
+        ],
+        "sid": [
+          "03faabdc1e261cb430d82fddf246521f"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "content-type": "application/json",
+        "cookie": "[cookies present]",
+        "referer": "https://lancastercc-self.achieveservice.com/fillform/?iframe_id=fillform-frame-1&db_id=",
+        "x-requested-with": "XMLHttpRequest"
+      },
+      "response_headers": {
+        "cache-control": "no-store, no-cache, must-revalidate",
+        "content-type": "application/json",
+        "set-cookie": "[cookies present]",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "SAMEORIGIN",
+        "x-xss-protection": "0"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 39,
+        "content_ref": "024185aa7e3fc1120be2e3bea85471dfc1b2d290.json"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T16:31:11.320Z",
+      "duration_ms": 53.791,
+      "endpoint": "/api/nextref",
+      "host": "lancastercc-self.achieveservice.com",
+      "method": "GET",
+      "status": 200,
+      "query_params": {
+        "_": [
+          "1753115471313"
+        ],
+        "sid": [
+          "03faabdc1e261cb430d82fddf246521f"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "content-type": "application/json",
+        "cookie": "[cookies present]",
+        "referer": "https://lancastercc-self.achieveservice.com/fillform/?iframe_id=fillform-frame-1&db_id=",
+        "x-requested-with": "XMLHttpRequest"
+      },
+      "response_headers": {
+        "cache-control": "no-store, no-cache, must-revalidate",
+        "content-type": "application/json",
+        "set-cookie": "[cookies present]",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "SAMEORIGIN",
+        "x-xss-protection": "0"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 116,
+        "content_ref": "5db83a83128a2358d8dffd2959f0eee2893132ca.json"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T16:31:11.319Z",
+      "duration_ms": 58.089,
+      "endpoint": "/api/af-configs-list/list",
+      "host": "lancastercc-self.achieveservice.com",
+      "method": "GET",
+      "status": 200,
+      "query_params": {
+        "_": [
+          "1753115471311"
+        ],
+        "sid": [
+          "03faabdc1e261cb430d82fddf246521f"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "content-type": "application/json",
+        "cookie": "[cookies present]",
+        "referer": "https://lancastercc-self.achieveservice.com/fillform/?iframe_id=fillform-frame-1&db_id=",
+        "x-requested-with": "XMLHttpRequest"
+      },
+      "response_headers": {
+        "cache-control": "no-store, no-cache, must-revalidate",
+        "content-type": "application/json",
+        "set-cookie": "[cookies present]",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "SAMEORIGIN",
+        "x-xss-protection": "0"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 1374,
+        "compressed": true,
+        "content_ref": "cc4406bda003ec81491595c4c9559ed5f4f95165.json"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T16:31:11.320Z",
+      "duration_ms": 72.611,
+      "endpoint": "/apibroker/{id}",
+      "host": "lancastercc-self.achieveservice.com",
+      "method": "GET",
+      "status": 200,
+      "path_params": [
+        "environment-tokens-public"
+      ],
+      "query_params": {
+        "app_name": [
+          "AF-Renderer::Self"
+        ],
+        "_": [
+          "1753115471314"
+        ],
+        "sid": [
+          "03faabdc1e261cb430d82fddf246521f"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "content-type": "application/json",
+        "cookie": "[cookies present]",
+        "referer": "https://lancastercc-self.achieveservice.com/fillform/?iframe_id=fillform-frame-1&db_id=",
+        "x-requested-with": "XMLHttpRequest"
+      },
+      "response_headers": {
+        "cache-control": "no-store, no-cache, must-revalidate",
+        "content-type": "application/json; charset=UTF-8",
+        "set-cookie": "[cookies present]",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "SAMEORIGIN",
+        "x-xss-protection": "0"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 19369,
+        "compressed": true,
+        "content_ref": "b54589bd0be842c4cfd792cf1d37085d5dd57cfd.json"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T16:31:11.320Z",
+      "duration_ms": 89.80199999999999,
+      "endpoint": "/apibroker/location",
+      "host": "lancastercc-self.achieveservice.com",
+      "method": "GET",
+      "status": 200,
+      "query_params": {
+        "app_name": [
+          "AF-Renderer::Self"
+        ],
+        "_": [
+          "1753115471315"
+        ],
+        "sid": [
+          "03faabdc1e261cb430d82fddf246521f"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "content-type": "application/json",
+        "cookie": "[cookies present]",
+        "referer": "https://lancastercc-self.achieveservice.com/fillform/?iframe_id=fillform-frame-1&db_id=",
+        "x-requested-with": "XMLHttpRequest"
+      },
+      "response_headers": {
+        "cache-control": "no-store, no-cache, must-revalidate",
+        "content-type": "application/json; charset=UTF-8",
+        "set-cookie": "[cookies present]",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "SAMEORIGIN",
+        "x-xss-protection": "0"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 272,
+        "content_ref": "43187a87d33b5733e40b698fdb501a1747960295.json"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T16:31:11.452Z",
+      "duration_ms": 143.297,
+      "endpoint": "/apibroker/runLookup",
+      "host": "lancastercc-self.achieveservice.com",
+      "method": "POST",
+      "status": 200,
+      "query_params": {
+        "id": [
+          "f143efbb0bb54"
+        ],
+        "noRetry": [
+          "false"
+        ],
+        "getOnlyTokens": [
+          "true"
+        ],
+        "app_name": [
+          "AF-Renderer::Self"
+        ],
+        "_": [
+          "1753115471449"
+        ],
+        "sid": [
+          "03faabdc1e261cb430d82fddf246521f"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "content-type": "application/json",
+        "cookie": "[cookies present]",
+        "origin": "https://lancastercc-self.achieveservice.com",
+        "referer": "https://lancastercc-self.achieveservice.com/fillform/?iframe_id=fillform-frame-1&db_id=",
+        "x-requested-with": "XMLHttpRequest"
+      },
+      "response_headers": {
+        "cache-control": "no-store, no-cache, must-revalidate",
+        "content-type": "application/json; charset=UTF-8",
+        "set-cookie": "[cookies present]",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "SAMEORIGIN",
+        "x-xss-protection": "0"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 128,
+        "content_ref": "24bf83b8e2883dfc47b2618c99d2e1cab7ab61ed.json"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T16:31:11.598Z",
+      "duration_ms": 148.171,
+      "endpoint": "/apibroker/runLookup",
+      "host": "lancastercc-self.achieveservice.com",
+      "method": "POST",
+      "status": 200,
+      "query_params": {
+        "id": [
+          "62fe3cfd2cf02"
+        ],
+        "noRetry": [
+          "true"
+        ],
+        "getOnlyTokens": [
+          "true"
+        ],
+        "app_name": [
+          "AF-Renderer::Self"
+        ],
+        "_": [
+          "1753115471594"
+        ],
+        "sid": [
+          "03faabdc1e261cb430d82fddf246521f"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "content-type": "application/json",
+        "cookie": "[cookies present]",
+        "origin": "https://lancastercc-self.achieveservice.com",
+        "referer": "https://lancastercc-self.achieveservice.com/fillform/?iframe_id=fillform-frame-1&db_id=",
+        "x-requested-with": "XMLHttpRequest"
+      },
+      "response_headers": {
+        "cache-control": "no-store, no-cache, must-revalidate",
+        "content-type": "application/json; charset=UTF-8",
+        "set-cookie": "[cookies present]",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "SAMEORIGIN",
+        "x-xss-protection": "0"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 78,
+        "content_ref": "ab977d6e2e6668206eb4abf8d5e0d6d8a03113d2.json"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T16:31:14.772Z",
+      "duration_ms": 520.545,
+      "endpoint": "/apibroker/runLookup",
+      "host": "lancastercc-self.achieveservice.com",
+      "method": "POST",
+      "status": 200,
+      "query_params": {
+        "id": [
+          "f143efbb0bb54"
+        ],
+        "noRetry": [
+          "false"
+        ],
+        "getOnlyTokens": [
+          "undefined"
+        ],
+        "app_name": [
+          "AF-Renderer::Self"
+        ],
+        "_": [
+          "1753115474769"
+        ],
+        "sid": [
+          "03faabdc1e261cb430d82fddf246521f"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "content-type": "application/json",
+        "cookie": "[cookies present]",
+        "origin": "https://lancastercc-self.achieveservice.com",
+        "referer": "https://lancastercc-self.achieveservice.com/fillform/?iframe_id=fillform-frame-1&db_id=",
+        "x-requested-with": "XMLHttpRequest"
+      },
+      "response_headers": {
+        "cache-control": "no-store, no-cache, must-revalidate",
+        "content-type": "application/json; charset=UTF-8",
+        "set-cookie": "[cookies present]",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "SAMEORIGIN",
+        "x-xss-protection": "0"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 104464,
+        "compressed": true,
+        "content_ref": "31f729b3ca6bea0da4f773d3004bedbb4a3cf8ed.json"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T16:31:20.880Z",
+      "duration_ms": 379.33299999999997,
+      "endpoint": "/apibroker/runLookup",
+      "host": "lancastercc-self.achieveservice.com",
+      "method": "POST",
+      "status": 200,
+      "query_params": {
+        "id": [
+          "62fe3cfd2cf02"
+        ],
+        "noRetry": [
+          "true"
+        ],
+        "getOnlyTokens": [
+          "undefined"
+        ],
+        "app_name": [
+          "AF-Renderer::Self"
+        ],
+        "_": [
+          "1753115480874"
+        ],
+        "sid": [
+          "03faabdc1e261cb430d82fddf246521f"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "content-type": "application/json",
+        "cookie": "[cookies present]",
+        "origin": "https://lancastercc-self.achieveservice.com",
+        "referer": "https://lancastercc-self.achieveservice.com/fillform/?iframe_id=fillform-frame-1&db_id=",
+        "x-requested-with": "XMLHttpRequest"
+      },
+      "response_headers": {
+        "cache-control": "no-store, no-cache, must-revalidate",
+        "content-type": "application/json; charset=UTF-8",
+        "set-cookie": "[cookies present]",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "SAMEORIGIN",
+        "x-xss-protection": "0"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 1294,
+        "compressed": true,
+        "content_ref": "daab48f00b37f3420e2835d6d227c7fda62df801.json"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T16:31:22.836Z",
+      "duration_ms": 76.83399999999999,
+      "endpoint": "/bincalendars/Calendar6.pdf",
+      "host": "planningdocs.lancaster.gov.uk",
+      "method": "GET",
+      "status": 200,
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+        "referer": "https://lancastercc-self.achieveservice.com/"
+      },
+      "response_headers": {
+        "content-type": "application/pdf",
+        "x-powered-by": "ASP.NET"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T16:31:28.349Z",
+      "duration_ms": 500.77,
+      "endpoint": "/",
+      "host": "lcc-wrp.whitespacews.com",
+      "method": "GET",
+      "status": 200,
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+        "referer": "https://lancastercc-self.achieveservice.com/"
+      },
+      "response_headers": {
+        "content-type": "text/html; charset=UTF-8",
+        "x-frame-options": "DENY"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 7171,
+        "compressed": true,
+        "content_ref": "22a64a76b6f6f948d147271c61f2c8065836882b.html"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T16:31:32.350Z",
+      "duration_ms": 892.966,
+      "endpoint": "/",
+      "host": "lcc-wrp.whitespacews.com",
+      "method": "GET",
+      "status": 200,
+      "query_params": {
+        "Track": [
+          "2025/07/21/QDBF3C3"
+        ],
+        "serviceID": [
+          "A"
+        ],
+        "seq": [
+          "1"
+        ]
+      },
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+        "referer": "https://lcc-wrp.whitespacews.com/"
+      },
+      "response_headers": {
+        "content-type": "text/html; charset=UTF-8",
+        "x-frame-options": "DENY"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 10889,
+        "compressed": true,
+        "content_ref": "2881586bfec014f673007161e5f1e2690f1de86d.html"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T16:31:43.794Z",
+      "duration_ms": 1123.9409999999998,
+      "endpoint": "/mop.php",
+      "host": "lcc-wrp.whitespacews.com",
+      "method": "POST",
+      "status": 200,
+      "query_params": {
+        "serviceID": [
+          "A"
+        ],
+        "Track": [
+          "2025/07/21/QDBF3C3"
+        ],
+        "seq": [
+          "2"
+        ]
+      },
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+        "content-type": "application/x-www-form-urlencoded",
+        "origin": "https://lcc-wrp.whitespacews.com",
+        "referer": "https://lcc-wrp.whitespacews.com/?Track=2025/07/21/QDBF3C3&serviceID=A&seq=1"
+      },
+      "response_headers": {
+        "content-type": "text/html; charset=UTF-8",
+        "x-frame-options": "DENY"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 13958,
+        "compressed": true,
+        "content_ref": "19653bddb09e5f01b92ce720fae6455fd4bc1597.html"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T16:31:48.433Z",
+      "duration_ms": 1585.6909999999998,
+      "endpoint": "/mop.php",
+      "host": "lcc-wrp.whitespacews.com",
+      "method": "GET",
+      "status": 200,
+      "query_params": {
+        "Track": [
+          "2025/07/21/QDBF3C3"
+        ],
+        "serviceID": [
+          "A"
+        ],
+        "seq": [
+          "3"
+        ],
+        "pIndex": [
+          "1"
+        ]
+      },
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+        "referer": "https://lcc-wrp.whitespacews.com/mop.php?serviceID=A&Track=2025/07/21/QDBF3C3&seq=2"
+      },
+      "response_headers": {
+        "content-type": "text/html; charset=UTF-8",
+        "x-frame-options": "DENY"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 19844,
+        "compressed": true,
+        "content_ref": "ad32add57fb602305b29756158c6dadd9394b5f5.html"
+      }
     }
-  ]
+  ],
+  "analysis": {
+    "total_requests": 32,
+    "unique_endpoints": 23,
+    "methods_used": [
+      "GET",
+      "POST"
+    ],
+    "status_codes": {
+      "302": 2,
+      "200": 28,
+      "301": 2
+    },
+    "endpoints_with_params": [
+      {
+        "endpoint": "/bins-recycling/{id}",
+        "method": "GET",
+        "query_params": [],
+        "path_params": true
+      },
+      {
+        "endpoint": "/en/AchieveForms",
+        "method": "GET",
+        "query_params": [
+          "form_uri",
+          "redirectlink",
+          "cancelRedirectLink",
+          "consentMessage"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/af/affdf5/{id}/{id}/l",
+        "method": "GET",
+        "query_params": [
+          "subset_id",
+          "fvd",
+          "v"
+        ],
+        "path_params": true
+      },
+      {
+        "endpoint": "/af/14d4d5/{id}/{id}/l",
+        "method": "GET",
+        "query_params": [
+          "subset_id",
+          "fvd",
+          "v"
+        ],
+        "path_params": true
+      },
+      {
+        "endpoint": "/af/b5ce2a/{id}/{id}/l",
+        "method": "GET",
+        "query_params": [
+          "subset_id",
+          "fvd",
+          "v"
+        ],
+        "path_params": true
+      },
+      {
+        "endpoint": "/af/2223ac/{id}/{id}/l",
+        "method": "GET",
+        "query_params": [
+          "subset_id",
+          "fvd",
+          "v"
+        ],
+        "path_params": true
+      },
+      {
+        "endpoint": "/authapi/isauthenticated",
+        "method": "GET",
+        "query_params": [
+          "uri",
+          "hostname",
+          "withCredentials"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/apibroker/domain/{id}",
+        "method": "GET",
+        "query_params": [
+          "_",
+          "sid"
+        ],
+        "path_params": true
+      },
+      {
+        "endpoint": "/apibroker/self-settings",
+        "method": "GET",
+        "query_params": [
+          "keys",
+          "app_name",
+          "_",
+          "sid"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/fillform",
+        "method": "GET",
+        "query_params": [
+          "iframe_id"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/jsapi",
+        "method": "GET",
+        "query_params": [
+          "key"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/maps/api/mapsjs/gen_204",
+        "method": "GET",
+        "query_params": [
+          "csp_test"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/api/self/self-content/getByKeyAndApp",
+        "method": "GET",
+        "query_params": [
+          "language",
+          "key",
+          "app",
+          "_",
+          "sid"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/api/get-document/json",
+        "method": "GET",
+        "query_params": [
+          "uri",
+          "_",
+          "sid"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/api/{id}/get",
+        "method": "GET",
+        "query_params": [
+          "_",
+          "sid"
+        ],
+        "path_params": true
+      },
+      {
+        "endpoint": "/api/nextref",
+        "method": "GET",
+        "query_params": [
+          "_",
+          "sid"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/api/af-configs-list/list",
+        "method": "GET",
+        "query_params": [
+          "_",
+          "sid"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/apibroker/{id}",
+        "method": "GET",
+        "query_params": [
+          "app_name",
+          "_",
+          "sid"
+        ],
+        "path_params": true
+      },
+      {
+        "endpoint": "/apibroker/location",
+        "method": "GET",
+        "query_params": [
+          "app_name",
+          "_",
+          "sid"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/apibroker/runLookup",
+        "method": "POST",
+        "query_params": [
+          "id",
+          "noRetry",
+          "getOnlyTokens",
+          "app_name",
+          "_",
+          "sid"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/",
+        "method": "GET",
+        "query_params": [
+          "Track",
+          "serviceID",
+          "seq"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/mop.php",
+        "method": "POST",
+        "query_params": [
+          "serviceID",
+          "Track",
+          "seq"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/mop.php",
+        "method": "GET",
+        "query_params": [
+          "Track",
+          "serviceID",
+          "seq",
+          "pIndex"
+        ],
+        "path_params": false
+      }
+    ],
+    "redirects": [
+      {
+        "from": "/bins-recycling/{id}",
+        "to": "https://www.lancaster.gov.uk/bins-recycling/bin-collection-calendar",
+        "status": 302
+      },
+      {
+        "from": "/bins-recycling/{id}",
+        "to": "https://lancastercc-self.achieveservice.com/en/AchieveForms/?form_uri=sandbox-publish://AF-Process-18b9e65f-d457-4c0e-9a14-0e8bacbfbcce/AF-Stage-278b13e2-cfba-404b-b6ff-2e4816f54bac/definition.json&redirectlink=%2Fen&cancelRedirectLink=%2Fen&consentMessage=yes",
+        "status": 302
+      },
+      {
+        "from": "/jsapi",
+        "to": "https://www.gstatic.com/charts/loader.js",
+        "status": 301
+      },
+      {
+        "from": "/jsapi",
+        "to": "https://www.gstatic.com/charts/loader.js?key=AIzaSyDMYR3xNkRwUG-OsKEC4WVi1ptWIPzybMs",
+        "status": 301
+      }
+    ],
+    "api_calls": [
+      {
+        "endpoint": "/authapi/isauthenticated",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": [
+          "uri",
+          "hostname",
+          "withCredentials"
+        ]
+      },
+      {
+        "endpoint": "/apibroker/domain/{id}",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": [
+          "_",
+          "sid"
+        ]
+      },
+      {
+        "endpoint": "/apibroker/domain/{id}",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": [
+          "_",
+          "sid"
+        ]
+      },
+      {
+        "endpoint": "/apibroker/self-settings",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": [
+          "keys",
+          "app_name",
+          "_",
+          "sid"
+        ]
+      },
+      {
+        "endpoint": "/maps/api/mapsjs/gen_204",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": [
+          "csp_test"
+        ]
+      },
+      {
+        "endpoint": "/api/self/self-content/getByKeyAndApp",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": [
+          "language",
+          "key",
+          "app",
+          "_",
+          "sid"
+        ]
+      },
+      {
+        "endpoint": "/api/get-document/json",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": [
+          "uri",
+          "_",
+          "sid"
+        ]
+      },
+      {
+        "endpoint": "/api/get-document/json",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": [
+          "uri",
+          "_",
+          "sid"
+        ]
+      },
+      {
+        "endpoint": "/api/{id}/get",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": [
+          "_",
+          "sid"
+        ]
+      },
+      {
+        "endpoint": "/api/nextref",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": [
+          "_",
+          "sid"
+        ]
+      },
+      {
+        "endpoint": "/api/af-configs-list/list",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": [
+          "_",
+          "sid"
+        ]
+      },
+      {
+        "endpoint": "/apibroker/{id}",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": [
+          "app_name",
+          "_",
+          "sid"
+        ]
+      },
+      {
+        "endpoint": "/apibroker/location",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": [
+          "app_name",
+          "_",
+          "sid"
+        ]
+      },
+      {
+        "endpoint": "/apibroker/runLookup",
+        "method": "POST",
+        "response_type": "application/json",
+        "params": [
+          "id",
+          "noRetry",
+          "getOnlyTokens",
+          "app_name",
+          "_",
+          "sid"
+        ]
+      },
+      {
+        "endpoint": "/apibroker/runLookup",
+        "method": "POST",
+        "response_type": "application/json",
+        "params": [
+          "id",
+          "noRetry",
+          "getOnlyTokens",
+          "app_name",
+          "_",
+          "sid"
+        ]
+      },
+      {
+        "endpoint": "/apibroker/runLookup",
+        "method": "POST",
+        "response_type": "application/json",
+        "params": [
+          "id",
+          "noRetry",
+          "getOnlyTokens",
+          "app_name",
+          "_",
+          "sid"
+        ]
+      },
+      {
+        "endpoint": "/apibroker/runLookup",
+        "method": "POST",
+        "response_type": "application/json",
+        "params": [
+          "id",
+          "noRetry",
+          "getOnlyTokens",
+          "app_name",
+          "_",
+          "sid"
+        ]
+      }
+    ],
+    "form_submissions": []
+  },
+  "grouped_by_endpoint": {
+    "/bins-recycling/{id}": [
+      {
+        "timestamp": "2025-07-21T16:31:07.273Z",
+        "duration_ms": 75.462,
+        "endpoint": "/bins-recycling/{id}",
+        "host": "www.lancaster.gov.uk",
+        "method": "GET",
+        "status": 302,
+        "path_params": [
+          "bin-collection-calendar"
+        ],
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7"
+        },
+        "response_headers": {
+          "content-type": "text/html; charset=utf-8",
+          "location": "https://www.lancaster.gov.uk/bins-recycling/bin-collection-calendar"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": -1
+        },
+        "redirect_to": "https://www.lancaster.gov.uk/bins-recycling/bin-collection-calendar"
+      },
+      {
+        "timestamp": "2025-07-21T16:31:07.329Z",
+        "duration_ms": 126.202,
+        "endpoint": "/bins-recycling/{id}",
+        "host": "www.lancaster.gov.uk",
+        "method": "GET",
+        "status": 302,
+        "path_params": [
+          "bin-collection-calendar"
+        ],
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7"
+        },
+        "response_headers": {
+          "cache-control": "private",
+          "content-type": "text/html; charset=utf-8",
+          "location": "https://lancastercc-self.achieveservice.com/en/AchieveForms/?form_uri=sandbox-publish://AF-Process-18b9e65f-d457-4c0e-9a14-0e8bacbfbcce/AF-Stage-278b13e2-cfba-404b-b6ff-2e4816f54bac/definition.json&redirectlink=%2Fen&cancelRedirectLink=%2Fen&consentMessage=yes"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": -1
+        },
+        "redirect_to": "https://lancastercc-self.achieveservice.com/en/AchieveForms/?form_uri=sandbox-publish://AF-Process-18b9e65f-d457-4c0e-9a14-0e8bacbfbcce/AF-Stage-278b13e2-cfba-404b-b6ff-2e4816f54bac/definition.json&redirectlink=%2Fen&cancelRedirectLink=%2Fen&consentMessage=yes"
+      }
+    ],
+    "/en/AchieveForms": [
+      {
+        "timestamp": "2025-07-21T16:31:07.425Z",
+        "duration_ms": 1885.031,
+        "endpoint": "/en/AchieveForms",
+        "host": "lancastercc-self.achieveservice.com",
+        "method": "GET",
+        "status": 200,
+        "query_params": {
+          "form_uri": [
+            "sandbox-publish://AF-Process-18b9e65f-d457-4c0e-9a14-0e8bacbfbcce/AF-Stage-278b13e2-cfba-404b-b6ff-2e4816f54bac/definition.json"
+          ],
+          "redirectlink": [
+            "/en"
+          ],
+          "cancelRedirectLink": [
+            "/en"
+          ],
+          "consentMessage": [
+            "yes"
+          ]
+        },
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+          "cookie": "[cookies present]"
+        },
+        "response_headers": {
+          "cache-control": "no-store, no-cache, must-revalidate",
+          "content-type": "text/html; charset=UTF-8",
+          "set-cookie": "[cookies present]",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "SAMEORIGIN",
+          "x-xss-protection": "0"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 30234,
+          "compressed": true,
+          "content_ref": "c28ebe85fefffa42af36998fc7f69656e2a8ef3d.html"
+        }
+      }
+    ],
+    "/jsapi": [
+      {
+        "timestamp": "2025-07-21T16:31:09.319Z",
+        "duration_ms": 264.539,
+        "endpoint": "/jsapi",
+        "host": "www.google.com",
+        "method": "GET",
+        "status": 301,
+        "request_headers": {
+          "accept": "*/*",
+          "referer": "https://lancastercc-self.achieveservice.com/",
+          "x-browser-copyright": "Copyright 2025 Google LLC. All rights reserved.",
+          "x-browser-validation": "qvLgIVtG4U8GgiRPSI9IJ22mUlI=",
+          "x-browser-year": "2025",
+          "x-client-data": "CMiXywE="
+        },
+        "response_headers": {
+          "cache-control": "public, max-age=1800",
+          "content-type": "text/html; charset=UTF-8",
+          "location": "https://www.gstatic.com/charts/loader.js",
+          "x-content-type-options": "nosniff",
+          "x-xss-protection": "0"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": -1
+        },
+        "redirect_to": "https://www.gstatic.com/charts/loader.js"
+      },
+      {
+        "timestamp": "2025-07-21T16:31:10.649Z",
+        "duration_ms": 108.95200000000001,
+        "endpoint": "/jsapi",
+        "host": "www.google.com",
+        "method": "GET",
+        "status": 301,
+        "query_params": {
+          "key": [
+            "AIzaSyDMYR3xNkRwUG-OsKEC4WVi1ptWIPzybMs"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "referer": "https://lancastercc-self.achieveservice.com/",
+          "x-browser-copyright": "Copyright 2025 Google LLC. All rights reserved.",
+          "x-browser-validation": "qvLgIVtG4U8GgiRPSI9IJ22mUlI=",
+          "x-browser-year": "2025",
+          "x-client-data": "CMiXywE="
+        },
+        "response_headers": {
+          "cache-control": "public, max-age=1800",
+          "content-type": "text/html; charset=UTF-8",
+          "location": "https://www.gstatic.com/charts/loader.js?key=AIzaSyDMYR3xNkRwUG-OsKEC4WVi1ptWIPzybMs",
+          "x-content-type-options": "nosniff",
+          "x-xss-protection": "0"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": -1
+        },
+        "redirect_to": "https://www.gstatic.com/charts/loader.js?key=AIzaSyDMYR3xNkRwUG-OsKEC4WVi1ptWIPzybMs"
+      }
+    ],
+    "/af/affdf5/{id}/{id}/l": [
+      {
+        "timestamp": "2025-07-21T16:31:10.293Z",
+        "duration_ms": 50.081999999999994,
+        "endpoint": "/af/affdf5/{id}/{id}/l",
+        "host": "use.typekit.net",
+        "method": "GET",
+        "status": 200,
+        "path_params": [
+          "00000000000000003b9b0328",
+          "27"
+        ],
+        "query_params": {
+          "subset_id": [
+            "2"
+          ],
+          "fvd": [
+            "n4"
+          ],
+          "v": [
+            "3"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "origin": "https://lancastercc-self.achieveservice.com",
+          "referer": "https://use.typekit.net/nzf5lsg.css"
+        },
+        "response_headers": {
+          "cache-control": "public, max-age=31536000",
+          "content-type": "application/font-woff2"
+        }
+      }
+    ],
+    "/af/14d4d5/{id}/{id}/l": [
+      {
+        "timestamp": "2025-07-21T16:31:10.294Z",
+        "duration_ms": 32.042,
+        "endpoint": "/af/14d4d5/{id}/{id}/l",
+        "host": "use.typekit.net",
+        "method": "GET",
+        "status": 200,
+        "path_params": [
+          "00000000000000000001721c",
+          "27"
+        ],
+        "query_params": {
+          "subset_id": [
+            "2"
+          ],
+          "fvd": [
+            "n4"
+          ],
+          "v": [
+            "3"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "origin": "https://lancastercc-self.achieveservice.com",
+          "referer": "https://use.typekit.net/nzf5lsg.css"
+        },
+        "response_headers": {
+          "cache-control": "public, max-age=31536000",
+          "content-type": "application/font-woff2"
+        }
+      }
+    ],
+    "/af/b5ce2a/{id}/{id}/l": [
+      {
+        "timestamp": "2025-07-21T16:31:10.294Z",
+        "duration_ms": 33.748999999999995,
+        "endpoint": "/af/b5ce2a/{id}/{id}/l",
+        "host": "use.typekit.net",
+        "method": "GET",
+        "status": 200,
+        "path_params": [
+          "00000000000000003b9b032d",
+          "27"
+        ],
+        "query_params": {
+          "subset_id": [
+            "2"
+          ],
+          "fvd": [
+            "n7"
+          ],
+          "v": [
+            "3"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "origin": "https://lancastercc-self.achieveservice.com",
+          "referer": "https://use.typekit.net/nzf5lsg.css"
+        },
+        "response_headers": {
+          "cache-control": "public, max-age=31536000",
+          "content-type": "application/font-woff2"
+        }
+      }
+    ],
+    "/af/2223ac/{id}/{id}/l": [
+      {
+        "timestamp": "2025-07-21T16:31:10.294Z",
+        "duration_ms": 35.269,
+        "endpoint": "/af/2223ac/{id}/{id}/l",
+        "host": "use.typekit.net",
+        "method": "GET",
+        "status": 200,
+        "path_params": [
+          "00000000000000003b9b0326",
+          "27"
+        ],
+        "query_params": {
+          "subset_id": [
+            "2"
+          ],
+          "fvd": [
+            "n3"
+          ],
+          "v": [
+            "3"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "origin": "https://lancastercc-self.achieveservice.com",
+          "referer": "https://use.typekit.net/nzf5lsg.css"
+        },
+        "response_headers": {
+          "cache-control": "public, max-age=31536000",
+          "content-type": "application/font-woff2"
+        }
+      }
+    ],
+    "/authapi/isauthenticated": [
+      {
+        "timestamp": "2025-07-21T16:31:10.294Z",
+        "duration_ms": 196.22699999999998,
+        "endpoint": "/authapi/isauthenticated",
+        "host": "lancastercc-self.achieveservice.com",
+        "method": "GET",
+        "status": 200,
+        "query_params": {
+          "uri": [
+            "https%3A%2F%2Flancastercc-self.achieveservice.com%2Fen%2FAchieveForms%2F%3Fform_uri%3Dsandbox-publish%3A%2F%2FAF-Process-18b9e65f-d457-4c0e-9a14-0e8bacbfbcce%2FAF-Stage-278b13e2-cfba-404b-b6ff-2e4816f54bac%2Fdefinition.json%26redirectlink%3D%252Fen%26cancelRedirectLink%3D%252Fen%26consentMessage%3Dyes"
+          ],
+          "hostname": [
+            "lancastercc-self.achieveservice.com"
+          ],
+          "withCredentials": [
+            "true"
+          ]
+        },
+        "request_headers": {
+          "accept": "application/json, text/javascript, */*; q=0.01",
+          "cookie": "[cookies present]",
+          "referer": "https://lancastercc-self.achieveservice.com/en/AchieveForms/?form_uri=sandbox-publish://AF-Process-18b9e65f-d457-4c0e-9a14-0e8bacbfbcce/AF-Stage-278b13e2-cfba-404b-b6ff-2e4816f54bac/definition.json&redirectlink=%2Fen&cancelRedirectLink=%2Fen&consentMessage=yes",
+          "x-requested-with": "XMLHttpRequest"
+        },
+        "response_headers": {
+          "cache-control": "no-store, no-cache, must-revalidate",
+          "content-type": "application/json; charset=utf-8",
+          "set-cookie": "[cookies present]",
+          "x-auth-session": "ro6v0mmc2l1tpq1t8ksi6hhkb8",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "SAMEORIGIN",
+          "x-xss-protection": "0"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 3158,
+          "compressed": true,
+          "content_ref": "9bfa314f4db56076df6048166803bfa437800dee.json"
+        }
+      }
+    ],
+    "/apibroker/domain/{id}": [
+      {
+        "timestamp": "2025-07-21T16:31:10.466Z",
+        "duration_ms": 62.57299999999999,
+        "endpoint": "/apibroker/domain/{id}",
+        "host": "lancastercc-self.achieveservice.com",
+        "method": "GET",
+        "status": 200,
+        "path_params": [
+          "lancastercc-self.achieveservice.com"
+        ],
+        "query_params": {
+          "_": [
+            "1753115470281"
+          ],
+          "sid": [
+            "03faabdc1e261cb430d82fddf246521f"
+          ]
+        },
+        "request_headers": {
+          "accept": "application/json, text/javascript, */*; q=0.01",
+          "cookie": "[cookies present]",
+          "referer": "https://lancastercc-self.achieveservice.com/en/AchieveForms/?form_uri=sandbox-publish://AF-Process-18b9e65f-d457-4c0e-9a14-0e8bacbfbcce/AF-Stage-278b13e2-cfba-404b-b6ff-2e4816f54bac/definition.json&redirectlink=%2Fen&cancelRedirectLink=%2Fen&consentMessage=yes",
+          "x-requested-with": "XMLHttpRequest"
+        },
+        "response_headers": {
+          "content-type": "application/json",
+          "set-cookie": "[cookies present]",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "SAMEORIGIN",
+          "x-xss-protection": "0"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 235,
+          "content_ref": "578bcd0c4e4e569c455c58c875d497ae6e46c9ec.json"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T16:31:10.466Z",
+        "duration_ms": 66.679,
+        "endpoint": "/apibroker/domain/{id}",
+        "host": "lancastercc-self.achieveservice.com",
+        "method": "GET",
+        "status": 200,
+        "path_params": [
+          "lancastercc-self.achieveservice.com"
+        ],
+        "query_params": {
+          "_": [
+            "1753115470264"
+          ],
+          "sid": [
+            "03faabdc1e261cb430d82fddf246521f"
+          ]
+        },
+        "request_headers": {
+          "accept": "application/json, text/javascript, */*; q=0.01",
+          "cookie": "[cookies present]",
+          "referer": "https://lancastercc-self.achieveservice.com/en/AchieveForms/?form_uri=sandbox-publish://AF-Process-18b9e65f-d457-4c0e-9a14-0e8bacbfbcce/AF-Stage-278b13e2-cfba-404b-b6ff-2e4816f54bac/definition.json&redirectlink=%2Fen&cancelRedirectLink=%2Fen&consentMessage=yes",
+          "x-requested-with": "XMLHttpRequest"
+        },
+        "response_headers": {
+          "content-type": "application/json",
+          "set-cookie": "[cookies present]",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "SAMEORIGIN",
+          "x-xss-protection": "0"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 235,
+          "content_ref": "578bcd0c4e4e569c455c58c875d497ae6e46c9ec.json"
+        }
+      }
+    ],
+    "/apibroker/self-settings": [
+      {
+        "timestamp": "2025-07-21T16:31:10.466Z",
+        "duration_ms": 85.679,
+        "endpoint": "/apibroker/self-settings",
+        "host": "lancastercc-self.achieveservice.com",
+        "method": "GET",
+        "status": 200,
+        "query_params": {
+          "keys": [
+            "CustomIFrameCss,CustomCssInline"
+          ],
+          "app_name": [
+            "Self"
+          ],
+          "_": [
+            "1753115470464"
+          ],
+          "sid": [
+            "03faabdc1e261cb430d82fddf246521f"
+          ]
+        },
+        "request_headers": {
+          "accept": "application/json, text/javascript, */*; q=0.01",
+          "cookie": "[cookies present]",
+          "referer": "https://lancastercc-self.achieveservice.com/en/AchieveForms/?form_uri=sandbox-publish://AF-Process-18b9e65f-d457-4c0e-9a14-0e8bacbfbcce/AF-Stage-278b13e2-cfba-404b-b6ff-2e4816f54bac/definition.json&redirectlink=%2Fen&cancelRedirectLink=%2Fen&consentMessage=yes",
+          "x-requested-with": "XMLHttpRequest"
+        },
+        "response_headers": {
+          "cache-control": "no-store, no-cache, must-revalidate",
+          "content-type": "application/json; charset=UTF-8",
+          "set-cookie": "[cookies present]",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "SAMEORIGIN",
+          "x-xss-protection": "0"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 137,
+          "content_ref": "ada46d0a8fcad340065988ffdf4249a027a70457.json"
+        }
+      }
+    ],
+    "/fillform": [
+      {
+        "timestamp": "2025-07-21T16:31:10.589Z",
+        "duration_ms": 52.492999999999995,
+        "endpoint": "/fillform",
+        "host": "lancastercc-self.achieveservice.com",
+        "method": "GET",
+        "status": 200,
+        "query_params": {
+          "iframe_id": [
+            "fillform-frame-1"
+          ]
+        },
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+          "cookie": "[cookies present]",
+          "referer": "https://lancastercc-self.achieveservice.com/en/AchieveForms/?form_uri=sandbox-publish://AF-Process-18b9e65f-d457-4c0e-9a14-0e8bacbfbcce/AF-Stage-278b13e2-cfba-404b-b6ff-2e4816f54bac/definition.json&redirectlink=%2Fen&cancelRedirectLink=%2Fen&consentMessage=yes"
+        },
+        "response_headers": {
+          "cache-control": "no-store, no-cache, must-revalidate",
+          "content-type": "text/html; charset=UTF-8",
+          "set-cookie": "[cookies present]",
+          "x-content-type-options": "nosniff",
+          "x-ua-compatible": "IE=Edge,chrome=1",
+          "x-xss-protection": "0"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 4319,
+          "compressed": true,
+          "content_ref": "ab9ea3b583553a5060470b48290da0023203f46d.html"
+        }
+      }
+    ],
+    "/maps/api/mapsjs/gen_204": [
+      {
+        "timestamp": "2025-07-21T16:31:10.949Z",
+        "duration_ms": 52.05499999999999,
+        "endpoint": "/maps/api/mapsjs/gen_204",
+        "host": "maps.googleapis.com",
+        "method": "GET",
+        "status": 200,
+        "query_params": {
+          "csp_test": [
+            "true"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "origin": "https://lancastercc-self.achieveservice.com",
+          "referer": "https://lancastercc-self.achieveservice.com/",
+          "x-browser-copyright": "Copyright 2025 Google LLC. All rights reserved.",
+          "x-browser-validation": "qvLgIVtG4U8GgiRPSI9IJ22mUlI=",
+          "x-browser-year": "2025",
+          "x-client-data": "CMiXywE="
+        },
+        "response_headers": {
+          "content-type": "application/json; charset=UTF-8",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "SAMEORIGIN",
+          "x-xss-protection": "0"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 3,
+          "content_ref": "5f36b2ea290645ee34d943220a14b54ee5ea5be5.json"
+        }
+      }
+    ],
+    "/api/self/self-content/getByKeyAndApp": [
+      {
+        "timestamp": "2025-07-21T16:31:10.951Z",
+        "duration_ms": 39.364,
+        "endpoint": "/api/self/self-content/getByKeyAndApp",
+        "host": "lancastercc-self.achieveservice.com",
+        "method": "GET",
+        "status": 200,
+        "query_params": {
+          "language": [
+            "en"
+          ],
+          "key": [
+            "FORM_LOADING_TEXT"
+          ],
+          "app": [
+            "SELF_CORE"
+          ],
+          "_": [
+            "1753115470927"
+          ],
+          "sid": [
+            "03faabdc1e261cb430d82fddf246521f"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "content-type": "application/json",
+          "cookie": "[cookies present]",
+          "referer": "https://lancastercc-self.achieveservice.com/fillform/?iframe_id=fillform-frame-1&db_id=",
+          "x-requested-with": "XMLHttpRequest"
+        },
+        "response_headers": {
+          "cache-control": "no-store, no-cache, must-revalidate",
+          "content-type": "application/json",
+          "set-cookie": "[cookies present]",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "SAMEORIGIN",
+          "x-xss-protection": "0"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 169,
+          "content_ref": "288f60220ea3b8d8ae1376434437f26bab717a6d.json"
+        }
+      }
+    ],
+    "/api/get-document/json": [
+      {
+        "timestamp": "2025-07-21T16:31:10.985Z",
+        "duration_ms": 163.58399999999997,
+        "endpoint": "/api/get-document/json",
+        "host": "lancastercc-self.achieveservice.com",
+        "method": "GET",
+        "status": 200,
+        "query_params": {
+          "uri": [
+            "sandbox-publish://AF-Process-18b9e65f-d457-4c0e-9a14-0e8bacbfbcce/AF-Stage-278b13e2-cfba-404b-b6ff-2e4816f54bac/definition.json"
+          ],
+          "_": [
+            "1753115470969"
+          ],
+          "sid": [
+            "03faabdc1e261cb430d82fddf246521f"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "content-type": "application/json",
+          "cookie": "[cookies present]",
+          "referer": "https://lancastercc-self.achieveservice.com/fillform/?iframe_id=fillform-frame-1&db_id=",
+          "x-requested-with": "XMLHttpRequest"
+        },
+        "response_headers": {
+          "cache-control": "no-store, no-cache, must-revalidate",
+          "content-type": "application/json",
+          "set-cookie": "[cookies present]",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "SAMEORIGIN",
+          "x-xss-protection": "0"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 14182,
+          "compressed": true,
+          "content_ref": "aa8531cb07adf127628da43bc577ee44d9f3e023.json"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T16:31:11.137Z",
+        "duration_ms": 168.258,
+        "endpoint": "/api/get-document/json",
+        "host": "lancastercc-self.achieveservice.com",
+        "method": "GET",
+        "status": 200,
+        "query_params": {
+          "uri": [
+            "sandbox-publish://AF-Process-18b9e65f-d457-4c0e-9a14-0e8bacbfbcce/definition.json"
+          ],
+          "_": [
+            "1753115471134"
+          ],
+          "sid": [
+            "03faabdc1e261cb430d82fddf246521f"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "content-type": "application/json",
+          "cookie": "[cookies present]",
+          "referer": "https://lancastercc-self.achieveservice.com/fillform/?iframe_id=fillform-frame-1&db_id=",
+          "x-requested-with": "XMLHttpRequest"
+        },
+        "response_headers": {
+          "cache-control": "no-store, no-cache, must-revalidate",
+          "content-type": "application/json",
+          "set-cookie": "[cookies present]",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "SAMEORIGIN",
+          "x-xss-protection": "0"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 3073,
+          "compressed": true,
+          "content_ref": "7e29d854b92f9c45d6581b3a96ce9e7f29f262a7.json"
+        }
+      }
+    ],
+    "/api/{id}/get": [
+      {
+        "timestamp": "2025-07-21T16:31:11.319Z",
+        "duration_ms": 52.583,
+        "endpoint": "/api/{id}/get",
+        "host": "lancastercc-self.achieveservice.com",
+        "method": "GET",
+        "status": 200,
+        "path_params": [
+          "queue-processor-config"
+        ],
+        "query_params": {
+          "_": [
+            "1753115471312"
+          ],
+          "sid": [
+            "03faabdc1e261cb430d82fddf246521f"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "content-type": "application/json",
+          "cookie": "[cookies present]",
+          "referer": "https://lancastercc-self.achieveservice.com/fillform/?iframe_id=fillform-frame-1&db_id=",
+          "x-requested-with": "XMLHttpRequest"
+        },
+        "response_headers": {
+          "cache-control": "no-store, no-cache, must-revalidate",
+          "content-type": "application/json",
+          "set-cookie": "[cookies present]",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "SAMEORIGIN",
+          "x-xss-protection": "0"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 39,
+          "content_ref": "024185aa7e3fc1120be2e3bea85471dfc1b2d290.json"
+        }
+      }
+    ],
+    "/api/nextref": [
+      {
+        "timestamp": "2025-07-21T16:31:11.320Z",
+        "duration_ms": 53.791,
+        "endpoint": "/api/nextref",
+        "host": "lancastercc-self.achieveservice.com",
+        "method": "GET",
+        "status": 200,
+        "query_params": {
+          "_": [
+            "1753115471313"
+          ],
+          "sid": [
+            "03faabdc1e261cb430d82fddf246521f"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "content-type": "application/json",
+          "cookie": "[cookies present]",
+          "referer": "https://lancastercc-self.achieveservice.com/fillform/?iframe_id=fillform-frame-1&db_id=",
+          "x-requested-with": "XMLHttpRequest"
+        },
+        "response_headers": {
+          "cache-control": "no-store, no-cache, must-revalidate",
+          "content-type": "application/json",
+          "set-cookie": "[cookies present]",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "SAMEORIGIN",
+          "x-xss-protection": "0"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 116,
+          "content_ref": "5db83a83128a2358d8dffd2959f0eee2893132ca.json"
+        }
+      }
+    ],
+    "/api/af-configs-list/list": [
+      {
+        "timestamp": "2025-07-21T16:31:11.319Z",
+        "duration_ms": 58.089,
+        "endpoint": "/api/af-configs-list/list",
+        "host": "lancastercc-self.achieveservice.com",
+        "method": "GET",
+        "status": 200,
+        "query_params": {
+          "_": [
+            "1753115471311"
+          ],
+          "sid": [
+            "03faabdc1e261cb430d82fddf246521f"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "content-type": "application/json",
+          "cookie": "[cookies present]",
+          "referer": "https://lancastercc-self.achieveservice.com/fillform/?iframe_id=fillform-frame-1&db_id=",
+          "x-requested-with": "XMLHttpRequest"
+        },
+        "response_headers": {
+          "cache-control": "no-store, no-cache, must-revalidate",
+          "content-type": "application/json",
+          "set-cookie": "[cookies present]",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "SAMEORIGIN",
+          "x-xss-protection": "0"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 1374,
+          "compressed": true,
+          "content_ref": "cc4406bda003ec81491595c4c9559ed5f4f95165.json"
+        }
+      }
+    ],
+    "/apibroker/{id}": [
+      {
+        "timestamp": "2025-07-21T16:31:11.320Z",
+        "duration_ms": 72.611,
+        "endpoint": "/apibroker/{id}",
+        "host": "lancastercc-self.achieveservice.com",
+        "method": "GET",
+        "status": 200,
+        "path_params": [
+          "environment-tokens-public"
+        ],
+        "query_params": {
+          "app_name": [
+            "AF-Renderer::Self"
+          ],
+          "_": [
+            "1753115471314"
+          ],
+          "sid": [
+            "03faabdc1e261cb430d82fddf246521f"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "content-type": "application/json",
+          "cookie": "[cookies present]",
+          "referer": "https://lancastercc-self.achieveservice.com/fillform/?iframe_id=fillform-frame-1&db_id=",
+          "x-requested-with": "XMLHttpRequest"
+        },
+        "response_headers": {
+          "cache-control": "no-store, no-cache, must-revalidate",
+          "content-type": "application/json; charset=UTF-8",
+          "set-cookie": "[cookies present]",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "SAMEORIGIN",
+          "x-xss-protection": "0"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 19369,
+          "compressed": true,
+          "content_ref": "b54589bd0be842c4cfd792cf1d37085d5dd57cfd.json"
+        }
+      }
+    ],
+    "/apibroker/location": [
+      {
+        "timestamp": "2025-07-21T16:31:11.320Z",
+        "duration_ms": 89.80199999999999,
+        "endpoint": "/apibroker/location",
+        "host": "lancastercc-self.achieveservice.com",
+        "method": "GET",
+        "status": 200,
+        "query_params": {
+          "app_name": [
+            "AF-Renderer::Self"
+          ],
+          "_": [
+            "1753115471315"
+          ],
+          "sid": [
+            "03faabdc1e261cb430d82fddf246521f"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "content-type": "application/json",
+          "cookie": "[cookies present]",
+          "referer": "https://lancastercc-self.achieveservice.com/fillform/?iframe_id=fillform-frame-1&db_id=",
+          "x-requested-with": "XMLHttpRequest"
+        },
+        "response_headers": {
+          "cache-control": "no-store, no-cache, must-revalidate",
+          "content-type": "application/json; charset=UTF-8",
+          "set-cookie": "[cookies present]",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "SAMEORIGIN",
+          "x-xss-protection": "0"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 272,
+          "content_ref": "43187a87d33b5733e40b698fdb501a1747960295.json"
+        }
+      }
+    ],
+    "/apibroker/runLookup": [
+      {
+        "timestamp": "2025-07-21T16:31:11.452Z",
+        "duration_ms": 143.297,
+        "endpoint": "/apibroker/runLookup",
+        "host": "lancastercc-self.achieveservice.com",
+        "method": "POST",
+        "status": 200,
+        "query_params": {
+          "id": [
+            "f143efbb0bb54"
+          ],
+          "noRetry": [
+            "false"
+          ],
+          "getOnlyTokens": [
+            "true"
+          ],
+          "app_name": [
+            "AF-Renderer::Self"
+          ],
+          "_": [
+            "1753115471449"
+          ],
+          "sid": [
+            "03faabdc1e261cb430d82fddf246521f"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "content-type": "application/json",
+          "cookie": "[cookies present]",
+          "origin": "https://lancastercc-self.achieveservice.com",
+          "referer": "https://lancastercc-self.achieveservice.com/fillform/?iframe_id=fillform-frame-1&db_id=",
+          "x-requested-with": "XMLHttpRequest"
+        },
+        "response_headers": {
+          "cache-control": "no-store, no-cache, must-revalidate",
+          "content-type": "application/json; charset=UTF-8",
+          "set-cookie": "[cookies present]",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "SAMEORIGIN",
+          "x-xss-protection": "0"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 128,
+          "content_ref": "24bf83b8e2883dfc47b2618c99d2e1cab7ab61ed.json"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T16:31:11.598Z",
+        "duration_ms": 148.171,
+        "endpoint": "/apibroker/runLookup",
+        "host": "lancastercc-self.achieveservice.com",
+        "method": "POST",
+        "status": 200,
+        "query_params": {
+          "id": [
+            "62fe3cfd2cf02"
+          ],
+          "noRetry": [
+            "true"
+          ],
+          "getOnlyTokens": [
+            "true"
+          ],
+          "app_name": [
+            "AF-Renderer::Self"
+          ],
+          "_": [
+            "1753115471594"
+          ],
+          "sid": [
+            "03faabdc1e261cb430d82fddf246521f"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "content-type": "application/json",
+          "cookie": "[cookies present]",
+          "origin": "https://lancastercc-self.achieveservice.com",
+          "referer": "https://lancastercc-self.achieveservice.com/fillform/?iframe_id=fillform-frame-1&db_id=",
+          "x-requested-with": "XMLHttpRequest"
+        },
+        "response_headers": {
+          "cache-control": "no-store, no-cache, must-revalidate",
+          "content-type": "application/json; charset=UTF-8",
+          "set-cookie": "[cookies present]",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "SAMEORIGIN",
+          "x-xss-protection": "0"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 78,
+          "content_ref": "ab977d6e2e6668206eb4abf8d5e0d6d8a03113d2.json"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T16:31:14.772Z",
+        "duration_ms": 520.545,
+        "endpoint": "/apibroker/runLookup",
+        "host": "lancastercc-self.achieveservice.com",
+        "method": "POST",
+        "status": 200,
+        "query_params": {
+          "id": [
+            "f143efbb0bb54"
+          ],
+          "noRetry": [
+            "false"
+          ],
+          "getOnlyTokens": [
+            "undefined"
+          ],
+          "app_name": [
+            "AF-Renderer::Self"
+          ],
+          "_": [
+            "1753115474769"
+          ],
+          "sid": [
+            "03faabdc1e261cb430d82fddf246521f"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "content-type": "application/json",
+          "cookie": "[cookies present]",
+          "origin": "https://lancastercc-self.achieveservice.com",
+          "referer": "https://lancastercc-self.achieveservice.com/fillform/?iframe_id=fillform-frame-1&db_id=",
+          "x-requested-with": "XMLHttpRequest"
+        },
+        "response_headers": {
+          "cache-control": "no-store, no-cache, must-revalidate",
+          "content-type": "application/json; charset=UTF-8",
+          "set-cookie": "[cookies present]",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "SAMEORIGIN",
+          "x-xss-protection": "0"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 104464,
+          "compressed": true,
+          "content_ref": "31f729b3ca6bea0da4f773d3004bedbb4a3cf8ed.json"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T16:31:20.880Z",
+        "duration_ms": 379.33299999999997,
+        "endpoint": "/apibroker/runLookup",
+        "host": "lancastercc-self.achieveservice.com",
+        "method": "POST",
+        "status": 200,
+        "query_params": {
+          "id": [
+            "62fe3cfd2cf02"
+          ],
+          "noRetry": [
+            "true"
+          ],
+          "getOnlyTokens": [
+            "undefined"
+          ],
+          "app_name": [
+            "AF-Renderer::Self"
+          ],
+          "_": [
+            "1753115480874"
+          ],
+          "sid": [
+            "03faabdc1e261cb430d82fddf246521f"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "content-type": "application/json",
+          "cookie": "[cookies present]",
+          "origin": "https://lancastercc-self.achieveservice.com",
+          "referer": "https://lancastercc-self.achieveservice.com/fillform/?iframe_id=fillform-frame-1&db_id=",
+          "x-requested-with": "XMLHttpRequest"
+        },
+        "response_headers": {
+          "cache-control": "no-store, no-cache, must-revalidate",
+          "content-type": "application/json; charset=UTF-8",
+          "set-cookie": "[cookies present]",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "SAMEORIGIN",
+          "x-xss-protection": "0"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 1294,
+          "compressed": true,
+          "content_ref": "daab48f00b37f3420e2835d6d227c7fda62df801.json"
+        }
+      }
+    ],
+    "/bincalendars/Calendar6.pdf": [
+      {
+        "timestamp": "2025-07-21T16:31:22.836Z",
+        "duration_ms": 76.83399999999999,
+        "endpoint": "/bincalendars/Calendar6.pdf",
+        "host": "planningdocs.lancaster.gov.uk",
+        "method": "GET",
+        "status": 200,
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+          "referer": "https://lancastercc-self.achieveservice.com/"
+        },
+        "response_headers": {
+          "content-type": "application/pdf",
+          "x-powered-by": "ASP.NET"
+        }
+      }
+    ],
+    "/": [
+      {
+        "timestamp": "2025-07-21T16:31:28.349Z",
+        "duration_ms": 500.77,
+        "endpoint": "/",
+        "host": "lcc-wrp.whitespacews.com",
+        "method": "GET",
+        "status": 200,
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+          "referer": "https://lancastercc-self.achieveservice.com/"
+        },
+        "response_headers": {
+          "content-type": "text/html; charset=UTF-8",
+          "x-frame-options": "DENY"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 7171,
+          "compressed": true,
+          "content_ref": "22a64a76b6f6f948d147271c61f2c8065836882b.html"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T16:31:32.350Z",
+        "duration_ms": 892.966,
+        "endpoint": "/",
+        "host": "lcc-wrp.whitespacews.com",
+        "method": "GET",
+        "status": 200,
+        "query_params": {
+          "Track": [
+            "2025/07/21/QDBF3C3"
+          ],
+          "serviceID": [
+            "A"
+          ],
+          "seq": [
+            "1"
+          ]
+        },
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+          "referer": "https://lcc-wrp.whitespacews.com/"
+        },
+        "response_headers": {
+          "content-type": "text/html; charset=UTF-8",
+          "x-frame-options": "DENY"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 10889,
+          "compressed": true,
+          "content_ref": "2881586bfec014f673007161e5f1e2690f1de86d.html"
+        }
+      }
+    ],
+    "/mop.php": [
+      {
+        "timestamp": "2025-07-21T16:31:43.794Z",
+        "duration_ms": 1123.9409999999998,
+        "endpoint": "/mop.php",
+        "host": "lcc-wrp.whitespacews.com",
+        "method": "POST",
+        "status": 200,
+        "query_params": {
+          "serviceID": [
+            "A"
+          ],
+          "Track": [
+            "2025/07/21/QDBF3C3"
+          ],
+          "seq": [
+            "2"
+          ]
+        },
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+          "content-type": "application/x-www-form-urlencoded",
+          "origin": "https://lcc-wrp.whitespacews.com",
+          "referer": "https://lcc-wrp.whitespacews.com/?Track=2025/07/21/QDBF3C3&serviceID=A&seq=1"
+        },
+        "response_headers": {
+          "content-type": "text/html; charset=UTF-8",
+          "x-frame-options": "DENY"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 13958,
+          "compressed": true,
+          "content_ref": "19653bddb09e5f01b92ce720fae6455fd4bc1597.html"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T16:31:48.433Z",
+        "duration_ms": 1585.6909999999998,
+        "endpoint": "/mop.php",
+        "host": "lcc-wrp.whitespacews.com",
+        "method": "GET",
+        "status": 200,
+        "query_params": {
+          "Track": [
+            "2025/07/21/QDBF3C3"
+          ],
+          "serviceID": [
+            "A"
+          ],
+          "seq": [
+            "3"
+          ],
+          "pIndex": [
+            "1"
+          ]
+        },
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+          "referer": "https://lcc-wrp.whitespacews.com/mop.php?serviceID=A&Track=2025/07/21/QDBF3C3&seq=2"
+        },
+        "response_headers": {
+          "content-type": "text/html; charset=UTF-8",
+          "x-frame-options": "DENY"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 19844,
+          "compressed": true,
+          "content_ref": "ad32add57fb602305b29756158c6dadd9394b5f5.html"
+        }
+      }
+    ]
+  }
 }

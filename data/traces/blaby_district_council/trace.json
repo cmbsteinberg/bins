@@ -1,204 +1,2551 @@
 {
-  "metadata": {
-    "trace_name": "blaby_district_council",
-    "processed_at": "2025-08-26 18:44:24",
-    "workflow_steps_count": 8,
-    "navigation_events_count": 13
-  },
-  "scraping_patterns": {
-    "login_detected": false,
-    "form_submissions": 5,
-    "navigation_count": 4,
-    "unique_domains": [
-      "apikeys.civiccomputing.com",
-      "my.blaby.gov.uk",
-      "www.blaby.gov.uk",
-      "q.clarity.ms",
-      "clapi.civiccomputing.com"
-    ],
-    "api_endpoints": [],
-    "data_extraction_indicators": []
-  },
-  "workflow_steps": [
+  "entries": [
     {
-      "action": "goto",
-      "target": "http://my.blaby.gov.uk/collections",
-      "status": "Failed",
-      "details": {
-        "error": "Timeout 60000ms exceeded."
+      "timestamp": "2025-07-21T07:59:55.796Z",
+      "duration_ms": -1,
+      "endpoint": "/collections",
+      "host": "my.blaby.gov.uk",
+      "method": "GET",
+      "status": -1
+    },
+    {
+      "timestamp": "2025-07-21T08:00:57.103Z",
+      "duration_ms": -1,
+      "endpoint": "/collections",
+      "host": "my.blaby.gov.uk",
+      "method": "GET",
+      "status": -1
+    },
+    {
+      "timestamp": "2025-07-21T08:01:11.911Z",
+      "duration_ms": -1,
+      "endpoint": "/collections",
+      "host": "my.blaby.gov.uk",
+      "method": "GET",
+      "status": -1
+    },
+    {
+      "timestamp": "2025-07-21T08:01:12.336Z",
+      "duration_ms": 218.03900000000002,
+      "endpoint": "/",
+      "host": "www.blaby.gov.uk",
+      "method": "GET",
+      "status": 200,
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7"
       },
-      "timestamp": 0
-    },
-    {
-      "action": "goto",
-      "target": "http://my.blaby.gov.uk/collections",
-      "status": "Failed",
-      "details": {
-        "error": "net::ERR_CONNECTION_TIMED_OUT at http://my.blaby.gov.uk/collections"
+      "response_headers": {
+        "cache-control": "no-cache, no-store",
+        "content-type": "text/html; charset=utf-8",
+        "set-cookie": "[cookies present]",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "SAMEORIGIN",
+        "x-xss-protection": "1; mode=block"
       },
-      "timestamp": 0
+      "response_info": {
+        "type": "text/html",
+        "size": 27455,
+        "compressed": true,
+        "content_ref": "bdfae430cad55d4a11029c9df0a90a58d72d2509.html"
+      }
     },
     {
-      "action": "goto",
-      "target": "https://www.blaby.gov.uk/",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
-    },
-    {
-      "action": "click",
-      "target": "aria-ref=e22 >> internal:describe=\"Accept all button\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
-    },
-    {
-      "action": "goto",
-      "target": "https://my.blaby.gov.uk/collections",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
-    },
-    {
-      "action": "fill",
-      "target": "aria-ref=e40 >> internal:describe=\"Postcode textbox\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0,
-      "value": "LE10 3PB"
-    },
-    {
-      "action": "click",
-      "target": "aria-ref=e41 >> internal:describe=\"Go button\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
-    },
-    {
-      "action": "click",
-      "target": "aria-ref=e50 >> internal:describe=\"2 Brookfield, Sharnford, LE10 3PB link\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
-    }
-  ],
-  "navigation_events": [
-    {
-      "url": "https://www.blaby.gov.uk/",
+      "timestamp": "2025-07-21T08:01:12.726Z",
+      "duration_ms": 65.062,
+      "endpoint": "/c/v",
+      "host": "apikeys.civiccomputing.com",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "text/html; charset=utf-8",
-      "size": 27455,
-      "timestamp": "2025-07-21T08:01:12.336Z"
+      "query_params": {
+        "d": [
+          "www.blaby.gov.uk"
+        ],
+        "p": [
+          "CookieControl Multi-Site"
+        ],
+        "v": [
+          "9"
+        ],
+        "k": [
+          "c9854ac8121234f70ef11f8517a1f1188c7b418e"
+        ],
+        "format": [
+          "json"
+        ]
+      },
+      "request_headers": {
+        "accept": "application/json, text/plain, */*",
+        "origin": "https://www.blaby.gov.uk",
+        "referer": "https://www.blaby.gov.uk/"
+      },
+      "response_headers": {
+        "cache-control": "max-age=3600, private, no-store",
+        "content-type": "application/json",
+        "x-apikeys": "hit",
+        "x-cf-test": "true",
+        "x-content-type-options": "nosniff",
+        "x-xss-protection": "1"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 301,
+        "content_ref": "8b2c2e741bfbe0b37e6d70acf0f042ce4002d37d.json"
+      }
     },
     {
-      "url": "https://apikeys.civiccomputing.com/c/v?d=www.blaby.gov.uk&p=CookieControl%20Multi-Site&v=9&k=c9854ac8121234f70ef11f8517a1f1188c7b418e&format=json",
+      "timestamp": "2025-07-21T08:01:13.024Z",
+      "duration_ms": 458.72400000000005,
+      "endpoint": "/collect",
+      "host": "q.clarity.ms",
+      "method": "POST",
+      "status": 204,
+      "request_headers": {
+        "accept": "application/x-clarity-gzip",
+        "cookie": "[cookies present]",
+        "origin": "https://www.blaby.gov.uk",
+        "referer": "https://www.blaby.gov.uk/"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T08:01:14.185Z",
+      "duration_ms": 86.298,
+      "endpoint": "/collect",
+      "host": "q.clarity.ms",
+      "method": "POST",
+      "status": 204,
+      "request_headers": {
+        "accept": "application/x-clarity-gzip",
+        "cookie": "[cookies present]",
+        "origin": "https://www.blaby.gov.uk",
+        "referer": "https://www.blaby.gov.uk/"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T08:01:15.009Z",
+      "duration_ms": 16.645,
+      "endpoint": "/j/collect",
+      "host": "www.google-analytics.com",
+      "method": "POST",
+      "status": 200,
+      "query_params": {
+        "v": [
+          "1"
+        ],
+        "_v": [
+          "j101"
+        ],
+        "aip": [
+          "1"
+        ],
+        "a": [
+          "1171258497"
+        ],
+        "t": [
+          "pageview"
+        ],
+        "_s": [
+          "1"
+        ],
+        "dl": [
+          "https://www.blaby.gov.uk/"
+        ],
+        "ul": [
+          "en-gb"
+        ],
+        "de": [
+          "UTF-8"
+        ],
+        "dt": [
+          "Blaby District Council"
+        ],
+        "sd": [
+          "24-bit"
+        ],
+        "sr": [
+          "800x600"
+        ],
+        "vp": [
+          "800x461"
+        ],
+        "je": [
+          "0"
+        ],
+        "_u": [
+          "YEBAAUABAAAAACAAI~"
+        ],
+        "jid": [
+          "1199121286"
+        ],
+        "gjid": [
+          "1362667686"
+        ],
+        "cid": [
+          "1075869632.1753084875"
+        ],
+        "tid": [
+          "UA-131259193-1"
+        ],
+        "_gid": [
+          "1161434092.1753084875"
+        ],
+        "_r": [
+          "1"
+        ],
+        "gtm": [
+          "457e57g1za200"
+        ],
+        "gcd": [
+          "13l3l3l3l1l1"
+        ],
+        "dma": [
+          "0"
+        ],
+        "tag_exp": [
+          "101509157~103116026~103200004~103233427~104684208~104684211~104952209~104952211"
+        ],
+        "jsscut": [
+          "1"
+        ],
+        "z": [
+          "300295894"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "content-type": "text/plain",
+        "origin": "https://www.blaby.gov.uk",
+        "referer": "https://www.blaby.gov.uk/"
+      },
+      "response_headers": {
+        "cache-control": "no-cache, no-store, must-revalidate",
+        "content-type": "text/plain",
+        "x-content-type-options": "nosniff"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T08:01:14.965Z",
+      "duration_ms": 111.504,
+      "endpoint": "/{id}/log",
+      "host": "clapi.civiccomputing.com",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json",
-      "size": 301,
-      "timestamp": "2025-07-21T08:01:12.726Z"
+      "path_params": [
+        "1"
+      ],
+      "query_params": {
+        "k": [
+          "c9854ac8121234f70ef11f8517a1f1188c7b418e"
+        ],
+        "d": [
+          "www.blaby.gov.uk"
+        ],
+        "u": [
+          "undefined"
+        ],
+        "c": [
+          "\"{\\\"necessaryCookies\\\":[],\\\"optionalCookies\\\":{\\\"analytics\\\":\\\"accepted\\\",\\\"preferences\\\":\\\"accepted\\\"},\\\"statement\\\":{\\\"shown\\\":true,\\\"updated\\\":\\\"21/10/2021\\\"},\\\"consentDate\\\":1753084874961,\\\"consentExpiry\\\":90,\\\"interactedWith\\\":true,\\\"user\\\":\\\"DD542831-6DA0-48C7-A0DA-C4ED30FB55A0\\\"}\""
+        ]
+      },
+      "request_headers": {
+        "accept": "application/json, text/plain, */*",
+        "origin": "https://www.blaby.gov.uk",
+        "referer": "https://www.blaby.gov.uk/"
+      },
+      "response_headers": {
+        "content-type": "application/json",
+        "x-content-type-options": "nosniff",
+        "x-xss-protection": "0"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 13,
+        "content_ref": "a26ad77888189cc5d6973bb818e45f448628c5c1.json"
+      }
     },
     {
-      "url": "https://q.clarity.ms/collect",
+      "timestamp": "2025-07-21T08:01:15.052Z",
+      "duration_ms": 65.391,
+      "endpoint": "/g/collect",
+      "host": "region1.google-analytics.com",
       "method": "POST",
       "status": 204,
-      "redirect_url": null,
-      "mime_type": "x-unknown",
-      "size": 0,
-      "timestamp": "2025-07-21T08:01:13.024Z"
+      "query_params": {
+        "v": [
+          "2"
+        ],
+        "tid": [
+          "G-YW7MSZH6TX"
+        ],
+        "gtm": [
+          "45je57g1v899679153za200"
+        ],
+        "_p": [
+          "1753084874955"
+        ],
+        "gcd": [
+          "13l3l3l3l1l1"
+        ],
+        "npa": [
+          "0"
+        ],
+        "dma": [
+          "0"
+        ],
+        "tag_exp": [
+          "101509157~103116026~103200004~103233427~104684208~104684211~104921715~104921717"
+        ],
+        "cid": [
+          "1075869632.1753084875"
+        ],
+        "ul": [
+          "en-gb"
+        ],
+        "sr": [
+          "800x600"
+        ],
+        "ir": [
+          "1"
+        ],
+        "uaa": [
+          "arm"
+        ],
+        "uab": [
+          "64"
+        ],
+        "uafvl": [
+          "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+        ],
+        "uamb": [
+          "0"
+        ],
+        "uap": [
+          "macOS"
+        ],
+        "uapv": [
+          "15.5.0"
+        ],
+        "uaw": [
+          "0"
+        ],
+        "are": [
+          "1"
+        ],
+        "frm": [
+          "0"
+        ],
+        "pscdl": [
+          "noapi"
+        ],
+        "_eu": [
+          "EAAI"
+        ],
+        "_s": [
+          "1"
+        ],
+        "sid": [
+          "1753084875"
+        ],
+        "sct": [
+          "1"
+        ],
+        "seg": [
+          "0"
+        ],
+        "dl": [
+          "https://www.blaby.gov.uk/"
+        ],
+        "dt": [
+          "Blaby District Council"
+        ],
+        "en": [
+          "page_view"
+        ],
+        "_fv": [
+          "1"
+        ],
+        "_ss": [
+          "1"
+        ],
+        "tfd": [
+          "2709"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "cookie": "[cookies present]",
+        "origin": "https://www.blaby.gov.uk",
+        "referer": "https://www.blaby.gov.uk/"
+      },
+      "response_headers": {
+        "cache-control": "no-cache, no-store, must-revalidate",
+        "content-type": "text/plain"
+      }
     },
     {
-      "url": "https://q.clarity.ms/collect",
+      "timestamp": "2025-07-21T08:01:16.958Z",
+      "duration_ms": 85.923,
+      "endpoint": "/collect",
+      "host": "q.clarity.ms",
       "method": "POST",
       "status": 204,
-      "redirect_url": null,
-      "mime_type": "x-unknown",
-      "size": 0,
-      "timestamp": "2025-07-21T08:01:14.185Z"
+      "request_headers": {
+        "accept": "application/x-clarity-gzip",
+        "cookie": "[cookies present]",
+        "origin": "https://www.blaby.gov.uk",
+        "referer": "https://www.blaby.gov.uk/"
+      }
     },
     {
-      "url": "https://clapi.civiccomputing.com/1/log?k=c9854ac8121234f70ef11f8517a1f1188c7b418e&d=www.blaby.gov.uk&u=undefined&c=%22%7B%5C%22necessaryCookies%5C%22%3A%5B%5D%2C%5C%22optionalCookies%5C%22%3A%7B%5C%22analytics%5C%22%3A%5C%22accepted%5C%22%2C%5C%22preferences%5C%22%3A%5C%22accepted%5C%22%7D%2C%5C%22statement%5C%22%3A%7B%5C%22shown%5C%22%3Atrue%2C%5C%22updated%5C%22%3A%5C%2221%2F10%2F2021%5C%22%7D%2C%5C%22consentDate%5C%22%3A1753084874961%2C%5C%22consentExpiry%5C%22%3A90%2C%5C%22interactedWith%5C%22%3Atrue%2C%5C%22user%5C%22%3A%5C%22DD542831-6DA0-48C7-A0DA-C4ED30FB55A0%5C%22%7D%22",
+      "timestamp": "2025-07-21T08:01:20.731Z",
+      "duration_ms": 91.54599999999999,
+      "endpoint": "/collect",
+      "host": "q.clarity.ms",
+      "method": "POST",
+      "status": 204,
+      "request_headers": {
+        "accept": "application/x-clarity-gzip",
+        "cookie": "[cookies present]",
+        "origin": "https://www.blaby.gov.uk",
+        "referer": "https://www.blaby.gov.uk/"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T08:01:26.732Z",
+      "duration_ms": 96.531,
+      "endpoint": "/collect",
+      "host": "q.clarity.ms",
+      "method": "POST",
+      "status": 204,
+      "request_headers": {
+        "accept": "application/x-clarity-gzip",
+        "cookie": "[cookies present]",
+        "origin": "https://www.blaby.gov.uk",
+        "referer": "https://www.blaby.gov.uk/"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T08:01:27.862Z",
+      "duration_ms": -1,
+      "endpoint": "/collect",
+      "host": "q.clarity.ms",
+      "method": "POST",
+      "status": -1,
+      "request_headers": {
+        "referer": "https://www.blaby.gov.uk/",
+        "content-type": "text/plain;charset=UTF-8"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T08:01:27.863Z",
+      "duration_ms": -1,
+      "endpoint": "/g/collect",
+      "host": "region1.google-analytics.com",
+      "method": "POST",
+      "status": -1,
+      "query_params": {
+        "v": [
+          "2"
+        ],
+        "tid": [
+          "G-YW7MSZH6TX"
+        ],
+        "gtm": [
+          "45je57g1v899679153za200"
+        ],
+        "_p": [
+          "1753084874955"
+        ],
+        "gcd": [
+          "13l3l3l3l1l1"
+        ],
+        "npa": [
+          "0"
+        ],
+        "dma": [
+          "0"
+        ],
+        "tag_exp": [
+          "101509157~103116026~103200004~103233427~104684208~104684211~104921715~104921717"
+        ],
+        "cid": [
+          "1075869632.1753084875"
+        ],
+        "ul": [
+          "en-gb"
+        ],
+        "sr": [
+          "800x600"
+        ],
+        "ir": [
+          "1"
+        ],
+        "uaa": [
+          "arm"
+        ],
+        "uab": [
+          "64"
+        ],
+        "uafvl": [
+          "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+        ],
+        "uamb": [
+          "0"
+        ],
+        "uap": [
+          "macOS"
+        ],
+        "uapv": [
+          "15.5.0"
+        ],
+        "uaw": [
+          "0"
+        ],
+        "are": [
+          "1"
+        ],
+        "frm": [
+          "0"
+        ],
+        "pscdl": [
+          "noapi"
+        ],
+        "_eu": [
+          "EAAIAAQ"
+        ],
+        "_s": [
+          "2"
+        ],
+        "sid": [
+          "1753084875"
+        ],
+        "sct": [
+          "1"
+        ],
+        "seg": [
+          "1"
+        ],
+        "dl": [
+          "https://www.blaby.gov.uk/"
+        ],
+        "dt": [
+          "Blaby District Council"
+        ],
+        "en": [
+          "user_engagement"
+        ],
+        "_et": [
+          "12813"
+        ],
+        "tfd": [
+          "15526"
+        ]
+      },
+      "request_headers": {
+        "referer": "https://www.blaby.gov.uk/"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T08:01:27.779Z",
+      "duration_ms": 111.35000000000001,
+      "endpoint": "/collections",
+      "host": "my.blaby.gov.uk",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json",
-      "size": 13,
-      "timestamp": "2025-07-21T08:01:14.965Z"
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+        "cookie": "[cookies present]"
+      },
+      "response_headers": {
+        "cache-control": "no-store, no-cache, must-revalidate",
+        "content-type": "text/html; charset=UTF-8",
+        "set-cookie": "[cookies present]",
+        "x-powered-by": "ASP.NET"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 13026,
+        "content_ref": "e695c9815ad9a8b3ecbd8cd8c164e8a282a4b991.html"
+      }
     },
     {
-      "url": "https://q.clarity.ms/collect",
+      "timestamp": "2025-07-21T08:01:32.274Z",
+      "duration_ms": 19.852,
+      "endpoint": "/g/collect",
+      "host": "region1.google-analytics.com",
       "method": "POST",
       "status": 204,
-      "redirect_url": null,
-      "mime_type": "x-unknown",
-      "size": 0,
-      "timestamp": "2025-07-21T08:01:16.958Z"
+      "query_params": {
+        "v": [
+          "2"
+        ],
+        "tid": [
+          "G-YW7MSZH6TX"
+        ],
+        "gtm": [
+          "45je57h0h2v899679153za200"
+        ],
+        "_p": [
+          "1753084887906"
+        ],
+        "gcd": [
+          "13l3l3l3l1l1"
+        ],
+        "npa": [
+          "0"
+        ],
+        "dma": [
+          "0"
+        ],
+        "tag_exp": [
+          "101509157~103116026~103200004~103233427~104684208~104684211~104952206~104952208"
+        ],
+        "cid": [
+          "1075869632.1753084875"
+        ],
+        "ul": [
+          "en-gb"
+        ],
+        "sr": [
+          "800x600"
+        ],
+        "uaa": [
+          "arm"
+        ],
+        "uab": [
+          "64"
+        ],
+        "uafvl": [
+          "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+        ],
+        "uamb": [
+          "0"
+        ],
+        "uap": [
+          "macOS"
+        ],
+        "uapv": [
+          "15.5.0"
+        ],
+        "uaw": [
+          "0"
+        ],
+        "are": [
+          "1"
+        ],
+        "frm": [
+          "0"
+        ],
+        "pscdl": [
+          "noapi"
+        ],
+        "_eu": [
+          "AAAAAAQ"
+        ],
+        "_s": [
+          "1"
+        ],
+        "sid": [
+          "1753084875"
+        ],
+        "sct": [
+          "1"
+        ],
+        "seg": [
+          "1"
+        ],
+        "dl": [
+          "https://my.blaby.gov.uk/collections"
+        ],
+        "dt": [
+          "Blaby District Council | Recycling and refuse - collection dates"
+        ],
+        "en": [
+          "page_view"
+        ],
+        "_ee": [
+          "1"
+        ],
+        "tfd": [
+          "4490"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "cookie": "[cookies present]",
+        "origin": "https://my.blaby.gov.uk",
+        "referer": "https://my.blaby.gov.uk/"
+      },
+      "response_headers": {
+        "cache-control": "no-cache, no-store, must-revalidate",
+        "content-type": "text/plain"
+      }
     },
     {
-      "url": "https://q.clarity.ms/collect",
+      "timestamp": "2025-07-21T08:01:32.401Z",
+      "duration_ms": -1,
+      "endpoint": "/g/collect",
+      "host": "region1.google-analytics.com",
       "method": "POST",
-      "status": 204,
-      "redirect_url": null,
-      "mime_type": "x-unknown",
-      "size": 0,
-      "timestamp": "2025-07-21T08:01:20.731Z"
+      "status": -1,
+      "query_params": {
+        "v": [
+          "2"
+        ],
+        "tid": [
+          "G-YW7MSZH6TX"
+        ],
+        "gtm": [
+          "45je57h0h2v899679153za200"
+        ],
+        "_p": [
+          "1753084887906"
+        ],
+        "gcd": [
+          "13l3l3l3l1l1"
+        ],
+        "npa": [
+          "0"
+        ],
+        "dma": [
+          "0"
+        ],
+        "tag_exp": [
+          "101509157~103116026~103200004~103233427~104684208~104684211~104952206~104952208"
+        ],
+        "cid": [
+          "1075869632.1753084875"
+        ],
+        "ul": [
+          "en-gb"
+        ],
+        "sr": [
+          "800x600"
+        ],
+        "uaa": [
+          "arm"
+        ],
+        "uab": [
+          "64"
+        ],
+        "uafvl": [
+          "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+        ],
+        "uamb": [
+          "0"
+        ],
+        "uap": [
+          "macOS"
+        ],
+        "uapv": [
+          "15.5.0"
+        ],
+        "uaw": [
+          "0"
+        ],
+        "are": [
+          "1"
+        ],
+        "frm": [
+          "0"
+        ],
+        "pscdl": [
+          "noapi"
+        ],
+        "_eu": [
+          "AEEAAAQ"
+        ],
+        "sid": [
+          "1753084875"
+        ],
+        "sct": [
+          "1"
+        ],
+        "seg": [
+          "1"
+        ],
+        "dl": [
+          "https://my.blaby.gov.uk/collections"
+        ],
+        "dt": [
+          "Blaby District Council | Recycling and refuse - collection dates"
+        ],
+        "_s": [
+          "2"
+        ],
+        "tfd": [
+          "4622"
+        ]
+      },
+      "request_headers": {
+        "referer": "https://my.blaby.gov.uk/",
+        "content-type": "text/plain;charset=UTF-8"
+      }
     },
     {
-      "url": "https://q.clarity.ms/collect",
-      "method": "POST",
-      "status": 204,
-      "redirect_url": null,
-      "mime_type": "x-unknown",
-      "size": 0,
-      "timestamp": "2025-07-21T08:01:26.732Z"
-    },
-    {
-      "url": "https://my.blaby.gov.uk/collections",
+      "timestamp": "2025-07-21T08:01:32.327Z",
+      "duration_ms": 70.68900000000001,
+      "endpoint": "/collections",
+      "host": "my.blaby.gov.uk",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "text/html; charset=UTF-8",
-      "size": 13026,
-      "timestamp": "2025-07-21T08:01:27.779Z"
+      "query_params": {
+        "location": [
+          "change"
+        ],
+        "address": [
+          "LE10 3PB"
+        ]
+      },
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+        "cookie": "[cookies present]",
+        "referer": "https://my.blaby.gov.uk/collections"
+      },
+      "response_headers": {
+        "cache-control": "no-store, no-cache, must-revalidate",
+        "content-type": "text/html; charset=UTF-8",
+        "x-powered-by": "ASP.NET"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 22746,
+        "content_ref": "587fb3f7ead6d25f592202ea6cfd6f37c24ff8b8.html"
+      }
     },
     {
-      "url": "https://my.blaby.gov.uk/collections?location=change&address=LE10+3PB&layer=",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "text/html; charset=UTF-8",
-      "size": 22746,
-      "timestamp": "2025-07-21T08:01:32.327Z"
-    },
-    {
-      "url": "https://my.blaby.gov.uk/site/images/loading.gif",
-      "method": "GET",
-      "status": 404,
-      "redirect_url": null,
-      "mime_type": "text/html; charset=UTF-8",
-      "size": 8945,
-      "timestamp": "2025-07-21T08:01:32.407Z"
-    },
-    {
-      "url": "https://my.blaby.gov.uk/set-location.php?ref=100030377477&redirect=collections&rememberloc=",
+      "timestamp": "2025-07-21T08:01:35.422Z",
+      "duration_ms": 65.692,
+      "endpoint": "/set-location.php",
+      "host": "my.blaby.gov.uk",
       "method": "GET",
       "status": 302,
-      "redirect_url": "https://my.blaby.gov.uk/collections",
-      "mime_type": "text/html; charset=UTF-8",
-      "size": -1,
-      "timestamp": "2025-07-21T08:01:35.422Z"
+      "query_params": {
+        "ref": [
+          "100030377477"
+        ],
+        "redirect": [
+          "collections"
+        ]
+      },
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+        "cookie": "[cookies present]",
+        "referer": "https://my.blaby.gov.uk/collections?location=change&address=LE10+3PB&layer="
+      },
+      "response_headers": {
+        "cache-control": "no-store, no-cache, must-revalidate",
+        "content-type": "text/html; charset=UTF-8",
+        "location": "https://my.blaby.gov.uk/collections",
+        "set-cookie": "[cookies present]",
+        "x-powered-by": "ASP.NET"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": -1
+      },
+      "redirect_to": "https://my.blaby.gov.uk/collections"
     },
     {
-      "url": "https://my.blaby.gov.uk/collections",
+      "timestamp": "2025-07-21T08:01:37.354Z",
+      "duration_ms": -1,
+      "endpoint": "/g/collect",
+      "host": "region1.google-analytics.com",
+      "method": "POST",
+      "status": -1,
+      "query_params": {
+        "v": [
+          "2"
+        ],
+        "tid": [
+          "G-YW7MSZH6TX"
+        ],
+        "gtm": [
+          "45je57h0h2v899679153za200"
+        ],
+        "_p": [
+          "1753084892407"
+        ],
+        "gcd": [
+          "13l3l3l3l1l1"
+        ],
+        "npa": [
+          "0"
+        ],
+        "dma": [
+          "0"
+        ],
+        "tag_exp": [
+          "101509157~103116026~103200004~103233427~104684208~104684211~104952206~104952208"
+        ],
+        "cid": [
+          "1075869632.1753084875"
+        ],
+        "ul": [
+          "en-gb"
+        ],
+        "sr": [
+          "800x600"
+        ],
+        "uaa": [
+          "arm"
+        ],
+        "uab": [
+          "64"
+        ],
+        "uafvl": [
+          "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+        ],
+        "uamb": [
+          "0"
+        ],
+        "uap": [
+          "macOS"
+        ],
+        "uapv": [
+          "15.5.0"
+        ],
+        "uaw": [
+          "0"
+        ],
+        "are": [
+          "1"
+        ],
+        "frm": [
+          "0"
+        ],
+        "pscdl": [
+          "noapi"
+        ],
+        "_eu": [
+          "AAAAAAQ"
+        ],
+        "sid": [
+          "1753084875"
+        ],
+        "sct": [
+          "1"
+        ],
+        "seg": [
+          "1"
+        ],
+        "dl": [
+          "https://my.blaby.gov.uk/collections?location=change&address=LE10+3PB&layer="
+        ],
+        "dr": [
+          "https://my.blaby.gov.uk/collections"
+        ],
+        "dt": [
+          "Blaby District Council | Recycling and refuse - collection dates"
+        ],
+        "_s": [
+          "1"
+        ],
+        "tfd": [
+          "5076"
+        ]
+      },
+      "request_headers": {
+        "referer": "https://my.blaby.gov.uk/",
+        "content-type": "text/plain;charset=UTF-8"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T08:01:35.488Z",
+      "duration_ms": 1850.707,
+      "endpoint": "/collections",
+      "host": "my.blaby.gov.uk",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "text/html; charset=UTF-8",
-      "size": 15508,
-      "timestamp": "2025-07-21T08:01:35.488Z"
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+        "cookie": "[cookies present]",
+        "referer": "https://my.blaby.gov.uk/collections?location=change&address=LE10+3PB&layer="
+      },
+      "response_headers": {
+        "cache-control": "no-store, no-cache, must-revalidate",
+        "content-type": "text/html; charset=UTF-8",
+        "x-powered-by": "ASP.NET"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 15508,
+        "content_ref": "b1702ec0f3bf243b5e978006c5b2919287ee7727.html"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T08:01:42.399Z",
+      "duration_ms": 16.14,
+      "endpoint": "/g/collect",
+      "host": "region1.google-analytics.com",
+      "method": "POST",
+      "status": 204,
+      "query_params": {
+        "v": [
+          "2"
+        ],
+        "tid": [
+          "G-YW7MSZH6TX"
+        ],
+        "gtm": [
+          "45je57h0h2v899679153za200"
+        ],
+        "_p": [
+          "1753084897361"
+        ],
+        "gcd": [
+          "13l3l3l3l1l1"
+        ],
+        "npa": [
+          "0"
+        ],
+        "dma": [
+          "0"
+        ],
+        "tag_exp": [
+          "101509157~103116026~103200004~103233427~104684208~104684211~104952206~104952208"
+        ],
+        "cid": [
+          "1075869632.1753084875"
+        ],
+        "ul": [
+          "en-gb"
+        ],
+        "sr": [
+          "800x600"
+        ],
+        "uaa": [
+          "arm"
+        ],
+        "uab": [
+          "64"
+        ],
+        "uafvl": [
+          "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+        ],
+        "uamb": [
+          "0"
+        ],
+        "uap": [
+          "macOS"
+        ],
+        "uapv": [
+          "15.5.0"
+        ],
+        "uaw": [
+          "0"
+        ],
+        "are": [
+          "1"
+        ],
+        "frm": [
+          "0"
+        ],
+        "pscdl": [
+          "noapi"
+        ],
+        "_eu": [
+          "AAAAAAQ"
+        ],
+        "_s": [
+          "1"
+        ],
+        "sid": [
+          "1753084875"
+        ],
+        "sct": [
+          "1"
+        ],
+        "seg": [
+          "1"
+        ],
+        "dl": [
+          "https://my.blaby.gov.uk/collections"
+        ],
+        "dr": [
+          "https://my.blaby.gov.uk/collections?location=change&address=LE10+3PB&layer="
+        ],
+        "dt": [
+          "Blaby District Council | Recycling and refuse - collection dates"
+        ],
+        "en": [
+          "page_view"
+        ],
+        "_ee": [
+          "1"
+        ],
+        "tfd": [
+          "7027"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "cookie": "[cookies present]",
+        "origin": "https://my.blaby.gov.uk",
+        "referer": "https://my.blaby.gov.uk/"
+      },
+      "response_headers": {
+        "cache-control": "no-cache, no-store, must-revalidate",
+        "content-type": "text/plain"
+      }
     }
-  ]
+  ],
+  "analysis": {
+    "total_requests": 23,
+    "unique_endpoints": 8,
+    "methods_used": [
+      "GET",
+      "POST"
+    ],
+    "status_codes": {
+      "-1": 7,
+      "200": 7,
+      "204": 8,
+      "302": 1
+    },
+    "endpoints_with_params": [
+      {
+        "endpoint": "/c/v",
+        "method": "GET",
+        "query_params": [
+          "d",
+          "p",
+          "v",
+          "k",
+          "format"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/j/collect",
+        "method": "POST",
+        "query_params": [
+          "v",
+          "_v",
+          "aip",
+          "a",
+          "t",
+          "_s",
+          "dl",
+          "ul",
+          "de",
+          "dt",
+          "sd",
+          "sr",
+          "vp",
+          "je",
+          "_u",
+          "jid",
+          "gjid",
+          "cid",
+          "tid",
+          "_gid",
+          "_r",
+          "gtm",
+          "gcd",
+          "dma",
+          "tag_exp",
+          "jsscut",
+          "z"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/{id}/log",
+        "method": "GET",
+        "query_params": [
+          "k",
+          "d",
+          "u",
+          "c"
+        ],
+        "path_params": true
+      },
+      {
+        "endpoint": "/g/collect",
+        "method": "POST",
+        "query_params": [
+          "v",
+          "tid",
+          "gtm",
+          "_p",
+          "gcd",
+          "npa",
+          "dma",
+          "tag_exp",
+          "cid",
+          "ul",
+          "sr",
+          "ir",
+          "uaa",
+          "uab",
+          "uafvl",
+          "uamb",
+          "uap",
+          "uapv",
+          "uaw",
+          "are",
+          "frm",
+          "pscdl",
+          "_eu",
+          "_s",
+          "sid",
+          "sct",
+          "seg",
+          "dl",
+          "dt",
+          "en",
+          "_fv",
+          "_ss",
+          "tfd"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/g/collect",
+        "method": "POST",
+        "query_params": [
+          "v",
+          "tid",
+          "gtm",
+          "_p",
+          "gcd",
+          "npa",
+          "dma",
+          "tag_exp",
+          "cid",
+          "ul",
+          "sr",
+          "ir",
+          "uaa",
+          "uab",
+          "uafvl",
+          "uamb",
+          "uap",
+          "uapv",
+          "uaw",
+          "are",
+          "frm",
+          "pscdl",
+          "_eu",
+          "_s",
+          "sid",
+          "sct",
+          "seg",
+          "dl",
+          "dt",
+          "en",
+          "_et",
+          "tfd"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/g/collect",
+        "method": "POST",
+        "query_params": [
+          "v",
+          "tid",
+          "gtm",
+          "_p",
+          "gcd",
+          "npa",
+          "dma",
+          "tag_exp",
+          "cid",
+          "ul",
+          "sr",
+          "uaa",
+          "uab",
+          "uafvl",
+          "uamb",
+          "uap",
+          "uapv",
+          "uaw",
+          "are",
+          "frm",
+          "pscdl",
+          "_eu",
+          "_s",
+          "sid",
+          "sct",
+          "seg",
+          "dl",
+          "dt",
+          "en",
+          "_ee",
+          "tfd"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/g/collect",
+        "method": "POST",
+        "query_params": [
+          "v",
+          "tid",
+          "gtm",
+          "_p",
+          "gcd",
+          "npa",
+          "dma",
+          "tag_exp",
+          "cid",
+          "ul",
+          "sr",
+          "uaa",
+          "uab",
+          "uafvl",
+          "uamb",
+          "uap",
+          "uapv",
+          "uaw",
+          "are",
+          "frm",
+          "pscdl",
+          "_eu",
+          "sid",
+          "sct",
+          "seg",
+          "dl",
+          "dt",
+          "_s",
+          "tfd"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/collections",
+        "method": "GET",
+        "query_params": [
+          "location",
+          "address"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/set-location.php",
+        "method": "GET",
+        "query_params": [
+          "ref",
+          "redirect"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/g/collect",
+        "method": "POST",
+        "query_params": [
+          "v",
+          "tid",
+          "gtm",
+          "_p",
+          "gcd",
+          "npa",
+          "dma",
+          "tag_exp",
+          "cid",
+          "ul",
+          "sr",
+          "uaa",
+          "uab",
+          "uafvl",
+          "uamb",
+          "uap",
+          "uapv",
+          "uaw",
+          "are",
+          "frm",
+          "pscdl",
+          "_eu",
+          "sid",
+          "sct",
+          "seg",
+          "dl",
+          "dr",
+          "dt",
+          "_s",
+          "tfd"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/g/collect",
+        "method": "POST",
+        "query_params": [
+          "v",
+          "tid",
+          "gtm",
+          "_p",
+          "gcd",
+          "npa",
+          "dma",
+          "tag_exp",
+          "cid",
+          "ul",
+          "sr",
+          "uaa",
+          "uab",
+          "uafvl",
+          "uamb",
+          "uap",
+          "uapv",
+          "uaw",
+          "are",
+          "frm",
+          "pscdl",
+          "_eu",
+          "_s",
+          "sid",
+          "sct",
+          "seg",
+          "dl",
+          "dr",
+          "dt",
+          "en",
+          "_ee",
+          "tfd"
+        ],
+        "path_params": false
+      }
+    ],
+    "redirects": [
+      {
+        "from": "/set-location.php",
+        "to": "https://my.blaby.gov.uk/collections",
+        "status": 302
+      }
+    ],
+    "api_calls": [
+      {
+        "endpoint": "/c/v",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": [
+          "d",
+          "p",
+          "v",
+          "k",
+          "format"
+        ]
+      },
+      {
+        "endpoint": "/{id}/log",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": [
+          "k",
+          "d",
+          "u",
+          "c"
+        ]
+      }
+    ],
+    "form_submissions": []
+  },
+  "grouped_by_endpoint": {
+    "/collections": [
+      {
+        "timestamp": "2025-07-21T07:59:55.796Z",
+        "duration_ms": -1,
+        "endpoint": "/collections",
+        "host": "my.blaby.gov.uk",
+        "method": "GET",
+        "status": -1
+      },
+      {
+        "timestamp": "2025-07-21T08:00:57.103Z",
+        "duration_ms": -1,
+        "endpoint": "/collections",
+        "host": "my.blaby.gov.uk",
+        "method": "GET",
+        "status": -1
+      },
+      {
+        "timestamp": "2025-07-21T08:01:11.911Z",
+        "duration_ms": -1,
+        "endpoint": "/collections",
+        "host": "my.blaby.gov.uk",
+        "method": "GET",
+        "status": -1
+      },
+      {
+        "timestamp": "2025-07-21T08:01:27.779Z",
+        "duration_ms": 111.35000000000001,
+        "endpoint": "/collections",
+        "host": "my.blaby.gov.uk",
+        "method": "GET",
+        "status": 200,
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+          "cookie": "[cookies present]"
+        },
+        "response_headers": {
+          "cache-control": "no-store, no-cache, must-revalidate",
+          "content-type": "text/html; charset=UTF-8",
+          "set-cookie": "[cookies present]",
+          "x-powered-by": "ASP.NET"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 13026,
+          "content_ref": "e695c9815ad9a8b3ecbd8cd8c164e8a282a4b991.html"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T08:01:32.327Z",
+        "duration_ms": 70.68900000000001,
+        "endpoint": "/collections",
+        "host": "my.blaby.gov.uk",
+        "method": "GET",
+        "status": 200,
+        "query_params": {
+          "location": [
+            "change"
+          ],
+          "address": [
+            "LE10 3PB"
+          ]
+        },
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+          "cookie": "[cookies present]",
+          "referer": "https://my.blaby.gov.uk/collections"
+        },
+        "response_headers": {
+          "cache-control": "no-store, no-cache, must-revalidate",
+          "content-type": "text/html; charset=UTF-8",
+          "x-powered-by": "ASP.NET"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 22746,
+          "content_ref": "587fb3f7ead6d25f592202ea6cfd6f37c24ff8b8.html"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T08:01:35.488Z",
+        "duration_ms": 1850.707,
+        "endpoint": "/collections",
+        "host": "my.blaby.gov.uk",
+        "method": "GET",
+        "status": 200,
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+          "cookie": "[cookies present]",
+          "referer": "https://my.blaby.gov.uk/collections?location=change&address=LE10+3PB&layer="
+        },
+        "response_headers": {
+          "cache-control": "no-store, no-cache, must-revalidate",
+          "content-type": "text/html; charset=UTF-8",
+          "x-powered-by": "ASP.NET"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 15508,
+          "content_ref": "b1702ec0f3bf243b5e978006c5b2919287ee7727.html"
+        }
+      }
+    ],
+    "/": [
+      {
+        "timestamp": "2025-07-21T08:01:12.336Z",
+        "duration_ms": 218.03900000000002,
+        "endpoint": "/",
+        "host": "www.blaby.gov.uk",
+        "method": "GET",
+        "status": 200,
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7"
+        },
+        "response_headers": {
+          "cache-control": "no-cache, no-store",
+          "content-type": "text/html; charset=utf-8",
+          "set-cookie": "[cookies present]",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "SAMEORIGIN",
+          "x-xss-protection": "1; mode=block"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 27455,
+          "compressed": true,
+          "content_ref": "bdfae430cad55d4a11029c9df0a90a58d72d2509.html"
+        }
+      }
+    ],
+    "/c/v": [
+      {
+        "timestamp": "2025-07-21T08:01:12.726Z",
+        "duration_ms": 65.062,
+        "endpoint": "/c/v",
+        "host": "apikeys.civiccomputing.com",
+        "method": "GET",
+        "status": 200,
+        "query_params": {
+          "d": [
+            "www.blaby.gov.uk"
+          ],
+          "p": [
+            "CookieControl Multi-Site"
+          ],
+          "v": [
+            "9"
+          ],
+          "k": [
+            "c9854ac8121234f70ef11f8517a1f1188c7b418e"
+          ],
+          "format": [
+            "json"
+          ]
+        },
+        "request_headers": {
+          "accept": "application/json, text/plain, */*",
+          "origin": "https://www.blaby.gov.uk",
+          "referer": "https://www.blaby.gov.uk/"
+        },
+        "response_headers": {
+          "cache-control": "max-age=3600, private, no-store",
+          "content-type": "application/json",
+          "x-apikeys": "hit",
+          "x-cf-test": "true",
+          "x-content-type-options": "nosniff",
+          "x-xss-protection": "1"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 301,
+          "content_ref": "8b2c2e741bfbe0b37e6d70acf0f042ce4002d37d.json"
+        }
+      }
+    ],
+    "/collect": [
+      {
+        "timestamp": "2025-07-21T08:01:13.024Z",
+        "duration_ms": 458.72400000000005,
+        "endpoint": "/collect",
+        "host": "q.clarity.ms",
+        "method": "POST",
+        "status": 204,
+        "request_headers": {
+          "accept": "application/x-clarity-gzip",
+          "cookie": "[cookies present]",
+          "origin": "https://www.blaby.gov.uk",
+          "referer": "https://www.blaby.gov.uk/"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T08:01:14.185Z",
+        "duration_ms": 86.298,
+        "endpoint": "/collect",
+        "host": "q.clarity.ms",
+        "method": "POST",
+        "status": 204,
+        "request_headers": {
+          "accept": "application/x-clarity-gzip",
+          "cookie": "[cookies present]",
+          "origin": "https://www.blaby.gov.uk",
+          "referer": "https://www.blaby.gov.uk/"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T08:01:16.958Z",
+        "duration_ms": 85.923,
+        "endpoint": "/collect",
+        "host": "q.clarity.ms",
+        "method": "POST",
+        "status": 204,
+        "request_headers": {
+          "accept": "application/x-clarity-gzip",
+          "cookie": "[cookies present]",
+          "origin": "https://www.blaby.gov.uk",
+          "referer": "https://www.blaby.gov.uk/"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T08:01:20.731Z",
+        "duration_ms": 91.54599999999999,
+        "endpoint": "/collect",
+        "host": "q.clarity.ms",
+        "method": "POST",
+        "status": 204,
+        "request_headers": {
+          "accept": "application/x-clarity-gzip",
+          "cookie": "[cookies present]",
+          "origin": "https://www.blaby.gov.uk",
+          "referer": "https://www.blaby.gov.uk/"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T08:01:26.732Z",
+        "duration_ms": 96.531,
+        "endpoint": "/collect",
+        "host": "q.clarity.ms",
+        "method": "POST",
+        "status": 204,
+        "request_headers": {
+          "accept": "application/x-clarity-gzip",
+          "cookie": "[cookies present]",
+          "origin": "https://www.blaby.gov.uk",
+          "referer": "https://www.blaby.gov.uk/"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T08:01:27.862Z",
+        "duration_ms": -1,
+        "endpoint": "/collect",
+        "host": "q.clarity.ms",
+        "method": "POST",
+        "status": -1,
+        "request_headers": {
+          "referer": "https://www.blaby.gov.uk/",
+          "content-type": "text/plain;charset=UTF-8"
+        }
+      }
+    ],
+    "/j/collect": [
+      {
+        "timestamp": "2025-07-21T08:01:15.009Z",
+        "duration_ms": 16.645,
+        "endpoint": "/j/collect",
+        "host": "www.google-analytics.com",
+        "method": "POST",
+        "status": 200,
+        "query_params": {
+          "v": [
+            "1"
+          ],
+          "_v": [
+            "j101"
+          ],
+          "aip": [
+            "1"
+          ],
+          "a": [
+            "1171258497"
+          ],
+          "t": [
+            "pageview"
+          ],
+          "_s": [
+            "1"
+          ],
+          "dl": [
+            "https://www.blaby.gov.uk/"
+          ],
+          "ul": [
+            "en-gb"
+          ],
+          "de": [
+            "UTF-8"
+          ],
+          "dt": [
+            "Blaby District Council"
+          ],
+          "sd": [
+            "24-bit"
+          ],
+          "sr": [
+            "800x600"
+          ],
+          "vp": [
+            "800x461"
+          ],
+          "je": [
+            "0"
+          ],
+          "_u": [
+            "YEBAAUABAAAAACAAI~"
+          ],
+          "jid": [
+            "1199121286"
+          ],
+          "gjid": [
+            "1362667686"
+          ],
+          "cid": [
+            "1075869632.1753084875"
+          ],
+          "tid": [
+            "UA-131259193-1"
+          ],
+          "_gid": [
+            "1161434092.1753084875"
+          ],
+          "_r": [
+            "1"
+          ],
+          "gtm": [
+            "457e57g1za200"
+          ],
+          "gcd": [
+            "13l3l3l3l1l1"
+          ],
+          "dma": [
+            "0"
+          ],
+          "tag_exp": [
+            "101509157~103116026~103200004~103233427~104684208~104684211~104952209~104952211"
+          ],
+          "jsscut": [
+            "1"
+          ],
+          "z": [
+            "300295894"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "content-type": "text/plain",
+          "origin": "https://www.blaby.gov.uk",
+          "referer": "https://www.blaby.gov.uk/"
+        },
+        "response_headers": {
+          "cache-control": "no-cache, no-store, must-revalidate",
+          "content-type": "text/plain",
+          "x-content-type-options": "nosniff"
+        }
+      }
+    ],
+    "/{id}/log": [
+      {
+        "timestamp": "2025-07-21T08:01:14.965Z",
+        "duration_ms": 111.504,
+        "endpoint": "/{id}/log",
+        "host": "clapi.civiccomputing.com",
+        "method": "GET",
+        "status": 200,
+        "path_params": [
+          "1"
+        ],
+        "query_params": {
+          "k": [
+            "c9854ac8121234f70ef11f8517a1f1188c7b418e"
+          ],
+          "d": [
+            "www.blaby.gov.uk"
+          ],
+          "u": [
+            "undefined"
+          ],
+          "c": [
+            "\"{\\\"necessaryCookies\\\":[],\\\"optionalCookies\\\":{\\\"analytics\\\":\\\"accepted\\\",\\\"preferences\\\":\\\"accepted\\\"},\\\"statement\\\":{\\\"shown\\\":true,\\\"updated\\\":\\\"21/10/2021\\\"},\\\"consentDate\\\":1753084874961,\\\"consentExpiry\\\":90,\\\"interactedWith\\\":true,\\\"user\\\":\\\"DD542831-6DA0-48C7-A0DA-C4ED30FB55A0\\\"}\""
+          ]
+        },
+        "request_headers": {
+          "accept": "application/json, text/plain, */*",
+          "origin": "https://www.blaby.gov.uk",
+          "referer": "https://www.blaby.gov.uk/"
+        },
+        "response_headers": {
+          "content-type": "application/json",
+          "x-content-type-options": "nosniff",
+          "x-xss-protection": "0"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 13,
+          "content_ref": "a26ad77888189cc5d6973bb818e45f448628c5c1.json"
+        }
+      }
+    ],
+    "/g/collect": [
+      {
+        "timestamp": "2025-07-21T08:01:15.052Z",
+        "duration_ms": 65.391,
+        "endpoint": "/g/collect",
+        "host": "region1.google-analytics.com",
+        "method": "POST",
+        "status": 204,
+        "query_params": {
+          "v": [
+            "2"
+          ],
+          "tid": [
+            "G-YW7MSZH6TX"
+          ],
+          "gtm": [
+            "45je57g1v899679153za200"
+          ],
+          "_p": [
+            "1753084874955"
+          ],
+          "gcd": [
+            "13l3l3l3l1l1"
+          ],
+          "npa": [
+            "0"
+          ],
+          "dma": [
+            "0"
+          ],
+          "tag_exp": [
+            "101509157~103116026~103200004~103233427~104684208~104684211~104921715~104921717"
+          ],
+          "cid": [
+            "1075869632.1753084875"
+          ],
+          "ul": [
+            "en-gb"
+          ],
+          "sr": [
+            "800x600"
+          ],
+          "ir": [
+            "1"
+          ],
+          "uaa": [
+            "arm"
+          ],
+          "uab": [
+            "64"
+          ],
+          "uafvl": [
+            "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+          ],
+          "uamb": [
+            "0"
+          ],
+          "uap": [
+            "macOS"
+          ],
+          "uapv": [
+            "15.5.0"
+          ],
+          "uaw": [
+            "0"
+          ],
+          "are": [
+            "1"
+          ],
+          "frm": [
+            "0"
+          ],
+          "pscdl": [
+            "noapi"
+          ],
+          "_eu": [
+            "EAAI"
+          ],
+          "_s": [
+            "1"
+          ],
+          "sid": [
+            "1753084875"
+          ],
+          "sct": [
+            "1"
+          ],
+          "seg": [
+            "0"
+          ],
+          "dl": [
+            "https://www.blaby.gov.uk/"
+          ],
+          "dt": [
+            "Blaby District Council"
+          ],
+          "en": [
+            "page_view"
+          ],
+          "_fv": [
+            "1"
+          ],
+          "_ss": [
+            "1"
+          ],
+          "tfd": [
+            "2709"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "cookie": "[cookies present]",
+          "origin": "https://www.blaby.gov.uk",
+          "referer": "https://www.blaby.gov.uk/"
+        },
+        "response_headers": {
+          "cache-control": "no-cache, no-store, must-revalidate",
+          "content-type": "text/plain"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T08:01:27.863Z",
+        "duration_ms": -1,
+        "endpoint": "/g/collect",
+        "host": "region1.google-analytics.com",
+        "method": "POST",
+        "status": -1,
+        "query_params": {
+          "v": [
+            "2"
+          ],
+          "tid": [
+            "G-YW7MSZH6TX"
+          ],
+          "gtm": [
+            "45je57g1v899679153za200"
+          ],
+          "_p": [
+            "1753084874955"
+          ],
+          "gcd": [
+            "13l3l3l3l1l1"
+          ],
+          "npa": [
+            "0"
+          ],
+          "dma": [
+            "0"
+          ],
+          "tag_exp": [
+            "101509157~103116026~103200004~103233427~104684208~104684211~104921715~104921717"
+          ],
+          "cid": [
+            "1075869632.1753084875"
+          ],
+          "ul": [
+            "en-gb"
+          ],
+          "sr": [
+            "800x600"
+          ],
+          "ir": [
+            "1"
+          ],
+          "uaa": [
+            "arm"
+          ],
+          "uab": [
+            "64"
+          ],
+          "uafvl": [
+            "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+          ],
+          "uamb": [
+            "0"
+          ],
+          "uap": [
+            "macOS"
+          ],
+          "uapv": [
+            "15.5.0"
+          ],
+          "uaw": [
+            "0"
+          ],
+          "are": [
+            "1"
+          ],
+          "frm": [
+            "0"
+          ],
+          "pscdl": [
+            "noapi"
+          ],
+          "_eu": [
+            "EAAIAAQ"
+          ],
+          "_s": [
+            "2"
+          ],
+          "sid": [
+            "1753084875"
+          ],
+          "sct": [
+            "1"
+          ],
+          "seg": [
+            "1"
+          ],
+          "dl": [
+            "https://www.blaby.gov.uk/"
+          ],
+          "dt": [
+            "Blaby District Council"
+          ],
+          "en": [
+            "user_engagement"
+          ],
+          "_et": [
+            "12813"
+          ],
+          "tfd": [
+            "15526"
+          ]
+        },
+        "request_headers": {
+          "referer": "https://www.blaby.gov.uk/"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T08:01:32.274Z",
+        "duration_ms": 19.852,
+        "endpoint": "/g/collect",
+        "host": "region1.google-analytics.com",
+        "method": "POST",
+        "status": 204,
+        "query_params": {
+          "v": [
+            "2"
+          ],
+          "tid": [
+            "G-YW7MSZH6TX"
+          ],
+          "gtm": [
+            "45je57h0h2v899679153za200"
+          ],
+          "_p": [
+            "1753084887906"
+          ],
+          "gcd": [
+            "13l3l3l3l1l1"
+          ],
+          "npa": [
+            "0"
+          ],
+          "dma": [
+            "0"
+          ],
+          "tag_exp": [
+            "101509157~103116026~103200004~103233427~104684208~104684211~104952206~104952208"
+          ],
+          "cid": [
+            "1075869632.1753084875"
+          ],
+          "ul": [
+            "en-gb"
+          ],
+          "sr": [
+            "800x600"
+          ],
+          "uaa": [
+            "arm"
+          ],
+          "uab": [
+            "64"
+          ],
+          "uafvl": [
+            "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+          ],
+          "uamb": [
+            "0"
+          ],
+          "uap": [
+            "macOS"
+          ],
+          "uapv": [
+            "15.5.0"
+          ],
+          "uaw": [
+            "0"
+          ],
+          "are": [
+            "1"
+          ],
+          "frm": [
+            "0"
+          ],
+          "pscdl": [
+            "noapi"
+          ],
+          "_eu": [
+            "AAAAAAQ"
+          ],
+          "_s": [
+            "1"
+          ],
+          "sid": [
+            "1753084875"
+          ],
+          "sct": [
+            "1"
+          ],
+          "seg": [
+            "1"
+          ],
+          "dl": [
+            "https://my.blaby.gov.uk/collections"
+          ],
+          "dt": [
+            "Blaby District Council | Recycling and refuse - collection dates"
+          ],
+          "en": [
+            "page_view"
+          ],
+          "_ee": [
+            "1"
+          ],
+          "tfd": [
+            "4490"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "cookie": "[cookies present]",
+          "origin": "https://my.blaby.gov.uk",
+          "referer": "https://my.blaby.gov.uk/"
+        },
+        "response_headers": {
+          "cache-control": "no-cache, no-store, must-revalidate",
+          "content-type": "text/plain"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T08:01:32.401Z",
+        "duration_ms": -1,
+        "endpoint": "/g/collect",
+        "host": "region1.google-analytics.com",
+        "method": "POST",
+        "status": -1,
+        "query_params": {
+          "v": [
+            "2"
+          ],
+          "tid": [
+            "G-YW7MSZH6TX"
+          ],
+          "gtm": [
+            "45je57h0h2v899679153za200"
+          ],
+          "_p": [
+            "1753084887906"
+          ],
+          "gcd": [
+            "13l3l3l3l1l1"
+          ],
+          "npa": [
+            "0"
+          ],
+          "dma": [
+            "0"
+          ],
+          "tag_exp": [
+            "101509157~103116026~103200004~103233427~104684208~104684211~104952206~104952208"
+          ],
+          "cid": [
+            "1075869632.1753084875"
+          ],
+          "ul": [
+            "en-gb"
+          ],
+          "sr": [
+            "800x600"
+          ],
+          "uaa": [
+            "arm"
+          ],
+          "uab": [
+            "64"
+          ],
+          "uafvl": [
+            "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+          ],
+          "uamb": [
+            "0"
+          ],
+          "uap": [
+            "macOS"
+          ],
+          "uapv": [
+            "15.5.0"
+          ],
+          "uaw": [
+            "0"
+          ],
+          "are": [
+            "1"
+          ],
+          "frm": [
+            "0"
+          ],
+          "pscdl": [
+            "noapi"
+          ],
+          "_eu": [
+            "AEEAAAQ"
+          ],
+          "sid": [
+            "1753084875"
+          ],
+          "sct": [
+            "1"
+          ],
+          "seg": [
+            "1"
+          ],
+          "dl": [
+            "https://my.blaby.gov.uk/collections"
+          ],
+          "dt": [
+            "Blaby District Council | Recycling and refuse - collection dates"
+          ],
+          "_s": [
+            "2"
+          ],
+          "tfd": [
+            "4622"
+          ]
+        },
+        "request_headers": {
+          "referer": "https://my.blaby.gov.uk/",
+          "content-type": "text/plain;charset=UTF-8"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T08:01:37.354Z",
+        "duration_ms": -1,
+        "endpoint": "/g/collect",
+        "host": "region1.google-analytics.com",
+        "method": "POST",
+        "status": -1,
+        "query_params": {
+          "v": [
+            "2"
+          ],
+          "tid": [
+            "G-YW7MSZH6TX"
+          ],
+          "gtm": [
+            "45je57h0h2v899679153za200"
+          ],
+          "_p": [
+            "1753084892407"
+          ],
+          "gcd": [
+            "13l3l3l3l1l1"
+          ],
+          "npa": [
+            "0"
+          ],
+          "dma": [
+            "0"
+          ],
+          "tag_exp": [
+            "101509157~103116026~103200004~103233427~104684208~104684211~104952206~104952208"
+          ],
+          "cid": [
+            "1075869632.1753084875"
+          ],
+          "ul": [
+            "en-gb"
+          ],
+          "sr": [
+            "800x600"
+          ],
+          "uaa": [
+            "arm"
+          ],
+          "uab": [
+            "64"
+          ],
+          "uafvl": [
+            "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+          ],
+          "uamb": [
+            "0"
+          ],
+          "uap": [
+            "macOS"
+          ],
+          "uapv": [
+            "15.5.0"
+          ],
+          "uaw": [
+            "0"
+          ],
+          "are": [
+            "1"
+          ],
+          "frm": [
+            "0"
+          ],
+          "pscdl": [
+            "noapi"
+          ],
+          "_eu": [
+            "AAAAAAQ"
+          ],
+          "sid": [
+            "1753084875"
+          ],
+          "sct": [
+            "1"
+          ],
+          "seg": [
+            "1"
+          ],
+          "dl": [
+            "https://my.blaby.gov.uk/collections?location=change&address=LE10+3PB&layer="
+          ],
+          "dr": [
+            "https://my.blaby.gov.uk/collections"
+          ],
+          "dt": [
+            "Blaby District Council | Recycling and refuse - collection dates"
+          ],
+          "_s": [
+            "1"
+          ],
+          "tfd": [
+            "5076"
+          ]
+        },
+        "request_headers": {
+          "referer": "https://my.blaby.gov.uk/",
+          "content-type": "text/plain;charset=UTF-8"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T08:01:42.399Z",
+        "duration_ms": 16.14,
+        "endpoint": "/g/collect",
+        "host": "region1.google-analytics.com",
+        "method": "POST",
+        "status": 204,
+        "query_params": {
+          "v": [
+            "2"
+          ],
+          "tid": [
+            "G-YW7MSZH6TX"
+          ],
+          "gtm": [
+            "45je57h0h2v899679153za200"
+          ],
+          "_p": [
+            "1753084897361"
+          ],
+          "gcd": [
+            "13l3l3l3l1l1"
+          ],
+          "npa": [
+            "0"
+          ],
+          "dma": [
+            "0"
+          ],
+          "tag_exp": [
+            "101509157~103116026~103200004~103233427~104684208~104684211~104952206~104952208"
+          ],
+          "cid": [
+            "1075869632.1753084875"
+          ],
+          "ul": [
+            "en-gb"
+          ],
+          "sr": [
+            "800x600"
+          ],
+          "uaa": [
+            "arm"
+          ],
+          "uab": [
+            "64"
+          ],
+          "uafvl": [
+            "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+          ],
+          "uamb": [
+            "0"
+          ],
+          "uap": [
+            "macOS"
+          ],
+          "uapv": [
+            "15.5.0"
+          ],
+          "uaw": [
+            "0"
+          ],
+          "are": [
+            "1"
+          ],
+          "frm": [
+            "0"
+          ],
+          "pscdl": [
+            "noapi"
+          ],
+          "_eu": [
+            "AAAAAAQ"
+          ],
+          "_s": [
+            "1"
+          ],
+          "sid": [
+            "1753084875"
+          ],
+          "sct": [
+            "1"
+          ],
+          "seg": [
+            "1"
+          ],
+          "dl": [
+            "https://my.blaby.gov.uk/collections"
+          ],
+          "dr": [
+            "https://my.blaby.gov.uk/collections?location=change&address=LE10+3PB&layer="
+          ],
+          "dt": [
+            "Blaby District Council | Recycling and refuse - collection dates"
+          ],
+          "en": [
+            "page_view"
+          ],
+          "_ee": [
+            "1"
+          ],
+          "tfd": [
+            "7027"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "cookie": "[cookies present]",
+          "origin": "https://my.blaby.gov.uk",
+          "referer": "https://my.blaby.gov.uk/"
+        },
+        "response_headers": {
+          "cache-control": "no-cache, no-store, must-revalidate",
+          "content-type": "text/plain"
+        }
+      }
+    ],
+    "/set-location.php": [
+      {
+        "timestamp": "2025-07-21T08:01:35.422Z",
+        "duration_ms": 65.692,
+        "endpoint": "/set-location.php",
+        "host": "my.blaby.gov.uk",
+        "method": "GET",
+        "status": 302,
+        "query_params": {
+          "ref": [
+            "100030377477"
+          ],
+          "redirect": [
+            "collections"
+          ]
+        },
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+          "cookie": "[cookies present]",
+          "referer": "https://my.blaby.gov.uk/collections?location=change&address=LE10+3PB&layer="
+        },
+        "response_headers": {
+          "cache-control": "no-store, no-cache, must-revalidate",
+          "content-type": "text/html; charset=UTF-8",
+          "location": "https://my.blaby.gov.uk/collections",
+          "set-cookie": "[cookies present]",
+          "x-powered-by": "ASP.NET"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": -1
+        },
+        "redirect_to": "https://my.blaby.gov.uk/collections"
+      }
+    ]
+  }
 }

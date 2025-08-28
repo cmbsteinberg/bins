@@ -1,328 +1,1798 @@
 {
-  "metadata": {
-    "trace_name": "eastleigh_borough_council",
-    "processed_at": "2025-08-26 18:44:24",
-    "workflow_steps_count": 5,
-    "navigation_events_count": 30
-  },
-  "scraping_patterns": {
-    "login_detected": false,
-    "form_submissions": 14,
-    "navigation_count": 5,
-    "unique_domains": [
-      "challenges.cloudflare.com",
-      "www.eastleigh.gov.uk"
-    ],
-    "api_endpoints": [],
-    "data_extraction_indicators": []
-  },
-  "workflow_steps": [
+  "entries": [
     {
-      "action": "goto",
-      "target": "https://www.eastleigh.gov.uk/waste-bins-and-recycling",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
-    },
-    {
-      "action": "goto",
-      "target": "https://www.eastleigh.gov.uk/waste-bins-and-recycling",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
-    },
-    {
-      "action": "goto",
-      "target": "https://www.eastleigh.gov.uk/waste-bins-and-recycling",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
-    },
-    {
-      "action": "goto",
-      "target": "https://www.eastleigh.gov.uk/",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
-    },
-    {
-      "action": "goto",
-      "target": "https://www.eastleigh.gov.uk/",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
-    }
-  ],
-  "navigation_events": [
-    {
-      "url": "https://www.eastleigh.gov.uk/waste-bins-and-recycling",
+      "timestamp": "2025-07-21T07:44:42.220Z",
+      "duration_ms": 56.39,
+      "endpoint": "/{id}",
+      "host": "www.eastleigh.gov.uk",
       "method": "GET",
       "status": 307,
-      "redirect_url": "https://www.eastleigh.gov.uk/waste-bins-and-recycling",
-      "mime_type": "x-unknown",
-      "size": -1,
-      "timestamp": "2025-07-21T07:44:42.220Z"
+      "path_params": [
+        "waste-bins-and-recycling"
+      ],
+      "response_headers": {
+        "location": "https://www.eastleigh.gov.uk/waste-bins-and-recycling"
+      },
+      "redirect_to": "https://www.eastleigh.gov.uk/waste-bins-and-recycling"
     },
     {
-      "url": "https://www.eastleigh.gov.uk/waste-bins-and-recycling",
+      "timestamp": "2025-07-21T07:44:42.275Z",
+      "duration_ms": 14.247,
+      "endpoint": "/{id}",
+      "host": "www.eastleigh.gov.uk",
       "method": "GET",
       "status": 403,
-      "redirect_url": null,
-      "mime_type": "text/html; charset=UTF-8",
-      "size": 4943,
-      "timestamp": "2025-07-21T07:44:42.275Z"
+      "path_params": [
+        "waste-bins-and-recycling"
+      ],
+      "response_headers": {
+        "cache-control": "private, max-age=0, no-store, no-cache, must-revalidate, post-check=0, pre-check=0",
+        "content-type": "text/html; charset=UTF-8",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "SAMEORIGIN\nSAMEORIGIN"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 4943,
+        "compressed": true,
+        "content_ref": "7ee86ac0f0c7dfb89239b82a4d739b373f12c3fa.html"
+      }
     },
     {
-      "url": "https://www.eastleigh.gov.uk/cdn-cgi/challenge-platform/h/g/flow/ov1/1808329704:1753082110:4FeRzr56LeQhYQ37sAy8vtiEI_SgPs3tBL4UHn1CPg8/962913185d5494db/GiBe8NtwB07Jqk3IdGQikCDVdXY8XuAgdtSNUHZp_28-1753083882-1.2.1.1-3wZp.CzWD182bVhhFajRHUJXmG2tK3oDmZFtJuG_YgHAd1dGQh2Z4iFnv7yk8y7K",
+      "timestamp": "2025-07-21T07:44:42.470Z",
+      "duration_ms": 34.862,
+      "endpoint": "/cdn-cgi/challenge-platform/h/g/flow/ov1/{id}/962913185d5494db/{id}",
+      "host": "www.eastleigh.gov.uk",
       "method": "POST",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "text/plain; charset=UTF-8",
-      "size": 19436,
-      "timestamp": "2025-07-21T07:44:42.470Z"
+      "path_params": [
+        "1808329704:1753082110:4FeRzr56LeQhYQ37sAy8vtiEI_SgPs3tBL4UHn1CPg8",
+        "GiBe8NtwB07Jqk3IdGQikCDVdXY8XuAgdtSNUHZp_28-1753083882-1.2.1.1-3wZp.CzWD182bVhhFajRHUJXmG2tK3oDmZFtJuG_YgHAd1dGQh2Z4iFnv7yk8y7K"
+      ],
+      "request_headers": {
+        "accept": "*/*",
+        "content-type": "text/plain;charset=UTF-8",
+        "origin": "https://www.eastleigh.gov.uk",
+        "referer": "https://www.eastleigh.gov.uk/waste-bins-and-recycling"
+      },
+      "response_headers": {
+        "content-type": "text/plain; charset=UTF-8"
+      }
     },
     {
-      "url": "https://challenges.cloudflare.com/cdn-cgi/challenge-platform/h/g/turnstile/if/ov2/av0/rcv/ouvzt/0x4AAAAAAADnPIDROrmt1Wwj/light/fbE/new/normal/auto/",
+      "timestamp": "2025-07-21T07:44:42.527Z",
+      "duration_ms": 42.31399999999999,
+      "endpoint": "/cdn-cgi/challenge-platform/h/g/turnstile/if/ov2/av0/rcv/ouvzt/{id}/light/fbE/new/normal/auto",
+      "host": "challenges.cloudflare.com",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "text/html; charset=UTF-8",
-      "size": 27263,
-      "timestamp": "2025-07-21T07:44:42.527Z"
+      "path_params": [
+        "0x4AAAAAAADnPIDROrmt1Wwj"
+      ],
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7"
+      },
+      "response_headers": {
+        "cache-control": "private, max-age=0, no-store, no-cache, must-revalidate, post-check=0, pre-check=0",
+        "content-type": "text/html; charset=UTF-8"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 27263,
+        "compressed": true,
+        "content_ref": "d79ae5d3f9171901c33b94ecf112c89a62c87f2b.html"
+      }
     },
     {
-      "url": "https://challenges.cloudflare.com/cdn-cgi/challenge-platform/h/g/flow/ov1/838272693:1753082140:dfEytRw1sDcU3McXJ5sOWZS2KrCMhn_-AvHL64waGEM/9629131a0df63c8b/RtFmjCS1DGlgapVzSh4AABTmi6cujEL8MXqJRVtReQU-1753083882-1.2.1.1-CPZopMt0B1ip1CkBleMYQMYKfK_c2sOAMSYq2fCsJL.fdaU1D_z5JcqTsPcT67W9",
+      "timestamp": "2025-07-21T07:44:43.012Z",
+      "duration_ms": 97.295,
+      "endpoint": "/cdn-cgi/challenge-platform/h/g/flow/ov1/{id}/9629131a0df63c8b/{id}",
+      "host": "challenges.cloudflare.com",
       "method": "POST",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "text/plain; charset=UTF-8",
-      "size": 282808,
-      "timestamp": "2025-07-21T07:44:43.012Z"
+      "path_params": [
+        "838272693:1753082140:dfEytRw1sDcU3McXJ5sOWZS2KrCMhn_-AvHL64waGEM",
+        "RtFmjCS1DGlgapVzSh4AABTmi6cujEL8MXqJRVtReQU-1753083882-1.2.1.1-CPZopMt0B1ip1CkBleMYQMYKfK_c2sOAMSYq2fCsJL.fdaU1D_z5JcqTsPcT67W9"
+      ],
+      "request_headers": {
+        "accept": "*/*",
+        "content-type": "text/plain;charset=UTF-8",
+        "origin": "https://challenges.cloudflare.com",
+        "referer": "https://challenges.cloudflare.com/cdn-cgi/challenge-platform/h/g/turnstile/if/ov2/av0/rcv/ouvzt/0x4AAAAAAADnPIDROrmt1Wwj/light/fbE/new/normal/auto/"
+      },
+      "response_headers": {
+        "content-type": "text/plain; charset=UTF-8"
+      }
     },
     {
-      "url": "https://challenges.cloudflare.com/cdn-cgi/challenge-platform/h/g/pat/9629131a0df63c8b/1753083883040/5d817ca71f1ce016daf958751388937c26b2dd52c1b0391451270bbf5dc38b09/qv3oqM0ISxY09sh",
+      "timestamp": "2025-07-21T07:44:43.611Z",
+      "duration_ms": 11.919,
+      "endpoint": "/cdn-cgi/challenge-platform/h/g/pat/9629131a0df63c8b/{id}/{id}/qv3oqM0ISxY09sh",
+      "host": "challenges.cloudflare.com",
       "method": "GET",
       "status": 401,
-      "redirect_url": null,
-      "mime_type": "text/plain; charset=utf-8",
-      "size": 1,
-      "timestamp": "2025-07-21T07:44:43.611Z"
+      "path_params": [
+        "1753083883040",
+        "5d817ca71f1ce016daf958751388937c26b2dd52c1b0391451270bbf5dc38b09"
+      ],
+      "request_headers": {
+        "accept": "*/*",
+        "referer": "https://challenges.cloudflare.com/cdn-cgi/challenge-platform/h/g/turnstile/if/ov2/av0/rcv/ouvzt/0x4AAAAAAADnPIDROrmt1Wwj/light/fbE/new/normal/auto/"
+      },
+      "response_headers": {
+        "content-type": "text/plain; charset=utf-8"
+      }
     },
     {
-      "url": "https://challenges.cloudflare.com/cdn-cgi/challenge-platform/h/g/flow/ov1/838272693:1753082140:dfEytRw1sDcU3McXJ5sOWZS2KrCMhn_-AvHL64waGEM/9629131a0df63c8b/RtFmjCS1DGlgapVzSh4AABTmi6cujEL8MXqJRVtReQU-1753083882-1.2.1.1-CPZopMt0B1ip1CkBleMYQMYKfK_c2sOAMSYq2fCsJL.fdaU1D_z5JcqTsPcT67W9",
+      "timestamp": "2025-07-21T07:44:44.958Z",
+      "duration_ms": 44.235,
+      "endpoint": "/cdn-cgi/challenge-platform/h/g/flow/ov1/{id}/9629131a0df63c8b/{id}",
+      "host": "challenges.cloudflare.com",
       "method": "POST",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "text/plain; charset=UTF-8",
-      "size": 29664,
-      "timestamp": "2025-07-21T07:44:44.958Z"
+      "path_params": [
+        "838272693:1753082140:dfEytRw1sDcU3McXJ5sOWZS2KrCMhn_-AvHL64waGEM",
+        "RtFmjCS1DGlgapVzSh4AABTmi6cujEL8MXqJRVtReQU-1753083882-1.2.1.1-CPZopMt0B1ip1CkBleMYQMYKfK_c2sOAMSYq2fCsJL.fdaU1D_z5JcqTsPcT67W9"
+      ],
+      "request_headers": {
+        "accept": "*/*",
+        "content-type": "text/plain;charset=UTF-8",
+        "origin": "https://challenges.cloudflare.com",
+        "referer": "https://challenges.cloudflare.com/cdn-cgi/challenge-platform/h/g/turnstile/if/ov2/av0/rcv/ouvzt/0x4AAAAAAADnPIDROrmt1Wwj/light/fbE/new/normal/auto/"
+      },
+      "response_headers": {
+        "content-type": "text/plain; charset=UTF-8"
+      }
     },
     {
-      "url": "https://www.eastleigh.gov.uk/waste-bins-and-recycling",
+      "timestamp": "2025-07-21T07:44:49.781Z",
+      "duration_ms": 16.767,
+      "endpoint": "/{id}",
+      "host": "www.eastleigh.gov.uk",
       "method": "GET",
       "status": 403,
-      "redirect_url": null,
-      "mime_type": "text/html; charset=UTF-8",
-      "size": 4943,
-      "timestamp": "2025-07-21T07:44:49.781Z"
+      "path_params": [
+        "waste-bins-and-recycling"
+      ],
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7"
+      },
+      "response_headers": {
+        "cache-control": "private, max-age=0, no-store, no-cache, must-revalidate, post-check=0, pre-check=0",
+        "content-type": "text/html; charset=UTF-8",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "SAMEORIGIN"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 4943,
+        "compressed": true,
+        "content_ref": "5310da48f043e1451fadb4fb7b5b098ec8e5172e.html"
+      }
     },
     {
-      "url": "https://www.eastleigh.gov.uk/cdn-cgi/challenge-platform/h/g/flow/ov1/517511865:1753082249:KW6Wz9_xA3eE3B7Zoc8lD8RT6KddrRYy33Dql_ilPP0/962913473da894db/nnMjz0IVRg_EDDqWDD9LwIbFbILDJzmCpXyw1Awf12E-1753083889-1.2.1.1-8r1XnIZsfKnit0rYq6INv7lr1B6tIVAynIlGuEJSmv.YZ44CsYRDi_Qc4JdcWwYj",
+      "timestamp": "2025-07-21T07:44:49.968Z",
+      "duration_ms": 29.286,
+      "endpoint": "/cdn-cgi/challenge-platform/h/g/flow/ov1/{id}/962913473da894db/{id}",
+      "host": "www.eastleigh.gov.uk",
       "method": "POST",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "text/plain; charset=UTF-8",
-      "size": 19456,
-      "timestamp": "2025-07-21T07:44:49.968Z"
+      "path_params": [
+        "517511865:1753082249:KW6Wz9_xA3eE3B7Zoc8lD8RT6KddrRYy33Dql_ilPP0",
+        "nnMjz0IVRg_EDDqWDD9LwIbFbILDJzmCpXyw1Awf12E-1753083889-1.2.1.1-8r1XnIZsfKnit0rYq6INv7lr1B6tIVAynIlGuEJSmv.YZ44CsYRDi_Qc4JdcWwYj"
+      ],
+      "request_headers": {
+        "accept": "*/*",
+        "content-type": "text/plain;charset=UTF-8",
+        "origin": "https://www.eastleigh.gov.uk",
+        "referer": "https://www.eastleigh.gov.uk/waste-bins-and-recycling"
+      },
+      "response_headers": {
+        "content-type": "text/plain; charset=UTF-8"
+      }
     },
     {
-      "url": "https://challenges.cloudflare.com/cdn-cgi/challenge-platform/h/g/turnstile/if/ov2/av0/rcv/zex7v/0x4AAAAAAADnPIDROrmt1Wwj/light/fbE/new/normal/auto/",
+      "timestamp": "2025-07-21T07:44:50.025Z",
+      "duration_ms": 18.944,
+      "endpoint": "/cdn-cgi/challenge-platform/h/g/turnstile/if/ov2/av0/rcv/zex7v/{id}/light/fbE/new/normal/auto",
+      "host": "challenges.cloudflare.com",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "text/html; charset=UTF-8",
-      "size": 27263,
-      "timestamp": "2025-07-21T07:44:50.025Z"
+      "path_params": [
+        "0x4AAAAAAADnPIDROrmt1Wwj"
+      ],
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7"
+      },
+      "response_headers": {
+        "cache-control": "private, max-age=0, no-store, no-cache, must-revalidate, post-check=0, pre-check=0",
+        "content-type": "text/html; charset=UTF-8"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 27263,
+        "compressed": true,
+        "content_ref": "3895b9033297472dbc660137d654903e6f1ffc4b.html"
+      }
     },
     {
-      "url": "https://challenges.cloudflare.com/cdn-cgi/challenge-platform/h/g/flow/ov1/339483033:1753082175:e5Z6BzB8QQ6s-EibA_giw8W8eWqSNbervMP7ildIkQc/96291348c89d3c8b/KzdW8SQulIOWOkH01x1Ll4IoLqP0FmbfT4_XN9bJDg0-1753083890-1.2.1.1-bkDrtroTMhZh16mvzCAr2_ILS_BgCH9ct.LjsZaR_ay4Qk6yOtlmQmgHKFxUR1c.",
+      "timestamp": "2025-07-21T07:44:50.301Z",
+      "duration_ms": 86.158,
+      "endpoint": "/cdn-cgi/challenge-platform/h/g/flow/ov1/{id}/96291348c89d3c8b/{id}",
+      "host": "challenges.cloudflare.com",
       "method": "POST",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "text/plain; charset=UTF-8",
-      "size": 282604,
-      "timestamp": "2025-07-21T07:44:50.301Z"
+      "path_params": [
+        "339483033:1753082175:e5Z6BzB8QQ6s-EibA_giw8W8eWqSNbervMP7ildIkQc",
+        "KzdW8SQulIOWOkH01x1Ll4IoLqP0FmbfT4_XN9bJDg0-1753083890-1.2.1.1-bkDrtroTMhZh16mvzCAr2_ILS_BgCH9ct.LjsZaR_ay4Qk6yOtlmQmgHKFxUR1c."
+      ],
+      "request_headers": {
+        "accept": "*/*",
+        "content-type": "text/plain;charset=UTF-8",
+        "origin": "https://challenges.cloudflare.com",
+        "referer": "https://challenges.cloudflare.com/cdn-cgi/challenge-platform/h/g/turnstile/if/ov2/av0/rcv/zex7v/0x4AAAAAAADnPIDROrmt1Wwj/light/fbE/new/normal/auto/"
+      },
+      "response_headers": {
+        "content-type": "text/plain; charset=UTF-8"
+      }
     },
     {
-      "url": "https://challenges.cloudflare.com/cdn-cgi/challenge-platform/h/g/pat/96291348c89d3c8b/1753083890330/8298877ea60501e4fb9b52c81f3fa6c4f2ac439eaafec6e27571acb368706cff/TCekWa_RHddrj8l",
+      "timestamp": "2025-07-21T07:44:51.220Z",
+      "duration_ms": 18.351,
+      "endpoint": "/cdn-cgi/challenge-platform/h/g/pat/96291348c89d3c8b/{id}/{id}/TCekWa_RHddrj8l",
+      "host": "challenges.cloudflare.com",
       "method": "GET",
       "status": 401,
-      "redirect_url": null,
-      "mime_type": "text/plain; charset=utf-8",
-      "size": 1,
-      "timestamp": "2025-07-21T07:44:51.220Z"
+      "path_params": [
+        "1753083890330",
+        "8298877ea60501e4fb9b52c81f3fa6c4f2ac439eaafec6e27571acb368706cff"
+      ],
+      "request_headers": {
+        "accept": "*/*",
+        "referer": "https://challenges.cloudflare.com/cdn-cgi/challenge-platform/h/g/turnstile/if/ov2/av0/rcv/zex7v/0x4AAAAAAADnPIDROrmt1Wwj/light/fbE/new/normal/auto/"
+      },
+      "response_headers": {
+        "content-type": "text/plain; charset=utf-8"
+      }
     },
     {
-      "url": "https://challenges.cloudflare.com/cdn-cgi/challenge-platform/h/g/flow/ov1/339483033:1753082175:e5Z6BzB8QQ6s-EibA_giw8W8eWqSNbervMP7ildIkQc/96291348c89d3c8b/KzdW8SQulIOWOkH01x1Ll4IoLqP0FmbfT4_XN9bJDg0-1753083890-1.2.1.1-bkDrtroTMhZh16mvzCAr2_ILS_BgCH9ct.LjsZaR_ay4Qk6yOtlmQmgHKFxUR1c.",
+      "timestamp": "2025-07-21T07:44:51.564Z",
+      "duration_ms": 44.369,
+      "endpoint": "/cdn-cgi/challenge-platform/h/g/flow/ov1/{id}/96291348c89d3c8b/{id}",
+      "host": "challenges.cloudflare.com",
       "method": "POST",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "text/plain; charset=UTF-8",
-      "size": 29664,
-      "timestamp": "2025-07-21T07:44:51.564Z"
+      "path_params": [
+        "339483033:1753082175:e5Z6BzB8QQ6s-EibA_giw8W8eWqSNbervMP7ildIkQc",
+        "KzdW8SQulIOWOkH01x1Ll4IoLqP0FmbfT4_XN9bJDg0-1753083890-1.2.1.1-bkDrtroTMhZh16mvzCAr2_ILS_BgCH9ct.LjsZaR_ay4Qk6yOtlmQmgHKFxUR1c."
+      ],
+      "request_headers": {
+        "accept": "*/*",
+        "content-type": "text/plain;charset=UTF-8",
+        "origin": "https://challenges.cloudflare.com",
+        "referer": "https://challenges.cloudflare.com/cdn-cgi/challenge-platform/h/g/turnstile/if/ov2/av0/rcv/zex7v/0x4AAAAAAADnPIDROrmt1Wwj/light/fbE/new/normal/auto/"
+      },
+      "response_headers": {
+        "content-type": "text/plain; charset=UTF-8"
+      }
     },
     {
-      "url": "https://www.eastleigh.gov.uk/waste-bins-and-recycling",
+      "timestamp": "2025-07-21T07:44:57.658Z",
+      "duration_ms": 14.28,
+      "endpoint": "/{id}",
+      "host": "www.eastleigh.gov.uk",
       "method": "GET",
       "status": 403,
-      "redirect_url": null,
-      "mime_type": "text/html; charset=UTF-8",
-      "size": 4943,
-      "timestamp": "2025-07-21T07:44:57.658Z"
+      "path_params": [
+        "waste-bins-and-recycling"
+      ],
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7"
+      },
+      "response_headers": {
+        "cache-control": "private, max-age=0, no-store, no-cache, must-revalidate, post-check=0, pre-check=0",
+        "content-type": "text/html; charset=UTF-8",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "SAMEORIGIN"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 4943,
+        "compressed": true,
+        "content_ref": "8bca2f8e5e59ad53706bbb9593deafbfb82b9171.html"
+      }
     },
     {
-      "url": "https://www.eastleigh.gov.uk/cdn-cgi/challenge-platform/h/g/flow/ov1/639722098:1753082152:egRGKeNDMBb645ER91I-EjEZPXc9IA2JDF05KuqLF2U/962913787c2d94db/VvSX9jUVpifSyp.Hpu.qnNAb_RzHfoZhdnj5.zV2COI-1753083897-1.2.1.1-NAvqujzZehQd8LGfBmzFMErJgB9fiJ.92QLCUQne3RBvz68oj0dLdt4_LTYKzvOb",
+      "timestamp": "2025-07-21T07:44:57.842Z",
+      "duration_ms": 27.25,
+      "endpoint": "/cdn-cgi/challenge-platform/h/g/flow/ov1/{id}/962913787c2d94db/{id}",
+      "host": "www.eastleigh.gov.uk",
       "method": "POST",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "text/plain; charset=UTF-8",
-      "size": 19424,
-      "timestamp": "2025-07-21T07:44:57.842Z"
+      "path_params": [
+        "639722098:1753082152:egRGKeNDMBb645ER91I-EjEZPXc9IA2JDF05KuqLF2U",
+        "VvSX9jUVpifSyp.Hpu.qnNAb_RzHfoZhdnj5.zV2COI-1753083897-1.2.1.1-NAvqujzZehQd8LGfBmzFMErJgB9fiJ.92QLCUQne3RBvz68oj0dLdt4_LTYKzvOb"
+      ],
+      "request_headers": {
+        "accept": "*/*",
+        "content-type": "text/plain;charset=UTF-8",
+        "origin": "https://www.eastleigh.gov.uk",
+        "referer": "https://www.eastleigh.gov.uk/waste-bins-and-recycling"
+      },
+      "response_headers": {
+        "content-type": "text/plain; charset=UTF-8"
+      }
     },
     {
-      "url": "https://challenges.cloudflare.com/cdn-cgi/challenge-platform/h/g/turnstile/if/ov2/av0/rcv/f3wl8/0x4AAAAAAADnPIDROrmt1Wwj/light/fbE/new/normal/auto/",
+      "timestamp": "2025-07-21T07:44:57.895Z",
+      "duration_ms": 16.505,
+      "endpoint": "/cdn-cgi/challenge-platform/h/g/turnstile/if/ov2/av0/rcv/f3wl8/{id}/light/fbE/new/normal/auto",
+      "host": "challenges.cloudflare.com",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "text/html; charset=UTF-8",
-      "size": 27263,
-      "timestamp": "2025-07-21T07:44:57.895Z"
+      "path_params": [
+        "0x4AAAAAAADnPIDROrmt1Wwj"
+      ],
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7"
+      },
+      "response_headers": {
+        "cache-control": "private, max-age=0, no-store, no-cache, must-revalidate, post-check=0, pre-check=0",
+        "content-type": "text/html; charset=UTF-8"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 27263,
+        "compressed": true,
+        "content_ref": "19e6d250620014ffdc6d719ef44e38ab7d99c13d.html"
+      }
     },
     {
-      "url": "https://challenges.cloudflare.com/cdn-cgi/challenge-platform/h/g/flow/ov1/1549233269:1753082250:YCG7AQpK_2kFs6mh_xpLzeE3bHXz1DbyXYAR7ZakyLc/96291379f94d3c8b/pHO9nfvqmIcKcei9Q5es5UC4QUgTI3tjBhrJMff9nWM-1753083897-1.2.1.1-b8dADduKGzPBawVebqoJHoGacWQ529QKmQT9B_Qsh.3BxVPW4djcz9XfXhpjIdzU",
+      "timestamp": "2025-07-21T07:44:58.089Z",
+      "duration_ms": 82.85,
+      "endpoint": "/cdn-cgi/challenge-platform/h/g/flow/ov1/{id}/96291379f94d3c8b/{id}",
+      "host": "challenges.cloudflare.com",
       "method": "POST",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "text/plain; charset=UTF-8",
-      "size": 285132,
-      "timestamp": "2025-07-21T07:44:58.089Z"
+      "path_params": [
+        "1549233269:1753082250:YCG7AQpK_2kFs6mh_xpLzeE3bHXz1DbyXYAR7ZakyLc",
+        "pHO9nfvqmIcKcei9Q5es5UC4QUgTI3tjBhrJMff9nWM-1753083897-1.2.1.1-b8dADduKGzPBawVebqoJHoGacWQ529QKmQT9B_Qsh.3BxVPW4djcz9XfXhpjIdzU"
+      ],
+      "request_headers": {
+        "accept": "*/*",
+        "content-type": "text/plain;charset=UTF-8",
+        "origin": "https://challenges.cloudflare.com",
+        "referer": "https://challenges.cloudflare.com/cdn-cgi/challenge-platform/h/g/turnstile/if/ov2/av0/rcv/f3wl8/0x4AAAAAAADnPIDROrmt1Wwj/light/fbE/new/normal/auto/"
+      },
+      "response_headers": {
+        "content-type": "text/plain; charset=UTF-8"
+      }
     },
     {
-      "url": "https://challenges.cloudflare.com/cdn-cgi/challenge-platform/h/g/pat/96291379f94d3c8b/1753083898117/eaac0b43994b8974538f5b2d7f8f8bf0075a884776d7def26b46b507dff97783/jNFDNiGXKlUNk8G",
+      "timestamp": "2025-07-21T07:44:58.774Z",
+      "duration_ms": 11.946,
+      "endpoint": "/cdn-cgi/challenge-platform/h/g/pat/96291379f94d3c8b/{id}/{id}/jNFDNiGXKlUNk8G",
+      "host": "challenges.cloudflare.com",
       "method": "GET",
       "status": 401,
-      "redirect_url": null,
-      "mime_type": "text/plain; charset=utf-8",
-      "size": 1,
-      "timestamp": "2025-07-21T07:44:58.774Z"
+      "path_params": [
+        "1753083898117",
+        "eaac0b43994b8974538f5b2d7f8f8bf0075a884776d7def26b46b507dff97783"
+      ],
+      "request_headers": {
+        "accept": "*/*",
+        "referer": "https://challenges.cloudflare.com/cdn-cgi/challenge-platform/h/g/turnstile/if/ov2/av0/rcv/f3wl8/0x4AAAAAAADnPIDROrmt1Wwj/light/fbE/new/normal/auto/"
+      },
+      "response_headers": {
+        "content-type": "text/plain; charset=utf-8"
+      }
     },
     {
-      "url": "https://challenges.cloudflare.com/cdn-cgi/challenge-platform/h/g/flow/ov1/1549233269:1753082250:YCG7AQpK_2kFs6mh_xpLzeE3bHXz1DbyXYAR7ZakyLc/96291379f94d3c8b/pHO9nfvqmIcKcei9Q5es5UC4QUgTI3tjBhrJMff9nWM-1753083897-1.2.1.1-b8dADduKGzPBawVebqoJHoGacWQ529QKmQT9B_Qsh.3BxVPW4djcz9XfXhpjIdzU",
+      "timestamp": "2025-07-21T07:44:59.294Z",
+      "duration_ms": 39.823,
+      "endpoint": "/cdn-cgi/challenge-platform/h/g/flow/ov1/{id}/96291379f94d3c8b/{id}",
+      "host": "challenges.cloudflare.com",
       "method": "POST",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "text/plain; charset=UTF-8",
-      "size": 29680,
-      "timestamp": "2025-07-21T07:44:59.294Z"
+      "path_params": [
+        "1549233269:1753082250:YCG7AQpK_2kFs6mh_xpLzeE3bHXz1DbyXYAR7ZakyLc",
+        "pHO9nfvqmIcKcei9Q5es5UC4QUgTI3tjBhrJMff9nWM-1753083897-1.2.1.1-b8dADduKGzPBawVebqoJHoGacWQ529QKmQT9B_Qsh.3BxVPW4djcz9XfXhpjIdzU"
+      ],
+      "request_headers": {
+        "accept": "*/*",
+        "content-type": "text/plain;charset=UTF-8",
+        "origin": "https://challenges.cloudflare.com",
+        "referer": "https://challenges.cloudflare.com/cdn-cgi/challenge-platform/h/g/turnstile/if/ov2/av0/rcv/f3wl8/0x4AAAAAAADnPIDROrmt1Wwj/light/fbE/new/normal/auto/"
+      },
+      "response_headers": {
+        "content-type": "text/plain; charset=UTF-8"
+      }
     },
     {
-      "url": "https://www.eastleigh.gov.uk/",
+      "timestamp": "2025-07-21T07:44:59.802Z",
+      "duration_ms": 13.851999999999999,
+      "endpoint": "/",
+      "host": "www.eastleigh.gov.uk",
       "method": "GET",
       "status": 403,
-      "redirect_url": null,
-      "mime_type": "text/html; charset=UTF-8",
-      "size": 4850,
-      "timestamp": "2025-07-21T07:44:59.802Z"
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7"
+      },
+      "response_headers": {
+        "cache-control": "private, max-age=0, no-store, no-cache, must-revalidate, post-check=0, pre-check=0",
+        "content-type": "text/html; charset=UTF-8",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "SAMEORIGIN"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 4850,
+        "compressed": true,
+        "content_ref": "771f65f499c83fde04275ead0cb0659c179c54b5.html"
+      }
     },
     {
-      "url": "https://www.eastleigh.gov.uk/cdn-cgi/challenge-platform/h/g/flow/ov1/1418171733:1753082157:XanAxPt8eTRBV0VI-kOP1IYVV-4Dhwu0MUsmxT0gJE0/96291385ddfc94db/GpGgEangqjY5NMXI4k9NaIKyqagOtXiBiIZeZrWO368-1753083899-1.2.1.1-huwRLHpu3cvQEAaz_L2rSFk6dT3dO8OmWcLNSwPnVQzzT3vD_HcgAOfNXB1A5Gno",
+      "timestamp": "2025-07-21T07:44:59.997Z",
+      "duration_ms": 34.419000000000004,
+      "endpoint": "/cdn-cgi/challenge-platform/h/g/flow/ov1/{id}/96291385ddfc94db/{id}",
+      "host": "www.eastleigh.gov.uk",
       "method": "POST",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "text/plain; charset=UTF-8",
-      "size": 19464,
-      "timestamp": "2025-07-21T07:44:59.997Z"
+      "path_params": [
+        "1418171733:1753082157:XanAxPt8eTRBV0VI-kOP1IYVV-4Dhwu0MUsmxT0gJE0",
+        "GpGgEangqjY5NMXI4k9NaIKyqagOtXiBiIZeZrWO368-1753083899-1.2.1.1-huwRLHpu3cvQEAaz_L2rSFk6dT3dO8OmWcLNSwPnVQzzT3vD_HcgAOfNXB1A5Gno"
+      ],
+      "request_headers": {
+        "accept": "*/*",
+        "content-type": "text/plain;charset=UTF-8",
+        "origin": "https://www.eastleigh.gov.uk",
+        "referer": "https://www.eastleigh.gov.uk/"
+      },
+      "response_headers": {
+        "content-type": "text/plain; charset=UTF-8"
+      }
     },
     {
-      "url": "https://challenges.cloudflare.com/cdn-cgi/challenge-platform/h/g/turnstile/if/ov2/av0/rcv/afsln/0x4AAAAAAADnPIDROrmt1Wwj/light/fbE/new/normal/auto/",
+      "timestamp": "2025-07-21T07:45:00.068Z",
+      "duration_ms": 14.725,
+      "endpoint": "/cdn-cgi/challenge-platform/h/g/turnstile/if/ov2/av0/rcv/afsln/{id}/light/fbE/new/normal/auto",
+      "host": "challenges.cloudflare.com",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "text/html; charset=UTF-8",
-      "size": 27263,
-      "timestamp": "2025-07-21T07:45:00.068Z"
+      "path_params": [
+        "0x4AAAAAAADnPIDROrmt1Wwj"
+      ],
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7"
+      },
+      "response_headers": {
+        "cache-control": "private, max-age=0, no-store, no-cache, must-revalidate, post-check=0, pre-check=0",
+        "content-type": "text/html; charset=UTF-8"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 27263,
+        "compressed": true,
+        "content_ref": "dd41f87331b5b44b8704dd11a5a1c39305a3ba61.html"
+      }
     },
     {
-      "url": "https://challenges.cloudflare.com/cdn-cgi/challenge-platform/h/g/flow/ov1/1263580334:1753082184:pSsH2eCicn_c3fvWOiUyFihy-Uak-2Z9qfjKvzzlHf0/962913878f443c8b/pG_NdehNxLtVnLKUb23aKQxkC2F6mhE1S2HNV3d1kBI-1753083900-1.2.1.1-xEyAOZvc05XH94FF622CUgO0m.WX96vIhxlZ688DSl1Y0IZQNrJyO_X1oXdLgnAT",
+      "timestamp": "2025-07-21T07:45:00.302Z",
+      "duration_ms": 80.796,
+      "endpoint": "/cdn-cgi/challenge-platform/h/g/flow/ov1/{id}/962913878f443c8b/{id}",
+      "host": "challenges.cloudflare.com",
       "method": "POST",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "text/plain; charset=UTF-8",
-      "size": 282632,
-      "timestamp": "2025-07-21T07:45:00.302Z"
+      "path_params": [
+        "1263580334:1753082184:pSsH2eCicn_c3fvWOiUyFihy-Uak-2Z9qfjKvzzlHf0",
+        "pG_NdehNxLtVnLKUb23aKQxkC2F6mhE1S2HNV3d1kBI-1753083900-1.2.1.1-xEyAOZvc05XH94FF622CUgO0m.WX96vIhxlZ688DSl1Y0IZQNrJyO_X1oXdLgnAT"
+      ],
+      "request_headers": {
+        "accept": "*/*",
+        "content-type": "text/plain;charset=UTF-8",
+        "origin": "https://challenges.cloudflare.com",
+        "referer": "https://challenges.cloudflare.com/cdn-cgi/challenge-platform/h/g/turnstile/if/ov2/av0/rcv/afsln/0x4AAAAAAADnPIDROrmt1Wwj/light/fbE/new/normal/auto/"
+      },
+      "response_headers": {
+        "content-type": "text/plain; charset=UTF-8"
+      }
     },
     {
-      "url": "https://challenges.cloudflare.com/cdn-cgi/challenge-platform/h/g/pat/962913878f443c8b/1753083900328/d0c6c206984fda98dd8668db084be7b8478efa584fa72d95cff7158ae0623825/IAj4dHIeGQMTsPS",
+      "timestamp": "2025-07-21T07:45:00.742Z",
+      "duration_ms": 10.966,
+      "endpoint": "/cdn-cgi/challenge-platform/h/g/pat/962913878f443c8b/{id}/{id}/IAj4dHIeGQMTsPS",
+      "host": "challenges.cloudflare.com",
       "method": "GET",
       "status": 401,
-      "redirect_url": null,
-      "mime_type": "text/plain; charset=utf-8",
-      "size": 1,
-      "timestamp": "2025-07-21T07:45:00.742Z"
+      "path_params": [
+        "1753083900328",
+        "d0c6c206984fda98dd8668db084be7b8478efa584fa72d95cff7158ae0623825"
+      ],
+      "request_headers": {
+        "accept": "*/*",
+        "referer": "https://challenges.cloudflare.com/cdn-cgi/challenge-platform/h/g/turnstile/if/ov2/av0/rcv/afsln/0x4AAAAAAADnPIDROrmt1Wwj/light/fbE/new/normal/auto/"
+      },
+      "response_headers": {
+        "content-type": "text/plain; charset=utf-8"
+      }
     },
     {
-      "url": "https://www.eastleigh.gov.uk/",
+      "timestamp": "2025-07-21T07:45:01.038Z",
+      "duration_ms": 15.681,
+      "endpoint": "/",
+      "host": "www.eastleigh.gov.uk",
       "method": "GET",
       "status": 403,
-      "redirect_url": null,
-      "mime_type": "text/html; charset=UTF-8",
-      "size": 4850,
-      "timestamp": "2025-07-21T07:45:01.038Z"
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7"
+      },
+      "response_headers": {
+        "cache-control": "private, max-age=0, no-store, no-cache, must-revalidate, post-check=0, pre-check=0",
+        "content-type": "text/html; charset=UTF-8",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "SAMEORIGIN"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 4850,
+        "compressed": true,
+        "content_ref": "b0cd2d12a00febf13592943a261853053535aa7d.html"
+      }
     },
     {
-      "url": "https://www.eastleigh.gov.uk/cdn-cgi/challenge-platform/h/g/flow/ov1/1995978763:1753082201:MvHtH0Prce8T5awkHGEttnmLO1o2RSErAhdpUQsVCNc/9629138d9b7294db/VklxtWJAkWeMcJQhc3n63lUO.GzmdIcMlJsoXLu.YJk-1753083901-1.2.1.1-1PSyP_71SRKovvNvRMb4Kfn5nLaYMUkd7kc2S484UmGSsaPZyxgv2_y8C9oKn02b",
+      "timestamp": "2025-07-21T07:45:01.221Z",
+      "duration_ms": 31.79,
+      "endpoint": "/cdn-cgi/challenge-platform/h/g/flow/ov1/{id}/9629138d9b7294db/{id}",
+      "host": "www.eastleigh.gov.uk",
       "method": "POST",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "text/plain; charset=UTF-8",
-      "size": 19484,
-      "timestamp": "2025-07-21T07:45:01.221Z"
+      "path_params": [
+        "1995978763:1753082201:MvHtH0Prce8T5awkHGEttnmLO1o2RSErAhdpUQsVCNc",
+        "VklxtWJAkWeMcJQhc3n63lUO.GzmdIcMlJsoXLu.YJk-1753083901-1.2.1.1-1PSyP_71SRKovvNvRMb4Kfn5nLaYMUkd7kc2S484UmGSsaPZyxgv2_y8C9oKn02b"
+      ],
+      "request_headers": {
+        "accept": "*/*",
+        "content-type": "text/plain;charset=UTF-8",
+        "origin": "https://www.eastleigh.gov.uk",
+        "referer": "https://www.eastleigh.gov.uk/"
+      },
+      "response_headers": {
+        "content-type": "text/plain; charset=UTF-8"
+      }
     },
     {
-      "url": "https://challenges.cloudflare.com/cdn-cgi/challenge-platform/h/g/turnstile/if/ov2/av0/rcv/83ngp/0x4AAAAAAADnPIDROrmt1Wwj/light/fbE/new/normal/auto/",
+      "timestamp": "2025-07-21T07:45:01.284Z",
+      "duration_ms": 14.318000000000001,
+      "endpoint": "/cdn-cgi/challenge-platform/h/g/turnstile/if/ov2/av0/rcv/83ngp/{id}/light/fbE/new/normal/auto",
+      "host": "challenges.cloudflare.com",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "text/html; charset=UTF-8",
-      "size": 27263,
-      "timestamp": "2025-07-21T07:45:01.284Z"
+      "path_params": [
+        "0x4AAAAAAADnPIDROrmt1Wwj"
+      ],
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7"
+      },
+      "response_headers": {
+        "cache-control": "private, max-age=0, no-store, no-cache, must-revalidate, post-check=0, pre-check=0",
+        "content-type": "text/html; charset=UTF-8"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 27263,
+        "compressed": true,
+        "content_ref": "c20e367fc7fcba834306a64afff17397a3cdfe26.html"
+      }
     },
     {
-      "url": "https://challenges.cloudflare.com/cdn-cgi/challenge-platform/h/g/flow/ov1/849575482:1753082197:nkAx3JElwaFzOO7Dcw52ojM_0n36smtzsE1huiQcaBY/9629138f2c013c8b/ehWc0grE5FGGkAkALmXhVJTy6PT37P4IzoZ.4.34THA-1753083901-1.2.1.1-dW5I7JW1jZswezYrZWflb4Jed_IBpA2h40Rx5ptqZYArY1b2Z.RNTgUe86BQpJCT",
+      "timestamp": "2025-07-21T07:45:01.636Z",
+      "duration_ms": 78.103,
+      "endpoint": "/cdn-cgi/challenge-platform/h/g/flow/ov1/{id}/9629138f2c013c8b/{id}",
+      "host": "challenges.cloudflare.com",
       "method": "POST",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "text/plain; charset=UTF-8",
-      "size": 283564,
-      "timestamp": "2025-07-21T07:45:01.636Z"
+      "path_params": [
+        "849575482:1753082197:nkAx3JElwaFzOO7Dcw52ojM_0n36smtzsE1huiQcaBY",
+        "ehWc0grE5FGGkAkALmXhVJTy6PT37P4IzoZ.4.34THA-1753083901-1.2.1.1-dW5I7JW1jZswezYrZWflb4Jed_IBpA2h40Rx5ptqZYArY1b2Z.RNTgUe86BQpJCT"
+      ],
+      "request_headers": {
+        "accept": "*/*",
+        "content-type": "text/plain;charset=UTF-8",
+        "origin": "https://challenges.cloudflare.com",
+        "referer": "https://challenges.cloudflare.com/cdn-cgi/challenge-platform/h/g/turnstile/if/ov2/av0/rcv/83ngp/0x4AAAAAAADnPIDROrmt1Wwj/light/fbE/new/normal/auto/"
+      },
+      "response_headers": {
+        "content-type": "text/plain; charset=UTF-8"
+      }
     },
     {
-      "url": "https://challenges.cloudflare.com/cdn-cgi/challenge-platform/h/g/pat/9629138f2c013c8b/1753083901662/788c674f8df981a06fb9ae9e565490e81288f656e795646fd07477120aa21a2f/jh0jiVvHZvIOfYE",
+      "timestamp": "2025-07-21T07:45:02.165Z",
+      "duration_ms": 21.836000000000002,
+      "endpoint": "/cdn-cgi/challenge-platform/h/g/pat/9629138f2c013c8b/{id}/{id}/jh0jiVvHZvIOfYE",
+      "host": "challenges.cloudflare.com",
       "method": "GET",
       "status": 401,
-      "redirect_url": null,
-      "mime_type": "text/plain; charset=utf-8",
-      "size": 1,
-      "timestamp": "2025-07-21T07:45:02.165Z"
+      "path_params": [
+        "1753083901662",
+        "788c674f8df981a06fb9ae9e565490e81288f656e795646fd07477120aa21a2f"
+      ],
+      "request_headers": {
+        "accept": "*/*",
+        "referer": "https://challenges.cloudflare.com/cdn-cgi/challenge-platform/h/g/turnstile/if/ov2/av0/rcv/83ngp/0x4AAAAAAADnPIDROrmt1Wwj/light/fbE/new/normal/auto/"
+      },
+      "response_headers": {
+        "content-type": "text/plain; charset=utf-8"
+      }
     },
     {
-      "url": "https://challenges.cloudflare.com/cdn-cgi/challenge-platform/h/g/flow/ov1/849575482:1753082197:nkAx3JElwaFzOO7Dcw52ojM_0n36smtzsE1huiQcaBY/9629138f2c013c8b/ehWc0grE5FGGkAkALmXhVJTy6PT37P4IzoZ.4.34THA-1753083901-1.2.1.1-dW5I7JW1jZswezYrZWflb4Jed_IBpA2h40Rx5ptqZYArY1b2Z.RNTgUe86BQpJCT",
+      "timestamp": "2025-07-21T07:45:02.819Z",
+      "duration_ms": 36.204,
+      "endpoint": "/cdn-cgi/challenge-platform/h/g/flow/ov1/{id}/9629138f2c013c8b/{id}",
+      "host": "challenges.cloudflare.com",
       "method": "POST",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "text/plain; charset=UTF-8",
-      "size": 29648,
-      "timestamp": "2025-07-21T07:45:02.819Z"
+      "path_params": [
+        "849575482:1753082197:nkAx3JElwaFzOO7Dcw52ojM_0n36smtzsE1huiQcaBY",
+        "ehWc0grE5FGGkAkALmXhVJTy6PT37P4IzoZ.4.34THA-1753083901-1.2.1.1-dW5I7JW1jZswezYrZWflb4Jed_IBpA2h40Rx5ptqZYArY1b2Z.RNTgUe86BQpJCT"
+      ],
+      "request_headers": {
+        "accept": "*/*",
+        "content-type": "text/plain;charset=UTF-8",
+        "origin": "https://challenges.cloudflare.com",
+        "referer": "https://challenges.cloudflare.com/cdn-cgi/challenge-platform/h/g/turnstile/if/ov2/av0/rcv/83ngp/0x4AAAAAAADnPIDROrmt1Wwj/light/fbE/new/normal/auto/"
+      },
+      "response_headers": {
+        "content-type": "text/plain; charset=UTF-8"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T07:44:42.339Z",
+      "duration_ms": -1,
+      "endpoint": "/https:/www.eastleigh.gov.uk/{id}",
+      "host": "",
+      "method": "GET",
+      "status": -1,
+      "path_params": [
+        "6d6874b1-a496-4e2d-a1b0-6ac2349af868"
+      ],
+      "request_headers": {
+        "accept": "*/*"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T07:44:42.862Z",
+      "duration_ms": -1,
+      "endpoint": "/https:/{id}/{id}",
+      "host": "",
+      "method": "GET",
+      "status": -1,
+      "path_params": [
+        "challenges.cloudflare.com",
+        "4959804d-2c8e-46f8-8c08-b7f0296f7b49"
+      ],
+      "request_headers": {
+        "accept": "*/*"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T07:44:49.836Z",
+      "duration_ms": -1,
+      "endpoint": "/https:/www.eastleigh.gov.uk/{id}",
+      "host": "",
+      "method": "GET",
+      "status": -1,
+      "path_params": [
+        "73d87cc1-1632-4a87-88f3-4242b95148dd"
+      ],
+      "request_headers": {
+        "accept": "*/*"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T07:44:50.150Z",
+      "duration_ms": -1,
+      "endpoint": "/https:/{id}/{id}",
+      "host": "",
+      "method": "GET",
+      "status": -1,
+      "path_params": [
+        "challenges.cloudflare.com",
+        "803cd6f0-7658-4a31-a46f-87695148e146"
+      ],
+      "request_headers": {
+        "accept": "*/*"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T07:44:57.705Z",
+      "duration_ms": -1,
+      "endpoint": "/https:/www.eastleigh.gov.uk/{id}",
+      "host": "",
+      "method": "GET",
+      "status": -1,
+      "path_params": [
+        "236c27c3-ce02-4667-91cf-9c7fd05281c6"
+      ],
+      "request_headers": {
+        "accept": "*/*"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T07:44:57.948Z",
+      "duration_ms": -1,
+      "endpoint": "/https:/{id}/{id}",
+      "host": "",
+      "method": "GET",
+      "status": -1,
+      "path_params": [
+        "challenges.cloudflare.com",
+        "e5fcc503-88cf-4766-a7a9-13bcfce171a2"
+      ],
+      "request_headers": {
+        "accept": "*/*"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T07:44:59.855Z",
+      "duration_ms": -1,
+      "endpoint": "/https:/www.eastleigh.gov.uk/{id}",
+      "host": "",
+      "method": "GET",
+      "status": -1,
+      "path_params": [
+        "05ed2b1b-15ff-4237-8a62-fe841133a723"
+      ],
+      "request_headers": {
+        "accept": "*/*"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T07:45:00.158Z",
+      "duration_ms": -1,
+      "endpoint": "/https:/{id}/{id}",
+      "host": "",
+      "method": "GET",
+      "status": -1,
+      "path_params": [
+        "challenges.cloudflare.com",
+        "38ab49ce-7310-423b-ade2-fcc7d04ccf90"
+      ],
+      "request_headers": {
+        "accept": "*/*"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T07:45:01.086Z",
+      "duration_ms": -1,
+      "endpoint": "/https:/www.eastleigh.gov.uk/{id}",
+      "host": "",
+      "method": "GET",
+      "status": -1,
+      "path_params": [
+        "1110e2e5-906c-4f8f-bc0f-bb2d71c14b8e"
+      ],
+      "request_headers": {
+        "accept": "*/*"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T07:45:01.497Z",
+      "duration_ms": -1,
+      "endpoint": "/https:/{id}/{id}",
+      "host": "",
+      "method": "GET",
+      "status": -1,
+      "path_params": [
+        "challenges.cloudflare.com",
+        "8c260d45-8283-4a80-bb2b-7fdfdb832179"
+      ],
+      "request_headers": {
+        "accept": "*/*"
+      }
     }
-  ]
+  ],
+  "analysis": {
+    "total_requests": 40,
+    "unique_endpoints": 24,
+    "methods_used": [
+      "GET",
+      "POST"
+    ],
+    "status_codes": {
+      "307": 1,
+      "403": 5,
+      "200": 19,
+      "401": 5,
+      "-1": 10
+    },
+    "endpoints_with_params": [
+      {
+        "endpoint": "/{id}",
+        "method": "GET",
+        "query_params": [],
+        "path_params": true
+      },
+      {
+        "endpoint": "/cdn-cgi/challenge-platform/h/g/flow/ov1/{id}/962913185d5494db/{id}",
+        "method": "POST",
+        "query_params": [],
+        "path_params": true
+      },
+      {
+        "endpoint": "/cdn-cgi/challenge-platform/h/g/turnstile/if/ov2/av0/rcv/ouvzt/{id}/light/fbE/new/normal/auto",
+        "method": "GET",
+        "query_params": [],
+        "path_params": true
+      },
+      {
+        "endpoint": "/cdn-cgi/challenge-platform/h/g/flow/ov1/{id}/9629131a0df63c8b/{id}",
+        "method": "POST",
+        "query_params": [],
+        "path_params": true
+      },
+      {
+        "endpoint": "/cdn-cgi/challenge-platform/h/g/pat/9629131a0df63c8b/{id}/{id}/qv3oqM0ISxY09sh",
+        "method": "GET",
+        "query_params": [],
+        "path_params": true
+      },
+      {
+        "endpoint": "/cdn-cgi/challenge-platform/h/g/flow/ov1/{id}/962913473da894db/{id}",
+        "method": "POST",
+        "query_params": [],
+        "path_params": true
+      },
+      {
+        "endpoint": "/cdn-cgi/challenge-platform/h/g/turnstile/if/ov2/av0/rcv/zex7v/{id}/light/fbE/new/normal/auto",
+        "method": "GET",
+        "query_params": [],
+        "path_params": true
+      },
+      {
+        "endpoint": "/cdn-cgi/challenge-platform/h/g/flow/ov1/{id}/96291348c89d3c8b/{id}",
+        "method": "POST",
+        "query_params": [],
+        "path_params": true
+      },
+      {
+        "endpoint": "/cdn-cgi/challenge-platform/h/g/pat/96291348c89d3c8b/{id}/{id}/TCekWa_RHddrj8l",
+        "method": "GET",
+        "query_params": [],
+        "path_params": true
+      },
+      {
+        "endpoint": "/cdn-cgi/challenge-platform/h/g/flow/ov1/{id}/962913787c2d94db/{id}",
+        "method": "POST",
+        "query_params": [],
+        "path_params": true
+      },
+      {
+        "endpoint": "/cdn-cgi/challenge-platform/h/g/turnstile/if/ov2/av0/rcv/f3wl8/{id}/light/fbE/new/normal/auto",
+        "method": "GET",
+        "query_params": [],
+        "path_params": true
+      },
+      {
+        "endpoint": "/cdn-cgi/challenge-platform/h/g/flow/ov1/{id}/96291379f94d3c8b/{id}",
+        "method": "POST",
+        "query_params": [],
+        "path_params": true
+      },
+      {
+        "endpoint": "/cdn-cgi/challenge-platform/h/g/pat/96291379f94d3c8b/{id}/{id}/jNFDNiGXKlUNk8G",
+        "method": "GET",
+        "query_params": [],
+        "path_params": true
+      },
+      {
+        "endpoint": "/cdn-cgi/challenge-platform/h/g/flow/ov1/{id}/96291385ddfc94db/{id}",
+        "method": "POST",
+        "query_params": [],
+        "path_params": true
+      },
+      {
+        "endpoint": "/cdn-cgi/challenge-platform/h/g/turnstile/if/ov2/av0/rcv/afsln/{id}/light/fbE/new/normal/auto",
+        "method": "GET",
+        "query_params": [],
+        "path_params": true
+      },
+      {
+        "endpoint": "/cdn-cgi/challenge-platform/h/g/flow/ov1/{id}/962913878f443c8b/{id}",
+        "method": "POST",
+        "query_params": [],
+        "path_params": true
+      },
+      {
+        "endpoint": "/cdn-cgi/challenge-platform/h/g/pat/962913878f443c8b/{id}/{id}/IAj4dHIeGQMTsPS",
+        "method": "GET",
+        "query_params": [],
+        "path_params": true
+      },
+      {
+        "endpoint": "/cdn-cgi/challenge-platform/h/g/flow/ov1/{id}/9629138d9b7294db/{id}",
+        "method": "POST",
+        "query_params": [],
+        "path_params": true
+      },
+      {
+        "endpoint": "/cdn-cgi/challenge-platform/h/g/turnstile/if/ov2/av0/rcv/83ngp/{id}/light/fbE/new/normal/auto",
+        "method": "GET",
+        "query_params": [],
+        "path_params": true
+      },
+      {
+        "endpoint": "/cdn-cgi/challenge-platform/h/g/flow/ov1/{id}/9629138f2c013c8b/{id}",
+        "method": "POST",
+        "query_params": [],
+        "path_params": true
+      },
+      {
+        "endpoint": "/cdn-cgi/challenge-platform/h/g/pat/9629138f2c013c8b/{id}/{id}/jh0jiVvHZvIOfYE",
+        "method": "GET",
+        "query_params": [],
+        "path_params": true
+      },
+      {
+        "endpoint": "/https:/www.eastleigh.gov.uk/{id}",
+        "method": "GET",
+        "query_params": [],
+        "path_params": true
+      },
+      {
+        "endpoint": "/https:/{id}/{id}",
+        "method": "GET",
+        "query_params": [],
+        "path_params": true
+      }
+    ],
+    "redirects": [
+      {
+        "from": "/{id}",
+        "to": "https://www.eastleigh.gov.uk/waste-bins-and-recycling",
+        "status": 307
+      }
+    ],
+    "api_calls": [],
+    "form_submissions": []
+  },
+  "grouped_by_endpoint": {
+    "/{id}": [
+      {
+        "timestamp": "2025-07-21T07:44:42.220Z",
+        "duration_ms": 56.39,
+        "endpoint": "/{id}",
+        "host": "www.eastleigh.gov.uk",
+        "method": "GET",
+        "status": 307,
+        "path_params": [
+          "waste-bins-and-recycling"
+        ],
+        "response_headers": {
+          "location": "https://www.eastleigh.gov.uk/waste-bins-and-recycling"
+        },
+        "redirect_to": "https://www.eastleigh.gov.uk/waste-bins-and-recycling"
+      },
+      {
+        "timestamp": "2025-07-21T07:44:42.275Z",
+        "duration_ms": 14.247,
+        "endpoint": "/{id}",
+        "host": "www.eastleigh.gov.uk",
+        "method": "GET",
+        "status": 403,
+        "path_params": [
+          "waste-bins-and-recycling"
+        ],
+        "response_headers": {
+          "cache-control": "private, max-age=0, no-store, no-cache, must-revalidate, post-check=0, pre-check=0",
+          "content-type": "text/html; charset=UTF-8",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "SAMEORIGIN\nSAMEORIGIN"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 4943,
+          "compressed": true,
+          "content_ref": "7ee86ac0f0c7dfb89239b82a4d739b373f12c3fa.html"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T07:44:49.781Z",
+        "duration_ms": 16.767,
+        "endpoint": "/{id}",
+        "host": "www.eastleigh.gov.uk",
+        "method": "GET",
+        "status": 403,
+        "path_params": [
+          "waste-bins-and-recycling"
+        ],
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7"
+        },
+        "response_headers": {
+          "cache-control": "private, max-age=0, no-store, no-cache, must-revalidate, post-check=0, pre-check=0",
+          "content-type": "text/html; charset=UTF-8",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "SAMEORIGIN"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 4943,
+          "compressed": true,
+          "content_ref": "5310da48f043e1451fadb4fb7b5b098ec8e5172e.html"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T07:44:57.658Z",
+        "duration_ms": 14.28,
+        "endpoint": "/{id}",
+        "host": "www.eastleigh.gov.uk",
+        "method": "GET",
+        "status": 403,
+        "path_params": [
+          "waste-bins-and-recycling"
+        ],
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7"
+        },
+        "response_headers": {
+          "cache-control": "private, max-age=0, no-store, no-cache, must-revalidate, post-check=0, pre-check=0",
+          "content-type": "text/html; charset=UTF-8",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "SAMEORIGIN"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 4943,
+          "compressed": true,
+          "content_ref": "8bca2f8e5e59ad53706bbb9593deafbfb82b9171.html"
+        }
+      }
+    ],
+    "/cdn-cgi/challenge-platform/h/g/flow/ov1/{id}/962913185d5494db/{id}": [
+      {
+        "timestamp": "2025-07-21T07:44:42.470Z",
+        "duration_ms": 34.862,
+        "endpoint": "/cdn-cgi/challenge-platform/h/g/flow/ov1/{id}/962913185d5494db/{id}",
+        "host": "www.eastleigh.gov.uk",
+        "method": "POST",
+        "status": 200,
+        "path_params": [
+          "1808329704:1753082110:4FeRzr56LeQhYQ37sAy8vtiEI_SgPs3tBL4UHn1CPg8",
+          "GiBe8NtwB07Jqk3IdGQikCDVdXY8XuAgdtSNUHZp_28-1753083882-1.2.1.1-3wZp.CzWD182bVhhFajRHUJXmG2tK3oDmZFtJuG_YgHAd1dGQh2Z4iFnv7yk8y7K"
+        ],
+        "request_headers": {
+          "accept": "*/*",
+          "content-type": "text/plain;charset=UTF-8",
+          "origin": "https://www.eastleigh.gov.uk",
+          "referer": "https://www.eastleigh.gov.uk/waste-bins-and-recycling"
+        },
+        "response_headers": {
+          "content-type": "text/plain; charset=UTF-8"
+        }
+      }
+    ],
+    "/cdn-cgi/challenge-platform/h/g/turnstile/if/ov2/av0/rcv/ouvzt/{id}/light/fbE/new/normal/auto": [
+      {
+        "timestamp": "2025-07-21T07:44:42.527Z",
+        "duration_ms": 42.31399999999999,
+        "endpoint": "/cdn-cgi/challenge-platform/h/g/turnstile/if/ov2/av0/rcv/ouvzt/{id}/light/fbE/new/normal/auto",
+        "host": "challenges.cloudflare.com",
+        "method": "GET",
+        "status": 200,
+        "path_params": [
+          "0x4AAAAAAADnPIDROrmt1Wwj"
+        ],
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7"
+        },
+        "response_headers": {
+          "cache-control": "private, max-age=0, no-store, no-cache, must-revalidate, post-check=0, pre-check=0",
+          "content-type": "text/html; charset=UTF-8"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 27263,
+          "compressed": true,
+          "content_ref": "d79ae5d3f9171901c33b94ecf112c89a62c87f2b.html"
+        }
+      }
+    ],
+    "/cdn-cgi/challenge-platform/h/g/flow/ov1/{id}/9629131a0df63c8b/{id}": [
+      {
+        "timestamp": "2025-07-21T07:44:43.012Z",
+        "duration_ms": 97.295,
+        "endpoint": "/cdn-cgi/challenge-platform/h/g/flow/ov1/{id}/9629131a0df63c8b/{id}",
+        "host": "challenges.cloudflare.com",
+        "method": "POST",
+        "status": 200,
+        "path_params": [
+          "838272693:1753082140:dfEytRw1sDcU3McXJ5sOWZS2KrCMhn_-AvHL64waGEM",
+          "RtFmjCS1DGlgapVzSh4AABTmi6cujEL8MXqJRVtReQU-1753083882-1.2.1.1-CPZopMt0B1ip1CkBleMYQMYKfK_c2sOAMSYq2fCsJL.fdaU1D_z5JcqTsPcT67W9"
+        ],
+        "request_headers": {
+          "accept": "*/*",
+          "content-type": "text/plain;charset=UTF-8",
+          "origin": "https://challenges.cloudflare.com",
+          "referer": "https://challenges.cloudflare.com/cdn-cgi/challenge-platform/h/g/turnstile/if/ov2/av0/rcv/ouvzt/0x4AAAAAAADnPIDROrmt1Wwj/light/fbE/new/normal/auto/"
+        },
+        "response_headers": {
+          "content-type": "text/plain; charset=UTF-8"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T07:44:44.958Z",
+        "duration_ms": 44.235,
+        "endpoint": "/cdn-cgi/challenge-platform/h/g/flow/ov1/{id}/9629131a0df63c8b/{id}",
+        "host": "challenges.cloudflare.com",
+        "method": "POST",
+        "status": 200,
+        "path_params": [
+          "838272693:1753082140:dfEytRw1sDcU3McXJ5sOWZS2KrCMhn_-AvHL64waGEM",
+          "RtFmjCS1DGlgapVzSh4AABTmi6cujEL8MXqJRVtReQU-1753083882-1.2.1.1-CPZopMt0B1ip1CkBleMYQMYKfK_c2sOAMSYq2fCsJL.fdaU1D_z5JcqTsPcT67W9"
+        ],
+        "request_headers": {
+          "accept": "*/*",
+          "content-type": "text/plain;charset=UTF-8",
+          "origin": "https://challenges.cloudflare.com",
+          "referer": "https://challenges.cloudflare.com/cdn-cgi/challenge-platform/h/g/turnstile/if/ov2/av0/rcv/ouvzt/0x4AAAAAAADnPIDROrmt1Wwj/light/fbE/new/normal/auto/"
+        },
+        "response_headers": {
+          "content-type": "text/plain; charset=UTF-8"
+        }
+      }
+    ],
+    "/cdn-cgi/challenge-platform/h/g/pat/9629131a0df63c8b/{id}/{id}/qv3oqM0ISxY09sh": [
+      {
+        "timestamp": "2025-07-21T07:44:43.611Z",
+        "duration_ms": 11.919,
+        "endpoint": "/cdn-cgi/challenge-platform/h/g/pat/9629131a0df63c8b/{id}/{id}/qv3oqM0ISxY09sh",
+        "host": "challenges.cloudflare.com",
+        "method": "GET",
+        "status": 401,
+        "path_params": [
+          "1753083883040",
+          "5d817ca71f1ce016daf958751388937c26b2dd52c1b0391451270bbf5dc38b09"
+        ],
+        "request_headers": {
+          "accept": "*/*",
+          "referer": "https://challenges.cloudflare.com/cdn-cgi/challenge-platform/h/g/turnstile/if/ov2/av0/rcv/ouvzt/0x4AAAAAAADnPIDROrmt1Wwj/light/fbE/new/normal/auto/"
+        },
+        "response_headers": {
+          "content-type": "text/plain; charset=utf-8"
+        }
+      }
+    ],
+    "/cdn-cgi/challenge-platform/h/g/flow/ov1/{id}/962913473da894db/{id}": [
+      {
+        "timestamp": "2025-07-21T07:44:49.968Z",
+        "duration_ms": 29.286,
+        "endpoint": "/cdn-cgi/challenge-platform/h/g/flow/ov1/{id}/962913473da894db/{id}",
+        "host": "www.eastleigh.gov.uk",
+        "method": "POST",
+        "status": 200,
+        "path_params": [
+          "517511865:1753082249:KW6Wz9_xA3eE3B7Zoc8lD8RT6KddrRYy33Dql_ilPP0",
+          "nnMjz0IVRg_EDDqWDD9LwIbFbILDJzmCpXyw1Awf12E-1753083889-1.2.1.1-8r1XnIZsfKnit0rYq6INv7lr1B6tIVAynIlGuEJSmv.YZ44CsYRDi_Qc4JdcWwYj"
+        ],
+        "request_headers": {
+          "accept": "*/*",
+          "content-type": "text/plain;charset=UTF-8",
+          "origin": "https://www.eastleigh.gov.uk",
+          "referer": "https://www.eastleigh.gov.uk/waste-bins-and-recycling"
+        },
+        "response_headers": {
+          "content-type": "text/plain; charset=UTF-8"
+        }
+      }
+    ],
+    "/cdn-cgi/challenge-platform/h/g/turnstile/if/ov2/av0/rcv/zex7v/{id}/light/fbE/new/normal/auto": [
+      {
+        "timestamp": "2025-07-21T07:44:50.025Z",
+        "duration_ms": 18.944,
+        "endpoint": "/cdn-cgi/challenge-platform/h/g/turnstile/if/ov2/av0/rcv/zex7v/{id}/light/fbE/new/normal/auto",
+        "host": "challenges.cloudflare.com",
+        "method": "GET",
+        "status": 200,
+        "path_params": [
+          "0x4AAAAAAADnPIDROrmt1Wwj"
+        ],
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7"
+        },
+        "response_headers": {
+          "cache-control": "private, max-age=0, no-store, no-cache, must-revalidate, post-check=0, pre-check=0",
+          "content-type": "text/html; charset=UTF-8"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 27263,
+          "compressed": true,
+          "content_ref": "3895b9033297472dbc660137d654903e6f1ffc4b.html"
+        }
+      }
+    ],
+    "/cdn-cgi/challenge-platform/h/g/flow/ov1/{id}/96291348c89d3c8b/{id}": [
+      {
+        "timestamp": "2025-07-21T07:44:50.301Z",
+        "duration_ms": 86.158,
+        "endpoint": "/cdn-cgi/challenge-platform/h/g/flow/ov1/{id}/96291348c89d3c8b/{id}",
+        "host": "challenges.cloudflare.com",
+        "method": "POST",
+        "status": 200,
+        "path_params": [
+          "339483033:1753082175:e5Z6BzB8QQ6s-EibA_giw8W8eWqSNbervMP7ildIkQc",
+          "KzdW8SQulIOWOkH01x1Ll4IoLqP0FmbfT4_XN9bJDg0-1753083890-1.2.1.1-bkDrtroTMhZh16mvzCAr2_ILS_BgCH9ct.LjsZaR_ay4Qk6yOtlmQmgHKFxUR1c."
+        ],
+        "request_headers": {
+          "accept": "*/*",
+          "content-type": "text/plain;charset=UTF-8",
+          "origin": "https://challenges.cloudflare.com",
+          "referer": "https://challenges.cloudflare.com/cdn-cgi/challenge-platform/h/g/turnstile/if/ov2/av0/rcv/zex7v/0x4AAAAAAADnPIDROrmt1Wwj/light/fbE/new/normal/auto/"
+        },
+        "response_headers": {
+          "content-type": "text/plain; charset=UTF-8"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T07:44:51.564Z",
+        "duration_ms": 44.369,
+        "endpoint": "/cdn-cgi/challenge-platform/h/g/flow/ov1/{id}/96291348c89d3c8b/{id}",
+        "host": "challenges.cloudflare.com",
+        "method": "POST",
+        "status": 200,
+        "path_params": [
+          "339483033:1753082175:e5Z6BzB8QQ6s-EibA_giw8W8eWqSNbervMP7ildIkQc",
+          "KzdW8SQulIOWOkH01x1Ll4IoLqP0FmbfT4_XN9bJDg0-1753083890-1.2.1.1-bkDrtroTMhZh16mvzCAr2_ILS_BgCH9ct.LjsZaR_ay4Qk6yOtlmQmgHKFxUR1c."
+        ],
+        "request_headers": {
+          "accept": "*/*",
+          "content-type": "text/plain;charset=UTF-8",
+          "origin": "https://challenges.cloudflare.com",
+          "referer": "https://challenges.cloudflare.com/cdn-cgi/challenge-platform/h/g/turnstile/if/ov2/av0/rcv/zex7v/0x4AAAAAAADnPIDROrmt1Wwj/light/fbE/new/normal/auto/"
+        },
+        "response_headers": {
+          "content-type": "text/plain; charset=UTF-8"
+        }
+      }
+    ],
+    "/cdn-cgi/challenge-platform/h/g/pat/96291348c89d3c8b/{id}/{id}/TCekWa_RHddrj8l": [
+      {
+        "timestamp": "2025-07-21T07:44:51.220Z",
+        "duration_ms": 18.351,
+        "endpoint": "/cdn-cgi/challenge-platform/h/g/pat/96291348c89d3c8b/{id}/{id}/TCekWa_RHddrj8l",
+        "host": "challenges.cloudflare.com",
+        "method": "GET",
+        "status": 401,
+        "path_params": [
+          "1753083890330",
+          "8298877ea60501e4fb9b52c81f3fa6c4f2ac439eaafec6e27571acb368706cff"
+        ],
+        "request_headers": {
+          "accept": "*/*",
+          "referer": "https://challenges.cloudflare.com/cdn-cgi/challenge-platform/h/g/turnstile/if/ov2/av0/rcv/zex7v/0x4AAAAAAADnPIDROrmt1Wwj/light/fbE/new/normal/auto/"
+        },
+        "response_headers": {
+          "content-type": "text/plain; charset=utf-8"
+        }
+      }
+    ],
+    "/cdn-cgi/challenge-platform/h/g/flow/ov1/{id}/962913787c2d94db/{id}": [
+      {
+        "timestamp": "2025-07-21T07:44:57.842Z",
+        "duration_ms": 27.25,
+        "endpoint": "/cdn-cgi/challenge-platform/h/g/flow/ov1/{id}/962913787c2d94db/{id}",
+        "host": "www.eastleigh.gov.uk",
+        "method": "POST",
+        "status": 200,
+        "path_params": [
+          "639722098:1753082152:egRGKeNDMBb645ER91I-EjEZPXc9IA2JDF05KuqLF2U",
+          "VvSX9jUVpifSyp.Hpu.qnNAb_RzHfoZhdnj5.zV2COI-1753083897-1.2.1.1-NAvqujzZehQd8LGfBmzFMErJgB9fiJ.92QLCUQne3RBvz68oj0dLdt4_LTYKzvOb"
+        ],
+        "request_headers": {
+          "accept": "*/*",
+          "content-type": "text/plain;charset=UTF-8",
+          "origin": "https://www.eastleigh.gov.uk",
+          "referer": "https://www.eastleigh.gov.uk/waste-bins-and-recycling"
+        },
+        "response_headers": {
+          "content-type": "text/plain; charset=UTF-8"
+        }
+      }
+    ],
+    "/cdn-cgi/challenge-platform/h/g/turnstile/if/ov2/av0/rcv/f3wl8/{id}/light/fbE/new/normal/auto": [
+      {
+        "timestamp": "2025-07-21T07:44:57.895Z",
+        "duration_ms": 16.505,
+        "endpoint": "/cdn-cgi/challenge-platform/h/g/turnstile/if/ov2/av0/rcv/f3wl8/{id}/light/fbE/new/normal/auto",
+        "host": "challenges.cloudflare.com",
+        "method": "GET",
+        "status": 200,
+        "path_params": [
+          "0x4AAAAAAADnPIDROrmt1Wwj"
+        ],
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7"
+        },
+        "response_headers": {
+          "cache-control": "private, max-age=0, no-store, no-cache, must-revalidate, post-check=0, pre-check=0",
+          "content-type": "text/html; charset=UTF-8"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 27263,
+          "compressed": true,
+          "content_ref": "19e6d250620014ffdc6d719ef44e38ab7d99c13d.html"
+        }
+      }
+    ],
+    "/cdn-cgi/challenge-platform/h/g/flow/ov1/{id}/96291379f94d3c8b/{id}": [
+      {
+        "timestamp": "2025-07-21T07:44:58.089Z",
+        "duration_ms": 82.85,
+        "endpoint": "/cdn-cgi/challenge-platform/h/g/flow/ov1/{id}/96291379f94d3c8b/{id}",
+        "host": "challenges.cloudflare.com",
+        "method": "POST",
+        "status": 200,
+        "path_params": [
+          "1549233269:1753082250:YCG7AQpK_2kFs6mh_xpLzeE3bHXz1DbyXYAR7ZakyLc",
+          "pHO9nfvqmIcKcei9Q5es5UC4QUgTI3tjBhrJMff9nWM-1753083897-1.2.1.1-b8dADduKGzPBawVebqoJHoGacWQ529QKmQT9B_Qsh.3BxVPW4djcz9XfXhpjIdzU"
+        ],
+        "request_headers": {
+          "accept": "*/*",
+          "content-type": "text/plain;charset=UTF-8",
+          "origin": "https://challenges.cloudflare.com",
+          "referer": "https://challenges.cloudflare.com/cdn-cgi/challenge-platform/h/g/turnstile/if/ov2/av0/rcv/f3wl8/0x4AAAAAAADnPIDROrmt1Wwj/light/fbE/new/normal/auto/"
+        },
+        "response_headers": {
+          "content-type": "text/plain; charset=UTF-8"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T07:44:59.294Z",
+        "duration_ms": 39.823,
+        "endpoint": "/cdn-cgi/challenge-platform/h/g/flow/ov1/{id}/96291379f94d3c8b/{id}",
+        "host": "challenges.cloudflare.com",
+        "method": "POST",
+        "status": 200,
+        "path_params": [
+          "1549233269:1753082250:YCG7AQpK_2kFs6mh_xpLzeE3bHXz1DbyXYAR7ZakyLc",
+          "pHO9nfvqmIcKcei9Q5es5UC4QUgTI3tjBhrJMff9nWM-1753083897-1.2.1.1-b8dADduKGzPBawVebqoJHoGacWQ529QKmQT9B_Qsh.3BxVPW4djcz9XfXhpjIdzU"
+        ],
+        "request_headers": {
+          "accept": "*/*",
+          "content-type": "text/plain;charset=UTF-8",
+          "origin": "https://challenges.cloudflare.com",
+          "referer": "https://challenges.cloudflare.com/cdn-cgi/challenge-platform/h/g/turnstile/if/ov2/av0/rcv/f3wl8/0x4AAAAAAADnPIDROrmt1Wwj/light/fbE/new/normal/auto/"
+        },
+        "response_headers": {
+          "content-type": "text/plain; charset=UTF-8"
+        }
+      }
+    ],
+    "/cdn-cgi/challenge-platform/h/g/pat/96291379f94d3c8b/{id}/{id}/jNFDNiGXKlUNk8G": [
+      {
+        "timestamp": "2025-07-21T07:44:58.774Z",
+        "duration_ms": 11.946,
+        "endpoint": "/cdn-cgi/challenge-platform/h/g/pat/96291379f94d3c8b/{id}/{id}/jNFDNiGXKlUNk8G",
+        "host": "challenges.cloudflare.com",
+        "method": "GET",
+        "status": 401,
+        "path_params": [
+          "1753083898117",
+          "eaac0b43994b8974538f5b2d7f8f8bf0075a884776d7def26b46b507dff97783"
+        ],
+        "request_headers": {
+          "accept": "*/*",
+          "referer": "https://challenges.cloudflare.com/cdn-cgi/challenge-platform/h/g/turnstile/if/ov2/av0/rcv/f3wl8/0x4AAAAAAADnPIDROrmt1Wwj/light/fbE/new/normal/auto/"
+        },
+        "response_headers": {
+          "content-type": "text/plain; charset=utf-8"
+        }
+      }
+    ],
+    "/": [
+      {
+        "timestamp": "2025-07-21T07:44:59.802Z",
+        "duration_ms": 13.851999999999999,
+        "endpoint": "/",
+        "host": "www.eastleigh.gov.uk",
+        "method": "GET",
+        "status": 403,
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7"
+        },
+        "response_headers": {
+          "cache-control": "private, max-age=0, no-store, no-cache, must-revalidate, post-check=0, pre-check=0",
+          "content-type": "text/html; charset=UTF-8",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "SAMEORIGIN"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 4850,
+          "compressed": true,
+          "content_ref": "771f65f499c83fde04275ead0cb0659c179c54b5.html"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T07:45:01.038Z",
+        "duration_ms": 15.681,
+        "endpoint": "/",
+        "host": "www.eastleigh.gov.uk",
+        "method": "GET",
+        "status": 403,
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7"
+        },
+        "response_headers": {
+          "cache-control": "private, max-age=0, no-store, no-cache, must-revalidate, post-check=0, pre-check=0",
+          "content-type": "text/html; charset=UTF-8",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "SAMEORIGIN"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 4850,
+          "compressed": true,
+          "content_ref": "b0cd2d12a00febf13592943a261853053535aa7d.html"
+        }
+      }
+    ],
+    "/cdn-cgi/challenge-platform/h/g/flow/ov1/{id}/96291385ddfc94db/{id}": [
+      {
+        "timestamp": "2025-07-21T07:44:59.997Z",
+        "duration_ms": 34.419000000000004,
+        "endpoint": "/cdn-cgi/challenge-platform/h/g/flow/ov1/{id}/96291385ddfc94db/{id}",
+        "host": "www.eastleigh.gov.uk",
+        "method": "POST",
+        "status": 200,
+        "path_params": [
+          "1418171733:1753082157:XanAxPt8eTRBV0VI-kOP1IYVV-4Dhwu0MUsmxT0gJE0",
+          "GpGgEangqjY5NMXI4k9NaIKyqagOtXiBiIZeZrWO368-1753083899-1.2.1.1-huwRLHpu3cvQEAaz_L2rSFk6dT3dO8OmWcLNSwPnVQzzT3vD_HcgAOfNXB1A5Gno"
+        ],
+        "request_headers": {
+          "accept": "*/*",
+          "content-type": "text/plain;charset=UTF-8",
+          "origin": "https://www.eastleigh.gov.uk",
+          "referer": "https://www.eastleigh.gov.uk/"
+        },
+        "response_headers": {
+          "content-type": "text/plain; charset=UTF-8"
+        }
+      }
+    ],
+    "/cdn-cgi/challenge-platform/h/g/turnstile/if/ov2/av0/rcv/afsln/{id}/light/fbE/new/normal/auto": [
+      {
+        "timestamp": "2025-07-21T07:45:00.068Z",
+        "duration_ms": 14.725,
+        "endpoint": "/cdn-cgi/challenge-platform/h/g/turnstile/if/ov2/av0/rcv/afsln/{id}/light/fbE/new/normal/auto",
+        "host": "challenges.cloudflare.com",
+        "method": "GET",
+        "status": 200,
+        "path_params": [
+          "0x4AAAAAAADnPIDROrmt1Wwj"
+        ],
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7"
+        },
+        "response_headers": {
+          "cache-control": "private, max-age=0, no-store, no-cache, must-revalidate, post-check=0, pre-check=0",
+          "content-type": "text/html; charset=UTF-8"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 27263,
+          "compressed": true,
+          "content_ref": "dd41f87331b5b44b8704dd11a5a1c39305a3ba61.html"
+        }
+      }
+    ],
+    "/cdn-cgi/challenge-platform/h/g/flow/ov1/{id}/962913878f443c8b/{id}": [
+      {
+        "timestamp": "2025-07-21T07:45:00.302Z",
+        "duration_ms": 80.796,
+        "endpoint": "/cdn-cgi/challenge-platform/h/g/flow/ov1/{id}/962913878f443c8b/{id}",
+        "host": "challenges.cloudflare.com",
+        "method": "POST",
+        "status": 200,
+        "path_params": [
+          "1263580334:1753082184:pSsH2eCicn_c3fvWOiUyFihy-Uak-2Z9qfjKvzzlHf0",
+          "pG_NdehNxLtVnLKUb23aKQxkC2F6mhE1S2HNV3d1kBI-1753083900-1.2.1.1-xEyAOZvc05XH94FF622CUgO0m.WX96vIhxlZ688DSl1Y0IZQNrJyO_X1oXdLgnAT"
+        ],
+        "request_headers": {
+          "accept": "*/*",
+          "content-type": "text/plain;charset=UTF-8",
+          "origin": "https://challenges.cloudflare.com",
+          "referer": "https://challenges.cloudflare.com/cdn-cgi/challenge-platform/h/g/turnstile/if/ov2/av0/rcv/afsln/0x4AAAAAAADnPIDROrmt1Wwj/light/fbE/new/normal/auto/"
+        },
+        "response_headers": {
+          "content-type": "text/plain; charset=UTF-8"
+        }
+      }
+    ],
+    "/cdn-cgi/challenge-platform/h/g/pat/962913878f443c8b/{id}/{id}/IAj4dHIeGQMTsPS": [
+      {
+        "timestamp": "2025-07-21T07:45:00.742Z",
+        "duration_ms": 10.966,
+        "endpoint": "/cdn-cgi/challenge-platform/h/g/pat/962913878f443c8b/{id}/{id}/IAj4dHIeGQMTsPS",
+        "host": "challenges.cloudflare.com",
+        "method": "GET",
+        "status": 401,
+        "path_params": [
+          "1753083900328",
+          "d0c6c206984fda98dd8668db084be7b8478efa584fa72d95cff7158ae0623825"
+        ],
+        "request_headers": {
+          "accept": "*/*",
+          "referer": "https://challenges.cloudflare.com/cdn-cgi/challenge-platform/h/g/turnstile/if/ov2/av0/rcv/afsln/0x4AAAAAAADnPIDROrmt1Wwj/light/fbE/new/normal/auto/"
+        },
+        "response_headers": {
+          "content-type": "text/plain; charset=utf-8"
+        }
+      }
+    ],
+    "/cdn-cgi/challenge-platform/h/g/flow/ov1/{id}/9629138d9b7294db/{id}": [
+      {
+        "timestamp": "2025-07-21T07:45:01.221Z",
+        "duration_ms": 31.79,
+        "endpoint": "/cdn-cgi/challenge-platform/h/g/flow/ov1/{id}/9629138d9b7294db/{id}",
+        "host": "www.eastleigh.gov.uk",
+        "method": "POST",
+        "status": 200,
+        "path_params": [
+          "1995978763:1753082201:MvHtH0Prce8T5awkHGEttnmLO1o2RSErAhdpUQsVCNc",
+          "VklxtWJAkWeMcJQhc3n63lUO.GzmdIcMlJsoXLu.YJk-1753083901-1.2.1.1-1PSyP_71SRKovvNvRMb4Kfn5nLaYMUkd7kc2S484UmGSsaPZyxgv2_y8C9oKn02b"
+        ],
+        "request_headers": {
+          "accept": "*/*",
+          "content-type": "text/plain;charset=UTF-8",
+          "origin": "https://www.eastleigh.gov.uk",
+          "referer": "https://www.eastleigh.gov.uk/"
+        },
+        "response_headers": {
+          "content-type": "text/plain; charset=UTF-8"
+        }
+      }
+    ],
+    "/cdn-cgi/challenge-platform/h/g/turnstile/if/ov2/av0/rcv/83ngp/{id}/light/fbE/new/normal/auto": [
+      {
+        "timestamp": "2025-07-21T07:45:01.284Z",
+        "duration_ms": 14.318000000000001,
+        "endpoint": "/cdn-cgi/challenge-platform/h/g/turnstile/if/ov2/av0/rcv/83ngp/{id}/light/fbE/new/normal/auto",
+        "host": "challenges.cloudflare.com",
+        "method": "GET",
+        "status": 200,
+        "path_params": [
+          "0x4AAAAAAADnPIDROrmt1Wwj"
+        ],
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7"
+        },
+        "response_headers": {
+          "cache-control": "private, max-age=0, no-store, no-cache, must-revalidate, post-check=0, pre-check=0",
+          "content-type": "text/html; charset=UTF-8"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 27263,
+          "compressed": true,
+          "content_ref": "c20e367fc7fcba834306a64afff17397a3cdfe26.html"
+        }
+      }
+    ],
+    "/cdn-cgi/challenge-platform/h/g/flow/ov1/{id}/9629138f2c013c8b/{id}": [
+      {
+        "timestamp": "2025-07-21T07:45:01.636Z",
+        "duration_ms": 78.103,
+        "endpoint": "/cdn-cgi/challenge-platform/h/g/flow/ov1/{id}/9629138f2c013c8b/{id}",
+        "host": "challenges.cloudflare.com",
+        "method": "POST",
+        "status": 200,
+        "path_params": [
+          "849575482:1753082197:nkAx3JElwaFzOO7Dcw52ojM_0n36smtzsE1huiQcaBY",
+          "ehWc0grE5FGGkAkALmXhVJTy6PT37P4IzoZ.4.34THA-1753083901-1.2.1.1-dW5I7JW1jZswezYrZWflb4Jed_IBpA2h40Rx5ptqZYArY1b2Z.RNTgUe86BQpJCT"
+        ],
+        "request_headers": {
+          "accept": "*/*",
+          "content-type": "text/plain;charset=UTF-8",
+          "origin": "https://challenges.cloudflare.com",
+          "referer": "https://challenges.cloudflare.com/cdn-cgi/challenge-platform/h/g/turnstile/if/ov2/av0/rcv/83ngp/0x4AAAAAAADnPIDROrmt1Wwj/light/fbE/new/normal/auto/"
+        },
+        "response_headers": {
+          "content-type": "text/plain; charset=UTF-8"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T07:45:02.819Z",
+        "duration_ms": 36.204,
+        "endpoint": "/cdn-cgi/challenge-platform/h/g/flow/ov1/{id}/9629138f2c013c8b/{id}",
+        "host": "challenges.cloudflare.com",
+        "method": "POST",
+        "status": 200,
+        "path_params": [
+          "849575482:1753082197:nkAx3JElwaFzOO7Dcw52ojM_0n36smtzsE1huiQcaBY",
+          "ehWc0grE5FGGkAkALmXhVJTy6PT37P4IzoZ.4.34THA-1753083901-1.2.1.1-dW5I7JW1jZswezYrZWflb4Jed_IBpA2h40Rx5ptqZYArY1b2Z.RNTgUe86BQpJCT"
+        ],
+        "request_headers": {
+          "accept": "*/*",
+          "content-type": "text/plain;charset=UTF-8",
+          "origin": "https://challenges.cloudflare.com",
+          "referer": "https://challenges.cloudflare.com/cdn-cgi/challenge-platform/h/g/turnstile/if/ov2/av0/rcv/83ngp/0x4AAAAAAADnPIDROrmt1Wwj/light/fbE/new/normal/auto/"
+        },
+        "response_headers": {
+          "content-type": "text/plain; charset=UTF-8"
+        }
+      }
+    ],
+    "/cdn-cgi/challenge-platform/h/g/pat/9629138f2c013c8b/{id}/{id}/jh0jiVvHZvIOfYE": [
+      {
+        "timestamp": "2025-07-21T07:45:02.165Z",
+        "duration_ms": 21.836000000000002,
+        "endpoint": "/cdn-cgi/challenge-platform/h/g/pat/9629138f2c013c8b/{id}/{id}/jh0jiVvHZvIOfYE",
+        "host": "challenges.cloudflare.com",
+        "method": "GET",
+        "status": 401,
+        "path_params": [
+          "1753083901662",
+          "788c674f8df981a06fb9ae9e565490e81288f656e795646fd07477120aa21a2f"
+        ],
+        "request_headers": {
+          "accept": "*/*",
+          "referer": "https://challenges.cloudflare.com/cdn-cgi/challenge-platform/h/g/turnstile/if/ov2/av0/rcv/83ngp/0x4AAAAAAADnPIDROrmt1Wwj/light/fbE/new/normal/auto/"
+        },
+        "response_headers": {
+          "content-type": "text/plain; charset=utf-8"
+        }
+      }
+    ],
+    "/https:/www.eastleigh.gov.uk/{id}": [
+      {
+        "timestamp": "2025-07-21T07:44:42.339Z",
+        "duration_ms": -1,
+        "endpoint": "/https:/www.eastleigh.gov.uk/{id}",
+        "host": "",
+        "method": "GET",
+        "status": -1,
+        "path_params": [
+          "6d6874b1-a496-4e2d-a1b0-6ac2349af868"
+        ],
+        "request_headers": {
+          "accept": "*/*"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T07:44:49.836Z",
+        "duration_ms": -1,
+        "endpoint": "/https:/www.eastleigh.gov.uk/{id}",
+        "host": "",
+        "method": "GET",
+        "status": -1,
+        "path_params": [
+          "73d87cc1-1632-4a87-88f3-4242b95148dd"
+        ],
+        "request_headers": {
+          "accept": "*/*"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T07:44:57.705Z",
+        "duration_ms": -1,
+        "endpoint": "/https:/www.eastleigh.gov.uk/{id}",
+        "host": "",
+        "method": "GET",
+        "status": -1,
+        "path_params": [
+          "236c27c3-ce02-4667-91cf-9c7fd05281c6"
+        ],
+        "request_headers": {
+          "accept": "*/*"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T07:44:59.855Z",
+        "duration_ms": -1,
+        "endpoint": "/https:/www.eastleigh.gov.uk/{id}",
+        "host": "",
+        "method": "GET",
+        "status": -1,
+        "path_params": [
+          "05ed2b1b-15ff-4237-8a62-fe841133a723"
+        ],
+        "request_headers": {
+          "accept": "*/*"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T07:45:01.086Z",
+        "duration_ms": -1,
+        "endpoint": "/https:/www.eastleigh.gov.uk/{id}",
+        "host": "",
+        "method": "GET",
+        "status": -1,
+        "path_params": [
+          "1110e2e5-906c-4f8f-bc0f-bb2d71c14b8e"
+        ],
+        "request_headers": {
+          "accept": "*/*"
+        }
+      }
+    ],
+    "/https:/{id}/{id}": [
+      {
+        "timestamp": "2025-07-21T07:44:42.862Z",
+        "duration_ms": -1,
+        "endpoint": "/https:/{id}/{id}",
+        "host": "",
+        "method": "GET",
+        "status": -1,
+        "path_params": [
+          "challenges.cloudflare.com",
+          "4959804d-2c8e-46f8-8c08-b7f0296f7b49"
+        ],
+        "request_headers": {
+          "accept": "*/*"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T07:44:50.150Z",
+        "duration_ms": -1,
+        "endpoint": "/https:/{id}/{id}",
+        "host": "",
+        "method": "GET",
+        "status": -1,
+        "path_params": [
+          "challenges.cloudflare.com",
+          "803cd6f0-7658-4a31-a46f-87695148e146"
+        ],
+        "request_headers": {
+          "accept": "*/*"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T07:44:57.948Z",
+        "duration_ms": -1,
+        "endpoint": "/https:/{id}/{id}",
+        "host": "",
+        "method": "GET",
+        "status": -1,
+        "path_params": [
+          "challenges.cloudflare.com",
+          "e5fcc503-88cf-4766-a7a9-13bcfce171a2"
+        ],
+        "request_headers": {
+          "accept": "*/*"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T07:45:00.158Z",
+        "duration_ms": -1,
+        "endpoint": "/https:/{id}/{id}",
+        "host": "",
+        "method": "GET",
+        "status": -1,
+        "path_params": [
+          "challenges.cloudflare.com",
+          "38ab49ce-7310-423b-ade2-fcc7d04ccf90"
+        ],
+        "request_headers": {
+          "accept": "*/*"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T07:45:01.497Z",
+        "duration_ms": -1,
+        "endpoint": "/https:/{id}/{id}",
+        "host": "",
+        "method": "GET",
+        "status": -1,
+        "path_params": [
+          "challenges.cloudflare.com",
+          "8c260d45-8283-4a80-bb2b-7fdfdb832179"
+        ],
+        "request_headers": {
+          "accept": "*/*"
+        }
+      }
+    ]
+  }
 }

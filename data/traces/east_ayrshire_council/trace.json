@@ -1,372 +1,3419 @@
 {
-  "metadata": {
-    "trace_name": "east_ayrshire_council",
-    "processed_at": "2025-08-26 18:44:24",
-    "workflow_steps_count": 8,
-    "navigation_events_count": 32
-  },
-  "scraping_patterns": {
-    "login_detected": false,
-    "form_submissions": 6,
-    "navigation_count": 2,
-    "unique_domains": [
-      "www.google.com",
-      "apikeys.civiccomputing.com",
-      "www.east-ayrshire.gov.uk",
-      "clapi.civiccomputing.com",
-      "www.matomo.east-ayrshire.gov.uk"
-    ],
-    "api_endpoints": [],
-    "data_extraction_indicators": []
-  },
-  "workflow_steps": [
+  "entries": [
     {
-      "action": "goto",
-      "target": "https://www.east-ayrshire.gov.uk/Housing/RubbishAndRecycling/Rubbishandrecycling.aspx",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
+      "timestamp": "2025-07-21T16:24:36.116Z",
+      "duration_ms": 205.728,
+      "endpoint": "/Housing/RubbishAndRecycling/{id}",
+      "host": "www.east-ayrshire.gov.uk",
+      "method": "GET",
+      "status": 200,
+      "path_params": [
+        "Rubbishandrecycling.aspx"
+      ],
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7"
+      },
+      "response_headers": {
+        "cache-control": "no-cache, no-store, must-revalidate,no-cache",
+        "content-type": "text/html; charset=utf-8",
+        "set-cookie": "[cookies present]",
+        "x-depends": "675159 716270 672769 672768",
+        "x-node": "675301",
+        "x-powered-by": "",
+        "x-testy-mctest": "east-ayrshire.gov.uk"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 22274,
+        "compressed": true,
+        "content_ref": "955380a180054239197153d5ee3fe8cd0268716e.html"
+      }
     },
     {
-      "action": "click",
-      "target": "aria-ref=e16 >> internal:describe=\"Accept button\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
+      "timestamp": "2025-07-21T16:24:36.492Z",
+      "duration_ms": 56.29899999999999,
+      "endpoint": "/c/v",
+      "host": "apikeys.civiccomputing.com",
+      "method": "GET",
+      "status": 200,
+      "query_params": {
+        "d": [
+          "www.east-ayrshire.gov.uk"
+        ],
+        "p": [
+          "CookieControl Single-Site"
+        ],
+        "v": [
+          "9"
+        ],
+        "k": [
+          "9f8f94f5f9fe8f7489ec4ab1ff2db9d59a213ec6"
+        ],
+        "format": [
+          "json"
+        ]
+      },
+      "request_headers": {
+        "accept": "application/json, text/plain, */*",
+        "origin": "https://www.east-ayrshire.gov.uk",
+        "referer": "https://www.east-ayrshire.gov.uk/"
+      },
+      "response_headers": {
+        "cache-control": "max-age=3600, private, no-store",
+        "content-type": "application/json",
+        "x-apikeys": "hit",
+        "x-cf-test": "true",
+        "x-content-type-options": "nosniff",
+        "x-xss-protection": "1"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 310,
+        "content_ref": "7756139defb9d70e84c69101c302d0fa74983ae8.json"
+      }
     },
     {
-      "action": "click",
-      "target": "aria-ref=e99 >> internal:describe=\"Recycling calendar link\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
+      "timestamp": "2025-07-21T16:24:37.795Z",
+      "duration_ms": 107.243,
+      "endpoint": "/{id}/log",
+      "host": "clapi.civiccomputing.com",
+      "method": "GET",
+      "status": 200,
+      "path_params": [
+        "1"
+      ],
+      "query_params": {
+        "k": [
+          "9f8f94f5f9fe8f7489ec4ab1ff2db9d59a213ec6"
+        ],
+        "d": [
+          "www.east-ayrshire.gov.uk"
+        ],
+        "u": [
+          "A12AE335-FC62-402C-8AE1-D562AA28AE40"
+        ],
+        "c": [
+          "{\"necessaryCookies\":[],\"optionalCookies\":{\"analytics\":\"accepted\"},\"statement\":{\"shown\":true,\"updated\":\"29/11/2019\"},\"consentDate\":1753115077790,\"consentExpiry\":90,\"interactedWith\":true,\"user\":\"A12AE335-FC62-402C-8AE1-D562AA28AE40\"}"
+        ]
+      },
+      "request_headers": {
+        "accept": "application/json, text/plain, */*",
+        "origin": "https://www.east-ayrshire.gov.uk",
+        "referer": "https://www.east-ayrshire.gov.uk/"
+      },
+      "response_headers": {
+        "content-type": "application/json",
+        "x-content-type-options": "nosniff",
+        "x-xss-protection": "0"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 13,
+        "content_ref": "a26ad77888189cc5d6973bb818e45f448628c5c1.json"
+      }
     },
     {
-      "action": "fill",
-      "target": "aria-ref=e85 >> internal:describe=\"textbox \\\"Search for your property\\\"\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0,
-      "value": "KA1 1AE"
+      "timestamp": "2025-07-21T16:24:37.902Z",
+      "duration_ms": 723.529,
+      "endpoint": "/matomo.php",
+      "host": "www.matomo.east-ayrshire.gov.uk",
+      "method": "POST",
+      "status": 204,
+      "query_params": {
+        "action_name": [
+          "Waste and recycling \u00b7 East Ayrshire Council"
+        ],
+        "idsite": [
+          "1"
+        ],
+        "rec": [
+          "1"
+        ],
+        "r": [
+          "330967"
+        ],
+        "h": [
+          "17"
+        ],
+        "m": [
+          "24"
+        ],
+        "s": [
+          "37"
+        ],
+        "url": [
+          "https://www.east-ayrshire.gov.uk/housing/rubbishandrecycling/rubbishandrecycling.aspx"
+        ],
+        "_id": [
+          "1abea662fbc5deeb"
+        ],
+        "_idn": [
+          "1"
+        ],
+        "send_image": [
+          "0"
+        ],
+        "_refts": [
+          "0"
+        ],
+        "pdf": [
+          "1"
+        ],
+        "qt": [
+          "0"
+        ],
+        "realp": [
+          "0"
+        ],
+        "wma": [
+          "0"
+        ],
+        "fla": [
+          "0"
+        ],
+        "java": [
+          "0"
+        ],
+        "ag": [
+          "0"
+        ],
+        "cookie": [
+          "1"
+        ],
+        "res": [
+          "800x600"
+        ],
+        "pv_id": [
+          "3JUrrV"
+        ],
+        "pf_net": [
+          "57"
+        ],
+        "pf_srv": [
+          "124"
+        ],
+        "pf_tfr": [
+          "1"
+        ],
+        "pf_dm1": [
+          "104"
+        ],
+        "pf_dm2": [
+          "90"
+        ],
+        "pf_onl": [
+          "1"
+        ],
+        "uadata": [
+          "{\"fullVersionList\":[{\"brand\":\"Not)A;Brand\",\"version\":\"8.0.0.0\"},{\"brand\":\"Chromium\",\"version\":\"138.0.7204.101\"},{\"brand\":\"Google Chrome\",\"version\":\"138.0.7204.101\"}],\"mobile\":false,\"model\":\"\",\"platform\":\"macOS\",\"platformVersion\":\"15.5.0\"}"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "content-type": "application/x-www-form-urlencoded; charset=utf-8",
+        "cookie": "[cookies present]",
+        "origin": "https://www.east-ayrshire.gov.uk",
+        "referer": "https://www.east-ayrshire.gov.uk/"
+      },
+      "response_headers": {
+        "content-type": "text/html; charset=UTF-8",
+        "x-powered-by": "ARR/3.0"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 0,
+        "content_ref": "da39a3ee5e6b4b0d3255bfef95601890afd80709.html"
+      }
     },
     {
-      "action": "click",
-      "target": "aria-ref=e87 >> internal:describe=\"Find address button\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
+      "timestamp": "2025-07-21T16:24:40.070Z",
+      "duration_ms": 46.022,
+      "endpoint": "/Housing/RubbishAndRecycling/Collection-days/{id}",
+      "host": "www.east-ayrshire.gov.uk",
+      "method": "GET",
+      "status": 200,
+      "path_params": [
+        "ViewYourRecyclingCalendar.aspx"
+      ],
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+        "cookie": "[cookies present]",
+        "referer": "https://www.east-ayrshire.gov.uk/Housing/RubbishAndRecycling/Rubbishandrecycling.aspx"
+      },
+      "response_headers": {
+        "cache-control": "no-cache, no-store, must-revalidate,no-cache",
+        "content-type": "text/html; charset=utf-8",
+        "x-depends": "675119 92900 716270 672769 672768 706263 675122 672766",
+        "x-node": "649443",
+        "x-powered-by": "",
+        "x-testy-mctest": "east-ayrshire.gov.uk"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 21778,
+        "compressed": true,
+        "content_ref": "33700b46fda6d21120c8024b22346ead6365aae2.html"
+      }
     },
     {
-      "action": "selectOption",
-      "target": "aria-ref=e86 >> internal:describe=\"combobox \\\"Select a property\\\"\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0,
-      "value": null
+      "timestamp": "2025-07-21T16:24:40.127Z",
+      "duration_ms": 22.296,
+      "endpoint": "/WebResource.axd",
+      "host": "www.east-ayrshire.gov.uk",
+      "method": "GET",
+      "status": 304,
+      "query_params": {
+        "d": [
+          "pynGkmcFUV13He1Qd6_TZDiRNbXquXH6l8EAWG4zHSJYbO_M6WrncM75gMRfUxVCfI3vblwVqwfBDJ77XOn6tQ2"
+        ],
+        "t": [
+          "638628243619783110"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "cookie": "[cookies present]",
+        "referer": "https://www.east-ayrshire.gov.uk/Housing/RubbishAndRecycling/Collection-days/ViewYourRecyclingCalendar.aspx"
+      },
+      "response_headers": {
+        "cache-control": "public,no-cache",
+        "x-powered-by": "",
+        "x-testy-mctest": "east-ayrshire.gov.uk"
+      }
     },
     {
-      "action": "click",
-      "target": "aria-ref=e136 >> internal:describe=\"Show collection days button\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
+      "timestamp": "2025-07-21T16:24:40.127Z",
+      "duration_ms": 33.544000000000004,
+      "endpoint": "/ScriptResource.axd",
+      "host": "www.east-ayrshire.gov.uk",
+      "method": "GET",
+      "status": 304,
+      "query_params": {
+        "d": [
+          "Jw6tUGWnA15YEa3ai3FadLCxIEGDIzTYWzOYsvFznfTSlYwFq89rqphlIvwO6xs9PSOb8h6YKtskxY7JfT3H_q4QGl92F1NN5NMtd0kIDHm4zgP6fhuWsreCEs1_rcpAqF09JhfdfH4F_RmSqT2WZdaS0CU7y-8LfIopeqXu9DA1"
+        ],
+        "t": [
+          "2a9d95e3"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "cookie": "[cookies present]",
+        "referer": "https://www.east-ayrshire.gov.uk/Housing/RubbishAndRecycling/Collection-days/ViewYourRecyclingCalendar.aspx"
+      },
+      "response_headers": {
+        "cache-control": "public,no-cache",
+        "x-powered-by": "",
+        "x-testy-mctest": "east-ayrshire.gov.uk"
+      }
     },
     {
-      "action": "goto",
-      "target": "https://www.east-ayrshire.gov.uk/Housing/RubbishAndRecycling/Your-bins-and-containers/bins-and-containers.aspx",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
+      "timestamp": "2025-07-21T16:24:40.127Z",
+      "duration_ms": 33.861999999999995,
+      "endpoint": "/ScriptResource.axd",
+      "host": "www.east-ayrshire.gov.uk",
+      "method": "GET",
+      "status": 304,
+      "query_params": {
+        "d": [
+          "uHIkleVeDJf4xS50Krz-yMUtQo1aXsyg1Vy-95_e90dwW8VCqf5vIb4BlooEItaq1cqCyKX9qov5ZwQqwIc1cufOy5NwgB28TEL-YAz_MB1ecxPxrpY_ms6KK8dGcnZsjgwgSElU0smkOPtt37aqA9397Is44mkfuB9HjXjGUfQ1"
+        ],
+        "t": [
+          "2a9d95e3"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "cookie": "[cookies present]",
+        "referer": "https://www.east-ayrshire.gov.uk/Housing/RubbishAndRecycling/Collection-days/ViewYourRecyclingCalendar.aspx"
+      },
+      "response_headers": {
+        "cache-control": "public,no-cache",
+        "x-powered-by": "",
+        "x-testy-mctest": "east-ayrshire.gov.uk"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T16:24:40.168Z",
+      "duration_ms": 14.972,
+      "endpoint": "/c/v",
+      "host": "apikeys.civiccomputing.com",
+      "method": "GET",
+      "status": 200,
+      "query_params": {
+        "d": [
+          "www.east-ayrshire.gov.uk"
+        ],
+        "p": [
+          "CookieControl Single-Site"
+        ],
+        "v": [
+          "9"
+        ],
+        "k": [
+          "9f8f94f5f9fe8f7489ec4ab1ff2db9d59a213ec6"
+        ],
+        "format": [
+          "json"
+        ]
+      },
+      "request_headers": {
+        "accept": "application/json, text/plain, */*",
+        "origin": "https://www.east-ayrshire.gov.uk",
+        "referer": "https://www.east-ayrshire.gov.uk/"
+      },
+      "response_headers": {
+        "cache-control": "max-age=3600, private, no-store",
+        "content-type": "application/json",
+        "x-apikeys": "hit",
+        "x-cf-test": "true",
+        "x-content-type-options": "nosniff",
+        "x-xss-protection": "1"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 310,
+        "content_ref": "7756139defb9d70e84c69101c302d0fa74983ae8.json"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T16:24:40.190Z",
+      "duration_ms": 951.317,
+      "endpoint": "/matomo.php",
+      "host": "www.matomo.east-ayrshire.gov.uk",
+      "method": "POST",
+      "status": 204,
+      "query_params": {
+        "action_name": [
+          "Recycling calendar \u00b7 East Ayrshire Council"
+        ],
+        "idsite": [
+          "1"
+        ],
+        "rec": [
+          "1"
+        ],
+        "r": [
+          "090828"
+        ],
+        "h": [
+          "17"
+        ],
+        "m": [
+          "24"
+        ],
+        "s": [
+          "40"
+        ],
+        "url": [
+          "https://www.east-ayrshire.gov.uk/housing/rubbishandrecycling/collection-days/viewyourrecyclingcalendar.aspx"
+        ],
+        "urlref": [
+          "https://www.east-ayrshire.gov.uk/Housing/RubbishAndRecycling/Rubbishandrecycling.aspx"
+        ],
+        "_id": [
+          "4fd71fb92a70c0ed"
+        ],
+        "_idn": [
+          "1"
+        ],
+        "send_image": [
+          "0"
+        ],
+        "_refts": [
+          "0"
+        ],
+        "pdf": [
+          "1"
+        ],
+        "qt": [
+          "0"
+        ],
+        "realp": [
+          "0"
+        ],
+        "wma": [
+          "0"
+        ],
+        "fla": [
+          "0"
+        ],
+        "java": [
+          "0"
+        ],
+        "ag": [
+          "0"
+        ],
+        "cookie": [
+          "1"
+        ],
+        "res": [
+          "800x600"
+        ],
+        "pv_id": [
+          "C4HP5P"
+        ],
+        "pf_net": [
+          "0"
+        ],
+        "pf_srv": [
+          "45"
+        ],
+        "pf_tfr": [
+          "1"
+        ],
+        "pf_dm1": [
+          "40"
+        ],
+        "pf_dm2": [
+          "12"
+        ],
+        "pf_onl": [
+          "0"
+        ],
+        "uadata": [
+          "{\"fullVersionList\":[{\"brand\":\"Not)A;Brand\",\"version\":\"8.0.0.0\"},{\"brand\":\"Chromium\",\"version\":\"138.0.7204.101\"},{\"brand\":\"Google Chrome\",\"version\":\"138.0.7204.101\"}],\"mobile\":false,\"model\":\"\",\"platform\":\"macOS\",\"platformVersion\":\"15.5.0\"}"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "content-type": "application/x-www-form-urlencoded; charset=utf-8",
+        "cookie": "[cookies present]",
+        "origin": "https://www.east-ayrshire.gov.uk",
+        "referer": "https://www.east-ayrshire.gov.uk/"
+      },
+      "response_headers": {
+        "content-type": "text/html; charset=UTF-8",
+        "x-powered-by": "ARR/3.0"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 0,
+        "content_ref": "da39a3ee5e6b4b0d3255bfef95601890afd80709.html"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T16:24:45.789Z",
+      "duration_ms": 22.899,
+      "endpoint": "/WebResource.axd",
+      "host": "www.east-ayrshire.gov.uk",
+      "method": "GET",
+      "status": 304,
+      "query_params": {
+        "d": [
+          "pynGkmcFUV13He1Qd6_TZDiRNbXquXH6l8EAWG4zHSJYbO_M6WrncM75gMRfUxVCfI3vblwVqwfBDJ77XOn6tQ2"
+        ],
+        "t": [
+          "638628243619783110"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "cookie": "[cookies present]",
+        "referer": "https://www.east-ayrshire.gov.uk/Housing/RubbishAndRecycling/Collection-days/ViewYourRecyclingCalendar.aspx?p=KA1%201AE"
+      },
+      "response_headers": {
+        "cache-control": "public,no-cache",
+        "x-powered-by": "",
+        "x-testy-mctest": "east-ayrshire.gov.uk"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T16:24:45.789Z",
+      "duration_ms": 23.739,
+      "endpoint": "/ScriptResource.axd",
+      "host": "www.east-ayrshire.gov.uk",
+      "method": "GET",
+      "status": 304,
+      "query_params": {
+        "d": [
+          "uHIkleVeDJf4xS50Krz-yMUtQo1aXsyg1Vy-95_e90dwW8VCqf5vIb4BlooEItaq1cqCyKX9qov5ZwQqwIc1cufOy5NwgB28TEL-YAz_MB1ecxPxrpY_ms6KK8dGcnZsjgwgSElU0smkOPtt37aqA9397Is44mkfuB9HjXjGUfQ1"
+        ],
+        "t": [
+          "2a9d95e3"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "cookie": "[cookies present]",
+        "referer": "https://www.east-ayrshire.gov.uk/Housing/RubbishAndRecycling/Collection-days/ViewYourRecyclingCalendar.aspx?p=KA1%201AE"
+      },
+      "response_headers": {
+        "cache-control": "public,no-cache",
+        "x-powered-by": "",
+        "x-testy-mctest": "east-ayrshire.gov.uk"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T16:24:45.789Z",
+      "duration_ms": 25.405,
+      "endpoint": "/ScriptResource.axd",
+      "host": "www.east-ayrshire.gov.uk",
+      "method": "GET",
+      "status": 304,
+      "query_params": {
+        "d": [
+          "Jw6tUGWnA15YEa3ai3FadLCxIEGDIzTYWzOYsvFznfTSlYwFq89rqphlIvwO6xs9PSOb8h6YKtskxY7JfT3H_q4QGl92F1NN5NMtd0kIDHm4zgP6fhuWsreCEs1_rcpAqF09JhfdfH4F_RmSqT2WZdaS0CU7y-8LfIopeqXu9DA1"
+        ],
+        "t": [
+          "2a9d95e3"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "cookie": "[cookies present]",
+        "referer": "https://www.east-ayrshire.gov.uk/Housing/RubbishAndRecycling/Collection-days/ViewYourRecyclingCalendar.aspx?p=KA1%201AE"
+      },
+      "response_headers": {
+        "cache-control": "public,no-cache",
+        "x-powered-by": "",
+        "x-testy-mctest": "east-ayrshire.gov.uk"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T16:24:45.589Z",
+      "duration_ms": 180.538,
+      "endpoint": "/Housing/RubbishAndRecycling/Collection-days/{id}",
+      "host": "www.east-ayrshire.gov.uk",
+      "method": "GET",
+      "status": 200,
+      "path_params": [
+        "ViewYourRecyclingCalendar.aspx"
+      ],
+      "query_params": {
+        "p": [
+          "KA1 1AE"
+        ]
+      },
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+        "cookie": "[cookies present]",
+        "referer": "https://www.east-ayrshire.gov.uk/Housing/RubbishAndRecycling/Collection-days/ViewYourRecyclingCalendar.aspx"
+      },
+      "response_headers": {
+        "cache-control": "no-cache, no-store, must-revalidate,no-cache",
+        "content-type": "text/html; charset=utf-8",
+        "x-depends": "675119 92900 716270 672769 672768 706263 675122 672766",
+        "x-node": "649443",
+        "x-powered-by": "",
+        "x-testy-mctest": "east-ayrshire.gov.uk"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 26437,
+        "compressed": true,
+        "content_ref": "978a7c5d2ce7ae10fc7353eb29b339161d5ab20a.html"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T16:24:45.814Z",
+      "duration_ms": 15.248999999999999,
+      "endpoint": "/c/v",
+      "host": "apikeys.civiccomputing.com",
+      "method": "GET",
+      "status": 200,
+      "query_params": {
+        "d": [
+          "www.east-ayrshire.gov.uk"
+        ],
+        "p": [
+          "CookieControl Single-Site"
+        ],
+        "v": [
+          "9"
+        ],
+        "k": [
+          "9f8f94f5f9fe8f7489ec4ab1ff2db9d59a213ec6"
+        ],
+        "format": [
+          "json"
+        ]
+      },
+      "request_headers": {
+        "accept": "application/json, text/plain, */*",
+        "origin": "https://www.east-ayrshire.gov.uk",
+        "referer": "https://www.east-ayrshire.gov.uk/"
+      },
+      "response_headers": {
+        "cache-control": "max-age=3600, private, no-store",
+        "content-type": "application/json",
+        "x-apikeys": "hit",
+        "x-cf-test": "true",
+        "x-content-type-options": "nosniff",
+        "x-xss-protection": "1"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 310,
+        "content_ref": "7756139defb9d70e84c69101c302d0fa74983ae8.json"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T16:24:45.843Z",
+      "duration_ms": 845.079,
+      "endpoint": "/matomo.php",
+      "host": "www.matomo.east-ayrshire.gov.uk",
+      "method": "POST",
+      "status": 204,
+      "query_params": {
+        "action_name": [
+          "Recycling calendar \u00b7 East Ayrshire Council"
+        ],
+        "idsite": [
+          "1"
+        ],
+        "rec": [
+          "1"
+        ],
+        "r": [
+          "825046"
+        ],
+        "h": [
+          "17"
+        ],
+        "m": [
+          "24"
+        ],
+        "s": [
+          "45"
+        ],
+        "url": [
+          "https://www.east-ayrshire.gov.uk/housing/rubbishandrecycling/collection-days/viewyourrecyclingcalendar.aspx?p=ka1%201ae"
+        ],
+        "urlref": [
+          "https://www.east-ayrshire.gov.uk/Housing/RubbishAndRecycling/Collection-days/ViewYourRecyclingCalendar.aspx"
+        ],
+        "_id": [
+          "3254a9d7f42237cf"
+        ],
+        "_idn": [
+          "1"
+        ],
+        "send_image": [
+          "0"
+        ],
+        "_refts": [
+          "0"
+        ],
+        "pdf": [
+          "1"
+        ],
+        "qt": [
+          "0"
+        ],
+        "realp": [
+          "0"
+        ],
+        "wma": [
+          "0"
+        ],
+        "fla": [
+          "0"
+        ],
+        "java": [
+          "0"
+        ],
+        "ag": [
+          "0"
+        ],
+        "cookie": [
+          "1"
+        ],
+        "res": [
+          "800x600"
+        ],
+        "pv_id": [
+          "jcxmO2"
+        ],
+        "pf_net": [
+          "0"
+        ],
+        "pf_srv": [
+          "180"
+        ],
+        "pf_tfr": [
+          "0"
+        ],
+        "pf_dm1": [
+          "30"
+        ],
+        "pf_dm2": [
+          "15"
+        ],
+        "pf_onl": [
+          "0"
+        ],
+        "uadata": [
+          "{\"fullVersionList\":[{\"brand\":\"Not)A;Brand\",\"version\":\"8.0.0.0\"},{\"brand\":\"Chromium\",\"version\":\"138.0.7204.101\"},{\"brand\":\"Google Chrome\",\"version\":\"138.0.7204.101\"}],\"mobile\":false,\"model\":\"\",\"platform\":\"macOS\",\"platformVersion\":\"15.5.0\"}"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "content-type": "application/x-www-form-urlencoded; charset=utf-8",
+        "cookie": "[cookies present]",
+        "origin": "https://www.east-ayrshire.gov.uk",
+        "referer": "https://www.east-ayrshire.gov.uk/"
+      },
+      "response_headers": {
+        "content-type": "text/html; charset=UTF-8",
+        "x-powered-by": "ARR/3.0"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 0,
+        "content_ref": "da39a3ee5e6b4b0d3255bfef95601890afd80709.html"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T16:24:52.321Z",
+      "duration_ms": 23.497,
+      "endpoint": "/WebResource.axd",
+      "host": "www.east-ayrshire.gov.uk",
+      "method": "GET",
+      "status": 304,
+      "query_params": {
+        "d": [
+          "pynGkmcFUV13He1Qd6_TZDiRNbXquXH6l8EAWG4zHSJYbO_M6WrncM75gMRfUxVCfI3vblwVqwfBDJ77XOn6tQ2"
+        ],
+        "t": [
+          "638628243619783110"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "cookie": "[cookies present]",
+        "referer": "https://www.east-ayrshire.gov.uk/Housing/RubbishAndRecycling/Collection-days/ViewYourRecyclingCalendar.aspx?r=127072016"
+      },
+      "response_headers": {
+        "cache-control": "public,no-cache",
+        "x-powered-by": "",
+        "x-testy-mctest": "east-ayrshire.gov.uk"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T16:24:52.322Z",
+      "duration_ms": 24.622,
+      "endpoint": "/ScriptResource.axd",
+      "host": "www.east-ayrshire.gov.uk",
+      "method": "GET",
+      "status": 304,
+      "query_params": {
+        "d": [
+          "Jw6tUGWnA15YEa3ai3FadLCxIEGDIzTYWzOYsvFznfTSlYwFq89rqphlIvwO6xs9PSOb8h6YKtskxY7JfT3H_q4QGl92F1NN5NMtd0kIDHm4zgP6fhuWsreCEs1_rcpAqF09JhfdfH4F_RmSqT2WZdaS0CU7y-8LfIopeqXu9DA1"
+        ],
+        "t": [
+          "2a9d95e3"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "cookie": "[cookies present]",
+        "referer": "https://www.east-ayrshire.gov.uk/Housing/RubbishAndRecycling/Collection-days/ViewYourRecyclingCalendar.aspx?r=127072016"
+      },
+      "response_headers": {
+        "cache-control": "public,no-cache",
+        "x-powered-by": "",
+        "x-testy-mctest": "east-ayrshire.gov.uk"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T16:24:52.322Z",
+      "duration_ms": 24.772,
+      "endpoint": "/ScriptResource.axd",
+      "host": "www.east-ayrshire.gov.uk",
+      "method": "GET",
+      "status": 304,
+      "query_params": {
+        "d": [
+          "uHIkleVeDJf4xS50Krz-yMUtQo1aXsyg1Vy-95_e90dwW8VCqf5vIb4BlooEItaq1cqCyKX9qov5ZwQqwIc1cufOy5NwgB28TEL-YAz_MB1ecxPxrpY_ms6KK8dGcnZsjgwgSElU0smkOPtt37aqA9397Is44mkfuB9HjXjGUfQ1"
+        ],
+        "t": [
+          "2a9d95e3"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "cookie": "[cookies present]",
+        "referer": "https://www.east-ayrshire.gov.uk/Housing/RubbishAndRecycling/Collection-days/ViewYourRecyclingCalendar.aspx?r=127072016"
+      },
+      "response_headers": {
+        "cache-control": "public,no-cache",
+        "x-powered-by": "",
+        "x-testy-mctest": "east-ayrshire.gov.uk"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T16:24:51.668Z",
+      "duration_ms": 631.67,
+      "endpoint": "/Housing/RubbishAndRecycling/Collection-days/{id}",
+      "host": "www.east-ayrshire.gov.uk",
+      "method": "GET",
+      "status": 200,
+      "path_params": [
+        "ViewYourRecyclingCalendar.aspx"
+      ],
+      "query_params": {
+        "r": [
+          "127072016"
+        ]
+      },
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+        "cookie": "[cookies present]",
+        "referer": "https://www.east-ayrshire.gov.uk/Housing/RubbishAndRecycling/Collection-days/ViewYourRecyclingCalendar.aspx?p=KA1%201AE"
+      },
+      "response_headers": {
+        "cache-control": "no-cache, no-store, must-revalidate,no-cache",
+        "content-type": "text/html; charset=utf-8",
+        "x-depends": "675119 92900 716270 672769 672768 706263 675122 672766",
+        "x-node": "649443",
+        "x-powered-by": "",
+        "x-testy-mctest": "east-ayrshire.gov.uk"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 53727,
+        "compressed": true,
+        "content_ref": "2b3cde2625ab3f48051607f07659e94571ad2fe6.html"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T16:24:52.371Z",
+      "duration_ms": 15.046,
+      "endpoint": "/c/v",
+      "host": "apikeys.civiccomputing.com",
+      "method": "GET",
+      "status": 200,
+      "query_params": {
+        "d": [
+          "www.east-ayrshire.gov.uk"
+        ],
+        "p": [
+          "CookieControl Single-Site"
+        ],
+        "v": [
+          "9"
+        ],
+        "k": [
+          "9f8f94f5f9fe8f7489ec4ab1ff2db9d59a213ec6"
+        ],
+        "format": [
+          "json"
+        ]
+      },
+      "request_headers": {
+        "accept": "application/json, text/plain, */*",
+        "origin": "https://www.east-ayrshire.gov.uk",
+        "referer": "https://www.east-ayrshire.gov.uk/"
+      },
+      "response_headers": {
+        "cache-control": "max-age=3600, private, no-store",
+        "content-type": "application/json",
+        "x-apikeys": "hit",
+        "x-cf-test": "true",
+        "x-content-type-options": "nosniff",
+        "x-xss-protection": "1"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 310,
+        "content_ref": "7756139defb9d70e84c69101c302d0fa74983ae8.json"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T16:24:52.528Z",
+      "duration_ms": 64.914,
+      "endpoint": "/recaptcha/api2/anchor",
+      "host": "www.google.com",
+      "method": "GET",
+      "status": 200,
+      "query_params": {
+        "ar": [
+          "1"
+        ],
+        "k": [
+          "6LfDIZoiAAAAAMPAiijI6ymJWdhsoWh4SDU_k70y"
+        ],
+        "co": [
+          "aHR0cHM6Ly93d3cuZWFzdC1heXJzaGlyZS5nb3YudWs6NDQz"
+        ],
+        "hl": [
+          "en"
+        ],
+        "v": [
+          "3jpV4E_UA9gZWYy11LtggjoU"
+        ],
+        "size": [
+          "invisible"
+        ],
+        "anchor-ms": [
+          "20000"
+        ],
+        "execute-ms": [
+          "15000"
+        ],
+        "cb": [
+          "awqil1s7ktbj"
+        ]
+      },
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+        "cookie": "[cookies present]",
+        "referer": "https://www.east-ayrshire.gov.uk/",
+        "x-browser-channel": "stable",
+        "x-browser-copyright": "Copyright 2025 Google LLC. All rights reserved.",
+        "x-browser-validation": "9Fs9UJjMhwc/kTw0uGkObIyMhWI=",
+        "x-browser-year": "2025",
+        "x-client-data": "CMiXywE="
+      },
+      "response_headers": {
+        "cache-control": "no-cache, no-store, max-age=0, must-revalidate",
+        "content-type": "text/html; charset=utf-8",
+        "x-content-type-options": "nosniff",
+        "x-xss-protection": "0"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 73535,
+        "compressed": true,
+        "content_ref": "0f1d331cc46f958ebc967fda0864226f3dc410e8.html"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T16:24:52.393Z",
+      "duration_ms": 647.284,
+      "endpoint": "/matomo.php",
+      "host": "www.matomo.east-ayrshire.gov.uk",
+      "method": "POST",
+      "status": 204,
+      "query_params": {
+        "action_name": [
+          "Recycling calendar \u00b7 East Ayrshire Council"
+        ],
+        "idsite": [
+          "1"
+        ],
+        "rec": [
+          "1"
+        ],
+        "r": [
+          "065044"
+        ],
+        "h": [
+          "17"
+        ],
+        "m": [
+          "24"
+        ],
+        "s": [
+          "52"
+        ],
+        "url": [
+          "https://www.east-ayrshire.gov.uk/housing/rubbishandrecycling/collection-days/viewyourrecyclingcalendar.aspx?r=127072016#address"
+        ],
+        "urlref": [
+          "https://www.east-ayrshire.gov.uk/Housing/RubbishAndRecycling/Collection-days/ViewYourRecyclingCalendar.aspx?p=KA1 1AE"
+        ],
+        "_id": [
+          "71c02c9b6f765a29"
+        ],
+        "_idn": [
+          "1"
+        ],
+        "send_image": [
+          "0"
+        ],
+        "_refts": [
+          "0"
+        ],
+        "pdf": [
+          "1"
+        ],
+        "qt": [
+          "0"
+        ],
+        "realp": [
+          "0"
+        ],
+        "wma": [
+          "0"
+        ],
+        "fla": [
+          "0"
+        ],
+        "java": [
+          "0"
+        ],
+        "ag": [
+          "0"
+        ],
+        "cookie": [
+          "1"
+        ],
+        "res": [
+          "800x600"
+        ],
+        "pv_id": [
+          "vCPNoS"
+        ],
+        "pf_net": [
+          "0"
+        ],
+        "pf_srv": [
+          "630"
+        ],
+        "pf_tfr": [
+          "2"
+        ],
+        "pf_dm1": [
+          "58"
+        ],
+        "uadata": [
+          "{\"fullVersionList\":[{\"brand\":\"Not)A;Brand\",\"version\":\"8.0.0.0\"},{\"brand\":\"Chromium\",\"version\":\"138.0.7204.101\"},{\"brand\":\"Google Chrome\",\"version\":\"138.0.7204.101\"}],\"mobile\":false,\"model\":\"\",\"platform\":\"macOS\",\"platformVersion\":\"15.5.0\"}"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "content-type": "application/x-www-form-urlencoded; charset=utf-8",
+        "cookie": "[cookies present]",
+        "origin": "https://www.east-ayrshire.gov.uk",
+        "referer": "https://www.east-ayrshire.gov.uk/"
+      },
+      "response_headers": {
+        "content-type": "text/html; charset=UTF-8",
+        "x-powered-by": "ARR/3.0"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 0,
+        "content_ref": "da39a3ee5e6b4b0d3255bfef95601890afd80709.html"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T16:25:00.856Z",
+      "duration_ms": 184.152,
+      "endpoint": "/Housing/RubbishAndRecycling/Collection-days/{id}",
+      "host": "www.east-ayrshire.gov.uk",
+      "method": "GET",
+      "status": 200,
+      "path_params": [
+        "ViewYourRecyclingCalendar.aspx"
+      ],
+      "query_params": {
+        "p": [
+          "KA1 1AE"
+        ]
+      },
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+        "cookie": "[cookies present]",
+        "referer": "https://www.east-ayrshire.gov.uk/Housing/RubbishAndRecycling/Collection-days/ViewYourRecyclingCalendar.aspx"
+      },
+      "response_headers": {
+        "cache-control": "no-cache, no-store, must-revalidate,no-cache",
+        "content-type": "text/html; charset=utf-8",
+        "x-depends": "675119 92900 716270 672769 672768 706263 675122 672766",
+        "x-node": "649443",
+        "x-powered-by": "",
+        "x-testy-mctest": "east-ayrshire.gov.uk"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 26437,
+        "compressed": true,
+        "content_ref": "92105629b88b87e7068c2a3fad9100b928f3f5f6.html"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T16:25:01.073Z",
+      "duration_ms": 17.075,
+      "endpoint": "/c/v",
+      "host": "apikeys.civiccomputing.com",
+      "method": "GET",
+      "status": 200,
+      "query_params": {
+        "d": [
+          "www.east-ayrshire.gov.uk"
+        ],
+        "p": [
+          "CookieControl Single-Site"
+        ],
+        "v": [
+          "9"
+        ],
+        "k": [
+          "9f8f94f5f9fe8f7489ec4ab1ff2db9d59a213ec6"
+        ],
+        "format": [
+          "json"
+        ]
+      },
+      "request_headers": {
+        "accept": "application/json, text/plain, */*",
+        "origin": "https://www.east-ayrshire.gov.uk",
+        "referer": "https://www.east-ayrshire.gov.uk/"
+      },
+      "response_headers": {
+        "cache-control": "max-age=3600, private, no-store",
+        "content-type": "application/json",
+        "x-apikeys": "hit",
+        "x-cf-test": "true",
+        "x-content-type-options": "nosniff",
+        "x-xss-protection": "1"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 310,
+        "content_ref": "7756139defb9d70e84c69101c302d0fa74983ae8.json"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T16:25:01.114Z",
+      "duration_ms": 668.215,
+      "endpoint": "/matomo.php",
+      "host": "www.matomo.east-ayrshire.gov.uk",
+      "method": "POST",
+      "status": 204,
+      "query_params": {
+        "action_name": [
+          "Recycling calendar \u00b7 East Ayrshire Council"
+        ],
+        "idsite": [
+          "1"
+        ],
+        "rec": [
+          "1"
+        ],
+        "r": [
+          "684385"
+        ],
+        "h": [
+          "17"
+        ],
+        "m": [
+          "25"
+        ],
+        "s": [
+          "1"
+        ],
+        "url": [
+          "https://www.east-ayrshire.gov.uk/housing/rubbishandrecycling/collection-days/viewyourrecyclingcalendar.aspx?p=ka1%201ae"
+        ],
+        "urlref": [
+          "https://www.east-ayrshire.gov.uk/Housing/RubbishAndRecycling/Collection-days/ViewYourRecyclingCalendar.aspx"
+        ],
+        "_id": [
+          "00d902578f88b9c9"
+        ],
+        "_idn": [
+          "1"
+        ],
+        "send_image": [
+          "0"
+        ],
+        "_refts": [
+          "0"
+        ],
+        "pdf": [
+          "1"
+        ],
+        "qt": [
+          "0"
+        ],
+        "realp": [
+          "0"
+        ],
+        "wma": [
+          "0"
+        ],
+        "fla": [
+          "0"
+        ],
+        "java": [
+          "0"
+        ],
+        "ag": [
+          "0"
+        ],
+        "cookie": [
+          "1"
+        ],
+        "res": [
+          "800x600"
+        ],
+        "pv_id": [
+          "hqfay3"
+        ],
+        "pf_net": [
+          "0"
+        ],
+        "pf_srv": [
+          "183"
+        ],
+        "pf_tfr": [
+          "0"
+        ],
+        "pf_dm1": [
+          "18"
+        ],
+        "pf_dm2": [
+          "10"
+        ],
+        "pf_onl": [
+          "0"
+        ],
+        "uadata": [
+          "{\"fullVersionList\":[{\"brand\":\"Not)A;Brand\",\"version\":\"8.0.0.0\"},{\"brand\":\"Chromium\",\"version\":\"138.0.7204.101\"},{\"brand\":\"Google Chrome\",\"version\":\"138.0.7204.101\"}],\"mobile\":false,\"model\":\"\",\"platform\":\"macOS\",\"platformVersion\":\"15.5.0\"}"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "content-type": "application/x-www-form-urlencoded; charset=utf-8",
+        "cookie": "[cookies present]",
+        "origin": "https://www.east-ayrshire.gov.uk",
+        "referer": "https://www.east-ayrshire.gov.uk/"
+      },
+      "response_headers": {
+        "content-type": "text/html; charset=UTF-8",
+        "x-powered-by": "ARR/3.0"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 0,
+        "content_ref": "da39a3ee5e6b4b0d3255bfef95601890afd80709.html"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T16:25:08.513Z",
+      "duration_ms": 88.703,
+      "endpoint": "/Housing/RubbishAndRecycling/{id}/{id}",
+      "host": "www.east-ayrshire.gov.uk",
+      "method": "GET",
+      "status": 200,
+      "path_params": [
+        "Your-bins-and-containers",
+        "bins-and-containers.aspx"
+      ],
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+        "cookie": "[cookies present]"
+      },
+      "response_headers": {
+        "cache-control": "no-cache, no-store, must-revalidate,no-cache",
+        "content-type": "text/html; charset=utf-8",
+        "x-depends": "675159 92900 716270 672769 672768",
+        "x-node": "695891",
+        "x-powered-by": "",
+        "x-testy-mctest": "east-ayrshire.gov.uk"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 24062,
+        "compressed": true,
+        "content_ref": "e35e3325da19cb930c8f6af932ce721e737379e9.html"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T16:25:08.613Z",
+      "duration_ms": 23.264,
+      "endpoint": "/WebResource.axd",
+      "host": "www.east-ayrshire.gov.uk",
+      "method": "GET",
+      "status": 304,
+      "query_params": {
+        "d": [
+          "pynGkmcFUV13He1Qd6_TZDiRNbXquXH6l8EAWG4zHSJYbO_M6WrncM75gMRfUxVCfI3vblwVqwfBDJ77XOn6tQ2"
+        ],
+        "t": [
+          "638628243619783110"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "cookie": "[cookies present]",
+        "referer": "https://www.east-ayrshire.gov.uk/Housing/RubbishAndRecycling/Your-bins-and-containers/bins-and-containers.aspx"
+      },
+      "response_headers": {
+        "cache-control": "public,no-cache",
+        "x-powered-by": "",
+        "x-testy-mctest": "east-ayrshire.gov.uk"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T16:25:08.613Z",
+      "duration_ms": 24.141,
+      "endpoint": "/ScriptResource.axd",
+      "host": "www.east-ayrshire.gov.uk",
+      "method": "GET",
+      "status": 304,
+      "query_params": {
+        "d": [
+          "uHIkleVeDJf4xS50Krz-yMUtQo1aXsyg1Vy-95_e90dwW8VCqf5vIb4BlooEItaq1cqCyKX9qov5ZwQqwIc1cufOy5NwgB28TEL-YAz_MB1ecxPxrpY_ms6KK8dGcnZsjgwgSElU0smkOPtt37aqA9397Is44mkfuB9HjXjGUfQ1"
+        ],
+        "t": [
+          "2a9d95e3"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "cookie": "[cookies present]",
+        "referer": "https://www.east-ayrshire.gov.uk/Housing/RubbishAndRecycling/Your-bins-and-containers/bins-and-containers.aspx"
+      },
+      "response_headers": {
+        "cache-control": "public,no-cache",
+        "x-powered-by": "",
+        "x-testy-mctest": "east-ayrshire.gov.uk"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T16:25:08.613Z",
+      "duration_ms": 24.489,
+      "endpoint": "/ScriptResource.axd",
+      "host": "www.east-ayrshire.gov.uk",
+      "method": "GET",
+      "status": 304,
+      "query_params": {
+        "d": [
+          "Jw6tUGWnA15YEa3ai3FadLCxIEGDIzTYWzOYsvFznfTSlYwFq89rqphlIvwO6xs9PSOb8h6YKtskxY7JfT3H_q4QGl92F1NN5NMtd0kIDHm4zgP6fhuWsreCEs1_rcpAqF09JhfdfH4F_RmSqT2WZdaS0CU7y-8LfIopeqXu9DA1"
+        ],
+        "t": [
+          "2a9d95e3"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "cookie": "[cookies present]",
+        "referer": "https://www.east-ayrshire.gov.uk/Housing/RubbishAndRecycling/Your-bins-and-containers/bins-and-containers.aspx"
+      },
+      "response_headers": {
+        "cache-control": "public,no-cache",
+        "x-powered-by": "",
+        "x-testy-mctest": "east-ayrshire.gov.uk"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T16:25:08.640Z",
+      "duration_ms": 16.465,
+      "endpoint": "/c/v",
+      "host": "apikeys.civiccomputing.com",
+      "method": "GET",
+      "status": 200,
+      "query_params": {
+        "d": [
+          "www.east-ayrshire.gov.uk"
+        ],
+        "p": [
+          "CookieControl Single-Site"
+        ],
+        "v": [
+          "9"
+        ],
+        "k": [
+          "9f8f94f5f9fe8f7489ec4ab1ff2db9d59a213ec6"
+        ],
+        "format": [
+          "json"
+        ]
+      },
+      "request_headers": {
+        "accept": "application/json, text/plain, */*",
+        "origin": "https://www.east-ayrshire.gov.uk",
+        "referer": "https://www.east-ayrshire.gov.uk/"
+      },
+      "response_headers": {
+        "cache-control": "max-age=3600, private, no-store",
+        "content-type": "application/json",
+        "x-apikeys": "hit",
+        "x-cf-test": "true",
+        "x-content-type-options": "nosniff",
+        "x-xss-protection": "1"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 310,
+        "content_ref": "7756139defb9d70e84c69101c302d0fa74983ae8.json"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T16:25:08.672Z",
+      "duration_ms": 610.3679999999999,
+      "endpoint": "/matomo.php",
+      "host": "www.matomo.east-ayrshire.gov.uk",
+      "method": "POST",
+      "status": 204,
+      "query_params": {
+        "action_name": [
+          "Bins and containers \u00b7 East Ayrshire Council"
+        ],
+        "idsite": [
+          "1"
+        ],
+        "rec": [
+          "1"
+        ],
+        "r": [
+          "983274"
+        ],
+        "h": [
+          "17"
+        ],
+        "m": [
+          "25"
+        ],
+        "s": [
+          "8"
+        ],
+        "url": [
+          "https://www.east-ayrshire.gov.uk/housing/rubbishandrecycling/your-bins-and-containers/bins-and-containers.aspx"
+        ],
+        "_id": [
+          "ae02cb9a0ec6d2ca"
+        ],
+        "_idn": [
+          "1"
+        ],
+        "send_image": [
+          "0"
+        ],
+        "_refts": [
+          "0"
+        ],
+        "pdf": [
+          "1"
+        ],
+        "qt": [
+          "0"
+        ],
+        "realp": [
+          "0"
+        ],
+        "wma": [
+          "0"
+        ],
+        "fla": [
+          "0"
+        ],
+        "java": [
+          "0"
+        ],
+        "ag": [
+          "0"
+        ],
+        "cookie": [
+          "1"
+        ],
+        "res": [
+          "800x600"
+        ],
+        "pv_id": [
+          "6yWwMi"
+        ],
+        "pf_net": [
+          "0"
+        ],
+        "pf_srv": [
+          "88"
+        ],
+        "pf_tfr": [
+          "0"
+        ],
+        "pf_dm1": [
+          "29"
+        ],
+        "pf_dm2": [
+          "14"
+        ],
+        "pf_onl": [
+          "0"
+        ],
+        "uadata": [
+          "{\"fullVersionList\":[{\"brand\":\"Not)A;Brand\",\"version\":\"8.0.0.0\"},{\"brand\":\"Chromium\",\"version\":\"138.0.7204.101\"},{\"brand\":\"Google Chrome\",\"version\":\"138.0.7204.101\"}],\"mobile\":false,\"model\":\"\",\"platform\":\"macOS\",\"platformVersion\":\"15.5.0\"}"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "content-type": "application/x-www-form-urlencoded; charset=utf-8",
+        "cookie": "[cookies present]",
+        "origin": "https://www.east-ayrshire.gov.uk",
+        "referer": "https://www.east-ayrshire.gov.uk/"
+      },
+      "response_headers": {
+        "content-type": "text/html; charset=UTF-8",
+        "x-powered-by": "ARR/3.0"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 0,
+        "content_ref": "da39a3ee5e6b4b0d3255bfef95601890afd80709.html"
+      }
     }
   ],
-  "navigation_events": [
-    {
-      "url": "https://www.east-ayrshire.gov.uk/Housing/RubbishAndRecycling/Rubbishandrecycling.aspx",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "text/html; charset=utf-8",
-      "size": 22274,
-      "timestamp": "2025-07-21T16:24:36.116Z"
+  "analysis": {
+    "total_requests": 32,
+    "unique_endpoints": 9,
+    "methods_used": [
+      "GET",
+      "POST"
+    ],
+    "status_codes": {
+      "200": 14,
+      "204": 6,
+      "304": 12
     },
-    {
-      "url": "https://apikeys.civiccomputing.com/c/v?d=www.east-ayrshire.gov.uk&p=CookieControl%20Single-Site&v=9&k=9f8f94f5f9fe8f7489ec4ab1ff2db9d59a213ec6&format=json",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json",
-      "size": 310,
-      "timestamp": "2025-07-21T16:24:36.492Z"
-    },
-    {
-      "url": "https://clapi.civiccomputing.com/1/log?k=9f8f94f5f9fe8f7489ec4ab1ff2db9d59a213ec6&d=www.east-ayrshire.gov.uk&u=A12AE335-FC62-402C-8AE1-D562AA28AE40&c={%22necessaryCookies%22:[],%22optionalCookies%22:{%22analytics%22:%22accepted%22},%22statement%22:{%22shown%22:true,%22updated%22:%2229/11/2019%22},%22consentDate%22:1753115077790,%22consentExpiry%22:90,%22interactedWith%22:true,%22user%22:%22A12AE335-FC62-402C-8AE1-D562AA28AE40%22}",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json",
-      "size": 13,
-      "timestamp": "2025-07-21T16:24:37.795Z"
-    },
-    {
-      "url": "https://www.matomo.east-ayrshire.gov.uk/matomo.php?action_name=Waste%20and%20recycling%20%C2%B7%20East%20Ayrshire%20Council&idsite=1&rec=1&r=330967&h=17&m=24&s=37&url=https%3A%2F%2Fwww.east-ayrshire.gov.uk%2Fhousing%2Frubbishandrecycling%2Frubbishandrecycling.aspx&_id=1abea662fbc5deeb&_idn=1&send_image=0&_refts=0&pdf=1&qt=0&realp=0&wma=0&fla=0&java=0&ag=0&cookie=1&res=800x600&pv_id=3JUrrV&pf_net=57&pf_srv=124&pf_tfr=1&pf_dm1=104&pf_dm2=90&pf_onl=1&uadata=%7B%22fullVersionList%22%3A%5B%7B%22brand%22%3A%22Not)A%3BBrand%22%2C%22version%22%3A%228.0.0.0%22%7D%2C%7B%22brand%22%3A%22Chromium%22%2C%22version%22%3A%22138.0.7204.101%22%7D%2C%7B%22brand%22%3A%22Google%20Chrome%22%2C%22version%22%3A%22138.0.7204.101%22%7D%5D%2C%22mobile%22%3Afalse%2C%22model%22%3A%22%22%2C%22platform%22%3A%22macOS%22%2C%22platformVersion%22%3A%2215.5.0%22%7D",
-      "method": "POST",
-      "status": 204,
-      "redirect_url": null,
-      "mime_type": "text/html; charset=UTF-8",
-      "size": 0,
-      "timestamp": "2025-07-21T16:24:37.902Z"
-    },
-    {
-      "url": "https://www.east-ayrshire.gov.uk/Housing/RubbishAndRecycling/Collection-days/ViewYourRecyclingCalendar.aspx",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "text/html; charset=utf-8",
-      "size": 21778,
-      "timestamp": "2025-07-21T16:24:40.070Z"
-    },
-    {
-      "url": "https://www.east-ayrshire.gov.uk/WebResource.axd?d=pynGkmcFUV13He1Qd6_TZDiRNbXquXH6l8EAWG4zHSJYbO_M6WrncM75gMRfUxVCfI3vblwVqwfBDJ77XOn6tQ2&t=638628243619783110",
-      "method": "GET",
-      "status": 304,
-      "redirect_url": null,
-      "mime_type": "x-unknown",
-      "size": -1,
-      "timestamp": "2025-07-21T16:24:40.127Z"
-    },
-    {
-      "url": "https://www.east-ayrshire.gov.uk/ScriptResource.axd?d=Jw6tUGWnA15YEa3ai3FadLCxIEGDIzTYWzOYsvFznfTSlYwFq89rqphlIvwO6xs9PSOb8h6YKtskxY7JfT3H_q4QGl92F1NN5NMtd0kIDHm4zgP6fhuWsreCEs1_rcpAqF09JhfdfH4F_RmSqT2WZdaS0CU7y-8LfIopeqXu9DA1&t=2a9d95e3",
-      "method": "GET",
-      "status": 304,
-      "redirect_url": null,
-      "mime_type": "x-unknown",
-      "size": -1,
-      "timestamp": "2025-07-21T16:24:40.127Z"
-    },
-    {
-      "url": "https://www.east-ayrshire.gov.uk/ScriptResource.axd?d=uHIkleVeDJf4xS50Krz-yMUtQo1aXsyg1Vy-95_e90dwW8VCqf5vIb4BlooEItaq1cqCyKX9qov5ZwQqwIc1cufOy5NwgB28TEL-YAz_MB1ecxPxrpY_ms6KK8dGcnZsjgwgSElU0smkOPtt37aqA9397Is44mkfuB9HjXjGUfQ1&t=2a9d95e3",
-      "method": "GET",
-      "status": 304,
-      "redirect_url": null,
-      "mime_type": "x-unknown",
-      "size": -1,
-      "timestamp": "2025-07-21T16:24:40.127Z"
-    },
-    {
-      "url": "https://apikeys.civiccomputing.com/c/v?d=www.east-ayrshire.gov.uk&p=CookieControl%20Single-Site&v=9&k=9f8f94f5f9fe8f7489ec4ab1ff2db9d59a213ec6&format=json",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json",
-      "size": 310,
-      "timestamp": "2025-07-21T16:24:40.168Z"
-    },
-    {
-      "url": "https://www.matomo.east-ayrshire.gov.uk/matomo.php?action_name=Recycling%20calendar%20%C2%B7%20East%20Ayrshire%20Council&idsite=1&rec=1&r=090828&h=17&m=24&s=40&url=https%3A%2F%2Fwww.east-ayrshire.gov.uk%2Fhousing%2Frubbishandrecycling%2Fcollection-days%2Fviewyourrecyclingcalendar.aspx&urlref=https%3A%2F%2Fwww.east-ayrshire.gov.uk%2FHousing%2FRubbishAndRecycling%2FRubbishandrecycling.aspx&_id=4fd71fb92a70c0ed&_idn=1&send_image=0&_refts=0&pdf=1&qt=0&realp=0&wma=0&fla=0&java=0&ag=0&cookie=1&res=800x600&pv_id=C4HP5P&pf_net=0&pf_srv=45&pf_tfr=1&pf_dm1=40&pf_dm2=12&pf_onl=0&uadata=%7B%22fullVersionList%22%3A%5B%7B%22brand%22%3A%22Not)A%3BBrand%22%2C%22version%22%3A%228.0.0.0%22%7D%2C%7B%22brand%22%3A%22Chromium%22%2C%22version%22%3A%22138.0.7204.101%22%7D%2C%7B%22brand%22%3A%22Google%20Chrome%22%2C%22version%22%3A%22138.0.7204.101%22%7D%5D%2C%22mobile%22%3Afalse%2C%22model%22%3A%22%22%2C%22platform%22%3A%22macOS%22%2C%22platformVersion%22%3A%2215.5.0%22%7D",
-      "method": "POST",
-      "status": 204,
-      "redirect_url": null,
-      "mime_type": "text/html; charset=UTF-8",
-      "size": 0,
-      "timestamp": "2025-07-21T16:24:40.190Z"
-    },
-    {
-      "url": "https://www.east-ayrshire.gov.uk/Housing/RubbishAndRecycling/Collection-days/ViewYourRecyclingCalendar.aspx?p=KA1%201AE",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "text/html; charset=utf-8",
-      "size": 26437,
-      "timestamp": "2025-07-21T16:24:45.589Z"
-    },
-    {
-      "url": "https://www.east-ayrshire.gov.uk/WebResource.axd?d=pynGkmcFUV13He1Qd6_TZDiRNbXquXH6l8EAWG4zHSJYbO_M6WrncM75gMRfUxVCfI3vblwVqwfBDJ77XOn6tQ2&t=638628243619783110",
-      "method": "GET",
-      "status": 304,
-      "redirect_url": null,
-      "mime_type": "x-unknown",
-      "size": -1,
-      "timestamp": "2025-07-21T16:24:45.789Z"
-    },
-    {
-      "url": "https://www.east-ayrshire.gov.uk/ScriptResource.axd?d=uHIkleVeDJf4xS50Krz-yMUtQo1aXsyg1Vy-95_e90dwW8VCqf5vIb4BlooEItaq1cqCyKX9qov5ZwQqwIc1cufOy5NwgB28TEL-YAz_MB1ecxPxrpY_ms6KK8dGcnZsjgwgSElU0smkOPtt37aqA9397Is44mkfuB9HjXjGUfQ1&t=2a9d95e3",
-      "method": "GET",
-      "status": 304,
-      "redirect_url": null,
-      "mime_type": "x-unknown",
-      "size": -1,
-      "timestamp": "2025-07-21T16:24:45.789Z"
-    },
-    {
-      "url": "https://www.east-ayrshire.gov.uk/ScriptResource.axd?d=Jw6tUGWnA15YEa3ai3FadLCxIEGDIzTYWzOYsvFznfTSlYwFq89rqphlIvwO6xs9PSOb8h6YKtskxY7JfT3H_q4QGl92F1NN5NMtd0kIDHm4zgP6fhuWsreCEs1_rcpAqF09JhfdfH4F_RmSqT2WZdaS0CU7y-8LfIopeqXu9DA1&t=2a9d95e3",
-      "method": "GET",
-      "status": 304,
-      "redirect_url": null,
-      "mime_type": "x-unknown",
-      "size": -1,
-      "timestamp": "2025-07-21T16:24:45.789Z"
-    },
-    {
-      "url": "https://apikeys.civiccomputing.com/c/v?d=www.east-ayrshire.gov.uk&p=CookieControl%20Single-Site&v=9&k=9f8f94f5f9fe8f7489ec4ab1ff2db9d59a213ec6&format=json",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json",
-      "size": 310,
-      "timestamp": "2025-07-21T16:24:45.814Z"
-    },
-    {
-      "url": "https://www.matomo.east-ayrshire.gov.uk/matomo.php?action_name=Recycling%20calendar%20%C2%B7%20East%20Ayrshire%20Council&idsite=1&rec=1&r=825046&h=17&m=24&s=45&url=https%3A%2F%2Fwww.east-ayrshire.gov.uk%2Fhousing%2Frubbishandrecycling%2Fcollection-days%2Fviewyourrecyclingcalendar.aspx%3Fp%3Dka1%25201ae&urlref=https%3A%2F%2Fwww.east-ayrshire.gov.uk%2FHousing%2FRubbishAndRecycling%2FCollection-days%2FViewYourRecyclingCalendar.aspx&_id=3254a9d7f42237cf&_idn=1&send_image=0&_refts=0&pdf=1&qt=0&realp=0&wma=0&fla=0&java=0&ag=0&cookie=1&res=800x600&pv_id=jcxmO2&pf_net=0&pf_srv=180&pf_tfr=0&pf_dm1=30&pf_dm2=15&pf_onl=0&uadata=%7B%22fullVersionList%22%3A%5B%7B%22brand%22%3A%22Not)A%3BBrand%22%2C%22version%22%3A%228.0.0.0%22%7D%2C%7B%22brand%22%3A%22Chromium%22%2C%22version%22%3A%22138.0.7204.101%22%7D%2C%7B%22brand%22%3A%22Google%20Chrome%22%2C%22version%22%3A%22138.0.7204.101%22%7D%5D%2C%22mobile%22%3Afalse%2C%22model%22%3A%22%22%2C%22platform%22%3A%22macOS%22%2C%22platformVersion%22%3A%2215.5.0%22%7D",
-      "method": "POST",
-      "status": 204,
-      "redirect_url": null,
-      "mime_type": "text/html; charset=UTF-8",
-      "size": 0,
-      "timestamp": "2025-07-21T16:24:45.843Z"
-    },
-    {
-      "url": "https://www.east-ayrshire.gov.uk/Housing/RubbishAndRecycling/Collection-days/ViewYourRecyclingCalendar.aspx?r=127072016",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "text/html; charset=utf-8",
-      "size": 53727,
-      "timestamp": "2025-07-21T16:24:51.668Z"
-    },
-    {
-      "url": "https://www.east-ayrshire.gov.uk/WebResource.axd?d=pynGkmcFUV13He1Qd6_TZDiRNbXquXH6l8EAWG4zHSJYbO_M6WrncM75gMRfUxVCfI3vblwVqwfBDJ77XOn6tQ2&t=638628243619783110",
-      "method": "GET",
-      "status": 304,
-      "redirect_url": null,
-      "mime_type": "x-unknown",
-      "size": -1,
-      "timestamp": "2025-07-21T16:24:52.321Z"
-    },
-    {
-      "url": "https://www.east-ayrshire.gov.uk/ScriptResource.axd?d=Jw6tUGWnA15YEa3ai3FadLCxIEGDIzTYWzOYsvFznfTSlYwFq89rqphlIvwO6xs9PSOb8h6YKtskxY7JfT3H_q4QGl92F1NN5NMtd0kIDHm4zgP6fhuWsreCEs1_rcpAqF09JhfdfH4F_RmSqT2WZdaS0CU7y-8LfIopeqXu9DA1&t=2a9d95e3",
-      "method": "GET",
-      "status": 304,
-      "redirect_url": null,
-      "mime_type": "x-unknown",
-      "size": -1,
-      "timestamp": "2025-07-21T16:24:52.322Z"
-    },
-    {
-      "url": "https://www.east-ayrshire.gov.uk/ScriptResource.axd?d=uHIkleVeDJf4xS50Krz-yMUtQo1aXsyg1Vy-95_e90dwW8VCqf5vIb4BlooEItaq1cqCyKX9qov5ZwQqwIc1cufOy5NwgB28TEL-YAz_MB1ecxPxrpY_ms6KK8dGcnZsjgwgSElU0smkOPtt37aqA9397Is44mkfuB9HjXjGUfQ1&t=2a9d95e3",
-      "method": "GET",
-      "status": 304,
-      "redirect_url": null,
-      "mime_type": "x-unknown",
-      "size": -1,
-      "timestamp": "2025-07-21T16:24:52.322Z"
-    },
-    {
-      "url": "https://apikeys.civiccomputing.com/c/v?d=www.east-ayrshire.gov.uk&p=CookieControl%20Single-Site&v=9&k=9f8f94f5f9fe8f7489ec4ab1ff2db9d59a213ec6&format=json",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json",
-      "size": 310,
-      "timestamp": "2025-07-21T16:24:52.371Z"
-    },
-    {
-      "url": "https://www.matomo.east-ayrshire.gov.uk/matomo.php?action_name=Recycling%20calendar%20%C2%B7%20East%20Ayrshire%20Council&idsite=1&rec=1&r=065044&h=17&m=24&s=52&url=https%3A%2F%2Fwww.east-ayrshire.gov.uk%2Fhousing%2Frubbishandrecycling%2Fcollection-days%2Fviewyourrecyclingcalendar.aspx%3Fr%3D127072016%23address&urlref=https%3A%2F%2Fwww.east-ayrshire.gov.uk%2FHousing%2FRubbishAndRecycling%2FCollection-days%2FViewYourRecyclingCalendar.aspx%3Fp%3DKA1%201AE&_id=71c02c9b6f765a29&_idn=1&send_image=0&_refts=0&pdf=1&qt=0&realp=0&wma=0&fla=0&java=0&ag=0&cookie=1&res=800x600&pv_id=vCPNoS&pf_net=0&pf_srv=630&pf_tfr=2&pf_dm1=58&uadata=%7B%22fullVersionList%22%3A%5B%7B%22brand%22%3A%22Not)A%3BBrand%22%2C%22version%22%3A%228.0.0.0%22%7D%2C%7B%22brand%22%3A%22Chromium%22%2C%22version%22%3A%22138.0.7204.101%22%7D%2C%7B%22brand%22%3A%22Google%20Chrome%22%2C%22version%22%3A%22138.0.7204.101%22%7D%5D%2C%22mobile%22%3Afalse%2C%22model%22%3A%22%22%2C%22platform%22%3A%22macOS%22%2C%22platformVersion%22%3A%2215.5.0%22%7D",
-      "method": "POST",
-      "status": 204,
-      "redirect_url": null,
-      "mime_type": "text/html; charset=UTF-8",
-      "size": 0,
-      "timestamp": "2025-07-21T16:24:52.393Z"
-    },
-    {
-      "url": "https://www.google.com/recaptcha/api2/anchor?ar=1&k=6LfDIZoiAAAAAMPAiijI6ymJWdhsoWh4SDU_k70y&co=aHR0cHM6Ly93d3cuZWFzdC1heXJzaGlyZS5nb3YudWs6NDQz&hl=en&v=3jpV4E_UA9gZWYy11LtggjoU&size=invisible&anchor-ms=20000&execute-ms=15000&cb=awqil1s7ktbj",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "text/html; charset=utf-8",
-      "size": 73535,
-      "timestamp": "2025-07-21T16:24:52.528Z"
-    },
-    {
-      "url": "https://www.east-ayrshire.gov.uk/Housing/RubbishAndRecycling/Collection-days/ViewYourRecyclingCalendar.aspx?p=KA1%201AE",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "text/html; charset=utf-8",
-      "size": 26437,
-      "timestamp": "2025-07-21T16:25:00.856Z"
-    },
-    {
-      "url": "https://apikeys.civiccomputing.com/c/v?d=www.east-ayrshire.gov.uk&p=CookieControl%20Single-Site&v=9&k=9f8f94f5f9fe8f7489ec4ab1ff2db9d59a213ec6&format=json",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json",
-      "size": 310,
-      "timestamp": "2025-07-21T16:25:01.073Z"
-    },
-    {
-      "url": "https://www.matomo.east-ayrshire.gov.uk/matomo.php?action_name=Recycling%20calendar%20%C2%B7%20East%20Ayrshire%20Council&idsite=1&rec=1&r=684385&h=17&m=25&s=1&url=https%3A%2F%2Fwww.east-ayrshire.gov.uk%2Fhousing%2Frubbishandrecycling%2Fcollection-days%2Fviewyourrecyclingcalendar.aspx%3Fp%3Dka1%25201ae&urlref=https%3A%2F%2Fwww.east-ayrshire.gov.uk%2FHousing%2FRubbishAndRecycling%2FCollection-days%2FViewYourRecyclingCalendar.aspx&_id=00d902578f88b9c9&_idn=1&send_image=0&_refts=0&pdf=1&qt=0&realp=0&wma=0&fla=0&java=0&ag=0&cookie=1&res=800x600&pv_id=hqfay3&pf_net=0&pf_srv=183&pf_tfr=0&pf_dm1=18&pf_dm2=10&pf_onl=0&uadata=%7B%22fullVersionList%22%3A%5B%7B%22brand%22%3A%22Not)A%3BBrand%22%2C%22version%22%3A%228.0.0.0%22%7D%2C%7B%22brand%22%3A%22Chromium%22%2C%22version%22%3A%22138.0.7204.101%22%7D%2C%7B%22brand%22%3A%22Google%20Chrome%22%2C%22version%22%3A%22138.0.7204.101%22%7D%5D%2C%22mobile%22%3Afalse%2C%22model%22%3A%22%22%2C%22platform%22%3A%22macOS%22%2C%22platformVersion%22%3A%2215.5.0%22%7D",
-      "method": "POST",
-      "status": 204,
-      "redirect_url": null,
-      "mime_type": "text/html; charset=UTF-8",
-      "size": 0,
-      "timestamp": "2025-07-21T16:25:01.114Z"
-    },
-    {
-      "url": "https://www.east-ayrshire.gov.uk/Housing/RubbishAndRecycling/Your-bins-and-containers/bins-and-containers.aspx",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "text/html; charset=utf-8",
-      "size": 24062,
-      "timestamp": "2025-07-21T16:25:08.513Z"
-    },
-    {
-      "url": "https://www.east-ayrshire.gov.uk/WebResource.axd?d=pynGkmcFUV13He1Qd6_TZDiRNbXquXH6l8EAWG4zHSJYbO_M6WrncM75gMRfUxVCfI3vblwVqwfBDJ77XOn6tQ2&t=638628243619783110",
-      "method": "GET",
-      "status": 304,
-      "redirect_url": null,
-      "mime_type": "x-unknown",
-      "size": -1,
-      "timestamp": "2025-07-21T16:25:08.613Z"
-    },
-    {
-      "url": "https://www.east-ayrshire.gov.uk/ScriptResource.axd?d=uHIkleVeDJf4xS50Krz-yMUtQo1aXsyg1Vy-95_e90dwW8VCqf5vIb4BlooEItaq1cqCyKX9qov5ZwQqwIc1cufOy5NwgB28TEL-YAz_MB1ecxPxrpY_ms6KK8dGcnZsjgwgSElU0smkOPtt37aqA9397Is44mkfuB9HjXjGUfQ1&t=2a9d95e3",
-      "method": "GET",
-      "status": 304,
-      "redirect_url": null,
-      "mime_type": "x-unknown",
-      "size": -1,
-      "timestamp": "2025-07-21T16:25:08.613Z"
-    },
-    {
-      "url": "https://www.east-ayrshire.gov.uk/ScriptResource.axd?d=Jw6tUGWnA15YEa3ai3FadLCxIEGDIzTYWzOYsvFznfTSlYwFq89rqphlIvwO6xs9PSOb8h6YKtskxY7JfT3H_q4QGl92F1NN5NMtd0kIDHm4zgP6fhuWsreCEs1_rcpAqF09JhfdfH4F_RmSqT2WZdaS0CU7y-8LfIopeqXu9DA1&t=2a9d95e3",
-      "method": "GET",
-      "status": 304,
-      "redirect_url": null,
-      "mime_type": "x-unknown",
-      "size": -1,
-      "timestamp": "2025-07-21T16:25:08.613Z"
-    },
-    {
-      "url": "https://apikeys.civiccomputing.com/c/v?d=www.east-ayrshire.gov.uk&p=CookieControl%20Single-Site&v=9&k=9f8f94f5f9fe8f7489ec4ab1ff2db9d59a213ec6&format=json",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json",
-      "size": 310,
-      "timestamp": "2025-07-21T16:25:08.640Z"
-    },
-    {
-      "url": "https://www.matomo.east-ayrshire.gov.uk/matomo.php?action_name=Bins%20and%20containers%20%C2%B7%20East%20Ayrshire%20Council&idsite=1&rec=1&r=983274&h=17&m=25&s=8&url=https%3A%2F%2Fwww.east-ayrshire.gov.uk%2Fhousing%2Frubbishandrecycling%2Fyour-bins-and-containers%2Fbins-and-containers.aspx&_id=ae02cb9a0ec6d2ca&_idn=1&send_image=0&_refts=0&pdf=1&qt=0&realp=0&wma=0&fla=0&java=0&ag=0&cookie=1&res=800x600&pv_id=6yWwMi&pf_net=0&pf_srv=88&pf_tfr=0&pf_dm1=29&pf_dm2=14&pf_onl=0&uadata=%7B%22fullVersionList%22%3A%5B%7B%22brand%22%3A%22Not)A%3BBrand%22%2C%22version%22%3A%228.0.0.0%22%7D%2C%7B%22brand%22%3A%22Chromium%22%2C%22version%22%3A%22138.0.7204.101%22%7D%2C%7B%22brand%22%3A%22Google%20Chrome%22%2C%22version%22%3A%22138.0.7204.101%22%7D%5D%2C%22mobile%22%3Afalse%2C%22model%22%3A%22%22%2C%22platform%22%3A%22macOS%22%2C%22platformVersion%22%3A%2215.5.0%22%7D",
-      "method": "POST",
-      "status": 204,
-      "redirect_url": null,
-      "mime_type": "text/html; charset=UTF-8",
-      "size": 0,
-      "timestamp": "2025-07-21T16:25:08.672Z"
-    }
-  ]
+    "endpoints_with_params": [
+      {
+        "endpoint": "/Housing/RubbishAndRecycling/{id}",
+        "method": "GET",
+        "query_params": [],
+        "path_params": true
+      },
+      {
+        "endpoint": "/c/v",
+        "method": "GET",
+        "query_params": [
+          "d",
+          "p",
+          "v",
+          "k",
+          "format"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/{id}/log",
+        "method": "GET",
+        "query_params": [
+          "k",
+          "d",
+          "u",
+          "c"
+        ],
+        "path_params": true
+      },
+      {
+        "endpoint": "/matomo.php",
+        "method": "POST",
+        "query_params": [
+          "action_name",
+          "idsite",
+          "rec",
+          "r",
+          "h",
+          "m",
+          "s",
+          "url",
+          "_id",
+          "_idn",
+          "send_image",
+          "_refts",
+          "pdf",
+          "qt",
+          "realp",
+          "wma",
+          "fla",
+          "java",
+          "ag",
+          "cookie",
+          "res",
+          "pv_id",
+          "pf_net",
+          "pf_srv",
+          "pf_tfr",
+          "pf_dm1",
+          "pf_dm2",
+          "pf_onl",
+          "uadata"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/Housing/RubbishAndRecycling/Collection-days/{id}",
+        "method": "GET",
+        "query_params": [],
+        "path_params": true
+      },
+      {
+        "endpoint": "/WebResource.axd",
+        "method": "GET",
+        "query_params": [
+          "d",
+          "t"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/ScriptResource.axd",
+        "method": "GET",
+        "query_params": [
+          "d",
+          "t"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/matomo.php",
+        "method": "POST",
+        "query_params": [
+          "action_name",
+          "idsite",
+          "rec",
+          "r",
+          "h",
+          "m",
+          "s",
+          "url",
+          "urlref",
+          "_id",
+          "_idn",
+          "send_image",
+          "_refts",
+          "pdf",
+          "qt",
+          "realp",
+          "wma",
+          "fla",
+          "java",
+          "ag",
+          "cookie",
+          "res",
+          "pv_id",
+          "pf_net",
+          "pf_srv",
+          "pf_tfr",
+          "pf_dm1",
+          "pf_dm2",
+          "pf_onl",
+          "uadata"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/Housing/RubbishAndRecycling/Collection-days/{id}",
+        "method": "GET",
+        "query_params": [
+          "p"
+        ],
+        "path_params": true
+      },
+      {
+        "endpoint": "/Housing/RubbishAndRecycling/Collection-days/{id}",
+        "method": "GET",
+        "query_params": [
+          "r"
+        ],
+        "path_params": true
+      },
+      {
+        "endpoint": "/recaptcha/api2/anchor",
+        "method": "GET",
+        "query_params": [
+          "ar",
+          "k",
+          "co",
+          "hl",
+          "v",
+          "size",
+          "anchor-ms",
+          "execute-ms",
+          "cb"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/matomo.php",
+        "method": "POST",
+        "query_params": [
+          "action_name",
+          "idsite",
+          "rec",
+          "r",
+          "h",
+          "m",
+          "s",
+          "url",
+          "urlref",
+          "_id",
+          "_idn",
+          "send_image",
+          "_refts",
+          "pdf",
+          "qt",
+          "realp",
+          "wma",
+          "fla",
+          "java",
+          "ag",
+          "cookie",
+          "res",
+          "pv_id",
+          "pf_net",
+          "pf_srv",
+          "pf_tfr",
+          "pf_dm1",
+          "uadata"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/Housing/RubbishAndRecycling/{id}/{id}",
+        "method": "GET",
+        "query_params": [],
+        "path_params": true
+      }
+    ],
+    "redirects": [],
+    "api_calls": [
+      {
+        "endpoint": "/c/v",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": [
+          "d",
+          "p",
+          "v",
+          "k",
+          "format"
+        ]
+      },
+      {
+        "endpoint": "/{id}/log",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": [
+          "k",
+          "d",
+          "u",
+          "c"
+        ]
+      },
+      {
+        "endpoint": "/c/v",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": [
+          "d",
+          "p",
+          "v",
+          "k",
+          "format"
+        ]
+      },
+      {
+        "endpoint": "/c/v",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": [
+          "d",
+          "p",
+          "v",
+          "k",
+          "format"
+        ]
+      },
+      {
+        "endpoint": "/c/v",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": [
+          "d",
+          "p",
+          "v",
+          "k",
+          "format"
+        ]
+      },
+      {
+        "endpoint": "/c/v",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": [
+          "d",
+          "p",
+          "v",
+          "k",
+          "format"
+        ]
+      },
+      {
+        "endpoint": "/c/v",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": [
+          "d",
+          "p",
+          "v",
+          "k",
+          "format"
+        ]
+      }
+    ],
+    "form_submissions": []
+  },
+  "grouped_by_endpoint": {
+    "/Housing/RubbishAndRecycling/{id}": [
+      {
+        "timestamp": "2025-07-21T16:24:36.116Z",
+        "duration_ms": 205.728,
+        "endpoint": "/Housing/RubbishAndRecycling/{id}",
+        "host": "www.east-ayrshire.gov.uk",
+        "method": "GET",
+        "status": 200,
+        "path_params": [
+          "Rubbishandrecycling.aspx"
+        ],
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7"
+        },
+        "response_headers": {
+          "cache-control": "no-cache, no-store, must-revalidate,no-cache",
+          "content-type": "text/html; charset=utf-8",
+          "set-cookie": "[cookies present]",
+          "x-depends": "675159 716270 672769 672768",
+          "x-node": "675301",
+          "x-powered-by": "",
+          "x-testy-mctest": "east-ayrshire.gov.uk"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 22274,
+          "compressed": true,
+          "content_ref": "955380a180054239197153d5ee3fe8cd0268716e.html"
+        }
+      }
+    ],
+    "/c/v": [
+      {
+        "timestamp": "2025-07-21T16:24:36.492Z",
+        "duration_ms": 56.29899999999999,
+        "endpoint": "/c/v",
+        "host": "apikeys.civiccomputing.com",
+        "method": "GET",
+        "status": 200,
+        "query_params": {
+          "d": [
+            "www.east-ayrshire.gov.uk"
+          ],
+          "p": [
+            "CookieControl Single-Site"
+          ],
+          "v": [
+            "9"
+          ],
+          "k": [
+            "9f8f94f5f9fe8f7489ec4ab1ff2db9d59a213ec6"
+          ],
+          "format": [
+            "json"
+          ]
+        },
+        "request_headers": {
+          "accept": "application/json, text/plain, */*",
+          "origin": "https://www.east-ayrshire.gov.uk",
+          "referer": "https://www.east-ayrshire.gov.uk/"
+        },
+        "response_headers": {
+          "cache-control": "max-age=3600, private, no-store",
+          "content-type": "application/json",
+          "x-apikeys": "hit",
+          "x-cf-test": "true",
+          "x-content-type-options": "nosniff",
+          "x-xss-protection": "1"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 310,
+          "content_ref": "7756139defb9d70e84c69101c302d0fa74983ae8.json"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T16:24:40.168Z",
+        "duration_ms": 14.972,
+        "endpoint": "/c/v",
+        "host": "apikeys.civiccomputing.com",
+        "method": "GET",
+        "status": 200,
+        "query_params": {
+          "d": [
+            "www.east-ayrshire.gov.uk"
+          ],
+          "p": [
+            "CookieControl Single-Site"
+          ],
+          "v": [
+            "9"
+          ],
+          "k": [
+            "9f8f94f5f9fe8f7489ec4ab1ff2db9d59a213ec6"
+          ],
+          "format": [
+            "json"
+          ]
+        },
+        "request_headers": {
+          "accept": "application/json, text/plain, */*",
+          "origin": "https://www.east-ayrshire.gov.uk",
+          "referer": "https://www.east-ayrshire.gov.uk/"
+        },
+        "response_headers": {
+          "cache-control": "max-age=3600, private, no-store",
+          "content-type": "application/json",
+          "x-apikeys": "hit",
+          "x-cf-test": "true",
+          "x-content-type-options": "nosniff",
+          "x-xss-protection": "1"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 310,
+          "content_ref": "7756139defb9d70e84c69101c302d0fa74983ae8.json"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T16:24:45.814Z",
+        "duration_ms": 15.248999999999999,
+        "endpoint": "/c/v",
+        "host": "apikeys.civiccomputing.com",
+        "method": "GET",
+        "status": 200,
+        "query_params": {
+          "d": [
+            "www.east-ayrshire.gov.uk"
+          ],
+          "p": [
+            "CookieControl Single-Site"
+          ],
+          "v": [
+            "9"
+          ],
+          "k": [
+            "9f8f94f5f9fe8f7489ec4ab1ff2db9d59a213ec6"
+          ],
+          "format": [
+            "json"
+          ]
+        },
+        "request_headers": {
+          "accept": "application/json, text/plain, */*",
+          "origin": "https://www.east-ayrshire.gov.uk",
+          "referer": "https://www.east-ayrshire.gov.uk/"
+        },
+        "response_headers": {
+          "cache-control": "max-age=3600, private, no-store",
+          "content-type": "application/json",
+          "x-apikeys": "hit",
+          "x-cf-test": "true",
+          "x-content-type-options": "nosniff",
+          "x-xss-protection": "1"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 310,
+          "content_ref": "7756139defb9d70e84c69101c302d0fa74983ae8.json"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T16:24:52.371Z",
+        "duration_ms": 15.046,
+        "endpoint": "/c/v",
+        "host": "apikeys.civiccomputing.com",
+        "method": "GET",
+        "status": 200,
+        "query_params": {
+          "d": [
+            "www.east-ayrshire.gov.uk"
+          ],
+          "p": [
+            "CookieControl Single-Site"
+          ],
+          "v": [
+            "9"
+          ],
+          "k": [
+            "9f8f94f5f9fe8f7489ec4ab1ff2db9d59a213ec6"
+          ],
+          "format": [
+            "json"
+          ]
+        },
+        "request_headers": {
+          "accept": "application/json, text/plain, */*",
+          "origin": "https://www.east-ayrshire.gov.uk",
+          "referer": "https://www.east-ayrshire.gov.uk/"
+        },
+        "response_headers": {
+          "cache-control": "max-age=3600, private, no-store",
+          "content-type": "application/json",
+          "x-apikeys": "hit",
+          "x-cf-test": "true",
+          "x-content-type-options": "nosniff",
+          "x-xss-protection": "1"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 310,
+          "content_ref": "7756139defb9d70e84c69101c302d0fa74983ae8.json"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T16:25:01.073Z",
+        "duration_ms": 17.075,
+        "endpoint": "/c/v",
+        "host": "apikeys.civiccomputing.com",
+        "method": "GET",
+        "status": 200,
+        "query_params": {
+          "d": [
+            "www.east-ayrshire.gov.uk"
+          ],
+          "p": [
+            "CookieControl Single-Site"
+          ],
+          "v": [
+            "9"
+          ],
+          "k": [
+            "9f8f94f5f9fe8f7489ec4ab1ff2db9d59a213ec6"
+          ],
+          "format": [
+            "json"
+          ]
+        },
+        "request_headers": {
+          "accept": "application/json, text/plain, */*",
+          "origin": "https://www.east-ayrshire.gov.uk",
+          "referer": "https://www.east-ayrshire.gov.uk/"
+        },
+        "response_headers": {
+          "cache-control": "max-age=3600, private, no-store",
+          "content-type": "application/json",
+          "x-apikeys": "hit",
+          "x-cf-test": "true",
+          "x-content-type-options": "nosniff",
+          "x-xss-protection": "1"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 310,
+          "content_ref": "7756139defb9d70e84c69101c302d0fa74983ae8.json"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T16:25:08.640Z",
+        "duration_ms": 16.465,
+        "endpoint": "/c/v",
+        "host": "apikeys.civiccomputing.com",
+        "method": "GET",
+        "status": 200,
+        "query_params": {
+          "d": [
+            "www.east-ayrshire.gov.uk"
+          ],
+          "p": [
+            "CookieControl Single-Site"
+          ],
+          "v": [
+            "9"
+          ],
+          "k": [
+            "9f8f94f5f9fe8f7489ec4ab1ff2db9d59a213ec6"
+          ],
+          "format": [
+            "json"
+          ]
+        },
+        "request_headers": {
+          "accept": "application/json, text/plain, */*",
+          "origin": "https://www.east-ayrshire.gov.uk",
+          "referer": "https://www.east-ayrshire.gov.uk/"
+        },
+        "response_headers": {
+          "cache-control": "max-age=3600, private, no-store",
+          "content-type": "application/json",
+          "x-apikeys": "hit",
+          "x-cf-test": "true",
+          "x-content-type-options": "nosniff",
+          "x-xss-protection": "1"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 310,
+          "content_ref": "7756139defb9d70e84c69101c302d0fa74983ae8.json"
+        }
+      }
+    ],
+    "/{id}/log": [
+      {
+        "timestamp": "2025-07-21T16:24:37.795Z",
+        "duration_ms": 107.243,
+        "endpoint": "/{id}/log",
+        "host": "clapi.civiccomputing.com",
+        "method": "GET",
+        "status": 200,
+        "path_params": [
+          "1"
+        ],
+        "query_params": {
+          "k": [
+            "9f8f94f5f9fe8f7489ec4ab1ff2db9d59a213ec6"
+          ],
+          "d": [
+            "www.east-ayrshire.gov.uk"
+          ],
+          "u": [
+            "A12AE335-FC62-402C-8AE1-D562AA28AE40"
+          ],
+          "c": [
+            "{\"necessaryCookies\":[],\"optionalCookies\":{\"analytics\":\"accepted\"},\"statement\":{\"shown\":true,\"updated\":\"29/11/2019\"},\"consentDate\":1753115077790,\"consentExpiry\":90,\"interactedWith\":true,\"user\":\"A12AE335-FC62-402C-8AE1-D562AA28AE40\"}"
+          ]
+        },
+        "request_headers": {
+          "accept": "application/json, text/plain, */*",
+          "origin": "https://www.east-ayrshire.gov.uk",
+          "referer": "https://www.east-ayrshire.gov.uk/"
+        },
+        "response_headers": {
+          "content-type": "application/json",
+          "x-content-type-options": "nosniff",
+          "x-xss-protection": "0"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 13,
+          "content_ref": "a26ad77888189cc5d6973bb818e45f448628c5c1.json"
+        }
+      }
+    ],
+    "/matomo.php": [
+      {
+        "timestamp": "2025-07-21T16:24:37.902Z",
+        "duration_ms": 723.529,
+        "endpoint": "/matomo.php",
+        "host": "www.matomo.east-ayrshire.gov.uk",
+        "method": "POST",
+        "status": 204,
+        "query_params": {
+          "action_name": [
+            "Waste and recycling \u00b7 East Ayrshire Council"
+          ],
+          "idsite": [
+            "1"
+          ],
+          "rec": [
+            "1"
+          ],
+          "r": [
+            "330967"
+          ],
+          "h": [
+            "17"
+          ],
+          "m": [
+            "24"
+          ],
+          "s": [
+            "37"
+          ],
+          "url": [
+            "https://www.east-ayrshire.gov.uk/housing/rubbishandrecycling/rubbishandrecycling.aspx"
+          ],
+          "_id": [
+            "1abea662fbc5deeb"
+          ],
+          "_idn": [
+            "1"
+          ],
+          "send_image": [
+            "0"
+          ],
+          "_refts": [
+            "0"
+          ],
+          "pdf": [
+            "1"
+          ],
+          "qt": [
+            "0"
+          ],
+          "realp": [
+            "0"
+          ],
+          "wma": [
+            "0"
+          ],
+          "fla": [
+            "0"
+          ],
+          "java": [
+            "0"
+          ],
+          "ag": [
+            "0"
+          ],
+          "cookie": [
+            "1"
+          ],
+          "res": [
+            "800x600"
+          ],
+          "pv_id": [
+            "3JUrrV"
+          ],
+          "pf_net": [
+            "57"
+          ],
+          "pf_srv": [
+            "124"
+          ],
+          "pf_tfr": [
+            "1"
+          ],
+          "pf_dm1": [
+            "104"
+          ],
+          "pf_dm2": [
+            "90"
+          ],
+          "pf_onl": [
+            "1"
+          ],
+          "uadata": [
+            "{\"fullVersionList\":[{\"brand\":\"Not)A;Brand\",\"version\":\"8.0.0.0\"},{\"brand\":\"Chromium\",\"version\":\"138.0.7204.101\"},{\"brand\":\"Google Chrome\",\"version\":\"138.0.7204.101\"}],\"mobile\":false,\"model\":\"\",\"platform\":\"macOS\",\"platformVersion\":\"15.5.0\"}"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "content-type": "application/x-www-form-urlencoded; charset=utf-8",
+          "cookie": "[cookies present]",
+          "origin": "https://www.east-ayrshire.gov.uk",
+          "referer": "https://www.east-ayrshire.gov.uk/"
+        },
+        "response_headers": {
+          "content-type": "text/html; charset=UTF-8",
+          "x-powered-by": "ARR/3.0"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 0,
+          "content_ref": "da39a3ee5e6b4b0d3255bfef95601890afd80709.html"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T16:24:40.190Z",
+        "duration_ms": 951.317,
+        "endpoint": "/matomo.php",
+        "host": "www.matomo.east-ayrshire.gov.uk",
+        "method": "POST",
+        "status": 204,
+        "query_params": {
+          "action_name": [
+            "Recycling calendar \u00b7 East Ayrshire Council"
+          ],
+          "idsite": [
+            "1"
+          ],
+          "rec": [
+            "1"
+          ],
+          "r": [
+            "090828"
+          ],
+          "h": [
+            "17"
+          ],
+          "m": [
+            "24"
+          ],
+          "s": [
+            "40"
+          ],
+          "url": [
+            "https://www.east-ayrshire.gov.uk/housing/rubbishandrecycling/collection-days/viewyourrecyclingcalendar.aspx"
+          ],
+          "urlref": [
+            "https://www.east-ayrshire.gov.uk/Housing/RubbishAndRecycling/Rubbishandrecycling.aspx"
+          ],
+          "_id": [
+            "4fd71fb92a70c0ed"
+          ],
+          "_idn": [
+            "1"
+          ],
+          "send_image": [
+            "0"
+          ],
+          "_refts": [
+            "0"
+          ],
+          "pdf": [
+            "1"
+          ],
+          "qt": [
+            "0"
+          ],
+          "realp": [
+            "0"
+          ],
+          "wma": [
+            "0"
+          ],
+          "fla": [
+            "0"
+          ],
+          "java": [
+            "0"
+          ],
+          "ag": [
+            "0"
+          ],
+          "cookie": [
+            "1"
+          ],
+          "res": [
+            "800x600"
+          ],
+          "pv_id": [
+            "C4HP5P"
+          ],
+          "pf_net": [
+            "0"
+          ],
+          "pf_srv": [
+            "45"
+          ],
+          "pf_tfr": [
+            "1"
+          ],
+          "pf_dm1": [
+            "40"
+          ],
+          "pf_dm2": [
+            "12"
+          ],
+          "pf_onl": [
+            "0"
+          ],
+          "uadata": [
+            "{\"fullVersionList\":[{\"brand\":\"Not)A;Brand\",\"version\":\"8.0.0.0\"},{\"brand\":\"Chromium\",\"version\":\"138.0.7204.101\"},{\"brand\":\"Google Chrome\",\"version\":\"138.0.7204.101\"}],\"mobile\":false,\"model\":\"\",\"platform\":\"macOS\",\"platformVersion\":\"15.5.0\"}"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "content-type": "application/x-www-form-urlencoded; charset=utf-8",
+          "cookie": "[cookies present]",
+          "origin": "https://www.east-ayrshire.gov.uk",
+          "referer": "https://www.east-ayrshire.gov.uk/"
+        },
+        "response_headers": {
+          "content-type": "text/html; charset=UTF-8",
+          "x-powered-by": "ARR/3.0"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 0,
+          "content_ref": "da39a3ee5e6b4b0d3255bfef95601890afd80709.html"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T16:24:45.843Z",
+        "duration_ms": 845.079,
+        "endpoint": "/matomo.php",
+        "host": "www.matomo.east-ayrshire.gov.uk",
+        "method": "POST",
+        "status": 204,
+        "query_params": {
+          "action_name": [
+            "Recycling calendar \u00b7 East Ayrshire Council"
+          ],
+          "idsite": [
+            "1"
+          ],
+          "rec": [
+            "1"
+          ],
+          "r": [
+            "825046"
+          ],
+          "h": [
+            "17"
+          ],
+          "m": [
+            "24"
+          ],
+          "s": [
+            "45"
+          ],
+          "url": [
+            "https://www.east-ayrshire.gov.uk/housing/rubbishandrecycling/collection-days/viewyourrecyclingcalendar.aspx?p=ka1%201ae"
+          ],
+          "urlref": [
+            "https://www.east-ayrshire.gov.uk/Housing/RubbishAndRecycling/Collection-days/ViewYourRecyclingCalendar.aspx"
+          ],
+          "_id": [
+            "3254a9d7f42237cf"
+          ],
+          "_idn": [
+            "1"
+          ],
+          "send_image": [
+            "0"
+          ],
+          "_refts": [
+            "0"
+          ],
+          "pdf": [
+            "1"
+          ],
+          "qt": [
+            "0"
+          ],
+          "realp": [
+            "0"
+          ],
+          "wma": [
+            "0"
+          ],
+          "fla": [
+            "0"
+          ],
+          "java": [
+            "0"
+          ],
+          "ag": [
+            "0"
+          ],
+          "cookie": [
+            "1"
+          ],
+          "res": [
+            "800x600"
+          ],
+          "pv_id": [
+            "jcxmO2"
+          ],
+          "pf_net": [
+            "0"
+          ],
+          "pf_srv": [
+            "180"
+          ],
+          "pf_tfr": [
+            "0"
+          ],
+          "pf_dm1": [
+            "30"
+          ],
+          "pf_dm2": [
+            "15"
+          ],
+          "pf_onl": [
+            "0"
+          ],
+          "uadata": [
+            "{\"fullVersionList\":[{\"brand\":\"Not)A;Brand\",\"version\":\"8.0.0.0\"},{\"brand\":\"Chromium\",\"version\":\"138.0.7204.101\"},{\"brand\":\"Google Chrome\",\"version\":\"138.0.7204.101\"}],\"mobile\":false,\"model\":\"\",\"platform\":\"macOS\",\"platformVersion\":\"15.5.0\"}"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "content-type": "application/x-www-form-urlencoded; charset=utf-8",
+          "cookie": "[cookies present]",
+          "origin": "https://www.east-ayrshire.gov.uk",
+          "referer": "https://www.east-ayrshire.gov.uk/"
+        },
+        "response_headers": {
+          "content-type": "text/html; charset=UTF-8",
+          "x-powered-by": "ARR/3.0"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 0,
+          "content_ref": "da39a3ee5e6b4b0d3255bfef95601890afd80709.html"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T16:24:52.393Z",
+        "duration_ms": 647.284,
+        "endpoint": "/matomo.php",
+        "host": "www.matomo.east-ayrshire.gov.uk",
+        "method": "POST",
+        "status": 204,
+        "query_params": {
+          "action_name": [
+            "Recycling calendar \u00b7 East Ayrshire Council"
+          ],
+          "idsite": [
+            "1"
+          ],
+          "rec": [
+            "1"
+          ],
+          "r": [
+            "065044"
+          ],
+          "h": [
+            "17"
+          ],
+          "m": [
+            "24"
+          ],
+          "s": [
+            "52"
+          ],
+          "url": [
+            "https://www.east-ayrshire.gov.uk/housing/rubbishandrecycling/collection-days/viewyourrecyclingcalendar.aspx?r=127072016#address"
+          ],
+          "urlref": [
+            "https://www.east-ayrshire.gov.uk/Housing/RubbishAndRecycling/Collection-days/ViewYourRecyclingCalendar.aspx?p=KA1 1AE"
+          ],
+          "_id": [
+            "71c02c9b6f765a29"
+          ],
+          "_idn": [
+            "1"
+          ],
+          "send_image": [
+            "0"
+          ],
+          "_refts": [
+            "0"
+          ],
+          "pdf": [
+            "1"
+          ],
+          "qt": [
+            "0"
+          ],
+          "realp": [
+            "0"
+          ],
+          "wma": [
+            "0"
+          ],
+          "fla": [
+            "0"
+          ],
+          "java": [
+            "0"
+          ],
+          "ag": [
+            "0"
+          ],
+          "cookie": [
+            "1"
+          ],
+          "res": [
+            "800x600"
+          ],
+          "pv_id": [
+            "vCPNoS"
+          ],
+          "pf_net": [
+            "0"
+          ],
+          "pf_srv": [
+            "630"
+          ],
+          "pf_tfr": [
+            "2"
+          ],
+          "pf_dm1": [
+            "58"
+          ],
+          "uadata": [
+            "{\"fullVersionList\":[{\"brand\":\"Not)A;Brand\",\"version\":\"8.0.0.0\"},{\"brand\":\"Chromium\",\"version\":\"138.0.7204.101\"},{\"brand\":\"Google Chrome\",\"version\":\"138.0.7204.101\"}],\"mobile\":false,\"model\":\"\",\"platform\":\"macOS\",\"platformVersion\":\"15.5.0\"}"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "content-type": "application/x-www-form-urlencoded; charset=utf-8",
+          "cookie": "[cookies present]",
+          "origin": "https://www.east-ayrshire.gov.uk",
+          "referer": "https://www.east-ayrshire.gov.uk/"
+        },
+        "response_headers": {
+          "content-type": "text/html; charset=UTF-8",
+          "x-powered-by": "ARR/3.0"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 0,
+          "content_ref": "da39a3ee5e6b4b0d3255bfef95601890afd80709.html"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T16:25:01.114Z",
+        "duration_ms": 668.215,
+        "endpoint": "/matomo.php",
+        "host": "www.matomo.east-ayrshire.gov.uk",
+        "method": "POST",
+        "status": 204,
+        "query_params": {
+          "action_name": [
+            "Recycling calendar \u00b7 East Ayrshire Council"
+          ],
+          "idsite": [
+            "1"
+          ],
+          "rec": [
+            "1"
+          ],
+          "r": [
+            "684385"
+          ],
+          "h": [
+            "17"
+          ],
+          "m": [
+            "25"
+          ],
+          "s": [
+            "1"
+          ],
+          "url": [
+            "https://www.east-ayrshire.gov.uk/housing/rubbishandrecycling/collection-days/viewyourrecyclingcalendar.aspx?p=ka1%201ae"
+          ],
+          "urlref": [
+            "https://www.east-ayrshire.gov.uk/Housing/RubbishAndRecycling/Collection-days/ViewYourRecyclingCalendar.aspx"
+          ],
+          "_id": [
+            "00d902578f88b9c9"
+          ],
+          "_idn": [
+            "1"
+          ],
+          "send_image": [
+            "0"
+          ],
+          "_refts": [
+            "0"
+          ],
+          "pdf": [
+            "1"
+          ],
+          "qt": [
+            "0"
+          ],
+          "realp": [
+            "0"
+          ],
+          "wma": [
+            "0"
+          ],
+          "fla": [
+            "0"
+          ],
+          "java": [
+            "0"
+          ],
+          "ag": [
+            "0"
+          ],
+          "cookie": [
+            "1"
+          ],
+          "res": [
+            "800x600"
+          ],
+          "pv_id": [
+            "hqfay3"
+          ],
+          "pf_net": [
+            "0"
+          ],
+          "pf_srv": [
+            "183"
+          ],
+          "pf_tfr": [
+            "0"
+          ],
+          "pf_dm1": [
+            "18"
+          ],
+          "pf_dm2": [
+            "10"
+          ],
+          "pf_onl": [
+            "0"
+          ],
+          "uadata": [
+            "{\"fullVersionList\":[{\"brand\":\"Not)A;Brand\",\"version\":\"8.0.0.0\"},{\"brand\":\"Chromium\",\"version\":\"138.0.7204.101\"},{\"brand\":\"Google Chrome\",\"version\":\"138.0.7204.101\"}],\"mobile\":false,\"model\":\"\",\"platform\":\"macOS\",\"platformVersion\":\"15.5.0\"}"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "content-type": "application/x-www-form-urlencoded; charset=utf-8",
+          "cookie": "[cookies present]",
+          "origin": "https://www.east-ayrshire.gov.uk",
+          "referer": "https://www.east-ayrshire.gov.uk/"
+        },
+        "response_headers": {
+          "content-type": "text/html; charset=UTF-8",
+          "x-powered-by": "ARR/3.0"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 0,
+          "content_ref": "da39a3ee5e6b4b0d3255bfef95601890afd80709.html"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T16:25:08.672Z",
+        "duration_ms": 610.3679999999999,
+        "endpoint": "/matomo.php",
+        "host": "www.matomo.east-ayrshire.gov.uk",
+        "method": "POST",
+        "status": 204,
+        "query_params": {
+          "action_name": [
+            "Bins and containers \u00b7 East Ayrshire Council"
+          ],
+          "idsite": [
+            "1"
+          ],
+          "rec": [
+            "1"
+          ],
+          "r": [
+            "983274"
+          ],
+          "h": [
+            "17"
+          ],
+          "m": [
+            "25"
+          ],
+          "s": [
+            "8"
+          ],
+          "url": [
+            "https://www.east-ayrshire.gov.uk/housing/rubbishandrecycling/your-bins-and-containers/bins-and-containers.aspx"
+          ],
+          "_id": [
+            "ae02cb9a0ec6d2ca"
+          ],
+          "_idn": [
+            "1"
+          ],
+          "send_image": [
+            "0"
+          ],
+          "_refts": [
+            "0"
+          ],
+          "pdf": [
+            "1"
+          ],
+          "qt": [
+            "0"
+          ],
+          "realp": [
+            "0"
+          ],
+          "wma": [
+            "0"
+          ],
+          "fla": [
+            "0"
+          ],
+          "java": [
+            "0"
+          ],
+          "ag": [
+            "0"
+          ],
+          "cookie": [
+            "1"
+          ],
+          "res": [
+            "800x600"
+          ],
+          "pv_id": [
+            "6yWwMi"
+          ],
+          "pf_net": [
+            "0"
+          ],
+          "pf_srv": [
+            "88"
+          ],
+          "pf_tfr": [
+            "0"
+          ],
+          "pf_dm1": [
+            "29"
+          ],
+          "pf_dm2": [
+            "14"
+          ],
+          "pf_onl": [
+            "0"
+          ],
+          "uadata": [
+            "{\"fullVersionList\":[{\"brand\":\"Not)A;Brand\",\"version\":\"8.0.0.0\"},{\"brand\":\"Chromium\",\"version\":\"138.0.7204.101\"},{\"brand\":\"Google Chrome\",\"version\":\"138.0.7204.101\"}],\"mobile\":false,\"model\":\"\",\"platform\":\"macOS\",\"platformVersion\":\"15.5.0\"}"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "content-type": "application/x-www-form-urlencoded; charset=utf-8",
+          "cookie": "[cookies present]",
+          "origin": "https://www.east-ayrshire.gov.uk",
+          "referer": "https://www.east-ayrshire.gov.uk/"
+        },
+        "response_headers": {
+          "content-type": "text/html; charset=UTF-8",
+          "x-powered-by": "ARR/3.0"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 0,
+          "content_ref": "da39a3ee5e6b4b0d3255bfef95601890afd80709.html"
+        }
+      }
+    ],
+    "/Housing/RubbishAndRecycling/Collection-days/{id}": [
+      {
+        "timestamp": "2025-07-21T16:24:40.070Z",
+        "duration_ms": 46.022,
+        "endpoint": "/Housing/RubbishAndRecycling/Collection-days/{id}",
+        "host": "www.east-ayrshire.gov.uk",
+        "method": "GET",
+        "status": 200,
+        "path_params": [
+          "ViewYourRecyclingCalendar.aspx"
+        ],
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+          "cookie": "[cookies present]",
+          "referer": "https://www.east-ayrshire.gov.uk/Housing/RubbishAndRecycling/Rubbishandrecycling.aspx"
+        },
+        "response_headers": {
+          "cache-control": "no-cache, no-store, must-revalidate,no-cache",
+          "content-type": "text/html; charset=utf-8",
+          "x-depends": "675119 92900 716270 672769 672768 706263 675122 672766",
+          "x-node": "649443",
+          "x-powered-by": "",
+          "x-testy-mctest": "east-ayrshire.gov.uk"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 21778,
+          "compressed": true,
+          "content_ref": "33700b46fda6d21120c8024b22346ead6365aae2.html"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T16:24:45.589Z",
+        "duration_ms": 180.538,
+        "endpoint": "/Housing/RubbishAndRecycling/Collection-days/{id}",
+        "host": "www.east-ayrshire.gov.uk",
+        "method": "GET",
+        "status": 200,
+        "path_params": [
+          "ViewYourRecyclingCalendar.aspx"
+        ],
+        "query_params": {
+          "p": [
+            "KA1 1AE"
+          ]
+        },
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+          "cookie": "[cookies present]",
+          "referer": "https://www.east-ayrshire.gov.uk/Housing/RubbishAndRecycling/Collection-days/ViewYourRecyclingCalendar.aspx"
+        },
+        "response_headers": {
+          "cache-control": "no-cache, no-store, must-revalidate,no-cache",
+          "content-type": "text/html; charset=utf-8",
+          "x-depends": "675119 92900 716270 672769 672768 706263 675122 672766",
+          "x-node": "649443",
+          "x-powered-by": "",
+          "x-testy-mctest": "east-ayrshire.gov.uk"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 26437,
+          "compressed": true,
+          "content_ref": "978a7c5d2ce7ae10fc7353eb29b339161d5ab20a.html"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T16:24:51.668Z",
+        "duration_ms": 631.67,
+        "endpoint": "/Housing/RubbishAndRecycling/Collection-days/{id}",
+        "host": "www.east-ayrshire.gov.uk",
+        "method": "GET",
+        "status": 200,
+        "path_params": [
+          "ViewYourRecyclingCalendar.aspx"
+        ],
+        "query_params": {
+          "r": [
+            "127072016"
+          ]
+        },
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+          "cookie": "[cookies present]",
+          "referer": "https://www.east-ayrshire.gov.uk/Housing/RubbishAndRecycling/Collection-days/ViewYourRecyclingCalendar.aspx?p=KA1%201AE"
+        },
+        "response_headers": {
+          "cache-control": "no-cache, no-store, must-revalidate,no-cache",
+          "content-type": "text/html; charset=utf-8",
+          "x-depends": "675119 92900 716270 672769 672768 706263 675122 672766",
+          "x-node": "649443",
+          "x-powered-by": "",
+          "x-testy-mctest": "east-ayrshire.gov.uk"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 53727,
+          "compressed": true,
+          "content_ref": "2b3cde2625ab3f48051607f07659e94571ad2fe6.html"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T16:25:00.856Z",
+        "duration_ms": 184.152,
+        "endpoint": "/Housing/RubbishAndRecycling/Collection-days/{id}",
+        "host": "www.east-ayrshire.gov.uk",
+        "method": "GET",
+        "status": 200,
+        "path_params": [
+          "ViewYourRecyclingCalendar.aspx"
+        ],
+        "query_params": {
+          "p": [
+            "KA1 1AE"
+          ]
+        },
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+          "cookie": "[cookies present]",
+          "referer": "https://www.east-ayrshire.gov.uk/Housing/RubbishAndRecycling/Collection-days/ViewYourRecyclingCalendar.aspx"
+        },
+        "response_headers": {
+          "cache-control": "no-cache, no-store, must-revalidate,no-cache",
+          "content-type": "text/html; charset=utf-8",
+          "x-depends": "675119 92900 716270 672769 672768 706263 675122 672766",
+          "x-node": "649443",
+          "x-powered-by": "",
+          "x-testy-mctest": "east-ayrshire.gov.uk"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 26437,
+          "compressed": true,
+          "content_ref": "92105629b88b87e7068c2a3fad9100b928f3f5f6.html"
+        }
+      }
+    ],
+    "/WebResource.axd": [
+      {
+        "timestamp": "2025-07-21T16:24:40.127Z",
+        "duration_ms": 22.296,
+        "endpoint": "/WebResource.axd",
+        "host": "www.east-ayrshire.gov.uk",
+        "method": "GET",
+        "status": 304,
+        "query_params": {
+          "d": [
+            "pynGkmcFUV13He1Qd6_TZDiRNbXquXH6l8EAWG4zHSJYbO_M6WrncM75gMRfUxVCfI3vblwVqwfBDJ77XOn6tQ2"
+          ],
+          "t": [
+            "638628243619783110"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "cookie": "[cookies present]",
+          "referer": "https://www.east-ayrshire.gov.uk/Housing/RubbishAndRecycling/Collection-days/ViewYourRecyclingCalendar.aspx"
+        },
+        "response_headers": {
+          "cache-control": "public,no-cache",
+          "x-powered-by": "",
+          "x-testy-mctest": "east-ayrshire.gov.uk"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T16:24:45.789Z",
+        "duration_ms": 22.899,
+        "endpoint": "/WebResource.axd",
+        "host": "www.east-ayrshire.gov.uk",
+        "method": "GET",
+        "status": 304,
+        "query_params": {
+          "d": [
+            "pynGkmcFUV13He1Qd6_TZDiRNbXquXH6l8EAWG4zHSJYbO_M6WrncM75gMRfUxVCfI3vblwVqwfBDJ77XOn6tQ2"
+          ],
+          "t": [
+            "638628243619783110"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "cookie": "[cookies present]",
+          "referer": "https://www.east-ayrshire.gov.uk/Housing/RubbishAndRecycling/Collection-days/ViewYourRecyclingCalendar.aspx?p=KA1%201AE"
+        },
+        "response_headers": {
+          "cache-control": "public,no-cache",
+          "x-powered-by": "",
+          "x-testy-mctest": "east-ayrshire.gov.uk"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T16:24:52.321Z",
+        "duration_ms": 23.497,
+        "endpoint": "/WebResource.axd",
+        "host": "www.east-ayrshire.gov.uk",
+        "method": "GET",
+        "status": 304,
+        "query_params": {
+          "d": [
+            "pynGkmcFUV13He1Qd6_TZDiRNbXquXH6l8EAWG4zHSJYbO_M6WrncM75gMRfUxVCfI3vblwVqwfBDJ77XOn6tQ2"
+          ],
+          "t": [
+            "638628243619783110"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "cookie": "[cookies present]",
+          "referer": "https://www.east-ayrshire.gov.uk/Housing/RubbishAndRecycling/Collection-days/ViewYourRecyclingCalendar.aspx?r=127072016"
+        },
+        "response_headers": {
+          "cache-control": "public,no-cache",
+          "x-powered-by": "",
+          "x-testy-mctest": "east-ayrshire.gov.uk"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T16:25:08.613Z",
+        "duration_ms": 23.264,
+        "endpoint": "/WebResource.axd",
+        "host": "www.east-ayrshire.gov.uk",
+        "method": "GET",
+        "status": 304,
+        "query_params": {
+          "d": [
+            "pynGkmcFUV13He1Qd6_TZDiRNbXquXH6l8EAWG4zHSJYbO_M6WrncM75gMRfUxVCfI3vblwVqwfBDJ77XOn6tQ2"
+          ],
+          "t": [
+            "638628243619783110"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "cookie": "[cookies present]",
+          "referer": "https://www.east-ayrshire.gov.uk/Housing/RubbishAndRecycling/Your-bins-and-containers/bins-and-containers.aspx"
+        },
+        "response_headers": {
+          "cache-control": "public,no-cache",
+          "x-powered-by": "",
+          "x-testy-mctest": "east-ayrshire.gov.uk"
+        }
+      }
+    ],
+    "/ScriptResource.axd": [
+      {
+        "timestamp": "2025-07-21T16:24:40.127Z",
+        "duration_ms": 33.544000000000004,
+        "endpoint": "/ScriptResource.axd",
+        "host": "www.east-ayrshire.gov.uk",
+        "method": "GET",
+        "status": 304,
+        "query_params": {
+          "d": [
+            "Jw6tUGWnA15YEa3ai3FadLCxIEGDIzTYWzOYsvFznfTSlYwFq89rqphlIvwO6xs9PSOb8h6YKtskxY7JfT3H_q4QGl92F1NN5NMtd0kIDHm4zgP6fhuWsreCEs1_rcpAqF09JhfdfH4F_RmSqT2WZdaS0CU7y-8LfIopeqXu9DA1"
+          ],
+          "t": [
+            "2a9d95e3"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "cookie": "[cookies present]",
+          "referer": "https://www.east-ayrshire.gov.uk/Housing/RubbishAndRecycling/Collection-days/ViewYourRecyclingCalendar.aspx"
+        },
+        "response_headers": {
+          "cache-control": "public,no-cache",
+          "x-powered-by": "",
+          "x-testy-mctest": "east-ayrshire.gov.uk"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T16:24:40.127Z",
+        "duration_ms": 33.861999999999995,
+        "endpoint": "/ScriptResource.axd",
+        "host": "www.east-ayrshire.gov.uk",
+        "method": "GET",
+        "status": 304,
+        "query_params": {
+          "d": [
+            "uHIkleVeDJf4xS50Krz-yMUtQo1aXsyg1Vy-95_e90dwW8VCqf5vIb4BlooEItaq1cqCyKX9qov5ZwQqwIc1cufOy5NwgB28TEL-YAz_MB1ecxPxrpY_ms6KK8dGcnZsjgwgSElU0smkOPtt37aqA9397Is44mkfuB9HjXjGUfQ1"
+          ],
+          "t": [
+            "2a9d95e3"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "cookie": "[cookies present]",
+          "referer": "https://www.east-ayrshire.gov.uk/Housing/RubbishAndRecycling/Collection-days/ViewYourRecyclingCalendar.aspx"
+        },
+        "response_headers": {
+          "cache-control": "public,no-cache",
+          "x-powered-by": "",
+          "x-testy-mctest": "east-ayrshire.gov.uk"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T16:24:45.789Z",
+        "duration_ms": 23.739,
+        "endpoint": "/ScriptResource.axd",
+        "host": "www.east-ayrshire.gov.uk",
+        "method": "GET",
+        "status": 304,
+        "query_params": {
+          "d": [
+            "uHIkleVeDJf4xS50Krz-yMUtQo1aXsyg1Vy-95_e90dwW8VCqf5vIb4BlooEItaq1cqCyKX9qov5ZwQqwIc1cufOy5NwgB28TEL-YAz_MB1ecxPxrpY_ms6KK8dGcnZsjgwgSElU0smkOPtt37aqA9397Is44mkfuB9HjXjGUfQ1"
+          ],
+          "t": [
+            "2a9d95e3"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "cookie": "[cookies present]",
+          "referer": "https://www.east-ayrshire.gov.uk/Housing/RubbishAndRecycling/Collection-days/ViewYourRecyclingCalendar.aspx?p=KA1%201AE"
+        },
+        "response_headers": {
+          "cache-control": "public,no-cache",
+          "x-powered-by": "",
+          "x-testy-mctest": "east-ayrshire.gov.uk"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T16:24:45.789Z",
+        "duration_ms": 25.405,
+        "endpoint": "/ScriptResource.axd",
+        "host": "www.east-ayrshire.gov.uk",
+        "method": "GET",
+        "status": 304,
+        "query_params": {
+          "d": [
+            "Jw6tUGWnA15YEa3ai3FadLCxIEGDIzTYWzOYsvFznfTSlYwFq89rqphlIvwO6xs9PSOb8h6YKtskxY7JfT3H_q4QGl92F1NN5NMtd0kIDHm4zgP6fhuWsreCEs1_rcpAqF09JhfdfH4F_RmSqT2WZdaS0CU7y-8LfIopeqXu9DA1"
+          ],
+          "t": [
+            "2a9d95e3"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "cookie": "[cookies present]",
+          "referer": "https://www.east-ayrshire.gov.uk/Housing/RubbishAndRecycling/Collection-days/ViewYourRecyclingCalendar.aspx?p=KA1%201AE"
+        },
+        "response_headers": {
+          "cache-control": "public,no-cache",
+          "x-powered-by": "",
+          "x-testy-mctest": "east-ayrshire.gov.uk"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T16:24:52.322Z",
+        "duration_ms": 24.622,
+        "endpoint": "/ScriptResource.axd",
+        "host": "www.east-ayrshire.gov.uk",
+        "method": "GET",
+        "status": 304,
+        "query_params": {
+          "d": [
+            "Jw6tUGWnA15YEa3ai3FadLCxIEGDIzTYWzOYsvFznfTSlYwFq89rqphlIvwO6xs9PSOb8h6YKtskxY7JfT3H_q4QGl92F1NN5NMtd0kIDHm4zgP6fhuWsreCEs1_rcpAqF09JhfdfH4F_RmSqT2WZdaS0CU7y-8LfIopeqXu9DA1"
+          ],
+          "t": [
+            "2a9d95e3"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "cookie": "[cookies present]",
+          "referer": "https://www.east-ayrshire.gov.uk/Housing/RubbishAndRecycling/Collection-days/ViewYourRecyclingCalendar.aspx?r=127072016"
+        },
+        "response_headers": {
+          "cache-control": "public,no-cache",
+          "x-powered-by": "",
+          "x-testy-mctest": "east-ayrshire.gov.uk"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T16:24:52.322Z",
+        "duration_ms": 24.772,
+        "endpoint": "/ScriptResource.axd",
+        "host": "www.east-ayrshire.gov.uk",
+        "method": "GET",
+        "status": 304,
+        "query_params": {
+          "d": [
+            "uHIkleVeDJf4xS50Krz-yMUtQo1aXsyg1Vy-95_e90dwW8VCqf5vIb4BlooEItaq1cqCyKX9qov5ZwQqwIc1cufOy5NwgB28TEL-YAz_MB1ecxPxrpY_ms6KK8dGcnZsjgwgSElU0smkOPtt37aqA9397Is44mkfuB9HjXjGUfQ1"
+          ],
+          "t": [
+            "2a9d95e3"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "cookie": "[cookies present]",
+          "referer": "https://www.east-ayrshire.gov.uk/Housing/RubbishAndRecycling/Collection-days/ViewYourRecyclingCalendar.aspx?r=127072016"
+        },
+        "response_headers": {
+          "cache-control": "public,no-cache",
+          "x-powered-by": "",
+          "x-testy-mctest": "east-ayrshire.gov.uk"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T16:25:08.613Z",
+        "duration_ms": 24.141,
+        "endpoint": "/ScriptResource.axd",
+        "host": "www.east-ayrshire.gov.uk",
+        "method": "GET",
+        "status": 304,
+        "query_params": {
+          "d": [
+            "uHIkleVeDJf4xS50Krz-yMUtQo1aXsyg1Vy-95_e90dwW8VCqf5vIb4BlooEItaq1cqCyKX9qov5ZwQqwIc1cufOy5NwgB28TEL-YAz_MB1ecxPxrpY_ms6KK8dGcnZsjgwgSElU0smkOPtt37aqA9397Is44mkfuB9HjXjGUfQ1"
+          ],
+          "t": [
+            "2a9d95e3"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "cookie": "[cookies present]",
+          "referer": "https://www.east-ayrshire.gov.uk/Housing/RubbishAndRecycling/Your-bins-and-containers/bins-and-containers.aspx"
+        },
+        "response_headers": {
+          "cache-control": "public,no-cache",
+          "x-powered-by": "",
+          "x-testy-mctest": "east-ayrshire.gov.uk"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T16:25:08.613Z",
+        "duration_ms": 24.489,
+        "endpoint": "/ScriptResource.axd",
+        "host": "www.east-ayrshire.gov.uk",
+        "method": "GET",
+        "status": 304,
+        "query_params": {
+          "d": [
+            "Jw6tUGWnA15YEa3ai3FadLCxIEGDIzTYWzOYsvFznfTSlYwFq89rqphlIvwO6xs9PSOb8h6YKtskxY7JfT3H_q4QGl92F1NN5NMtd0kIDHm4zgP6fhuWsreCEs1_rcpAqF09JhfdfH4F_RmSqT2WZdaS0CU7y-8LfIopeqXu9DA1"
+          ],
+          "t": [
+            "2a9d95e3"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "cookie": "[cookies present]",
+          "referer": "https://www.east-ayrshire.gov.uk/Housing/RubbishAndRecycling/Your-bins-and-containers/bins-and-containers.aspx"
+        },
+        "response_headers": {
+          "cache-control": "public,no-cache",
+          "x-powered-by": "",
+          "x-testy-mctest": "east-ayrshire.gov.uk"
+        }
+      }
+    ],
+    "/recaptcha/api2/anchor": [
+      {
+        "timestamp": "2025-07-21T16:24:52.528Z",
+        "duration_ms": 64.914,
+        "endpoint": "/recaptcha/api2/anchor",
+        "host": "www.google.com",
+        "method": "GET",
+        "status": 200,
+        "query_params": {
+          "ar": [
+            "1"
+          ],
+          "k": [
+            "6LfDIZoiAAAAAMPAiijI6ymJWdhsoWh4SDU_k70y"
+          ],
+          "co": [
+            "aHR0cHM6Ly93d3cuZWFzdC1heXJzaGlyZS5nb3YudWs6NDQz"
+          ],
+          "hl": [
+            "en"
+          ],
+          "v": [
+            "3jpV4E_UA9gZWYy11LtggjoU"
+          ],
+          "size": [
+            "invisible"
+          ],
+          "anchor-ms": [
+            "20000"
+          ],
+          "execute-ms": [
+            "15000"
+          ],
+          "cb": [
+            "awqil1s7ktbj"
+          ]
+        },
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+          "cookie": "[cookies present]",
+          "referer": "https://www.east-ayrshire.gov.uk/",
+          "x-browser-channel": "stable",
+          "x-browser-copyright": "Copyright 2025 Google LLC. All rights reserved.",
+          "x-browser-validation": "9Fs9UJjMhwc/kTw0uGkObIyMhWI=",
+          "x-browser-year": "2025",
+          "x-client-data": "CMiXywE="
+        },
+        "response_headers": {
+          "cache-control": "no-cache, no-store, max-age=0, must-revalidate",
+          "content-type": "text/html; charset=utf-8",
+          "x-content-type-options": "nosniff",
+          "x-xss-protection": "0"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 73535,
+          "compressed": true,
+          "content_ref": "0f1d331cc46f958ebc967fda0864226f3dc410e8.html"
+        }
+      }
+    ],
+    "/Housing/RubbishAndRecycling/{id}/{id}": [
+      {
+        "timestamp": "2025-07-21T16:25:08.513Z",
+        "duration_ms": 88.703,
+        "endpoint": "/Housing/RubbishAndRecycling/{id}/{id}",
+        "host": "www.east-ayrshire.gov.uk",
+        "method": "GET",
+        "status": 200,
+        "path_params": [
+          "Your-bins-and-containers",
+          "bins-and-containers.aspx"
+        ],
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+          "cookie": "[cookies present]"
+        },
+        "response_headers": {
+          "cache-control": "no-cache, no-store, must-revalidate,no-cache",
+          "content-type": "text/html; charset=utf-8",
+          "x-depends": "675159 92900 716270 672769 672768",
+          "x-node": "695891",
+          "x-powered-by": "",
+          "x-testy-mctest": "east-ayrshire.gov.uk"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 24062,
+          "compressed": true,
+          "content_ref": "e35e3325da19cb930c8f6af932ce721e737379e9.html"
+        }
+      }
+    ]
+  }
 }

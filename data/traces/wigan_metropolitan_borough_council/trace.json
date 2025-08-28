@@ -1,292 +1,3346 @@
 {
-  "metadata": {
-    "trace_name": "wigan_metropolitan_borough_council",
-    "processed_at": "2025-08-26 18:44:24",
-    "workflow_steps_count": 5,
-    "navigation_events_count": 22
-  },
-  "scraping_patterns": {
-    "login_detected": false,
-    "form_submissions": 3,
-    "navigation_count": 1,
-    "unique_domains": [
-      "geolocation.onetrust.com",
-      "cdn.cookielaw.org",
-      "apps.wigan.gov.uk",
-      "translate.googleapis.com"
-    ],
-    "api_endpoints": [
-      "https://cdn.cookielaw.org/consent/01aceaf6-57ad-4799-b7d2-33dc0226db73/01aceaf6-57ad-4799-b7d2-33dc0226db73.json",
-      "https://cdn.cookielaw.org/consent/01aceaf6-57ad-4799-b7d2-33dc0226db73/c8e437ef-640b-43c9-b093-dc6559f22105/en.json",
-      "https://cdn.cookielaw.org/scripttemplates/6.31.0/assets/otFloatingRounded.json",
-      "https://cdn.cookielaw.org/scripttemplates/6.31.0/assets/v2/otPcPanel.json",
-      "https://cdn.cookielaw.org/scripttemplates/6.31.0/assets/otCookieSettingsButton.json",
-      "https://cdn.cookielaw.org/consent/01aceaf6-57ad-4799-b7d2-33dc0226db73/01aceaf6-57ad-4799-b7d2-33dc0226db73.json",
-      "https://cdn.cookielaw.org/consent/01aceaf6-57ad-4799-b7d2-33dc0226db73/c8e437ef-640b-43c9-b093-dc6559f22105/en.json",
-      "https://cdn.cookielaw.org/scripttemplates/6.31.0/assets/otFloatingRounded.json",
-      "https://cdn.cookielaw.org/scripttemplates/6.31.0/assets/v2/otPcPanel.json",
-      "https://cdn.cookielaw.org/scripttemplates/6.31.0/assets/otCookieSettingsButton.json",
-      "https://cdn.cookielaw.org/consent/01aceaf6-57ad-4799-b7d2-33dc0226db73/01aceaf6-57ad-4799-b7d2-33dc0226db73.json",
-      "https://cdn.cookielaw.org/consent/01aceaf6-57ad-4799-b7d2-33dc0226db73/c8e437ef-640b-43c9-b093-dc6559f22105/en.json",
-      "https://cdn.cookielaw.org/scripttemplates/6.31.0/assets/otFloatingRounded.json",
-      "https://cdn.cookielaw.org/scripttemplates/6.31.0/assets/v2/otPcPanel.json",
-      "https://cdn.cookielaw.org/scripttemplates/6.31.0/assets/otCookieSettingsButton.json"
-    ],
-    "data_extraction_indicators": []
-  },
-  "workflow_steps": [
+  "entries": [
     {
-      "action": "goto",
-      "target": "https://apps.wigan.gov.uk/MyNeighbourhood/",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
-    },
-    {
-      "action": "click",
-      "target": "aria-ref=e175 >> internal:describe=\"Accept All Cookies\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
-    },
-    {
-      "action": "fill",
-      "target": "aria-ref=e55 >> internal:describe=\"textbox\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0,
-      "value": "M28 1AF"
-    },
-    {
-      "action": "click",
-      "target": "aria-ref=e56 >> internal:describe=\"Search button\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
-    },
-    {
-      "action": "click",
-      "target": "aria-ref=e313 >> internal:describe=\"150 Mosley Common Road, Worsley, Manchester, M28 1AF\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
-    }
-  ],
-  "navigation_events": [
-    {
-      "url": "https://apps.wigan.gov.uk/MyNeighbourhood/",
+      "timestamp": "2025-07-21T08:06:39.870Z",
+      "duration_ms": 58.782000000000004,
+      "endpoint": "/MyNeighbourhood",
+      "host": "apps.wigan.gov.uk",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "text/html; charset=utf-8",
-      "size": 19655,
-      "timestamp": "2025-07-21T08:06:39.870Z"
-    },
-    {
-      "url": "https://cdn.cookielaw.org/consent/01aceaf6-57ad-4799-b7d2-33dc0226db73/01aceaf6-57ad-4799-b7d2-33dc0226db73.json",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json",
-      "size": 3554,
-      "timestamp": "2025-07-21T08:06:41.013Z"
-    },
-    {
-      "url": "https://geolocation.onetrust.com/cookieconsentpub/v1/geo/location",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json",
-      "size": 69,
-      "timestamp": "2025-07-21T08:06:41.056Z"
-    },
-    {
-      "url": "https://cdn.cookielaw.org/consent/01aceaf6-57ad-4799-b7d2-33dc0226db73/c8e437ef-640b-43c9-b093-dc6559f22105/en.json",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json",
-      "size": 56940,
-      "timestamp": "2025-07-21T08:06:41.170Z"
-    },
-    {
-      "url": "https://cdn.cookielaw.org/scripttemplates/6.31.0/assets/otFloatingRounded.json",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json",
-      "size": 9894,
-      "timestamp": "2025-07-21T08:06:41.203Z"
-    },
-    {
-      "url": "https://cdn.cookielaw.org/scripttemplates/6.31.0/assets/v2/otPcPanel.json",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json",
-      "size": 49022,
-      "timestamp": "2025-07-21T08:06:41.204Z"
-    },
-    {
-      "url": "https://cdn.cookielaw.org/scripttemplates/6.31.0/assets/otCookieSettingsButton.json",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json",
-      "size": 4753,
-      "timestamp": "2025-07-21T08:06:41.204Z"
-    },
-    {
-      "url": "https://translate.googleapis.com/element/log?format=json&hasfast=true&authuser=0",
-      "method": "POST",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "text/plain; charset=UTF-8",
-      "size": 131,
-      "timestamp": "2025-07-21T08:06:51.106Z"
-    },
-    {
-      "url": "https://apps.wigan.gov.uk/MyNeighbourhood/",
-      "method": "POST",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "text/html; charset=utf-8",
-      "size": 29553,
-      "timestamp": "2025-07-21T08:06:57.027Z",
-      "form_data": {
-        "__VIEWSTATE": "Y3en0sALuTErLvY9QrRg+eJXHrLKgedAkOBh8X0O807zOmf8iV227ISQ8aiix/iOQXJg1c0T+njGz3PlpaDK+krUQZpG5/QvFSVqyNC50HCY4oA+krbi9uBxm27hF5xtbFsMB0q8pjoYWHta+1y8jhdzD7TXOkAjqJvT+Wmqd/ngkwa+D308vKc4uWLUNkic",
-        "__VIEWSTATEGENERATOR": "F01E8114",
-        "__EVENTVALIDATION": "v8zEUQixIzYh58QNG0XnSzH0kKTxMlLG5Ge69IoXWATrH3kbzFNmOuKSyuD3y94EQJX4NE7QOl6DA+Aq/p+qB6BrAop4tznAUNXRBtAp6KC822Y3H5i38LFNaHaIFBML7p8Ra7Bpd76Gx2b6eVQ06w==",
-        "ctl00$ContentPlaceHolder1$txtPostcode": "M28 1AF",
-        "ctl00$ContentPlaceHolder1$btnPostcodeSearch": "Search"
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7"
+      },
+      "response_headers": {
+        "cache-control": "private",
+        "content-type": "text/html; charset=utf-8",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "DENY",
+        "x-xss-protection": "0; mode=block;"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 19655,
+        "compressed": true,
+        "content_ref": "65303fb461c0caeac15899c3bf4ec241292e5ef6.html"
       }
     },
     {
-      "url": "https://cdn.cookielaw.org/consent/01aceaf6-57ad-4799-b7d2-33dc0226db73/01aceaf6-57ad-4799-b7d2-33dc0226db73.json",
+      "timestamp": "2025-07-21T08:06:41.013Z",
+      "duration_ms": 53.505,
+      "endpoint": "/consent/{id}/{id}",
+      "host": "cdn.cookielaw.org",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json",
-      "size": 3554,
-      "timestamp": "2025-07-21T08:06:57.206Z"
+      "path_params": [
+        "01aceaf6-57ad-4799-b7d2-33dc0226db73",
+        "01aceaf6-57ad-4799-b7d2-33dc0226db73.json"
+      ],
+      "request_headers": {
+        "accept": "*/*",
+        "origin": "https://apps.wigan.gov.uk"
+      },
+      "response_headers": {
+        "cache-control": "public, max-age=86400",
+        "content-type": "application/json",
+        "x-content-type-options": "nosniff",
+        "x-ms-blob-type": "BlockBlob",
+        "x-ms-lease-status": "unlocked",
+        "x-ms-request-id": "689385f4-b01e-00fb-441f-f35b90000000",
+        "x-ms-version": "2009-09-19",
+        "x-onetrust-isbot": "true"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 3554,
+        "compressed": true,
+        "content_ref": "7e3acdfd5a9e4eb229d7376eed280f6294a867dc.json"
+      }
     },
     {
-      "url": "https://geolocation.onetrust.com/cookieconsentpub/v1/geo/location",
+      "timestamp": "2025-07-21T08:06:41.056Z",
+      "duration_ms": 77.759,
+      "endpoint": "/cookieconsentpub/v1/geo/location",
+      "host": "geolocation.onetrust.com",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json",
-      "size": 69,
-      "timestamp": "2025-07-21T08:06:57.221Z"
+      "request_headers": {
+        "accept": "application/json",
+        "origin": "https://apps.wigan.gov.uk"
+      },
+      "response_headers": {
+        "content-type": "application/json"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 69,
+        "content_ref": "63651d95ac63171fdd67c68a61e6b23de672f908.json"
+      }
     },
     {
-      "url": "https://cdn.cookielaw.org/consent/01aceaf6-57ad-4799-b7d2-33dc0226db73/c8e437ef-640b-43c9-b093-dc6559f22105/en.json",
+      "timestamp": "2025-07-21T08:06:41.170Z",
+      "duration_ms": 27.454,
+      "endpoint": "/consent/{id}/{id}/en.json",
+      "host": "cdn.cookielaw.org",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json",
-      "size": 56940,
-      "timestamp": "2025-07-21T08:06:57.284Z"
+      "path_params": [
+        "01aceaf6-57ad-4799-b7d2-33dc0226db73",
+        "c8e437ef-640b-43c9-b093-dc6559f22105"
+      ],
+      "request_headers": {
+        "accept": "*/*",
+        "origin": "https://apps.wigan.gov.uk"
+      },
+      "response_headers": {
+        "cache-control": "public, max-age=86400",
+        "content-type": "application/json",
+        "x-content-type-options": "nosniff",
+        "x-ms-blob-type": "BlockBlob",
+        "x-ms-lease-status": "unlocked",
+        "x-ms-request-id": "98ef4003-201e-001b-6bbc-efbd18000000",
+        "x-ms-version": "2009-09-19",
+        "x-onetrust-isbot": "true"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 56940,
+        "compressed": true,
+        "content_ref": "11302551b5af97cff6929c4dd45ac9658993bca6.json"
+      }
     },
     {
-      "url": "https://cdn.cookielaw.org/scripttemplates/6.31.0/assets/otFloatingRounded.json",
+      "timestamp": "2025-07-21T08:06:41.203Z",
+      "duration_ms": 18.345,
+      "endpoint": "/scripttemplates/6.31.0/assets/{id}",
+      "host": "cdn.cookielaw.org",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json",
-      "size": 9894,
-      "timestamp": "2025-07-21T08:06:57.286Z"
+      "path_params": [
+        "otFloatingRounded.json"
+      ],
+      "request_headers": {
+        "accept": "*/*",
+        "origin": "https://apps.wigan.gov.uk"
+      },
+      "response_headers": {
+        "cache-control": "max-age=86400",
+        "content-type": "application/json",
+        "x-content-type-options": "nosniff",
+        "x-ms-blob-type": "BlockBlob",
+        "x-ms-lease-status": "unlocked",
+        "x-ms-request-id": "d3ee2ef9-201e-00b1-1c7d-f86bf7000000",
+        "x-ms-version": "2009-09-19"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 9894,
+        "compressed": true,
+        "content_ref": "721bc37b0e2d2aaace5ad72f009f97b9271bd47a.json"
+      }
     },
     {
-      "url": "https://cdn.cookielaw.org/scripttemplates/6.31.0/assets/v2/otPcPanel.json",
+      "timestamp": "2025-07-21T08:06:41.204Z",
+      "duration_ms": 19.616999999999997,
+      "endpoint": "/scripttemplates/6.31.0/assets/v2/otPcPanel.json",
+      "host": "cdn.cookielaw.org",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json",
-      "size": 49022,
-      "timestamp": "2025-07-21T08:06:57.286Z"
+      "request_headers": {
+        "accept": "*/*",
+        "origin": "https://apps.wigan.gov.uk"
+      },
+      "response_headers": {
+        "cache-control": "max-age=86400",
+        "content-type": "application/json",
+        "x-content-type-options": "nosniff",
+        "x-ms-blob-type": "BlockBlob",
+        "x-ms-lease-status": "unlocked",
+        "x-ms-request-id": "8c3c3058-601e-0094-5fac-f7f344000000",
+        "x-ms-version": "2009-09-19"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 49022,
+        "compressed": true,
+        "content_ref": "550233105ec607d6ca8d1e6808af3e30d188cc5c.json"
+      }
     },
     {
-      "url": "https://cdn.cookielaw.org/scripttemplates/6.31.0/assets/otCookieSettingsButton.json",
+      "timestamp": "2025-07-21T08:06:41.204Z",
+      "duration_ms": 20.388,
+      "endpoint": "/scripttemplates/6.31.0/assets/{id}",
+      "host": "cdn.cookielaw.org",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json",
-      "size": 4753,
-      "timestamp": "2025-07-21T08:06:57.286Z"
+      "path_params": [
+        "otCookieSettingsButton.json"
+      ],
+      "request_headers": {
+        "accept": "*/*",
+        "origin": "https://apps.wigan.gov.uk"
+      },
+      "response_headers": {
+        "cache-control": "max-age=86400",
+        "content-type": "application/json",
+        "x-content-type-options": "nosniff",
+        "x-ms-blob-type": "BlockBlob",
+        "x-ms-lease-status": "unlocked",
+        "x-ms-request-id": "a9ff7723-301e-0100-11ee-f2d5df000000",
+        "x-ms-version": "2009-09-19"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 4753,
+        "compressed": true,
+        "content_ref": "9e5ea2008bf8bbc473798738a567ee8f60941b18.json"
+      }
     },
     {
-      "url": "https://apps.wigan.gov.uk/MyNeighbourhood/",
+      "timestamp": "2025-07-21T08:06:42.490Z",
+      "duration_ms": 16.993,
+      "endpoint": "/j/collect",
+      "host": "www.google-analytics.com",
+      "method": "POST",
+      "status": 200,
+      "query_params": {
+        "v": [
+          "1"
+        ],
+        "_v": [
+          "j101"
+        ],
+        "aip": [
+          "1"
+        ],
+        "a": [
+          "194969353"
+        ],
+        "t": [
+          "pageview"
+        ],
+        "_s": [
+          "1"
+        ],
+        "dl": [
+          "https://apps.wigan.gov.uk/MyNeighbourhood/"
+        ],
+        "ul": [
+          "en-gb"
+        ],
+        "de": [
+          "UTF-8"
+        ],
+        "dt": [
+          "My Neighbourhood"
+        ],
+        "sd": [
+          "24-bit"
+        ],
+        "sr": [
+          "800x600"
+        ],
+        "vp": [
+          "800x461"
+        ],
+        "je": [
+          "0"
+        ],
+        "_u": [
+          "YEBAAEABAAAAACAAI~"
+        ],
+        "jid": [
+          "1122488023"
+        ],
+        "gjid": [
+          "1043556846"
+        ],
+        "cid": [
+          "561528583.1753085202"
+        ],
+        "tid": [
+          "UA-1865277-1"
+        ],
+        "_gid": [
+          "780552741.1753085202"
+        ],
+        "_r": [
+          "1"
+        ],
+        "_slc": [
+          "1"
+        ],
+        "gtm": [
+          "45He57h0h2n71KJH7KMv72364810za200"
+        ],
+        "gcd": [
+          "13l3l3l3l1l1"
+        ],
+        "dma": [
+          "0"
+        ],
+        "tag_exp": [
+          "101509157~103116026~103200004~103233427~104684208~104684211"
+        ],
+        "z": [
+          "1295742576"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "content-type": "text/plain",
+        "origin": "https://apps.wigan.gov.uk"
+      },
+      "response_headers": {
+        "cache-control": "no-cache, no-store, must-revalidate",
+        "content-type": "text/plain",
+        "x-content-type-options": "nosniff"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T08:06:42.524Z",
+      "duration_ms": 68.024,
+      "endpoint": "/g/collect",
+      "host": "region1.google-analytics.com",
+      "method": "POST",
+      "status": 204,
+      "query_params": {
+        "v": [
+          "2"
+        ],
+        "tid": [
+          "G-0NSWECBZHQ"
+        ],
+        "gtm": [
+          "45je57h0h2v873757920z872364810za200zb72364810"
+        ],
+        "_p": [
+          "1753085200050"
+        ],
+        "gcd": [
+          "13l3l3l3l1l1"
+        ],
+        "npa": [
+          "0"
+        ],
+        "dma": [
+          "0"
+        ],
+        "tag_exp": [
+          "101509157~103116026~103200004~103233427~104684208~104684211"
+        ],
+        "cid": [
+          "561528583.1753085202"
+        ],
+        "ul": [
+          "en-gb"
+        ],
+        "sr": [
+          "800x600"
+        ],
+        "uaa": [
+          "arm"
+        ],
+        "uab": [
+          "64"
+        ],
+        "uafvl": [
+          "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+        ],
+        "uamb": [
+          "0"
+        ],
+        "uap": [
+          "macOS"
+        ],
+        "uapv": [
+          "15.5.0"
+        ],
+        "uaw": [
+          "0"
+        ],
+        "are": [
+          "1"
+        ],
+        "frm": [
+          "0"
+        ],
+        "pscdl": [
+          "noapi"
+        ],
+        "_s": [
+          "1"
+        ],
+        "sid": [
+          "1753085202"
+        ],
+        "sct": [
+          "1"
+        ],
+        "seg": [
+          "0"
+        ],
+        "dl": [
+          "https://apps.wigan.gov.uk/MyNeighbourhood/"
+        ],
+        "dt": [
+          "My Neighbourhood"
+        ],
+        "en": [
+          "page_view"
+        ],
+        "_fv": [
+          "1"
+        ],
+        "_ss": [
+          "1"
+        ],
+        "tfd": [
+          "2643"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "cookie": "[cookies present]",
+        "origin": "https://apps.wigan.gov.uk"
+      },
+      "response_headers": {
+        "cache-control": "no-cache, no-store, must-revalidate",
+        "content-type": "text/plain"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T08:06:51.106Z",
+      "duration_ms": 65.236,
+      "endpoint": "/element/log",
+      "host": "translate.googleapis.com",
+      "method": "POST",
+      "status": 200,
+      "query_params": {
+        "format": [
+          "json"
+        ],
+        "hasfast": [
+          "true"
+        ],
+        "authuser": [
+          "0"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "content-type": "application/binary",
+        "origin": "https://apps.wigan.gov.uk",
+        "x-browser-copyright": "Copyright 2025 Google LLC. All rights reserved.",
+        "x-browser-validation": "qvLgIVtG4U8GgiRPSI9IJ22mUlI=",
+        "x-browser-year": "2025",
+        "x-client-data": "CMiXywE=",
+        "x-goog-authuser": "0"
+      },
+      "response_headers": {
+        "content-type": "text/plain; charset=UTF-8",
+        "x-frame-options": "SAMEORIGIN",
+        "x-xss-protection": "0"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T08:06:57.155Z",
+      "duration_ms": -1,
+      "endpoint": "/element/log",
+      "host": "translate.googleapis.com",
+      "method": "POST",
+      "status": -1,
+      "query_params": {
+        "hasfast": [
+          "true"
+        ],
+        "authuser": [
+          "0"
+        ],
+        "format": [
+          "json"
+        ]
+      },
+      "request_headers": {
+        "referer": "",
+        "content-type": "text/plain;charset=UTF-8"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T08:06:57.154Z",
+      "duration_ms": -1,
+      "endpoint": "/g/collect",
+      "host": "region1.google-analytics.com",
+      "method": "POST",
+      "status": -1,
+      "query_params": {
+        "v": [
+          "2"
+        ],
+        "tid": [
+          "G-0NSWECBZHQ"
+        ],
+        "gtm": [
+          "45je57h0h2v873757920za200zb72364810"
+        ],
+        "_p": [
+          "1753085200050"
+        ],
+        "gcd": [
+          "13l3l3l3l1l1"
+        ],
+        "npa": [
+          "0"
+        ],
+        "dma": [
+          "0"
+        ],
+        "tag_exp": [
+          "101509157~103116026~103200004~103233427~104684208~104684211"
+        ],
+        "cid": [
+          "561528583.1753085202"
+        ],
+        "ul": [
+          "en-gb"
+        ],
+        "sr": [
+          "800x600"
+        ],
+        "uaa": [
+          "arm"
+        ],
+        "uab": [
+          "64"
+        ],
+        "uafvl": [
+          "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+        ],
+        "uamb": [
+          "0"
+        ],
+        "uap": [
+          "macOS"
+        ],
+        "uapv": [
+          "15.5.0"
+        ],
+        "uaw": [
+          "0"
+        ],
+        "are": [
+          "1"
+        ],
+        "frm": [
+          "0"
+        ],
+        "pscdl": [
+          "noapi"
+        ],
+        "_eu": [
+          "AAAAAAQ"
+        ],
+        "_s": [
+          "2"
+        ],
+        "sid": [
+          "1753085202"
+        ],
+        "sct": [
+          "1"
+        ],
+        "seg": [
+          "1"
+        ],
+        "dl": [
+          "https://apps.wigan.gov.uk/MyNeighbourhood/"
+        ],
+        "dt": [
+          "My Neighbourhood"
+        ],
+        "en": [
+          "user_engagement"
+        ],
+        "_et": [
+          "14634"
+        ],
+        "tfd": [
+          "17282"
+        ]
+      },
+      "request_headers": {
+        "referer": ""
+      }
+    },
+    {
+      "timestamp": "2025-07-21T08:06:57.027Z",
+      "duration_ms": 114.32000000000001,
+      "endpoint": "/MyNeighbourhood",
+      "host": "apps.wigan.gov.uk",
+      "method": "POST",
+      "status": 200,
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+        "content-type": "application/x-www-form-urlencoded",
+        "cookie": "[cookies present]",
+        "origin": "null"
+      },
+      "response_headers": {
+        "cache-control": "private",
+        "content-type": "text/html; charset=utf-8",
+        "set-cookie": "[cookies present]",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "DENY",
+        "x-xss-protection": "0; mode=block;"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 29553,
+        "compressed": true,
+        "content_ref": "ba4e12feb6fe225a9a7cff91306889569c33041b.html"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T08:06:57.206Z",
+      "duration_ms": 0.697,
+      "endpoint": "/consent/{id}/{id}",
+      "host": "cdn.cookielaw.org",
+      "method": "GET",
+      "status": 200,
+      "path_params": [
+        "01aceaf6-57ad-4799-b7d2-33dc0226db73",
+        "01aceaf6-57ad-4799-b7d2-33dc0226db73.json"
+      ],
+      "request_headers": {
+        "referer": ""
+      },
+      "response_headers": {
+        "x-ms-lease-status": "unlocked",
+        "x-content-type-options": "nosniff",
+        "x-ms-version": "2009-09-19",
+        "content-type": "application/json",
+        "x-onetrust-isbot": "true",
+        "cache-control": "public, max-age=86400",
+        "x-ms-request-id": "689385f4-b01e-00fb-441f-f35b90000000",
+        "x-ms-blob-type": "BlockBlob"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 3554,
+        "compressed": true,
+        "content_ref": "7e3acdfd5a9e4eb229d7376eed280f6294a867dc.json"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T08:06:57.221Z",
+      "duration_ms": 18.638,
+      "endpoint": "/cookieconsentpub/v1/geo/location",
+      "host": "geolocation.onetrust.com",
+      "method": "GET",
+      "status": 200,
+      "request_headers": {
+        "accept": "application/json",
+        "origin": "https://apps.wigan.gov.uk"
+      },
+      "response_headers": {
+        "content-type": "application/json"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 69,
+        "content_ref": "63651d95ac63171fdd67c68a61e6b23de672f908.json"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T08:06:57.284Z",
+      "duration_ms": 1.814,
+      "endpoint": "/consent/{id}/{id}/en.json",
+      "host": "cdn.cookielaw.org",
+      "method": "GET",
+      "status": 200,
+      "path_params": [
+        "01aceaf6-57ad-4799-b7d2-33dc0226db73",
+        "c8e437ef-640b-43c9-b093-dc6559f22105"
+      ],
+      "request_headers": {
+        "referer": ""
+      },
+      "response_headers": {
+        "x-ms-lease-status": "unlocked",
+        "x-content-type-options": "nosniff",
+        "x-ms-version": "2009-09-19",
+        "content-type": "application/json",
+        "x-onetrust-isbot": "true",
+        "cache-control": "public, max-age=86400",
+        "x-ms-request-id": "98ef4003-201e-001b-6bbc-efbd18000000",
+        "x-ms-blob-type": "BlockBlob"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 56940,
+        "compressed": true,
+        "content_ref": "11302551b5af97cff6929c4dd45ac9658993bca6.json"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T08:06:57.286Z",
+      "duration_ms": 1.307,
+      "endpoint": "/scripttemplates/6.31.0/assets/{id}",
+      "host": "cdn.cookielaw.org",
+      "method": "GET",
+      "status": 200,
+      "path_params": [
+        "otFloatingRounded.json"
+      ],
+      "request_headers": {
+        "referer": ""
+      },
+      "response_headers": {
+        "x-ms-version": "2009-09-19",
+        "x-ms-lease-status": "unlocked",
+        "x-content-type-options": "nosniff",
+        "content-type": "application/json",
+        "cache-control": "max-age=86400",
+        "x-ms-request-id": "d3ee2ef9-201e-00b1-1c7d-f86bf7000000",
+        "x-ms-blob-type": "BlockBlob"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 9894,
+        "compressed": true,
+        "content_ref": "721bc37b0e2d2aaace5ad72f009f97b9271bd47a.json"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T08:06:57.286Z",
+      "duration_ms": 1.179,
+      "endpoint": "/scripttemplates/6.31.0/assets/v2/otPcPanel.json",
+      "host": "cdn.cookielaw.org",
+      "method": "GET",
+      "status": 200,
+      "request_headers": {
+        "referer": ""
+      },
+      "response_headers": {
+        "x-ms-version": "2009-09-19",
+        "x-ms-lease-status": "unlocked",
+        "x-content-type-options": "nosniff",
+        "content-type": "application/json",
+        "cache-control": "max-age=86400",
+        "x-ms-request-id": "8c3c3058-601e-0094-5fac-f7f344000000",
+        "x-ms-blob-type": "BlockBlob"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 49022,
+        "compressed": true,
+        "content_ref": "550233105ec607d6ca8d1e6808af3e30d188cc5c.json"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T08:06:57.286Z",
+      "duration_ms": 1.217,
+      "endpoint": "/scripttemplates/6.31.0/assets/{id}",
+      "host": "cdn.cookielaw.org",
+      "method": "GET",
+      "status": 200,
+      "path_params": [
+        "otCookieSettingsButton.json"
+      ],
+      "request_headers": {
+        "referer": ""
+      },
+      "response_headers": {
+        "x-ms-version": "2009-09-19",
+        "x-ms-lease-status": "unlocked",
+        "x-content-type-options": "nosniff",
+        "content-type": "application/json",
+        "cache-control": "max-age=86400",
+        "x-ms-request-id": "a9ff7723-301e-0100-11ee-f2d5df000000",
+        "x-ms-blob-type": "BlockBlob"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 4753,
+        "compressed": true,
+        "content_ref": "9e5ea2008bf8bbc473798738a567ee8f60941b18.json"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T08:06:57.295Z",
+      "duration_ms": 16.73,
+      "endpoint": "/j/collect",
+      "host": "www.google-analytics.com",
+      "method": "POST",
+      "status": 200,
+      "query_params": {
+        "v": [
+          "1"
+        ],
+        "_v": [
+          "j101"
+        ],
+        "aip": [
+          "1"
+        ],
+        "a": [
+          "1915696810"
+        ],
+        "t": [
+          "pageview"
+        ],
+        "_s": [
+          "1"
+        ],
+        "dl": [
+          "https://apps.wigan.gov.uk/MyNeighbourhood/"
+        ],
+        "ul": [
+          "en-gb"
+        ],
+        "de": [
+          "UTF-8"
+        ],
+        "dt": [
+          "My Neighbourhood"
+        ],
+        "sd": [
+          "24-bit"
+        ],
+        "sr": [
+          "800x600"
+        ],
+        "vp": [
+          "800x461"
+        ],
+        "je": [
+          "0"
+        ],
+        "_u": [
+          "QACAAEABAAAAACAAI~"
+        ],
+        "cid": [
+          "561528583.1753085202"
+        ],
+        "tid": [
+          "UA-1865277-1"
+        ],
+        "_gid": [
+          "780552741.1753085202"
+        ],
+        "_slc": [
+          "1"
+        ],
+        "gtm": [
+          "45He57h0h2n71KJH7KMv72364810za200"
+        ],
+        "gcd": [
+          "13l3l3l3l1l1"
+        ],
+        "dma": [
+          "0"
+        ],
+        "tag_exp": [
+          "101509157~103116026~103200004~103233427~104684208~104684211"
+        ],
+        "z": [
+          "815544774"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "content-type": "text/plain",
+        "origin": "https://apps.wigan.gov.uk"
+      },
+      "response_headers": {
+        "cache-control": "no-cache, no-store, must-revalidate",
+        "content-type": "text/plain",
+        "x-content-type-options": "nosniff"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T08:06:59.812Z",
+      "duration_ms": 98.76100000000001,
+      "endpoint": "/MyNeighbourhood",
+      "host": "apps.wigan.gov.uk",
       "method": "POST",
       "status": 302,
-      "redirect_url": "https://apps.wigan.gov.uk/MyNeighbourhood/MyArea.aspx",
-      "mime_type": "text/html; charset=utf-8",
-      "size": -1,
-      "timestamp": "2025-07-21T08:06:59.812Z",
-      "form_data": {
-        "__EVENTTARGET": "ctl00$ContentPlaceHolder1$lstAddresses",
-        "__EVENTARGUMENT": "",
-        "__LASTFOCUS": "",
-        "__VIEWSTATE": "4awiojinxaIOo6pxWLSc6ZWTkPKKA1qevXf9VhspqWeiZF5PvlQBhKAwIxDhKl8abmFvLcAQRvwP2rQbGSG+6sYQqpkvyhgqyOEWCDWTjmE+yCObDQzerAL+r8GzO+MBgAVVyEDpQmavTLa8OuNuKcJ7NKxyfFUwV8t4J92paHeJ7uG2ak+pkRyveb2574edVCeViUmhKnIQBTk1au8Hbb42W9VTWM/kCh7MZmRT6pAFRu6vKQ3uFgFh/XA68bQJsVSb8wM9UKY5kQnMMXQcRjcSsuCzhFTVtL4Ckg89H3VDaafN5s/5i/q2lVvweXRt18+mxpPNk7+pKqI0gl/lVOznTSevR+VgloS7SHJhwEwIbjr3fC1cdHfhrCxfHSFVPuXeBQAkYUXtDtpF0hVCN8J4Y2+ZgSIlk9QaNFlSQpHIQ8fjkwOE95lG7R+NMYASUpX6RCObzTiD0zWmITf+VdygRkm0X/smaX+rbwu6n9A0L1+iMqytl8bSwuLV5Lt9J23VlrqCJZ8h2D2lQ/PilkgXzQgsGobtSRXQiyNx+wEG0qcahr6S6LPEq4niE6S+YzhLcIO+QNa0OGt5LuLUhXbNhUrxHW7Q0jZK6EvE20SolSXF859XlXdGh7O4ERNxgSJ6FopDA0D2+TKL11vKLoBWvZzHjrAlRGV1jsFxLFD7r9m5PWjlUhIRFCZfx61Tke3zQxAsPNUL8hAgkPPDRVj1bdR6lfa42XAHfqQKZMiAWmhMOb5SGSV/e5sBgtCUtwJ5dMqZnYIdGip5Ot8HnTXHjgWgfFTkmqRKQvLTMXnNqdu2Xsq3qkmQVaG6cYQWo51Y9+UnI2Jf+qE3yoVMZo6//Lm4sBZ26HJR5PEW3Ni0UiYXboDrJln2uLS5Loq1jDBKqjm0QkFMVnayFGeBlbtGYZRgSs1VJKbdkPbCw2pu7Pjn68bOsfMF1ECtAGNs/rbmd0wnGbRAU9OtEXWOO9LXY1OoWdJjX6svdZ+MmAjh7NZgKalJdFY/iLSWJ9q3rdytJ64BmRgQfHQQEXGQRCwIHoL+Zeqzb4UR+1EZR1odJJQdwtMDvBBnDPLtCwXCXzmUySH2p4W+IYWx/NYLbCLvr/Ms5WSlousvEQe6RaMTDF0GARr00Zern23ViLAKYeYx82F8Z3DI3+KBIeCF3ONdy2VTpyGPGZaFxfecECCRQPwW509fD+9orgATDaDAexCAeNbEF+9pr8CKa7+lmjgNkxZ3QDjzxaR4VpOUbUQhwSfrxEYni6bB7nWXexx6qbit3vE5FaBH49NGSXlgJkBHzNhppXXqGkouRkJvFhX2es/tnTX0dOPmZ8At3JTNA/hv6aTgGqtXOrJLPyab4U8Fm7ETzmCnEjg8uQv6K8NIB6SCanx+1Rdp3hHetLNut04+VC+wu204tK38EasXVt0G7h/Of3Ap0gO9i7gQwDfLl2lITmRPNjJNemRYAmBLuvewiVaRnqZZUTHGjPm7tH3IMIs+uJkUiR5NOFxtMQeYE3hH7Htq7pakhhJH90g1ZRyRIvjbeYOidWcKVduNpyXGVq/l1yqoA3AXLrhgUAVhtc5F2s1TQxJL0VpqqybQm7VakLpjHGTiEe/+hsH/CL386lhEf5HdPCCdXI4P6W52hQFxy83oMQaiKnHtAX69WM7/OJtLL6w3VCm8AAj+upzSpeRfzChkBab+KAo+iW0qyWZxB+XKMl5C1W2RaZ6soUyZqwFDeuHkH7W8fyZ5N0fGV65uCy8TBtUq/FCX6V78X5DLeX4hyUfg7sxVfseR33Jp+j84U6rnCrhuhdvfF9U4zUMelSBbAz1c8vHzm5z1eDOHDCkmSExnW3r0oUoZIdAF+pwBErsL8AAdZYknIJb2lBo1tTAhEQ7ZDfKmSy6Rir7L4DrwfsU3bhU/Canw1PTq923IY7pN39JSbEDUKRoOkXalX6S2LTF6Eyv5opsjlRm2iAnuHce5q1iNgyUp+/vuqzgsuhELrUlwyyVsKVi5HVommCXiyYRZE013Dbe3+gZ1SzM1a3AzCQu+0VtWABQy/NCn+14MuXi4RvsI6PBPUSCpGy9s3tRaWa3YbgTAUSX95Fdx9+52P0MVW0hG1Dw/AfC+Ho5in9Q43nZ0vLANPggfYCWkLHZIAPdHeblW/M+XvG0bMZ9OI7rcsji2iQpPtCICKMoL7vpWhdpGfKAFV8NbNe224QwZx8Wei3esgNDYlG3/ATZPLjctLIEpOZ5WSXxQwxEgtcn3W3/RaQcQnQcFOWPRenn17RcF5vhiC9Y73xTu3BsmbUicYro0GDyrFE2Xt0irMHXegGUfCPRQ4dMPP4TILAoiBLY/OmMKtOD35YcMnmLsb11uKxlQ3M9EqP/OURq3lfK6hrV9J8d8FVFPmYY/t2mLQSBs7HEy3dEt5Syl3AKR1ai+Xgq/R+MRiNAeSpxMvJxruuWrpUQfrgivov12tVYaG8pLV4TPbljsMJzN34GbAImWFzdZ0+7+XS4OcMPbXXjIRBm6XwmyGq6sAeU4sf6oGLIw8OcL1LV4hiK+SDGc7ZrjgWi+n9VrSqjofNX9aZEB6rMpwq1QYAAyuqysLWiixWcOEtqt8WVPjJNO42VrPzQaZg/m7mwQszbZfoPlpNjRwpX1SJBbktQLE9MdRvWXpbiH8FBdq7EPK46Hx0xeq6rPJqu4l+sKv5EaWPRwOpo1FeQcldCqONFfVSr0BllbXI6pN+1QxThEGPCIgNUHv0IDUzQKSLO7HjROXnYv9D3SIHwM8XN5PD4oPIIvdcVQ0uqAyfMVjaQmpvc6UIlvp5Sy/TXZajbKgNTwI3+2yCflsRypl2cqGJS9ejDL5bwd9byEd11ABSSwelfTSsQFEN+mST1yYULWRCl/4zJBRTuzkIA3pqoKaXZys9G7TMhhTXc8HhsF/6bve0U867L1o9GJvqUH0DxhgtKzTknaC37Mhqi7HDX+6TLIGMM2P2vGhD3gNvU6IeLKNjKNN9xEzQEkO7KuEBkI6YstcqoC1oXIfPEf1q/DEJleaycxefXa/QBS6TsjlHAtwoV5nNSAIBbPGNYPW+V04lM79zmnRcgmk0yXerxaiola12W1j1GiaV54uDZNbD4ej5GmNYMEfOPNUeKGeF/Rr3dzivtkcs3+SsnB0aCWgOOggiz79izveqFacz/Q1OszrB7sm/EGFD/Wc7DhlheNrtBA8rIY1E4+GqS0rv2Sx8Exq616dK7xQEedTX37JxIeoYBM9dKtve5BtQEkKOgUdFBoLYeoE++Fn4ZAiY0kp/cnNx5r4VWftWa0XKtUSQDsynWirPygDBObP5HGonPnHwJ4zCe6jz4TJz60ZjcV4nzyROvZe2ZgADY7KT9wfGPsfq4i1f2T4iv2i31/4Rr0P4W6MHO0JAQDGrL/MMnWApU3Gv0mbWHDyd+aAG928g8wU1//qvcb282hVAI1WQqdFQcT0AKQ5wBmbEfL0Mu3hT1dKZxUN541bIvItUHyn1GFhs2AoerKHteqIPhkVPFej+930qYuJIPPdEQ+9D5iwikoenB6G3mdx3x0v8JizgE/JHHqcoJXjB/ezeFmwC2z/LpKgPhltFJV/no90FBxb1Csu5gklZB8bxrSbMeD3FhbukDUs52Ay6Gt74Fl7gaOAqGYbddFRLUGVag85C4QIRpdkl1AFptgRGMgLcDlfEvKaSkfEwopeKK/8V3octYwAzZ63GlNOOY5Ey3pQL6cpE5qsIakl4M5Z3jrC2m2qg7X8ZXqleh9YH7C2P7+nR/c+3n0nqXTCFKT7qQHPOMczohgZEsVd2W45kg7PbS3TcfQQ3hssPDRxqWpy/kSE755J6PyqTp/Ws/BVhFcXjDft/RKkBduu4RIs3m5SPkBVyrd2KPX7pDXInlcY8jTGPVyR+4Vu4qDM9V5Tu49H1uv9d9XHome92qM0PqCmCiOyQFVY5m1QJYRaGhE85CE3O7Cn8TWqum+r5umDpwSUY1doQH8SN5nLdrE7V7tIOV3W34fc/LONp/ujyHRfNTxpqBa+Vnhr0eCra/CsFYjiw==",
-        "__VIEWSTATEGENERATOR": "F01E8114",
-        "__EVENTVALIDATION": "9dcP+1CTXsQwOf0QwNk2mHLMjD5k0vJEjFgi6/p7ThGV0Qw/JOuQcVA5BHhWrBEsMZ2Nz4TZZCoUsljUCIsJk8EHyVzZlLCdeAEQUBSjGpOj+Whb6YNjT63c/4uJhiPgNebZjdDS8P1UeSpig/+y2tB+VlAK/TIyyK455dES0A8VeZJO6qjo5CKjnr2ychfX6fW2XEB9hrmtvuGjR3zan//c25oki2rOfKf6PIpHox5uE3+p3N3GHUWpDOw8s8qDAYOZwWrsc4Pqf6p9mW86P+x5N8PcQSDbN5iaoiVUyy9Udg/NzZoYguOlpakXLIPRD3/BN93mokigR/myKevTKCX9qCNgaEy2Cr4WAbFfHjP7jlPAysj55RJCby4e6Q8WA3HFOpKsBsf3TsQn4EojCwK7hFPvUustSwPJjqCMqYo8sO9+D2/NKKYg2jqEly2qEJQhTGth6/l8Oux3ezDoBAaT1Q+Q+mZ+O//O2xKjURg5wfjukcNCwNz7XRTL07zUP2v37zGMVxDQ7MwovNEifPRkJYAPhAzmgiwG6A89ZG5i0rpbifNGVWiSB6wr5wnU/W1H+fUrvnRAOJ7AxcQw7SqMSbNliD4f5Ima1JE/brN0dzP9fsyi+K5FXckRgrdkbSr0ZnpSgpl/qT/GZt6jYPf/KsL16azS02pqYP6ApatckzlQcJnBO1ADbbSONDMqW9qFMcs4B26ABa9Xr6RDOaaitU7wmWlyjH8oEo+PdcTZ2VJ93fm7zg6yPjrIEOu4wnlJ/iQCaO/wOtcJBejK/wmoBCEGSq1RYEyUA3cE8xowmspZki7zn4mOaJHuTrjO3DRCMpa0e9GWtqdQOxYlLLuYl2lM4fSFsCVXdU4gLlp0L9GDTpzR+0e0AkWxb2bU3D63ANES7DicNeXfOriFgTWlYrY+B7pngpVSuDp6C5B+i8R0jNOscBqDUmtpk7oE8W0v22Ls5HJqJjJf0pBZzzyOAhHy3Z1wxF58X0IraycE+Ls6NxOniLYnpJZozN56",
-        "ctl00$ContentPlaceHolder1$txtPostcode": "M28 1AF",
-        "ctl00$ContentPlaceHolder1$lstAddresses": "UPRN100011734060"
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+        "content-type": "application/x-www-form-urlencoded",
+        "cookie": "[cookies present]",
+        "origin": "null"
+      },
+      "response_headers": {
+        "cache-control": "private",
+        "content-type": "text/html; charset=utf-8",
+        "location": "/MyNeighbourhood/MyArea.aspx",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "DENY",
+        "x-xss-protection": "0; mode=block;"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": -1
+      },
+      "redirect_to": "/MyNeighbourhood/MyArea.aspx"
+    },
+    {
+      "timestamp": "2025-07-21T08:07:01.923Z",
+      "duration_ms": -1,
+      "endpoint": "/element/log",
+      "host": "translate.googleapis.com",
+      "method": "POST",
+      "status": -1,
+      "query_params": {
+        "hasfast": [
+          "true"
+        ],
+        "authuser": [
+          "0"
+        ],
+        "format": [
+          "json"
+        ]
+      },
+      "request_headers": {
+        "referer": "",
+        "content-type": "text/plain;charset=UTF-8"
       }
     },
     {
-      "url": "https://apps.wigan.gov.uk/MyNeighbourhood/MyArea.aspx",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "text/html; charset=utf-8",
-      "size": 30061,
-      "timestamp": "2025-07-21T08:06:59.911Z"
+      "timestamp": "2025-07-21T08:07:01.922Z",
+      "duration_ms": -1,
+      "endpoint": "/g/collect",
+      "host": "region1.google-analytics.com",
+      "method": "POST",
+      "status": -1,
+      "query_params": {
+        "v": [
+          "2"
+        ],
+        "tid": [
+          "G-0NSWECBZHQ"
+        ],
+        "gtm": [
+          "45je57h0h2v873757920za200zb72364810"
+        ],
+        "_p": [
+          "1753085217184"
+        ],
+        "gcd": [
+          "13l3l3l3l1l1"
+        ],
+        "npa": [
+          "0"
+        ],
+        "dma": [
+          "0"
+        ],
+        "tag_exp": [
+          "101509157~103116026~103200004~103233427~104684208~104684211"
+        ],
+        "cid": [
+          "561528583.1753085202"
+        ],
+        "ul": [
+          "en-gb"
+        ],
+        "sr": [
+          "800x600"
+        ],
+        "uaa": [
+          "arm"
+        ],
+        "uab": [
+          "64"
+        ],
+        "uafvl": [
+          "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+        ],
+        "uamb": [
+          "0"
+        ],
+        "uap": [
+          "macOS"
+        ],
+        "uapv": [
+          "15.5.0"
+        ],
+        "uaw": [
+          "0"
+        ],
+        "are": [
+          "1"
+        ],
+        "frm": [
+          "0"
+        ],
+        "pscdl": [
+          "noapi"
+        ],
+        "_eu": [
+          "AAAAAAQ"
+        ],
+        "_s": [
+          "2"
+        ],
+        "sid": [
+          "1753085202"
+        ],
+        "sct": [
+          "1"
+        ],
+        "seg": [
+          "1"
+        ],
+        "dl": [
+          "https://apps.wigan.gov.uk/MyNeighbourhood/"
+        ],
+        "dt": [
+          "My Neighbourhood"
+        ],
+        "en": [
+          "user_engagement"
+        ],
+        "_et": [
+          "4644"
+        ],
+        "tfd": [
+          "4892"
+        ]
+      },
+      "request_headers": {
+        "referer": ""
+      }
     },
     {
-      "url": "https://cdn.cookielaw.org/consent/01aceaf6-57ad-4799-b7d2-33dc0226db73/01aceaf6-57ad-4799-b7d2-33dc0226db73.json",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json",
-      "size": 3554,
-      "timestamp": "2025-07-21T08:07:01.978Z"
+      "timestamp": "2025-07-21T08:07:01.921Z",
+      "duration_ms": -1,
+      "endpoint": "/g/collect",
+      "host": "region1.google-analytics.com",
+      "method": "POST",
+      "status": -1,
+      "query_params": {
+        "v": [
+          "2"
+        ],
+        "tid": [
+          "G-0NSWECBZHQ"
+        ],
+        "gtm": [
+          "45je57h0h2v873757920z872364810za200zb72364810"
+        ],
+        "_p": [
+          "1753085217184"
+        ],
+        "gcd": [
+          "13l3l3l3l1l1"
+        ],
+        "npa": [
+          "0"
+        ],
+        "dma": [
+          "0"
+        ],
+        "tag_exp": [
+          "101509157~103116026~103200004~103233427~104684208~104684211"
+        ],
+        "cid": [
+          "561528583.1753085202"
+        ],
+        "ul": [
+          "en-gb"
+        ],
+        "sr": [
+          "800x600"
+        ],
+        "uaa": [
+          "arm"
+        ],
+        "uab": [
+          "64"
+        ],
+        "uafvl": [
+          "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+        ],
+        "uamb": [
+          "0"
+        ],
+        "uap": [
+          "macOS"
+        ],
+        "uapv": [
+          "15.5.0"
+        ],
+        "uaw": [
+          "0"
+        ],
+        "are": [
+          "1"
+        ],
+        "frm": [
+          "0"
+        ],
+        "pscdl": [
+          "noapi"
+        ],
+        "_eu": [
+          "AAAAAAQ"
+        ],
+        "_s": [
+          "1"
+        ],
+        "sid": [
+          "1753085202"
+        ],
+        "sct": [
+          "1"
+        ],
+        "seg": [
+          "1"
+        ],
+        "dl": [
+          "https://apps.wigan.gov.uk/MyNeighbourhood/"
+        ],
+        "dt": [
+          "My Neighbourhood"
+        ],
+        "en": [
+          "page_view"
+        ],
+        "tfd": [
+          "4890"
+        ]
+      },
+      "request_headers": {
+        "referer": ""
+      }
     },
     {
-      "url": "https://cdn.cookielaw.org/consent/01aceaf6-57ad-4799-b7d2-33dc0226db73/c8e437ef-640b-43c9-b093-dc6559f22105/en.json",
+      "timestamp": "2025-07-21T08:06:59.911Z",
+      "duration_ms": 1996.32,
+      "endpoint": "/MyNeighbourhood/MyArea.aspx",
+      "host": "apps.wigan.gov.uk",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json",
-      "size": 56940,
-      "timestamp": "2025-07-21T08:07:01.993Z"
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+        "cookie": "[cookies present]"
+      },
+      "response_headers": {
+        "cache-control": "private",
+        "content-type": "text/html; charset=utf-8",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "DENY",
+        "x-xss-protection": "0; mode=block;"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 30061,
+        "compressed": true,
+        "content_ref": "ef8d5b8a92074592a34b07b376b399b37b0c13e5.html"
+      }
     },
     {
-      "url": "https://cdn.cookielaw.org/scripttemplates/6.31.0/assets/otFloatingRounded.json",
+      "timestamp": "2025-07-21T08:07:01.978Z",
+      "duration_ms": 0.8049999999999999,
+      "endpoint": "/consent/{id}/{id}",
+      "host": "cdn.cookielaw.org",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json",
-      "size": 9894,
-      "timestamp": "2025-07-21T08:07:02.046Z"
+      "path_params": [
+        "01aceaf6-57ad-4799-b7d2-33dc0226db73",
+        "01aceaf6-57ad-4799-b7d2-33dc0226db73.json"
+      ],
+      "request_headers": {
+        "referer": ""
+      },
+      "response_headers": {
+        "x-ms-lease-status": "unlocked",
+        "x-content-type-options": "nosniff",
+        "x-ms-version": "2009-09-19",
+        "content-type": "application/json",
+        "x-onetrust-isbot": "true",
+        "cache-control": "public, max-age=86400",
+        "x-ms-request-id": "689385f4-b01e-00fb-441f-f35b90000000",
+        "x-ms-blob-type": "BlockBlob"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 3554,
+        "compressed": true,
+        "content_ref": "7e3acdfd5a9e4eb229d7376eed280f6294a867dc.json"
+      }
     },
     {
-      "url": "https://cdn.cookielaw.org/scripttemplates/6.31.0/assets/v2/otPcPanel.json",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json",
-      "size": 49022,
-      "timestamp": "2025-07-21T08:07:02.046Z"
+      "timestamp": "2025-07-21T08:07:01.995Z",
+      "duration_ms": 14.917,
+      "endpoint": "/g/collect",
+      "host": "region1.google-analytics.com",
+      "method": "POST",
+      "status": 204,
+      "query_params": {
+        "v": [
+          "2"
+        ],
+        "tid": [
+          "G-0NSWECBZHQ"
+        ],
+        "gtm": [
+          "45je57h0h2v873757920z872364810za200zb72364810"
+        ],
+        "_p": [
+          "1753085221947"
+        ],
+        "gcd": [
+          "13l3l3l3l1l1"
+        ],
+        "npa": [
+          "0"
+        ],
+        "dma": [
+          "0"
+        ],
+        "tag_exp": [
+          "101509157~103116026~103200004~103233427~104684208~104684211"
+        ],
+        "cid": [
+          "561528583.1753085202"
+        ],
+        "ul": [
+          "en-gb"
+        ],
+        "sr": [
+          "800x600"
+        ],
+        "uaa": [
+          "arm"
+        ],
+        "uab": [
+          "64"
+        ],
+        "uafvl": [
+          "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+        ],
+        "uamb": [
+          "0"
+        ],
+        "uap": [
+          "macOS"
+        ],
+        "uapv": [
+          "15.5.0"
+        ],
+        "uaw": [
+          "0"
+        ],
+        "are": [
+          "1"
+        ],
+        "frm": [
+          "0"
+        ],
+        "pscdl": [
+          "noapi"
+        ],
+        "_eu": [
+          "AAAAAAQ"
+        ],
+        "_s": [
+          "1"
+        ],
+        "sid": [
+          "1753085202"
+        ],
+        "sct": [
+          "1"
+        ],
+        "seg": [
+          "1"
+        ],
+        "dl": [
+          "https://apps.wigan.gov.uk/MyNeighbourhood/MyArea.aspx"
+        ],
+        "dt": [
+          "My Neighbourhood"
+        ],
+        "en": [
+          "page_view"
+        ],
+        "tfd": [
+          "2180"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "cookie": "[cookies present]",
+        "origin": "https://apps.wigan.gov.uk"
+      },
+      "response_headers": {
+        "cache-control": "no-cache, no-store, must-revalidate",
+        "content-type": "text/plain"
+      }
     },
     {
-      "url": "https://cdn.cookielaw.org/scripttemplates/6.31.0/assets/otCookieSettingsButton.json",
+      "timestamp": "2025-07-21T08:07:01.993Z",
+      "duration_ms": 0.6990000000000001,
+      "endpoint": "/consent/{id}/{id}/en.json",
+      "host": "cdn.cookielaw.org",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json",
-      "size": 4753,
-      "timestamp": "2025-07-21T08:07:02.046Z"
+      "path_params": [
+        "01aceaf6-57ad-4799-b7d2-33dc0226db73",
+        "c8e437ef-640b-43c9-b093-dc6559f22105"
+      ],
+      "request_headers": {
+        "referer": ""
+      },
+      "response_headers": {
+        "x-ms-lease-status": "unlocked",
+        "x-content-type-options": "nosniff",
+        "x-ms-version": "2009-09-19",
+        "content-type": "application/json",
+        "x-onetrust-isbot": "true",
+        "cache-control": "public, max-age=86400",
+        "x-ms-request-id": "98ef4003-201e-001b-6bbc-efbd18000000",
+        "x-ms-blob-type": "BlockBlob"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 56940,
+        "compressed": true,
+        "content_ref": "11302551b5af97cff6929c4dd45ac9658993bca6.json"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T08:07:01.993Z",
+      "duration_ms": 15.719,
+      "endpoint": "/j/collect",
+      "host": "www.google-analytics.com",
+      "method": "POST",
+      "status": 200,
+      "query_params": {
+        "v": [
+          "1"
+        ],
+        "_v": [
+          "j101"
+        ],
+        "aip": [
+          "1"
+        ],
+        "a": [
+          "1920594711"
+        ],
+        "t": [
+          "pageview"
+        ],
+        "_s": [
+          "1"
+        ],
+        "dl": [
+          "https://apps.wigan.gov.uk/MyNeighbourhood/MyArea.aspx"
+        ],
+        "ul": [
+          "en-gb"
+        ],
+        "de": [
+          "UTF-8"
+        ],
+        "dt": [
+          "My Neighbourhood"
+        ],
+        "sd": [
+          "24-bit"
+        ],
+        "sr": [
+          "800x600"
+        ],
+        "vp": [
+          "800x461"
+        ],
+        "je": [
+          "0"
+        ],
+        "_u": [
+          "QACAAEABAAAAACAAI~"
+        ],
+        "cid": [
+          "561528583.1753085202"
+        ],
+        "tid": [
+          "UA-1865277-1"
+        ],
+        "_gid": [
+          "780552741.1753085202"
+        ],
+        "_slc": [
+          "1"
+        ],
+        "gtm": [
+          "45He57h0h2n71KJH7KMv72364810za200"
+        ],
+        "gcd": [
+          "13l3l3l3l1l1"
+        ],
+        "dma": [
+          "0"
+        ],
+        "tag_exp": [
+          "101509157~103116026~103200004~103233427~104684208~104684211"
+        ],
+        "z": [
+          "382375498"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "content-type": "text/plain",
+        "origin": "https://apps.wigan.gov.uk"
+      },
+      "response_headers": {
+        "cache-control": "no-cache, no-store, must-revalidate",
+        "content-type": "text/plain",
+        "x-content-type-options": "nosniff"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T08:07:02.046Z",
+      "duration_ms": 1.0939999999999999,
+      "endpoint": "/scripttemplates/6.31.0/assets/{id}",
+      "host": "cdn.cookielaw.org",
+      "method": "GET",
+      "status": 200,
+      "path_params": [
+        "otFloatingRounded.json"
+      ],
+      "request_headers": {
+        "referer": ""
+      },
+      "response_headers": {
+        "x-ms-version": "2009-09-19",
+        "x-ms-lease-status": "unlocked",
+        "x-content-type-options": "nosniff",
+        "content-type": "application/json",
+        "cache-control": "max-age=86400",
+        "x-ms-request-id": "d3ee2ef9-201e-00b1-1c7d-f86bf7000000",
+        "x-ms-blob-type": "BlockBlob"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 9894,
+        "compressed": true,
+        "content_ref": "721bc37b0e2d2aaace5ad72f009f97b9271bd47a.json"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T08:07:02.046Z",
+      "duration_ms": 1.263,
+      "endpoint": "/scripttemplates/6.31.0/assets/v2/otPcPanel.json",
+      "host": "cdn.cookielaw.org",
+      "method": "GET",
+      "status": 200,
+      "request_headers": {
+        "referer": ""
+      },
+      "response_headers": {
+        "x-ms-version": "2009-09-19",
+        "x-ms-lease-status": "unlocked",
+        "x-content-type-options": "nosniff",
+        "content-type": "application/json",
+        "cache-control": "max-age=86400",
+        "x-ms-request-id": "8c3c3058-601e-0094-5fac-f7f344000000",
+        "x-ms-blob-type": "BlockBlob"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 49022,
+        "compressed": true,
+        "content_ref": "550233105ec607d6ca8d1e6808af3e30d188cc5c.json"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T08:07:02.046Z",
+      "duration_ms": 1.339,
+      "endpoint": "/scripttemplates/6.31.0/assets/{id}",
+      "host": "cdn.cookielaw.org",
+      "method": "GET",
+      "status": 200,
+      "path_params": [
+        "otCookieSettingsButton.json"
+      ],
+      "request_headers": {
+        "referer": ""
+      },
+      "response_headers": {
+        "x-ms-version": "2009-09-19",
+        "x-ms-lease-status": "unlocked",
+        "x-content-type-options": "nosniff",
+        "content-type": "application/json",
+        "cache-control": "max-age=86400",
+        "x-ms-request-id": "a9ff7723-301e-0100-11ee-f2d5df000000",
+        "x-ms-blob-type": "BlockBlob"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 4753,
+        "compressed": true,
+        "content_ref": "9e5ea2008bf8bbc473798738a567ee8f60941b18.json"
+      }
     }
-  ]
+  ],
+  "analysis": {
+    "total_requests": 32,
+    "unique_endpoints": 10,
+    "methods_used": [
+      "GET",
+      "POST"
+    ],
+    "status_codes": {
+      "200": 24,
+      "204": 2,
+      "-1": 5,
+      "302": 1
+    },
+    "endpoints_with_params": [
+      {
+        "endpoint": "/consent/{id}/{id}",
+        "method": "GET",
+        "query_params": [],
+        "path_params": true
+      },
+      {
+        "endpoint": "/consent/{id}/{id}/en.json",
+        "method": "GET",
+        "query_params": [],
+        "path_params": true
+      },
+      {
+        "endpoint": "/scripttemplates/6.31.0/assets/{id}",
+        "method": "GET",
+        "query_params": [],
+        "path_params": true
+      },
+      {
+        "endpoint": "/j/collect",
+        "method": "POST",
+        "query_params": [
+          "v",
+          "_v",
+          "aip",
+          "a",
+          "t",
+          "_s",
+          "dl",
+          "ul",
+          "de",
+          "dt",
+          "sd",
+          "sr",
+          "vp",
+          "je",
+          "_u",
+          "jid",
+          "gjid",
+          "cid",
+          "tid",
+          "_gid",
+          "_r",
+          "_slc",
+          "gtm",
+          "gcd",
+          "dma",
+          "tag_exp",
+          "z"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/g/collect",
+        "method": "POST",
+        "query_params": [
+          "v",
+          "tid",
+          "gtm",
+          "_p",
+          "gcd",
+          "npa",
+          "dma",
+          "tag_exp",
+          "cid",
+          "ul",
+          "sr",
+          "uaa",
+          "uab",
+          "uafvl",
+          "uamb",
+          "uap",
+          "uapv",
+          "uaw",
+          "are",
+          "frm",
+          "pscdl",
+          "_s",
+          "sid",
+          "sct",
+          "seg",
+          "dl",
+          "dt",
+          "en",
+          "_fv",
+          "_ss",
+          "tfd"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/element/log",
+        "method": "POST",
+        "query_params": [
+          "format",
+          "hasfast",
+          "authuser"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/element/log",
+        "method": "POST",
+        "query_params": [
+          "hasfast",
+          "authuser",
+          "format"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/g/collect",
+        "method": "POST",
+        "query_params": [
+          "v",
+          "tid",
+          "gtm",
+          "_p",
+          "gcd",
+          "npa",
+          "dma",
+          "tag_exp",
+          "cid",
+          "ul",
+          "sr",
+          "uaa",
+          "uab",
+          "uafvl",
+          "uamb",
+          "uap",
+          "uapv",
+          "uaw",
+          "are",
+          "frm",
+          "pscdl",
+          "_eu",
+          "_s",
+          "sid",
+          "sct",
+          "seg",
+          "dl",
+          "dt",
+          "en",
+          "_et",
+          "tfd"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/j/collect",
+        "method": "POST",
+        "query_params": [
+          "v",
+          "_v",
+          "aip",
+          "a",
+          "t",
+          "_s",
+          "dl",
+          "ul",
+          "de",
+          "dt",
+          "sd",
+          "sr",
+          "vp",
+          "je",
+          "_u",
+          "cid",
+          "tid",
+          "_gid",
+          "_slc",
+          "gtm",
+          "gcd",
+          "dma",
+          "tag_exp",
+          "z"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/g/collect",
+        "method": "POST",
+        "query_params": [
+          "v",
+          "tid",
+          "gtm",
+          "_p",
+          "gcd",
+          "npa",
+          "dma",
+          "tag_exp",
+          "cid",
+          "ul",
+          "sr",
+          "uaa",
+          "uab",
+          "uafvl",
+          "uamb",
+          "uap",
+          "uapv",
+          "uaw",
+          "are",
+          "frm",
+          "pscdl",
+          "_eu",
+          "_s",
+          "sid",
+          "sct",
+          "seg",
+          "dl",
+          "dt",
+          "en",
+          "tfd"
+        ],
+        "path_params": false
+      }
+    ],
+    "redirects": [
+      {
+        "from": "/MyNeighbourhood",
+        "to": "/MyNeighbourhood/MyArea.aspx",
+        "status": 302
+      }
+    ],
+    "api_calls": [
+      {
+        "endpoint": "/consent/{id}/{id}",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": []
+      },
+      {
+        "endpoint": "/cookieconsentpub/v1/geo/location",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": []
+      },
+      {
+        "endpoint": "/consent/{id}/{id}/en.json",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": []
+      },
+      {
+        "endpoint": "/scripttemplates/6.31.0/assets/{id}",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": []
+      },
+      {
+        "endpoint": "/scripttemplates/6.31.0/assets/v2/otPcPanel.json",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": []
+      },
+      {
+        "endpoint": "/scripttemplates/6.31.0/assets/{id}",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": []
+      },
+      {
+        "endpoint": "/consent/{id}/{id}",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": []
+      },
+      {
+        "endpoint": "/cookieconsentpub/v1/geo/location",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": []
+      },
+      {
+        "endpoint": "/consent/{id}/{id}/en.json",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": []
+      },
+      {
+        "endpoint": "/scripttemplates/6.31.0/assets/{id}",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": []
+      },
+      {
+        "endpoint": "/scripttemplates/6.31.0/assets/v2/otPcPanel.json",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": []
+      },
+      {
+        "endpoint": "/scripttemplates/6.31.0/assets/{id}",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": []
+      },
+      {
+        "endpoint": "/consent/{id}/{id}",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": []
+      },
+      {
+        "endpoint": "/consent/{id}/{id}/en.json",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": []
+      },
+      {
+        "endpoint": "/scripttemplates/6.31.0/assets/{id}",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": []
+      },
+      {
+        "endpoint": "/scripttemplates/6.31.0/assets/v2/otPcPanel.json",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": []
+      },
+      {
+        "endpoint": "/scripttemplates/6.31.0/assets/{id}",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": []
+      }
+    ],
+    "form_submissions": []
+  },
+  "grouped_by_endpoint": {
+    "/MyNeighbourhood": [
+      {
+        "timestamp": "2025-07-21T08:06:39.870Z",
+        "duration_ms": 58.782000000000004,
+        "endpoint": "/MyNeighbourhood",
+        "host": "apps.wigan.gov.uk",
+        "method": "GET",
+        "status": 200,
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7"
+        },
+        "response_headers": {
+          "cache-control": "private",
+          "content-type": "text/html; charset=utf-8",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "DENY",
+          "x-xss-protection": "0; mode=block;"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 19655,
+          "compressed": true,
+          "content_ref": "65303fb461c0caeac15899c3bf4ec241292e5ef6.html"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T08:06:57.027Z",
+        "duration_ms": 114.32000000000001,
+        "endpoint": "/MyNeighbourhood",
+        "host": "apps.wigan.gov.uk",
+        "method": "POST",
+        "status": 200,
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+          "content-type": "application/x-www-form-urlencoded",
+          "cookie": "[cookies present]",
+          "origin": "null"
+        },
+        "response_headers": {
+          "cache-control": "private",
+          "content-type": "text/html; charset=utf-8",
+          "set-cookie": "[cookies present]",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "DENY",
+          "x-xss-protection": "0; mode=block;"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 29553,
+          "compressed": true,
+          "content_ref": "ba4e12feb6fe225a9a7cff91306889569c33041b.html"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T08:06:59.812Z",
+        "duration_ms": 98.76100000000001,
+        "endpoint": "/MyNeighbourhood",
+        "host": "apps.wigan.gov.uk",
+        "method": "POST",
+        "status": 302,
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+          "content-type": "application/x-www-form-urlencoded",
+          "cookie": "[cookies present]",
+          "origin": "null"
+        },
+        "response_headers": {
+          "cache-control": "private",
+          "content-type": "text/html; charset=utf-8",
+          "location": "/MyNeighbourhood/MyArea.aspx",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "DENY",
+          "x-xss-protection": "0; mode=block;"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": -1
+        },
+        "redirect_to": "/MyNeighbourhood/MyArea.aspx"
+      }
+    ],
+    "/consent/{id}/{id}": [
+      {
+        "timestamp": "2025-07-21T08:06:41.013Z",
+        "duration_ms": 53.505,
+        "endpoint": "/consent/{id}/{id}",
+        "host": "cdn.cookielaw.org",
+        "method": "GET",
+        "status": 200,
+        "path_params": [
+          "01aceaf6-57ad-4799-b7d2-33dc0226db73",
+          "01aceaf6-57ad-4799-b7d2-33dc0226db73.json"
+        ],
+        "request_headers": {
+          "accept": "*/*",
+          "origin": "https://apps.wigan.gov.uk"
+        },
+        "response_headers": {
+          "cache-control": "public, max-age=86400",
+          "content-type": "application/json",
+          "x-content-type-options": "nosniff",
+          "x-ms-blob-type": "BlockBlob",
+          "x-ms-lease-status": "unlocked",
+          "x-ms-request-id": "689385f4-b01e-00fb-441f-f35b90000000",
+          "x-ms-version": "2009-09-19",
+          "x-onetrust-isbot": "true"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 3554,
+          "compressed": true,
+          "content_ref": "7e3acdfd5a9e4eb229d7376eed280f6294a867dc.json"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T08:06:57.206Z",
+        "duration_ms": 0.697,
+        "endpoint": "/consent/{id}/{id}",
+        "host": "cdn.cookielaw.org",
+        "method": "GET",
+        "status": 200,
+        "path_params": [
+          "01aceaf6-57ad-4799-b7d2-33dc0226db73",
+          "01aceaf6-57ad-4799-b7d2-33dc0226db73.json"
+        ],
+        "request_headers": {
+          "referer": ""
+        },
+        "response_headers": {
+          "x-ms-lease-status": "unlocked",
+          "x-content-type-options": "nosniff",
+          "x-ms-version": "2009-09-19",
+          "content-type": "application/json",
+          "x-onetrust-isbot": "true",
+          "cache-control": "public, max-age=86400",
+          "x-ms-request-id": "689385f4-b01e-00fb-441f-f35b90000000",
+          "x-ms-blob-type": "BlockBlob"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 3554,
+          "compressed": true,
+          "content_ref": "7e3acdfd5a9e4eb229d7376eed280f6294a867dc.json"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T08:07:01.978Z",
+        "duration_ms": 0.8049999999999999,
+        "endpoint": "/consent/{id}/{id}",
+        "host": "cdn.cookielaw.org",
+        "method": "GET",
+        "status": 200,
+        "path_params": [
+          "01aceaf6-57ad-4799-b7d2-33dc0226db73",
+          "01aceaf6-57ad-4799-b7d2-33dc0226db73.json"
+        ],
+        "request_headers": {
+          "referer": ""
+        },
+        "response_headers": {
+          "x-ms-lease-status": "unlocked",
+          "x-content-type-options": "nosniff",
+          "x-ms-version": "2009-09-19",
+          "content-type": "application/json",
+          "x-onetrust-isbot": "true",
+          "cache-control": "public, max-age=86400",
+          "x-ms-request-id": "689385f4-b01e-00fb-441f-f35b90000000",
+          "x-ms-blob-type": "BlockBlob"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 3554,
+          "compressed": true,
+          "content_ref": "7e3acdfd5a9e4eb229d7376eed280f6294a867dc.json"
+        }
+      }
+    ],
+    "/cookieconsentpub/v1/geo/location": [
+      {
+        "timestamp": "2025-07-21T08:06:41.056Z",
+        "duration_ms": 77.759,
+        "endpoint": "/cookieconsentpub/v1/geo/location",
+        "host": "geolocation.onetrust.com",
+        "method": "GET",
+        "status": 200,
+        "request_headers": {
+          "accept": "application/json",
+          "origin": "https://apps.wigan.gov.uk"
+        },
+        "response_headers": {
+          "content-type": "application/json"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 69,
+          "content_ref": "63651d95ac63171fdd67c68a61e6b23de672f908.json"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T08:06:57.221Z",
+        "duration_ms": 18.638,
+        "endpoint": "/cookieconsentpub/v1/geo/location",
+        "host": "geolocation.onetrust.com",
+        "method": "GET",
+        "status": 200,
+        "request_headers": {
+          "accept": "application/json",
+          "origin": "https://apps.wigan.gov.uk"
+        },
+        "response_headers": {
+          "content-type": "application/json"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 69,
+          "content_ref": "63651d95ac63171fdd67c68a61e6b23de672f908.json"
+        }
+      }
+    ],
+    "/consent/{id}/{id}/en.json": [
+      {
+        "timestamp": "2025-07-21T08:06:41.170Z",
+        "duration_ms": 27.454,
+        "endpoint": "/consent/{id}/{id}/en.json",
+        "host": "cdn.cookielaw.org",
+        "method": "GET",
+        "status": 200,
+        "path_params": [
+          "01aceaf6-57ad-4799-b7d2-33dc0226db73",
+          "c8e437ef-640b-43c9-b093-dc6559f22105"
+        ],
+        "request_headers": {
+          "accept": "*/*",
+          "origin": "https://apps.wigan.gov.uk"
+        },
+        "response_headers": {
+          "cache-control": "public, max-age=86400",
+          "content-type": "application/json",
+          "x-content-type-options": "nosniff",
+          "x-ms-blob-type": "BlockBlob",
+          "x-ms-lease-status": "unlocked",
+          "x-ms-request-id": "98ef4003-201e-001b-6bbc-efbd18000000",
+          "x-ms-version": "2009-09-19",
+          "x-onetrust-isbot": "true"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 56940,
+          "compressed": true,
+          "content_ref": "11302551b5af97cff6929c4dd45ac9658993bca6.json"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T08:06:57.284Z",
+        "duration_ms": 1.814,
+        "endpoint": "/consent/{id}/{id}/en.json",
+        "host": "cdn.cookielaw.org",
+        "method": "GET",
+        "status": 200,
+        "path_params": [
+          "01aceaf6-57ad-4799-b7d2-33dc0226db73",
+          "c8e437ef-640b-43c9-b093-dc6559f22105"
+        ],
+        "request_headers": {
+          "referer": ""
+        },
+        "response_headers": {
+          "x-ms-lease-status": "unlocked",
+          "x-content-type-options": "nosniff",
+          "x-ms-version": "2009-09-19",
+          "content-type": "application/json",
+          "x-onetrust-isbot": "true",
+          "cache-control": "public, max-age=86400",
+          "x-ms-request-id": "98ef4003-201e-001b-6bbc-efbd18000000",
+          "x-ms-blob-type": "BlockBlob"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 56940,
+          "compressed": true,
+          "content_ref": "11302551b5af97cff6929c4dd45ac9658993bca6.json"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T08:07:01.993Z",
+        "duration_ms": 0.6990000000000001,
+        "endpoint": "/consent/{id}/{id}/en.json",
+        "host": "cdn.cookielaw.org",
+        "method": "GET",
+        "status": 200,
+        "path_params": [
+          "01aceaf6-57ad-4799-b7d2-33dc0226db73",
+          "c8e437ef-640b-43c9-b093-dc6559f22105"
+        ],
+        "request_headers": {
+          "referer": ""
+        },
+        "response_headers": {
+          "x-ms-lease-status": "unlocked",
+          "x-content-type-options": "nosniff",
+          "x-ms-version": "2009-09-19",
+          "content-type": "application/json",
+          "x-onetrust-isbot": "true",
+          "cache-control": "public, max-age=86400",
+          "x-ms-request-id": "98ef4003-201e-001b-6bbc-efbd18000000",
+          "x-ms-blob-type": "BlockBlob"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 56940,
+          "compressed": true,
+          "content_ref": "11302551b5af97cff6929c4dd45ac9658993bca6.json"
+        }
+      }
+    ],
+    "/scripttemplates/6.31.0/assets/{id}": [
+      {
+        "timestamp": "2025-07-21T08:06:41.203Z",
+        "duration_ms": 18.345,
+        "endpoint": "/scripttemplates/6.31.0/assets/{id}",
+        "host": "cdn.cookielaw.org",
+        "method": "GET",
+        "status": 200,
+        "path_params": [
+          "otFloatingRounded.json"
+        ],
+        "request_headers": {
+          "accept": "*/*",
+          "origin": "https://apps.wigan.gov.uk"
+        },
+        "response_headers": {
+          "cache-control": "max-age=86400",
+          "content-type": "application/json",
+          "x-content-type-options": "nosniff",
+          "x-ms-blob-type": "BlockBlob",
+          "x-ms-lease-status": "unlocked",
+          "x-ms-request-id": "d3ee2ef9-201e-00b1-1c7d-f86bf7000000",
+          "x-ms-version": "2009-09-19"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 9894,
+          "compressed": true,
+          "content_ref": "721bc37b0e2d2aaace5ad72f009f97b9271bd47a.json"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T08:06:41.204Z",
+        "duration_ms": 20.388,
+        "endpoint": "/scripttemplates/6.31.0/assets/{id}",
+        "host": "cdn.cookielaw.org",
+        "method": "GET",
+        "status": 200,
+        "path_params": [
+          "otCookieSettingsButton.json"
+        ],
+        "request_headers": {
+          "accept": "*/*",
+          "origin": "https://apps.wigan.gov.uk"
+        },
+        "response_headers": {
+          "cache-control": "max-age=86400",
+          "content-type": "application/json",
+          "x-content-type-options": "nosniff",
+          "x-ms-blob-type": "BlockBlob",
+          "x-ms-lease-status": "unlocked",
+          "x-ms-request-id": "a9ff7723-301e-0100-11ee-f2d5df000000",
+          "x-ms-version": "2009-09-19"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 4753,
+          "compressed": true,
+          "content_ref": "9e5ea2008bf8bbc473798738a567ee8f60941b18.json"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T08:06:57.286Z",
+        "duration_ms": 1.307,
+        "endpoint": "/scripttemplates/6.31.0/assets/{id}",
+        "host": "cdn.cookielaw.org",
+        "method": "GET",
+        "status": 200,
+        "path_params": [
+          "otFloatingRounded.json"
+        ],
+        "request_headers": {
+          "referer": ""
+        },
+        "response_headers": {
+          "x-ms-version": "2009-09-19",
+          "x-ms-lease-status": "unlocked",
+          "x-content-type-options": "nosniff",
+          "content-type": "application/json",
+          "cache-control": "max-age=86400",
+          "x-ms-request-id": "d3ee2ef9-201e-00b1-1c7d-f86bf7000000",
+          "x-ms-blob-type": "BlockBlob"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 9894,
+          "compressed": true,
+          "content_ref": "721bc37b0e2d2aaace5ad72f009f97b9271bd47a.json"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T08:06:57.286Z",
+        "duration_ms": 1.217,
+        "endpoint": "/scripttemplates/6.31.0/assets/{id}",
+        "host": "cdn.cookielaw.org",
+        "method": "GET",
+        "status": 200,
+        "path_params": [
+          "otCookieSettingsButton.json"
+        ],
+        "request_headers": {
+          "referer": ""
+        },
+        "response_headers": {
+          "x-ms-version": "2009-09-19",
+          "x-ms-lease-status": "unlocked",
+          "x-content-type-options": "nosniff",
+          "content-type": "application/json",
+          "cache-control": "max-age=86400",
+          "x-ms-request-id": "a9ff7723-301e-0100-11ee-f2d5df000000",
+          "x-ms-blob-type": "BlockBlob"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 4753,
+          "compressed": true,
+          "content_ref": "9e5ea2008bf8bbc473798738a567ee8f60941b18.json"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T08:07:02.046Z",
+        "duration_ms": 1.0939999999999999,
+        "endpoint": "/scripttemplates/6.31.0/assets/{id}",
+        "host": "cdn.cookielaw.org",
+        "method": "GET",
+        "status": 200,
+        "path_params": [
+          "otFloatingRounded.json"
+        ],
+        "request_headers": {
+          "referer": ""
+        },
+        "response_headers": {
+          "x-ms-version": "2009-09-19",
+          "x-ms-lease-status": "unlocked",
+          "x-content-type-options": "nosniff",
+          "content-type": "application/json",
+          "cache-control": "max-age=86400",
+          "x-ms-request-id": "d3ee2ef9-201e-00b1-1c7d-f86bf7000000",
+          "x-ms-blob-type": "BlockBlob"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 9894,
+          "compressed": true,
+          "content_ref": "721bc37b0e2d2aaace5ad72f009f97b9271bd47a.json"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T08:07:02.046Z",
+        "duration_ms": 1.339,
+        "endpoint": "/scripttemplates/6.31.0/assets/{id}",
+        "host": "cdn.cookielaw.org",
+        "method": "GET",
+        "status": 200,
+        "path_params": [
+          "otCookieSettingsButton.json"
+        ],
+        "request_headers": {
+          "referer": ""
+        },
+        "response_headers": {
+          "x-ms-version": "2009-09-19",
+          "x-ms-lease-status": "unlocked",
+          "x-content-type-options": "nosniff",
+          "content-type": "application/json",
+          "cache-control": "max-age=86400",
+          "x-ms-request-id": "a9ff7723-301e-0100-11ee-f2d5df000000",
+          "x-ms-blob-type": "BlockBlob"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 4753,
+          "compressed": true,
+          "content_ref": "9e5ea2008bf8bbc473798738a567ee8f60941b18.json"
+        }
+      }
+    ],
+    "/scripttemplates/6.31.0/assets/v2/otPcPanel.json": [
+      {
+        "timestamp": "2025-07-21T08:06:41.204Z",
+        "duration_ms": 19.616999999999997,
+        "endpoint": "/scripttemplates/6.31.0/assets/v2/otPcPanel.json",
+        "host": "cdn.cookielaw.org",
+        "method": "GET",
+        "status": 200,
+        "request_headers": {
+          "accept": "*/*",
+          "origin": "https://apps.wigan.gov.uk"
+        },
+        "response_headers": {
+          "cache-control": "max-age=86400",
+          "content-type": "application/json",
+          "x-content-type-options": "nosniff",
+          "x-ms-blob-type": "BlockBlob",
+          "x-ms-lease-status": "unlocked",
+          "x-ms-request-id": "8c3c3058-601e-0094-5fac-f7f344000000",
+          "x-ms-version": "2009-09-19"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 49022,
+          "compressed": true,
+          "content_ref": "550233105ec607d6ca8d1e6808af3e30d188cc5c.json"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T08:06:57.286Z",
+        "duration_ms": 1.179,
+        "endpoint": "/scripttemplates/6.31.0/assets/v2/otPcPanel.json",
+        "host": "cdn.cookielaw.org",
+        "method": "GET",
+        "status": 200,
+        "request_headers": {
+          "referer": ""
+        },
+        "response_headers": {
+          "x-ms-version": "2009-09-19",
+          "x-ms-lease-status": "unlocked",
+          "x-content-type-options": "nosniff",
+          "content-type": "application/json",
+          "cache-control": "max-age=86400",
+          "x-ms-request-id": "8c3c3058-601e-0094-5fac-f7f344000000",
+          "x-ms-blob-type": "BlockBlob"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 49022,
+          "compressed": true,
+          "content_ref": "550233105ec607d6ca8d1e6808af3e30d188cc5c.json"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T08:07:02.046Z",
+        "duration_ms": 1.263,
+        "endpoint": "/scripttemplates/6.31.0/assets/v2/otPcPanel.json",
+        "host": "cdn.cookielaw.org",
+        "method": "GET",
+        "status": 200,
+        "request_headers": {
+          "referer": ""
+        },
+        "response_headers": {
+          "x-ms-version": "2009-09-19",
+          "x-ms-lease-status": "unlocked",
+          "x-content-type-options": "nosniff",
+          "content-type": "application/json",
+          "cache-control": "max-age=86400",
+          "x-ms-request-id": "8c3c3058-601e-0094-5fac-f7f344000000",
+          "x-ms-blob-type": "BlockBlob"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 49022,
+          "compressed": true,
+          "content_ref": "550233105ec607d6ca8d1e6808af3e30d188cc5c.json"
+        }
+      }
+    ],
+    "/j/collect": [
+      {
+        "timestamp": "2025-07-21T08:06:42.490Z",
+        "duration_ms": 16.993,
+        "endpoint": "/j/collect",
+        "host": "www.google-analytics.com",
+        "method": "POST",
+        "status": 200,
+        "query_params": {
+          "v": [
+            "1"
+          ],
+          "_v": [
+            "j101"
+          ],
+          "aip": [
+            "1"
+          ],
+          "a": [
+            "194969353"
+          ],
+          "t": [
+            "pageview"
+          ],
+          "_s": [
+            "1"
+          ],
+          "dl": [
+            "https://apps.wigan.gov.uk/MyNeighbourhood/"
+          ],
+          "ul": [
+            "en-gb"
+          ],
+          "de": [
+            "UTF-8"
+          ],
+          "dt": [
+            "My Neighbourhood"
+          ],
+          "sd": [
+            "24-bit"
+          ],
+          "sr": [
+            "800x600"
+          ],
+          "vp": [
+            "800x461"
+          ],
+          "je": [
+            "0"
+          ],
+          "_u": [
+            "YEBAAEABAAAAACAAI~"
+          ],
+          "jid": [
+            "1122488023"
+          ],
+          "gjid": [
+            "1043556846"
+          ],
+          "cid": [
+            "561528583.1753085202"
+          ],
+          "tid": [
+            "UA-1865277-1"
+          ],
+          "_gid": [
+            "780552741.1753085202"
+          ],
+          "_r": [
+            "1"
+          ],
+          "_slc": [
+            "1"
+          ],
+          "gtm": [
+            "45He57h0h2n71KJH7KMv72364810za200"
+          ],
+          "gcd": [
+            "13l3l3l3l1l1"
+          ],
+          "dma": [
+            "0"
+          ],
+          "tag_exp": [
+            "101509157~103116026~103200004~103233427~104684208~104684211"
+          ],
+          "z": [
+            "1295742576"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "content-type": "text/plain",
+          "origin": "https://apps.wigan.gov.uk"
+        },
+        "response_headers": {
+          "cache-control": "no-cache, no-store, must-revalidate",
+          "content-type": "text/plain",
+          "x-content-type-options": "nosniff"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T08:06:57.295Z",
+        "duration_ms": 16.73,
+        "endpoint": "/j/collect",
+        "host": "www.google-analytics.com",
+        "method": "POST",
+        "status": 200,
+        "query_params": {
+          "v": [
+            "1"
+          ],
+          "_v": [
+            "j101"
+          ],
+          "aip": [
+            "1"
+          ],
+          "a": [
+            "1915696810"
+          ],
+          "t": [
+            "pageview"
+          ],
+          "_s": [
+            "1"
+          ],
+          "dl": [
+            "https://apps.wigan.gov.uk/MyNeighbourhood/"
+          ],
+          "ul": [
+            "en-gb"
+          ],
+          "de": [
+            "UTF-8"
+          ],
+          "dt": [
+            "My Neighbourhood"
+          ],
+          "sd": [
+            "24-bit"
+          ],
+          "sr": [
+            "800x600"
+          ],
+          "vp": [
+            "800x461"
+          ],
+          "je": [
+            "0"
+          ],
+          "_u": [
+            "QACAAEABAAAAACAAI~"
+          ],
+          "cid": [
+            "561528583.1753085202"
+          ],
+          "tid": [
+            "UA-1865277-1"
+          ],
+          "_gid": [
+            "780552741.1753085202"
+          ],
+          "_slc": [
+            "1"
+          ],
+          "gtm": [
+            "45He57h0h2n71KJH7KMv72364810za200"
+          ],
+          "gcd": [
+            "13l3l3l3l1l1"
+          ],
+          "dma": [
+            "0"
+          ],
+          "tag_exp": [
+            "101509157~103116026~103200004~103233427~104684208~104684211"
+          ],
+          "z": [
+            "815544774"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "content-type": "text/plain",
+          "origin": "https://apps.wigan.gov.uk"
+        },
+        "response_headers": {
+          "cache-control": "no-cache, no-store, must-revalidate",
+          "content-type": "text/plain",
+          "x-content-type-options": "nosniff"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T08:07:01.993Z",
+        "duration_ms": 15.719,
+        "endpoint": "/j/collect",
+        "host": "www.google-analytics.com",
+        "method": "POST",
+        "status": 200,
+        "query_params": {
+          "v": [
+            "1"
+          ],
+          "_v": [
+            "j101"
+          ],
+          "aip": [
+            "1"
+          ],
+          "a": [
+            "1920594711"
+          ],
+          "t": [
+            "pageview"
+          ],
+          "_s": [
+            "1"
+          ],
+          "dl": [
+            "https://apps.wigan.gov.uk/MyNeighbourhood/MyArea.aspx"
+          ],
+          "ul": [
+            "en-gb"
+          ],
+          "de": [
+            "UTF-8"
+          ],
+          "dt": [
+            "My Neighbourhood"
+          ],
+          "sd": [
+            "24-bit"
+          ],
+          "sr": [
+            "800x600"
+          ],
+          "vp": [
+            "800x461"
+          ],
+          "je": [
+            "0"
+          ],
+          "_u": [
+            "QACAAEABAAAAACAAI~"
+          ],
+          "cid": [
+            "561528583.1753085202"
+          ],
+          "tid": [
+            "UA-1865277-1"
+          ],
+          "_gid": [
+            "780552741.1753085202"
+          ],
+          "_slc": [
+            "1"
+          ],
+          "gtm": [
+            "45He57h0h2n71KJH7KMv72364810za200"
+          ],
+          "gcd": [
+            "13l3l3l3l1l1"
+          ],
+          "dma": [
+            "0"
+          ],
+          "tag_exp": [
+            "101509157~103116026~103200004~103233427~104684208~104684211"
+          ],
+          "z": [
+            "382375498"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "content-type": "text/plain",
+          "origin": "https://apps.wigan.gov.uk"
+        },
+        "response_headers": {
+          "cache-control": "no-cache, no-store, must-revalidate",
+          "content-type": "text/plain",
+          "x-content-type-options": "nosniff"
+        }
+      }
+    ],
+    "/g/collect": [
+      {
+        "timestamp": "2025-07-21T08:06:42.524Z",
+        "duration_ms": 68.024,
+        "endpoint": "/g/collect",
+        "host": "region1.google-analytics.com",
+        "method": "POST",
+        "status": 204,
+        "query_params": {
+          "v": [
+            "2"
+          ],
+          "tid": [
+            "G-0NSWECBZHQ"
+          ],
+          "gtm": [
+            "45je57h0h2v873757920z872364810za200zb72364810"
+          ],
+          "_p": [
+            "1753085200050"
+          ],
+          "gcd": [
+            "13l3l3l3l1l1"
+          ],
+          "npa": [
+            "0"
+          ],
+          "dma": [
+            "0"
+          ],
+          "tag_exp": [
+            "101509157~103116026~103200004~103233427~104684208~104684211"
+          ],
+          "cid": [
+            "561528583.1753085202"
+          ],
+          "ul": [
+            "en-gb"
+          ],
+          "sr": [
+            "800x600"
+          ],
+          "uaa": [
+            "arm"
+          ],
+          "uab": [
+            "64"
+          ],
+          "uafvl": [
+            "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+          ],
+          "uamb": [
+            "0"
+          ],
+          "uap": [
+            "macOS"
+          ],
+          "uapv": [
+            "15.5.0"
+          ],
+          "uaw": [
+            "0"
+          ],
+          "are": [
+            "1"
+          ],
+          "frm": [
+            "0"
+          ],
+          "pscdl": [
+            "noapi"
+          ],
+          "_s": [
+            "1"
+          ],
+          "sid": [
+            "1753085202"
+          ],
+          "sct": [
+            "1"
+          ],
+          "seg": [
+            "0"
+          ],
+          "dl": [
+            "https://apps.wigan.gov.uk/MyNeighbourhood/"
+          ],
+          "dt": [
+            "My Neighbourhood"
+          ],
+          "en": [
+            "page_view"
+          ],
+          "_fv": [
+            "1"
+          ],
+          "_ss": [
+            "1"
+          ],
+          "tfd": [
+            "2643"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "cookie": "[cookies present]",
+          "origin": "https://apps.wigan.gov.uk"
+        },
+        "response_headers": {
+          "cache-control": "no-cache, no-store, must-revalidate",
+          "content-type": "text/plain"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T08:06:57.154Z",
+        "duration_ms": -1,
+        "endpoint": "/g/collect",
+        "host": "region1.google-analytics.com",
+        "method": "POST",
+        "status": -1,
+        "query_params": {
+          "v": [
+            "2"
+          ],
+          "tid": [
+            "G-0NSWECBZHQ"
+          ],
+          "gtm": [
+            "45je57h0h2v873757920za200zb72364810"
+          ],
+          "_p": [
+            "1753085200050"
+          ],
+          "gcd": [
+            "13l3l3l3l1l1"
+          ],
+          "npa": [
+            "0"
+          ],
+          "dma": [
+            "0"
+          ],
+          "tag_exp": [
+            "101509157~103116026~103200004~103233427~104684208~104684211"
+          ],
+          "cid": [
+            "561528583.1753085202"
+          ],
+          "ul": [
+            "en-gb"
+          ],
+          "sr": [
+            "800x600"
+          ],
+          "uaa": [
+            "arm"
+          ],
+          "uab": [
+            "64"
+          ],
+          "uafvl": [
+            "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+          ],
+          "uamb": [
+            "0"
+          ],
+          "uap": [
+            "macOS"
+          ],
+          "uapv": [
+            "15.5.0"
+          ],
+          "uaw": [
+            "0"
+          ],
+          "are": [
+            "1"
+          ],
+          "frm": [
+            "0"
+          ],
+          "pscdl": [
+            "noapi"
+          ],
+          "_eu": [
+            "AAAAAAQ"
+          ],
+          "_s": [
+            "2"
+          ],
+          "sid": [
+            "1753085202"
+          ],
+          "sct": [
+            "1"
+          ],
+          "seg": [
+            "1"
+          ],
+          "dl": [
+            "https://apps.wigan.gov.uk/MyNeighbourhood/"
+          ],
+          "dt": [
+            "My Neighbourhood"
+          ],
+          "en": [
+            "user_engagement"
+          ],
+          "_et": [
+            "14634"
+          ],
+          "tfd": [
+            "17282"
+          ]
+        },
+        "request_headers": {
+          "referer": ""
+        }
+      },
+      {
+        "timestamp": "2025-07-21T08:07:01.922Z",
+        "duration_ms": -1,
+        "endpoint": "/g/collect",
+        "host": "region1.google-analytics.com",
+        "method": "POST",
+        "status": -1,
+        "query_params": {
+          "v": [
+            "2"
+          ],
+          "tid": [
+            "G-0NSWECBZHQ"
+          ],
+          "gtm": [
+            "45je57h0h2v873757920za200zb72364810"
+          ],
+          "_p": [
+            "1753085217184"
+          ],
+          "gcd": [
+            "13l3l3l3l1l1"
+          ],
+          "npa": [
+            "0"
+          ],
+          "dma": [
+            "0"
+          ],
+          "tag_exp": [
+            "101509157~103116026~103200004~103233427~104684208~104684211"
+          ],
+          "cid": [
+            "561528583.1753085202"
+          ],
+          "ul": [
+            "en-gb"
+          ],
+          "sr": [
+            "800x600"
+          ],
+          "uaa": [
+            "arm"
+          ],
+          "uab": [
+            "64"
+          ],
+          "uafvl": [
+            "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+          ],
+          "uamb": [
+            "0"
+          ],
+          "uap": [
+            "macOS"
+          ],
+          "uapv": [
+            "15.5.0"
+          ],
+          "uaw": [
+            "0"
+          ],
+          "are": [
+            "1"
+          ],
+          "frm": [
+            "0"
+          ],
+          "pscdl": [
+            "noapi"
+          ],
+          "_eu": [
+            "AAAAAAQ"
+          ],
+          "_s": [
+            "2"
+          ],
+          "sid": [
+            "1753085202"
+          ],
+          "sct": [
+            "1"
+          ],
+          "seg": [
+            "1"
+          ],
+          "dl": [
+            "https://apps.wigan.gov.uk/MyNeighbourhood/"
+          ],
+          "dt": [
+            "My Neighbourhood"
+          ],
+          "en": [
+            "user_engagement"
+          ],
+          "_et": [
+            "4644"
+          ],
+          "tfd": [
+            "4892"
+          ]
+        },
+        "request_headers": {
+          "referer": ""
+        }
+      },
+      {
+        "timestamp": "2025-07-21T08:07:01.921Z",
+        "duration_ms": -1,
+        "endpoint": "/g/collect",
+        "host": "region1.google-analytics.com",
+        "method": "POST",
+        "status": -1,
+        "query_params": {
+          "v": [
+            "2"
+          ],
+          "tid": [
+            "G-0NSWECBZHQ"
+          ],
+          "gtm": [
+            "45je57h0h2v873757920z872364810za200zb72364810"
+          ],
+          "_p": [
+            "1753085217184"
+          ],
+          "gcd": [
+            "13l3l3l3l1l1"
+          ],
+          "npa": [
+            "0"
+          ],
+          "dma": [
+            "0"
+          ],
+          "tag_exp": [
+            "101509157~103116026~103200004~103233427~104684208~104684211"
+          ],
+          "cid": [
+            "561528583.1753085202"
+          ],
+          "ul": [
+            "en-gb"
+          ],
+          "sr": [
+            "800x600"
+          ],
+          "uaa": [
+            "arm"
+          ],
+          "uab": [
+            "64"
+          ],
+          "uafvl": [
+            "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+          ],
+          "uamb": [
+            "0"
+          ],
+          "uap": [
+            "macOS"
+          ],
+          "uapv": [
+            "15.5.0"
+          ],
+          "uaw": [
+            "0"
+          ],
+          "are": [
+            "1"
+          ],
+          "frm": [
+            "0"
+          ],
+          "pscdl": [
+            "noapi"
+          ],
+          "_eu": [
+            "AAAAAAQ"
+          ],
+          "_s": [
+            "1"
+          ],
+          "sid": [
+            "1753085202"
+          ],
+          "sct": [
+            "1"
+          ],
+          "seg": [
+            "1"
+          ],
+          "dl": [
+            "https://apps.wigan.gov.uk/MyNeighbourhood/"
+          ],
+          "dt": [
+            "My Neighbourhood"
+          ],
+          "en": [
+            "page_view"
+          ],
+          "tfd": [
+            "4890"
+          ]
+        },
+        "request_headers": {
+          "referer": ""
+        }
+      },
+      {
+        "timestamp": "2025-07-21T08:07:01.995Z",
+        "duration_ms": 14.917,
+        "endpoint": "/g/collect",
+        "host": "region1.google-analytics.com",
+        "method": "POST",
+        "status": 204,
+        "query_params": {
+          "v": [
+            "2"
+          ],
+          "tid": [
+            "G-0NSWECBZHQ"
+          ],
+          "gtm": [
+            "45je57h0h2v873757920z872364810za200zb72364810"
+          ],
+          "_p": [
+            "1753085221947"
+          ],
+          "gcd": [
+            "13l3l3l3l1l1"
+          ],
+          "npa": [
+            "0"
+          ],
+          "dma": [
+            "0"
+          ],
+          "tag_exp": [
+            "101509157~103116026~103200004~103233427~104684208~104684211"
+          ],
+          "cid": [
+            "561528583.1753085202"
+          ],
+          "ul": [
+            "en-gb"
+          ],
+          "sr": [
+            "800x600"
+          ],
+          "uaa": [
+            "arm"
+          ],
+          "uab": [
+            "64"
+          ],
+          "uafvl": [
+            "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+          ],
+          "uamb": [
+            "0"
+          ],
+          "uap": [
+            "macOS"
+          ],
+          "uapv": [
+            "15.5.0"
+          ],
+          "uaw": [
+            "0"
+          ],
+          "are": [
+            "1"
+          ],
+          "frm": [
+            "0"
+          ],
+          "pscdl": [
+            "noapi"
+          ],
+          "_eu": [
+            "AAAAAAQ"
+          ],
+          "_s": [
+            "1"
+          ],
+          "sid": [
+            "1753085202"
+          ],
+          "sct": [
+            "1"
+          ],
+          "seg": [
+            "1"
+          ],
+          "dl": [
+            "https://apps.wigan.gov.uk/MyNeighbourhood/MyArea.aspx"
+          ],
+          "dt": [
+            "My Neighbourhood"
+          ],
+          "en": [
+            "page_view"
+          ],
+          "tfd": [
+            "2180"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "cookie": "[cookies present]",
+          "origin": "https://apps.wigan.gov.uk"
+        },
+        "response_headers": {
+          "cache-control": "no-cache, no-store, must-revalidate",
+          "content-type": "text/plain"
+        }
+      }
+    ],
+    "/element/log": [
+      {
+        "timestamp": "2025-07-21T08:06:51.106Z",
+        "duration_ms": 65.236,
+        "endpoint": "/element/log",
+        "host": "translate.googleapis.com",
+        "method": "POST",
+        "status": 200,
+        "query_params": {
+          "format": [
+            "json"
+          ],
+          "hasfast": [
+            "true"
+          ],
+          "authuser": [
+            "0"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "content-type": "application/binary",
+          "origin": "https://apps.wigan.gov.uk",
+          "x-browser-copyright": "Copyright 2025 Google LLC. All rights reserved.",
+          "x-browser-validation": "qvLgIVtG4U8GgiRPSI9IJ22mUlI=",
+          "x-browser-year": "2025",
+          "x-client-data": "CMiXywE=",
+          "x-goog-authuser": "0"
+        },
+        "response_headers": {
+          "content-type": "text/plain; charset=UTF-8",
+          "x-frame-options": "SAMEORIGIN",
+          "x-xss-protection": "0"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T08:06:57.155Z",
+        "duration_ms": -1,
+        "endpoint": "/element/log",
+        "host": "translate.googleapis.com",
+        "method": "POST",
+        "status": -1,
+        "query_params": {
+          "hasfast": [
+            "true"
+          ],
+          "authuser": [
+            "0"
+          ],
+          "format": [
+            "json"
+          ]
+        },
+        "request_headers": {
+          "referer": "",
+          "content-type": "text/plain;charset=UTF-8"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T08:07:01.923Z",
+        "duration_ms": -1,
+        "endpoint": "/element/log",
+        "host": "translate.googleapis.com",
+        "method": "POST",
+        "status": -1,
+        "query_params": {
+          "hasfast": [
+            "true"
+          ],
+          "authuser": [
+            "0"
+          ],
+          "format": [
+            "json"
+          ]
+        },
+        "request_headers": {
+          "referer": "",
+          "content-type": "text/plain;charset=UTF-8"
+        }
+      }
+    ],
+    "/MyNeighbourhood/MyArea.aspx": [
+      {
+        "timestamp": "2025-07-21T08:06:59.911Z",
+        "duration_ms": 1996.32,
+        "endpoint": "/MyNeighbourhood/MyArea.aspx",
+        "host": "apps.wigan.gov.uk",
+        "method": "GET",
+        "status": 200,
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+          "cookie": "[cookies present]"
+        },
+        "response_headers": {
+          "cache-control": "private",
+          "content-type": "text/html; charset=utf-8",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "DENY",
+          "x-xss-protection": "0; mode=block;"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 30061,
+          "compressed": true,
+          "content_ref": "ef8d5b8a92074592a34b07b376b399b37b0c13e5.html"
+        }
+      }
+    ]
+  }
 }

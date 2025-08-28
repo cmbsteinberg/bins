@@ -1,54 +1,113 @@
 {
-  "metadata": {
-    "trace_name": "welwyn_hatfield_council",
-    "processed_at": "2025-08-26 18:44:24",
-    "workflow_steps_count": 2,
-    "navigation_events_count": 2
-  },
-  "scraping_patterns": {
-    "login_detected": false,
-    "form_submissions": 0,
-    "navigation_count": 2,
-    "unique_domains": [
-      "www.welhat.gov.uk"
-    ],
-    "api_endpoints": [],
-    "data_extraction_indicators": []
-  },
-  "workflow_steps": [
+  "entries": [
     {
-      "action": "goto",
-      "target": "https://www.welhat.gov.uk/rubbish-recycling/check-bin-collection-day",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
+      "timestamp": "2025-07-22T07:36:53.497Z",
+      "duration_ms": 49.409,
+      "endpoint": "/rubbish-recycling/{id}",
+      "host": "www.welhat.gov.uk",
+      "method": "GET",
+      "status": 403,
+      "path_params": [
+        "check-bin-collection-day"
+      ],
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7"
+      },
+      "response_headers": {
+        "content-type": "text/html"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 520,
+        "content_ref": "76f70f10f6b6a17b7cec2d17c689f92c80f8bd56.html"
+      }
     },
     {
-      "action": "goto",
-      "target": "https://www.welhat.gov.uk/",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
+      "timestamp": "2025-07-22T07:36:54.935Z",
+      "duration_ms": 8.253,
+      "endpoint": "/",
+      "host": "www.welhat.gov.uk",
+      "method": "GET",
+      "status": 403,
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7"
+      },
+      "response_headers": {
+        "content-type": "text/html"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 520,
+        "content_ref": "76f70f10f6b6a17b7cec2d17c689f92c80f8bd56.html"
+      }
     }
   ],
-  "navigation_events": [
-    {
-      "url": "https://www.welhat.gov.uk/rubbish-recycling/check-bin-collection-day",
-      "method": "GET",
-      "status": 403,
-      "redirect_url": null,
-      "mime_type": "text/html",
-      "size": 520,
-      "timestamp": "2025-07-22T07:36:53.497Z"
+  "analysis": {
+    "total_requests": 2,
+    "unique_endpoints": 2,
+    "methods_used": [
+      "GET"
+    ],
+    "status_codes": {
+      "403": 2
     },
-    {
-      "url": "https://www.welhat.gov.uk/",
-      "method": "GET",
-      "status": 403,
-      "redirect_url": null,
-      "mime_type": "text/html",
-      "size": 520,
-      "timestamp": "2025-07-22T07:36:54.935Z"
-    }
-  ]
+    "endpoints_with_params": [
+      {
+        "endpoint": "/rubbish-recycling/{id}",
+        "method": "GET",
+        "query_params": [],
+        "path_params": true
+      }
+    ],
+    "redirects": [],
+    "api_calls": [],
+    "form_submissions": []
+  },
+  "grouped_by_endpoint": {
+    "/rubbish-recycling/{id}": [
+      {
+        "timestamp": "2025-07-22T07:36:53.497Z",
+        "duration_ms": 49.409,
+        "endpoint": "/rubbish-recycling/{id}",
+        "host": "www.welhat.gov.uk",
+        "method": "GET",
+        "status": 403,
+        "path_params": [
+          "check-bin-collection-day"
+        ],
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7"
+        },
+        "response_headers": {
+          "content-type": "text/html"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 520,
+          "content_ref": "76f70f10f6b6a17b7cec2d17c689f92c80f8bd56.html"
+        }
+      }
+    ],
+    "/": [
+      {
+        "timestamp": "2025-07-22T07:36:54.935Z",
+        "duration_ms": 8.253,
+        "endpoint": "/",
+        "host": "www.welhat.gov.uk",
+        "method": "GET",
+        "status": 403,
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7"
+        },
+        "response_headers": {
+          "content-type": "text/html"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 520,
+          "content_ref": "76f70f10f6b6a17b7cec2d17c689f92c80f8bd56.html"
+        }
+      }
+    ]
+  }
 }

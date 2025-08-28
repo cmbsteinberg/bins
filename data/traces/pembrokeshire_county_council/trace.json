@@ -1,146 +1,1092 @@
 {
-  "metadata": {
-    "trace_name": "pembrokeshire_county_council",
-    "processed_at": "2025-08-26 18:44:24",
-    "workflow_steps_count": 6,
-    "navigation_events_count": 8
-  },
-  "scraping_patterns": {
-    "login_detected": false,
-    "form_submissions": 1,
-    "navigation_count": 1,
-    "unique_domains": [
-      "cdn.pembrokeshire.gov.uk",
-      "www.pembrokeshire.gov.uk",
-      "nearest.pembrokeshire.gov.uk",
-      "apikeys.civiccomputing.com"
-    ],
-    "api_endpoints": [],
-    "data_extraction_indicators": []
-  },
-  "workflow_steps": [
+  "entries": [
     {
-      "action": "goto",
-      "target": "https://www.pembrokeshire.gov.uk/waste-and-recycling",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
-    },
-    {
-      "action": "click",
-      "target": "aria-ref=e13 >> internal:describe=\"I Accept Cookies button\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
-    },
-    {
-      "action": "fill",
-      "target": "aria-ref=e192 >> internal:describe=\"Address Search textbox\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0,
-      "value": "SA34 0NL"
-    },
-    {
-      "action": "click",
-      "target": "aria-ref=e194 >> internal:describe=\"Find Bin Day button\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
-    },
-    {
-      "action": "selectOption",
-      "target": "aria-ref=e18 >> internal:describe=\"combobox\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0,
-      "value": null
-    },
-    {
-      "action": "click",
-      "target": "aria-ref=e90 >> internal:describe=\"Search button\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
-    }
-  ],
-  "navigation_events": [
-    {
-      "url": "https://www.pembrokeshire.gov.uk/waste-and-recycling",
+      "timestamp": "2025-07-21T10:24:06.063Z",
+      "duration_ms": 546.611,
+      "endpoint": "/waste-and-recycling",
+      "host": "www.pembrokeshire.gov.uk",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "text/html",
-      "size": 51088,
-      "timestamp": "2025-07-21T10:24:06.063Z"
-    },
-    {
-      "url": "https://apikeys.civiccomputing.com/c/v?d=www.pembrokeshire.gov.uk&p=CookieControl%20Multi-Site&v=9&k=ae61c4718ddc049b5eefb7b893cb69b912c8cd19&format=json",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json",
-      "size": 309,
-      "timestamp": "2025-07-21T10:24:07.738Z"
-    },
-    {
-      "url": "https://cdn.pembrokeshire.gov.uk/fonts/fontawesome-webfont.woff2?v=4.7.0",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/font-woff2",
-      "size": 77160,
-      "timestamp": "2025-07-21T10:24:07.743Z"
-    },
-    {
-      "url": "https://nearest.pembrokeshire.gov.uk/search/?query=SA34+0NL",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "text/html; charset=utf-8",
-      "size": 10669,
-      "timestamp": "2025-07-21T10:24:14.337Z"
-    },
-    {
-      "url": "https://nearest.pembrokeshire.gov.uk/properties",
-      "method": "POST",
-      "status": 302,
-      "redirect_url": "https://nearest.pembrokeshire.gov.uk/property/200003244142",
-      "mime_type": "x-unknown",
-      "size": -1,
-      "timestamp": "2025-07-21T10:24:20.676Z",
-      "form_data": {
-        "propertyList": "System.Collections.Generic.List`1[FindMyNearestCoreV1.Models.SearchProperty]",
-        "Uprn": "200003244142",
-        "__RequestVerificationToken": "CfDJ8ClCL-l1Z25Cj-NNymUy5D6Af-0Ol8nbtdcemX6PNE6zW9RkH9LUT9uUrMm7Qy8eUbNdSn1b6gOcdjiCjOQHOLPR8BRl7NSXpPBmc2NZVKKWaqLOfKzLJWF0hNhAEAdT1yiH_IRL57GN7b88XlQ79-s"
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7"
+      },
+      "response_headers": {
+        "cache-control": "private",
+        "content-type": "text/html",
+        "set-cookie": "[cookies present]",
+        "x-frame-options": "SAMEORIGIN",
+        "x-robots-tag": "all",
+        "x-serveron": ".23"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 51088,
+        "content_ref": "cca0cdf91167abad2dd7f5d78ca04ed6efd28fae.html"
       }
     },
     {
-      "url": "https://nearest.pembrokeshire.gov.uk/property/200003244142",
+      "timestamp": "2025-07-21T10:24:07.738Z",
+      "duration_ms": 49.572,
+      "endpoint": "/c/v",
+      "host": "apikeys.civiccomputing.com",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "text/html; charset=utf-8",
-      "size": 10589,
-      "timestamp": "2025-07-21T10:24:20.697Z"
+      "query_params": {
+        "d": [
+          "www.pembrokeshire.gov.uk"
+        ],
+        "p": [
+          "CookieControl Multi-Site"
+        ],
+        "v": [
+          "9"
+        ],
+        "k": [
+          "ae61c4718ddc049b5eefb7b893cb69b912c8cd19"
+        ],
+        "format": [
+          "json"
+        ]
+      },
+      "request_headers": {
+        "accept": "application/json, text/plain, */*",
+        "origin": "https://www.pembrokeshire.gov.uk",
+        "referer": "https://www.pembrokeshire.gov.uk/"
+      },
+      "response_headers": {
+        "cache-control": "max-age=3600, private, no-store",
+        "content-type": "application/json",
+        "x-apikeys": "hit",
+        "x-cf-test": "true",
+        "x-content-type-options": "nosniff",
+        "x-xss-protection": "1"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 309,
+        "content_ref": "93bfb904389767acd806fcaf56bdb08dccad871c.json"
+      }
     },
     {
-      "url": "https://cdn.pembrokeshire.gov.uk/ModularMaps/1.0//templates/wrapperTemplate.html",
+      "timestamp": "2025-07-21T10:24:07.743Z",
+      "duration_ms": 186.613,
+      "endpoint": "/fonts/{id}",
+      "host": "cdn.pembrokeshire.gov.uk",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "text/html",
-      "size": 3843,
-      "timestamp": "2025-07-21T10:24:22.402Z"
+      "path_params": [
+        "fontawesome-webfont.woff2"
+      ],
+      "query_params": {
+        "v": [
+          "4.7.0"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "origin": "https://www.pembrokeshire.gov.uk",
+        "referer": "https://cdn.pembrokeshire.gov.uk/css/font-awesome.min.css"
+      },
+      "response_headers": {
+        "cache-control": "private",
+        "content-type": "application/font-woff2",
+        "set-cookie": "[cookies present]",
+        "x-serveron": ".23"
+      }
     },
     {
-      "url": "https://cdn.pembrokeshire.gov.uk/gis/wfs/?service=WFS&version=1.1.0&request=GetFeature&typename=tblLLPGAddress&cql_filter=UPRN=200003244142&outputFormat=json",
+      "timestamp": "2025-07-21T10:24:09.337Z",
+      "duration_ms": 17.133,
+      "endpoint": "/j/collect",
+      "host": "www.google-analytics.com",
+      "method": "POST",
+      "status": 200,
+      "query_params": {
+        "v": [
+          "1"
+        ],
+        "_v": [
+          "j101"
+        ],
+        "aip": [
+          "1"
+        ],
+        "a": [
+          "1387019728"
+        ],
+        "t": [
+          "pageview"
+        ],
+        "_s": [
+          "1"
+        ],
+        "dl": [
+          "https://www.pembrokeshire.gov.uk/waste-and-recycling"
+        ],
+        "ul": [
+          "en-gb"
+        ],
+        "de": [
+          "UTF-8"
+        ],
+        "dt": [
+          "Waste & Recycling - Pembrokeshire County Council"
+        ],
+        "sd": [
+          "24-bit"
+        ],
+        "sr": [
+          "800x600"
+        ],
+        "vp": [
+          "800x461"
+        ],
+        "je": [
+          "0"
+        ],
+        "_u": [
+          "YEBAAEABAAAAACAAI~"
+        ],
+        "jid": [
+          "1742269945"
+        ],
+        "gjid": [
+          "1900970376"
+        ],
+        "cid": [
+          "2089783331.1753093449"
+        ],
+        "tid": [
+          "UA-1928241-2"
+        ],
+        "_gid": [
+          "1178296087.1753093449"
+        ],
+        "_r": [
+          "1"
+        ],
+        "_slc": [
+          "1"
+        ],
+        "z": [
+          "1600676473"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "content-type": "text/plain",
+        "origin": "https://www.pembrokeshire.gov.uk",
+        "referer": "https://www.pembrokeshire.gov.uk/"
+      },
+      "response_headers": {
+        "cache-control": "no-cache, no-store, must-revalidate",
+        "content-type": "text/plain",
+        "x-content-type-options": "nosniff"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T10:24:09.465Z",
+      "duration_ms": 56.964999999999996,
+      "endpoint": "/g/collect",
+      "host": "region1.google-analytics.com",
+      "method": "POST",
+      "status": 204,
+      "query_params": {
+        "v": [
+          "2"
+        ],
+        "tid": [
+          "G-JY5DJ3T087"
+        ],
+        "gtm": [
+          "45je57g1v9122940447za200"
+        ],
+        "_p": [
+          "1753093449354"
+        ],
+        "gcd": [
+          "13l3l3l3l2l1"
+        ],
+        "npa": [
+          "0"
+        ],
+        "dma": [
+          "0"
+        ],
+        "tag_exp": [
+          "101509157~103116026~103200004~103233427~104684208~104684211~104948813"
+        ],
+        "ul": [
+          "en-gb"
+        ],
+        "sr": [
+          "800x600"
+        ],
+        "cid": [
+          "2089783331.1753093449"
+        ],
+        "uaa": [
+          "arm"
+        ],
+        "uab": [
+          "64"
+        ],
+        "uafvl": [
+          "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+        ],
+        "uamb": [
+          "0"
+        ],
+        "uap": [
+          "macOS"
+        ],
+        "uapv": [
+          "15.5.0"
+        ],
+        "uaw": [
+          "0"
+        ],
+        "are": [
+          "1"
+        ],
+        "frm": [
+          "0"
+        ],
+        "pscdl": [
+          "noapi"
+        ],
+        "_eu": [
+          "ABAI"
+        ],
+        "_s": [
+          "1"
+        ],
+        "dl": [
+          "https://www.pembrokeshire.gov.uk/waste-and-recycling"
+        ],
+        "dt": [
+          "Waste & Recycling - Pembrokeshire County Council"
+        ],
+        "sid": [
+          "1753093449"
+        ],
+        "sct": [
+          "1"
+        ],
+        "seg": [
+          "0"
+        ],
+        "_tu": [
+          "wAQ"
+        ],
+        "en": [
+          "page_view"
+        ],
+        "_fv": [
+          "1"
+        ],
+        "_ss": [
+          "1"
+        ],
+        "_ee": [
+          "1"
+        ],
+        "tfd": [
+          "3397"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "cookie": "[cookies present]",
+        "origin": "https://www.pembrokeshire.gov.uk",
+        "referer": "https://www.pembrokeshire.gov.uk/"
+      },
+      "response_headers": {
+        "cache-control": "no-cache, no-store, must-revalidate",
+        "content-type": "text/plain"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T10:24:14.337Z",
+      "duration_ms": 216.954,
+      "endpoint": "/search",
+      "host": "nearest.pembrokeshire.gov.uk",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json",
-      "size": 979,
-      "timestamp": "2025-07-21T10:24:22.512Z"
+      "query_params": {
+        "query": [
+          "SA34 0NL"
+        ]
+      },
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+        "cookie": "[cookies present]",
+        "referer": "https://www.pembrokeshire.gov.uk/"
+      },
+      "response_headers": {
+        "cache-control": "no-cache, no-store",
+        "content-type": "text/html; charset=utf-8",
+        "set-cookie": "[cookies present]",
+        "x-frame-options": "SAMEORIGIN",
+        "x-serveron": ".23"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 10669,
+        "compressed": true,
+        "content_ref": "8bd38e30ad6e614c7fa273175f2d377576098a7c.html"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T10:24:20.676Z",
+      "duration_ms": 23.733999999999998,
+      "endpoint": "/properties",
+      "host": "nearest.pembrokeshire.gov.uk",
+      "method": "POST",
+      "status": 302,
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+        "content-type": "application/x-www-form-urlencoded",
+        "cookie": "[cookies present]",
+        "origin": "https://nearest.pembrokeshire.gov.uk",
+        "referer": "https://nearest.pembrokeshire.gov.uk/search/?query=SA34+0NL"
+      },
+      "response_headers": {
+        "location": "/property/200003244142",
+        "x-serveron": ".23"
+      },
+      "redirect_to": "/property/200003244142"
+    },
+    {
+      "timestamp": "2025-07-21T10:24:20.697Z",
+      "duration_ms": 1337.319,
+      "endpoint": "/property/{id}",
+      "host": "nearest.pembrokeshire.gov.uk",
+      "method": "GET",
+      "status": 200,
+      "path_params": [
+        "200003244142"
+      ],
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+        "cookie": "[cookies present]",
+        "referer": "https://nearest.pembrokeshire.gov.uk/search/?query=SA34+0NL"
+      },
+      "response_headers": {
+        "content-type": "text/html; charset=utf-8",
+        "x-serveron": ".23"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 10589,
+        "compressed": true,
+        "content_ref": "4fa0b130d655e72763a5413d0e8dac297b5e53b6.html"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T10:24:22.402Z",
+      "duration_ms": 19.259,
+      "endpoint": "/ModularMaps/1.0/templates/wrapperTemplate.html",
+      "host": "cdn.pembrokeshire.gov.uk",
+      "method": "GET",
+      "status": 200,
+      "request_headers": {
+        "accept": "*/*",
+        "origin": "https://nearest.pembrokeshire.gov.uk",
+        "referer": "https://nearest.pembrokeshire.gov.uk/"
+      },
+      "response_headers": {
+        "content-type": "text/html",
+        "x-serveron": ".23"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 3843,
+        "compressed": true,
+        "content_ref": "1600d10bbc1c25bd0e6818a9e47e1f6dc2da08ca.html"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T10:24:22.512Z",
+      "duration_ms": 31.701,
+      "endpoint": "/gis/wfs",
+      "host": "cdn.pembrokeshire.gov.uk",
+      "method": "GET",
+      "status": 200,
+      "query_params": {
+        "service": [
+          "WFS"
+        ],
+        "version": [
+          "1.1.0"
+        ],
+        "request": [
+          "GetFeature"
+        ],
+        "typename": [
+          "tblLLPGAddress"
+        ],
+        "cql_filter": [
+          "UPRN=200003244142"
+        ],
+        "outputFormat": [
+          "json"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "origin": "https://nearest.pembrokeshire.gov.uk",
+        "referer": "https://nearest.pembrokeshire.gov.uk/"
+      },
+      "response_headers": {
+        "cache-control": "private",
+        "content-type": "application/json",
+        "x-serveron": ".23"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 979,
+        "content_ref": "7df1de2854af2243f5198ac0f4adae1d645e149a.json"
+      }
     }
-  ]
+  ],
+  "analysis": {
+    "total_requests": 10,
+    "unique_endpoints": 10,
+    "methods_used": [
+      "GET",
+      "POST"
+    ],
+    "status_codes": {
+      "200": 8,
+      "204": 1,
+      "302": 1
+    },
+    "endpoints_with_params": [
+      {
+        "endpoint": "/c/v",
+        "method": "GET",
+        "query_params": [
+          "d",
+          "p",
+          "v",
+          "k",
+          "format"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/fonts/{id}",
+        "method": "GET",
+        "query_params": [
+          "v"
+        ],
+        "path_params": true
+      },
+      {
+        "endpoint": "/j/collect",
+        "method": "POST",
+        "query_params": [
+          "v",
+          "_v",
+          "aip",
+          "a",
+          "t",
+          "_s",
+          "dl",
+          "ul",
+          "de",
+          "dt",
+          "sd",
+          "sr",
+          "vp",
+          "je",
+          "_u",
+          "jid",
+          "gjid",
+          "cid",
+          "tid",
+          "_gid",
+          "_r",
+          "_slc",
+          "z"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/g/collect",
+        "method": "POST",
+        "query_params": [
+          "v",
+          "tid",
+          "gtm",
+          "_p",
+          "gcd",
+          "npa",
+          "dma",
+          "tag_exp",
+          "ul",
+          "sr",
+          "cid",
+          "uaa",
+          "uab",
+          "uafvl",
+          "uamb",
+          "uap",
+          "uapv",
+          "uaw",
+          "are",
+          "frm",
+          "pscdl",
+          "_eu",
+          "_s",
+          "dl",
+          "dt",
+          "sid",
+          "sct",
+          "seg",
+          "_tu",
+          "en",
+          "_fv",
+          "_ss",
+          "_ee",
+          "tfd"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/search",
+        "method": "GET",
+        "query_params": [
+          "query"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/property/{id}",
+        "method": "GET",
+        "query_params": [],
+        "path_params": true
+      },
+      {
+        "endpoint": "/gis/wfs",
+        "method": "GET",
+        "query_params": [
+          "service",
+          "version",
+          "request",
+          "typename",
+          "cql_filter",
+          "outputFormat"
+        ],
+        "path_params": false
+      }
+    ],
+    "redirects": [
+      {
+        "from": "/properties",
+        "to": "/property/200003244142",
+        "status": 302
+      }
+    ],
+    "api_calls": [
+      {
+        "endpoint": "/c/v",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": [
+          "d",
+          "p",
+          "v",
+          "k",
+          "format"
+        ]
+      },
+      {
+        "endpoint": "/gis/wfs",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": [
+          "service",
+          "version",
+          "request",
+          "typename",
+          "cql_filter",
+          "outputFormat"
+        ]
+      }
+    ],
+    "form_submissions": []
+  },
+  "grouped_by_endpoint": {
+    "/waste-and-recycling": [
+      {
+        "timestamp": "2025-07-21T10:24:06.063Z",
+        "duration_ms": 546.611,
+        "endpoint": "/waste-and-recycling",
+        "host": "www.pembrokeshire.gov.uk",
+        "method": "GET",
+        "status": 200,
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7"
+        },
+        "response_headers": {
+          "cache-control": "private",
+          "content-type": "text/html",
+          "set-cookie": "[cookies present]",
+          "x-frame-options": "SAMEORIGIN",
+          "x-robots-tag": "all",
+          "x-serveron": ".23"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 51088,
+          "content_ref": "cca0cdf91167abad2dd7f5d78ca04ed6efd28fae.html"
+        }
+      }
+    ],
+    "/c/v": [
+      {
+        "timestamp": "2025-07-21T10:24:07.738Z",
+        "duration_ms": 49.572,
+        "endpoint": "/c/v",
+        "host": "apikeys.civiccomputing.com",
+        "method": "GET",
+        "status": 200,
+        "query_params": {
+          "d": [
+            "www.pembrokeshire.gov.uk"
+          ],
+          "p": [
+            "CookieControl Multi-Site"
+          ],
+          "v": [
+            "9"
+          ],
+          "k": [
+            "ae61c4718ddc049b5eefb7b893cb69b912c8cd19"
+          ],
+          "format": [
+            "json"
+          ]
+        },
+        "request_headers": {
+          "accept": "application/json, text/plain, */*",
+          "origin": "https://www.pembrokeshire.gov.uk",
+          "referer": "https://www.pembrokeshire.gov.uk/"
+        },
+        "response_headers": {
+          "cache-control": "max-age=3600, private, no-store",
+          "content-type": "application/json",
+          "x-apikeys": "hit",
+          "x-cf-test": "true",
+          "x-content-type-options": "nosniff",
+          "x-xss-protection": "1"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 309,
+          "content_ref": "93bfb904389767acd806fcaf56bdb08dccad871c.json"
+        }
+      }
+    ],
+    "/fonts/{id}": [
+      {
+        "timestamp": "2025-07-21T10:24:07.743Z",
+        "duration_ms": 186.613,
+        "endpoint": "/fonts/{id}",
+        "host": "cdn.pembrokeshire.gov.uk",
+        "method": "GET",
+        "status": 200,
+        "path_params": [
+          "fontawesome-webfont.woff2"
+        ],
+        "query_params": {
+          "v": [
+            "4.7.0"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "origin": "https://www.pembrokeshire.gov.uk",
+          "referer": "https://cdn.pembrokeshire.gov.uk/css/font-awesome.min.css"
+        },
+        "response_headers": {
+          "cache-control": "private",
+          "content-type": "application/font-woff2",
+          "set-cookie": "[cookies present]",
+          "x-serveron": ".23"
+        }
+      }
+    ],
+    "/j/collect": [
+      {
+        "timestamp": "2025-07-21T10:24:09.337Z",
+        "duration_ms": 17.133,
+        "endpoint": "/j/collect",
+        "host": "www.google-analytics.com",
+        "method": "POST",
+        "status": 200,
+        "query_params": {
+          "v": [
+            "1"
+          ],
+          "_v": [
+            "j101"
+          ],
+          "aip": [
+            "1"
+          ],
+          "a": [
+            "1387019728"
+          ],
+          "t": [
+            "pageview"
+          ],
+          "_s": [
+            "1"
+          ],
+          "dl": [
+            "https://www.pembrokeshire.gov.uk/waste-and-recycling"
+          ],
+          "ul": [
+            "en-gb"
+          ],
+          "de": [
+            "UTF-8"
+          ],
+          "dt": [
+            "Waste & Recycling - Pembrokeshire County Council"
+          ],
+          "sd": [
+            "24-bit"
+          ],
+          "sr": [
+            "800x600"
+          ],
+          "vp": [
+            "800x461"
+          ],
+          "je": [
+            "0"
+          ],
+          "_u": [
+            "YEBAAEABAAAAACAAI~"
+          ],
+          "jid": [
+            "1742269945"
+          ],
+          "gjid": [
+            "1900970376"
+          ],
+          "cid": [
+            "2089783331.1753093449"
+          ],
+          "tid": [
+            "UA-1928241-2"
+          ],
+          "_gid": [
+            "1178296087.1753093449"
+          ],
+          "_r": [
+            "1"
+          ],
+          "_slc": [
+            "1"
+          ],
+          "z": [
+            "1600676473"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "content-type": "text/plain",
+          "origin": "https://www.pembrokeshire.gov.uk",
+          "referer": "https://www.pembrokeshire.gov.uk/"
+        },
+        "response_headers": {
+          "cache-control": "no-cache, no-store, must-revalidate",
+          "content-type": "text/plain",
+          "x-content-type-options": "nosniff"
+        }
+      }
+    ],
+    "/g/collect": [
+      {
+        "timestamp": "2025-07-21T10:24:09.465Z",
+        "duration_ms": 56.964999999999996,
+        "endpoint": "/g/collect",
+        "host": "region1.google-analytics.com",
+        "method": "POST",
+        "status": 204,
+        "query_params": {
+          "v": [
+            "2"
+          ],
+          "tid": [
+            "G-JY5DJ3T087"
+          ],
+          "gtm": [
+            "45je57g1v9122940447za200"
+          ],
+          "_p": [
+            "1753093449354"
+          ],
+          "gcd": [
+            "13l3l3l3l2l1"
+          ],
+          "npa": [
+            "0"
+          ],
+          "dma": [
+            "0"
+          ],
+          "tag_exp": [
+            "101509157~103116026~103200004~103233427~104684208~104684211~104948813"
+          ],
+          "ul": [
+            "en-gb"
+          ],
+          "sr": [
+            "800x600"
+          ],
+          "cid": [
+            "2089783331.1753093449"
+          ],
+          "uaa": [
+            "arm"
+          ],
+          "uab": [
+            "64"
+          ],
+          "uafvl": [
+            "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+          ],
+          "uamb": [
+            "0"
+          ],
+          "uap": [
+            "macOS"
+          ],
+          "uapv": [
+            "15.5.0"
+          ],
+          "uaw": [
+            "0"
+          ],
+          "are": [
+            "1"
+          ],
+          "frm": [
+            "0"
+          ],
+          "pscdl": [
+            "noapi"
+          ],
+          "_eu": [
+            "ABAI"
+          ],
+          "_s": [
+            "1"
+          ],
+          "dl": [
+            "https://www.pembrokeshire.gov.uk/waste-and-recycling"
+          ],
+          "dt": [
+            "Waste & Recycling - Pembrokeshire County Council"
+          ],
+          "sid": [
+            "1753093449"
+          ],
+          "sct": [
+            "1"
+          ],
+          "seg": [
+            "0"
+          ],
+          "_tu": [
+            "wAQ"
+          ],
+          "en": [
+            "page_view"
+          ],
+          "_fv": [
+            "1"
+          ],
+          "_ss": [
+            "1"
+          ],
+          "_ee": [
+            "1"
+          ],
+          "tfd": [
+            "3397"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "cookie": "[cookies present]",
+          "origin": "https://www.pembrokeshire.gov.uk",
+          "referer": "https://www.pembrokeshire.gov.uk/"
+        },
+        "response_headers": {
+          "cache-control": "no-cache, no-store, must-revalidate",
+          "content-type": "text/plain"
+        }
+      }
+    ],
+    "/search": [
+      {
+        "timestamp": "2025-07-21T10:24:14.337Z",
+        "duration_ms": 216.954,
+        "endpoint": "/search",
+        "host": "nearest.pembrokeshire.gov.uk",
+        "method": "GET",
+        "status": 200,
+        "query_params": {
+          "query": [
+            "SA34 0NL"
+          ]
+        },
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+          "cookie": "[cookies present]",
+          "referer": "https://www.pembrokeshire.gov.uk/"
+        },
+        "response_headers": {
+          "cache-control": "no-cache, no-store",
+          "content-type": "text/html; charset=utf-8",
+          "set-cookie": "[cookies present]",
+          "x-frame-options": "SAMEORIGIN",
+          "x-serveron": ".23"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 10669,
+          "compressed": true,
+          "content_ref": "8bd38e30ad6e614c7fa273175f2d377576098a7c.html"
+        }
+      }
+    ],
+    "/properties": [
+      {
+        "timestamp": "2025-07-21T10:24:20.676Z",
+        "duration_ms": 23.733999999999998,
+        "endpoint": "/properties",
+        "host": "nearest.pembrokeshire.gov.uk",
+        "method": "POST",
+        "status": 302,
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+          "content-type": "application/x-www-form-urlencoded",
+          "cookie": "[cookies present]",
+          "origin": "https://nearest.pembrokeshire.gov.uk",
+          "referer": "https://nearest.pembrokeshire.gov.uk/search/?query=SA34+0NL"
+        },
+        "response_headers": {
+          "location": "/property/200003244142",
+          "x-serveron": ".23"
+        },
+        "redirect_to": "/property/200003244142"
+      }
+    ],
+    "/property/{id}": [
+      {
+        "timestamp": "2025-07-21T10:24:20.697Z",
+        "duration_ms": 1337.319,
+        "endpoint": "/property/{id}",
+        "host": "nearest.pembrokeshire.gov.uk",
+        "method": "GET",
+        "status": 200,
+        "path_params": [
+          "200003244142"
+        ],
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+          "cookie": "[cookies present]",
+          "referer": "https://nearest.pembrokeshire.gov.uk/search/?query=SA34+0NL"
+        },
+        "response_headers": {
+          "content-type": "text/html; charset=utf-8",
+          "x-serveron": ".23"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 10589,
+          "compressed": true,
+          "content_ref": "4fa0b130d655e72763a5413d0e8dac297b5e53b6.html"
+        }
+      }
+    ],
+    "/ModularMaps/1.0/templates/wrapperTemplate.html": [
+      {
+        "timestamp": "2025-07-21T10:24:22.402Z",
+        "duration_ms": 19.259,
+        "endpoint": "/ModularMaps/1.0/templates/wrapperTemplate.html",
+        "host": "cdn.pembrokeshire.gov.uk",
+        "method": "GET",
+        "status": 200,
+        "request_headers": {
+          "accept": "*/*",
+          "origin": "https://nearest.pembrokeshire.gov.uk",
+          "referer": "https://nearest.pembrokeshire.gov.uk/"
+        },
+        "response_headers": {
+          "content-type": "text/html",
+          "x-serveron": ".23"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 3843,
+          "compressed": true,
+          "content_ref": "1600d10bbc1c25bd0e6818a9e47e1f6dc2da08ca.html"
+        }
+      }
+    ],
+    "/gis/wfs": [
+      {
+        "timestamp": "2025-07-21T10:24:22.512Z",
+        "duration_ms": 31.701,
+        "endpoint": "/gis/wfs",
+        "host": "cdn.pembrokeshire.gov.uk",
+        "method": "GET",
+        "status": 200,
+        "query_params": {
+          "service": [
+            "WFS"
+          ],
+          "version": [
+            "1.1.0"
+          ],
+          "request": [
+            "GetFeature"
+          ],
+          "typename": [
+            "tblLLPGAddress"
+          ],
+          "cql_filter": [
+            "UPRN=200003244142"
+          ],
+          "outputFormat": [
+            "json"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "origin": "https://nearest.pembrokeshire.gov.uk",
+          "referer": "https://nearest.pembrokeshire.gov.uk/"
+        },
+        "response_headers": {
+          "cache-control": "private",
+          "content-type": "application/json",
+          "x-serveron": ".23"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 979,
+          "content_ref": "7df1de2854af2243f5198ac0f4adae1d645e149a.json"
+        }
+      }
+    ]
+  }
 }

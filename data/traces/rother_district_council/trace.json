@@ -1,203 +1,2241 @@
 {
-  "metadata": {
-    "trace_name": "rother_district_council",
-    "processed_at": "2025-08-26 18:44:24",
-    "workflow_steps_count": 6,
-    "navigation_events_count": 15
-  },
-  "scraping_patterns": {
-    "login_detected": false,
-    "form_submissions": 12,
-    "navigation_count": 1,
-    "unique_domains": [
-      "europe.directline.botframework.com",
-      "q.clarity.ms",
-      "www.rother.gov.uk"
-    ],
-    "api_endpoints": [],
-    "data_extraction_indicators": []
-  },
-  "workflow_steps": [
+  "entries": [
     {
-      "action": "goto",
-      "target": "http://www.rother.gov.uk/whenismybinday",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
-    },
-    {
-      "action": "click",
-      "target": "aria-ref=e19 >> internal:describe=\"Accept All\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
-    },
-    {
-      "action": "fill",
-      "target": "aria-ref=e95 >> internal:describe=\"Address Search\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0,
-      "value": "BN24 6PR"
-    },
-    {
-      "action": "click",
-      "target": "aria-ref=e97 >> internal:describe=\"Search\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
-    },
-    {
-      "action": "selectOption",
-      "target": "aria-ref=e146 >> internal:describe=\"Please select your address\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0,
-      "value": null
-    },
-    {
-      "action": "click",
-      "target": "aria-ref=e194 >> internal:describe=\"Search\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
-    }
-  ],
-  "navigation_events": [
-    {
-      "url": "http://www.rother.gov.uk/whenismybinday",
+      "timestamp": "2025-07-21T08:05:23.243Z",
+      "duration_ms": 46.644000000000005,
+      "endpoint": "/whenismybinday",
+      "host": "www.rother.gov.uk",
       "method": "GET",
       "status": 301,
-      "redirect_url": "https://www.rother.gov.uk/whenismybinday",
-      "mime_type": "text/html",
-      "size": -1,
-      "timestamp": "2025-07-21T08:05:23.243Z"
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7"
+      },
+      "response_headers": {
+        "content-type": "text/html",
+        "location": "https://www.rother.gov.uk/whenismybinday"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": -1
+      },
+      "redirect_to": "https://www.rother.gov.uk/whenismybinday"
     },
     {
-      "url": "https://www.rother.gov.uk/whenismybinday",
+      "timestamp": "2025-07-21T08:05:23.271Z",
+      "duration_ms": 211.439,
+      "endpoint": "/whenismybinday",
+      "host": "www.rother.gov.uk",
       "method": "GET",
       "status": 302,
-      "redirect_url": "https://www.rother.gov.uk/findmynearest",
-      "mime_type": "text/html; charset=UTF-8",
-      "size": -1,
-      "timestamp": "2025-07-21T08:05:23.271Z"
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7"
+      },
+      "response_headers": {
+        "content-type": "text/html; charset=UTF-8",
+        "location": "/findmynearest",
+        "set-cookie": "[cookies present]",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "sameorigin",
+        "x-redirect-by": "redirection",
+        "x-xss-protection": "1; mode=block"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": -1
+      },
+      "redirect_to": "/findmynearest"
     },
     {
-      "url": "https://www.rother.gov.uk/findmynearest",
+      "timestamp": "2025-07-21T08:05:23.474Z",
+      "duration_ms": 375.964,
+      "endpoint": "/findmynearest",
+      "host": "www.rother.gov.uk",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "text/html; charset=UTF-8",
-      "size": 46172,
-      "timestamp": "2025-07-21T08:05:23.474Z"
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+        "cookie": "[cookies present]"
+      },
+      "response_headers": {
+        "cache-control": "no-cache, must-revalidate, max-age=0",
+        "content-type": "text/html; charset=UTF-8",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "sameorigin",
+        "x-xss-protection": "1; mode=block"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 46172,
+        "compressed": true,
+        "content_ref": "878610b7ed7d96806ef5aa4332c28bd404ab1424.html"
+      }
     },
     {
-      "url": "https://www.rother.gov.uk/wp-admin/admin-ajax.php",
-      "method": "POST",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json; charset=UTF-8",
-      "size": 81,
-      "timestamp": "2025-07-21T08:05:25.361Z"
-    },
-    {
-      "url": "https://q.clarity.ms/collect",
+      "timestamp": "2025-07-21T08:05:24.471Z",
+      "duration_ms": 67.63499999999999,
+      "endpoint": "/g/collect",
+      "host": "region1.google-analytics.com",
       "method": "POST",
       "status": 204,
-      "redirect_url": null,
-      "mime_type": "x-unknown",
-      "size": 0,
-      "timestamp": "2025-07-21T08:05:25.473Z"
+      "query_params": {
+        "v": [
+          "2"
+        ],
+        "tid": [
+          "G-SCVJ9SSE1N"
+        ],
+        "gtm": [
+          "45je57g1v873603326za200"
+        ],
+        "_p": [
+          "1753085123860"
+        ],
+        "gcs": [
+          "G100"
+        ],
+        "gcd": [
+          "13p3p3p3p5l1"
+        ],
+        "npa": [
+          "1"
+        ],
+        "dma_cps": [
+          "-"
+        ],
+        "dma": [
+          "0"
+        ],
+        "tag_exp": [
+          "101509157~103116026~103200004~103233427~104684208~104684211~104948814"
+        ],
+        "cid": [
+          "1920811099.1753085124"
+        ],
+        "ul": [
+          "en-gb"
+        ],
+        "sr": [
+          "800x600"
+        ],
+        "uaa": [
+          "arm"
+        ],
+        "uab": [
+          "64"
+        ],
+        "uafvl": [
+          "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+        ],
+        "uamb": [
+          "0"
+        ],
+        "uap": [
+          "macOS"
+        ],
+        "uapv": [
+          "15.5.0"
+        ],
+        "uaw": [
+          "0"
+        ],
+        "are": [
+          "1"
+        ],
+        "frm": [
+          "0"
+        ],
+        "pscdl": [
+          "denied"
+        ],
+        "_s": [
+          "1"
+        ],
+        "sid": [
+          "1753085123"
+        ],
+        "sct": [
+          "1"
+        ],
+        "seg": [
+          "0"
+        ],
+        "dl": [
+          "https://www.rother.gov.uk/findmynearest"
+        ],
+        "dt": [
+          "Find My Nearest \u2013 Rother District Council"
+        ],
+        "en": [
+          "page_view"
+        ],
+        "_fv": [
+          "1"
+        ],
+        "_nsi": [
+          "1"
+        ],
+        "_ss": [
+          "1"
+        ],
+        "_ee": [
+          "1"
+        ],
+        "ep.anonymize_ip": [
+          "true"
+        ],
+        "tfd": [
+          "1224"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "cookie": "[cookies present]",
+        "origin": "https://www.rother.gov.uk",
+        "referer": "https://www.rother.gov.uk/findmynearest"
+      },
+      "response_headers": {
+        "cache-control": "no-cache, no-store, must-revalidate",
+        "content-type": "text/plain"
+      }
     },
     {
-      "url": "https://europe.directline.botframework.com/v3/directline/conversations",
+      "timestamp": "2025-07-21T08:05:25.473Z",
+      "duration_ms": 442.81300000000005,
+      "endpoint": "/collect",
+      "host": "q.clarity.ms",
+      "method": "POST",
+      "status": 204,
+      "request_headers": {
+        "accept": "application/x-clarity-gzip",
+        "cookie": "[cookies present]",
+        "origin": "https://www.rother.gov.uk",
+        "referer": "https://www.rother.gov.uk/findmynearest"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T08:05:25.361Z",
+      "duration_ms": 573.3380000000001,
+      "endpoint": "/wp-admin/admin-ajax.php",
+      "host": "www.rother.gov.uk",
+      "method": "POST",
+      "status": 200,
+      "request_headers": {
+        "accept": "*/*",
+        "content-type": "application/x-www-form-urlencoded; charset=UTF-8",
+        "cookie": "[cookies present]",
+        "origin": "https://www.rother.gov.uk",
+        "referer": "https://www.rother.gov.uk/findmynearest",
+        "x-requested-with": "XMLHttpRequest"
+      },
+      "response_headers": {
+        "cache-control": "no-cache, must-revalidate, max-age=0",
+        "content-type": "application/json; charset=UTF-8",
+        "set-cookie": "[cookies present]",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "sameorigin",
+        "x-robots-tag": "noindex",
+        "x-xss-protection": "1; mode=block"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 81,
+        "content_ref": "854d29909770cae72435acbb6c0d23867702ad91.json"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T08:05:25.922Z",
+      "duration_ms": 250.75400000000002,
+      "endpoint": "/v3/directline/conversations",
+      "host": "europe.directline.botframework.com",
       "method": "POST",
       "status": 201,
-      "redirect_url": null,
-      "mime_type": "application/json; charset=utf-8",
-      "size": 2169,
-      "timestamp": "2025-07-21T08:05:25.922Z"
+      "request_headers": {
+        "accept": "application/json",
+        "authorization": "Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6ImFVZGhFNk1RQTNUa1pxa09vWVhSMDBxX2dsayIsIng1dCI6ImFVZGhFNk1RQTNUa1pxa09vWVhSMDBxX2dsayIsInR5cCI6IkpXVCJ9.eyJib3QiOiJhaWltZWUiLCJzaXRlIjoiaHdVWmtxaXpsTFkiLCJjb252IjoiMWhCaE5UV2l4YkkzUldvMUl2dFBFUy1ldSIsInVzZXIiOiJkbF82ODdkZjRjNWJmZThkNS4xMDEyNjQyOSIsIm9yaWdpbiI6WyJodHRwczovL3d3dy5yb3RoZXIuZ292LnVrIiwiaHR0cDovL2xvY2FsaG9zdDozMDAwIiwiaHR0cHM6Ly9yZGN3b3JkcHJlc3N2My1zdGFnaW5nLmF6dXJld2Vic2l0ZXMubmV0Il0sIm5iZiI6MTc1MzA4NTEyNSwiZXhwIjoxNzUzMDg4NzI1LCJpc3MiOiJodHRwczovL2RpcmVjdGxpbmUuYm90ZnJhbWV3b3JrLmNvbS8iLCJhdWQiOiJodHRwczovL2RpcmVjdGxpbmUuYm90ZnJhbWV3b3JrLmNvbS8ifQ.XTDRQypYv7Bfan2n1zykyI-mgekp4bOcHYTwOulTIYC5hKpkYv3ldC8HM_xq8Yese3fATc-YgOkl2RwgxTcK8Ole2iMW-Wr4PihuvZA0gM3rw69hZ4dAhF1HsEty6_-okpoxu6DZErf4D19RqelLmmEK2RJrc811lG2QbTtxbsvVVp387qiw7JIW5Ld5Digf0am_P4bgfSJJCQIPAVeqXnhYFasdMaihKSY1XrHeupg3sBV1FB5JBio5x7tSTYQExNHlkXc1PYbUeHwO8Eo3JDYIhVHPsOjiV8uC8dl_0uVhic4-QSkbqMes4LhTPKFHtLna0G-rne5uK6hPy0BZvg",
+        "content-type": "application/json",
+        "origin": "https://www.rother.gov.uk",
+        "referer": "https://www.rother.gov.uk/findmynearest",
+        "x-ms-bot-agent": "DirectLine/3.0 (directlinejs; WebChat/4.17.0 (Full) 0.15.5)",
+        "x-requested-with": "XMLHttpRequest"
+      },
+      "response_headers": {
+        "cache-control": "no-cache",
+        "content-type": "application/json; charset=utf-8",
+        "x-content-type-options": "nosniff",
+        "x-ms-request-id": "cd84050432b5e41a226fb6269401ba4d",
+        "x-xss-protection": "1; mode=block"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 2169,
+        "content_ref": "d3d762c5bc219bb2c48e86f3b6405cf51881dc15.json"
+      }
     },
     {
-      "url": "https://www.rother.gov.uk/wp-admin/admin-ajax.php",
+      "timestamp": "2025-07-21T08:05:26.330Z",
+      "duration_ms": 14.3,
+      "endpoint": "/g/collect",
+      "host": "region1.google-analytics.com",
+      "method": "POST",
+      "status": 204,
+      "query_params": {
+        "v": [
+          "2"
+        ],
+        "tid": [
+          "G-SCVJ9SSE1N"
+        ],
+        "gtm": [
+          "45je57g1v873603326za200"
+        ],
+        "_p": [
+          "1753085123860"
+        ],
+        "gcs": [
+          "G100"
+        ],
+        "gcd": [
+          "13p3p3p3p5l1"
+        ],
+        "npa": [
+          "1"
+        ],
+        "dma_cps": [
+          "-"
+        ],
+        "dma": [
+          "0"
+        ],
+        "tag_exp": [
+          "101509157~103116026~103200004~103233427~104684208~104684211~104948814"
+        ],
+        "cid": [
+          "1920811099.1753085124"
+        ],
+        "ul": [
+          "en-gb"
+        ],
+        "sr": [
+          "800x600"
+        ],
+        "uaa": [
+          "arm"
+        ],
+        "uab": [
+          "64"
+        ],
+        "uafvl": [
+          "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+        ],
+        "uamb": [
+          "0"
+        ],
+        "uap": [
+          "macOS"
+        ],
+        "uapv": [
+          "15.5.0"
+        ],
+        "uaw": [
+          "0"
+        ],
+        "are": [
+          "1"
+        ],
+        "frm": [
+          "0"
+        ],
+        "pscdl": [
+          "denied"
+        ],
+        "_eu": [
+          "AEA"
+        ],
+        "_s": [
+          "2"
+        ],
+        "sid": [
+          "1753085123"
+        ],
+        "sct": [
+          "1"
+        ],
+        "seg": [
+          "0"
+        ],
+        "dl": [
+          "https://www.rother.gov.uk/findmynearest"
+        ],
+        "dt": [
+          "Find My Nearest \u2013 Rother District Council"
+        ],
+        "en": [
+          "scroll"
+        ],
+        "ep.anonymize_ip": [
+          "true"
+        ],
+        "epn.percent_scrolled": [
+          "90"
+        ],
+        "_et": [
+          "6"
+        ],
+        "tfd": [
+          "3082"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "cookie": "[cookies present]",
+        "origin": "https://www.rother.gov.uk",
+        "referer": "https://www.rother.gov.uk/findmynearest"
+      },
+      "response_headers": {
+        "cache-control": "no-cache, no-store, must-revalidate",
+        "content-type": "text/plain"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T08:05:26.330Z",
+      "duration_ms": 179.30700000000002,
+      "endpoint": "/wp-admin/admin-ajax.php",
+      "host": "www.rother.gov.uk",
       "method": "POST",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json; charset=UTF-8",
-      "size": 16,
-      "timestamp": "2025-07-21T08:05:26.330Z"
+      "request_headers": {
+        "accept": "*/*",
+        "content-type": "application/x-www-form-urlencoded; charset=UTF-8",
+        "cookie": "[cookies present]",
+        "origin": "https://www.rother.gov.uk",
+        "referer": "https://www.rother.gov.uk/findmynearest",
+        "x-requested-with": "XMLHttpRequest"
+      },
+      "response_headers": {
+        "cache-control": "no-cache, must-revalidate, max-age=0",
+        "content-type": "application/json; charset=UTF-8",
+        "set-cookie": "[cookies present]",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "sameorigin",
+        "x-robots-tag": "noindex",
+        "x-xss-protection": "1; mode=block"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 16,
+        "content_ref": "a15e2127145548437173fc17f3e980e3f3dee2d0.json"
+      }
     },
     {
-      "url": "https://q.clarity.ms/collect",
+      "timestamp": "2025-07-21T08:05:26.953Z",
+      "duration_ms": 104.393,
+      "endpoint": "/collect",
+      "host": "q.clarity.ms",
       "method": "POST",
       "status": 204,
-      "redirect_url": null,
-      "mime_type": "x-unknown",
-      "size": 0,
-      "timestamp": "2025-07-21T08:05:26.953Z"
+      "request_headers": {
+        "accept": "application/x-clarity-gzip",
+        "cookie": "[cookies present]",
+        "origin": "https://www.rother.gov.uk",
+        "referer": "https://www.rother.gov.uk/findmynearest"
+      }
     },
     {
-      "url": "https://www.rother.gov.uk/wp-admin/admin-ajax.php",
+      "timestamp": "2025-07-21T08:05:27.290Z",
+      "duration_ms": 204.772,
+      "endpoint": "/wp-admin/admin-ajax.php",
+      "host": "www.rother.gov.uk",
       "method": "POST",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json; charset=UTF-8",
-      "size": 16,
-      "timestamp": "2025-07-21T08:05:27.290Z"
+      "request_headers": {
+        "accept": "*/*",
+        "content-type": "application/x-www-form-urlencoded; charset=UTF-8",
+        "cookie": "[cookies present]",
+        "origin": "https://www.rother.gov.uk",
+        "referer": "https://www.rother.gov.uk/findmynearest",
+        "x-requested-with": "XMLHttpRequest"
+      },
+      "response_headers": {
+        "cache-control": "no-cache, must-revalidate, max-age=0",
+        "content-type": "application/json; charset=UTF-8",
+        "set-cookie": "[cookies present]",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "sameorigin",
+        "x-robots-tag": "noindex",
+        "x-xss-protection": "1; mode=block"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 16,
+        "content_ref": "a15e2127145548437173fc17f3e980e3f3dee2d0.json"
+      }
     },
     {
-      "url": "https://q.clarity.ms/collect",
+      "timestamp": "2025-07-21T08:05:29.451Z",
+      "duration_ms": 97.286,
+      "endpoint": "/collect",
+      "host": "q.clarity.ms",
       "method": "POST",
       "status": 204,
-      "redirect_url": null,
-      "mime_type": "x-unknown",
-      "size": 0,
-      "timestamp": "2025-07-21T08:05:29.451Z"
+      "request_headers": {
+        "accept": "application/x-clarity-gzip",
+        "cookie": "[cookies present]",
+        "origin": "https://www.rother.gov.uk",
+        "referer": "https://www.rother.gov.uk/findmynearest"
+      }
     },
     {
-      "url": "https://www.rother.gov.uk/wp-admin/admin-ajax.php",
+      "timestamp": "2025-07-21T08:05:31.330Z",
+      "duration_ms": 14.282,
+      "endpoint": "/g/collect",
+      "host": "region1.google-analytics.com",
+      "method": "POST",
+      "status": 204,
+      "query_params": {
+        "v": [
+          "2"
+        ],
+        "tid": [
+          "G-SCVJ9SSE1N"
+        ],
+        "gtm": [
+          "45je57g1v873603326za200"
+        ],
+        "_p": [
+          "1753085123860"
+        ],
+        "gcs": [
+          "G101"
+        ],
+        "gcd": [
+          "13p3r3p3p5l1"
+        ],
+        "npa": [
+          "1"
+        ],
+        "dma_cps": [
+          "-"
+        ],
+        "dma": [
+          "0"
+        ],
+        "tag_exp": [
+          "101509157~103116026~103200004~103233427~104684208~104684211~104948814"
+        ],
+        "cid": [
+          "1920811099.1753085124"
+        ],
+        "ul": [
+          "en-gb"
+        ],
+        "sr": [
+          "800x600"
+        ],
+        "uaa": [
+          "arm"
+        ],
+        "uab": [
+          "64"
+        ],
+        "uafvl": [
+          "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+        ],
+        "uamb": [
+          "0"
+        ],
+        "uap": [
+          "macOS"
+        ],
+        "uapv": [
+          "15.5.0"
+        ],
+        "uaw": [
+          "0"
+        ],
+        "are": [
+          "1"
+        ],
+        "frm": [
+          "0"
+        ],
+        "pscdl": [
+          "denied"
+        ],
+        "_eu": [
+          "AAAAAAQ"
+        ],
+        "_s": [
+          "3"
+        ],
+        "sid": [
+          "1753085123"
+        ],
+        "sct": [
+          "1"
+        ],
+        "seg": [
+          "0"
+        ],
+        "dl": [
+          "https://www.rother.gov.uk/findmynearest"
+        ],
+        "dt": [
+          "Find My Nearest \u2013 Rother District Council"
+        ],
+        "en": [
+          "user_engagement"
+        ],
+        "ep.anonymize_ip": [
+          "true"
+        ],
+        "ep.ga_temp_client_id": [
+          "1920811099.1753085124"
+        ],
+        "_et": [
+          "1852"
+        ],
+        "tfd": [
+          "8086"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "cookie": "[cookies present]",
+        "origin": "https://www.rother.gov.uk",
+        "referer": "https://www.rother.gov.uk/findmynearest"
+      },
+      "response_headers": {
+        "cache-control": "no-cache, no-store, must-revalidate",
+        "content-type": "text/plain"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T08:05:40.805Z",
+      "duration_ms": 14.607,
+      "endpoint": "/g/collect",
+      "host": "region1.google-analytics.com",
+      "method": "POST",
+      "status": 204,
+      "query_params": {
+        "v": [
+          "2"
+        ],
+        "tid": [
+          "G-SCVJ9SSE1N"
+        ],
+        "gtm": [
+          "45je57g1v873603326za200"
+        ],
+        "_p": [
+          "1753085123860"
+        ],
+        "gcs": [
+          "G100"
+        ],
+        "gcd": [
+          "13p3q3p3p5l1"
+        ],
+        "npa": [
+          "1"
+        ],
+        "dma_cps": [
+          "-"
+        ],
+        "dma": [
+          "0"
+        ],
+        "tag_exp": [
+          "101509157~103116026~103200004~103233427~104684208~104684211~104948814"
+        ],
+        "cid": [
+          "969717039.1753085141"
+        ],
+        "ul": [
+          "en-gb"
+        ],
+        "sr": [
+          "800x600"
+        ],
+        "uaa": [
+          "arm"
+        ],
+        "uab": [
+          "64"
+        ],
+        "uafvl": [
+          "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+        ],
+        "uamb": [
+          "0"
+        ],
+        "uap": [
+          "macOS"
+        ],
+        "uapv": [
+          "15.5.0"
+        ],
+        "uaw": [
+          "0"
+        ],
+        "are": [
+          "1"
+        ],
+        "frm": [
+          "0"
+        ],
+        "pscdl": [
+          "denied"
+        ],
+        "_s": [
+          "4"
+        ],
+        "sid": [
+          "1753085140"
+        ],
+        "sct": [
+          "1"
+        ],
+        "seg": [
+          "0"
+        ],
+        "dl": [
+          "https://www.rother.gov.uk/findmynearest"
+        ],
+        "dt": [
+          "Find My Nearest \u2013 Rother District Council"
+        ],
+        "en": [
+          "postcode-search"
+        ],
+        "_fv": [
+          "1"
+        ],
+        "_nsi": [
+          "1"
+        ],
+        "_ss": [
+          "1"
+        ],
+        "_ee": [
+          "1"
+        ],
+        "ep.anonymize_ip": [
+          "true"
+        ],
+        "ep.event_category": [
+          "find-my-nearest"
+        ],
+        "tfd": [
+          "17561"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "cookie": "[cookies present]",
+        "origin": "https://www.rother.gov.uk",
+        "referer": "https://www.rother.gov.uk/findmynearest"
+      },
+      "response_headers": {
+        "cache-control": "no-cache, no-store, must-revalidate",
+        "content-type": "text/plain"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T08:05:40.805Z",
+      "duration_ms": 1068.857,
+      "endpoint": "/wp-admin/admin-ajax.php",
+      "host": "www.rother.gov.uk",
       "method": "POST",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json; charset=UTF-8",
-      "size": 6036,
-      "timestamp": "2025-07-21T08:05:40.805Z"
+      "request_headers": {
+        "accept": "*/*",
+        "content-type": "application/x-www-form-urlencoded; charset=UTF-8",
+        "cookie": "[cookies present]",
+        "origin": "https://www.rother.gov.uk",
+        "referer": "https://www.rother.gov.uk/findmynearest",
+        "x-requested-with": "XMLHttpRequest"
+      },
+      "response_headers": {
+        "cache-control": "no-store, no-cache, must-revalidate",
+        "content-type": "application/json; charset=UTF-8",
+        "set-cookie": "[cookies present]",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "sameorigin",
+        "x-ratelimit-limit": "5",
+        "x-ratelimit-remaining": "4",
+        "x-robots-tag": "noindex",
+        "x-xss-protection": "1; mode=block"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 6036,
+        "content_ref": "6be59cf35e7d47a702694706b980ff4101646ff5.json"
+      }
     },
     {
-      "url": "https://q.clarity.ms/collect",
+      "timestamp": "2025-07-21T08:05:42.388Z",
+      "duration_ms": 95.964,
+      "endpoint": "/collect",
+      "host": "q.clarity.ms",
       "method": "POST",
       "status": 204,
-      "redirect_url": null,
-      "mime_type": "x-unknown",
-      "size": 0,
-      "timestamp": "2025-07-21T08:05:42.388Z"
+      "request_headers": {
+        "accept": "application/x-clarity-gzip",
+        "cookie": "[cookies present]",
+        "origin": "https://www.rother.gov.uk",
+        "referer": "https://www.rother.gov.uk/findmynearest"
+      }
     },
     {
-      "url": "https://q.clarity.ms/collect",
+      "timestamp": "2025-07-21T08:05:46.519Z",
+      "duration_ms": 117.837,
+      "endpoint": "/collect",
+      "host": "q.clarity.ms",
       "method": "POST",
       "status": 204,
-      "redirect_url": null,
-      "mime_type": "x-unknown",
-      "size": 0,
-      "timestamp": "2025-07-21T08:05:46.519Z"
+      "request_headers": {
+        "accept": "application/x-clarity-gzip",
+        "cookie": "[cookies present]",
+        "origin": "https://www.rother.gov.uk",
+        "referer": "https://www.rother.gov.uk/findmynearest"
+      }
     },
     {
-      "url": "https://www.rother.gov.uk/wp-admin/admin-ajax.php",
+      "timestamp": "2025-07-21T08:05:55.454Z",
+      "duration_ms": 2241.528,
+      "endpoint": "/wp-admin/admin-ajax.php",
+      "host": "www.rother.gov.uk",
       "method": "POST",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json; charset=UTF-8",
-      "size": 7421,
-      "timestamp": "2025-07-21T08:05:55.454Z"
+      "request_headers": {
+        "accept": "*/*",
+        "content-type": "application/x-www-form-urlencoded; charset=UTF-8",
+        "cookie": "[cookies present]",
+        "origin": "https://www.rother.gov.uk",
+        "referer": "https://www.rother.gov.uk/findmynearest",
+        "x-requested-with": "XMLHttpRequest"
+      },
+      "response_headers": {
+        "cache-control": "no-store, no-cache, must-revalidate",
+        "content-type": "application/json; charset=UTF-8",
+        "set-cookie": "[cookies present]",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "sameorigin",
+        "x-ratelimit-limit": "5",
+        "x-ratelimit-remaining": "4",
+        "x-robots-tag": "noindex",
+        "x-xss-protection": "1; mode=block"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 7421,
+        "content_ref": "413c6d647d055a946a2132353b3e0de8bdfac71a.json"
+      }
     },
     {
-      "url": "https://q.clarity.ms/collect",
+      "timestamp": "2025-07-21T08:05:58.286Z",
+      "duration_ms": 106.981,
+      "endpoint": "/collect",
+      "host": "q.clarity.ms",
       "method": "POST",
       "status": 204,
-      "redirect_url": null,
-      "mime_type": "x-unknown",
-      "size": 0,
-      "timestamp": "2025-07-21T08:05:58.286Z"
+      "request_headers": {
+        "accept": "application/x-clarity-gzip",
+        "cookie": "[cookies present]",
+        "origin": "https://www.rother.gov.uk",
+        "referer": "https://www.rother.gov.uk/findmynearest"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T08:06:00.456Z",
+      "duration_ms": 14.511,
+      "endpoint": "/g/collect",
+      "host": "region1.google-analytics.com",
+      "method": "POST",
+      "status": 204,
+      "query_params": {
+        "v": [
+          "2"
+        ],
+        "tid": [
+          "G-SCVJ9SSE1N"
+        ],
+        "gtm": [
+          "45je57g1v873603326za200"
+        ],
+        "_p": [
+          "1753085123860"
+        ],
+        "gcs": [
+          "G100"
+        ],
+        "gcd": [
+          "13p3q3p3p5l1"
+        ],
+        "npa": [
+          "1"
+        ],
+        "dma_cps": [
+          "-"
+        ],
+        "dma": [
+          "0"
+        ],
+        "tag_exp": [
+          "101509157~103116026~103200004~103233427~104684208~104684211~104948814"
+        ],
+        "cid": [
+          "969717039.1753085141"
+        ],
+        "ul": [
+          "en-gb"
+        ],
+        "sr": [
+          "800x600"
+        ],
+        "uaa": [
+          "arm"
+        ],
+        "uab": [
+          "64"
+        ],
+        "uafvl": [
+          "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+        ],
+        "uamb": [
+          "0"
+        ],
+        "uap": [
+          "macOS"
+        ],
+        "uapv": [
+          "15.5.0"
+        ],
+        "uaw": [
+          "0"
+        ],
+        "are": [
+          "1"
+        ],
+        "frm": [
+          "0"
+        ],
+        "pscdl": [
+          "denied"
+        ],
+        "_s": [
+          "5"
+        ],
+        "sid": [
+          "1753085140"
+        ],
+        "sct": [
+          "1"
+        ],
+        "seg": [
+          "1"
+        ],
+        "dl": [
+          "https://www.rother.gov.uk/findmynearest"
+        ],
+        "dt": [
+          "Find My Nearest \u2013 Rother District Council"
+        ],
+        "en": [
+          "address-selected"
+        ],
+        "_ee": [
+          "1"
+        ],
+        "ep.anonymize_ip": [
+          "true"
+        ],
+        "ep.event_category": [
+          "find-my-nearest"
+        ],
+        "_et": [
+          "14649"
+        ],
+        "tfd": [
+          "37214"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "cookie": "[cookies present]",
+        "origin": "https://www.rother.gov.uk",
+        "referer": "https://www.rother.gov.uk/findmynearest"
+      },
+      "response_headers": {
+        "cache-control": "no-cache, no-store, must-revalidate",
+        "content-type": "text/plain"
+      }
     }
-  ]
+  ],
+  "analysis": {
+    "total_requests": 20,
+    "unique_endpoints": 6,
+    "methods_used": [
+      "GET",
+      "POST"
+    ],
+    "status_codes": {
+      "301": 1,
+      "302": 1,
+      "200": 6,
+      "204": 11,
+      "201": 1
+    },
+    "endpoints_with_params": [
+      {
+        "endpoint": "/g/collect",
+        "method": "POST",
+        "query_params": [
+          "v",
+          "tid",
+          "gtm",
+          "_p",
+          "gcs",
+          "gcd",
+          "npa",
+          "dma_cps",
+          "dma",
+          "tag_exp",
+          "cid",
+          "ul",
+          "sr",
+          "uaa",
+          "uab",
+          "uafvl",
+          "uamb",
+          "uap",
+          "uapv",
+          "uaw",
+          "are",
+          "frm",
+          "pscdl",
+          "_s",
+          "sid",
+          "sct",
+          "seg",
+          "dl",
+          "dt",
+          "en",
+          "_fv",
+          "_nsi",
+          "_ss",
+          "_ee",
+          "ep.anonymize_ip",
+          "tfd"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/g/collect",
+        "method": "POST",
+        "query_params": [
+          "v",
+          "tid",
+          "gtm",
+          "_p",
+          "gcs",
+          "gcd",
+          "npa",
+          "dma_cps",
+          "dma",
+          "tag_exp",
+          "cid",
+          "ul",
+          "sr",
+          "uaa",
+          "uab",
+          "uafvl",
+          "uamb",
+          "uap",
+          "uapv",
+          "uaw",
+          "are",
+          "frm",
+          "pscdl",
+          "_eu",
+          "_s",
+          "sid",
+          "sct",
+          "seg",
+          "dl",
+          "dt",
+          "en",
+          "ep.anonymize_ip",
+          "epn.percent_scrolled",
+          "_et",
+          "tfd"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/g/collect",
+        "method": "POST",
+        "query_params": [
+          "v",
+          "tid",
+          "gtm",
+          "_p",
+          "gcs",
+          "gcd",
+          "npa",
+          "dma_cps",
+          "dma",
+          "tag_exp",
+          "cid",
+          "ul",
+          "sr",
+          "uaa",
+          "uab",
+          "uafvl",
+          "uamb",
+          "uap",
+          "uapv",
+          "uaw",
+          "are",
+          "frm",
+          "pscdl",
+          "_eu",
+          "_s",
+          "sid",
+          "sct",
+          "seg",
+          "dl",
+          "dt",
+          "en",
+          "ep.anonymize_ip",
+          "ep.ga_temp_client_id",
+          "_et",
+          "tfd"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/g/collect",
+        "method": "POST",
+        "query_params": [
+          "v",
+          "tid",
+          "gtm",
+          "_p",
+          "gcs",
+          "gcd",
+          "npa",
+          "dma_cps",
+          "dma",
+          "tag_exp",
+          "cid",
+          "ul",
+          "sr",
+          "uaa",
+          "uab",
+          "uafvl",
+          "uamb",
+          "uap",
+          "uapv",
+          "uaw",
+          "are",
+          "frm",
+          "pscdl",
+          "_s",
+          "sid",
+          "sct",
+          "seg",
+          "dl",
+          "dt",
+          "en",
+          "_fv",
+          "_nsi",
+          "_ss",
+          "_ee",
+          "ep.anonymize_ip",
+          "ep.event_category",
+          "tfd"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/g/collect",
+        "method": "POST",
+        "query_params": [
+          "v",
+          "tid",
+          "gtm",
+          "_p",
+          "gcs",
+          "gcd",
+          "npa",
+          "dma_cps",
+          "dma",
+          "tag_exp",
+          "cid",
+          "ul",
+          "sr",
+          "uaa",
+          "uab",
+          "uafvl",
+          "uamb",
+          "uap",
+          "uapv",
+          "uaw",
+          "are",
+          "frm",
+          "pscdl",
+          "_s",
+          "sid",
+          "sct",
+          "seg",
+          "dl",
+          "dt",
+          "en",
+          "_ee",
+          "ep.anonymize_ip",
+          "ep.event_category",
+          "_et",
+          "tfd"
+        ],
+        "path_params": false
+      }
+    ],
+    "redirects": [
+      {
+        "from": "/whenismybinday",
+        "to": "https://www.rother.gov.uk/whenismybinday",
+        "status": 301
+      },
+      {
+        "from": "/whenismybinday",
+        "to": "/findmynearest",
+        "status": 302
+      }
+    ],
+    "api_calls": [
+      {
+        "endpoint": "/wp-admin/admin-ajax.php",
+        "method": "POST",
+        "response_type": "application/json",
+        "params": []
+      },
+      {
+        "endpoint": "/v3/directline/conversations",
+        "method": "POST",
+        "response_type": "application/json",
+        "params": []
+      },
+      {
+        "endpoint": "/wp-admin/admin-ajax.php",
+        "method": "POST",
+        "response_type": "application/json",
+        "params": []
+      },
+      {
+        "endpoint": "/wp-admin/admin-ajax.php",
+        "method": "POST",
+        "response_type": "application/json",
+        "params": []
+      },
+      {
+        "endpoint": "/wp-admin/admin-ajax.php",
+        "method": "POST",
+        "response_type": "application/json",
+        "params": []
+      },
+      {
+        "endpoint": "/wp-admin/admin-ajax.php",
+        "method": "POST",
+        "response_type": "application/json",
+        "params": []
+      }
+    ],
+    "form_submissions": []
+  },
+  "grouped_by_endpoint": {
+    "/whenismybinday": [
+      {
+        "timestamp": "2025-07-21T08:05:23.243Z",
+        "duration_ms": 46.644000000000005,
+        "endpoint": "/whenismybinday",
+        "host": "www.rother.gov.uk",
+        "method": "GET",
+        "status": 301,
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7"
+        },
+        "response_headers": {
+          "content-type": "text/html",
+          "location": "https://www.rother.gov.uk/whenismybinday"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": -1
+        },
+        "redirect_to": "https://www.rother.gov.uk/whenismybinday"
+      },
+      {
+        "timestamp": "2025-07-21T08:05:23.271Z",
+        "duration_ms": 211.439,
+        "endpoint": "/whenismybinday",
+        "host": "www.rother.gov.uk",
+        "method": "GET",
+        "status": 302,
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7"
+        },
+        "response_headers": {
+          "content-type": "text/html; charset=UTF-8",
+          "location": "/findmynearest",
+          "set-cookie": "[cookies present]",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "sameorigin",
+          "x-redirect-by": "redirection",
+          "x-xss-protection": "1; mode=block"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": -1
+        },
+        "redirect_to": "/findmynearest"
+      }
+    ],
+    "/findmynearest": [
+      {
+        "timestamp": "2025-07-21T08:05:23.474Z",
+        "duration_ms": 375.964,
+        "endpoint": "/findmynearest",
+        "host": "www.rother.gov.uk",
+        "method": "GET",
+        "status": 200,
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+          "cookie": "[cookies present]"
+        },
+        "response_headers": {
+          "cache-control": "no-cache, must-revalidate, max-age=0",
+          "content-type": "text/html; charset=UTF-8",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "sameorigin",
+          "x-xss-protection": "1; mode=block"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 46172,
+          "compressed": true,
+          "content_ref": "878610b7ed7d96806ef5aa4332c28bd404ab1424.html"
+        }
+      }
+    ],
+    "/g/collect": [
+      {
+        "timestamp": "2025-07-21T08:05:24.471Z",
+        "duration_ms": 67.63499999999999,
+        "endpoint": "/g/collect",
+        "host": "region1.google-analytics.com",
+        "method": "POST",
+        "status": 204,
+        "query_params": {
+          "v": [
+            "2"
+          ],
+          "tid": [
+            "G-SCVJ9SSE1N"
+          ],
+          "gtm": [
+            "45je57g1v873603326za200"
+          ],
+          "_p": [
+            "1753085123860"
+          ],
+          "gcs": [
+            "G100"
+          ],
+          "gcd": [
+            "13p3p3p3p5l1"
+          ],
+          "npa": [
+            "1"
+          ],
+          "dma_cps": [
+            "-"
+          ],
+          "dma": [
+            "0"
+          ],
+          "tag_exp": [
+            "101509157~103116026~103200004~103233427~104684208~104684211~104948814"
+          ],
+          "cid": [
+            "1920811099.1753085124"
+          ],
+          "ul": [
+            "en-gb"
+          ],
+          "sr": [
+            "800x600"
+          ],
+          "uaa": [
+            "arm"
+          ],
+          "uab": [
+            "64"
+          ],
+          "uafvl": [
+            "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+          ],
+          "uamb": [
+            "0"
+          ],
+          "uap": [
+            "macOS"
+          ],
+          "uapv": [
+            "15.5.0"
+          ],
+          "uaw": [
+            "0"
+          ],
+          "are": [
+            "1"
+          ],
+          "frm": [
+            "0"
+          ],
+          "pscdl": [
+            "denied"
+          ],
+          "_s": [
+            "1"
+          ],
+          "sid": [
+            "1753085123"
+          ],
+          "sct": [
+            "1"
+          ],
+          "seg": [
+            "0"
+          ],
+          "dl": [
+            "https://www.rother.gov.uk/findmynearest"
+          ],
+          "dt": [
+            "Find My Nearest \u2013 Rother District Council"
+          ],
+          "en": [
+            "page_view"
+          ],
+          "_fv": [
+            "1"
+          ],
+          "_nsi": [
+            "1"
+          ],
+          "_ss": [
+            "1"
+          ],
+          "_ee": [
+            "1"
+          ],
+          "ep.anonymize_ip": [
+            "true"
+          ],
+          "tfd": [
+            "1224"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "cookie": "[cookies present]",
+          "origin": "https://www.rother.gov.uk",
+          "referer": "https://www.rother.gov.uk/findmynearest"
+        },
+        "response_headers": {
+          "cache-control": "no-cache, no-store, must-revalidate",
+          "content-type": "text/plain"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T08:05:26.330Z",
+        "duration_ms": 14.3,
+        "endpoint": "/g/collect",
+        "host": "region1.google-analytics.com",
+        "method": "POST",
+        "status": 204,
+        "query_params": {
+          "v": [
+            "2"
+          ],
+          "tid": [
+            "G-SCVJ9SSE1N"
+          ],
+          "gtm": [
+            "45je57g1v873603326za200"
+          ],
+          "_p": [
+            "1753085123860"
+          ],
+          "gcs": [
+            "G100"
+          ],
+          "gcd": [
+            "13p3p3p3p5l1"
+          ],
+          "npa": [
+            "1"
+          ],
+          "dma_cps": [
+            "-"
+          ],
+          "dma": [
+            "0"
+          ],
+          "tag_exp": [
+            "101509157~103116026~103200004~103233427~104684208~104684211~104948814"
+          ],
+          "cid": [
+            "1920811099.1753085124"
+          ],
+          "ul": [
+            "en-gb"
+          ],
+          "sr": [
+            "800x600"
+          ],
+          "uaa": [
+            "arm"
+          ],
+          "uab": [
+            "64"
+          ],
+          "uafvl": [
+            "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+          ],
+          "uamb": [
+            "0"
+          ],
+          "uap": [
+            "macOS"
+          ],
+          "uapv": [
+            "15.5.0"
+          ],
+          "uaw": [
+            "0"
+          ],
+          "are": [
+            "1"
+          ],
+          "frm": [
+            "0"
+          ],
+          "pscdl": [
+            "denied"
+          ],
+          "_eu": [
+            "AEA"
+          ],
+          "_s": [
+            "2"
+          ],
+          "sid": [
+            "1753085123"
+          ],
+          "sct": [
+            "1"
+          ],
+          "seg": [
+            "0"
+          ],
+          "dl": [
+            "https://www.rother.gov.uk/findmynearest"
+          ],
+          "dt": [
+            "Find My Nearest \u2013 Rother District Council"
+          ],
+          "en": [
+            "scroll"
+          ],
+          "ep.anonymize_ip": [
+            "true"
+          ],
+          "epn.percent_scrolled": [
+            "90"
+          ],
+          "_et": [
+            "6"
+          ],
+          "tfd": [
+            "3082"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "cookie": "[cookies present]",
+          "origin": "https://www.rother.gov.uk",
+          "referer": "https://www.rother.gov.uk/findmynearest"
+        },
+        "response_headers": {
+          "cache-control": "no-cache, no-store, must-revalidate",
+          "content-type": "text/plain"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T08:05:31.330Z",
+        "duration_ms": 14.282,
+        "endpoint": "/g/collect",
+        "host": "region1.google-analytics.com",
+        "method": "POST",
+        "status": 204,
+        "query_params": {
+          "v": [
+            "2"
+          ],
+          "tid": [
+            "G-SCVJ9SSE1N"
+          ],
+          "gtm": [
+            "45je57g1v873603326za200"
+          ],
+          "_p": [
+            "1753085123860"
+          ],
+          "gcs": [
+            "G101"
+          ],
+          "gcd": [
+            "13p3r3p3p5l1"
+          ],
+          "npa": [
+            "1"
+          ],
+          "dma_cps": [
+            "-"
+          ],
+          "dma": [
+            "0"
+          ],
+          "tag_exp": [
+            "101509157~103116026~103200004~103233427~104684208~104684211~104948814"
+          ],
+          "cid": [
+            "1920811099.1753085124"
+          ],
+          "ul": [
+            "en-gb"
+          ],
+          "sr": [
+            "800x600"
+          ],
+          "uaa": [
+            "arm"
+          ],
+          "uab": [
+            "64"
+          ],
+          "uafvl": [
+            "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+          ],
+          "uamb": [
+            "0"
+          ],
+          "uap": [
+            "macOS"
+          ],
+          "uapv": [
+            "15.5.0"
+          ],
+          "uaw": [
+            "0"
+          ],
+          "are": [
+            "1"
+          ],
+          "frm": [
+            "0"
+          ],
+          "pscdl": [
+            "denied"
+          ],
+          "_eu": [
+            "AAAAAAQ"
+          ],
+          "_s": [
+            "3"
+          ],
+          "sid": [
+            "1753085123"
+          ],
+          "sct": [
+            "1"
+          ],
+          "seg": [
+            "0"
+          ],
+          "dl": [
+            "https://www.rother.gov.uk/findmynearest"
+          ],
+          "dt": [
+            "Find My Nearest \u2013 Rother District Council"
+          ],
+          "en": [
+            "user_engagement"
+          ],
+          "ep.anonymize_ip": [
+            "true"
+          ],
+          "ep.ga_temp_client_id": [
+            "1920811099.1753085124"
+          ],
+          "_et": [
+            "1852"
+          ],
+          "tfd": [
+            "8086"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "cookie": "[cookies present]",
+          "origin": "https://www.rother.gov.uk",
+          "referer": "https://www.rother.gov.uk/findmynearest"
+        },
+        "response_headers": {
+          "cache-control": "no-cache, no-store, must-revalidate",
+          "content-type": "text/plain"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T08:05:40.805Z",
+        "duration_ms": 14.607,
+        "endpoint": "/g/collect",
+        "host": "region1.google-analytics.com",
+        "method": "POST",
+        "status": 204,
+        "query_params": {
+          "v": [
+            "2"
+          ],
+          "tid": [
+            "G-SCVJ9SSE1N"
+          ],
+          "gtm": [
+            "45je57g1v873603326za200"
+          ],
+          "_p": [
+            "1753085123860"
+          ],
+          "gcs": [
+            "G100"
+          ],
+          "gcd": [
+            "13p3q3p3p5l1"
+          ],
+          "npa": [
+            "1"
+          ],
+          "dma_cps": [
+            "-"
+          ],
+          "dma": [
+            "0"
+          ],
+          "tag_exp": [
+            "101509157~103116026~103200004~103233427~104684208~104684211~104948814"
+          ],
+          "cid": [
+            "969717039.1753085141"
+          ],
+          "ul": [
+            "en-gb"
+          ],
+          "sr": [
+            "800x600"
+          ],
+          "uaa": [
+            "arm"
+          ],
+          "uab": [
+            "64"
+          ],
+          "uafvl": [
+            "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+          ],
+          "uamb": [
+            "0"
+          ],
+          "uap": [
+            "macOS"
+          ],
+          "uapv": [
+            "15.5.0"
+          ],
+          "uaw": [
+            "0"
+          ],
+          "are": [
+            "1"
+          ],
+          "frm": [
+            "0"
+          ],
+          "pscdl": [
+            "denied"
+          ],
+          "_s": [
+            "4"
+          ],
+          "sid": [
+            "1753085140"
+          ],
+          "sct": [
+            "1"
+          ],
+          "seg": [
+            "0"
+          ],
+          "dl": [
+            "https://www.rother.gov.uk/findmynearest"
+          ],
+          "dt": [
+            "Find My Nearest \u2013 Rother District Council"
+          ],
+          "en": [
+            "postcode-search"
+          ],
+          "_fv": [
+            "1"
+          ],
+          "_nsi": [
+            "1"
+          ],
+          "_ss": [
+            "1"
+          ],
+          "_ee": [
+            "1"
+          ],
+          "ep.anonymize_ip": [
+            "true"
+          ],
+          "ep.event_category": [
+            "find-my-nearest"
+          ],
+          "tfd": [
+            "17561"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "cookie": "[cookies present]",
+          "origin": "https://www.rother.gov.uk",
+          "referer": "https://www.rother.gov.uk/findmynearest"
+        },
+        "response_headers": {
+          "cache-control": "no-cache, no-store, must-revalidate",
+          "content-type": "text/plain"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T08:06:00.456Z",
+        "duration_ms": 14.511,
+        "endpoint": "/g/collect",
+        "host": "region1.google-analytics.com",
+        "method": "POST",
+        "status": 204,
+        "query_params": {
+          "v": [
+            "2"
+          ],
+          "tid": [
+            "G-SCVJ9SSE1N"
+          ],
+          "gtm": [
+            "45je57g1v873603326za200"
+          ],
+          "_p": [
+            "1753085123860"
+          ],
+          "gcs": [
+            "G100"
+          ],
+          "gcd": [
+            "13p3q3p3p5l1"
+          ],
+          "npa": [
+            "1"
+          ],
+          "dma_cps": [
+            "-"
+          ],
+          "dma": [
+            "0"
+          ],
+          "tag_exp": [
+            "101509157~103116026~103200004~103233427~104684208~104684211~104948814"
+          ],
+          "cid": [
+            "969717039.1753085141"
+          ],
+          "ul": [
+            "en-gb"
+          ],
+          "sr": [
+            "800x600"
+          ],
+          "uaa": [
+            "arm"
+          ],
+          "uab": [
+            "64"
+          ],
+          "uafvl": [
+            "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+          ],
+          "uamb": [
+            "0"
+          ],
+          "uap": [
+            "macOS"
+          ],
+          "uapv": [
+            "15.5.0"
+          ],
+          "uaw": [
+            "0"
+          ],
+          "are": [
+            "1"
+          ],
+          "frm": [
+            "0"
+          ],
+          "pscdl": [
+            "denied"
+          ],
+          "_s": [
+            "5"
+          ],
+          "sid": [
+            "1753085140"
+          ],
+          "sct": [
+            "1"
+          ],
+          "seg": [
+            "1"
+          ],
+          "dl": [
+            "https://www.rother.gov.uk/findmynearest"
+          ],
+          "dt": [
+            "Find My Nearest \u2013 Rother District Council"
+          ],
+          "en": [
+            "address-selected"
+          ],
+          "_ee": [
+            "1"
+          ],
+          "ep.anonymize_ip": [
+            "true"
+          ],
+          "ep.event_category": [
+            "find-my-nearest"
+          ],
+          "_et": [
+            "14649"
+          ],
+          "tfd": [
+            "37214"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "cookie": "[cookies present]",
+          "origin": "https://www.rother.gov.uk",
+          "referer": "https://www.rother.gov.uk/findmynearest"
+        },
+        "response_headers": {
+          "cache-control": "no-cache, no-store, must-revalidate",
+          "content-type": "text/plain"
+        }
+      }
+    ],
+    "/collect": [
+      {
+        "timestamp": "2025-07-21T08:05:25.473Z",
+        "duration_ms": 442.81300000000005,
+        "endpoint": "/collect",
+        "host": "q.clarity.ms",
+        "method": "POST",
+        "status": 204,
+        "request_headers": {
+          "accept": "application/x-clarity-gzip",
+          "cookie": "[cookies present]",
+          "origin": "https://www.rother.gov.uk",
+          "referer": "https://www.rother.gov.uk/findmynearest"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T08:05:26.953Z",
+        "duration_ms": 104.393,
+        "endpoint": "/collect",
+        "host": "q.clarity.ms",
+        "method": "POST",
+        "status": 204,
+        "request_headers": {
+          "accept": "application/x-clarity-gzip",
+          "cookie": "[cookies present]",
+          "origin": "https://www.rother.gov.uk",
+          "referer": "https://www.rother.gov.uk/findmynearest"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T08:05:29.451Z",
+        "duration_ms": 97.286,
+        "endpoint": "/collect",
+        "host": "q.clarity.ms",
+        "method": "POST",
+        "status": 204,
+        "request_headers": {
+          "accept": "application/x-clarity-gzip",
+          "cookie": "[cookies present]",
+          "origin": "https://www.rother.gov.uk",
+          "referer": "https://www.rother.gov.uk/findmynearest"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T08:05:42.388Z",
+        "duration_ms": 95.964,
+        "endpoint": "/collect",
+        "host": "q.clarity.ms",
+        "method": "POST",
+        "status": 204,
+        "request_headers": {
+          "accept": "application/x-clarity-gzip",
+          "cookie": "[cookies present]",
+          "origin": "https://www.rother.gov.uk",
+          "referer": "https://www.rother.gov.uk/findmynearest"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T08:05:46.519Z",
+        "duration_ms": 117.837,
+        "endpoint": "/collect",
+        "host": "q.clarity.ms",
+        "method": "POST",
+        "status": 204,
+        "request_headers": {
+          "accept": "application/x-clarity-gzip",
+          "cookie": "[cookies present]",
+          "origin": "https://www.rother.gov.uk",
+          "referer": "https://www.rother.gov.uk/findmynearest"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T08:05:58.286Z",
+        "duration_ms": 106.981,
+        "endpoint": "/collect",
+        "host": "q.clarity.ms",
+        "method": "POST",
+        "status": 204,
+        "request_headers": {
+          "accept": "application/x-clarity-gzip",
+          "cookie": "[cookies present]",
+          "origin": "https://www.rother.gov.uk",
+          "referer": "https://www.rother.gov.uk/findmynearest"
+        }
+      }
+    ],
+    "/wp-admin/admin-ajax.php": [
+      {
+        "timestamp": "2025-07-21T08:05:25.361Z",
+        "duration_ms": 573.3380000000001,
+        "endpoint": "/wp-admin/admin-ajax.php",
+        "host": "www.rother.gov.uk",
+        "method": "POST",
+        "status": 200,
+        "request_headers": {
+          "accept": "*/*",
+          "content-type": "application/x-www-form-urlencoded; charset=UTF-8",
+          "cookie": "[cookies present]",
+          "origin": "https://www.rother.gov.uk",
+          "referer": "https://www.rother.gov.uk/findmynearest",
+          "x-requested-with": "XMLHttpRequest"
+        },
+        "response_headers": {
+          "cache-control": "no-cache, must-revalidate, max-age=0",
+          "content-type": "application/json; charset=UTF-8",
+          "set-cookie": "[cookies present]",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "sameorigin",
+          "x-robots-tag": "noindex",
+          "x-xss-protection": "1; mode=block"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 81,
+          "content_ref": "854d29909770cae72435acbb6c0d23867702ad91.json"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T08:05:26.330Z",
+        "duration_ms": 179.30700000000002,
+        "endpoint": "/wp-admin/admin-ajax.php",
+        "host": "www.rother.gov.uk",
+        "method": "POST",
+        "status": 200,
+        "request_headers": {
+          "accept": "*/*",
+          "content-type": "application/x-www-form-urlencoded; charset=UTF-8",
+          "cookie": "[cookies present]",
+          "origin": "https://www.rother.gov.uk",
+          "referer": "https://www.rother.gov.uk/findmynearest",
+          "x-requested-with": "XMLHttpRequest"
+        },
+        "response_headers": {
+          "cache-control": "no-cache, must-revalidate, max-age=0",
+          "content-type": "application/json; charset=UTF-8",
+          "set-cookie": "[cookies present]",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "sameorigin",
+          "x-robots-tag": "noindex",
+          "x-xss-protection": "1; mode=block"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 16,
+          "content_ref": "a15e2127145548437173fc17f3e980e3f3dee2d0.json"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T08:05:27.290Z",
+        "duration_ms": 204.772,
+        "endpoint": "/wp-admin/admin-ajax.php",
+        "host": "www.rother.gov.uk",
+        "method": "POST",
+        "status": 200,
+        "request_headers": {
+          "accept": "*/*",
+          "content-type": "application/x-www-form-urlencoded; charset=UTF-8",
+          "cookie": "[cookies present]",
+          "origin": "https://www.rother.gov.uk",
+          "referer": "https://www.rother.gov.uk/findmynearest",
+          "x-requested-with": "XMLHttpRequest"
+        },
+        "response_headers": {
+          "cache-control": "no-cache, must-revalidate, max-age=0",
+          "content-type": "application/json; charset=UTF-8",
+          "set-cookie": "[cookies present]",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "sameorigin",
+          "x-robots-tag": "noindex",
+          "x-xss-protection": "1; mode=block"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 16,
+          "content_ref": "a15e2127145548437173fc17f3e980e3f3dee2d0.json"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T08:05:40.805Z",
+        "duration_ms": 1068.857,
+        "endpoint": "/wp-admin/admin-ajax.php",
+        "host": "www.rother.gov.uk",
+        "method": "POST",
+        "status": 200,
+        "request_headers": {
+          "accept": "*/*",
+          "content-type": "application/x-www-form-urlencoded; charset=UTF-8",
+          "cookie": "[cookies present]",
+          "origin": "https://www.rother.gov.uk",
+          "referer": "https://www.rother.gov.uk/findmynearest",
+          "x-requested-with": "XMLHttpRequest"
+        },
+        "response_headers": {
+          "cache-control": "no-store, no-cache, must-revalidate",
+          "content-type": "application/json; charset=UTF-8",
+          "set-cookie": "[cookies present]",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "sameorigin",
+          "x-ratelimit-limit": "5",
+          "x-ratelimit-remaining": "4",
+          "x-robots-tag": "noindex",
+          "x-xss-protection": "1; mode=block"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 6036,
+          "content_ref": "6be59cf35e7d47a702694706b980ff4101646ff5.json"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T08:05:55.454Z",
+        "duration_ms": 2241.528,
+        "endpoint": "/wp-admin/admin-ajax.php",
+        "host": "www.rother.gov.uk",
+        "method": "POST",
+        "status": 200,
+        "request_headers": {
+          "accept": "*/*",
+          "content-type": "application/x-www-form-urlencoded; charset=UTF-8",
+          "cookie": "[cookies present]",
+          "origin": "https://www.rother.gov.uk",
+          "referer": "https://www.rother.gov.uk/findmynearest",
+          "x-requested-with": "XMLHttpRequest"
+        },
+        "response_headers": {
+          "cache-control": "no-store, no-cache, must-revalidate",
+          "content-type": "application/json; charset=UTF-8",
+          "set-cookie": "[cookies present]",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "sameorigin",
+          "x-ratelimit-limit": "5",
+          "x-ratelimit-remaining": "4",
+          "x-robots-tag": "noindex",
+          "x-xss-protection": "1; mode=block"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 7421,
+          "content_ref": "413c6d647d055a946a2132353b3e0de8bdfac71a.json"
+        }
+      }
+    ],
+    "/v3/directline/conversations": [
+      {
+        "timestamp": "2025-07-21T08:05:25.922Z",
+        "duration_ms": 250.75400000000002,
+        "endpoint": "/v3/directline/conversations",
+        "host": "europe.directline.botframework.com",
+        "method": "POST",
+        "status": 201,
+        "request_headers": {
+          "accept": "application/json",
+          "authorization": "Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6ImFVZGhFNk1RQTNUa1pxa09vWVhSMDBxX2dsayIsIng1dCI6ImFVZGhFNk1RQTNUa1pxa09vWVhSMDBxX2dsayIsInR5cCI6IkpXVCJ9.eyJib3QiOiJhaWltZWUiLCJzaXRlIjoiaHdVWmtxaXpsTFkiLCJjb252IjoiMWhCaE5UV2l4YkkzUldvMUl2dFBFUy1ldSIsInVzZXIiOiJkbF82ODdkZjRjNWJmZThkNS4xMDEyNjQyOSIsIm9yaWdpbiI6WyJodHRwczovL3d3dy5yb3RoZXIuZ292LnVrIiwiaHR0cDovL2xvY2FsaG9zdDozMDAwIiwiaHR0cHM6Ly9yZGN3b3JkcHJlc3N2My1zdGFnaW5nLmF6dXJld2Vic2l0ZXMubmV0Il0sIm5iZiI6MTc1MzA4NTEyNSwiZXhwIjoxNzUzMDg4NzI1LCJpc3MiOiJodHRwczovL2RpcmVjdGxpbmUuYm90ZnJhbWV3b3JrLmNvbS8iLCJhdWQiOiJodHRwczovL2RpcmVjdGxpbmUuYm90ZnJhbWV3b3JrLmNvbS8ifQ.XTDRQypYv7Bfan2n1zykyI-mgekp4bOcHYTwOulTIYC5hKpkYv3ldC8HM_xq8Yese3fATc-YgOkl2RwgxTcK8Ole2iMW-Wr4PihuvZA0gM3rw69hZ4dAhF1HsEty6_-okpoxu6DZErf4D19RqelLmmEK2RJrc811lG2QbTtxbsvVVp387qiw7JIW5Ld5Digf0am_P4bgfSJJCQIPAVeqXnhYFasdMaihKSY1XrHeupg3sBV1FB5JBio5x7tSTYQExNHlkXc1PYbUeHwO8Eo3JDYIhVHPsOjiV8uC8dl_0uVhic4-QSkbqMes4LhTPKFHtLna0G-rne5uK6hPy0BZvg",
+          "content-type": "application/json",
+          "origin": "https://www.rother.gov.uk",
+          "referer": "https://www.rother.gov.uk/findmynearest",
+          "x-ms-bot-agent": "DirectLine/3.0 (directlinejs; WebChat/4.17.0 (Full) 0.15.5)",
+          "x-requested-with": "XMLHttpRequest"
+        },
+        "response_headers": {
+          "cache-control": "no-cache",
+          "content-type": "application/json; charset=utf-8",
+          "x-content-type-options": "nosniff",
+          "x-ms-request-id": "cd84050432b5e41a226fb6269401ba4d",
+          "x-xss-protection": "1; mode=block"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 2169,
+          "content_ref": "d3d762c5bc219bb2c48e86f3b6405cf51881dc15.json"
+        }
+      }
+    ]
+  }
 }

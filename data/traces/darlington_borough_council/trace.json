@@ -1,259 +1,1249 @@
 {
-  "metadata": {
-    "trace_name": "darlington_borough_council",
-    "processed_at": "2025-08-26 18:44:24",
-    "workflow_steps_count": 6,
-    "navigation_events_count": 21
-  },
-  "scraping_patterns": {
-    "login_detected": false,
-    "form_submissions": 0,
-    "navigation_count": 2,
-    "unique_domains": [
-      "www.darlington.gov.uk"
-    ],
-    "api_endpoints": [
-      "https://www.darlington.gov.uk/manifest.json",
-      "https://www.darlington.gov.uk/manifest.json",
-      "https://www.darlington.gov.uk/manifest.json"
-    ],
-    "data_extraction_indicators": []
-  },
-  "workflow_steps": [
+  "entries": [
     {
-      "action": "goto",
-      "target": "http://www.darlington.gov.uk/environment-and-planning/street-scene/revised-weekly-collection-lookup/",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
-    },
-    {
-      "action": "goto",
-      "target": "https://www.darlington.gov.uk/",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
-    },
-    {
-      "action": "click",
-      "target": "aria-ref=e101 >> internal:describe=\"Find your bin day\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
-    },
-    {
-      "action": "fill",
-      "target": "aria-ref=e120 >> internal:describe=\"Your Postcode\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0,
-      "value": "DL1 1AG"
-    },
-    {
-      "action": "click",
-      "target": "aria-ref=e121 >> internal:describe=\"Find Your Address\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
-    },
-    {
-      "action": "selectOption",
-      "target": "aria-ref=e231 >> internal:describe=\"Select your address\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0,
-      "value": null
-    }
-  ],
-  "navigation_events": [
-    {
-      "url": "http://www.darlington.gov.uk/environment-and-planning/street-scene/revised-weekly-collection-lookup/",
+      "timestamp": "2025-07-21T10:42:42.112Z",
+      "duration_ms": 15.896,
+      "endpoint": "/{id}/street-scene/{id}",
+      "host": "www.darlington.gov.uk",
       "method": "GET",
       "status": 307,
-      "redirect_url": "https://www.darlington.gov.uk/environment-and-planning/street-scene/revised-weekly-collection-lookup/",
-      "mime_type": "x-unknown",
-      "size": -1,
-      "timestamp": "2025-07-21T10:42:42.112Z"
+      "path_params": [
+        "environment-and-planning",
+        "revised-weekly-collection-lookup"
+      ],
+      "response_headers": {
+        "location": "https://www.darlington.gov.uk/environment-and-planning/street-scene/revised-weekly-collection-lookup/"
+      },
+      "redirect_to": "https://www.darlington.gov.uk/environment-and-planning/street-scene/revised-weekly-collection-lookup/"
     },
     {
-      "url": "https://www.darlington.gov.uk/environment-and-planning/street-scene/revised-weekly-collection-lookup/",
+      "timestamp": "2025-07-21T10:42:42.127Z",
+      "duration_ms": 246.65800000000002,
+      "endpoint": "/{id}/street-scene/{id}",
+      "host": "www.darlington.gov.uk",
       "method": "GET",
       "status": 404,
-      "redirect_url": null,
-      "mime_type": "text/html; charset=utf-8",
-      "size": 15663,
-      "timestamp": "2025-07-21T10:42:42.127Z"
+      "path_params": [
+        "environment-and-planning",
+        "revised-weekly-collection-lookup"
+      ],
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7"
+      },
+      "response_headers": {
+        "content-type": "text/html; charset=utf-8",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "SAMEORIGIN",
+        "x-xss-protection": "1; mode=block"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 15663,
+        "compressed": true,
+        "content_ref": "ddc610f9858a39b1650e51cd344f6ec96f9a375d.html"
+      }
     },
     {
-      "url": "https://www.darlington.gov.uk/manifest.json",
+      "timestamp": "2025-07-21T10:42:42.468Z",
+      "duration_ms": 73.30599999999998,
+      "endpoint": "/manifest.json",
+      "host": "www.darlington.gov.uk",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json",
-      "size": 1612,
-      "timestamp": "2025-07-21T10:42:42.468Z"
+      "request_headers": {
+        "accept": "*/*",
+        "referer": "https://www.darlington.gov.uk/environment-and-planning/street-scene/revised-weekly-collection-lookup/"
+      },
+      "response_headers": {
+        "content-type": "application/json"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 1612,
+        "compressed": true,
+        "content_ref": "b7c9651dbeefe12b434c2c93869c25367443c5a9.json"
+      }
     },
     {
-      "url": "https://www.darlington.gov.uk/",
+      "timestamp": "2025-07-21T10:42:44.479Z",
+      "duration_ms": 142.106,
+      "endpoint": "/",
+      "host": "www.darlington.gov.uk",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "text/html; charset=utf-8",
-      "size": 118890,
-      "timestamp": "2025-07-21T10:42:44.479Z"
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7"
+      },
+      "response_headers": {
+        "content-type": "text/html; charset=utf-8",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "SAMEORIGIN",
+        "x-xss-protection": "1; mode=block"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 118890,
+        "compressed": true,
+        "content_ref": "aea50cba85d59556636fd3f1cf0326cac9454056.html"
+      }
     },
     {
-      "url": "https://www.darlington.gov.uk/internalapi/events/getevents?categories=3&includeVenues=true",
+      "timestamp": "2025-07-21T10:42:44.799Z",
+      "duration_ms": 5.46,
+      "endpoint": "/manifest.json",
+      "host": "www.darlington.gov.uk",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json; charset=utf-8",
-      "size": 2277670,
-      "timestamp": "2025-07-21T10:42:44.796Z"
+      "request_headers": {
+        "referer": "https://www.darlington.gov.uk/"
+      },
+      "response_headers": {
+        "content-type": "application/json"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 1612,
+        "compressed": true,
+        "content_ref": "b7c9651dbeefe12b434c2c93869c25367443c5a9.json"
+      }
     },
     {
-      "url": "https://www.darlington.gov.uk/internalapi/consultations/GetConsultations",
+      "timestamp": "2025-07-21T10:42:44.797Z",
+      "duration_ms": 310.03000000000003,
+      "endpoint": "/internalapi/consultations/GetConsultations",
+      "host": "www.darlington.gov.uk",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json; charset=utf-8",
-      "size": 74066,
-      "timestamp": "2025-07-21T10:42:44.797Z"
+      "request_headers": {
+        "accept": "*/*",
+        "referer": "https://www.darlington.gov.uk/"
+      },
+      "response_headers": {
+        "content-type": "application/json; charset=utf-8",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "SAMEORIGIN",
+        "x-xss-protection": "1; mode=block"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 74066,
+        "compressed": true,
+        "content_ref": "c69c9ec05c5e926b73bea51c16c76e872bbae0ac.json"
+      }
     },
     {
-      "url": "https://www.darlington.gov.uk/internalapi/news/GetHomePageArticles",
+      "timestamp": "2025-07-21T10:42:44.797Z",
+      "duration_ms": 327.297,
+      "endpoint": "/internalapi/news/GetHomePageArticles",
+      "host": "www.darlington.gov.uk",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json; charset=utf-8",
-      "size": 8635,
-      "timestamp": "2025-07-21T10:42:44.797Z"
+      "request_headers": {
+        "accept": "*/*",
+        "cookie": "[cookies present]",
+        "referer": "https://www.darlington.gov.uk/"
+      },
+      "response_headers": {
+        "content-type": "application/json; charset=utf-8",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "SAMEORIGIN",
+        "x-xss-protection": "1; mode=block"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 8635,
+        "compressed": true,
+        "content_ref": "a390c86024266c64fabd57fef395565f452a0dc6.json"
+      }
     },
     {
-      "url": "https://www.darlington.gov.uk/internalapi/news/GetArticles",
+      "timestamp": "2025-07-21T10:42:44.797Z",
+      "duration_ms": 350.839,
+      "endpoint": "/internalapi/news/GetArticles",
+      "host": "www.darlington.gov.uk",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json; charset=utf-8",
-      "size": 42576,
-      "timestamp": "2025-07-21T10:42:44.797Z"
+      "request_headers": {
+        "accept": "*/*",
+        "referer": "https://www.darlington.gov.uk/"
+      },
+      "response_headers": {
+        "content-type": "application/json; charset=utf-8",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "SAMEORIGIN",
+        "x-xss-protection": "1; mode=block"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 42576,
+        "compressed": true,
+        "content_ref": "a4ba53ee8de0207c448ef5a9540df6940c35834b.json"
+      }
     },
     {
-      "url": "https://www.darlington.gov.uk/internalapi/vacancies/GetAllVacancies?mode=all",
+      "timestamp": "2025-07-21T10:42:44.797Z",
+      "duration_ms": 795.15,
+      "endpoint": "/internalapi/vacancies/GetAllVacancies",
+      "host": "www.darlington.gov.uk",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json; charset=utf-8",
-      "size": 52010,
-      "timestamp": "2025-07-21T10:42:44.797Z"
+      "query_params": {
+        "mode": [
+          "all"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "referer": "https://www.darlington.gov.uk/"
+      },
+      "response_headers": {
+        "content-type": "application/json; charset=utf-8",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "SAMEORIGIN",
+        "x-xss-protection": "1; mode=block"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 52010,
+        "compressed": true,
+        "content_ref": "de1f4d18917dbd66ef4ff650f028f30965ddc291.json"
+      }
     },
     {
-      "url": "https://www.darlington.gov.uk/manifest.json",
+      "timestamp": "2025-07-21T10:42:44.796Z",
+      "duration_ms": 2741.5930000000003,
+      "endpoint": "/internalapi/events/getevents",
+      "host": "www.darlington.gov.uk",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json",
-      "size": 1612,
-      "timestamp": "2025-07-21T10:42:44.799Z"
+      "query_params": {
+        "categories": [
+          "3"
+        ],
+        "includeVenues": [
+          "true"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "referer": "https://www.darlington.gov.uk/"
+      },
+      "response_headers": {
+        "content-type": "application/json; charset=utf-8",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "SAMEORIGIN",
+        "x-xss-protection": "1; mode=block"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 2277670,
+        "compressed": true,
+        "content_ref": "174f596a09bfacdb24321e6b4a75580a932f9491.json"
+      }
     },
     {
-      "url": "https://www.darlington.gov.uk/media/23023/move-more-climbing-wall.jpg",
-      "method": "GET",
-      "status": 404,
-      "redirect_url": null,
-      "mime_type": "text/html; charset=utf-8",
-      "size": 15634,
-      "timestamp": "2025-07-21T10:42:45.106Z"
-    },
-    {
-      "url": "https://www.darlington.gov.uk/bins-waste-and-recycling/collection-day-lookup/",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "text/html; charset=utf-8",
-      "size": 66037,
-      "timestamp": "2025-07-21T10:42:48.969Z"
-    },
-    {
-      "url": "https://www.darlington.gov.uk/internalapi/news/GetArticles",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json; charset=utf-8",
-      "size": 42576,
-      "timestamp": "2025-07-21T10:42:49.122Z"
-    },
-    {
-      "url": "https://www.darlington.gov.uk/internalapi/consultations/GetConsultations",
+      "timestamp": "2025-07-21T10:42:48.969Z",
+      "duration_ms": 78.587,
+      "endpoint": "/{id}/{id}",
+      "host": "www.darlington.gov.uk",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json; charset=utf-8",
-      "size": 74066,
-      "timestamp": "2025-07-21T10:42:49.122Z"
+      "path_params": [
+        "bins-waste-and-recycling",
+        "collection-day-lookup"
+      ],
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+        "cookie": "[cookies present]",
+        "referer": "https://www.darlington.gov.uk/"
+      },
+      "response_headers": {
+        "content-type": "text/html; charset=utf-8",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "SAMEORIGIN",
+        "x-xss-protection": "1; mode=block"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 66037,
+        "compressed": true,
+        "content_ref": "eeaaaf974d8676800fe1ffaa9d9fc832f588f911.html"
+      }
     },
     {
-      "url": "https://www.darlington.gov.uk/internalapi/vacancies/GetAllVacancies?mode=all",
+      "timestamp": "2025-07-21T10:42:49.124Z",
+      "duration_ms": 0.989,
+      "endpoint": "/manifest.json",
+      "host": "www.darlington.gov.uk",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json; charset=utf-8",
-      "size": 52010,
-      "timestamp": "2025-07-21T10:42:49.122Z"
+      "request_headers": {
+        "referer": "https://www.darlington.gov.uk/bins-waste-and-recycling/collection-day-lookup/"
+      },
+      "response_headers": {
+        "content-type": "application/json"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 1612,
+        "compressed": true,
+        "content_ref": "b7c9651dbeefe12b434c2c93869c25367443c5a9.json"
+      }
     },
     {
-      "url": "https://www.darlington.gov.uk/internalapi/events/getevents?categories=3&includeVenues=true",
+      "timestamp": "2025-07-21T10:42:49.122Z",
+      "duration_ms": 109.785,
+      "endpoint": "/internalapi/news/GetArticles",
+      "host": "www.darlington.gov.uk",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json; charset=utf-8",
-      "size": 2277670,
-      "timestamp": "2025-07-21T10:42:49.122Z"
+      "request_headers": {
+        "accept": "*/*",
+        "cookie": "[cookies present]",
+        "referer": "https://www.darlington.gov.uk/bins-waste-and-recycling/collection-day-lookup/"
+      },
+      "response_headers": {
+        "content-type": "application/json; charset=utf-8",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "SAMEORIGIN",
+        "x-xss-protection": "1; mode=block"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 42576,
+        "compressed": true,
+        "content_ref": "a4ba53ee8de0207c448ef5a9540df6940c35834b.json"
+      }
     },
     {
-      "url": "https://www.darlington.gov.uk/manifest.json",
+      "timestamp": "2025-07-21T10:42:49.122Z",
+      "duration_ms": 276.923,
+      "endpoint": "/internalapi/consultations/GetConsultations",
+      "host": "www.darlington.gov.uk",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json",
-      "size": 1612,
-      "timestamp": "2025-07-21T10:42:49.124Z"
+      "request_headers": {
+        "accept": "*/*",
+        "cookie": "[cookies present]",
+        "referer": "https://www.darlington.gov.uk/bins-waste-and-recycling/collection-day-lookup/"
+      },
+      "response_headers": {
+        "content-type": "application/json; charset=utf-8",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "SAMEORIGIN",
+        "x-xss-protection": "1; mode=block"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 74066,
+        "compressed": true,
+        "content_ref": "c69c9ec05c5e926b73bea51c16c76e872bbae0ac.json"
+      }
     },
     {
-      "url": "https://www.darlington.gov.uk/postaladdress/GetAddressesByPostcode/DL1%201AG",
+      "timestamp": "2025-07-21T10:42:49.122Z",
+      "duration_ms": 674.534,
+      "endpoint": "/internalapi/vacancies/GetAllVacancies",
+      "host": "www.darlington.gov.uk",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json; charset=utf-8",
-      "size": 3882,
-      "timestamp": "2025-07-21T10:42:57.228Z"
+      "query_params": {
+        "mode": [
+          "all"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "cookie": "[cookies present]",
+        "referer": "https://www.darlington.gov.uk/bins-waste-and-recycling/collection-day-lookup/"
+      },
+      "response_headers": {
+        "content-type": "application/json; charset=utf-8",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "SAMEORIGIN",
+        "x-xss-protection": "1; mode=block"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 52010,
+        "compressed": true,
+        "content_ref": "de1f4d18917dbd66ef4ff650f028f30965ddc291.json"
+      }
     },
     {
-      "url": "https://www.darlington.gov.uk/postaladdress/GetAddressesDetails/10003080170",
+      "timestamp": "2025-07-21T10:42:49.122Z",
+      "duration_ms": 3043.914,
+      "endpoint": "/internalapi/events/getevents",
+      "host": "www.darlington.gov.uk",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json; charset=utf-8",
-      "size": 489,
-      "timestamp": "2025-07-21T10:43:00.916Z"
+      "query_params": {
+        "categories": [
+          "3"
+        ],
+        "includeVenues": [
+          "true"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "cookie": "[cookies present]",
+        "referer": "https://www.darlington.gov.uk/bins-waste-and-recycling/collection-day-lookup/"
+      },
+      "response_headers": {
+        "content-type": "application/json; charset=utf-8",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "SAMEORIGIN",
+        "x-xss-protection": "1; mode=block"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 2277670,
+        "compressed": true,
+        "content_ref": "174f596a09bfacdb24321e6b4a75580a932f9491.json"
+      }
     },
     {
-      "url": "https://www.darlington.gov.uk/bins-waste-and-recycling/dbc-refuse-and-recycling/?uprn=10003080170",
+      "timestamp": "2025-07-21T10:42:57.228Z",
+      "duration_ms": 516.1030000000001,
+      "endpoint": "/postaladdress/{id}/DL1%201AG",
+      "host": "www.darlington.gov.uk",
+      "method": "GET",
+      "status": 200,
+      "path_params": [
+        "GetAddressesByPostcode"
+      ],
+      "request_headers": {
+        "accept": "*/*",
+        "cookie": "[cookies present]",
+        "referer": "https://www.darlington.gov.uk/bins-waste-and-recycling/collection-day-lookup/"
+      },
+      "response_headers": {
+        "content-type": "application/json; charset=utf-8",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "SAMEORIGIN",
+        "x-xss-protection": "1; mode=block"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 3882,
+        "compressed": true,
+        "content_ref": "304a60c9ae8b8ec5cc7d791e2baf79229c977f06.json"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T10:43:00.916Z",
+      "duration_ms": 408.44899999999996,
+      "endpoint": "/postaladdress/GetAddressesDetails/{id}",
+      "host": "www.darlington.gov.uk",
+      "method": "GET",
+      "status": 200,
+      "path_params": [
+        "10003080170"
+      ],
+      "request_headers": {
+        "accept": "*/*",
+        "cookie": "[cookies present]",
+        "referer": "https://www.darlington.gov.uk/bins-waste-and-recycling/collection-day-lookup/"
+      },
+      "response_headers": {
+        "content-type": "application/json; charset=utf-8",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "SAMEORIGIN",
+        "x-xss-protection": "1; mode=block"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 489,
+        "content_ref": "32b341889edff96153466e69894669b1c1ad82d7.json"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T10:43:01.329Z",
+      "duration_ms": 44.611,
+      "endpoint": "/{id}/{id}",
+      "host": "www.darlington.gov.uk",
       "method": "GET",
       "status": 301,
-      "redirect_url": "https://www.darlington.gov.uk/bins-waste-and-recycling/collection-day-lookup/?uprn=10003080170",
-      "mime_type": "x-unknown",
-      "size": -1,
-      "timestamp": "2025-07-21T10:43:01.329Z"
+      "path_params": [
+        "bins-waste-and-recycling",
+        "dbc-refuse-and-recycling"
+      ],
+      "query_params": {
+        "uprn": [
+          "10003080170"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "cookie": "[cookies present]",
+        "referer": "https://www.darlington.gov.uk/bins-waste-and-recycling/collection-day-lookup/",
+        "x-requested-with": "XMLHttpRequest"
+      },
+      "response_headers": {
+        "cache-control": "no-cache, no-store, must-revalidate",
+        "location": "/bins-waste-and-recycling/collection-day-lookup/?uprn=10003080170",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "SAMEORIGIN",
+        "x-xss-protection": "1; mode=block"
+      },
+      "redirect_to": "/bins-waste-and-recycling/collection-day-lookup/?uprn=10003080170"
     },
     {
-      "url": "https://www.darlington.gov.uk/bins-waste-and-recycling/collection-day-lookup/?uprn=10003080170",
+      "timestamp": "2025-07-21T10:43:01.373Z",
+      "duration_ms": 289.737,
+      "endpoint": "/{id}/{id}",
+      "host": "www.darlington.gov.uk",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "text/html; charset=utf-8",
-      "size": 5256,
-      "timestamp": "2025-07-21T10:43:01.373Z"
+      "path_params": [
+        "bins-waste-and-recycling",
+        "collection-day-lookup"
+      ],
+      "query_params": {
+        "uprn": [
+          "10003080170"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "cookie": "[cookies present]",
+        "referer": "https://www.darlington.gov.uk/bins-waste-and-recycling/collection-day-lookup/",
+        "x-requested-with": "XMLHttpRequest"
+      },
+      "response_headers": {
+        "content-type": "text/html; charset=utf-8",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "SAMEORIGIN",
+        "x-xss-protection": "1; mode=block"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 5256,
+        "compressed": true,
+        "content_ref": "79bae418ec6f02f45c26b9b3898b8863a4c402b3.html"
+      }
     }
-  ]
+  ],
+  "analysis": {
+    "total_requests": 20,
+    "unique_endpoints": 11,
+    "methods_used": [
+      "GET"
+    ],
+    "status_codes": {
+      "307": 1,
+      "404": 1,
+      "200": 17,
+      "301": 1
+    },
+    "endpoints_with_params": [
+      {
+        "endpoint": "/{id}/street-scene/{id}",
+        "method": "GET",
+        "query_params": [],
+        "path_params": true
+      },
+      {
+        "endpoint": "/internalapi/vacancies/GetAllVacancies",
+        "method": "GET",
+        "query_params": [
+          "mode"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/internalapi/events/getevents",
+        "method": "GET",
+        "query_params": [
+          "categories",
+          "includeVenues"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/{id}/{id}",
+        "method": "GET",
+        "query_params": [],
+        "path_params": true
+      },
+      {
+        "endpoint": "/postaladdress/{id}/DL1%201AG",
+        "method": "GET",
+        "query_params": [],
+        "path_params": true
+      },
+      {
+        "endpoint": "/postaladdress/GetAddressesDetails/{id}",
+        "method": "GET",
+        "query_params": [],
+        "path_params": true
+      },
+      {
+        "endpoint": "/{id}/{id}",
+        "method": "GET",
+        "query_params": [
+          "uprn"
+        ],
+        "path_params": true
+      }
+    ],
+    "redirects": [
+      {
+        "from": "/{id}/street-scene/{id}",
+        "to": "https://www.darlington.gov.uk/environment-and-planning/street-scene/revised-weekly-collection-lookup/",
+        "status": 307
+      },
+      {
+        "from": "/{id}/{id}",
+        "to": "/bins-waste-and-recycling/collection-day-lookup/?uprn=10003080170",
+        "status": 301
+      }
+    ],
+    "api_calls": [
+      {
+        "endpoint": "/manifest.json",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": []
+      },
+      {
+        "endpoint": "/manifest.json",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": []
+      },
+      {
+        "endpoint": "/internalapi/consultations/GetConsultations",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": []
+      },
+      {
+        "endpoint": "/internalapi/news/GetHomePageArticles",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": []
+      },
+      {
+        "endpoint": "/internalapi/news/GetArticles",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": []
+      },
+      {
+        "endpoint": "/internalapi/vacancies/GetAllVacancies",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": [
+          "mode"
+        ]
+      },
+      {
+        "endpoint": "/internalapi/events/getevents",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": [
+          "categories",
+          "includeVenues"
+        ]
+      },
+      {
+        "endpoint": "/manifest.json",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": []
+      },
+      {
+        "endpoint": "/internalapi/news/GetArticles",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": []
+      },
+      {
+        "endpoint": "/internalapi/consultations/GetConsultations",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": []
+      },
+      {
+        "endpoint": "/internalapi/vacancies/GetAllVacancies",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": [
+          "mode"
+        ]
+      },
+      {
+        "endpoint": "/internalapi/events/getevents",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": [
+          "categories",
+          "includeVenues"
+        ]
+      },
+      {
+        "endpoint": "/postaladdress/{id}/DL1%201AG",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": []
+      },
+      {
+        "endpoint": "/postaladdress/GetAddressesDetails/{id}",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": []
+      }
+    ],
+    "form_submissions": []
+  },
+  "grouped_by_endpoint": {
+    "/{id}/street-scene/{id}": [
+      {
+        "timestamp": "2025-07-21T10:42:42.112Z",
+        "duration_ms": 15.896,
+        "endpoint": "/{id}/street-scene/{id}",
+        "host": "www.darlington.gov.uk",
+        "method": "GET",
+        "status": 307,
+        "path_params": [
+          "environment-and-planning",
+          "revised-weekly-collection-lookup"
+        ],
+        "response_headers": {
+          "location": "https://www.darlington.gov.uk/environment-and-planning/street-scene/revised-weekly-collection-lookup/"
+        },
+        "redirect_to": "https://www.darlington.gov.uk/environment-and-planning/street-scene/revised-weekly-collection-lookup/"
+      },
+      {
+        "timestamp": "2025-07-21T10:42:42.127Z",
+        "duration_ms": 246.65800000000002,
+        "endpoint": "/{id}/street-scene/{id}",
+        "host": "www.darlington.gov.uk",
+        "method": "GET",
+        "status": 404,
+        "path_params": [
+          "environment-and-planning",
+          "revised-weekly-collection-lookup"
+        ],
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7"
+        },
+        "response_headers": {
+          "content-type": "text/html; charset=utf-8",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "SAMEORIGIN",
+          "x-xss-protection": "1; mode=block"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 15663,
+          "compressed": true,
+          "content_ref": "ddc610f9858a39b1650e51cd344f6ec96f9a375d.html"
+        }
+      }
+    ],
+    "/manifest.json": [
+      {
+        "timestamp": "2025-07-21T10:42:42.468Z",
+        "duration_ms": 73.30599999999998,
+        "endpoint": "/manifest.json",
+        "host": "www.darlington.gov.uk",
+        "method": "GET",
+        "status": 200,
+        "request_headers": {
+          "accept": "*/*",
+          "referer": "https://www.darlington.gov.uk/environment-and-planning/street-scene/revised-weekly-collection-lookup/"
+        },
+        "response_headers": {
+          "content-type": "application/json"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 1612,
+          "compressed": true,
+          "content_ref": "b7c9651dbeefe12b434c2c93869c25367443c5a9.json"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T10:42:44.799Z",
+        "duration_ms": 5.46,
+        "endpoint": "/manifest.json",
+        "host": "www.darlington.gov.uk",
+        "method": "GET",
+        "status": 200,
+        "request_headers": {
+          "referer": "https://www.darlington.gov.uk/"
+        },
+        "response_headers": {
+          "content-type": "application/json"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 1612,
+          "compressed": true,
+          "content_ref": "b7c9651dbeefe12b434c2c93869c25367443c5a9.json"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T10:42:49.124Z",
+        "duration_ms": 0.989,
+        "endpoint": "/manifest.json",
+        "host": "www.darlington.gov.uk",
+        "method": "GET",
+        "status": 200,
+        "request_headers": {
+          "referer": "https://www.darlington.gov.uk/bins-waste-and-recycling/collection-day-lookup/"
+        },
+        "response_headers": {
+          "content-type": "application/json"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 1612,
+          "compressed": true,
+          "content_ref": "b7c9651dbeefe12b434c2c93869c25367443c5a9.json"
+        }
+      }
+    ],
+    "/": [
+      {
+        "timestamp": "2025-07-21T10:42:44.479Z",
+        "duration_ms": 142.106,
+        "endpoint": "/",
+        "host": "www.darlington.gov.uk",
+        "method": "GET",
+        "status": 200,
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7"
+        },
+        "response_headers": {
+          "content-type": "text/html; charset=utf-8",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "SAMEORIGIN",
+          "x-xss-protection": "1; mode=block"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 118890,
+          "compressed": true,
+          "content_ref": "aea50cba85d59556636fd3f1cf0326cac9454056.html"
+        }
+      }
+    ],
+    "/internalapi/consultations/GetConsultations": [
+      {
+        "timestamp": "2025-07-21T10:42:44.797Z",
+        "duration_ms": 310.03000000000003,
+        "endpoint": "/internalapi/consultations/GetConsultations",
+        "host": "www.darlington.gov.uk",
+        "method": "GET",
+        "status": 200,
+        "request_headers": {
+          "accept": "*/*",
+          "referer": "https://www.darlington.gov.uk/"
+        },
+        "response_headers": {
+          "content-type": "application/json; charset=utf-8",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "SAMEORIGIN",
+          "x-xss-protection": "1; mode=block"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 74066,
+          "compressed": true,
+          "content_ref": "c69c9ec05c5e926b73bea51c16c76e872bbae0ac.json"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T10:42:49.122Z",
+        "duration_ms": 276.923,
+        "endpoint": "/internalapi/consultations/GetConsultations",
+        "host": "www.darlington.gov.uk",
+        "method": "GET",
+        "status": 200,
+        "request_headers": {
+          "accept": "*/*",
+          "cookie": "[cookies present]",
+          "referer": "https://www.darlington.gov.uk/bins-waste-and-recycling/collection-day-lookup/"
+        },
+        "response_headers": {
+          "content-type": "application/json; charset=utf-8",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "SAMEORIGIN",
+          "x-xss-protection": "1; mode=block"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 74066,
+          "compressed": true,
+          "content_ref": "c69c9ec05c5e926b73bea51c16c76e872bbae0ac.json"
+        }
+      }
+    ],
+    "/internalapi/news/GetHomePageArticles": [
+      {
+        "timestamp": "2025-07-21T10:42:44.797Z",
+        "duration_ms": 327.297,
+        "endpoint": "/internalapi/news/GetHomePageArticles",
+        "host": "www.darlington.gov.uk",
+        "method": "GET",
+        "status": 200,
+        "request_headers": {
+          "accept": "*/*",
+          "cookie": "[cookies present]",
+          "referer": "https://www.darlington.gov.uk/"
+        },
+        "response_headers": {
+          "content-type": "application/json; charset=utf-8",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "SAMEORIGIN",
+          "x-xss-protection": "1; mode=block"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 8635,
+          "compressed": true,
+          "content_ref": "a390c86024266c64fabd57fef395565f452a0dc6.json"
+        }
+      }
+    ],
+    "/internalapi/news/GetArticles": [
+      {
+        "timestamp": "2025-07-21T10:42:44.797Z",
+        "duration_ms": 350.839,
+        "endpoint": "/internalapi/news/GetArticles",
+        "host": "www.darlington.gov.uk",
+        "method": "GET",
+        "status": 200,
+        "request_headers": {
+          "accept": "*/*",
+          "referer": "https://www.darlington.gov.uk/"
+        },
+        "response_headers": {
+          "content-type": "application/json; charset=utf-8",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "SAMEORIGIN",
+          "x-xss-protection": "1; mode=block"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 42576,
+          "compressed": true,
+          "content_ref": "a4ba53ee8de0207c448ef5a9540df6940c35834b.json"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T10:42:49.122Z",
+        "duration_ms": 109.785,
+        "endpoint": "/internalapi/news/GetArticles",
+        "host": "www.darlington.gov.uk",
+        "method": "GET",
+        "status": 200,
+        "request_headers": {
+          "accept": "*/*",
+          "cookie": "[cookies present]",
+          "referer": "https://www.darlington.gov.uk/bins-waste-and-recycling/collection-day-lookup/"
+        },
+        "response_headers": {
+          "content-type": "application/json; charset=utf-8",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "SAMEORIGIN",
+          "x-xss-protection": "1; mode=block"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 42576,
+          "compressed": true,
+          "content_ref": "a4ba53ee8de0207c448ef5a9540df6940c35834b.json"
+        }
+      }
+    ],
+    "/internalapi/vacancies/GetAllVacancies": [
+      {
+        "timestamp": "2025-07-21T10:42:44.797Z",
+        "duration_ms": 795.15,
+        "endpoint": "/internalapi/vacancies/GetAllVacancies",
+        "host": "www.darlington.gov.uk",
+        "method": "GET",
+        "status": 200,
+        "query_params": {
+          "mode": [
+            "all"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "referer": "https://www.darlington.gov.uk/"
+        },
+        "response_headers": {
+          "content-type": "application/json; charset=utf-8",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "SAMEORIGIN",
+          "x-xss-protection": "1; mode=block"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 52010,
+          "compressed": true,
+          "content_ref": "de1f4d18917dbd66ef4ff650f028f30965ddc291.json"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T10:42:49.122Z",
+        "duration_ms": 674.534,
+        "endpoint": "/internalapi/vacancies/GetAllVacancies",
+        "host": "www.darlington.gov.uk",
+        "method": "GET",
+        "status": 200,
+        "query_params": {
+          "mode": [
+            "all"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "cookie": "[cookies present]",
+          "referer": "https://www.darlington.gov.uk/bins-waste-and-recycling/collection-day-lookup/"
+        },
+        "response_headers": {
+          "content-type": "application/json; charset=utf-8",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "SAMEORIGIN",
+          "x-xss-protection": "1; mode=block"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 52010,
+          "compressed": true,
+          "content_ref": "de1f4d18917dbd66ef4ff650f028f30965ddc291.json"
+        }
+      }
+    ],
+    "/internalapi/events/getevents": [
+      {
+        "timestamp": "2025-07-21T10:42:44.796Z",
+        "duration_ms": 2741.5930000000003,
+        "endpoint": "/internalapi/events/getevents",
+        "host": "www.darlington.gov.uk",
+        "method": "GET",
+        "status": 200,
+        "query_params": {
+          "categories": [
+            "3"
+          ],
+          "includeVenues": [
+            "true"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "referer": "https://www.darlington.gov.uk/"
+        },
+        "response_headers": {
+          "content-type": "application/json; charset=utf-8",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "SAMEORIGIN",
+          "x-xss-protection": "1; mode=block"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 2277670,
+          "compressed": true,
+          "content_ref": "174f596a09bfacdb24321e6b4a75580a932f9491.json"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T10:42:49.122Z",
+        "duration_ms": 3043.914,
+        "endpoint": "/internalapi/events/getevents",
+        "host": "www.darlington.gov.uk",
+        "method": "GET",
+        "status": 200,
+        "query_params": {
+          "categories": [
+            "3"
+          ],
+          "includeVenues": [
+            "true"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "cookie": "[cookies present]",
+          "referer": "https://www.darlington.gov.uk/bins-waste-and-recycling/collection-day-lookup/"
+        },
+        "response_headers": {
+          "content-type": "application/json; charset=utf-8",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "SAMEORIGIN",
+          "x-xss-protection": "1; mode=block"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 2277670,
+          "compressed": true,
+          "content_ref": "174f596a09bfacdb24321e6b4a75580a932f9491.json"
+        }
+      }
+    ],
+    "/{id}/{id}": [
+      {
+        "timestamp": "2025-07-21T10:42:48.969Z",
+        "duration_ms": 78.587,
+        "endpoint": "/{id}/{id}",
+        "host": "www.darlington.gov.uk",
+        "method": "GET",
+        "status": 200,
+        "path_params": [
+          "bins-waste-and-recycling",
+          "collection-day-lookup"
+        ],
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+          "cookie": "[cookies present]",
+          "referer": "https://www.darlington.gov.uk/"
+        },
+        "response_headers": {
+          "content-type": "text/html; charset=utf-8",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "SAMEORIGIN",
+          "x-xss-protection": "1; mode=block"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 66037,
+          "compressed": true,
+          "content_ref": "eeaaaf974d8676800fe1ffaa9d9fc832f588f911.html"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T10:43:01.329Z",
+        "duration_ms": 44.611,
+        "endpoint": "/{id}/{id}",
+        "host": "www.darlington.gov.uk",
+        "method": "GET",
+        "status": 301,
+        "path_params": [
+          "bins-waste-and-recycling",
+          "dbc-refuse-and-recycling"
+        ],
+        "query_params": {
+          "uprn": [
+            "10003080170"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "cookie": "[cookies present]",
+          "referer": "https://www.darlington.gov.uk/bins-waste-and-recycling/collection-day-lookup/",
+          "x-requested-with": "XMLHttpRequest"
+        },
+        "response_headers": {
+          "cache-control": "no-cache, no-store, must-revalidate",
+          "location": "/bins-waste-and-recycling/collection-day-lookup/?uprn=10003080170",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "SAMEORIGIN",
+          "x-xss-protection": "1; mode=block"
+        },
+        "redirect_to": "/bins-waste-and-recycling/collection-day-lookup/?uprn=10003080170"
+      },
+      {
+        "timestamp": "2025-07-21T10:43:01.373Z",
+        "duration_ms": 289.737,
+        "endpoint": "/{id}/{id}",
+        "host": "www.darlington.gov.uk",
+        "method": "GET",
+        "status": 200,
+        "path_params": [
+          "bins-waste-and-recycling",
+          "collection-day-lookup"
+        ],
+        "query_params": {
+          "uprn": [
+            "10003080170"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "cookie": "[cookies present]",
+          "referer": "https://www.darlington.gov.uk/bins-waste-and-recycling/collection-day-lookup/",
+          "x-requested-with": "XMLHttpRequest"
+        },
+        "response_headers": {
+          "content-type": "text/html; charset=utf-8",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "SAMEORIGIN",
+          "x-xss-protection": "1; mode=block"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 5256,
+          "compressed": true,
+          "content_ref": "79bae418ec6f02f45c26b9b3898b8863a4c402b3.html"
+        }
+      }
+    ],
+    "/postaladdress/{id}/DL1%201AG": [
+      {
+        "timestamp": "2025-07-21T10:42:57.228Z",
+        "duration_ms": 516.1030000000001,
+        "endpoint": "/postaladdress/{id}/DL1%201AG",
+        "host": "www.darlington.gov.uk",
+        "method": "GET",
+        "status": 200,
+        "path_params": [
+          "GetAddressesByPostcode"
+        ],
+        "request_headers": {
+          "accept": "*/*",
+          "cookie": "[cookies present]",
+          "referer": "https://www.darlington.gov.uk/bins-waste-and-recycling/collection-day-lookup/"
+        },
+        "response_headers": {
+          "content-type": "application/json; charset=utf-8",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "SAMEORIGIN",
+          "x-xss-protection": "1; mode=block"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 3882,
+          "compressed": true,
+          "content_ref": "304a60c9ae8b8ec5cc7d791e2baf79229c977f06.json"
+        }
+      }
+    ],
+    "/postaladdress/GetAddressesDetails/{id}": [
+      {
+        "timestamp": "2025-07-21T10:43:00.916Z",
+        "duration_ms": 408.44899999999996,
+        "endpoint": "/postaladdress/GetAddressesDetails/{id}",
+        "host": "www.darlington.gov.uk",
+        "method": "GET",
+        "status": 200,
+        "path_params": [
+          "10003080170"
+        ],
+        "request_headers": {
+          "accept": "*/*",
+          "cookie": "[cookies present]",
+          "referer": "https://www.darlington.gov.uk/bins-waste-and-recycling/collection-day-lookup/"
+        },
+        "response_headers": {
+          "content-type": "application/json; charset=utf-8",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "SAMEORIGIN",
+          "x-xss-protection": "1; mode=block"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 489,
+          "content_ref": "32b341889edff96153466e69894669b1c1ad82d7.json"
+        }
+      }
+    ]
+  }
 }

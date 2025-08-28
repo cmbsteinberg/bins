@@ -1,99 +1,196 @@
 {
-  "metadata": {
-    "trace_name": "castle_point_borough_council",
-    "processed_at": "2025-08-26 18:44:24",
-    "workflow_steps_count": 7,
-    "navigation_events_count": 3
-  },
-  "scraping_patterns": {
-    "login_detected": false,
-    "form_submissions": 0,
-    "navigation_count": 2,
-    "unique_domains": [
-      "www.castlepoint.gov.uk"
-    ],
-    "api_endpoints": [],
-    "data_extraction_indicators": []
-  },
-  "workflow_steps": [
+  "entries": [
     {
-      "action": "goto",
-      "target": "http://www.castlepoint.gov.uk/main.cfm?MenuId=11462",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
-    },
-    {
-      "action": "click",
-      "target": "aria-ref=e85 >> internal:describe=\"Check your bin date\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
-    },
-    {
-      "action": "selectOption",
-      "target": "aria-ref=e69 >> internal:describe=\"Street Name combobox\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0,
-      "value": null
-    },
-    {
-      "action": "click",
-      "target": "aria-ref=e1195 >> internal:describe=\"Search button\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
-    },
-    {
-      "action": "click",
-      "target": "aria-ref=e147 >> internal:describe=\"Recycling calendar\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
-    },
-    {
-      "action": "click",
-      "target": "aria-ref=e150 >> internal:describe=\"Recycling guide\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
-    },
-    {
-      "action": "goto",
-      "target": "http://www.castlepoint.gov.uk/main.cfm?MenuId=11462",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
-    }
-  ],
-  "navigation_events": [
-    {
-      "url": "http://www.castlepoint.gov.uk/main.cfm?MenuId=11462",
+      "timestamp": "2025-07-21T10:31:08.622Z",
+      "duration_ms": 0.972,
+      "endpoint": "/main.cfm",
+      "host": "www.castlepoint.gov.uk",
       "method": "GET",
       "status": 307,
-      "redirect_url": "https://www.castlepoint.gov.uk/main.cfm?MenuId=11462",
-      "mime_type": "x-unknown",
-      "size": -1,
-      "timestamp": "2025-07-21T10:31:08.622Z"
+      "query_params": {
+        "MenuId": [
+          "11462"
+        ]
+      },
+      "response_headers": {
+        "location": "https://www.castlepoint.gov.uk/main.cfm?MenuId=11462"
+      },
+      "redirect_to": "https://www.castlepoint.gov.uk/main.cfm?MenuId=11462"
     },
     {
-      "url": "https://www.castlepoint.gov.uk/main.cfm?MenuId=11462",
+      "timestamp": "2025-07-21T10:31:08.624Z",
+      "duration_ms": 83.393,
+      "endpoint": "/main.cfm",
+      "host": "www.castlepoint.gov.uk",
       "method": "GET",
       "status": 301,
-      "redirect_url": "https://www.castlepoint.gov.uk/",
-      "mime_type": "text/html;charset=UTF-8",
-      "size": -1,
-      "timestamp": "2025-07-21T10:31:08.624Z"
+      "query_params": {
+        "MenuId": [
+          "11462"
+        ]
+      },
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+        "cookie": "[cookies present]"
+      },
+      "response_headers": {
+        "cache-control": "no-cache, no-store, must-revalidate, max-age=0",
+        "content-type": "text/html;charset=UTF-8",
+        "set-cookie": "[cookies present]",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "SAMEORIGIN",
+        "x-responder": "HP4",
+        "x-xss-protection": "1; mode=block",
+        "location": "/"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": -1
+      },
+      "redirect_to": "/"
     },
     {
-      "url": "https://www.castlepoint.gov.uk/",
+      "timestamp": "2025-07-21T10:31:08.686Z",
+      "duration_ms": 551.7850000000001,
+      "endpoint": "/",
+      "host": "www.castlepoint.gov.uk",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "text/html;charset=UTF-8",
-      "size": 39538,
-      "timestamp": "2025-07-21T10:31:08.686Z"
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+        "cookie": "[cookies present]"
+      },
+      "response_headers": {
+        "content-type": "text/html;charset=UTF-8",
+        "x-cache": "MISS",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "SAMEORIGIN",
+        "x-responder": "HP4",
+        "x-xss-protection": "1; mode=block"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 39538,
+        "compressed": true,
+        "content_ref": "514877d38fb50367933f5edb8bf1f078e433665e.html"
+      }
     }
-  ]
+  ],
+  "analysis": {
+    "total_requests": 3,
+    "unique_endpoints": 2,
+    "methods_used": [
+      "GET"
+    ],
+    "status_codes": {
+      "307": 1,
+      "301": 1,
+      "200": 1
+    },
+    "endpoints_with_params": [
+      {
+        "endpoint": "/main.cfm",
+        "method": "GET",
+        "query_params": [
+          "MenuId"
+        ],
+        "path_params": false
+      }
+    ],
+    "redirects": [
+      {
+        "from": "/main.cfm",
+        "to": "https://www.castlepoint.gov.uk/main.cfm?MenuId=11462",
+        "status": 307
+      },
+      {
+        "from": "/main.cfm",
+        "to": "/",
+        "status": 301
+      }
+    ],
+    "api_calls": [],
+    "form_submissions": []
+  },
+  "grouped_by_endpoint": {
+    "/main.cfm": [
+      {
+        "timestamp": "2025-07-21T10:31:08.622Z",
+        "duration_ms": 0.972,
+        "endpoint": "/main.cfm",
+        "host": "www.castlepoint.gov.uk",
+        "method": "GET",
+        "status": 307,
+        "query_params": {
+          "MenuId": [
+            "11462"
+          ]
+        },
+        "response_headers": {
+          "location": "https://www.castlepoint.gov.uk/main.cfm?MenuId=11462"
+        },
+        "redirect_to": "https://www.castlepoint.gov.uk/main.cfm?MenuId=11462"
+      },
+      {
+        "timestamp": "2025-07-21T10:31:08.624Z",
+        "duration_ms": 83.393,
+        "endpoint": "/main.cfm",
+        "host": "www.castlepoint.gov.uk",
+        "method": "GET",
+        "status": 301,
+        "query_params": {
+          "MenuId": [
+            "11462"
+          ]
+        },
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+          "cookie": "[cookies present]"
+        },
+        "response_headers": {
+          "cache-control": "no-cache, no-store, must-revalidate, max-age=0",
+          "content-type": "text/html;charset=UTF-8",
+          "set-cookie": "[cookies present]",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "SAMEORIGIN",
+          "x-responder": "HP4",
+          "x-xss-protection": "1; mode=block",
+          "location": "/"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": -1
+        },
+        "redirect_to": "/"
+      }
+    ],
+    "/": [
+      {
+        "timestamp": "2025-07-21T10:31:08.686Z",
+        "duration_ms": 551.7850000000001,
+        "endpoint": "/",
+        "host": "www.castlepoint.gov.uk",
+        "method": "GET",
+        "status": 200,
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+          "cookie": "[cookies present]"
+        },
+        "response_headers": {
+          "content-type": "text/html;charset=UTF-8",
+          "x-cache": "MISS",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "SAMEORIGIN",
+          "x-responder": "HP4",
+          "x-xss-protection": "1; mode=block"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 39538,
+          "compressed": true,
+          "content_ref": "514877d38fb50367933f5edb8bf1f078e433665e.html"
+        }
+      }
+    ]
+  }
 }

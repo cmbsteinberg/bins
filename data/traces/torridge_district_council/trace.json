@@ -1,335 +1,3646 @@
 {
-  "metadata": {
-    "trace_name": "torridge_district_council",
-    "processed_at": "2025-08-26 18:44:24",
-    "workflow_steps_count": 5,
-    "navigation_events_count": 29
-  },
-  "scraping_patterns": {
-    "login_detected": false,
-    "form_submissions": 7,
-    "navigation_count": 1,
-    "unique_domains": [
-      "www.google.com",
-      "maps.googleapis.com",
-      "www.torridge.gov.uk",
-      "geocode.arcgis.com",
-      "nominatim.openstreetmap.org",
-      "torridgedc-self.achieveservice.com"
-    ],
-    "api_endpoints": [
-      "https://maps.googleapis.com/maps/api/mapsjs/gen_204?csp_test=true",
-      "https://torridgedc-self.achieveservice.com/api/self/self-content/getByKeyAndApp?language=en&key=FORM_LOADING_TEXT&app=SELF_CORE&_=1753085173764&sid=e5d814910c6893c3029f54324812968f",
-      "https://torridgedc-self.achieveservice.com/api/get-document/json?uri=sandbox-publish%3A%2F%2FAF-Process-bb925b16-12f7-4233-9b77-c644617535f6%2FAF-Stage-a963b8c5-2715-4d5d-805c-18e16c033612%2Fdefinition.json&_=1753085173811&sid=e5d814910c6893c3029f54324812968f",
-      "https://torridgedc-self.achieveservice.com/api/get-document/json?uri=sandbox-publish%3A%2F%2FAF-Process-bb925b16-12f7-4233-9b77-c644617535f6%2Fdefinition.json&_=1753085173992&sid=e5d814910c6893c3029f54324812968f",
-      "https://torridgedc-self.achieveservice.com/api/queue-processor-config/get?_=1753085174172&sid=e5d814910c6893c3029f54324812968f",
-      "https://torridgedc-self.achieveservice.com/api/nextref?_=1753085174172&sid=e5d814910c6893c3029f54324812968f",
-      "https://torridgedc-self.achieveservice.com/api/af-configs-list/list?_=1753085174171&sid=e5d814910c6893c3029f54324812968f",
-      "https://torridgedc-self.achieveservice.com/api/get-document/json?uri=sandbox-publish%3A%2F%2FAF-Process-bb925b16-12f7-4233-9b77-c644617535f6%2FAF-Stage-a963b8c5-2715-4d5d-805c-18e16c033612%2FAF-Form-0e7afc52-6449-4f1d-a9c8-28095c98f67e%2Fdefinition.json&_=1753085184587&sid=e5d814910c6893c3029f54324812968f",
-      "https://geocode.arcgis.com/arcgis/rest/services/World/GeocodeServer/?f=json"
-    ],
-    "data_extraction_indicators": []
-  },
-  "workflow_steps": [
+  "entries": [
     {
-      "action": "goto",
-      "target": "https://www.torridge.gov.uk/forms/firmstep/wastecalendar.html",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
+      "timestamp": "2025-07-21T08:06:11.001Z",
+      "duration_ms": 127.255,
+      "endpoint": "/forms/firmstep/wastecalendar.html",
+      "host": "www.torridge.gov.uk",
+      "method": "GET",
+      "status": 301,
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7"
+      },
+      "response_headers": {
+        "cache-control": "no-cache, no-store",
+        "content-type": "text/html; charset=utf-8",
+        "location": "https://www.torridge.gov.uk/collectiondates",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "SAMEORIGIN",
+        "x-powered-by": "",
+        "x-ua-compatible": "IE=Edge",
+        "x-xss-protection": "1; mode=block"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": -1
+      },
+      "redirect_to": "https://www.torridge.gov.uk/collectiondates"
     },
     {
-      "action": "click",
-      "target": "aria-ref=e9 >> internal:describe=\"button \\\"Close\\\"\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
+      "timestamp": "2025-07-21T08:06:11.111Z",
+      "duration_ms": 15.423,
+      "endpoint": "/collectiondates",
+      "host": "www.torridge.gov.uk",
+      "method": "GET",
+      "status": 301,
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7"
+      },
+      "response_headers": {
+        "cache-control": "no-cache, no-store",
+        "content-type": "text/html; charset=utf-8",
+        "location": "https://torridgedc-self.achieveservice.com/service/My_property_information",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "SAMEORIGIN",
+        "x-powered-by": "",
+        "x-ua-compatible": "IE=Edge",
+        "x-xss-protection": "1; mode=block"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": -1
+      },
+      "redirect_to": "https://torridgedc-self.achieveservice.com/service/My_property_information"
     },
     {
-      "action": "fill",
-      "target": "aria-ref=f1e45 >> internal:describe=\"textbox \\\"Enter your postcodeRequired\\\"\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0,
-      "value": "EX18 7QE"
+      "timestamp": "2025-07-21T08:06:11.125Z",
+      "duration_ms": 1383.487,
+      "endpoint": "/service/{id}",
+      "host": "torridgedc-self.achieveservice.com",
+      "method": "GET",
+      "status": 200,
+      "path_params": [
+        "My_property_information"
+      ],
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+        "cookie": "[cookies present]"
+      },
+      "response_headers": {
+        "cache-control": "no-store, no-cache, must-revalidate",
+        "content-type": "text/html; charset=UTF-8",
+        "set-cookie": "[cookies present]",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "SAMEORIGIN",
+        "x-xss-protection": "0"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 28812,
+        "compressed": true,
+        "content_ref": "a173b6c418811b13531680dfd1556e5e3ab5f891.html"
+      }
     },
     {
-      "action": "selectOption",
-      "target": "aria-ref=f1e58 >> internal:describe=\"combobox\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0,
-      "value": null
+      "timestamp": "2025-07-21T08:06:12.522Z",
+      "duration_ms": 145.814,
+      "endpoint": "/jsapi",
+      "host": "www.google.com",
+      "method": "GET",
+      "status": 301,
+      "request_headers": {
+        "accept": "*/*",
+        "referer": "https://torridgedc-self.achieveservice.com/",
+        "x-browser-copyright": "Copyright 2025 Google LLC. All rights reserved.",
+        "x-browser-validation": "qvLgIVtG4U8GgiRPSI9IJ22mUlI=",
+        "x-browser-year": "2025",
+        "x-client-data": "CMiXywE="
+      },
+      "response_headers": {
+        "cache-control": "public, max-age=1800",
+        "content-type": "text/html; charset=UTF-8",
+        "location": "https://www.gstatic.com/charts/loader.js",
+        "x-content-type-options": "nosniff",
+        "x-xss-protection": "0"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": -1
+      },
+      "redirect_to": "https://www.gstatic.com/charts/loader.js"
     },
     {
-      "action": "click",
-      "target": "aria-ref=f1e96 >> internal:describe=\"button \\\"Next \uf054\\\"\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
+      "timestamp": "2025-07-21T08:06:12.788Z",
+      "duration_ms": 89.635,
+      "endpoint": "/authapi/isauthenticated",
+      "host": "torridgedc-self.achieveservice.com",
+      "method": "GET",
+      "status": 200,
+      "query_params": {
+        "uri": [
+          "https%3A%2F%2Ftorridgedc-self.achieveservice.com%2Fservice%2FMy_property_information"
+        ],
+        "hostname": [
+          "torridgedc-self.achieveservice.com"
+        ],
+        "withCredentials": [
+          "true"
+        ]
+      },
+      "request_headers": {
+        "accept": "application/json, text/javascript, */*; q=0.01",
+        "cookie": "[cookies present]",
+        "referer": "https://torridgedc-self.achieveservice.com/service/My_property_information",
+        "x-requested-with": "XMLHttpRequest"
+      },
+      "response_headers": {
+        "cache-control": "no-store, no-cache, must-revalidate",
+        "content-type": "application/json; charset=utf-8",
+        "set-cookie": "[cookies present]",
+        "x-auth-session": "a8gcuh1j1qfj0u6p4lvjg7768r",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "SAMEORIGIN",
+        "x-xss-protection": "0"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 1889,
+        "compressed": true,
+        "content_ref": "9ef988150b43a0ebc41004586caa2fc6ae04a91c.json"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T08:06:12.909Z",
+      "duration_ms": 14.837,
+      "endpoint": "/j/collect",
+      "host": "www.google-analytics.com",
+      "method": "POST",
+      "status": 200,
+      "query_params": {
+        "v": [
+          "1"
+        ],
+        "_v": [
+          "j101"
+        ],
+        "a": [
+          "1644309846"
+        ],
+        "t": [
+          "pageview"
+        ],
+        "_s": [
+          "1"
+        ],
+        "dl": [
+          "https://torridgedc-self.achieveservice.com/service/My_property_information"
+        ],
+        "ul": [
+          "en-gb"
+        ],
+        "de": [
+          "UTF-8"
+        ],
+        "dt": [
+          "My property information - Customer Self Service | Torridge District Council"
+        ],
+        "sd": [
+          "24-bit"
+        ],
+        "sr": [
+          "800x600"
+        ],
+        "vp": [
+          "800x461"
+        ],
+        "je": [
+          "0"
+        ],
+        "_u": [
+          "YADAAEABAAAAACAAI~"
+        ],
+        "jid": [
+          "1827382180"
+        ],
+        "gjid": [
+          "831330430"
+        ],
+        "cid": [
+          "1571716689.1752599500"
+        ],
+        "tid": [
+          "UA-11792103-20"
+        ],
+        "_gid": [
+          "1387576256.1753085173"
+        ],
+        "_r": [
+          "1"
+        ],
+        "_slc": [
+          "1"
+        ],
+        "gtm": [
+          "45He57g1n81PZWKRXNv862153208za200"
+        ],
+        "gcd": [
+          "13l3l3l3l1l1"
+        ],
+        "dma": [
+          "0"
+        ],
+        "tag_exp": [
+          "101509157~103116026~103200004~103233427~104684208~104684211"
+        ],
+        "z": [
+          "135479159"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "content-type": "text/plain",
+        "origin": "https://torridgedc-self.achieveservice.com",
+        "referer": "https://torridgedc-self.achieveservice.com/"
+      },
+      "response_headers": {
+        "cache-control": "no-cache, no-store, must-revalidate",
+        "content-type": "text/plain",
+        "x-content-type-options": "nosniff"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T08:06:12.907Z",
+      "duration_ms": 34.027,
+      "endpoint": "/apibroker/domain/{id}",
+      "host": "torridgedc-self.achieveservice.com",
+      "method": "GET",
+      "status": 200,
+      "path_params": [
+        "torridgedc-self.achieveservice.com"
+      ],
+      "query_params": {
+        "_": [
+          "1753085172803"
+        ],
+        "sid": [
+          "e5d814910c6893c3029f54324812968f"
+        ]
+      },
+      "request_headers": {
+        "accept": "application/json, text/javascript, */*; q=0.01",
+        "cookie": "[cookies present]",
+        "referer": "https://torridgedc-self.achieveservice.com/service/My_property_information",
+        "x-requested-with": "XMLHttpRequest"
+      },
+      "response_headers": {
+        "content-type": "application/json",
+        "set-cookie": "[cookies present]",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "SAMEORIGIN",
+        "x-xss-protection": "0"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 258,
+        "content_ref": "0d71f0913f03b2e53af90009759474f70b0cd259.json"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T08:06:12.907Z",
+      "duration_ms": 35.162,
+      "endpoint": "/apibroker/domain/{id}",
+      "host": "torridgedc-self.achieveservice.com",
+      "method": "GET",
+      "status": 200,
+      "path_params": [
+        "torridgedc-self.achieveservice.com"
+      ],
+      "query_params": {
+        "_": [
+          "1753085172778"
+        ],
+        "sid": [
+          "e5d814910c6893c3029f54324812968f"
+        ]
+      },
+      "request_headers": {
+        "accept": "application/json, text/javascript, */*; q=0.01",
+        "cookie": "[cookies present]",
+        "referer": "https://torridgedc-self.achieveservice.com/service/My_property_information",
+        "x-requested-with": "XMLHttpRequest"
+      },
+      "response_headers": {
+        "content-type": "application/json",
+        "set-cookie": "[cookies present]",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "SAMEORIGIN",
+        "x-xss-protection": "0"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 258,
+        "content_ref": "0d71f0913f03b2e53af90009759474f70b0cd259.json"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T08:06:12.907Z",
+      "duration_ms": 46.506,
+      "endpoint": "/apibroker/self-settings",
+      "host": "torridgedc-self.achieveservice.com",
+      "method": "GET",
+      "status": 200,
+      "query_params": {
+        "keys": [
+          "CustomIFrameCss,CustomCssInline"
+        ],
+        "app_name": [
+          "Self"
+        ],
+        "_": [
+          "1753085172875"
+        ],
+        "sid": [
+          "e5d814910c6893c3029f54324812968f"
+        ]
+      },
+      "request_headers": {
+        "accept": "application/json, text/javascript, */*; q=0.01",
+        "cookie": "[cookies present]",
+        "referer": "https://torridgedc-self.achieveservice.com/service/My_property_information",
+        "x-requested-with": "XMLHttpRequest"
+      },
+      "response_headers": {
+        "cache-control": "no-store, no-cache, must-revalidate",
+        "content-type": "application/json; charset=UTF-8",
+        "set-cookie": "[cookies present]",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "SAMEORIGIN",
+        "x-xss-protection": "0"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 216,
+        "content_ref": "33af989f1da317feb4632981f6c88993b711bdf9.json"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T08:06:12.958Z",
+      "duration_ms": 14.612,
+      "endpoint": "/j/collect",
+      "host": "www.google-analytics.com",
+      "method": "POST",
+      "status": 200,
+      "query_params": {
+        "v": [
+          "1"
+        ],
+        "_v": [
+          "j101"
+        ],
+        "a": [
+          "1644309846"
+        ],
+        "t": [
+          "pageview"
+        ],
+        "_s": [
+          "1"
+        ],
+        "dl": [
+          "https://torridgedc-self.achieveservice.com/service/My_property_information"
+        ],
+        "ul": [
+          "en-gb"
+        ],
+        "de": [
+          "UTF-8"
+        ],
+        "dt": [
+          "My property information - Customer Self Service | Torridge District Council"
+        ],
+        "sd": [
+          "24-bit"
+        ],
+        "sr": [
+          "800x600"
+        ],
+        "vp": [
+          "800x461"
+        ],
+        "je": [
+          "0"
+        ],
+        "_u": [
+          "aADAAEABAAAAACAAI~"
+        ],
+        "jid": [
+          "901186890"
+        ],
+        "gjid": [
+          "1948204177"
+        ],
+        "cid": [
+          "1571716689.1752599500"
+        ],
+        "tid": [
+          "UA-11792103-20"
+        ],
+        "_gid": [
+          "1387576256.1753085173"
+        ],
+        "_r": [
+          "1"
+        ],
+        "z": [
+          "664754266"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "content-type": "text/plain",
+        "origin": "https://torridgedc-self.achieveservice.com",
+        "referer": "https://torridgedc-self.achieveservice.com/"
+      },
+      "response_headers": {
+        "cache-control": "no-cache, no-store, must-revalidate",
+        "content-type": "text/plain",
+        "x-content-type-options": "nosniff"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T08:06:12.910Z",
+      "duration_ms": 107.596,
+      "endpoint": "/g/collect",
+      "host": "region1.google-analytics.com",
+      "method": "POST",
+      "status": 204,
+      "query_params": {
+        "v": [
+          "2"
+        ],
+        "tid": [
+          "G-3N668PK4E6"
+        ],
+        "gtm": [
+          "45je57g1v876025140z8862153208za200zb862153208"
+        ],
+        "_p": [
+          "1753085172686"
+        ],
+        "gcd": [
+          "13l3l3l3l1l1"
+        ],
+        "npa": [
+          "0"
+        ],
+        "dma": [
+          "0"
+        ],
+        "tag_exp": [
+          "101509157~103116026~103200004~103233427~104684208~104684211~104921712~104921714"
+        ],
+        "cid": [
+          "1571716689.1752599500"
+        ],
+        "ul": [
+          "en-gb"
+        ],
+        "sr": [
+          "800x600"
+        ],
+        "uaa": [
+          "arm"
+        ],
+        "uab": [
+          "64"
+        ],
+        "uafvl": [
+          "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+        ],
+        "uamb": [
+          "0"
+        ],
+        "uap": [
+          "macOS"
+        ],
+        "uapv": [
+          "15.5.0"
+        ],
+        "uaw": [
+          "0"
+        ],
+        "are": [
+          "1"
+        ],
+        "frm": [
+          "0"
+        ],
+        "pscdl": [
+          "noapi"
+        ],
+        "_s": [
+          "1"
+        ],
+        "sid": [
+          "1753085172"
+        ],
+        "sct": [
+          "1"
+        ],
+        "seg": [
+          "0"
+        ],
+        "dl": [
+          "https://torridgedc-self.achieveservice.com/service/My_property_information"
+        ],
+        "dt": [
+          "My property information - Customer Self Service | Torridge District Council"
+        ],
+        "en": [
+          "page_view"
+        ],
+        "_fv": [
+          "1"
+        ],
+        "_ss": [
+          "1"
+        ],
+        "tfd": [
+          "1894"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "cookie": "[cookies present]",
+        "origin": "https://torridgedc-self.achieveservice.com",
+        "referer": "https://torridgedc-self.achieveservice.com/"
+      },
+      "response_headers": {
+        "cache-control": "no-cache, no-store, must-revalidate",
+        "content-type": "text/plain"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T08:06:12.958Z",
+      "duration_ms": 503.948,
+      "endpoint": "/fillform",
+      "host": "torridgedc-self.achieveservice.com",
+      "method": "GET",
+      "status": 200,
+      "query_params": {
+        "iframe_id": [
+          "fillform-frame-1"
+        ]
+      },
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+        "cookie": "[cookies present]",
+        "referer": "https://torridgedc-self.achieveservice.com/service/My_property_information"
+      },
+      "response_headers": {
+        "cache-control": "no-store, no-cache, must-revalidate",
+        "content-type": "text/html; charset=UTF-8",
+        "set-cookie": "[cookies present]",
+        "x-content-type-options": "nosniff",
+        "x-ua-compatible": "IE=Edge,chrome=1",
+        "x-xss-protection": "0"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 4333,
+        "compressed": true,
+        "content_ref": "2834ffc3e10cb4cf00e87a7386df859fbdde9919.html"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T08:06:13.483Z",
+      "duration_ms": 144.071,
+      "endpoint": "/jsapi",
+      "host": "www.google.com",
+      "method": "GET",
+      "status": 301,
+      "query_params": {
+        "key": [
+          "AIzaSyDMYR3xNkRwUG-OsKEC4WVi1ptWIPzybMs"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "referer": "https://torridgedc-self.achieveservice.com/",
+        "x-browser-copyright": "Copyright 2025 Google LLC. All rights reserved.",
+        "x-browser-validation": "qvLgIVtG4U8GgiRPSI9IJ22mUlI=",
+        "x-browser-year": "2025",
+        "x-client-data": "CMiXywE="
+      },
+      "response_headers": {
+        "cache-control": "public, max-age=1800",
+        "content-type": "text/html; charset=UTF-8",
+        "location": "https://www.gstatic.com/charts/loader.js?key=AIzaSyDMYR3xNkRwUG-OsKEC4WVi1ptWIPzybMs",
+        "x-content-type-options": "nosniff",
+        "x-xss-protection": "0"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": -1
+      },
+      "redirect_to": "https://www.gstatic.com/charts/loader.js?key=AIzaSyDMYR3xNkRwUG-OsKEC4WVi1ptWIPzybMs"
+    },
+    {
+      "timestamp": "2025-07-21T08:06:13.762Z",
+      "duration_ms": 13.728,
+      "endpoint": "/j/collect",
+      "host": "www.google-analytics.com",
+      "method": "POST",
+      "status": 200,
+      "query_params": {
+        "v": [
+          "1"
+        ],
+        "_v": [
+          "j101"
+        ],
+        "a": [
+          "569530655"
+        ],
+        "t": [
+          "pageview"
+        ],
+        "_s": [
+          "1"
+        ],
+        "dl": [
+          "https://torridgedc-self.achieveservice.com/fillform/?iframe_id=fillform-frame-1&db_id="
+        ],
+        "ul": [
+          "en-gb"
+        ],
+        "de": [
+          "UTF-8"
+        ],
+        "dt": [
+          "AchieveForms"
+        ],
+        "sd": [
+          "24-bit"
+        ],
+        "sr": [
+          "800x600"
+        ],
+        "vp": [
+          "710x250"
+        ],
+        "je": [
+          "0"
+        ],
+        "_u": [
+          "AACAAEABAAAAACAAI~"
+        ],
+        "cid": [
+          "1571716689.1752599500"
+        ],
+        "tid": [
+          "UA-11792103-20"
+        ],
+        "_gid": [
+          "1387576256.1753085173"
+        ],
+        "_slc": [
+          "1"
+        ],
+        "z": [
+          "1622442102"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "content-type": "text/plain",
+        "origin": "https://torridgedc-self.achieveservice.com",
+        "referer": "https://torridgedc-self.achieveservice.com/"
+      },
+      "response_headers": {
+        "cache-control": "no-cache, no-store, must-revalidate",
+        "content-type": "text/plain",
+        "x-content-type-options": "nosniff"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T08:06:13.761Z",
+      "duration_ms": 45.333,
+      "endpoint": "/maps/api/mapsjs/gen_204",
+      "host": "maps.googleapis.com",
+      "method": "GET",
+      "status": 200,
+      "query_params": {
+        "csp_test": [
+          "true"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "origin": "https://torridgedc-self.achieveservice.com",
+        "referer": "https://torridgedc-self.achieveservice.com/",
+        "x-browser-copyright": "Copyright 2025 Google LLC. All rights reserved.",
+        "x-browser-validation": "qvLgIVtG4U8GgiRPSI9IJ22mUlI=",
+        "x-browser-year": "2025",
+        "x-client-data": "CMiXywE="
+      },
+      "response_headers": {
+        "content-type": "application/json; charset=UTF-8",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "SAMEORIGIN",
+        "x-xss-protection": "0"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 3,
+        "content_ref": "5f36b2ea290645ee34d943220a14b54ee5ea5be5.json"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T08:06:13.778Z",
+      "duration_ms": 43.533,
+      "endpoint": "/api/self/self-content/getByKeyAndApp",
+      "host": "torridgedc-self.achieveservice.com",
+      "method": "GET",
+      "status": 200,
+      "query_params": {
+        "language": [
+          "en"
+        ],
+        "key": [
+          "FORM_LOADING_TEXT"
+        ],
+        "app": [
+          "SELF_CORE"
+        ],
+        "_": [
+          "1753085173764"
+        ],
+        "sid": [
+          "e5d814910c6893c3029f54324812968f"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "content-type": "application/json",
+        "cookie": "[cookies present]",
+        "referer": "https://torridgedc-self.achieveservice.com/fillform/?iframe_id=fillform-frame-1&db_id=",
+        "x-requested-with": "XMLHttpRequest"
+      },
+      "response_headers": {
+        "cache-control": "no-store, no-cache, must-revalidate",
+        "content-type": "application/json",
+        "set-cookie": "[cookies present]",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "SAMEORIGIN",
+        "x-xss-protection": "0"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 169,
+        "content_ref": "7d70e7cbb66e662eb064267834005ac78795a487.json"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T08:06:13.812Z",
+      "duration_ms": 178.416,
+      "endpoint": "/api/get-document/json",
+      "host": "torridgedc-self.achieveservice.com",
+      "method": "GET",
+      "status": 200,
+      "query_params": {
+        "uri": [
+          "sandbox-publish://AF-Process-bb925b16-12f7-4233-9b77-c644617535f6/AF-Stage-a963b8c5-2715-4d5d-805c-18e16c033612/definition.json"
+        ],
+        "_": [
+          "1753085173811"
+        ],
+        "sid": [
+          "e5d814910c6893c3029f54324812968f"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "content-type": "application/json",
+        "cookie": "[cookies present]",
+        "referer": "https://torridgedc-self.achieveservice.com/fillform/?iframe_id=fillform-frame-1&db_id=",
+        "x-requested-with": "XMLHttpRequest"
+      },
+      "response_headers": {
+        "cache-control": "no-store, no-cache, must-revalidate",
+        "content-type": "application/json",
+        "set-cookie": "[cookies present]",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "SAMEORIGIN",
+        "x-xss-protection": "0"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 64794,
+        "compressed": true,
+        "content_ref": "363f29910222dee66772e298245eb7ba8c8a8b85.json"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T08:06:13.994Z",
+      "duration_ms": 171.04000000000002,
+      "endpoint": "/api/get-document/json",
+      "host": "torridgedc-self.achieveservice.com",
+      "method": "GET",
+      "status": 200,
+      "query_params": {
+        "uri": [
+          "sandbox-publish://AF-Process-bb925b16-12f7-4233-9b77-c644617535f6/definition.json"
+        ],
+        "_": [
+          "1753085173992"
+        ],
+        "sid": [
+          "e5d814910c6893c3029f54324812968f"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "content-type": "application/json",
+        "cookie": "[cookies present]",
+        "referer": "https://torridgedc-self.achieveservice.com/fillform/?iframe_id=fillform-frame-1&db_id=",
+        "x-requested-with": "XMLHttpRequest"
+      },
+      "response_headers": {
+        "cache-control": "no-store, no-cache, must-revalidate",
+        "content-type": "application/json",
+        "set-cookie": "[cookies present]",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "SAMEORIGIN",
+        "x-xss-protection": "0"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 5398,
+        "compressed": true,
+        "content_ref": "17dc546f33743a5323c7c5422ca86e261e998209.json"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T08:06:14.177Z",
+      "duration_ms": 44.301,
+      "endpoint": "/api/{id}/get",
+      "host": "torridgedc-self.achieveservice.com",
+      "method": "GET",
+      "status": 200,
+      "path_params": [
+        "queue-processor-config"
+      ],
+      "query_params": {
+        "_": [
+          "1753085174172"
+        ],
+        "sid": [
+          "e5d814910c6893c3029f54324812968f"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "content-type": "application/json",
+        "cookie": "[cookies present]",
+        "referer": "https://torridgedc-self.achieveservice.com/fillform/?iframe_id=fillform-frame-1&db_id=",
+        "x-requested-with": "XMLHttpRequest"
+      },
+      "response_headers": {
+        "cache-control": "no-store, no-cache, must-revalidate",
+        "content-type": "application/json",
+        "set-cookie": "[cookies present]",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "SAMEORIGIN",
+        "x-xss-protection": "0"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 38,
+        "content_ref": "0e0ba25417798115d5fea53e39077bbb9ee3b8c9.json"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T08:06:14.177Z",
+      "duration_ms": 44.565000000000005,
+      "endpoint": "/api/nextref",
+      "host": "torridgedc-self.achieveservice.com",
+      "method": "GET",
+      "status": 200,
+      "query_params": {
+        "_": [
+          "1753085174172"
+        ],
+        "sid": [
+          "e5d814910c6893c3029f54324812968f"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "content-type": "application/json",
+        "cookie": "[cookies present]",
+        "referer": "https://torridgedc-self.achieveservice.com/fillform/?iframe_id=fillform-frame-1&db_id=",
+        "x-requested-with": "XMLHttpRequest"
+      },
+      "response_headers": {
+        "cache-control": "no-store, no-cache, must-revalidate",
+        "content-type": "application/json",
+        "set-cookie": "[cookies present]",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "SAMEORIGIN",
+        "x-xss-protection": "0"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 116,
+        "content_ref": "42599a473dcf704c7df28f610858383bf6d33258.json"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T08:06:14.177Z",
+      "duration_ms": 49.17,
+      "endpoint": "/apibroker/{id}",
+      "host": "torridgedc-self.achieveservice.com",
+      "method": "GET",
+      "status": 200,
+      "path_params": [
+        "environment-tokens-public"
+      ],
+      "query_params": {
+        "app_name": [
+          "AF-Renderer::Self"
+        ],
+        "_": [
+          "1753085174173"
+        ],
+        "sid": [
+          "e5d814910c6893c3029f54324812968f"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "content-type": "application/json",
+        "cookie": "[cookies present]",
+        "referer": "https://torridgedc-self.achieveservice.com/fillform/?iframe_id=fillform-frame-1&db_id=",
+        "x-requested-with": "XMLHttpRequest"
+      },
+      "response_headers": {
+        "cache-control": "no-store, no-cache, must-revalidate",
+        "content-type": "application/json; charset=UTF-8",
+        "set-cookie": "[cookies present]",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "SAMEORIGIN",
+        "x-xss-protection": "0"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 5517,
+        "compressed": true,
+        "content_ref": "77da9b7765f80fb77006a83648791812054a326e.json"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T08:06:14.177Z",
+      "duration_ms": 54.695,
+      "endpoint": "/api/af-configs-list/list",
+      "host": "torridgedc-self.achieveservice.com",
+      "method": "GET",
+      "status": 200,
+      "query_params": {
+        "_": [
+          "1753085174171"
+        ],
+        "sid": [
+          "e5d814910c6893c3029f54324812968f"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "content-type": "application/json",
+        "cookie": "[cookies present]",
+        "referer": "https://torridgedc-self.achieveservice.com/fillform/?iframe_id=fillform-frame-1&db_id=",
+        "x-requested-with": "XMLHttpRequest"
+      },
+      "response_headers": {
+        "cache-control": "no-store, no-cache, must-revalidate",
+        "content-type": "application/json",
+        "set-cookie": "[cookies present]",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "SAMEORIGIN",
+        "x-xss-protection": "0"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 1212,
+        "content_ref": "7939352b2820679e2ec8ed87ea56e3857b0ddaf5.json"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T08:06:14.178Z",
+      "duration_ms": 54.158,
+      "endpoint": "/apibroker/location",
+      "host": "torridgedc-self.achieveservice.com",
+      "method": "GET",
+      "status": 200,
+      "query_params": {
+        "app_name": [
+          "AF-Renderer::Self"
+        ],
+        "_": [
+          "1753085174174"
+        ],
+        "sid": [
+          "e5d814910c6893c3029f54324812968f"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "content-type": "application/json",
+        "cookie": "[cookies present]",
+        "referer": "https://torridgedc-self.achieveservice.com/fillform/?iframe_id=fillform-frame-1&db_id=",
+        "x-requested-with": "XMLHttpRequest"
+      },
+      "response_headers": {
+        "cache-control": "no-store, no-cache, must-revalidate",
+        "content-type": "application/json; charset=UTF-8",
+        "set-cookie": "[cookies present]",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "SAMEORIGIN",
+        "x-xss-protection": "0"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 272,
+        "content_ref": "43187a87d33b5733e40b698fdb501a1747960295.json"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T08:06:14.276Z",
+      "duration_ms": 406.721,
+      "endpoint": "/apibroker/runLookup",
+      "host": "torridgedc-self.achieveservice.com",
+      "method": "POST",
+      "status": 200,
+      "query_params": {
+        "id": [
+          "5a3aefaf052d9"
+        ],
+        "noRetry": [
+          "false"
+        ],
+        "getOnlyTokens": [
+          "undefined"
+        ],
+        "app_name": [
+          "AF-Renderer::Self"
+        ],
+        "_": [
+          "1753085174270"
+        ],
+        "sid": [
+          "e5d814910c6893c3029f54324812968f"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "content-type": "application/json",
+        "cookie": "[cookies present]",
+        "origin": "https://torridgedc-self.achieveservice.com",
+        "referer": "https://torridgedc-self.achieveservice.com/fillform/?iframe_id=fillform-frame-1&db_id=",
+        "x-requested-with": "XMLHttpRequest"
+      },
+      "response_headers": {
+        "cache-control": "no-store, no-cache, must-revalidate",
+        "content-type": "application/json; charset=UTF-8",
+        "set-cookie": "[cookies present]",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "SAMEORIGIN",
+        "x-xss-protection": "0"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 2814,
+        "compressed": true,
+        "content_ref": "c6e04933ae0e22543391fd37ed14aa37a634f495.json"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T08:06:18.280Z",
+      "duration_ms": 443.958,
+      "endpoint": "/apibroker/runLookup",
+      "host": "torridgedc-self.achieveservice.com",
+      "method": "POST",
+      "status": 200,
+      "query_params": {
+        "id": [
+          "5a3aefaf052d9"
+        ],
+        "noRetry": [
+          "false"
+        ],
+        "getOnlyTokens": [
+          "undefined"
+        ],
+        "app_name": [
+          "AF-Renderer::Self"
+        ],
+        "_": [
+          "1753085178275"
+        ],
+        "sid": [
+          "e5d814910c6893c3029f54324812968f"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "content-type": "application/json",
+        "cookie": "[cookies present]",
+        "origin": "https://torridgedc-self.achieveservice.com",
+        "referer": "https://torridgedc-self.achieveservice.com/fillform/?iframe_id=fillform-frame-1&db_id=",
+        "x-requested-with": "XMLHttpRequest"
+      },
+      "response_headers": {
+        "cache-control": "no-store, no-cache, must-revalidate",
+        "content-type": "application/json; charset=UTF-8",
+        "set-cookie": "[cookies present]",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "SAMEORIGIN",
+        "x-xss-protection": "0"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 88955,
+        "compressed": true,
+        "content_ref": "0f017b5bbb5212a5e485b4000af2ff497fbb6760.json"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T08:06:20.422Z",
+      "duration_ms": 2059.85,
+      "endpoint": "/apibroker/runLookup",
+      "host": "torridgedc-self.achieveservice.com",
+      "method": "POST",
+      "status": 200,
+      "query_params": {
+        "id": [
+          "6583107397653"
+        ],
+        "noRetry": [
+          "true"
+        ],
+        "getOnlyTokens": [
+          "undefined"
+        ],
+        "app_name": [
+          "AF-Renderer::Self"
+        ],
+        "_": [
+          "1753085180419"
+        ],
+        "sid": [
+          "e5d814910c6893c3029f54324812968f"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "content-type": "application/json",
+        "cookie": "[cookies present]",
+        "origin": "https://torridgedc-self.achieveservice.com",
+        "referer": "https://torridgedc-self.achieveservice.com/fillform/?iframe_id=fillform-frame-1&db_id=",
+        "x-requested-with": "XMLHttpRequest"
+      },
+      "response_headers": {
+        "cache-control": "no-store, no-cache, must-revalidate",
+        "content-type": "application/json; charset=UTF-8",
+        "set-cookie": "[cookies present]",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "SAMEORIGIN",
+        "x-xss-protection": "0"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 2079,
+        "compressed": true,
+        "content_ref": "93348f39df824f7e97daf50716ef86f24533731b.json"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T08:06:24.598Z",
+      "duration_ms": 192.874,
+      "endpoint": "/arcgis/rest/services/World/GeocodeServer",
+      "host": "geocode.arcgis.com",
+      "method": "GET",
+      "status": 200,
+      "query_params": {
+        "f": [
+          "json"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "origin": "https://torridgedc-self.achieveservice.com",
+        "referer": "https://torridgedc-self.achieveservice.com/"
+      },
+      "response_headers": {
+        "cache-control": "max-age=0,must-revalidate",
+        "content-type": "application/json;charset=UTF-8",
+        "set-cookie": "[cookies present]",
+        "x-content-type-options": "nosniff"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 1006653,
+        "compressed": true,
+        "content_ref": "9b0a1927be1a6e3bb5402d4c168b1141beb04cd4.json"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T08:06:24.593Z",
+      "duration_ms": 234.73600000000002,
+      "endpoint": "/api/get-document/json",
+      "host": "torridgedc-self.achieveservice.com",
+      "method": "GET",
+      "status": 200,
+      "query_params": {
+        "uri": [
+          "sandbox-publish://AF-Process-bb925b16-12f7-4233-9b77-c644617535f6/AF-Stage-a963b8c5-2715-4d5d-805c-18e16c033612/AF-Form-0e7afc52-6449-4f1d-a9c8-28095c98f67e/definition.json"
+        ],
+        "_": [
+          "1753085184587"
+        ],
+        "sid": [
+          "e5d814910c6893c3029f54324812968f"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "content-type": "application/json",
+        "cookie": "[cookies present]",
+        "referer": "https://torridgedc-self.achieveservice.com/fillform/?iframe_id=fillform-frame-1&db_id=",
+        "x-requested-with": "XMLHttpRequest"
+      },
+      "response_headers": {
+        "cache-control": "no-store, no-cache, must-revalidate",
+        "content-type": "application/json",
+        "set-cookie": "[cookies present]",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "SAMEORIGIN",
+        "x-xss-protection": "0"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 12019,
+        "compressed": true,
+        "content_ref": "2bc4ede3cafdd1a2c5b5d40f362daaebb0208d8f.json"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T08:06:24.600Z",
+      "duration_ms": 1516.47,
+      "endpoint": "/apibroker/runLookup",
+      "host": "torridgedc-self.achieveservice.com",
+      "method": "POST",
+      "status": 200,
+      "query_params": {
+        "id": [
+          "659416e5a6e2e"
+        ],
+        "noRetry": [
+          "true"
+        ],
+        "getOnlyTokens": [
+          "undefined"
+        ],
+        "app_name": [
+          "AF-Renderer::Self"
+        ],
+        "_": [
+          "1753085184592"
+        ],
+        "sid": [
+          "e5d814910c6893c3029f54324812968f"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "content-type": "application/json",
+        "cookie": "[cookies present]",
+        "origin": "https://torridgedc-self.achieveservice.com",
+        "referer": "https://torridgedc-self.achieveservice.com/fillform/?iframe_id=fillform-frame-1&db_id=",
+        "x-requested-with": "XMLHttpRequest"
+      },
+      "response_headers": {
+        "cache-control": "no-store, no-cache, must-revalidate",
+        "content-type": "application/json; charset=UTF-8",
+        "set-cookie": "[cookies present]",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "SAMEORIGIN",
+        "x-xss-protection": "0"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 4607,
+        "compressed": true,
+        "content_ref": "16cb0332536610039b4b1dc5cc5c48e5df8f0ec7.json"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T08:06:26.119Z",
+      "duration_ms": 2708.142,
+      "endpoint": "/apibroker/runLookup",
+      "host": "torridgedc-self.achieveservice.com",
+      "method": "POST",
+      "status": 200,
+      "query_params": {
+        "id": [
+          "65956fdb70ea4"
+        ],
+        "noRetry": [
+          "true"
+        ],
+        "getOnlyTokens": [
+          "undefined"
+        ],
+        "app_name": [
+          "AF-Renderer::Self"
+        ],
+        "_": [
+          "1753085186114"
+        ],
+        "sid": [
+          "e5d814910c6893c3029f54324812968f"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "content-type": "application/json",
+        "cookie": "[cookies present]",
+        "origin": "https://torridgedc-self.achieveservice.com",
+        "referer": "https://torridgedc-self.achieveservice.com/fillform/?iframe_id=fillform-frame-1&db_id=",
+        "x-requested-with": "XMLHttpRequest"
+      },
+      "response_headers": {
+        "cache-control": "no-store, no-cache, must-revalidate",
+        "content-type": "application/json; charset=UTF-8",
+        "set-cookie": "[cookies present]",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "SAMEORIGIN",
+        "x-xss-protection": "0"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 107473,
+        "compressed": true,
+        "content_ref": "1669cae7dc6814a38eee73a3ad4c87cc60da1013.json"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T08:06:28.859Z",
+      "duration_ms": 631.677,
+      "endpoint": "/apibroker/runLookup",
+      "host": "torridgedc-self.achieveservice.com",
+      "method": "POST",
+      "status": 200,
+      "query_params": {
+        "id": [
+          "65843f780f7ce"
+        ],
+        "noRetry": [
+          "false"
+        ],
+        "getOnlyTokens": [
+          "undefined"
+        ],
+        "app_name": [
+          "AF-Renderer::Self"
+        ],
+        "_": [
+          "1753085188854"
+        ],
+        "sid": [
+          "e5d814910c6893c3029f54324812968f"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "content-type": "application/json",
+        "cookie": "[cookies present]",
+        "origin": "https://torridgedc-self.achieveservice.com",
+        "referer": "https://torridgedc-self.achieveservice.com/fillform/?iframe_id=fillform-frame-1&db_id=",
+        "x-requested-with": "XMLHttpRequest"
+      },
+      "response_headers": {
+        "cache-control": "no-store, no-cache, must-revalidate",
+        "content-type": "application/json; charset=UTF-8",
+        "set-cookie": "[cookies present]",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "SAMEORIGIN",
+        "x-xss-protection": "0"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 5869,
+        "compressed": true,
+        "content_ref": "3b240ce96cbced6c24961c1f09de06d5dba38676.json"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T08:06:29.925Z",
+      "duration_ms": 144.54,
+      "endpoint": "/reverse",
+      "host": "nominatim.openstreetmap.org",
+      "method": "GET",
+      "status": 200,
+      "query_params": {
+        "format": [
+          "json"
+        ],
+        "lat": [
+          "50.8828771095578"
+        ],
+        "lon": [
+          "-3.94564370820622"
+        ],
+        "zoom": [
+          "18"
+        ],
+        "addressdetails": [
+          "1"
+        ]
+      },
+      "request_headers": {
+        "accept": "application/json, text/javascript, */*; q=0.01",
+        "origin": "https://torridgedc-self.achieveservice.com",
+        "referer": "https://torridgedc-self.achieveservice.com/"
+      },
+      "response_headers": {
+        "content-type": "application/json; charset=utf-8"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 738,
+        "content_ref": "3bdd6602d00a3b2a118543ca83e7f9fbacb775dd.json"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T08:06:29.529Z",
+      "duration_ms": 2525.321,
+      "endpoint": "/apibroker/runLookup",
+      "host": "torridgedc-self.achieveservice.com",
+      "method": "POST",
+      "status": 200,
+      "query_params": {
+        "id": [
+          "65956fdb70ea4"
+        ],
+        "noRetry": [
+          "true"
+        ],
+        "getOnlyTokens": [
+          "undefined"
+        ],
+        "app_name": [
+          "AF-Renderer::Self"
+        ],
+        "_": [
+          "1753085189521"
+        ],
+        "sid": [
+          "e5d814910c6893c3029f54324812968f"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "content-type": "application/json",
+        "cookie": "[cookies present]",
+        "origin": "https://torridgedc-self.achieveservice.com",
+        "referer": "https://torridgedc-self.achieveservice.com/fillform/?iframe_id=fillform-frame-1&db_id=",
+        "x-requested-with": "XMLHttpRequest"
+      },
+      "response_headers": {
+        "cache-control": "no-store, no-cache, must-revalidate",
+        "content-type": "application/json; charset=UTF-8",
+        "set-cookie": "[cookies present]",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "SAMEORIGIN",
+        "x-xss-protection": "0"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 107473,
+        "compressed": true,
+        "content_ref": "481f8446897efd953b1ff597669f61becd67d943.json"
+      }
     }
   ],
-  "navigation_events": [
-    {
-      "url": "https://www.torridge.gov.uk/forms/firmstep/wastecalendar.html",
-      "method": "GET",
-      "status": 301,
-      "redirect_url": "https://www.torridge.gov.uk/collectiondates",
-      "mime_type": "text/html; charset=utf-8",
-      "size": -1,
-      "timestamp": "2025-07-21T08:06:11.001Z"
+  "analysis": {
+    "total_requests": 33,
+    "unique_endpoints": 21,
+    "methods_used": [
+      "GET",
+      "POST"
+    ],
+    "status_codes": {
+      "301": 4,
+      "200": 28,
+      "204": 1
     },
-    {
-      "url": "https://www.torridge.gov.uk/collectiondates",
-      "method": "GET",
-      "status": 301,
-      "redirect_url": "https://torridgedc-self.achieveservice.com/service/My_property_information",
-      "mime_type": "text/html; charset=utf-8",
-      "size": -1,
-      "timestamp": "2025-07-21T08:06:11.111Z"
-    },
-    {
-      "url": "https://torridgedc-self.achieveservice.com/service/My_property_information",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "text/html; charset=UTF-8",
-      "size": 28812,
-      "timestamp": "2025-07-21T08:06:11.125Z"
-    },
-    {
-      "url": "https://www.google.com/jsapi",
-      "method": "GET",
-      "status": 301,
-      "redirect_url": "https://www.gstatic.com/charts/loader.js",
-      "mime_type": "text/html; charset=UTF-8",
-      "size": -1,
-      "timestamp": "2025-07-21T08:06:12.522Z"
-    },
-    {
-      "url": "https://torridgedc-self.achieveservice.com/authapi/isauthenticated?uri=https%253A%252F%252Ftorridgedc-self.achieveservice.com%252Fservice%252FMy_property_information&hostname=torridgedc-self.achieveservice.com&withCredentials=true",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json; charset=utf-8",
-      "size": 1889,
-      "timestamp": "2025-07-21T08:06:12.788Z"
-    },
-    {
-      "url": "https://torridgedc-self.achieveservice.com/apibroker/domain/torridgedc-self.achieveservice.com?_=1753085172803&sid=e5d814910c6893c3029f54324812968f",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json",
-      "size": 258,
-      "timestamp": "2025-07-21T08:06:12.907Z"
-    },
-    {
-      "url": "https://torridgedc-self.achieveservice.com/apibroker/domain/torridgedc-self.achieveservice.com?_=1753085172778&sid=e5d814910c6893c3029f54324812968f",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json",
-      "size": 258,
-      "timestamp": "2025-07-21T08:06:12.907Z"
-    },
-    {
-      "url": "https://torridgedc-self.achieveservice.com/apibroker/self-settings?keys=CustomIFrameCss%2CCustomCssInline&app_name=Self&_=1753085172875&sid=e5d814910c6893c3029f54324812968f",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json; charset=UTF-8",
-      "size": 216,
-      "timestamp": "2025-07-21T08:06:12.907Z"
-    },
-    {
-      "url": "https://torridgedc-self.achieveservice.com/fillform/?iframe_id=fillform-frame-1&db_id=",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "text/html; charset=UTF-8",
-      "size": 4333,
-      "timestamp": "2025-07-21T08:06:12.958Z"
-    },
-    {
-      "url": "https://www.google.com/jsapi?key=AIzaSyDMYR3xNkRwUG-OsKEC4WVi1ptWIPzybMs",
-      "method": "GET",
-      "status": 301,
-      "redirect_url": "https://www.gstatic.com/charts/loader.js?key=AIzaSyDMYR3xNkRwUG-OsKEC4WVi1ptWIPzybMs",
-      "mime_type": "text/html; charset=UTF-8",
-      "size": -1,
-      "timestamp": "2025-07-21T08:06:13.483Z"
-    },
-    {
-      "url": "https://maps.googleapis.com/maps/api/mapsjs/gen_204?csp_test=true",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json; charset=UTF-8",
-      "size": 3,
-      "timestamp": "2025-07-21T08:06:13.761Z"
-    },
-    {
-      "url": "https://torridgedc-self.achieveservice.com/api/self/self-content/getByKeyAndApp?language=en&key=FORM_LOADING_TEXT&app=SELF_CORE&_=1753085173764&sid=e5d814910c6893c3029f54324812968f",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json",
-      "size": 169,
-      "timestamp": "2025-07-21T08:06:13.778Z"
-    },
-    {
-      "url": "https://torridgedc-self.achieveservice.com/api/get-document/json?uri=sandbox-publish%3A%2F%2FAF-Process-bb925b16-12f7-4233-9b77-c644617535f6%2FAF-Stage-a963b8c5-2715-4d5d-805c-18e16c033612%2Fdefinition.json&_=1753085173811&sid=e5d814910c6893c3029f54324812968f",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json",
-      "size": 64794,
-      "timestamp": "2025-07-21T08:06:13.812Z"
-    },
-    {
-      "url": "https://torridgedc-self.achieveservice.com/api/get-document/json?uri=sandbox-publish%3A%2F%2FAF-Process-bb925b16-12f7-4233-9b77-c644617535f6%2Fdefinition.json&_=1753085173992&sid=e5d814910c6893c3029f54324812968f",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json",
-      "size": 5398,
-      "timestamp": "2025-07-21T08:06:13.994Z"
-    },
-    {
-      "url": "https://torridgedc-self.achieveservice.com/api/queue-processor-config/get?_=1753085174172&sid=e5d814910c6893c3029f54324812968f",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json",
-      "size": 38,
-      "timestamp": "2025-07-21T08:06:14.177Z"
-    },
-    {
-      "url": "https://torridgedc-self.achieveservice.com/api/nextref?_=1753085174172&sid=e5d814910c6893c3029f54324812968f",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json",
-      "size": 116,
-      "timestamp": "2025-07-21T08:06:14.177Z"
-    },
-    {
-      "url": "https://torridgedc-self.achieveservice.com/apibroker/environment-tokens-public?app_name=AF-Renderer::Self&_=1753085174173&sid=e5d814910c6893c3029f54324812968f",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json; charset=UTF-8",
-      "size": 5517,
-      "timestamp": "2025-07-21T08:06:14.177Z"
-    },
-    {
-      "url": "https://torridgedc-self.achieveservice.com/api/af-configs-list/list?_=1753085174171&sid=e5d814910c6893c3029f54324812968f",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json",
-      "size": 1212,
-      "timestamp": "2025-07-21T08:06:14.177Z"
-    },
-    {
-      "url": "https://torridgedc-self.achieveservice.com/apibroker/location?app_name=AF-Renderer::Self&_=1753085174174&sid=e5d814910c6893c3029f54324812968f",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json; charset=UTF-8",
-      "size": 272,
-      "timestamp": "2025-07-21T08:06:14.178Z"
-    },
-    {
-      "url": "https://torridgedc-self.achieveservice.com/apibroker/runLookup?id=5a3aefaf052d9&repeat_against=&noRetry=false&getOnlyTokens=undefined&log_id=&app_name=AF-Renderer::Self&_=1753085174270&sid=e5d814910c6893c3029f54324812968f",
-      "method": "POST",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json; charset=UTF-8",
-      "size": 2814,
-      "timestamp": "2025-07-21T08:06:14.276Z"
-    },
-    {
-      "url": "https://torridgedc-self.achieveservice.com/apibroker/runLookup?id=5a3aefaf052d9&repeat_against=&noRetry=false&getOnlyTokens=undefined&log_id=&app_name=AF-Renderer::Self&_=1753085178275&sid=e5d814910c6893c3029f54324812968f",
-      "method": "POST",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json; charset=UTF-8",
-      "size": 88955,
-      "timestamp": "2025-07-21T08:06:18.280Z"
-    },
-    {
-      "url": "https://torridgedc-self.achieveservice.com/apibroker/runLookup?id=6583107397653&repeat_against=&noRetry=true&getOnlyTokens=undefined&log_id=&app_name=AF-Renderer::Self&_=1753085180419&sid=e5d814910c6893c3029f54324812968f",
-      "method": "POST",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json; charset=UTF-8",
-      "size": 2079,
-      "timestamp": "2025-07-21T08:06:20.422Z"
-    },
-    {
-      "url": "https://torridgedc-self.achieveservice.com/api/get-document/json?uri=sandbox-publish%3A%2F%2FAF-Process-bb925b16-12f7-4233-9b77-c644617535f6%2FAF-Stage-a963b8c5-2715-4d5d-805c-18e16c033612%2FAF-Form-0e7afc52-6449-4f1d-a9c8-28095c98f67e%2Fdefinition.json&_=1753085184587&sid=e5d814910c6893c3029f54324812968f",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json",
-      "size": 12019,
-      "timestamp": "2025-07-21T08:06:24.593Z"
-    },
-    {
-      "url": "https://geocode.arcgis.com/arcgis/rest/services/World/GeocodeServer/?f=json",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json;charset=UTF-8",
-      "size": 1006653,
-      "timestamp": "2025-07-21T08:06:24.598Z"
-    },
-    {
-      "url": "https://torridgedc-self.achieveservice.com/apibroker/runLookup?id=659416e5a6e2e&repeat_against=&noRetry=true&getOnlyTokens=undefined&log_id=&app_name=AF-Renderer::Self&_=1753085184592&sid=e5d814910c6893c3029f54324812968f",
-      "method": "POST",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json; charset=UTF-8",
-      "size": 4607,
-      "timestamp": "2025-07-21T08:06:24.600Z"
-    },
-    {
-      "url": "https://torridgedc-self.achieveservice.com/apibroker/runLookup?id=65956fdb70ea4&repeat_against=&noRetry=true&getOnlyTokens=undefined&log_id=&app_name=AF-Renderer::Self&_=1753085186114&sid=e5d814910c6893c3029f54324812968f",
-      "method": "POST",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json; charset=UTF-8",
-      "size": 107473,
-      "timestamp": "2025-07-21T08:06:26.119Z"
-    },
-    {
-      "url": "https://torridgedc-self.achieveservice.com/apibroker/runLookup?id=65843f780f7ce&repeat_against=&noRetry=false&getOnlyTokens=undefined&log_id=&app_name=AF-Renderer::Self&_=1753085188854&sid=e5d814910c6893c3029f54324812968f",
-      "method": "POST",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json; charset=UTF-8",
-      "size": 5869,
-      "timestamp": "2025-07-21T08:06:28.859Z"
-    },
-    {
-      "url": "https://torridgedc-self.achieveservice.com/apibroker/runLookup?id=65956fdb70ea4&repeat_against=&noRetry=true&getOnlyTokens=undefined&log_id=&app_name=AF-Renderer::Self&_=1753085189521&sid=e5d814910c6893c3029f54324812968f",
-      "method": "POST",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json; charset=UTF-8",
-      "size": 107473,
-      "timestamp": "2025-07-21T08:06:29.529Z"
-    },
-    {
-      "url": "https://nominatim.openstreetmap.org/reverse?format=json&lat=50.8828771095578&lon=-3.94564370820622&zoom=18&addressdetails=1",
-      "method": "GET",
-      "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json; charset=utf-8",
-      "size": 738,
-      "timestamp": "2025-07-21T08:06:29.925Z"
-    }
-  ]
+    "endpoints_with_params": [
+      {
+        "endpoint": "/service/{id}",
+        "method": "GET",
+        "query_params": [],
+        "path_params": true
+      },
+      {
+        "endpoint": "/authapi/isauthenticated",
+        "method": "GET",
+        "query_params": [
+          "uri",
+          "hostname",
+          "withCredentials"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/j/collect",
+        "method": "POST",
+        "query_params": [
+          "v",
+          "_v",
+          "a",
+          "t",
+          "_s",
+          "dl",
+          "ul",
+          "de",
+          "dt",
+          "sd",
+          "sr",
+          "vp",
+          "je",
+          "_u",
+          "jid",
+          "gjid",
+          "cid",
+          "tid",
+          "_gid",
+          "_r",
+          "_slc",
+          "gtm",
+          "gcd",
+          "dma",
+          "tag_exp",
+          "z"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/apibroker/domain/{id}",
+        "method": "GET",
+        "query_params": [
+          "_",
+          "sid"
+        ],
+        "path_params": true
+      },
+      {
+        "endpoint": "/apibroker/self-settings",
+        "method": "GET",
+        "query_params": [
+          "keys",
+          "app_name",
+          "_",
+          "sid"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/j/collect",
+        "method": "POST",
+        "query_params": [
+          "v",
+          "_v",
+          "a",
+          "t",
+          "_s",
+          "dl",
+          "ul",
+          "de",
+          "dt",
+          "sd",
+          "sr",
+          "vp",
+          "je",
+          "_u",
+          "jid",
+          "gjid",
+          "cid",
+          "tid",
+          "_gid",
+          "_r",
+          "z"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/g/collect",
+        "method": "POST",
+        "query_params": [
+          "v",
+          "tid",
+          "gtm",
+          "_p",
+          "gcd",
+          "npa",
+          "dma",
+          "tag_exp",
+          "cid",
+          "ul",
+          "sr",
+          "uaa",
+          "uab",
+          "uafvl",
+          "uamb",
+          "uap",
+          "uapv",
+          "uaw",
+          "are",
+          "frm",
+          "pscdl",
+          "_s",
+          "sid",
+          "sct",
+          "seg",
+          "dl",
+          "dt",
+          "en",
+          "_fv",
+          "_ss",
+          "tfd"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/fillform",
+        "method": "GET",
+        "query_params": [
+          "iframe_id"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/jsapi",
+        "method": "GET",
+        "query_params": [
+          "key"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/j/collect",
+        "method": "POST",
+        "query_params": [
+          "v",
+          "_v",
+          "a",
+          "t",
+          "_s",
+          "dl",
+          "ul",
+          "de",
+          "dt",
+          "sd",
+          "sr",
+          "vp",
+          "je",
+          "_u",
+          "cid",
+          "tid",
+          "_gid",
+          "_slc",
+          "z"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/maps/api/mapsjs/gen_204",
+        "method": "GET",
+        "query_params": [
+          "csp_test"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/api/self/self-content/getByKeyAndApp",
+        "method": "GET",
+        "query_params": [
+          "language",
+          "key",
+          "app",
+          "_",
+          "sid"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/api/get-document/json",
+        "method": "GET",
+        "query_params": [
+          "uri",
+          "_",
+          "sid"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/api/{id}/get",
+        "method": "GET",
+        "query_params": [
+          "_",
+          "sid"
+        ],
+        "path_params": true
+      },
+      {
+        "endpoint": "/api/nextref",
+        "method": "GET",
+        "query_params": [
+          "_",
+          "sid"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/apibroker/{id}",
+        "method": "GET",
+        "query_params": [
+          "app_name",
+          "_",
+          "sid"
+        ],
+        "path_params": true
+      },
+      {
+        "endpoint": "/api/af-configs-list/list",
+        "method": "GET",
+        "query_params": [
+          "_",
+          "sid"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/apibroker/location",
+        "method": "GET",
+        "query_params": [
+          "app_name",
+          "_",
+          "sid"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/apibroker/runLookup",
+        "method": "POST",
+        "query_params": [
+          "id",
+          "noRetry",
+          "getOnlyTokens",
+          "app_name",
+          "_",
+          "sid"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/arcgis/rest/services/World/GeocodeServer",
+        "method": "GET",
+        "query_params": [
+          "f"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/reverse",
+        "method": "GET",
+        "query_params": [
+          "format",
+          "lat",
+          "lon",
+          "zoom",
+          "addressdetails"
+        ],
+        "path_params": false
+      }
+    ],
+    "redirects": [
+      {
+        "from": "/forms/firmstep/wastecalendar.html",
+        "to": "https://www.torridge.gov.uk/collectiondates",
+        "status": 301
+      },
+      {
+        "from": "/collectiondates",
+        "to": "https://torridgedc-self.achieveservice.com/service/My_property_information",
+        "status": 301
+      },
+      {
+        "from": "/jsapi",
+        "to": "https://www.gstatic.com/charts/loader.js",
+        "status": 301
+      },
+      {
+        "from": "/jsapi",
+        "to": "https://www.gstatic.com/charts/loader.js?key=AIzaSyDMYR3xNkRwUG-OsKEC4WVi1ptWIPzybMs",
+        "status": 301
+      }
+    ],
+    "api_calls": [
+      {
+        "endpoint": "/authapi/isauthenticated",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": [
+          "uri",
+          "hostname",
+          "withCredentials"
+        ]
+      },
+      {
+        "endpoint": "/apibroker/domain/{id}",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": [
+          "_",
+          "sid"
+        ]
+      },
+      {
+        "endpoint": "/apibroker/domain/{id}",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": [
+          "_",
+          "sid"
+        ]
+      },
+      {
+        "endpoint": "/apibroker/self-settings",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": [
+          "keys",
+          "app_name",
+          "_",
+          "sid"
+        ]
+      },
+      {
+        "endpoint": "/maps/api/mapsjs/gen_204",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": [
+          "csp_test"
+        ]
+      },
+      {
+        "endpoint": "/api/self/self-content/getByKeyAndApp",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": [
+          "language",
+          "key",
+          "app",
+          "_",
+          "sid"
+        ]
+      },
+      {
+        "endpoint": "/api/get-document/json",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": [
+          "uri",
+          "_",
+          "sid"
+        ]
+      },
+      {
+        "endpoint": "/api/get-document/json",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": [
+          "uri",
+          "_",
+          "sid"
+        ]
+      },
+      {
+        "endpoint": "/api/{id}/get",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": [
+          "_",
+          "sid"
+        ]
+      },
+      {
+        "endpoint": "/api/nextref",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": [
+          "_",
+          "sid"
+        ]
+      },
+      {
+        "endpoint": "/apibroker/{id}",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": [
+          "app_name",
+          "_",
+          "sid"
+        ]
+      },
+      {
+        "endpoint": "/api/af-configs-list/list",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": [
+          "_",
+          "sid"
+        ]
+      },
+      {
+        "endpoint": "/apibroker/location",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": [
+          "app_name",
+          "_",
+          "sid"
+        ]
+      },
+      {
+        "endpoint": "/apibroker/runLookup",
+        "method": "POST",
+        "response_type": "application/json",
+        "params": [
+          "id",
+          "noRetry",
+          "getOnlyTokens",
+          "app_name",
+          "_",
+          "sid"
+        ]
+      },
+      {
+        "endpoint": "/apibroker/runLookup",
+        "method": "POST",
+        "response_type": "application/json",
+        "params": [
+          "id",
+          "noRetry",
+          "getOnlyTokens",
+          "app_name",
+          "_",
+          "sid"
+        ]
+      },
+      {
+        "endpoint": "/apibroker/runLookup",
+        "method": "POST",
+        "response_type": "application/json",
+        "params": [
+          "id",
+          "noRetry",
+          "getOnlyTokens",
+          "app_name",
+          "_",
+          "sid"
+        ]
+      },
+      {
+        "endpoint": "/arcgis/rest/services/World/GeocodeServer",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": [
+          "f"
+        ]
+      },
+      {
+        "endpoint": "/api/get-document/json",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": [
+          "uri",
+          "_",
+          "sid"
+        ]
+      },
+      {
+        "endpoint": "/apibroker/runLookup",
+        "method": "POST",
+        "response_type": "application/json",
+        "params": [
+          "id",
+          "noRetry",
+          "getOnlyTokens",
+          "app_name",
+          "_",
+          "sid"
+        ]
+      },
+      {
+        "endpoint": "/apibroker/runLookup",
+        "method": "POST",
+        "response_type": "application/json",
+        "params": [
+          "id",
+          "noRetry",
+          "getOnlyTokens",
+          "app_name",
+          "_",
+          "sid"
+        ]
+      },
+      {
+        "endpoint": "/apibroker/runLookup",
+        "method": "POST",
+        "response_type": "application/json",
+        "params": [
+          "id",
+          "noRetry",
+          "getOnlyTokens",
+          "app_name",
+          "_",
+          "sid"
+        ]
+      },
+      {
+        "endpoint": "/reverse",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": [
+          "format",
+          "lat",
+          "lon",
+          "zoom",
+          "addressdetails"
+        ]
+      },
+      {
+        "endpoint": "/apibroker/runLookup",
+        "method": "POST",
+        "response_type": "application/json",
+        "params": [
+          "id",
+          "noRetry",
+          "getOnlyTokens",
+          "app_name",
+          "_",
+          "sid"
+        ]
+      }
+    ],
+    "form_submissions": []
+  },
+  "grouped_by_endpoint": {
+    "/forms/firmstep/wastecalendar.html": [
+      {
+        "timestamp": "2025-07-21T08:06:11.001Z",
+        "duration_ms": 127.255,
+        "endpoint": "/forms/firmstep/wastecalendar.html",
+        "host": "www.torridge.gov.uk",
+        "method": "GET",
+        "status": 301,
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7"
+        },
+        "response_headers": {
+          "cache-control": "no-cache, no-store",
+          "content-type": "text/html; charset=utf-8",
+          "location": "https://www.torridge.gov.uk/collectiondates",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "SAMEORIGIN",
+          "x-powered-by": "",
+          "x-ua-compatible": "IE=Edge",
+          "x-xss-protection": "1; mode=block"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": -1
+        },
+        "redirect_to": "https://www.torridge.gov.uk/collectiondates"
+      }
+    ],
+    "/collectiondates": [
+      {
+        "timestamp": "2025-07-21T08:06:11.111Z",
+        "duration_ms": 15.423,
+        "endpoint": "/collectiondates",
+        "host": "www.torridge.gov.uk",
+        "method": "GET",
+        "status": 301,
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7"
+        },
+        "response_headers": {
+          "cache-control": "no-cache, no-store",
+          "content-type": "text/html; charset=utf-8",
+          "location": "https://torridgedc-self.achieveservice.com/service/My_property_information",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "SAMEORIGIN",
+          "x-powered-by": "",
+          "x-ua-compatible": "IE=Edge",
+          "x-xss-protection": "1; mode=block"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": -1
+        },
+        "redirect_to": "https://torridgedc-self.achieveservice.com/service/My_property_information"
+      }
+    ],
+    "/service/{id}": [
+      {
+        "timestamp": "2025-07-21T08:06:11.125Z",
+        "duration_ms": 1383.487,
+        "endpoint": "/service/{id}",
+        "host": "torridgedc-self.achieveservice.com",
+        "method": "GET",
+        "status": 200,
+        "path_params": [
+          "My_property_information"
+        ],
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+          "cookie": "[cookies present]"
+        },
+        "response_headers": {
+          "cache-control": "no-store, no-cache, must-revalidate",
+          "content-type": "text/html; charset=UTF-8",
+          "set-cookie": "[cookies present]",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "SAMEORIGIN",
+          "x-xss-protection": "0"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 28812,
+          "compressed": true,
+          "content_ref": "a173b6c418811b13531680dfd1556e5e3ab5f891.html"
+        }
+      }
+    ],
+    "/jsapi": [
+      {
+        "timestamp": "2025-07-21T08:06:12.522Z",
+        "duration_ms": 145.814,
+        "endpoint": "/jsapi",
+        "host": "www.google.com",
+        "method": "GET",
+        "status": 301,
+        "request_headers": {
+          "accept": "*/*",
+          "referer": "https://torridgedc-self.achieveservice.com/",
+          "x-browser-copyright": "Copyright 2025 Google LLC. All rights reserved.",
+          "x-browser-validation": "qvLgIVtG4U8GgiRPSI9IJ22mUlI=",
+          "x-browser-year": "2025",
+          "x-client-data": "CMiXywE="
+        },
+        "response_headers": {
+          "cache-control": "public, max-age=1800",
+          "content-type": "text/html; charset=UTF-8",
+          "location": "https://www.gstatic.com/charts/loader.js",
+          "x-content-type-options": "nosniff",
+          "x-xss-protection": "0"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": -1
+        },
+        "redirect_to": "https://www.gstatic.com/charts/loader.js"
+      },
+      {
+        "timestamp": "2025-07-21T08:06:13.483Z",
+        "duration_ms": 144.071,
+        "endpoint": "/jsapi",
+        "host": "www.google.com",
+        "method": "GET",
+        "status": 301,
+        "query_params": {
+          "key": [
+            "AIzaSyDMYR3xNkRwUG-OsKEC4WVi1ptWIPzybMs"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "referer": "https://torridgedc-self.achieveservice.com/",
+          "x-browser-copyright": "Copyright 2025 Google LLC. All rights reserved.",
+          "x-browser-validation": "qvLgIVtG4U8GgiRPSI9IJ22mUlI=",
+          "x-browser-year": "2025",
+          "x-client-data": "CMiXywE="
+        },
+        "response_headers": {
+          "cache-control": "public, max-age=1800",
+          "content-type": "text/html; charset=UTF-8",
+          "location": "https://www.gstatic.com/charts/loader.js?key=AIzaSyDMYR3xNkRwUG-OsKEC4WVi1ptWIPzybMs",
+          "x-content-type-options": "nosniff",
+          "x-xss-protection": "0"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": -1
+        },
+        "redirect_to": "https://www.gstatic.com/charts/loader.js?key=AIzaSyDMYR3xNkRwUG-OsKEC4WVi1ptWIPzybMs"
+      }
+    ],
+    "/authapi/isauthenticated": [
+      {
+        "timestamp": "2025-07-21T08:06:12.788Z",
+        "duration_ms": 89.635,
+        "endpoint": "/authapi/isauthenticated",
+        "host": "torridgedc-self.achieveservice.com",
+        "method": "GET",
+        "status": 200,
+        "query_params": {
+          "uri": [
+            "https%3A%2F%2Ftorridgedc-self.achieveservice.com%2Fservice%2FMy_property_information"
+          ],
+          "hostname": [
+            "torridgedc-self.achieveservice.com"
+          ],
+          "withCredentials": [
+            "true"
+          ]
+        },
+        "request_headers": {
+          "accept": "application/json, text/javascript, */*; q=0.01",
+          "cookie": "[cookies present]",
+          "referer": "https://torridgedc-self.achieveservice.com/service/My_property_information",
+          "x-requested-with": "XMLHttpRequest"
+        },
+        "response_headers": {
+          "cache-control": "no-store, no-cache, must-revalidate",
+          "content-type": "application/json; charset=utf-8",
+          "set-cookie": "[cookies present]",
+          "x-auth-session": "a8gcuh1j1qfj0u6p4lvjg7768r",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "SAMEORIGIN",
+          "x-xss-protection": "0"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 1889,
+          "compressed": true,
+          "content_ref": "9ef988150b43a0ebc41004586caa2fc6ae04a91c.json"
+        }
+      }
+    ],
+    "/j/collect": [
+      {
+        "timestamp": "2025-07-21T08:06:12.909Z",
+        "duration_ms": 14.837,
+        "endpoint": "/j/collect",
+        "host": "www.google-analytics.com",
+        "method": "POST",
+        "status": 200,
+        "query_params": {
+          "v": [
+            "1"
+          ],
+          "_v": [
+            "j101"
+          ],
+          "a": [
+            "1644309846"
+          ],
+          "t": [
+            "pageview"
+          ],
+          "_s": [
+            "1"
+          ],
+          "dl": [
+            "https://torridgedc-self.achieveservice.com/service/My_property_information"
+          ],
+          "ul": [
+            "en-gb"
+          ],
+          "de": [
+            "UTF-8"
+          ],
+          "dt": [
+            "My property information - Customer Self Service | Torridge District Council"
+          ],
+          "sd": [
+            "24-bit"
+          ],
+          "sr": [
+            "800x600"
+          ],
+          "vp": [
+            "800x461"
+          ],
+          "je": [
+            "0"
+          ],
+          "_u": [
+            "YADAAEABAAAAACAAI~"
+          ],
+          "jid": [
+            "1827382180"
+          ],
+          "gjid": [
+            "831330430"
+          ],
+          "cid": [
+            "1571716689.1752599500"
+          ],
+          "tid": [
+            "UA-11792103-20"
+          ],
+          "_gid": [
+            "1387576256.1753085173"
+          ],
+          "_r": [
+            "1"
+          ],
+          "_slc": [
+            "1"
+          ],
+          "gtm": [
+            "45He57g1n81PZWKRXNv862153208za200"
+          ],
+          "gcd": [
+            "13l3l3l3l1l1"
+          ],
+          "dma": [
+            "0"
+          ],
+          "tag_exp": [
+            "101509157~103116026~103200004~103233427~104684208~104684211"
+          ],
+          "z": [
+            "135479159"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "content-type": "text/plain",
+          "origin": "https://torridgedc-self.achieveservice.com",
+          "referer": "https://torridgedc-self.achieveservice.com/"
+        },
+        "response_headers": {
+          "cache-control": "no-cache, no-store, must-revalidate",
+          "content-type": "text/plain",
+          "x-content-type-options": "nosniff"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T08:06:12.958Z",
+        "duration_ms": 14.612,
+        "endpoint": "/j/collect",
+        "host": "www.google-analytics.com",
+        "method": "POST",
+        "status": 200,
+        "query_params": {
+          "v": [
+            "1"
+          ],
+          "_v": [
+            "j101"
+          ],
+          "a": [
+            "1644309846"
+          ],
+          "t": [
+            "pageview"
+          ],
+          "_s": [
+            "1"
+          ],
+          "dl": [
+            "https://torridgedc-self.achieveservice.com/service/My_property_information"
+          ],
+          "ul": [
+            "en-gb"
+          ],
+          "de": [
+            "UTF-8"
+          ],
+          "dt": [
+            "My property information - Customer Self Service | Torridge District Council"
+          ],
+          "sd": [
+            "24-bit"
+          ],
+          "sr": [
+            "800x600"
+          ],
+          "vp": [
+            "800x461"
+          ],
+          "je": [
+            "0"
+          ],
+          "_u": [
+            "aADAAEABAAAAACAAI~"
+          ],
+          "jid": [
+            "901186890"
+          ],
+          "gjid": [
+            "1948204177"
+          ],
+          "cid": [
+            "1571716689.1752599500"
+          ],
+          "tid": [
+            "UA-11792103-20"
+          ],
+          "_gid": [
+            "1387576256.1753085173"
+          ],
+          "_r": [
+            "1"
+          ],
+          "z": [
+            "664754266"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "content-type": "text/plain",
+          "origin": "https://torridgedc-self.achieveservice.com",
+          "referer": "https://torridgedc-self.achieveservice.com/"
+        },
+        "response_headers": {
+          "cache-control": "no-cache, no-store, must-revalidate",
+          "content-type": "text/plain",
+          "x-content-type-options": "nosniff"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T08:06:13.762Z",
+        "duration_ms": 13.728,
+        "endpoint": "/j/collect",
+        "host": "www.google-analytics.com",
+        "method": "POST",
+        "status": 200,
+        "query_params": {
+          "v": [
+            "1"
+          ],
+          "_v": [
+            "j101"
+          ],
+          "a": [
+            "569530655"
+          ],
+          "t": [
+            "pageview"
+          ],
+          "_s": [
+            "1"
+          ],
+          "dl": [
+            "https://torridgedc-self.achieveservice.com/fillform/?iframe_id=fillform-frame-1&db_id="
+          ],
+          "ul": [
+            "en-gb"
+          ],
+          "de": [
+            "UTF-8"
+          ],
+          "dt": [
+            "AchieveForms"
+          ],
+          "sd": [
+            "24-bit"
+          ],
+          "sr": [
+            "800x600"
+          ],
+          "vp": [
+            "710x250"
+          ],
+          "je": [
+            "0"
+          ],
+          "_u": [
+            "AACAAEABAAAAACAAI~"
+          ],
+          "cid": [
+            "1571716689.1752599500"
+          ],
+          "tid": [
+            "UA-11792103-20"
+          ],
+          "_gid": [
+            "1387576256.1753085173"
+          ],
+          "_slc": [
+            "1"
+          ],
+          "z": [
+            "1622442102"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "content-type": "text/plain",
+          "origin": "https://torridgedc-self.achieveservice.com",
+          "referer": "https://torridgedc-self.achieveservice.com/"
+        },
+        "response_headers": {
+          "cache-control": "no-cache, no-store, must-revalidate",
+          "content-type": "text/plain",
+          "x-content-type-options": "nosniff"
+        }
+      }
+    ],
+    "/apibroker/domain/{id}": [
+      {
+        "timestamp": "2025-07-21T08:06:12.907Z",
+        "duration_ms": 34.027,
+        "endpoint": "/apibroker/domain/{id}",
+        "host": "torridgedc-self.achieveservice.com",
+        "method": "GET",
+        "status": 200,
+        "path_params": [
+          "torridgedc-self.achieveservice.com"
+        ],
+        "query_params": {
+          "_": [
+            "1753085172803"
+          ],
+          "sid": [
+            "e5d814910c6893c3029f54324812968f"
+          ]
+        },
+        "request_headers": {
+          "accept": "application/json, text/javascript, */*; q=0.01",
+          "cookie": "[cookies present]",
+          "referer": "https://torridgedc-self.achieveservice.com/service/My_property_information",
+          "x-requested-with": "XMLHttpRequest"
+        },
+        "response_headers": {
+          "content-type": "application/json",
+          "set-cookie": "[cookies present]",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "SAMEORIGIN",
+          "x-xss-protection": "0"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 258,
+          "content_ref": "0d71f0913f03b2e53af90009759474f70b0cd259.json"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T08:06:12.907Z",
+        "duration_ms": 35.162,
+        "endpoint": "/apibroker/domain/{id}",
+        "host": "torridgedc-self.achieveservice.com",
+        "method": "GET",
+        "status": 200,
+        "path_params": [
+          "torridgedc-self.achieveservice.com"
+        ],
+        "query_params": {
+          "_": [
+            "1753085172778"
+          ],
+          "sid": [
+            "e5d814910c6893c3029f54324812968f"
+          ]
+        },
+        "request_headers": {
+          "accept": "application/json, text/javascript, */*; q=0.01",
+          "cookie": "[cookies present]",
+          "referer": "https://torridgedc-self.achieveservice.com/service/My_property_information",
+          "x-requested-with": "XMLHttpRequest"
+        },
+        "response_headers": {
+          "content-type": "application/json",
+          "set-cookie": "[cookies present]",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "SAMEORIGIN",
+          "x-xss-protection": "0"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 258,
+          "content_ref": "0d71f0913f03b2e53af90009759474f70b0cd259.json"
+        }
+      }
+    ],
+    "/apibroker/self-settings": [
+      {
+        "timestamp": "2025-07-21T08:06:12.907Z",
+        "duration_ms": 46.506,
+        "endpoint": "/apibroker/self-settings",
+        "host": "torridgedc-self.achieveservice.com",
+        "method": "GET",
+        "status": 200,
+        "query_params": {
+          "keys": [
+            "CustomIFrameCss,CustomCssInline"
+          ],
+          "app_name": [
+            "Self"
+          ],
+          "_": [
+            "1753085172875"
+          ],
+          "sid": [
+            "e5d814910c6893c3029f54324812968f"
+          ]
+        },
+        "request_headers": {
+          "accept": "application/json, text/javascript, */*; q=0.01",
+          "cookie": "[cookies present]",
+          "referer": "https://torridgedc-self.achieveservice.com/service/My_property_information",
+          "x-requested-with": "XMLHttpRequest"
+        },
+        "response_headers": {
+          "cache-control": "no-store, no-cache, must-revalidate",
+          "content-type": "application/json; charset=UTF-8",
+          "set-cookie": "[cookies present]",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "SAMEORIGIN",
+          "x-xss-protection": "0"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 216,
+          "content_ref": "33af989f1da317feb4632981f6c88993b711bdf9.json"
+        }
+      }
+    ],
+    "/g/collect": [
+      {
+        "timestamp": "2025-07-21T08:06:12.910Z",
+        "duration_ms": 107.596,
+        "endpoint": "/g/collect",
+        "host": "region1.google-analytics.com",
+        "method": "POST",
+        "status": 204,
+        "query_params": {
+          "v": [
+            "2"
+          ],
+          "tid": [
+            "G-3N668PK4E6"
+          ],
+          "gtm": [
+            "45je57g1v876025140z8862153208za200zb862153208"
+          ],
+          "_p": [
+            "1753085172686"
+          ],
+          "gcd": [
+            "13l3l3l3l1l1"
+          ],
+          "npa": [
+            "0"
+          ],
+          "dma": [
+            "0"
+          ],
+          "tag_exp": [
+            "101509157~103116026~103200004~103233427~104684208~104684211~104921712~104921714"
+          ],
+          "cid": [
+            "1571716689.1752599500"
+          ],
+          "ul": [
+            "en-gb"
+          ],
+          "sr": [
+            "800x600"
+          ],
+          "uaa": [
+            "arm"
+          ],
+          "uab": [
+            "64"
+          ],
+          "uafvl": [
+            "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+          ],
+          "uamb": [
+            "0"
+          ],
+          "uap": [
+            "macOS"
+          ],
+          "uapv": [
+            "15.5.0"
+          ],
+          "uaw": [
+            "0"
+          ],
+          "are": [
+            "1"
+          ],
+          "frm": [
+            "0"
+          ],
+          "pscdl": [
+            "noapi"
+          ],
+          "_s": [
+            "1"
+          ],
+          "sid": [
+            "1753085172"
+          ],
+          "sct": [
+            "1"
+          ],
+          "seg": [
+            "0"
+          ],
+          "dl": [
+            "https://torridgedc-self.achieveservice.com/service/My_property_information"
+          ],
+          "dt": [
+            "My property information - Customer Self Service | Torridge District Council"
+          ],
+          "en": [
+            "page_view"
+          ],
+          "_fv": [
+            "1"
+          ],
+          "_ss": [
+            "1"
+          ],
+          "tfd": [
+            "1894"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "cookie": "[cookies present]",
+          "origin": "https://torridgedc-self.achieveservice.com",
+          "referer": "https://torridgedc-self.achieveservice.com/"
+        },
+        "response_headers": {
+          "cache-control": "no-cache, no-store, must-revalidate",
+          "content-type": "text/plain"
+        }
+      }
+    ],
+    "/fillform": [
+      {
+        "timestamp": "2025-07-21T08:06:12.958Z",
+        "duration_ms": 503.948,
+        "endpoint": "/fillform",
+        "host": "torridgedc-self.achieveservice.com",
+        "method": "GET",
+        "status": 200,
+        "query_params": {
+          "iframe_id": [
+            "fillform-frame-1"
+          ]
+        },
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+          "cookie": "[cookies present]",
+          "referer": "https://torridgedc-self.achieveservice.com/service/My_property_information"
+        },
+        "response_headers": {
+          "cache-control": "no-store, no-cache, must-revalidate",
+          "content-type": "text/html; charset=UTF-8",
+          "set-cookie": "[cookies present]",
+          "x-content-type-options": "nosniff",
+          "x-ua-compatible": "IE=Edge,chrome=1",
+          "x-xss-protection": "0"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 4333,
+          "compressed": true,
+          "content_ref": "2834ffc3e10cb4cf00e87a7386df859fbdde9919.html"
+        }
+      }
+    ],
+    "/maps/api/mapsjs/gen_204": [
+      {
+        "timestamp": "2025-07-21T08:06:13.761Z",
+        "duration_ms": 45.333,
+        "endpoint": "/maps/api/mapsjs/gen_204",
+        "host": "maps.googleapis.com",
+        "method": "GET",
+        "status": 200,
+        "query_params": {
+          "csp_test": [
+            "true"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "origin": "https://torridgedc-self.achieveservice.com",
+          "referer": "https://torridgedc-self.achieveservice.com/",
+          "x-browser-copyright": "Copyright 2025 Google LLC. All rights reserved.",
+          "x-browser-validation": "qvLgIVtG4U8GgiRPSI9IJ22mUlI=",
+          "x-browser-year": "2025",
+          "x-client-data": "CMiXywE="
+        },
+        "response_headers": {
+          "content-type": "application/json; charset=UTF-8",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "SAMEORIGIN",
+          "x-xss-protection": "0"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 3,
+          "content_ref": "5f36b2ea290645ee34d943220a14b54ee5ea5be5.json"
+        }
+      }
+    ],
+    "/api/self/self-content/getByKeyAndApp": [
+      {
+        "timestamp": "2025-07-21T08:06:13.778Z",
+        "duration_ms": 43.533,
+        "endpoint": "/api/self/self-content/getByKeyAndApp",
+        "host": "torridgedc-self.achieveservice.com",
+        "method": "GET",
+        "status": 200,
+        "query_params": {
+          "language": [
+            "en"
+          ],
+          "key": [
+            "FORM_LOADING_TEXT"
+          ],
+          "app": [
+            "SELF_CORE"
+          ],
+          "_": [
+            "1753085173764"
+          ],
+          "sid": [
+            "e5d814910c6893c3029f54324812968f"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "content-type": "application/json",
+          "cookie": "[cookies present]",
+          "referer": "https://torridgedc-self.achieveservice.com/fillform/?iframe_id=fillform-frame-1&db_id=",
+          "x-requested-with": "XMLHttpRequest"
+        },
+        "response_headers": {
+          "cache-control": "no-store, no-cache, must-revalidate",
+          "content-type": "application/json",
+          "set-cookie": "[cookies present]",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "SAMEORIGIN",
+          "x-xss-protection": "0"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 169,
+          "content_ref": "7d70e7cbb66e662eb064267834005ac78795a487.json"
+        }
+      }
+    ],
+    "/api/get-document/json": [
+      {
+        "timestamp": "2025-07-21T08:06:13.812Z",
+        "duration_ms": 178.416,
+        "endpoint": "/api/get-document/json",
+        "host": "torridgedc-self.achieveservice.com",
+        "method": "GET",
+        "status": 200,
+        "query_params": {
+          "uri": [
+            "sandbox-publish://AF-Process-bb925b16-12f7-4233-9b77-c644617535f6/AF-Stage-a963b8c5-2715-4d5d-805c-18e16c033612/definition.json"
+          ],
+          "_": [
+            "1753085173811"
+          ],
+          "sid": [
+            "e5d814910c6893c3029f54324812968f"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "content-type": "application/json",
+          "cookie": "[cookies present]",
+          "referer": "https://torridgedc-self.achieveservice.com/fillform/?iframe_id=fillform-frame-1&db_id=",
+          "x-requested-with": "XMLHttpRequest"
+        },
+        "response_headers": {
+          "cache-control": "no-store, no-cache, must-revalidate",
+          "content-type": "application/json",
+          "set-cookie": "[cookies present]",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "SAMEORIGIN",
+          "x-xss-protection": "0"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 64794,
+          "compressed": true,
+          "content_ref": "363f29910222dee66772e298245eb7ba8c8a8b85.json"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T08:06:13.994Z",
+        "duration_ms": 171.04000000000002,
+        "endpoint": "/api/get-document/json",
+        "host": "torridgedc-self.achieveservice.com",
+        "method": "GET",
+        "status": 200,
+        "query_params": {
+          "uri": [
+            "sandbox-publish://AF-Process-bb925b16-12f7-4233-9b77-c644617535f6/definition.json"
+          ],
+          "_": [
+            "1753085173992"
+          ],
+          "sid": [
+            "e5d814910c6893c3029f54324812968f"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "content-type": "application/json",
+          "cookie": "[cookies present]",
+          "referer": "https://torridgedc-self.achieveservice.com/fillform/?iframe_id=fillform-frame-1&db_id=",
+          "x-requested-with": "XMLHttpRequest"
+        },
+        "response_headers": {
+          "cache-control": "no-store, no-cache, must-revalidate",
+          "content-type": "application/json",
+          "set-cookie": "[cookies present]",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "SAMEORIGIN",
+          "x-xss-protection": "0"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 5398,
+          "compressed": true,
+          "content_ref": "17dc546f33743a5323c7c5422ca86e261e998209.json"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T08:06:24.593Z",
+        "duration_ms": 234.73600000000002,
+        "endpoint": "/api/get-document/json",
+        "host": "torridgedc-self.achieveservice.com",
+        "method": "GET",
+        "status": 200,
+        "query_params": {
+          "uri": [
+            "sandbox-publish://AF-Process-bb925b16-12f7-4233-9b77-c644617535f6/AF-Stage-a963b8c5-2715-4d5d-805c-18e16c033612/AF-Form-0e7afc52-6449-4f1d-a9c8-28095c98f67e/definition.json"
+          ],
+          "_": [
+            "1753085184587"
+          ],
+          "sid": [
+            "e5d814910c6893c3029f54324812968f"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "content-type": "application/json",
+          "cookie": "[cookies present]",
+          "referer": "https://torridgedc-self.achieveservice.com/fillform/?iframe_id=fillform-frame-1&db_id=",
+          "x-requested-with": "XMLHttpRequest"
+        },
+        "response_headers": {
+          "cache-control": "no-store, no-cache, must-revalidate",
+          "content-type": "application/json",
+          "set-cookie": "[cookies present]",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "SAMEORIGIN",
+          "x-xss-protection": "0"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 12019,
+          "compressed": true,
+          "content_ref": "2bc4ede3cafdd1a2c5b5d40f362daaebb0208d8f.json"
+        }
+      }
+    ],
+    "/api/{id}/get": [
+      {
+        "timestamp": "2025-07-21T08:06:14.177Z",
+        "duration_ms": 44.301,
+        "endpoint": "/api/{id}/get",
+        "host": "torridgedc-self.achieveservice.com",
+        "method": "GET",
+        "status": 200,
+        "path_params": [
+          "queue-processor-config"
+        ],
+        "query_params": {
+          "_": [
+            "1753085174172"
+          ],
+          "sid": [
+            "e5d814910c6893c3029f54324812968f"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "content-type": "application/json",
+          "cookie": "[cookies present]",
+          "referer": "https://torridgedc-self.achieveservice.com/fillform/?iframe_id=fillform-frame-1&db_id=",
+          "x-requested-with": "XMLHttpRequest"
+        },
+        "response_headers": {
+          "cache-control": "no-store, no-cache, must-revalidate",
+          "content-type": "application/json",
+          "set-cookie": "[cookies present]",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "SAMEORIGIN",
+          "x-xss-protection": "0"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 38,
+          "content_ref": "0e0ba25417798115d5fea53e39077bbb9ee3b8c9.json"
+        }
+      }
+    ],
+    "/api/nextref": [
+      {
+        "timestamp": "2025-07-21T08:06:14.177Z",
+        "duration_ms": 44.565000000000005,
+        "endpoint": "/api/nextref",
+        "host": "torridgedc-self.achieveservice.com",
+        "method": "GET",
+        "status": 200,
+        "query_params": {
+          "_": [
+            "1753085174172"
+          ],
+          "sid": [
+            "e5d814910c6893c3029f54324812968f"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "content-type": "application/json",
+          "cookie": "[cookies present]",
+          "referer": "https://torridgedc-self.achieveservice.com/fillform/?iframe_id=fillform-frame-1&db_id=",
+          "x-requested-with": "XMLHttpRequest"
+        },
+        "response_headers": {
+          "cache-control": "no-store, no-cache, must-revalidate",
+          "content-type": "application/json",
+          "set-cookie": "[cookies present]",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "SAMEORIGIN",
+          "x-xss-protection": "0"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 116,
+          "content_ref": "42599a473dcf704c7df28f610858383bf6d33258.json"
+        }
+      }
+    ],
+    "/apibroker/{id}": [
+      {
+        "timestamp": "2025-07-21T08:06:14.177Z",
+        "duration_ms": 49.17,
+        "endpoint": "/apibroker/{id}",
+        "host": "torridgedc-self.achieveservice.com",
+        "method": "GET",
+        "status": 200,
+        "path_params": [
+          "environment-tokens-public"
+        ],
+        "query_params": {
+          "app_name": [
+            "AF-Renderer::Self"
+          ],
+          "_": [
+            "1753085174173"
+          ],
+          "sid": [
+            "e5d814910c6893c3029f54324812968f"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "content-type": "application/json",
+          "cookie": "[cookies present]",
+          "referer": "https://torridgedc-self.achieveservice.com/fillform/?iframe_id=fillform-frame-1&db_id=",
+          "x-requested-with": "XMLHttpRequest"
+        },
+        "response_headers": {
+          "cache-control": "no-store, no-cache, must-revalidate",
+          "content-type": "application/json; charset=UTF-8",
+          "set-cookie": "[cookies present]",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "SAMEORIGIN",
+          "x-xss-protection": "0"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 5517,
+          "compressed": true,
+          "content_ref": "77da9b7765f80fb77006a83648791812054a326e.json"
+        }
+      }
+    ],
+    "/api/af-configs-list/list": [
+      {
+        "timestamp": "2025-07-21T08:06:14.177Z",
+        "duration_ms": 54.695,
+        "endpoint": "/api/af-configs-list/list",
+        "host": "torridgedc-self.achieveservice.com",
+        "method": "GET",
+        "status": 200,
+        "query_params": {
+          "_": [
+            "1753085174171"
+          ],
+          "sid": [
+            "e5d814910c6893c3029f54324812968f"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "content-type": "application/json",
+          "cookie": "[cookies present]",
+          "referer": "https://torridgedc-self.achieveservice.com/fillform/?iframe_id=fillform-frame-1&db_id=",
+          "x-requested-with": "XMLHttpRequest"
+        },
+        "response_headers": {
+          "cache-control": "no-store, no-cache, must-revalidate",
+          "content-type": "application/json",
+          "set-cookie": "[cookies present]",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "SAMEORIGIN",
+          "x-xss-protection": "0"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 1212,
+          "content_ref": "7939352b2820679e2ec8ed87ea56e3857b0ddaf5.json"
+        }
+      }
+    ],
+    "/apibroker/location": [
+      {
+        "timestamp": "2025-07-21T08:06:14.178Z",
+        "duration_ms": 54.158,
+        "endpoint": "/apibroker/location",
+        "host": "torridgedc-self.achieveservice.com",
+        "method": "GET",
+        "status": 200,
+        "query_params": {
+          "app_name": [
+            "AF-Renderer::Self"
+          ],
+          "_": [
+            "1753085174174"
+          ],
+          "sid": [
+            "e5d814910c6893c3029f54324812968f"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "content-type": "application/json",
+          "cookie": "[cookies present]",
+          "referer": "https://torridgedc-self.achieveservice.com/fillform/?iframe_id=fillform-frame-1&db_id=",
+          "x-requested-with": "XMLHttpRequest"
+        },
+        "response_headers": {
+          "cache-control": "no-store, no-cache, must-revalidate",
+          "content-type": "application/json; charset=UTF-8",
+          "set-cookie": "[cookies present]",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "SAMEORIGIN",
+          "x-xss-protection": "0"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 272,
+          "content_ref": "43187a87d33b5733e40b698fdb501a1747960295.json"
+        }
+      }
+    ],
+    "/apibroker/runLookup": [
+      {
+        "timestamp": "2025-07-21T08:06:14.276Z",
+        "duration_ms": 406.721,
+        "endpoint": "/apibroker/runLookup",
+        "host": "torridgedc-self.achieveservice.com",
+        "method": "POST",
+        "status": 200,
+        "query_params": {
+          "id": [
+            "5a3aefaf052d9"
+          ],
+          "noRetry": [
+            "false"
+          ],
+          "getOnlyTokens": [
+            "undefined"
+          ],
+          "app_name": [
+            "AF-Renderer::Self"
+          ],
+          "_": [
+            "1753085174270"
+          ],
+          "sid": [
+            "e5d814910c6893c3029f54324812968f"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "content-type": "application/json",
+          "cookie": "[cookies present]",
+          "origin": "https://torridgedc-self.achieveservice.com",
+          "referer": "https://torridgedc-self.achieveservice.com/fillform/?iframe_id=fillform-frame-1&db_id=",
+          "x-requested-with": "XMLHttpRequest"
+        },
+        "response_headers": {
+          "cache-control": "no-store, no-cache, must-revalidate",
+          "content-type": "application/json; charset=UTF-8",
+          "set-cookie": "[cookies present]",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "SAMEORIGIN",
+          "x-xss-protection": "0"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 2814,
+          "compressed": true,
+          "content_ref": "c6e04933ae0e22543391fd37ed14aa37a634f495.json"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T08:06:18.280Z",
+        "duration_ms": 443.958,
+        "endpoint": "/apibroker/runLookup",
+        "host": "torridgedc-self.achieveservice.com",
+        "method": "POST",
+        "status": 200,
+        "query_params": {
+          "id": [
+            "5a3aefaf052d9"
+          ],
+          "noRetry": [
+            "false"
+          ],
+          "getOnlyTokens": [
+            "undefined"
+          ],
+          "app_name": [
+            "AF-Renderer::Self"
+          ],
+          "_": [
+            "1753085178275"
+          ],
+          "sid": [
+            "e5d814910c6893c3029f54324812968f"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "content-type": "application/json",
+          "cookie": "[cookies present]",
+          "origin": "https://torridgedc-self.achieveservice.com",
+          "referer": "https://torridgedc-self.achieveservice.com/fillform/?iframe_id=fillform-frame-1&db_id=",
+          "x-requested-with": "XMLHttpRequest"
+        },
+        "response_headers": {
+          "cache-control": "no-store, no-cache, must-revalidate",
+          "content-type": "application/json; charset=UTF-8",
+          "set-cookie": "[cookies present]",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "SAMEORIGIN",
+          "x-xss-protection": "0"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 88955,
+          "compressed": true,
+          "content_ref": "0f017b5bbb5212a5e485b4000af2ff497fbb6760.json"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T08:06:20.422Z",
+        "duration_ms": 2059.85,
+        "endpoint": "/apibroker/runLookup",
+        "host": "torridgedc-self.achieveservice.com",
+        "method": "POST",
+        "status": 200,
+        "query_params": {
+          "id": [
+            "6583107397653"
+          ],
+          "noRetry": [
+            "true"
+          ],
+          "getOnlyTokens": [
+            "undefined"
+          ],
+          "app_name": [
+            "AF-Renderer::Self"
+          ],
+          "_": [
+            "1753085180419"
+          ],
+          "sid": [
+            "e5d814910c6893c3029f54324812968f"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "content-type": "application/json",
+          "cookie": "[cookies present]",
+          "origin": "https://torridgedc-self.achieveservice.com",
+          "referer": "https://torridgedc-self.achieveservice.com/fillform/?iframe_id=fillform-frame-1&db_id=",
+          "x-requested-with": "XMLHttpRequest"
+        },
+        "response_headers": {
+          "cache-control": "no-store, no-cache, must-revalidate",
+          "content-type": "application/json; charset=UTF-8",
+          "set-cookie": "[cookies present]",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "SAMEORIGIN",
+          "x-xss-protection": "0"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 2079,
+          "compressed": true,
+          "content_ref": "93348f39df824f7e97daf50716ef86f24533731b.json"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T08:06:24.600Z",
+        "duration_ms": 1516.47,
+        "endpoint": "/apibroker/runLookup",
+        "host": "torridgedc-self.achieveservice.com",
+        "method": "POST",
+        "status": 200,
+        "query_params": {
+          "id": [
+            "659416e5a6e2e"
+          ],
+          "noRetry": [
+            "true"
+          ],
+          "getOnlyTokens": [
+            "undefined"
+          ],
+          "app_name": [
+            "AF-Renderer::Self"
+          ],
+          "_": [
+            "1753085184592"
+          ],
+          "sid": [
+            "e5d814910c6893c3029f54324812968f"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "content-type": "application/json",
+          "cookie": "[cookies present]",
+          "origin": "https://torridgedc-self.achieveservice.com",
+          "referer": "https://torridgedc-self.achieveservice.com/fillform/?iframe_id=fillform-frame-1&db_id=",
+          "x-requested-with": "XMLHttpRequest"
+        },
+        "response_headers": {
+          "cache-control": "no-store, no-cache, must-revalidate",
+          "content-type": "application/json; charset=UTF-8",
+          "set-cookie": "[cookies present]",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "SAMEORIGIN",
+          "x-xss-protection": "0"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 4607,
+          "compressed": true,
+          "content_ref": "16cb0332536610039b4b1dc5cc5c48e5df8f0ec7.json"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T08:06:26.119Z",
+        "duration_ms": 2708.142,
+        "endpoint": "/apibroker/runLookup",
+        "host": "torridgedc-self.achieveservice.com",
+        "method": "POST",
+        "status": 200,
+        "query_params": {
+          "id": [
+            "65956fdb70ea4"
+          ],
+          "noRetry": [
+            "true"
+          ],
+          "getOnlyTokens": [
+            "undefined"
+          ],
+          "app_name": [
+            "AF-Renderer::Self"
+          ],
+          "_": [
+            "1753085186114"
+          ],
+          "sid": [
+            "e5d814910c6893c3029f54324812968f"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "content-type": "application/json",
+          "cookie": "[cookies present]",
+          "origin": "https://torridgedc-self.achieveservice.com",
+          "referer": "https://torridgedc-self.achieveservice.com/fillform/?iframe_id=fillform-frame-1&db_id=",
+          "x-requested-with": "XMLHttpRequest"
+        },
+        "response_headers": {
+          "cache-control": "no-store, no-cache, must-revalidate",
+          "content-type": "application/json; charset=UTF-8",
+          "set-cookie": "[cookies present]",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "SAMEORIGIN",
+          "x-xss-protection": "0"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 107473,
+          "compressed": true,
+          "content_ref": "1669cae7dc6814a38eee73a3ad4c87cc60da1013.json"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T08:06:28.859Z",
+        "duration_ms": 631.677,
+        "endpoint": "/apibroker/runLookup",
+        "host": "torridgedc-self.achieveservice.com",
+        "method": "POST",
+        "status": 200,
+        "query_params": {
+          "id": [
+            "65843f780f7ce"
+          ],
+          "noRetry": [
+            "false"
+          ],
+          "getOnlyTokens": [
+            "undefined"
+          ],
+          "app_name": [
+            "AF-Renderer::Self"
+          ],
+          "_": [
+            "1753085188854"
+          ],
+          "sid": [
+            "e5d814910c6893c3029f54324812968f"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "content-type": "application/json",
+          "cookie": "[cookies present]",
+          "origin": "https://torridgedc-self.achieveservice.com",
+          "referer": "https://torridgedc-self.achieveservice.com/fillform/?iframe_id=fillform-frame-1&db_id=",
+          "x-requested-with": "XMLHttpRequest"
+        },
+        "response_headers": {
+          "cache-control": "no-store, no-cache, must-revalidate",
+          "content-type": "application/json; charset=UTF-8",
+          "set-cookie": "[cookies present]",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "SAMEORIGIN",
+          "x-xss-protection": "0"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 5869,
+          "compressed": true,
+          "content_ref": "3b240ce96cbced6c24961c1f09de06d5dba38676.json"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T08:06:29.529Z",
+        "duration_ms": 2525.321,
+        "endpoint": "/apibroker/runLookup",
+        "host": "torridgedc-self.achieveservice.com",
+        "method": "POST",
+        "status": 200,
+        "query_params": {
+          "id": [
+            "65956fdb70ea4"
+          ],
+          "noRetry": [
+            "true"
+          ],
+          "getOnlyTokens": [
+            "undefined"
+          ],
+          "app_name": [
+            "AF-Renderer::Self"
+          ],
+          "_": [
+            "1753085189521"
+          ],
+          "sid": [
+            "e5d814910c6893c3029f54324812968f"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "content-type": "application/json",
+          "cookie": "[cookies present]",
+          "origin": "https://torridgedc-self.achieveservice.com",
+          "referer": "https://torridgedc-self.achieveservice.com/fillform/?iframe_id=fillform-frame-1&db_id=",
+          "x-requested-with": "XMLHttpRequest"
+        },
+        "response_headers": {
+          "cache-control": "no-store, no-cache, must-revalidate",
+          "content-type": "application/json; charset=UTF-8",
+          "set-cookie": "[cookies present]",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "SAMEORIGIN",
+          "x-xss-protection": "0"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 107473,
+          "compressed": true,
+          "content_ref": "481f8446897efd953b1ff597669f61becd67d943.json"
+        }
+      }
+    ],
+    "/arcgis/rest/services/World/GeocodeServer": [
+      {
+        "timestamp": "2025-07-21T08:06:24.598Z",
+        "duration_ms": 192.874,
+        "endpoint": "/arcgis/rest/services/World/GeocodeServer",
+        "host": "geocode.arcgis.com",
+        "method": "GET",
+        "status": 200,
+        "query_params": {
+          "f": [
+            "json"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "origin": "https://torridgedc-self.achieveservice.com",
+          "referer": "https://torridgedc-self.achieveservice.com/"
+        },
+        "response_headers": {
+          "cache-control": "max-age=0,must-revalidate",
+          "content-type": "application/json;charset=UTF-8",
+          "set-cookie": "[cookies present]",
+          "x-content-type-options": "nosniff"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 1006653,
+          "compressed": true,
+          "content_ref": "9b0a1927be1a6e3bb5402d4c168b1141beb04cd4.json"
+        }
+      }
+    ],
+    "/reverse": [
+      {
+        "timestamp": "2025-07-21T08:06:29.925Z",
+        "duration_ms": 144.54,
+        "endpoint": "/reverse",
+        "host": "nominatim.openstreetmap.org",
+        "method": "GET",
+        "status": 200,
+        "query_params": {
+          "format": [
+            "json"
+          ],
+          "lat": [
+            "50.8828771095578"
+          ],
+          "lon": [
+            "-3.94564370820622"
+          ],
+          "zoom": [
+            "18"
+          ],
+          "addressdetails": [
+            "1"
+          ]
+        },
+        "request_headers": {
+          "accept": "application/json, text/javascript, */*; q=0.01",
+          "origin": "https://torridgedc-self.achieveservice.com",
+          "referer": "https://torridgedc-self.achieveservice.com/"
+        },
+        "response_headers": {
+          "content-type": "application/json; charset=utf-8"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 738,
+          "content_ref": "3bdd6602d00a3b2a118543ca83e7f9fbacb775dd.json"
+        }
+      }
+    ]
+  }
 }

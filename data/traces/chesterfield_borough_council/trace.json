@@ -1,292 +1,3030 @@
 {
-  "metadata": {
-    "trace_name": "chesterfield_borough_council",
-    "processed_at": "2025-08-26 18:44:24",
-    "workflow_steps_count": 10,
-    "navigation_events_count": 21
-  },
-  "scraping_patterns": {
-    "login_detected": false,
-    "form_submissions": 5,
-    "navigation_count": 3,
-    "unique_domains": [
-      "translate.googleapis.com",
-      "myaccount.chesterfield.gov.uk",
-      "www.chesterfield.gov.uk",
-      "cdnjs.cloudflare.com"
-    ],
-    "api_endpoints": [],
-    "data_extraction_indicators": []
-  },
-  "workflow_steps": [
+  "entries": [
     {
-      "action": "goto",
-      "target": "http://www.chesterfield.gov.uk/Bin-Collection-Dates-952.html",
-      "status": "Failed",
-      "details": {
-        "error": "net::ERR_HTTP_RESPONSE_CODE_FAILURE at http://www.chesterfield.gov.uk/Bin-Collection-Dates-952.html"
-      },
-      "timestamp": 0
-    },
-    {
-      "action": "goto",
-      "target": "http://www.chesterfield.gov.uk/Bin-Collection-Dates-952.html",
-      "status": "Failed",
-      "details": {
-        "error": "net::ERR_HTTP_RESPONSE_CODE_FAILURE at http://www.chesterfield.gov.uk/Bin-Collection-Dates-952.html"
-      },
-      "timestamp": 0
-    },
-    {
-      "action": "goto",
-      "target": "http://www.chesterfield.gov.uk/",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
-    },
-    {
-      "action": "click",
-      "target": "aria-ref=e422 >> internal:describe=\"Check bin collections\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
-    },
-    {
-      "action": "click",
-      "target": "aria-ref=e422 >> internal:describe=\"check bin dates here\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
-    },
-    {
-      "action": "fill",
-      "target": "aria-ref=e397 >> internal:describe=\"Post Code\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0,
-      "value": "S40 1BP"
-    },
-    {
-      "action": "click",
-      "target": "aria-ref=e400 >> internal:describe=\"Search Addresses\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
-    },
-    {
-      "action": "selectOption",
-      "target": "aria-ref=e494 >> internal:describe=\"Please Select Address\"",
-      "status": "Failed",
-      "details": {
-        "error": "Error: Element is not a <select> element"
-      },
-      "timestamp": 0,
-      "value": null
-    },
-    {
-      "action": "click",
-      "target": "aria-ref=e494 >> internal:describe=\"Please Select Address\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
-    },
-    {
-      "action": "click",
-      "target": "aria-ref=e506 >> internal:describe=\"20 STERLAND STREET, CHESTERFIELD, S40 1BP\"",
-      "status": "Success",
-      "details": {},
-      "timestamp": 0
-    }
-  ],
-  "navigation_events": [
-    {
-      "url": "http://www.chesterfield.gov.uk/Bin-Collection-Dates-952.html",
+      "timestamp": "2025-07-21T16:35:16.074Z",
+      "duration_ms": 39.400999999999996,
+      "endpoint": "/{id}",
+      "host": "www.chesterfield.gov.uk",
       "method": "GET",
       "status": 301,
-      "redirect_url": "https://www.chesterfield.gov.uk/Bin-Collection-Dates-952.html",
-      "mime_type": "text/html",
-      "size": -1,
-      "timestamp": "2025-07-21T16:35:16.074Z"
+      "path_params": [
+        "Bin-Collection-Dates-952.html"
+      ],
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7"
+      },
+      "response_headers": {
+        "content-type": "text/html",
+        "location": "https://www.chesterfield.gov.uk/Bin-Collection-Dates-952.html"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": -1
+      },
+      "redirect_to": "https://www.chesterfield.gov.uk/Bin-Collection-Dates-952.html"
     },
     {
-      "url": "https://www.chesterfield.gov.uk/Bin-Collection-Dates-952.html",
+      "timestamp": "2025-07-21T16:35:16.103Z",
+      "duration_ms": 58.318999999999996,
+      "endpoint": "/{id}",
+      "host": "www.chesterfield.gov.uk",
       "method": "GET",
       "status": 404,
-      "redirect_url": null,
-      "mime_type": "x-unknown",
-      "size": -1,
-      "timestamp": "2025-07-21T16:35:16.103Z"
+      "path_params": [
+        "Bin-Collection-Dates-952.html"
+      ],
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7"
+      },
+      "response_headers": {
+        "x-powered-by": "ASP.NET"
+      }
     },
     {
-      "url": "http://www.chesterfield.gov.uk/Bin-Collection-Dates-952.html",
+      "timestamp": "2025-07-21T16:35:17.459Z",
+      "duration_ms": 1.061,
+      "endpoint": "/{id}",
+      "host": "www.chesterfield.gov.uk",
       "method": "GET",
       "status": 301,
-      "redirect_url": "https://www.chesterfield.gov.uk/Bin-Collection-Dates-952.html",
-      "mime_type": "text/html",
-      "size": -1,
-      "timestamp": "2025-07-21T16:35:17.459Z"
+      "path_params": [
+        "Bin-Collection-Dates-952.html"
+      ],
+      "response_headers": {
+        "content-type": "text/html",
+        "location": "https://www.chesterfield.gov.uk/Bin-Collection-Dates-952.html"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": -1
+      },
+      "redirect_to": "https://www.chesterfield.gov.uk/Bin-Collection-Dates-952.html"
     },
     {
-      "url": "https://www.chesterfield.gov.uk/Bin-Collection-Dates-952.html",
+      "timestamp": "2025-07-21T16:35:17.461Z",
+      "duration_ms": 13.687,
+      "endpoint": "/{id}",
+      "host": "www.chesterfield.gov.uk",
       "method": "GET",
       "status": 404,
-      "redirect_url": null,
-      "mime_type": "x-unknown",
-      "size": -1,
-      "timestamp": "2025-07-21T16:35:17.461Z"
+      "path_params": [
+        "Bin-Collection-Dates-952.html"
+      ],
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7"
+      },
+      "response_headers": {
+        "x-powered-by": "ASP.NET"
+      }
     },
     {
-      "url": "http://www.chesterfield.gov.uk/",
+      "timestamp": "2025-07-21T16:35:19.061Z",
+      "duration_ms": 8.556,
+      "endpoint": "/",
+      "host": "www.chesterfield.gov.uk",
       "method": "GET",
       "status": 301,
-      "redirect_url": "https://www.chesterfield.gov.uk/",
-      "mime_type": "text/html",
-      "size": -1,
-      "timestamp": "2025-07-21T16:35:19.061Z"
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7"
+      },
+      "response_headers": {
+        "content-type": "text/html",
+        "location": "https://www.chesterfield.gov.uk/"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": -1
+      },
+      "redirect_to": "https://www.chesterfield.gov.uk/"
     },
     {
-      "url": "https://www.chesterfield.gov.uk/",
+      "timestamp": "2025-07-21T16:35:19.070Z",
+      "duration_ms": 43.641,
+      "endpoint": "/",
+      "host": "www.chesterfield.gov.uk",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "text/html; charset=utf-8",
-      "size": 60832,
-      "timestamp": "2025-07-21T16:35:19.070Z"
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7"
+      },
+      "response_headers": {
+        "content-type": "text/html; charset=utf-8",
+        "x-powered-by": "ASP.NET"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 60832,
+        "content_ref": "0f7a41607414dcbe3b2984c9909f7e264c73da13.html"
+      }
     },
     {
-      "url": "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/fonts/fontawesome-webfont.woff2?v=4.7.0",
+      "timestamp": "2025-07-21T16:35:20.216Z",
+      "duration_ms": 34.832,
+      "endpoint": "/media/om2pffvb/{id}",
+      "host": "www.chesterfield.gov.uk",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/octet-stream; charset=utf-8",
-      "size": 77160,
-      "timestamp": "2025-07-21T16:35:20.215Z"
+      "path_params": [
+        "seftonicons-webfont.woff"
+      ],
+      "query_params": {
+        "v": [
+          "1.1"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "origin": "https://www.chesterfield.gov.uk",
+        "referer": "https://www.chesterfield.gov.uk/css/sefton-icons.css"
+      },
+      "response_headers": {
+        "content-type": "application/font-woff",
+        "x-powered-by": "ASP.NET"
+      }
     },
     {
-      "url": "https://www.chesterfield.gov.uk/media/om2pffvb/seftonicons-webfont.woff?v=1.1",
+      "timestamp": "2025-07-21T16:35:20.215Z",
+      "duration_ms": 77.42599999999999,
+      "endpoint": "/ajax/libs/font-awesome/4.7.0/fonts/{id}",
+      "host": "cdnjs.cloudflare.com",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/font-woff",
-      "size": 63196,
-      "timestamp": "2025-07-21T16:35:20.216Z"
+      "path_params": [
+        "fontawesome-webfont.woff2"
+      ],
+      "query_params": {
+        "v": [
+          "4.7.0"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "origin": "https://www.chesterfield.gov.uk",
+        "referer": "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+      },
+      "response_headers": {
+        "cache-control": "public, max-age=30672000",
+        "content-type": "application/octet-stream; charset=utf-8",
+        "x-content-type-options": "nosniff"
+      }
     },
     {
-      "url": "https://www.chesterfield.gov.uk/bins-and-recycling/bin-collections/",
+      "timestamp": "2025-07-21T16:35:20.260Z",
+      "duration_ms": 135.50900000000001,
+      "endpoint": "/g/collect",
+      "host": "region1.google-analytics.com",
+      "method": "POST",
+      "status": 204,
+      "query_params": {
+        "v": [
+          "2"
+        ],
+        "tid": [
+          "G-D6LMYV4JPF"
+        ],
+        "gtm": [
+          "45je57h0h1v9217696947za200"
+        ],
+        "_p": [
+          "1753115719301"
+        ],
+        "gcd": [
+          "13l3l3l3l1l1"
+        ],
+        "npa": [
+          "0"
+        ],
+        "dma": [
+          "0"
+        ],
+        "tag_exp": [
+          "101509157~103116026~103200004~103233427~104684208~104684211"
+        ],
+        "cid": [
+          "1989938653.1753115719"
+        ],
+        "ul": [
+          "en-gb"
+        ],
+        "sr": [
+          "800x600"
+        ],
+        "uaa": [
+          "arm"
+        ],
+        "uab": [
+          "64"
+        ],
+        "uafvl": [
+          "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+        ],
+        "uamb": [
+          "0"
+        ],
+        "uap": [
+          "macOS"
+        ],
+        "uapv": [
+          "15.5.0"
+        ],
+        "uaw": [
+          "0"
+        ],
+        "are": [
+          "1"
+        ],
+        "frm": [
+          "0"
+        ],
+        "pscdl": [
+          "noapi"
+        ],
+        "_s": [
+          "1"
+        ],
+        "sid": [
+          "1753115720"
+        ],
+        "sct": [
+          "1"
+        ],
+        "seg": [
+          "0"
+        ],
+        "dl": [
+          "https://www.chesterfield.gov.uk/"
+        ],
+        "dt": [
+          "Chesterfield Borough Council"
+        ],
+        "en": [
+          "page_view"
+        ],
+        "_fv": [
+          "1"
+        ],
+        "_ss": [
+          "1"
+        ],
+        "_ee": [
+          "1"
+        ],
+        "tfd": [
+          "1198"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "cookie": "[cookies present]",
+        "origin": "https://www.chesterfield.gov.uk",
+        "referer": "https://www.chesterfield.gov.uk/"
+      },
+      "response_headers": {
+        "cache-control": "no-cache, no-store, must-revalidate",
+        "content-type": "text/plain"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T16:35:22.349Z",
+      "duration_ms": -1,
+      "endpoint": "/element/log",
+      "host": "translate.googleapis.com",
+      "method": "POST",
+      "status": -1,
+      "query_params": {
+        "hasfast": [
+          "true"
+        ],
+        "authuser": [
+          "0"
+        ],
+        "format": [
+          "json"
+        ]
+      },
+      "request_headers": {
+        "referer": "https://www.chesterfield.gov.uk/",
+        "content-type": "text/plain;charset=UTF-8"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T16:35:22.371Z",
+      "duration_ms": 1.081,
+      "endpoint": "/ajax/libs/font-awesome/4.7.0/fonts/{id}",
+      "host": "cdnjs.cloudflare.com",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "text/html; charset=utf-8",
-      "size": 45384,
-      "timestamp": "2025-07-21T16:35:22.306Z"
+      "path_params": [
+        "fontawesome-webfont.woff2"
+      ],
+      "query_params": {
+        "v": [
+          "4.7.0"
+        ]
+      },
+      "request_headers": {
+        "referer": ""
+      },
+      "response_headers": {
+        "x-content-type-options": "nosniff",
+        "content-type": "application/octet-stream; charset=utf-8",
+        "cache-control": "public, max-age=30672000"
+      }
     },
     {
-      "url": "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/fonts/fontawesome-webfont.woff2?v=4.7.0",
+      "timestamp": "2025-07-21T16:35:22.371Z",
+      "duration_ms": 1.042,
+      "endpoint": "/media/om2pffvb/{id}",
+      "host": "www.chesterfield.gov.uk",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/octet-stream; charset=utf-8",
-      "size": -1,
-      "timestamp": "2025-07-21T16:35:22.371Z"
+      "path_params": [
+        "seftonicons-webfont.woff"
+      ],
+      "query_params": {
+        "v": [
+          "1.1"
+        ]
+      },
+      "request_headers": {
+        "referer": ""
+      },
+      "response_headers": {
+        "content-type": "application/font-woff",
+        "x-powered-by": "ASP.NET"
+      }
     },
     {
-      "url": "https://www.chesterfield.gov.uk/media/om2pffvb/seftonicons-webfont.woff?v=1.1",
+      "timestamp": "2025-07-21T16:35:22.306Z",
+      "duration_ms": 46.463,
+      "endpoint": "/bins-and-recycling/bin-collections",
+      "host": "www.chesterfield.gov.uk",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/font-woff",
-      "size": -1,
-      "timestamp": "2025-07-21T16:35:22.371Z"
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+        "cookie": "[cookies present]",
+        "referer": "https://www.chesterfield.gov.uk/"
+      },
+      "response_headers": {
+        "content-type": "text/html; charset=utf-8",
+        "x-powered-by": "ASP.NET"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 45384,
+        "content_ref": "326372a2fd4975c4781b14950d64f1d970354c43.html"
+      }
     },
     {
-      "url": "https://www.chesterfield.gov.uk/bins-and-recycling/bin-collections/check-bin-collections/",
+      "timestamp": "2025-07-21T16:35:22.394Z",
+      "duration_ms": 14.492,
+      "endpoint": "/g/collect",
+      "host": "region1.google-analytics.com",
+      "method": "POST",
+      "status": 204,
+      "query_params": {
+        "v": [
+          "2"
+        ],
+        "tid": [
+          "G-D6LMYV4JPF"
+        ],
+        "gtm": [
+          "45je57h0h1v9217696947za200"
+        ],
+        "_p": [
+          "1753115722359"
+        ],
+        "gcd": [
+          "13l3l3l3l1l1"
+        ],
+        "npa": [
+          "0"
+        ],
+        "dma": [
+          "0"
+        ],
+        "tag_exp": [
+          "101509157~103116026~103200004~103233427~104684208~104684211"
+        ],
+        "cid": [
+          "1989938653.1753115719"
+        ],
+        "ul": [
+          "en-gb"
+        ],
+        "sr": [
+          "800x600"
+        ],
+        "uaa": [
+          "arm"
+        ],
+        "uab": [
+          "64"
+        ],
+        "uafvl": [
+          "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+        ],
+        "uamb": [
+          "0"
+        ],
+        "uap": [
+          "macOS"
+        ],
+        "uapv": [
+          "15.5.0"
+        ],
+        "uaw": [
+          "0"
+        ],
+        "are": [
+          "1"
+        ],
+        "frm": [
+          "0"
+        ],
+        "pscdl": [
+          "noapi"
+        ],
+        "_eu": [
+          "AAAAAAQ"
+        ],
+        "_s": [
+          "1"
+        ],
+        "sid": [
+          "1753115720"
+        ],
+        "sct": [
+          "1"
+        ],
+        "seg": [
+          "1"
+        ],
+        "dl": [
+          "https://www.chesterfield.gov.uk/bins-and-recycling/bin-collections/"
+        ],
+        "dr": [
+          "https://www.chesterfield.gov.uk/"
+        ],
+        "dt": [
+          "Bin collections"
+        ],
+        "en": [
+          "page_view"
+        ],
+        "_ee": [
+          "1"
+        ],
+        "tfd": [
+          "153"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "cookie": "[cookies present]",
+        "origin": "https://www.chesterfield.gov.uk",
+        "referer": "https://www.chesterfield.gov.uk/"
+      },
+      "response_headers": {
+        "cache-control": "no-cache, no-store, must-revalidate",
+        "content-type": "text/plain"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T16:35:25.777Z",
+      "duration_ms": -1,
+      "endpoint": "/g/collect",
+      "host": "region1.google-analytics.com",
+      "method": "POST",
+      "status": -1,
+      "query_params": {
+        "v": [
+          "2"
+        ],
+        "tid": [
+          "G-D6LMYV4JPF"
+        ],
+        "gtm": [
+          "45je57h0h1v9217696947za200"
+        ],
+        "_p": [
+          "1753115722359"
+        ],
+        "gcd": [
+          "13l3l3l3l1l1"
+        ],
+        "npa": [
+          "0"
+        ],
+        "dma": [
+          "0"
+        ],
+        "tag_exp": [
+          "101509157~103116026~103200004~103233427~104684208~104684211"
+        ],
+        "cid": [
+          "1989938653.1753115719"
+        ],
+        "ul": [
+          "en-gb"
+        ],
+        "sr": [
+          "800x600"
+        ],
+        "uaa": [
+          "arm"
+        ],
+        "uab": [
+          "64"
+        ],
+        "uafvl": [
+          "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+        ],
+        "uamb": [
+          "0"
+        ],
+        "uap": [
+          "macOS"
+        ],
+        "uapv": [
+          "15.5.0"
+        ],
+        "uaw": [
+          "0"
+        ],
+        "are": [
+          "1"
+        ],
+        "frm": [
+          "0"
+        ],
+        "pscdl": [
+          "noapi"
+        ],
+        "_eu": [
+          "AEAAAAQ"
+        ],
+        "_s": [
+          "2"
+        ],
+        "sid": [
+          "1753115720"
+        ],
+        "sct": [
+          "1"
+        ],
+        "seg": [
+          "1"
+        ],
+        "dl": [
+          "https://www.chesterfield.gov.uk/bins-and-recycling/bin-collections/"
+        ],
+        "dr": [
+          "https://www.chesterfield.gov.uk/"
+        ],
+        "dt": [
+          "Bin collections"
+        ],
+        "en": [
+          "scroll"
+        ],
+        "epn.percent_scrolled": [
+          "90"
+        ],
+        "_et": [
+          "3"
+        ],
+        "tfd": [
+          "3539"
+        ]
+      },
+      "request_headers": {
+        "referer": "https://www.chesterfield.gov.uk/"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T16:35:25.778Z",
+      "duration_ms": -1,
+      "endpoint": "/element/log",
+      "host": "translate.googleapis.com",
+      "method": "POST",
+      "status": -1,
+      "query_params": {
+        "hasfast": [
+          "true"
+        ],
+        "authuser": [
+          "0"
+        ],
+        "format": [
+          "json"
+        ]
+      },
+      "request_headers": {
+        "referer": "https://www.chesterfield.gov.uk/",
+        "content-type": "text/plain;charset=UTF-8"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T16:35:25.777Z",
+      "duration_ms": -1,
+      "endpoint": "/g/collect",
+      "host": "region1.google-analytics.com",
+      "method": "POST",
+      "status": -1,
+      "query_params": {
+        "v": [
+          "2"
+        ],
+        "tid": [
+          "G-D6LMYV4JPF"
+        ],
+        "gtm": [
+          "45je57h0h1v9217696947za200"
+        ],
+        "_p": [
+          "1753115722359"
+        ],
+        "gcd": [
+          "13l3l3l3l1l1"
+        ],
+        "npa": [
+          "0"
+        ],
+        "dma": [
+          "0"
+        ],
+        "tag_exp": [
+          "101509157~103116026~103200004~103233427~104684208~104684211"
+        ],
+        "cid": [
+          "1989938653.1753115719"
+        ],
+        "ul": [
+          "en-gb"
+        ],
+        "sr": [
+          "800x600"
+        ],
+        "uaa": [
+          "arm"
+        ],
+        "uab": [
+          "64"
+        ],
+        "uafvl": [
+          "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+        ],
+        "uamb": [
+          "0"
+        ],
+        "uap": [
+          "macOS"
+        ],
+        "uapv": [
+          "15.5.0"
+        ],
+        "uaw": [
+          "0"
+        ],
+        "are": [
+          "1"
+        ],
+        "frm": [
+          "0"
+        ],
+        "pscdl": [
+          "noapi"
+        ],
+        "_eu": [
+          "AAAAAAQ"
+        ],
+        "_s": [
+          "3"
+        ],
+        "sid": [
+          "1753115720"
+        ],
+        "sct": [
+          "1"
+        ],
+        "seg": [
+          "1"
+        ],
+        "dl": [
+          "https://www.chesterfield.gov.uk/bins-and-recycling/bin-collections/"
+        ],
+        "dr": [
+          "https://www.chesterfield.gov.uk/"
+        ],
+        "dt": [
+          "Bin collections"
+        ],
+        "en": [
+          "user_engagement"
+        ],
+        "_et": [
+          "3382"
+        ],
+        "tfd": [
+          "3539"
+        ]
+      },
+      "request_headers": {
+        "referer": "https://www.chesterfield.gov.uk/"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T16:35:25.816Z",
+      "duration_ms": 1.094,
+      "endpoint": "/ajax/libs/font-awesome/4.7.0/fonts/{id}",
+      "host": "cdnjs.cloudflare.com",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "text/html; charset=utf-8",
-      "size": 44088,
-      "timestamp": "2025-07-21T16:35:25.669Z"
+      "path_params": [
+        "fontawesome-webfont.woff2"
+      ],
+      "query_params": {
+        "v": [
+          "4.7.0"
+        ]
+      },
+      "request_headers": {
+        "referer": ""
+      },
+      "response_headers": {
+        "x-content-type-options": "nosniff",
+        "content-type": "application/octet-stream; charset=utf-8",
+        "cache-control": "public, max-age=30672000"
+      }
     },
     {
-      "url": "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/fonts/fontawesome-webfont.woff2?v=4.7.0",
+      "timestamp": "2025-07-21T16:35:25.817Z",
+      "duration_ms": 1.051,
+      "endpoint": "/media/om2pffvb/{id}",
+      "host": "www.chesterfield.gov.uk",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/octet-stream; charset=utf-8",
-      "size": -1,
-      "timestamp": "2025-07-21T16:35:25.816Z"
+      "path_params": [
+        "seftonicons-webfont.woff"
+      ],
+      "query_params": {
+        "v": [
+          "1.1"
+        ]
+      },
+      "request_headers": {
+        "referer": ""
+      },
+      "response_headers": {
+        "content-type": "application/font-woff",
+        "x-powered-by": "ASP.NET"
+      }
     },
     {
-      "url": "https://www.chesterfield.gov.uk/media/om2pffvb/seftonicons-webfont.woff?v=1.1",
+      "timestamp": "2025-07-21T16:35:25.669Z",
+      "duration_ms": 105.51899999999999,
+      "endpoint": "/bins-and-recycling/bin-collections/{id}",
+      "host": "www.chesterfield.gov.uk",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/font-woff",
-      "size": -1,
-      "timestamp": "2025-07-21T16:35:25.817Z"
+      "path_params": [
+        "check-bin-collections"
+      ],
+      "request_headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+        "cookie": "[cookies present]",
+        "referer": "https://www.chesterfield.gov.uk/bins-and-recycling/bin-collections/"
+      },
+      "response_headers": {
+        "content-type": "text/html; charset=utf-8",
+        "x-powered-by": "ASP.NET"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": 44088,
+        "content_ref": "889df9cfe7744261aef98f7deadb7214fbcd2f76.html"
+      }
     },
     {
-      "url": "https://myaccount.chesterfield.gov.uk/anonymous/c/cbc_VE_CollectionDaysLO.app?aura.format=JSON&aura.formatAdapter=LIGHTNING_OUT",
+      "timestamp": "2025-07-21T16:35:25.827Z",
+      "duration_ms": 12.933,
+      "endpoint": "/g/collect",
+      "host": "region1.google-analytics.com",
+      "method": "POST",
+      "status": 204,
+      "query_params": {
+        "v": [
+          "2"
+        ],
+        "tid": [
+          "G-D6LMYV4JPF"
+        ],
+        "gtm": [
+          "45je57h0h1v9217696947za200"
+        ],
+        "_p": [
+          "1753115725787"
+        ],
+        "gcd": [
+          "13l3l3l3l1l1"
+        ],
+        "npa": [
+          "0"
+        ],
+        "dma": [
+          "0"
+        ],
+        "tag_exp": [
+          "101509157~103116026~103200004~103233427~104684208~104684211"
+        ],
+        "cid": [
+          "1989938653.1753115719"
+        ],
+        "ul": [
+          "en-gb"
+        ],
+        "sr": [
+          "800x600"
+        ],
+        "uaa": [
+          "arm"
+        ],
+        "uab": [
+          "64"
+        ],
+        "uafvl": [
+          "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+        ],
+        "uamb": [
+          "0"
+        ],
+        "uap": [
+          "macOS"
+        ],
+        "uapv": [
+          "15.5.0"
+        ],
+        "uaw": [
+          "0"
+        ],
+        "are": [
+          "1"
+        ],
+        "frm": [
+          "0"
+        ],
+        "pscdl": [
+          "noapi"
+        ],
+        "_eu": [
+          "AAAAAAQ"
+        ],
+        "_s": [
+          "1"
+        ],
+        "sid": [
+          "1753115720"
+        ],
+        "sct": [
+          "1"
+        ],
+        "seg": [
+          "1"
+        ],
+        "dl": [
+          "https://www.chesterfield.gov.uk/bins-and-recycling/bin-collections/check-bin-collections/"
+        ],
+        "dr": [
+          "https://www.chesterfield.gov.uk/bins-and-recycling/bin-collections/"
+        ],
+        "dt": [
+          "Check bin collections"
+        ],
+        "en": [
+          "page_view"
+        ],
+        "_ee": [
+          "1"
+        ],
+        "tfd": [
+          "195"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "cookie": "[cookies present]",
+        "origin": "https://www.chesterfield.gov.uk",
+        "referer": "https://www.chesterfield.gov.uk/"
+      },
+      "response_headers": {
+        "cache-control": "no-cache, no-store, must-revalidate",
+        "content-type": "text/plain"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T16:35:25.976Z",
+      "duration_ms": 262.126,
+      "endpoint": "/anonymous/c/{id}",
+      "host": "myaccount.chesterfield.gov.uk",
       "method": "GET",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json;charset=UTF-8",
-      "size": 145010,
-      "timestamp": "2025-07-21T16:35:25.976Z"
+      "path_params": [
+        "cbc_VE_CollectionDaysLO.app"
+      ],
+      "query_params": {
+        "aura.format": [
+          "JSON"
+        ],
+        "aura.formatAdapter": [
+          "LIGHTNING_OUT"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "origin": "https://www.chesterfield.gov.uk",
+        "referer": "https://www.chesterfield.gov.uk/"
+      },
+      "response_headers": {
+        "cache-control": "no-cache,must-revalidate,max-age=0,no-store,private",
+        "content-type": "application/json;charset=UTF-8",
+        "set-cookie": "[cookies present]",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "SAMEORIGIN",
+        "x-request-id": "2efeb264d85251703b6ed61c46773155",
+        "x-sfdc-request-id": "2efeb264d85251703b6ed61c46773155"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 145010,
+        "compressed": true,
+        "content_ref": "6ebeccd0d23103bb9d8c9fb8c74d1e7bc4d93d42.json"
+      }
     },
     {
-      "url": "https://myaccount.chesterfield.gov.uk/anonymous/aura?r=0&aura.ApexAction.execute=1",
+      "timestamp": "2025-07-21T16:35:30.816Z",
+      "duration_ms": 23.552,
+      "endpoint": "/g/collect",
+      "host": "region1.google-analytics.com",
+      "method": "POST",
+      "status": 204,
+      "query_params": {
+        "v": [
+          "2"
+        ],
+        "tid": [
+          "G-D6LMYV4JPF"
+        ],
+        "gtm": [
+          "45je57h0h1v9217696947za200"
+        ],
+        "_p": [
+          "1753115725787"
+        ],
+        "gcd": [
+          "13l3l3l3l1l1"
+        ],
+        "npa": [
+          "0"
+        ],
+        "dma": [
+          "0"
+        ],
+        "tag_exp": [
+          "101509157~103116026~103200004~103233427~104684208~104684211"
+        ],
+        "cid": [
+          "1989938653.1753115719"
+        ],
+        "ul": [
+          "en-gb"
+        ],
+        "sr": [
+          "800x600"
+        ],
+        "uaa": [
+          "arm"
+        ],
+        "uab": [
+          "64"
+        ],
+        "uafvl": [
+          "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+        ],
+        "uamb": [
+          "0"
+        ],
+        "uap": [
+          "macOS"
+        ],
+        "uapv": [
+          "15.5.0"
+        ],
+        "uaw": [
+          "0"
+        ],
+        "are": [
+          "1"
+        ],
+        "frm": [
+          "0"
+        ],
+        "pscdl": [
+          "noapi"
+        ],
+        "_eu": [
+          "AEAAAAQ"
+        ],
+        "_s": [
+          "2"
+        ],
+        "sid": [
+          "1753115720"
+        ],
+        "sct": [
+          "1"
+        ],
+        "seg": [
+          "1"
+        ],
+        "dl": [
+          "https://www.chesterfield.gov.uk/bins-and-recycling/bin-collections/check-bin-collections/"
+        ],
+        "dr": [
+          "https://www.chesterfield.gov.uk/bins-and-recycling/bin-collections/"
+        ],
+        "dt": [
+          "Check bin collections"
+        ],
+        "en": [
+          "scroll"
+        ],
+        "epn.percent_scrolled": [
+          "90"
+        ],
+        "_et": [
+          "3"
+        ],
+        "tfd": [
+          "5198"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "cookie": "[cookies present]",
+        "origin": "https://www.chesterfield.gov.uk",
+        "referer": "https://www.chesterfield.gov.uk/"
+      },
+      "response_headers": {
+        "cache-control": "no-cache, no-store, must-revalidate",
+        "content-type": "text/plain"
+      }
+    },
+    {
+      "timestamp": "2025-07-21T16:35:31.405Z",
+      "duration_ms": 640.722,
+      "endpoint": "/anonymous/aura",
+      "host": "myaccount.chesterfield.gov.uk",
       "method": "POST",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json;charset=UTF-8",
-      "size": 4326,
-      "timestamp": "2025-07-21T16:35:31.405Z"
+      "query_params": {
+        "r": [
+          "0"
+        ],
+        "aura.ApexAction.execute": [
+          "1"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "content-type": "application/x-www-form-urlencoded; charset=UTF-8",
+        "cookie": "[cookies present]",
+        "origin": "https://www.chesterfield.gov.uk",
+        "referer": "https://www.chesterfield.gov.uk/",
+        "x-sfdc-lds-endpoints": "ApexActionController.execute:CBC_VE_CollectionDays.getAddressListFromPostCode"
+      },
+      "response_headers": {
+        "cache-control": "no-cache,must-revalidate,max-age=0,no-store,private",
+        "content-type": "application/json;charset=UTF-8",
+        "x-content-type-options": "nosniff",
+        "x-request-id": "a723b1044c89bff2e42cb04cf45552f9",
+        "x-sfdc-request-id": "a723b1044c89bff2e42cb04cf45552f9"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 4326,
+        "compressed": true,
+        "content_ref": "2ace1e2f03cd850b5b017407a82d6d84ea601a87.json"
+      }
     },
     {
-      "url": "https://myaccount.chesterfield.gov.uk/anonymous/auraCmpDef?_au=714_EIz3hBYo4zyeqGNcq-EJ9A&_c=false&_density=VIEW_ONE&_dfs=8&_ff=DESKTOP&_l=true&_l10n=en_US&_lrmc=-386269907&_style=274465954&aura.app=markup://c:cbc_VE_CollectionDaysLO&aura.mode=PROD&_def=markup://lightning:iconSvgTemplatesUtility&_cl=53999514&_uid=LATEST",
+      "timestamp": "2025-07-21T16:35:32.066Z",
+      "duration_ms": 104.28399999999999,
+      "endpoint": "/anonymous/auraCmpDef",
+      "host": "myaccount.chesterfield.gov.uk",
       "method": "GET",
       "status": 302,
-      "redirect_url": "https://myaccount.chesterfield.gov.uk/anonymous/auraCmpDef?_au=714_EIz3hBYo4zyeqGNcq-EJ9A&_c=false&_def=markup://lightning:iconSvgTemplatesUtility&_density=VIEW_ONE&_dfs=8&_ff=DESKTOP&_l=true&_l10n=en_US&_lrmc=-386269907&_style=274465954&_uid=396_nNELThP8c4pd7DSmSRb90g&aura.app=markup://c:cbc_VE_CollectionDaysLO&aura.mode=PROD",
-      "mime_type": "text/html;charset=UTF-8",
-      "size": -1,
-      "timestamp": "2025-07-21T16:35:32.066Z"
+      "query_params": {
+        "_au": [
+          "714_EIz3hBYo4zyeqGNcq-EJ9A"
+        ],
+        "_c": [
+          "false"
+        ],
+        "_density": [
+          "VIEW_ONE"
+        ],
+        "_dfs": [
+          "8"
+        ],
+        "_ff": [
+          "DESKTOP"
+        ],
+        "_l": [
+          "true"
+        ],
+        "_l10n": [
+          "en_US"
+        ],
+        "_lrmc": [
+          "-386269907"
+        ],
+        "_style": [
+          "274465954"
+        ],
+        "aura.app": [
+          "markup://c:cbc_VE_CollectionDaysLO"
+        ],
+        "aura.mode": [
+          "PROD"
+        ],
+        "_def": [
+          "markup://lightning:iconSvgTemplatesUtility"
+        ],
+        "_cl": [
+          "53999514"
+        ],
+        "_uid": [
+          "LATEST"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "cookie": "[cookies present]",
+        "referer": "https://www.chesterfield.gov.uk/"
+      },
+      "response_headers": {
+        "cache-control": "public,max-age=31536000,stale-while-revalidate=31536000",
+        "content-type": "text/html;charset=UTF-8",
+        "location": "https://myaccount.chesterfield.gov.uk/anonymous/auraCmpDef?_au=714_EIz3hBYo4zyeqGNcq-EJ9A&_c=false&_def=markup://lightning:iconSvgTemplatesUtility&_density=VIEW_ONE&_dfs=8&_ff=DESKTOP&_l=true&_l10n=en_US&_lrmc=-386269907&_style=274465954&_uid=396_nNELThP8c4pd7DSmSRb90g&aura.app=markup://c:cbc_VE_CollectionDaysLO&aura.mode=PROD",
+        "x-content-type-options": "nosniff",
+        "x-request-id": "3cbbcf52d625b81b09bae4751af14ece",
+        "x-sfdc-request-id": "3cbbcf52d625b81b09bae4751af14ece"
+      },
+      "response_info": {
+        "type": "text/html",
+        "size": -1
+      },
+      "redirect_to": "https://myaccount.chesterfield.gov.uk/anonymous/auraCmpDef?_au=714_EIz3hBYo4zyeqGNcq-EJ9A&_c=false&_def=markup://lightning:iconSvgTemplatesUtility&_density=VIEW_ONE&_dfs=8&_ff=DESKTOP&_l=true&_l10n=en_US&_lrmc=-386269907&_style=274465954&_uid=396_nNELThP8c4pd7DSmSRb90g&aura.app=markup://c:cbc_VE_CollectionDaysLO&aura.mode=PROD"
     },
     {
-      "url": "https://translate.googleapis.com/element/log?format=json&hasfast=true&authuser=0",
+      "timestamp": "2025-07-21T16:35:36.340Z",
+      "duration_ms": 51.278000000000006,
+      "endpoint": "/element/log",
+      "host": "translate.googleapis.com",
       "method": "POST",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "text/plain; charset=UTF-8",
-      "size": 131,
-      "timestamp": "2025-07-21T16:35:36.340Z"
+      "query_params": {
+        "format": [
+          "json"
+        ],
+        "hasfast": [
+          "true"
+        ],
+        "authuser": [
+          "0"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "content-type": "application/binary",
+        "origin": "https://www.chesterfield.gov.uk",
+        "referer": "https://www.chesterfield.gov.uk/",
+        "x-browser-copyright": "Copyright 2025 Google LLC. All rights reserved.",
+        "x-browser-validation": "qvLgIVtG4U8GgiRPSI9IJ22mUlI=",
+        "x-browser-year": "2025",
+        "x-client-data": "CMiXywE=",
+        "x-goog-authuser": "0"
+      },
+      "response_headers": {
+        "content-type": "text/plain; charset=UTF-8",
+        "x-frame-options": "SAMEORIGIN",
+        "x-xss-protection": "0"
+      }
     },
     {
-      "url": "https://myaccount.chesterfield.gov.uk/anonymous/aura?r=1&aura.ApexAction.execute=1",
+      "timestamp": "2025-07-21T16:35:41.687Z",
+      "duration_ms": 111.365,
+      "endpoint": "/anonymous/aura",
+      "host": "myaccount.chesterfield.gov.uk",
       "method": "POST",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json;charset=UTF-8",
-      "size": 1631,
-      "timestamp": "2025-07-21T16:35:41.687Z"
+      "query_params": {
+        "r": [
+          "1"
+        ],
+        "aura.ApexAction.execute": [
+          "1"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "content-type": "application/x-www-form-urlencoded; charset=UTF-8",
+        "cookie": "[cookies present]",
+        "origin": "https://www.chesterfield.gov.uk",
+        "referer": "https://www.chesterfield.gov.uk/",
+        "x-sfdc-lds-endpoints": "ApexActionController.execute:CBC_VE_Echo_Outage_Check.checkPlannedEchoOutage"
+      },
+      "response_headers": {
+        "cache-control": "no-cache,must-revalidate,max-age=0,no-store,private",
+        "content-type": "application/json;charset=UTF-8",
+        "x-content-type-options": "nosniff",
+        "x-request-id": "c06bee3ee2bfa1b76cac82346f5e6113",
+        "x-sfdc-request-id": "c06bee3ee2bfa1b76cac82346f5e6113"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 1631,
+        "compressed": true,
+        "content_ref": "3fb8c9cb8011d8558a97e42c1789f14b798afd2c.json"
+      }
     },
     {
-      "url": "https://myaccount.chesterfield.gov.uk/anonymous/aura?r=2&aura.ApexAction.execute=1",
+      "timestamp": "2025-07-21T16:35:41.796Z",
+      "duration_ms": 961.8130000000001,
+      "endpoint": "/anonymous/aura",
+      "host": "myaccount.chesterfield.gov.uk",
       "method": "POST",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json;charset=UTF-8",
-      "size": 37233,
-      "timestamp": "2025-07-21T16:35:41.796Z"
+      "query_params": {
+        "r": [
+          "2"
+        ],
+        "aura.ApexAction.execute": [
+          "1"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "content-type": "application/x-www-form-urlencoded; charset=UTF-8",
+        "cookie": "[cookies present]",
+        "origin": "https://www.chesterfield.gov.uk",
+        "referer": "https://www.chesterfield.gov.uk/",
+        "x-sfdc-lds-endpoints": "ApexActionController.execute:CBC_VE_CollectionDays.getServicesByUPRN"
+      },
+      "response_headers": {
+        "cache-control": "no-cache,must-revalidate,max-age=0,no-store,private",
+        "content-type": "application/json;charset=UTF-8",
+        "x-content-type-options": "nosniff",
+        "x-request-id": "ced3cfe28a2cad752efd7bd7173de500",
+        "x-sfdc-request-id": "ced3cfe28a2cad752efd7bd7173de500"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 37233,
+        "compressed": true,
+        "content_ref": "70a4ec40abbecfd68ca7927aa3a23a08bd02512c.json"
+      }
     },
     {
-      "url": "https://myaccount.chesterfield.gov.uk/anonymous/aura?r=3&aura.ApexAction.execute=1",
+      "timestamp": "2025-07-21T16:35:42.763Z",
+      "duration_ms": 543.534,
+      "endpoint": "/anonymous/aura",
+      "host": "myaccount.chesterfield.gov.uk",
       "method": "POST",
       "status": 200,
-      "redirect_url": null,
-      "mime_type": "application/json;charset=UTF-8",
-      "size": 10093,
-      "timestamp": "2025-07-21T16:35:42.763Z"
+      "query_params": {
+        "r": [
+          "3"
+        ],
+        "aura.ApexAction.execute": [
+          "1"
+        ]
+      },
+      "request_headers": {
+        "accept": "*/*",
+        "content-type": "application/x-www-form-urlencoded; charset=UTF-8",
+        "cookie": "[cookies present]",
+        "origin": "https://www.chesterfield.gov.uk",
+        "referer": "https://www.chesterfield.gov.uk/",
+        "x-sfdc-lds-endpoints": "ApexActionController.execute:CBC_VE_CollectionDays.getTask"
+      },
+      "response_headers": {
+        "cache-control": "no-cache,must-revalidate,max-age=0,no-store,private",
+        "content-type": "application/json;charset=UTF-8",
+        "x-content-type-options": "nosniff",
+        "x-request-id": "b72b227ba74c23e071271c5fe2071d61",
+        "x-sfdc-request-id": "b72b227ba74c23e071271c5fe2071d61"
+      },
+      "response_info": {
+        "type": "application/json",
+        "size": 10093,
+        "compressed": true,
+        "content_ref": "28f70680b48eb77c9d144d0149801826e3b54884.json"
+      }
     }
-  ]
+  ],
+  "analysis": {
+    "total_requests": 29,
+    "unique_endpoints": 11,
+    "methods_used": [
+      "GET",
+      "POST"
+    ],
+    "status_codes": {
+      "301": 3,
+      "404": 2,
+      "200": 15,
+      "204": 4,
+      "-1": 4,
+      "302": 1
+    },
+    "endpoints_with_params": [
+      {
+        "endpoint": "/{id}",
+        "method": "GET",
+        "query_params": [],
+        "path_params": true
+      },
+      {
+        "endpoint": "/media/om2pffvb/{id}",
+        "method": "GET",
+        "query_params": [
+          "v"
+        ],
+        "path_params": true
+      },
+      {
+        "endpoint": "/ajax/libs/font-awesome/4.7.0/fonts/{id}",
+        "method": "GET",
+        "query_params": [
+          "v"
+        ],
+        "path_params": true
+      },
+      {
+        "endpoint": "/g/collect",
+        "method": "POST",
+        "query_params": [
+          "v",
+          "tid",
+          "gtm",
+          "_p",
+          "gcd",
+          "npa",
+          "dma",
+          "tag_exp",
+          "cid",
+          "ul",
+          "sr",
+          "uaa",
+          "uab",
+          "uafvl",
+          "uamb",
+          "uap",
+          "uapv",
+          "uaw",
+          "are",
+          "frm",
+          "pscdl",
+          "_s",
+          "sid",
+          "sct",
+          "seg",
+          "dl",
+          "dt",
+          "en",
+          "_fv",
+          "_ss",
+          "_ee",
+          "tfd"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/element/log",
+        "method": "POST",
+        "query_params": [
+          "hasfast",
+          "authuser",
+          "format"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/g/collect",
+        "method": "POST",
+        "query_params": [
+          "v",
+          "tid",
+          "gtm",
+          "_p",
+          "gcd",
+          "npa",
+          "dma",
+          "tag_exp",
+          "cid",
+          "ul",
+          "sr",
+          "uaa",
+          "uab",
+          "uafvl",
+          "uamb",
+          "uap",
+          "uapv",
+          "uaw",
+          "are",
+          "frm",
+          "pscdl",
+          "_eu",
+          "_s",
+          "sid",
+          "sct",
+          "seg",
+          "dl",
+          "dr",
+          "dt",
+          "en",
+          "_ee",
+          "tfd"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/g/collect",
+        "method": "POST",
+        "query_params": [
+          "v",
+          "tid",
+          "gtm",
+          "_p",
+          "gcd",
+          "npa",
+          "dma",
+          "tag_exp",
+          "cid",
+          "ul",
+          "sr",
+          "uaa",
+          "uab",
+          "uafvl",
+          "uamb",
+          "uap",
+          "uapv",
+          "uaw",
+          "are",
+          "frm",
+          "pscdl",
+          "_eu",
+          "_s",
+          "sid",
+          "sct",
+          "seg",
+          "dl",
+          "dr",
+          "dt",
+          "en",
+          "epn.percent_scrolled",
+          "_et",
+          "tfd"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/g/collect",
+        "method": "POST",
+        "query_params": [
+          "v",
+          "tid",
+          "gtm",
+          "_p",
+          "gcd",
+          "npa",
+          "dma",
+          "tag_exp",
+          "cid",
+          "ul",
+          "sr",
+          "uaa",
+          "uab",
+          "uafvl",
+          "uamb",
+          "uap",
+          "uapv",
+          "uaw",
+          "are",
+          "frm",
+          "pscdl",
+          "_eu",
+          "_s",
+          "sid",
+          "sct",
+          "seg",
+          "dl",
+          "dr",
+          "dt",
+          "en",
+          "_et",
+          "tfd"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/bins-and-recycling/bin-collections/{id}",
+        "method": "GET",
+        "query_params": [],
+        "path_params": true
+      },
+      {
+        "endpoint": "/anonymous/c/{id}",
+        "method": "GET",
+        "query_params": [
+          "aura.format",
+          "aura.formatAdapter"
+        ],
+        "path_params": true
+      },
+      {
+        "endpoint": "/anonymous/aura",
+        "method": "POST",
+        "query_params": [
+          "r",
+          "aura.ApexAction.execute"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/anonymous/auraCmpDef",
+        "method": "GET",
+        "query_params": [
+          "_au",
+          "_c",
+          "_density",
+          "_dfs",
+          "_ff",
+          "_l",
+          "_l10n",
+          "_lrmc",
+          "_style",
+          "aura.app",
+          "aura.mode",
+          "_def",
+          "_cl",
+          "_uid"
+        ],
+        "path_params": false
+      },
+      {
+        "endpoint": "/element/log",
+        "method": "POST",
+        "query_params": [
+          "format",
+          "hasfast",
+          "authuser"
+        ],
+        "path_params": false
+      }
+    ],
+    "redirects": [
+      {
+        "from": "/{id}",
+        "to": "https://www.chesterfield.gov.uk/Bin-Collection-Dates-952.html",
+        "status": 301
+      },
+      {
+        "from": "/{id}",
+        "to": "https://www.chesterfield.gov.uk/Bin-Collection-Dates-952.html",
+        "status": 301
+      },
+      {
+        "from": "/",
+        "to": "https://www.chesterfield.gov.uk/",
+        "status": 301
+      },
+      {
+        "from": "/anonymous/auraCmpDef",
+        "to": "https://myaccount.chesterfield.gov.uk/anonymous/auraCmpDef?_au=714_EIz3hBYo4zyeqGNcq-EJ9A&_c=false&_def=markup://lightning:iconSvgTemplatesUtility&_density=VIEW_ONE&_dfs=8&_ff=DESKTOP&_l=true&_l10n=en_US&_lrmc=-386269907&_style=274465954&_uid=396_nNELThP8c4pd7DSmSRb90g&aura.app=markup://c:cbc_VE_CollectionDaysLO&aura.mode=PROD",
+        "status": 302
+      }
+    ],
+    "api_calls": [
+      {
+        "endpoint": "/anonymous/c/{id}",
+        "method": "GET",
+        "response_type": "application/json",
+        "params": [
+          "aura.format",
+          "aura.formatAdapter"
+        ]
+      },
+      {
+        "endpoint": "/anonymous/aura",
+        "method": "POST",
+        "response_type": "application/json",
+        "params": [
+          "r",
+          "aura.ApexAction.execute"
+        ]
+      },
+      {
+        "endpoint": "/anonymous/aura",
+        "method": "POST",
+        "response_type": "application/json",
+        "params": [
+          "r",
+          "aura.ApexAction.execute"
+        ]
+      },
+      {
+        "endpoint": "/anonymous/aura",
+        "method": "POST",
+        "response_type": "application/json",
+        "params": [
+          "r",
+          "aura.ApexAction.execute"
+        ]
+      },
+      {
+        "endpoint": "/anonymous/aura",
+        "method": "POST",
+        "response_type": "application/json",
+        "params": [
+          "r",
+          "aura.ApexAction.execute"
+        ]
+      }
+    ],
+    "form_submissions": []
+  },
+  "grouped_by_endpoint": {
+    "/{id}": [
+      {
+        "timestamp": "2025-07-21T16:35:16.074Z",
+        "duration_ms": 39.400999999999996,
+        "endpoint": "/{id}",
+        "host": "www.chesterfield.gov.uk",
+        "method": "GET",
+        "status": 301,
+        "path_params": [
+          "Bin-Collection-Dates-952.html"
+        ],
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7"
+        },
+        "response_headers": {
+          "content-type": "text/html",
+          "location": "https://www.chesterfield.gov.uk/Bin-Collection-Dates-952.html"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": -1
+        },
+        "redirect_to": "https://www.chesterfield.gov.uk/Bin-Collection-Dates-952.html"
+      },
+      {
+        "timestamp": "2025-07-21T16:35:16.103Z",
+        "duration_ms": 58.318999999999996,
+        "endpoint": "/{id}",
+        "host": "www.chesterfield.gov.uk",
+        "method": "GET",
+        "status": 404,
+        "path_params": [
+          "Bin-Collection-Dates-952.html"
+        ],
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7"
+        },
+        "response_headers": {
+          "x-powered-by": "ASP.NET"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T16:35:17.459Z",
+        "duration_ms": 1.061,
+        "endpoint": "/{id}",
+        "host": "www.chesterfield.gov.uk",
+        "method": "GET",
+        "status": 301,
+        "path_params": [
+          "Bin-Collection-Dates-952.html"
+        ],
+        "response_headers": {
+          "content-type": "text/html",
+          "location": "https://www.chesterfield.gov.uk/Bin-Collection-Dates-952.html"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": -1
+        },
+        "redirect_to": "https://www.chesterfield.gov.uk/Bin-Collection-Dates-952.html"
+      },
+      {
+        "timestamp": "2025-07-21T16:35:17.461Z",
+        "duration_ms": 13.687,
+        "endpoint": "/{id}",
+        "host": "www.chesterfield.gov.uk",
+        "method": "GET",
+        "status": 404,
+        "path_params": [
+          "Bin-Collection-Dates-952.html"
+        ],
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7"
+        },
+        "response_headers": {
+          "x-powered-by": "ASP.NET"
+        }
+      }
+    ],
+    "/": [
+      {
+        "timestamp": "2025-07-21T16:35:19.061Z",
+        "duration_ms": 8.556,
+        "endpoint": "/",
+        "host": "www.chesterfield.gov.uk",
+        "method": "GET",
+        "status": 301,
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7"
+        },
+        "response_headers": {
+          "content-type": "text/html",
+          "location": "https://www.chesterfield.gov.uk/"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": -1
+        },
+        "redirect_to": "https://www.chesterfield.gov.uk/"
+      },
+      {
+        "timestamp": "2025-07-21T16:35:19.070Z",
+        "duration_ms": 43.641,
+        "endpoint": "/",
+        "host": "www.chesterfield.gov.uk",
+        "method": "GET",
+        "status": 200,
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7"
+        },
+        "response_headers": {
+          "content-type": "text/html; charset=utf-8",
+          "x-powered-by": "ASP.NET"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 60832,
+          "content_ref": "0f7a41607414dcbe3b2984c9909f7e264c73da13.html"
+        }
+      }
+    ],
+    "/media/om2pffvb/{id}": [
+      {
+        "timestamp": "2025-07-21T16:35:20.216Z",
+        "duration_ms": 34.832,
+        "endpoint": "/media/om2pffvb/{id}",
+        "host": "www.chesterfield.gov.uk",
+        "method": "GET",
+        "status": 200,
+        "path_params": [
+          "seftonicons-webfont.woff"
+        ],
+        "query_params": {
+          "v": [
+            "1.1"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "origin": "https://www.chesterfield.gov.uk",
+          "referer": "https://www.chesterfield.gov.uk/css/sefton-icons.css"
+        },
+        "response_headers": {
+          "content-type": "application/font-woff",
+          "x-powered-by": "ASP.NET"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T16:35:22.371Z",
+        "duration_ms": 1.042,
+        "endpoint": "/media/om2pffvb/{id}",
+        "host": "www.chesterfield.gov.uk",
+        "method": "GET",
+        "status": 200,
+        "path_params": [
+          "seftonicons-webfont.woff"
+        ],
+        "query_params": {
+          "v": [
+            "1.1"
+          ]
+        },
+        "request_headers": {
+          "referer": ""
+        },
+        "response_headers": {
+          "content-type": "application/font-woff",
+          "x-powered-by": "ASP.NET"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T16:35:25.817Z",
+        "duration_ms": 1.051,
+        "endpoint": "/media/om2pffvb/{id}",
+        "host": "www.chesterfield.gov.uk",
+        "method": "GET",
+        "status": 200,
+        "path_params": [
+          "seftonicons-webfont.woff"
+        ],
+        "query_params": {
+          "v": [
+            "1.1"
+          ]
+        },
+        "request_headers": {
+          "referer": ""
+        },
+        "response_headers": {
+          "content-type": "application/font-woff",
+          "x-powered-by": "ASP.NET"
+        }
+      }
+    ],
+    "/ajax/libs/font-awesome/4.7.0/fonts/{id}": [
+      {
+        "timestamp": "2025-07-21T16:35:20.215Z",
+        "duration_ms": 77.42599999999999,
+        "endpoint": "/ajax/libs/font-awesome/4.7.0/fonts/{id}",
+        "host": "cdnjs.cloudflare.com",
+        "method": "GET",
+        "status": 200,
+        "path_params": [
+          "fontawesome-webfont.woff2"
+        ],
+        "query_params": {
+          "v": [
+            "4.7.0"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "origin": "https://www.chesterfield.gov.uk",
+          "referer": "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+        },
+        "response_headers": {
+          "cache-control": "public, max-age=30672000",
+          "content-type": "application/octet-stream; charset=utf-8",
+          "x-content-type-options": "nosniff"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T16:35:22.371Z",
+        "duration_ms": 1.081,
+        "endpoint": "/ajax/libs/font-awesome/4.7.0/fonts/{id}",
+        "host": "cdnjs.cloudflare.com",
+        "method": "GET",
+        "status": 200,
+        "path_params": [
+          "fontawesome-webfont.woff2"
+        ],
+        "query_params": {
+          "v": [
+            "4.7.0"
+          ]
+        },
+        "request_headers": {
+          "referer": ""
+        },
+        "response_headers": {
+          "x-content-type-options": "nosniff",
+          "content-type": "application/octet-stream; charset=utf-8",
+          "cache-control": "public, max-age=30672000"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T16:35:25.816Z",
+        "duration_ms": 1.094,
+        "endpoint": "/ajax/libs/font-awesome/4.7.0/fonts/{id}",
+        "host": "cdnjs.cloudflare.com",
+        "method": "GET",
+        "status": 200,
+        "path_params": [
+          "fontawesome-webfont.woff2"
+        ],
+        "query_params": {
+          "v": [
+            "4.7.0"
+          ]
+        },
+        "request_headers": {
+          "referer": ""
+        },
+        "response_headers": {
+          "x-content-type-options": "nosniff",
+          "content-type": "application/octet-stream; charset=utf-8",
+          "cache-control": "public, max-age=30672000"
+        }
+      }
+    ],
+    "/g/collect": [
+      {
+        "timestamp": "2025-07-21T16:35:20.260Z",
+        "duration_ms": 135.50900000000001,
+        "endpoint": "/g/collect",
+        "host": "region1.google-analytics.com",
+        "method": "POST",
+        "status": 204,
+        "query_params": {
+          "v": [
+            "2"
+          ],
+          "tid": [
+            "G-D6LMYV4JPF"
+          ],
+          "gtm": [
+            "45je57h0h1v9217696947za200"
+          ],
+          "_p": [
+            "1753115719301"
+          ],
+          "gcd": [
+            "13l3l3l3l1l1"
+          ],
+          "npa": [
+            "0"
+          ],
+          "dma": [
+            "0"
+          ],
+          "tag_exp": [
+            "101509157~103116026~103200004~103233427~104684208~104684211"
+          ],
+          "cid": [
+            "1989938653.1753115719"
+          ],
+          "ul": [
+            "en-gb"
+          ],
+          "sr": [
+            "800x600"
+          ],
+          "uaa": [
+            "arm"
+          ],
+          "uab": [
+            "64"
+          ],
+          "uafvl": [
+            "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+          ],
+          "uamb": [
+            "0"
+          ],
+          "uap": [
+            "macOS"
+          ],
+          "uapv": [
+            "15.5.0"
+          ],
+          "uaw": [
+            "0"
+          ],
+          "are": [
+            "1"
+          ],
+          "frm": [
+            "0"
+          ],
+          "pscdl": [
+            "noapi"
+          ],
+          "_s": [
+            "1"
+          ],
+          "sid": [
+            "1753115720"
+          ],
+          "sct": [
+            "1"
+          ],
+          "seg": [
+            "0"
+          ],
+          "dl": [
+            "https://www.chesterfield.gov.uk/"
+          ],
+          "dt": [
+            "Chesterfield Borough Council"
+          ],
+          "en": [
+            "page_view"
+          ],
+          "_fv": [
+            "1"
+          ],
+          "_ss": [
+            "1"
+          ],
+          "_ee": [
+            "1"
+          ],
+          "tfd": [
+            "1198"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "cookie": "[cookies present]",
+          "origin": "https://www.chesterfield.gov.uk",
+          "referer": "https://www.chesterfield.gov.uk/"
+        },
+        "response_headers": {
+          "cache-control": "no-cache, no-store, must-revalidate",
+          "content-type": "text/plain"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T16:35:22.394Z",
+        "duration_ms": 14.492,
+        "endpoint": "/g/collect",
+        "host": "region1.google-analytics.com",
+        "method": "POST",
+        "status": 204,
+        "query_params": {
+          "v": [
+            "2"
+          ],
+          "tid": [
+            "G-D6LMYV4JPF"
+          ],
+          "gtm": [
+            "45je57h0h1v9217696947za200"
+          ],
+          "_p": [
+            "1753115722359"
+          ],
+          "gcd": [
+            "13l3l3l3l1l1"
+          ],
+          "npa": [
+            "0"
+          ],
+          "dma": [
+            "0"
+          ],
+          "tag_exp": [
+            "101509157~103116026~103200004~103233427~104684208~104684211"
+          ],
+          "cid": [
+            "1989938653.1753115719"
+          ],
+          "ul": [
+            "en-gb"
+          ],
+          "sr": [
+            "800x600"
+          ],
+          "uaa": [
+            "arm"
+          ],
+          "uab": [
+            "64"
+          ],
+          "uafvl": [
+            "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+          ],
+          "uamb": [
+            "0"
+          ],
+          "uap": [
+            "macOS"
+          ],
+          "uapv": [
+            "15.5.0"
+          ],
+          "uaw": [
+            "0"
+          ],
+          "are": [
+            "1"
+          ],
+          "frm": [
+            "0"
+          ],
+          "pscdl": [
+            "noapi"
+          ],
+          "_eu": [
+            "AAAAAAQ"
+          ],
+          "_s": [
+            "1"
+          ],
+          "sid": [
+            "1753115720"
+          ],
+          "sct": [
+            "1"
+          ],
+          "seg": [
+            "1"
+          ],
+          "dl": [
+            "https://www.chesterfield.gov.uk/bins-and-recycling/bin-collections/"
+          ],
+          "dr": [
+            "https://www.chesterfield.gov.uk/"
+          ],
+          "dt": [
+            "Bin collections"
+          ],
+          "en": [
+            "page_view"
+          ],
+          "_ee": [
+            "1"
+          ],
+          "tfd": [
+            "153"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "cookie": "[cookies present]",
+          "origin": "https://www.chesterfield.gov.uk",
+          "referer": "https://www.chesterfield.gov.uk/"
+        },
+        "response_headers": {
+          "cache-control": "no-cache, no-store, must-revalidate",
+          "content-type": "text/plain"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T16:35:25.777Z",
+        "duration_ms": -1,
+        "endpoint": "/g/collect",
+        "host": "region1.google-analytics.com",
+        "method": "POST",
+        "status": -1,
+        "query_params": {
+          "v": [
+            "2"
+          ],
+          "tid": [
+            "G-D6LMYV4JPF"
+          ],
+          "gtm": [
+            "45je57h0h1v9217696947za200"
+          ],
+          "_p": [
+            "1753115722359"
+          ],
+          "gcd": [
+            "13l3l3l3l1l1"
+          ],
+          "npa": [
+            "0"
+          ],
+          "dma": [
+            "0"
+          ],
+          "tag_exp": [
+            "101509157~103116026~103200004~103233427~104684208~104684211"
+          ],
+          "cid": [
+            "1989938653.1753115719"
+          ],
+          "ul": [
+            "en-gb"
+          ],
+          "sr": [
+            "800x600"
+          ],
+          "uaa": [
+            "arm"
+          ],
+          "uab": [
+            "64"
+          ],
+          "uafvl": [
+            "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+          ],
+          "uamb": [
+            "0"
+          ],
+          "uap": [
+            "macOS"
+          ],
+          "uapv": [
+            "15.5.0"
+          ],
+          "uaw": [
+            "0"
+          ],
+          "are": [
+            "1"
+          ],
+          "frm": [
+            "0"
+          ],
+          "pscdl": [
+            "noapi"
+          ],
+          "_eu": [
+            "AEAAAAQ"
+          ],
+          "_s": [
+            "2"
+          ],
+          "sid": [
+            "1753115720"
+          ],
+          "sct": [
+            "1"
+          ],
+          "seg": [
+            "1"
+          ],
+          "dl": [
+            "https://www.chesterfield.gov.uk/bins-and-recycling/bin-collections/"
+          ],
+          "dr": [
+            "https://www.chesterfield.gov.uk/"
+          ],
+          "dt": [
+            "Bin collections"
+          ],
+          "en": [
+            "scroll"
+          ],
+          "epn.percent_scrolled": [
+            "90"
+          ],
+          "_et": [
+            "3"
+          ],
+          "tfd": [
+            "3539"
+          ]
+        },
+        "request_headers": {
+          "referer": "https://www.chesterfield.gov.uk/"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T16:35:25.777Z",
+        "duration_ms": -1,
+        "endpoint": "/g/collect",
+        "host": "region1.google-analytics.com",
+        "method": "POST",
+        "status": -1,
+        "query_params": {
+          "v": [
+            "2"
+          ],
+          "tid": [
+            "G-D6LMYV4JPF"
+          ],
+          "gtm": [
+            "45je57h0h1v9217696947za200"
+          ],
+          "_p": [
+            "1753115722359"
+          ],
+          "gcd": [
+            "13l3l3l3l1l1"
+          ],
+          "npa": [
+            "0"
+          ],
+          "dma": [
+            "0"
+          ],
+          "tag_exp": [
+            "101509157~103116026~103200004~103233427~104684208~104684211"
+          ],
+          "cid": [
+            "1989938653.1753115719"
+          ],
+          "ul": [
+            "en-gb"
+          ],
+          "sr": [
+            "800x600"
+          ],
+          "uaa": [
+            "arm"
+          ],
+          "uab": [
+            "64"
+          ],
+          "uafvl": [
+            "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+          ],
+          "uamb": [
+            "0"
+          ],
+          "uap": [
+            "macOS"
+          ],
+          "uapv": [
+            "15.5.0"
+          ],
+          "uaw": [
+            "0"
+          ],
+          "are": [
+            "1"
+          ],
+          "frm": [
+            "0"
+          ],
+          "pscdl": [
+            "noapi"
+          ],
+          "_eu": [
+            "AAAAAAQ"
+          ],
+          "_s": [
+            "3"
+          ],
+          "sid": [
+            "1753115720"
+          ],
+          "sct": [
+            "1"
+          ],
+          "seg": [
+            "1"
+          ],
+          "dl": [
+            "https://www.chesterfield.gov.uk/bins-and-recycling/bin-collections/"
+          ],
+          "dr": [
+            "https://www.chesterfield.gov.uk/"
+          ],
+          "dt": [
+            "Bin collections"
+          ],
+          "en": [
+            "user_engagement"
+          ],
+          "_et": [
+            "3382"
+          ],
+          "tfd": [
+            "3539"
+          ]
+        },
+        "request_headers": {
+          "referer": "https://www.chesterfield.gov.uk/"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T16:35:25.827Z",
+        "duration_ms": 12.933,
+        "endpoint": "/g/collect",
+        "host": "region1.google-analytics.com",
+        "method": "POST",
+        "status": 204,
+        "query_params": {
+          "v": [
+            "2"
+          ],
+          "tid": [
+            "G-D6LMYV4JPF"
+          ],
+          "gtm": [
+            "45je57h0h1v9217696947za200"
+          ],
+          "_p": [
+            "1753115725787"
+          ],
+          "gcd": [
+            "13l3l3l3l1l1"
+          ],
+          "npa": [
+            "0"
+          ],
+          "dma": [
+            "0"
+          ],
+          "tag_exp": [
+            "101509157~103116026~103200004~103233427~104684208~104684211"
+          ],
+          "cid": [
+            "1989938653.1753115719"
+          ],
+          "ul": [
+            "en-gb"
+          ],
+          "sr": [
+            "800x600"
+          ],
+          "uaa": [
+            "arm"
+          ],
+          "uab": [
+            "64"
+          ],
+          "uafvl": [
+            "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+          ],
+          "uamb": [
+            "0"
+          ],
+          "uap": [
+            "macOS"
+          ],
+          "uapv": [
+            "15.5.0"
+          ],
+          "uaw": [
+            "0"
+          ],
+          "are": [
+            "1"
+          ],
+          "frm": [
+            "0"
+          ],
+          "pscdl": [
+            "noapi"
+          ],
+          "_eu": [
+            "AAAAAAQ"
+          ],
+          "_s": [
+            "1"
+          ],
+          "sid": [
+            "1753115720"
+          ],
+          "sct": [
+            "1"
+          ],
+          "seg": [
+            "1"
+          ],
+          "dl": [
+            "https://www.chesterfield.gov.uk/bins-and-recycling/bin-collections/check-bin-collections/"
+          ],
+          "dr": [
+            "https://www.chesterfield.gov.uk/bins-and-recycling/bin-collections/"
+          ],
+          "dt": [
+            "Check bin collections"
+          ],
+          "en": [
+            "page_view"
+          ],
+          "_ee": [
+            "1"
+          ],
+          "tfd": [
+            "195"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "cookie": "[cookies present]",
+          "origin": "https://www.chesterfield.gov.uk",
+          "referer": "https://www.chesterfield.gov.uk/"
+        },
+        "response_headers": {
+          "cache-control": "no-cache, no-store, must-revalidate",
+          "content-type": "text/plain"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T16:35:30.816Z",
+        "duration_ms": 23.552,
+        "endpoint": "/g/collect",
+        "host": "region1.google-analytics.com",
+        "method": "POST",
+        "status": 204,
+        "query_params": {
+          "v": [
+            "2"
+          ],
+          "tid": [
+            "G-D6LMYV4JPF"
+          ],
+          "gtm": [
+            "45je57h0h1v9217696947za200"
+          ],
+          "_p": [
+            "1753115725787"
+          ],
+          "gcd": [
+            "13l3l3l3l1l1"
+          ],
+          "npa": [
+            "0"
+          ],
+          "dma": [
+            "0"
+          ],
+          "tag_exp": [
+            "101509157~103116026~103200004~103233427~104684208~104684211"
+          ],
+          "cid": [
+            "1989938653.1753115719"
+          ],
+          "ul": [
+            "en-gb"
+          ],
+          "sr": [
+            "800x600"
+          ],
+          "uaa": [
+            "arm"
+          ],
+          "uab": [
+            "64"
+          ],
+          "uafvl": [
+            "Not)A%3BBrand;8.0.0.0|Chromium;138.0.7204.101|Google%20Chrome;138.0.7204.101"
+          ],
+          "uamb": [
+            "0"
+          ],
+          "uap": [
+            "macOS"
+          ],
+          "uapv": [
+            "15.5.0"
+          ],
+          "uaw": [
+            "0"
+          ],
+          "are": [
+            "1"
+          ],
+          "frm": [
+            "0"
+          ],
+          "pscdl": [
+            "noapi"
+          ],
+          "_eu": [
+            "AEAAAAQ"
+          ],
+          "_s": [
+            "2"
+          ],
+          "sid": [
+            "1753115720"
+          ],
+          "sct": [
+            "1"
+          ],
+          "seg": [
+            "1"
+          ],
+          "dl": [
+            "https://www.chesterfield.gov.uk/bins-and-recycling/bin-collections/check-bin-collections/"
+          ],
+          "dr": [
+            "https://www.chesterfield.gov.uk/bins-and-recycling/bin-collections/"
+          ],
+          "dt": [
+            "Check bin collections"
+          ],
+          "en": [
+            "scroll"
+          ],
+          "epn.percent_scrolled": [
+            "90"
+          ],
+          "_et": [
+            "3"
+          ],
+          "tfd": [
+            "5198"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "cookie": "[cookies present]",
+          "origin": "https://www.chesterfield.gov.uk",
+          "referer": "https://www.chesterfield.gov.uk/"
+        },
+        "response_headers": {
+          "cache-control": "no-cache, no-store, must-revalidate",
+          "content-type": "text/plain"
+        }
+      }
+    ],
+    "/element/log": [
+      {
+        "timestamp": "2025-07-21T16:35:22.349Z",
+        "duration_ms": -1,
+        "endpoint": "/element/log",
+        "host": "translate.googleapis.com",
+        "method": "POST",
+        "status": -1,
+        "query_params": {
+          "hasfast": [
+            "true"
+          ],
+          "authuser": [
+            "0"
+          ],
+          "format": [
+            "json"
+          ]
+        },
+        "request_headers": {
+          "referer": "https://www.chesterfield.gov.uk/",
+          "content-type": "text/plain;charset=UTF-8"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T16:35:25.778Z",
+        "duration_ms": -1,
+        "endpoint": "/element/log",
+        "host": "translate.googleapis.com",
+        "method": "POST",
+        "status": -1,
+        "query_params": {
+          "hasfast": [
+            "true"
+          ],
+          "authuser": [
+            "0"
+          ],
+          "format": [
+            "json"
+          ]
+        },
+        "request_headers": {
+          "referer": "https://www.chesterfield.gov.uk/",
+          "content-type": "text/plain;charset=UTF-8"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T16:35:36.340Z",
+        "duration_ms": 51.278000000000006,
+        "endpoint": "/element/log",
+        "host": "translate.googleapis.com",
+        "method": "POST",
+        "status": 200,
+        "query_params": {
+          "format": [
+            "json"
+          ],
+          "hasfast": [
+            "true"
+          ],
+          "authuser": [
+            "0"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "content-type": "application/binary",
+          "origin": "https://www.chesterfield.gov.uk",
+          "referer": "https://www.chesterfield.gov.uk/",
+          "x-browser-copyright": "Copyright 2025 Google LLC. All rights reserved.",
+          "x-browser-validation": "qvLgIVtG4U8GgiRPSI9IJ22mUlI=",
+          "x-browser-year": "2025",
+          "x-client-data": "CMiXywE=",
+          "x-goog-authuser": "0"
+        },
+        "response_headers": {
+          "content-type": "text/plain; charset=UTF-8",
+          "x-frame-options": "SAMEORIGIN",
+          "x-xss-protection": "0"
+        }
+      }
+    ],
+    "/bins-and-recycling/bin-collections": [
+      {
+        "timestamp": "2025-07-21T16:35:22.306Z",
+        "duration_ms": 46.463,
+        "endpoint": "/bins-and-recycling/bin-collections",
+        "host": "www.chesterfield.gov.uk",
+        "method": "GET",
+        "status": 200,
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+          "cookie": "[cookies present]",
+          "referer": "https://www.chesterfield.gov.uk/"
+        },
+        "response_headers": {
+          "content-type": "text/html; charset=utf-8",
+          "x-powered-by": "ASP.NET"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 45384,
+          "content_ref": "326372a2fd4975c4781b14950d64f1d970354c43.html"
+        }
+      }
+    ],
+    "/bins-and-recycling/bin-collections/{id}": [
+      {
+        "timestamp": "2025-07-21T16:35:25.669Z",
+        "duration_ms": 105.51899999999999,
+        "endpoint": "/bins-and-recycling/bin-collections/{id}",
+        "host": "www.chesterfield.gov.uk",
+        "method": "GET",
+        "status": 200,
+        "path_params": [
+          "check-bin-collections"
+        ],
+        "request_headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+          "cookie": "[cookies present]",
+          "referer": "https://www.chesterfield.gov.uk/bins-and-recycling/bin-collections/"
+        },
+        "response_headers": {
+          "content-type": "text/html; charset=utf-8",
+          "x-powered-by": "ASP.NET"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": 44088,
+          "content_ref": "889df9cfe7744261aef98f7deadb7214fbcd2f76.html"
+        }
+      }
+    ],
+    "/anonymous/c/{id}": [
+      {
+        "timestamp": "2025-07-21T16:35:25.976Z",
+        "duration_ms": 262.126,
+        "endpoint": "/anonymous/c/{id}",
+        "host": "myaccount.chesterfield.gov.uk",
+        "method": "GET",
+        "status": 200,
+        "path_params": [
+          "cbc_VE_CollectionDaysLO.app"
+        ],
+        "query_params": {
+          "aura.format": [
+            "JSON"
+          ],
+          "aura.formatAdapter": [
+            "LIGHTNING_OUT"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "origin": "https://www.chesterfield.gov.uk",
+          "referer": "https://www.chesterfield.gov.uk/"
+        },
+        "response_headers": {
+          "cache-control": "no-cache,must-revalidate,max-age=0,no-store,private",
+          "content-type": "application/json;charset=UTF-8",
+          "set-cookie": "[cookies present]",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "SAMEORIGIN",
+          "x-request-id": "2efeb264d85251703b6ed61c46773155",
+          "x-sfdc-request-id": "2efeb264d85251703b6ed61c46773155"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 145010,
+          "compressed": true,
+          "content_ref": "6ebeccd0d23103bb9d8c9fb8c74d1e7bc4d93d42.json"
+        }
+      }
+    ],
+    "/anonymous/aura": [
+      {
+        "timestamp": "2025-07-21T16:35:31.405Z",
+        "duration_ms": 640.722,
+        "endpoint": "/anonymous/aura",
+        "host": "myaccount.chesterfield.gov.uk",
+        "method": "POST",
+        "status": 200,
+        "query_params": {
+          "r": [
+            "0"
+          ],
+          "aura.ApexAction.execute": [
+            "1"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "content-type": "application/x-www-form-urlencoded; charset=UTF-8",
+          "cookie": "[cookies present]",
+          "origin": "https://www.chesterfield.gov.uk",
+          "referer": "https://www.chesterfield.gov.uk/",
+          "x-sfdc-lds-endpoints": "ApexActionController.execute:CBC_VE_CollectionDays.getAddressListFromPostCode"
+        },
+        "response_headers": {
+          "cache-control": "no-cache,must-revalidate,max-age=0,no-store,private",
+          "content-type": "application/json;charset=UTF-8",
+          "x-content-type-options": "nosniff",
+          "x-request-id": "a723b1044c89bff2e42cb04cf45552f9",
+          "x-sfdc-request-id": "a723b1044c89bff2e42cb04cf45552f9"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 4326,
+          "compressed": true,
+          "content_ref": "2ace1e2f03cd850b5b017407a82d6d84ea601a87.json"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T16:35:41.687Z",
+        "duration_ms": 111.365,
+        "endpoint": "/anonymous/aura",
+        "host": "myaccount.chesterfield.gov.uk",
+        "method": "POST",
+        "status": 200,
+        "query_params": {
+          "r": [
+            "1"
+          ],
+          "aura.ApexAction.execute": [
+            "1"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "content-type": "application/x-www-form-urlencoded; charset=UTF-8",
+          "cookie": "[cookies present]",
+          "origin": "https://www.chesterfield.gov.uk",
+          "referer": "https://www.chesterfield.gov.uk/",
+          "x-sfdc-lds-endpoints": "ApexActionController.execute:CBC_VE_Echo_Outage_Check.checkPlannedEchoOutage"
+        },
+        "response_headers": {
+          "cache-control": "no-cache,must-revalidate,max-age=0,no-store,private",
+          "content-type": "application/json;charset=UTF-8",
+          "x-content-type-options": "nosniff",
+          "x-request-id": "c06bee3ee2bfa1b76cac82346f5e6113",
+          "x-sfdc-request-id": "c06bee3ee2bfa1b76cac82346f5e6113"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 1631,
+          "compressed": true,
+          "content_ref": "3fb8c9cb8011d8558a97e42c1789f14b798afd2c.json"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T16:35:41.796Z",
+        "duration_ms": 961.8130000000001,
+        "endpoint": "/anonymous/aura",
+        "host": "myaccount.chesterfield.gov.uk",
+        "method": "POST",
+        "status": 200,
+        "query_params": {
+          "r": [
+            "2"
+          ],
+          "aura.ApexAction.execute": [
+            "1"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "content-type": "application/x-www-form-urlencoded; charset=UTF-8",
+          "cookie": "[cookies present]",
+          "origin": "https://www.chesterfield.gov.uk",
+          "referer": "https://www.chesterfield.gov.uk/",
+          "x-sfdc-lds-endpoints": "ApexActionController.execute:CBC_VE_CollectionDays.getServicesByUPRN"
+        },
+        "response_headers": {
+          "cache-control": "no-cache,must-revalidate,max-age=0,no-store,private",
+          "content-type": "application/json;charset=UTF-8",
+          "x-content-type-options": "nosniff",
+          "x-request-id": "ced3cfe28a2cad752efd7bd7173de500",
+          "x-sfdc-request-id": "ced3cfe28a2cad752efd7bd7173de500"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 37233,
+          "compressed": true,
+          "content_ref": "70a4ec40abbecfd68ca7927aa3a23a08bd02512c.json"
+        }
+      },
+      {
+        "timestamp": "2025-07-21T16:35:42.763Z",
+        "duration_ms": 543.534,
+        "endpoint": "/anonymous/aura",
+        "host": "myaccount.chesterfield.gov.uk",
+        "method": "POST",
+        "status": 200,
+        "query_params": {
+          "r": [
+            "3"
+          ],
+          "aura.ApexAction.execute": [
+            "1"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "content-type": "application/x-www-form-urlencoded; charset=UTF-8",
+          "cookie": "[cookies present]",
+          "origin": "https://www.chesterfield.gov.uk",
+          "referer": "https://www.chesterfield.gov.uk/",
+          "x-sfdc-lds-endpoints": "ApexActionController.execute:CBC_VE_CollectionDays.getTask"
+        },
+        "response_headers": {
+          "cache-control": "no-cache,must-revalidate,max-age=0,no-store,private",
+          "content-type": "application/json;charset=UTF-8",
+          "x-content-type-options": "nosniff",
+          "x-request-id": "b72b227ba74c23e071271c5fe2071d61",
+          "x-sfdc-request-id": "b72b227ba74c23e071271c5fe2071d61"
+        },
+        "response_info": {
+          "type": "application/json",
+          "size": 10093,
+          "compressed": true,
+          "content_ref": "28f70680b48eb77c9d144d0149801826e3b54884.json"
+        }
+      }
+    ],
+    "/anonymous/auraCmpDef": [
+      {
+        "timestamp": "2025-07-21T16:35:32.066Z",
+        "duration_ms": 104.28399999999999,
+        "endpoint": "/anonymous/auraCmpDef",
+        "host": "myaccount.chesterfield.gov.uk",
+        "method": "GET",
+        "status": 302,
+        "query_params": {
+          "_au": [
+            "714_EIz3hBYo4zyeqGNcq-EJ9A"
+          ],
+          "_c": [
+            "false"
+          ],
+          "_density": [
+            "VIEW_ONE"
+          ],
+          "_dfs": [
+            "8"
+          ],
+          "_ff": [
+            "DESKTOP"
+          ],
+          "_l": [
+            "true"
+          ],
+          "_l10n": [
+            "en_US"
+          ],
+          "_lrmc": [
+            "-386269907"
+          ],
+          "_style": [
+            "274465954"
+          ],
+          "aura.app": [
+            "markup://c:cbc_VE_CollectionDaysLO"
+          ],
+          "aura.mode": [
+            "PROD"
+          ],
+          "_def": [
+            "markup://lightning:iconSvgTemplatesUtility"
+          ],
+          "_cl": [
+            "53999514"
+          ],
+          "_uid": [
+            "LATEST"
+          ]
+        },
+        "request_headers": {
+          "accept": "*/*",
+          "cookie": "[cookies present]",
+          "referer": "https://www.chesterfield.gov.uk/"
+        },
+        "response_headers": {
+          "cache-control": "public,max-age=31536000,stale-while-revalidate=31536000",
+          "content-type": "text/html;charset=UTF-8",
+          "location": "https://myaccount.chesterfield.gov.uk/anonymous/auraCmpDef?_au=714_EIz3hBYo4zyeqGNcq-EJ9A&_c=false&_def=markup://lightning:iconSvgTemplatesUtility&_density=VIEW_ONE&_dfs=8&_ff=DESKTOP&_l=true&_l10n=en_US&_lrmc=-386269907&_style=274465954&_uid=396_nNELThP8c4pd7DSmSRb90g&aura.app=markup://c:cbc_VE_CollectionDaysLO&aura.mode=PROD",
+          "x-content-type-options": "nosniff",
+          "x-request-id": "3cbbcf52d625b81b09bae4751af14ece",
+          "x-sfdc-request-id": "3cbbcf52d625b81b09bae4751af14ece"
+        },
+        "response_info": {
+          "type": "text/html",
+          "size": -1
+        },
+        "redirect_to": "https://myaccount.chesterfield.gov.uk/anonymous/auraCmpDef?_au=714_EIz3hBYo4zyeqGNcq-EJ9A&_c=false&_def=markup://lightning:iconSvgTemplatesUtility&_density=VIEW_ONE&_dfs=8&_ff=DESKTOP&_l=true&_l10n=en_US&_lrmc=-386269907&_style=274465954&_uid=396_nNELThP8c4pd7DSmSRb90g&aura.app=markup://c:cbc_VE_CollectionDaysLO&aura.mode=PROD"
+      }
+    ]
+  }
 }

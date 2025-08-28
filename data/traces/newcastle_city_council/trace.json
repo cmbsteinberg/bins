@@ -1,46 +1,86 @@
 {
-  "metadata": {
-    "trace_name": "newcastle_city_council",
-    "processed_at": "2025-08-26 18:44:24",
-    "workflow_steps_count": 3,
-    "navigation_events_count": 0
-  },
-  "scraping_patterns": {
-    "login_detected": false,
-    "form_submissions": 0,
-    "navigation_count": 3,
-    "unique_domains": [],
-    "api_endpoints": [],
-    "data_extraction_indicators": []
-  },
-  "workflow_steps": [
+  "entries": [
     {
-      "action": "goto",
-      "target": "https://community2.newcastle.gov.uk/my-neighbourhood/",
-      "status": "Failed",
-      "details": {
-        "error": "Timeout 60000ms exceeded."
-      },
-      "timestamp": 0
+      "timestamp": "2025-07-21T16:32:03.813Z",
+      "duration_ms": -1,
+      "endpoint": "/my-neighbourhood",
+      "host": "community2.newcastle.gov.uk",
+      "method": "GET",
+      "status": -1
     },
     {
-      "action": "goto",
-      "target": "https://community2.newcastle.gov.uk/my-neighbourhood/",
-      "status": "Failed",
-      "details": {
-        "error": "net::ERR_CONNECTION_TIMED_OUT at https://community2.newcastle.gov.uk/my-neighbourhood/"
-      },
-      "timestamp": 0
+      "timestamp": "2025-07-21T16:33:05.417Z",
+      "duration_ms": -1,
+      "endpoint": "/my-neighbourhood",
+      "host": "community2.newcastle.gov.uk",
+      "method": "GET",
+      "status": -1
     },
     {
-      "action": "goto",
-      "target": "https://community2.newcastle.gov.uk/my-neighbourhood/",
-      "status": "Failed",
-      "details": {
-        "error": "Timeout 60000ms exceeded."
-      },
-      "timestamp": 0
+      "timestamp": "2025-07-21T16:33:19.927Z",
+      "duration_ms": -1,
+      "endpoint": "/my-neighbourhood",
+      "host": "community2.newcastle.gov.uk",
+      "method": "GET",
+      "status": -1
+    },
+    {
+      "timestamp": "2025-07-21T16:33:20.470Z",
+      "duration_ms": -1,
+      "endpoint": "/my-neighbourhood",
+      "host": "community2.newcastle.gov.uk",
+      "method": "GET",
+      "status": -1
     }
   ],
-  "navigation_events": []
+  "analysis": {
+    "total_requests": 4,
+    "unique_endpoints": 1,
+    "methods_used": [
+      "GET"
+    ],
+    "status_codes": {
+      "-1": 4
+    },
+    "endpoints_with_params": [],
+    "redirects": [],
+    "api_calls": [],
+    "form_submissions": []
+  },
+  "grouped_by_endpoint": {
+    "/my-neighbourhood": [
+      {
+        "timestamp": "2025-07-21T16:32:03.813Z",
+        "duration_ms": -1,
+        "endpoint": "/my-neighbourhood",
+        "host": "community2.newcastle.gov.uk",
+        "method": "GET",
+        "status": -1
+      },
+      {
+        "timestamp": "2025-07-21T16:33:05.417Z",
+        "duration_ms": -1,
+        "endpoint": "/my-neighbourhood",
+        "host": "community2.newcastle.gov.uk",
+        "method": "GET",
+        "status": -1
+      },
+      {
+        "timestamp": "2025-07-21T16:33:19.927Z",
+        "duration_ms": -1,
+        "endpoint": "/my-neighbourhood",
+        "host": "community2.newcastle.gov.uk",
+        "method": "GET",
+        "status": -1
+      },
+      {
+        "timestamp": "2025-07-21T16:33:20.470Z",
+        "duration_ms": -1,
+        "endpoint": "/my-neighbourhood",
+        "host": "community2.newcastle.gov.uk",
+        "method": "GET",
+        "status": -1
+      }
+    ]
+  }
 }

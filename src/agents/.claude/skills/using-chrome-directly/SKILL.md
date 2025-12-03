@@ -76,6 +76,22 @@ chrome-ws screenshot <tab> <file.png>   # Capture screenshot
 chrome-ws markdown <tab> <file.md>      # Save as markdown
 ```
 
+**Network Tracking (NEW - for API discovery):**
+```bash
+# Start persistent session with network monitoring
+chrome-ws session-start <tab>                    # Returns session-id, keep process alive
+
+# Execute commands within session (in separate terminal/process)
+chrome-ws session-cmd <session-id> navigate <url>
+chrome-ws session-cmd <session-id> click <selector>
+chrome-ws session-cmd <session-id> fill <selector> <value>
+chrome-ws session-cmd <session-id> extract <selector>
+chrome-ws session-cmd <session-id> wait-for <selector>
+
+# Stop session and export all captured network traffic
+chrome-ws session-stop <session-id> <output.json>  # Exports complete network log
+```
+
 **Raw Protocol:**
 ```bash
 chrome-ws raw <ws-url> <json-rpc>       # Direct CDP access
@@ -115,6 +131,24 @@ chrome-ws fill 0 "input[name=q]" "query"
 chrome-ws click 0 "button.search"
 chrome-ws wait-for 0 ".results"
 chrome-ws extract 0 ".result-title"
+```
+
+**Capture network traffic (API discovery):**
+```bash
+# Start monitoring (background process)
+SESSION_ID=$(chrome-ws session-start 0)
+
+# Perform interactions (network traffic is captured automatically)
+chrome-ws session-cmd $SESSION_ID navigate "https://council.gov.uk/bins"
+chrome-ws session-cmd $SESSION_ID fill "input#postcode" "AB12 3CD"
+chrome-ws session-cmd $SESSION_ID click "button#search"
+chrome-ws session-cmd $SESSION_ID wait-for "div.results"
+
+# Stop and export - creates JSON with ALL requests/responses
+chrome-ws session-stop $SESSION_ID network.json
+
+# network.json contains: URL, method, headers, request body, response body, timing
+# Use this to identify which API call fetched the bin data
 ```
 
 ## Troubleshooting

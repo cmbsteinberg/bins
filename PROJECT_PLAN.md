@@ -13,7 +13,7 @@ Create a unified API wrapper for UK council bin collection times. Currently, eac
   - Sample postcodes for testing
 
 ### Core Approach
-Use Claude Agent SDK with Playwright MCP to:
+Use Claude Agent SDK with bespoke tool to:
 1. Discover how each council's bin lookup works
 2. Capture the underlying API calls or data sources
 3. Generate configuration files for each council

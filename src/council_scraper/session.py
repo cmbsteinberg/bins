@@ -5,8 +5,8 @@ import re
 from playwright.async_api import Page
 from rich.console import Console
 
-from .executor import Executor
-from .models import (
+from executor import Executor
+from models import (
     Action,
     Config,
     Council,
@@ -15,9 +15,9 @@ from .models import (
     Observation,
     SessionResult,
 )
-from .observer import Observer
-from .recorder import Recorder
-from .strategist import Strategist
+from observer import Observer
+from recorder import Recorder
+from strategist import Strategist
 
 console = Console()
 

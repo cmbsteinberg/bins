@@ -1,11 +1,21 @@
-"""CLI entry point for the bin collection scraper."""
+"""CLI entry point for the bin collection scraper.
+
+1. run - Execute the full bin collection scraper
+   - --councils - Path to council list CSV/JSON (default: data/postcodes_by_council.csv)
+   - --output - Output directory (default: output/)
+   - --headless/--headed - Run browser headless or with UI (default: headless)
+   - --max-iterations - Max iterations per council (default: 50)
+ 2. preflight - Validate councils before running
+ uv run src/council_scraper/main.py preflight
+ This checks URL reachability, postcode validity, and generates a preflight report.
+"""
 
 import asyncio
 
 import typer
 
-from .models import Config
-from .runner import Runner
+from models import Config
+from runner import Runner
 
 app = typer.Typer()
 

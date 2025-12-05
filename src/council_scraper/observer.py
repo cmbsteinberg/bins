@@ -5,7 +5,7 @@ from datetime import datetime
 from playwright.async_api import Page
 from rich.console import Console
 
-from .models import (
+from models import (
     ButtonElement,
     CustomDropdown,
     InputElement,

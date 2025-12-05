@@ -4,7 +4,7 @@ from abc import ABC, abstractmethod
 
 from rich.console import Console
 
-from .models import Action, Config, HistoryEntry, Observation, TestData
+from models import Action, Config, HistoryEntry, Observation, TestData
 
 console = Console()
 

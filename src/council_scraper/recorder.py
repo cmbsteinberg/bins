@@ -11,7 +11,7 @@ import aiofiles
 from playwright.async_api import Page, Request, Response
 from rich.console import Console
 
-from .models import Action, ExecutionResult, NetworkEntry, Observation
+from models import Action, ExecutionResult, NetworkEntry, Observation
 
 console = Console()
 

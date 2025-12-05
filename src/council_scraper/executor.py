@@ -6,7 +6,7 @@ from playwright.async_api import Error, Page
 from playwright.async_api import TimeoutError as PlaywrightTimeoutError
 from rich.console import Console
 
-from .models import Action, Config, ExecutionResult
+from models import Action, Config, ExecutionResult
 
 console = Console()
 

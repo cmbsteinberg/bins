@@ -9,9 +9,9 @@ import aiohttp
 from playwright.async_api import Browser, async_playwright
 from rich.console import Console
 
-from .models import Config, Council, PreflightResult, RunnerResult, SessionResult
-from .recorder import Recorder
-from .session import Session
+from models import Config, Council, PreflightResult, RunnerResult, SessionResult
+from recorder import Recorder
+from session import Session
 
 console = Console()
 

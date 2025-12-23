@@ -93,12 +93,22 @@ class Observer:
         visible_text = await page.locator("body").text_content() or ""
         visible_text_sample = visible_text[:1000]
 
-        # Find elements
+        # Find elements on main page
         inputs = await self._find_inputs(page)
         buttons = await self._find_buttons(page)
         links = await self._find_links(page)
         selects = await self._find_selects(page)
         custom_dropdowns = await self._find_custom_dropdowns(page)
+
+        # Also search inside iframes
+        (
+            iframe_inputs,
+            iframe_buttons,
+            iframe_selects,
+        ) = await self._find_elements_in_iframes(page)
+        inputs.extend(iframe_inputs)
+        buttons.extend(iframe_buttons)
+        selects.extend(iframe_selects)
 
         console.log(
             f"[dim]Found {len(inputs)} inputs, {len(buttons)} buttons, {len(links)} links, {len(selects)} selects[/dim]"
@@ -257,12 +267,22 @@ class Observer:
                     if elem_id:
                         elem_selector = f"#{elem_id}"
                     elif text and len(text.strip()) < 50:
-                        # Use text-based selector for short, unique text
+                        # Use text-based selector for short text, but verify uniqueness
                         clean_text = text.strip()
                         # Normalize whitespace: collapse multiple spaces/newlines to single space
                         clean_text = " ".join(clean_text.split())
                         clean_text = clean_text.replace('"', '\\"')
-                        elem_selector = f'{selector}:has-text("{clean_text}")'
+                        candidate_selector = f'{selector}:has-text("{clean_text}")'
+                        # Check if this selector is unique to avoid strict mode violations
+                        try:
+                            match_count = await page.locator(candidate_selector).count()
+                            if match_count == 1:
+                                elem_selector = candidate_selector
+                            else:
+                                # Not unique, use nth index
+                                elem_selector = f"{selector} >> nth={i}"
+                        except Exception:
+                            elem_selector = f"{selector} >> nth={i}"
                     else:
                         # Fallback to nth
                         elem_selector = f"{selector} >> nth={i}"
@@ -319,13 +339,23 @@ class Observer:
 
                 elem_id = await element.get_attribute("id")
 
-                # Build selector: prefer ID > text > nth
+                # Build selector: prefer ID > unique text > nth
                 if elem_id:
                     elem_selector = f"#{elem_id}"
                 elif text and len(text.strip()) < 100:
                     clean_text = " ".join(text.strip().split())
                     clean_text = clean_text.replace('"', '\\"')
-                    elem_selector = f'a:has-text("{clean_text}")'
+                    candidate_selector = f'a:has-text("{clean_text}")'
+                    # Check if this selector is unique to avoid strict mode violations
+                    try:
+                        match_count = await page.locator(candidate_selector).count()
+                        if match_count == 1:
+                            elem_selector = candidate_selector
+                        else:
+                            # Not unique, use nth index
+                            elem_selector = f"a >> nth={i}"
+                    except Exception:
+                        elem_selector = f"a >> nth={i}"
                 else:
                     elem_selector = f"a >> nth={i}"
 
@@ -482,6 +512,225 @@ class Observer:
                 continue
 
         return dropdowns
+
+    async def _find_elements_in_iframes(
+        self, page: Page
+    ) -> tuple[list[InputElement], list[ButtonElement], list[SelectElement]]:
+        """Find form elements inside iframes."""
+        inputs = []
+        buttons = []
+        selects = []
+
+        try:
+            # Find all iframes on the page
+            iframe_count = await page.locator("iframe").count()
+            if iframe_count == 0:
+                return inputs, buttons, selects
+
+            console.log(f"[dim]Checking {iframe_count} iframes for form elements[/dim]")
+
+            for i in range(iframe_count):
+                try:
+                    iframe_locator = page.locator("iframe").nth(i)
+
+                    # Check if iframe is visible
+                    if not await iframe_locator.is_visible():
+                        continue
+
+                    # Get iframe frame
+                    frame = await iframe_locator.content_frame()
+                    if frame is None:
+                        continue
+
+                    # Build iframe prefix for selectors
+                    iframe_id = await iframe_locator.get_attribute("id")
+                    iframe_name = await iframe_locator.get_attribute("name")
+                    if iframe_id:
+                        iframe_prefix = f"iframe#{iframe_id} >>> "
+                    elif iframe_name:
+                        iframe_prefix = f"iframe[name='{iframe_name}'] >>> "
+                    else:
+                        iframe_prefix = f"iframe >> nth={i} >>> "
+
+                    # Find inputs in iframe
+                    input_selectors = [
+                        "input[type='text']",
+                        "input[type='search']",
+                        "input[type='tel']",
+                        "input:not([type])",
+                        "textarea",
+                    ]
+
+                    for selector in input_selectors:
+                        count = await frame.locator(selector).count()
+                        for j in range(count):
+                            try:
+                                element = frame.locator(selector).nth(j)
+                                is_visible = await element.is_visible()
+                                if not is_visible:
+                                    continue
+
+                                elem_id = await element.get_attribute("id")
+                                name = await element.get_attribute("name")
+                                input_type = await element.get_attribute("type")
+                                placeholder = await element.get_attribute("placeholder")
+                                value = await element.input_value()
+                                is_enabled = await element.is_enabled()
+
+                                # Build selector with iframe prefix
+                                if elem_id:
+                                    elem_selector = f"{iframe_prefix}#{elem_id}"
+                                elif name:
+                                    elem_selector = f"{iframe_prefix}[name='{name}']"
+                                else:
+                                    elem_selector = (
+                                        f"{iframe_prefix}{selector} >> nth={j}"
+                                    )
+
+                                # Get label text
+                                label_text = None
+                                try:
+                                    aria_label = await element.get_attribute(
+                                        "aria-label"
+                                    )
+                                    if aria_label:
+                                        label_text = aria_label
+                                    elif elem_id:
+                                        label = frame.locator(f"label[for='{elem_id}']")
+                                        if await label.count() > 0:
+                                            label_text = (
+                                                await label.first.text_content()
+                                            )
+                                except Exception:
+                                    pass
+
+                                inp = InputElement(
+                                    selector=elem_selector,
+                                    tag=await element.evaluate("el => el.tagName"),
+                                    input_type=input_type,
+                                    id=elem_id,
+                                    name=name,
+                                    placeholder=placeholder,
+                                    label_text=label_text,
+                                    current_value=value,
+                                    is_visible=is_visible,
+                                    is_enabled=is_enabled,
+                                )
+                                inp.relevance_score = self._score_input_relevance(inp)
+                                inputs.append(inp)
+                            except Exception:
+                                continue
+
+                    # Find buttons in iframe
+                    button_selectors = ["button", "input[type='submit']"]
+                    for selector in button_selectors:
+                        count = await frame.locator(selector).count()
+                        for j in range(count):
+                            try:
+                                element = frame.locator(selector).nth(j)
+                                is_visible = await element.is_visible()
+                                if not is_visible:
+                                    continue
+
+                                elem_id = await element.get_attribute("id")
+                                text = await element.text_content()
+                                button_type = await element.get_attribute("type")
+                                is_enabled = await element.is_enabled()
+
+                                if elem_id:
+                                    elem_selector = f"{iframe_prefix}#{elem_id}"
+                                elif text and len(text.strip()) < 50:
+                                    clean_text = " ".join(text.strip().split())
+                                    clean_text = clean_text.replace('"', '\\"')
+                                    elem_selector = f'{iframe_prefix}{selector}:has-text("{clean_text}")'
+                                else:
+                                    elem_selector = (
+                                        f"{iframe_prefix}{selector} >> nth={j}"
+                                    )
+
+                                btn = ButtonElement(
+                                    selector=elem_selector,
+                                    tag=selector.split("[")[0],
+                                    text=text or "",
+                                    id=elem_id,
+                                    type=button_type,
+                                    is_visible=is_visible,
+                                    is_enabled=is_enabled,
+                                )
+                                btn.relevance_score = self._score_button_relevance(btn)
+                                buttons.append(btn)
+                            except Exception:
+                                continue
+
+                    # Find selects in iframe
+                    count = await frame.locator("select").count()
+                    for j in range(count):
+                        try:
+                            element = frame.locator("select").nth(j)
+                            is_visible = await element.is_visible()
+                            if not is_visible:
+                                continue
+
+                            elem_id = await element.get_attribute("id")
+                            name = await element.get_attribute("name")
+                            is_enabled = await element.is_enabled()
+
+                            if elem_id:
+                                elem_selector = f"{iframe_prefix}#{elem_id}"
+                            elif name:
+                                elem_selector = f"{iframe_prefix}select[name='{name}']"
+                            else:
+                                elem_selector = f"{iframe_prefix}select >> nth={j}"
+
+                            # Get options
+                            options = []
+                            option_count = await element.locator("option").count()
+                            for k in range(option_count):
+                                try:
+                                    option_elem = element.locator("option").nth(k)
+                                    option_value = (
+                                        await option_elem.get_attribute("value") or ""
+                                    )
+                                    option_text = await option_elem.text_content() or ""
+                                    is_placeholder = (
+                                        "select" in option_text.lower()
+                                        or option_value == ""
+                                    )
+                                    options.append(
+                                        SelectOption(
+                                            value=option_value,
+                                            text=option_text,
+                                            is_placeholder=is_placeholder,
+                                        )
+                                    )
+                                except Exception:
+                                    continue
+
+                            sel = SelectElement(
+                                selector=elem_selector,
+                                options=options,
+                                id=elem_id,
+                                name=name,
+                                is_visible=is_visible,
+                                is_enabled=is_enabled,
+                            )
+                            selects.append(sel)
+                        except Exception:
+                            continue
+
+                except Exception as e:
+                    console.log(f"[dim]Could not access iframe {i}: {e}[/dim]")
+                    continue
+
+        except Exception as e:
+            console.log(f"[dim]Error searching iframes: {e}[/dim]")
+
+        if inputs or buttons or selects:
+            console.log(
+                f"[dim]Found in iframes: {len(inputs)} inputs, {len(buttons)} buttons, {len(selects)} selects[/dim]"
+            )
+
+        return inputs, buttons, selects
 
     async def _get_label_for_element(self, page: Page, element) -> str | None:
         """Find label text for an element."""
@@ -685,6 +934,30 @@ class Observer:
         """Detect if page contains success indicators (actual bin collection dates)."""
         text_lower = text.lower()
 
+        # Must have bin collection-related keywords to be considered a success page
+        bin_keywords = [
+            "your next collection",
+            "collection date",
+            "next collection",
+            "bin collection",
+            "recycling collection",
+            "refuse collection",
+            "waste collection",
+            "garden waste",
+            "food waste",
+            "black bin",
+            "blue bin",
+            "green bin",
+            "brown bin",
+            "grey bin",
+            "wheelie bin",
+            "general waste",
+            "black sack",
+        ]
+        has_bin_keyword = any(kw in text_lower for kw in bin_keywords)
+        if not has_bin_keyword:
+            return False, None
+
         # Check for day names
         has_day = any(day in text_lower for day in self.date_day_names)
         if not has_day:
@@ -699,7 +972,7 @@ class Observer:
         )
 
         if has_day and has_date:
-            # Found both day name and date pattern - likely a success page
+            # Found bin keywords, day name, and date pattern - likely a success page
             return True, "date_pattern_detected"
 
         return False, None

@@ -464,3 +464,33 @@ class Session:
 
         # Additional short wait for any final DOM updates
         await self.page.wait_for_timeout(self.config.settle_check_interval_ms)
+
+        # Wait for common JS frameworks to render forms
+        await self._wait_for_dynamic_content()
+
+    async def _wait_for_dynamic_content(self) -> None:
+        """Wait for JS-rendered form elements to appear."""
+        # Common selectors for form elements that might be dynamically loaded
+        form_selectors = [
+            "input[type='text']",
+            "input[type='search']",
+            "input[name*='postcode' i]",
+            "input[placeholder*='postcode' i]",
+            "input[id*='postcode' i]",
+            "form",
+            "[data-component]",  # React/Vue components
+            "[class*='form']",
+        ]
+
+        # Try waiting for any of these selectors (short timeout per selector)
+        for selector in form_selectors:
+            try:
+                locator = self.page.locator(selector).first
+                await locator.wait_for(state="visible", timeout=500)
+                # Found a form element, good enough
+                return
+            except Exception:
+                continue
+
+        # Also wait a bit for any shadow DOM to render
+        await self.page.wait_for_timeout(200)

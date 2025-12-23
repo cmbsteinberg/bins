@@ -159,7 +159,7 @@ class Observation:
 class Action:
     """Represents a single action to perform on the page."""
 
-    action_type: Literal["fill", "click", "select", "wait"]
+    action_type: Literal["fill", "click", "select", "wait", "press_enter"]
     selector: str
     value: str | None = None
     description: str = ""

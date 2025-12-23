@@ -147,12 +147,18 @@ class ClickSubmitAfterFillRule(Rule):
         history: list[HistoryEntry],
         test_data: TestData,
     ) -> list[Action]:
-        """If we just filled something, look for a submit button."""
+        """If we recently filled something, look for a submit button."""
         candidates = []
 
-        # Check if last action was a fill
-        if history and history[-1].action.action_type == "fill":
-            # Find high-relevance buttons near the filled input
+        # Check if any of the last 3 actions was a fill (to handle cookie dismissals etc)
+        recent_fill = None
+        for entry in reversed(history[-3:]):
+            if entry.action.action_type == "fill" and entry.result.success:
+                recent_fill = entry
+                break
+
+        if recent_fill:
+            # Strategy 1: Find high-relevance buttons
             high_relevance_buttons = sorted(
                 [
                     btn
@@ -170,7 +176,90 @@ class ClickSubmitAfterFillRule(Rule):
                         action_type="click",
                         selector=btn.selector,
                         description=f"Submit form: {btn.text}",
-                        confidence=btn.relevance_score,
+                        confidence=max(btn.relevance_score, 0.8),
+                    )
+                )
+
+            # Strategy 2: Look for submit-type buttons specifically
+            submit_buttons = [
+                btn
+                for btn in observation.buttons
+                if btn.type == "submit" or "submit" in btn.text.lower()
+            ]
+            for btn in submit_buttons:
+                if btn.selector not in [c.selector for c in candidates]:
+                    candidates.append(
+                        Action(
+                            action_type="click",
+                            selector=btn.selector,
+                            description=f"Submit form (type=submit): {btn.text}",
+                            confidence=0.85,
+                        )
+                    )
+
+            # Strategy 3: Look for buttons with common submit text patterns
+            submit_terms = ["find", "search", "go", "look up", "check", "get"]
+            for btn in observation.buttons:
+                text_lower = btn.text.lower().strip()
+                if any(term in text_lower for term in submit_terms) and btn.is_enabled:
+                    if btn.selector not in [c.selector for c in candidates]:
+                        candidates.append(
+                            Action(
+                                action_type="click",
+                                selector=btn.selector,
+                                description=f"Submit form: {btn.text}",
+                                confidence=0.75,
+                            )
+                        )
+
+        return candidates
+
+
+class PressEnterAfterFillRule(Rule):
+    """Press Enter on the input field after filling to submit."""
+
+    @property
+    def priority(self) -> int:
+        return 25  # Just after ClickSubmitAfterFillRule
+
+    def propose(
+        self,
+        observation: Observation,
+        history: list[HistoryEntry],
+        test_data: TestData,
+    ) -> list[Action]:
+        """If we recently filled something and there's no obvious submit button, try Enter."""
+        candidates = []
+
+        # Check if any of the last 3 actions was a fill
+        recent_fill = None
+        for entry in reversed(history[-3:]):
+            if entry.action.action_type == "fill" and entry.result.success:
+                recent_fill = entry
+                break
+
+        if recent_fill:
+            last_fill_selector = recent_fill.action.selector
+
+            # Only suggest Enter if we don't see many obvious submit buttons
+            submit_like_buttons = [
+                btn
+                for btn in observation.buttons
+                if btn.type == "submit"
+                or any(
+                    term in btn.text.lower()
+                    for term in ["find", "search", "submit", "go", "look up"]
+                )
+            ]
+
+            # If few or no obvious submit buttons, suggest pressing Enter
+            if len(submit_like_buttons) <= 1:
+                candidates.append(
+                    Action(
+                        action_type="press_enter",
+                        selector=last_fill_selector,
+                        description="Press Enter to submit form",
+                        confidence=0.7,
                     )
                 )
 
@@ -295,6 +384,11 @@ class ClickBinCollectionLinkRule(Rule):
     ) -> list[Action]:
         """Find high-relevance bin collection links and propose to click them."""
         candidates = []
+
+        # Don't navigate away if we've recently filled a form - we should submit instead
+        for entry in reversed(history[-3:]):
+            if entry.action.action_type == "fill" and entry.result.success:
+                return []  # Let ClickSubmitAfterFillRule handle this
 
         # Find high-scoring links (> 0.6 relevance)
         high_relevance_links = sorted(
@@ -490,6 +584,7 @@ class Strategist:
             ClickBinCollectionLinkRule(),
             FillPostcodeRule(),
             ClickSubmitAfterFillRule(),
+            PressEnterAfterFillRule(),
             SelectAddressRule(),
             SelectFromCustomDropdownRule(),
             OpenCustomDropdownRule(),

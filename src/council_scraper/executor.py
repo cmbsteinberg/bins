@@ -34,6 +34,8 @@ class Executor:
                 result = await self._execute_select(page, action)
             elif action.action_type == "wait":
                 result = await self._execute_wait(page, action)
+            elif action.action_type == "press_enter":
+                result = await self._execute_press_enter(page, action)
             else:
                 result = ExecutionResult(
                     success=False,
@@ -175,5 +177,29 @@ class Executor:
                 success=False,
                 action=action,
                 error_type="wait_error",
+                error_message=str(e),
+            )
+
+    async def _execute_press_enter(self, page: Page, action: Action) -> ExecutionResult:
+        """Press Enter key on an element to submit form."""
+        try:
+            element = page.locator(action.selector)
+            await element.wait_for(
+                state="visible", timeout=self.config.element_timeout_ms
+            )
+            await element.press("Enter")
+            return ExecutionResult(success=True, action=action)
+        except PlaywrightTimeoutError:
+            return ExecutionResult(
+                success=False,
+                action=action,
+                error_type="timeout",
+                error_message=f"Element {action.selector} timeout",
+            )
+        except Error as e:
+            return ExecutionResult(
+                success=False,
+                action=action,
+                error_type="playwright_error",
                 error_message=str(e),
             )

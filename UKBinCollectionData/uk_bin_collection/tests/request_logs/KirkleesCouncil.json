@@ -1,0 +1,250 @@
+{
+  "council": "KirkleesCouncil",
+  "timestamp": "2025-12-24T18:56:05.014908",
+  "success": true,
+  "total_requests": 2,
+  "requests": [
+    {
+      "method": "GET",
+      "url": "https://my.kirklees.gov.uk/authapi/isauthenticated?uri=https%253A%252F%252Fmy.kirklees.gov.uk%252Fservice%252FBins_and_recycling___Manage_your_bins&hostname=my.kirklees.gov.uk&withCredentials=true",
+      "request_headers": {},
+      "request_params": null,
+      "request_body": null,
+      "status_code": 200,
+      "response_headers": {
+        "Date": "Wed, 24 Dec 2025 18:56:05 GMT",
+        "Content-Type": "application/json; charset=utf-8",
+        "Content-Length": "566",
+        "Connection": "keep-alive",
+        "Set-Cookie": "AWSALB=HUE/pY8hKaf6YH/Yd4AND6/axMpPxGXx5R3pHD0AhX3Ue3kmFGRywwB1c4N4rYzunXhm1ziyMoNbLyYHu68idhc6bEJuZZJ555RzZMQai1gdrioWYyiMFhCurNPw; Expires=Wed, 31 Dec 2025 18:56:05 GMT; Path=/, AWSALBCORS=HUE/pY8hKaf6YH/Yd4AND6/axMpPxGXx5R3pHD0AhX3Ue3kmFGRywwB1c4N4rYzunXhm1ziyMoNbLyYHu68idhc6bEJuZZJ555RzZMQai1gdrioWYyiMFhCurNPw; Expires=Wed, 31 Dec 2025 18:56:05 GMT; Path=/; SameSite=None; Secure, PHPSESSID=drh0q3b5cpjemogd5o8hbpr6ac; path=/; secure; HttpOnly, SESSIONCHECK=947988d94ff2dbf3f5afc754638c190e6213b2e2292543f945aa16fe7fac098d60abd6a90108f5a8598130f2481235c3138f0a29ba0f7eef3ffcab054e787715; expires=Thu, 25-Dec-2025 00:56:05 GMT; Max-Age=21600; path=/api/; domain=my.kirklees.gov.uk; secure; HttpOnly, SimpleSAMLSessionID=88df9a1c35e9a87672e378ef0bb6b457; path=/; secure; HttpOnly, SESSfsauthsession=0; path=/; domain=.kirklees.gov.uk; secure; HttpOnly",
+        "Server": "Apache",
+        "X-Frame-Options": "SAMEORIGIN",
+        "X-Content-Type-Options": "nosniff",
+        "Expires": "Thu, 19 Nov 1981 08:52:00 GMT",
+        "Cache-Control": "no-store, no-cache, must-revalidate",
+        "Pragma": "no-cache",
+        "X-Auth-Session": "drh0q3b5cpjemogd5o8hbpr6ac",
+        "Vary": "Accept-Encoding",
+        "Content-Encoding": "gzip",
+        "X-XSS-Protection": "0",
+        "Strict-Transport-Security": "max-age=31536000;",
+        "Content-Security-Policy": "default-src 'self' 'unsafe-eval' 'unsafe-inline' data: * ;media-src 'self' data: blob:"
+      },
+      "response_body": {
+        "auth-session": "753c1b07b5fffdebfc6da3594f992fe9",
+        "cookie-domain": ".kirklees.gov.uk",
+        "is_authenticated": false,
+        "providers": [
+          {
+            "name": "Azure___Login__self_",
+            "displayname": "Azure - Login (self)",
+            "image": "https://fs-filestore-eu.s3-eu-west-1.amazonaws.com/resources/azure.png",
+            "supportonly": "true",
+            "mapping": "{\"username\" : \"sAMAccountName\",\"email\" : \"emailaddress\",\"memberof\" :\"memberof\",\"name\":\"displayName\",\"first_name\" : \"givenName\",\"last_name\" :\"surname\",\"groupof\" :\"groups\"}",
+            "url": "https://my.kirklees.gov.uk/authapi/auth?provider=Azure___Login__self_&uri=https%253A%252F%252Fmy.kirklees.gov.uk%252Fservice%252FBins_and_recycling___Manage_your_bins"
+          },
+          {
+            "name": "google_admin",
+            "displayname": "Firmstep Admin",
+            "image": "https://fs-filestore-eu.s3.amazonaws.com/resources/Googlethumb.jpg",
+            "supportonly": "true",
+            "url": "https://my.kirklees.gov.uk/authapi/auth?provider=google_admin&uri=https%253A%252F%252Fmy.kirklees.gov.uk%252Fservice%252FBins_and_recycling___Manage_your_bins"
+          },
+          {
+            "name": "google_fam",
+            "displayname": "Firmstep Google FAM",
+            "image": "//fs-filestore-eu.s3.amazonaws.com/resources/Logo_icon_round_100px.png",
+            "supportonly": "true",
+            "url": "https://my.kirklees.gov.uk/authapi/auth?provider=google_fam&uri=https%253A%252F%252Fmy.kirklees.gov.uk%252Fservice%252FBins_and_recycling___Manage_your_bins"
+          },
+          {
+            "name": "ssauth",
+            "displayname": "Self-service",
+            "image": "https://fs-filestore-eu.s3.amazonaws.com/resources/network.png",
+            "url": "https://my.kirklees.gov.uk/authapi/auth?provider=ssauth&uri=https%253A%252F%252Fmy.kirklees.gov.uk%252Fservice%252FBins_and_recycling___Manage_your_bins",
+            "register_url": "https://my.kirklees.gov.uk/authapi/register?provider=ssauth&uri=https%253A%252F%252Fmy.kirklees.gov.uk%252Fservice%252FBins_and_recycling___Manage_your_bins"
+          }
+        ]
+      },
+      "source": "requests.Session",
+      "timestamp": "2025-12-24T18:56:06.021275"
+    },
+    {
+      "method": "POST",
+      "url": "https://my.kirklees.gov.uk/apibroker/runLookup",
+      "request_headers": {
+        "Content-Type": "application/json",
+        "Accept": "application/json",
+        "User-Agent": "Mozilla/5.0",
+        "X-Requested-With": "XMLHttpRequest",
+        "Referer": "https://my.kirklees.gov.uk/fillform/?iframe_id=fillform-frame-1&db_id="
+      },
+      "request_params": {
+        "id": "65e08e60b299d",
+        "repeat_against": "",
+        "noRetry": "false",
+        "getOnlyTokens": "undefined",
+        "log_id": "",
+        "app_name": "AF-Renderer::Self",
+        "_": "1766602566021",
+        "sid": "753c1b07b5fffdebfc6da3594f992fe9"
+      },
+      "request_body": {
+        "formValues": {
+          "Search": {
+            "validatedUPRN": {
+              "value": "83002937"
+            }
+          }
+        }
+      },
+      "status_code": 200,
+      "response_headers": {
+        "Date": "Wed, 24 Dec 2025 18:56:08 GMT",
+        "Content-Type": "application/json; charset=UTF-8",
+        "Content-Length": "1082",
+        "Connection": "keep-alive",
+        "Set-Cookie": "AWSALB=bLGDXZNXDV4tVl9/Sk5fkeG9KgnGMmZhT3n05jZm5C0tNo8rl8Wof8rLYzHj7ObmL1tbZqdkfo1uuTP9+6niVT+BxO6z6ol9sshGcB8OQz5FEhlZcHxnPjwaerE+; Expires=Wed, 31 Dec 2025 18:56:06 GMT; Path=/, AWSALBCORS=bLGDXZNXDV4tVl9/Sk5fkeG9KgnGMmZhT3n05jZm5C0tNo8rl8Wof8rLYzHj7ObmL1tbZqdkfo1uuTP9+6niVT+BxO6z6ol9sshGcB8OQz5FEhlZcHxnPjwaerE+; Expires=Wed, 31 Dec 2025 18:56:06 GMT; Path=/; SameSite=None; Secure",
+        "Server": "Apache",
+        "X-Frame-Options": "SAMEORIGIN",
+        "X-Content-Type-Options": "nosniff",
+        "Strict-Transport-Security": "max-age=31536000;",
+        "Expires": "Thu, 19 Nov 1981 08:52:00 GMT",
+        "Cache-Control": "no-store, no-cache, must-revalidate",
+        "Pragma": "no-cache",
+        "Vary": "Accept-Encoding",
+        "Content-Encoding": "gzip",
+        "X-XSS-Protection": "0",
+        "Content-Security-Policy": "default-src 'self' 'unsafe-eval' 'unsafe-inline' data: * ;media-src 'self' data: blob:"
+      },
+      "response_body": {
+        "status": "done",
+        "data": "<?xml version=\"1.0\"?>\n<Responses><RequestResponse><DatabaseResponse><Fields><Field Type=\"varchar\" Name=\"name\"/><Field Type=\"varchar\" Name=\"label\"/><Field Type=\"varchar\" Name=\"IsAssisted\"/><Field Type=\"varchar\" Name=\"ServiceItemID\"/><Field Type=\"varchar\" Name=\"ServiceItemName\"/><Field Type=\"varchar\" Name=\"Quantity\"/><Field Type=\"varchar\" Name=\"RoundSchedule\"/><Field Type=\"varchar\" Name=\"NextCollectionDate\"/><Field Type=\"varchar\" Name=\"ScheduleName\"/><Field Type=\"varchar\" Name=\"BinDetails\"/><Field Type=\"varchar\" Name=\"BinCountBrown\"/></Fields><Rows><Row id=\"0\"><result column=\"name\" isNull=\"False\">1841024</result><result column=\"label\" isNull=\"False\">Grey wheelie bin</result><result column=\"IsAssisted\" isNull=\"False\">false</result><result column=\"ServiceItemID\" isNull=\"False\">131</result><result column=\"ServiceItemName\" isNull=\"False\">240D</result><result column=\"Quantity\" isNull=\"False\">1</result><result column=\"RoundSchedule\" isNull=\"False\">DV09</result><result column=\"NextCollectionDate\" isNull=\"False\">2026-01-06T00:00:00</result><result column=\"ScheduleName\" isNull=\"False\"> TUE WKBD</result><result column=\"BinDetails\" isNull=\"False\">240D:DV09; TUE WKBD!2026-01-06#131</result><result column=\"BinCountBrown\" isNull=\"False\">NoBin;0</result></Row><Row id=\"1\"><result column=\"name\" isNull=\"False\">1815371</result><result column=\"label\" isNull=\"False\">Green wheelie bin</result><result column=\"IsAssisted\" isNull=\"False\">false</result><result column=\"ServiceItemID\" isNull=\"False\">150</result><result column=\"ServiceItemName\" isNull=\"False\">240G</result><result column=\"Quantity\" isNull=\"False\">1</result><result column=\"RoundSchedule\" isNull=\"False\">RV09</result><result column=\"NextCollectionDate\" isNull=\"False\">2026-01-13T00:00:00</result><result column=\"ScheduleName\" isNull=\"False\"> TUE WKAC</result><result column=\"BinDetails\" isNull=\"False\">240G:RV09; TUE WKAC!2026-01-13#150</result><result column=\"BinCountBrown\" isNull=\"False\">NoBin;0</result></Row></Rows></DatabaseResponse></RequestResponse></Responses>\n",
+        "integration": {
+          "id": "65e08e60b299d",
+          "type": "webservice",
+          "transformed": {
+            "error": null,
+            "xml_data": "<?xml version=\"1.0\"?><Responses><RequestResponse><DatabaseResponse><Fields><Field Type=\"varchar\" Name=\"name\"/><Field Type=\"varchar\" Name=\"label\"/><Field Type=\"varchar\" Name=\"IsAssisted\"/><Field Type=\"varchar\" Name=\"ServiceItemID\"/><Field Type=\"varchar\" Name=\"ServiceItemName\"/><Field Type=\"varchar\" Name=\"Quantity\"/><Field Type=\"varchar\" Name=\"RoundSchedule\"/><Field Type=\"varchar\" Name=\"NextCollectionDate\"/><Field Type=\"varchar\" Name=\"ScheduleName\"/><Field Type=\"varchar\" Name=\"BinDetails\"/><Field Type=\"varchar\" Name=\"BinCountBrown\"/></Fields><Rows><Row id=\"0\"><result column=\"name\" isNull=\"False\">1841024</result><result column=\"label\" isNull=\"False\">Grey wheelie bin</result><result column=\"IsAssisted\" isNull=\"False\">false</result><result column=\"ServiceItemID\" isNull=\"False\">131</result><result column=\"ServiceItemName\" isNull=\"False\">240D</result><result column=\"Quantity\" isNull=\"False\">1</result><result column=\"RoundSchedule\" isNull=\"False\">DV09</result><result column=\"NextCollectionDate\" isNull=\"False\">2026-01-06T00:00:00</result><result column=\"ScheduleName\" isNull=\"False\"> TUE WKBD</result><result column=\"BinDetails\" isNull=\"False\">240D:DV09; TUE WKBD!2026-01-06#131</result><result column=\"BinCountBrown\" isNull=\"False\">NoBin;0</result></Row><Row id=\"1\"><result column=\"name\" isNull=\"False\">1815371</result><result column=\"label\" isNull=\"False\">Green wheelie bin</result><result column=\"IsAssisted\" isNull=\"False\">false</result><result column=\"ServiceItemID\" isNull=\"False\">150</result><result column=\"ServiceItemName\" isNull=\"False\">240G</result><result column=\"Quantity\" isNull=\"False\">1</result><result column=\"RoundSchedule\" isNull=\"False\">RV09</result><result column=\"NextCollectionDate\" isNull=\"False\">2026-01-13T00:00:00</result><result column=\"ScheduleName\" isNull=\"False\"> TUE WKAC</result><result column=\"BinDetails\" isNull=\"False\">240G:RV09; TUE WKAC!2026-01-13#150</result><result column=\"BinCountBrown\" isNull=\"False\">NoBin;0</result></Row></Rows></DatabaseResponse></RequestResponse></Responses>",
+            "rows_data": {
+              "1841024": {
+                "name": "1841024",
+                "label": "Grey wheelie bin",
+                "IsAssisted": "false",
+                "ServiceItemID": "131",
+                "ServiceItemName": "240D",
+                "Quantity": "1",
+                "RoundSchedule": "DV09",
+                "NextCollectionDate": "2026-01-06T00:00:00",
+                "ScheduleName": " TUE WKBD",
+                "BinDetails": "240D:DV09; TUE WKBD!2026-01-06#131",
+                "BinCountBrown": "NoBin;0"
+              },
+              "1815371": {
+                "name": "1815371",
+                "label": "Green wheelie bin",
+                "IsAssisted": "false",
+                "ServiceItemID": "150",
+                "ServiceItemName": "240G",
+                "Quantity": "1",
+                "RoundSchedule": "RV09",
+                "NextCollectionDate": "2026-01-13T00:00:00",
+                "ScheduleName": " TUE WKAC",
+                "BinDetails": "240G:RV09; TUE WKAC!2026-01-13#150",
+                "BinCountBrown": "NoBin;0"
+              }
+            },
+            "fields_data": {
+              "name": {
+                "type": "varchar",
+                "name": "name"
+              },
+              "label": {
+                "type": "varchar",
+                "name": "label"
+              },
+              "IsAssisted": {
+                "type": "varchar",
+                "name": "IsAssisted"
+              },
+              "ServiceItemID": {
+                "type": "varchar",
+                "name": "ServiceItemID"
+              },
+              "ServiceItemName": {
+                "type": "varchar",
+                "name": "ServiceItemName"
+              },
+              "Quantity": {
+                "type": "varchar",
+                "name": "Quantity"
+              },
+              "RoundSchedule": {
+                "type": "varchar",
+                "name": "RoundSchedule"
+              },
+              "NextCollectionDate": {
+                "type": "varchar",
+                "name": "NextCollectionDate"
+              },
+              "ScheduleName": {
+                "type": "varchar",
+                "name": "ScheduleName"
+              },
+              "BinDetails": {
+                "type": "varchar",
+                "name": "BinDetails"
+              },
+              "BinCountBrown": {
+                "type": "varchar",
+                "name": "BinCountBrown"
+              }
+            },
+            "select_data": [
+              {
+                "label": "Grey wheelie bin",
+                "value": "1841024"
+              },
+              {
+                "label": "Green wheelie bin",
+                "value": "1815371"
+              }
+            ],
+            "meta_data": [],
+            "results_page": null,
+            "post_transform": null,
+            "pre_transform": null
+          },
+          "tokens": [
+            "{PowerSuiteApi_url}",
+            "{PowerSuiteApi_username}",
+            "{PowerSuiteApi_password}",
+            "{validatedUPRN}",
+            "{current_datetime}"
+          ],
+          "runtimes": {
+            "integration": {
+              "template": "492ms",
+              "lim": "57ms",
+              "webservice": "446ms"
+            },
+            "api": "446ms",
+            "lim": "57ms"
+          },
+          "log_id": "cb99b90f-0b98-4b85-bad7-b73e840d17f8"
+        },
+        "hash": "EF3E65B62BFD11EC5366C4B57505FC12BAF1802DD7961B2C698A6FC080F1D207"
+      },
+      "source": "requests.Session",
+      "timestamp": "2025-12-24T18:56:08.770149"
+    }
+  ],
+  "metadata": {
+    "skip_get_url": true,
+    "uprn": "83002937",
+    "url": "https://www.kirklees.gov.uk/beta/your-property-bins-recycling/your-bins",
+    "wiki_name": "Kirklees",
+    "wiki_note": "Provide your UPRN. Find your UPRN using [FindMyAddress](https://www.findmyaddress.co.uk/search).",
+    "LAD24CD": "E08000034"
+  }
+}

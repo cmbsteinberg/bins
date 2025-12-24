@@ -1,0 +1,563 @@
+{
+  "council": "SandwellBoroughCouncil",
+  "timestamp": "2025-12-24T19:07:41.774488",
+  "success": true,
+  "total_requests": 5,
+  "requests": [
+    {
+      "method": "GET",
+      "url": "https://my.sandwell.gov.uk/authapi/isauthenticated?uri=https%253A%252F%252Fmy.sandwell.gov.uk%252Fen%252F...",
+      "request_headers": {},
+      "request_params": null,
+      "request_body": null,
+      "status_code": 200,
+      "response_headers": {
+        "Date": "Wed, 24 Dec 2025 19:07:42 GMT",
+        "Content-Type": "application/json; charset=utf-8",
+        "Content-Length": "530",
+        "Connection": "keep-alive",
+        "Set-Cookie": "AWSALB=j1yY7RBq8379Tsik84DzE1gl0Cr/Le526PD8VDunt5sIqLyYuLr+b4163Qh/T8014czQ+hYS7L88AxpkjRmB6OSA+5QAPKM0lgoorVi3A5w/RwCjs3Huw9ms/Mn9; Expires=Wed, 31 Dec 2025 19:07:41 GMT; Path=/, AWSALBCORS=j1yY7RBq8379Tsik84DzE1gl0Cr/Le526PD8VDunt5sIqLyYuLr+b4163Qh/T8014czQ+hYS7L88AxpkjRmB6OSA+5QAPKM0lgoorVi3A5w/RwCjs3Huw9ms/Mn9; Expires=Wed, 31 Dec 2025 19:07:41 GMT; Path=/; SameSite=None; Secure, PHPSESSID=5r08jcsmigj4i3s9hb5rgu71nl; path=/; secure; HttpOnly, SESSIONCHECK=e75cc52ccf008ceb11eeb83920cf06e3a7c6c5f9309b4f26ba42c294d692324d0715b904456bafa206719488b82047ad75295404dcd075233812a6ebdfd278ce; expires=Thu, 25-Dec-2025 01:07:41 GMT; Max-Age=21600; path=/api/; domain=my.sandwell.gov.uk; secure; HttpOnly, SimpleSAMLSessionID=bf02fc134fd8d9e661e992ccff58b518; path=/; secure; HttpOnly, SESSfsauthsession=0; path=/; secure; HttpOnly",
+        "Server": "Apache",
+        "X-Frame-Options": "SAMEORIGIN",
+        "X-Content-Type-Options": "nosniff",
+        "Expires": "Thu, 19 Nov 1981 08:52:00 GMT",
+        "Cache-Control": "no-store, no-cache, must-revalidate",
+        "Pragma": "no-cache",
+        "X-Auth-Session": "5r08jcsmigj4i3s9hb5rgu71nl",
+        "Vary": "Accept-Encoding",
+        "Content-Encoding": "gzip",
+        "X-XSS-Protection": "0",
+        "Strict-Transport-Security": "max-age=31536000;",
+        "Content-Security-Policy": "default-src 'self' 'unsafe-eval' 'unsafe-inline' data: * ;media-src 'self' data: blob:"
+      },
+      "response_body": {
+        "auth-session": "be916c5464f8e0f904095efe62a221c1",
+        "cookie-domain": "",
+        "is_authenticated": false,
+        "providers": [
+          {
+            "name": "Azure___Login__Self_",
+            "displayname": "Azure - Login (Self)",
+            "image": "https://fs-filestore-eu.s3.amazonaws.com/resources/azure.png",
+            "supportonly": "true",
+            "mapping": "{\"username\" : \"sAMAccountName\",\"email\" : \"emailaddress\",\"memberof\" :\"memberof\",\"name\":\"displayName\",\"first_name\" : \"givenName\",\"last_name\" :\"surname\",\"groupof\" :\"groups\"}",
+            "url": "https://my.sandwell.gov.uk/authapi/auth?provider=Azure___Login__Self_&uri=https%253A%252F%252Fmy.sandwell.gov.uk%252Fen%252F..."
+          },
+          {
+            "name": "google_admin",
+            "displayname": "Firmstep Admin",
+            "image": "https://fs-filestore-eu.s3.amazonaws.com/resources/Googlethumb.jpg",
+            "supportonly": "true",
+            "url": "https://my.sandwell.gov.uk/authapi/auth?provider=google_admin&uri=https%253A%252F%252Fmy.sandwell.gov.uk%252Fen%252F..."
+          },
+          {
+            "name": "google_fam",
+            "displayname": "Firmstep Google FAM",
+            "image": "//fs-filestore-eu.s3.amazonaws.com/resources/Logo_icon_round_100px.png",
+            "supportonly": "true",
+            "url": "https://my.sandwell.gov.uk/authapi/auth?provider=google_fam&uri=https%253A%252F%252Fmy.sandwell.gov.uk%252Fen%252F..."
+          },
+          {
+            "name": "ssauth",
+            "displayname": "Self-service",
+            "image": "https://fs-filestore-eu.s3.amazonaws.com/resources/network.png",
+            "url": "https://my.sandwell.gov.uk/authapi/auth?provider=ssauth&uri=https%253A%252F%252Fmy.sandwell.gov.uk%252Fen%252F...",
+            "register_url": "https://my.sandwell.gov.uk/authapi/register?provider=ssauth&uri=https%253A%252F%252Fmy.sandwell.gov.uk%252Fen%252F..."
+          }
+        ]
+      },
+      "source": "requests.Session",
+      "timestamp": "2025-12-24T19:07:41.975471"
+    },
+    {
+      "method": "POST",
+      "url": "https://my.sandwell.gov.uk/apibroker/runLookup",
+      "request_headers": {
+        "Content-Type": "application/json",
+        "Accept": "application/json",
+        "User-Agent": "Mozilla/5.0",
+        "X-Requested-With": "XMLHttpRequest",
+        "Referer": "https://my.sandwell.gov.uk/fillform/?iframe_id=fillform-frame-1&db_id="
+      },
+      "request_params": {
+        "id": "686295a88a750",
+        "repeat_against": "",
+        "noRetry": "false",
+        "getOnlyTokens": "undefined",
+        "log_id": "",
+        "app_name": "AF-Renderer::Self",
+        "_": "1766603261975",
+        "sid": "be916c5464f8e0f904095efe62a221c1"
+      },
+      "request_body": {
+        "formValues": {
+          "Property details": {
+            "Uprn": {
+              "value": "32101971"
+            },
+            "NextCollectionFromDate": {
+              "value": "2025-12-24"
+            }
+          }
+        }
+      },
+      "status_code": 200,
+      "response_headers": {
+        "Date": "Wed, 24 Dec 2025 19:07:42 GMT",
+        "Content-Type": "application/json; charset=UTF-8",
+        "Content-Length": "522",
+        "Connection": "keep-alive",
+        "Set-Cookie": "AWSALB=IK4Hh2Mv8oSXMxsXhox4gGsYtNG9yom2rBDPi2QoiDRJaA9xjuTOhVjixl4qgLCO+wAbAI+9DzW+F8Kp4nkZg4qtCem7/M/+bYW/zxkmv+oJQGaAE9DTomp3UF3g; Expires=Wed, 31 Dec 2025 19:07:42 GMT; Path=/, AWSALBCORS=IK4Hh2Mv8oSXMxsXhox4gGsYtNG9yom2rBDPi2QoiDRJaA9xjuTOhVjixl4qgLCO+wAbAI+9DzW+F8Kp4nkZg4qtCem7/M/+bYW/zxkmv+oJQGaAE9DTomp3UF3g; Expires=Wed, 31 Dec 2025 19:07:42 GMT; Path=/; SameSite=None; Secure",
+        "Server": "Apache",
+        "X-Frame-Options": "SAMEORIGIN",
+        "X-Content-Type-Options": "nosniff",
+        "Strict-Transport-Security": "max-age=31536000;",
+        "Expires": "Thu, 19 Nov 1981 08:52:00 GMT",
+        "Cache-Control": "no-store, no-cache, must-revalidate",
+        "Pragma": "no-cache",
+        "Vary": "Accept-Encoding",
+        "Content-Encoding": "gzip",
+        "X-XSS-Protection": "0",
+        "Content-Security-Policy": "default-src 'self' 'unsafe-eval' 'unsafe-inline' data: * ;media-src 'self' data: blob:"
+      },
+      "response_body": {
+        "status": "done",
+        "data": "<?xml version=\"1.0\"?>\n<Responses><RequestResponse><DatabaseResponse><Fields><Field Type=\"varchar\" Name=\"GWCollection\"/><Field Type=\"varchar\" Name=\"GWDay\"/><Field Type=\"varchar\" Name=\"GWDate\"/><Field Type=\"varchar\" Name=\"Schedule\"/></Fields><Rows/></DatabaseResponse></RequestResponse></Responses>\n",
+        "integration": {
+          "id": "686295a88a750",
+          "type": "webservice",
+          "transformed": {
+            "error": null,
+            "xml_data": "<?xml version=\"1.0\"?><Responses><RequestResponse><DatabaseResponse><Fields><Field Type=\"varchar\" Name=\"GWCollection\"/><Field Type=\"varchar\" Name=\"GWDay\"/><Field Type=\"varchar\" Name=\"GWDate\"/><Field Type=\"varchar\" Name=\"Schedule\"/></Fields><Rows/></DatabaseResponse></RequestResponse></Responses>",
+            "rows_data": [],
+            "fields_data": {
+              "GWCollection": {
+                "type": "varchar",
+                "name": "GWCollection"
+              },
+              "GWDay": {
+                "type": "varchar",
+                "name": "GWDay"
+              },
+              "GWDate": {
+                "type": "varchar",
+                "name": "GWDate"
+              },
+              "Schedule": {
+                "type": "varchar",
+                "name": "Schedule"
+              }
+            },
+            "select_data": [],
+            "meta_data": [],
+            "results_page": null,
+            "post_transform": null,
+            "pre_transform": null
+          },
+          "tokens": [
+            "{wsusername}",
+            "{wspassword}",
+            "{Uprn}",
+            "{today}"
+          ],
+          "runtimes": {
+            "integration": {
+              "template": "13ms",
+              "lim": "11ms",
+              "webservice": "242ms"
+            },
+            "api": "242ms",
+            "lim": "11ms"
+          },
+          "log_id": "fffae56c-945a-4ade-8b32-9e9e84c4416d"
+        },
+        "hash": "306BC77959F39E1BA1443ECCD85A58ABBA03001B9A72970E8FED112E42C3ACE9"
+      },
+      "source": "requests.Session",
+      "timestamp": "2025-12-24T19:07:42.476643"
+    },
+    {
+      "method": "POST",
+      "url": "https://my.sandwell.gov.uk/apibroker/runLookup",
+      "request_headers": {
+        "Content-Type": "application/json",
+        "Accept": "application/json",
+        "User-Agent": "Mozilla/5.0",
+        "X-Requested-With": "XMLHttpRequest",
+        "Referer": "https://my.sandwell.gov.uk/fillform/?iframe_id=fillform-frame-1&db_id="
+      },
+      "request_params": {
+        "id": "686294de50729",
+        "repeat_against": "",
+        "noRetry": "false",
+        "getOnlyTokens": "undefined",
+        "log_id": "",
+        "app_name": "AF-Renderer::Self",
+        "_": "1766603261975",
+        "sid": "be916c5464f8e0f904095efe62a221c1"
+      },
+      "request_body": {
+        "formValues": {
+          "Property details": {
+            "Uprn": {
+              "value": "32101971"
+            },
+            "NextCollectionFromDate": {
+              "value": "2025-12-24"
+            }
+          }
+        }
+      },
+      "status_code": 200,
+      "response_headers": {
+        "Date": "Wed, 24 Dec 2025 19:07:42 GMT",
+        "Content-Type": "application/json; charset=UTF-8",
+        "Content-Length": "657",
+        "Connection": "keep-alive",
+        "Set-Cookie": "AWSALB=jV17p6mO2gHZKZQpaNfBZCHyfwKgiDaCeb6SOCLVacUSxOtMVXAMsshzoXZxmdBjMkaKs3ixlsmG5NgnfJ+Kc9FiAP9YPa67IKt868VHx2b0vSOAINu6Huh4/kI9; Expires=Wed, 31 Dec 2025 19:07:42 GMT; Path=/, AWSALBCORS=jV17p6mO2gHZKZQpaNfBZCHyfwKgiDaCeb6SOCLVacUSxOtMVXAMsshzoXZxmdBjMkaKs3ixlsmG5NgnfJ+Kc9FiAP9YPa67IKt868VHx2b0vSOAINu6Huh4/kI9; Expires=Wed, 31 Dec 2025 19:07:42 GMT; Path=/; SameSite=None; Secure",
+        "Server": "Apache",
+        "X-Frame-Options": "SAMEORIGIN",
+        "X-Content-Type-Options": "nosniff",
+        "Strict-Transport-Security": "max-age=31536000;",
+        "Expires": "Thu, 19 Nov 1981 08:52:00 GMT",
+        "Cache-Control": "no-store, no-cache, must-revalidate",
+        "Pragma": "no-cache",
+        "Vary": "Accept-Encoding",
+        "Content-Encoding": "gzip",
+        "X-XSS-Protection": "0",
+        "Content-Security-Policy": "default-src 'self' 'unsafe-eval' 'unsafe-inline' data: * ;media-src 'self' data: blob:"
+      },
+      "response_body": {
+        "status": "done",
+        "data": "<?xml version=\"1.0\"?>\n<Responses><RequestResponse><DatabaseResponse><Fields><Field Type=\"varchar\" Name=\"DWCollection\"/><Field Type=\"varchar\" Name=\"DWDay\"/><Field Type=\"varchar\" Name=\"DWDate\"/></Fields><Rows><Row id=\"0\"><result column=\"DWCollection\" isNull=\"False\">Household Waste</result><result column=\"DWDay\" isNull=\"False\">Friday</result><result column=\"DWDate\" isNull=\"False\">03/01/2026</result></Row><Row id=\"1\"><result column=\"DWCollection\" isNull=\"False\">Household Waste</result><result column=\"DWDay\" isNull=\"False\">Friday</result><result column=\"DWDate\" isNull=\"False\">16/01/2026</result></Row></Rows></DatabaseResponse></RequestResponse></Responses>\n",
+        "integration": {
+          "id": "686294de50729",
+          "type": "webservice",
+          "transformed": {
+            "error": null,
+            "xml_data": "<?xml version=\"1.0\"?><Responses><RequestResponse><DatabaseResponse><Fields><Field Type=\"varchar\" Name=\"DWCollection\"/><Field Type=\"varchar\" Name=\"DWDay\"/><Field Type=\"varchar\" Name=\"DWDate\"/></Fields><Rows><Row id=\"0\"><result column=\"DWCollection\" isNull=\"False\">Household Waste</result><result column=\"DWDay\" isNull=\"False\">Friday</result><result column=\"DWDate\" isNull=\"False\">03/01/2026</result></Row><Row id=\"1\"><result column=\"DWCollection\" isNull=\"False\">Household Waste</result><result column=\"DWDay\" isNull=\"False\">Friday</result><result column=\"DWDate\" isNull=\"False\">16/01/2026</result></Row></Rows></DatabaseResponse></RequestResponse></Responses>",
+            "rows_data": {
+              "0": {
+                "DWCollection": "Household Waste",
+                "DWDay": "Friday",
+                "DWDate": "03/01/2026"
+              },
+              "1": {
+                "DWCollection": "Household Waste",
+                "DWDay": "Friday",
+                "DWDate": "16/01/2026"
+              }
+            },
+            "fields_data": {
+              "DWCollection": {
+                "type": "varchar",
+                "name": "DWCollection"
+              },
+              "DWDay": {
+                "type": "varchar",
+                "name": "DWDay"
+              },
+              "DWDate": {
+                "type": "varchar",
+                "name": "DWDate"
+              }
+            },
+            "select_data": [
+              {
+                "label": "",
+                "value": ""
+              },
+              {
+                "label": "",
+                "value": ""
+              }
+            ],
+            "meta_data": [],
+            "results_page": null,
+            "post_transform": null,
+            "pre_transform": null
+          },
+          "tokens": [
+            "{wsusername}",
+            "{wspassword}",
+            "{Uprn}",
+            "{today}"
+          ],
+          "runtimes": {
+            "integration": {
+              "template": "13ms",
+              "lim": "11ms",
+              "webservice": "185ms"
+            },
+            "api": "185ms",
+            "lim": "11ms"
+          },
+          "log_id": "17114d2b-6c0c-41c5-8b0f-969091ca0c56"
+        },
+        "hash": "058BAF4B7501A35A45F46780A1D4EA75BEBB1921474F019792C10911D344E642"
+      },
+      "source": "requests.Session",
+      "timestamp": "2025-12-24T19:07:42.887343"
+    },
+    {
+      "method": "POST",
+      "url": "https://my.sandwell.gov.uk/apibroker/runLookup",
+      "request_headers": {
+        "Content-Type": "application/json",
+        "Accept": "application/json",
+        "User-Agent": "Mozilla/5.0",
+        "X-Requested-With": "XMLHttpRequest",
+        "Referer": "https://my.sandwell.gov.uk/fillform/?iframe_id=fillform-frame-1&db_id="
+      },
+      "request_params": {
+        "id": "6863a78a1dd8e",
+        "repeat_against": "",
+        "noRetry": "false",
+        "getOnlyTokens": "undefined",
+        "log_id": "",
+        "app_name": "AF-Renderer::Self",
+        "_": "1766603261975",
+        "sid": "be916c5464f8e0f904095efe62a221c1"
+      },
+      "request_body": {
+        "formValues": {
+          "Property details": {
+            "Uprn": {
+              "value": "32101971"
+            },
+            "NextCollectionFromDate": {
+              "value": "2025-12-24"
+            }
+          }
+        }
+      },
+      "status_code": 200,
+      "response_headers": {
+        "Date": "Wed, 24 Dec 2025 19:07:43 GMT",
+        "Content-Type": "application/json; charset=UTF-8",
+        "Content-Length": "693",
+        "Connection": "keep-alive",
+        "Set-Cookie": "AWSALB=ztOjiI4sdvTVIh0EQbFgcZebZJtl4PWq/FFnUCee5n0W4MvRgF2KlqmXd3g1ZwaL5FoahwY7g7r+DHf6U8KtfrOV2SKubytTN9vitwA2PTIHDxNaJwkB3P8VnyGy; Expires=Wed, 31 Dec 2025 19:07:42 GMT; Path=/, AWSALBCORS=ztOjiI4sdvTVIh0EQbFgcZebZJtl4PWq/FFnUCee5n0W4MvRgF2KlqmXd3g1ZwaL5FoahwY7g7r+DHf6U8KtfrOV2SKubytTN9vitwA2PTIHDxNaJwkB3P8VnyGy; Expires=Wed, 31 Dec 2025 19:07:42 GMT; Path=/; SameSite=None; Secure",
+        "Server": "Apache",
+        "X-Frame-Options": "SAMEORIGIN",
+        "X-Content-Type-Options": "nosniff",
+        "Strict-Transport-Security": "max-age=31536000;",
+        "Expires": "Thu, 19 Nov 1981 08:52:00 GMT",
+        "Cache-Control": "no-store, no-cache, must-revalidate",
+        "Pragma": "no-cache",
+        "Vary": "Accept-Encoding",
+        "Content-Encoding": "gzip",
+        "X-XSS-Protection": "0",
+        "Content-Security-Policy": "default-src 'self' 'unsafe-eval' 'unsafe-inline' data: * ;media-src 'self' data: blob:"
+      },
+      "response_body": {
+        "status": "done",
+        "data": "<?xml version=\"1.0\"?>\n<Responses><RequestResponse><DatabaseResponse><Fields><Field Type=\"varchar\" Name=\"FWCollection\"/><Field Type=\"varchar\" Name=\"FWDay\"/><Field Type=\"varchar\" Name=\"FWDate\"/><Field Type=\"varchar\" Name=\"FWRound\"/></Fields><Rows><Row id=\"0\"><result column=\"FWCollection\" isNull=\"False\">Food Recycling</result><result column=\"FWDay\" isNull=\"False\">Friday</result><result column=\"FWDate\" isNull=\"False\">26/12/2025</result><result column=\"FWRound\" isNull=\"False\">xFW-3</result></Row><Row id=\"1\"><result column=\"FWCollection\" isNull=\"False\">Food Recycling</result><result column=\"FWDay\" isNull=\"False\">Friday</result><result column=\"FWDate\" isNull=\"False\">02/01/2026</result><result column=\"FWRound\" isNull=\"False\">xFW-3</result></Row></Rows></DatabaseResponse></RequestResponse></Responses>\n",
+        "integration": {
+          "id": "6863a78a1dd8e",
+          "type": "webservice",
+          "transformed": {
+            "error": null,
+            "xml_data": "<?xml version=\"1.0\"?><Responses><RequestResponse><DatabaseResponse><Fields><Field Type=\"varchar\" Name=\"FWCollection\"/><Field Type=\"varchar\" Name=\"FWDay\"/><Field Type=\"varchar\" Name=\"FWDate\"/><Field Type=\"varchar\" Name=\"FWRound\"/></Fields><Rows><Row id=\"0\"><result column=\"FWCollection\" isNull=\"False\">Food Recycling</result><result column=\"FWDay\" isNull=\"False\">Friday</result><result column=\"FWDate\" isNull=\"False\">26/12/2025</result><result column=\"FWRound\" isNull=\"False\">xFW-3</result></Row><Row id=\"1\"><result column=\"FWCollection\" isNull=\"False\">Food Recycling</result><result column=\"FWDay\" isNull=\"False\">Friday</result><result column=\"FWDate\" isNull=\"False\">02/01/2026</result><result column=\"FWRound\" isNull=\"False\">xFW-3</result></Row></Rows></DatabaseResponse></RequestResponse></Responses>",
+            "rows_data": {
+              "0": {
+                "FWCollection": "Food Recycling",
+                "FWDay": "Friday",
+                "FWDate": "26/12/2025",
+                "FWRound": "xFW-3"
+              },
+              "1": {
+                "FWCollection": "Food Recycling",
+                "FWDay": "Friday",
+                "FWDate": "02/01/2026",
+                "FWRound": "xFW-3"
+              }
+            },
+            "fields_data": {
+              "FWCollection": {
+                "type": "varchar",
+                "name": "FWCollection"
+              },
+              "FWDay": {
+                "type": "varchar",
+                "name": "FWDay"
+              },
+              "FWDate": {
+                "type": "varchar",
+                "name": "FWDate"
+              },
+              "FWRound": {
+                "type": "varchar",
+                "name": "FWRound"
+              }
+            },
+            "select_data": [
+              {
+                "label": "",
+                "value": ""
+              },
+              {
+                "label": "",
+                "value": ""
+              }
+            ],
+            "meta_data": [],
+            "results_page": null,
+            "post_transform": null,
+            "pre_transform": null
+          },
+          "tokens": [
+            "{wsusername}",
+            "{wspassword}",
+            "{Uprn}",
+            "{today}"
+          ],
+          "runtimes": {
+            "integration": {
+              "template": "11ms",
+              "lim": "12ms",
+              "webservice": "203ms"
+            },
+            "api": "203ms",
+            "lim": "12ms"
+          },
+          "log_id": "c7f80fdd-591e-4d4b-8962-316795d1011f"
+        },
+        "hash": "415DA56FFBAFCF657241C2A56E4844DBE8DF864C3248D8573A03D66F43035FB2"
+      },
+      "source": "requests.Session",
+      "timestamp": "2025-12-24T19:07:43.275181"
+    },
+    {
+      "method": "POST",
+      "url": "https://my.sandwell.gov.uk/apibroker/runLookup",
+      "request_headers": {
+        "Content-Type": "application/json",
+        "Accept": "application/json",
+        "User-Agent": "Mozilla/5.0",
+        "X-Requested-With": "XMLHttpRequest",
+        "Referer": "https://my.sandwell.gov.uk/fillform/?iframe_id=fillform-frame-1&db_id="
+      },
+      "request_params": {
+        "id": "68629dd642423",
+        "repeat_against": "",
+        "noRetry": "false",
+        "getOnlyTokens": "undefined",
+        "log_id": "",
+        "app_name": "AF-Renderer::Self",
+        "_": "1766603261975",
+        "sid": "be916c5464f8e0f904095efe62a221c1"
+      },
+      "request_body": {
+        "formValues": {
+          "Property details": {
+            "Uprn": {
+              "value": "32101971"
+            },
+            "NextCollectionFromDate": {
+              "value": "2025-12-24"
+            }
+          }
+        }
+      },
+      "status_code": 200,
+      "response_headers": {
+        "Date": "Wed, 24 Dec 2025 19:07:43 GMT",
+        "Content-Type": "application/json; charset=UTF-8",
+        "Content-Length": "673",
+        "Connection": "keep-alive",
+        "Set-Cookie": "AWSALB=aww5/B1RhF+zYRtrLSynAI8L9U5F5jZ6N58sHyvw80+J3gO6BE0CmZRoqmT+KCHosHuOywzuhyf7vowxC5LnlFecYJ4hYJwKfgxKJQyZMRUX36TzbBMUE6Kt4A/m; Expires=Wed, 31 Dec 2025 19:07:43 GMT; Path=/, AWSALBCORS=aww5/B1RhF+zYRtrLSynAI8L9U5F5jZ6N58sHyvw80+J3gO6BE0CmZRoqmT+KCHosHuOywzuhyf7vowxC5LnlFecYJ4hYJwKfgxKJQyZMRUX36TzbBMUE6Kt4A/m; Expires=Wed, 31 Dec 2025 19:07:43 GMT; Path=/; SameSite=None; Secure",
+        "Server": "Apache",
+        "X-Frame-Options": "SAMEORIGIN",
+        "X-Content-Type-Options": "nosniff",
+        "Strict-Transport-Security": "max-age=31536000;",
+        "Expires": "Thu, 19 Nov 1981 08:52:00 GMT",
+        "Cache-Control": "no-store, no-cache, must-revalidate",
+        "Pragma": "no-cache",
+        "Vary": "Accept-Encoding",
+        "Content-Encoding": "gzip",
+        "X-XSS-Protection": "0",
+        "Content-Security-Policy": "default-src 'self' 'unsafe-eval' 'unsafe-inline' data: * ;media-src 'self' data: blob:"
+      },
+      "response_body": {
+        "status": "done",
+        "data": "<?xml version=\"1.0\"?>\n<Responses><RequestResponse><DatabaseResponse><Fields><Field Type=\"varchar\" Name=\"MDRCollection\"/><Field Type=\"varchar\" Name=\"MDRDay\"/><Field Type=\"varchar\" Name=\"MDRDate\"/></Fields><Rows><Row id=\"0\"><result column=\"MDRCollection\" isNull=\"False\">Mixed Dry Recycling</result><result column=\"MDRDay\" isNull=\"False\">Friday</result><result column=\"MDRDate\" isNull=\"False\">28/12/2025</result></Row><Row id=\"1\"><result column=\"MDRCollection\" isNull=\"False\">Mixed Dry Recycling</result><result column=\"MDRDay\" isNull=\"False\">Friday</result><result column=\"MDRDate\" isNull=\"False\">09/01/2026</result></Row></Rows></DatabaseResponse></RequestResponse></Responses>\n",
+        "integration": {
+          "id": "68629dd642423",
+          "type": "webservice",
+          "transformed": {
+            "error": null,
+            "xml_data": "<?xml version=\"1.0\"?><Responses><RequestResponse><DatabaseResponse><Fields><Field Type=\"varchar\" Name=\"MDRCollection\"/><Field Type=\"varchar\" Name=\"MDRDay\"/><Field Type=\"varchar\" Name=\"MDRDate\"/></Fields><Rows><Row id=\"0\"><result column=\"MDRCollection\" isNull=\"False\">Mixed Dry Recycling</result><result column=\"MDRDay\" isNull=\"False\">Friday</result><result column=\"MDRDate\" isNull=\"False\">28/12/2025</result></Row><Row id=\"1\"><result column=\"MDRCollection\" isNull=\"False\">Mixed Dry Recycling</result><result column=\"MDRDay\" isNull=\"False\">Friday</result><result column=\"MDRDate\" isNull=\"False\">09/01/2026</result></Row></Rows></DatabaseResponse></RequestResponse></Responses>",
+            "rows_data": {
+              "0": {
+                "MDRCollection": "Mixed Dry Recycling",
+                "MDRDay": "Friday",
+                "MDRDate": "28/12/2025"
+              },
+              "1": {
+                "MDRCollection": "Mixed Dry Recycling",
+                "MDRDay": "Friday",
+                "MDRDate": "09/01/2026"
+              }
+            },
+            "fields_data": {
+              "MDRCollection": {
+                "type": "varchar",
+                "name": "MDRCollection"
+              },
+              "MDRDay": {
+                "type": "varchar",
+                "name": "MDRDay"
+              },
+              "MDRDate": {
+                "type": "varchar",
+                "name": "MDRDate"
+              }
+            },
+            "select_data": [
+              {
+                "label": "",
+                "value": ""
+              },
+              {
+                "label": "",
+                "value": ""
+              }
+            ],
+            "meta_data": [],
+            "results_page": null,
+            "post_transform": null,
+            "pre_transform": null
+          },
+          "tokens": [
+            "{wsusername}",
+            "{wspassword}",
+            "{Uprn}",
+            "{today}"
+          ],
+          "runtimes": {
+            "integration": {
+              "template": "12ms",
+              "lim": "14ms",
+              "webservice": "227ms"
+            },
+            "api": "227ms",
+            "lim": "14ms"
+          },
+          "log_id": "dc9f7a16-7aa8-426f-bc82-c7c2be32d6ec"
+        },
+        "hash": "59B200965BCEFA4AB984B34D104BDE33727F693CDD73FA77DE7DDEC943EDDF8A"
+      },
+      "source": "requests.Session",
+      "timestamp": "2025-12-24T19:07:43.695115"
+    }
+  ],
+  "metadata": {
+    "skip_get_url": true,
+    "uprn": "32101971",
+    "url": "https://www.sandwell.gov.uk",
+    "wiki_name": "Sandwell",
+    "wiki_note": "Pass the UPRN. You will need to use [FindMyAddress](https://www.findmyaddress.co.uk/search).",
+    "LAD24CD": "E08000028"
+  }
+}

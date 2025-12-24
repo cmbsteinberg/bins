@@ -1,0 +1,75 @@
+{
+  "council": "StAlbansCityAndDistrictCouncil",
+  "timestamp": "2025-12-24T19:08:22.532913",
+  "success": true,
+  "total_requests": 1,
+  "requests": [
+    {
+      "method": "post",
+      "url": "https://gis.stalbans.gov.uk/NoticeBoard9/VeoliaProxy.NoticeBoard.asmx/GetServicesByUprnAndNoticeBoard",
+      "request_headers": {
+        "Content-Type": "application/json; charset=UTF-8"
+      },
+      "request_params": null,
+      "request_body": {
+        "uprn": "100081153583",
+        "noticeBoard": "default"
+      },
+      "status_code": 200,
+      "response_headers": {
+        "Date": "Wed, 24 Dec 2025 19:08:23 GMT",
+        "Cache-Control": "private, max-age=0,no-store",
+        "Content-Type": "application/json; charset=utf-8",
+        "X-XSS-Protection": "1;mode=block",
+        "X-Content-Type-Options": "nosniff",
+        "X-Frame-Options": "deny, SAMEORIGIN",
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Credentials": "true",
+        "Access-Control-Allow-Methods": "GET,POST,OPTIONS",
+        "Access-Control-Allow-Headers": "Origin, X-Requested-With, Content-Type, Accept",
+        "Content-Length": "545",
+        "Vary": "Accept-Encoding",
+        "Keep-Alive": "timeout=15, max=100",
+        "Connection": "Keep-Alive"
+      },
+      "response_body": {
+        "d": [
+          {
+            "__type": "Cadcorp.Custom.VeoliaLink.VeoliaService",
+            "ServiceHeaders": [
+              {
+                "TaskType": "Collect Domestic Recycling",
+                "Last": "2025-12-16T07:00:00+00:00",
+                "Next": "2025-12-31T07:00:00+00:00",
+                "ScheduleDescription": "Every Tuesday fortnightly"
+              }
+            ],
+            "ServiceName": "Domestic Recycling Collection"
+          },
+          {
+            "__type": "Cadcorp.Custom.VeoliaLink.VeoliaService",
+            "ServiceHeaders": [
+              {
+                "TaskType": "Collect Domestic Food",
+                "Last": "2025-12-23T07:00:00+00:00",
+                "Next": "2025-12-31T07:00:00+00:00",
+                "ScheduleDescription": "Every Tuesday"
+              }
+            ],
+            "ServiceName": "Domestic Food Collection"
+          }
+        ]
+      },
+      "source": "requests.Session",
+      "timestamp": "2025-12-24T19:08:23.231745"
+    }
+  ],
+  "metadata": {
+    "skip_get_url": true,
+    "uprn": "100081153583",
+    "url": "https://gis.stalbans.gov.uk/NoticeBoard9/VeoliaProxy.NoticeBoard.asmx/GetServicesByUprnAndNoticeBoard",
+    "wiki_name": "St Albans",
+    "wiki_note": "Provide your UPRN. You can find it using [FindMyAddress](https://www.findmyaddress.co.uk/search).",
+    "LAD24CD": "E07000240"
+  }
+}

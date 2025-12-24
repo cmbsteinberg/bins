@@ -1,0 +1,80 @@
+{
+  "council": "SouthHollandDistrictCouncil",
+  "timestamp": "2025-12-24T19:08:09.532157",
+  "success": true,
+  "total_requests": 1,
+  "requests": [
+    {
+      "method": "post",
+      "url": "https://www.sholland.gov.uk/apiserver/ajaxlibrary",
+      "request_headers": {},
+      "request_params": null,
+      "request_body": {
+        "id": 1,
+        "jsonrpc": "2.0",
+        "method": "SouthHolland.Waste.getCollectionDates",
+        "params": {
+          "UPRN": "100030872493"
+        }
+      },
+      "status_code": 200,
+      "response_headers": {
+        "Date": "Wed, 24 Dec 2025 19:08:11 GMT",
+        "Content-Type": "application/json; charset=utf-8",
+        "Transfer-Encoding": "chunked",
+        "Connection": "keep-alive",
+        "Cache-Control": "private",
+        "x-content-type-options": "nosniff",
+        "x-xss-protection": "1; mode=block",
+        "strict-transport-security": "max-age=31536000",
+        "access-control-allow-origin": "*",
+        "access-control-allow-headers": "*",
+        "access-control-allow-methods": "*",
+        "access-control-expose-headers": "*",
+        "Server": "cloudflare",
+        "x-powered-by": "",
+        "cf-cache-status": "DYNAMIC",
+        "set-cookie": "__cf_bm=CIAP_Fy69aNTwXU8wJHbKCg.RZ89MZ9VXIC9.WR3._4-1766603289.7120757-1.0.1.1-_tuYliG88Iw8.OEKR2zAaqev7pmA6nHXcYZ1DyHbGMLTAK__EXBhnCjqMZV6salgsG7GHz9Fhbf9Ky59kvEVOpAmnRCSdoZQxPXIU55cay5__.FCLXRtlFf6qAMk910Z; HttpOnly; Secure; Path=/; Domain=psps1-prd.gosshosted.com; Expires=Wed, 24 Dec 2025 19:38:11 GMT",
+        "Content-Encoding": "gzip",
+        "CF-RAY": "9b3262c0bfdaf666-LHR"
+      },
+      "response_body": {
+        "id": 1,
+        "result": [
+          {
+            "typeDisplay": "Recycling",
+            "typeDayDisplay": "Recycling - normally Mondays",
+            "nextDate": "2025-12-29",
+            "slipMessage": ""
+          },
+          {
+            "typeDisplay": "Refuse",
+            "typeDayDisplay": "Refuse - normally Wednesdays",
+            "nextDate": "2025-12-31",
+            "slipMessage": ""
+          },
+          {
+            "typeDisplay": "Garden Waste",
+            "typeDayDisplay": "Garden Waste - Friday (Week 2)",
+            "nextDate": "2026-01-23",
+            "slipMessage": ""
+          }
+        ],
+        "jsonrpc": "2.0"
+      },
+      "source": "requests.Session",
+      "timestamp": "2025-12-24T19:08:11.968248"
+    }
+  ],
+  "metadata": {
+    "house_number": "1",
+    "postcode": "PE6 0HE",
+    "skip_get_url": true,
+    "uprn": "100030872493",
+    "url": "https://www.sholland.gov.uk/mycollections",
+    "web_driver": "http://selenium:4444",
+    "wiki_name": "South Holland",
+    "wiki_note": "Pass the UPRN and postcode in their respective parameters. This parser requires a Selenium webdriver.",
+    "LAD24CD": "E07000140"
+  }
+}

@@ -1,0 +1,1405 @@
+{
+  "council": "LondonBoroughLambeth",
+  "timestamp": "2025-12-24T18:57:57.994644",
+  "success": true,
+  "total_requests": 1,
+  "requests": [
+    {
+      "method": "post",
+      "url": "https://wasteservice.lambeth.gov.uk/WhitespaceComms/GetServicesByUprn",
+      "request_headers": {
+        "Content-Type": "application/json"
+      },
+      "request_params": null,
+      "request_body": {
+        "uprn": "100021881738",
+        "includeEventTypes": false,
+        "includeFlags": true
+      },
+      "status_code": 200,
+      "response_headers": {
+        "Date": "Wed, 24 Dec 2025 18:58:03 GMT",
+        "Server": "Microsoft-IIS/10.0",
+        "Access-Control-Allow-Origin": "http://localhost:8100",
+        "Access-Control-Allow-Methods": "DELETE, POST, GET, OPTIONS",
+        "Access-Control-Allow-Credentials": "true",
+        "Access-Control-Allow-Headers": "Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With",
+        "Referrer-Policy": "same-origin, origin",
+        "Cache-Control": "private",
+        "Content-Type": "application/json; charset=utf-8",
+        "X-AspNetMvc-Version": "5.2",
+        "X-AspNet-Version": "4.0.30319",
+        "X-Powered-By": "ASP.NET",
+        "Content-Length": "33289",
+        "Strict-Transport-Security": "max-age=31536000",
+        "X-Content-Type-Options": "nosniff",
+        "X-XSS-Protection": "1; mode=block",
+        "Keep-Alive": "timeout=5, max=100",
+        "Connection": "Keep-Alive"
+      },
+      "response_body": {
+        "SiteServices": [
+          {
+            "ServiceDescription": "Domestic Refuse Collection Service",
+            "AccountSiteID": 31382,
+            "ContractID": 30,
+            "ContractName": "Domestic Refuse Collection Service Contract",
+            "RoundSchedule": "REF8 TueA, REF8 TueB",
+            "ServiceItemDescription": "DW-SACK",
+            "ServiceID": 30,
+            "ServiceItemID": 41,
+            "ServiceItemName": "DW-SACK",
+            "Container": {
+              "Name": "Domestic Waste Sack",
+              "DisplayPhrase": "waste sacks",
+              "Price": null,
+              "Bulk": null,
+              "Orderable": null,
+              "Stream": 0,
+              "LargerRequestable": null,
+              "LargerNextSize": null,
+              "LargetNextSizeContainer": null,
+              "Reportable": null,
+              "IsBag": true,
+              "WhitespaceID": 41
+            },
+            "ContainerQuantity": 1.0,
+            "Rounds": [
+              {
+                "RoundCode": "REF8 - TueA",
+                "RoundRoundAreaServiceScheduleID": 12256,
+                "RoundID": 650
+              },
+              {
+                "RoundCode": "REF8 - TueB",
+                "RoundRoundAreaServiceScheduleID": 12259,
+                "RoundID": 650
+              }
+            ],
+            "NextCollectionDateRaw": null,
+            "NextCollectionDate": "",
+            "SiteServiceValidFromRaw": "/Date(1713135600000)/",
+            "SiteServiceValidFrom": "15/04/2024",
+            "SiteServiceValidToRaw": "/Date(1713221999000)/",
+            "SiteServiceValidTo": "15/04/2024",
+            "ContractValidFromRaw": "/Date(946684800000)/",
+            "ContractValidFrom": "01/01/2000",
+            "ContractValidToRaw": "/Date(-62135596800000)/",
+            "ContractValidTo": "01/01/0001"
+          },
+          {
+            "ServiceDescription": "Communal Recycling Collection Service",
+            "AccountSiteID": 31382,
+            "ContractID": 25,
+            "ContractName": "Communal Recycling Collection Service Contract",
+            "RoundSchedule": "CDR1 Tue",
+            "ServiceItemDescription": "DR-1280",
+            "ServiceID": 25,
+            "ServiceItemID": 24,
+            "ServiceItemName": "DR-1280",
+            "Container": {
+              "Name": "Domestic Recycling 1280L bulk bin",
+              "DisplayPhrase": "green bin",
+              "Price": null,
+              "Bulk": true,
+              "Orderable": null,
+              "Stream": 1,
+              "LargerRequestable": null,
+              "LargerNextSize": null,
+              "LargetNextSizeContainer": null,
+              "Reportable": true,
+              "IsBag": null,
+              "WhitespaceID": 24
+            },
+            "ContainerQuantity": 1.0,
+            "Rounds": [
+              {
+                "RoundCode": "CDR1 - Tue",
+                "RoundRoundAreaServiceScheduleID": 2308,
+                "RoundID": 115
+              }
+            ],
+            "NextCollectionDateRaw": null,
+            "NextCollectionDate": "",
+            "SiteServiceValidFromRaw": "/Date(1704672000000)/",
+            "SiteServiceValidFrom": "08/01/2024",
+            "SiteServiceValidToRaw": "/Date(1713135599000)/",
+            "SiteServiceValidTo": "14/04/2024",
+            "ContractValidFromRaw": "/Date(946684800000)/",
+            "ContractValidFrom": "01/01/2000",
+            "ContractValidToRaw": "/Date(-62135596800000)/",
+            "ContractValidTo": "01/01/0001"
+          },
+          {
+            "ServiceDescription": "Domestic Food Collection Service",
+            "AccountSiteID": 31382,
+            "ContractID": 27,
+            "ContractName": "Domestic Food Collection Service Contract",
+            "RoundSchedule": "CFG1 TueFW",
+            "ServiceItemDescription": "FW-240",
+            "ServiceID": 27,
+            "ServiceItemID": 43,
+            "ServiceItemName": "FW-240",
+            "Container": {
+              "Name": "Domestic Food Waste 240L wheelie bin",
+              "DisplayPhrase": "brown bin",
+              "Price": null,
+              "Bulk": null,
+              "Orderable": null,
+              "Stream": 2,
+              "LargerRequestable": null,
+              "LargerNextSize": null,
+              "LargetNextSizeContainer": null,
+              "Reportable": null,
+              "IsBag": null,
+              "WhitespaceID": 43
+            },
+            "ContainerQuantity": 1.0,
+            "Rounds": [
+              {
+                "RoundCode": "CFG1 - TueFW",
+                "RoundRoundAreaServiceScheduleID": 2348,
+                "RoundID": 117
+              }
+            ],
+            "NextCollectionDateRaw": null,
+            "NextCollectionDate": "",
+            "SiteServiceValidFromRaw": "/Date(1704672000000)/",
+            "SiteServiceValidFrom": "08/01/2024",
+            "SiteServiceValidToRaw": "/Date(1713135599000)/",
+            "SiteServiceValidTo": "14/04/2024",
+            "ContractValidFromRaw": "/Date(946684800000)/",
+            "ContractValidFrom": "01/01/2000",
+            "ContractValidToRaw": "/Date(-62135596800000)/",
+            "ContractValidTo": "01/01/0001"
+          },
+          {
+            "ServiceDescription": "Domestic Food Collection Service",
+            "AccountSiteID": 31382,
+            "ContractID": 27,
+            "ContractName": "Domestic Food Collection Service Contract",
+            "RoundSchedule": "CFG1 TueFW",
+            "ServiceItemDescription": "FW-23",
+            "ServiceID": 27,
+            "ServiceItemID": 42,
+            "ServiceItemName": "FW-23",
+            "Container": {
+              "Name": "Domestic Food Waste 23L kerbside",
+              "DisplayPhrase": "brown bin",
+              "Price": 0.0,
+              "Bulk": null,
+              "Orderable": true,
+              "Stream": 2,
+              "LargerRequestable": null,
+              "LargerNextSize": null,
+              "LargetNextSizeContainer": null,
+              "Reportable": false,
+              "IsBag": null,
+              "WhitespaceID": 42
+            },
+            "ContainerQuantity": 1.0,
+            "Rounds": [
+              {
+                "RoundCode": "CFG1 - TueFW",
+                "RoundRoundAreaServiceScheduleID": 2348,
+                "RoundID": 117
+              }
+            ],
+            "NextCollectionDateRaw": null,
+            "NextCollectionDate": "",
+            "SiteServiceValidFromRaw": "/Date(1643068800000)/",
+            "SiteServiceValidFrom": "25/01/2022",
+            "SiteServiceValidToRaw": "/Date(1713135599000)/",
+            "SiteServiceValidTo": "14/04/2024",
+            "ContractValidFromRaw": "/Date(946684800000)/",
+            "ContractValidFrom": "01/01/2000",
+            "ContractValidToRaw": "/Date(-62135596800000)/",
+            "ContractValidTo": "01/01/0001"
+          },
+          {
+            "ServiceDescription": "Domestic Recycling Collection Service",
+            "AccountSiteID": 31382,
+            "ContractID": 29,
+            "ContractName": "Domestic Recycling Collection Service Contract",
+            "RoundSchedule": "CDR1 Tue",
+            "ServiceItemDescription": "DR-1280",
+            "ServiceID": 29,
+            "ServiceItemID": 24,
+            "ServiceItemName": "DR-1280",
+            "Container": {
+              "Name": "Domestic Recycling 1280L bulk bin",
+              "DisplayPhrase": "green bin",
+              "Price": null,
+              "Bulk": true,
+              "Orderable": null,
+              "Stream": 1,
+              "LargerRequestable": null,
+              "LargerNextSize": null,
+              "LargetNextSizeContainer": null,
+              "Reportable": true,
+              "IsBag": null,
+              "WhitespaceID": 24
+            },
+            "ContainerQuantity": 1.0,
+            "Rounds": [
+              {
+                "RoundCode": "CDR1 - Tue",
+                "RoundRoundAreaServiceScheduleID": 2313,
+                "RoundID": 115
+              }
+            ],
+            "NextCollectionDateRaw": null,
+            "NextCollectionDate": "",
+            "SiteServiceValidFromRaw": "/Date(1635724800000)/",
+            "SiteServiceValidFrom": "01/11/2021",
+            "SiteServiceValidToRaw": "/Date(1713135599000)/",
+            "SiteServiceValidTo": "14/04/2024",
+            "ContractValidFromRaw": "/Date(946684800000)/",
+            "ContractValidFrom": "01/01/2000",
+            "ContractValidToRaw": "/Date(-62135596800000)/",
+            "ContractValidTo": "01/01/0001"
+          },
+          {
+            "ServiceDescription": "Domestic Refuse Collection Service",
+            "AccountSiteID": 31382,
+            "ContractID": 30,
+            "ContractName": "Domestic Refuse Collection Service Contract",
+            "RoundSchedule": "CWB1 Tue",
+            "ServiceItemDescription": "DW-SACK",
+            "ServiceID": 30,
+            "ServiceItemID": 41,
+            "ServiceItemName": "DW-SACK",
+            "Container": {
+              "Name": "Domestic Waste Sack",
+              "DisplayPhrase": "waste sacks",
+              "Price": null,
+              "Bulk": null,
+              "Orderable": null,
+              "Stream": 0,
+              "LargerRequestable": null,
+              "LargerNextSize": null,
+              "LargetNextSizeContainer": null,
+              "Reportable": null,
+              "IsBag": true,
+              "WhitespaceID": 41
+            },
+            "ContainerQuantity": 1.0,
+            "Rounds": [
+              {
+                "RoundCode": "CWB1 - Tue",
+                "RoundRoundAreaServiceScheduleID": 2381,
+                "RoundID": 120
+              }
+            ],
+            "NextCollectionDateRaw": null,
+            "NextCollectionDate": "",
+            "SiteServiceValidFromRaw": "/Date(1635724800000)/",
+            "SiteServiceValidFrom": "01/11/2021",
+            "SiteServiceValidToRaw": "/Date(1713135599000)/",
+            "SiteServiceValidTo": "14/04/2024",
+            "ContractValidFromRaw": "/Date(946684800000)/",
+            "ContractValidFrom": "01/01/2000",
+            "ContractValidToRaw": "/Date(-62135596800000)/",
+            "ContractValidTo": "01/01/0001"
+          },
+          {
+            "ServiceDescription": "Domestic Recycling Collection Service",
+            "AccountSiteID": 31382,
+            "ContractID": 29,
+            "ContractName": "Domestic Recycling Collection Service Contract",
+            "RoundSchedule": "REC8 Tue",
+            "ServiceItemDescription": "DR-1280",
+            "ServiceID": 29,
+            "ServiceItemID": 24,
+            "ServiceItemName": "DR-1280",
+            "Container": {
+              "Name": "Domestic Recycling 1280L bulk bin",
+              "DisplayPhrase": "green bin",
+              "Price": null,
+              "Bulk": true,
+              "Orderable": null,
+              "Stream": 1,
+              "LargerRequestable": null,
+              "LargerNextSize": null,
+              "LargetNextSizeContainer": null,
+              "Reportable": true,
+              "IsBag": null,
+              "WhitespaceID": 24
+            },
+            "ContainerQuantity": 1.0,
+            "Rounds": [
+              {
+                "RoundCode": "REC8 - Tue",
+                "RoundRoundAreaServiceScheduleID": 11969,
+                "RoundID": 639
+              }
+            ],
+            "NextCollectionDateRaw": null,
+            "NextCollectionDate": "",
+            "SiteServiceValidFromRaw": "/Date(1712876400000)/",
+            "SiteServiceValidFrom": "12/04/2024",
+            "SiteServiceValidToRaw": "/Date(1712962799000)/",
+            "SiteServiceValidTo": "12/04/2024",
+            "ContractValidFromRaw": "/Date(946684800000)/",
+            "ContractValidFrom": "01/01/2000",
+            "ContractValidToRaw": "/Date(-62135596800000)/",
+            "ContractValidTo": "01/01/0001"
+          },
+          {
+            "ServiceDescription": "Domestic Food Collection Service",
+            "AccountSiteID": 31382,
+            "ContractID": 27,
+            "ContractName": "Domestic Food Collection Service Contract",
+            "RoundSchedule": "CFG1 TueFW",
+            "ServiceItemDescription": "FW-23",
+            "ServiceID": 27,
+            "ServiceItemID": 42,
+            "ServiceItemName": "FW-23",
+            "Container": {
+              "Name": "Domestic Food Waste 23L kerbside",
+              "DisplayPhrase": "brown bin",
+              "Price": 0.0,
+              "Bulk": null,
+              "Orderable": true,
+              "Stream": 2,
+              "LargerRequestable": null,
+              "LargerNextSize": null,
+              "LargetNextSizeContainer": null,
+              "Reportable": false,
+              "IsBag": null,
+              "WhitespaceID": 42
+            },
+            "ContainerQuantity": 1.0,
+            "Rounds": [
+              {
+                "RoundCode": "CFG1 - TueFW",
+                "RoundRoundAreaServiceScheduleID": 2348,
+                "RoundID": 117
+              }
+            ],
+            "NextCollectionDateRaw": null,
+            "NextCollectionDate": "",
+            "SiteServiceValidFromRaw": "/Date(1643068800000)/",
+            "SiteServiceValidFrom": "25/01/2022",
+            "SiteServiceValidToRaw": "/Date(1704585600000)/",
+            "SiteServiceValidTo": "07/01/2024",
+            "ContractValidFromRaw": "/Date(946684800000)/",
+            "ContractValidFrom": "01/01/2000",
+            "ContractValidToRaw": "/Date(-62135596800000)/",
+            "ContractValidTo": "01/01/0001"
+          },
+          {
+            "ServiceDescription": "Domestic Recycling Collection Service",
+            "AccountSiteID": 31382,
+            "ContractID": 29,
+            "ContractName": "Domestic Recycling Collection Service Contract",
+            "RoundSchedule": "CDR1 Tue",
+            "ServiceItemDescription": "DR-1280",
+            "ServiceID": 29,
+            "ServiceItemID": 24,
+            "ServiceItemName": "DR-1280",
+            "Container": {
+              "Name": "Domestic Recycling 1280L bulk bin",
+              "DisplayPhrase": "green bin",
+              "Price": null,
+              "Bulk": true,
+              "Orderable": null,
+              "Stream": 1,
+              "LargerRequestable": null,
+              "LargerNextSize": null,
+              "LargetNextSizeContainer": null,
+              "Reportable": true,
+              "IsBag": null,
+              "WhitespaceID": 24
+            },
+            "ContainerQuantity": 1.0,
+            "Rounds": [
+              {
+                "RoundCode": "CDR1 - Tue",
+                "RoundRoundAreaServiceScheduleID": 2313,
+                "RoundID": 115
+              }
+            ],
+            "NextCollectionDateRaw": null,
+            "NextCollectionDate": "",
+            "SiteServiceValidFromRaw": "/Date(1617231600000)/",
+            "SiteServiceValidFrom": "01/04/2021",
+            "SiteServiceValidToRaw": "/Date(1704585600000)/",
+            "SiteServiceValidTo": "07/01/2024",
+            "ContractValidFromRaw": "/Date(946684800000)/",
+            "ContractValidFrom": "01/01/2000",
+            "ContractValidToRaw": "/Date(-62135596800000)/",
+            "ContractValidTo": "01/01/0001"
+          },
+          {
+            "ServiceDescription": "Barrow",
+            "AccountSiteID": 31382,
+            "ContractID": 1,
+            "ContractName": "Barrow Contract",
+            "RoundSchedule": "XBEAT50 Tue",
+            "ServiceItemDescription": "New Sweep 22",
+            "ServiceID": 1,
+            "ServiceItemID": 221,
+            "ServiceItemName": "Sweep2",
+            "Container": null,
+            "ContainerQuantity": 1.0,
+            "Rounds": [
+              {
+                "RoundCode": "XBEAT50 - Tue",
+                "RoundRoundAreaServiceScheduleID": 4384,
+                "RoundID": 59
+              }
+            ],
+            "NextCollectionDateRaw": null,
+            "NextCollectionDate": "",
+            "SiteServiceValidFromRaw": "/Date(1642809600000)/",
+            "SiteServiceValidFrom": "22/01/2022",
+            "SiteServiceValidToRaw": "/Date(1684105140000)/",
+            "SiteServiceValidTo": "14/05/2023",
+            "ContractValidFromRaw": "/Date(946684800000)/",
+            "ContractValidFrom": "01/01/2000",
+            "ContractValidToRaw": "/Date(-62135596800000)/",
+            "ContractValidTo": "01/01/0001"
+          },
+          {
+            "ServiceDescription": "Barrow",
+            "AccountSiteID": 31382,
+            "ContractID": 1,
+            "ContractName": "Barrow Contract",
+            "RoundSchedule": "XBEAT50 Tue",
+            "ServiceItemDescription": "New Sweep 22",
+            "ServiceID": 1,
+            "ServiceItemID": 221,
+            "ServiceItemName": "Sweep2",
+            "Container": null,
+            "ContainerQuantity": 1.0,
+            "Rounds": [
+              {
+                "RoundCode": "XBEAT50 - Tue",
+                "RoundRoundAreaServiceScheduleID": 4384,
+                "RoundID": 59
+              }
+            ],
+            "NextCollectionDateRaw": null,
+            "NextCollectionDate": "",
+            "SiteServiceValidFromRaw": "/Date(1642809600000)/",
+            "SiteServiceValidFrom": "22/01/2022",
+            "SiteServiceValidToRaw": "/Date(1684105140000)/",
+            "SiteServiceValidTo": "14/05/2023",
+            "ContractValidFromRaw": "/Date(946684800000)/",
+            "ContractValidFrom": "01/01/2000",
+            "ContractValidToRaw": "/Date(-62135596800000)/",
+            "ContractValidTo": "01/01/0001"
+          },
+          {
+            "ServiceDescription": "Barrow",
+            "AccountSiteID": 31382,
+            "ContractID": 1,
+            "ContractName": "Barrow Contract",
+            "RoundSchedule": "",
+            "ServiceItemDescription": "Sweep",
+            "ServiceID": 1,
+            "ServiceItemID": 49,
+            "ServiceItemName": "Sweep",
+            "Container": null,
+            "ContainerQuantity": 1.0,
+            "Rounds": [],
+            "NextCollectionDateRaw": null,
+            "NextCollectionDate": "",
+            "SiteServiceValidFromRaw": "/Date(1617231600000)/",
+            "SiteServiceValidFrom": "01/04/2021",
+            "SiteServiceValidToRaw": "/Date(1662073199000)/",
+            "SiteServiceValidTo": "01/09/2022",
+            "ContractValidFromRaw": "/Date(946684800000)/",
+            "ContractValidFrom": "01/01/2000",
+            "ContractValidToRaw": "/Date(-62135596800000)/",
+            "ContractValidTo": "01/01/0001"
+          },
+          {
+            "ServiceDescription": "EPA Response",
+            "AccountSiteID": 31382,
+            "ContractID": 5,
+            "ContractName": "EPA Response Contract",
+            "RoundSchedule": "",
+            "ServiceItemDescription": "Sweep",
+            "ServiceID": 5,
+            "ServiceItemID": 49,
+            "ServiceItemName": "Sweep",
+            "Container": null,
+            "ContainerQuantity": 1.0,
+            "Rounds": [],
+            "NextCollectionDateRaw": null,
+            "NextCollectionDate": "",
+            "SiteServiceValidFromRaw": "/Date(1617231600000)/",
+            "SiteServiceValidFrom": "01/04/2021",
+            "SiteServiceValidToRaw": "/Date(1662073199000)/",
+            "SiteServiceValidTo": "01/09/2022",
+            "ContractValidFromRaw": "/Date(946684800000)/",
+            "ContractValidFrom": "01/01/2000",
+            "ContractValidToRaw": "/Date(1694559600000)/",
+            "ContractValidTo": "13/09/2023"
+          },
+          {
+            "ServiceDescription": "Barrow",
+            "AccountSiteID": 31382,
+            "ContractID": 1,
+            "ContractName": "Barrow Contract",
+            "RoundSchedule": "Beat7B Thu, Beat7B Tue",
+            "ServiceItemDescription": "Sweep",
+            "ServiceID": 1,
+            "ServiceItemID": 49,
+            "ServiceItemName": "Sweep",
+            "Container": null,
+            "ContainerQuantity": 1.0,
+            "Rounds": [
+              {
+                "RoundCode": "Beat7B - Thu",
+                "RoundRoundAreaServiceScheduleID": 10673,
+                "RoundID": 573
+              },
+              {
+                "RoundCode": "Beat7B - Tue",
+                "RoundRoundAreaServiceScheduleID": 10674,
+                "RoundID": 573
+              }
+            ],
+            "NextCollectionDateRaw": "/Date(1766707200000)/",
+            "NextCollectionDate": "26/12/2025",
+            "SiteServiceValidFromRaw": "/Date(1691362800000)/",
+            "SiteServiceValidFrom": "07/08/2023",
+            "SiteServiceValidToRaw": "/Date(-62135596800000)/",
+            "SiteServiceValidTo": "01/01/0001",
+            "ContractValidFromRaw": "/Date(946684800000)/",
+            "ContractValidFrom": "01/01/2000",
+            "ContractValidToRaw": "/Date(-62135596800000)/",
+            "ContractValidTo": "01/01/0001"
+          },
+          {
+            "ServiceDescription": "Communal Recycling Collection Service",
+            "AccountSiteID": 31382,
+            "ContractID": 25,
+            "ContractName": "Communal Recycling Collection Service Contract",
+            "RoundSchedule": "REC8 Tue",
+            "ServiceItemDescription": "DR-1280",
+            "ServiceID": 25,
+            "ServiceItemID": 24,
+            "ServiceItemName": "DR-1280",
+            "Container": {
+              "Name": "Domestic Recycling 1280L bulk bin",
+              "DisplayPhrase": "green bin",
+              "Price": null,
+              "Bulk": true,
+              "Orderable": null,
+              "Stream": 1,
+              "LargerRequestable": null,
+              "LargerNextSize": null,
+              "LargetNextSizeContainer": null,
+              "Reportable": true,
+              "IsBag": null,
+              "WhitespaceID": 24
+            },
+            "ContainerQuantity": 1.0,
+            "Rounds": [
+              {
+                "RoundCode": "REC8 - Tue",
+                "RoundRoundAreaServiceScheduleID": 11968,
+                "RoundID": 639
+              }
+            ],
+            "NextCollectionDateRaw": "/Date(1767052800000)/",
+            "NextCollectionDate": "30/12/2025",
+            "SiteServiceValidFromRaw": "/Date(1713135600000)/",
+            "SiteServiceValidFrom": "15/04/2024",
+            "SiteServiceValidToRaw": "/Date(-62135596800000)/",
+            "SiteServiceValidTo": "01/01/0001",
+            "ContractValidFromRaw": "/Date(946684800000)/",
+            "ContractValidFrom": "01/01/2000",
+            "ContractValidToRaw": "/Date(-62135596800000)/",
+            "ContractValidTo": "01/01/0001"
+          },
+          {
+            "ServiceDescription": "Domestic Food Collection Service",
+            "AccountSiteID": 31382,
+            "ContractID": 27,
+            "ContractName": "Domestic Food Collection Service Contract",
+            "RoundSchedule": "ORG2 TueFW",
+            "ServiceItemDescription": "FW-23",
+            "ServiceID": 27,
+            "ServiceItemID": 42,
+            "ServiceItemName": "FW-23",
+            "Container": {
+              "Name": "Domestic Food Waste 23L kerbside",
+              "DisplayPhrase": "brown bin",
+              "Price": 0.0,
+              "Bulk": null,
+              "Orderable": true,
+              "Stream": 2,
+              "LargerRequestable": null,
+              "LargerNextSize": null,
+              "LargetNextSizeContainer": null,
+              "Reportable": false,
+              "IsBag": null,
+              "WhitespaceID": 42
+            },
+            "ContainerQuantity": 1.0,
+            "Rounds": [
+              {
+                "RoundCode": "ORG2 - TueFW",
+                "RoundRoundAreaServiceScheduleID": 12883,
+                "RoundID": 627
+              }
+            ],
+            "NextCollectionDateRaw": "/Date(1767052800000)/",
+            "NextCollectionDate": "30/12/2025",
+            "SiteServiceValidFromRaw": "/Date(1713135600000)/",
+            "SiteServiceValidFrom": "15/04/2024",
+            "SiteServiceValidToRaw": "/Date(-62135596800000)/",
+            "SiteServiceValidTo": "01/01/0001",
+            "ContractValidFromRaw": "/Date(946684800000)/",
+            "ContractValidFrom": "01/01/2000",
+            "ContractValidToRaw": "/Date(-62135596800000)/",
+            "ContractValidTo": "01/01/0001"
+          },
+          {
+            "ServiceDescription": "Domestic Refuse Collection Service",
+            "AccountSiteID": 31382,
+            "ContractID": 30,
+            "ContractName": "Domestic Refuse Collection Service Contract",
+            "RoundSchedule": "REF8 TueB",
+            "ServiceItemDescription": "DW-240",
+            "ServiceID": 30,
+            "ServiceItemID": 34,
+            "ServiceItemName": "DW-240",
+            "Container": {
+              "Name": "Domestic Waste 240L wheelie bin",
+              "DisplayPhrase": "black bin",
+              "Price": 61.5,
+              "Bulk": null,
+              "Orderable": true,
+              "Stream": 0,
+              "LargerRequestable": true,
+              "LargerNextSize": 35,
+              "LargetNextSizeContainer": {
+                "Name": "Domestic Waste 360L wheelie bin",
+                "DisplayPhrase": "black bin",
+                "Price": 81.5,
+                "Bulk": null,
+                "Orderable": true,
+                "Stream": 0,
+                "LargerRequestable": null,
+                "LargerNextSize": null,
+                "LargetNextSizeContainer": null,
+                "Reportable": false,
+                "IsBag": null,
+                "WhitespaceID": 35
+              },
+              "Reportable": false,
+              "IsBag": null,
+              "WhitespaceID": 34
+            },
+            "ContainerQuantity": 1.0,
+            "Rounds": [
+              {
+                "RoundCode": "REF8 - TueB",
+                "RoundRoundAreaServiceScheduleID": 12259,
+                "RoundID": 650
+              }
+            ],
+            "NextCollectionDateRaw": "/Date(1767052800000)/",
+            "NextCollectionDate": "30/12/2025",
+            "SiteServiceValidFromRaw": "/Date(1729033200000)/",
+            "SiteServiceValidFrom": "16/10/2024",
+            "SiteServiceValidToRaw": "/Date(-62135596800000)/",
+            "SiteServiceValidTo": "01/01/0001",
+            "ContractValidFromRaw": "/Date(946684800000)/",
+            "ContractValidFrom": "01/01/2000",
+            "ContractValidToRaw": "/Date(-62135596800000)/",
+            "ContractValidTo": "01/01/0001"
+          },
+          {
+            "ServiceDescription": "EPA Auto Response",
+            "AccountSiteID": 31382,
+            "ContractID": 37,
+            "ContractName": "EPA Auto Worksheets Contract",
+            "RoundSchedule": "MOBILE1AM NoSchedule",
+            "ServiceItemDescription": "EPA-AUTO",
+            "ServiceID": 596,
+            "ServiceItemID": 258,
+            "ServiceItemName": "EPA-AUTO",
+            "Container": null,
+            "ContainerQuantity": 1.0,
+            "Rounds": [
+              {
+                "RoundCode": "MOBILE1AM - NoSchedule",
+                "RoundRoundAreaServiceScheduleID": 10920,
+                "RoundID": 600
+              }
+            ],
+            "NextCollectionDateRaw": null,
+            "NextCollectionDate": "",
+            "SiteServiceValidFromRaw": "/Date(1693522800000)/",
+            "SiteServiceValidFrom": "01/09/2023",
+            "SiteServiceValidToRaw": "/Date(-62135596800000)/",
+            "SiteServiceValidTo": "01/01/0001",
+            "ContractValidFromRaw": "/Date(1661986800000)/",
+            "ContractValidFrom": "01/09/2022",
+            "ContractValidToRaw": "/Date(-62135596800000)/",
+            "ContractValidTo": "01/01/0001"
+          },
+          {
+            "ServiceDescription": "Flytipping and Bulky Housing Service",
+            "AccountSiteID": 31382,
+            "ContractID": 41,
+            "ContractName": "Flytipping and Bulky Housing Contract",
+            "RoundSchedule": "LH1 NoSchedule",
+            "ServiceItemDescription": "CLEARANCE-AUTO",
+            "ServiceID": 583,
+            "ServiceItemID": 243,
+            "ServiceItemName": "CLEARANCE-AUTO",
+            "Container": null,
+            "ContainerQuantity": 1.0,
+            "Rounds": [
+              {
+                "RoundCode": "LH1 - NoSchedule",
+                "RoundRoundAreaServiceScheduleID": 10913,
+                "RoundID": 474
+              }
+            ],
+            "NextCollectionDateRaw": null,
+            "NextCollectionDate": "",
+            "SiteServiceValidFromRaw": "/Date(1700697600000)/",
+            "SiteServiceValidFrom": "23/11/2023",
+            "SiteServiceValidToRaw": "/Date(-62135596800000)/",
+            "SiteServiceValidTo": "01/01/0001",
+            "ContractValidFromRaw": "/Date(1664578800000)/",
+            "ContractValidFrom": "01/10/2022",
+            "ContractValidToRaw": "/Date(-62135596800000)/",
+            "ContractValidTo": "01/01/0001"
+          },
+          {
+            "ServiceDescription": "Sack Delivery",
+            "AccountSiteID": 31382,
+            "ContractID": 12,
+            "ContractName": "Sack Delivery Contract",
+            "RoundSchedule": "SACKDEL1 Tue",
+            "ServiceItemDescription": "Del-Rolls",
+            "ServiceID": 12,
+            "ServiceItemID": 22,
+            "ServiceItemName": "Del-Rolls",
+            "Container": {
+              "Name": "Del-rolls",
+              "DisplayPhrase": "recycling sacks",
+              "Price": null,
+              "Bulk": null,
+              "Orderable": null,
+              "Stream": null,
+              "LargerRequestable": null,
+              "LargerNextSize": null,
+              "LargetNextSizeContainer": null,
+              "Reportable": null,
+              "IsBag": true,
+              "WhitespaceID": 22
+            },
+            "ContainerQuantity": 1.0,
+            "Rounds": [
+              {
+                "RoundCode": "SACKDEL1 - Tue",
+                "RoundRoundAreaServiceScheduleID": 10894,
+                "RoundID": 170
+              }
+            ],
+            "NextCollectionDateRaw": "/Date(1767052800000)/",
+            "NextCollectionDate": "30/12/2025",
+            "SiteServiceValidFromRaw": "/Date(1696287600000)/",
+            "SiteServiceValidFrom": "03/10/2023",
+            "SiteServiceValidToRaw": "/Date(-62135596800000)/",
+            "SiteServiceValidTo": "01/01/0001",
+            "ContractValidFromRaw": "/Date(946684800000)/",
+            "ContractValidFrom": "01/01/2000",
+            "ContractValidToRaw": "/Date(-62135596800000)/",
+            "ContractValidTo": "01/01/0001"
+          },
+          {
+            "ServiceDescription": "Sack Delivery",
+            "AccountSiteID": 31382,
+            "ContractID": 12,
+            "ContractName": "Sack Delivery Contract",
+            "RoundSchedule": "",
+            "ServiceItemDescription": "Del-FPSack",
+            "ServiceID": 12,
+            "ServiceItemID": 21,
+            "ServiceItemName": "Del-FPSack",
+            "Container": {
+              "Name": "Flat Pack Sacks",
+              "DisplayPhrase": "recycling sacks",
+              "Price": null,
+              "Bulk": null,
+              "Orderable": null,
+              "Stream": null,
+              "LargerRequestable": null,
+              "LargerNextSize": null,
+              "LargetNextSizeContainer": null,
+              "Reportable": null,
+              "IsBag": true,
+              "WhitespaceID": 21
+            },
+            "ContainerQuantity": 1.0,
+            "Rounds": [],
+            "NextCollectionDateRaw": null,
+            "NextCollectionDate": "",
+            "SiteServiceValidFromRaw": "/Date(1617231600000)/",
+            "SiteServiceValidFrom": "01/04/2021",
+            "SiteServiceValidToRaw": "/Date(-62135596800000)/",
+            "SiteServiceValidTo": "01/01/0001",
+            "ContractValidFromRaw": "/Date(946684800000)/",
+            "ContractValidFrom": "01/01/2000",
+            "ContractValidToRaw": "/Date(-62135596800000)/",
+            "ContractValidTo": "01/01/0001"
+          },
+          {
+            "ServiceDescription": "Weeding",
+            "AccountSiteID": 31382,
+            "ContractID": 17,
+            "ContractName": "Weeding Contract",
+            "RoundSchedule": "XWEED2 WeedingWk38Thu",
+            "ServiceItemDescription": "Weed",
+            "ServiceID": 17,
+            "ServiceItemID": 54,
+            "ServiceItemName": "Weed",
+            "Container": null,
+            "ContainerQuantity": 1.0,
+            "Rounds": [
+              {
+                "RoundCode": "XWEED2 - WeedingWk38Thu",
+                "RoundRoundAreaServiceScheduleID": 3691,
+                "RoundID": 217
+              }
+            ],
+            "NextCollectionDateRaw": "/Date(1788994800000)/",
+            "NextCollectionDate": "10/09/2026",
+            "SiteServiceValidFromRaw": "/Date(1617231600000)/",
+            "SiteServiceValidFrom": "01/04/2021",
+            "SiteServiceValidToRaw": "/Date(-62135596800000)/",
+            "SiteServiceValidTo": "01/01/0001",
+            "ContractValidFromRaw": "/Date(946684800000)/",
+            "ContractValidFrom": "01/01/2000",
+            "ContractValidToRaw": "/Date(-62135596800000)/",
+            "ContractValidTo": "01/01/0001"
+          },
+          {
+            "ServiceDescription": "ZoneLookup",
+            "AccountSiteID": 31382,
+            "ContractID": 20,
+            "ContractName": "ZoneLookup Contract",
+            "RoundSchedule": "XZONE2 Daily",
+            "ServiceItemDescription": "Zone 2",
+            "ServiceID": 20,
+            "ServiceItemID": 57,
+            "ServiceItemName": "Zone 2",
+            "Container": null,
+            "ContainerQuantity": 1.0,
+            "Rounds": [
+              {
+                "RoundCode": "XZONE2 - Daily",
+                "RoundRoundAreaServiceScheduleID": 3816,
+                "RoundID": 221
+              }
+            ],
+            "NextCollectionDateRaw": "/Date(1766534400000)/",
+            "NextCollectionDate": "24/12/2025",
+            "SiteServiceValidFromRaw": "/Date(1617231600000)/",
+            "SiteServiceValidFrom": "01/04/2021",
+            "SiteServiceValidToRaw": "/Date(-62135596800000)/",
+            "SiteServiceValidTo": "01/01/0001",
+            "ContractValidFromRaw": "/Date(946684800000)/",
+            "ContractValidFrom": "01/01/2000",
+            "ContractValidToRaw": "/Date(-62135596800000)/",
+            "ContractValidTo": "01/01/0001"
+          }
+        ],
+        "SiteSchedules": [
+          {
+            "ServiceName": "ZoneLookup",
+            "ScheduleDescription": "Daily",
+            "RoundCode": "XZONE2",
+            "RoundRoundAreaServiceScheduleID": 3816
+          },
+          {
+            "ServiceName": "Weeding",
+            "ScheduleDescription": "WeedingWk41Thu",
+            "RoundCode": "XWEED1",
+            "RoundRoundAreaServiceScheduleID": 3457
+          },
+          {
+            "ServiceName": "Weeding",
+            "ScheduleDescription": "WeedingWk38Thu",
+            "RoundCode": "XWEED2",
+            "RoundRoundAreaServiceScheduleID": 3691
+          },
+          {
+            "ServiceName": "Textiles Collection Service",
+            "ScheduleDescription": "Tuesday Weekly",
+            "RoundCode": "CDR1",
+            "RoundRoundAreaServiceScheduleID": 5294
+          },
+          {
+            "ServiceName": "Support Unit",
+            "ScheduleDescription": "Tue Once Every 3 Weeks Wk2",
+            "RoundCode": "XBEAT30",
+            "RoundRoundAreaServiceScheduleID": 6228
+          },
+          {
+            "ServiceName": "Support Unit",
+            "ScheduleDescription": "Tuesday Weekly",
+            "RoundCode": "XBEAT50",
+            "RoundRoundAreaServiceScheduleID": 6236
+          },
+          {
+            "ServiceName": "Small Mechanical Sweeper",
+            "ScheduleDescription": "Tue Once Every 3 Weeks Wk2",
+            "RoundCode": "XBEAT30",
+            "RoundRoundAreaServiceScheduleID": 6227
+          },
+          {
+            "ServiceName": "Small Mechanical Sweeper",
+            "ScheduleDescription": "Tuesday Weekly",
+            "RoundCode": "XBEAT50",
+            "RoundRoundAreaServiceScheduleID": 6235
+          },
+          {
+            "ServiceName": "Sack Delivery",
+            "ScheduleDescription": "BDWeek4Wed",
+            "RoundCode": "SACKDEL1",
+            "RoundRoundAreaServiceScheduleID": 2957
+          },
+          {
+            "ServiceName": "Sack Delivery",
+            "ScheduleDescription": "Tuesday Weekly",
+            "RoundCode": "SACKDEL1",
+            "RoundRoundAreaServiceScheduleID": 10894
+          },
+          {
+            "ServiceName": "Park and Cemetery",
+            "ScheduleDescription": "Monday Weekly",
+            "RoundCode": "CBA1",
+            "RoundRoundAreaServiceScheduleID": 5241
+          },
+          {
+            "ServiceName": "Mobile Team",
+            "ScheduleDescription": "Tue Once Every 3 Weeks Wk2",
+            "RoundCode": "XBEAT30",
+            "RoundRoundAreaServiceScheduleID": 6226
+          },
+          {
+            "ServiceName": "Mobile Team",
+            "ScheduleDescription": "Tuesday Weekly",
+            "RoundCode": "XBEAT50",
+            "RoundRoundAreaServiceScheduleID": 6234
+          },
+          {
+            "ServiceName": "Mobile Team",
+            "ScheduleDescription": "Tuesday Weekly",
+            "RoundCode": "XMOBILE7",
+            "RoundRoundAreaServiceScheduleID": 2761
+          },
+          {
+            "ServiceName": "Lower Marsh",
+            "ScheduleDescription": "Tue Once Every 3 Weeks Wk2",
+            "RoundCode": "XBEAT30",
+            "RoundRoundAreaServiceScheduleID": 6225
+          },
+          {
+            "ServiceName": "Lower Marsh",
+            "ScheduleDescription": "Tuesday Weekly",
+            "RoundCode": "XBEAT50",
+            "RoundRoundAreaServiceScheduleID": 6233
+          },
+          {
+            "ServiceName": "Large Mechanical Sweeper",
+            "ScheduleDescription": "Tue Once Every 3 Weeks Wk2",
+            "RoundCode": "XBEAT30",
+            "RoundRoundAreaServiceScheduleID": 6224
+          },
+          {
+            "ServiceName": "Large Mechanical Sweeper",
+            "ScheduleDescription": "Tuesday Weekly",
+            "RoundCode": "XBEAT50",
+            "RoundRoundAreaServiceScheduleID": 6232
+          },
+          {
+            "ServiceName": "Flytipping and Bulky Housing Service",
+            "ScheduleDescription": "NoSchedule",
+            "RoundCode": "LH1",
+            "RoundRoundAreaServiceScheduleID": 10913
+          },
+          {
+            "ServiceName": "Flytipping and Bulky Housing Service",
+            "ScheduleDescription": "NoSchedule",
+            "RoundCode": "LH2",
+            "RoundRoundAreaServiceScheduleID": 10914
+          },
+          {
+            "ServiceName": "Flytipping and Bulky Housing Service",
+            "ScheduleDescription": "NoSchedule",
+            "RoundCode": "LH3",
+            "RoundRoundAreaServiceScheduleID": 10915
+          },
+          {
+            "ServiceName": "Flats above Shops Refuse Collection Service",
+            "ScheduleDescription": "Monday Weekly",
+            "RoundCode": "CBA1",
+            "RoundRoundAreaServiceScheduleID": 2253
+          },
+          {
+            "ServiceName": "Flats above Shops Refuse Collection Service",
+            "ScheduleDescription": "Tuesday Weekly",
+            "RoundCode": "CWB1",
+            "RoundRoundAreaServiceScheduleID": 2386
+          },
+          {
+            "ServiceName": "Flats above Shops Refuse Collection Service",
+            "ScheduleDescription": "Tuesday Refuse Week A",
+            "RoundCode": "REF8",
+            "RoundRoundAreaServiceScheduleID": 12257
+          },
+          {
+            "ServiceName": "Flats above Shops Refuse Collection Service",
+            "ScheduleDescription": "Tuesday Refuse Week B",
+            "RoundCode": "REF8",
+            "RoundRoundAreaServiceScheduleID": 12260
+          },
+          {
+            "ServiceName": "Flats above Shops Recycling Collection Service",
+            "ScheduleDescription": "Tuesday Weekly",
+            "RoundCode": "CDR1",
+            "RoundRoundAreaServiceScheduleID": 2318
+          },
+          {
+            "ServiceName": "Flats above Shops Recycling Collection Service",
+            "ScheduleDescription": "Tuesday Weekly",
+            "RoundCode": "CWB1",
+            "RoundRoundAreaServiceScheduleID": 5160
+          },
+          {
+            "ServiceName": "Flats above Shops Recycling Collection Service",
+            "ScheduleDescription": "Tuesday Weekly",
+            "RoundCode": "REC8",
+            "RoundRoundAreaServiceScheduleID": 11970
+          },
+          {
+            "ServiceName": "EPA Response",
+            "ScheduleDescription": "Tue Once Every 3 Weeks Wk2",
+            "RoundCode": "XBEAT30",
+            "RoundRoundAreaServiceScheduleID": 6223
+          },
+          {
+            "ServiceName": "EPA Response",
+            "ScheduleDescription": "Tuesday Weekly",
+            "RoundCode": "XBEAT50",
+            "RoundRoundAreaServiceScheduleID": 6231
+          },
+          {
+            "ServiceName": "EPA Response",
+            "ScheduleDescription": "Daily",
+            "RoundCode": "XEPA1",
+            "RoundRoundAreaServiceScheduleID": 2406
+          },
+          {
+            "ServiceName": "EPA Auto Response",
+            "ScheduleDescription": "NoSchedule",
+            "RoundCode": "EPA1",
+            "RoundRoundAreaServiceScheduleID": 10905
+          },
+          {
+            "ServiceName": "EPA Auto Response",
+            "ScheduleDescription": "NoSchedule",
+            "RoundCode": "MOBILE1AM",
+            "RoundRoundAreaServiceScheduleID": 10920
+          },
+          {
+            "ServiceName": "Domestic Refuse Collection Service",
+            "ScheduleDescription": "Monday Weekly",
+            "RoundCode": "CBA1",
+            "RoundRoundAreaServiceScheduleID": 2247
+          },
+          {
+            "ServiceName": "Domestic Refuse Collection Service",
+            "ScheduleDescription": "Tuesday Weekly",
+            "RoundCode": "CWB1",
+            "RoundRoundAreaServiceScheduleID": 2381
+          },
+          {
+            "ServiceName": "Domestic Refuse Collection Service",
+            "ScheduleDescription": "Tuesday Refuse Week A",
+            "RoundCode": "REF8",
+            "RoundRoundAreaServiceScheduleID": 12256
+          },
+          {
+            "ServiceName": "Domestic Refuse Collection Service",
+            "ScheduleDescription": "Tuesday Refuse Week B",
+            "RoundCode": "REF8",
+            "RoundRoundAreaServiceScheduleID": 12259
+          },
+          {
+            "ServiceName": "Domestic Recycling Collection Service",
+            "ScheduleDescription": "Tuesday Weekly",
+            "RoundCode": "CDR1",
+            "RoundRoundAreaServiceScheduleID": 2313
+          },
+          {
+            "ServiceName": "Domestic Recycling Collection Service",
+            "ScheduleDescription": "Tuesday Weekly",
+            "RoundCode": "CWB1",
+            "RoundRoundAreaServiceScheduleID": 5159
+          },
+          {
+            "ServiceName": "Domestic Recycling Collection Service",
+            "ScheduleDescription": "Tuesday Weekly",
+            "RoundCode": "REC8",
+            "RoundRoundAreaServiceScheduleID": 11969
+          },
+          {
+            "ServiceName": "Domestic Garden Collection Service",
+            "ScheduleDescription": "Tuesday Weekly Food Waste",
+            "RoundCode": "ORG2",
+            "RoundRoundAreaServiceScheduleID": 12901
+          },
+          {
+            "ServiceName": "Domestic Garden Collection Service",
+            "ScheduleDescription": "Tuesday Weekly Garden Waste",
+            "RoundCode": "ORG2",
+            "RoundRoundAreaServiceScheduleID": 12854
+          },
+          {
+            "ServiceName": "Domestic Food Collection Service",
+            "ScheduleDescription": "Tuesday Weekly Food Waste",
+            "RoundCode": "CFG1",
+            "RoundRoundAreaServiceScheduleID": 2348
+          },
+          {
+            "ServiceName": "Domestic Food Collection Service",
+            "ScheduleDescription": "Tuesday Weekly",
+            "RoundCode": "CWB1",
+            "RoundRoundAreaServiceScheduleID": 5158
+          },
+          {
+            "ServiceName": "Domestic Food Collection Service",
+            "ScheduleDescription": "Tuesday Weekly Food Waste",
+            "RoundCode": "ORG2",
+            "RoundRoundAreaServiceScheduleID": 12883
+          },
+          {
+            "ServiceName": "Communal Refuse Collection Service",
+            "ScheduleDescription": "Monday Weekly",
+            "RoundCode": "CBA1",
+            "RoundRoundAreaServiceScheduleID": 2241
+          },
+          {
+            "ServiceName": "Communal Refuse Collection Service",
+            "ScheduleDescription": "Tuesday Weekly",
+            "RoundCode": "CWB1",
+            "RoundRoundAreaServiceScheduleID": 2376
+          },
+          {
+            "ServiceName": "Communal Refuse Collection Service",
+            "ScheduleDescription": "Tuesday Refuse Week A",
+            "RoundCode": "REF8",
+            "RoundRoundAreaServiceScheduleID": 12255
+          },
+          {
+            "ServiceName": "Communal Refuse Collection Service",
+            "ScheduleDescription": "Tuesday Refuse Week B",
+            "RoundCode": "REF8",
+            "RoundRoundAreaServiceScheduleID": 12258
+          },
+          {
+            "ServiceName": "Communal Recycling Collection Service",
+            "ScheduleDescription": "Tuesday Weekly",
+            "RoundCode": "CDR1",
+            "RoundRoundAreaServiceScheduleID": 2308
+          },
+          {
+            "ServiceName": "Communal Recycling Collection Service",
+            "ScheduleDescription": "Tuesday Weekly",
+            "RoundCode": "CWB1",
+            "RoundRoundAreaServiceScheduleID": 5157
+          },
+          {
+            "ServiceName": "Communal Recycling Collection Service",
+            "ScheduleDescription": "Tuesday Weekly",
+            "RoundCode": "REC8",
+            "RoundRoundAreaServiceScheduleID": 11968
+          },
+          {
+            "ServiceName": "Communal Food Collection Service",
+            "ScheduleDescription": "Tuesday Weekly",
+            "RoundCode": "CWB1",
+            "RoundRoundAreaServiceScheduleID": 5156
+          },
+          {
+            "ServiceName": "Commercial Refuse Collection Service",
+            "ScheduleDescription": "Monday Weekly",
+            "RoundCode": "CBA1",
+            "RoundRoundAreaServiceScheduleID": 2235
+          },
+          {
+            "ServiceName": "Commercial Refuse Collection Service",
+            "ScheduleDescription": "Tuesday Weekly",
+            "RoundCode": "CWB1",
+            "RoundRoundAreaServiceScheduleID": 2371
+          },
+          {
+            "ServiceName": "Commercial Recycling Collection Service",
+            "ScheduleDescription": "Tuesday Weekly",
+            "RoundCode": "CDR1",
+            "RoundRoundAreaServiceScheduleID": 2303
+          },
+          {
+            "ServiceName": "Commercial Recycling Collection Service",
+            "ScheduleDescription": "Tuesday Weekly",
+            "RoundCode": "CWB1",
+            "RoundRoundAreaServiceScheduleID": 5155
+          },
+          {
+            "ServiceName": "Commercial Food Collection Service",
+            "ScheduleDescription": "Tuesday Weekly Food Waste",
+            "RoundCode": "CFG1",
+            "RoundRoundAreaServiceScheduleID": 2343
+          },
+          {
+            "ServiceName": "Commercial Food Collection Service",
+            "ScheduleDescription": "Tuesday Weekly",
+            "RoundCode": "CWB1",
+            "RoundRoundAreaServiceScheduleID": 5154
+          },
+          {
+            "ServiceName": "Commercial Food Collection Service",
+            "ScheduleDescription": "Tuesday Weekly Food Waste",
+            "RoundCode": "ORG2",
+            "RoundRoundAreaServiceScheduleID": 13040
+          },
+          {
+            "ServiceName": "Clinical Collection Service",
+            "ScheduleDescription": "Every 4 Months",
+            "RoundCode": "CLIN1",
+            "RoundRoundAreaServiceScheduleID": 9570
+          },
+          {
+            "ServiceName": "Clinical Collection Service",
+            "ScheduleDescription": "Every 6 Months",
+            "RoundCode": "CLIN1",
+            "RoundRoundAreaServiceScheduleID": 4579
+          },
+          {
+            "ServiceName": "Clinical Collection Service",
+            "ScheduleDescription": "Every Other Month",
+            "RoundCode": "CLIN1",
+            "RoundRoundAreaServiceScheduleID": 4575
+          },
+          {
+            "ServiceName": "Clinical Collection Service",
+            "ScheduleDescription": "TueMonthly",
+            "RoundCode": "CLIN1",
+            "RoundRoundAreaServiceScheduleID": 3874
+          },
+          {
+            "ServiceName": "Clinical Collection Service",
+            "ScheduleDescription": "TueQuarterly",
+            "RoundCode": "CLIN1",
+            "RoundRoundAreaServiceScheduleID": 3870
+          },
+          {
+            "ServiceName": "Clinical Collection Service",
+            "ScheduleDescription": "Tuesday Weekly",
+            "RoundCode": "CLIN1",
+            "RoundRoundAreaServiceScheduleID": 2358
+          },
+          {
+            "ServiceName": "Clear All",
+            "ScheduleDescription": "Tue Once Every 3 Weeks Wk2",
+            "RoundCode": "XBEAT30",
+            "RoundRoundAreaServiceScheduleID": 6222
+          },
+          {
+            "ServiceName": "Clear All",
+            "ScheduleDescription": "Tuesday Weekly",
+            "RoundCode": "XBEAT50",
+            "RoundRoundAreaServiceScheduleID": 6230
+          },
+          {
+            "ServiceName": "Brixton Market",
+            "ScheduleDescription": "Tue Once Every 3 Weeks Wk2",
+            "RoundCode": "XBEAT30",
+            "RoundRoundAreaServiceScheduleID": 6221
+          },
+          {
+            "ServiceName": "Brixton Market",
+            "ScheduleDescription": "Tuesday Weekly",
+            "RoundCode": "XBEAT50",
+            "RoundRoundAreaServiceScheduleID": 6229
+          },
+          {
+            "ServiceName": "Barrow",
+            "ScheduleDescription": "Monday Weekly",
+            "RoundCode": "Beat7B",
+            "RoundRoundAreaServiceScheduleID": 10670
+          },
+          {
+            "ServiceName": "Barrow",
+            "ScheduleDescription": "Thursday Weekly",
+            "RoundCode": "Beat7B",
+            "RoundRoundAreaServiceScheduleID": 10673
+          },
+          {
+            "ServiceName": "Barrow",
+            "ScheduleDescription": "Tuesday Weekly",
+            "RoundCode": "Beat7B",
+            "RoundRoundAreaServiceScheduleID": 10674
+          },
+          {
+            "ServiceName": "Barrow",
+            "ScheduleDescription": "Wednesday Weekly",
+            "RoundCode": "Beat7B",
+            "RoundRoundAreaServiceScheduleID": 10675
+          },
+          {
+            "ServiceName": "Barrow",
+            "ScheduleDescription": "Tue Once Every 3 Weeks Wk2",
+            "RoundCode": "XBEAT30",
+            "RoundRoundAreaServiceScheduleID": 1773
+          },
+          {
+            "ServiceName": "Barrow",
+            "ScheduleDescription": "Tuesday Weekly",
+            "RoundCode": "XBEAT50",
+            "RoundRoundAreaServiceScheduleID": 2000
+          },
+          {
+            "ServiceName": "Barrow",
+            "ScheduleDescription": "Tuesday Weekly",
+            "RoundCode": "XBEAT50",
+            "RoundRoundAreaServiceScheduleID": 4384
+          }
+        ],
+        "Flags": [
+          {
+            "FlagName": "Clapham-Supervisor",
+            "FlagID": 5,
+            "FlagDescription": "Clapham-Supervisor"
+          }
+        ],
+        "Success": true
+      },
+      "source": "requests.Session",
+      "timestamp": "2025-12-24T18:57:59.146700"
+    }
+  ],
+  "metadata": {
+    "skip_get_url": true,
+    "uprn": "100021881738",
+    "url": "https://wasteservice.lambeth.gov.uk/WhitespaceComms/GetServicesByUprn",
+    "wiki_name": "Lambeth",
+    "wiki_note": "Pass the UPRN. You can find it using [FindMyAddress](https://www.findmyaddress.co.uk/search).",
+    "LAD24CD": "E09000022"
+  }
+}

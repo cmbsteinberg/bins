@@ -1,0 +1,351 @@
+{
+  "council": "GraveshamBoroughCouncil",
+  "timestamp": "2025-12-24T18:51:54.535040",
+  "success": true,
+  "total_requests": 3,
+  "requests": [
+    {
+      "method": "GET",
+      "url": "https://my.gravesham.gov.uk/authapi/isauthenticated?uri=https%253A%252F%252Fmy.gravesham.gov.uk%252Fen%252FAchieveForms%252F%253Fform_uri%253Dsandbox-publish%253A%252F%252FAF-Process-22218d5c-c6d6-492f-b627-c713771126be%252FAF-Stage-905e87c1-144b-4a72-8932-5518ddd3e618%252Fdefinition.json%2526redirectlink%253D%25252Fen%2526cancelRedirectLink%253D%25252Fen%2526consentMessage%253Dyes&hostname=my.gravesham.gov.uk&withCredentials=true",
+      "request_headers": {},
+      "request_params": null,
+      "request_body": null,
+      "status_code": 200,
+      "response_headers": {
+        "Date": "Wed, 24 Dec 2025 18:51:54 GMT",
+        "Content-Type": "application/json; charset=utf-8",
+        "Content-Length": "720",
+        "Connection": "keep-alive",
+        "Set-Cookie": "AWSALB=HCJBe65cYbYZkWM9PNaDhweFR4uxJEbSkHPwkMkEsRbv8ppniI5qBqMOG0RN0+IwlAvccIYK7BmcCvLQ8inwxHCrA2VMRKlYsw9j4kDnTtb/FAlASMdfKeM259vQ; Expires=Wed, 31 Dec 2025 18:51:54 GMT; Path=/, AWSALBCORS=HCJBe65cYbYZkWM9PNaDhweFR4uxJEbSkHPwkMkEsRbv8ppniI5qBqMOG0RN0+IwlAvccIYK7BmcCvLQ8inwxHCrA2VMRKlYsw9j4kDnTtb/FAlASMdfKeM259vQ; Expires=Wed, 31 Dec 2025 18:51:54 GMT; Path=/; SameSite=None; Secure, PHPSESSID=sp80k6efa590uekndumah55efn; path=/; secure; HttpOnly, SESSIONCHECK=06df1671017dedd4a7689dd03117b386b031b6d23c486948208a035303505e02f295e8ebf3abb885669618a05bd1b03d4662fd6bf56002a526deb9ccc08e901c; expires=Thu, 25-Dec-2025 00:51:54 GMT; Max-Age=21600; path=/api/; domain=my.gravesham.gov.uk; secure; HttpOnly, SimpleSAMLSessionID=824a20b691b4b47a81adc61323f86864; path=/; secure; HttpOnly, SESSfsauthsession=0; path=/; secure; HttpOnly",
+        "Server": "Apache",
+        "X-Frame-Options": "SAMEORIGIN",
+        "X-Content-Type-Options": "nosniff",
+        "Expires": "Thu, 19 Nov 1981 08:52:00 GMT",
+        "Cache-Control": "no-store, no-cache, must-revalidate",
+        "Pragma": "no-cache",
+        "X-Auth-Session": "sp80k6efa590uekndumah55efn",
+        "Vary": "Accept-Encoding",
+        "Content-Encoding": "gzip",
+        "X-XSS-Protection": "0",
+        "Strict-Transport-Security": "max-age=31536000;",
+        "Content-Security-Policy": "default-src 'self' 'unsafe-eval' 'unsafe-inline' data: * ;media-src 'self' data: blob:"
+      },
+      "response_body": {
+        "auth-session": "8f8cc4e26de55f2598cf73dc4e0d9ab2",
+        "cookie-domain": "",
+        "is_authenticated": false,
+        "providers": [
+          {
+            "name": "Azure_Self",
+            "displayname": "Azure Self",
+            "image": "https://fs-filestore-eu.s3-eu-west-1.amazonaws.com/resources/azure.png",
+            "supportonly": "true",
+            "mapping": "{\"username\" : \"sAMAccountName\",\"email\" : \"emailaddress\",\"memberof\" :\"memberof\",\"name\":\"displayName\",\"first_name\" : \"givenName\",\"last_name\" :\"surname\",\"groupof\" :\"groups\"}",
+            "url": "https://my.gravesham.gov.uk/authapi/auth?provider=Azure_Self&uri=https%253A%252F%252Fmy.gravesham.gov.uk%252Fen%252FAchieveForms%252F%253Fform_uri%253Dsandbox-publish%253A%252F%252FAF-Process-22218d5c-c6d6-492f-b627-c713771126be%252FAF-Stage-905e87c1-144b-4a72-8932-5518ddd3e618%252Fdefinition.json%2526redirectlink%253D%25252Fen%2526cancelRedirectLink%253D%25252Fen%2526consentMessage%253Dyes"
+          },
+          {
+            "name": "fam_self",
+            "displayname": "Self Office Login",
+            "image": "https://fs-filestore-eu.s3.amazonaws.com/resources/network.png",
+            "supportonly": "true",
+            "url": "https://my.gravesham.gov.uk/authapi/auth?provider=fam_self&uri=https%253A%252F%252Fmy.gravesham.gov.uk%252Fen%252FAchieveForms%252F%253Fform_uri%253Dsandbox-publish%253A%252F%252FAF-Process-22218d5c-c6d6-492f-b627-c713771126be%252FAF-Stage-905e87c1-144b-4a72-8932-5518ddd3e618%252Fdefinition.json%2526redirectlink%253D%25252Fen%2526cancelRedirectLink%253D%25252Fen%2526consentMessage%253Dyes"
+          },
+          {
+            "name": "google_admin",
+            "displayname": "Firmstep Admin",
+            "image": "https://fs-filestore-eu.s3.amazonaws.com/resources/Googlethumb.jpg",
+            "supportonly": "true",
+            "url": "https://my.gravesham.gov.uk/authapi/auth?provider=google_admin&uri=https%253A%252F%252Fmy.gravesham.gov.uk%252Fen%252FAchieveForms%252F%253Fform_uri%253Dsandbox-publish%253A%252F%252FAF-Process-22218d5c-c6d6-492f-b627-c713771126be%252FAF-Stage-905e87c1-144b-4a72-8932-5518ddd3e618%252Fdefinition.json%2526redirectlink%253D%25252Fen%2526cancelRedirectLink%253D%25252Fen%2526consentMessage%253Dyes"
+          },
+          {
+            "name": "google_fam",
+            "displayname": "Firmstep Google FAM",
+            "image": "//fs-filestore-eu.s3.amazonaws.com/resources/Logo_icon_round_100px.png",
+            "supportonly": "true",
+            "url": "https://my.gravesham.gov.uk/authapi/auth?provider=google_fam&uri=https%253A%252F%252Fmy.gravesham.gov.uk%252Fen%252FAchieveForms%252F%253Fform_uri%253Dsandbox-publish%253A%252F%252FAF-Process-22218d5c-c6d6-492f-b627-c713771126be%252FAF-Stage-905e87c1-144b-4a72-8932-5518ddd3e618%252Fdefinition.json%2526redirectlink%253D%25252Fen%2526cancelRedirectLink%253D%25252Fen%2526consentMessage%253Dyes"
+          },
+          {
+            "name": "ssauth",
+            "displayname": "Self-service",
+            "image": "https://fs-filestore-eu.s3.amazonaws.com/resources/network.png",
+            "url": "https://my.gravesham.gov.uk/authapi/auth?provider=ssauth&uri=https%253A%252F%252Fmy.gravesham.gov.uk%252Fen%252FAchieveForms%252F%253Fform_uri%253Dsandbox-publish%253A%252F%252FAF-Process-22218d5c-c6d6-492f-b627-c713771126be%252FAF-Stage-905e87c1-144b-4a72-8932-5518ddd3e618%252Fdefinition.json%2526redirectlink%253D%25252Fen%2526cancelRedirectLink%253D%25252Fen%2526consentMessage%253Dyes",
+            "register_url": "https://my.gravesham.gov.uk/authapi/register?provider=ssauth&uri=https%253A%252F%252Fmy.gravesham.gov.uk%252Fen%252FAchieveForms%252F%253Fform_uri%253Dsandbox-publish%253A%252F%252FAF-Process-22218d5c-c6d6-492f-b627-c713771126be%252FAF-Stage-905e87c1-144b-4a72-8932-5518ddd3e618%252Fdefinition.json%2526redirectlink%253D%25252Fen%2526cancelRedirectLink%253D%25252Fen%2526consentMessage%253Dyes"
+          }
+        ]
+      },
+      "source": "requests.Session",
+      "timestamp": "2025-12-24T18:51:54.775945"
+    },
+    {
+      "method": "POST",
+      "url": "https://my.gravesham.gov.uk/apibroker/runLookup",
+      "request_headers": {
+        "Content-Type": "application/json",
+        "Accept": "application/json",
+        "User-Agent": "Mozilla/5.0",
+        "X-Requested-With": "XMLHttpRequest",
+        "Referer": "https://my.gravesham.gov.uk/fillform/?iframe_id=fillform-frame-1&db_id="
+      },
+      "request_params": {
+        "id": "5ee8854759297",
+        "repeat_against": "",
+        "noRetry": "false",
+        "getOnlyTokens": "undefined",
+        "log_id": "",
+        "app_name": "AF-Renderer::Self",
+        "_": "1766602314776",
+        "sid": "8f8cc4e26de55f2598cf73dc4e0d9ab2"
+      },
+      "request_body": null,
+      "status_code": 200,
+      "response_headers": {
+        "Date": "Wed, 24 Dec 2025 18:51:55 GMT",
+        "Content-Type": "application/json; charset=UTF-8",
+        "Content-Length": "590",
+        "Connection": "keep-alive",
+        "Set-Cookie": "AWSALB=+MlBnKZKuunAREXfAEuL8ApPK4W7olGo6uEdoisRR9dtTSk/wNrZv2ciGiQXVarofy1rRx3LMl4FHFY2EmtUpxzfXFopBv/+sY9nZ2jQ+zmxWfvR56gtGMwu21mC; Expires=Wed, 31 Dec 2025 18:51:54 GMT; Path=/, AWSALBCORS=+MlBnKZKuunAREXfAEuL8ApPK4W7olGo6uEdoisRR9dtTSk/wNrZv2ciGiQXVarofy1rRx3LMl4FHFY2EmtUpxzfXFopBv/+sY9nZ2jQ+zmxWfvR56gtGMwu21mC; Expires=Wed, 31 Dec 2025 18:51:54 GMT; Path=/; SameSite=None; Secure",
+        "Server": "Apache",
+        "X-Frame-Options": "SAMEORIGIN",
+        "X-Content-Type-Options": "nosniff",
+        "Strict-Transport-Security": "max-age=31536000;",
+        "Expires": "Thu, 19 Nov 1981 08:52:00 GMT",
+        "Cache-Control": "no-store, no-cache, must-revalidate",
+        "Pragma": "no-cache",
+        "Vary": "Accept-Encoding",
+        "Content-Encoding": "gzip",
+        "X-XSS-Protection": "0",
+        "Content-Security-Policy": "default-src 'self' 'unsafe-eval' 'unsafe-inline' data: * ;media-src 'self' data: blob:"
+      },
+      "response_body": {
+        "status": "done",
+        "data": "<?xml version=\"1.0\"?>\n<Responses><RequestResponse><DatabaseResponse><Fields><Field Type=\"varchar\" Name=\"tokenString\"/></Fields><Rows><Row id=\"0\"><result column=\"tokenString\" isNull=\"False\">RADdktvYlFkz+sbwHFia8c92o/yDxy/AKpa3dClW6IvpOcCVlDZS4sjthH1/CO3CexVKz3Ns0Fc=</result></Row></Rows></DatabaseResponse></RequestResponse></Responses>\n",
+        "integration": {
+          "id": "5ee8854759297",
+          "type": "webservice",
+          "transformed": {
+            "error": null,
+            "xml_data": "<?xml version=\"1.0\"?><Responses><RequestResponse><DatabaseResponse><Fields><Field Type=\"varchar\" Name=\"tokenString\"/></Fields><Rows><Row id=\"0\"><result column=\"tokenString\" isNull=\"False\">RADdktvYlFkz+sbwHFia8c92o/yDxy/AKpa3dClW6IvpOcCVlDZS4sjthH1/CO3CexVKz3Ns0Fc=</result></Row></Rows></DatabaseResponse></RequestResponse></Responses>",
+            "rows_data": {
+              "0": {
+                "tokenString": "RADdktvYlFkz+sbwHFia8c92o/yDxy/AKpa3dClW6IvpOcCVlDZS4sjthH1/CO3CexVKz3Ns0Fc="
+              }
+            },
+            "fields_data": {
+              "tokenString": {
+                "type": "varchar",
+                "name": "tokenString"
+              }
+            },
+            "select_data": [
+              {
+                "label": "",
+                "value": ""
+              }
+            ],
+            "meta_data": [],
+            "results_page": null,
+            "post_transform": null,
+            "pre_transform": null
+          },
+          "tokens": [],
+          "runtimes": {
+            "integration": {
+              "template": "14ms",
+              "lim": "13ms",
+              "webservice": "170ms"
+            },
+            "api": "170ms",
+            "lim": "13ms"
+          },
+          "log_id": "b41f527c-ea58-4d2e-adb7-1e7871971c04"
+        },
+        "hash": "6995EE4EDD7A155402358B2EC963426868111334B6C54F8F79F04533DC190C20"
+      },
+      "source": "requests.Session",
+      "timestamp": "2025-12-24T18:51:55.118358"
+    },
+    {
+      "method": "POST",
+      "url": "https://my.gravesham.gov.uk/apibroker/runLookup",
+      "request_headers": {
+        "Content-Type": "application/json",
+        "Accept": "application/json",
+        "User-Agent": "Mozilla/5.0",
+        "X-Requested-With": "XMLHttpRequest",
+        "Referer": "https://my.gravesham.gov.uk/fillform/?iframe_id=fillform-frame-1&db_id="
+      },
+      "request_params": {
+        "id": "5c8f869376376",
+        "repeat_against": "",
+        "noRetry": "false",
+        "getOnlyTokens": "undefined",
+        "log_id": "",
+        "app_name": "AF-Renderer::Self",
+        "_": "1766602315118",
+        "sid": "8f8cc4e26de55f2598cf73dc4e0d9ab2"
+      },
+      "request_body": {
+        "formValues": {
+          "Check your bin day": {
+            "tokenString": {
+              "value": "RADdktvYlFkz+sbwHFia8c92o/yDxy/AKpa3dClW6IvpOcCVlDZS4sjthH1/CO3CexVKz3Ns0Fc="
+            },
+            "UPRNForAPI": {
+              "value": "100060927046"
+            },
+            "formatDateToday": {
+              "value": "2025-12-24T18:51:55"
+            },
+            "formatDateTo": {
+              "value": "2026-01-24T18:51:55"
+            }
+          }
+        }
+      },
+      "status_code": 200,
+      "response_headers": {
+        "Date": "Wed, 24 Dec 2025 18:51:56 GMT",
+        "Content-Type": "application/json; charset=UTF-8",
+        "Content-Length": "929",
+        "Connection": "keep-alive",
+        "Set-Cookie": "AWSALB=vWEb/cbbld6bcm4MWMizrq4N5waH1Tm8Tt/3vDhN8ZhbQ14nCDsqTnFaNsIRWiG/MB4nPSjMZHoLRMw+YQCHu/6wPWk/iyN1Zmplg1nlYglpphF2x9I2S/oRrrIy; Expires=Wed, 31 Dec 2025 18:51:55 GMT; Path=/, AWSALBCORS=vWEb/cbbld6bcm4MWMizrq4N5waH1Tm8Tt/3vDhN8ZhbQ14nCDsqTnFaNsIRWiG/MB4nPSjMZHoLRMw+YQCHu/6wPWk/iyN1Zmplg1nlYglpphF2x9I2S/oRrrIy; Expires=Wed, 31 Dec 2025 18:51:55 GMT; Path=/; SameSite=None; Secure",
+        "Server": "Apache",
+        "X-Frame-Options": "SAMEORIGIN",
+        "X-Content-Type-Options": "nosniff",
+        "Strict-Transport-Security": "max-age=31536000;",
+        "Expires": "Thu, 19 Nov 1981 08:52:00 GMT",
+        "Cache-Control": "no-store, no-cache, must-revalidate",
+        "Pragma": "no-cache",
+        "Vary": "Accept-Encoding",
+        "Content-Encoding": "gzip",
+        "X-XSS-Protection": "0",
+        "Content-Security-Policy": "default-src 'self' 'unsafe-eval' 'unsafe-inline' data: * ;media-src 'self' data: blob:"
+      },
+      "response_body": {
+        "status": "done",
+        "data": "<?xml version=\"1.0\"?>\n<Responses><RequestResponse><DatabaseResponse><Fields><Field Type=\"varchar\" Name=\"Date\"/><Field Type=\"varchar\" Name=\"Name\"/><Field Type=\"varchar\" Name=\"Round\"/><Field Type=\"varchar\" Name=\"Success\"/></Fields><Rows><Row id=\"0\"><result column=\"Date\"/><result column=\"Name\"/><result column=\"Round\"/><result column=\"Success\" isNull=\"False\">True</result></Row><Row id=\"1\"><result column=\"Date\" isNull=\"False\">2026-01-15T07:00:00</result><result column=\"Name\" isNull=\"False\">Empty Bin FOOD BIN Empty Bin RECYCLING 240L </result><result column=\"Round\" isNull=\"False\">Waste-Food Waste 1-150126 Waste-DOM-8-150126 </result><result column=\"Success\" isNull=\"False\">True</result></Row><Row id=\"2\"><result column=\"Date\" isNull=\"False\">2026-01-22T07:00:00</result><result column=\"Name\" isNull=\"False\">Empty Bin FOOD BIN Empty Bin REFUSE 180L </result><result column=\"Round\" isNull=\"False\">Waste-Food Waste 1-220126 Waste-DOM-8-220126 </result><result column=\"Success\" isNull=\"False\">True</result></Row><Row id=\"3\"><result column=\"Date\" isNull=\"False\">2025-12-27T07:00:00</result><result column=\"Name\" isNull=\"False\">Empty Bin REFUSE 180L Empty Bin FOOD BIN </result><result column=\"Round\" isNull=\"False\">Waste-DOM-8-271225 Waste-Food Waste 1-271225 </result><result column=\"Success\" isNull=\"False\">True</result></Row><Row id=\"4\"><result column=\"Date\" isNull=\"False\">2026-01-03T07:00:00</result><result column=\"Name\" isNull=\"False\">Empty Bin RECYCLING 240L Empty Bin FOOD BIN </result><result column=\"Round\" isNull=\"False\">Waste-DOM-8-030126 Waste-Food Waste 1-030126 </result><result column=\"Success\" isNull=\"False\">True</result></Row><Row id=\"5\"><result column=\"Date\" isNull=\"False\">2026-01-09T07:00:00</result><result column=\"Name\" isNull=\"False\">Empty Bin FOOD BIN Empty Bin REFUSE 180L </result><result column=\"Round\" isNull=\"False\">Waste-Food Waste 1-090126 Waste-DOM-8-090126 </result><result column=\"Success\" isNull=\"False\">True</result></Row></Rows></DatabaseResponse></RequestResponse></Responses>\n",
+        "integration": {
+          "id": "5c8f869376376",
+          "type": "webservice",
+          "transformed": {
+            "error": null,
+            "xml_data": "<?xml version=\"1.0\"?><Responses><RequestResponse><DatabaseResponse><Fields><Field Type=\"varchar\" Name=\"Date\"/><Field Type=\"varchar\" Name=\"Name\"/><Field Type=\"varchar\" Name=\"Round\"/><Field Type=\"varchar\" Name=\"Success\"/></Fields><Rows><Row id=\"0\"><result column=\"Date\"/><result column=\"Name\"/><result column=\"Round\"/><result column=\"Success\" isNull=\"False\">True</result></Row><Row id=\"1\"><result column=\"Date\" isNull=\"False\">2026-01-15T07:00:00</result><result column=\"Name\" isNull=\"False\">Empty Bin FOOD BIN Empty Bin RECYCLING 240L </result><result column=\"Round\" isNull=\"False\">Waste-Food Waste 1-150126 Waste-DOM-8-150126 </result><result column=\"Success\" isNull=\"False\">True</result></Row><Row id=\"2\"><result column=\"Date\" isNull=\"False\">2026-01-22T07:00:00</result><result column=\"Name\" isNull=\"False\">Empty Bin FOOD BIN Empty Bin REFUSE 180L </result><result column=\"Round\" isNull=\"False\">Waste-Food Waste 1-220126 Waste-DOM-8-220126 </result><result column=\"Success\" isNull=\"False\">True</result></Row><Row id=\"3\"><result column=\"Date\" isNull=\"False\">2025-12-27T07:00:00</result><result column=\"Name\" isNull=\"False\">Empty Bin REFUSE 180L Empty Bin FOOD BIN </result><result column=\"Round\" isNull=\"False\">Waste-DOM-8-271225 Waste-Food Waste 1-271225 </result><result column=\"Success\" isNull=\"False\">True</result></Row><Row id=\"4\"><result column=\"Date\" isNull=\"False\">2026-01-03T07:00:00</result><result column=\"Name\" isNull=\"False\">Empty Bin RECYCLING 240L Empty Bin FOOD BIN </result><result column=\"Round\" isNull=\"False\">Waste-DOM-8-030126 Waste-Food Waste 1-030126 </result><result column=\"Success\" isNull=\"False\">True</result></Row><Row id=\"5\"><result column=\"Date\" isNull=\"False\">2026-01-09T07:00:00</result><result column=\"Name\" isNull=\"False\">Empty Bin FOOD BIN Empty Bin REFUSE 180L </result><result column=\"Round\" isNull=\"False\">Waste-Food Waste 1-090126 Waste-DOM-8-090126 </result><result column=\"Success\" isNull=\"False\">True</result></Row></Rows></DatabaseResponse></RequestResponse></Responses>",
+            "rows_data": {
+              "0": {
+                "Date": "",
+                "Name": "",
+                "Round": "",
+                "Success": "True"
+              },
+              "1": {
+                "Date": "2026-01-15T07:00:00",
+                "Name": "Empty Bin FOOD BIN Empty Bin RECYCLING 240L ",
+                "Round": "Waste-Food Waste 1-150126 Waste-DOM-8-150126 ",
+                "Success": "True"
+              },
+              "2": {
+                "Date": "2026-01-22T07:00:00",
+                "Name": "Empty Bin FOOD BIN Empty Bin REFUSE 180L ",
+                "Round": "Waste-Food Waste 1-220126 Waste-DOM-8-220126 ",
+                "Success": "True"
+              },
+              "3": {
+                "Date": "2025-12-27T07:00:00",
+                "Name": "Empty Bin REFUSE 180L Empty Bin FOOD BIN ",
+                "Round": "Waste-DOM-8-271225 Waste-Food Waste 1-271225 ",
+                "Success": "True"
+              },
+              "4": {
+                "Date": "2026-01-03T07:00:00",
+                "Name": "Empty Bin RECYCLING 240L Empty Bin FOOD BIN ",
+                "Round": "Waste-DOM-8-030126 Waste-Food Waste 1-030126 ",
+                "Success": "True"
+              },
+              "5": {
+                "Date": "2026-01-09T07:00:00",
+                "Name": "Empty Bin FOOD BIN Empty Bin REFUSE 180L ",
+                "Round": "Waste-Food Waste 1-090126 Waste-DOM-8-090126 ",
+                "Success": "True"
+              }
+            },
+            "fields_data": {
+              "Date": {
+                "type": "varchar",
+                "name": "Date"
+              },
+              "Name": {
+                "type": "varchar",
+                "name": "Name"
+              },
+              "Round": {
+                "type": "varchar",
+                "name": "Round"
+              },
+              "Success": {
+                "type": "varchar",
+                "name": "Success"
+              }
+            },
+            "select_data": [
+              {
+                "label": "",
+                "value": ""
+              },
+              {
+                "label": "",
+                "value": ""
+              },
+              {
+                "label": "",
+                "value": ""
+              },
+              {
+                "label": "",
+                "value": ""
+              },
+              {
+                "label": "",
+                "value": ""
+              },
+              {
+                "label": "",
+                "value": ""
+              }
+            ],
+            "meta_data": [],
+            "results_page": null,
+            "post_transform": null,
+            "pre_transform": null
+          },
+          "tokens": [
+            "{tokenString}",
+            "{UPRNForAPI}",
+            "{formatDateToday}",
+            "{formatDateTo}"
+          ],
+          "runtimes": {
+            "integration": {
+              "template": "12ms",
+              "lim": "12ms",
+              "webservice": "768ms"
+            },
+            "api": "768ms",
+            "lim": "12ms"
+          },
+          "log_id": "8f90d22b-7970-476f-b4a3-a6329858db45"
+        },
+        "hash": "C7F759C9D260136109289683DD8CC4B742048CA1FFCFF61B7F83E484F9C91FBD"
+      },
+      "source": "requests.Session",
+      "timestamp": "2025-12-24T18:51:56.098520"
+    }
+  ],
+  "metadata": {
+    "skip_get_url": true,
+    "uprn": "100060927046",
+    "url": "https://www.gravesham.gov.uk",
+    "wiki_name": "Gravesham",
+    "wiki_note": "Pass the UPRN. You will need to use [FindMyAddress](https://www.findmyaddress.co.uk/search).",
+    "LAD24CD": "E07000109"
+  }
+}

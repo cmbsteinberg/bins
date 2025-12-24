@@ -411,6 +411,10 @@ def create_webdriver(
                             # Skip common static asset paths
                             if any(path in url_lower for path in ['/fonts/', '/images/', '/img/', '/media/']):
                                 continue
+
+                            # Skip Google requests
+                            if any(domain in url_lower for domain in ['accounts.google.com', 'clients2.google.com', 'clients.google.com', 'google.com/generate_204']):
+                                continue
                             # Extract request body (limit size to avoid memory issues)
                             request_body = None
                             if req.body:
@@ -498,6 +502,14 @@ class RequestTracker:
         tracker_self = self
 
         def logged_request(*args, **kwargs):
+            # Get the URL for filtering
+            url = kwargs.get('url', args[1] if len(args) > 1 else '')
+            url_lower = url.lower() if url else ''
+
+            # Skip Google requests
+            if any(domain in url_lower for domain in ['accounts.google.com', 'clients2.google.com', 'clients.google.com', 'google.com/generate_204']):
+                return tracker_self._original_request(*args, **kwargs)
+
             # Extract request body BEFORE making the request
             # Note: requests library pre-processes json parameter into data
             request_body = None
@@ -553,6 +565,11 @@ class RequestTracker:
         self._original_session_request = requests.Session.request
 
         def logged_session_request(session_self, method, url, **kwargs):
+            # Skip Google requests
+            url_lower = url.lower() if url else ''
+            if any(domain in url_lower for domain in ['accounts.google.com', 'clients2.google.com', 'clients.google.com', 'google.com/generate_204']):
+                return tracker_self._original_session_request(session_self, method, url, **kwargs)
+
             # Extract request body BEFORE making the request
             # Note: requests library pre-processes json parameter into data
             request_body = None
@@ -688,6 +705,10 @@ class RequestTracker:
             # Skip static resources by URL extension
             url_lower = url.lower()
             if any(url_lower.endswith(ext) for ext in static_extensions):
+                continue
+
+            # Skip Google requests
+            if any(domain in url_lower for domain in ['accounts.google.com', 'clients2.google.com', 'clients.google.com', 'google.com/generate_204']):
                 continue
 
             # Skip common static resource types (but keep XHR, Fetch, Document)

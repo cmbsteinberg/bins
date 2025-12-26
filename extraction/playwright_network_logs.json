@@ -1,0 +1,1218 @@
+[
+  {
+    "council": "AdurAndWorthingCouncils",
+    "status": "skipped",
+    "reason": "no_test_parameters",
+    "network_requests": []
+  },
+  {
+    "council": "AngusCouncil",
+    "status": "failed",
+    "playwright_code": "await page.goto('https://myangus.angus.gov.uk/service/Bin_collection_dates_V3')\niframe_element = await page.wait_for_selector('#fillform-frame-1')\nframe = await iframe_element.content_frame()\nawait frame.wait_for_selector('#searchString')\nawait frame.fill('#searchString', postcode)\nawait frame.click(\"//button[contains(text(), 'Search')]\")\nawait frame.wait_for_selector('#customerAddress')\nawait frame.select_option('#customerAddress', value=uprn)\nawait frame.wait_for_selector('span.fieldInput.content.html.non-input')\nawait page.wait_for_timeout(15000)\ncontent = await frame.content()",
+    "test_params": {
+      "uprn": "117053733",
+      "skip_get_url": true,
+      "postcode": "DD7 7LE",
+      "web_driver": "http://selenium:4444"
+    },
+    "network_requests": []
+  },
+  {
+    "council": "AntrimAndNewtonabbeyCouncil",
+    "status": "skipped",
+    "reason": "no_test_parameters",
+    "network_requests": []
+  },
+  {
+    "council": "ArgyllandButeCouncil",
+    "status": "failed",
+    "playwright_code": "await page.goto('https://www.argyll-bute.gov.uk/rubbish-and-recycling/household-waste/bin-collection')\ntry:\n    await page.wait_for_selector('#ccc-recommended-settings', timeout=5000)\n    await page.click('#ccc-recommended-settings')\nexcept:\n    pass\nawait page.wait_for_selector('#edit-postcode')\nawait page.fill('#edit-postcode', postcode)\nawait page.click('#edit-submit')\nawait page.wait_for_selector('#edit-address')\nawait page.select_option('#edit-address', str(uprn).zfill(12))\nawait page.click('input[value=\"Search for my bin collection details\"]')\nawait page.wait_for_selector(\"//th[contains(text(),'Collection date')]/ancestor::table\")",
+    "test_params": {
+      "skip_get_url": true,
+      "postcode": "PA286LJ",
+      "uprn": "000125011723",
+      "web_driver": "http://selenium:4444"
+    },
+    "network_requests": []
+  },
+  {
+    "council": "ArunCouncil",
+    "status": "failed",
+    "playwright_code": "await page.goto('https://www1.arun.gov.uk/when-are-my-bins-collected/')\nawait page.click('text=Start now')\nawait page.wait_for_selector('#postcode')\nawait page.fill('#postcode', postcode)\nawait page.click('.govuk-button')\nawait page.wait_for_selector('#address')\naddress_options = await page.query_selector_all('#address option')\nfor option in address_options:\n    text = await option.inner_text()\n    if text.startswith(house_number):\n        await page.select_option('#address', label=text)\n        break\nawait page.click('.govuk-button')\nawait page.wait_for_selector(\"//*[contains(text(), 'Next collection dates')]\")",
+    "test_params": {
+      "house_number": "1",
+      "postcode": "BN16 4DA",
+      "skip_get_url": true,
+      "web_driver": "http://selenium:4444"
+    },
+    "network_requests": []
+  },
+  {
+    "council": "AshfieldDistrictCouncil",
+    "status": "failed",
+    "playwright_code": "await page.goto('https://portal.digital.ashfield.gov.uk/w/webpage/raise-case?service=bin_calendar')\nawait page.wait_for_selector('input.relation_path_type_ahead_search')\nawait page.fill('input.relation_path_type_ahead_search', postcode)\naddress_selector = f\"//li[starts-with(@aria-label, '{house_number}')]\"\nawait page.wait_for_selector(address_selector)\nawait page.click(address_selector)\nawait page.click(\"//input[@type='submit' and @value='Search']\")\nawait page.wait_for_selector('table.listing.table-striped')\nresults = await page.content()",
+    "test_params": {
+      "house_number": "1",
+      "postcode": "NG16 6RH",
+      "web_driver": "http://selenium:4444"
+    },
+    "network_requests": []
+  },
+  {
+    "council": "AshfordBoroughCouncil",
+    "status": "failed",
+    "playwright_code": "await page.goto('https://secure.ashford.gov.uk/waste/collectiondaylookup/')\nawait page.fill('#ContentPlaceHolder1_CollectionDayLookup2_TextBox_PostCode', postcode)\nawait page.click('#ContentPlaceHolder1_CollectionDayLookup2_Button_PostCodeSearch')\nawait page.wait_for_selector('#ContentPlaceHolder1_CollectionDayLookup2_DropDownList_Addresses')\nawait page.select_option('#ContentPlaceHolder1_CollectionDayLookup2_DropDownList_Addresses', uprn)\nawait page.click('#ContentPlaceHolder1_CollectionDayLookup2_Button_SelectAddress')\nawait page.wait_for_selector(\"//h4[contains(text(), 'Collection Dates')]\")",
+    "test_params": {
+      "postcode": "TN23 7SP",
+      "uprn": "100060777899",
+      "web_driver": "http://selenium:4444"
+    },
+    "network_requests": []
+  },
+  {
+    "council": "BarkingDagenham",
+    "status": "failed",
+    "playwright_code": "await page.goto(url)\nawait page.keyboard.press('Escape')\ntry:\n    cookie_button = await page.wait_for_selector('.agree-button.eu-cookie-compliance-secondary-button', timeout=5000)\n    await cookie_button.click()\nexcept:\n    pass\nawait page.fill('#postcode', postcode)\nawait page.keyboard.press('Tab')\nawait page.keyboard.press('Enter')\naddress_select = await page.wait_for_selector('#address')\nawait address_select.select_option(label={'content': house_number, 'match_substring': True})\nawait page.keyboard.press('Tab')\nawait page.keyboard.press('Enter')\nawait page.wait_for_selector('.bin--container')",
+    "test_params": {
+      "house_number": "19",
+      "postcode": "RM6 6XH",
+      "skip_get_url": true,
+      "web_driver": "http://selenium:4444"
+    },
+    "network_requests": []
+  },
+  {
+    "council": "BarnetCouncil",
+    "status": "failed",
+    "playwright_code": "await page.goto('https://www.barnet.gov.uk/recycling-and-waste/bin-collections/find-your-bin-collection-day')\ntry:\n    accept_cookies = await page.wait_for_selector(\"button:has-text('Accept additional cookies')\", timeout=5000)\n    await accept_cookies.click()\nexcept:\n    pass\nawait page.click(\"text=Find your household collection day\")\ntry:\n    await page.wait_for_selector('#epdagree', timeout=5000)\n    await page.click('#epdagree')\n    await page.click('#epdsubmit')\nexcept:\n    pass\nawait page.fill('[aria-label=\"Postcode\"]', postcode)\nawait page.click('input[value=\"Find address\"]')\nawait page.wait_for_selector('select[id*=\"MainContent_CUSTOM_FIELD\"]')\noptions = await page.query_selector_all('select[id*=\"MainContent_CUSTOM_FIELD\"] option')\nfor option in options:\n    text = await option.inner_text()\n    if house_number.upper() in text.upper() and postcode.upper() in text.upper():\n        val = await option.get_attribute('value')\n        await page.select_option('select[id*=\"MainContent_CUSTOM_FIELD\"]', val)\n        break\nawait page.wait_for_selector(\"div:has-text('Next collection date:')\", timeout=15000)",
+    "test_params": {
+      "house_number": "26A",
+      "postcode": "EN4 8TB",
+      "skip_get_url": true,
+      "web_driver": "http://selenium:4444"
+    },
+    "network_requests": []
+  },
+  {
+    "council": "BexleyCouncil",
+    "status": "failed",
+    "playwright_code": "await page.goto(f'https://waste.bexley.gov.uk/waste/{uprn}')\nawait page.wait_for_selector('#loading-indicator', state='hidden', timeout=30000)\nawait page.wait_for_selector('.waste-service-name')\nawait page.wait_for_timeout(3000)",
+    "test_params": {
+      "uprn": "100020196143",
+      "skip_get_url": true
+    },
+    "network_requests": []
+  },
+  {
+    "council": "BlaenauGwentCountyBoroughCouncil",
+    "status": "failed",
+    "playwright_code": "await page.goto('https://www.blaenau-gwent.gov.uk/en/resident/waste-recycling/')\ntry:\n    await page.wait_for_selector('#ccc-overlay', timeout=3000)\n    cookie_button = await page.query_selector(\"//button[contains(text(), 'Accept')] | //button[@id='ccc-recommended-settings']\")\n    if cookie_button:\n        await cookie_button.click()\nexcept:\n    pass\n\nlink = await page.wait_for_selector(\"//a[contains(text(), 'Find Your Collection Day')]\")\ncollection_url = await link.get_attribute('href')\nawait page.goto(collection_url)\n\nawait page.fill('#postcodeSearch', postcode)\nawait page.click(\"//button[contains(text(), 'Find')]\")\n\nawait page.wait_for_selector('#addressSelect')\nawait page.select_option('#addressSelect', value=uprn)\n\nawait page.wait_for_load_state('networkidle')\nawait page.wait_for_function('() => document.body.innerText.includes(\"Your next collections\")')",
+    "test_params": {
+      "postcode": "NP23 7TE",
+      "skip_get_url": false,
+      "uprn": "100100471367",
+      "web_driver": "http://selenium:4444"
+    },
+    "network_requests": []
+  },
+  {
+    "council": "BoltonCouncil",
+    "status": "failed",
+    "playwright_code": "await page.goto('https://web.bolton.gov.uk/bins.aspx')\nawait page.wait_for_selector('#txtPostcode')\nawait page.fill('#txtPostcode', postcode)\nawait page.click('#btnSubmit')\nawait page.wait_for_selector('#ddlAddresses')\nawait page.select_option('#ddlAddresses', value=uprn)\nawait page.wait_for_selector('#pnlStep3')",
+    "test_params": {
+      "postcode": "BL1 5PQ",
+      "skip_get_url": true,
+      "uprn": "100010886936",
+      "web_driver": "http://selenium:4444"
+    },
+    "network_requests": []
+  },
+  {
+    "council": "BostonBoroughCouncil",
+    "status": "failed",
+    "playwright_code": "await page.goto('https://www.boston.gov.uk/findwastecollections')\ntry:\n    accept_button = await page.wait_for_selector('button[name=\"acceptall\"]', timeout=5000)\n    if accept_button:\n        await accept_button.click()\nexcept Exception: \n    pass\nawait page.wait_for_selector('#BBCWASTECOLLECTIONS_START_SEARCHPOSTCODE')\nawait page.fill('#BBCWASTECOLLECTIONS_START_SEARCHPOSTCODE', postcode)\nawait page.click('#BBCWASTECOLLECTIONS_START_START10_NEXT')\nawait page.wait_for_selector('#BBCWASTECOLLECTIONS_COLLECTIONADDRESS_INCIDENTUPRN_chosen')\nawait page.click('#BBCWASTECOLLECTIONS_COLLECTIONADDRESS_INCIDENTUPRN_chosen')\nawait page.click(f\"//li[@class='active-result' and contains(text(), '{house_number}')]\")\nawait page.click('#BBCWASTECOLLECTIONS_COLLECTIONADDRESS_NEXT3_NEXT')\nawait page.wait_for_selector('#BBCWASTECOLLECTIONS_SERVICE_FIELD859_OUTER')\nresults_html = await page.content()",
+    "test_params": {
+      "house_number": "CEDAR",
+      "postcode": "PE20 1AY",
+      "skip_get_url": true,
+      "web_driver": "http://selenium:4444"
+    },
+    "network_requests": []
+  },
+  {
+    "council": "BrightonandHoveCityCouncil",
+    "status": "failed",
+    "playwright_code": "await page.goto('https://enviroservices.brighton-hove.gov.uk/link/collections')\nawait page.wait_for_selector('.form-control')\nawait page.fill('.form-control', postcode)\nawait page.click(\"//button[contains(@class, 'mx-name-actionButton3')]\")\nawait page.wait_for_selector(f'//option[contains(text(), \"{paon}\")]')\nawait page.select_option('select', label=f'{paon}')\nawait page.click(\"//button[contains(@class, 'mx-name-actionButton5')]\")\nawait page.wait_for_selector('.mx-name-listView1')",
+    "test_params": {
+      "house_number": "44",
+      "postcode": "BN1 8NE",
+      "skip_get_url": true,
+      "web_driver": "http://selenium:4444"
+    },
+    "network_requests": []
+  },
+  {
+    "council": "BroadlandDistrictCouncil",
+    "status": "failed",
+    "playwright_code": "await page.goto('https://area.southnorfolkandbroadland.gov.uk/FindAddress')\ntry:\n    await page.click('#CybotCookiebotDialogBodyLevelButtonLevelOptinAllowAll', timeout=5000)\nexcept:\n    pass\nawait page.fill('#Postcode', postcode)\nawait page.press('#Postcode', 'Enter')\nawait page.wait_for_selector('#UprnAddress')\noptions = await page.query_selector_all('#UprnAddress option')\nfor option in options:\n    text = await option.inner_text()\n    if house_number.lower().strip() in text.lower().strip():\n        val = await option.get_attribute('value')\n        await page.select_option('#UprnAddress', val)\n        break\nawait page.click('input[type=\"submit\"]')\nawait page.wait_for_selector(\"h4:has-text('Your next collections')\")",
+    "test_params": {
+      "skip_get_url": true,
+      "house_number": "1",
+      "postcode": "NR10 3FD",
+      "web_driver": "http://selenium:4444"
+    },
+    "network_requests": []
+  },
+  {
+    "council": "BromleyBoroughCouncil",
+    "status": "failed",
+    "playwright_code": "await page.goto(kwargs.get('url'))\nawait page.wait_for_selector('.waste-service-image', timeout=30000)\ncontent = await page.content()",
+    "test_params": {
+      "web_driver": "http://selenium:4444"
+    },
+    "network_requests": []
+  },
+  {
+    "council": "BroxbourneCouncil",
+    "status": "failed",
+    "playwright_code": "async def get_bins(page, postcode, uprn):\n    await page.goto('https://www.broxbourne.gov.uk/bin-collection-date')\n    await page.wait_for_timeout(8000)\n    try:\n        cookie_btn = await page.wait_for_selector(\"//button[contains(text(), 'Allow all')]\", timeout=5000)\n        await cookie_btn.click()\n    except:\n        pass\n    postcode_input = await page.wait_for_selector(\"//input[@autocomplete='postal-code']\")\n    await postcode_input.fill(postcode)\n    await postcode_input.press('Enter')\n    address_select = await page.wait_for_selector('//select')\n    await address_select.select_option(value=uprn)\n    next_btn = await page.wait_for_selector(\"//button[contains(text(), 'Next')]\")\n    await next_btn.click()\n    await page.wait_for_selector(\"//h1[contains(text(), 'When is my bin collection date?')]\")\n    table = await page.wait_for_selector(\"//h1[contains(text(), 'When is my bin collection date?')]/following::table[1]\")\n    return await table.inner_html()",
+    "test_params": {
+      "postcode": "EN8 7FL",
+      "uprn": "148048608",
+      "web_driver": "http://selenium:4444"
+    },
+    "network_requests": []
+  },
+  {
+    "council": "BroxtoweBoroughCouncil",
+    "status": "failed",
+    "playwright_code": "await page.goto('https://selfservice.broxtowe.gov.uk/renderform.aspx?t=217&k=9D2EF214E144EE796430597FB475C3892C43C528')\nawait page.fill('#ctl00_ContentPlaceHolder1_FF5683TB', postcode)\nawait page.click('#ctl00_ContentPlaceHolder1_FF5683BTN')\nawait page.wait_for_selector('#ctl00_ContentPlaceHolder1_FF5683DDL')\nawait page.select_option('#ctl00_ContentPlaceHolder1_FF5683DDL', value='U' + uprn)\nawait page.click('#ctl00_ContentPlaceHolder1_btnSubmit')\nawait page.wait_for_selector('#ctl00_ContentPlaceHolder1_FF5686FormGroup')",
+    "test_params": {
+      "postcode": "NG16 2LY",
+      "skip_get_url": true,
+      "uprn": "100031325997",
+      "web_driver": "http://selenium:4444"
+    },
+    "network_requests": []
+  },
+  {
+    "council": "CalderdaleCouncil",
+    "status": "failed",
+    "playwright_code": "await page.goto(kwargs.get('url'))\nawait page.fill('#pPostcode', user_postcode)\nawait page.click('.searchbox_submit')\nawait page.wait_for_selector('#uprn')\nawait page.select_option('#uprn', user_uprn)\nawait page.press('#gdprTerms', 'Space')\nawait page.click('.searchbox_submit')\nawait page.wait_for_selector('#collection')",
+    "test_params": {
+      "postcode": "OL14 7EX",
+      "skip_get_url": true,
+      "uprn": "010035034598",
+      "web_driver": "http://selenium:4444"
+    },
+    "network_requests": []
+  },
+  {
+    "council": "CeredigionCountyCouncil",
+    "status": "failed",
+    "playwright_code": "await page.goto('https://www.ceredigion.gov.uk/resident/bins-recycling/')\ntry:\n    await page.click(\"button[id='ccc-reject-settings']\", timeout=5000)\nexcept:\n    pass\npostcode_search = page.locator(\"//a[contains(text(), 'Postcode Search')]\")\nawait postcode_search.scroll_into_view_if_needed()\nawait postcode_search.click()\nawait page.fill(\"input[data-ebv-desc='Postcode']\", postcode)\nawait page.click(\"input[value='Find Address']\")\nawait page.select_option(\"select[data-ebv-desc='Select Address']\", label=house_number)\nawait page.click(\"input[value='Next']\")\nawait page.wait_for_selector(\"form:has-text('Next collection:')\")\nresult_html = await page.content()",
+    "test_params": {
+      "house_number": "BLAEN CWMMAGWR, TRISANT, CEREDIGION, SY23 4RQ",
+      "postcode": "SY23 4RQ",
+      "web_driver": "http://selenium:4444"
+    },
+    "network_requests": []
+  },
+  {
+    "council": "ChelmsfordCityCouncil",
+    "status": "failed",
+    "playwright_code": "await page.goto('https://www.chelmsford.gov.uk/bins-and-recycling/check-your-collection-day/')\ntry:\n    accept_btn = await page.wait_for_selector(\"//*[contains(text(), 'ACCEPT')]\", timeout=5000)\n    await accept_btn.click()\nexcept:\n    pass\nawait page.fill(\"input[id*='_keyword']\", postcode)\nawait page.click('.__submitButton')\nawait page.wait_for_selector('table')\nrows = await page.query_selector_all('tr')\ncalendar_url = None\nfor row in rows:\n    text = await row.inner_text()\n    if house_number in text:\n        import re\n        match = re.search(r'(Monday|Tuesday|Wednesday|Thursday|Friday)\\s+([AB])', text, re.IGNORECASE)\n        if match:\n            day = match.group(1).lower()\n            letter = match.group(2).lower()\n            calendar_url = f'https://www.chelmsford.gov.uk/bins-and-recycling/check-your-collection-day/{day}-{letter}-collection-calendar/'\n            break\nif calendar_url:\n    await page.goto(calendar_url)\n    ics_link = await page.wait_for_selector(\"a[href$='.ics']\")\n    ics_url = await ics_link.get_attribute('href')",
+    "test_params": {
+      "house_number": "1 Celeborn Street, South Woodham Ferrers, Chelmsford, CM3 7AE",
+      "postcode": "CM3 7AE",
+      "web_driver": "http://selenium:4444"
+    },
+    "network_requests": []
+  },
+  {
+    "council": "ChichesterDistrictCouncil",
+    "status": "failed",
+    "playwright_code": "await page.goto('https://www.chichester.gov.uk/checkyourbinday')\nawait page.fill('#WASTECOLLECTIONCALENDARV5_CALENDAR_ADDRESSLOOKUPPOSTCODE', postcode)\nawait page.click('#WASTECOLLECTIONCALENDARV5_CALENDAR_ADDRESSLOOKUPSEARCH')\nawait page.wait_for_selector('#WASTECOLLECTIONCALENDARV5_CALENDAR_ADDRESSLOOKUPADDRESS')\n\n# Address Selection Logic\ndropdown = page.locator('#WASTECOLLECTIONCALENDARV5_CALENDAR_ADDRESSLOOKUPADDRESS')\noptions = await dropdown.locator('option').all_inner_texts()\n\ntarget_option = None\nfor idx, opt in enumerate(options):\n    if house_number.lower().strip() == opt.lower().strip() or opt.lower().strip().startswith(house_number.lower().strip() + ','):\n        target_option = opt\n        break\n\nif not target_option:\n    for idx, opt in enumerate(options):\n        if house_number.lower().strip() in opt.lower().strip():\n            target_option = opt\n            break\n\nif target_option:\n    await dropdown.select_option(label=target_option)\nelse:\n    raise Exception(f'Could not find address matching {house_number}')\n\nawait page.wait_for_selector('.bin-collection-dates-container')\nresults_html = await page.content()",
+    "test_params": {
+      "house_number": "7",
+      "postcode": "RH14 0JT",
+      "skip_get_url": true,
+      "web_driver": "http://selenium:4444"
+    },
+    "network_requests": []
+  },
+  {
+    "council": "ChorleyCouncil",
+    "status": "failed",
+    "playwright_code": "await page.goto('https://chorley.gov.uk/bincollectiondays')\nawait page.click(\"//a[@class='button' and @href='https://forms.chorleysouthribble.gov.uk/chorley-bincollectiondays']\")\nawait page.wait_for_selector(\"//input[@type='text'][1]\")\nawait page.fill(\"//input[@type='text'][1]\", postcode)\nawait page.click(\"//button[contains(@class, 'btn--lookup')]\")\nawait page.wait_for_selector(\"select.form__select\")\nawait page.select_option(\"select.form__select\", {\"label\": f\"{uprn}\"} if uprn else {\"index\": 1})\nawait page.click(\"button[type='submit'][value='Next']\")\nawait page.wait_for_selector(\"//th[text()='Collection']\")",
+    "test_params": {
+      "postcode": "PR6 7PG",
+      "skip_get_url": true,
+      "uprn": "100010382247",
+      "web_driver": "http://selenium:4444"
+    },
+    "network_requests": []
+  },
+  {
+    "council": "ColchesterCityCouncil",
+    "status": "failed",
+    "playwright_code": "await page.goto('https://www.colchester.gov.uk/your-recycling-calendar/?start=true')\ntry:\n    accept_cookies = await page.wait_for_selector('#ccc-notify-accept', timeout=5000)\n    await accept_cookies.click()\nexcept:\n    pass\nawait page.wait_for_selector('.input-text')\nawait page.fill('.input-text', postcode)\nawait page.click('.button-small')\nawait page.wait_for_selector('.input-select')\nawait page.select_option('.input-select', label={'substring': paon})\nawait page.click('.button-small')\nawait page.wait_for_selector('.recycling-calendar')",
+    "test_params": {
+      "house_number": "29",
+      "paon": "29",
+      "postcode": "CO2 8UN",
+      "skip_get_url": false,
+      "web_driver": "http://selenium:4444"
+    },
+    "network_requests": []
+  },
+  {
+    "council": "CotswoldDistrictCouncil",
+    "status": "failed",
+    "playwright_code": "await page.goto('https://community.cotswold.gov.uk/s/waste-collection-enquiry')\nawait page.wait_for_timeout(10000)\naddress_input = page.locator(\"//label[contains(text(), 'Enter your address')]/following-sibling::*//input\")\nawait address_input.fill(house_number)\nawait address_input.click()\nawait page.wait_for_selector(\"//li[@role='presentation']\")\nawait page.click(\"//li[@role='presentation']\")\nawait page.click(\"//button[contains(text(), 'Next')]\")\nawait page.wait_for_selector(\"//span[contains(text(), 'Collection Day')]\")\nawait page.wait_for_timeout(3000)",
+    "test_params": {
+      "house_number": "19 SUMMERS WAY, MORETON-IN-MARSH, GL56 0GB",
+      "postcode": "GL56 0GB",
+      "skip_get_url": true,
+      "web_driver": "http://selenium:4444"
+    },
+    "network_requests": []
+  },
+  {
+    "council": "CroydonCouncil",
+    "status": "failed",
+    "playwright_code": "await page.goto('https://service.croydon.gov.uk/wasteservices/w/webpage/bin-day-enter-address')\npostcode_input = await page.wait_for_selector('input[data-ts_identifier=\"postcode_input\"]')\nawait postcode_input.fill(postcode)\nawait postcode_input.press('Enter')\nselect_selector = 'select[data-ts_identifier=\"address_selection\"]'\nawait page.wait_for_selector(select_selector)\noptions = await page.query_selector_all(f'{select_selector} option')\nfound = False\nfor option in options:\n    text = await option.inner_text()\n    if f' {house_number} ' in f' {text} ':\n        value = await option.get_attribute('value')\n        await page.select_option(select_selector, value)\n        found = True\n        break\nif not found: raise ValueError('Address not found')\nawait page.click('input[type=\"submit\"][value=\"Next\"]')\nawait page.wait_for_selector('#mats_content_wrapper .listing_template_record')",
+    "test_params": {
+      "house_number": "13",
+      "postcode": "SE25 5DW",
+      "skip_get_url": true,
+      "web_driver": "http://selenium:4444"
+    },
+    "network_requests": []
+  },
+  {
+    "council": "DacorumBoroughCouncil",
+    "status": "failed",
+    "playwright_code": "await page.goto('https://webapps.dacorum.gov.uk/bincollections/')\nawait page.wait_for_selector('#txtBxPCode')\nawait page.fill('#txtBxPCode', postcode)\nawait page.click('#btnFindAddr')\nawait page.wait_for_selector('#lstBxAddrList')\nawait page.select_option('#lstBxAddrList', label=house_number)\nawait page.click('#MainContent_btnGetSchedules')\nawait page.wait_for_selector('#lblSelectedAddr')",
+    "test_params": {
+      "house_number": "13",
+      "postcode": "HP3 9JY",
+      "skip_get_url": true,
+      "web_driver": "http://selenium:4444"
+    },
+    "network_requests": []
+  },
+  {
+    "council": "EastLindseyDistrictCouncil",
+    "status": "failed",
+    "playwright_code": "await page.goto('https://www.e-lindsey.gov.uk/mywastecollections')\ninput_postcode = await page.wait_for_selector('#WASTECOLLECTIONDAYS202526_LOOKUP_ADDRESSLOOKUPPOSTCODE')\nawait input_postcode.fill(postcode)\nawait page.click('#WASTECOLLECTIONDAYS202526_LOOKUP_ADDRESSLOOKUPSEARCH')\naddress_dropdown = await page.wait_for_selector('#WASTECOLLECTIONDAYS202526_LOOKUP_ADDRESSLOOKUPADDRESS')\nawait address_dropdown.select_option(label=house_number)\nawait page.click('#WASTECOLLECTIONDAYS202526_LOOKUP_FIELD2_NEXT')\nawait page.wait_for_selector('.waste-results')",
+    "test_params": {
+      "house_number": "1",
+      "postcode": "PE22 0YD",
+      "skip_get_url": true,
+      "web_driver": "http://selenium:4444"
+    },
+    "network_requests": []
+  },
+  {
+    "council": "EastRenfrewshireCouncil",
+    "status": "failed",
+    "playwright_code": "await page.goto('https://eastrenfrewshire.gov.uk/bin-days')\ninput_postcode = await page.wait_for_selector('input[autocomplete=\"postal-code\"]')\nawait input_postcode.fill(postcode)\nawait page.click(\"//button[text()='Search']\")\n\naddress_select = await page.wait_for_selector(\"//label[text()='Addresses']/following-sibling::select\")\nif uprn:\n    await address_select.select_option(value=uprn)\nelse:\n    # Logic to select by house number (paon) or first option\n    options = await address_select.query_selector_all('option')\n    selected = False\n    for option in options:\n        text = await option.inner_text()\n        if house_number and house_number in text:\n            await address_select.select_option(label=text)\n            selected = True\n            break\n    if not selected:\n        await address_select.select_option(index=1)\n\nawait page.click(\"//button[text()='Find my collection dates']\")\nawait page.wait_for_selector(\"//th[text()='Bin Type']\")",
+    "test_params": {
+      "house_number": "23",
+      "postcode": "G46 6RG",
+      "skip_get_url": true,
+      "web_driver": "http://selenium:4444"
+    },
+    "network_requests": []
+  },
+  {
+    "council": "EastRidingCouncil",
+    "status": "failed",
+    "playwright_code": "await page.goto('https://www.eastriding.gov.uk/environment/bins-rubbish-recycling/bins-and-collections/bin-collection-dates/#')\ntry:\n    await page.click('#er-cookie-placeholder-settings div a:has-text(\"Accept all\")', timeout=5000)\nexcept:\n    pass\nawait page.click('//a[contains(text(), \"Open all\")]')\nawait page.fill(\"input[placeholder='Enter your postcode']\", postcode)\nawait page.press(\"input[placeholder='Enter your postcode']\", 'Enter')\nawait page.wait_for_selector(\"select.dropdown\")\nawait page.select_option(\"select.dropdown\", label=house_number)\nawait page.wait_for_selector(\".results\")\nsoup = BeautifulSoup(await page.content(), 'html.parser')\nbin_types = {}\nheader_elements = soup.find_all('li', class_=lambda x: x and x.startswith('header'))\nfor header_element in header_elements:\n    bin_type = header_element.get_text(strip=True)\n    bin_class = [cls for cls in header_element.get('class') if cls != 'header']\n    if bin_class:\n        bin_types[bin_class[0]] = bin_type\ndate_elements = soup.find_all('li', class_=lambda x: x and x.startswith('date'))\nfor date_element in date_elements:\n    bin_class = [cls for cls in date_element.get('class') if cls != 'date']\n    if bin_class:\n        bin_type = bin_types.get(bin_class[0])\n        span_text = date_element.find('span').get_text(strip=True)\n        results.append({\"type\": bin_type, \"collectionDate\": span_text})",
+    "test_params": {
+      "house_number": "14 THE LEASES BEVERLEY HU17 8LG",
+      "postcode": "HU17 8LG",
+      "skip_get_url": true,
+      "web_driver": "http://selenium:4444"
+    },
+    "network_requests": []
+  },
+  {
+    "council": "EastStaffordshireBoroughCouncil",
+    "status": "skipped",
+    "reason": "no_test_parameters",
+    "network_requests": []
+  },
+  {
+    "council": "EastSuffolkCouncil",
+    "status": "failed",
+    "playwright_code": "await page.goto('https://my.eastsuffolk.gov.uk/service/Bin_collection_dates_finder')\nframe = page.frame_locator('#fillform-frame-1')\nawait frame.locator('#alt_postcode_search').fill(postcode.replace(' ', ''))\naddress_select = frame.locator('#alt_choose_address')\nawait frame.locator('.spinner-outer').wait_for(state='hidden')\nawait address_select.select_option(value=uprn)\nawait frame.locator('.spinner-outer').wait_for(state='hidden')\nawait frame.locator('//div[@data-field-name=\"collection_details\"]//table').wait_for()",
+    "test_params": {
+      "postcode": "IP11 9FJ",
+      "skip_get_url": true,
+      "uprn": "10093544720",
+      "web_driver": "http://selenium:4444"
+    },
+    "network_requests": []
+  },
+  {
+    "council": "EastleighBoroughCouncil",
+    "status": "failed",
+    "playwright_code": "await page.goto(f'https://www.eastleigh.gov.uk/waste-bins-and-recycling/collection-dates/your-waste-bin-and-recycling-collections?uprn={uprn}')\nawait page.wait_for_selector('.dl-horizontal')\ncontent = await page.content()",
+    "test_params": {
+      "skip_get_url": true,
+      "uprn": "100060303535",
+      "web_driver": "http://selenium:4444"
+    },
+    "network_requests": []
+  },
+  {
+    "council": "EnfieldCouncil",
+    "status": "failed",
+    "playwright_code": "await page.goto('https://www.enfield.gov.uk/services/rubbish-and-recycling/find-my-collection-day')\ntry:\n    await page.click('#ccc-notify-reject', timeout=5000)\nexcept:\n    pass\n\n# Enfield uses an iframe for its form\nframe_element = await page.wait_for_selector('iframe')\nframe = await frame_element.content_frame()\n\nawait frame.fill('[aria-label=\"Enter your address\"]', postcode)\nawait frame.click('#submitButton0')\n\n# Wait for address dropdown\nawait frame.wait_for_selector('[aria-label=\"Select full address\"]')\noptions = await frame.query_selector_all('[aria-label=\"Select full address\"] option')\nfor option in options:\n    text = await option.inner_text()\n    if house_number in text:\n        val = await option.get_attribute('value')\n        await frame.select_option('[aria-label=\"Select full address\"]', value=val)\n        break\n\nawait frame.wait_for_selector('#FinalResults')",
+    "test_params": {
+      "house_number": "111",
+      "postcode": "N13 5AJ",
+      "skip_get_url": true,
+      "web_driver": "http://selenium:4444"
+    },
+    "network_requests": []
+  },
+  {
+    "council": "EnvironmentFirst",
+    "status": "skipped",
+    "reason": "no_test_parameters",
+    "network_requests": []
+  },
+  {
+    "council": "EppingForestDistrictCouncil",
+    "status": "failed",
+    "playwright_code": "await page.goto(f'https://eppingforestdc.maps.arcgis.com/apps/instant/lookup/index.html?appid=bfca32b46e2a47cd9c0a84f2d8cdde17&find={postcode}')\nawait page.wait_for_selector('.esri-widget--loader-container', state='hidden', timeout=20000)\ncontent_selector = '.esri-feature-content'\nawait page.wait_for_selector(content_selector, state='visible', timeout=20000)\ncontent = await page.content()",
+    "test_params": {
+      "postcode": "IG9 6EP",
+      "skip_get_url": true,
+      "web_driver": "http://selenium:4444"
+    },
+    "network_requests": []
+  },
+  {
+    "council": "EpsomandEwellBoroughCouncil",
+    "status": "failed",
+    "playwright_code": "await page.goto('https://iportal.itouchvision.com/icollectionday/collection-day/?uuid=8E7DCC4BD90D8405D154BE053147018A8C0B5F09')\nawait page.wait_for_selector('#postcodeSearch')\nawait page.evaluate(f\"\"\"const input = document.getElementById('postcodeSearch'); const nativeInputValueSetter = Object.getOwnPropertyDescriptor(window.HTMLInputElement.prototype, 'value').set; nativeInputValueSetter.call(input, '{postcode}'); input.dispatchEvent(new Event('input', {{ bubbles: true }})); input.dispatchEvent(new Event('change', {{ bubbles: true }}));\"\"\")\nawait page.click('.govuk-button')\nawait page.wait_for_selector('#addressSelect')\nawait page.evaluate(f\"\"\"const select = document.getElementById('addressSelect'); select.value = '{uprn}'; select.dispatchEvent(new Event('change', {{ bubbles: true }}));\"\"\")\nawait page.wait_for_selector('h3')\nawait page.wait_for_timeout(3000)",
+    "test_params": {
+      "uprn": "100061349083",
+      "postcode": "KT17 2RG",
+      "skip_get_url": true,
+      "web_driver": "http://selenium:4444"
+    },
+    "network_requests": []
+  },
+  {
+    "council": "FifeCouncil",
+    "status": "failed",
+    "playwright_code": "await page.goto('https://fife.portal.uk.empro.verintcloudservices.com/site/fife/request/bin_calendar')\nawait page.wait_for_selector('#dform_widget_ps_45M3LET8_txt_postcode')\nawait page.fill('#dform_widget_ps_45M3LET8_txt_postcode', postcode)\nawait page.click('#dform_widget_ps_3SHSN93_searchbutton')\nawait page.wait_for_selector('#dform_widget_ps_3SHSN93_id')\n\n# Wait for options to load\nawait page.wait_for_function('document.querySelectorAll(\"#dform_widget_ps_3SHSN93_id option\").length > 1')\n\n# Select matching address\noptions = await page.query_selector_all('#dform_widget_ps_3SHSN93_id option')\nfor option in options:\n    text = await option.inner_text()\n    if house_number.lower() in text.lower():\n        value = await option.get_attribute('value')\n        await page.select_option('#dform_widget_ps_3SHSN93_id', value)\n        break\n\n# Wait for table to load\nawait page.wait_for_selector('#dform_table_tab_collections .dform_tr:nth-child(2)')",
+    "test_params": {
+      "postcode": "KY16 9NQ",
+      "house_number": "1",
+      "web_driver": "http://selenium:4444"
+    },
+    "network_requests": []
+  },
+  {
+    "council": "ForestOfDeanDistrictCouncil",
+    "status": "failed",
+    "playwright_code": "await page.goto('https://community.fdean.gov.uk/s/waste-collection-enquiry')\nfull_address = f\"{house_number}, {postcode}\"\naddress_field = await page.wait_for_selector('//*[@placeholder=\"Search Properties...\"]')\nawait address_field.fill(full_address)\nproperty_option = await page.wait_for_selector(f'//*[@title=\"{full_address}\"]')\nawait property_option.click()\nnext_button = await page.wait_for_selector(\"//lightning-button/button[contains(text(), 'Next')]\")\nawait next_button.click()\nawait page.wait_for_selector('table.slds-table')\ntable_html = await page.inner_html('table.slds-table')",
+    "test_params": {
+      "house_number": "ELMOGAL, PARKEND ROAD, BREAM, LYDNEY",
+      "postcode": "GL15 6JT",
+      "skip_get_url": true,
+      "web_driver": "http://selenium:4444"
+    },
+    "network_requests": []
+  },
+  {
+    "council": "GatesheadCouncil",
+    "status": "failed",
+    "playwright_code": "await page.goto('https://www.gateshead.gov.uk/article/3150/Bin-collection-day-checker')\ntry:\n    accept_button = await page.wait_for_selector('button[name=\"acceptall\"]', timeout=5000)\n    await accept_button.click()\nexcept:\n    pass\nawait page.fill('#BINCOLLECTIONCHECKER_ADDRESSSEARCH_ADDRESSLOOKUPPOSTCODE', postcode)\nawait page.click('#BINCOLLECTIONCHECKER_ADDRESSSEARCH_ADDRESSLOOKUPSEARCH')\nawait page.wait_for_selector('#BINCOLLECTIONCHECKER_ADDRESSSEARCH_ADDRESSLOOKUPADDRESS')\naddress_dropdown = page.locator('#BINCOLLECTIONCHECKER_ADDRESSSEARCH_ADDRESSLOOKUPADDRESS')\nawait address_dropdown.select_option(label=re.compile(f\".*{house_number}.*\", re.IGNORECASE))\nawait page.wait_for_timeout(5000)\n# Wait for any content indicating results are loaded\nawait page.wait_for_selector(\"text=/collection|bin|refuse|recycling/i\")",
+    "test_params": {
+      "house_number": "Bracken Cottage",
+      "postcode": "NE16 5LQ",
+      "skip_get_url": true,
+      "web_driver": "http://selenium:4444"
+    },
+    "network_requests": []
+  },
+  {
+    "council": "GloucesterCityCouncil",
+    "status": "failed",
+    "playwright_code": "await page.goto('https://gloucester-self.achieveservice.com/service/Bins___Check_your_bin_day')\nif await page.query_selector('#close-cookie-message'):\n    await page.click('#close-cookie-message')\nframe_element = await page.wait_for_selector('#fillform-frame-1')\nframe = await frame_element.content_frame()\nawait frame.wait_for_selector('input[name=\"find_postcode\"]')\nawait frame.fill('input[name=\"find_postcode\"]', postcode)\nawait frame.wait_for_selector('select[name=\"chooseAddress\"]')\nawait frame.select_option('select[name=\"chooseAddress\"]', value=uprn)\nawait frame.wait_for_selector('span[data-name=\"html1\"]:has-text(\"Searching\")', state='visible')\nawait frame.wait_for_selector('span[data-name=\"html1\"]:has-text(\"Searching\")', state='hidden')\nawait page.wait_for_timeout(5000)\ncontent = await frame.content()",
+    "test_params": {
+      "house_number": "111",
+      "postcode": "GL2 0RR",
+      "skip_get_url": true,
+      "uprn": "100120479507",
+      "web_driver": "http://selenium:4444"
+    },
+    "network_requests": []
+  },
+  {
+    "council": "GreatYarmouthBoroughCouncil",
+    "status": "failed",
+    "playwright_code": "await page.goto(url)\nawait page.click('button[name=\"acceptall\"]')\nawait page.fill('#WASTECOLLECTIONCALENDARV2_ADDRESS_ALSF', postcode)\nawait page.keyboard.press('Tab')\nawait page.keyboard.press('Enter')\nawait page.wait_for_selector('#WASTECOLLECTIONCALENDARV2_ADDRESS_ALML')\nawait page.select_option('#WASTECOLLECTIONCALENDARV2_ADDRESS_ALML', value=uprn)\nawait page.keyboard.press('Tab')\nawait page.keyboard.press('Tab')\nawait page.keyboard.press('Enter')\nawait page.wait_for_selector('#WASTECOLLECTIONCALENDARV2_LOOKUP_SHOWSCHEDULE')",
+    "test_params": {
+      "postcode": "NR31 7EB",
+      "skip_get_url": true,
+      "uprn": "100090834792",
+      "web_driver": "http://selenium:4444"
+    },
+    "network_requests": []
+  },
+  {
+    "council": "GuildfordCouncil",
+    "status": "failed",
+    "playwright_code": "await page.goto('https://my.guildford.gov.uk/customers/s/view-bin-collections')\nawait page.wait_for_selector(\"//input[contains(@class, 'slds-input')]\")\nawait page.fill(\"//input[contains(@class, 'slds-input')]\", postcode)\nawait page.keyboard.press('Enter')\naddress_xpath = f\"//lightning-base-formatted-text[contains(text(), '{house_number}')]\"\nawait page.wait_for_selector(address_xpath)\nradio_xpath = f\"{address_xpath}/../../../../preceding-sibling::td//input[@type='radio']\"\nawait page.click(radio_xpath)\nawait page.click(\"//button[contains(@name,'NEXT')]\")\nawait page.wait_for_selector('.cBinScheduleDisplay')",
+    "test_params": {
+      "house_number": "THE LODGE",
+      "postcode": "GU3 1AH",
+      "skip_get_url": true,
+      "web_driver": "http://selenium:4444"
+    },
+    "network_requests": []
+  },
+  {
+    "council": "HaltonBoroughCouncil",
+    "status": "failed",
+    "playwright_code": "await page.goto('https://webapp.halton.gov.uk/PublicWebForms/WasteServiceSearchv1.aspx')\nawait page.fill('input[name=\"ctl00$ContentPlaceHolder1$txtProperty\"]', house_number)\nawait page.fill('input[name=\"ctl00$ContentPlaceHolder1$txtPostcode\"]', postcode)\n# Note: reCAPTCHA handling usually requires user interaction or a solving service\nawait page.click('#ContentPlaceHolder1_btnSearch')\nawait page.wait_for_selector('#collectionTabs')\nresults = []\nanchors = await page.query_selector_all('#collectionTabs a.ui-tabs-anchor')\nfor anchor in anchors:\n    waste_type = await anchor.inner_text()\n    panel_id = await anchor.get_attribute('href')\n    dates = await page.query_selector_all(f'{panel_id} ul:nth-of-type(2) li')\n    for date_li in dates:\n        date_text = await date_li.inner_text()\n        results.append({'type': waste_type, 'date': date_text})",
+    "test_params": {
+      "house_number": "12",
+      "postcode": "WA7 4HA",
+      "skip_get_url": true,
+      "web_driver": "http://selenium:4444"
+    },
+    "network_requests": []
+  },
+  {
+    "council": "HertsmereBoroughCouncil",
+    "status": "failed",
+    "playwright_code": "await page.goto('https://www.hertsmere.gov.uk/Environment-Refuse-and-Recycling/Recycling--Waste/Bin-collections/Collections-and-calendar.aspx')\ncurrent_week_text = await page.locator('li.current').inner_text()\n# Logic to parse bin types per week would go here\n\nawait page.goto('https://hertsmere-services.onmats.com/w/webpage/round-search')\nawait page.fill('.relation_path_type_ahead_search', postcode)\naddress_selector = f\"//ul[@class='result_list']/li[starts-with(@aria-label, '{house_number}')]\"\nawait page.wait_for_selector(address_selector)\nawait page.click(address_selector)\nawait page.click(\"input.fragment_presenter_template_edit.btn.bg-primary.btn-medium[type='submit']\")\nawait page.wait_for_selector(\"//h3[contains(text(), 'Collection days')]\")\n# Extraction logic for table data follows",
+    "test_params": {
+      "house_number": "1",
+      "postcode": "WD7 9HZ",
+      "skip_get_url": true,
+      "web_driver": "http://selenium:4444"
+    },
+    "network_requests": []
+  },
+  {
+    "council": "HighPeakCouncil",
+    "status": "failed",
+    "playwright_code": "await page.goto('https://www.highpeak.gov.uk/findyourbinday')\nawait page.fill('#FINDBINDAYSHIGHPEAK_POSTCODESELECT_POSTCODE', postcode)\nawait page.keyboard.press('Enter')\nawait page.wait_for_selector('#FINDBINDAYSHIGHPEAK_ADDRESSSELECT_ADDRESS')\nawait page.select_option('#FINDBINDAYSHIGHPEAK_ADDRESSSELECT_ADDRESS', {'label': house_number})\nawait page.click('#FINDBINDAYSHIGHPEAK_ADDRESSSELECT_ADDRESSSELECTNEXTBTN_NEXT')\nawait page.wait_for_selector('#FINDBINDAYSHIGHPEAK_CALENDAR_MAINCALENDAR')",
+    "test_params": {
+      "house_number": "9 Ellison Street, Glossop",
+      "postcode": "SK13 8BX",
+      "skip_get_url": true,
+      "web_driver": "http://selenium:4444"
+    },
+    "network_requests": []
+  },
+  {
+    "council": "Hillingdon",
+    "status": "failed",
+    "playwright_code": "await page.goto('https://www.hillingdon.gov.uk/check-your-collection-day')\nawait page.click('button.btn.btn--cookiemessage.btn--cancel.btn--contrast', timeout=5000)\nawait page.fill('#WASTECOLLECTIONDAYLOOKUPINCLUDEGARDEN_ADDRESSLOOKUPPOSTCODE', postcode)\nawait page.press('#WASTECOLLECTIONDAYLOOKUPINCLUDEGARDEN_ADDRESSLOOKUPPOSTCODE', 'Enter')\nawait page.wait_for_selector('#WASTECOLLECTIONDAYLOOKUPINCLUDEGARDEN_ADDRESSLOOKUPADDRESS option:nth-child(2)')\noptions = await page.query_selector_all('#WASTECOLLECTIONDAYLOOKUPINCLUDEGARDEN_ADDRESSLOOKUPADDRESS option')\nfor option in options:\n    text = await option.inner_text()\n    if house_number.lower() in text.lower():\n        await option.click()\n        break\nawait page.wait_for_selector('#WASTECOLLECTIONDAYLOOKUPINCLUDEGARDEN_COLLECTIONTABLE')",
+    "test_params": {
+      "house_number": "1, Milverton Drive, Ickenham, UB10 8PP, Ickenham, Hillingdon",
+      "postcode": "UB10 8PP",
+      "skip_get_url": true,
+      "web_driver": "http://selenium:4444"
+    },
+    "network_requests": []
+  },
+  {
+    "council": "HorshamDistrictCouncil",
+    "status": "failed",
+    "playwright_code": "await page.goto('https://www.horsham.gov.uk/waste-recycling-and-bins/household-bin-collections/check-your-bin-collection-day')\ntry:\n    await page.click('#ccc-notify-accept', timeout=5000)\nexcept:\n    pass\nawait page.fill('input[value=\"Enter your postcode\"]', postcode)\nawait page.click('#Submit1')\nawait page.wait_for_selector('//option[contains(text(),\"Please select address...\")]/parent::select')\nawait page.select_option('//option[contains(text(),\"Please select address...\")]/parent::select', uprn)\nawait page.wait_for_selector('//th[contains(text(),\"COLLECTION TYPE\")]/ancestor::table')",
+    "test_params": {
+      "postcode": "RH12 1AA",
+      "skip_get_url": true,
+      "uprn": "010013792717",
+      "web_driver": "http://selenium:4444"
+    },
+    "network_requests": []
+  },
+  {
+    "council": "HyndburnBoroughCouncil",
+    "status": "failed",
+    "playwright_code": "await page.goto('https://iapp.itouchvision.com/iappcollectionday/collection-day/?uuid=FEBA68993831481FD81B2E605364D00A8DC017A4')\nawait page.wait_for_selector('#postcodeSearch')\nawait page.fill('#postcodeSearch', postcode)\nawait page.keyboard.press('Tab')\nawait page.keyboard.press('Enter')\nawait page.wait_for_selector('#addressSelect')\nawait page.select_option('#addressSelect', value=uprn)\nawait page.wait_for_selector('div.ant-row.d-flex.justify-content-between')\nawait page.wait_for_selector('div.ant-col h3.text-white')",
+    "test_params": {
+      "postcode": "BB1 4DJ",
+      "uprn": "100010448773",
+      "skip_get_url": true,
+      "web_driver": "http://selenium:4444"
+    },
+    "network_requests": []
+  },
+  {
+    "council": "KingstonUponThamesCouncil",
+    "status": "failed",
+    "playwright_code": "await page.goto(f'https://waste-services.kingston.gov.uk/waste/{uprn}')\nawait page.wait_for_selector('.waste-service-name')\ncollections = await page.query_selector_all('h3.waste-service-name')\nfor collection in collections:\n    service_name = await collection.inner_text()\n    row_container = await collection.evaluate_handle('node => node.nextElementSibling')\n    rows = await row_container.query_selector_all('.govuk-summary-list__row')\n    for row in rows:\n        dt = await row.query_selector('dt')\n        if dt and 'next collection' in (await dt.inner_text()).lower():\n            dd = await row.query_selector('dd')\n            collection_date_text = await dd.inner_text()",
+    "test_params": {
+      "web_driver": "http://selenium:4444"
+    },
+    "network_requests": []
+  },
+  {
+    "council": "KnowsleyMBCouncil",
+    "status": "failed",
+    "playwright_code": "await page.goto('https://www.knowsley.gov.uk/bins-waste-and-recycling/your-household-bins/putting-your-bins-out')\ntry:\n    accept_cookies = await page.wait_for_selector(\"//a[contains(@class, 'agree-button') and contains(text(), 'Accept all cookies')]\", timeout=5000)\n    await accept_cookies.click()\nexcept:\n    pass\nsearch_btn = await page.wait_for_selector(\"//a[contains(text(), 'Search\\u00a0by postcode\\u00a0to find out when your bins are emptied')]\")\nawait search_btn.click()\npostcode_box = await page.wait_for_selector(\"//label[contains(text(), 'Please enter the post code')]/following-sibling::input\")\nawait postcode_box.fill(postcode)\npostcode_search_btn = await page.wait_for_selector(\"//label[contains(text(), 'Please enter the post code')]/parent::div/following-sibling::button\")\nawait postcode_search_btn.click()\naddress_btn = await page.wait_for_selector(f\"//span[contains(text(), '{house_number}')]/ancestor::li//button\")\nawait address_btn.click()\nawait page.wait_for_selector(\"//label[contains(text(), 'collection')]\")",
+    "test_params": {
+      "house_number": "2 ALTMOOR ROAD HUYTON L36 3UY",
+      "postcode": "L36 3UY",
+      "skip_get_url": true,
+      "web_driver": "http://selenium:4444"
+    },
+    "network_requests": []
+  },
+  {
+    "council": "LeedsCityCouncil",
+    "status": "failed",
+    "playwright_code": "await page.goto('https://www.leeds.gov.uk/residents/bins-and-recycling/check-your-bin-day')\nawait page.wait_for_selector('#postcode')\nawait page.fill('#postcode', postcode)\nawait page.click(\"//button[contains(text(),'Look up Address')]\")\nawait page.wait_for_selector('select:has(option:text(\"Select an address\"))')\nawait page.select_option('select:has(option:text(\"Select an address\"))', value=uprn)\nawait page.wait_for_selector('.lcc-bins')",
+    "test_params": {
+      "house_number": "1",
+      "postcode": "LS6 2SE",
+      "skip_get_url": true,
+      "uprn": "72506983",
+      "web_driver": "http://selenium:4444"
+    },
+    "network_requests": []
+  },
+  {
+    "council": "LondonBoroughLewisham",
+    "status": "failed",
+    "playwright_code": "await page.goto('https://lewisham.gov.uk/myservices/recycling-and-rubbish/your-bins/collection')\ntry:\n    cookie_button = await page.wait_for_selector('#CybotCookiebotDialogBodyLevelButtonLevelOptinAllowAll', timeout=5000)\n    await cookie_button.click()\nexcept:\n    pass\nawait page.fill('.js-address-finder-input', postcode)\nawait page.click('.js-address-finder-step-address')\nawait page.wait_for_selector('#address-selector option[value=\"' + uprn + '\"]')\nawait page.select_option('#address-selector', uprn)\nawait page.wait_for_url('**/find-your-collection-day-result**')",
+    "test_params": {
+      "postcode": "SE12 9QF",
+      "skip_get_url": true,
+      "uprn": "100021954849",
+      "web_driver": "http://selenium:4444"
+    },
+    "network_requests": []
+  },
+  {
+    "council": "LondonBoroughOfRichmondUponThames",
+    "status": "failed",
+    "playwright_code": "await page.goto(kwargs['url'])\nawait page.click('#ccc-dismiss-button')\nawait page.fill('#Street', kwargs['paon'])\nawait page.press('#Street', 'Enter')\nawait page.wait_for_selector(\"#maincontent table\")\n\nrows = await page.query_selector_all(\"#maincontent table tr\")\nheader_cells = await rows[0].query_selector_all(\"th\")\ndata_cells = await rows[1].query_selector_all(\"td\")\n\nbins = []\n# Iterate through columns starting from the 3rd column (index 2)\nfor i in range(2, len(header_cells)):\n    bin_type = await header_cells[i].inner_text()\n    raw_date = await data_cells[i].inner_text()\n    # Handle 'More dates' split common in garden collection cells\n    clean_date = raw_date.split('More dates')[0].strip()\n    bins.append({\"type\": bin_type.strip(), \"collectionDate\": clean_date})\nreturn bins",
+    "test_params": {
+      "house_number": "March Road",
+      "skip_get_url": true,
+      "web_driver": "http://selenium:4444"
+    },
+    "network_requests": []
+  },
+  {
+    "council": "LondonBoroughRedbridge",
+    "status": "failed",
+    "playwright_code": "await page.goto(kwargs.get('url'))\nawait page.wait_for_selector('input.searchAddress')\nawait page.fill('input.searchAddress', postcode)\nawait page.click('button.searchAddressButton')\naddress_link_selector = f'a[data-uprn=\"{uprn}\"]'\nawait page.wait_for_selector(address_link_selector)\nawait page.click(address_link_selector)\nawait page.wait_for_selector('.your-collection-schedule-container')",
+    "test_params": {
+      "postcode": "IG2 6LQ",
+      "uprn": "10023770353",
+      "web_driver": "http://selenium:4444"
+    },
+    "network_requests": []
+  },
+  {
+    "council": "MaidstoneBoroughCouncil",
+    "status": "failed",
+    "playwright_code": "await page.goto('https://my.maidstone.gov.uk/service/Find-your-bin-day')\niframe_element = await page.wait_for_selector('#fillform-frame-1')\nframe = await iframe_element.content_frame()\nawait frame.wait_for_selector('input[name=\"postcode\"]')\nawait frame.fill('input[name=\"postcode\"]', postcode)\nawait frame.press('input[name=\"postcode\"]', 'Tab')\nawait frame.press('input[name=\"postcode\"]', 'ArrowDown')\naddress_selector = f\"//div[contains(text(), ' {house_number}')]\"\nawait frame.click(address_selector)\nawait frame.wait_for_selector('div.col-collection-panel:has-text(\"Next collection\")')\nawait page.wait_for_timeout(5000)\ncollection_panels = await frame.query_selector_all('div.col-collection-panel')\nfor panel in collection_panels:\n    bin_type = await (await panel.query_selector('h3.collectionDataHeader')).inner_text()\n    lines = await panel.query_selector_all('ul li')\n    for line in lines:\n        text = await line.inner_text()\n        if 'Next collection' in text:\n            date_str = text.split('Next collection')[-1].replace(':', '').strip()\n            # date_str processing occurs here",
+    "test_params": {
+      "skip_get_url": true,
+      "house_number": "71",
+      "postcode": "ME16 8BT",
+      "web_driver": "http://selenium:4444"
+    },
+    "network_requests": []
+  },
+  {
+    "council": "MidAndEastAntrimBoroughCouncil",
+    "status": "failed",
+    "playwright_code": "await page.goto('https://www.midandeastantrim.gov.uk/resident/waste-recycling/collection-dates/')\nawait asyncio.sleep(5)\nframe = page.frames[1] if len(page.frames) > 1 else page.main_frame\nawait frame.fill('#txtAjaxSearch', postcode)\nawait asyncio.sleep(5)\ntry:\n    await frame.click('#show-button-0')\nexcept:\n    pass\nawait asyncio.sleep(4)\nresults_element = await frame.query_selector('#divCalendarGraphics')\npage_content = await results_element.evaluate('el => el.outerHTML')",
+    "test_params": {
+      "postcode": "100 Galgorm Road",
+      "skip_get_url": true,
+      "web_driver": "http://selenium:4444"
+    },
+    "network_requests": []
+  },
+  {
+    "council": "MidUlsterDistrictCouncil",
+    "status": "failed",
+    "playwright_code": "await page.goto('https://www.midulstercouncil.org/resident/bins-recycling')\ntry:\n    accept_cookies = await page.wait_for_selector('//button/span[contains(text(), \"I Accept Cookies\")]', timeout=5000)\n    await accept_cookies.click()\nexcept:\n    pass\nawait page.fill('#postcode-search-input', postcode)\nawait page.click('//button[contains(text(), \"Go\")]')\naddress_button_xpath = f'//button[contains(text(), \"{house_number}\")]'\nawait page.wait_for_selector(address_button_xpath)\nawait page.click(address_button_xpath)\nawait page.wait_for_selector('//h3[contains(text(), \"Collection day:\")]')\nresults_container = await page.query_selector('//div/h3[contains(text(), \"My address:\")]/parent::div')",
+    "test_params": {
+      "house_number": "20 HILLHEAD, STEWARTSTOWN, BT71 5HY",
+      "postcode": "BT71 5HY",
+      "skip_get_url": true,
+      "web_driver": "http://selenium:4444"
+    },
+    "network_requests": []
+  },
+  {
+    "council": "NeathPortTalbotCouncil",
+    "status": "failed",
+    "playwright_code": "await page.goto('https://beta.npt.gov.uk/bins-and-recycling/bin-day-finder/')\ntry:\n    await page.click('#ccc-notify-accept', timeout=5000)\nexcept:\n    pass\nawait page.fill('#PostCode', postcode)\nawait page.click(\"//button[@value='Find address']\")\nawait page.wait_for_selector('#Address')\nawait page.select_option('#Address', label={'re': f'.*{house_number}.*'})\nawait page.click(\"//input[@value='Find bin day']\")\nawait page.wait_for_selector('#contentInner')",
+    "test_params": {
+      "house_number": "2",
+      "postcode": "SA13 3BA",
+      "skip_get_url": true,
+      "web_driver": "http://selenium:4444"
+    },
+    "network_requests": []
+  },
+  {
+    "council": "NewForestCouncil",
+    "status": "failed",
+    "playwright_code": "await page.goto('https://forms.newforest.gov.uk/ufs/FIND_MY_BIN_BAR.eb')\nawait page.reload()\nawait page.wait_for_selector('//input[@id=\"CTID-JmLqCKl2-_-A\"]')\nawait page.evaluate(f\"document.getElementById('CTID-JmLqCKl2-_-A').value='{postcode}'\")\nawait page.click('//input[@type=\"submit\"]')\nawait page.wait_for_selector('//select[@id=\"CTID-KOeKcmrC-_-A\"]')\nawait page.select_option('//select[@id=\"CTID-KOeKcmrC-_-A\"]', value=uprn)\nawait page.click('//input[@value=\"Submit\"]')\nawait page.wait_for_timeout(2000)\ntry:\n    legacy_link = await page.query_selector('//a[contains(text(),\"Find your current bin collection day\")]')\n    if legacy_link:\n        await legacy_link.click()\n        await page.wait_for_timeout(2000)\nexcept Exception:\n    pass\nawait page.wait_for_selector('table[class*=\"eb-1j4UaesZ-tableContent\"]')",
+    "test_params": {
+      "postcode": "SO41 0GJ",
+      "skip_get_url": true,
+      "uprn": "100060482345",
+      "web_driver": "http://selenium:4444"
+    },
+    "network_requests": []
+  },
+  {
+    "council": "NewarkAndSherwoodDC",
+    "status": "failed",
+    "playwright_code": "await page.goto(f'https://app.newark-sherwooddc.gov.uk/bincollection/default.aspx?uprn={uprn}')\nawait page.wait_for_selector('table[class*=\"table table-condensed\"]')",
+    "test_params": {
+      "uprn": "200004258529",
+      "skip_get_url": true
+    },
+    "network_requests": []
+  },
+  {
+    "council": "NorthDevonCountyCouncil",
+    "status": "failed",
+    "playwright_code": "await page.goto('https://my.northdevon.gov.uk/service/WasteRecyclingCollectionCalendar')\nframe = page.frame_locator('#fillform-frame-1')\nawait frame.get_by_label('Postcode').fill(postcode.replace(' ', ''))\nawait frame.get_by_label('Postcode').press('Enter')\nawait frame.locator('#chooseAddress').select_option(uprn)\nawait frame.locator('.spinner-outer').wait_for(state='hidden')\nawait frame.get_by_role('button', name='Next').click()\nawait frame.locator('h4:has-text(\"Key\")').wait_for()\nresults_html = await frame.locator('div[data-field-name=\"html1\"] .fieldContent').inner_html()",
+    "test_params": {
+      "house_number": "1",
+      "postcode": "EX31 2LE",
+      "skip_get_url": true,
+      "uprn": "100040249471",
+      "web_driver": "http://selenium:4444"
+    },
+    "network_requests": []
+  },
+  {
+    "council": "NorthEastDerbyshireDistrictCouncil",
+    "status": "failed",
+    "playwright_code": "await page.goto('https://myselfservice.ne-derbyshire.gov.uk/service/Check_your_Bin_Day')\nframe_element = await page.wait_for_selector('#fillform-frame-1')\nframe = await frame_element.content_frame()\nawait frame.fill('input[name=\"postcode_search\"]', postcode)\nawait frame.wait_for_selector('select[name=\"selAddress\"] option.lookup-option')\nawait frame.select_option('select[name=\"selAddress\"]', value=uprn)\nawait frame.wait_for_selector('//th[contains(text(), \"Waste Collection\")]')\nawait page.wait_for_timeout(10000)\ncontent = await frame.content()",
+    "test_params": {
+      "postcode": "S42 5RB",
+      "skip_get_url": true,
+      "uprn": "010034492222",
+      "web_driver": "http://selenium:4444"
+    },
+    "network_requests": []
+  },
+  {
+    "council": "NorthKestevenDistrictCouncil",
+    "status": "skipped",
+    "reason": "no_test_parameters",
+    "network_requests": []
+  },
+  {
+    "council": "NorthLanarkshireCouncil",
+    "status": "skipped",
+    "reason": "no_test_parameters",
+    "network_requests": []
+  },
+  {
+    "council": "NorthNorfolkDistrictCouncil",
+    "status": "failed",
+    "playwright_code": "async def get_bins(page, postcode, house_number):\n    await page.goto('https://forms.north-norfolk.gov.uk/outreach/BinCollectionDays.ofml')\n    await page.fill('#F_Address_subform\\\\:Postcode', postcode)\n    await page.click('#BA_Address_subform\\\\:Search_button')\n    await page.wait_for_selector('#F_Address_subform\\\\:Id')\n    \n    # Select the address containing the house number\n    options = await page.query_selector_all('#F_Address_subform\\\\:Id option')\n    for option in options:\n        text = await option.inner_text()\n        if house_number.lower() in text.lower():\n            await option.click()\n            break\n    \n    await page.wait_for_selector('div#Search_result_details_cps_hd')\n    content = await page.content()\n    return content",
+    "test_params": {
+      "house_number": "1 Morston Mews",
+      "postcode": "NR25 6BH",
+      "skip_get_url": true,
+      "web_driver": "http://selenium:4444"
+    },
+    "network_requests": []
+  },
+  {
+    "council": "NorthWestLeicestershire",
+    "status": "failed",
+    "playwright_code": "await page.goto(f'https://my.nwleics.gov.uk/my-property-finder?address={postcode}&go=1')\naddress_link = await page.wait_for_selector(f'//a[contains(@href, \"{uprn}\")]')\nawait address_link.click()\nawait page.wait_for_selector('//h3[contains(text(), \"Refuse Collection Dates\")]')\ncontent = await page.content()",
+    "test_params": {
+      "postcode": "DE74 2FZ",
+      "skip_get_url": true,
+      "uprn": "100030572613",
+      "web_driver": "http://selenium:4444"
+    },
+    "network_requests": []
+  },
+  {
+    "council": "NorthumberlandCouncil",
+    "status": "failed",
+    "playwright_code": "await page.goto('https://bincollection.northumberland.gov.uk/postcode')\nawait page.click('.accept-all')\nawait page.fill('#postcode', postcode)\nawait page.click('.govuk-button')\nawait page.wait_for_selector('#address')\nawait page.select_option('#address', uprn.zfill(12))\nawait page.click('.govuk-button')\nawait page.wait_for_selector('.govuk-table')",
+    "test_params": {
+      "uprn": "010096302588",
+      "postcode": "NE65 0ZP",
+      "skip_get_url": true,
+      "web_driver": "http://selenium:4444"
+    },
+    "network_requests": []
+  },
+  {
+    "council": "OldhamCouncil",
+    "status": "skipped",
+    "reason": "no_test_parameters",
+    "network_requests": []
+  },
+  {
+    "council": "PembrokeshireCountyCouncil",
+    "status": "skipped",
+    "reason": "no_test_parameters",
+    "network_requests": []
+  },
+  {
+    "council": "PeterboroughCityCouncil",
+    "status": "failed",
+    "playwright_code": "await page.goto('https://report.peterborough.gov.uk/waste')\ntry:\n    accept_cookies = await page.wait_for_selector(\"//button/span[contains(text(), 'I Accept Cookies')]\", timeout=5000)\n    await accept_cookies.click()\nexcept:\n    pass\nawait page.fill('input#postcode', postcode)\nawait page.click('input#go')\nawait page.wait_for_selector('input#address')\nawait page.click('input#address')\naddress_option = await page.wait_for_selector(f\"//li[contains(text(), '{house_number}')]\")\nawait address_option.click()\nawait page.click('input[value=\"Continue\"]')\nawait page.wait_for_selector('div.waste__collections')",
+    "test_params": {
+      "house_number": "7 Arundel Road, Peterborough, PE4 6JJ",
+      "postcode": "PE4 6JJ",
+      "skip_get_url": true,
+      "web_driver": "http://selenium:4444"
+    },
+    "network_requests": []
+  },
+  {
+    "council": "PortsmouthCityCouncil",
+    "status": "failed",
+    "playwright_code": "await page.goto('https://my.portsmouth.gov.uk/en/AchieveForms/?form_uri=sandbox-publish://AF-Process-26e27e70-f771-47b1-a34d-af276075cede/AF-Stage-cd7cc291-2e59-42cc-8c3f-1f93e132a2c9/definition.json&redirectlink=%2F&cancelRedirectLink=%2F')\niframe = page.frame_locator('#fillform-frame-1')\nawait iframe.get_by_name('postcode_search').fill(postcode)\nawait iframe.locator('#lookupAddress').click()\nawait iframe.get_by_name('Choose_Address').select_option(uprn)\nawait iframe.locator(\"//h4[contains(text(), 'next 10 collection dates')]\").wait_for()",
+    "test_params": {
+      "postcode": "PO4 0LE",
+      "skip_get_url": true,
+      "uprn": "1775027504",
+      "web_driver": "http://selenium:4444"
+    },
+    "network_requests": []
+  },
+  {
+    "council": "PowysCouncil",
+    "status": "failed",
+    "playwright_code": "await page.goto('https://en.powys.gov.uk/binday')\nawait page.click('button[name=\"acceptall\"]')\nawait page.fill('#BINDAYLOOKUP_ADDRESSLOOKUP_ADDRESSLOOKUPPOSTCODE', postcode)\nawait page.click('#BINDAYLOOKUP_ADDRESSLOOKUP_ADDRESSLOOKUPSEARCH')\nawait page.wait_for_selector('#BINDAYLOOKUP_ADDRESSLOOKUP_ADDRESSLOOKUPADDRESS')\nawait page.select_option('#BINDAYLOOKUP_ADDRESSLOOKUP_ADDRESSLOOKUPADDRESS', label=house_number)\nawait page.click('#BINDAYLOOKUP_ADDRESSLOOKUP_ADDRESSLOOKUPBUTTONS_NEXT')\nawait page.wait_for_selector('#BINDAYLOOKUP_COLLECTIONDATES_COLLECTIONDATES')",
+    "test_params": {
+      "house_number": "LANE COTTAGE",
+      "postcode": "HR3 5JS",
+      "skip_get_url": true,
+      "web_driver": "http://selenium:4444"
+    },
+    "network_requests": []
+  },
+  {
+    "council": "PrestonCityCouncil",
+    "status": "failed",
+    "playwright_code": "await page.goto('https://selfservice.preston.gov.uk/service/Forms/FindMyNearest.aspx?Service=bins')\nawait page.fill('#MainContent_txtAddress', f\"{house_number} {postcode}\")\nawait page.keyboard.press('Enter')\nawait page.wait_for_selector('#MainContent_ddlSearchResults')\nawait page.select_option('#MainContent_ddlSearchResults', index=1)\nawait page.wait_for_selector('#MainContent_lblMoreCollectionDates')",
+    "test_params": {
+      "house_number": "Town Hall",
+      "postcode": "PR1 2RL",
+      "skip_get_url": true,
+      "web_driver": "http://selenium:4444"
+    },
+    "network_requests": []
+  },
+  {
+    "council": "ReigateAndBansteadBoroughCouncil",
+    "status": "failed",
+    "playwright_code": "await page.goto(f'https://my.reigate-banstead.gov.uk/en/service/Bins_and_recycling___collections_calendar?uprn={uprn.zfill(12)}')\nframe_element = await page.wait_for_selector('#fillform-frame-1')\nframe = await frame_element.content_frame()\nawait frame.wait_for_selector('span[data-name=\"html2\"] > div')",
+    "test_params": {
+      "skip_get_url": true,
+      "uprn": "68134867",
+      "web_driver": "http://selenium:4444"
+    },
+    "network_requests": []
+  },
+  {
+    "council": "RenfrewshireCouncil",
+    "status": "failed",
+    "playwright_code": "await page.goto('https://www.renfrewshire.gov.uk/bin-day')\ntry:\n    await page.wait_for_selector('#ccc-notify-accept', timeout=5000)\n    await page.click('#ccc-notify-accept')\nexcept:\n    pass\nawait page.fill('#RENFREWSHIREBINCOLLECTIONS_PAGE1_ADDRESSLOOKUPPOSTCODE', postcode)\nawait page.click('#RENFREWSHIREBINCOLLECTIONS_PAGE1_ADDRESSLOOKUPSEARCH')\nawait page.wait_for_selector('#RENFREWSHIREBINCOLLECTIONS_PAGE1_ADDRESSLOOKUPADDRESS')\nawait page.select_option('#RENFREWSHIREBINCOLLECTIONS_PAGE1_ADDRESSLOOKUPADDRESS', label=paon)\nawait page.wait_for_selector('#RENFREWSHIREBINCOLLECTIONS_PAGE1_COLLECTIONDETAILS', timeout=30000)\n# Results are now in page content",
+    "test_params": {
+      "house_number": "1, STATIONHOUSE DRIVE, JOHNSTONE, RENFREWSHIRE, PA6 7FJ",
+      "paon": "1, STATIONHOUSE DRIVE, JOHNSTONE, RENFREWSHIRE, PA6 7FJ",
+      "postcode": "PA6 7FJ",
+      "skip_get_url": true,
+      "web_driver": "http://selenium:4444"
+    },
+    "network_requests": []
+  },
+  {
+    "council": "RochfordCouncil",
+    "status": "skipped",
+    "reason": "no_test_parameters",
+    "network_requests": []
+  },
+  {
+    "council": "RugbyBoroughCouncil",
+    "status": "failed",
+    "playwright_code": "await page.goto('https://www.rugby.gov.uk/check-your-next-bin-day')\nawait page.click('#ccc-recommended-settings')\nawait page.fill('//*[@id=\"_com_placecube_digitalplace_local_waste_portlet_CollectionDayFinderPortlet_postcode\"]', postcode)\nawait page.keyboard.press('Enter')\nawait page.wait_for_selector('#_com_placecube_digitalplace_local_waste_portlet_CollectionDayFinderPortlet_uprn')\nawait page.select_option('#_com_placecube_digitalplace_local_waste_portlet_CollectionDayFinderPortlet_uprn', value=uprn)\nawait page.keyboard.press('Enter')\nawait page.wait_for_selector('table.table')",
+    "test_params": {
+      "postcode": "CV22 6LA",
+      "skip_get_url": true,
+      "uprn": "100070182634",
+      "web_driver": "http://selenium:4444"
+    },
+    "network_requests": []
+  },
+  {
+    "council": "RushcliffeBoroughCouncil",
+    "status": "failed",
+    "playwright_code": "await page.goto('https://selfservice.rushcliffe.gov.uk/renderform.aspx?t=1242&k=86BDCD8DE8D868B9E23D10842A7A4FE0F1023CCA')\nawait page.fill('#FF3518-text', postcode)\nawait page.click('#FF3518-find')\nawait page.wait_for_selector('#FF3518-list')\nawait page.select_option('#FF3518-list', value=f'U{uprn}')\nawait page.click('#submit-button')\nawait page.wait_for_selector('.ss_confPanel')",
+    "test_params": {
+      "postcode": "NG13 8TZ",
+      "skip_get_url": true,
+      "uprn": "3040040994",
+      "web_driver": "http://selenium:4444"
+    },
+    "network_requests": []
+  },
+  {
+    "council": "SevenoaksDistrictCouncil",
+    "status": "failed",
+    "playwright_code": "await page.goto('https://sevenoaks-dc-host01.oncreate.app/w/webpage/waste-collection-day')\nawait page.wait_for_selector('#address_search_postcode')\nawait page.fill('#address_search_postcode', postcode)\nawait page.keyboard.press('Enter')\nawait page.wait_for_selector('//select/option[2]')\nif house_number:\n    await page.select_option('select', label={'pattern': f'.*{house_number}.*'})\nelse:\n    await page.select_option('select', index=1)\nawait page.wait_for_selector('//div[@data-class_name]//h4')\nelements = await page.query_selector_all('//div[@data-class_name]//h4/../../../..')\nbins = []\nfor element in elements:\n    bin_type = await (await element.query_selector('h4')).inner_text()\n    date_elements = await element.query_selector_all('.//div[input]')\n    if len(date_elements) > 1:\n        date_text = await date_elements[1].inner_text()\n        if 'suspended' not in date_text.lower():\n            bins.append({'type': bin_type, 'collectionDate': date_text})",
+    "test_params": {
+      "house_number": "60 Hever Road",
+      "postcode": "TN15 6EB",
+      "skip_get_url": true,
+      "web_driver": "http://selenium:4444"
+    },
+    "network_requests": []
+  },
+  {
+    "council": "SheffieldCityCouncil",
+    "status": "skipped",
+    "reason": "no_test_parameters",
+    "network_requests": []
+  },
+  {
+    "council": "ShropshireCouncil",
+    "status": "skipped",
+    "reason": "no_test_parameters",
+    "network_requests": []
+  },
+  {
+    "council": "SloughBoroughCouncil",
+    "status": "failed",
+    "playwright_code": "await page.goto('https://www.slough.gov.uk/bin-collections')\nawait page.click('#ccc-recommended-settings')\naddress_input = await page.wait_for_selector('#keyword_directory25')\nawait address_input.fill(user_address)\nawait page.keyboard.press('Enter')\nawait page.wait_for_selector('span.list__link-text')\nstreet_links = await page.query_selector_all('span.list__link-text')\nfor link in street_links:\n    text = await link.inner_text()\n    if user_address.lower() in text.lower():\n        await link.click()\n        break\nawait page.wait_for_selector('section.site-content')\nheadings = await page.query_selector_all('dt.definition__heading')\n# Logic continues to iterate through specific bin detail links and scrape dates from <li> elements in .editor ul",
+    "test_params": {
+      "postcode": "SL2 2EW",
+      "skip_get_url": true,
+      "web_driver": "http://selenium:4444"
+    },
+    "network_requests": []
+  },
+  {
+    "council": "SolihullCouncil",
+    "status": "skipped",
+    "reason": "no_test_parameters",
+    "network_requests": []
+  },
+  {
+    "council": "SomersetCouncil",
+    "status": "failed",
+    "playwright_code": "await page.goto('https://www.somerset.gov.uk/collection-days')\nawait page.wait_for_selector('#postcodeSearch')\nawait page.fill('#postcodeSearch', postcode)\nawait page.click('.govuk-button')\nawait page.wait_for_selector('#addressSelect')\nawait page.select_option('#addressSelect', label={'contains': house_number})\nawait page.wait_for_selector(\"//h2[contains(@class,'govuk-heading-s') and normalize-space(.)='Your next collections']\")",
+    "test_params": {
+      "postcode": "TA6 4AA",
+      "skip_get_url": true,
+      "house_number": "5",
+      "web_driver": "http://selenium:4444"
+    },
+    "network_requests": []
+  },
+  {
+    "council": "SouthLanarkshireCouncil",
+    "status": "skipped",
+    "reason": "no_test_parameters",
+    "network_requests": []
+  },
+  {
+    "council": "StHelensBC",
+    "status": "failed",
+    "playwright_code": "await page.goto('https://www.sthelens.gov.uk/article/3473/Check-your-collection-dates')\nawait page.wait_for_selector('#RESIDENTCOLLECTIONDATES_PAGE1_POSTCODE')\nawait page.fill('#RESIDENTCOLLECTIONDATES_PAGE1_POSTCODE', postcode)\nawait page.click('#RESIDENTCOLLECTIONDATES_PAGE1_FINDADDRESS_NEXT')\nawait page.wait_for_selector('#RESIDENTCOLLECTIONDATES_PAGE1_ADDRESS_chosen')\nawait page.click('#RESIDENTCOLLECTIONDATES_PAGE1_ADDRESS_chosen')\nawait page.click(f\"//ul[@id='RESIDENTCOLLECTIONDATES_PAGE1_ADDRESS-chosen-search-results']/li[starts-with(text(), '{house_number}')]\")\nawait page.click('#RESIDENTCOLLECTIONDATES_PAGE1_ADDRESSNEXT_NEXT')\nawait page.wait_for_selector('#RESIDENTCOLLECTIONDATES__FIELDS_OUTER')",
+    "test_params": {
+      "house_number": "15",
+      "postcode": "L34 2GA",
+      "skip_get_url": true,
+      "web_driver": "http://selenium:4444"
+    },
+    "network_requests": []
+  },
+  {
+    "council": "StaffordshireMoorlandsDistrictCouncil",
+    "status": "failed",
+    "playwright_code": "await page.goto('https://www.staffsmoorlands.gov.uk/findyourbinday')\nawait page.fill('#FINDBINDAYSSTAFFORDSHIREMOORLANDS_POSTCODESELECT_POSTCODE', postcode)\nawait page.click('#FINDBINDAYSSTAFFORDSHIREMOORLANDS_POSTCODESELECT_PAGE1NEXT_NEXT')\nawait page.wait_for_selector('#FINDBINDAYSSTAFFORDSHIREMOORLANDS_ADDRESSSELECT_ADDRESS')\nawait page.select_option('#FINDBINDAYSSTAFFORDSHIREMOORLANDS_ADDRESSSELECT_ADDRESS', uprn)\nawait page.click('#FINDBINDAYSSTAFFORDSHIREMOORLANDS_ADDRESSSELECT_ADDRESSSELECTNEXTBTN_NEXT')\nawait page.wait_for_selector('.bin-collection__month')",
+    "test_params": {
+      "postcode": "ST8 6HN",
+      "skip_get_url": true,
+      "uprn": "100031863037",
+      "web_driver": "http://selenium:4444"
+    },
+    "network_requests": []
+  },
+  {
+    "council": "StirlingCouncil",
+    "status": "failed",
+    "playwright_code": "await page.goto('https://www.stirling.gov.uk/bins-and-recycling/bin-collection-dates-search/')\ntry:\n    cookie_button = await page.wait_for_selector('#ccc-recommended-settings', timeout=5000)\n    await cookie_button.click()\nexcept:\n    pass\nawait page.fill('#js-postcode-lookup-postcode', postcode)\nawait page.keyboard.press('Tab')\nawait page.keyboard.press('Enter')\nawait page.wait_for_selector('.select__input')\nawait page.select_option('.select__input', label=house_number)\nawait page.keyboard.press('Tab')\nawait page.keyboard.press('Tab')\nawait page.keyboard.press('Enter')\nawait page.wait_for_selector('.schedule__list')\nschedule_items = await page.query_selector_all('li.schedule__item')",
+    "test_params": {
+      "house_number": "5, SUNNYLAW ROAD, BRIDGE OF ALLAN, STIRLING, FK9 4QA",
+      "postcode": "FK9 4QA",
+      "skip_get_url": true,
+      "web_driver": "http://selenium:4444"
+    },
+    "network_requests": []
+  },
+  {
+    "council": "StockportBoroughCouncil",
+    "status": "skipped",
+    "reason": "no_test_parameters",
+    "network_requests": []
+  },
+  {
+    "council": "StocktonOnTeesCouncil",
+    "status": "failed",
+    "playwright_code": "await page.goto('https://www.stockton.gov.uk/bin-collection-days')\nawait page.fill('#LOOKUPBINDATESBYADDRESSSKIPOUTOFREGION_ADDRESSLOOKUPPOSTCODE', postcode)\nawait page.click('#LOOKUPBINDATESBYADDRESSSKIPOUTOFREGION_ADDRESSLOOKUPSEARCH')\nawait page.wait_for_selector('#LOOKUPBINDATESBYADDRESSSKIPOUTOFREGION_ADDRESSLOOKUPADDRESS')\nawait page.select_option('#LOOKUPBINDATESBYADDRESSSKIPOUTOFREGION_ADDRESSLOOKUPADDRESS', label={'re': f'.*{house_number}.*'})\nawait page.wait_for_selector('#LOOKUPBINDATESBYADDRESSSKIPOUTOFREGION_COLLECTIONDETAILS2')",
+    "test_params": {
+      "house_number": "24",
+      "postcode": "TS20 2RD",
+      "skip_get_url": true,
+      "web_driver": "http://selenium:4444"
+    },
+    "network_requests": []
+  },
+  {
+    "council": "SunderlandCityCouncil",
+    "status": "failed",
+    "playwright_code": "await page.goto('https://webapps.sunderland.gov.uk/WEBAPPS/WSS/Sunderland_Portal/Forms/bindaychecker.aspx')\nawait page.fill('#ContentPlaceHolder1_tbPostCode_controltext', postcode)\nawait page.click('#ContentPlaceHolder1_btnLLPG')\nawait page.wait_for_selector('#ContentPlaceHolder1_ddlAddresses')\naddress_dropdown = await page.query_selector('#ContentPlaceHolder1_ddlAddresses')\noptions = await address_dropdown.query_selector_all('option')\nfor index, option in enumerate(options):\n    text = await option.inner_text()\n    if text.startswith(house_number):\n        await address_dropdown.select_option(index=index)\n        break\nawait page.wait_for_load_state('networkidle')\nhousehold_el = await page.query_selector('#ContentPlaceHolder1_LabelHouse')\nrecycling_el = await page.query_selector('#ContentPlaceHolder1_LabelRecycle')",
+    "test_params": {
+      "house_number": "13",
+      "postcode": "SR4 6BJ",
+      "skip_get_url": true,
+      "web_driver": "http://selenium:4444"
+    },
+    "network_requests": []
+  },
+  {
+    "council": "SwaleBoroughCouncil",
+    "status": "failed",
+    "playwright_code": "async def get_bins(page, postcode, house_number):\n    await page.goto('https://swale.gov.uk/bins-littering-and-the-environment/bins/check-your-bin-day')\n    await page.wait_for_selector('#q485476_q1')\n    await page.fill('#q485476_q1', postcode)\n    await page.click('#form_email_485465_submit')\n    await page.wait_for_selector('select[name=\"q485480:q1\"]')\n    await page.select_option('select[name=\"q485480:q1\"]', label=house_number)\n    await page.click('#form_email_485465_submit')\n    await page.wait_for_selector('#SBCYBDSummary')",
+    "test_params": {
+      "house_number": "81",
+      "postcode": "ME12 2NQ",
+      "skip_get_url": true,
+      "web_driver": "http://selenium:4444"
+    },
+    "network_requests": []
+  },
+  {
+    "council": "TeignbridgeCouncil",
+    "status": "failed",
+    "playwright_code": "await page.goto(f'https://www.teignbridge.gov.uk/repositories/hidden-pages/bin-finder?uprn={uprn}')\nawait page.wait_for_selector('h3')\ncontent = await page.content()",
+    "test_params": {
+      "uprn": "100040338776",
+      "web_driver": "http://selenium:4444"
+    },
+    "network_requests": []
+  },
+  {
+    "council": "TendringDistrictCouncil",
+    "status": "failed",
+    "playwright_code": "await page.goto('https://tendring-self.achieveservice.com/en/service/Rubbish_and_recycling_collection_days')\ntry:\n    cookie_button = await page.wait_for_selector('#close-cookie-message', timeout=5000)\n    await cookie_button.click()\nexcept:\n    pass\nawait page.click('text=\"or, continue without an account\"')\niframe_element = await page.wait_for_selector('#fillform-frame-1')\nframe = await iframe_element.content_frame()\nawait frame.wait_for_selector('input[name=\"postcode_search\"]')\nawait frame.fill('input[name=\"postcode_search\"]', postcode)\nawait frame.wait_for_selector('select[name=\"selectAddress\"] option:nth-child(2)')\nawait frame.select_option('select[name=\"selectAddress\"]', value=uprn)\nawait frame.wait_for_selector('.wasteTable')",
+    "test_params": {
+      "postcode": "CO15 4EU",
+      "skip_get_url": true,
+      "uprn": "100090604247",
+      "web_driver": "http://selenium:4444"
+    },
+    "network_requests": []
+  },
+  {
+    "council": "TestValleyBoroughCouncil",
+    "status": "failed",
+    "playwright_code": "await page.goto('https://testvalley.gov.uk/wasteandrecycling/when-are-my-bins-collected/when-are-my-bins-collected')\nawait page.wait_for_selector('#postcodeSearch')\nawait page.fill('#postcodeSearch', postcode)\nawait page.click('.govuk-button')\nawait page.wait_for_selector('#addressSelect')\nawait page.select_option('#addressSelect', label={'contains': house_number})\nawait page.wait_for_selector(\"h2:has-text('Your next collections')\")",
+    "test_params": {
+      "postcode": "SO51 0BY",
+      "skip_get_url": true,
+      "house_number": "2",
+      "web_driver": "http://selenium:4444"
+    },
+    "network_requests": []
+  },
+  {
+    "council": "ThanetDistrictCouncil",
+    "status": "failed",
+    "playwright_code": "async def get_bins(uprn):\n    url = f'https://www.thanet.gov.uk/wp-content/mu-plugins/collection-day/incl/mu-collection-day-calls.php?pAddress={uprn}'\n    await page.goto(url)\n    await page.wait_for_load_state('networkidle')\n    body_content = await page.inner_text('body')\n    import json\n    bin_data = json.loads(body_content)\n    results = []\n    for item in bin_data:\n        results.append({\n            'type': item['type'],\n            'collectionDate': item['nextDate'].split(' ')[0]\n        })\n    return results",
+    "test_params": {
+      "uprn": "100061111858",
+      "web_driver": "http://selenium:4444"
+    },
+    "network_requests": []
+  },
+  {
+    "council": "ThreeRiversDistrictCouncil",
+    "status": "failed",
+    "playwright_code": "await page.goto('https://my.threerivers.gov.uk/en/AchieveForms/?mode=fill&consentMessage=yes&form_uri=sandbox-publish://AF-Process-52df96e3-992a-4b39-bba3-06cfaabcb42b/AF-Stage-01ee28aa-1584-442c-8d1f-119b6e27114a/definition.json&process=1&process_uri=sandbox-processes://AF-Process-52df96e3-992a-4b39-bba3-06cfaabcb42b&process_id=AF-Process-52df96e3-992a-4b39-bba3-06cfaabcb42b&noLoginPrompt=1')\nawait page.click(\"button:has-text('Continue')\")\niframe = page.frame_locator('#fillform-frame-1')\nawait iframe.locator('#postcode_search').fill(postcode)\nawait iframe.locator('#chooseAddress').select_option(uprn)\nawait page.wait_for_timeout(2000)\nawait iframe.locator(\"button:has-text('Next')\").click()\nawait iframe.locator(\"div[data-field-name='subCollectionCalendar'] table\").wait_for()",
+    "test_params": {
+      "postcode": "WD3 7AZ",
+      "skip_get_url": true,
+      "uprn": "100080913662",
+      "web_driver": "http://selenium:4444"
+    },
+    "network_requests": []
+  },
+  {
+    "council": "TorbayCouncil",
+    "status": "failed",
+    "playwright_code": "await page.goto('https://www.torbay.gov.uk/recycling/bin-collections/')\ntry:\n    await page.click('/html/body/div[1]/div/div[2]/button[1]', timeout=5000)\nexcept:\n    pass\nasync with page.expect_popup() as popup_info:\n    await page.click('text=\"Find your collection day\"')\npage1 = await popup_info.value\nawait page1.fill('#FF1168-text', postcode)\nawait page1.keyboard.press('Enter')\nawait page1.wait_for_selector('#FF1168-list')\nawait page1.select_option('#FF1168-list', label=f'U{uprn}|')\nawait page1.wait_for_selector('.esbAddressSelected')\nawait page1.click('#submit-button')\nawait page1.wait_for_selector('#resiCollectionDetails')\ncontent = await page1.content()",
+    "test_params": {
+      "skip_get_url": true,
+      "uprn": "10000016984",
+      "postcode": "TQ1 1AG",
+      "web_driver": "http://selenium:4444"
+    },
+    "network_requests": []
+  },
+  {
+    "council": "UttlesfordDistrictCouncil",
+    "status": "failed",
+    "playwright_code": "await page.goto('https://bins.uttlesford.gov.uk/')\nawait page.wait_for_selector('input#postcode')\nawait page.fill('input#postcode', postcode)\nawait page.keyboard.press('Enter')\nawait page.wait_for_selector('select#housenn')\nawait page.select_option('select#housenn', {'label': str(house_number)})\nawait page.click('input[alt=\"View your waste collection days\"]')\nawait page.wait_for_selector(\"//h3[contains(text(), 'Future Collection Dates')]\")\ncontent = await page.content()",
+    "test_params": {
+      "house_number": "72, Birchanger Lane",
+      "postcode": "CM23 5QF",
+      "skip_get_url": true,
+      "uprn": "100090643434",
+      "web_driver": "http://selenium:4444"
+    },
+    "network_requests": []
+  },
+  {
+    "council": "WakefieldCityCouncil",
+    "status": "failed",
+    "playwright_code": "await page.goto(kwargs.get(\"url\"))\nhtml_content = await page.content()\n# The provided URL usually contains the address lookup, e.g., https://www.wakefield.gov.uk/where-i-live?a=115%20Elizabeth%20Drive\nawait page.wait_for_selector(\"div.wil_c-content-section_heading\")",
+    "test_params": {
+      "custom_component_show_url_field": true,
+      "skip_get_url": true,
+      "web_driver": "http://selenium:4444"
+    },
+    "network_requests": []
+  },
+  {
+    "council": "WalthamForest",
+    "status": "failed",
+    "playwright_code": "await page.goto('https://portal.walthamforest.gov.uk/AchieveForms/?mode=fill&consentMessage=yes&form_uri=sandbox-publish://AF-Process-d62ccdd2-3de9-48eb-a229-8e20cbdd6393/AF-Stage-8bf39bf9-5391-4c24-857f-0dc2025c67f4/definition.json&process=1&process_uri=sandbox-processes://AF-Process-d62ccdd2-3de9-48eb-a229-8e20cbdd6393&process_id=AF-Process-d62ccdd2-3de9-48eb-a229-8e20cbdd6393')\niframe_element = await page.wait_for_selector('#fillform-frame-1')\nframe = await iframe_element.content_frame()\nawait frame.fill('input[name=\"postcode_search\"]', postcode)\nawait frame.click('#lookupPostcode')\nawait frame.wait_for_selector('.select2-choice')\nawait frame.click('.select2-choice')\nawait frame.fill('.select2-input', house_number)\nawait frame.press('.select2-input', 'Enter')\nawait frame.click('#confirmSearchUPRN')\nawait frame.wait_for_selector('h4:has-text(\"Next Collections\")')\nbins_elements = await frame.query_selector_all('div[style*=\"text-align: center;\"]')\nfor bin in bins_elements:\n    type_el = await bin.query_selector('h5')\n    date_el = await bin.query_selector('p b')\n    if type_el and date_el:\n        bin_type = await type_el.inner_text()\n        bin_date = await date_el.inner_text()",
+    "test_params": {
+      "house_number": "17 Chingford Road, Walthamstow",
+      "postcode": "E17 4PW",
+      "skip_get_url": true,
+      "uprn": "200001415697",
+      "web_driver": "http://selenium:4444"
+    },
+    "network_requests": []
+  },
+  {
+    "council": "WestBerkshireCouncil",
+    "status": "failed",
+    "playwright_code": "await page.goto('https://www.westberks.gov.uk/binday')\nawait page.wait_for_selector('#FINDYOURBINDAYS3WEEKLY_ADDRESSLOOKUPPOSTCODE')\nawait page.fill('#FINDYOURBINDAYS3WEEKLY_ADDRESSLOOKUPPOSTCODE', postcode)\nawait page.click('#FINDYOURBINDAYS3WEEKLY_ADDRESSLOOKUPSEARCH')\nawait page.wait_for_selector('#FINDYOURBINDAYS3WEEKLY_ADDRESSLOOKUPADDRESS')\nawait page.select_option('#FINDYOURBINDAYS3WEEKLY_ADDRESSLOOKUPADDRESS', {'label': house_number})\nawait page.wait_for_selector('#FINDYOURBINDAYS3WEEKLY_RUBBISHRECYCLEFOODDATE')\n# Data is extracted from .rubbish_collection_difs_black, .rubbish_collection_difs_green, and .rubbish_collection_difs_purple",
+    "test_params": {
+      "house_number": "8",
+      "postcode": "RG14 7DP",
+      "skip_get_url": true,
+      "web_driver": "http://selenium:4444"
+    },
+    "network_requests": []
+  },
+  {
+    "council": "WestLothianCouncil",
+    "status": "failed",
+    "playwright_code": "await page.goto('https://www.westlothian.gov.uk/article/31528/Bin-Collection-Calendar-Dates')\nfeedback_no = await page.wait_for_selector('.feedback__link--no')\nawait feedback_no.click()\nawait page.fill('#WLBINCOLLECTION_PAGE1_ADDRESSLOOKUPPOSTCODE', postcode)\nawait page.click('#WLBINCOLLECTION_PAGE1_ADDRESSLOOKUPSEARCH')\nselect_selector = '#WLBINCOLLECTION_PAGE1_ADDRESSLOOKUPADDRESS'\nawait page.wait_for_selector(select_selector)\noptions = await page.query_selector_all(f'{select_selector} option')\nfor option in options:\n    text = await option.inner_text()\n    if house_number.lower() in text.lower():\n        val = await option.get_attribute('value')\n        await page.select_option(select_selector, value=val)\n        break\nawait page.wait_for_selector('.bin-collections')",
+    "test_params": {
+      "house_number": "1 GOSCHEN PLACE",
+      "postcode": "EH52 5JE",
+      "skip_get_url": true,
+      "web_driver": "http://selenium:4444"
+    },
+    "network_requests": []
+  },
+  {
+    "council": "WestOxfordshireDistrictCouncil",
+    "status": "failed",
+    "playwright_code": "await page.goto('https://community.westoxon.gov.uk/s/waste-collection-enquiry')\nfull_address = f'{house_number}, {postcode}'\naddress_input = await page.wait_for_selector('//input[@placeholder=\"Search Properties...\"]')\nawait address_input.click()\nawait address_input.fill(full_address)\nawait page.keyboard.press('Backspace')\nawait page.keyboard.type(full_address[-1])\ndropdown_item = await page.wait_for_selector('(//lightning-base-combobox-item)[2]')\nawait dropdown_item.click()\nnext_button = await page.wait_for_selector('//lightning-button/button')\nawait next_button.click()\nawait page.wait_for_selector(\"//span[contains(text(), 'Container')]\")",
+    "test_params": {
+      "house_number": "24",
+      "postcode": "OX28 1YA",
+      "skip_get_url": true,
+      "web_driver": "http://selenium:4444"
+    },
+    "network_requests": []
+  },
+  {
+    "council": "WinchesterCityCouncil",
+    "status": "failed",
+    "playwright_code": "await page.goto('http://www.winchester.gov.uk/bin-calendar')\nawait page.wait_for_selector('#postcodeSearch')\nawait page.fill('#postcodeSearch', postcode)\nawait page.click('//button[@class=\"govuk-button mt-4\"]')\nawait page.wait_for_selector('#addressSelect')\nawait page.select_option('#addressSelect', label={'contains': paon})\nawait page.wait_for_selector('div.ant-row.justify-content-between')",
+    "test_params": {
+      "house_number": "12",
+      "paon": "12",
+      "postcode": "SO23 7GA",
+      "skip_get_url": false,
+      "web_driver": "http://selenium:4444"
+    },
+    "network_requests": []
+  },
+  {
+    "council": "WindsorAndMaidenheadCouncil",
+    "status": "failed",
+    "playwright_code": "await page.goto(f'https://forms.rbwm.gov.uk/bincollections?uprn={uprn}')\nawait page.wait_for_selector('.widget-bin-collections')\nrows = await page.query_selector_all('.widget-bin-collections tbody tr')\nfor row in rows:\n    cells = await row.query_selector_all('td')\n    if len(cells) >= 2:\n        bin_type = await cells[0].inner_text()\n        bin_date = await cells[1].inner_text()",
+    "test_params": {
+      "skip_get_url": true,
+      "uprn": "100080371082",
+      "web_driver": "http://selenium:4444"
+    },
+    "network_requests": []
+  },
+  {
+    "council": "WokinghamBoroughCouncil",
+    "status": "failed",
+    "playwright_code": "async def scrape_bins(page, postcode, paon):\n    await page.goto('https://www.wokingham.gov.uk/rubbish-and-recycling/waste-collection/find-your-bin-collection-day')\n    await page.wait_for_selector('#edit-postcode-search-csv')\n    await page.fill('#edit-postcode-search-csv', postcode)\n    await page.keyboard.press('Enter')\n    \n    # Select address using PAON\n    await page.wait_for_selector('#edit-address-options-csv')\n    option_xpath = f\"//*[@id='edit-address-options-csv']//option[starts-with(normalize-space(.), '{paon}')]\"\n    await page.click(option_xpath)\n    \n    # Submit the form to show dates\n    await page.click('#edit-show-collection-dates-csv')\n    \n    # Wait for results to load\n    await page.wait_for_selector('.card.card--waste.card--blue-light')\n    \n    cards = await page.query_selector_all('.card.card--waste.card--blue-light')\n    bins = []\n    for card in cards:\n        type_el = await card.query_selector('h3.heading--sub')\n        date_el = await card.query_selector('.card__date')\n        if type_el and date_el:\n            waste_type = (await type_el.inner_text()).split('(')[0].strip()\n            raw_date = (await date_el.inner_text()).split(' ')[1].strip()\n            bins.append({\n                \"type\": waste_type,\n                \"collectionDate\": raw_date\n            })\n    return bins",
+    "test_params": {
+      "house_number": "90",
+      "postcode": "RG40 2HR",
+      "skip_get_url": true,
+      "web_driver": "http://selenium:4444"
+    },
+    "network_requests": []
+  },
+  {
+    "council": "WrexhamCountyBoroughCouncil",
+    "status": "failed",
+    "playwright_code": "await page.goto('https://www.wrexham.gov.uk/service/when-are-my-bins-collected')\nawait page.click(\"xpath=//a[contains(text(),'Start now')]\")\nawait page.click(\"xpath=//a[contains(text(),'or, continue without an account')]\")\niframe_element = await page.wait_for_selector('#fillform-frame-1')\nframe = await iframe_element.content_frame()\nawait frame.fill('#LocationSearch', postcode)\nawait frame.wait_for_selector('.spinner', state='hidden')\nawait frame.select_option('#ChooseAddress', uprn)\nawait frame.wait_for_selector(\"xpath=//table[@id='wcbc_collection_details']\")\ntable_html = await frame.inner_html(\"xpath=//table[@id='wcbc_collection_details']\")",
+    "test_params": {
+      "house_number": "1",
+      "postcode": "LL12 7RW",
+      "uprn": "200002944225",
+      "skip_get_url": true,
+      "web_driver": "http://selenium:4444"
+    },
+    "network_requests": []
+  },
+  {
+    "council": "WychavonDistrictCouncil",
+    "status": "failed",
+    "playwright_code": "await page.goto('https://selfservice.wychavon.gov.uk/wdcroundlookup/wdc_search.jsp')\ntry:\n    await page.wait_for_selector('#ccc-recommended-settings', timeout=5000)\n    await page.click('#ccc-recommended-settings')\n    await page.click('#ccc-close')\nexcept:\n    pass\nawait page.fill('#alAddrtxt', postcode)\nawait page.click('#alAddrbtn')\nawait page.wait_for_selector('#alAddrsel')\nawait page.select_option('#alAddrsel', uprn)\nawait page.click('#btnSubmit')\nawait page.wait_for_selector(\"//strong[contains(text(), 'Upcoming collections')]\")",
+    "test_params": {
+      "postcode": "WR3 7RU",
+      "skip_get_url": true,
+      "uprn": "100120716273",
+      "web_driver": "http://selenium:4444"
+    },
+    "network_requests": []
+  }
+]

@@ -1,73 +1,11 @@
 import asyncio
 import aiohttp
 import json
-from enum import Enum
-from typing import List, Optional, Literal
-from pydantic import BaseModel, Field
-from google import genai
-from google.genai.types import (
-    GenerateContentConfig,
-    ThinkingConfig,
-    ThinkingLevel,
-)
 from dotenv import load_dotenv
-import os
+from structured_output import CouncilExtraction
+from gemini import llm_call_with_struct_output
 
 load_dotenv()
-
-
-# ============================================================================
-# STRUCTURED OUTPUT SCHEMA
-# ============================================================================
-
-
-class RequestType(str, Enum):
-    """The type of scraping approach used"""
-
-    SINGLE_API = "single_api"  # One HTTP request returns bin data
-    TOKEN_THEN_API = "token_then_api"  # Get CSRF token/cookie, then query
-    ID_LOOKUP_THEN_API = (
-        "id_lookup_then_api"  # Find council ID from postcode, then query
-    )
-    SELENIUM = "selenium"  # Browser automation (will be converted to Playwright)
-    CALENDAR_CALCULATION = "calendar"  # Date arithmetic based on fixed patterns
-
-
-class HttpMethod(str, Enum):
-    GET = "GET"
-    POST = "POST"
-    PUT = "PUT"
-
-
-# Simplified flat schema for faster generation
-
-
-class CouncilExtraction(BaseModel):
-    """Simplified extraction spec for faster generation"""
-
-    council_name: str
-    request_type: RequestType
-    required_user_input: List[str]
-
-    # Flattened API info (instead of nested objects)
-    api_urls: Optional[List[str]] = None  # URLs in sequence
-    api_methods: Optional[List[str]] = None  # GET/POST per URL
-    api_description: Optional[str] = None  # How the API workflow works
-
-    # Bin parsing (simplified)
-    response_format: Optional[Literal["json", "html", "xml"]] = None
-    bin_selector: Optional[str] = None  # CSS/JSONPath for bin entries
-    date_format: Optional[str] = None  # e.g., "%d/%m/%Y"
-
-    # Calendar (simplified)
-    calendar_description: Optional[str] = None  # How dates are calculated
-    calendar_interval_days: Optional[int] = None  # 7, 14, etc.
-
-    # Playwright (simplified)
-    playwright_steps: Optional[str] = None  # Natural language steps
-    playwright_code: Optional[str] = None  # Python async code
-
-    notes: Optional[str] = None
 
 
 # ============================================================================
@@ -76,13 +14,6 @@ class CouncilExtraction(BaseModel):
 
 GITHUB_API_URL = "https://api.github.com/repos/robbrad/UKBinCollectionData/contents/uk_bin_collection/uk_bin_collection/councils"
 INPUT_JSON_URL = "https://raw.githubusercontent.com/robbrad/UKBinCollectionData/refs/heads/master/uk_bin_collection/tests/input.json"
-MODEL_ID = "gemini-3-flash-preview"
-
-client = genai.Client(
-    vertexai=True,
-    project=os.environ.get("PROJECT"),
-    location="global",
-)
 
 
 # ============================================================================
@@ -152,20 +83,10 @@ DO NOT use JavaScript syntax (const, let, var). Use Python syntax with await.
 CODE:
 {code_content}
 """
-
-            # Call LLM with structured output
-            response = await client.aio.models.generate_content(
-                model=MODEL_ID,
-                contents=prompt,
-                config=GenerateContentConfig(
-                    response_mime_type="application/json",
-                    response_schema=CouncilExtraction,
-                    thinking_config=ThinkingConfig(thinking_level=ThinkingLevel.LOW),
-                ),
+            extracted = llm_call_with_struct_output(
+                prompt=prompt,
+                response_schema=CouncilExtraction,
             )
-
-            extracted = response.parsed.model_dump()
-
             # Validate against input.json
             extracted_inputs = set(extracted.get("required_user_input", []))
             expected_inputs_set = set(expected_fields)
@@ -224,7 +145,7 @@ async def main():
             1 for r in final_results if r.get("validation", {}).get("match", False)
         )
 
-        with open("council_extraction_results.json", "w") as f:
+        with open("data/council_extraction_results.json", "w") as f:
             json.dump(final_results, f, indent=2)
 
         print(f"\n{'=' * 60}")

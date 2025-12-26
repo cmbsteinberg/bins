@@ -1,43 +1,10 @@
 import json
 import time
-from typing import List, Optional, Dict, Any, Literal
-from pydantic import BaseModel
+from typing import List, Optional, Dict, Any
 from playwright.sync_api import sync_playwright
 from dotenv import load_dotenv
-import os
 
 load_dotenv()
-
-
-# ============================================================================
-# STRUCTURED OUTPUT SCHEMA FOR GEMINI ANALYSIS
-# ============================================================================
-
-
-class NetworkAnalysisResult(BaseModel):
-    """Analysis of network requests to propose a requests-based alternative"""
-
-    council_name: str
-    original_playwright_required: bool  # Was Playwright actually needed?
-
-    # If we can replace with requests:
-    alternative_request_type: Optional[
-        Literal[
-            "single_api",
-            "token_then_api",
-            "id_lookup_then_api",
-            "still_needs_selenium",
-        ]
-    ] = None
-    api_urls: Optional[List[str]] = None
-    api_methods: Optional[List[str]] = None
-    api_headers: Optional[Dict[str, str]] = None  # Any special headers needed
-    api_payload_example: Optional[str] = None  # Example POST body if needed
-
-    # Analysis
-    key_requests: Optional[List[str]] = None  # URLs of important requests
-    notes: Optional[str] = None
-    confidence: Optional[Literal["high", "medium", "low"]] = None
 
 
 # ============================================================================
@@ -125,7 +92,7 @@ def execute_playwright_and_capture(
                 "page": page,
                 "__builtins__": __builtins__,
                 "kwargs": input_params,  # Some code expects kwargs dict
-                **input_params
+                **input_params,
             }
 
             # The playwright_code is async, so we need to strip await keywords
@@ -144,6 +111,7 @@ def execute_playwright_and_capture(
     except Exception as e:
         print(f"  ❌ Error executing playwright: {str(e)}")
         import traceback
+
         traceback.print_exc()
         return None
 
@@ -162,13 +130,13 @@ def phase1_capture_network_logs():
 
     # Load council extraction results
     print("Loading council_extraction_results.json...", flush=True)
-    with open("council_extraction_results.json", "r") as f:
+    with open("data/council_extraction_results.json", "r") as f:
         councils = json.load(f)
     print(f"Loaded {len(councils)} councils", flush=True)
 
     # Load input.json for test parameters
     print("Loading input.json...", flush=True)
-    with open("input.json", "r") as f:
+    with open("data/input.json", "r") as f:
         input_params = json.load(f)
     print(f"Loaded {len(input_params)} council parameters", flush=True)
 
@@ -181,7 +149,10 @@ def phase1_capture_network_logs():
         and c.get("data", {}).get("playwright_code")
     ]
 
-    print(f"Found {len(selenium_councils)} councils using Selenium with playwright_code", flush=True)
+    print(
+        f"Found {len(selenium_councils)} councils using Selenium with playwright_code",
+        flush=True,
+    )
 
     # Track councils without playwright_code
     skipped = [
@@ -203,7 +174,9 @@ def phase1_capture_network_logs():
         council_name = council_data["council"]
         playwright_code = council_data["data"]["playwright_code"]
 
-        print(f"\n[{i}/{len(selenium_councils)}] Processing {council_name}...", flush=True)
+        print(
+            f"\n[{i}/{len(selenium_councils)}] Processing {council_name}...", flush=True
+        )
 
         # Get input parameters for this council
         params = input_params.get(council_name, {})
@@ -212,11 +185,18 @@ def phase1_capture_network_logs():
         test_params = {
             k: v
             for k, v in params.items()
-            if k not in ["LAD24CD", "url", "wiki_name", "wiki_note", "wiki_command_url_override"]
+            if k
+            not in [
+                "LAD24CD",
+                "url",
+                "wiki_name",
+                "wiki_note",
+                "wiki_command_url_override",
+            ]
         }
 
         if not test_params:
-            print(f"  ⚠️  No test parameters found in input.json, skipping")
+            print("  ⚠️  No test parameters found in input.json, skipping")
             results.append(
                 {
                     "council": council_name,
@@ -246,7 +226,7 @@ def phase1_capture_network_logs():
                 }
             )
         else:
-            print(f"  ❌ Failed to capture network requests")
+            print("  ❌ Failed to capture network requests")
             results.append(
                 {
                     "council": council_name,
@@ -262,14 +242,12 @@ def phase1_capture_network_logs():
         json.dump(results, f, indent=2)
 
     print(f"\n{'=' * 80}")
-    print(f"PHASE 1 COMPLETE!")
+    print("PHASE 1 COMPLETE!")
     print(f"Processed: {len(selenium_councils)}")
-    print(
-        f"Success: {sum(1 for r in results if r['status'] == 'success')}"
-    )
+    print(f"Success: {sum(1 for r in results if r['status'] == 'success')}")
     print(f"Failed: {sum(1 for r in results if r['status'] == 'failed')}")
     print(f"Skipped: {sum(1 for r in results if r['status'] == 'skipped')}")
-    print(f"Saved to: playwright_network_logs.json")
+    print("Saved to: playwright_network_logs.json")
     print(f"{'=' * 80}")
 
 

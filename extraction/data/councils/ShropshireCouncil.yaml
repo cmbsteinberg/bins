@@ -1,0 +1,11 @@
+council: ShropshireCouncil
+request_type: selenium
+required_user_input:
+- postcode
+- paon
+status: not_implemented
+notes: Requires Playwright/Selenium automation - not yet implemented as HTTP requests
+api_description: The first step involves submitting a postcode to the binday endpoint
+  to retrieve a list of Address IDs (UPRNs). Selecting the specific address redirects
+  the user to a property-specific URL (e.g., bins.shropshire.gov.uk/property/100070034731)
+  which contains the collection data in the HTML response.

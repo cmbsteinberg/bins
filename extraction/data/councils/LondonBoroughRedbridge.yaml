@@ -1,0 +1,11 @@
+council: LondonBoroughRedbridge
+request_type: selenium
+required_user_input:
+- postcode
+- uprn
+status: not_implemented
+notes: Requires Playwright/Selenium automation - not yet implemented as HTTP requests
+api_description: The process involves searching for addresses by postcode to get a
+  list of properties, then 'saving' the selected UPRN to the session via a GET request,
+  and finally fetching the main page which renders the schedule based on the session
+  state.

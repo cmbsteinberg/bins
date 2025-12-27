@@ -1,0 +1,10 @@
+council: PeterboroughCityCouncil
+request_type: selenium
+required_user_input:
+- postcode
+- house_number
+status: not_implemented
+notes: Requires Playwright/Selenium automation - not yet implemented as HTTP requests
+api_description: The sequence involves submitting a postcode via POST to get a list
+  of addresses, then submitting a specific address ID via another POST, which redirects
+  (302) to a results page containing the bin collection data.

@@ -1,0 +1,10 @@
+council: StockportBoroughCouncil
+request_type: selenium
+required_user_input:
+- postcode
+status: not_implemented
+notes: Requires Playwright/Selenium automation - not yet implemented as HTTP requests
+api_description: The first request is a POST to the postcode endpoint which triggers
+  a lookup (usually resulting in a redirect or a list of addresses). The test parameters
+  indicate that once a property ID (UPRN) is known, the data is accessible via a direct
+  GET request to a URL containing that ID.

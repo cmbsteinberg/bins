@@ -1,0 +1,14 @@
+council: CastlepointDistrictCouncil
+request_type: id_lookup_then_api
+required_user_input:
+- uprn
+api_urls:
+- https://apps.castlepoint.gov.uk/cpapps/index.cfm?fa=myStreet.displayDetails
+api_methods:
+- POST
+api_description: The script sends a POST request with the USRN (passed as uprn) to
+  retrieve a calendar view. It then scrapes the current month and the link for the
+  next month to gather collection dates for both periods.
+response_format: html
+bin_selector: table.calendar td.pink, table.calendar td.normal
+date_format: dd/MM/yyyy

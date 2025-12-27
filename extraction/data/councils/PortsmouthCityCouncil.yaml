@@ -1,0 +1,11 @@
+council: PortsmouthCityCouncil
+request_type: selenium
+required_user_input:
+- postcode
+- uprn
+status: not_implemented
+notes: Requires Playwright/Selenium automation - not yet implemented as HTTP requests
+api_description: 'The site uses Firmstep (AchieveForms). It typically involves a multi-step
+  process: 1. Fetching the form definition/session. 2. Performing an address lookup
+  via a POST request to an internal fillform-endpoint. 3. Submitting the address selection
+  to trigger a backend lookup for bin collection dates.'

@@ -1,0 +1,11 @@
+council: KnowsleyMBCouncil
+request_type: selenium
+required_user_input:
+- postcode
+- house_number
+status: not_implemented
+notes: Requires Playwright/Selenium automation - not yet implemented as HTTP requests
+api_description: The site uses a Mendix-based web application. It requires an initial
+  session setup, followed by a postcode lookup to retrieve address objects (GUIDs/UPRNs),
+  and finally a runtime operation using the selected address GUID to fetch the bin
+  collection details.

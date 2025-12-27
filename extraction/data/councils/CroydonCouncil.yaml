@@ -1,0 +1,12 @@
+council: CroydonCouncil
+request_type: selenium
+required_user_input:
+- postcode
+- house_number
+status: not_implemented
+notes: Requires Playwright/Selenium automation - not yet implemented as HTTP requests
+api_description: The site uses a session-based multi-step form. First, a GET request
+  initializes the session and retrieves a `form_check_ajax` token. A POST request
+  then performs an address search using the postcode to retrieve a list of address
+  IDs. A final POST request submits the selected address ID, which redirects the session
+  to a details page containing the bin collection dates.

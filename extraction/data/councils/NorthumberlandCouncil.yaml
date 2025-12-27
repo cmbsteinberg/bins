@@ -1,0 +1,10 @@
+council: NorthumberlandCouncil
+request_type: selenium
+required_user_input:
+- postcode
+- uprn
+status: not_implemented
+notes: Requires Playwright/Selenium automation - not yet implemented as HTTP requests
+api_description: The process involves submitting a postcode to a form which sets a
+  session and generates a CSRF token. A second POST request then selects the specific
+  address (UPRN) to display the collection schedule.

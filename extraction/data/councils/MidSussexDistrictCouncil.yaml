@@ -1,0 +1,15 @@
+council: MidSussexDistrictCouncil
+request_type: id_lookup_then_api
+required_user_input:
+- house_number
+- postcode
+api_urls:
+- https://sms-wrp.whitespacews.com/
+api_methods:
+- POST
+api_description: The script first initiates a session to obtain a session-based link,
+  then POSTs the postcode and house number to search for properties. It selects the
+  first property match and GETs the schedule from the resulting unique property URL.
+response_format: html
+bin_selector: section#scheduled-collections ul.displayinlineblock
+date_format: '%d/%m/%Y'

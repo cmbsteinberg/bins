@@ -1,0 +1,13 @@
+council: WarwickDistrictCouncil
+request_type: id_lookup_then_api
+required_user_input:
+- uprn
+api_urls:
+- https://estates7.warwickdc.gov.uk/WDC_Bins/Home/BinDates?uprn={uprn}
+api_methods:
+- GET
+api_description: The script uses the UPRN to call the BinDates endpoint, which returns
+  an HTML page containing bin collection panels.
+response_format: html
+bin_selector: div.col-sm-4.col-lg-3
+date_format: dd/MM/yyyy

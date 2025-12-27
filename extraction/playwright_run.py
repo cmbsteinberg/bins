@@ -39,11 +39,14 @@ def should_capture_request(resource_type: str, url: str) -> bool:
 
 
 def execute_playwright_and_capture(
-    council_name: str, playwright_code: str, input_params: Dict[str, Any]
-) -> Optional[List[Dict[str, Any]]]:
+    council_name: str,
+    playwright_code: str,
+    input_params: Dict[str, Any],
+) -> Dict[str, Any]:
     """
     Execute playwright code (synchronously) and capture network requests
-    Returns list of captured requests or None if failed
+    Returns dict with 'success' (bool) and 'requests' (list of captured network requests)
+    Even on failure, returns any requests captured before the error occurred
     """
     captured_requests = []
 
@@ -68,12 +71,14 @@ def execute_playwright_and_capture(
                         }
 
                         # Try to get response details when available
+                        # Note: Skip response if browser/context is closing (CancelledError)
                         try:
                             response = request.response()
                             if response:
                                 request_data["responseStatus"] = response.status
                                 request_data["responseHeaders"] = response.headers
                         except Exception:
+                            # This can fail if browser is closing or response not available
                             pass
 
                         captured_requests.append(request_data)
@@ -86,13 +91,39 @@ def execute_playwright_and_capture(
             # Now create the page
             page = context.new_page()
 
+            # Add parameter aliases/mappings for common variations
+            params_with_aliases = dict(input_params)
+
+            # If house_number exists but paon doesn't, map house_number to paon
+            if (
+                "house_number" in params_with_aliases
+                and "paon" not in params_with_aliases
+            ):
+                params_with_aliases["paon"] = params_with_aliases["house_number"]
+
+            # Extract common parameters from URL if not directly provided
+            if "url" in params_with_aliases:
+                from urllib.parse import urlparse, parse_qs
+
+                url = params_with_aliases["url"]
+                parsed = urlparse(url)
+                query_params = parse_qs(parsed.query)
+
+                # Extract UPRN from URL query params if not already in params
+                if "uprn" not in params_with_aliases:
+                    # Check various parameter names that might contain UPRN
+                    for param_name in ["uprn", "brlu-selected-address", "UPRN"]:
+                        if param_name in query_params and query_params[param_name]:
+                            params_with_aliases["uprn"] = query_params[param_name][0]
+                            break
+
             # Prepare execution context with input parameters
             # Include common variables that might be referenced
             exec_globals = {
                 "page": page,
                 "__builtins__": __builtins__,
-                "kwargs": input_params,  # Some code expects kwargs dict
-                **input_params,
+                "kwargs": params_with_aliases,  # Some code expects kwargs dict
+                **params_with_aliases,
             }
 
             # The playwright_code is async, so we need to strip await keywords
@@ -106,14 +137,16 @@ def execute_playwright_and_capture(
 
             browser.close()
 
-        return captured_requests
+        return {"success": True, "requests": captured_requests}
 
     except Exception as e:
         print(f"  ❌ Error executing playwright: {str(e)}")
         import traceback
 
         traceback.print_exc()
-        return None
+        # Still return any requests captured before the error
+        # This helps with debugging what happened before the failure
+        return {"success": False, "requests": captured_requests}
 
 
 # ============================================================================
@@ -181,14 +214,13 @@ def phase1_capture_network_logs():
         # Get input parameters for this council
         params = input_params.get(council_name, {})
 
-        # Filter out metadata fields
+        # Filter out metadata fields (keep 'url' as it's needed by playwright code)
         test_params = {
             k: v
             for k, v in params.items()
             if k
             not in [
                 "LAD24CD",
-                "url",
                 "wiki_name",
                 "wiki_note",
                 "wiki_command_url_override",
@@ -210,11 +242,14 @@ def phase1_capture_network_logs():
         print(f"  Using params: {list(test_params.keys())}")
 
         # Execute and capture
-        network_requests = execute_playwright_and_capture(
+        result = execute_playwright_and_capture(
             council_name, playwright_code, test_params
         )
 
-        if network_requests is not None:
+        network_requests = result["requests"]
+        success = result["success"]
+
+        if success:
             print(f"  ✅ Captured {len(network_requests)} network requests")
             results.append(
                 {
@@ -226,14 +261,21 @@ def phase1_capture_network_logs():
                 }
             )
         else:
-            print("  ❌ Failed to capture network requests")
+            # Failed but may have captured some requests before the error
+            if network_requests:
+                print(
+                    f"  ⚠️  Failed but captured {len(network_requests)} requests before error"
+                )
+            else:
+                print("  ❌ Failed with no network requests captured")
+
             results.append(
                 {
                     "council": council_name,
                     "status": "failed",
                     "playwright_code": playwright_code,
                     "test_params": test_params,
-                    "network_requests": [],
+                    "network_requests": network_requests,
                 }
             )
 

@@ -1,0 +1,16 @@
+council: WestSuffolkCouncil
+request_type: id_lookup_then_api
+required_user_input:
+- postcode
+- skip_get_url
+- uprn
+api_urls:
+- https://maps.westsuffolk.gov.uk/MyWestSuffolk.aspx?action=SetAddress&UniqueId={uprn}
+api_methods:
+- GET
+api_description: The API takes a UPRN as a UniqueId parameter and returns a MyWestSuffolk
+  dashboard page containing bin collection information within a panel titled 'Bin
+  collection days'.
+response_format: html
+bin_selector: div.atPanelData
+date_format: Not specified in script

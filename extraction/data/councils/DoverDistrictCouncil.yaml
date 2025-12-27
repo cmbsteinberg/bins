@@ -1,0 +1,12 @@
+council: DoverDistrictCouncil
+request_type: single_api
+required_user_input:
+- uprn
+api_urls:
+- https://collections.dover.gov.uk/property/{uprn}
+api_methods:
+- GET
+api_description: Fetches the collection schedule directly by property UPRN.
+response_format: html
+bin_selector: div.service-wrapper
+date_format: '%d/%m/%Y'

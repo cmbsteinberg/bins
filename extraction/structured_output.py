@@ -1,39 +1,10 @@
 from pydantic import BaseModel
 from typing import List, Optional, Dict, Literal
 from enum import Enum
-# ============================================================================
-# STRUCTURED OUTPUT SCHEMA FOR GEMINI ANALYSIS
-# ============================================================================
-
-
-class NetworkAnalysisResult(BaseModel):
-    """Analysis of network requests to propose a requests-based alternative"""
-
-    council_name: str
-    original_playwright_required: bool  # Was Playwright actually needed?
-
-    # If we can replace with requests:
-    alternative_request_type: Optional[
-        Literal[
-            "single_api",
-            "token_then_api",
-            "id_lookup_then_api",
-            "still_needs_selenium",
-        ]
-    ] = None
-    api_urls: Optional[List[str]] = None
-    api_methods: Optional[List[str]] = None
-    api_headers: Optional[Dict[str, str]] = None  # Any special headers needed
-    api_payload_example: Optional[str] = None  # Example POST body if needed
-
-    # Analysis
-    key_requests: Optional[List[str]] = None  # URLs of important requests
-    notes: Optional[str] = None
-    confidence: Optional[Literal["high", "medium", "low"]] = None
 
 
 # ============================================================================
-# STRUCTURED OUTPUT SCHEMA
+# ENUMS
 # ============================================================================
 
 
@@ -55,11 +26,13 @@ class HttpMethod(str, Enum):
     PUT = "PUT"
 
 
-# Simplified flat schema for faster generation
+# ============================================================================
+# BASE SCHEMA - Common core fields for both extraction and network analysis
+# ============================================================================
 
 
-class CouncilExtraction(BaseModel):
-    """Simplified extraction spec for faster generation"""
+class BaseCouncilExtraction(BaseModel):
+    """Base extraction schema with core fields common to all analysis types"""
 
     council_name: str
     request_type: RequestType
@@ -69,6 +42,17 @@ class CouncilExtraction(BaseModel):
     api_urls: Optional[List[str]] = None  # URLs in sequence
     api_methods: Optional[List[str]] = None  # GET/POST per URL
     api_description: Optional[str] = None  # How the API workflow works
+
+    notes: Optional[str] = None
+
+
+# ============================================================================
+# FULL EXTRACTION SCHEMA - For initial code extraction
+# ============================================================================
+
+
+class CouncilExtraction(BaseCouncilExtraction):
+    """Full extraction spec for initial code analysis - extends base with implementation details"""
 
     # Bin parsing (simplified)
     response_format: Optional[Literal["json", "html", "xml"]] = None
@@ -83,4 +67,22 @@ class CouncilExtraction(BaseModel):
     playwright_steps: Optional[str] = None  # Natural language steps
     playwright_code: Optional[str] = None  # Python async code
 
-    notes: Optional[str] = None
+
+# ============================================================================
+# NETWORK ANALYSIS SCHEMA - For analyzing captured network logs
+# ============================================================================
+
+
+class NetworkAnalysisResult(BaseCouncilExtraction):
+    """Analysis of network requests to propose a requests-based alternative.
+    Inherits core fields from BaseCouncilExtraction but drops playwright/calendar details."""
+
+    original_playwright_required: bool  # Was Playwright actually needed?
+    alternative_request_type: Optional[RequestType] = None  # Proposed simplified request type (None if unclear)
+
+    # Additional analysis fields
+    api_headers: Optional[Dict[str, str]] = None  # Any special headers needed
+    api_payload_example: Optional[str] = None  # Example POST body if needed
+    key_requests: Optional[List[str]] = None  # URLs of important requests
+    confidence: Literal["high", "medium", "low"]
+    simplification_notes: Optional[str] = None  # Explanation of how to simplify

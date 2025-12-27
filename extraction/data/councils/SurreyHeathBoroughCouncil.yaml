@@ -1,0 +1,17 @@
+council: SurreyHeathBoroughCouncil
+request_type: id_lookup_then_api
+required_user_input:
+- house_number
+- postcode
+- skip_get_url
+api_urls:
+- https://asjwsw-wrpsurreyheathmunicipal-live.whitespacews.com/
+api_methods:
+- POST
+api_description: The script first scrapes a session token and a dynamic base URL from
+  the homepage. It then performs a POST request using the house number and postcode
+  to find the property, and follows the returned link to extract collection dates
+  from a summary list.
+response_format: html
+bin_selector: '#property_list > ul > li > a'
+date_format: '%d/%m/%Y'

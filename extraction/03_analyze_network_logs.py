@@ -3,7 +3,7 @@ import json
 from typing import List, Dict, Any
 from dotenv import load_dotenv
 from extraction.utils.structured_output import NetworkAnalysisResult
-from extraction.utils.gemini import llm_call_with_struct_output
+from extraction.utils.llms import llm_call_with_struct_output
 from extraction.utils.error_handling import read_json, write_json
 from extraction.utils.paths import paths
 

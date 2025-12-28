@@ -3,7 +3,7 @@ import aiohttp
 import json
 from dotenv import load_dotenv
 from extraction.utils.structured_output import CouncilExtraction
-from extraction.utils.gemini import llm_call_with_struct_output
+from extraction.utils.llms import llm_call_with_struct_output
 from extraction.utils.error_handling import write_json, print_summary, safe_execute
 from extraction.utils.paths import paths
 

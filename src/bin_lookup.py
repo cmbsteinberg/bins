@@ -293,10 +293,20 @@ class BinLookup:
                 config, inputs, config.get("response_format")
             )
             response = self._execute_http_request(
-                method, url, headers, client, payload, content_type
+                method,
+                url,
+                headers,
+                client,
+                payload,
+                content_type,
             )
         else:
-            response = self._execute_http_request(method, url, headers, client)
+            response = self._execute_http_request(
+                method,
+                url,
+                headers,
+                client,
+            )
 
         logger.debug(f"{council_name}: Response status {response.status_code}")
         return response

@@ -9,11 +9,11 @@ import json
 import traceback
 import yaml
 from pathlib import Path
-from typing import Any, Dict, List, Optional, TypeVar, Callable
+from typing import Any, List, Optional, TypeVar, Callable
 from functools import wraps
 import asyncio
 
-T = TypeVar('T')
+T = TypeVar("T")
 
 
 # ============================================================================
@@ -39,13 +39,14 @@ def handle_exceptions(
         async def process_council(...):
             ...
     """
+
     def decorator(func: Callable) -> Callable:
         @wraps(func)
         async def async_wrapper(*args, **kwargs):
             try:
                 return await func(*args, **kwargs)
             except Exception as e:
-                name = council_name or kwargs.get('council_name', 'Unknown')
+                name = council_name or kwargs.get("council_name", "Unknown")
                 print(f"❌ {name}: {str(e)}")
                 if print_traceback:
                     traceback.print_exc()
@@ -56,7 +57,7 @@ def handle_exceptions(
             try:
                 return func(*args, **kwargs)
             except Exception as e:
-                name = council_name or kwargs.get('council_name', 'Unknown')
+                name = council_name or kwargs.get("council_name", "Unknown")
                 print(f"❌ {name}: {str(e)}")
                 if print_traceback:
                     traceback.print_exc()

@@ -1,5 +1,3 @@
-import os
-
 from litellm import acompletion
 from dotenv import load_dotenv
 from pydantic import BaseModel

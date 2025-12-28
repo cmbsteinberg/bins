@@ -78,7 +78,9 @@ class NetworkAnalysisResult(BaseCouncilExtraction):
     Inherits core fields from BaseCouncilExtraction but drops playwright/calendar details."""
 
     original_playwright_required: bool  # Was Playwright actually needed?
-    alternative_request_type: Optional[RequestType] = None  # Proposed simplified request type (None if unclear)
+    alternative_request_type: Optional[RequestType] = (
+        None  # Proposed simplified request type (None if unclear)
+    )
 
     # Additional analysis fields
     api_headers: Optional[Dict[str, str]] = None  # Any special headers needed

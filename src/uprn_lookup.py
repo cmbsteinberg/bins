@@ -58,7 +58,9 @@ class PostcodeFinder:
             "parent_tier": parent.get("tier") if parent else None,
         }
 
-    @retry(stop=stop_after_attempt(3), wait=wait_exponential(multiplier=1, min=1, max=10))
+    @retry(
+        stop=stop_after_attempt(3), wait=wait_exponential(multiplier=1, min=1, max=10)
+    )
     def uprn_lookup(self, postcode: str) -> List[Dict[str, str]]:
         """Fetches UPRN data for a given postcode."""
         if not self._validate_postcode(postcode):
@@ -82,7 +84,9 @@ class PostcodeFinder:
             logger.error(f"UPRN lookup failed for {postcode}: {e}")
             raise
 
-    @retry(stop=stop_after_attempt(3), wait=wait_exponential(multiplier=1, min=1, max=10))
+    @retry(
+        stop=stop_after_attempt(3), wait=wait_exponential(multiplier=1, min=1, max=10)
+    )
     def admin_lookup(
         self,
         postcode: str,

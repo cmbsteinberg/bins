@@ -1,6 +1,5 @@
-import json
 import time
-from typing import List, Optional, Dict, Any
+from typing import Dict, Any
 from playwright.sync_api import sync_playwright
 from dotenv import load_dotenv
 from extraction.utils.error_handling import read_json, write_json

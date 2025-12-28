@@ -1,6 +1,6 @@
 import asyncio
 import json
-from typing import List, Dict, Any
+from typing import Dict, Any
 from dotenv import load_dotenv
 from extraction.utils.structured_output import NetworkAnalysisResult
 from extraction.utils.llms import llm_call_with_struct_output
@@ -214,13 +214,13 @@ async def main():
             by_confidence[confidence] = by_confidence.get(confidence, 0) + 1
 
         print(f"\n{'=' * 80}")
-        print(f"🚀 PHASE 2 COMPLETE!")
+        print("🚀 PHASE 2 COMPLETE!")
         print(f"{'=' * 80}")
         print(f"\nAnalyzed: {total} councils")
-        print(f"\nBy Alternative Type:")
+        print("\nBy Alternative Type:")
         for alt_type, count in sorted(by_type.items()):
             print(f"  {alt_type}: {count} ({count / total * 100:.1f}%)")
-        print(f"\nBy Confidence:")
+        print("\nBy Confidence:")
         for conf, count in sorted(by_confidence.items()):
             print(f"  {conf}: {count} ({count / total * 100:.1f}%)")
         print(f"\n📄 Output saved to: {paths.network_analysis_json}")

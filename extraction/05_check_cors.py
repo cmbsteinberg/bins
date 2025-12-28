@@ -1,6 +1,5 @@
 import httpx
 import yaml
-from pathlib import Path
 import re
 import asyncio
 from extraction.utils.paths import paths
@@ -46,16 +45,16 @@ def fill_url_template(url_template: str, test_inputs: dict) -> str:
 
     for placeholder in placeholders:
         # Use test_inputs first, then fallback to sample data
-        value = test_inputs.get(placeholder, sample_data.get(placeholder, f"sample_{placeholder}"))
+        value = test_inputs.get(
+            placeholder, sample_data.get(placeholder, f"sample_{placeholder}")
+        )
         filled_url = filled_url.replace(f"{{{placeholder}}}", str(value))
 
     return filled_url
 
 
 async def check_council_cors(
-    council_name: str,
-    client: httpx.AsyncClient,
-    semaphore: asyncio.Semaphore
+    council_name: str, client: httpx.AsyncClient, semaphore: asyncio.Semaphore
 ) -> list[str]:
     """Check CORS for a single council's URLs"""
     results = []
@@ -70,7 +69,9 @@ async def check_council_cors(
         test_inputs = config.get("test_inputs", {})
 
         if not api_urls:
-            results.append(f"{council_name:<30} | {request_type:<10} | {'N/A':<8} | {'N/A':<8} | No URLs in config")
+            results.append(
+                f"{council_name:<30} | {request_type:<10} | {'N/A':<8} | {'N/A':<8} | No URLs in config"
+            )
             return results
 
         # Check each URL
@@ -81,9 +82,7 @@ async def check_council_cors(
                     url = fill_url_template(url_template, test_inputs)
 
                     # Make request to check CORS
-                    response = await client.head(
-                        url, timeout=5, follow_redirects=True
-                    )
+                    response = await client.head(url, timeout=5, follow_redirects=True)
 
                     # Check for CORS header
                     cors_header = response.headers.get("Access-Control-Allow-Origin")
@@ -93,15 +92,25 @@ async def check_council_cors(
                     type_label = "selenium" if is_selenium else "http"
                     url_display = url[:60] + "..." if len(url) > 60 else url
 
-                    results.append(f"{council_name:<30} | {type_label:<10} | {success:<8} | {has_cors:<8} | {url_display}")
+                    results.append(
+                        f"{council_name:<30} | {type_label:<10} | {success:<8} | {has_cors:<8} | {url_display}"
+                    )
 
                 except (httpx.RequestError, httpx.TimeoutException):
                     type_label = "selenium" if is_selenium else "http"
-                    url_display = url_template[:60] + "..." if len(url_template) > 60 else url_template
-                    results.append(f"{council_name:<30} | {type_label:<10} | {'Error':<8} | {'N/A':<8} | {url_display}")
+                    url_display = (
+                        url_template[:60] + "..."
+                        if len(url_template) > 60
+                        else url_template
+                    )
+                    results.append(
+                        f"{council_name:<30} | {type_label:<10} | {'Error':<8} | {'N/A':<8} | {url_display}"
+                    )
 
     except Exception as e:
-        results.append(f"{council_name:<30} | {'error':<10} | {'Error':<8} | {'N/A':<8} | Config load failed: {str(e)[:30]}")
+        results.append(
+            f"{council_name:<30} | {'error':<10} | {'Error':<8} | {'N/A':<8} | Config load failed: {str(e)[:30]}"
+        )
 
     return results
 
@@ -135,7 +144,7 @@ async def check_cors_for_councils():
             "error": 0,
             "na": 0,
             "selenium": 0,
-            "total_urls": 0
+            "total_urls": 0,
         }
 
         # Print results in order and collect stats
@@ -171,12 +180,12 @@ async def check_cors_for_councils():
         print()
 
         # Calculate percentages for URLs that were actually checked (excluding N/A)
-        checkable_urls = stats['total_urls'] - stats['na']
+        checkable_urls = stats["total_urls"] - stats["na"]
 
         if checkable_urls > 0:
-            cors_yes_pct = (stats['cors_yes'] / checkable_urls) * 100
-            cors_no_pct = (stats['cors_no'] / checkable_urls) * 100
-            error_pct = (stats['error'] / checkable_urls) * 100
+            cors_yes_pct = (stats["cors_yes"] / checkable_urls) * 100
+            cors_no_pct = (stats["cors_no"] / checkable_urls) * 100
+            error_pct = (stats["error"] / checkable_urls) * 100
 
             print(f"CORS Enabled:  {stats['cors_yes']:4d} URLs ({cors_yes_pct:5.1f}%)")
             print(f"CORS Disabled: {stats['cors_no']:4d} URLs ({cors_no_pct:5.1f}%)")

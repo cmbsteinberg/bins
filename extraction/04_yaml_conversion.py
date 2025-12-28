@@ -1,5 +1,4 @@
 import re
-from pathlib import Path
 from typing import Dict, Any, Optional
 from extraction.utils.error_handling import read_json, write_yaml
 from extraction.utils.paths import paths
@@ -36,11 +35,11 @@ def extract_test_inputs(input_data: Dict[str, Any]) -> Dict[str, Any]:
         # - /uprn/12345
         # - uprn-12345
         uprn_patterns = [
-            r'[?&]uprn[=:](\d+)',
-            r'brlu-selected-address[=:](\d+)',
-            r'/uprn[/-](\d+)',
-            r'uprn[_-](\d+)',
-            r'UPRN[=:](\d+)',
+            r"[?&]uprn[=:](\d+)",
+            r"brlu-selected-address[=:](\d+)",
+            r"/uprn[/-](\d+)",
+            r"uprn[_-](\d+)",
+            r"UPRN[=:](\d+)",
         ]
         for pattern in uprn_patterns:
             match = re.search(pattern, url, re.IGNORECASE)
@@ -52,7 +51,7 @@ def extract_test_inputs(input_data: Dict[str, Any]) -> Dict[str, Any]:
     if "url" in input_data and "postcode" not in test_inputs:
         url = input_data["url"]
         # UK postcode pattern
-        postcode_pattern = r'\b([A-Z]{1,2}\d{1,2}[A-Z]?\s?\d[A-Z]{2})\b'
+        postcode_pattern = r"\b([A-Z]{1,2}\d{1,2}[A-Z]?\s?\d[A-Z]{2})\b"
         match = re.search(postcode_pattern, url, re.IGNORECASE)
         if match:
             test_inputs["postcode"] = match.group(1)
@@ -63,8 +62,8 @@ def extract_test_inputs(input_data: Dict[str, Any]) -> Dict[str, Any]:
 
         # Extract house number (paon)
         paon_patterns = [
-            r'[?&]paon[=:](\d+)',
-            r'houseNumber[=:](\d+)',
+            r"[?&]paon[=:](\d+)",
+            r"houseNumber[=:](\d+)",
         ]
         for pattern in paon_patterns:
             match = re.search(pattern, url, re.IGNORECASE)
@@ -74,7 +73,7 @@ def extract_test_inputs(input_data: Dict[str, Any]) -> Dict[str, Any]:
 
         # Extract USRN
         usrn_patterns = [
-            r'[?&]usrn[=:](\d+)',
+            r"[?&]usrn[=:](\d+)",
         ]
         for pattern in usrn_patterns:
             match = re.search(pattern, url, re.IGNORECASE)
@@ -108,18 +107,26 @@ def auto_correct_request_type(config: Dict[str, Any]) -> Dict[str, Any]:
         if api_urls and api_methods and len(api_urls) == 1 and len(api_methods) == 1:
             # Check if description mentions two-step process
             two_step_indicators = [
-                "then a post", "followed by", "final post", "second request",
-                "initial get", "first get", "lookup", "search for address"
+                "then a post",
+                "followed by",
+                "final post",
+                "second request",
+                "initial get",
+                "first get",
+                "lookup",
+                "search for address",
             ]
 
-            has_two_step_description = any(indicator in description for indicator in two_step_indicators)
+            has_two_step_description = any(
+                indicator in description for indicator in two_step_indicators
+            )
 
             if not has_two_step_description:
                 # Likely should be single_api
                 config["request_type"] = "single_api"
                 config["api_description"] = (
-                    "[AUTO-CORRECTED from id_lookup_then_api] " +
-                    config.get("api_description", "")
+                    "[AUTO-CORRECTED from id_lookup_then_api] "
+                    + config.get("api_description", "")
                 )
 
     return config
@@ -211,7 +218,9 @@ def convert_json_to_yaml():
     network_by_name = {c["council"]: c for c in network_councils}
 
     print(f"\nTotal councils: {len(extraction_by_name)}")
-    print(f"Councils with network analysis (selenium refinement): {len(network_by_name)}")
+    print(
+        f"Councils with network analysis (selenium refinement): {len(network_by_name)}"
+    )
 
     # Categorize councils
     # Process all extraction councils, using network analysis as override where available
@@ -225,7 +234,9 @@ def convert_json_to_yaml():
         # Determine final request type (network analysis overrides extraction if present)
         if network_data:
             # This council was selenium initially, but network analysis may have found a simpler way
-            final_request_type = network_data.get("analysis", {}).get("alternative_request_type")
+            final_request_type = network_data.get("analysis", {}).get(
+                "alternative_request_type"
+            )
         else:
             # Use original extraction result
             final_request_type = extraction_data.get("data", {}).get("request_type")
@@ -233,24 +244,33 @@ def convert_json_to_yaml():
         # Categorize based on final request type
         if final_request_type == "selenium":
             # Still requires selenium/playwright
-            selenium_councils.append({
-                "name": council_name,
-                "extraction_data": extraction_data,
-                "network_data": network_data,
-                "source": "network_analysis" if network_data else "extraction",
-            })
-        elif final_request_type in ["single_api", "token_then_api", "id_lookup_then_api", "calendar"]:
+            selenium_councils.append(
+                {
+                    "name": council_name,
+                    "extraction_data": extraction_data,
+                    "network_data": network_data,
+                    "source": "network_analysis" if network_data else "extraction",
+                }
+            )
+        elif final_request_type in [
+            "single_api",
+            "token_then_api",
+            "id_lookup_then_api",
+            "calendar",
+        ]:
             # Can be implemented with HTTP requests
-            api_ready.append({
-                "name": council_name,
-                "extraction_data": extraction_data,
-                "network_data": network_data,
-            })
+            api_ready.append(
+                {
+                    "name": council_name,
+                    "extraction_data": extraction_data,
+                    "network_data": network_data,
+                }
+            )
         else:
             # No valid request type (None or unclear)
             skipped.append(council_name)
 
-    print(f"\nCategories:")
+    print("\nCategories:")
     print(f"  API-ready: {len(api_ready)}")
     print(f"  Selenium (holding patterns): {len(selenium_councils)}")
     print(f"  Skipped (no valid request type): {len(skipped)}\n")
@@ -297,7 +317,9 @@ def convert_json_to_yaml():
         if network_data:
             analysis = network_data.get("analysis", {})
             required_inputs = analysis.get("required_user_input", [])
-            description = analysis.get("api_description") or analysis.get("simplification_notes")
+            description = analysis.get("api_description") or analysis.get(
+                "simplification_notes"
+            )
         else:
             data = extraction_data.get("data", {})
             required_inputs = data.get("required_user_input", [])
@@ -326,7 +348,7 @@ def convert_json_to_yaml():
 
     # Summary
     print(f"\n{'=' * 80}")
-    print(f"Conversion complete!")
+    print("Conversion complete!")
     print(f"{'=' * 80}")
     print(f"API-ready: {api_count} councils")
     print(f"Selenium (total): {len(selenium_councils)} councils")

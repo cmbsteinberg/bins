@@ -28,7 +28,9 @@ class ExtractionPaths:
 
         # Processing outputs
         self.council_extraction_json = self.data_dir / "council_extraction_results.json"
-        self.playwright_network_logs_json = self.data_dir / "playwright_network_logs.json"
+        self.playwright_network_logs_json = (
+            self.data_dir / "playwright_network_logs.json"
+        )
         self.network_analysis_json = self.data_dir / "network_analysis_results.json"
 
         # GitHub URLs (constants, not paths)

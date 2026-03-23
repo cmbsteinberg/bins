@@ -10,6 +10,7 @@ dependencies = [
     "httpx>=0.28.1",
     "icalendar>=7.0.3",
     "icalevents>=0.1.27",
+    "jinja2>=3.1.6",
     "pytest>=9.0.2",
     "pytest-asyncio>=1.3.0",
     "python-dateutil>=2.9.0.post0",
@@ -22,15 +23,16 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [tool.hatch.build.targets.wheel]
-packages = ["src"]
+packages = ["api"]
 
 [dependency-groups]
 dev = [
+    "asgi-lifespan>=2.1.0",
     "lefthook>=2.1.4",
 ]
 
 [tool.ruff]
-exclude = ["src/api/scrapers"]
+exclude = ["api/scrapers"]
 
 [tool.ruff.lint]
 select = ["E", "F", "W", "I"]

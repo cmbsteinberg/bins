@@ -8,7 +8,6 @@ test case's params.
 Usage:
     uv run pytest tests/test_api_scrapers.py -v
     uv run pytest tests/test_api_scrapers.py -v -k "aberdeen"
-    uv run pytest tests/test_api_scrapers.py -v --timeout 60
 """
 
 import json
@@ -16,11 +15,13 @@ from pathlib import Path
 
 import httpx
 import pytest
+import pytest_asyncio
+from asgi_lifespan import LifespanManager
 
-TEST_CASES_PATH = (
-    Path(__file__).parent.parent / "src" / "address_lookup" / "test_cases.json"
-)
-BASE_URL = "http://localhost:8000/api/v1"
+from api.main import app
+
+TEST_CASES_PATH = Path(__file__).parent / "test_cases.json"
+BASE_URL = "http://testserver/api/v1"
 
 
 def _load_test_cases() -> list[tuple[str, str, dict]]:
@@ -37,19 +38,32 @@ def _load_test_cases() -> list[tuple[str, str, dict]]:
 TEST_DATA = _load_test_cases()
 
 
+@pytest_asyncio.fixture(scope="session", loop_scope="session")
+async def client():
+    """Shared async client with app lifespan (startup/shutdown) managed."""
+    async with LifespanManager(app) as manager:
+        transport = httpx.ASGITransport(app=manager.app)
+        async with httpx.AsyncClient(
+            transport=transport, base_url=BASE_URL, timeout=120
+        ) as c:
+            yield c
+
+
 @pytest.mark.parametrize(
     "council,label,params",
     TEST_DATA,
     ids=[f"{cc}_{ll}" for cc, ll, _ in TEST_DATA],
 )
-@pytest.mark.asyncio
-async def test_lookup(council: str, label: str, params: dict):
+@pytest.mark.asyncio(loop_scope="session")
+async def test_lookup(
+    client: httpx.AsyncClient, council: str, label: str, params: dict
+):
     """Test that the lookup endpoint returns a valid response for each scraper."""
+    params = dict(params)  # copy so pop doesn't mutate shared data
     uprn = params.pop("uprn", params.pop("address_id", "0"))
     query = {"council": council, **params}
 
-    async with httpx.AsyncClient(base_url=BASE_URL, timeout=120) as client:
-        resp = await client.get(f"/lookup/{uprn}", params=query)
+    resp = await client.get(f"/lookup/{uprn}", params=query)
 
     assert resp.status_code == 200, (
         f"{council} ({label}): expected 200, got {resp.status_code} — {resp.text}"

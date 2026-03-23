@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>UK Bin Collections</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
+  <style>
+    .collection { display: flex; align-items: center; gap: 0.75rem; padding: 0.5rem 0; }
+    .collection-icon { font-size: 1.5rem; }
+    .collection-date { color: var(--pico-muted-color); font-size: 0.9rem; }
+    #error { color: var(--pico-del-color); }
+    .hidden { display: none; }
+    #results article { margin-top: 1rem; }
+  </style>
+</head>
+<body>
+  <nav class="container">
+    <ul><li><strong>UK Bin Collections</strong></li></ul>
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/api-docs" class="contrast">API</a></li>
+    </ul>
+  </nav>
+  <main class="container">
+    <h1>UK Bin Collections</h1>
+    <p>Find your next bin collection dates.</p>
+
+    <section id="step-postcode">
+      <form id="postcode-form">
+        <label for="postcode">Enter your postcode</label>
+        <fieldset role="group">
+          <input id="postcode" type="text" name="postcode" placeholder="e.g. BR8 7RE" required>
+          <button type="submit">Search</button>
+        </fieldset>
+      </form>
+    </section>
+
+    <section id="step-address" class="hidden">
+      <label for="address-select">Select your address</label>
+      <select id="address-select">
+        <option value="">-- Choose address --</option>
+      </select>
+      <button id="address-btn" type="button" disabled>Get bin dates</button>
+      <button id="back-btn" type="button" class="outline secondary">Back</button>
+    </section>
+
+    <section id="results" class="hidden"></section>
+    <p id="error" class="hidden"></p>
+  </main>
+
+  <script type="module" src="/static/app.js"></script>
+</body>
+</html>

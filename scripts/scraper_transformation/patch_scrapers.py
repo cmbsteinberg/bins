@@ -1331,6 +1331,17 @@ def _mark_stmt_replace(
             delete_ranges.append((ln, ln))
 
 
+def _is_deprecated_scraper(source: str) -> bool:
+    """Detect deprecated scrapers that just wrap another scraper.
+
+    These import from waste_collection_schedule.source.<other_scraper>,
+    meaning they delegate to a different scraper and have no standalone logic.
+    """
+    return bool(
+        re.search(r"from\s+(?:api\.)?waste_collection_schedule\.source\.", source)
+    )
+
+
 # --- File-level entry points ---
 
 
@@ -1369,13 +1380,23 @@ def main():
     print(f"Patching {len(source_files)} files...")
 
     all_warnings: dict[str, list[str]] = {}
+    deprecated: list[str] = []
     for src in source_files:
         out = args.output_dir / src.name
+        raw = src.read_text()
+        if _is_deprecated_scraper(raw):
+            deprecated.append(src.name)
+            if out.exists():
+                out.unlink()
+            continue
         warns = transform_file(src, out)
         if warns:
             all_warnings[src.name] = warns
 
-    patched = len(source_files) - len(all_warnings)
+    if deprecated:
+        print(f"Deleted {len(deprecated)} deprecated scrapers: {', '.join(deprecated)}")
+
+    patched = len(source_files) - len(all_warnings) - len(deprecated)
     print(f"Patched: {patched}/{len(source_files)}")
 
     if all_warnings:

@@ -1,8 +1,10 @@
-import urllib.request
+import logging
+
+import httpx
 from bs4 import BeautifulSoup
 from dateutil import parser
-import logging
-from src.api.waste_collection_schedule import Collection
+
+from api.waste_collection_schedule import Collection
 
 TITLE = "Sheffield City Council"
 DESCRIPTION = "Source for waste collection services from Sheffield City Council (SCC)"
@@ -38,13 +40,14 @@ class Source:
     def __init__(self, uprn=None):
         self._uprn = str(uprn)
 
-    def fetch(self):
+    async def fetch(self):
         if self._uprn:
             # Get the page containing bin details
             # /calendar gives further future informaion over just the "Services" page
-            req = urllib.request.Request(f"{API_URL}/property/{self._uprn}/calendar",headers=HEADERS)
-            with urllib.request.urlopen(req) as response:
-                html_doc = response.read()
+
+            response = await httpx.AsyncClient(follow_redirects=True).get(f"{API_URL}/property/{self._uprn}/calendar", headers=HEADERS)
+
+            html_doc = response.content
 
             # Parse the page to get the data required (collection date and type)
             soup = BeautifulSoup(html_doc, 'html.parser')

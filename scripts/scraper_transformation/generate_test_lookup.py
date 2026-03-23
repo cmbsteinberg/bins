@@ -18,7 +18,9 @@ logging.basicConfig(level=logging.INFO, format="%(levelname)s: %(message)s")
 logger = logging.getLogger(__name__)
 
 SCRAPERS_DIR = Path(__file__).resolve().parent.parent.parent / "api" / "scrapers"
-OUTPUT_PATH = Path(__file__).resolve().parent.parent.parent.parent / "tests" / "test_cases.json"
+OUTPUT_PATH = (
+    Path(__file__).resolve().parent.parent.parent / "tests" / "test_cases.json"
+)
 
 
 def extract_test_cases(path: Path) -> dict | None:
@@ -72,7 +74,9 @@ def main():
     print("Test Cases Extraction Summary")
     print(f"{'=' * 50}")
     print(f"Total scrapers:          {total_scrapers}")
-    print(f"With TEST_CASES:         {len(output)} ({len(output) * 100 // total_scrapers}%)")
+    print(
+        f"With TEST_CASES:         {len(output)} ({len(output) * 100 // total_scrapers}%)"
+    )
     print(f"Without TEST_CASES:      {len(no_tests)}")
     total_cases = sum(len(v) for v in output.values())
     print(f"Total test cases:        {total_cases}")

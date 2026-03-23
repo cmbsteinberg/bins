@@ -4,8 +4,9 @@ import time
 from datetime import datetime
 
 import httpx
-from src.api.waste_collection_schedule import Collection  # type: ignore[attr-defined]
-from src.api.waste_collection_schedule.exceptions import SourceArgumentNotFound
+
+from api.waste_collection_schedule import Collection  # type: ignore[attr-defined]
+from api.waste_collection_schedule.exceptions import SourceArgumentNotFound
 
 TITLE = "Knowsley Council"
 DESCRIPTION = "Source for Knowsley Council."

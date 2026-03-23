@@ -1,14 +1,14 @@
 from __future__ import annotations
 
+import datetime
 import re
 from dataclasses import dataclass
-import datetime
-from dateutil import parser
 
 import httpx
 from bs4 import BeautifulSoup
-from src.api.waste_collection_schedule import Collection
+from dateutil import parser
 
+from api.waste_collection_schedule import Collection
 
 TITLE = "Neath Port Talbot Council"
 DESCRIPTION = "Source for waste collection services for Neath Port Talbot Council"

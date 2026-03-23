@@ -1,9 +1,10 @@
+import logging
 from datetime import datetime, timedelta
 from time import time_ns
-import logging
 
 import httpx
-from src.api.waste_collection_schedule import Collection
+
+from api.waste_collection_schedule import Collection
 
 LOGGER = logging.getLogger(__name__)
 TITLE = "Waltham Forest"

@@ -129,6 +129,10 @@ def transform_source(source: str) -> tuple[str, list[str]]:
                         has_from_time_import_sleep = True
 
     if not has_requests_import and not has_cloudscraper_import:
+        # Still apply waste_collection_schedule import rewrite
+        patched = _final_requests_cleanup(source)
+        if patched != source:
+            return patched, []
         return source, [
             "No 'import requests' or 'import cloudscraper' found — skipping"
         ]
@@ -154,6 +158,16 @@ def transform_source(source: str) -> tuple[str, list[str]]:
                 ):
                     init_session_attr = tgt.attr
                     session_var_names.add(f"self.{tgt.attr}")
+        # Track context manager sessions: with requests.Session() as var:
+        if isinstance(node, ast.With):
+            for item in node.items:
+                if (
+                    isinstance(item.context_expr, ast.Call)
+                    and _is_requests_session(item.context_expr)
+                    and item.optional_vars
+                    and isinstance(item.optional_vars, ast.Name)
+                ):
+                    session_var_names.add(item.optional_vars.id)
 
     # Find time.sleep / sleep usage
     for node in ast.walk(tree):
@@ -476,6 +490,20 @@ def _process_method(
                 f"def {method.name}(", f"async def {method.name}(", 1
             )
 
+    # Build local session var names that include method parameters named s/session
+    local_session_vars = set(session_var_names)
+    for arg in method.args.args:
+        if arg.arg in ("s", "session"):
+            local_session_vars.add(arg.arg)
+
+    # Pre-pass: detect chained bare requests calls (requests.get(...).json() etc)
+    chained_bare_requests: set[int] = set()
+    for node in ast.walk(method):
+        if isinstance(node, ast.Call) and isinstance(node.func, ast.Attribute):
+            inner = node.func.value
+            if isinstance(inner, ast.Call) and _is_bare_requests_call(inner):
+                chained_bare_requests.add(id(inner))
+
     # Walk all nodes in the method body
     for node in ast.walk(method):
         # --- requests.Session() → httpx.AsyncClient(...) ---
@@ -498,20 +526,35 @@ def _process_method(
 
         # --- s.mount(...) → delete ---
         if isinstance(node, (ast.Expr,)) and isinstance(node.value, ast.Call):
-            if _is_method_call_on(node.value, session_var_names, "mount"):
+            if _is_method_call_on(node.value, local_session_vars, "mount"):
                 for ln in range(node.lineno, node.end_lineno + 1):
                     delete_lines.add(ln)
                 continue
 
         # --- s.get(...) / s.post(...) etc → await s.get(...) ---
         if isinstance(node, ast.Call) and _is_session_http_call(
-            node, session_var_names
+            node, local_session_vars
         ):
             _add_await_before_call(node, lines, line_replacements)
 
         # --- requests.get(...) / requests.post(...) → await httpx client call ---
         if isinstance(node, ast.Call) and _is_bare_requests_call(node):
-            _transform_bare_request(node, lines, line_replacements)
+            if id(node) in chained_bare_requests:
+                # Chained call like requests.get(...).json() — handled separately
+                pass
+            else:
+                _transform_bare_request(node, lines, line_replacements)
+
+        # --- Chained bare requests: requests.get(...).json() → (await ...).json() ---
+        if (
+            isinstance(node, ast.Call)
+            and isinstance(node.func, ast.Attribute)
+            and isinstance(node.func.value, ast.Call)
+            and _is_bare_requests_call(node.func.value)
+        ):
+            _transform_chained_bare_request(
+                node.func.value, node, lines, line_replacements
+            )
 
         # --- time.sleep(x) → await asyncio.sleep(x) ---
         if isinstance(node, ast.Call) and _is_attr_call(node, "time", "sleep"):
@@ -747,6 +790,45 @@ def _transform_bare_request(
     line_replacements[lineno] = new_line
 
 
+def _transform_chained_bare_request(
+    inner_call: ast.Call,
+    outer_call: ast.Call,
+    lines: list[str],
+    line_replacements: dict[int, str],
+):
+    """Transform requests.get(...).json() → (await httpx.AsyncClient(...).get(...)).json()."""
+    func = inner_call.func
+    if not isinstance(func, ast.Attribute):
+        return
+    method_name = func.attr
+
+    start_lineno = func.value.lineno
+    line = line_replacements.get(start_lineno, lines[start_lineno - 1])
+
+    old_pattern = f"requests.{method_name}("
+    if old_pattern not in line:
+        return
+
+    new_pattern = f"(await httpx.AsyncClient(follow_redirects=True).{method_name}("
+    new_line = line.replace(old_pattern, new_pattern, 1)
+    line_replacements[start_lineno] = new_line
+
+    # Insert closing paren ')' after the inner call's closing paren
+    end_lineno = inner_call.end_lineno
+    end_col = inner_call.end_col_offset
+
+    if start_lineno == end_lineno:
+        # Same line — account for the shift from the replacement above
+        shift = len(new_pattern) - len(old_pattern)
+        adjusted_col = end_col + shift
+        el = line_replacements[start_lineno]
+        line_replacements[start_lineno] = el[:adjusted_col] + ")" + el[adjusted_col:]
+    else:
+        # Different lines — insert ')' at the inner call's end position
+        el = line_replacements.get(end_lineno, lines[end_lineno - 1])
+        line_replacements[end_lineno] = el[:end_col] + ")" + el[end_col:]
+
+
 def _replace_time_sleep(
     call_node: ast.Call, lines: list[str], line_replacements: dict[int, str]
 ):
@@ -922,21 +1004,288 @@ def _final_requests_cleanup(source: str) -> str:
         ("requests.RequestException", "httpx.HTTPError"),
         # cloudscraper remnants
         ("cloudscraper.create_scraper()", "httpx.AsyncClient(follow_redirects=True)"),
-        # Context manager form: with requests.Session() as X → X = httpx.AsyncClient(...)
-        # This is handled by the broader Session replacement above
+        # requests kwarg → httpx kwarg
+        ("allow_redirects=", "follow_redirects="),
     ]
     for old, new in replacements:
         source = source.replace(old, new)
 
-    # Handle `with requests.Session() as var:` → `var = httpx.AsyncClient(follow_redirects=True)`
-    # This context manager pattern needs structural change
+    # Handle `with httpx.AsyncClient(...) as var:` → `async with httpx.AsyncClient(...) as var:`
     source = re.sub(
-        r"(\s*)with httpx\.AsyncClient\(follow_redirects=True\) as (\w+):",
-        r"\1\2 = httpx.AsyncClient(follow_redirects=True)",
+        r"(\s*)with (httpx\.AsyncClient\([^)]*\)) as (\w+):",
+        r"\1async with \2 as \3:",
         source,
     )
 
+    # Move verify=False from per-request kwarg to client constructor
+    # Pattern: await httpx.AsyncClient(follow_redirects=True).METHOD(..., verify=False, ...)
+    # → await httpx.AsyncClient(verify=False, follow_redirects=True).METHOD(... without verify=False ...)
+    def _move_verify_to_client(m):
+        pre = m.group(1)
+        client_args = m.group(2)
+        method = m.group(3)
+        call_args = m.group(4)
+        # Remove verify=False from call args
+        call_args = re.sub(r",?\s*verify=False", "", call_args)
+        call_args = re.sub(r"verify=False,?\s*", "", call_args)
+        # Add verify=False to client args
+        if "verify=" not in client_args:
+            client_args = "verify=False, " + client_args if client_args else "verify=False"
+        return f"{pre}httpx.AsyncClient({client_args}).{method}({call_args})"
+
+    source = re.sub(
+        r"(await\s+)httpx\.AsyncClient\(([^)]*)\)\.(get|post|put|delete|patch|head)\(([^)]*verify=False[^)]*)\)",
+        _move_verify_to_client,
+        source,
+    )
+
+    # Handle verify=False on session method calls:
+    # 1. Find session vars that use verify=False in their requests (multiline aware)
+    # 2. Add verify=False to their AsyncClient() constructor
+    # 3. Remove verify=False lines/occurrences from request calls
+
+    # Find vars whose HTTP calls use verify=False (multiline: look for await VAR.method(\n...\nverify=False)
+    verify_false_vars: set[str] = set()
+    for m in re.finditer(
+        r"await\s+(\w+)\.(get|post|put|delete|patch|head)\(",
+        source,
+    ):
+        var = m.group(1)
+        # Check if verify=False appears in the argument block (up to closing paren)
+        start = m.end()
+        depth = 1
+        i = start
+        while i < len(source) and depth > 0:
+            if source[i] == "(":
+                depth += 1
+            elif source[i] == ")":
+                depth -= 1
+            i += 1
+        arg_block = source[start:i]
+        if "verify=False" in arg_block:
+            verify_false_vars.add(var)
+
+    # Also check self._session style
+    for m in re.finditer(
+        r"await\s+(self\.\w+)\.(get|post|put|delete|patch|head)\(",
+        source,
+    ):
+        var = m.group(1)
+        start = m.end()
+        depth = 1
+        i = start
+        while i < len(source) and depth > 0:
+            if source[i] == "(":
+                depth += 1
+            elif source[i] == ")":
+                depth -= 1
+            i += 1
+        arg_block = source[start:i]
+        if "verify=False" in arg_block:
+            verify_false_vars.add(var)
+
+    # Add verify=False to AsyncClient constructors for those vars
+    if verify_false_vars:
+        lines = source.split("\n")
+        new_lines = []
+        for line in lines:
+            for var in verify_false_vars:
+                escaped_var = re.escape(var)
+                pattern = rf"(\s*){escaped_var}\s*=\s*httpx\.AsyncClient\(([^)]*)\)"
+                m_line = re.match(pattern, line)
+                if m_line and "verify=" not in m_line.group(2):
+                    args = m_line.group(2)
+                    args = f"verify=False, {args}" if args else "verify=False"
+                    line = f"{m_line.group(1)}{var} = httpx.AsyncClient({args})"
+            new_lines.append(line)
+        source = "\n".join(new_lines)
+
+    # Remove verify=False from HTTP method call arguments only (not from AsyncClient constructors)
+    # Match lines containing verify=False that are NOT AsyncClient constructor lines
+    lines = source.split("\n")
+    new_lines = []
+    for line in lines:
+        if "verify=False" in line and "AsyncClient(" not in line:
+            line = re.sub(r",\s*verify=False", "", line)
+            line = re.sub(r"verify=False,\s*", "", line)
+            # If line is now just whitespace or empty after removing, skip it
+            if line.strip() == "" or line.strip() == ",":
+                continue
+        new_lines.append(line)
+    source = "\n".join(new_lines)
+
+    # Handle verify=VARIABLE (not just False) in session HTTP calls
+    # Find vars whose HTTP calls use verify=EXPR (variable, not a literal)
+    verify_var_mapping: dict[str, str] = {}  # session_var → verify_value
+    for m in re.finditer(
+        r"await\s+((?:self\.)?\w+)\.(get|post|put|delete|patch|head)\(",
+        source,
+    ):
+        var = m.group(1)
+        start = m.end()
+        depth = 1
+        i = start
+        while i < len(source) and depth > 0:
+            if source[i] == "(":
+                depth += 1
+            elif source[i] == ")":
+                depth -= 1
+            i += 1
+        arg_block = source[start:i]
+        verify_m = re.search(r"verify=(self\.\w+|\w+)", arg_block)
+        if verify_m and verify_m.group(1) not in ("False", "True"):
+            verify_var_mapping[var] = verify_m.group(1)
+
+    # Add verify=EXPR to AsyncClient constructors for those vars
+    if verify_var_mapping:
+        lines = source.split("\n")
+        new_lines = []
+        for line in lines:
+            for var, verify_val in verify_var_mapping.items():
+                escaped_var = re.escape(var)
+                pattern = rf"(\s*){escaped_var}\s*=\s*httpx\.AsyncClient\(([^)]*)\)"
+                m_line = re.match(pattern, line)
+                if m_line and "verify=" not in m_line.group(2):
+                    args = m_line.group(2)
+                    args = f"verify={verify_val}, {args}" if args else f"verify={verify_val}"
+                    line = f"{m_line.group(1)}{var} = httpx.AsyncClient({args})"
+            new_lines.append(line)
+        source = "\n".join(new_lines)
+
+    # Remove verify=VARIABLE from per-request calls (not AsyncClient constructors)
+    if verify_var_mapping:
+        lines = source.split("\n")
+        new_lines = []
+        for line in lines:
+            for verify_val in verify_var_mapping.values():
+                escaped_val = re.escape(verify_val)
+                if f"verify={verify_val}" in line and "AsyncClient(" not in line:
+                    line = re.sub(rf",\s*verify={escaped_val}", "", line)
+                    line = re.sub(rf"verify={escaped_val},\s*", "", line)
+            if line.strip() == "" or line.strip() == ",":
+                continue
+            new_lines.append(line)
+        source = "\n".join(new_lines)
+
+    # Convert positional data arg in .post()/.put()/.patch() calls
+    # s.post(url, payload) → s.post(url, data=payload)
+    # Match: .post(EXPR, VARNAME) where VARNAME is not a keyword arg
+    source = re.sub(
+        r"(\.\s*(?:post|put|patch)\([^,\n]+),\s+(?!data=|json=|files=|headers=|params=|timeout=|content=|cookies=|auth=|follow_redirects=)(\w+)\)",
+        r"\1, data=\2)",
+        source,
+    )
+
+    # Convert requests-style multipart files= with (None, val) tuples to plain values
+    # Only match (None, value) in dict value contexts (preceded by ": ")
+    if re.search(r":\s*\(None,\s*.+?\)", source):
+        source = re.sub(r"(:\s*)\(None,\s*(.+?)\)", r"\1\2", source)
+        # Also convert files= to data= since (None, val) pattern indicates non-file form data
+        source = re.sub(r"\bfiles=", "data=", source)
+
+    # Convert response.url (httpx URL object) to str when string methods are called
+    # r.url.replace(...) → str(r.url).replace(...)
+    source = re.sub(
+        r"(\w+)\.url\.(replace|split|startswith|endswith|strip|lower|upper)\(",
+        r"str(\1.url).\2(",
+        source,
+    )
+
+    # Convert response.url used as a bare value (not calling methods on it)
+    # e.g. "Referer": r1.url  → "Referer": str(r1.url)
+    source = re.sub(
+        r"(\w+)\.url(?=\s*[,)\]}])",
+        r"str(\1.url)",
+        source,
+    )
+
+    # Fix raise_for_status without () — upstream bug that causes silent failures
+    source = re.sub(r"\.raise_for_status\b(?!\()", ".raise_for_status()", source)
+
+    # Handle get_legacy_session() callers — SSLError.py returns httpx.AsyncClient
+    # but the calling scrapers were not converted since they don't import requests
+    if "get_legacy_session" in source:
+        # Make fetch() async
+        source = re.sub(
+            r"(\s+)def fetch\(self\)",
+            r"\1async def fetch(self)",
+            source,
+        )
+        # Add await to chained get_legacy_session().get/post calls
+        source = re.sub(
+            r"(?<!await )get_legacy_session\(\)\.(get|post|put|delete|patch)\(",
+            r"await get_legacy_session().\1(",
+            source,
+        )
+        # Find vars assigned from get_legacy_session() and add await to their HTTP calls
+        for m in re.finditer(r"(\w+)\s*=\s*get_legacy_session\(\)", source):
+            var = m.group(1)
+            escaped = re.escape(var)
+            source = re.sub(
+                rf"(?<!await ){escaped}\.(get|post|put|delete|patch)\(",
+                rf"await {var}.\1(",
+                source,
+            )
+        # Delete get_adapter() lines (requests-only, no httpx equivalent)
+        source = re.sub(r"[^\n]*\.get_adapter\([^)]*\)[^\n]*\n", "", source)
+
+    # Handle urllib.request callers — convert to async httpx
+    if "urllib.request" in source and "import requests" not in source:
+        # Replace import
+        source = re.sub(
+            r"import urllib\.request\b",
+            "import httpx",
+            source,
+        )
+        # Make fetch() async
+        source = re.sub(
+            r"(\s+)def fetch\(self\)",
+            r"\1async def fetch(self)",
+            source,
+        )
+        # Convert urllib.request.Request + urlopen pattern:
+        #   req = urllib.request.Request(URL, headers=HEADERS)
+        #   with urllib.request.urlopen(req) as response:
+        #       html_doc = response.read()
+        # → response = await httpx.AsyncClient().get(URL, headers=HEADERS)
+        #   html_doc = response.content
+
+        # Remove Request object creation lines and capture URL/headers
+        source = re.sub(
+            r"(\s+)\w+\s*=\s*urllib\.request\.Request\(([^,\n]+?)(?:,\s*headers=(\w+))?\)\n",
+            r"\1__urllib_url__ = \2\n\1__urllib_headers__ = \3\n",
+            source,
+        )
+        # Convert with urlopen pattern to httpx
+        source = re.sub(
+            r"(\s+)with urllib\.request\.urlopen\(\w+\) as (\w+):\n\s+(\w+)\s*=\s*\2\.read\(\)\n",
+            r"\1__urllib_resp__ = await httpx.AsyncClient(follow_redirects=True).get(__urllib_url__, headers=__urllib_headers__)\n\1\3 = __urllib_resp__.content\n",
+            source,
+        )
+        # Clean up temp placeholders — inline the values
+        # Find __urllib_url__ and __urllib_headers__ assignments and inline them
+        url_match = re.search(r"__urllib_url__\s*=\s*(.+)", source)
+        headers_match = re.search(r"__urllib_headers__\s*=\s*(.+)", source)
+        if url_match and headers_match:
+            url_val = url_match.group(1).strip()
+            headers_val = headers_match.group(1).strip()
+            # Remove temp assignments
+            source = re.sub(r"[^\n]*__urllib_url__\s*=\s*[^\n]+\n", "", source)
+            source = re.sub(r"[^\n]*__urllib_headers__\s*=\s*[^\n]+\n", "", source)
+            # Replace placeholders in the response line
+            source = source.replace("__urllib_url__", url_val)
+            if headers_val and headers_val != "None":
+                source = source.replace("__urllib_headers__", headers_val)
+            else:
+                source = re.sub(r",\s*headers=__urllib_headers__", "", source)
+            source = source.replace("__urllib_resp__", "response")
+
     # Rewrite waste_collection_schedule imports to use api prefix
+    source = re.sub(
+        r"from (?:src\.)?api\.waste_collection_schedule(\b)",
+        r"from api.waste_collection_schedule\1",
+        source,
+    )
     source = re.sub(
         r"from waste_collection_schedule(\b)",
         r"from api.waste_collection_schedule\1",

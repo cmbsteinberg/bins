@@ -7,8 +7,9 @@ from urllib.parse import quote
 
 import httpx
 from bs4 import BeautifulSoup as soup
-from src.api.waste_collection_schedule import Collection
-from src.api.waste_collection_schedule.exceptions import (
+
+from api.waste_collection_schedule import Collection
+from api.waste_collection_schedule.exceptions import (
     SourceArgumentExceptionMultiple,
     SourceArgumentNotFound,
     SourceArgumentNotFoundWithSuggestions,

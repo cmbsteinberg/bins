@@ -1,7 +1,8 @@
 import datetime
 
 import httpx
-from src.api.waste_collection_schedule import Collection
+
+from api.waste_collection_schedule import Collection
 
 TITLE = "South Gloucestershire Council"  # Title will show up in README.md and info.md
 DESCRIPTION = "Source script for southglos.gov.uk"  # Describe your source

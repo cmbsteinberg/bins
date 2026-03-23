@@ -3,8 +3,9 @@ from datetime import datetime, timedelta
 
 import httpx
 from bs4 import BeautifulSoup
-from src.api.waste_collection_schedule import Collection
-from src.api.waste_collection_schedule.exceptions import (
+
+from api.waste_collection_schedule import Collection
+from api.waste_collection_schedule.exceptions import (
     SourceArgumentNotFound,
     SourceArgumentNotFoundWithSuggestions,
 )
@@ -117,9 +118,9 @@ class Source:
                     continue
         return entries
 
-    def _find_uprn(self, auth_token: str) -> tuple[str, str]:
+    async def _find_uprn(self, auth_token: str) -> tuple[str, str]:
         data = {"postcode": self._postcode}
-        addresses_response = self._session.post(
+        addresses_response = await self._session.post(
             url=API_BASE + API_URLS["postcode_lookup"],
             headers=self._get_headers(auth_token),
             json=self._create_payload(data),
@@ -151,14 +152,14 @@ class Source:
     async def fetch(self):
         self._session = httpx.AsyncClient(follow_redirects=True)
 
-        token_response = self._session.get(API_BASE + API_URLS["authentication"])
+        token_response = await self._session.get(API_BASE + API_URLS["authentication"])
         token_response.raise_for_status()
         auth_token = token_response.headers[AUTH_KEY]
 
-        uprn, auth_token = self._find_uprn(auth_token=auth_token)
+        uprn, auth_token = await self._find_uprn(auth_token=auth_token)
 
         set_object_url = (API_BASE + API_URLS["set_object"]).format(uprn=uprn)
-        set_object_response = self._session.post(
+        set_object_response = await self._session.post(
             set_object_url, headers=self._get_headers(auth_token)
         )
         set_object_response.raise_for_status()
@@ -177,7 +178,7 @@ class Source:
             }
         )
 
-        schedule = self._session.post(
+        schedule = await self._session.post(
             API_BASE + API_URLS["collection_dates"],
             json=post_data,
             headers=self._get_headers(auth_token=auth_token),

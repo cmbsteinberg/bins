@@ -5,7 +5,8 @@ from datetime import date, datetime
 from typing import Any
 
 import httpx
-from src.api.waste_collection_schedule import Collection
+
+from api.waste_collection_schedule import Collection
 
 TITLE = "Sandwell Council"
 DESCRIPTION = "Bin collection dates via my.sandwell.gov.uk (APIBroker runLookup)"

@@ -4,7 +4,8 @@ from datetime import datetime
 
 import httpx
 from bs4 import BeautifulSoup
-from src.api.waste_collection_schedule import Collection
+
+from api.waste_collection_schedule import Collection
 
 TITLE = "Angus Council"
 DESCRIPTION = "Source for Angus Council (MyAngus/Granicus)"
@@ -58,7 +59,7 @@ class Source:
                 "Content-Type": "application/json",
                 "X-Requested-With": "XMLHttpRequest",
                 "Origin": "https://myangus.angus.gov.uk",
-                "Referer": r1.url,
+                "Referer": str(r1.url),
             }
         )
 

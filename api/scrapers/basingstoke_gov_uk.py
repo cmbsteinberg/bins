@@ -4,7 +4,8 @@ from datetime import datetime
 import httpx
 import urllib3
 from bs4 import BeautifulSoup
-from src.api.waste_collection_schedule import Collection  # type: ignore[attr-defined]
+
+from api.waste_collection_schedule import Collection  # type: ignore[attr-defined]
 
 # With verify=True the POST fails due to a SSLCertVerificationError.
 # Using verify=False works, but is not ideal. The following links may provide a better way of dealing with this:
@@ -44,11 +45,10 @@ class Source:
             "cookie_control_popup": "N",
             "WhenAreMyBinsCollected": self._uprn,
         }
-        r = await httpx.AsyncClient(follow_redirects=True).get(
+        r = await httpx.AsyncClient(verify=False, follow_redirects=True).get(
             "https://www.basingstoke.gov.uk/bincollections",
             headers=HEADERS,
             cookies=REQUEST_COOKIES,
-            verify=False,
         )
         r.raise_for_status()
 

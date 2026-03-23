@@ -1,7 +1,8 @@
 import httpx
 from bs4 import BeautifulSoup
 from dateutil import parser
-from src.api.waste_collection_schedule import Collection
+
+from api.waste_collection_schedule import Collection
 
 TITLE = "Swindon Borough Council"
 DESCRIPTION = "Swindon Borough Council, UK - Waste Collection"
@@ -43,10 +44,10 @@ class Source:
             params=params,
             headers=headers,
         )
-        
+
         if r.status_code == 403 or "403 Client Error" in r.text:
             raise Exception("Rate limiting or IP ban may be in effect")
-        
+
         r.raise_for_status()
 
         entries = []

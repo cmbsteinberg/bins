@@ -3,7 +3,8 @@ from datetime import datetime
 from urllib.parse import quote as urlquote
 
 import httpx
-from src.api.waste_collection_schedule import Collection  # type: ignore[attr-defined]
+
+from api.waste_collection_schedule import Collection  # type: ignore[attr-defined]
 
 TITLE = "Tewkesbury Borough Council"
 DESCRIPTION = "Home waste collection schedule for Tewkesbury Borough Council"

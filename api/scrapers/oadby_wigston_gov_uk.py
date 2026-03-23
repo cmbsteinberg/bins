@@ -5,7 +5,8 @@ from datetime import date, timedelta
 import httpx
 from bs4 import BeautifulSoup
 from dateutil.parser import parse
-from src.api.waste_collection_schedule import Collection  # type: ignore[attr-defined]
+
+from api.waste_collection_schedule import Collection  # type: ignore[attr-defined]
 
 TITLE = "Oadby and Wigston Council"
 DESCRIPTION = "Source for Oadby and Wigston Council."

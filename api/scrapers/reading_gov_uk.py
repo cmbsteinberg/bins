@@ -2,8 +2,9 @@ from datetime import datetime
 from typing import List
 
 import httpx
-from src.api.waste_collection_schedule import Collection
-from src.api.waste_collection_schedule.exceptions import (
+
+from api.waste_collection_schedule import Collection
+from api.waste_collection_schedule.exceptions import (
     SourceArgumentExceptionMultiple,
     SourceArgumentNotFound,
     SourceArgumentNotFoundWithSuggestions,

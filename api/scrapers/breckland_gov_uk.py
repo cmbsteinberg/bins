@@ -2,9 +2,9 @@ import logging
 from datetime import datetime
 
 import httpx
-from src.api.waste_collection_schedule import Collection
-from src.api.waste_collection_schedule.exceptions import (
-    SourceArgumentException,
+
+from api.waste_collection_schedule import Collection
+from api.waste_collection_schedule.exceptions import (
     SourceArgumentExceptionMultiple,
 )
 

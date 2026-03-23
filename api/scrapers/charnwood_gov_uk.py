@@ -3,8 +3,9 @@ from datetime import date, timedelta
 import httpx
 from bs4 import BeautifulSoup
 from dateutil.parser import parse
-from src.api.waste_collection_schedule import Collection  # type: ignore[attr-defined]
-from src.api.waste_collection_schedule.exceptions import (
+
+from api.waste_collection_schedule import Collection  # type: ignore[attr-defined]
+from api.waste_collection_schedule.exceptions import (
     SourceArgumentNotFound,
     SourceArgumentNotFoundWithSuggestions,
 )

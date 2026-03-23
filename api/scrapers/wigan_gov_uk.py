@@ -7,7 +7,8 @@ from datetime import datetime
 
 import httpx
 from bs4 import BeautifulSoup
-from src.api.waste_collection_schedule import Collection  # type: ignore[attr-defined]
+
+from api.waste_collection_schedule import Collection  # type: ignore[attr-defined]
 
 TITLE = "Wigan Council"
 DESCRIPTION = "Source for wigan.gov.uk services for Wigan Council, UK."
@@ -56,7 +57,7 @@ class Source:
         }
 
         # Get address list
-        r1 = await s.post("https://apps.wigan.gov.uk/MyNeighbourhood/", payload)
+        r1 = await s.post("https://apps.wigan.gov.uk/MyNeighbourhood/", data=payload)
         r1.raise_for_status()
         soup = BeautifulSoup(r1.text, features="html.parser")
 
@@ -73,7 +74,7 @@ class Source:
         }
 
         # Get the collection schedule page
-        r2 = await s.post("https://apps.wigan.gov.uk/MyNeighbourhood/", payload)
+        r2 = await s.post("https://apps.wigan.gov.uk/MyNeighbourhood/", data=payload)
         r2.raise_for_status()
         soup = BeautifulSoup(r2.text, features="html.parser")
 

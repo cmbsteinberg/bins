@@ -1,7 +1,8 @@
 import datetime
 
 import httpx
-from src.api.waste_collection_schedule import Collection  # type: ignore[attr-defined]
+
+from api.waste_collection_schedule import Collection  # type: ignore[attr-defined]
 
 TITLE = "London Borough of Havering"
 DESCRIPTION = "Source for London Borough of Havering."

@@ -3,7 +3,8 @@ from datetime import datetime
 
 import httpx
 from bs4 import BeautifulSoup
-from src.api.waste_collection_schedule import Collection  # type: ignore[attr-defined]
+
+from api.waste_collection_schedule import Collection  # type: ignore[attr-defined]
 
 TITLE = "Sunderland City Council"
 DESCRIPTION = "Source for sunderland.gov.uk services for Sunderland City Council, UK."
@@ -37,7 +38,7 @@ class Source:
 
         # visit webpage to get viewstate info
         r = await s.get(API_URL, headers=HEADERS)
-        r.raise_for_status
+        r.raise_for_status()
 
         # update payload and perform address search
         payload = self.get_viewstate(r.content)
@@ -49,7 +50,7 @@ class Source:
             }
         )
         r = await s.post(API_URL, data=payload, headers=HEADERS)
-        r.raise_for_status
+        r.raise_for_status()
 
         # search results for address and get unique house code
         soup = BeautifulSoup(r.content, "html.parser")
@@ -68,7 +69,7 @@ class Source:
             }
         )
         r = await s.post(API_URL, data=payload, headers=HEADERS)
-        r.raise_for_status
+        r.raise_for_status()
 
         # extract collection dates
         entries = []

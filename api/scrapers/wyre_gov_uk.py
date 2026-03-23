@@ -1,7 +1,8 @@
 import httpx
 from bs4 import BeautifulSoup
 from dateutil import parser
-from src.api.waste_collection_schedule import Collection
+
+from api.waste_collection_schedule import Collection
 
 TITLE = "Wyre Borough Council"  # Title will show up in README.md and info.md
 DESCRIPTION = "Source script for wyre.gov.uk"  # Describe your source

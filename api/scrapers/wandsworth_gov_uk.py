@@ -3,8 +3,9 @@ import logging
 
 import httpx
 from bs4 import BeautifulSoup
-from src.api.waste_collection_schedule import Collection
-from src.api.waste_collection_schedule.exceptions import SourceArgumentException
+
+from api.waste_collection_schedule import Collection
+from api.waste_collection_schedule.exceptions import SourceArgumentException
 
 _LOGGER = logging.getLogger(__name__)
 

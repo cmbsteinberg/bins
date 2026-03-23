@@ -1,7 +1,8 @@
 import httpx
 from bs4 import BeautifulSoup
 from dateutil import parser
-from src.api.waste_collection_schedule import Collection  # type: ignore[attr-defined]
+
+from api.waste_collection_schedule import Collection  # type: ignore[attr-defined]
 
 TITLE = "Braintree District Council"
 DESCRIPTION = "Braintree District Council, UK - Waste Collection"
@@ -29,13 +30,13 @@ class Source:
 
     def initialize_form_data(self):
         self.form_data = {
-            "qe15dda0155d237d1ea161004d1839e3369ed4831_0_0": (None, self.post_code),
-            "page": (None, 5730),
+            "qe15dda0155d237d1ea161004d1839e3369ed4831_0_0": self.post_code,
+            "page": 5730,
         }
 
     async def fetch(self):
         self.initialize_form_data()  # Re-initialize form data before each fetch otherwise subsequent fetchs fail
-        address_lookup = await httpx.AsyncClient(follow_redirects=True).post(self.url, files=self.form_data)
+        address_lookup = await httpx.AsyncClient(follow_redirects=True).post(str(self.url), data=self.form_data)
         address_lookup.raise_for_status()
         addresses = {}
         for address in BeautifulSoup(address_lookup.text, "html.parser").find_all(
@@ -50,7 +51,7 @@ class Source:
         )
         self.form_data["qe15dda0155d237d1ea161004d1839e3369ed4831_1_0"] = (None, id)
         self.form_data["next"] = (None, "Next")
-        collection_lookup = await httpx.AsyncClient(follow_redirects=True).post(self.url, files=self.form_data)
+        collection_lookup = await httpx.AsyncClient(follow_redirects=True).post(str(self.url), data=self.form_data)
         collection_lookup.raise_for_status()
         entries = []
         for results in BeautifulSoup(collection_lookup.text, "html.parser").find_all(

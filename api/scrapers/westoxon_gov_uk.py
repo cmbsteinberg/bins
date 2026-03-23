@@ -6,8 +6,9 @@ from datetime import date, datetime
 import httpx
 import urllib3
 from dateutil.parser import parse
-from src.api.waste_collection_schedule import Collection  # type: ignore[attr-defined]
-from src.api.waste_collection_schedule.exceptions import (
+
+from api.waste_collection_schedule import Collection  # type: ignore[attr-defined]
+from api.waste_collection_schedule.exceptions import (
     SourceArgumentNotFoundWithSuggestions,
 )
 
@@ -52,7 +53,7 @@ HEADERS = {
 class Source:
     def __init__(self, address: str):
         self._address: str = address
-        self._session = httpx.AsyncClient(follow_redirects=True)
+        self._session = httpx.AsyncClient(verify=False, follow_redirects=True)
 
     @staticmethod
     def _parse_date(date_str: str) -> date:
@@ -65,8 +66,8 @@ class Source:
         return parse(date_str, default=datetime.now()).date()
 
     async def _init_connection(self):
-        self._session = httpx.AsyncClient(follow_redirects=True)
-        r = await self._session.get(SEARCH_PAGE, verify=False, headers=HEADERS)
+        self._session = httpx.AsyncClient(verify=False, follow_redirects=True)
+        r = await self._session.get(SEARCH_PAGE, headers=HEADERS)
         r.raise_for_status()
         aura_regex = REGEX_AURA_CONFIG.search(r.text, re.MULTILINE)
 
@@ -107,7 +108,6 @@ class Source:
                 "aura.pageURI": "/s/waste-collection-enquiry",
                 "aura.token": "null",
             },
-            verify=False,
             headers=HEADERS,
         )
         response.raise_for_status()

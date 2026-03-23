@@ -3,7 +3,8 @@ from typing import List
 
 import httpx
 from bs4 import BeautifulSoup
-from src.api.waste_collection_schedule import Collection
+
+from api.waste_collection_schedule import Collection
 
 TITLE = "Wakefield Council"
 DESCRIPTION = "Source for Wakefield.gov.uk services for Wakefield Council"
@@ -39,9 +40,9 @@ class Source:
 
     async def fetch(self) -> List[Collection]:
         entries = []
-        with httpx.AsyncClient() as sess:
+        async with httpx.AsyncClient() as sess:
             url = "https://www.wakefield.gov.uk/where-i-live/"  # the a parameter is needed for page to load but contents doesn't matter
-            request = sess.get(url, params={"uprn": {self._uprn}, "a": "Your Address"})
+            request = await sess.get(url, params={"uprn": {self._uprn}, "a": "Your Address"})
             soup = BeautifulSoup(request.content, "html.parser")
             collection_sections = soup.select(".tablet\\:l-col-fb-4.u-mt-10")
             for section in collection_sections:

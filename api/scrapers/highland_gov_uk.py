@@ -2,7 +2,8 @@ import datetime
 import time
 
 import httpx
-from src.api.waste_collection_schedule import Collection  # type: ignore[attr-defined]
+
+from api.waste_collection_schedule import Collection  # type: ignore[attr-defined]
 
 TITLE = "Highland"
 DESCRIPTION = "Source for Highland."
@@ -46,7 +47,7 @@ class Source:
             "Referer": "https://highland-self.achieveservice.com/fillform/?iframe_id=fillform-frame-1&db_id=",
         }
         s = httpx.AsyncClient(follow_redirects=True)
-        r = s.get(SESSION_URL)
+        r = await s.get(SESSION_URL)
         r.raise_for_status()
         session_data = r.json()
         sid = session_data["auth-session"]
@@ -62,7 +63,7 @@ class Source:
             "sid": sid,
         }
 
-        r = s.post(API_URL, json=data, headers=headers, params=params)
+        r = await s.post(API_URL, json=data, headers=headers, params=params)
         r.raise_for_status()
 
         data = r.json()

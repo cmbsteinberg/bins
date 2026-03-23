@@ -2,7 +2,8 @@ import json
 from datetime import datetime
 
 import httpx
-from src.api.waste_collection_schedule import Collection
+
+from api.waste_collection_schedule import Collection
 
 TITLE = "Dundee City Council"
 DESCRIPTION = "Source script for dundeecity.gov.uk"

@@ -3,7 +3,8 @@ from datetime import datetime
 
 import httpx
 from bs4 import BeautifulSoup
-from src.api.waste_collection_schedule import Collection  # type: ignore[attr-defined]
+
+from api.waste_collection_schedule import Collection  # type: ignore[attr-defined]
 
 TITLE = "East Devon District Council"
 DESCRIPTION = "Source for East Devon services for East Devon District Council, UK."

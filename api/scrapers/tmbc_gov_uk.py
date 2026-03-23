@@ -3,7 +3,8 @@ from datetime import datetime
 import httpx
 from bs4 import BeautifulSoup
 from dateutil import parser
-from src.api.waste_collection_schedule import Collection  # type: ignore[attr-defined]
+
+from api.waste_collection_schedule import Collection  # type: ignore[attr-defined]
 
 # mostly copied from braintree_gov_uk
 
@@ -35,13 +36,13 @@ class Source:
         self.address = address
         self.url = f"{URL}/xfp/form/167"
         self.form_data = {
-            "q752eec300b2ffef2757e4536b77b07061842041a_0_0": (None, post_code),
-            "page": (None, 128),
+            "q752eec300b2ffef2757e4536b77b07061842041a_0_0": post_code,
+            "page": 128,
         }
 
     async def fetch(self):
         address_lookup = await httpx.AsyncClient(follow_redirects=True).post(
-            "https://www.tmbc.gov.uk/xfp/form/167", files=self.form_data
+            "https://www.tmbc.gov.uk/xfp/form/167", data=self.form_data
         )
         address_lookup.raise_for_status()
         addresses = {}
@@ -64,7 +65,7 @@ class Source:
         self.form_data["q752eec300b2ffef2757e4536b77b07061842041a_1_0"] = (None, id)
         self.form_data["next"] = (None, "Next")
         collection_lookup = await httpx.AsyncClient(follow_redirects=True).post(
-            "https://www.tmbc.gov.uk/xfp/form/167", files=self.form_data
+            "https://www.tmbc.gov.uk/xfp/form/167", data=self.form_data
         )
         collection_lookup.raise_for_status()
         entries = []

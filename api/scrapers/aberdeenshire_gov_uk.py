@@ -1,9 +1,11 @@
 from datetime import datetime
 
 from bs4 import BeautifulSoup
-from src.api.waste_collection_schedule import Collection  # type: ignore[attr-defined]
+
+from api.waste_collection_schedule import Collection  # type: ignore[attr-defined]
+
 # Include work around for SSL UNSAFE_LEGACY_RENEGOTIATION_DISABLED error
-from src.api.waste_collection_schedule.service.SSLError import get_legacy_session
+from api.waste_collection_schedule.service.SSLError import get_legacy_session
 
 TITLE = "Aberdeenshire Council"
 DESCRIPTION = "Source for Aberdeenshire Council, UK."
@@ -33,8 +35,8 @@ class Source:
     def __init__(self, uprn):
         self._uprn = str(uprn).zfill(12)
 
-    def fetch(self):
-        response = get_legacy_session().get(
+    async def fetch(self):
+        response = await get_legacy_session().get(
             f"https://online.aberdeenshire.gov.uk/Apps/Waste-Collections/Routes/Route/{self._uprn}"
         )
         soup = BeautifulSoup(response.text, "html.parser")

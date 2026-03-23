@@ -1,10 +1,11 @@
+import asyncio
 import json
 from datetime import date, datetime, timedelta
-import asyncio
 
 import httpx
 from bs4 import BeautifulSoup
-from src.api.waste_collection_schedule import Collection  # type: ignore[attr-defined]
+
+from api.waste_collection_schedule import Collection  # type: ignore[attr-defined]
 
 TITLE = "North Norfolk District Council"
 DESCRIPTION = "Source for waste collection services for North Norfolk District Council"

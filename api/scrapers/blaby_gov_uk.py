@@ -4,7 +4,8 @@ from datetime import datetime
 import httpx
 import urllib3
 from bs4 import BeautifulSoup
-from src.api.waste_collection_schedule import Collection  # type: ignore[attr-defined]
+
+from api.waste_collection_schedule import Collection  # type: ignore[attr-defined]
 
 # With verify=True the POST fails due to a SSLCertVerificationError.
 # Using verify=False works, but is not ideal. The following links may provide a better way of dealing with this:
@@ -50,11 +51,10 @@ class Source:
         self._uprn = str(uprn).zfill(12)
 
     async def fetch(self):
-        s = httpx.AsyncClient(follow_redirects=True)
+        s = httpx.AsyncClient(verify=False, follow_redirects=True)
         payload: dict = {"ref": self._uprn, "redirect": "collections"}
         r = await s.get(
             "https://my.blaby.gov.uk/set-location.php",
-            verify=False,
             params=payload,
             headers=HEADERS,
         )

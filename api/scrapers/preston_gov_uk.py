@@ -1,9 +1,10 @@
 from datetime import date, datetime
 from typing import Optional
 
+import httpx
 from bs4 import BeautifulSoup
-from requests import Session
-from src.api.waste_collection_schedule import Collection  # type: ignore[attr-defined]
+
+from api.waste_collection_schedule import Collection  # type: ignore[attr-defined]
 
 TITLE = "Preston City Council"
 DESCRIPTION = "Source for preston.gov.uk services for Preston City Council, UK."
@@ -77,15 +78,15 @@ class Source:
         self._params["ctl00$MainContent$hdnUPRN"] = self._uprn
 
     async def fetch(self):
-        return self._get()
+        return await self._get()
 
-    def _get(self):
+    async def _get(self):
         #
         # Initial fetch to get session information
         #
-        session = Session()
+        session = httpx.AsyncClient(follow_redirects=True)
 
-        r0 = session.get(SRV_URL)
+        r0 = await session.get(SRV_URL)
         r0.raise_for_status()
         r0_bs4 = BeautifulSoup(r0.text, features="html.parser")
         self._update_params(r0_bs4)
@@ -93,7 +94,7 @@ class Source:
         #
         # Post with Street
         #
-        r1 = session.post(SRV_URL, data=self._params)
+        r1 = await session.post(SRV_URL, data=self._params)
         r1.raise_for_status()
         bs = BeautifulSoup(r1.text, features="html.parser")
 

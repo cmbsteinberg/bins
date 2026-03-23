@@ -1,8 +1,9 @@
 import json
+from datetime import datetime
+
 import httpx
 
-from datetime import datetime
-from src.api.waste_collection_schedule import Collection  # type: ignore[attr-defined]
+from api.waste_collection_schedule import Collection  # type: ignore[attr-defined]
 
 TITLE = "South Tyneside Council"
 DESCRIPTION = "Source for southtyneside.gov.uk services for South Tyneside Council, UK."
@@ -66,7 +67,7 @@ class Source:
         )
         r2 = await s.post(API, headers=HEADERS, data=payload)
         json_data = json.loads(r2.text)["result"]["SortedCollections"]
-        
+
         entries = []
         for item in json_data:
             for monthyear in item["Collections"]:

@@ -7,7 +7,7 @@ from dataclasses import dataclass
 from datetime import datetime
 from pathlib import Path
 
-from src.api.waste_collection_schedule import Collection
+from api.waste_collection_schedule import Collection
 
 logger = logging.getLogger(__name__)
 
@@ -54,7 +54,7 @@ class ScraperRegistry:
         for path in scraper_files:
             name = path.stem
             try:
-                module = importlib.import_module(f"src.api.scrapers.{name}")
+                module = importlib.import_module(f"api.scrapers.{name}")
                 if not hasattr(module, "Source"):
                     continue
 
@@ -94,8 +94,14 @@ class ScraperRegistry:
         return list(self._scrapers.values())
 
     async def invoke(self, council_id: str, params: dict) -> list[Collection]:
-        module = importlib.import_module(f"src.api.scrapers.{council_id}")
-        source = module.Source(**params)
+        module = importlib.import_module(f"api.scrapers.{council_id}")
+        meta = self._scrapers.get(council_id)
+        if meta:
+            accepted = set(meta.required_params + meta.optional_params)
+            filtered = {k: v for k, v in params.items() if k in accepted}
+        else:
+            filtered = params
+        source = module.Source(**filtered)
         return await source.fetch()
 
     def record_success(self, council_id: str) -> None:

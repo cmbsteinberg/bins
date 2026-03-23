@@ -2,8 +2,11 @@ import datetime
 
 import httpx
 from bs4 import BeautifulSoup
-from src.api.waste_collection_schedule import Collection
-from src.api.waste_collection_schedule.exceptions import SourceArgumentNotFoundWithSuggestions
+
+from api.waste_collection_schedule import Collection
+from api.waste_collection_schedule.exceptions import (
+    SourceArgumentNotFoundWithSuggestions,
+)
 
 TITLE = "Sefton Council"  # Title will show up in README.md and info.md
 DESCRIPTION = "Source for Sefton Council, UK"  # Describe your source
@@ -63,8 +66,8 @@ class Source:
         self._postcode = postcode
 
     async def fetch(self) -> list[Collection]:
-        with httpx.AsyncClient() as sess:
-            request = sess.get(
+        async with httpx.AsyncClient() as sess:
+            request = await sess.get(
                 "https://www.sefton.gov.uk/bins-and-recycling/bins-and-recycling/when-is-my-bin-collection-day/"
             )
 
@@ -73,7 +76,7 @@ class Source:
             payload = {x["name"]: x["value"] for x in hidden}
             payload["Postcode"] = self._postcode
             payload["Streetname"] = self._streetname
-            request = sess.post(
+            request = await sess.post(
                 "https://www.sefton.gov.uk/bins-and-recycling/bins-and-recycling/when-is-my-bin-collection-day/",
                 data=payload,
             )
@@ -93,7 +96,7 @@ class Source:
                     self._house_number_or_name,
                     [option.text.strip() for option in option_tags],
                 )
-            request = sess.post(
+            request = await sess.post(
                 "https://www.sefton.gov.uk/bins-and-recycling/bins-and-recycling/when-is-my-bin-collection-day/",
                 data=payload,
             )

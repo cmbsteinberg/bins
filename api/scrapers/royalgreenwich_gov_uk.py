@@ -4,8 +4,9 @@ from typing import Mapping, Optional
 import httpx
 from bs4 import BeautifulSoup, Tag
 from dateutil import parser
-from src.api.waste_collection_schedule import Collection  # type: ignore[attr-defined]
-from src.api.waste_collection_schedule.exceptions import (
+
+from api.waste_collection_schedule import Collection  # type: ignore[attr-defined]
+from api.waste_collection_schedule.exceptions import (
     SourceArgAmbiguousWithSuggestions,
     SourceArgumentNotFound,
     SourceArgumentRequired,

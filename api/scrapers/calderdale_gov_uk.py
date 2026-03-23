@@ -4,8 +4,9 @@ from datetime import datetime
 
 import httpx
 from bs4 import BeautifulSoup
-from src.api.waste_collection_schedule import Collection
-from src.api.waste_collection_schedule.exceptions import (
+
+from api.waste_collection_schedule import Collection
+from api.waste_collection_schedule.exceptions import (
     SourceArgumentNotFound,
 )
 

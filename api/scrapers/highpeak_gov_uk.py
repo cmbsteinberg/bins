@@ -4,7 +4,8 @@ from datetime import datetime
 
 import httpx
 from bs4 import BeautifulSoup, Tag
-from src.api.waste_collection_schedule import Collection  # type: ignore[attr-defined]
+
+from api.waste_collection_schedule import Collection  # type: ignore[attr-defined]
 
 _LOGGER = logging.getLogger(__name__)
 
@@ -68,14 +69,14 @@ class Source:
             }
         )
 
-        BASE_URL = "https://" + r.url.replace("https://", "").split("/")[0]
+        BASE_URL = "https://" + str(str(r.url)).replace("https://", "").split("/")[0]
 
         soup = BeautifulSoup(r.text, "html.parser")
 
         form_data, next_url = self._extract_all_form_data(soup)
 
         form_data["FINDBINDAYSHIGHPEAK_FORMACTION_NEXT"] = "FINDBINDAYSHIGHPEAK_POSTCODESELECT_PAGE1NEXT"
-        
+
         if next_url.startswith("/"):
             next_url = BASE_URL + next_url
 
@@ -86,7 +87,7 @@ class Source:
         form_data, next_url = self._extract_all_form_data(soup)
 
         form_data["FINDBINDAYSHIGHPEAK_FORMACTION_NEXT"] = "FINDBINDAYSHIGHPEAK_ADDRESSSELECT_ADDRESSSELECTNEXTBTN"
-        
+
         if next_url.startswith("/"):
             next_url = BASE_URL + next_url
         r = await s.post(next_url, data=form_data)

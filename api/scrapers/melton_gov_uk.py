@@ -2,7 +2,8 @@ from datetime import datetime
 
 import httpx
 from bs4 import BeautifulSoup
-from src.api.waste_collection_schedule import Collection  # type: ignore[attr-defined]
+
+from api.waste_collection_schedule import Collection  # type: ignore[attr-defined]
 
 TITLE = "Melton Borough Council"
 DESCRIPTION = "Source for waste collection services for Melton Borough Council, UK"
@@ -59,7 +60,7 @@ class Source:
         r = await s.get(
             "https://my.melton.gov.uk/set-location", headers=HEADERS, params=params
         )
-        r.raise_for_status
+        r.raise_for_status()
         soup: BeautifulSoup = BeautifulSoup(r.content, "html.parser")
 
         entries: list = []

@@ -1,8 +1,9 @@
 import asyncio
 
 import httpx
-from src.api.waste_collection_schedule import Collection  # type: ignore[attr-defined]
-from src.api.waste_collection_schedule.service.ICS import ICS
+
+from api.waste_collection_schedule import Collection  # type: ignore[attr-defined]
+from api.waste_collection_schedule.service.ICS import ICS
 
 TITLE = "London Borough of Bromley"
 DESCRIPTION = "Source for bromley.gov.uk services for London Borough of Bromley, UK."

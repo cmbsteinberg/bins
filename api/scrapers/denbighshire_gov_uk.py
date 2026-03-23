@@ -1,7 +1,8 @@
 from datetime import datetime
 
 import httpx
-from src.api.waste_collection_schedule import Collection  # type: ignore[attr-defined]
+
+from api.waste_collection_schedule import Collection  # type: ignore[attr-defined]
 
 TITLE = "Denbighshire County Council"
 DESCRIPTION = "Source for Denbighshire County Council."

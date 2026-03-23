@@ -4,7 +4,8 @@ import re
 from datetime import datetime
 
 import httpx
-from src.api.waste_collection_schedule import Collection
+
+from api.waste_collection_schedule import Collection
 
 TITLE = "Scottish Borders Council"
 DESCRIPTION = "Source for Scottish Borders Council (Bartec Municipal)"

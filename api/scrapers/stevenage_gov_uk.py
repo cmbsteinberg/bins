@@ -2,7 +2,8 @@ import datetime
 import time
 
 import httpx
-from src.api.waste_collection_schedule import Collection  # type: ignore[attr-defined]
+
+from api.waste_collection_schedule import Collection  # type: ignore[attr-defined]
 
 TITLE = "Stevenage Borough Council"
 DESCRIPTION = "Source for Stevenage."
@@ -56,12 +57,12 @@ class Source:
             "Referer": "https://stevenage-self.achieveservice.com/fillform/?iframe_id=fillform-frame-1&db_id=",
         }
         s = httpx.AsyncClient(follow_redirects=True)
-        r = s.get(SESSION_URL)
+        r = await s.get(SESSION_URL)
         r.raise_for_status()
         session_data = r.json()
         sid = session_data["auth-session"]
 
-        t = s.get(TOKEN_URL)
+        t = await s.get(TOKEN_URL)
         t.raise_for_status()
         token_data = t.json()
         data["formValues"]["Section 1"]["token"]["value"] = token_data["integration"][
@@ -80,7 +81,7 @@ class Source:
             "sid": sid,
         }
 
-        r = s.post(API_URL, json=data, headers=headers, params=params)
+        r = await s.post(API_URL, json=data, headers=headers, params=params)
         r.raise_for_status()
         data = r.json()
         rows_data = data["integration"]["transformed"]["rows_data"]

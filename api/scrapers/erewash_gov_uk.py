@@ -1,7 +1,8 @@
 from datetime import datetime
 
 import httpx
-from src.api.waste_collection_schedule import Collection  # type: ignore[attr-defined]
+
+from api.waste_collection_schedule import Collection  # type: ignore[attr-defined]
 
 TITLE = "Erewash Borough Council"
 DESCRIPTION = "Source for erewash.gov.uk services for Erewash Borough Council, UK."

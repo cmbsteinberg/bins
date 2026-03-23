@@ -3,7 +3,8 @@ import re
 from datetime import datetime
 
 import httpx
-from src.api.waste_collection_schedule import Collection  # type: ignore[attr-defined]
+
+from api.waste_collection_schedule import Collection  # type: ignore[attr-defined]
 
 TITLE = "East Riding of Yorkshire Council"
 DESCRIPTION = "Source for East Riding of Yorkshire Council, UK."

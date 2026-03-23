@@ -3,7 +3,8 @@ from datetime import date, datetime
 from typing import Any, Dict, List, Optional, Sequence, Set, Tuple, cast
 
 import httpx
-from src.api.waste_collection_schedule import Collection
+
+from api.waste_collection_schedule import Collection
 
 TITLE = "North Herts Council"
 DESCRIPTION = "Source for www.north-herts.gov.uk services for North Herts Council."

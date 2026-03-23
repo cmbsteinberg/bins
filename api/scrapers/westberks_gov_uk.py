@@ -3,7 +3,8 @@ import time
 from datetime import date, datetime
 
 import httpx
-from src.api.waste_collection_schedule import Collection  # type: ignore[attr-defined]
+
+from api.waste_collection_schedule import Collection  # type: ignore[attr-defined]
 
 TITLE = "West Berkshire Council"
 DESCRIPTION = "Source for westberks.gov.uk services for West Berkshire Council"

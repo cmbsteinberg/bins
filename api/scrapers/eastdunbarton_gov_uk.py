@@ -2,7 +2,8 @@ from datetime import datetime
 
 import httpx
 from bs4 import BeautifulSoup
-from src.api.waste_collection_schedule import Collection  # type: ignore[attr-defined]
+
+from api.waste_collection_schedule import Collection  # type: ignore[attr-defined]
 
 TITLE = "East Dunbartonshire Council"
 DESCRIPTION = "Source for East Dunbartonshire Council, UK."
@@ -43,7 +44,7 @@ class Source:
         r = await s.get(
             f"https://www.eastdunbarton.gov.uk/services/a-z-of-services/bins-waste-and-recycling/bins-and-recycling/collections/?uprn={self._uprn}"
         )
-        r.raise_for_status
+        r.raise_for_status()
         soup = BeautifulSoup(r.content, "html.parser")
 
         entries = []

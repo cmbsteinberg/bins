@@ -3,7 +3,8 @@ from datetime import datetime
 
 import httpx
 from bs4 import BeautifulSoup
-from src.api.waste_collection_schedule import Collection
+
+from api.waste_collection_schedule import Collection
 
 TITLE = "Oxford City Council"
 DESCRIPTION = "Source for oxford.gov.uk services for Oxford, UK."

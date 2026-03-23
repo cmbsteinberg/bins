@@ -1,14 +1,18 @@
 import base64
 import json
 import re
-from urllib.parse import parse_qs, urlparse
-import httpx
-from bs4 import BeautifulSoup
+
 # from dateutil import parser
 from datetime import datetime
-from src.api.waste_collection_schedule.collection import Collection  # type: ignore[attr-defined]
-from src.api.waste_collection_schedule.service.ICS import ICS # type: ignore[attr-defined]
+from urllib.parse import parse_qs, urlparse
 
+import httpx
+from bs4 import BeautifulSoup
+
+from api.waste_collection_schedule.collection import (
+    Collection,  # type: ignore[attr-defined]
+)
+from api.waste_collection_schedule.service.ICS import ICS  # type: ignore[attr-defined]
 
 TITLE = "West Lothian Council"
 DESCRIPTION = "Source for services for West Lothian"
@@ -138,7 +142,7 @@ class Source:
         goss_ids = self.__get_goss_form_ids(form["action"])
         r = await session.post(
             form["action"],
-            allow_redirects=True,
+            follow_redirects=True,
             data={
                 "WLBINCOLLECTION_PAGESESSIONID": goss_ids["page_session_id"],
                 "WLBINCOLLECTION_SESSIONID": goss_ids["session_id"],
@@ -155,7 +159,7 @@ class Source:
         return r.text
 
     async def __get_address_page(self, s):
-        r = s.get(COLLECTION_PAGE_URL)
+        r = await s.get(COLLECTION_PAGE_URL)
         r.raise_for_status()
         return r.text
 

@@ -1,11 +1,12 @@
 import json
-import httpx
-import bs4
 import xml.etree.ElementTree as ET
-
 from datetime import datetime, timedelta
 from time import time_ns
-from src.api.waste_collection_schedule import Collection  # type: ignore[attr-defined]
+
+import bs4
+import httpx
+
+from api.waste_collection_schedule import Collection  # type: ignore[attr-defined]
 
 TITLE = "Reigate & Banstead Borough Council"
 DESCRIPTION = "Source for reigate-banstead.gov.uk services for the Reigate & Banstead Borough, UK."
@@ -50,7 +51,7 @@ class Source:
         sid = sid_data['auth-session']
 
         # this request gets the 'tokenString' for use later
-        timestamp = time_ns() // 1_000_000  # epoch time in milliseconds  
+        timestamp = time_ns() // 1_000_000  # epoch time in milliseconds
         token_request = await s.get(
             f"https://my.reigate-banstead.gov.uk/apibroker/runLookup?id=595ce0f243541&repeat_against=&noRetry=true&getOnlyTokens=undefined&log_id=&app_name=AF-Renderer::Self&_={timestamp}&sid={sid}",
             headers=HEADERS
@@ -59,8 +60,8 @@ class Source:
         token_string = ET.fromstring(token_data['data'])[0][0][1][0][0].text
 
         # This request retrieves the schedule
-        timestamp = time_ns() // 1_000_000  # epoch time in milliseconds        
-        
+        timestamp = time_ns() // 1_000_000  # epoch time in milliseconds
+
         min_date = datetime.today().strftime("%Y-%m-%d")    # today
         max_date = datetime.today() + timedelta(days=28)    # max of 28 days ahead
         max_date = max_date.strftime("%Y-%m-%d")

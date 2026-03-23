@@ -4,7 +4,8 @@ from typing import Union
 
 import httpx
 from bs4 import BeautifulSoup
-from src.api.waste_collection_schedule import Collection  # type: ignore[attr-defined]
+
+from api.waste_collection_schedule import Collection  # type: ignore[attr-defined]
 
 TITLE = "Lancaster City Council"
 DESCRIPTION = "Source for lancaster.gov.uk services for Lancaster City Council, UK."

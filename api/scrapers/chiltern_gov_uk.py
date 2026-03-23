@@ -1,6 +1,6 @@
 import logging
 
-from src.api.waste_collection_schedule.source.iapp_itouchvision_com import (
+from api.waste_collection_schedule.source.iapp_itouchvision_com import (
     Source as iapp_iTouchVision,
 )
 

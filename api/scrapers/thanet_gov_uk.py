@@ -2,8 +2,9 @@ from datetime import datetime
 from typing import List
 
 import httpx
-from src.api.waste_collection_schedule import Collection
-from src.api.waste_collection_schedule.exceptions import (
+
+from api.waste_collection_schedule import Collection
+from api.waste_collection_schedule.exceptions import (
     SourceArgumentNotFoundWithSuggestions,
     SourceArgumentRequired,
     SourceArgumentRequiredWithSuggestions,
@@ -58,9 +59,9 @@ class Source:
             self._uprn = await self.get_uprn()
 
         url = "https://www.thanet.gov.uk/wp-content/mu-plugins/collection-day/incl/mu-collection-day-calls.php"
-        collections_json = await httpx.AsyncClient(follow_redirects=True).get(
+        collections_json = (await httpx.AsyncClient(follow_redirects=True).get(
             url, headers=self.header_text, params={"pAddress": self._uprn}
-        ).json()
+        )).json()
 
         entries = []
 
@@ -94,9 +95,9 @@ class Source:
                 "A postcode is required if no UPRN has been used. This allows the script to obtain the UPRN for you.",
             )
         url = "https://www.thanet.gov.uk/wp-content/mu-plugins/collection-day/incl/mu-collection-day-calls.php"
-        addresses_json = await httpx.AsyncClient(follow_redirects=True).get(
+        addresses_json = (await httpx.AsyncClient(follow_redirects=True).get(
             url, headers=self.header_text, params={"searchAddress": self._postcode}
-        ).json()
+        )).json()
         uprn = next(
             (
                 key

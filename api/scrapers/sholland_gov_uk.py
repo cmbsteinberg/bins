@@ -2,7 +2,8 @@ import datetime
 import re
 
 import httpx
-from src.api.waste_collection_schedule import Collection  # type: ignore[attr-defined]
+
+from api.waste_collection_schedule import Collection  # type: ignore[attr-defined]
 
 TITLE = "South Holland District Council"
 DESCRIPTION = "Source for South Holland District Council."
@@ -72,8 +73,8 @@ class Source:
             "params": {"UPRN": self._uprn},
         }
 
-        with httpx.AsyncClient() as session:
-            r = session.post(API_URL, json=payload, headers=HEADERS)
+        async with httpx.AsyncClient() as session:
+            r = await session.post(API_URL, json=payload, headers=HEADERS)
             r.raise_for_status()
             data = r.json()
 

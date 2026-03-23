@@ -1,7 +1,9 @@
 from datetime import datetime
+
 import httpx
 from bs4 import BeautifulSoup
-from src.api.waste_collection_schedule import Collection  # type: ignore[attr-defined]
+
+from api.waste_collection_schedule import Collection  # type: ignore[attr-defined]
 
 TITLE = "Stafford Borough Council"
 DESCRIPTION = "Source for bin collection services for Stafford Borough Council, UK."

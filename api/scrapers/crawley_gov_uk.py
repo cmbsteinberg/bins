@@ -6,7 +6,8 @@ from datetime import datetime
 
 import httpx
 from dateutil.parser import parse
-from src.api.waste_collection_schedule import Collection  # type: ignore[attr-defined]
+
+from api.waste_collection_schedule import Collection  # type: ignore[attr-defined]
 
 TITLE = "Crawley Borough Council (myCrawley)"
 DESCRIPTION = "Source for Crawley Borough Council (myCrawley)."
@@ -65,7 +66,7 @@ class Source:
         r = await self._session.get(INTIAL_URL)
         r.raise_for_status()
         params: dict[str, str | int] = {
-            "uri": r.url,
+            "uri": str(r.url),
             "hostname": "elmbridge-self.achieveservice.com",
             "withCredentials": "true",
         }

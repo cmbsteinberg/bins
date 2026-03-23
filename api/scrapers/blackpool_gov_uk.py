@@ -2,7 +2,8 @@ import re
 from datetime import datetime
 
 import httpx
-from src.api.waste_collection_schedule import Collection  # type: ignore[attr-defined]
+
+from api.waste_collection_schedule import Collection  # type: ignore[attr-defined]
 
 TITLE = "Blackpool Council"
 DESCRIPTION = "Source for blackpool.gov.uk services for Blackpool Council, UK."

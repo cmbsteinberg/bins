@@ -1,10 +1,10 @@
 import re
-import httpx
-
-from bs4 import BeautifulSoup
 from datetime import datetime, timedelta
 
-from src.api.waste_collection_schedule import Collection
+import httpx
+from bs4 import BeautifulSoup
+
+from api.waste_collection_schedule import Collection
 
 TITLE = "Cherwell District Council"
 DESCRIPTION = "Cherwell District Council North Oxfordshire, UK"
@@ -35,7 +35,7 @@ class Source:
 
 
     async def fetch(self):
- 
+
         today = datetime.now()
         today = today.replace(hour=0, minute=0, second=0, microsecond=0)
         yr = int(today.year)

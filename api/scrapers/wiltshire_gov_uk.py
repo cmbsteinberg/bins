@@ -2,7 +2,8 @@ from datetime import date, datetime
 
 import httpx
 from bs4 import BeautifulSoup
-from src.api.waste_collection_schedule import Collection
+
+from api.waste_collection_schedule import Collection
 
 TITLE = "Wiltshire Council"
 DESCRIPTION = "Source for wiltshire.gov.uk services for Wiltshire Council"

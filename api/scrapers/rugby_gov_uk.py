@@ -2,7 +2,8 @@ import json
 from datetime import datetime
 
 import httpx
-from src.api.waste_collection_schedule import Collection  # type: ignore[attr-defined]
+
+from api.waste_collection_schedule import Collection  # type: ignore[attr-defined]
 
 TITLE = "Rugby Borough Council"
 DESCRIPTION = "Source for Rugby Borough Council, UK."

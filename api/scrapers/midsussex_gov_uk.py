@@ -1,9 +1,14 @@
 import datetime
 import logging
+
 import httpx
 from bs4 import BeautifulSoup
-from src.api.waste_collection_schedule import Collection
-from src.api.waste_collection_schedule.exceptions import SourceArgumentException, SourceArgumentNotFound
+
+from api.waste_collection_schedule import Collection
+from api.waste_collection_schedule.exceptions import (
+    SourceArgumentException,
+    SourceArgumentNotFound,
+)
 
 _LOGGER = logging.getLogger(__name__)
 
@@ -19,10 +24,10 @@ DATE_FORMAT = "%d/%m/%Y"
 TEST_CASES = {
     # 1. Simple Numerical Address
     "Test Case 1: 23 High Street": {"number": "23", "street": "HIGH STREET", "postcode": "RH17 6TB"},
-    
+
     # 2. Complex Named Property
     "Test Case 2: Hapstead Hall": {"number": "HAPSTEAD HALL", "street": "HIGH STREET", "postcode": "RH17 6TB"},
-    
+
     # 3. Commercial/Pub Named Property
     "Test Case 3: The Gardeners Arms": {"number": "THE GARDENERS ARMS", "street": "SELSFIELD ROAD", "postcode": "RH17 6TJ"},
 }
@@ -74,9 +79,9 @@ class Source:
         entries = []
         BASE_URL = "https://sms-wrp.whitespacews.com"
 
-        with httpx.AsyncClient() as session:
+        async with httpx.AsyncClient() as session:
             # --- STEP 1: Get the Dynamic Track Token ---
-            r1 = session.get(f"{BASE_URL}/mop.php", timeout=30)
+            r1 = await session.get(f"{BASE_URL}/mop.php", timeout=30)
             r1.raise_for_status()
 
             soup = BeautifulSoup(r1.text, 'html.parser')
@@ -103,7 +108,7 @@ class Source:
                 'address_postcode': self._postcode.replace('+', ' '), # Send post data un-encoded
             }
 
-            r2 = session.post(post_url, data=payload, timeout=30)
+            r2 = await session.post(post_url, data=payload, timeout=30)
             r2.raise_for_status()
 
             # --- STEP 3: Select the Specific Address (Get pIndex) ---
@@ -124,7 +129,7 @@ class Source:
             final_schedule_url = f"{BASE_URL}/{final_link_path}"
 
             # --- STEP 4: Scrape the Final Schedule ---
-            r3 = session.get(final_schedule_url, timeout=30)
+            r3 = await session.get(final_schedule_url, timeout=30)
             r3.raise_for_status()
 
             soup3 = BeautifulSoup(r3.text, 'html.parser')

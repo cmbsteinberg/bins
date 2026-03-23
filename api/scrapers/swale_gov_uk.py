@@ -1,9 +1,10 @@
-from datetime import date, datetime, timedelta
 import asyncio
+from datetime import date, datetime, timedelta
 
 import httpx
 from bs4 import BeautifulSoup
-from src.api.waste_collection_schedule import Collection  # type: ignore[attr-defined]
+
+from api.waste_collection_schedule import Collection  # type: ignore[attr-defined]
 
 TITLE = "Swale Borough Council"
 DESCRIPTION = "Source for swale.gov.uk services for Swale, UK."
@@ -71,7 +72,7 @@ class Source:
             headers=HEADERS,
             data=payload,
         )
-        r.raise_for_status
+        r.raise_for_status()
         await asyncio.sleep(5)
 
         # mimic address selection
@@ -86,7 +87,7 @@ class Source:
             headers=HEADERS,
             data=payload,
         )
-        r.raise_for_status
+        r.raise_for_status()
         soup: BeautifulSoup = BeautifulSoup(r.content, "html.parser")
         temp_list: list = []
 

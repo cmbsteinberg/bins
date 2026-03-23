@@ -3,7 +3,8 @@ from datetime import date, datetime, timedelta
 
 import httpx
 from bs4 import BeautifulSoup
-from src.api.waste_collection_schedule import Collection  # type: ignore[attr-defined]
+
+from api.waste_collection_schedule import Collection  # type: ignore[attr-defined]
 
 TITLE = "Dudley Metropolitan Borough Council"
 DESCRIPTION = "Source for Dudley Metropolitan Borough Council, UK."

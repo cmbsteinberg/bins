@@ -3,7 +3,8 @@ from urllib.parse import parse_qs, urlparse
 import httpx
 from bs4 import BeautifulSoup
 from dateutil import parser
-from src.api.waste_collection_schedule import Collection  # type: ignore[attr-defined]
+
+from api.waste_collection_schedule import Collection  # type: ignore[attr-defined]
 
 TITLE = "East Renfrewshire Council"
 DESCRIPTION = "Source for eastrenfrewshire.gov.uk services for East Renfrewshire"
@@ -53,7 +54,7 @@ class Source:
         return self.__get_bin_collection_info(bin_collection_info_page)
 
     async def __get_address_page(self, s, postcode):
-        r = s.get(FORM_PAGE, timeout=30)
+        r = await s.get(FORM_PAGE, timeout=30)
         r.raise_for_status()
         soup = BeautifulSoup(r.text, "html.parser")
         form = soup.find(id="BINDAYSV2_FORM")
@@ -76,7 +77,7 @@ class Source:
             session_id = session_id or goss_ids["session_id"]
             nonce = nonce or goss_ids["nonce"]
 
-        r = s.post(
+        r = await s.post(
             form["action"],
             headers={"Origin": URL, "Referer": FORM_PAGE},
             data={

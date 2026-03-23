@@ -1,8 +1,9 @@
 import datetime
 
-from bs4 import BeautifulSoup
 import httpx
-from src.api.waste_collection_schedule import Collection
+from bs4 import BeautifulSoup
+
+from api.waste_collection_schedule import Collection
 
 TITLE = "Harlow Council"
 DESCRIPTION = "Source for harlow.gov.uk, Harlow Council, UK"

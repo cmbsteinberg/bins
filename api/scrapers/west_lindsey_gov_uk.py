@@ -3,7 +3,8 @@ from datetime import date, datetime, timedelta
 
 import httpx
 from bs4 import BeautifulSoup
-from src.api.waste_collection_schedule import Collection  # type: ignore[attr-defined]
+
+from api.waste_collection_schedule import Collection  # type: ignore[attr-defined]
 
 TITLE = "West Lindsey District Council"
 DESCRIPTION = "Source for West Lindsey District Council, Lincolnshire, UK."
@@ -79,7 +80,7 @@ class Source:
             headers=HEADERS,
             params=params,
         )
-        r.raise_for_status
+        r.raise_for_status()
 
         soup: BeautifulSoup = BeautifulSoup(
             r.content.decode("unicode-escape"), "html.parser"

@@ -1,8 +1,8 @@
 from datetime import datetime, timedelta
 
 import httpx
-from src.api.waste_collection_schedule import Collection  # type: ignore[attr-defined]
 
+from api.waste_collection_schedule import Collection  # type: ignore[attr-defined]
 
 TITLE = "East Northamptonshire and Wellingborough"
 DESCRIPTION = "Source for East Northamptonshire and Wellingborough"

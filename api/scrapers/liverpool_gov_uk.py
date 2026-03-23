@@ -1,8 +1,10 @@
 import re
+from datetime import datetime, timedelta
+
 import httpx
 from bs4 import BeautifulSoup
-from datetime import datetime, timedelta
-from src.api.waste_collection_schedule import Collection
+
+from api.waste_collection_schedule import Collection
 
 TITLE = "Liverpool City Council"
 DESCRIPTION = "Source for liverpool.gov.uk services for Liverpool City"
@@ -30,11 +32,11 @@ class Source:
         today = datetime.today().date()
         entries = []
 
-        def trimsuffix(s):                                             
+        def trimsuffix(s):
             return re.sub(r'(\d)(st|nd|rd|th)', r'\1', s)
-        
+
         q = str(API_URL).format(uprn=self._uprn)
-        
+
         r = await httpx.AsyncClient(follow_redirects=True).get(q)
         r.raise_for_status()
 
@@ -57,8 +59,8 @@ class Source:
                     # As no year is specified we might need to add one year if it crosses Dec 31st
                     if date.month == 1 and today.month == 12:
                         date = date.replace(year=date.year+1)
-                
-        
+
+
                 entries.append(
                     Collection(
                         date=date,
@@ -66,5 +68,5 @@ class Source:
                         icon=ICON_MAP.get(type),
                     )
                 )
-        
+
         return entries

@@ -1,7 +1,8 @@
 from datetime import datetime
 
 import httpx
-from src.api.waste_collection_schedule import Collection
+
+from api.waste_collection_schedule import Collection
 
 TITLE = "Plymouth City Council"
 DESCRIPTION = "Source for waste collection services for Plymouth City Council"
@@ -46,7 +47,7 @@ class Source:
         r.raise_for_status()
 
         params: dict[str, str | int] = {
-            "uri": r.url,
+            "uri": str(r.url),
             "hostname": HOSTNAME,
             "withCredentials": "true",
         }

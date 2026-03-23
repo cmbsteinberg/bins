@@ -5,8 +5,9 @@ from bs4 import BeautifulSoup
 
 # import rrule
 from dateutil.rrule import FR, MO, SA, SU, TH, TU, WE, WEEKLY, rrule, weekday
-from src.api.waste_collection_schedule import Collection  # type: ignore[attr-defined]
-from src.api.waste_collection_schedule.exceptions import (
+
+from api.waste_collection_schedule import Collection  # type: ignore[attr-defined]
+from api.waste_collection_schedule.exceptions import (
     SourceArgumentNotFoundWithSuggestions,
     SourceArgumentRequired,
 )
@@ -61,7 +62,7 @@ class Source:
                 "Please provide a street name",
             )
         r = await httpx.AsyncClient(follow_redirects=True).get(
-            STREETS_URL.format(start=self._street[0].lower()), verify=False
+            STREETS_URL.format(start=self._street[0].lower())
         )
         r.raise_for_status()
         soup = BeautifulSoup(r.text.replace("\xa0", " "), "html.parser")
@@ -153,7 +154,7 @@ class Source:
             assert self._round is not None
 
         # get json file
-        r = await httpx.AsyncClient(follow_redirects=True).get(API_URL, verify=False)
+        r = await httpx.AsyncClient(verify=False, follow_redirects=True).get(API_URL)
         r.raise_for_status()
 
         soup = BeautifulSoup(r.text.replace("\xa0", " "), "html.parser")

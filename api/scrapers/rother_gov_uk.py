@@ -4,7 +4,8 @@ from datetime import datetime
 import httpx
 import urllib3
 from bs4 import BeautifulSoup
-from src.api.waste_collection_schedule import Collection  # type: ignore[attr-defined]
+
+from api.waste_collection_schedule import Collection  # type: ignore[attr-defined]
 
 # With verify=True the POST fails due to a SSLCertVerificationError.
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
@@ -41,7 +42,7 @@ class Source:
     async def fetch(self):
         data = {"action": "get_address_data", "uprn": self._uprn}
 
-        r = await httpx.AsyncClient(follow_redirects=True).post(API_URL, headers=HEADERS, data=data, timeout=10, verify=False)
+        r = await httpx.AsyncClient(verify=False, follow_redirects=True).post(API_URL, headers=HEADERS, data=data, timeout=10)
         r.raise_for_status()
 
         # Response is JSON with fields: success(boolean) and data (string containing HTML fragment)

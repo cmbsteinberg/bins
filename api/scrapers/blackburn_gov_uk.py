@@ -1,8 +1,9 @@
 from datetime import datetime
+
 import urllib3
 
-from src.api.waste_collection_schedule import Collection  # type: ignore[attr-defined]
-from src.api.waste_collection_schedule.service.SSLError import get_legacy_session
+from api.waste_collection_schedule import Collection  # type: ignore[attr-defined]
+from api.waste_collection_schedule.service.SSLError import get_legacy_session
 
 TITLE = "Blackburn with Darwen Borough Council"
 DESCRIPTION = "Source for mybins.blackburn.gov.uk services for Blackburn with Darwen Borough Council, UK."
@@ -35,12 +36,11 @@ class Source:
     def __init__(self, uprn):
         self._uprn = str(uprn)
 
-    def fetch(self):
+    async def fetch(self):
         date = datetime.now()
 
         # that's not very nice, but it is the only way I got it to work
         s = get_legacy_session()
-        s.get_adapter("https://").ssl_context.check_hostname = False
 
         year = date.year
         month = date.month
@@ -52,10 +52,9 @@ class Source:
                 "uprn": self._uprn,
             }
 
-            r = s.get(
+            r = await s.get(
                 API_URL,
                 params=PARAMS,
-                verify=False,
             )
             r.raise_for_status()
 

@@ -1,8 +1,9 @@
-import httpx
 import json
-
 from datetime import datetime
-from src.api.waste_collection_schedule import Collection  # type: ignore[attr-defined]
+
+import httpx
+
+from api.waste_collection_schedule import Collection  # type: ignore[attr-defined]
 
 TITLE = "Warrington Borough Council"
 DESCRIPTION = "Source for warrington.gov.uk services for Warrington Borough Council, UK."

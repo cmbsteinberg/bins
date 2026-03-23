@@ -2,7 +2,8 @@ from datetime import datetime
 
 import httpx
 from bs4 import BeautifulSoup
-from src.api.waste_collection_schedule import Collection  # type: ignore[attr-defined]
+
+from api.waste_collection_schedule import Collection  # type: ignore[attr-defined]
 
 TITLE = "North Lanarkshire Council"
 DESCRIPTION = "Source for waste collection services for North Lanarkshire Council"
@@ -61,7 +62,7 @@ class Source:
         r = await s.get(
             f"https://www.northlanarkshire.gov.uk/bin-collection-dates/{self._uprn}/{self._usrn}"
         )
-        r.raise_for_status
+        r.raise_for_status()
 
         soup = BeautifulSoup(r.text, "html.parser")
         containers = soup.findAll("div", {"class": "waste-type-container"})

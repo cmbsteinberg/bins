@@ -1,7 +1,8 @@
+import dateutil.parser as parser
 import httpx
 from bs4 import BeautifulSoup
-import dateutil.parser as parser
-from src.api.waste_collection_schedule import Collection  # type: ignore[attr-defined]
+
+from api.waste_collection_schedule import Collection  # type: ignore[attr-defined]
 
 TITLE = "Welwyn Hatfield Borough Council"
 DESCRIPTION = "Source for www.welhat.gov.uk services for Welwyn Hatfield Borough Council, UK."

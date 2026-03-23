@@ -2,7 +2,8 @@ from datetime import datetime
 
 import httpx
 import urllib3
-from src.api.waste_collection_schedule import Collection  # type: ignore[attr-defined]
+
+from api.waste_collection_schedule import Collection  # type: ignore[attr-defined]
 
 # With verify=True the POST fails due to a SSLCertVerificationError.
 # Using verify=False works, but is not ideal. The following links may provide a better way of dealing with this:
@@ -60,7 +61,7 @@ class Source:
     async def fetch(self):
         payload = {"Uprn": self._uprn}
 
-        r = await httpx.AsyncClient(follow_redirects=True).post(API_URL, json=payload, verify=False)
+        r = await httpx.AsyncClient(verify=False, follow_redirects=True).post(API_URL, json=payload)
         r.raise_for_status()
 
         data = r.json()["d"]

@@ -2,7 +2,8 @@ import json
 
 import httpx
 from dateutil import parser
-from src.api.waste_collection_schedule import Collection
+
+from api.waste_collection_schedule import Collection
 
 TITLE = "Bracknell Forest Council"
 DESCRIPTION = "Bracknell Forest Council, UK - Waste Collection"
@@ -50,7 +51,7 @@ class Source:
 
     async def fetch(self):
         address_lookup = await httpx.AsyncClient(follow_redirects=True).post(
-            self.url,
+            str(self.url),
             params=self.params,
             headers=self.headers,
             data={
@@ -68,7 +69,7 @@ class Source:
         )["Id"]
 
         collection_lookup = await httpx.AsyncClient(follow_redirects=True).post(
-            self.url,
+            str(self.url),
             params=self.params,
             headers=self.headers,
             data={

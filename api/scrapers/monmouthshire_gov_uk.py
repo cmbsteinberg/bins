@@ -1,11 +1,12 @@
-from datetime import date, datetime
 import logging
 import re
+from datetime import date, datetime
 
 import httpx
 from bs4 import BeautifulSoup
-from src.api.waste_collection_schedule import Collection
-from src.api.waste_collection_schedule.exceptions import SourceArgumentException
+
+from api.waste_collection_schedule import Collection
+from api.waste_collection_schedule.exceptions import SourceArgumentException
 
 _LOGGER = logging.getLogger(__name__)
 
@@ -88,7 +89,7 @@ class Source:
         for year in (today.year, today.year + 1):
             try:
                 date_temp = date(year, month, day)
-                
+
                 # Handles 29 Feb on non-leap year
                 if date_temp >= today:
                     return date_temp
@@ -101,8 +102,8 @@ class Source:
     async def fetch(self) -> list[Collection]:
         try:
             r = await httpx.AsyncClient(follow_redirects=True).get(
-                API_URL, 
-                params={"action":"SetAddress", "UniqueId":self._uprn,}, 
+                API_URL,
+                params={"action":"SetAddress", "UniqueId":self._uprn,},
                 headers=HEADERS,
                 timeout=30
                 )

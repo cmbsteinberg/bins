@@ -4,7 +4,8 @@ from time import time_ns
 
 import httpx
 from bs4 import BeautifulSoup
-from src.api.waste_collection_schedule import Collection  # type: ignore[attr-defined]
+
+from api.waste_collection_schedule import Collection  # type: ignore[attr-defined]
 
 TITLE = "Wrexham County Borough Council"
 DESCRIPTION = "Source for Wrexham County Borough Council."

@@ -4,7 +4,8 @@ from io import BytesIO
 
 import httpx
 from pypdf import PdfReader
-from src.api.waste_collection_schedule import Collection  # type: ignore[attr-defined]
+
+from api.waste_collection_schedule import Collection  # type: ignore[attr-defined]
 
 TITLE = "Redbridge Council"
 DESCRIPTION = "Source for redbridge.gov.uk services for Redbridge Council, UK."

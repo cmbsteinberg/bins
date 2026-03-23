@@ -2,8 +2,9 @@ import datetime
 import xml.etree.ElementTree as ET
 
 import httpx
-from src.api.waste_collection_schedule import Collection
-from src.api.waste_collection_schedule.exceptions import SourceArgumentException
+
+from api.waste_collection_schedule import Collection
+from api.waste_collection_schedule.exceptions import SourceArgumentException
 
 TITLE = "Cannock Chase Council"
 DESCRIPTION = "Source for cannockchasedc.gov.uk services for Cannock Chase Council, UK."

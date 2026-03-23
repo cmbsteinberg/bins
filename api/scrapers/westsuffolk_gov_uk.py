@@ -1,7 +1,8 @@
 import httpx
 from bs4 import BeautifulSoup, Tag
 from dateutil import parser
-from src.api.waste_collection_schedule import Collection  # type: ignore[attr-defined]
+
+from api.waste_collection_schedule import Collection  # type: ignore[attr-defined]
 
 TITLE = "West Suffolk Council"
 DESCRIPTION = "Source for West Suffolk Council."
@@ -33,7 +34,7 @@ class Source:
         args = {"UniqueId": self._uprn, "action": "SetAddress"}
 
         # get json file
-        r = session.get(API_URL, params=args)
+        r = await session.get(API_URL, params=args)
         r.raise_for_status()
         soup = BeautifulSoup(r.text, "html.parser")
         waste_panel = soup.find("div", {"aria-label": "Waste and recycling"}).find(

@@ -10,9 +10,9 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import HTMLResponse
 from fastapi.staticfiles import StaticFiles
 
-from api.address_lookup import AddressLookup
 from api.routes import router as api_router
-from api.scraper_registry import ScraperRegistry
+from api.services.address_lookup import AddressLookup
+from api.services.scraper_registry import ScraperRegistry
 
 _TEMPLATES_DIR = Path(__file__).resolve().parent / "templates"
 _STATIC_DIR = Path(__file__).resolve().parent / "static"

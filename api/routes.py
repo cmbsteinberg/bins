@@ -12,7 +12,7 @@ from fastapi import APIRouter, Depends, HTTPException, Request
 from fastapi.responses import Response
 from icalendar import Calendar, Event
 
-from api.models import (
+from api.services.models import (
     AddressItem,
     AddressLookupResponse,
     CollectionItem,
@@ -21,7 +21,7 @@ from api.models import (
     HealthEntry,
     LookupResponse,
 )
-from api.rate_limiting import rate_limit
+from api.services.rate_limiting import rate_limit
 from api.waste_collection_schedule.exceptions import (
     SourceArgumentException,
     SourceArgumentExceptionMultiple,
@@ -29,7 +29,7 @@ from api.waste_collection_schedule.exceptions import (
 
 logger = logging.getLogger(__name__)
 
-_LOOKUP_PATH = Path(__file__).parent / "admin_scraper_lookup.json"
+_LOOKUP_PATH = Path(__file__).parent / "data" / "admin_scraper_lookup.json"
 _DOMAIN_TO_SCRAPER: dict[str, str] = json.loads(_LOOKUP_PATH.read_text())
 
 

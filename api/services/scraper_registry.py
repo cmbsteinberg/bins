@@ -11,7 +11,7 @@ from api.waste_collection_schedule import Collection
 
 logger = logging.getLogger(__name__)
 
-SCRAPERS_DIR = Path(__file__).parent / "scrapers"
+SCRAPERS_DIR = Path(__file__).parent.parent / "scrapers"
 
 
 @dataclass

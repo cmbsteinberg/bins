@@ -107,10 +107,10 @@ echo ""
 echo "=== Regenerating lookup files ==="
 
 echo "Generating admin scraper lookup..."
-uv run python -m scripts.address_lookup.generate_admin_lookup
+uv run python -m scripts.scraper_transformation.mampfes.generate_admin_lookup
 
 echo "Generating test cases lookup..."
-uv run python -m scripts.scraper_transformation.generate_test_lookup
+uv run python -m scripts.scraper_transformation.mampfes.generate_test_lookup
 
 # Save the version
 echo "$latest_sha" > "$VERSION_FILE"

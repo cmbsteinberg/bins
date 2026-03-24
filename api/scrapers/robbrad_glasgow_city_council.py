@@ -1,0 +1,175 @@
+URL = "https://onlineservices.glasgow.gov.uk/forms/refuseandrecyclingcalendar/AddressSearch.aspx"
+import datetime
+
+from bs4 import BeautifulSoup
+
+from uk_bin_collection.uk_bin_collection.common import *
+from uk_bin_collection.uk_bin_collection.get_bin_data import AbstractGetBinDataClass
+
+
+class CouncilClass(AbstractGetBinDataClass):
+    """
+    Concrete classes have to implement all abstract operations of the
+    base class. They can also override some operations with a default
+    implementation.
+    """
+
+    def parse_data(self, page: str, **kwargs) -> dict:
+
+        try:
+            user_uprn = kwargs.get("uprn")
+            check_uprn(user_uprn)
+            url = f"https://onlineservices.glasgow.gov.uk/forms/refuseandrecyclingcalendar/CollectionsCalendar.aspx?UPRN={user_uprn}"
+            if not user_uprn:
+                # This is a fallback for if the user stored a URL in old system. Ensures backwards compatibility.
+                url = kwargs.get("url")
+        except Exception as e:
+            raise ValueError(f"Error getting identifier: {str(e)}")
+
+        # Make a BS4 object
+        page = requests.get(url)
+        soup = BeautifulSoup(page.text, features="html.parser")
+        soup.prettify()
+
+        # Declare an empty dict for data, and pair icon source URLs with their respective bin type
+        data = {"bins": []}
+        bin_types = {
+            "../Images/Bins/blueBin.gif": "Mixed recycling",
+            "../Images/Bins/greenBin.gif": "General waste",
+            "../Images/Bins/greyBin.gif": "Food waste",
+            "../Images/Bins/brownBin.gif": "Organic waste",
+            "../Images/Bins/purpleBin.gif": "Glass",
+            "../Images/Bins/ashBin.gif": "Ash bin",
+        }
+
+        fieldset = soup.find("fieldset")
+        ps = fieldset.find_all("p")
+        for p in ps:
+            collection = p.text.strip().replace("Your next ", "").split(".")[0]
+            bin_type = collection.split(" day is")[0]
+            collection_date = remove_ordinal_indicator_from_date_string(
+                collection
+            ).split("day is ")[1]
+            if collection_date == "Today":
+                collection_date = datetime.today().strftime(date_format)
+            elif collection_date == "Tomorrow":
+                collection_date = (datetime.today() + timedelta(days=1)).strftime(
+                    date_format
+                )
+                print(collection_date)
+            else:
+                collection_date = datetime.strptime(
+                    collection_date,
+                    "%A %d %B %Y",
+                ).strftime(date_format)
+            dict_data = {
+                "type": bin_type,
+                "collectionDate": collection_date,
+            }
+            data["bins"].append(dict_data)
+
+        # Find the page body with all the calendars
+        body = soup.find("div", {"id": "Application_ctl00"})
+        calendars = body.find_all_next("table", {"title": "Calendar"})
+        # For each calendar grid, get the month and all icons within it. We only take icons with alt text, as this
+        # includes the bin type while excluding spacers
+        for item in calendars:
+            icons = item.find_all("img")
+            # For each icon, get the day box, so we can parse the correct day number and make a datetime
+            for icon in icons:
+                cal_item = icon.find_parent().find_parent()
+                bin_date = datetime.strptime(
+                    cal_item["title"].replace("today is ", ""),
+                    "%A, %d %B %Y",
+                )
+
+                # If the collection date is in the future, we want the date. Select the correct type, add the new
+                # datetime, then add to the list
+                if datetime.now() <= bin_date:
+                    dict_data = {
+                        "type": bin_types.get(icon["src"]),
+                        "collectionDate": bin_date.strftime(date_format),
+                    }
+                    data["bins"].append(dict_data)
+
+        return data
+
+
+# --- Adapter for Project API ---
+from waste_collection_schedule import Collection
+
+class Source:
+    def __init__(self, uprn: str | None = None):
+        self.uprn = uprn
+        self.postcode = postcode
+        self.house_number = house_number
+        self.usrn = usrn
+        self._scraper = CouncilClass()
+
+    async def fetch(self) -> list[Collection]:
+        import asyncio
+        from datetime import datetime
+
+        # Run the synchronous scraper in a thread
+        # We wrap the call to get_data or whichever method is the entry point
+        # Heuristic: Most RobBrad scrapers seem to use 'get_data' or 'get_date_data'
+        # But we need to check the specific class. 
+        # For this generic adapter, we assume 'get_data' or similar.
+        
+        # NOTE: This is a best-effort adapter. 
+        # You may need to manually adjust the method call if it differs.
+        
+        try:
+             # Prepare kwargs
+            kwargs = {}
+            if self.postcode: kwargs['postcode'] = self.postcode
+            if self.uprn: kwargs['uprn'] = self.uprn
+            if self.house_number: kwargs['house_number'] = self.house_number
+            if self.usrn: kwargs['usrn'] = self.usrn
+            
+            # Helper to run sync method
+            def _run_scraper():
+                # Try common method names
+                if hasattr(self._scraper, 'get_data'):
+                    return self._scraper.get_data(**kwargs)
+                if hasattr(self._scraper, 'get_date_data'):
+                     return self._scraper.get_date_data(**kwargs)
+                raise NotImplementedError("Could not find fetch method on scraper")
+
+            data = await asyncio.to_thread(_run_scraper)
+            
+            # Parse result
+            # Expected format: { "bins": [ { "type": "...", "collectionDate": "..." } ] }
+            
+            entries = []
+            if isinstance(data, dict) and "bins" in data:
+                for item in data["bins"]:
+                    bin_type = item.get("type")
+                    date_str = item.get("collectionDate")
+                    
+                    if not bin_type or not date_str:
+                        continue
+                        
+                    # Parse date (RobBrad uses various formats, but often YYYY-MM-DD or DD/MM/YYYY)
+                    # We might need a robust parser.
+                    # For now, assume generic parsing or pass string if allowed (Collection expects date obj)
+                    
+                    try:
+                        # naive attempt at ISO
+                        if "-" in date_str:
+                             dt = datetime.strptime(date_str, "%Y-%m-%d").date()
+                        elif "/" in date_str:
+                             dt = datetime.strptime(date_str, "%d/%m/%Y").date()
+                        else:
+                            continue # skip unparseable
+                            
+                        entries.append(Collection(date=dt, t=bin_type, icon=None))
+                    except ValueError:
+                        continue
+                        
+            return entries
+
+        except Exception as e:
+            # Log error
+            print(f"Scraper failed: {e}")
+            raise

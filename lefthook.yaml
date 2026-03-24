@@ -2,7 +2,7 @@ pre-commit:
   parallel: true
   commands:
     sync-gov-uk-sources:
-      run: scripts/scraper_transformation/sync_gov_uk_sources.sh
+      run: scripts/scraper_transformation/mampfes/sync_gov_uk_sources.sh
     # 1. Sync dependencies with uv
     # This ensures your lockfile is up to date before any code is committed.
     uv-sync:
@@ -17,14 +17,11 @@ pre-commit:
       exclude: "api/scrapers/**"
       run: uv run ruff check --fix {staged_files}
 
-    caddy-check:
-      tags: linter
-      run: caddy validate Caddyfile
-
     docker-check:
       tags: linter
+      glob: "Dockerfile"
       run: hadolint Dockerfile
-    
+
     biome-check:
       glob: "*.{js,ts,cjs,mjs,d.cts,d.mts,jsx,tsx,json,jsonc}"
       run: npx @biomejs/biome check --write --no-errors-on-unmatched --files-ignore-unknown=true --colors=off {staged_files}

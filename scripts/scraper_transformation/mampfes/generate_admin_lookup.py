@@ -18,9 +18,9 @@ from urllib.parse import urlparse
 logging.basicConfig(level=logging.INFO, format="%(levelname)s: %(message)s")
 logger = logging.getLogger(__name__)
 
-SCRAPERS_DIR = Path(__file__).resolve().parent.parent.parent / "api" / "scrapers"
+SCRAPERS_DIR = Path(__file__).resolve().parent.parent.parent.parent / "api" / "scrapers"
 OUTPUT_PATH = (
-    Path(__file__).parent.parent.parent / "api" / "data" / "admin_scraper_lookup.json"
+    Path(__file__).resolve().parent.parent.parent.parent / "api" / "data" / "admin_scraper_lookup.json"
 )
 
 

@@ -1,6 +1,6 @@
+import csv
 import json
 import logging
-import re
 from pathlib import Path
 from urllib.parse import urlparse
 
@@ -29,10 +29,6 @@ def get_domain(url: str) -> str | None:
     if domain.startswith("www."):
         domain = domain[4:]
     return domain
-
-
-def normalize_postcode(pc: str) -> str:
-    return re.sub(r"\s+", "", pc).upper()
 
 
 async def main():
@@ -100,8 +96,6 @@ async def main():
     con = ibis.duckdb.connect()
 
     # We need to find which column is PCDS and which is LAD CD
-    # We'll read the header first
-    import csv
     with open(csv_file, 'r', encoding='utf-8-sig') as f:
         reader = csv.reader(f)
         header = next(reader)

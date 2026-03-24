@@ -1,11 +1,8 @@
 from __future__ import annotations
 
-import json
 import logging
 import uuid
 from datetime import timedelta
-from pathlib import Path
-from urllib.parse import urlparse
 
 import httpx
 from fastapi import APIRouter, Depends, HTTPException, Request
@@ -29,20 +26,6 @@ from api.waste_collection_schedule.exceptions import (
 
 logger = logging.getLogger(__name__)
 
-_LOOKUP_PATH = Path(__file__).parent / "data" / "admin_scraper_lookup.json"
-_DOMAIN_TO_SCRAPER: dict[str, str] = json.loads(_LOOKUP_PATH.read_text())
-
-
-def _homepage_to_scraper_id(homepage_url: str) -> str | None:
-    """Resolve a council homepage URL to a scraper ID via the domain lookup."""
-    if not homepage_url.startswith(("http://", "https://")):
-        homepage_url = "https://" + homepage_url
-    domain = urlparse(homepage_url).netloc.lower()
-    if domain.startswith("www."):
-        domain = domain[4:]
-    return _DOMAIN_TO_SCRAPER.get(domain)
-
-
 router = APIRouter()
 
 
@@ -58,17 +41,13 @@ async def addresses(
     except httpx.HTTPError as e:
         raise HTTPException(status_code=502, detail=f"Address lookup failed: {e}")
 
-    try:
-        authority = await lookup.get_local_authority(postcode)
-    except httpx.HTTPError as e:
-        raise HTTPException(status_code=502, detail=f"Authority lookup failed: {e}")
+    authorities = await lookup.get_local_authority(postcode)
 
-    # If authority resolved to a single council, map homepage to scraper ID
     council_id = None
     council_name = None
-    if hasattr(authority, "homepage_url"):
-        council_name = authority.name
-        council_id = _homepage_to_scraper_id(authority.homepage_url)
+    if len(authorities) == 1:
+        council_name = authorities[0].name
+        council_id = authorities[0].slug or None
 
     return AddressLookupResponse(
         postcode=postcode.strip().upper(),
@@ -88,16 +67,13 @@ async def council_lookup(
     _rate_limit: None = Depends(rate_limit),
 ):
     lookup = request.app.state.address_lookup
-    try:
-        authority = await lookup.get_local_authority(postcode)
-    except httpx.HTTPError as e:
-        raise HTTPException(status_code=502, detail=f"Authority lookup failed: {e}")
+    authorities = await lookup.get_local_authority(postcode)
 
     council_id = None
     council_name = None
-    if hasattr(authority, "homepage_url"):
-        council_name = authority.name
-        council_id = _homepage_to_scraper_id(authority.homepage_url)
+    if len(authorities) == 1:
+        council_name = authorities[0].name
+        council_id = authorities[0].slug or None
 
     return CouncilLookupResponse(
         postcode=postcode.strip().upper(),

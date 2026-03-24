@@ -17,10 +17,12 @@ ADDRESS_HEADERS = {
     "x-csrf-token": "Ba9vI91W",
 }
 
-ADDRESS_BODY_TEMPLATE = (
-    '{"/placecube_digitalplace.addresscontext/search-address-by-postcode":'
-    '{"companyId":"1486681","postcode":"%s","fallbackToNationalLookup":false}}'
-)
+_POSTCODE_RE = re.compile(r"^[A-Z0-9 ]{2,8}$")
+
+
+def _normalize_postcode(postcode: str) -> str:
+    """Strip whitespace and uppercase — matches the parquet lookup format."""
+    return re.sub(r"\s+", "", postcode).upper()
 
 
 @dataclass
@@ -34,10 +36,7 @@ class Address:
 class LocalAuthority:
     name: str
     slug: str
-    tier: str
     homepage_url: str
-    parent_name: str | None = None
-    parent_slug: str | None = None
 
 
 class AddressLookup:
@@ -56,15 +55,18 @@ class AddressLookup:
             self._lad_to_council = {}
 
         # Initialize ibis/duckdb for fast parquet queries
+        self._con = None
+        self._postcodes = None
         if self._postcode_parquet.exists():
             self._con = ibis.duckdb.connect()
             self._postcodes = self._con.read_parquet(self._postcode_parquet)
         else:
             logger.warning("postcode_lookup.parquet not found, local lookup will fail")
-            self._postcodes = None
 
     async def close(self) -> None:
         await self._client.aclose()
+        if self._con is not None:
+            self._con.disconnect()
 
     async def __aenter__(self):
         return self
@@ -74,9 +76,20 @@ class AddressLookup:
 
     async def search_addresses(self, postcode: str) -> list[Address]:
         postcode = postcode.strip().upper()
+        if not _POSTCODE_RE.match(postcode):
+            return []
+
         logger.info("Searching addresses for postcode %s", postcode)
 
-        body = ADDRESS_BODY_TEMPLATE % postcode
+        body = json.dumps(
+            {
+                "/placecube_digitalplace.addresscontext/search-address-by-postcode": {
+                    "companyId": "1486681",
+                    "postcode": postcode,
+                    "fallbackToNationalLookup": False,
+                }
+            }
+        )
         resp = await self._client.post(
             ADDRESS_API_URL, headers=ADDRESS_HEADERS, content=body
         )
@@ -94,20 +107,15 @@ class AddressLookup:
         logger.info("Found %d addresses for %s", len(addresses), postcode)
         return addresses
 
-    async def get_local_authority(self, postcode: str) -> LocalAuthority | list[dict]:
-        """Look up local authority by postcode via local parquet lookup.
-
-        Returns a LocalAuthority if the postcode maps to a single authority,
-        or a list of council info dicts if the postcode spans multiple authorities.
-        """
+    async def get_local_authority(self, postcode: str) -> list[LocalAuthority]:
+        """Look up local authorities by postcode via local parquet lookup."""
         if self._postcodes is None:
             logger.error("Local lookup database not initialized")
             return []
 
-        pc_clean = re.sub(r"\s+", "", postcode).upper()
+        pc_clean = _normalize_postcode(postcode)
         logger.info("Looking up local authority locally for postcode %s", pc_clean)
 
-        # Query parquet for LAD codes
         res = self._postcodes.filter(self._postcodes.postcode == pc_clean).execute()
 
         if res.empty:
@@ -123,37 +131,25 @@ class AddressLookup:
                     LocalAuthority(
                         name=council["name"],
                         slug=council["scraper_id"] or "",
-                        tier="unitary",
                         homepage_url=council["url"] or "",
                     )
                 )
 
-        if len(authorities) == 1:
-            return authorities[0]
-        elif len(authorities) > 1:
-            logger.info(
-                "Postcode %s spans %d authorities locally",
-                pc_clean,
-                len(authorities),
-            )
-            return [
-                {"name": a.name, "homepage_url": a.homepage_url} for a in authorities
-            ]
+        if not authorities:
+            logger.warning("Postcode %s found but no LAD metadata matching %s", pc_clean, lad_codes)
 
-        logger.warning("Postcode %s found but no LAD metadata matching %s", pc_clean, lad_codes)
-        return []
+        return authorities
 
     async def get_authority_by_slug(self, slug: str) -> LocalAuthority:
         """Look up a specific local authority by its slug (scraper_id)."""
         logger.info("Looking up authority by slug: %s", slug)
 
-        for lad, council in self._lad_to_council.items():
+        for _lad, council in self._lad_to_council.items():
             if council["scraper_id"] == slug:
                 return LocalAuthority(
                     name=council["name"],
                     slug=slug,
-                    tier="unitary",
-                    homepage_url=council["url"] or ""
+                    homepage_url=council["url"] or "",
                 )
 
         raise ValueError(f"Authority with slug '{slug}' not found locally")

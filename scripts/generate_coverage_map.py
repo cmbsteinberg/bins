@@ -2,20 +2,29 @@ import json
 import pathlib
 
 import httpx
-import ibis
 
-# Paths
 LAD_LOOKUP_PATH = "api/data/lad_lookup.json"
 GEOJSON_URL = "https://services1.arcgis.com/ESMARspQHYMw9BZ9/arcgis/rest/services/LAD_MAY_2025_UK_BUC/FeatureServer/0/query?outFields=*&where=1%3D1&f=geojson"
 OUTPUT_DIR = pathlib.Path("api/static")
 OUTPUT_GEOJSON = OUTPUT_DIR / "coverage.geojson"
 OUTPUT_MAP_HTML = OUTPUT_DIR / "coverage_map.html"
 
+COORD_PRECISION = 5  # ~1m accuracy, significantly reduces file size
+
+
+def _round_coords(coords):
+    """Recursively round coordinates to reduce GeoJSON file size."""
+    if isinstance(coords, list) and coords and isinstance(coords[0], (int, float)):
+        return [round(c, COORD_PRECISION) for c in coords]
+    return [_round_coords(c) for c in coords]
+
+
 def main():
-    # Fetch data
-    print("Fetching LAD lookup...")
+    print("Loading LAD lookup...")
     with open(LAD_LOOKUP_PATH) as f:
         lad_lookup = json.load(f)
+
+    covered_codes = {code for code, info in lad_lookup.items() if info["scraper_id"]}
 
     print("Fetching UK boundaries...")
     try:
@@ -26,54 +35,19 @@ def main():
         print(f"Error fetching GeoJSON: {e}")
         return
 
-    # Use ibis/duckdb for manipulation
+    for feature in geojson_data["features"]:
+        lad_cd = feature["properties"].get("LAD25CD", "")
+        feature["properties"]["covered"] = lad_cd in covered_codes
+        feature["geometry"]["coordinates"] = _round_coords(
+            feature["geometry"]["coordinates"]
+        )
 
-    # Prepare coverage data for ibis
-    coverage_list = []
-    for code, info in lad_lookup.items():
-        coverage_list.append({
-            "LAD25CD": code,
-            "covered": info["scraper_id"] is not None
-        })
-
-    coverage_table = ibis.memtable(coverage_list)
-
-    # Extract properties from GeoJSON features to a table
-    features = geojson_data["features"]
-    properties_list = [f["properties"] for f in features]
-    properties_table = ibis.memtable(properties_list)
-
-    # Join on LAD25CD
-    # Note: ArcGIS GeoJSON uses LAD25CD as seen in inspection
-    result_table = properties_table.join(coverage_table, "LAD25CD", how="left")
-    # Fill nulls in 'covered' as False
-    result_table = result_table.mutate(covered=result_table.covered.fill_null(False))
-
-    # Execute and get results back as dictionaries
-    print("Joining data...")
-    updated_properties_df = result_table.execute()
-    updated_properties = updated_properties_df.to_dict('records')
-
-    # Map LAD25CD to its updated properties for easy lookup
-    prop_map = {p["LAD25CD"]: p for p in updated_properties}
-
-    # Update GeoJSON features
-    for feature in features:
-        lad_cd = feature["properties"]["LAD25CD"]
-        if lad_cd in prop_map:
-            feature["properties"] = prop_map[lad_cd]
-        else:
-            # If not in lookup, default to not covered
-            feature["properties"]["covered"] = False
-
-    # Write updated GeoJSON
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
     print(f"Writing {OUTPUT_GEOJSON}...")
     with open(OUTPUT_GEOJSON, "w") as f:
-        json.dump(geojson_data, f)
+        json.dump(geojson_data, f, separators=(",", ":"))
 
-    # Generate Map HTML
-    map_html = """
+    map_html = """\
 <!DOCTYPE html>
 <html>
 <head>
@@ -95,7 +69,7 @@ def main():
     <script>
         var map = L.map('map').setView([55.3781, -3.4360], 6);
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            attribution: '© OpenStreetMap contributors'
+            attribution: '&copy; OpenStreetMap contributors'
         }).addTo(map);
 
         function getColor(covered) {
@@ -119,7 +93,7 @@ def main():
                     style: style,
                     onEachFeature: function(feature, layer) {
                         layer.bindPopup('<strong>' + feature.properties.LAD25NM + '</strong><br>' +
-                                      (feature.properties.covered ? '✅ Covered' : '❌ Not Covered'));
+                                      (feature.properties.covered ? 'Covered' : 'Not Covered'));
                     }
                 }).addTo(map);
             });
@@ -142,6 +116,7 @@ def main():
         f.write(map_html)
 
     print("Done!")
+
 
 if __name__ == "__main__":
     main()

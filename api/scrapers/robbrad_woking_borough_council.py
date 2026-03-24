@@ -1,10 +1,9 @@
-URL = "https://asjwsw-wrpwokingmunicipal-live.whitespacews.com/"
 import urllib
 
 from bs4 import BeautifulSoup
 
-from uk_bin_collection.uk_bin_collection.common import *
-from uk_bin_collection.uk_bin_collection.get_bin_data import AbstractGetBinDataClass
+from api.uk_bin_collection.common import *
+from api.uk_bin_collection.get_bin_data import AbstractGetBinDataClass
 
 
 class CouncilClass(AbstractGetBinDataClass):
@@ -15,7 +14,7 @@ class CouncilClass(AbstractGetBinDataClass):
     """
 
     def parse_data(self, page: str, **kwargs) -> dict:
-        requests.packages.urllib3.disable_warnings()
+        pass  # urllib3 warnings disabled
         root_url = "https://asjwsw-wrpwokingmunicipal-live.whitespacews.com/"
         # Get the house number and postcode from the commandline
         user_paon = kwargs.get("paon")
@@ -23,7 +22,7 @@ class CouncilClass(AbstractGetBinDataClass):
         check_postcode(user_postcode)
 
         # Start a new session for the form, and get the chosen URL from the commandline
-        session = httpx.AsyncClient()
+        session = httpx.Client(follow_redirects=True)
         req = session.get(root_url)
 
         # Parse the requested URL to get a link to the "View My Collections" portal with a unique service ID
@@ -118,80 +117,50 @@ class CouncilClass(AbstractGetBinDataClass):
 
 
 # --- Adapter for Project API ---
-from waste_collection_schedule import Collection
+from api.waste_collection_schedule import Collection  # type: ignore[attr-defined]
+
+TITLE = "Woking"
+URL = "https://asjwsw-wrpwokingmunicipal-live.whitespacews.com/"
+TEST_CASES = {}
+
 
 class Source:
     def __init__(self, postcode: str | None = None, house_number: str | None = None):
-        self.uprn = uprn
         self.postcode = postcode
         self.house_number = house_number
-        self.usrn = usrn
         self._scraper = CouncilClass()
 
     async def fetch(self) -> list[Collection]:
         import asyncio
         from datetime import datetime
 
-        # Run the synchronous scraper in a thread
-        # We wrap the call to get_data or whichever method is the entry point
-        # Heuristic: Most RobBrad scrapers seem to use 'get_data' or 'get_date_data'
-        # But we need to check the specific class. 
-        # For this generic adapter, we assume 'get_data' or similar.
-        
-        # NOTE: This is a best-effort adapter. 
-        # You may need to manually adjust the method call if it differs.
-        
-        try:
-             # Prepare kwargs
-            kwargs = {}
-            if self.postcode: kwargs['postcode'] = self.postcode
-            if self.uprn: kwargs['uprn'] = self.uprn
-            if self.house_number: kwargs['house_number'] = self.house_number
-            if self.usrn: kwargs['usrn'] = self.usrn
-            
-            # Helper to run sync method
-            def _run_scraper():
-                # Try common method names
-                if hasattr(self._scraper, 'get_data'):
-                    return self._scraper.get_data(**kwargs)
-                if hasattr(self._scraper, 'get_date_data'):
-                     return self._scraper.get_date_data(**kwargs)
-                raise NotImplementedError("Could not find fetch method on scraper")
+        kwargs = {}
+        if self.postcode: kwargs['postcode'] = self.postcode
+        if self.house_number: kwargs['paon'] = self.house_number
 
-            data = await asyncio.to_thread(_run_scraper)
-            
-            # Parse result
-            # Expected format: { "bins": [ { "type": "...", "collectionDate": "..." } ] }
-            
-            entries = []
-            if isinstance(data, dict) and "bins" in data:
-                for item in data["bins"]:
-                    bin_type = item.get("type")
-                    date_str = item.get("collectionDate")
-                    
-                    if not bin_type or not date_str:
-                        continue
-                        
-                    # Parse date (RobBrad uses various formats, but often YYYY-MM-DD or DD/MM/YYYY)
-                    # We might need a robust parser.
-                    # For now, assume generic parsing or pass string if allowed (Collection expects date obj)
-                    
-                    try:
-                        # naive attempt at ISO
-                        if "-" in date_str:
-                             dt = datetime.strptime(date_str, "%Y-%m-%d").date()
-                        elif "/" in date_str:
-                             dt = datetime.strptime(date_str, "%d/%m/%Y").date()
-                        else:
-                            continue # skip unparseable
-                            
-                        entries.append(Collection(date=dt, t=bin_type, icon=None))
-                    except ValueError:
-                        continue
-                        
-            return entries
+        def _run():
+            page = ""
+            if hasattr(self._scraper, "parse_data"):
+                return self._scraper.parse_data(page, **kwargs)
+            raise NotImplementedError("Could not find parse_data on scraper")
 
-        except Exception as e:
-            # Log error
-            print(f"Scraper failed: {e}")
-            raise
+        data = await asyncio.to_thread(_run)
+
+        entries = []
+        if isinstance(data, dict) and "bins" in data:
+            for item in data["bins"]:
+                bin_type = item.get("type")
+                date_str = item.get("collectionDate")
+                if not bin_type or not date_str:
+                    continue
+                try:
+                    if "-" in date_str:
+                        dt = datetime.strptime(date_str, "%Y-%m-%d").date()
+                    elif "/" in date_str:
+                        dt = datetime.strptime(date_str, "%d/%m/%Y").date()
+                    else:
+                        continue
+                    entries.append(Collection(date=dt, t=bin_type, icon=None))
+                except ValueError:
+                    continue
+        return entries

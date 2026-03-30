@@ -1,4 +1,4 @@
-from datetime import date, datetime
+from datetime import datetime
 
 import httpx
 from bs4 import BeautifulSoup

@@ -1,8 +1,9 @@
-from bs4 import BeautifulSoup
-import httpx
 import logging
 import re
-from typing import Dict, List, Any, Optional
+from typing import Any, Dict, List, Optional
+
+import httpx
+from bs4 import BeautifulSoup
 
 from api.uk_bin_collection.common import check_uprn
 from api.uk_bin_collection.get_bin_data import AbstractGetBinDataClass

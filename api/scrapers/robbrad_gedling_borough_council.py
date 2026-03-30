@@ -1,5 +1,3 @@
-from bs4 import BeautifulSoup
-import urllib.parse
 
 from api.uk_bin_collection.common import *
 from api.uk_bin_collection.get_bin_data import AbstractGetBinDataClass

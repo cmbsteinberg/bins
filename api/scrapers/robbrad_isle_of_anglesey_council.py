@@ -1,11 +1,13 @@
 import logging
+from datetime import datetime, timedelta, timezone
+
 import httpx
+
 from api.uk_bin_collection.common import (
     check_postcode,
     check_uprn,
     date_format,
 )
-from datetime import datetime, timezone, timedelta
 from api.uk_bin_collection.get_bin_data import AbstractGetBinDataClass
 
 logger = logging.getLogger(__name__)

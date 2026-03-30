@@ -2,6 +2,7 @@ import json
 from datetime import datetime, timedelta
 
 import httpx
+
 from api.uk_bin_collection.common import *
 from api.uk_bin_collection.get_bin_data import AbstractGetBinDataClass
 

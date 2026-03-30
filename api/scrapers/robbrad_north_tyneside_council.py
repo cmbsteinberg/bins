@@ -1,5 +1,6 @@
 import logging
 from datetime import datetime
+
 from bs4 import BeautifulSoup
 
 from api.uk_bin_collection.common import check_uprn, date_format

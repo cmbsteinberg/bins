@@ -116,7 +116,7 @@ class CouncilClass(AbstractGetBinDataClass):
             )
 
             output = response.text
-            
+
             # Check if API returned HTML error page instead of encrypted data
             if output.strip().startswith('<'):
                 raise ValueError(f"API returned HTML error page instead of encrypted data. Status: {response.status_code}")

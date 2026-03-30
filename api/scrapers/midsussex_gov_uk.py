@@ -24,10 +24,10 @@ DATE_FORMAT = "%d/%m/%Y"
 TEST_CASES = {
     # 1. Simple Numerical Address
     "Test Case 1: 23 High Street": {"number": "23", "street": "HIGH STREET", "postcode": "RH17 6TB"},
-
+    
     # 2. Complex Named Property
     "Test Case 2: Hapstead Hall": {"number": "HAPSTEAD HALL", "street": "HIGH STREET", "postcode": "RH17 6TB"},
-
+    
     # 3. Commercial/Pub Named Property
     "Test Case 3: The Gardeners Arms": {"number": "THE GARDENERS ARMS", "street": "SELSFIELD ROAD", "postcode": "RH17 6TJ"},
 }

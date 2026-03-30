@@ -1,6 +1,7 @@
+from dateutil import parser
+
 from api.uk_bin_collection.common import *
 from api.uk_bin_collection.get_bin_data import AbstractGetBinDataClass
-from dateutil import parser
 
 
 class CouncilClass(AbstractGetBinDataClass):

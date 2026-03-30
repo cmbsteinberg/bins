@@ -1,5 +1,7 @@
-import httpx
 from datetime import datetime
+
+import httpx
+
 from api.uk_bin_collection.common import date_format
 from api.uk_bin_collection.get_bin_data import AbstractGetBinDataClass
 
@@ -39,7 +41,7 @@ class CouncilClass(AbstractGetBinDataClass):
 
         # API endpoint from the council's website JavaScript
         api_url = "https://api.supatrak.com/API/JobTrak/NextCollection"
-        
+
         # Headers from the council's website
         headers = {
             "Authorization": "Basic VTAwMDE4XEFQSTpUcjRja2luZzEh",
@@ -60,16 +62,16 @@ class CouncilClass(AbstractGetBinDataClass):
 
         bins = []
         seen = set()  # Track unique type+date combinations
-        
+
         for collection in data:
             waste_type = collection.get("WasteType", "Unknown")
             next_collection = collection.get("NextCollection")
-            
+
             if next_collection:
                 # Parse the date string (format: "2025-02-05T00:00:00")
                 collection_date = datetime.fromisoformat(next_collection.replace("Z", "+00:00"))
                 formatted_date = collection_date.strftime(date_format)
-                
+
                 # Create unique key to avoid duplicates
                 unique_key = (waste_type, formatted_date)
                 if unique_key not in seen:

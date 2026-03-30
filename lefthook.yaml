@@ -14,7 +14,10 @@ pre-commit:
     ruff-check:
       tags: linter
       glob: "*.py"
-      exclude: "api/scrapers/**"
+      exclude:
+        - "api/scrapers/**"
+        - "scripts/scraper_transformation/mampfes/waste_sources/**"
+        - "scripts/scraper_transformation/robbrad/robbrad_sources/**"
       run: uv run ruff check --fix {staged_files}
 
     docker-check:

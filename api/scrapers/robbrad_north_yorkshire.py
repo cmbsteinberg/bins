@@ -1,6 +1,5 @@
 from datetime import datetime
 
-import httpx
 from bs4 import BeautifulSoup
 
 from api.uk_bin_collection.common import *

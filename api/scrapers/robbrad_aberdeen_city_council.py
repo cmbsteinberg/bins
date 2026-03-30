@@ -1,8 +1,10 @@
 import time
 
 import httpx
+
 from api.uk_bin_collection.common import *
 from api.uk_bin_collection.get_bin_data import AbstractGetBinDataClass
+
 
 # import the wonderful Beautiful Soup and the URL grabber
 class CouncilClass(AbstractGetBinDataClass):

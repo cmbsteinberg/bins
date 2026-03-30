@@ -76,7 +76,7 @@ class Source:
         form_data, next_url = self._extract_all_form_data(soup)
 
         form_data["FINDBINDAYSHIGHPEAK_FORMACTION_NEXT"] = "FINDBINDAYSHIGHPEAK_POSTCODESELECT_PAGE1NEXT"
-
+        
         if next_url.startswith("/"):
             next_url = BASE_URL + next_url
 
@@ -87,7 +87,7 @@ class Source:
         form_data, next_url = self._extract_all_form_data(soup)
 
         form_data["FINDBINDAYSHIGHPEAK_FORMACTION_NEXT"] = "FINDBINDAYSHIGHPEAK_ADDRESSSELECT_ADDRESSSELECTNEXTBTN"
-
+        
         if next_url.startswith("/"):
             next_url = BASE_URL + next_url
         r = await s.post(next_url, data=form_data)

@@ -67,7 +67,7 @@ class Source:
         )
         r2 = await s.post(API, headers=HEADERS, data=payload)
         json_data = json.loads(r2.text)["result"]["SortedCollections"]
-
+        
         entries = []
         for item in json_data:
             for monthyear in item["Collections"]:

@@ -1,5 +1,6 @@
 import httpx
 from bs4 import BeautifulSoup
+
 from api.uk_bin_collection.common import *
 from api.uk_bin_collection.get_bin_data import AbstractGetBinDataClass
 

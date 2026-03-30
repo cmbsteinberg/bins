@@ -1,10 +1,8 @@
-import re
 import time
 from datetime import datetime
 
 import httpx
 from bs4 import BeautifulSoup
-import httpx
 from urllib3.util.retry import Retry
 
 from api.uk_bin_collection.common import *

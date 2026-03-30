@@ -1,4 +1,3 @@
-import urllib3
 from bs4 import BeautifulSoup
 
 from api.uk_bin_collection.common import *

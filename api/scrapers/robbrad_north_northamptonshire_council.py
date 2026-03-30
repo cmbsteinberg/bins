@@ -1,7 +1,5 @@
-import hashlib
-import math
-import time
-from datetime import datetime as dtm, timedelta
+from datetime import datetime as dtm
+from datetime import timedelta
 
 from api.uk_bin_collection.common import *
 from api.uk_bin_collection.get_bin_data import AbstractGetBinDataClass

@@ -1,8 +1,10 @@
+from datetime import timedelta
+
 from bs4 import BeautifulSoup
+from dateutil.relativedelta import relativedelta
+
 from api.uk_bin_collection.common import *
 from api.uk_bin_collection.get_bin_data import AbstractGetBinDataClass
-from dateutil.relativedelta import relativedelta
-from datetime import timedelta
 
 
 # import the wonderful Beautiful Soup and the URL grabber

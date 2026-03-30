@@ -89,7 +89,7 @@ class Source:
         for year in (today.year, today.year + 1):
             try:
                 date_temp = date(year, month, day)
-
+                
                 # Handles 29 Feb on non-leap year
                 if date_temp >= today:
                     return date_temp

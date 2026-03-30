@@ -1,8 +1,10 @@
-from typing import Dict, List, Any
+from datetime import datetime
+from typing import Any, Dict, List
+
+import httpx
 from bs4 import BeautifulSoup
 from dateutil.relativedelta import relativedelta
-import httpx
-from datetime import datetime
+
 from api.uk_bin_collection.common import (
     check_postcode,
     check_uprn,

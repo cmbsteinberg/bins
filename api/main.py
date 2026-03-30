@@ -86,6 +86,11 @@ async def landing_page():
     return (_TEMPLATES_DIR / "index.html").read_text()
 
 
+@app.get("/coverage", response_class=HTMLResponse, include_in_schema=False)
+async def coverage_page():
+    return (_TEMPLATES_DIR / "coverage.html").read_text()
+
+
 @app.get("/api-docs", response_class=HTMLResponse, include_in_schema=False)
 async def api_docs_page():
     return (_TEMPLATES_DIR / "api-docs.html").read_text()

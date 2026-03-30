@@ -102,24 +102,24 @@ class Source:
                         title = svg.find("title")
                         if title and title.text.strip():
                             bin_type_raw = title.text.strip()
-
+                            
                             # Validate the date before processing
                             try:
                                 date_obj = datetime.strptime(f"{day} {month_year}", "%d %B %Y").date()
                             except ValueError:
                                 # Skip invalid dates (e.g., day 0, February 30, etc.)
                                 continue
-
+                            
                             # Use the proper translation from the key, or fallback mappings, or keep raw title
                             display_name = (
                                 self._bin_type_translation.get(bin_type_raw.lower()) or
                                 WASTE_TYPE_MAPPINGS.get(bin_type_raw) or
                                 bin_type_raw
                             )
-
+                            
                             # Get icon based on the clean display name
                             icon = ICON_MAP.get(display_name)
-
+                            
                             entries.append(
                                 Collection(
                                     date=date_obj,

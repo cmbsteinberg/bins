@@ -61,7 +61,7 @@ class Source:
 
         # This request retrieves the schedule
         timestamp = time_ns() // 1_000_000  # epoch time in milliseconds
-
+        
         min_date = datetime.today().strftime("%Y-%m-%d")    # today
         max_date = datetime.today() + timedelta(days=28)    # max of 28 days ahead
         max_date = max_date.strftime("%Y-%m-%d")

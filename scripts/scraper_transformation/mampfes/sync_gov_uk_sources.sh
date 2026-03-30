@@ -101,7 +101,7 @@ echo "waste_collection_schedule package synced."
 
 # Lint and auto-fix scrapers
 echo "Running ruff check --fix on scrapers..."
-uv run ruff check --fix --ignore E722 "$SCRAPERS_DIR"
+uv run ruff check --fix --ignore E402,E701,E722,E741,F403,F405,F821,F841,W293 "$SCRAPERS_DIR" || true
 
 # Regenerate lookup files
 echo ""

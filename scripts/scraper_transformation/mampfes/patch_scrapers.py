@@ -11,6 +11,7 @@ from __future__ import annotations
 import ast
 import re
 import sys
+from dataclasses import dataclass, field
 from pathlib import Path
 
 
@@ -24,8 +25,9 @@ class SourceRewriter:
         # Lines are 1-indexed (matching ast), cols are 0-indexed
         self._edits: list[tuple[int, int, int, int, str]] = []
 
-    def replace_node(self, node: ast.AST, replacement: str):
+    def replace_node(self, node: ast.expr | ast.stmt, replacement: str):
         """Replace an AST node's source span with replacement text."""
+        assert node.end_lineno is not None and node.end_col_offset is not None
         self._edits.append(
             (
                 node.lineno,
@@ -48,6 +50,7 @@ class SourceRewriter:
 
     def delete_statement(self, node: ast.stmt):
         """Delete an entire statement including its line(s) and trailing newline."""
+        assert node.end_lineno is not None
         start = node.lineno
         end = node.end_lineno
         # Delete entire lines
@@ -72,9 +75,6 @@ class SourceRewriter:
                     combined += lines[i]
 
                 # Calculate positions in the combined string
-                before = ""
-                for i in range(start_line - 1, start_line - 1):
-                    before += lines[i]
                 before = lines[start_line - 1][:start_col]
 
                 last_line = lines[end_line - 1]
@@ -88,77 +88,64 @@ class SourceRewriter:
         return "".join(lines)
 
 
-def transform_source(source: str) -> tuple[str, list[str]]:
-    """Transform a single source file. Returns (new_source, warnings)."""
-    warnings: list[str] = []
+@dataclass
+class _AnalysisResult:
+    """Results from analysing a source file's AST for sync→async transform."""
 
-    try:
-        tree = ast.parse(source)
-    except SyntaxError as e:
-        return source, [f"Parse error: {e}"]
-
-    # --- Analysis pass ---
-    has_requests_import = False
-    has_cloudscraper_import = False
-    has_time_import = False
-    has_from_time_import_sleep = False
-    uses_time_sleep = False
-    uses_time_other = False
-    httpadapter_classes: dict[str, ast.ClassDef] = {}
-    session_var_names: set[str] = set()
+    has_requests_import: bool = False
+    has_cloudscraper_import: bool = False
+    has_time_import: bool = False
+    has_from_time_import_sleep: bool = False
+    uses_time_sleep: bool = False
+    uses_time_other: bool = False
+    httpadapter_classes: dict[str, ast.ClassDef] = field(default_factory=dict)
+    session_var_names: set[str] = field(default_factory=set)
     init_session_attr: str | None = None
-    methods_needing_async: set[str] = set()
+    methods_needing_async: set[str] = field(default_factory=set)
 
+
+def _analyse_imports(tree: ast.Module, result: _AnalysisResult) -> None:
     for node in ast.walk(tree):
         if isinstance(node, ast.Import):
-            for alias in node.names:
-                if alias.name == "requests":
-                    has_requests_import = True
-                if alias.name == "cloudscraper":
-                    has_cloudscraper_import = True
-                if alias.name == "time":
-                    has_time_import = True
+            names = {alias.name for alias in node.names}
+            if "requests" in names:
+                result.has_requests_import = True
+            if "cloudscraper" in names:
+                result.has_cloudscraper_import = True
+            if "time" in names:
+                result.has_time_import = True
         elif isinstance(node, ast.ImportFrom):
-            if node.module == "requests" or (
-                node.module and node.module.startswith("requests.")
-            ):
-                has_requests_import = True
-            if node.module == "time":
-                for alias in node.names:
-                    if alias.name == "sleep":
-                        has_from_time_import_sleep = True
+            mod = node.module or ""
+            if mod == "requests" or mod.startswith("requests."):
+                result.has_requests_import = True
+            if mod == "time" and any(a.name == "sleep" for a in node.names):
+                result.has_from_time_import_sleep = True
 
-    if not has_requests_import and not has_cloudscraper_import:
-        # Still apply waste_collection_schedule import rewrite
-        patched = _final_requests_cleanup(source)
-        if patched != source:
-            return patched, []
-        return source, [
-            "No 'import requests' or 'import cloudscraper' found — skipping"
-        ]
 
-    # Find HTTPAdapter subclasses
+def _analyse_sessions_and_adapters(tree: ast.Module, result: _AnalysisResult) -> None:
     for node in ast.walk(tree):
         if isinstance(node, ast.ClassDef):
             for base in node.bases:
                 if _name_contains(base, "HTTPAdapter"):
-                    httpadapter_classes[node.name] = node
+                    result.httpadapter_classes[node.name] = node
 
-    # Find session variables
+    _analyse_session_vars(tree, result)
+
+
+def _analyse_session_vars(tree: ast.Module, result: _AnalysisResult) -> None:
     for node in ast.walk(tree):
         if isinstance(node, ast.Assign) and len(node.targets) == 1:
             if _is_requests_session(node.value):
                 tgt = node.targets[0]
                 if isinstance(tgt, ast.Name):
-                    session_var_names.add(tgt.id)
+                    result.session_var_names.add(tgt.id)
                 elif (
                     isinstance(tgt, ast.Attribute)
                     and isinstance(tgt.value, ast.Name)
                     and tgt.value.id == "self"
                 ):
-                    init_session_attr = tgt.attr
-                    session_var_names.add(f"self.{tgt.attr}")
-        # Track context manager sessions: with requests.Session() as var:
+                    result.init_session_attr = tgt.attr
+                    result.session_var_names.add(f"self.{tgt.attr}")
         if isinstance(node, ast.With):
             for item in node.items:
                 if (
@@ -167,222 +154,173 @@ def transform_source(source: str) -> tuple[str, list[str]]:
                     and item.optional_vars
                     and isinstance(item.optional_vars, ast.Name)
                 ):
-                    session_var_names.add(item.optional_vars.id)
+                    result.session_var_names.add(item.optional_vars.id)
 
-    # Find time.sleep / sleep usage
+
+def _analyse_time_usage(
+    tree: ast.Module, result: _AnalysisResult
+) -> None:
     for node in ast.walk(tree):
         if isinstance(node, ast.Call):
             if _is_attr_call(node, "time", "sleep"):
-                uses_time_sleep = True
+                result.uses_time_sleep = True
             elif (
                 isinstance(node.func, ast.Name)
                 and node.func.id == "sleep"
-                and has_from_time_import_sleep
+                and result.has_from_time_import_sleep
             ):
-                uses_time_sleep = True
+                result.uses_time_sleep = True
         if isinstance(node, ast.Attribute) and isinstance(node.value, ast.Name):
             if node.value.id == "time" and node.attr != "sleep":
-                uses_time_other = True
+                result.uses_time_other = True
 
-    # Find helper methods that need async: session param, self._session, or bare requests calls
-    for node in ast.walk(tree):
-        if (
-            isinstance(node, ast.FunctionDef)
-            and node.name != "__init__"
-            and node.name != "fetch"
-        ):
-            # Check if any param is named s/session
-            param_names = {a.arg for a in node.args.args}
-            has_session_param = bool(param_names & {"s", "session"})
-            # Check if method uses self._session
-            uses_session_attr = init_session_attr and _body_uses_attr(
-                node, "self", init_session_attr
-            )
-            # Check if method uses bare requests.get/post/etc calls
-            has_bare_requests = any(
-                isinstance(n, ast.Call) and _is_bare_requests_call(n)
-                for n in ast.walk(node)
-            )
-            # Check if method creates a local requests.Session()
-            has_local_session = any(
-                isinstance(n, ast.Call) and _is_requests_session(n)
-                for n in ast.walk(node)
-            )
-            if (
-                has_session_param
-                or uses_session_attr
-                or has_bare_requests
-                or has_local_session
-            ):
-                methods_needing_async.add(node.name)
 
-    # Transitive closure: if a method calls another method that needs async, it does too
-    # Also build a call graph of self.method() calls for propagation
+def _method_needs_async(func: ast.FunctionDef, init_session_attr: str | None) -> bool:
+    """Check if a helper method directly needs async (uses sessions or requests)."""
+    param_names = {a.arg for a in func.args.args}
+    if param_names & {"s", "session"}:
+        return True
+    if init_session_attr and _body_uses_attr(func, "self", init_session_attr):
+        return True
+    return any(
+        isinstance(n, ast.Call) and (_is_bare_requests_call(n) or _is_requests_session(n))
+        for n in ast.walk(func)
+    )
+
+
+def _build_self_call_graph(tree: ast.Module) -> dict[str, set[str]]:
+    """Build a mapping of method_name → set of self.method() callees."""
     method_calls: dict[str, set[str]] = {}
     for node in ast.walk(tree):
         if isinstance(node, ast.FunctionDef):
-            callees = set()
-            for n in ast.walk(node):
-                if (
-                    isinstance(n, ast.Call)
-                    and isinstance(n.func, ast.Attribute)
-                    and isinstance(n.func.value, ast.Name)
-                    and n.func.value.id == "self"
-                ):
-                    callees.add(n.func.attr)
-            method_calls[node.name] = callees
+            method_calls[node.name] = {
+                n.func.attr
+                for n in ast.walk(node)
+                if isinstance(n, ast.Call)
+                and isinstance(n.func, ast.Attribute)
+                and isinstance(n.func.value, ast.Name)
+                and n.func.value.id == "self"
+            }
+    return method_calls
 
+
+def _analyse_async_methods(
+    tree: ast.Module, result: _AnalysisResult
+) -> None:
+    for node in ast.walk(tree):
+        if (
+            isinstance(node, ast.FunctionDef)
+            and node.name not in ("__init__", "fetch")
+            and _method_needs_async(node, result.init_session_attr)
+        ):
+            result.methods_needing_async.add(node.name)
+
+    # Transitive closure via call graph
+    method_calls = _build_self_call_graph(tree)
     changed = True
     while changed:
         changed = False
         for method_name, callees in method_calls.items():
-            if method_name not in methods_needing_async and method_name not in (
-                "__init__",
-                "fetch",
+            if (
+                method_name not in result.methods_needing_async
+                and method_name not in ("__init__", "fetch")
+                and callees & result.methods_needing_async
             ):
-                if callees & methods_needing_async:
-                    methods_needing_async.add(method_name)
-                    changed = True
+                result.methods_needing_async.add(method_name)
+                changed = True
 
-    # --- Build edits using line-based approach with AST guidance ---
-    # We'll do targeted string replacements using AST node positions
 
-    lines = source.splitlines(keepends=True)
-    # Collect line-level operations
-    delete_lines: set[int] = set()  # 1-indexed lines to remove entirely
-    line_replacements: dict[int, str] = {}  # 1-indexed line -> replacement
+def _analyse_tree(tree: ast.Module) -> _AnalysisResult:
+    result = _AnalysisResult()
+    _analyse_imports(tree, result)
+    _analyse_sessions_and_adapters(tree, result)
+    _analyse_time_usage(tree, result)
+    _analyse_async_methods(tree, result)
+    return result
 
-    # We need to track multiline statement ranges too
-    delete_ranges: list[tuple[int, int]] = []  # (start, end) 1-indexed inclusive
 
-    # 1. Handle imports
+def _rewrite_import_from(
+    node: ast.ImportFrom,
+    lines: list[str],
+    delete_lines: set[int],
+    delete_ranges: list[tuple[int, int]],
+    line_replacements: dict[int, str],
+    analysis: _AnalysisResult,
+) -> None:
+    mod = node.module or ""
+    if mod == "requests":
+        _mark_stmt_replace(
+            node, lines, delete_ranges, line_replacements,
+            _get_stmt_text(node, lines), "import httpx",
+        )
+    elif mod.startswith("requests.adapters"):
+        _delete_stmt_lines(node, delete_lines)
+    elif mod.startswith("requests.exceptions"):
+        old_text = _get_stmt_text(node, lines)
+        new_text = _replace_exception_names(
+            old_text.replace("from requests.exceptions import", "from httpx import")
+        )
+        _mark_stmt_replace(node, lines, delete_ranges, line_replacements, old_text, new_text)
+    elif mod == "time" and analysis.uses_time_sleep:
+        if any(a.name == "sleep" for a in node.names):
+            _mark_stmt_replace(
+                node, lines, delete_ranges, line_replacements,
+                _get_stmt_text(node, lines), "import asyncio",
+            )
+
+
+def _rewrite_imports(
+    tree: ast.Module,
+    lines: list[str],
+    delete_lines: set[int],
+    delete_ranges: list[tuple[int, int]],
+    line_replacements: dict[int, str],
+    analysis: _AnalysisResult,
+) -> None:
     for node in ast.walk(tree):
         if isinstance(node, ast.Import):
             for alias in node.names:
-                if alias.name == "requests":
-                    # Replace the whole import statement
+                if alias.name in ("requests", "cloudscraper"):
                     _mark_stmt_replace(
-                        node,
-                        lines,
-                        delete_ranges,
-                        line_replacements,
-                        _get_stmt_text(node, lines),
-                        "import httpx",
+                        node, lines, delete_ranges, line_replacements,
+                        _get_stmt_text(node, lines), "import httpx",
                     )
-                if alias.name == "cloudscraper":
+                if (
+                    alias.name == "time"
+                    and analysis.uses_time_sleep
+                    and not analysis.uses_time_other
+                ):
                     _mark_stmt_replace(
-                        node,
-                        lines,
-                        delete_ranges,
-                        line_replacements,
-                        _get_stmt_text(node, lines),
-                        "import httpx",
+                        node, lines, delete_ranges, line_replacements,
+                        _get_stmt_text(node, lines), "import asyncio",
                     )
-                if alias.name == "time" and uses_time_sleep and not uses_time_other:
-                    _mark_stmt_replace(
-                        node,
-                        lines,
-                        delete_ranges,
-                        line_replacements,
-                        _get_stmt_text(node, lines),
-                        "import asyncio",
-                    )
-
         elif isinstance(node, ast.ImportFrom):
-            if node.module == "requests":
-                # from requests import Session, etc → import httpx
-                _mark_stmt_replace(
-                    node,
-                    lines,
-                    delete_ranges,
-                    line_replacements,
-                    _get_stmt_text(node, lines),
-                    "import httpx",
-                )
-
-            elif node.module and node.module.startswith("requests.adapters"):
-                # Remove entirely
-                for ln in range(node.lineno, node.end_lineno + 1):
-                    delete_lines.add(ln)
-
-            elif node.module and node.module.startswith("requests.exceptions"):
-                # Replace with httpx equivalents
-                old_text = _get_stmt_text(node, lines)
-                new_text = old_text.replace(
-                    "from requests.exceptions import", "from httpx import"
-                )
-                new_text = _replace_exception_names(new_text)
-                _mark_stmt_replace(
-                    node, lines, delete_ranges, line_replacements, old_text, new_text
-                )
-
-            elif node.module == "time":
-                for alias in node.names:
-                    if alias.name == "sleep":
-                        if uses_time_sleep:
-                            old_text = _get_stmt_text(node, lines)
-                            _mark_stmt_replace(
-                                node,
-                                lines,
-                                delete_ranges,
-                                line_replacements,
-                                old_text,
-                                "import asyncio",
-                            )
-
-    # 2. Remove HTTPAdapter subclass definitions
-    for cls_name, cls_node in httpadapter_classes.items():
-        for ln in range(cls_node.lineno, cls_node.end_lineno + 1):
-            delete_lines.add(ln)
-
-    # 3. Process Source class body
-    source_class = _find_source_class(tree)
-    if source_class:
-        _process_class(
-            source_class,
-            lines,
-            delete_lines,
-            delete_ranges,
-            line_replacements,
-            session_var_names,
-            httpadapter_classes,
-            methods_needing_async,
-            init_session_attr,
-            source,
-        )
-
-    # 4. Process module-level functions that use requests
-    for node in ast.iter_child_nodes(tree):
-        if isinstance(node, ast.FunctionDef) and node.name not in ("fetch",):
-            _process_module_function(
-                node,
-                lines,
-                delete_lines,
-                delete_ranges,
-                line_replacements,
-                session_var_names,
-                source,
+            _rewrite_import_from(
+                node, lines, delete_lines, delete_ranges, line_replacements, analysis,
             )
 
-    # --- Apply edits ---
-    result_lines = []
-    need_asyncio_import = uses_time_sleep and has_time_import and uses_time_other
+
+def _apply_edits(
+    lines: list[str],
+    delete_lines: set[int],
+    delete_ranges: list[tuple[int, int]],
+    line_replacements: dict[int, str],
+    analysis: _AnalysisResult,
+) -> str:
+    result_lines: list[str] = []
+    need_asyncio_import = (
+        analysis.uses_time_sleep and analysis.has_time_import and analysis.uses_time_other
+    )
     asyncio_inserted = False
     i = 1  # 1-indexed
     while i <= len(lines):
-        # line_replacements take priority over deletions
         if i in line_replacements:
             pass  # will be handled below
         elif i in delete_lines:
             i += 1
             continue
         else:
-            # Check if this line starts a delete range
-            in_range = False
-            for rs, re_ in delete_ranges:
-                if rs <= i <= re_:
-                    in_range = True
-                    break
+            in_range = any(rs <= i <= re_ for rs, re_ in delete_ranges)
             if in_range:
                 i += 1
                 continue
@@ -390,7 +328,6 @@ def transform_source(source: str) -> tuple[str, list[str]]:
         line = line_replacements.get(i, lines[i - 1])
         result_lines.append(line)
 
-        # Insert asyncio import after time import if needed
         if need_asyncio_import and not asyncio_inserted:
             stripped = lines[i - 1].strip()
             if stripped.startswith("import time"):
@@ -400,15 +337,59 @@ def transform_source(source: str) -> tuple[str, list[str]]:
         i += 1
 
     result = "".join(result_lines)
-    # Clean up excessive blank lines
-    result = re.sub(r"\n{4,}", "\n\n\n", result)
+    return re.sub(r"\n{4,}", "\n\n\n", result)
 
-    # --- Final text-level cleanup for remaining requests references ---
-    # These catch edge cases the AST transform doesn't handle structurally:
-    # type annotations, lowercase session(), context managers, bare exception refs
+
+def transform_source(source: str) -> tuple[str, list[str]]:
+    """Transform a single source file. Returns (new_source, warnings)."""
+    try:
+        tree = ast.parse(source)
+    except SyntaxError as e:
+        return source, [f"Parse error: {e}"]
+
+    analysis = _analyse_tree(tree)
+
+    if not analysis.has_requests_import and not analysis.has_cloudscraper_import:
+        patched = _final_requests_cleanup(source)
+        if patched != source:
+            return patched, []
+        return source, [
+            "No 'import requests' or 'import cloudscraper' found — skipping"
+        ]
+
+    lines = source.splitlines(keepends=True)
+    delete_lines: set[int] = set()
+    line_replacements: dict[int, str] = {}
+    delete_ranges: list[tuple[int, int]] = []
+
+    _rewrite_imports(tree, lines, delete_lines, delete_ranges, line_replacements, analysis)
+
+    # Remove HTTPAdapter subclass definitions
+    for cls_name, cls_node in analysis.httpadapter_classes.items():
+        assert cls_node.end_lineno is not None
+        for ln in range(cls_node.lineno, cls_node.end_lineno + 1):
+            delete_lines.add(ln)
+
+    # Process Source class body
+    source_class = _find_source_class(tree)
+    if source_class:
+        _process_class(
+            source_class, lines, delete_lines, delete_ranges, line_replacements,
+            analysis.session_var_names, analysis.httpadapter_classes,
+            analysis.methods_needing_async, analysis.init_session_attr, source,
+        )
+
+    # Process module-level functions that use requests
+    for node in ast.iter_child_nodes(tree):
+        if isinstance(node, ast.FunctionDef) and node.name not in ("fetch",):
+            _process_module_function(
+                node, lines, delete_lines, delete_ranges, line_replacements,
+                analysis.session_var_names, source,
+            )
+
+    result = _apply_edits(lines, delete_lines, delete_ranges, line_replacements, analysis)
     result = _final_requests_cleanup(result)
-
-    return result, warnings
+    return result, []
 
 
 def _process_class(
@@ -468,6 +449,115 @@ def _process_module_function(
             )
 
 
+def _transform_call_node(
+    node: ast.Call,
+    lines: list[str],
+    line_replacements: dict[int, str],
+    local_session_vars: set[str],
+    methods_needing_async: set[str],
+    chained_bare_requests: set[int],
+) -> None:
+    """Transform a Call node: add awaits, replace requests→httpx, sleep→asyncio."""
+    if _is_session_http_call(node, local_session_vars):
+        _add_await_before_call(node, lines, line_replacements)
+
+    if _is_bare_requests_call(node) and id(node) not in chained_bare_requests:
+        _transform_bare_request(node, lines, line_replacements)
+
+    if (
+        isinstance(node.func, ast.Attribute)
+        and isinstance(node.func.value, ast.Call)
+        and _is_bare_requests_call(node.func.value)
+    ):
+        _transform_chained_bare_request(node.func.value, node, lines, line_replacements)
+
+    if _is_attr_call(node, "time", "sleep"):
+        _replace_time_sleep(node, lines, line_replacements)
+
+    if isinstance(node.func, ast.Name) and node.func.id == "sleep":
+        _replace_bare_sleep(node, lines, line_replacements)
+
+    if (
+        isinstance(node.func, ast.Attribute)
+        and isinstance(node.func.value, ast.Name)
+        and node.func.value.id == "self"
+        and node.func.attr in methods_needing_async
+    ):
+        _add_await_before_call(node, lines, line_replacements)
+
+
+def _transform_node(
+    node: ast.AST,
+    method: ast.FunctionDef,
+    lines: list[str],
+    delete_lines: set[int],
+    delete_ranges: list[tuple[int, int]],
+    line_replacements: dict[int, str],
+    local_session_vars: set[str],
+    adapter_classes: dict[str, ast.ClassDef],
+    methods_needing_async: set[str],
+    chained_bare_requests: set[int],
+    full_source: str,
+) -> None:
+    """Transform a single AST node within a method body."""
+    if (
+        isinstance(node, ast.Assign)
+        and len(node.targets) == 1
+        and _is_requests_session(node.value)
+    ):
+        _transform_session_assign(
+            node, lines, delete_lines, delete_ranges, line_replacements,
+            adapter_classes, method, full_source,
+        )
+        return
+
+    if isinstance(node, ast.Expr) and isinstance(node.value, ast.Call):
+        if _is_method_call_on(node.value, local_session_vars, "mount"):
+            _delete_stmt_lines(node, delete_lines)
+            return
+
+    if isinstance(node, ast.Call):
+        _transform_call_node(
+            node, lines, line_replacements, local_session_vars,
+            methods_needing_async, chained_bare_requests,
+        )
+    elif isinstance(node, ast.Attribute):
+        _replace_requests_exceptions_in_node(node, lines, line_replacements)
+
+
+def _find_chained_bare_requests(method: ast.FunctionDef) -> set[int]:
+    """Find inner Call ids that are chained (e.g. requests.get(...).json())."""
+    result: set[int] = set()
+    for node in ast.walk(method):
+        if isinstance(node, ast.Call) and isinstance(node.func, ast.Attribute):
+            inner = node.func.value
+            if isinstance(inner, ast.Call) and _is_bare_requests_call(inner):
+                result.add(id(inner))
+    return result
+
+
+def _rewrite_init_session(
+    method: ast.FunctionDef,
+    init_session_attr: str,
+    lines: list[str],
+    delete_lines: set[int],
+    line_replacements: dict[int, str],
+) -> None:
+    """Replace self._session = requests.Session() in __init__."""
+    for node in ast.walk(method):
+        if (
+            isinstance(node, ast.Assign)
+            and len(node.targets) == 1
+            and _is_requests_session(node.value)
+        ):
+            assert node.end_lineno is not None
+            indent = _get_indent(lines[node.lineno - 1])
+            new = f"{indent}self.{init_session_attr} = httpx.AsyncClient(follow_redirects=True)\n"
+            line_replacements[node.lineno] = new
+            for ln in range(node.lineno + 1, node.end_lineno + 1):
+                delete_lines.add(ln)
+
+
 def _process_method(
     method: ast.FunctionDef,
     lines: list[str],
@@ -481,8 +571,6 @@ def _process_method(
     full_source: str,
 ):
     """Process a single method within Source class."""
-
-    # Make fetch() and helper methods async
     if method.name == "fetch" or method.name in methods_needing_async:
         line = lines[method.lineno - 1]
         if "async def" not in line:
@@ -490,112 +578,76 @@ def _process_method(
                 f"def {method.name}(", f"async def {method.name}(", 1
             )
 
-    # Build local session var names that include method parameters named s/session
     local_session_vars = set(session_var_names)
     for arg in method.args.args:
         if arg.arg in ("s", "session"):
             local_session_vars.add(arg.arg)
 
-    # Pre-pass: detect chained bare requests calls (requests.get(...).json() etc)
-    chained_bare_requests: set[int] = set()
-    for node in ast.walk(method):
-        if isinstance(node, ast.Call) and isinstance(node.func, ast.Attribute):
-            inner = node.func.value
-            if isinstance(inner, ast.Call) and _is_bare_requests_call(inner):
-                chained_bare_requests.add(id(inner))
+    chained_bare_requests = _find_chained_bare_requests(method)
 
-    # Walk all nodes in the method body
     for node in ast.walk(method):
-        # --- requests.Session() → httpx.AsyncClient(...) ---
-        if (
-            isinstance(node, ast.Assign)
-            and len(node.targets) == 1
-            and _is_requests_session(node.value)
+        _transform_node(
+            node, method, lines, delete_lines, delete_ranges, line_replacements,
+            local_session_vars, adapter_classes, methods_needing_async,
+            chained_bare_requests, full_source,
+        )
+
+    if method.name == "__init__" and init_session_attr:
+        _rewrite_init_session(method, init_session_attr, lines, delete_lines, line_replacements)
+
+
+def _delete_stmt_lines(stmt: ast.stmt, delete_lines: set[int]) -> None:
+    """Mark all lines of a statement for deletion."""
+    assert stmt.end_lineno is not None
+    for ln in range(stmt.lineno, stmt.end_lineno + 1):
+        delete_lines.add(ln)
+
+
+def _scan_mount_calls(
+    method: ast.FunctionDef,
+    var_name: str,
+    adapter_classes: dict[str, ast.ClassDef],
+    full_source: str,
+) -> tuple[list[ast.stmt], str | None, str | None]:
+    """Find .mount() calls and extract SSL context info.
+
+    Returns (mount_nodes, ssl_context_var, ssl_context_code).
+    """
+    ssl_context_var: str | None = None
+    ssl_context_code: str | None = None
+    mount_nodes: list[ast.stmt] = []
+
+    for stmt in method.body:
+        if not (isinstance(stmt, ast.Expr) and isinstance(stmt.value, ast.Call)):
+            continue
+        call = stmt.value
+        if not (
+            isinstance(call.func, ast.Attribute)
+            and call.func.attr == "mount"
+            and isinstance(call.func.value, ast.Name)
+            and call.func.value.id == var_name
         ):
-            _transform_session_assign(
-                node,
-                lines,
-                delete_lines,
-                delete_ranges,
-                line_replacements,
-                adapter_classes,
-                method,
-                full_source,
-            )
             continue
 
-        # --- s.mount(...) → delete ---
-        if isinstance(node, (ast.Expr,)) and isinstance(node.value, ast.Call):
-            if _is_method_call_on(node.value, local_session_vars, "mount"):
-                for ln in range(node.lineno, node.end_lineno + 1):
-                    delete_lines.add(ln)
-                continue
+        mount_nodes.append(stmt)
+        if not (call.args and len(call.args) >= 2 and isinstance(call.args[1], ast.Call)):
+            continue
 
-        # --- s.get(...) / s.post(...) etc → await s.get(...) ---
-        if isinstance(node, ast.Call) and _is_session_http_call(
-            node, local_session_vars
-        ):
-            _add_await_before_call(node, lines, line_replacements)
-
-        # --- requests.get(...) / requests.post(...) → await httpx client call ---
-        if isinstance(node, ast.Call) and _is_bare_requests_call(node):
-            if id(node) in chained_bare_requests:
-                # Chained call like requests.get(...).json() — handled separately
-                pass
-            else:
-                _transform_bare_request(node, lines, line_replacements)
-
-        # --- Chained bare requests: requests.get(...).json() → (await ...).json() ---
-        if (
-            isinstance(node, ast.Call)
-            and isinstance(node.func, ast.Attribute)
-            and isinstance(node.func.value, ast.Call)
-            and _is_bare_requests_call(node.func.value)
-        ):
-            _transform_chained_bare_request(
-                node.func.value, node, lines, line_replacements
+        adapter_arg = call.args[1]
+        adapter_name = (
+            adapter_arg.func.id if isinstance(adapter_arg.func, ast.Name) else None
+        )
+        if adapter_arg.args:
+            first_arg = adapter_arg.args[0]
+            if isinstance(first_arg, ast.Name):
+                ssl_context_var = first_arg.id
+        elif adapter_name and adapter_name in adapter_classes:
+            ssl_context_code = _extract_ssl_lines(
+                adapter_classes[adapter_name], full_source
             )
+            ssl_context_var = "ctx"
 
-        # --- time.sleep(x) → await asyncio.sleep(x) ---
-        if isinstance(node, ast.Call) and _is_attr_call(node, "time", "sleep"):
-            _replace_time_sleep(node, lines, line_replacements)
-
-        # --- sleep(x) from `from time import sleep` → await asyncio.sleep(x) ---
-        if (
-            isinstance(node, ast.Call)
-            and isinstance(node.func, ast.Name)
-            and node.func.id == "sleep"
-        ):
-            _replace_bare_sleep(node, lines, line_replacements)
-
-        # --- self.helper_method(s) → await self.helper_method(s) ---
-        if isinstance(node, ast.Call) and isinstance(node.func, ast.Attribute):
-            if (
-                isinstance(node.func.value, ast.Name)
-                and node.func.value.id == "self"
-                and node.func.attr in methods_needing_async
-            ):
-                _add_await_before_call(node, lines, line_replacements)
-
-        # --- requests.exceptions.X → httpx.X ---
-        if isinstance(node, ast.Attribute):
-            _replace_requests_exceptions_in_node(node, lines, line_replacements)
-
-    # Handle __init__ with self._session = requests.Session()
-    if method.name == "__init__" and init_session_attr:
-        for node in ast.walk(method):
-            if (
-                isinstance(node, ast.Assign)
-                and len(node.targets) == 1
-                and _is_requests_session(node.value)
-            ):
-                indent = _get_indent(lines[node.lineno - 1])
-                new = f"{indent}self.{init_session_attr} = httpx.AsyncClient(follow_redirects=True)\n"
-                for ln in range(node.lineno, node.end_lineno + 1):
-                    if ln == node.lineno:
-                        line_replacements[ln] = new
-                    else:
-                        delete_lines.add(ln)
+    return mount_nodes, ssl_context_var, ssl_context_code
 
 
 def _transform_session_assign(
@@ -618,43 +670,9 @@ def _transform_session_assign(
         return
 
     indent = _get_indent(lines[node.lineno - 1])
-
-    # Look for .mount() calls with adapter in the method to get SSL context
-    ssl_context_var = None
-    ssl_context_code = None
-    mount_nodes: list[ast.stmt] = []
-
-    for stmt in method.body:
-        if isinstance(stmt, ast.Expr) and isinstance(stmt.value, ast.Call):
-            call = stmt.value
-            # .mount() call
-            if (
-                isinstance(call.func, ast.Attribute)
-                and call.func.attr == "mount"
-                and isinstance(call.func.value, ast.Name)
-                and call.func.value.id == var_name
-            ):
-                mount_nodes.append(stmt)
-                # Check if adapter class is used
-                if call.args and len(call.args) >= 2:
-                    adapter_arg = call.args[1]
-                    if isinstance(adapter_arg, ast.Call):
-                        adapter_name = None
-                        if isinstance(adapter_arg.func, ast.Name):
-                            adapter_name = adapter_arg.func.id
-                        # Check if adapter constructor takes a ctx arg
-                        # e.g. CustomHttpAdapter(ctx) — ctx already exists in method body
-                        if adapter_arg.args:
-                            first_arg = adapter_arg.args[0]
-                            if isinstance(first_arg, ast.Name):
-                                ssl_context_var = first_arg.id
-                        # Adapter with no args — SSL context is internal to adapter class
-                        # e.g. LegacyTLSAdapter() — extract SSL setup lines
-                        elif adapter_name and adapter_name in adapter_classes:
-                            ssl_context_code = _extract_ssl_lines(
-                                adapter_classes[adapter_name], full_source
-                            )
-                            ssl_context_var = "ctx"
+    mount_nodes, ssl_context_var, ssl_context_code = _scan_mount_calls(
+        method, var_name, adapter_classes, full_source
+    )
 
     # Build AsyncClient kwargs
     kwargs_parts = []
@@ -667,36 +685,27 @@ def _transform_session_assign(
     )
 
     if ssl_context_code:
-        # Adapter class has internal SSL setup — prepend extracted lines before the client
         ssl_lines = ssl_context_code.strip().splitlines()
         prefix = "\n".join(indent + sl for sl in ssl_lines) + "\n"
         asyncclient_line = prefix + asyncclient_line
 
+    assert node.end_lineno is not None
     if ssl_context_var and not ssl_context_code and mount_nodes:
-        # ctx is defined in the method body and passed to the adapter constructor.
-        # The ctx may be defined between the Session() and mount() lines.
-        # Place AsyncClient at the mount() position (where ctx is guaranteed defined).
+        # Place AsyncClient at mount() position (where ctx is guaranteed defined)
         mount_stmt = mount_nodes[0]
-        # Delete original Session() line
-        for ln in range(node.lineno, node.end_lineno + 1):
-            delete_lines.add(ln)
-        # Replace mount line with AsyncClient creation
+        _delete_stmt_lines(node, delete_lines)
+        assert mount_stmt.end_lineno is not None
         line_replacements[mount_stmt.lineno] = asyncclient_line
         for ln in range(mount_stmt.lineno + 1, mount_stmt.end_lineno + 1):
             delete_lines.add(ln)
-        # Delete any other mount statements
         for stmt in mount_nodes[1:]:
-            for ln in range(stmt.lineno, stmt.end_lineno + 1):
-                delete_lines.add(ln)
+            _delete_stmt_lines(stmt, delete_lines)
     else:
-        # Replace the Session() assignment in-place
         line_replacements[node.lineno] = asyncclient_line
         for ln in range(node.lineno + 1, node.end_lineno + 1):
             delete_lines.add(ln)
-        # Delete mount statements
         for stmt in mount_nodes:
-            for ln in range(stmt.lineno, stmt.end_lineno + 1):
-                delete_lines.add(ln)
+            _delete_stmt_lines(stmt, delete_lines)
 
 
 def _extract_ssl_lines(cls_node: ast.ClassDef, source: str) -> str | None:
@@ -723,22 +732,6 @@ def _extract_ssl_lines(cls_node: ast.ClassDef, source: str) -> str | None:
             if ctx_lines:
                 return "\n".join(ctx_lines)
     return None
-
-
-def _find_ssl_context_setup(
-    method: ast.FunctionDef, var_name: str, source: str
-) -> str | None:
-    """Find ssl context setup for a named variable in method body."""
-    ctx_lines = []
-    for stmt in method.body:
-        seg = ast.get_source_segment(source, stmt)
-        if (
-            seg
-            and var_name in seg
-            and ("ssl" in seg or "create_default_context" in seg)
-        ):
-            ctx_lines.append(seg.strip())
-    return "\n".join(ctx_lines) if ctx_lines else None
 
 
 def _add_await_before_call(
@@ -814,6 +807,7 @@ def _transform_chained_bare_request(
     line_replacements[start_lineno] = new_line
 
     # Insert closing paren ')' after the inner call's closing paren
+    assert inner_call.end_lineno is not None and inner_call.end_col_offset is not None
     end_lineno = inner_call.end_lineno
     end_col = inner_call.end_col_offset
 
@@ -991,44 +985,71 @@ def _find_source_class(tree: ast.Module) -> ast.ClassDef | None:
 # --- Helpers ---
 
 
-def _final_requests_cleanup(source: str) -> str:
-    """Final text-level pass to replace remaining requests.* references."""
-    replacements = [
-        # Type annotations
-        ("requests.Response", "httpx.Response"),
-        ("requests.Session", "httpx.AsyncClient"),
-        # Lowercase session() constructor
-        ("requests.session()", "httpx.AsyncClient(follow_redirects=True)"),
-        # Exception classes used directly on requests module
-        ("requests.HTTPError", "httpx.HTTPStatusError"),
-        ("requests.RequestException", "httpx.HTTPError"),
-        # cloudscraper remnants
-        ("cloudscraper.create_scraper()", "httpx.AsyncClient(follow_redirects=True)"),
-        # requests kwarg → httpx kwarg
-        ("allow_redirects=", "follow_redirects="),
-    ]
-    for old, new in replacements:
-        source = source.replace(old, new)
+def _extract_call_arg_block(source: str, match_end: int) -> str:
+    """Extract the argument block from a call site, handling nested parens."""
+    depth = 1
+    i = match_end
+    while i < len(source) and depth > 0:
+        if source[i] == "(":
+            depth += 1
+        elif source[i] == ")":
+            depth -= 1
+        i += 1
+    return source[match_end:i]
 
-    # Handle `with httpx.AsyncClient(...) as var:` → `async with httpx.AsyncClient(...) as var:`
-    source = re.sub(
-        r"(\s*)with (httpx\.AsyncClient\([^)]*\)) as (\w+):",
-        r"\1async with \2 as \3:",
-        source,
-    )
 
-    # Move verify=False from per-request kwarg to client constructor
-    # Pattern: await httpx.AsyncClient(follow_redirects=True).METHOD(..., verify=False, ...)
-    # → await httpx.AsyncClient(verify=False, follow_redirects=True).METHOD(... without verify=False ...)
-    def _move_verify_to_client(m):
-        pre = m.group(1)
-        client_args = m.group(2)
-        method = m.group(3)
-        call_args = m.group(4)
-        # Remove verify=False from call args
+def _find_verify_vars(source: str, pattern: str) -> set[str]:
+    """Find session vars whose HTTP calls contain verify=False."""
+    result: set[str] = set()
+    for m in re.finditer(pattern, source):
+        arg_block = _extract_call_arg_block(source, m.end())
+        if "verify=False" in arg_block:
+            result.add(m.group(1))
+    return result
+
+
+def _hoist_verify_to_client(
+    source: str, vars_to_fix: set[str], verify_val: str = "False"
+) -> str:
+    """Add verify= to AsyncClient constructors for the given session vars."""
+    lines = source.split("\n")
+    new_lines = []
+    for line in lines:
+        for var in vars_to_fix:
+            escaped_var = re.escape(var)
+            pattern = rf"(\s*){escaped_var}\s*=\s*httpx\.AsyncClient\(([^)]*)\)"
+            m_line = re.match(pattern, line)
+            if m_line and "verify=" not in m_line.group(2):
+                args = m_line.group(2)
+                val = f"verify={verify_val}"
+                args = f"{val}, {args}" if args else val
+                line = f"{m_line.group(1)}{var} = httpx.AsyncClient({args})"
+        new_lines.append(line)
+    return "\n".join(new_lines)
+
+
+def _strip_verify_from_calls(source: str, verify_val: str = "False") -> str:
+    """Remove verify=VAL from HTTP method call lines (not AsyncClient constructors)."""
+    escaped_val = re.escape(verify_val)
+    lines = source.split("\n")
+    new_lines = []
+    for line in lines:
+        if f"verify={verify_val}" in line and "AsyncClient(" not in line:
+            line = re.sub(rf",\s*verify={escaped_val}", "", line)
+            line = re.sub(rf"verify={escaped_val},\s*", "", line)
+            if line.strip() == "" or line.strip() == ",":
+                continue
+        new_lines.append(line)
+    return "\n".join(new_lines)
+
+
+def _handle_verify_false(source: str) -> str:
+    """Move verify=False from per-request kwargs to AsyncClient constructors."""
+    # Move verify=False in inline AsyncClient().METHOD() calls
+    def _move_verify_to_client(m: re.Match[str]) -> str:
+        pre, client_args, method, call_args = m.group(1, 2, 3, 4)
         call_args = re.sub(r",?\s*verify=False", "", call_args)
         call_args = re.sub(r"verify=False,?\s*", "", call_args)
-        # Add verify=False to client args
         if "verify=" not in client_args:
             client_args = "verify=False, " + client_args if client_args else "verify=False"
         return f"{pre}httpx.AsyncClient({client_args}).{method}({call_args})"
@@ -1039,137 +1060,124 @@ def _final_requests_cleanup(source: str) -> str:
         source,
     )
 
-    # Handle verify=False on session method calls:
-    # 1. Find session vars that use verify=False in their requests (multiline aware)
-    # 2. Add verify=False to their AsyncClient() constructor
-    # 3. Remove verify=False lines/occurrences from request calls
+    # Find session vars that use verify=False
+    verify_false_vars = _find_verify_vars(
+        source, r"await\s+(\w+)\.(get|post|put|delete|patch|head)\("
+    )
+    verify_false_vars |= _find_verify_vars(
+        source, r"await\s+(self\.\w+)\.(get|post|put|delete|patch|head)\("
+    )
 
-    # Find vars whose HTTP calls use verify=False (multiline: look for await VAR.method(\n...\nverify=False)
-    verify_false_vars: set[str] = set()
-    for m in re.finditer(
-        r"await\s+(\w+)\.(get|post|put|delete|patch|head)\(",
-        source,
-    ):
-        var = m.group(1)
-        # Check if verify=False appears in the argument block (up to closing paren)
-        start = m.end()
-        depth = 1
-        i = start
-        while i < len(source) and depth > 0:
-            if source[i] == "(":
-                depth += 1
-            elif source[i] == ")":
-                depth -= 1
-            i += 1
-        arg_block = source[start:i]
-        if "verify=False" in arg_block:
-            verify_false_vars.add(var)
-
-    # Also check self._session style
-    for m in re.finditer(
-        r"await\s+(self\.\w+)\.(get|post|put|delete|patch|head)\(",
-        source,
-    ):
-        var = m.group(1)
-        start = m.end()
-        depth = 1
-        i = start
-        while i < len(source) and depth > 0:
-            if source[i] == "(":
-                depth += 1
-            elif source[i] == ")":
-                depth -= 1
-            i += 1
-        arg_block = source[start:i]
-        if "verify=False" in arg_block:
-            verify_false_vars.add(var)
-
-    # Add verify=False to AsyncClient constructors for those vars
     if verify_false_vars:
-        lines = source.split("\n")
-        new_lines = []
-        for line in lines:
-            for var in verify_false_vars:
-                escaped_var = re.escape(var)
-                pattern = rf"(\s*){escaped_var}\s*=\s*httpx\.AsyncClient\(([^)]*)\)"
-                m_line = re.match(pattern, line)
-                if m_line and "verify=" not in m_line.group(2):
-                    args = m_line.group(2)
-                    args = f"verify=False, {args}" if args else "verify=False"
-                    line = f"{m_line.group(1)}{var} = httpx.AsyncClient({args})"
-            new_lines.append(line)
-        source = "\n".join(new_lines)
+        source = _hoist_verify_to_client(source, verify_false_vars)
+    source = _strip_verify_from_calls(source)
+    return source
 
-    # Remove verify=False from HTTP method call arguments only (not from AsyncClient constructors)
-    # Match lines containing verify=False that are NOT AsyncClient constructor lines
-    lines = source.split("\n")
-    new_lines = []
-    for line in lines:
-        if "verify=False" in line and "AsyncClient(" not in line:
-            line = re.sub(r",\s*verify=False", "", line)
-            line = re.sub(r"verify=False,\s*", "", line)
-            # If line is now just whitespace or empty after removing, skip it
-            if line.strip() == "" or line.strip() == ",":
-                continue
-        new_lines.append(line)
-    source = "\n".join(new_lines)
 
-    # Handle verify=VARIABLE (not just False) in session HTTP calls
-    # Find vars whose HTTP calls use verify=EXPR (variable, not a literal)
-    verify_var_mapping: dict[str, str] = {}  # session_var → verify_value
+def _handle_verify_variable(source: str) -> str:
+    """Move verify=VARIABLE (not literal) from per-request kwargs to AsyncClient constructors."""
+    verify_var_mapping: dict[str, str] = {}
     for m in re.finditer(
         r"await\s+((?:self\.)?\w+)\.(get|post|put|delete|patch|head)\(",
         source,
     ):
-        var = m.group(1)
-        start = m.end()
-        depth = 1
-        i = start
-        while i < len(source) and depth > 0:
-            if source[i] == "(":
-                depth += 1
-            elif source[i] == ")":
-                depth -= 1
-            i += 1
-        arg_block = source[start:i]
+        arg_block = _extract_call_arg_block(source, m.end())
         verify_m = re.search(r"verify=(self\.\w+|\w+)", arg_block)
         if verify_m and verify_m.group(1) not in ("False", "True"):
-            verify_var_mapping[var] = verify_m.group(1)
+            verify_var_mapping[m.group(1)] = verify_m.group(1)
 
-    # Add verify=EXPR to AsyncClient constructors for those vars
-    if verify_var_mapping:
-        lines = source.split("\n")
-        new_lines = []
-        for line in lines:
-            for var, verify_val in verify_var_mapping.items():
-                escaped_var = re.escape(var)
-                pattern = rf"(\s*){escaped_var}\s*=\s*httpx\.AsyncClient\(([^)]*)\)"
-                m_line = re.match(pattern, line)
-                if m_line and "verify=" not in m_line.group(2):
-                    args = m_line.group(2)
-                    args = f"verify={verify_val}, {args}" if args else f"verify={verify_val}"
-                    line = f"{m_line.group(1)}{var} = httpx.AsyncClient({args})"
-            new_lines.append(line)
-        source = "\n".join(new_lines)
+    if not verify_var_mapping:
+        return source
 
-    # Remove verify=VARIABLE from per-request calls (not AsyncClient constructors)
-    if verify_var_mapping:
-        lines = source.split("\n")
-        new_lines = []
-        for line in lines:
-            for verify_val in verify_var_mapping.values():
-                escaped_val = re.escape(verify_val)
-                if f"verify={verify_val}" in line and "AsyncClient(" not in line:
-                    line = re.sub(rf",\s*verify={escaped_val}", "", line)
-                    line = re.sub(rf"verify={escaped_val},\s*", "", line)
-            if line.strip() == "" or line.strip() == ",":
-                continue
-            new_lines.append(line)
-        source = "\n".join(new_lines)
+    for var, verify_val in verify_var_mapping.items():
+        source = _hoist_verify_to_client(source, {var}, verify_val)
+        source = _strip_verify_from_calls(source, verify_val)
+
+    return source
+
+
+def _handle_legacy_session(source: str) -> str:
+    """Handle get_legacy_session() callers."""
+    source = re.sub(
+        r"(\s+)def fetch\(self\)",
+        r"\1async def fetch(self)",
+        source,
+    )
+    source = re.sub(
+        r"(?<!await )get_legacy_session\(\)\.(get|post|put|delete|patch)\(",
+        r"await get_legacy_session().\1(",
+        source,
+    )
+    for m in re.finditer(r"(\w+)\s*=\s*get_legacy_session\(\)", source):
+        var = m.group(1)
+        escaped = re.escape(var)
+        source = re.sub(
+            rf"(?<!await ){escaped}\.(get|post|put|delete|patch)\(",
+            rf"await {var}.\1(",
+            source,
+        )
+    source = re.sub(r"[^\n]*\.get_adapter\([^)]*\)[^\n]*\n", "", source)
+    return source
+
+
+def _handle_urllib(source: str) -> str:
+    """Convert urllib.request callers to async httpx."""
+    source = re.sub(r"import urllib\.request\b", "import httpx", source)
+    source = re.sub(
+        r"(\s+)def fetch\(self\)",
+        r"\1async def fetch(self)",
+        source,
+    )
+    source = re.sub(
+        r"(\s+)\w+\s*=\s*urllib\.request\.Request\(([^,\n]+?)(?:,\s*headers=(\w+))?\)\n",
+        r"\1__urllib_url__ = \2\n\1__urllib_headers__ = \3\n",
+        source,
+    )
+    source = re.sub(
+        r"(\s+)with urllib\.request\.urlopen\(\w+\) as (\w+):\n\s+(\w+)\s*=\s*\2\.read\(\)\n",
+        r"\1__urllib_resp__ = await httpx.AsyncClient(follow_redirects=True).get(__urllib_url__, headers=__urllib_headers__)\n\1\3 = __urllib_resp__.content\n",
+        source,
+    )
+    url_match = re.search(r"__urllib_url__\s*=\s*(.+)", source)
+    headers_match = re.search(r"__urllib_headers__\s*=\s*(.+)", source)
+    if url_match and headers_match:
+        url_val = url_match.group(1).strip()
+        headers_val = headers_match.group(1).strip()
+        source = re.sub(r"[^\n]*__urllib_url__\s*=\s*[^\n]+\n", "", source)
+        source = re.sub(r"[^\n]*__urllib_headers__\s*=\s*[^\n]+\n", "", source)
+        source = source.replace("__urllib_url__", url_val)
+        if headers_val and headers_val != "None":
+            source = source.replace("__urllib_headers__", headers_val)
+        else:
+            source = re.sub(r",\s*headers=__urllib_headers__", "", source)
+        source = source.replace("__urllib_resp__", "response")
+    return source
+
+
+def _final_requests_cleanup(source: str) -> str:
+    """Final text-level pass to replace remaining requests.* references."""
+    replacements = [
+        ("requests.Response", "httpx.Response"),
+        ("requests.Session", "httpx.AsyncClient"),
+        ("requests.session()", "httpx.AsyncClient(follow_redirects=True)"),
+        ("requests.HTTPError", "httpx.HTTPStatusError"),
+        ("requests.RequestException", "httpx.HTTPError"),
+        ("cloudscraper.create_scraper()", "httpx.AsyncClient(follow_redirects=True)"),
+        ("allow_redirects=", "follow_redirects="),
+    ]
+    for old, new in replacements:
+        source = source.replace(old, new)
+
+    source = re.sub(
+        r"(\s*)with (httpx\.AsyncClient\([^)]*\)) as (\w+):",
+        r"\1async with \2 as \3:",
+        source,
+    )
+
+    source = _handle_verify_false(source)
+    source = _handle_verify_variable(source)
 
     # Convert positional data arg in .post()/.put()/.patch() calls
-    # s.post(url, payload) → s.post(url, data=payload)
-    # Match: .post(EXPR, VARNAME) where VARNAME is not a keyword arg
     source = re.sub(
         r"(\.\s*(?:post|put|patch)\([^,\n]+),\s+(?!data=|json=|files=|headers=|params=|timeout=|content=|cookies=|auth=|follow_redirects=)(\w+)\)",
         r"\1, data=\2)",
@@ -1177,108 +1185,26 @@ def _final_requests_cleanup(source: str) -> str:
     )
 
     # Convert requests-style multipart files= with (None, val) tuples to plain values
-    # Only match (None, value) in dict value contexts (preceded by ": ")
     if re.search(r":\s*\(None,\s*.+?\)", source):
         source = re.sub(r"(:\s*)\(None,\s*(.+?)\)", r"\1\2", source)
-        # Also convert files= to data= since (None, val) pattern indicates non-file form data
         source = re.sub(r"\bfiles=", "data=", source)
 
-    # Convert response.url (httpx URL object) to str when string methods are called
-    # r.url.replace(...) → str(r.url).replace(...)
+    # Convert response.url (httpx URL object) to str
     source = re.sub(
         r"(\w+)\.url\.(replace|split|startswith|endswith|strip|lower|upper)\(",
         r"str(\1.url).\2(",
         source,
     )
+    source = re.sub(r"(\w+)\.url(?=\s*[,)\]}])", r"str(\1.url)", source)
 
-    # Convert response.url used as a bare value (not calling methods on it)
-    # e.g. "Referer": r1.url  → "Referer": str(r1.url)
-    source = re.sub(
-        r"(\w+)\.url(?=\s*[,)\]}])",
-        r"str(\1.url)",
-        source,
-    )
-
-    # Fix raise_for_status without () — upstream bug that causes silent failures
+    # Fix raise_for_status without ()
     source = re.sub(r"\.raise_for_status\b(?!\()", ".raise_for_status()", source)
 
-    # Handle get_legacy_session() callers — SSLError.py returns httpx.AsyncClient
-    # but the calling scrapers were not converted since they don't import requests
     if "get_legacy_session" in source:
-        # Make fetch() async
-        source = re.sub(
-            r"(\s+)def fetch\(self\)",
-            r"\1async def fetch(self)",
-            source,
-        )
-        # Add await to chained get_legacy_session().get/post calls
-        source = re.sub(
-            r"(?<!await )get_legacy_session\(\)\.(get|post|put|delete|patch)\(",
-            r"await get_legacy_session().\1(",
-            source,
-        )
-        # Find vars assigned from get_legacy_session() and add await to their HTTP calls
-        for m in re.finditer(r"(\w+)\s*=\s*get_legacy_session\(\)", source):
-            var = m.group(1)
-            escaped = re.escape(var)
-            source = re.sub(
-                rf"(?<!await ){escaped}\.(get|post|put|delete|patch)\(",
-                rf"await {var}.\1(",
-                source,
-            )
-        # Delete get_adapter() lines (requests-only, no httpx equivalent)
-        source = re.sub(r"[^\n]*\.get_adapter\([^)]*\)[^\n]*\n", "", source)
+        source = _handle_legacy_session(source)
 
-    # Handle urllib.request callers — convert to async httpx
     if "urllib.request" in source and "import requests" not in source:
-        # Replace import
-        source = re.sub(
-            r"import urllib\.request\b",
-            "import httpx",
-            source,
-        )
-        # Make fetch() async
-        source = re.sub(
-            r"(\s+)def fetch\(self\)",
-            r"\1async def fetch(self)",
-            source,
-        )
-        # Convert urllib.request.Request + urlopen pattern:
-        #   req = urllib.request.Request(URL, headers=HEADERS)
-        #   with urllib.request.urlopen(req) as response:
-        #       html_doc = response.read()
-        # → response = await httpx.AsyncClient().get(URL, headers=HEADERS)
-        #   html_doc = response.content
-
-        # Remove Request object creation lines and capture URL/headers
-        source = re.sub(
-            r"(\s+)\w+\s*=\s*urllib\.request\.Request\(([^,\n]+?)(?:,\s*headers=(\w+))?\)\n",
-            r"\1__urllib_url__ = \2\n\1__urllib_headers__ = \3\n",
-            source,
-        )
-        # Convert with urlopen pattern to httpx
-        source = re.sub(
-            r"(\s+)with urllib\.request\.urlopen\(\w+\) as (\w+):\n\s+(\w+)\s*=\s*\2\.read\(\)\n",
-            r"\1__urllib_resp__ = await httpx.AsyncClient(follow_redirects=True).get(__urllib_url__, headers=__urllib_headers__)\n\1\3 = __urllib_resp__.content\n",
-            source,
-        )
-        # Clean up temp placeholders — inline the values
-        # Find __urllib_url__ and __urllib_headers__ assignments and inline them
-        url_match = re.search(r"__urllib_url__\s*=\s*(.+)", source)
-        headers_match = re.search(r"__urllib_headers__\s*=\s*(.+)", source)
-        if url_match and headers_match:
-            url_val = url_match.group(1).strip()
-            headers_val = headers_match.group(1).strip()
-            # Remove temp assignments
-            source = re.sub(r"[^\n]*__urllib_url__\s*=\s*[^\n]+\n", "", source)
-            source = re.sub(r"[^\n]*__urllib_headers__\s*=\s*[^\n]+\n", "", source)
-            # Replace placeholders in the response line
-            source = source.replace("__urllib_url__", url_val)
-            if headers_val and headers_val != "None":
-                source = source.replace("__urllib_headers__", headers_val)
-            else:
-                source = re.sub(r",\s*headers=__urllib_headers__", "", source)
-            source = source.replace("__urllib_resp__", "response")
+        source = _handle_urllib(source)
 
     # Rewrite waste_collection_schedule imports to use api prefix
     source = re.sub(
@@ -1301,6 +1227,7 @@ def _get_indent(line: str) -> str:
 
 def _get_stmt_text(node: ast.stmt, lines: list[str]) -> str:
     """Get the full source text of a statement."""
+    assert node.end_lineno is not None
     result = []
     for i in range(node.lineno - 1, node.end_lineno):
         result.append(lines[i])
@@ -1323,6 +1250,7 @@ def _mark_stmt_replace(
     new_text: str,
 ):
     """Replace a statement, handling multiline."""
+    assert node.end_lineno is not None
     indent = _get_indent(lines[node.lineno - 1])
     line_replacements[node.lineno] = indent + new_text.lstrip() + "\n"
     # Delete extra lines if multiline
@@ -1352,29 +1280,11 @@ def transform_file(source_path: Path, output_path: Path) -> list[str]:
     return warnings
 
 
-def main():
-    import argparse
-
-    parser = argparse.ArgumentParser(
-        description="Patch waste collection scrapers from sync requests to async httpx"
-    )
-    parser.add_argument(
-        "input_dir", type=Path, help="Directory with raw upstream scrapers"
-    )
-    parser.add_argument(
-        "output_dir", type=Path, help="Directory to write patched files"
-    )
-    args = parser.parse_args()
-
-    if not args.input_dir.is_dir():
-        print(f"Error: {args.input_dir} is not a directory", file=sys.stderr)
-        sys.exit(1)
-
-    args.output_dir.mkdir(parents=True, exist_ok=True)
-
-    source_files = sorted(args.input_dir.glob("*_gov_uk.py"))
+def _patch_directory(input_dir: Path, output_dir: Path) -> None:
+    """Patch all scraper files from input_dir into output_dir."""
+    source_files = sorted(input_dir.glob("*_gov_uk.py"))
     if not source_files:
-        print(f"No *_gov_uk.py files found in {args.input_dir}", file=sys.stderr)
+        print(f"No *_gov_uk.py files found in {input_dir}", file=sys.stderr)
         sys.exit(1)
 
     print(f"Patching {len(source_files)} files...")
@@ -1382,7 +1292,7 @@ def main():
     all_warnings: dict[str, list[str]] = {}
     deprecated: list[str] = []
     for src in source_files:
-        out = args.output_dir / src.name
+        out = output_dir / src.name
         raw = src.read_text()
         if _is_deprecated_scraper(raw):
             deprecated.append(src.name)
@@ -1404,6 +1314,28 @@ def main():
         for filename, warns in sorted(all_warnings.items()):
             for w in warns:
                 print(f"  {filename}: {w}")
+
+
+def main():
+    import argparse
+
+    parser = argparse.ArgumentParser(
+        description="Patch waste collection scrapers from sync requests to async httpx"
+    )
+    parser.add_argument(
+        "input_dir", type=Path, help="Directory with raw upstream scrapers"
+    )
+    parser.add_argument(
+        "output_dir", type=Path, help="Directory to write patched files"
+    )
+    args = parser.parse_args()
+
+    if not args.input_dir.is_dir():
+        print(f"Error: {args.input_dir} is not a directory", file=sys.stderr)
+        sys.exit(1)
+
+    args.output_dir.mkdir(parents=True, exist_ok=True)
+    _patch_directory(args.input_dir, args.output_dir)
 
 
 if __name__ == "__main__":

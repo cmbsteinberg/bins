@@ -81,6 +81,17 @@ async def test_lookup_error_cases(client):
 
 
 @pytest.mark.asyncio(loop_scope="session")
+async def test_calendar_error_cases(client):
+    # Missing council param → 422
+    resp = await client.get("/api/v1/calendar/123456")
+    assert resp.status_code == 422
+
+    # Unknown council → 404
+    resp = await client.get("/api/v1/calendar/123456?council=nonexistent")
+    assert resp.status_code == 404
+
+
+@pytest.mark.asyncio(loop_scope="session")
 async def test_cors(client):
     resp = await client.options(
         "/api/v1/councils",

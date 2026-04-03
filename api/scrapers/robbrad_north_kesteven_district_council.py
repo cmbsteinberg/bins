@@ -30,20 +30,20 @@ class CouncilClass(AbstractGetBinDataClass):
             bin_type_span = li.find("span", {"class": "font-weight-bold"})
             if not bin_type_span:
                 continue
-
+            
             bin_type = bin_type_span.get_text(strip=True)
-
+            
             # Extract collection date from the strong tag
             date_strong = li.find("strong")
             if not date_strong:
                 continue
-
+            
             date_text = date_strong.get_text(strip=True)
-
+            
             try:
                 # Parse date in format "Monday, 2 February 2026"
                 collection_date = datetime.strptime(date_text, "%A, %d %B %Y")
-
+                
                 # Get the full bin description (e.g., "Black (Residual waste)")
                 # Extract text between bin type and " bin on"
                 full_text = li.get_text(strip=True)
@@ -53,7 +53,7 @@ class CouncilClass(AbstractGetBinDataClass):
                     bin_description = match.group(1).strip()
                     if bin_description:
                         bin_type = f"{bin_type} {bin_description}"
-
+                
                 data["bins"].append(
                     {
                         "type": bin_type,

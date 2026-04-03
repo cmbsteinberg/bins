@@ -40,6 +40,8 @@ class Source:
 
         # Use customised TLS/cipher settings
         ctx = ssl.create_default_context()
+        ctx.check_hostname = False
+        ctx.verify_mode = ssl.CERT_NONE
         ctx.set_ciphers("AES256-SHA256")
         ctx.minimum_version = ssl.TLSVersion.TLSv1_2
         ctx.maximum_version = ssl.TLSVersion.TLSv1_2

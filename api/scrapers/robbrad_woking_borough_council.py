@@ -1,5 +1,6 @@
 import urllib
 
+import httpx
 from bs4 import BeautifulSoup
 
 from api.compat.ukbcd.common import *

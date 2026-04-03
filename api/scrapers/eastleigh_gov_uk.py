@@ -2,6 +2,7 @@ from datetime import datetime
 
 from bs4 import BeautifulSoup
 
+from api.compat.curl_cffi_fallback import AsyncClient as _CurlCffiClient
 from api.compat.hacs import Collection  # type: ignore[attr-defined]
 
 TITLE = "Eastleigh Borough Council"
@@ -30,12 +31,12 @@ class Source:
     def __init__(self, uprn: str | int):
         self._uprn: str | int = uprn
 
-    def fetch(self):
-        session = httpx.AsyncClient(impersonate="chrome124")
+    async def fetch(self):
+        session = _CurlCffiClient(follow_redirects=True)
         args = {"uprn": self._uprn}
 
         # get json file
-        r = session.get(API_URL, params=args)
+        r = await session.get(API_URL, params=args)
         r.raise_for_status()
 
         soup = BeautifulSoup(r.text, "html.parser")

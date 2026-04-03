@@ -1,9 +1,9 @@
 from datetime import datetime
 
-import httpx
 from bs4 import BeautifulSoup
 
 from api.compat.hacs import Collection  # type: ignore[attr-defined]
+from api.compat.requests_fallback import AsyncClient as _FallbackClient
 
 TITLE = "Stratford District Council"
 DESCRIPTION = (
@@ -50,7 +50,7 @@ class Source:
         }
 
     async def fetch(self):
-        r = await httpx.AsyncClient(follow_redirects=True).post(API_URL, data=self._payload, headers=HEADERS)
+        r = await _FallbackClient(follow_redirects=True).post(API_URL, data=self._payload, headers=HEADERS)
         soup = BeautifulSoup(r.text, features="html.parser")
 
         # Retrieve collection details

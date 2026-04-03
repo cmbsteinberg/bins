@@ -14,6 +14,8 @@ import sys
 from dataclasses import dataclass, field
 from pathlib import Path
 
+from pipeline.shared import load_overrides
+
 
 class SourceRewriter:
     """Collects edits (indexed by line/col) and applies them in reverse order."""
@@ -94,6 +96,7 @@ class _AnalysisResult:
 
     has_requests_import: bool = False
     has_cloudscraper_import: bool = False
+    has_curl_cffi_import: bool = False
     has_time_import: bool = False
     has_from_time_import_sleep: bool = False
     uses_time_sleep: bool = False
@@ -104,22 +107,35 @@ class _AnalysisResult:
     methods_needing_async: set[str] = field(default_factory=set)
 
 
+def _analyse_import_node(node: ast.Import, result: _AnalysisResult) -> None:
+    """Analyse a plain `import X` statement."""
+    names = {alias.name for alias in node.names}
+    if "requests" in names:
+        result.has_requests_import = True
+    if "cloudscraper" in names:
+        result.has_cloudscraper_import = True
+    if "time" in names:
+        result.has_time_import = True
+
+
+def _analyse_import_from_node(node: ast.ImportFrom, result: _AnalysisResult) -> None:
+    """Analyse a `from X import Y` statement."""
+    mod = node.module or ""
+    if mod == "requests" or mod.startswith("requests."):
+        result.has_requests_import = True
+    if mod == "curl_cffi" and any(a.name == "requests" for a in node.names):
+        result.has_requests_import = True
+        result.has_curl_cffi_import = True
+    if mod == "time" and any(a.name == "sleep" for a in node.names):
+        result.has_from_time_import_sleep = True
+
+
 def _analyse_imports(tree: ast.Module, result: _AnalysisResult) -> None:
     for node in ast.walk(tree):
         if isinstance(node, ast.Import):
-            names = {alias.name for alias in node.names}
-            if "requests" in names:
-                result.has_requests_import = True
-            if "cloudscraper" in names:
-                result.has_cloudscraper_import = True
-            if "time" in names:
-                result.has_time_import = True
+            _analyse_import_node(node, result)
         elif isinstance(node, ast.ImportFrom):
-            mod = node.module or ""
-            if mod == "requests" or mod.startswith("requests."):
-                result.has_requests_import = True
-            if mod == "time" and any(a.name == "sleep" for a in node.names):
-                result.has_from_time_import_sleep = True
+            _analyse_import_from_node(node, result)
 
 
 def _analyse_sessions_and_adapters(tree: ast.Module, result: _AnalysisResult) -> None:
@@ -249,6 +265,11 @@ def _rewrite_import_from(
 ) -> None:
     mod = node.module or ""
     if mod == "requests":
+        _mark_stmt_replace(
+            node, lines, delete_ranges, line_replacements,
+            _get_stmt_text(node, lines), "import httpx",
+        )
+    elif mod == "curl_cffi" and any(a.name == "requests" for a in node.names):
         _mark_stmt_replace(
             node, lines, delete_ranges, line_replacements,
             _get_stmt_text(node, lines), "import httpx",
@@ -1174,6 +1195,18 @@ def _final_requests_cleanup(source: str) -> str:
         source,
     )
 
+    # Strip curl_cffi-specific impersonate= arg (not supported by httpx)
+    source = re.sub(
+        r"httpx\.AsyncClient\(impersonate=[\"'][^\"']*[\"']\)",
+        "httpx.AsyncClient(follow_redirects=True)",
+        source,
+    )
+    source = re.sub(
+        r"impersonate=[\"'][^\"']*[\"'],?\s*",
+        "",
+        source,
+    )
+
     source = _handle_verify_false(source)
     source = _handle_verify_variable(source)
 
@@ -1270,14 +1303,185 @@ def _is_deprecated_scraper(source: str) -> bool:
     )
 
 
+# --- Requests fallback for Cloudflare-blocked scrapers ---
+
+
+def _load_override_sets() -> tuple[set[str], set[str], set[str]]:
+    """Load all override sets from overrides.json.
+
+    Returns (requests_fallback, curl_cffi_fallback, ssl_verify_disabled).
+    """
+    overrides = load_overrides()
+    return (
+        set(overrides.get("requests_fallback", [])),
+        set(overrides.get("curl_cffi_fallback", [])),
+        set(overrides.get("ssl_verify_disabled", [])),
+    )
+
+
+def _apply_requests_fallback(source: str) -> str:
+    """Replace httpx imports with requests_fallback for Cloudflare-blocked scrapers."""
+    source = source.replace(
+        "import httpx",
+        "from api.compat.requests_fallback import AsyncClient as _FallbackClient",
+    )
+    source = source.replace("httpx.AsyncClient", "_FallbackClient")
+    return source
+
+
+def _apply_curl_cffi_fallback(source: str) -> str:
+    """Replace httpx imports with curl_cffi_fallback for CF-blocked scrapers."""
+    source = source.replace(
+        "import httpx",
+        "from api.compat.curl_cffi_fallback import AsyncClient as _CurlCffiClient",
+    )
+    source = source.replace("httpx.AsyncClient", "_CurlCffiClient")
+    return source
+
+
+def _apply_ssl_verify_disabled(source: str) -> str:
+    """Set verify=False on all HTTP client constructors for SSL-broken councils.
+
+    If the scraper creates a custom ssl.SSLContext (for cipher/TLS settings),
+    we inject check_hostname=False and verify_mode=CERT_NONE into the context
+    instead of discarding it — this preserves TLS configuration while disabling
+    certificate verification.
+    """
+    # If source creates an SSL context, inject cert-disable into the context
+    if "ssl.create_default_context" in source:
+        # Insert check_hostname=False and verify_mode after the context creation line
+        source = re.sub(
+            r"([ \t]+)(ctx|ssl_ctx|ssl_context|context)\s*=\s*ssl\.create_default_context\([^)]*\)\n",
+            lambda m: (
+                m.group(0)
+                + f"{m.group(1)}{m.group(2)}.check_hostname = False\n"
+                + f"{m.group(1)}{m.group(2)}.verify_mode = ssl.CERT_NONE\n"
+            ),
+            source,
+        )
+    else:
+        # No custom SSL context — add verify=False to client constructors
+        source = re.sub(
+            r"httpx\.AsyncClient\(([^)]*)\)",
+            lambda m: _inject_verify_false("httpx.AsyncClient", m.group(1), force=True),
+            source,
+        )
+        # Also handle fallback clients
+        for client_name in ("_FallbackClient", "_CurlCffiClient"):
+            source = re.sub(
+                rf"{re.escape(client_name)}\(([^)]*)\)",
+                lambda m, cn=client_name: _inject_verify_false(cn, m.group(1), force=True),
+                source,
+            )
+    # Handle get_legacy_session() — replace with httpx.AsyncClient(verify=False)
+    if "get_legacy_session" in source:
+        source = source.replace(
+            "get_legacy_session()",
+            "httpx.AsyncClient(verify=False, follow_redirects=True)",
+        )
+        # Remove the unused import
+        source = re.sub(
+            r"from api\.compat\.hacs\.service\.SSLError import get_legacy_session\n",
+            "",
+            source,
+        )
+        # Ensure httpx import exists
+        if "import httpx" not in source:
+            source = "import httpx\n" + source
+    return source
+
+
+def _inject_verify_false(client_name: str, args: str, force: bool = False) -> str:
+    """Add verify=False to a client constructor if not already present.
+
+    If force=True, replaces any existing verify= value with False.
+    """
+    if "verify=" in args:
+        if force:
+            args = re.sub(r"verify=\w+", "verify=False", args)
+            return f"{client_name}({args})"
+        return f"{client_name}({args})"
+    if args.strip():
+        return f"{client_name}(verify=False, {args})"
+    return f"{client_name}(verify=False)"
+
+
 # --- File-level entry points ---
 
 
-def transform_file(source_path: Path, output_path: Path) -> list[str]:
+def transform_file(
+    source_path: Path,
+    output_path: Path,
+    use_requests_fallback: bool = False,
+    use_curl_cffi_fallback: bool = False,
+    disable_ssl_verify: bool = False,
+) -> list[str]:
     source = source_path.read_text()
     transformed, warnings = transform_source(source)
+    if use_curl_cffi_fallback:
+        transformed = _apply_curl_cffi_fallback(transformed)
+    elif use_requests_fallback:
+        transformed = _apply_requests_fallback(transformed)
+    if disable_ssl_verify:
+        transformed = _apply_ssl_verify_disabled(transformed)
     output_path.write_text(transformed)
     return warnings
+
+
+def _patch_single_file(
+    src: Path,
+    output_dir: Path,
+    fallback_list: set[str],
+    curl_cffi_list: set[str],
+    ssl_disabled_list: set[str],
+) -> tuple[str | None, list[str]]:
+    """Patch a single scraper file.
+
+    Returns (deprecated_name_or_None, warnings).
+    """
+    out = output_dir / src.name
+    raw = src.read_text()
+    if _is_deprecated_scraper(raw):
+        if out.exists():
+            out.unlink()
+        return src.name, []
+    warns = transform_file(
+        src,
+        out,
+        use_requests_fallback=src.stem in fallback_list,
+        use_curl_cffi_fallback=src.stem in curl_cffi_list,
+        disable_ssl_verify=src.stem in ssl_disabled_list,
+    )
+    return None, warns
+
+
+def _log_override_info(
+    fallback_list: set[str], curl_cffi_list: set[str], ssl_disabled_list: set[str],
+) -> None:
+    """Print info about active overrides."""
+    if fallback_list:
+        print(f"Requests fallback enabled for {len(fallback_list)} scrapers.")
+    if curl_cffi_list:
+        print(f"curl_cffi fallback enabled for {len(curl_cffi_list)} scrapers.")
+    if ssl_disabled_list:
+        print(f"SSL verify disabled for {len(ssl_disabled_list)} scrapers.")
+
+
+def _print_results(
+    total: int, deprecated: list[str], all_warnings: dict[str, list[str]],
+) -> None:
+    """Print patch results summary."""
+    if deprecated:
+        print(f"Deleted {len(deprecated)} deprecated scrapers: {', '.join(deprecated)}")
+
+    patched = total - len(all_warnings) - len(deprecated)
+    print(f"Patched: {patched}/{total}")
+
+    if all_warnings:
+        print("\nWarnings:")
+        for filename, warns in sorted(all_warnings.items()):
+            for w in warns:
+                print(f"  {filename}: {w}")
 
 
 def _patch_directory(input_dir: Path, output_dir: Path) -> None:
@@ -1287,33 +1491,23 @@ def _patch_directory(input_dir: Path, output_dir: Path) -> None:
         print(f"No *_gov_uk.py files found in {input_dir}", file=sys.stderr)
         sys.exit(1)
 
+    fallback_list, curl_cffi_list, ssl_disabled_list = _load_override_sets()
+    _log_override_info(fallback_list, curl_cffi_list, ssl_disabled_list)
+
     print(f"Patching {len(source_files)} files...")
 
     all_warnings: dict[str, list[str]] = {}
     deprecated: list[str] = []
     for src in source_files:
-        out = output_dir / src.name
-        raw = src.read_text()
-        if _is_deprecated_scraper(raw):
-            deprecated.append(src.name)
-            if out.exists():
-                out.unlink()
-            continue
-        warns = transform_file(src, out)
-        if warns:
+        dep_name, warns = _patch_single_file(
+            src, output_dir, fallback_list, curl_cffi_list, ssl_disabled_list,
+        )
+        if dep_name:
+            deprecated.append(dep_name)
+        elif warns:
             all_warnings[src.name] = warns
 
-    if deprecated:
-        print(f"Deleted {len(deprecated)} deprecated scrapers: {', '.join(deprecated)}")
-
-    patched = len(source_files) - len(all_warnings) - len(deprecated)
-    print(f"Patched: {patched}/{len(source_files)}")
-
-    if all_warnings:
-        print("\nWarnings:")
-        for filename, warns in sorted(all_warnings.items()):
-            for w in warns:
-                print(f"  {filename}: {w}")
+    _print_results(len(source_files), deprecated, all_warnings)
 
 
 def main():

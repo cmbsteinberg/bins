@@ -1,11 +1,11 @@
 from datetime import datetime
 
+import httpx
 from bs4 import BeautifulSoup
 
 from api.compat.hacs import Collection  # type: ignore[attr-defined]
 
 # Include work around for SSL UNSAFE_LEGACY_RENEGOTIATION_DISABLED error
-from api.compat.hacs.service.SSLError import get_legacy_session
 
 TITLE = "Aberdeenshire Council"
 DESCRIPTION = "Source for Aberdeenshire Council, UK."
@@ -36,7 +36,7 @@ class Source:
         self._uprn = str(uprn).zfill(12)
 
     async def fetch(self):
-        response = await get_legacy_session().get(
+        response = await httpx.AsyncClient(verify=False, follow_redirects=True).get(
             f"https://online.aberdeenshire.gov.uk/Apps/Waste-Collections/Routes/Route/{self._uprn}"
         )
         soup = BeautifulSoup(response.text, "html.parser")

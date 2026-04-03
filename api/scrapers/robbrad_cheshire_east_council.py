@@ -1,5 +1,6 @@
 from typing import Any, Dict, Optional
 
+import httpx
 from bs4 import BeautifulSoup, NavigableString, Tag
 
 from api.compat.ukbcd.common import *
@@ -32,7 +33,7 @@ class CouncilClass(AbstractGetBinDataClass):
         urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
         # Make request with SSL verification disabled
-        page = httpx.get(url, verify=False)
+        page = httpx.get(url)
 
         soup = BeautifulSoup(page.text, features="html.parser")
 

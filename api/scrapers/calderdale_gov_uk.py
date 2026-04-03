@@ -2,13 +2,13 @@ import logging
 import re
 from datetime import datetime
 
-import httpx
 from bs4 import BeautifulSoup
 
 from api.compat.hacs import Collection
 from api.compat.hacs.exceptions import (
     SourceArgumentNotFound,
 )
+from api.compat.requests_fallback import AsyncClient as _FallbackClient
 
 _LOGGER = logging.getLogger(__name__)
 
@@ -44,7 +44,7 @@ class Source:
             "find": "Show me my collection days",
         }
 
-        response = await httpx.AsyncClient(follow_redirects=True).post(API_URL, data=data)
+        response = await _FallbackClient(follow_redirects=True).post(API_URL, data=data)
         response.raise_for_status()
 
         # Parse HTML response

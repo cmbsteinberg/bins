@@ -35,6 +35,8 @@ class Source:
         # In openssl3 some context is needed to access this host
         # or an UNSAFE_LEGACY_RENEGOTIATION_DISABLED error will occur
         ctx = ssl.create_default_context(ssl.Purpose.SERVER_AUTH)
+        ctx.check_hostname = False
+        ctx.verify_mode = ssl.CERT_NONE
         ctx.options |= 0x4
         s = httpx.AsyncClient(verify=ctx, follow_redirects=True)
 

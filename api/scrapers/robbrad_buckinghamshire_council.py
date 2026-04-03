@@ -128,7 +128,7 @@ TEST_CASES = {}
 class Source:
     def __init__(self, uprn: str | None = None):
         self.uprn = uprn
-        self._scraper = BucksInput()
+        self._scraper = CouncilClass()
 
     async def fetch(self) -> list[Collection]:
         import asyncio

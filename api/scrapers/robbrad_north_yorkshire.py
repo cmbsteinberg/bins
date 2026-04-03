@@ -1,5 +1,6 @@
 from datetime import datetime
 
+import httpx
 from bs4 import BeautifulSoup
 
 from api.compat.ukbcd.common import *
@@ -21,11 +22,11 @@ class CouncilClass(AbstractGetBinDataClass):
         headers = {"Content-Type": "application/x-www-form-urlencoded"}
 
         # This endpoint redirects to the data url.
-        response = requests.request("POST", url, headers=headers, data=payload)
+        response = httpx.request("POST", url, headers=headers, data=payload)
         bin_data_url = f"{response.url}/ajax"
 
         # Get bin data
-        response = requests.request("GET", bin_data_url)
+        response = httpx.request("GET", bin_data_url)
         bin_data = response.json()
 
         # Parse bin data

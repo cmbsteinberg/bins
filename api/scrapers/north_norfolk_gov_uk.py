@@ -2,10 +2,10 @@ import asyncio
 import json
 from datetime import date, datetime, timedelta
 
-import httpx
 from bs4 import BeautifulSoup
 
 from api.compat.hacs import Collection  # type: ignore[attr-defined]
+from api.compat.requests_fallback import AsyncClient as _FallbackClient
 
 TITLE = "North Norfolk District Council"
 DESCRIPTION = "Source for waste collection services for North Norfolk District Council"
@@ -66,7 +66,7 @@ class Source:
     async def fetch(self):
         await asyncio.sleep(1)  # prevents test case failures due to query rate
 
-        s = httpx.AsyncClient(follow_redirects=True)
+        s = _FallbackClient(follow_redirects=True)
 
         # visit homepage to get token for later queries
         r = await s.get(

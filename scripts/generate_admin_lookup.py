@@ -22,6 +22,7 @@ logger = logging.getLogger(__name__)
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 SCRAPERS_DIR = PROJECT_ROOT / "api" / "scrapers"
 OUTPUT_PATH = PROJECT_ROOT / "api" / "data" / "admin_scraper_lookup.json"
+OVERRIDES_PATH = PROJECT_ROOT / "pipeline" / "overrides.json"
 
 
 def extract_url_from_scraper(path: Path) -> str | None:
@@ -82,8 +83,22 @@ def main():
             )
         lookup[domain] = scraper_name
 
+    # Apply overrides: redirect domains from HACS to UKBCD scrapers
+    override_count = 0
+    if OVERRIDES_PATH.exists():
+        overrides = json.loads(OVERRIDES_PATH.read_text())
+        for domain, entry in overrides.get("hacs_to_ukbcd", {}).items():
+            if entry.get("disabled"):
+                continue
+            ukbcd_scraper = entry["ukbcd_scraper"]
+            if domain in lookup and (SCRAPERS_DIR / f"{ukbcd_scraper}.py").exists():
+                old = lookup[domain]
+                lookup[domain] = ukbcd_scraper
+                logger.info("Override: %s -> %s (was %s, reason: %s)", domain, ukbcd_scraper, old, entry.get("reason", ""))
+                override_count += 1
+
     OUTPUT_PATH.write_text(json.dumps(lookup, indent=2, sort_keys=True))
-    logger.info("Wrote %d domain -> scraper mappings to %s", len(lookup), OUTPUT_PATH)
+    logger.info("Wrote %d domain -> scraper mappings to %s (%d overrides applied)", len(lookup), OUTPUT_PATH, override_count)
 
     total_scrapers = len(list(SCRAPERS_DIR.glob("*.py")))
     hacs_count = sum(1 for v in lookup.values() if not v.startswith("robbrad_"))

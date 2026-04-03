@@ -30,7 +30,7 @@ class CouncilClass(AbstractGetBinDataClass):
             "content-type": "application/x-www-form-urlencoded",
         }
 
-        response = httpx.post(URI, data=post_data, headers=headers, verify=False)
+        response = httpx.post(URI, data=post_data, headers=headers)
 
         soup = BeautifulSoup(response.content, "html.parser")
         rows = soup.select("table.table tbody tr")

@@ -27,7 +27,7 @@ class Source:
         self._uprn = uprn
 
     async def fetch(self):
-        r = await httpx.AsyncClient(follow_redirects=True).get(
+        r = await httpx.AsyncClient(verify=False, follow_redirects=True).get(
             f"https://www.richmondshire.gov.uk/Umbraco/Api/MyAreaApi/GetBinRoundData?uprn={self._uprn}"
         )
         ids = r.json()

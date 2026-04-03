@@ -50,7 +50,7 @@ class CouncilClass(AbstractGetBinDataClass):
         }
 
         # Use the above to get to the next page with address selection
-        response = s.post("https://apps.wigan.gov.uk/MyNeighbourhood/", payload)
+        response = s.post("https://apps.wigan.gov.uk/MyNeighbourhood/", data=payload)
 
         soup = BeautifulSoup(response.text, features="html.parser")
         soup.prettify()
@@ -72,7 +72,7 @@ class CouncilClass(AbstractGetBinDataClass):
         }
 
         # Get the final page with the actual dates
-        response = s.post("https://apps.wigan.gov.uk/MyNeighbourhood/", payload)
+        response = s.post("https://apps.wigan.gov.uk/MyNeighbourhood/", data=payload)
 
         soup = BeautifulSoup(response.text, features="html.parser")
         soup.prettify()

@@ -1,10 +1,10 @@
 import re
 from datetime import datetime
 
-import httpx
 from bs4 import BeautifulSoup
 
 from api.compat.hacs import Collection  # type: ignore[attr-defined]
+from api.compat.requests_fallback import AsyncClient as _FallbackClient
 
 TITLE = "Sunderland City Council"
 DESCRIPTION = "Source for sunderland.gov.uk services for Sunderland City Council, UK."
@@ -34,7 +34,7 @@ class Source:
         return tags
 
     async def fetch(self):
-        s = httpx.AsyncClient(follow_redirects=True)
+        s = _FallbackClient(follow_redirects=True)
 
         # visit webpage to get viewstate info
         r = await s.get(API_URL, headers=HEADERS)

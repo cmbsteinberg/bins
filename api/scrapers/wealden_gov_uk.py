@@ -1,9 +1,8 @@
 import json
 from datetime import datetime
 
-import httpx
-
 from api.compat.hacs import Collection  # type: ignore[attr-defined]
+from api.compat.requests_fallback import AsyncClient as _FallbackClient
 
 TITLE = "Wealden District Council"
 DESCRIPTION = "Source for Wealden City services for Wealden District Council, UK."
@@ -48,9 +47,9 @@ class Source:
         self._uprn = str(uprn)
 
     async def fetch(self):
-        # s = httpx.AsyncClient()
+        # s = _FallbackClient()
         params = {"action": "wealden_get_collections_for_uprn", "uprn": self._uprn}
-        r = await httpx.AsyncClient(follow_redirects=True).post(API_URL, headers=HEADERS, data=params)
+        r = await _FallbackClient(follow_redirects=True).post(API_URL, headers=HEADERS, data=params)
         json_data = json.loads(r.text)["collection"]
         entries = []
 

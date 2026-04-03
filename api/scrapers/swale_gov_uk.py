@@ -2,10 +2,10 @@ import asyncio
 import logging
 from datetime import date, datetime, timedelta
 
-import httpx
 from bs4 import BeautifulSoup
 
 from api.compat.hacs import Collection  # type: ignore[attr-defined]
+from api.compat.requests_fallback import AsyncClient as _FallbackClient
 
 _LOGGER = logging.getLogger(__name__)
 
@@ -61,7 +61,7 @@ class Source:
         return dt
 
     async def fetch(self) -> list[Collection]:
-        s = httpx.AsyncClient(follow_redirects=True)
+        s = _FallbackClient(follow_redirects=True)
 
         # mimic postcode search
         payload: dict = {

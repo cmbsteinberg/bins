@@ -22,7 +22,7 @@ class Source:
         self._property = str(property).zfill(12)
 
     async def fetch(self):
-        s = httpx.AsyncClient(follow_redirects=True)
+        s = httpx.AsyncClient(verify=False, follow_redirects=True)
         r = await s.get(f"https://bincollection.newham.gov.uk/Details/Index/{self._property}")
 
         # Make a BS4 object

@@ -1,3 +1,4 @@
+import httpx
 from bs4 import BeautifulSoup
 
 from api.compat.ukbcd.common import *
@@ -27,7 +28,7 @@ class CouncilClass(AbstractGetBinDataClass):
         }
         headers = {"User-Agent": "Mozilla/5.0 (Windows NT 6.1; Win64; x64)"}
         pass  # urllib3 warnings disabled
-        response = requests.request("POST", api_url, headers=headers, data=values)
+        response = httpx.request("POST", api_url, headers=headers, data=values)
 
         soup = BeautifulSoup(response.text, features="html.parser")
 

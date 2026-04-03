@@ -1,6 +1,7 @@
 from bs4 import BeautifulSoup
 from dateutil.parser import parse
 
+from api.compat.curl_cffi_fallback import AsyncClient as _CurlCffiClient
 from api.compat.hacs import Collection  # type: ignore[attr-defined]
 
 TITLE = "Islington Council"
@@ -30,12 +31,12 @@ class Source:
     def __init__(self, postcode, uprn):
         self._uprn = str(uprn)
         self._postcode = str(postcode)
-        self._session = httpx.AsyncClient(impersonate="chrome124")
+        self._session = _CurlCffiClient(follow_redirects=True)
 
-    def fetch(self):
+    async def fetch(self):
         url = f"https://www.islington.gov.uk/your-area?Postcode={self._postcode}&Uprn={self._uprn}"
 
-        response = self._session.get(url)
+        response = await self._session.get(url)
         response.raise_for_status()
         soup = BeautifulSoup(response.text, "html.parser")
 

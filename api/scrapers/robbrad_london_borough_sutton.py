@@ -3,7 +3,6 @@ from datetime import datetime
 
 import httpx
 from bs4 import BeautifulSoup
-from urllib3.util.retry import Retry
 
 from api.compat.ukbcd.common import *
 from api.compat.ukbcd.get_bin_data import AbstractGetBinDataClass
@@ -40,16 +39,6 @@ class CouncilClass(AbstractGetBinDataClass):
                 "Connection": "close",
             }
         )
-        retry = Retry(
-            total=5,
-            backoff_factor=1.5,  # 0, 1.5s, 3s, 4.5s, 6s...
-            status_forcelist=(429, 500, 502, 503, 504),
-            allowed_methods=("GET",),
-            respect_retry_after_header=True,
-        )
-        s.mount("https://", HTTPAdapter(max_retries=retry))
-        s.mount("http://", HTTPAdapter(max_retries=retry))
-
         # --- Initial fetch with timeout
         r = s.get(URI, timeout=20)
         # If 429 and Retry-After present, requests+urllib3 will already honor it.

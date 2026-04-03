@@ -3,6 +3,7 @@ from urllib.parse import parse_qs, urlparse
 from bs4 import BeautifulSoup
 from dateutil import parser
 
+from api.compat.curl_cffi_fallback import AsyncClient as _CurlCffiClient
 from api.compat.hacs import Collection  # type: ignore[attr-defined]
 
 TITLE = "East Renfrewshire Council"
@@ -31,9 +32,9 @@ class Source:
         self._postcode = postcode
         self._uprn = str(uprn).zfill(12)
 
-    def fetch(self):
+    async def fetch(self):
         # Cloudflare-aware session
-        session = httpx.AsyncClient(impersonate="chrome124")
+        session = _CurlCffiClient(follow_redirects=True)
         session.headers.update(
             {
                 "User-Agent": (
@@ -46,14 +47,14 @@ class Source:
             }
         )
 
-        address_page = self.__get_address_page(session, self._postcode)
-        bin_collection_info_page = self.__get_bin_collection_info_page(
+        address_page = await self.__get_address_page(session, self._postcode)
+        bin_collection_info_page = await self.__get_bin_collection_info_page(
             session, address_page, self._uprn
         )
         return self.__get_bin_collection_info(bin_collection_info_page)
 
-    def __get_address_page(self, s, postcode):
-        r = s.get(FORM_PAGE, timeout=30)
+    async def __get_address_page(self, s, postcode):
+        r = await s.get(FORM_PAGE, timeout=30)
         r.raise_for_status()
         soup = BeautifulSoup(r.text, "html.parser")
         form = soup.find(id="BINDAYSV2_FORM")
@@ -76,7 +77,7 @@ class Source:
             session_id = session_id or goss_ids["session_id"]
             nonce = nonce or goss_ids["nonce"]
 
-        r = s.post(
+        r = await s.post(
             form["action"],
             headers={"Origin": URL, "Referer": FORM_PAGE},
             data={
@@ -94,7 +95,7 @@ class Source:
         r.raise_for_status()
         return r.text
 
-    def __get_bin_collection_info_page(self, session, address_page, uprn):
+    async def __get_bin_collection_info_page(self, session, address_page, uprn):
         soup = BeautifulSoup(address_page, "html.parser")
         form = soup.find(id="BINDAYSV2_FORM")
         if not form or not form.has_attr("action"):
@@ -115,7 +116,7 @@ class Source:
             session_id = session_id or goss_ids["session_id"]
             nonce = nonce or goss_ids["nonce"]
 
-        r = session.post(
+        r = await session.post(
             form["action"],
             headers={"Origin": URL, "Referer": FORM_PAGE},
             data={

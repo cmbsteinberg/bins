@@ -1,3 +1,4 @@
+import httpx
 from bs4 import BeautifulSoup
 
 from api.compat.ukbcd.common import *
@@ -18,7 +19,7 @@ class CouncilClass(AbstractGetBinDataClass):
             raise ValueError(f"Error getting identifier: {str(e)}")
 
         # Make a BS4 object
-        page = httpx.get(url, verify=False)
+        page = httpx.get(url)
         soup = BeautifulSoup(page.text, "html.parser")
         soup.prettify
 

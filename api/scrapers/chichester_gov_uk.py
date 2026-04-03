@@ -3,6 +3,7 @@ from datetime import datetime
 
 from bs4 import BeautifulSoup
 
+from api.compat.curl_cffi_fallback import AsyncClient as _CurlCffiClient
 from api.compat.hacs import Collection
 
 TITLE = "Chichester District Council"
@@ -26,10 +27,10 @@ class Source:
     def __init__(self, uprn):
         self._uprn = uprn
 
-    def fetch(self):
-        session = httpx.AsyncClient(impersonate="chrome124")
+    async def fetch(self):
+        session = _CurlCffiClient(follow_redirects=True)
         # Start a session
-        r = session.get("https://www.chichester.gov.uk/checkyourbinday")
+        r = await session.get("https://www.chichester.gov.uk/checkyourbinday")
         r.raise_for_status()
         soup = BeautifulSoup(r.text, features="html.parser")
 
@@ -45,7 +46,7 @@ class Source:
             f"{ID}_FORMACTION_NEXT": "Submit",
             f"{ID}_CALENDAR_UPRN": self._uprn,
         }
-        r = session.post(form_url, data=form_data)
+        r = await session.post(form_url, data=form_data)
         r.raise_for_status()
 
         # Extract collection dates

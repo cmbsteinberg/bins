@@ -37,7 +37,7 @@ class CouncilClass(AbstractGetBinDataClass):
 
         url = "https://wasteservice.lambeth.gov.uk/WhitespaceComms/GetServicesByUprn"
 
-        headers = CaseInsensitiveDict()
+        headers = {}
         headers["Content-Type"] = "application/json"
 
         body = {"uprn": user_uprn, "includeEventTypes": False, "includeFlags": True}

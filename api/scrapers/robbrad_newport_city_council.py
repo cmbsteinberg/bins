@@ -116,7 +116,7 @@ class CouncilClass(AbstractGetBinDataClass):
             )
 
             output = response.text
-
+            
             # Check if API returned HTML error page instead of encrypted data
             if output.strip().startswith('<'):
                 raise ValueError(f"API returned HTML error page instead of encrypted data. Status: {response.status_code}")
@@ -151,7 +151,7 @@ TEST_CASES = {}
 class Source:
     def __init__(self, uprn: str | None = None):
         self.uprn = uprn
-        self._scraper = NewportInput()
+        self._scraper = CouncilClass()
 
     async def fetch(self) -> list[Collection]:
         import asyncio

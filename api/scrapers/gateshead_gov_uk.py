@@ -6,6 +6,7 @@ from datetime import datetime
 
 from bs4 import BeautifulSoup
 
+from api.compat.curl_cffi_fallback import AsyncClient as _CurlCffiClient
 from api.compat.hacs import Collection  # type: ignore[attr-defined]
 
 TITLE = "Gateshead Council"
@@ -29,10 +30,10 @@ class Source:
     def __init__(self, uprn):
         self._uprn = uprn
 
-    def fetch(self):
-        session = httpx.AsyncClient(impersonate="chrome124")
+    async def fetch(self):
+        session = _CurlCffiClient(follow_redirects=True)
 
-        r = session.get(
+        r = await session.get(
             "https://www.gateshead.gov.uk/article/3150/Bin-collection-day-checker",
             timeout=30,
         )
@@ -73,7 +74,7 @@ class Source:
             "BINCOLLECTIONCHECKER_ADDRESSSEARCH_ADDRESSTEXT": " ",
         }
 
-        r = session.post(form_url, data=form_data)
+        r = await session.post(form_url, data=form_data)
         r.raise_for_status()
 
         soup = BeautifulSoup(r.text, features="html.parser")

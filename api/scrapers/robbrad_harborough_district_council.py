@@ -27,14 +27,14 @@ class CouncilClass(AbstractGetBinDataClass):
         URI2 = "https://harborough.fccenvironment.co.uk/detail-address"
 
         # Make the GET request
-        session = httpx.Client(follow_redirects=True)
+        session = httpx.Client(verify=False, follow_redirects=True)
         response = session.get(
-            URI1, verify=False
+            URI1
         )  # Initialize session state (cookies) required by URI2
         response.raise_for_status()  # Validate session initialization
 
         params = {"Uprn": user_uprn}
-        response = session.post(URI2, data=params, verify=False)
+        response = session.post(URI2, data=params)
 
         # Check for service errors
         if response.status_code == 502:

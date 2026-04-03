@@ -5,6 +5,7 @@ from datetime import datetime
 
 from bs4 import BeautifulSoup
 
+from api.compat.curl_cffi_fallback import AsyncClient as _CurlCffiClient
 from api.compat.hacs import Collection
 
 # Source code based on gateshead_gov_uk
@@ -34,12 +35,12 @@ class Source:
     def __init__(self, uprn: str | int):
         self._uprn: str | int = uprn
 
-    def fetch(self):
+    async def fetch(self):
         """Fetch using curl_cffi to bypass Cloudflare anti-bot protection"""
-        scraper = httpx.AsyncClient(impersonate="chrome124")
+        scraper = _CurlCffiClient(follow_redirects=True)
 
         # Start a session with the target URL
-        r = scraper.get(API_URL, timeout=30)
+        r = await scraper.get(API_URL, timeout=30)
         r.raise_for_status()
 
         # Process the response and extract collection data
@@ -87,7 +88,7 @@ class Source:
         }
 
         # Submit form
-        r = scraper.post(form_url, data=form_data, timeout=30)
+        r = await scraper.post(form_url, data=form_data, timeout=30)
         r.raise_for_status()
 
         # Extract encoded response data

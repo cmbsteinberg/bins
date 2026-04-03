@@ -6,13 +6,32 @@
   <title>UK Bin Collections</title>
   <link rel="stylesheet" href="https://unpkg.com/axist@latest/dist/axist.min.css">
   <style>
-    .collection { display: flex; align-items: center; gap: 0.75rem; padding: 0.5rem 0; }
-    .collection-icon { font-size: 1.5rem; }
-    .collection-date { color: #666; font-size: 0.9rem; }
-    #error { color: #e53935; }
+    :root { --bin-green: #4caf50; --bin-muted: #78909c; }
     .hidden { display: none; }
-    #results article { margin-top: 1rem; }
+    #error { color: #e53935; }
     main > h1, main > p { text-align: center; }
+    #results article { margin-top: 1rem; }
+    .collection-date { color: #666; font-size: 0.9rem; }
+
+    /* Bin group card */
+    .bin-group { border: 1px solid #e0e0e0; border-radius: 8px; padding: 0.75rem 1rem; margin-bottom: 0.75rem; }
+    .bin-next { display: flex; align-items: center; gap: 0.75rem; }
+    .bin-icon { flex-shrink: 0; width: 36px; height: 36px; }
+    .bin-icon svg { width: 100%; height: 100%; }
+    .bin-info { flex: 1; }
+    .bin-type { font-weight: 600; margin: 0; font-size: 1rem; }
+    .bin-date { margin: 0; color: #555; font-size: 0.95rem; }
+    .bin-relative { font-size: 0.8rem; color: var(--bin-green); font-weight: 500; }
+    .bin-relative.past { color: #e53935; }
+
+    /* Pure CSS accordion for future dates */
+    .bin-more { margin-top: 0.5rem; }
+    .bin-more summary { cursor: pointer; font-size: 0.85rem; color: var(--bin-muted); list-style: none; }
+    .bin-more summary::-webkit-details-marker { display: none; }
+    .bin-more summary::before { content: "▸ "; }
+    .bin-more[open] summary::before { content: "▾ "; }
+    .bin-more ul { margin: 0.25rem 0 0 0; padding-left: 1.25rem; }
+    .bin-more li { font-size: 0.85rem; color: #666; padding: 0.15rem 0; }
   </style>
 </head>
 <body>

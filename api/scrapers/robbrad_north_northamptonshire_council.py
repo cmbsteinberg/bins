@@ -1,6 +1,8 @@
 from datetime import datetime as dtm
 from datetime import timedelta
 
+import httpx
+
 from api.compat.ukbcd.common import *
 from api.compat.ukbcd.get_bin_data import AbstractGetBinDataClass
 
@@ -54,6 +56,8 @@ class CouncilClass(AbstractGetBinDataClass):
                 bin_type = "Recycling"
             elif "garden" in sov:
                 bin_type = "Garden"
+            elif "food" in sov or "caddy" in sov:
+                bin_type = "Food Caddy"
             elif "refuse" in sov:
                 bin_type = "General"
             else:

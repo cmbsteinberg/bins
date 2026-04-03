@@ -1,10 +1,10 @@
 import re
 from datetime import datetime
 
-import httpx
 from bs4 import BeautifulSoup
 
 from api.compat.hacs import Collection
+from api.compat.requests_fallback import AsyncClient as _FallbackClient
 
 TITLE = "Oxford City Council"
 DESCRIPTION = "Source for oxford.gov.uk services for Oxford, UK."
@@ -31,7 +31,7 @@ class Source:
 
     async def fetch(self):
         entries: list[Collection] = []
-        session = httpx.AsyncClient(follow_redirects=True)
+        session = _FallbackClient(follow_redirects=True)
 
         form_landing_response = await session.get(API_URL, headers=HEADERS)
         soup = BeautifulSoup(form_landing_response.text, "html.parser")

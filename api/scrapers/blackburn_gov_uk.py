@@ -1,9 +1,9 @@
 from datetime import datetime
 
+import httpx
 import urllib3
 
 from api.compat.hacs import Collection  # type: ignore[attr-defined]
-from api.compat.hacs.service.SSLError import get_legacy_session
 
 TITLE = "Blackburn with Darwen Borough Council"
 DESCRIPTION = "Source for mybins.blackburn.gov.uk services for Blackburn with Darwen Borough Council, UK."
@@ -40,7 +40,7 @@ class Source:
         date = datetime.now()
 
         # that's not very nice, but it is the only way I got it to work
-        s = get_legacy_session()
+        s = httpx.AsyncClient(verify=False, follow_redirects=True)
 
         year = date.year
         month = date.month

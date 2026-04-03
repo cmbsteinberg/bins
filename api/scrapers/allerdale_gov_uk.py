@@ -1,10 +1,10 @@
 import logging
 from datetime import datetime
 
-import httpx
 from bs4 import BeautifulSoup
 
 from api.compat.hacs import Collection  # type: ignore[attr-defined]
+from api.compat.requests_fallback import AsyncClient as _FallbackClient
 
 TITLE = "Allerdale Borough Council"
 DESCRIPTION = "Source for www.allerdale.gov.uk services for Allerdale Borough Council."
@@ -43,7 +43,7 @@ class Source:
         self._address_postcode = address_postcode
 
     async def fetch(self):
-        session = httpx.AsyncClient(follow_redirects=True)
+        session = _FallbackClient(follow_redirects=True)
 
         # get link from first page as has some kind of unique hash
         r = await session.get(

@@ -24,7 +24,7 @@ class CouncilClass(AbstractGetBinDataClass):
 
         s = httpx.Client(follow_redirects=True)
         r = s.get(uri)
-        for cookie in r.cookies:
+        for cookie in r.cookies.jar:
             if cookie.name == "fcc_session_cookie":
                 fcc_session_token = cookie.value
 

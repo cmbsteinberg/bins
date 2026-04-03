@@ -34,4 +34,8 @@ cp "$CLONE_DIR/$INPUT_JSON" "$LOCAL_DIR/input.json"
 echo "Running patch_scrapers.py..."
 uv run python "$PATCH_SCRIPT" "$CLONE_DIR" "$SCRAPERS_DIR"
 
+# Regenerate test cases for ukbcd scrapers
+echo "Generating ukbcd test cases lookup..."
+uv run python -m pipeline.ukbcd.generate_test_lookup
+
 echo "Done."

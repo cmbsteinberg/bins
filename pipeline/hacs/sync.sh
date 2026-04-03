@@ -108,7 +108,7 @@ echo ""
 echo "=== Regenerating lookup files ==="
 
 echo "Generating admin scraper lookup..."
-uv run python -m pipeline.hacs.generate_admin_lookup
+uv run python -m scripts.generate_admin_lookup
 
 echo "Generating test cases lookup..."
 uv run python -m pipeline.hacs.generate_test_lookup

@@ -9,6 +9,10 @@ from fastapi import APIRouter, Depends, HTTPException, Request
 from fastapi.responses import Response
 from icalendar import Calendar, Event
 
+from api.compat.hacs.exceptions import (
+    SourceArgumentException,
+    SourceArgumentExceptionMultiple,
+)
 from api.services.models import (
     AddressItem,
     AddressLookupResponse,
@@ -19,10 +23,6 @@ from api.services.models import (
     LookupResponse,
 )
 from api.services.rate_limiting import rate_limit
-from api.compat.hacs.exceptions import (
-    SourceArgumentException,
-    SourceArgumentExceptionMultiple,
-)
 
 logger = logging.getLogger(__name__)
 

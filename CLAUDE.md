@@ -35,10 +35,11 @@ pipeline/hacs/sync.sh      # hacs_waste_collection_schedule (primary)
 pipeline/ukbcd/sync.sh     # UKBinCollectionData (fallback)
 
 # Regenerate test_cases.json from scraper TEST_CASES
-uv run python -m pipeline.hacs.generate_test_lookup
+uv run python -m pipeline.hacs.generate_test_lookup   # hacs scrapers
+uv run python -m pipeline.ukbcd.generate_test_lookup  # ukbcd scrapers (merges into same file)
 
 # Regenerate admin_scraper_lookup.json (council domain → scraper ID mapping)
-uv run python -m pipeline.hacs.generate_admin_lookup
+uv run python -m scripts.generate_admin_lookup
 
 # Docker
 docker compose up --build

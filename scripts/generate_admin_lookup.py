@@ -1,8 +1,9 @@
 """
 Generate a JSON mapping of council homepage domain -> scraper module name.
 
-Reads the URL constant from each scraper in scrapers/, normalises to a
-bare domain, and writes the mapping to admin_scraper_lookup.json.
+Reads the URL constant from each scraper in api/scrapers/ (both hacs and
+ukbcd), normalises to a bare domain, and writes the mapping to
+api/data/admin_scraper_lookup.json.
 
 At runtime, the gov.uk local authority API returns a homepage_url — normalise
 that to a domain and look it up in this map to find the right scraper.
@@ -18,7 +19,7 @@ from urllib.parse import urlparse
 logging.basicConfig(level=logging.INFO, format="%(levelname)s: %(message)s")
 logger = logging.getLogger(__name__)
 
-PROJECT_ROOT = Path(__file__).resolve().parent.parent.parent
+PROJECT_ROOT = Path(__file__).resolve().parent.parent
 SCRAPERS_DIR = PROJECT_ROOT / "api" / "scrapers"
 OUTPUT_PATH = PROJECT_ROOT / "api" / "data" / "admin_scraper_lookup.json"
 
@@ -85,6 +86,9 @@ def main():
     logger.info("Wrote %d domain -> scraper mappings to %s", len(lookup), OUTPUT_PATH)
 
     total_scrapers = len(list(SCRAPERS_DIR.glob("*.py")))
+    hacs_count = sum(1 for v in lookup.values() if not v.startswith("robbrad_"))
+    ukbcd_count = sum(1 for v in lookup.values() if v.startswith("robbrad_"))
+
     print(f"\n{'=' * 50}")
     print("Domain -> Scraper Lookup Summary")
     print(f"{'=' * 50}")
@@ -92,6 +96,8 @@ def main():
     print(
         f"Mapped (have URL):    {len(lookup)} ({len(lookup) * 100 // total_scrapers if total_scrapers else 0}%)"
     )
+    print(f"  hacs:               {hacs_count}")
+    print(f"  ukbcd:              {ukbcd_count}")
     print(f"Missing URL constant: {len(no_url)}")
 
     if no_url:

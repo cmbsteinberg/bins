@@ -27,11 +27,10 @@ import argparse
 import os
 import sys
 import textwrap
-import time
 from pathlib import Path
 
 from hcloud import Client
-from hcloud.firewalls.domain import FirewallRule, FirewallResource
+from hcloud.firewalls.domain import FirewallRule
 from hcloud.servers.domain import ServerCreatePublicNetwork
 
 # ---------------------------------------------------------------------------

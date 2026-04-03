@@ -4,6 +4,7 @@ Provides the helpers that RobBrad scrapers import via ``from ... common import *
 without pulling in heavy dependencies (selenium, pandas, etc.).
 """
 
+import json  # noqa E401
 import re
 from datetime import datetime, timedelta
 from enum import Enum
@@ -132,8 +133,13 @@ def get_next_occurrence_from_day_month(date: datetime) -> datetime:
 
 def get_next_day_of_week(day_name, fmt="%d/%m/%Y"):
     _days = [
-        "Monday", "Tuesday", "Wednesday", "Thursday",
-        "Friday", "Saturday", "Sunday",
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+        "Sunday",
     ]
     today = datetime.now()
     target_idx = _days.index(day_name)

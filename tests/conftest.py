@@ -15,18 +15,15 @@ def pytest_runtest_logreport(report):
     node_id = report.nodeid
 
     # Extract council and label from parametrized id
-    # e.g. "test_scraper_lookup[allerdale_gov_uk_Test_001]"
+    # test_integration.py uses "council|label", test_ci.py uses "council" alone
     council = ""
     label = ""
     if "[" in node_id:
         param_str = node_id.split("[", 1)[1].rstrip("]")
-        # The id format is "{council}_{label}" — council ends at a _gov_uk boundary
-        for suffix in ("_gov_uk",):
-            idx = param_str.find(suffix)
-            if idx != -1:
-                council = param_str[: idx + len(suffix)]
-                label = param_str[idx + len(suffix) + 1 :]
-                break
+        if "|" in param_str:
+            council, label = param_str.split("|", 1)
+        else:
+            council = param_str
 
     entry = {
         "node_id": node_id,
@@ -43,17 +40,18 @@ def pytest_runtest_logreport(report):
         # Extract structured fields from the failure message
         for line in msg.splitlines():
             line_stripped = line.strip()
-            if line_stripped.startswith("UPRN/address_id:"):
+            if line_stripped.startswith(("UPRN/address_id:", "UPRN:")):
                 entry["uprn"] = line_stripped.split(":", 1)[1].strip()
             elif line_stripped.startswith("Query params:"):
-                # Query params span multiple lines as JSON; grab inline value
                 entry["query_params_raw"] = line_stripped.split(":", 1)[1].strip()
             elif line_stripped.startswith("Status code:"):
                 entry["status_code"] = line_stripped.split(":", 1)[1].strip()
             elif line_stripped.startswith("Error detail:"):
                 entry["error_detail"] = line_stripped.split(":", 1)[1].strip()
-            elif line_stripped.startswith("Exception:"):
+            elif line_stripped.startswith(("Exception:", "Error message:")):
                 entry["exception"] = line_stripped.split(":", 1)[1].strip()
+            elif line_stripped.startswith("Error type:"):
+                entry["error_type"] = line_stripped.split(":", 1)[1].strip()
             elif line_stripped.startswith("Response keys:"):
                 entry["response_keys"] = line_stripped.split(":", 1)[1].strip()
 
@@ -68,10 +66,10 @@ def pytest_runtest_logreport(report):
             # Fallback: last non-empty line
             entry["failure_category"] = msg.splitlines()[-1].strip()[:200]
 
-        # Also extract error_summary: the first line starting with "Expected" or "Response" or "Request"
+        # Extract error_summary from the first diagnostic line
         for line in msg.splitlines():
             line_stripped = line.strip()
-            if line_stripped.startswith(("Expected ", "Response ", "Request ")):
+            if line_stripped.startswith(("Expected ", "Response ", "Request ", "FAILED:")):
                 entry["error_summary"] = line_stripped[:200]
                 break
 

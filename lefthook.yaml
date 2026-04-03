@@ -28,3 +28,9 @@ pre-commit:
       glob: "*.{js}"
       run: npx @biomejs/biome check --write --no-errors-on-unmatched --files-ignore-unknown=true --colors=off {staged_files}
       stage_fixed: true
+
+    # 3. CI smoke tests — scrapers compile, compat imports, app starts
+    ci-tests:
+      tags: test
+      glob: "*.py"
+      run: uv run pytest tests/test_ci.py -x -q --tb=short

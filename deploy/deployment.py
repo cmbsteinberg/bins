@@ -37,7 +37,7 @@ from hcloud.servers.domain import ServerCreatePublicNetwork
 # Config — edit these to taste
 # ---------------------------------------------------------------------------
 SERVER_NAME = "bins-api"
-SERVER_TYPE = "cx22"  # 2 vCPU, 4 GB RAM — bump to cx32 if needed
+SERVER_TYPE = "cx32"  # 4 vCPU, 8 GB RAM — handles ~1000 concurrent requests
 IMAGE = "ubuntu-24.04"
 LOCATION = "fsn1"  # Falkenstein, DE — closest to UK
 SSH_KEY_NAME = "bins-deploy"
@@ -85,7 +85,6 @@ def build_cloud_init(repo_url: str, deploy_user: str) -> str:
         ufw allow OpenSSH
         ufw allow 80/tcp
         ufw allow 443/tcp
-        ufw allow 3001/tcp
         ufw --force enable
 
         echo ">>> Disabling root SSH login"
@@ -123,7 +122,9 @@ def cmd_provision(client: Client, ssh_key_file: str) -> None:
 
     existing_key = client.ssh_keys.get_by_name(SSH_KEY_NAME)
     if existing_key:
-        print(f"SSH key '{SSH_KEY_NAME}' already exists (id={existing_key.data_model.id})")
+        print(
+            f"SSH key '{SSH_KEY_NAME}' already exists (id={existing_key.data_model.id})"
+        )
         ssh_key = existing_key
     else:
         ssh_key = client.ssh_keys.create(name=SSH_KEY_NAME, public_key=pub_key)
@@ -132,7 +133,9 @@ def cmd_provision(client: Client, ssh_key_file: str) -> None:
     # 2. Firewall
     existing_fw = client.firewalls.get_by_name(FIREWALL_NAME)
     if existing_fw:
-        print(f"Firewall '{FIREWALL_NAME}' already exists (id={existing_fw.data_model.id})")
+        print(
+            f"Firewall '{FIREWALL_NAME}' already exists (id={existing_fw.data_model.id})"
+        )
         firewall = existing_fw
     else:
         rules = [
@@ -165,7 +168,9 @@ def cmd_provision(client: Client, ssh_key_file: str) -> None:
                 description="Uptime Kuma",
             ),
         ]
-        response = client.firewalls.create(name=FIREWALL_NAME, rules=rules, labels=LABELS)
+        response = client.firewalls.create(
+            name=FIREWALL_NAME, rules=rules, labels=LABELS
+        )
         firewall = response.firewall
         print(f"Created firewall '{FIREWALL_NAME}' (id={firewall.data_model.id})")
 
@@ -178,7 +183,9 @@ def cmd_provision(client: Client, ssh_key_file: str) -> None:
         return
 
     # 4. Create server
-    print(f"\nProvisioning server '{SERVER_NAME}' ({SERVER_TYPE} / {IMAGE} / {LOCATION})...")
+    print(
+        f"\nProvisioning server '{SERVER_NAME}' ({SERVER_TYPE} / {IMAGE} / {LOCATION})..."
+    )
     user_data = build_cloud_init(REPO_URL, DEPLOY_USER)
 
     response = client.servers.create(
@@ -283,7 +290,10 @@ def _ssh_exec(client: Client, ssh_key_file: str, command: str) -> int:
     try:
         import paramiko
     except ImportError:
-        print("Error: paramiko required for SSH commands. Run: uv add paramiko", file=sys.stderr)
+        print(
+            "Error: paramiko required for SSH commands. Run: uv add paramiko",
+            file=sys.stderr,
+        )
         sys.exit(1)
 
     server = client.servers.get_by_name(SERVER_NAME)
@@ -359,7 +369,9 @@ def main() -> None:
     if args.command == "provision":
         cmd_provision(client, args.ssh_key_file)
     elif args.command == "destroy":
-        cmd_destroy(client, args.ssh_key_file if hasattr(args, "ssh_key_file") else None)
+        cmd_destroy(
+            client, args.ssh_key_file if hasattr(args, "ssh_key_file") else None
+        )
     elif args.command == "deploy":
         cmd_deploy(client, args.ssh_key_file)
     elif args.command == "status":

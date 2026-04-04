@@ -97,6 +97,13 @@ async def log_requests(request: Request, call_next):
         response.status_code,
         duration_ms,
     )
+    # Security headers
+    response.headers["X-Content-Type-Options"] = "nosniff"
+    response.headers["X-Frame-Options"] = "DENY"
+    response.headers["Strict-Transport-Security"] = (
+        "max-age=31536000; includeSubDomains"
+    )
+    response.headers["Referrer-Policy"] = "strict-origin-when-cross-origin"
     # If Redis is available, increment a counter for analytics
     redis_client = getattr(request.app.state, "redis", None)
     if redis_client and request.url.path.startswith("/api"):

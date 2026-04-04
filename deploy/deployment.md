@@ -20,7 +20,7 @@ Automated deployment using `deploy/deployment.py` (wraps the Hetzner Cloud API v
 
 ## 1. Provision the Server
 
-One command creates everything — SSH key, firewall, and a CX22 server with cloud-init that installs Docker, creates a `deploy` user, clones the repo, and runs `docker compose up`:
+One command creates everything — SSH key, firewall, and a CX32 server with cloud-init that installs Docker, creates a `deploy` user, clones the repo, and runs `docker compose up`:
 
 ```bash
 uv run python deploy/deployment.py provision
@@ -62,7 +62,14 @@ uv run python deploy/deployment.py ssh "cd ~/bins && docker compose ps"
 uv run python deploy/deployment.py ssh "cd ~/bins && docker compose logs --tail 50"
 ```
 
-Set up Uptime Kuma monitoring at `http://<server-ip>:3001`.
+Uptime Kuma runs on the internal Docker network only (not exposed to the public internet). To access the dashboard, SSH tunnel to the server:
+
+```bash
+ssh -L 3001:localhost:3001 deploy@<server-ip>
+# Then open http://localhost:3001 in your browser
+```
+
+Alternatively, proxy it through Caddy with basic auth if you need persistent browser access.
 
 ## 4. Redeploying
 
@@ -105,7 +112,27 @@ Add these GitHub repo secrets:
 - `SERVER_IP` — your Hetzner server IP
 - `SSH_PRIVATE_KEY` — private key whose public key is on the server
 
-## 5. Maintenance
+## 5. Server Sizing & Scaling
+
+The API is I/O-bound (waiting on council websites), not CPU-bound. Redis caching (14h TTL) means repeat lookups for the same council+UPRN never hit the council site, so sustained traffic is cheap.
+
+| Server | Specs | Monthly | Handles |
+|--------|-------|---------|---------|
+| CX22 | 2 vCPU / 4 GB | ~€4.35 | ~200-300 concurrent cache-miss requests |
+| **CX32** | **4 vCPU / 8 GB** | **~€7.45** | **~800-1000 concurrent (mixed cache hits/misses)** |
+| CX42 | 8 vCPU / 16 GB | ~€14.45 | 1000+ concurrent cache misses with headroom |
+
+**Currently deployed on CX32.** This comfortably handles ~1000 concurrent requests when most are cache hits (the realistic scenario). Each cache miss holds an outbound httpx connection (~0.5-1MB) while waiting on a council site, so memory is the constraint for concurrent cache misses rather than CPU.
+
+**When to scale up to CX42:**
+- Sustained >80% memory usage (`docker stats --no-stream`)
+- Response times degrading under load
+- You can resize in-place on Hetzner with a quick reboot — no re-provisioning needed
+
+**When to consider horizontal scaling (multiple servers + load balancer):**
+- Likely never at these traffic levels. A single CX32 with Redis caching handles thousands of users per minute. The bottleneck is the upstream council websites, not our infrastructure.
+
+## 6. Maintenance
 
 ```bash
 # View logs
@@ -120,7 +147,7 @@ uv run python deploy/deployment.py ssh "df -h"
 uv run python deploy/deployment.py ssh "<command>"
 ```
 
-## 6. Tearing Down
+## 7. Tearing Down
 
 Remove all Hetzner resources (server, firewall, SSH key):
 

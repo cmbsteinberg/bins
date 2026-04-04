@@ -1,11 +1,9 @@
 from __future__ import annotations
 
+import json
 import logging
-import os
-import smtplib
 import uuid
-from datetime import timedelta
-from email.message import EmailMessage
+from datetime import date, datetime, timedelta
 
 import httpx
 from fastapi import APIRouter, Depends, HTTPException, Request
@@ -32,6 +30,40 @@ from api.services.scraper_registry import ScraperTimeoutError
 logger = logging.getLogger(__name__)
 
 router = APIRouter()
+
+CACHE_TTL = 14 * 3600  # 14 hours
+
+
+def _cache_key(council: str, params: dict) -> str:
+    """Build a deterministic Redis key from council + sorted params."""
+    parts = ":".join(f"{k}={v}" for k, v in sorted(params.items()))
+    return f"cache:{council}:{parts}"
+
+
+async def _cache_get(redis_client, key: str) -> dict | None:
+    """Try to read cached scraper result from Redis."""
+    if not redis_client:
+        return None
+    try:
+        raw = await redis_client.get(key)
+        if raw:
+            return json.loads(raw)
+    except Exception:
+        pass
+    return None
+
+
+async def _cache_set(redis_client, key: str, collections: list[dict]) -> None:
+    """Write scraper result to Redis with TTL."""
+    if not redis_client:
+        return
+    try:
+        payload = json.dumps(
+            {"collections": collections, "cached_at": datetime.now().isoformat()}
+        )
+        await redis_client.set(key, payload, ex=CACHE_TTL)
+    except Exception:
+        pass
 
 
 async def _resolve_council(lookup, postcode: str) -> tuple[str | None, str | None]:
@@ -115,6 +147,19 @@ async def lookup(
             f"Required: {meta.required_params}, Optional: {meta.optional_params}",
         )
 
+    # Check cache
+    redis_client = getattr(request.app.state, "redis", None)
+    key = _cache_key(council, params)
+    cached = await _cache_get(redis_client, key)
+    if cached:
+        return LookupResponse(
+            uprn=uprn,
+            council=council,
+            cached=True,
+            cached_at=datetime.fromisoformat(cached["cached_at"]),
+            collections=[CollectionItem(**c) for c in cached["collections"]],
+        )
+
     try:
         collections = await registry.invoke(council, params)
         registry.record_success(council)
@@ -148,17 +193,15 @@ async def lookup(
             "Please try again later.",
         )
 
+    items = [CollectionItem(date=c.date, type=c.type, icon=c.icon) for c in collections]
+
+    # Write to cache
+    await _cache_set(redis_client, key, [i.model_dump(mode="json") for i in items])
+
     return LookupResponse(
         uprn=uprn,
         council=council,
-        collections=[
-            CollectionItem(
-                date=c.date,
-                type=c.type,
-                icon=c.icon,
-            )
-            for c in collections
-        ],
+        collections=items,
     )
 
 
@@ -192,52 +235,64 @@ async def calendar(
             detail=f"Missing required parameters for {council}: {missing}",
         )
 
-    try:
-        collections = await registry.invoke(council, params)
-        registry.record_success(council)
-    except (SourceArgumentException, SourceArgumentExceptionMultiple) as e:
-        registry.record_failure(council, str(e))
-        raise HTTPException(
-            status_code=422,
-            detail="The details provided don't match what this council's system expects. "
-            "Please check your UPRN and postcode are correct.",
-        )
-    except ScraperTimeoutError as e:
-        registry.record_failure(council, str(e))
-        raise HTTPException(
-            status_code=504,
-            detail="Your council's website is taking too long to respond. "
-            "Please try again later.",
-        )
-    except (httpx.HTTPError, TimeoutError) as e:
-        registry.record_failure(council, str(e))
-        raise HTTPException(
-            status_code=503,
-            detail="We couldn't reach your council's website. "
-            "The site may be temporarily down — please try again later.",
-        )
-    except Exception as e:
-        registry.record_failure(council, str(e))
-        logger.exception("Scraper %s failed", council)
-        raise HTTPException(
-            status_code=503,
-            detail="Something went wrong while fetching your collection schedule. "
-            "Please try again later.",
-        )
+    # Check cache — reuse same cache as /lookup
+    redis_client = getattr(request.app.state, "redis", None)
+    key = _cache_key(council, params)
+    cached = await _cache_get(redis_client, key)
+    if cached:
+        collections_data = cached["collections"]
+    else:
+        try:
+            raw_collections = await registry.invoke(council, params)
+            registry.record_success(council)
+        except (SourceArgumentException, SourceArgumentExceptionMultiple) as e:
+            registry.record_failure(council, str(e))
+            raise HTTPException(
+                status_code=422,
+                detail="The details provided don't match what this council's system expects. "
+                "Please check your UPRN and postcode are correct.",
+            )
+        except ScraperTimeoutError as e:
+            registry.record_failure(council, str(e))
+            raise HTTPException(
+                status_code=504,
+                detail="Your council's website is taking too long to respond. "
+                "Please try again later.",
+            )
+        except (httpx.HTTPError, TimeoutError) as e:
+            registry.record_failure(council, str(e))
+            raise HTTPException(
+                status_code=503,
+                detail="We couldn't reach your council's website. "
+                "The site may be temporarily down — please try again later.",
+            )
+        except Exception as e:
+            registry.record_failure(council, str(e))
+            logger.exception("Scraper %s failed", council)
+            raise HTTPException(
+                status_code=503,
+                detail="Something went wrong while fetching your collection schedule. "
+                "Please try again later.",
+            )
+        collections_data = [
+            {"date": str(c.date), "type": c.type, "icon": c.icon}
+            for c in raw_collections
+        ]
+        await _cache_set(redis_client, key, collections_data)
 
     cal = Calendar()
     cal.add("prodid", "-//UK Bin Collections//bins//EN")
     cal.add("version", "2.0")
     cal.add("x-wr-calname", f"Bin Collections ({uprn})")
 
-    for c in collections:
+    for c in collections_data:
         event = Event()
-        event.add("summary", c.type)
-        event.add("dtstart", c.date)
-        event.add("dtend", c.date + timedelta(days=1))
+        event.add("summary", c["type"])
+        event.add("dtstart", date.fromisoformat(c["date"]))
+        event.add("dtend", date.fromisoformat(c["date"]) + timedelta(days=1))
         event.add("uid", str(uuid.uuid4()))
-        if c.icon:
-            event.add("description", c.icon)
+        if c.get("icon"):
+            event.add("description", c["icon"])
         cal.add_component(event)
 
     return Response(
@@ -317,36 +372,20 @@ class ReportRequest(BaseModel):
     collections: list[dict]
 
 
+report_logger = logging.getLogger("api.reports")
+
+
 @router.post("/report")
-async def report_wrong(request: Request, body: ReportRequest):
-    email_to = os.getenv("EMAIL")
-    if not email_to:
-        raise HTTPException(status_code=503, detail="Reporting is not configured.")
-
-    collections_text = "\n".join(
-        f"  - {c.get('type', '?')}: {c.get('date', '?')}" for c in body.collections
+async def report_wrong(body: ReportRequest):
+    collections_text = ", ".join(
+        f"{c.get('type', '?')} ({c.get('date', '?')})" for c in body.collections
     )
-    msg = EmailMessage()
-    msg["Subject"] = f"Wrong bin data: {body.postcode} - {body.council}"
-    msg["From"] = email_to
-    msg["To"] = email_to
-    msg.set_content(
-        f"A user reported incorrect bin collection data.\n\n"
-        f"Postcode: {body.postcode}\n"
-        f"Address: {body.address}\n"
-        f"UPRN: {body.uprn}\n"
-        f"Council: {body.council}\n\n"
-        f"Collections returned:\n{collections_text}\n"
+    report_logger.warning(
+        "User report: postcode=%s council=%s uprn=%s address=%s collections=[%s]",
+        body.postcode,
+        body.council,
+        body.uprn,
+        body.address,
+        collections_text,
     )
-
-    smtp_host = os.getenv("SMTP_HOST", "localhost")
-    smtp_port = int(os.getenv("SMTP_PORT", "25"))
-
-    try:
-        with smtplib.SMTP(smtp_host, smtp_port, timeout=10) as smtp:
-            smtp.send_message(msg)
-    except Exception:
-        logger.exception("Failed to send report email")
-        raise HTTPException(status_code=503, detail="Failed to send report.")
-
-    return {"status": "sent"}
+    return {"status": "logged"}

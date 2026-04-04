@@ -10,12 +10,12 @@ from datetime import datetime
 from pathlib import Path
 
 from api.compat.hacs import Collection
+from api.config import SCRAPER_TIMEOUT
 
 logger = logging.getLogger(__name__)
 
 SCRAPERS_DIR = Path(__file__).parent.parent / "scrapers"
 DISABLED_PATH = Path(__file__).parent.parent / "data" / "disabled_scrapers.json"
-SCRAPER_TIMEOUT = 30  # seconds
 
 
 class ScraperTimeoutError(Exception):

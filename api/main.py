@@ -11,9 +11,13 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import HTMLResponse
 from fastapi.staticfiles import StaticFiles
 
+from api import config
+from api.logging_config import setup_logging
 from api.routes import router as api_router
 from api.services.council_lookup import CouncilLookup
 from api.services.scraper_registry import ScraperRegistry
+
+setup_logging()
 
 _TEMPLATES_DIR = Path(__file__).resolve().parent / "templates"
 _STATIC_DIR = Path(__file__).resolve().parent / "static"
@@ -77,7 +81,7 @@ app = FastAPI(
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=config.CORS_ORIGINS,
     allow_methods=["GET"],
     allow_headers=["*"],
 )
@@ -96,6 +100,16 @@ async def log_requests(request: Request, call_next):
         request.url.path,
         response.status_code,
         duration_ms,
+        extra={
+            "method": request.method,
+            "path": request.url.path,
+            "status_code": response.status_code,
+            "duration_ms": duration_ms,
+            "client_ip": request.headers.get("X-Forwarded-For", "")
+            .split(",")[0]
+            .strip()
+            or (request.client.host if request.client else "unknown"),
+        },
     )
     # Security headers
     response.headers["X-Content-Type-Options"] = "nosniff"
@@ -110,7 +124,7 @@ async def log_requests(request: Request, call_next):
         try:
             await redis_client.hincrby("api:request_counts", request.url.path, 1)
         except Exception:
-            pass
+            logger.debug("Redis analytics increment failed", exc_info=True)
     return response
 
 
@@ -149,7 +163,9 @@ async def sitemap():
     from fastapi.responses import Response
 
     pages = ["/", "/coverage", "/api-docs", "/about"]
-    host = os.getenv("BASE_URL", "https://bins.lovesguinness.com")
+    host = config.BASE_URL.rstrip("/")
+    if not host:
+        logger.warning("BASE_URL not set, sitemap will use relative URLs")
     urls = "\n".join(f"  <url><loc>{host}{p}</loc></url>" for p in pages)
     xml = f'<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n{urls}\n</urlset>'
     return Response(content=xml, media_type="application/xml")

@@ -1,13 +1,13 @@
 from __future__ import annotations
 
 import logging
-from datetime import date, datetime
+from datetime import date, datetime, timedelta
 
 from fastapi import HTTPException, Request
 
-logger = logging.getLogger(__name__)
+from api.config import RATE_LIMIT_DAILY
 
-DAILY_LIMIT = 100
+logger = logging.getLogger(__name__)
 
 
 def _get_client_ip(request: Request) -> str:
@@ -20,10 +20,6 @@ def _get_client_ip(request: Request) -> str:
 
 def _seconds_until_midnight() -> int:
     now = datetime.now()
-    midnight = now.replace(hour=0, minute=0, second=0, microsecond=0)
-    midnight = midnight.replace(day=now.day + 1) if now.hour >= 0 else midnight
-    from datetime import timedelta
-
     tomorrow = now.replace(hour=0, minute=0, second=0, microsecond=0) + timedelta(
         days=1
     )
@@ -43,15 +39,15 @@ async def rate_limit(request: Request) -> None:
         if count == 1:
             await redis_client.expire(key, 86400)
 
-        request.state.rate_limit_remaining = max(0, DAILY_LIMIT - count)
+        request.state.rate_limit_remaining = max(0, RATE_LIMIT_DAILY - count)
 
-        if count > DAILY_LIMIT:
+        if count > RATE_LIMIT_DAILY:
             raise HTTPException(
                 status_code=429,
                 detail="Rate limit exceeded. Try again tomorrow.",
                 headers={
                     "Retry-After": str(_seconds_until_midnight()),
-                    "X-RateLimit-Limit": str(DAILY_LIMIT),
+                    "X-RateLimit-Limit": str(RATE_LIMIT_DAILY),
                     "X-RateLimit-Remaining": "0",
                 },
             )

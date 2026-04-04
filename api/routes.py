@@ -15,6 +15,7 @@ from api.compat.hacs.exceptions import (
     SourceArgumentException,
     SourceArgumentExceptionMultiple,
 )
+from api.config import CACHE_TTL, RATE_LIMIT_DAILY, SCRAPER_TIMEOUT
 from api.services.council_lookup import LookupDatabaseError, PostcodeNotFoundError
 from api.services.models import (
     CollectionItem,
@@ -30,8 +31,6 @@ from api.services.scraper_registry import ScraperTimeoutError
 logger = logging.getLogger(__name__)
 
 router = APIRouter()
-
-CACHE_TTL = 14 * 3600  # 14 hours
 
 
 def _cache_key(council: str, params: dict) -> str:
@@ -49,7 +48,7 @@ async def _cache_get(redis_client, key: str) -> dict | None:
         if raw:
             return json.loads(raw)
     except Exception:
-        pass
+        logger.warning("Redis cache read failed for key %s", key, exc_info=True)
     return None
 
 
@@ -63,7 +62,7 @@ async def _cache_set(redis_client, key: str, collections: list[dict]) -> None:
         )
         await redis_client.set(key, payload, ex=CACHE_TTL)
     except Exception:
-        pass
+        logger.warning("Redis cache write failed for key %s", key, exc_info=True)
 
 
 async def _resolve_council(lookup, postcode: str) -> tuple[str | None, str | None]:
@@ -362,6 +361,48 @@ async def system_status(request: Request):
         redis_connected=redis_ok,
         rate_limiting_active=redis_ok,
     )
+
+
+@router.get("/metrics")
+async def metrics(request: Request):
+    redis_client = getattr(request.app.state, "redis", None)
+    request_counts: dict[str, int] = {}
+    if redis_client:
+        try:
+            raw = await redis_client.hgetall("api:request_counts")
+            request_counts = {
+                k.decode() if isinstance(k, bytes) else k: int(v)
+                for k, v in raw.items()
+            }
+        except Exception:
+            logger.warning("Failed to read metrics from Redis", exc_info=True)
+
+    registry = request.app.state.registry
+    scraper_health = {}
+    for m in registry.list_all():
+        h = registry.get_health(m.id)
+        scraper_health[m.id] = {
+            "status": h.status,
+            "error_count": h.error_count,
+        }
+
+    return {
+        "request_counts": request_counts,
+        "scraper_count": len(registry.list_all()),
+        "scraper_health_summary": {
+            "healthy": sum(
+                1 for v in scraper_health.values() if v["status"] == "healthy"
+            ),
+            "unhealthy": sum(
+                1 for v in scraper_health.values() if v["status"] != "healthy"
+            ),
+        },
+        "config": {
+            "cache_ttl": CACHE_TTL,
+            "scraper_timeout": SCRAPER_TIMEOUT,
+            "rate_limit_daily": RATE_LIMIT_DAILY,
+        },
+    }
 
 
 class ReportRequest(BaseModel):

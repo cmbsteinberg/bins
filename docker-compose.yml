@@ -8,6 +8,13 @@ services:
         condition: service_healthy
     environment:
       - REDIS_URL=redis://redis:6379
+      - BASE_URL=${BASE_URL:-}
+      - LOG_LEVEL=${LOG_LEVEL:-INFO}
+      - LOG_FORMAT=${LOG_FORMAT:-json}
+      - CORS_ORIGINS=${CORS_ORIGINS:-}
+      - SCRAPER_TIMEOUT=${SCRAPER_TIMEOUT:-30}
+      - CACHE_TTL=${CACHE_TTL:-50400}
+      - RATE_LIMIT_DAILY=${RATE_LIMIT_DAILY:-100}
     healthcheck:
       test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000/api/v1/status')"]
       interval: 30s

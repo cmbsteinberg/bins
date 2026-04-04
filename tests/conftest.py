@@ -1,5 +1,11 @@
 """Pytest plugin to write structured test results to tests/test_output.json."""
 
+import os
+
+# Set test-time defaults before any app code is imported
+os.environ.setdefault("CORS_ORIGINS", "https://bins.lovesguinness.com")
+os.environ.setdefault("LOG_FORMAT", "text")
+
 import json
 from pathlib import Path
 
@@ -69,7 +75,9 @@ def pytest_runtest_logreport(report):
         # Extract error_summary from the first diagnostic line
         for line in msg.splitlines():
             line_stripped = line.strip()
-            if line_stripped.startswith(("Expected ", "Response ", "Request ", "FAILED:")):
+            if line_stripped.startswith(
+                ("Expected ", "Response ", "Request ", "FAILED:")
+            ):
                 entry["error_summary"] = line_stripped[:200]
                 break
 
@@ -93,14 +101,16 @@ def pytest_sessionfinish(session, exitstatus):
     failure_categories: dict[str, list[dict]] = {}
     for r in failed:
         key = r.get("failure_category", "unknown")
-        failure_categories.setdefault(key, []).append({
-            "council": r["council"],
-            "label": r["label"],
-            "uprn": r.get("uprn", ""),
-            "status_code": r.get("status_code", ""),
-            "error_summary": r.get("error_summary", ""),
-            "duration": r["duration"],
-        })
+        failure_categories.setdefault(key, []).append(
+            {
+                "council": r["council"],
+                "label": r["label"],
+                "uprn": r.get("uprn", ""),
+                "status_code": r.get("status_code", ""),
+                "error_summary": r.get("error_summary", ""),
+                "duration": r["duration"],
+            }
+        )
 
     summary["failure_categories"] = {
         k: {"count": len(v), "councils": v}

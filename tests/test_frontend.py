@@ -93,11 +93,25 @@ async def test_calendar_error_cases(client):
 
 @pytest.mark.asyncio(loop_scope="session")
 async def test_cors(client):
+    # Request from allowed origin gets CORS headers
     resp = await client.options(
         "/api/v1/councils",
         headers={
-            "Origin": "http://example.com",
+            "Origin": "https://bins.lovesguinness.com",
             "Access-Control-Request-Method": "GET",
         },
     )
-    assert resp.headers.get("access-control-allow-origin") == "*"
+    assert (
+        resp.headers.get("access-control-allow-origin")
+        == "https://bins.lovesguinness.com"
+    )
+
+    # Request from disallowed origin does not get allow-origin header
+    resp2 = await client.options(
+        "/api/v1/councils",
+        headers={
+            "Origin": "http://evil.com",
+            "Access-Control-Request-Method": "GET",
+        },
+    )
+    assert resp2.headers.get("access-control-allow-origin") is None

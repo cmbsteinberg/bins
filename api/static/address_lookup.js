@@ -3,7 +3,6 @@ const ADDRESS_API_URL = "https://www.midsuffolk.gov.uk/api/jsonws/invoke";
 const ADDRESS_HEADERS = {
 	accept: "*/*",
 	"content-type": "text/plain;charset=UTF-8",
-	"x-csrf-token": "Ba9vI91W",
 };
 
 class AddressLookup {

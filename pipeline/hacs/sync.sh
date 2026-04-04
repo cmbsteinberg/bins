@@ -71,6 +71,7 @@ COMPAT_FILES=(
 COMPAT_SERVICE_FILES=(
     "ICS.py"
     "SSLError.py"
+    "uk_cloud9_apps.py"
 )
 
 mkdir -p "${COMPAT_DIR}/service"

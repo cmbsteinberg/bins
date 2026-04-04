@@ -6,12 +6,22 @@
   <title>UK Bin Collections</title>
   <link rel="stylesheet" href="https://unpkg.com/axist@latest/dist/axist.min.css">
   <style>
-    :root { --bin-green: #4caf50; --bin-muted: #78909c; }
+    :root { --bin-green: #2e7d32; --bin-muted: #546e7a; }
     .hidden { display: none; }
-    #error { color: #e53935; }
+    #error { color: #c62828; font-weight: 500; }
     main > h1, main > p { text-align: center; }
     #results article { margin-top: 1rem; }
-    .collection-date { color: #666; font-size: 0.9rem; }
+    .collection-date { color: #555; font-size: 0.9rem; }
+
+    /* Screen-reader only */
+    .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+
+    /* Skip link */
+    .skip-link { position: absolute; left: -9999px; top: 0; background: #1565c0; color: #fff; padding: 0.5rem 1rem; z-index: 100; font-size: 0.9rem; }
+    .skip-link:focus { left: 0; }
+
+    /* Focus indicator */
+    :focus-visible { outline: 3px solid #1565c0; outline-offset: 2px; }
 
     /* Bin group card */
     .bin-group { border: 1px solid #e0e0e0; border-radius: 8px; padding: 0.75rem 1rem; margin-bottom: 0.75rem; }
@@ -20,9 +30,30 @@
     .bin-icon svg { width: 100%; height: 100%; }
     .bin-info { flex: 1; }
     .bin-type { font-weight: 600; margin: 0; font-size: 1rem; }
-    .bin-date { margin: 0; color: #555; font-size: 0.95rem; }
+    .bin-date { margin: 0; color: #444; font-size: 0.95rem; }
     .bin-relative { font-size: 0.8rem; color: var(--bin-green); font-weight: 500; }
-    .bin-relative.past { color: #e53935; }
+    .bin-relative.past { color: #c62828; }
+
+    /* Bin colour backgrounds — all pass 4.5:1 contrast with their text colours */
+    .bin-group[data-bin-colour="black"]  { background: #f0f0f0; }
+    .bin-group[data-bin-colour="blue"]   { background: #e8f0fe; }
+    .bin-group[data-bin-colour="green"]  { background: #e6f4ea; }
+    .bin-group[data-bin-colour="brown"]  { background: #f5ebe0; }
+
+    /* Credits section */
+    .credits { text-align: center; margin-top: 2rem; padding: 1rem 0; border-top: 1px solid #e0e0e0; font-size: 0.85rem; color: #555; }
+    .credits a { display: inline-flex; align-items: center; gap: 0.35rem; margin: 0 0.5rem; text-decoration: none; color: #333; border: 1px solid #d0d0d0; border-radius: 6px; padding: 0.3rem 0.6rem; font-size: 0.8rem; }
+    .credits a:hover { background: #f5f5f5; }
+    .credits .gh-icon { width: 16px; height: 16px; vertical-align: middle; }
+
+    /* Report button */
+    .report-btn { background: none; border: 1px solid #c62828; color: #c62828; padding: 0.3rem 0.75rem; border-radius: 6px; font-size: 0.8rem; cursor: pointer; margin-top: 0.5rem; }
+    .report-btn:hover { background: #fbe9e7; }
+    .report-sent { color: var(--bin-green); font-size: 0.85rem; }
+
+    /* Footer */
+    footer.site-footer { text-align: center; padding: 1.5rem 1rem; margin-top: 3rem; border-top: 1px solid #e0e0e0; font-size: 0.8rem; color: #555; }
+    footer.site-footer a { color: #444; margin: 0 0.5rem; }
 
     /* Pure CSS accordion for future dates */
     .bin-more { margin-top: 0.5rem; }
@@ -31,11 +62,12 @@
     .bin-more summary::before { content: "▸ "; }
     .bin-more[open] summary::before { content: "▾ "; }
     .bin-more ul { margin: 0.25rem 0 0 0; padding-left: 1.25rem; }
-    .bin-more li { font-size: 0.85rem; color: #666; padding: 0.15rem 0; }
+    .bin-more li { font-size: 0.85rem; color: #555; padding: 0.15rem 0; }
   </style>
 </head>
 <body>
-  <nav>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <nav aria-label="Main navigation">
     <ul><li><strong>UK Bin Collections</strong></li></ul>
     <ul>
       <li><a href="/">Home</a></li>
@@ -43,21 +75,21 @@
       <li><a href="/api-docs">API</a></li>
     </ul>
   </nav>
-  <main>
+  <main id="main-content">
     <h1>UK Bin Collections</h1>
     <p>Find your next bin collection dates.</p>
 
-    <section id="step-postcode">
+    <section id="step-postcode" aria-label="Postcode search">
       <form id="postcode-form">
         <label for="postcode">Enter your postcode</label>
         <fieldset role="group">
-          <input id="postcode" type="text" name="postcode" placeholder="e.g. BR8 7RE" required>
+          <input id="postcode" type="text" name="postcode" placeholder="e.g. BR8 7RE" required autocomplete="postal-code">
           <button type="submit">Search</button>
         </fieldset>
       </form>
     </section>
 
-    <section id="step-address" class="hidden">
+    <section id="step-address" class="hidden" aria-label="Address selection">
       <label for="address-select">Select your address</label>
       <select id="address-select">
         <option value="">-- Choose address --</option>
@@ -66,9 +98,22 @@
       <button id="back-btn" type="button">Back</button>
     </section>
 
-    <section id="results" class="hidden"></section>
-    <p id="error" class="hidden"></p>
+    <section id="results" class="hidden" aria-live="polite" aria-label="Collection results"></section>
+    <p id="error" class="hidden" role="alert" aria-live="assertive"></p>
   </main>
+
+  <footer class="site-footer" aria-label="Site footer">
+    <p>
+      Built on data from
+      <a href="https://github.com/mampfes/hacs_waste_collection_schedule" rel="noopener" target="_blank">hacs_waste_collection_schedule<span class="sr-only"> (opens GitHub in new tab)</span></a>
+      &amp;
+      <a href="https://github.com/robbrad/UKBinCollectionData" rel="noopener" target="_blank">UKBinCollectionData<span class="sr-only"> (opens GitHub in new tab)</span></a>
+    </p>
+    <p>
+      <a href="/about">About</a>
+      <a href="/sitemap.xml">Sitemap</a>
+    </p>
+  </footer>
 
   <script type="module" src="/static/app.js"></script>
 </body>

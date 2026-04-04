@@ -2,10 +2,11 @@ from __future__ import annotations
 
 import logging
 import os
+import time
 from contextlib import asynccontextmanager
 from pathlib import Path
 
-from fastapi import FastAPI
+from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import HTMLResponse
 from fastapi.staticfiles import StaticFiles
@@ -81,6 +82,31 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+request_logger = logging.getLogger("api.requests")
+
+
+@app.middleware("http")
+async def log_requests(request: Request, call_next):
+    start = time.time()
+    response = await call_next(request)
+    duration_ms = round((time.time() - start) * 1000)
+    request_logger.info(
+        "%s %s %d %dms",
+        request.method,
+        request.url.path,
+        response.status_code,
+        duration_ms,
+    )
+    # If Redis is available, increment a counter for analytics
+    redis_client = getattr(request.app.state, "redis", None)
+    if redis_client and request.url.path.startswith("/api"):
+        try:
+            await redis_client.hincrby("api:request_counts", request.url.path, 1)
+        except Exception:
+            pass
+    return response
+
+
 # API routes
 app.include_router(api_router, prefix="/api")
 app.include_router(api_router, prefix="/api/v1")
@@ -104,3 +130,19 @@ async def coverage_page():
 @app.get("/api-docs", response_class=HTMLResponse, include_in_schema=False)
 async def api_docs_page():
     return (_TEMPLATES_DIR / "api-docs.html").read_text()
+
+
+@app.get("/about", response_class=HTMLResponse, include_in_schema=False)
+async def about_page():
+    return (_TEMPLATES_DIR / "about.html").read_text()
+
+
+@app.get("/sitemap.xml", include_in_schema=False)
+async def sitemap():
+    from fastapi.responses import Response
+
+    pages = ["/", "/coverage", "/api-docs", "/about"]
+    host = os.getenv("BASE_URL", "https://bins.lovesguinness.com")
+    urls = "\n".join(f"  <url><loc>{host}{p}</loc></url>" for p in pages)
+    xml = f'<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n{urls}\n</urlset>'
+    return Response(content=xml, media_type="application/xml")

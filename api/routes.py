@@ -1,13 +1,17 @@
 from __future__ import annotations
 
 import logging
+import os
+import smtplib
 import uuid
 from datetime import timedelta
+from email.message import EmailMessage
 
 import httpx
 from fastapi import APIRouter, Depends, HTTPException, Request
 from fastapi.responses import Response
 from icalendar import Calendar, Event
+from pydantic import BaseModel
 
 from api.compat.hacs.exceptions import (
     SourceArgumentException,
@@ -303,3 +307,46 @@ async def system_status(request: Request):
         redis_connected=redis_ok,
         rate_limiting_active=redis_ok,
     )
+
+
+class ReportRequest(BaseModel):
+    postcode: str
+    address: str
+    uprn: str
+    council: str
+    collections: list[dict]
+
+
+@router.post("/report")
+async def report_wrong(request: Request, body: ReportRequest):
+    email_to = os.getenv("EMAIL")
+    if not email_to:
+        raise HTTPException(status_code=503, detail="Reporting is not configured.")
+
+    collections_text = "\n".join(
+        f"  - {c.get('type', '?')}: {c.get('date', '?')}" for c in body.collections
+    )
+    msg = EmailMessage()
+    msg["Subject"] = f"Wrong bin data: {body.postcode} - {body.council}"
+    msg["From"] = email_to
+    msg["To"] = email_to
+    msg.set_content(
+        f"A user reported incorrect bin collection data.\n\n"
+        f"Postcode: {body.postcode}\n"
+        f"Address: {body.address}\n"
+        f"UPRN: {body.uprn}\n"
+        f"Council: {body.council}\n\n"
+        f"Collections returned:\n{collections_text}\n"
+    )
+
+    smtp_host = os.getenv("SMTP_HOST", "localhost")
+    smtp_port = int(os.getenv("SMTP_PORT", "25"))
+
+    try:
+        with smtplib.SMTP(smtp_host, smtp_port, timeout=10) as smtp:
+            smtp.send_message(msg)
+    except Exception:
+        logger.exception("Failed to send report email")
+        raise HTTPException(status_code=503, detail="Failed to send report.")
+
+    return {"status": "sent"}

@@ -160,13 +160,6 @@ def cmd_provision(client: Client, ssh_key_file: str) -> None:
                 port="443",
                 description="HTTPS",
             ),
-            FirewallRule(
-                direction=FirewallRule.DIRECTION_IN,
-                protocol=FirewallRule.PROTOCOL_TCP,
-                source_ips=["0.0.0.0/0", "::/0"],
-                port="3001",
-                description="Uptime Kuma",
-            ),
         ]
         response = client.firewalls.create(
             name=FIREWALL_NAME, rules=rules, labels=LABELS

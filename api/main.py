@@ -3,6 +3,7 @@ from __future__ import annotations
 import logging
 import os
 import time
+import uuid
 from contextlib import asynccontextmanager
 from pathlib import Path
 
@@ -91,8 +92,11 @@ request_logger = logging.getLogger("api.requests")
 
 @app.middleware("http")
 async def log_requests(request: Request, call_next):
+    request_id = request.headers.get("X-Request-ID") or str(uuid.uuid4())[:8]
+    request.state.request_id = request_id
     start = time.time()
     response = await call_next(request)
+    response.headers["X-Request-ID"] = request_id
     duration_ms = round((time.time() - start) * 1000)
     request_logger.info(
         "%s %s %d %dms",
@@ -101,6 +105,7 @@ async def log_requests(request: Request, call_next):
         response.status_code,
         duration_ms,
         extra={
+            "request_id": request_id,
             "method": request.method,
             "path": request.url.path,
             "status_code": response.status_code,

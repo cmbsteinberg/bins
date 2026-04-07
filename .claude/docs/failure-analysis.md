@@ -1,7 +1,8 @@
 # Integration Test Failure Analysis
 
-Last run: 2026-04-07 — 660 tests, 565 passed, 95 failed (85.6%)
-Previous run: 2026-04-07 — 660 tests, 562 passed, 98 failed (85.2%)
+Last run: 2026-04-07 — 663 tests, 580 passed, 83 failed (87.5%)
+Baseline (before fixes): 660 tests, 545 passed, 115 failed (82.6%)
+Delta: +35 passed, -32 failed. 39 tests recovered, 8 regressed (all council-side intermittency)
 
 ---
 

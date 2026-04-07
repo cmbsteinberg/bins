@@ -2,7 +2,7 @@ import re
 from datetime import date, datetime
 from typing import Any, Optional, Sequence, cast
 
-import httpx
+import requests
 
 from api.compat.hacs import Collection
 from api.compat.hacs.exceptions import (
@@ -166,6 +166,8 @@ class Cloud9Client:
         self._authority = authority
         self._icon_keywords: dict[str, str] = icon_keywords or {}
         self._base_url = f"{API_DOMAIN}/{authority}{API_BASE}"
+        self._session = requests.Session()
+        self._session.headers.update(BASE_HEADERS)
 
     def _resolve_icon(self, label: str) -> Optional[str]:
         lowered = label.lower()
@@ -207,20 +209,19 @@ class Cloud9Client:
 
         return entries
 
-    async def _fetch_waste_json(self, uprn: str) -> JSONDict:
+    def _fetch_waste_json(self, uprn: str) -> JSONDict:
         url = f"{self._base_url}{WASTE_PATH}/{uprn}"
-        async with httpx.AsyncClient(headers=BASE_HEADERS) as client:
-            response = await client.get(url, timeout=REQUEST_TIMEOUT)
-            response.raise_for_status()
-            return cast(JSONDict, response.json())
+        response = self._session.get(url, timeout=REQUEST_TIMEOUT)
+        response.raise_for_status()
+        return cast(JSONDict, response.json())
 
-    async def fetch_by_uprn(self, uprn: str) -> list[Collection]:
-        payload = await self._fetch_waste_json(uprn)
+    def fetch_by_uprn(self, uprn: str) -> list[Collection]:
+        payload = self._fetch_waste_json(uprn)
         entries = self._build_collections(payload)
         entries.sort(key=lambda item: item.date)
         return entries
 
-    async def fetch_by_address(
+    def fetch_by_address(
         self,
         postcode: Optional[str],
         address_string: str,
@@ -231,7 +232,7 @@ class Cloud9Client:
     ) -> list[Collection]:
         normalised = normalise_postcode(postcode)
 
-        addresses = await self._lookup_addresses(
+        addresses = self._lookup_addresses(
             postcode=postcode,
             normalised_postcode=normalised,
             address_name_number=address_name_number,
@@ -251,12 +252,12 @@ class Cloud9Client:
         if not uprn:
             raise ValueError("Selected address does not expose a UPRN.")
 
-        entries = await self.fetch_by_uprn(uprn)
+        entries = self.fetch_by_uprn(uprn)
         if not entries:
             raise ValueError("No collection data returned for the selected address.")
         return entries
 
-    async def _lookup_addresses(
+    def _lookup_addresses(
         self,
         postcode: Optional[str],
         normalised_postcode: Optional[str],
@@ -282,27 +283,26 @@ class Cloud9Client:
             ("query", address_line),
             ("query", address_street),
         ]
-        async with httpx.AsyncClient(headers=BASE_HEADERS) as client:
-            for param, value in attempts:
-                cleaned = (value or "").strip()
-                if not cleaned:
-                    continue
-                key = (param, cleaned.lower())
-                if key in seen:
-                    continue
-                seen.add(key)
-                response = await client.get(
-                    url,
-                    params={param: cleaned},
-                    timeout=REQUEST_TIMEOUT,
-                )
-                response.raise_for_status()
-                payload_json = cast(JSONDict, response.json())
-                addresses_data = cast(
-                    Optional[list[Address]], payload_json.get("addresses")
-                )
-                if addresses_data:
-                    return [cast(Address, a) for a in addresses_data]
+        for param, value in attempts:
+            cleaned = (value or "").strip()
+            if not cleaned:
+                continue
+            key = (param, cleaned.lower())
+            if key in seen:
+                continue
+            seen.add(key)
+            response = self._session.get(
+                url,
+                params={param: cleaned},
+                timeout=REQUEST_TIMEOUT,
+            )
+            response.raise_for_status()
+            payload_json = cast(JSONDict, response.json())
+            addresses_data = cast(
+                Optional[list[Address]], payload_json.get("addresses")
+            )
+            if addresses_data:
+                return [cast(Address, a) for a in addresses_data]
 
         raise ValueError("No matching addresses were returned by the API.")
 

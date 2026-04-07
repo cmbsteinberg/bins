@@ -173,9 +173,7 @@ def _analyse_session_vars(tree: ast.Module, result: _AnalysisResult) -> None:
                     result.session_var_names.add(item.optional_vars.id)
 
 
-def _analyse_time_usage(
-    tree: ast.Module, result: _AnalysisResult
-) -> None:
+def _analyse_time_usage(tree: ast.Module, result: _AnalysisResult) -> None:
     for node in ast.walk(tree):
         if isinstance(node, ast.Call):
             if _is_attr_call(node, "time", "sleep"):
@@ -199,7 +197,8 @@ def _method_needs_async(func: ast.FunctionDef, init_session_attr: str | None) ->
     if init_session_attr and _body_uses_attr(func, "self", init_session_attr):
         return True
     return any(
-        isinstance(n, ast.Call) and (_is_bare_requests_call(n) or _is_requests_session(n))
+        isinstance(n, ast.Call)
+        and (_is_bare_requests_call(n) or _is_requests_session(n))
         for n in ast.walk(func)
     )
 
@@ -220,9 +219,7 @@ def _build_self_call_graph(tree: ast.Module) -> dict[str, set[str]]:
     return method_calls
 
 
-def _analyse_async_methods(
-    tree: ast.Module, result: _AnalysisResult
-) -> None:
+def _analyse_async_methods(tree: ast.Module, result: _AnalysisResult) -> None:
     for node in ast.walk(tree):
         if (
             isinstance(node, ast.FunctionDef)
@@ -266,13 +263,21 @@ def _rewrite_import_from(
     mod = node.module or ""
     if mod == "requests":
         _mark_stmt_replace(
-            node, lines, delete_ranges, line_replacements,
-            _get_stmt_text(node, lines), "import httpx",
+            node,
+            lines,
+            delete_ranges,
+            line_replacements,
+            _get_stmt_text(node, lines),
+            "import httpx",
         )
     elif mod == "curl_cffi" and any(a.name == "requests" for a in node.names):
         _mark_stmt_replace(
-            node, lines, delete_ranges, line_replacements,
-            _get_stmt_text(node, lines), "import httpx",
+            node,
+            lines,
+            delete_ranges,
+            line_replacements,
+            _get_stmt_text(node, lines),
+            "import httpx",
         )
     elif mod.startswith("requests.adapters"):
         _delete_stmt_lines(node, delete_lines)
@@ -281,12 +286,18 @@ def _rewrite_import_from(
         new_text = _replace_exception_names(
             old_text.replace("from requests.exceptions import", "from httpx import")
         )
-        _mark_stmt_replace(node, lines, delete_ranges, line_replacements, old_text, new_text)
+        _mark_stmt_replace(
+            node, lines, delete_ranges, line_replacements, old_text, new_text
+        )
     elif mod == "time" and analysis.uses_time_sleep:
         if any(a.name == "sleep" for a in node.names):
             _mark_stmt_replace(
-                node, lines, delete_ranges, line_replacements,
-                _get_stmt_text(node, lines), "import asyncio",
+                node,
+                lines,
+                delete_ranges,
+                line_replacements,
+                _get_stmt_text(node, lines),
+                "import asyncio",
             )
 
 
@@ -303,8 +314,12 @@ def _rewrite_imports(
             for alias in node.names:
                 if alias.name in ("requests", "cloudscraper"):
                     _mark_stmt_replace(
-                        node, lines, delete_ranges, line_replacements,
-                        _get_stmt_text(node, lines), "import httpx",
+                        node,
+                        lines,
+                        delete_ranges,
+                        line_replacements,
+                        _get_stmt_text(node, lines),
+                        "import httpx",
                     )
                 if (
                     alias.name == "time"
@@ -312,12 +327,21 @@ def _rewrite_imports(
                     and not analysis.uses_time_other
                 ):
                     _mark_stmt_replace(
-                        node, lines, delete_ranges, line_replacements,
-                        _get_stmt_text(node, lines), "import asyncio",
+                        node,
+                        lines,
+                        delete_ranges,
+                        line_replacements,
+                        _get_stmt_text(node, lines),
+                        "import asyncio",
                     )
         elif isinstance(node, ast.ImportFrom):
             _rewrite_import_from(
-                node, lines, delete_lines, delete_ranges, line_replacements, analysis,
+                node,
+                lines,
+                delete_lines,
+                delete_ranges,
+                line_replacements,
+                analysis,
             )
 
 
@@ -330,7 +354,9 @@ def _apply_edits(
 ) -> str:
     result_lines: list[str] = []
     need_asyncio_import = (
-        analysis.uses_time_sleep and analysis.has_time_import and analysis.uses_time_other
+        analysis.uses_time_sleep
+        and analysis.has_time_import
+        and analysis.uses_time_other
     )
     asyncio_inserted = False
     i = 1  # 1-indexed
@@ -383,7 +409,9 @@ def transform_source(source: str) -> tuple[str, list[str]]:
     line_replacements: dict[int, str] = {}
     delete_ranges: list[tuple[int, int]] = []
 
-    _rewrite_imports(tree, lines, delete_lines, delete_ranges, line_replacements, analysis)
+    _rewrite_imports(
+        tree, lines, delete_lines, delete_ranges, line_replacements, analysis
+    )
 
     # Remove HTTPAdapter subclass definitions
     for cls_name, cls_node in analysis.httpadapter_classes.items():
@@ -395,20 +423,34 @@ def transform_source(source: str) -> tuple[str, list[str]]:
     source_class = _find_source_class(tree)
     if source_class:
         _process_class(
-            source_class, lines, delete_lines, delete_ranges, line_replacements,
-            analysis.session_var_names, analysis.httpadapter_classes,
-            analysis.methods_needing_async, analysis.init_session_attr, source,
+            source_class,
+            lines,
+            delete_lines,
+            delete_ranges,
+            line_replacements,
+            analysis.session_var_names,
+            analysis.httpadapter_classes,
+            analysis.methods_needing_async,
+            analysis.init_session_attr,
+            source,
         )
 
     # Process module-level functions that use requests
     for node in ast.iter_child_nodes(tree):
         if isinstance(node, ast.FunctionDef) and node.name not in ("fetch",):
             _process_module_function(
-                node, lines, delete_lines, delete_ranges, line_replacements,
-                analysis.session_var_names, source,
+                node,
+                lines,
+                delete_lines,
+                delete_ranges,
+                line_replacements,
+                analysis.session_var_names,
+                source,
             )
 
-    result = _apply_edits(lines, delete_lines, delete_ranges, line_replacements, analysis)
+    result = _apply_edits(
+        lines, delete_lines, delete_ranges, line_replacements, analysis
+    )
     result = _final_requests_cleanup(result)
     return result, []
 
@@ -502,7 +544,7 @@ def _transform_call_node(
         isinstance(node.func, ast.Attribute)
         and isinstance(node.func.value, ast.Name)
         and node.func.value.id == "self"
-        and node.func.attr in methods_needing_async
+        and (node.func.attr in methods_needing_async or node.func.attr == "fetch")
     ):
         _add_await_before_call(node, lines, line_replacements)
 
@@ -527,8 +569,14 @@ def _transform_node(
         and _is_requests_session(node.value)
     ):
         _transform_session_assign(
-            node, lines, delete_lines, delete_ranges, line_replacements,
-            adapter_classes, method, full_source,
+            node,
+            lines,
+            delete_lines,
+            delete_ranges,
+            line_replacements,
+            adapter_classes,
+            method,
+            full_source,
         )
         return
 
@@ -539,8 +587,12 @@ def _transform_node(
 
     if isinstance(node, ast.Call):
         _transform_call_node(
-            node, lines, line_replacements, local_session_vars,
-            methods_needing_async, chained_bare_requests,
+            node,
+            lines,
+            line_replacements,
+            local_session_vars,
+            methods_needing_async,
+            chained_bare_requests,
         )
     elif isinstance(node, ast.Attribute):
         _replace_requests_exceptions_in_node(node, lines, line_replacements)
@@ -608,13 +660,23 @@ def _process_method(
 
     for node in ast.walk(method):
         _transform_node(
-            node, method, lines, delete_lines, delete_ranges, line_replacements,
-            local_session_vars, adapter_classes, methods_needing_async,
-            chained_bare_requests, full_source,
+            node,
+            method,
+            lines,
+            delete_lines,
+            delete_ranges,
+            line_replacements,
+            local_session_vars,
+            adapter_classes,
+            methods_needing_async,
+            chained_bare_requests,
+            full_source,
         )
 
     if method.name == "__init__" and init_session_attr:
-        _rewrite_init_session(method, init_session_attr, lines, delete_lines, line_replacements)
+        _rewrite_init_session(
+            method, init_session_attr, lines, delete_lines, line_replacements
+        )
 
 
 def _delete_stmt_lines(stmt: ast.stmt, delete_lines: set[int]) -> None:
@@ -651,7 +713,9 @@ def _scan_mount_calls(
             continue
 
         mount_nodes.append(stmt)
-        if not (call.args and len(call.args) >= 2 and isinstance(call.args[1], ast.Call)):
+        if not (
+            call.args and len(call.args) >= 2 and isinstance(call.args[1], ast.Call)
+        ):
             continue
 
         adapter_arg = call.args[1]
@@ -1066,13 +1130,16 @@ def _strip_verify_from_calls(source: str, verify_val: str = "False") -> str:
 
 def _handle_verify_false(source: str) -> str:
     """Move verify=False from per-request kwargs to AsyncClient constructors."""
+
     # Move verify=False in inline AsyncClient().METHOD() calls
     def _move_verify_to_client(m: re.Match[str]) -> str:
         pre, client_args, method, call_args = m.group(1, 2, 3, 4)
         call_args = re.sub(r",?\s*verify=False", "", call_args)
         call_args = re.sub(r"verify=False,?\s*", "", call_args)
         if "verify=" not in client_args:
-            client_args = "verify=False, " + client_args if client_args else "verify=False"
+            client_args = (
+                "verify=False, " + client_args if client_args else "verify=False"
+            )
         return f"{pre}httpx.AsyncClient({client_args}).{method}({call_args})"
 
     source = re.sub(
@@ -1370,7 +1437,9 @@ def _apply_ssl_verify_disabled(source: str) -> str:
         for client_name in ("_FallbackClient", "_CurlCffiClient"):
             source = re.sub(
                 rf"{re.escape(client_name)}\(([^)]*)\)",
-                lambda m, cn=client_name: _inject_verify_false(cn, m.group(1), force=True),
+                lambda m, cn=client_name: _inject_verify_false(
+                    cn, m.group(1), force=True
+                ),
                 source,
             )
     # Handle get_legacy_session() — replace with httpx.AsyncClient(verify=False)
@@ -1456,7 +1525,9 @@ def _patch_single_file(
 
 
 def _log_override_info(
-    fallback_list: set[str], curl_cffi_list: set[str], ssl_disabled_list: set[str],
+    fallback_list: set[str],
+    curl_cffi_list: set[str],
+    ssl_disabled_list: set[str],
 ) -> None:
     """Print info about active overrides."""
     if fallback_list:
@@ -1468,7 +1539,9 @@ def _log_override_info(
 
 
 def _print_results(
-    total: int, deprecated: list[str], all_warnings: dict[str, list[str]],
+    total: int,
+    deprecated: list[str],
+    all_warnings: dict[str, list[str]],
 ) -> None:
     """Print patch results summary."""
     if deprecated:
@@ -1500,7 +1573,11 @@ def _patch_directory(input_dir: Path, output_dir: Path) -> None:
     deprecated: list[str] = []
     for src in source_files:
         dep_name, warns = _patch_single_file(
-            src, output_dir, fallback_list, curl_cffi_list, ssl_disabled_list,
+            src,
+            output_dir,
+            fallback_list,
+            curl_cffi_list,
+            ssl_disabled_list,
         )
         if dep_name:
             deprecated.append(dep_name)

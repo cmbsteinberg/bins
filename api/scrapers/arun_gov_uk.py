@@ -50,12 +50,12 @@ class Source:
         self._postcode = postcode
         self._address = address
 
-    async def fetch(self) -> list[Collection]:
+    def fetch(self) -> list[Collection]:
         if self._uprn:
-            return await self._client.fetch_by_uprn(self._uprn)
+            return self._client.fetch_by_uprn(self._uprn)
         if not self._postcode:
             raise SourceArgumentRequired("uprn", "Provide a UPRN or postcode + address")
-        return await self._client.fetch_by_address(
+        return self._client.fetch_by_address(
             postcode=self._postcode,
             address_string=self._address or "",
             argument_name="postcode",

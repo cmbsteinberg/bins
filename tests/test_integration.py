@@ -63,7 +63,7 @@ async def _run_lookup(
 ) -> dict:
     """Execute a single lookup and capture every diagnostic detail."""
     params = dict(params)
-    uprn = str(params.pop("uprn", params.pop("address_id", "0")))
+    uprn = str(params.pop("uprn", "0"))
     query = {"council": council, **params}
 
     result = {
@@ -75,9 +75,8 @@ async def _run_lookup(
         "passed": False,
     }
 
-    start = time.monotonic()
-
     async with semaphore:
+        start = time.monotonic()
         try:
             resp = await client.get(f"/lookup/{uprn}", params=query)
         except httpx.TimeoutException as exc:

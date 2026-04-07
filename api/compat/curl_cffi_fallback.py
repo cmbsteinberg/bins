@@ -57,6 +57,11 @@ class AsyncClient:
         if headers:
             self._session.headers.update(headers)
 
+    @property
+    def headers(self) -> dict[str, str]:
+        """Expose session headers so scrapers can call client.headers.update(...)."""
+        return self._session.headers
+
     async def get(self, url: str, **kwargs: Any) -> Response:
         return await self._request("GET", url, **kwargs)
 
@@ -83,9 +88,7 @@ class AsyncClient:
             kwargs.setdefault("allow_redirects", self._allow_redirects)
         kwargs.pop("verify", None)  # already set on session
 
-        resp = await asyncio.to_thread(
-            self._session.request, method, url, **kwargs
-        )
+        resp = await asyncio.to_thread(self._session.request, method, url, **kwargs)
         return Response(resp)
 
     async def __aenter__(self) -> AsyncClient:

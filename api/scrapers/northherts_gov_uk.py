@@ -47,7 +47,7 @@ class Source:
         self._street_town = street_town
         self._address_postcode = address_postcode
 
-    async def fetch(self) -> list[Collection]:
+    def fetch(self) -> list[Collection]:
         search_query = " ".join(
             part.strip()
             for part in (
@@ -58,7 +58,7 @@ class Source:
             )
             if isinstance(part, str) and part.strip()
         )
-        return await self._client.fetch_by_address(
+        return self._client.fetch_by_address(
             postcode=self._address_postcode,
             address_string=search_query,
             address_name_number=self._address_name_numer,

@@ -92,7 +92,11 @@ class Source:
         if not collections and not self._address_id.startswith("U"):
             lookup_resp = await session.post(
                 ADDRESS_LOOKUP_URL,
-                data={"query": self._address_id, "searchNlpg": "False", "classification": ""},
+                data={
+                    "query": self._address_id,
+                    "searchNlpg": "False",
+                    "classification": "",
+                },
                 timeout=30,
             )
             lookup_resp.raise_for_status()
@@ -100,7 +104,7 @@ class Source:
             if data:
                 # Prefer first returned address ID from SKDC lookup.
                 self._address_id = next(iter(data.keys()))
-                return self.fetch()
+                return await self.fetch()
         if not collections:
             _LOGGER.warning(
                 "South Kesteven returned no collection rows for address_id=%s",

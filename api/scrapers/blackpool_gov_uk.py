@@ -15,15 +15,18 @@ TEST_CASES = {
 }
 
 API_URL = "https://api.blackpool.gov.uk/api/bartec"
-REGEX_JOB_NAME = r"^Empty(?: Bin)? ([A-Za-z ]+?)( \d+\w)?$"
+REGEX_JOB_NAME = r"^Empty(?: Bin)? ([A-Za-z &]+?)( \d+\w)?$"
 NAME_MAP = {
     "Domestic Refuse": "Grey bin or Red sack",
     "Dry Recycling": "Blue bin",
+    "Paper & Card": "Paper & Card",
 }
 ICON_MAP = {
     "Domestic Refuse": "mdi:trash-can",
     "Dry Recycling": "mdi:recycle",
     "Brown Sack": "mdi:newspaper",
+    "Paper & Card": "mdi:newspaper",
+    "Green Waste": "mdi:leaf",
 }
 
 

@@ -156,20 +156,41 @@ function relativeDay(dateStr) {
 	return { text: `In ${diff} days`, past: false };
 }
 
-const GH_SVG =
-	'<svg class="gh-icon" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true" focusable="false"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>';
-
 function binColour(type) {
 	const t = type.toLowerCase();
+	// Priority 1: explicit colour word in the bin name
+	const colourMatch = t.match(
+		/\b(black|blue|green|brown|red|purple|grey|gray|orange|pink|white)\b/,
+	);
+	if (colourMatch) {
+		const c = colourMatch[1] === "gray" ? "grey" : colourMatch[1];
+		// Map explicit colours to our three categories
+		if (c === "brown") return "brown";
+		if (c === "green" || c === "blue") return "green";
+		// black, grey, red, purple, orange, pink, white → default grey
+		return "grey";
+	}
+	// Priority 2: infer from waste category
 	if (/food|organic|compost|garden/.test(t)) return "brown";
-	if (/recycl|paper|card|plastic|glass|can|mixed dry|blue/.test(t))
-		return "blue";
-	if (/green|garden/.test(t)) return "green";
-	if (
-		/general|residual|refuse|rubbish|waste|black|domestic|non.?recycl/.test(t)
-	)
-		return "black";
-	return "";
+	if (/recycl|paper|card|plastic|glass|can|mixed dry/.test(t)) return "green";
+	if (/general|residual|refuse|rubbish|domestic|non.?recycl/.test(t))
+		return "grey";
+	// Default
+	return "grey";
+}
+
+function toTitleCase(str) {
+	return str.replace(
+		/\b\w+/g,
+		(w) => w.charAt(0).toUpperCase() + w.slice(1).toLowerCase(),
+	);
+}
+
+function isToday(dateStr) {
+	const today = new Date();
+	today.setHours(0, 0, 0, 0);
+	const d = new Date(dateStr + "T00:00:00");
+	return d >= today;
 }
 
 function renderResults(addr, data) {
@@ -177,86 +198,99 @@ function renderResults(addr, data) {
 	const council = currentData.council_name || data.council;
 	const councilId = currentData.council_id;
 
-	if (data.collections.length === 0) {
-		section.innerHTML = `
-            <article>
-                <header><strong>${addr.full_address}</strong></header>
-                <p>No upcoming collections found.</p>
-            </article>`;
-		show("results");
-		section.tabIndex = -1;
-		section.focus();
-		return;
-	}
-
-	// Group collections by type, preserving date order
-	const groups = new Map();
-	for (const c of data.collections) {
-		if (!groups.has(c.type)) groups.set(c.type, []);
-		groups.get(c.type).push(c);
-	}
-
-	let cards = "";
-	for (const [type, items] of groups) {
-		const next = items[0];
-		const rel = relativeDay(next.date);
-		const future = items.slice(1);
-
-		let moreHtml = "";
-		if (future.length > 0) {
-			const lis = future
-				.map(
-					(c) =>
-						`<li><time datetime="${c.date}">${formatDate(c.date)}</time></li>`,
-				)
-				.join("");
-			moreHtml = `
-				<details class="bin-more">
-					<summary>${future.length} more date${future.length === 1 ? "" : "s"}</summary>
-					<ul>${lis}</ul>
-				</details>`;
-		}
-
-		const colour = binColour(type);
-		const colourAttr = colour ? ` data-bin-colour="${colour}"` : "";
-		cards += `
-			<div class="bin-group"${colourAttr} role="group" aria-label="${type} collection">
-				<div class="bin-next">
-					<div class="bin-icon">${BIN_SVG}</div>
-					<div class="bin-info">
-						<p class="bin-type">${type}</p>
-						<p class="bin-date"><time datetime="${next.date}">${formatDate(next.date)}</time></p>
-						<span class="bin-relative${rel.past ? " past" : ""}">${rel.text}</span>
-					</div>
-				</div>
-				${moreHtml}
-			</div>`;
-	}
-
 	const calParams = new URLSearchParams({
 		council: councilId,
 		postcode: addr.postcode,
 	});
 	const calUrl = `${API}/calendar/${encodeURIComponent(addr.uprn)}?${calParams}`;
 
+	if (data.collections.length === 0) {
+		section.innerHTML = `
+			<div>
+				<strong>${addr.full_address}</strong>
+				<div>
+			<strong>${addr.full_address}</strong>
+			<div class="collection-date">${council}</div>
+		</div>
+			</div>
+			<p>No upcoming collections found.</p>
+			<div class="results-actions">
+				<a href="${calUrl}" class="action-btn">Add to Calendar</a>
+				<button class="action-btn outline" id="report-btn" type="button">Report wrong answer</button>
+				<span id="report-status" role="status" aria-live="polite"></span>
+			</div>`;
+		show("results");
+		section.tabIndex = -1;
+		section.focus();
+		return;
+	}
+
+	// Filter out past dates for display
+	const futureCollections = data.collections.filter((c) => isToday(c.date));
+
+	// Group by type, preserving date order — show next upcoming per type
+	const groups = new Map();
+	for (const c of futureCollections) {
+		if (!groups.has(c.type)) groups.set(c.type, []);
+		groups.get(c.type).push(c);
+	}
+
+	// Cards: one per type showing next date
+	let cards = "";
+	for (const [type, items] of groups) {
+		const next = items[0];
+		const rel = relativeDay(next.date);
+		const colour = binColour(type);
+		const displayType = toTitleCase(type);
+		cards += `
+			<div class="bin-group" data-bin-colour="${colour}" role="group" aria-label="${displayType} collection">
+				<div class="bin-next">
+					<div class="bin-icon">${BIN_SVG}</div>
+					<div class="bin-info">
+						<span class="bin-type">${displayType}</span>
+						<span class="bin-date">${formatDate(next.date)}</span>
+						<span class="bin-relative">${rel.text}</span>
+					</div>
+				</div>
+			</div>`;
+	}
+
+	// Single accordion with all future dates across all types
+	const allFuture = [];
+	for (const [type, items] of groups) {
+		for (const c of items.slice(1)) {
+			allFuture.push({ type, date: c.date });
+		}
+	}
+	allFuture.sort((a, b) => a.date.localeCompare(b.date));
+
+	let accordionHtml = "";
+	if (allFuture.length > 0) {
+		const lis = allFuture
+			.map(
+				(c) =>
+					`<li><span class="all-dates-type">${toTitleCase(c.type)}</span><span>${formatDate(c.date)}</span></li>`,
+			)
+			.join("");
+		accordionHtml = `
+			<details class="all-dates">
+				<summary>All upcoming dates (${allFuture.length})</summary>
+				<ul class="all-dates-list">${lis}</ul>
+			</details>`;
+	}
+
 	section.innerHTML = `
-        <article>
-            <header>
-                <strong>${addr.full_address}</strong>
-                <div class="collection-date">${council}</div>
-            </header>
-            ${cards}
-            <footer>
-                <a href="${calUrl}" role="button" class="outline">Subscribe to calendar (.ics)</a>
-                <button class="report-btn" id="report-btn" type="button">Report wrong answer</button>
-                <span id="report-status" role="status" aria-live="polite"></span>
-            </footer>
-        </article>
-        <div class="credits">
-            <p>Powered by</p>
-            <a href="https://github.com/mampfes/hacs_waste_collection_schedule" rel="noopener" target="_blank">${GH_SVG} hacs_waste_collection_schedule<span class="sr-only"> (opens GitHub in new tab)</span></a>
-            <a href="https://github.com/robbrad/UKBinCollectionData" rel="noopener" target="_blank">${GH_SVG} UKBinCollectionData<span class="sr-only"> (opens GitHub in new tab)</span></a>
-        </div>`;
+		<div>
+			<strong>${addr.full_address}</strong>
+			<div class="collection-date">${council}</div>
+		</div>
+		${cards}
+		${accordionHtml}
+		<div class="results-actions">
+			<a href="${calUrl}" class="action-btn">Add to Calendar</a>
+			<button class="action-btn outline" id="report-btn" type="button">Report wrong answer</button>
+			<span id="report-status" role="status" aria-live="polite"></span>
+		</div>`;
 	show("results");
 	section.tabIndex = -1;
 	section.focus();

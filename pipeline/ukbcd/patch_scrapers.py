@@ -13,16 +13,15 @@ import json
 import logging
 import re
 import sys
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from pathlib import Path
 
 from pipeline.shared import (
     BLOCKED_DOMAINS,
+    LAD_LOOKUP_PATH,
     extract_gov_uk_prefix,
-    load_admin_lookup,
     load_overrides,
     normalise_domain,
-    save_admin_lookup,
 )
 
 logging.basicConfig(level=logging.INFO, format="%(levelname)s: %(message)s")
@@ -365,6 +364,7 @@ class _PatchStats:
     skipped_selenium: int = 0
     skipped_existing: int = 0
     skipped_blocked: int = 0
+    lad_mappings: dict = field(default_factory=dict)
 
     def log_summary(self) -> None:
         logger.info("Summary:")
@@ -372,62 +372,99 @@ class _PatchStats:
         logger.info(f"  Skipped (Existing/Mampfes): {self.skipped_existing}")
         logger.info(f"  Skipped (Selenium): {self.skipped_selenium}")
         logger.info(f"  Skipped (Blocked domain): {self.skipped_blocked}")
+        logger.info(f"  LAD mappings: {len(self.lad_mappings)}")
 
 
-def _should_skip_council(
-    data: dict,
-    non_ukbcd_lookup: dict[str, str],
+def _council_to_ukbcd_name(council_name: str) -> str:
+    """Compute the UKBCD scraper filename from a council name (deterministic)."""
+    return "ukbcd_" + re.sub(r"(?<!^)(?=[A-Z])", "_", council_name).lower()
+
+
+def _get_lad_codes(data: dict) -> list[str]:
+    """Extract LAD codes from a council's input.json data."""
+    lad_codes = []
+    if "LAD24CD" in data:
+        lad_codes.append(data["LAD24CD"])
+    if "supported_councils_LAD24CD" in data:
+        lad_codes.extend(data["supported_councils_LAD24CD"])
+    return lad_codes
+
+
+def _find_hacs_scraper(
+    url: str,
+    hacs_domain_lookup: dict[str, str],
     hacs_prefixes: set[str],
-    ukbcd_override_domains: set[str],
-    stats: _PatchStats,
-) -> tuple[bool, str | None]:
-    """Check if a council should be skipped. Returns (skip, domain)."""
-    url = _resolve_url(data)
-    if not url:
-        return True, None
-
+) -> str | None:
+    """Try to find a HACS scraper matching this URL (domain then prefix fallback)."""
     domain = normalise_domain(url)
-
-    if domain in BLOCKED_DOMAINS:
-        stats.skipped_blocked += 1
-        return True, domain
-
-    # Check by full domain first, then by gov.uk prefix
-    has_hacs = domain in non_ukbcd_lookup
-    if not has_hacs:
-        prefix = extract_gov_uk_prefix(url)
-        if prefix and prefix in hacs_prefixes:
-            has_hacs = True
-
-    if has_hacs and domain not in ukbcd_override_domains:
-        stats.skipped_existing += 1
-        return True, domain
-
-    return False, domain
+    scraper = hacs_domain_lookup.get(domain)
+    if scraper:
+        return scraper
+    prefix = extract_gov_uk_prefix(url)
+    if prefix and prefix in hacs_prefixes:
+        for d, name in hacs_domain_lookup.items():
+            if extract_gov_uk_prefix("https://" + d) == prefix:
+                return name
+    return None
 
 
 def _patch_councils(
     input_data: dict,
     councils_dir: Path,
     target_dir: Path,
-    non_ukbcd_lookup: dict[str, str],
+    hacs_domain_lookup: dict[str, str],
     hacs_prefixes: set[str],
     ukbcd_override_domains: set[str],
-) -> tuple[dict[str, str], _PatchStats]:
-    """Process all councils from input.json. Returns (new_ukbcd_lookup, stats)."""
-    new_ukbcd_lookup: dict[str, str] = {}
+) -> _PatchStats:
+    """Process all councils from input.json. Returns stats (including lad_mappings).
+
+    Two-phase approach:
+      Phase 1: Record every council's LAD codes with its UKBCD scraper name as
+               the default (deterministic from council_name, never fails).
+               Also create UKBCD scrapers for councils not covered by HACS.
+      Phase 2: Upgrade UKBCD scraper_ids to HACS where a match exists, and
+               validate that every recorded scraper_id actually exists on disk.
+    """
     stats = _PatchStats()
 
+    # Phase 1: Process councils and record baseline LAD mappings
     for council_name, data in input_data.items():
         if not isinstance(data, dict):
             continue
 
-        skip, domain = _should_skip_council(
-            data, non_ukbcd_lookup, hacs_prefixes, ukbcd_override_domains, stats
-        )
-        if skip:
+        url = _resolve_url(data)
+        if not url:
             continue
 
+        domain = normalise_domain(url)
+        if domain in BLOCKED_DOMAINS:
+            stats.skipped_blocked += 1
+            continue
+
+        ukbcd_name = _council_to_ukbcd_name(council_name)
+        lad_codes = _get_lad_codes(data)
+        name = data.get("wiki_name") or ""
+
+        # Record baseline: every council gets its UKBCD scraper name
+        for lad in lad_codes:
+            if lad not in stats.lad_mappings:
+                stats.lad_mappings[lad] = {
+                    "name": name,
+                    "scraper_id": ukbcd_name,
+                    "url": url,
+                }
+
+        # Check if HACS covers this council
+        hacs_scraper = _find_hacs_scraper(url, hacs_domain_lookup, hacs_prefixes)
+
+        if hacs_scraper and domain not in ukbcd_override_domains:
+            stats.skipped_existing += 1
+            # Upgrade to HACS scraper_id
+            for lad in lad_codes:
+                stats.lad_mappings[lad]["scraper_id"] = hacs_scraper
+            continue
+
+        # No HACS match -- create UKBCD scraper
         logger.info(f"Adding new scraper: {council_name} ({domain})")
         sanitized_name = _process_council(council_name, data, councils_dir, target_dir)
 
@@ -438,9 +475,18 @@ def _patch_councils(
             continue
 
         stats.added += 1
-        new_ukbcd_lookup[domain] = sanitized_name
+        # Update with actual sanitized name (should match ukbcd_name, but use
+        # the real value from _process_council to be safe)
+        for lad in lad_codes:
+            stats.lad_mappings[lad]["scraper_id"] = sanitized_name
 
-    return new_ukbcd_lookup, stats
+    # Phase 2: Validate that every recorded scraper_id exists on disk
+    for lad, entry in stats.lad_mappings.items():
+        sid = entry["scraper_id"]
+        if sid and not (target_dir / f"{sid}.py").exists():
+            entry["scraper_id"] = None
+
+    return stats
 
 
 def _load_input_data(clone_dir: Path) -> dict:
@@ -467,10 +513,10 @@ def main():
 
     input_data = _load_input_data(clone_dir)
 
-    admin_lookup = load_admin_lookup()
-    non_ukbcd_lookup = {
-        k: v for k, v in admin_lookup.items() if not v.startswith("ukbcd_")
-    }
+    # Build domain -> scraper mapping from hacs files on disk
+    from pipeline.shared import build_hacs_domain_lookup
+
+    hacs_domain_lookup = build_hacs_domain_lookup(target_dir)
     ukbcd_override_domains = _load_ukbcd_override_domains()
 
     # Build gov.uk prefix set from HACS scrapers on disk for fuzzy matching
@@ -481,25 +527,26 @@ def main():
             hacs_prefixes.add(stem.rsplit("_gov_uk", 1)[0].replace("_", "-"))
 
     logger.info(
-        f"Loaded {len(non_ukbcd_lookup)} existing non-ukbcd councils from lookup "
+        f"Found {len(hacs_domain_lookup)} hacs scrapers on disk "
         f"({len(hacs_prefixes)} gov.uk prefixes)."
     )
 
-    new_ukbcd_lookup, stats = _patch_councils(
+    stats = _patch_councils(
         input_data,
         councils_dir,
         target_dir,
-        non_ukbcd_lookup,
+        hacs_domain_lookup,
         hacs_prefixes,
         ukbcd_override_domains,
     )
 
-    if stats.added > 0:
-        merged_lookup = {**non_ukbcd_lookup, **new_ukbcd_lookup}
+    # Write lad_lookup.json directly
+    if stats.lad_mappings:
         logger.info(
-            f"Updating admin_scraper_lookup.json with {stats.added} new ukbcd entries..."
+            f"Writing {len(stats.lad_mappings)} LAD mappings to lad_lookup.json"
         )
-        save_admin_lookup(merged_lookup)
+        LAD_LOOKUP_PATH.parent.mkdir(parents=True, exist_ok=True)
+        LAD_LOOKUP_PATH.write_text(json.dumps(stats.lad_mappings, indent=2))
 
     stats.log_summary()
 

@@ -11,6 +11,7 @@ from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import HTMLResponse
 from fastapi.staticfiles import StaticFiles
+from starlette.templating import Jinja2Templates
 
 from api import config
 from api.logging_config import setup_logging
@@ -22,6 +23,7 @@ setup_logging()
 
 _TEMPLATES_DIR = Path(__file__).resolve().parent / "templates"
 _STATIC_DIR = Path(__file__).resolve().parent / "static"
+_templates = Jinja2Templates(directory=str(_TEMPLATES_DIR))
 
 logger = logging.getLogger(__name__)
 
@@ -116,9 +118,12 @@ async def log_requests(request: Request, call_next):
             or (request.client.host if request.client else "unknown"),
         },
     )
+    # In dev, prevent stale static file caching so changes appear immediately
+    if request.url.path.startswith("/static") and os.getenv("ENV") != "production":
+        response.headers["Cache-Control"] = "no-cache"
     # Security headers
     response.headers["X-Content-Type-Options"] = "nosniff"
-    response.headers["X-Frame-Options"] = "DENY"
+    response.headers["X-Frame-Options"] = "SAMEORIGIN"
     response.headers["Strict-Transport-Security"] = (
         "max-age=31536000; includeSubDomains"
     )
@@ -134,7 +139,6 @@ async def log_requests(request: Request, call_next):
 
 
 # API routes
-app.include_router(api_router, prefix="/api")
 app.include_router(api_router, prefix="/api/v1")
 
 
@@ -144,23 +148,23 @@ app.mount("/static", StaticFiles(directory=_STATIC_DIR), name="static")
 
 # Frontend pages
 @app.get("/", response_class=HTMLResponse, include_in_schema=False)
-async def landing_page():
-    return (_TEMPLATES_DIR / "index.html").read_text()
+async def landing_page(request: Request):
+    return _templates.TemplateResponse(request, "index.html")
 
 
 @app.get("/coverage", response_class=HTMLResponse, include_in_schema=False)
-async def coverage_page():
-    return (_TEMPLATES_DIR / "coverage.html").read_text()
+async def coverage_page(request: Request):
+    return _templates.TemplateResponse(request, "coverage.html")
 
 
 @app.get("/api-docs", response_class=HTMLResponse, include_in_schema=False)
-async def api_docs_page():
-    return (_TEMPLATES_DIR / "api-docs.html").read_text()
+async def api_docs_page(request: Request):
+    return _templates.TemplateResponse(request, "api-docs.html")
 
 
 @app.get("/about", response_class=HTMLResponse, include_in_schema=False)
-async def about_page():
-    return (_TEMPLATES_DIR / "about.html").read_text()
+async def about_page(request: Request):
+    return _templates.TemplateResponse(request, "about.html")
 
 
 @app.get("/sitemap.xml", include_in_schema=False)
@@ -174,3 +178,7 @@ async def sitemap():
     urls = "\n".join(f"  <url><loc>{host}{p}</loc></url>" for p in pages)
     xml = f'<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n{urls}\n</urlset>'
     return Response(content=xml, media_type="application/xml")
+
+
+# uv run uvicorn api.main:app --reload
+# docker compose up --build

@@ -2,11 +2,13 @@ import json
 import pathlib
 from collections import defaultdict
 
+import duckdb
 import httpx
 
 LAD_LOOKUP_PATH = "api/data/lad_lookup.json"
 INTEGRATION_OUTPUT_PATH = "tests/integration_output.json"
 GEOJSON_URL = "https://services1.arcgis.com/ESMARspQHYMw9BZ9/arcgis/rest/services/LAD_MAY_2025_UK_BUC/FeatureServer/0/query?outFields=*&where=1%3D1&f=geojson"
+POPULATION_URL = "https://www.ons.gov.uk/file?uri=/peoplepopulationandcommunity/populationandmigration/populationestimates/datasets/populationestimatesforukenglandandwalesscotlandandnorthernireland/mid2024/mye24tablesuk.xlsx"
 OUTPUT_DIR = pathlib.Path("api/static")
 OUTPUT_GEOJSON = OUTPUT_DIR / "coverage.geojson"
 OUTPUT_MAP_HTML = OUTPUT_DIR / "coverage_map.html"
@@ -64,6 +66,25 @@ def _coverage_status(scraper_id: str | None, pass_rates: dict[str, float]) -> st
     return "broken"
 
 
+def _load_population_by_lad() -> dict[str, int]:
+    """Download ONS mid-year population estimates and return {LAD code: population}."""
+    cache_path = pathlib.Path("/tmp/mye24tablesuk.xlsx")
+    if not cache_path.exists():
+        print("  Downloading ONS population data...")
+        resp = httpx.get(POPULATION_URL, timeout=60.0, follow_redirects=True)
+        resp.raise_for_status()
+        cache_path.write_bytes(resp.content)
+
+    con = duckdb.connect()
+    con.execute("INSTALL spatial; LOAD spatial;")
+    rows = con.execute(
+        "SELECT Field1, Field5 FROM st_read(?, layer='MYE5', "
+        "open_options=['HEADERS=DISABLE']) WHERE OGC_FID > 8",
+        [str(cache_path)],
+    ).fetchall()
+    return {code: int(pop) for code, pop in rows if pop is not None}
+
+
 def main():
     print("Loading LAD lookup...")
     with open(LAD_LOOKUP_PATH) as f:
@@ -79,6 +100,10 @@ def main():
             f"  {len(pass_rates)} scrapers tested: {working} working, {partial} partial, {broken} broken"
         )
 
+    print("Loading population data...")
+    population = _load_population_by_lad()
+    print(f"  {len(population)} LAD population entries loaded")
+
     print("Fetching UK boundaries...")
     try:
         response = httpx.get(GEOJSON_URL, timeout=60.0)
@@ -87,6 +112,8 @@ def main():
     except Exception as e:
         print(f"Error fetching GeoJSON: {e}")
         return
+
+    pop_by_status: dict[str, int] = defaultdict(int)
 
     for feature in geojson_data["features"]:
         lad_cd = feature["properties"].get("LAD25CD", "")
@@ -98,9 +125,29 @@ def main():
         feature["properties"]["covered"] = status != "broken"
         if scraper_id and scraper_id in pass_rates:
             feature["properties"]["pass_rate"] = round(pass_rates[scraper_id] * 100)
+        lad_pop = population.get(lad_cd, 0)
+        if lad_pop:
+            feature["properties"]["population"] = lad_pop
+        pop_by_status[status] += lad_pop
         feature["geometry"]["coordinates"] = _round_coords(
             feature["geometry"]["coordinates"]
         )
+
+    total_pop = sum(pop_by_status.values())
+    if total_pop:
+        covered_pop = pop_by_status["working"] + pop_by_status["partial"]
+        print("\nPopulation coverage (mid-2024 ONS estimates):")
+        print(
+            f"  Working:     {pop_by_status['working']:>12,} ({pop_by_status['working'] / total_pop:.1%})"
+        )
+        print(
+            f"  Partial:     {pop_by_status['partial']:>12,} ({pop_by_status['partial'] / total_pop:.1%})"
+        )
+        print(
+            f"  Not covered: {pop_by_status['broken']:>12,} ({pop_by_status['broken'] / total_pop:.1%})"
+        )
+        print(f"  Total:       {total_pop:>12,}")
+        print(f"  Coverage:    {covered_pop / total_pop:.1%} of UK population")
 
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
     print(f"Writing {OUTPUT_GEOJSON}...")

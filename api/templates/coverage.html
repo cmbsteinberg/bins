@@ -4,25 +4,77 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Coverage - UK Bin Collections</title>
-  <link rel="stylesheet" href="https://unpkg.com/axist@latest/dist/axist.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/light.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  {% include "partials/shared-styles.html" %}
+  <link rel="stylesheet" href="/static/coverage.css">
 </head>
 <body>
-  <nav>
-    <ul>
-      <li><strong>UK Bin Collections</strong></li>
-    </ul>
-    <ul>
-      <li><a href="/">Home</a></li>
-      <li><a href="/coverage">Coverage</a></li>
-      <li><a href="/api-docs">API</a></li>
-    </ul>
-  </nav>
+  {% include "partials/nav.html" %}
   <main>
-    <h1>Coverage Map</h1>
-    <p>Green areas are fully working councils. Orange areas are partially working. Red areas are broken or not yet supported.</p>
-    <div style="height: 600px; width: 100%;">
-      <iframe src="/static/coverage_map.html" width="100%" height="100%" style="border:none;"></iframe>
-    </div>
+    <div id="map"></div>
   </main>
+  {% include "partials/footer.html" %}
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script>
+    var map = L.map('map').setView([55.3781, -3.4360], 6);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; OpenStreetMap contributors'
+    }).addTo(map);
+
+    var STATUS_COLORS = {
+        working:  '#2ecc71',
+        partial:  '#f39c12',
+        broken:   '#e74c3c'
+    };
+
+    var STATUS_LABELS = {
+        working:  'Working',
+        partial:  'Partially working',
+        broken:   'Broken / not covered'
+    };
+
+    function style(feature) {
+        var status = feature.properties.coverage_status || 'none';
+        return {
+            fillColor: STATUS_COLORS[status] || STATUS_COLORS.none,
+            weight: 1,
+            opacity: 1,
+            color: 'white',
+            fillOpacity: 0.6
+        };
+    }
+
+    function popupText(props) {
+        var status = props.coverage_status || 'none';
+        var label = STATUS_LABELS[status] || 'Unknown';
+        var text = '<strong>' + props.LAD25NM + '</strong><br>' + label;
+        if (props.pass_rate !== undefined) {
+            text += ' (' + props.pass_rate + '% pass rate)';
+        }
+        return text;
+    }
+
+    fetch('/static/coverage.geojson')
+        .then((res) => res.json())
+        .then((data) => {
+            L.geoJson(data, {
+                style: style,
+                onEachFeature: (feature, layer) => {
+                    layer.bindPopup(popupText(feature.properties));
+                }
+            }).addTo(map);
+        });
+
+    var legend = L.control({position: 'bottomright'});
+    legend.onAdd = () => {
+        var div = L.DomUtil.create('div', 'info legend');
+        Object.keys(STATUS_COLORS).forEach((key) => {
+            div.innerHTML += '<i style="background: ' + STATUS_COLORS[key] + '"></i> ' + STATUS_LABELS[key] + '<br>';
+        });
+        return div;
+    };
+    legend.addTo(map);
+  </script>
 </body>
 </html>

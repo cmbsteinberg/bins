@@ -121,11 +121,6 @@ for entry in overrides.get('hacs_to_ukbcd', {}).values():
 echo "Running ruff check --fix on scrapers..."
 uv run ruff check --fix --ignore E402,E701,E722,E741,F403,F405,F821,F841,W293 "$SCRAPERS_DIR" || true
 
-# Regenerate admin lookup (UKBCD sync needs this to know what HACS covers)
-echo ""
-echo "=== Regenerating admin lookup ==="
-uv run python -m scripts.generate_admin_lookup
-
 # Save the version
 echo "$latest_sha" > "$VERSION_FILE"
 echo "Version saved: ${latest_sha}"

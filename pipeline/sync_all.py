@@ -7,11 +7,9 @@ Flow:
   2. Wipe all scrapers so stale files never linger across syncs
   3. Run HACS sync (clone, patch, copy scrapers)
   4. Filter HACS scrapers: remove any whose gov.uk prefix isn't in input.json
-  5. Regenerate admin lookup (so UKBCD sync sees filtered state)
-  6. Run UKBCD sync (fills gaps for councils without a HACS scraper)
-  7. Final admin lookup regeneration
-  8. Regenerate test cases (HACS + UKBCD)
-  9. Regenerate LAD lookup (postcode -> council -> scraper)
+  5. Run UKBCD sync (fills gaps + builds lad_lookup.json with scraper IDs)
+  6. Regenerate test cases (HACS + UKBCD)
+  7. Regenerate postcode lookup (postcode -> LAD code parquet)
 
 Usage:
     uv run python -m pipeline.sync_all
@@ -20,12 +18,10 @@ Usage:
 
 from __future__ import annotations
 
-import ast
 import json
 import logging
 import subprocess
 import sys
-from pathlib import Path
 
 import httpx
 
@@ -34,6 +30,7 @@ from pipeline.shared import (
     PROJECT_ROOT,
     SCRAPERS_DIR,
     extract_gov_uk_prefix,
+    extract_url_from_scraper,
     load_overrides,
 )
 
@@ -68,25 +65,6 @@ def build_needed_prefixes(input_data: dict) -> set[str]:
             prefixes.add(prefix)
     logger.info("Found %d needed gov.uk prefixes in input.json", len(prefixes))
     return prefixes
-
-
-def extract_url_from_scraper(path: Path) -> str | None:
-    """Parse the URL = '...' constant from a scraper file using AST."""
-    try:
-        tree = ast.parse(path.read_text())
-    except SyntaxError:
-        return None
-    for node in ast.walk(tree):
-        if (
-            isinstance(node, ast.Assign)
-            and len(node.targets) == 1
-            and isinstance(node.targets[0], ast.Name)
-            and node.targets[0].id == "URL"
-            and isinstance(node.value, ast.Constant)
-            and isinstance(node.value.value, str)
-        ):
-            return node.value.value
-    return None
 
 
 def filter_hacs_scrapers(needed_prefixes: set[str]) -> list[str]:
@@ -195,16 +173,7 @@ def main():
     else:
         logger.info("No stale HACS scrapers found.")
 
-    # 5. Regenerate admin lookup so UKBCD sync sees filtered HACS state
-    print("\n" + "=" * 50)
-    print("=== Regenerating admin lookup (post-filter) ===")
-    print("=" * 50)
-    run_shell(
-        ["uv", "run", "python", "-m", "scripts.generate_admin_lookup"],
-        "admin lookup regeneration (post-filter)",
-    )
-
-    # 6. Run UKBCD sync (fills gaps)
+    # 5. Run UKBCD sync (fills gaps + builds lad_lookup.json)
     print("\n" + "=" * 50)
     print("=== Syncing UKBCD scrapers (filling gaps) ===")
     print("=" * 50)
@@ -213,16 +182,7 @@ def main():
         ukbcd_cmd.append("--include-unmerged")
     run_shell(ukbcd_cmd, "UKBCD sync")
 
-    # 7. Final admin lookup regeneration (includes UKBCD scrapers)
-    print("\n" + "=" * 50)
-    print("=== Regenerating admin lookup (final) ===")
-    print("=" * 50)
-    run_shell(
-        ["uv", "run", "python", "-m", "scripts.generate_admin_lookup"],
-        "admin lookup regeneration (final)",
-    )
-
-    # 8. Regenerate test cases (after filtering, so stale scrapers are excluded)
+    # 6. Regenerate test cases (after filtering, so stale scrapers are excluded)
     print("\n" + "=" * 50)
     print("=== Regenerating test cases ===")
     print("=" * 50)
@@ -235,13 +195,13 @@ def main():
         "UKBCD test cases",
     )
 
-    # 9. Regenerate LAD lookup (postcode -> council -> scraper mapping)
+    # 7. Regenerate postcode lookup (postcode -> LAD code parquet)
     print("\n" + "=" * 50)
-    print("=== Regenerating LAD lookup ===")
+    print("=== Regenerating postcode lookup ===")
     print("=" * 50)
     run_shell(
         ["uv", "run", "python", "-m", "scripts.lookup.create_lookup_table"],
-        "LAD lookup regeneration",
+        "postcode lookup regeneration",
     )
 
     # Cleanup temp file

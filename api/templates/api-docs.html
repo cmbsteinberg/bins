@@ -4,17 +4,11 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>API - UK Bin Collections</title>
-  <link rel="stylesheet" href="https://unpkg.com/axist@latest/dist/axist.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/light.css">
+  {% include "partials/shared-styles.html" %}
 </head>
 <body>
-  <nav>
-    <ul><li><strong>UK Bin Collections</strong></li></ul>
-    <ul>
-      <li><a href="/">Home</a></li>
-      <li><a href="/coverage">Coverage</a></li>
-      <li><a href="/api-docs">API</a></li>
-    </ul>
-  </nav>
+  {% include "partials/nav.html" %}
   <main>
     <h1>API Documentation</h1>
     <p>This project exposes a public REST API for looking up UK bin collection schedules.</p>
@@ -22,8 +16,8 @@
     <section>
       <h2>Interactive Docs</h2>
       <p>
-        <a href="/api/v1/docs" role="button">Swagger UI (OpenAPI)</a>
-        <a href="/api/v1/redoc" role="button" class="outline">ReDoc</a>
+        <a href="/api/v1/docs">Swagger UI (OpenAPI)</a> |
+        <a href="/api/v1/redoc">ReDoc</a>
       </p>
     </section>
 
@@ -43,5 +37,6 @@
       <p>The raw OpenAPI JSON schema is available at <a href="/api/v1/openapi.json">/api/v1/openapi.json</a>.</p>
     </section>
   </main>
+  {% include "partials/footer.html" %}
 </body>
 </html>

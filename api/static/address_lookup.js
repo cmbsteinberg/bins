@@ -5,6 +5,24 @@ const ADDRESS_HEADERS = {
 	"content-type": "text/plain;charset=UTF-8",
 };
 
+function titleCase(str) {
+	return str.toLowerCase().replace(/\b\w/g, (c) => c.toUpperCase());
+}
+
+function formatAddress(item) {
+	const parts = [
+		item.addressLine1,
+		item.addressLine2,
+		item.addressLine3,
+		item.addressLine4,
+		item.city,
+	]
+		.filter(Boolean)
+		.map(titleCase);
+	parts.push(item.postcode);
+	return parts.join(", ");
+}
+
 class AddressLookup {
 	constructor({ timeout = 15000 } = {}) {
 		this._timeout = timeout;
@@ -32,7 +50,7 @@ class AddressLookup {
 
 		return data.map((item) => ({
 			uprn: item.UPRN,
-			full_address: item.fullAddress,
+			full_address: formatAddress(item),
 			postcode: item.postcode,
 		}));
 	}

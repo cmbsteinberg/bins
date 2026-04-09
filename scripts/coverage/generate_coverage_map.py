@@ -133,9 +133,21 @@ def main():
             feature["geometry"]["coordinates"]
         )
 
+    # Council counts from lad_lookup (our source of truth), not GeoJSON features
+    # Multiple LADs can share a scraper, so count unique scrapers for "covered"
+    total_councils = len(lad_lookup)
+    covered_scrapers = {
+        info["scraper_id"] for info in lad_lookup.values() if info.get("scraper_id")
+    }
+    councils_with_scraper = sum(
+        1 for info in lad_lookup.values() if info.get("scraper_id")
+    )
+
+    # Population from GeoJSON features (aligned with boundary data)
     total_pop = sum(pop_by_status.values())
+    covered_pop = pop_by_status["working"] + pop_by_status["partial"]
+
     if total_pop:
-        covered_pop = pop_by_status["working"] + pop_by_status["partial"]
         print("\nPopulation coverage (mid-2024 ONS estimates):")
         print(
             f"  Working:     {pop_by_status['working']:>12,} ({pop_by_status['working'] / total_pop:.1%})"
@@ -148,6 +160,22 @@ def main():
         )
         print(f"  Total:       {total_pop:>12,}")
         print(f"  Coverage:    {covered_pop / total_pop:.1%} of UK population")
+
+    print(
+        f"\nCouncil coverage: {councils_with_scraper} / {total_councils} LADs "
+        f"({len(covered_scrapers)} unique scrapers)"
+    )
+
+    geojson_data["metadata"] = {
+        "councils_covered": councils_with_scraper,
+        "councils_total": total_councils,
+        "scrapers_unique": len(covered_scrapers),
+        "population_covered": covered_pop,
+        "population_total": total_pop,
+        "population_covered_pct": round(covered_pop / total_pop * 100)
+        if total_pop
+        else 0,
+    }
 
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
     print(f"Writing {OUTPUT_GEOJSON}...")

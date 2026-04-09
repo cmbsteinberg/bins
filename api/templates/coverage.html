@@ -12,6 +12,9 @@
 <body>
   {% include "partials/nav.html" %}
   <main>
+    <div id="stats" style="display:none; text-align:center; padding:1rem 0 0;">
+      <span id="council-stat"></span> &nbsp;·&nbsp; <span id="pop-stat"></span>
+    </div>
     <div id="map"></div>
   </main>
   {% include "partials/footer.html" %}
@@ -58,6 +61,14 @@
     fetch('/static/coverage.geojson')
         .then((res) => res.json())
         .then((data) => {
+            if (data.metadata) {
+                var m = data.metadata;
+                document.getElementById('council-stat').textContent =
+                    m.councils_covered + ' / ' + m.councils_total + ' councils supported';
+                document.getElementById('pop-stat').textContent =
+                    m.population_covered_pct + '% of UK population covered';
+                document.getElementById('stats').style.display = '';
+            }
             L.geoJson(data, {
                 style: style,
                 onEachFeature: (feature, layer) => {

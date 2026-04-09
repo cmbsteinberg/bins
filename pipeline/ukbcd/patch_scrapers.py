@@ -363,7 +363,6 @@ class _PatchStats:
     added: int = 0
     skipped_selenium: int = 0
     skipped_existing: int = 0
-    skipped_blocked: int = 0
     lad_mappings: dict = field(default_factory=dict)
 
     def log_summary(self) -> None:
@@ -371,7 +370,6 @@ class _PatchStats:
         logger.info(f"  Added: {self.added}")
         logger.info(f"  Skipped (Existing/Mampfes): {self.skipped_existing}")
         logger.info(f"  Skipped (Selenium): {self.skipped_selenium}")
-        logger.info(f"  Skipped (Blocked domain): {self.skipped_blocked}")
         logger.info(f"  LAD mappings: {len(self.lad_mappings)}")
 
 
@@ -437,9 +435,6 @@ def _patch_councils(
             continue
 
         domain = normalise_domain(url)
-        if domain in BLOCKED_DOMAINS:
-            stats.skipped_blocked += 1
-            continue
 
         ukbcd_name = _council_to_ukbcd_name(council_name)
         lad_codes = _get_lad_codes(data)
@@ -454,8 +449,12 @@ def _patch_councils(
                     "url": url,
                 }
 
-        # Check if HACS covers this council
-        hacs_scraper = _find_hacs_scraper(url, hacs_domain_lookup, hacs_prefixes)
+        # Blocked domains (e.g. calendar.google.com) can't be matched to
+        # HACS scrapers by domain, but should still be synced as UKBCD scrapers
+        if domain not in BLOCKED_DOMAINS:
+            hacs_scraper = _find_hacs_scraper(url, hacs_domain_lookup, hacs_prefixes)
+        else:
+            hacs_scraper = None
 
         if hacs_scraper and domain not in ukbcd_override_domains:
             stats.skipped_existing += 1

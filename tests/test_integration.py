@@ -6,7 +6,6 @@ response shapes, and network-level diagnostics. Results are written to
 tests/integration_output.json.
 
 Usage:
-    uv run pytest tests/test_integration.py -v
     uv run pytest tests/test_integration.py -v -k "aberdeen"
     uv run pytest tests/test_integration.py -v --tb=short   # condensed tracebacks
 """

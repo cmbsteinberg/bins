@@ -1,11 +1,13 @@
-import csv
 import json
 import logging
+import time
 from pathlib import Path
 from urllib.parse import urlparse
 
+import duckdb
 import httpx
-import ibis
+
+PARQUET_MAX_AGE_DAYS = 30
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -63,7 +65,9 @@ async def main():
         scraper_id = domain_to_scraper.get(domain)
 
         for lad in lad_codes:
-            if lad not in lad_to_council or (not lad_to_council[lad]["scraper_id"] and scraper_id):
+            if lad not in lad_to_council or (
+                not lad_to_council[lad]["scraper_id"] and scraper_id
+            ):
                 lad_to_council[lad] = {
                     "name": name,
                     "scraper_id": scraper_id,
@@ -74,60 +78,62 @@ async def main():
     with open(LAD_LOOKUP_PATH, "w") as f:
         json.dump(lad_to_council, f, indent=2)
 
-    # 3. Fetch ONS CSV and convert to Parquet using ibis
-    logger.info("Fetching ONS CSV (this may take a while)")
+    # 3. Download ONS CSV and convert to Parquet via DuckDB (cached for 30 days)
+    if POSTCODE_PARQUET_PATH.exists():
+        age_days = (time.time() - POSTCODE_PARQUET_PATH.stat().st_mtime) / 86400
+        if age_days < PARQUET_MAX_AGE_DAYS:
+            logger.info(
+                "Postcode parquet is %.0f days old (max %d), skipping ONS download",
+                age_days,
+                PARQUET_MAX_AGE_DAYS,
+            )
+            return
+
     csv_file = ROOT_DIR / "ons_postcodes.csv"
-    if not csv_file.exists():
-        async with httpx.AsyncClient(timeout=300, follow_redirects=True) as client:
-            async with client.stream("GET", ONS_URL) as response:
-                response.raise_for_status()
-                with open(csv_file, "wb") as f:
-                    async for chunk in response.aiter_bytes():
-                        f.write(chunk)
-    else:
-        logger.info("Using existing ons_postcodes.csv")
+    logger.info("Downloading ONS CSV (this may take a while)")
+    async with httpx.AsyncClient(timeout=300, follow_redirects=True) as client:
+        async with client.stream("GET", ONS_URL) as response:
+            response.raise_for_status()
+            with open(csv_file, "wb") as f:
+                async for chunk in response.aiter_bytes():
+                    f.write(chunk)
 
-    if csv_file.stat().st_size == 0:
-        logger.error("CSV file is empty")
+    logger.info("Processing CSV with DuckDB")
+    con = duckdb.connect()
+
+    # Find the LAD column name (changes with ONS releases, e.g. LAD24CD, LAD25CD)
+    cols = [
+        row[0]
+        for row in con.execute(
+            f"SELECT column_name FROM (DESCRIBE SELECT * FROM '{csv_file}')"
+        ).fetchall()
+    ]
+    lad_col = next(
+        (c for c in cols if c.lower().startswith("lad") and c.lower().endswith("cd")),
+        None,
+    )
+    if not lad_col:
+        logger.error("Could not find LAD column in header: %s", cols)
+        csv_file.unlink()
         return
 
-    logger.info("Processing CSV with DuckDB via ibis")
-    # Use duckdb directly to read only required columns for efficiency
-    con = ibis.duckdb.connect()
+    logger.info("Using LAD column: %s", lad_col)
 
-    # We need to find which column is PCDS and which is LAD CD
-    with open(csv_file, 'r', encoding='utf-8-sig') as f:
-        reader = csv.reader(f)
-        header = next(reader)
-
-    pcds_col = next((c for c in header if c.lower() == "pcds"), None)
-    lad_col = next((c for c in header if c.lower().startswith("lad") and c.lower().endswith("cd")), None)
-
-    if not pcds_col or not lad_col:
-        logger.error("Could not find required columns in header: %s", header)
-        return
-
-    logger.info("Using columns: %s, %s", pcds_col, lad_col)
-
-    # Register the CSV as a table and select only what we need
-    # DuckDB's read_csv is very fast and can select columns
-    t = con.read_csv(csv_file)
-
-    clean_pc = t[pcds_col].upper().replace(" ", "")
-
-    res = t.select(
-        postcode=clean_pc,
-        lad_code=t[lad_col]
-    ).distinct()
-
-    logger.info("Saving to parquet at %s", POSTCODE_PARQUET_PATH)
-    res.to_parquet(POSTCODE_PARQUET_PATH)
+    con.execute(
+        f"""
+        COPY (
+            SELECT DISTINCT
+                upper(replace(pcds, ' ', '')) AS postcode,
+                {lad_col} AS lad_code
+            FROM '{csv_file}'
+        ) TO '{POSTCODE_PARQUET_PATH}' (FORMAT PARQUET)
+        """
+    )
+    csv_file.unlink()
     logger.info("Done!")
-
-    # Cleanup CSV to save space if needed
-    # csv_file.unlink()
 
 
 if __name__ == "__main__":
     import asyncio
+
     asyncio.run(main())

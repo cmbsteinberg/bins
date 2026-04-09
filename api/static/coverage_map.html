@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -20,21 +19,40 @@
     <script>
         var map = L.map('map').setView([55.3781, -3.4360], 6);
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            attribution: '© OpenStreetMap contributors'
+            attribution: '&copy; OpenStreetMap contributors'
         }).addTo(map);
 
-        function getColor(covered) {
-            return covered ? '#2ecc71' : '#e74c3c';
-        }
+        var STATUS_COLORS = {
+            working:  '#2ecc71',
+            partial:  '#f39c12',
+            broken:   '#e74c3c'
+        };
+
+        var STATUS_LABELS = {
+            working:  'Working',
+            partial:  'Partially working',
+            broken:   'Broken / not covered'
+        };
 
         function style(feature) {
+            var status = feature.properties.coverage_status || 'none';
             return {
-                fillColor: getColor(feature.properties.covered),
+                fillColor: STATUS_COLORS[status] || STATUS_COLORS.none,
                 weight: 1,
                 opacity: 1,
                 color: 'white',
                 fillOpacity: 0.6
             };
+        }
+
+        function popupText(props) {
+            var status = props.coverage_status || 'none';
+            var label = STATUS_LABELS[status] || 'Unknown';
+            var text = '<strong>' + props.LAD25NM + '</strong><br>' + label;
+            if (props.pass_rate !== undefined) {
+                text += ' (' + props.pass_rate + '% pass rate)';
+            }
+            return text;
         }
 
         fetch('/static/coverage.geojson')
@@ -43,8 +61,7 @@
                 L.geoJson(data, {
                     style: style,
                     onEachFeature: function(feature, layer) {
-                        layer.bindPopup('<strong>' + feature.properties.LAD25NM + '</strong><br>' +
-                                      (feature.properties.covered ? '✅ Covered' : '❌ Not Covered'));
+                        layer.bindPopup(popupText(feature.properties));
                     }
                 }).addTo(map);
             });
@@ -52,8 +69,9 @@
         var legend = L.control({position: 'bottomright'});
         legend.onAdd = function (map) {
             var div = L.DomUtil.create('div', 'info legend');
-            div.innerHTML += '<i style="background: #2ecc71"></i> Covered<br>';
-            div.innerHTML += '<i style="background: #e74c3c"></i> Not Covered<br>';
+            Object.keys(STATUS_COLORS).forEach(function(key) {
+                div.innerHTML += '<i style="background: ' + STATUS_COLORS[key] + '"></i> ' + STATUS_LABELS[key] + '<br>';
+            });
             return div;
         };
         legend.addTo(map);

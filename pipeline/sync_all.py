@@ -12,7 +12,6 @@ Flow:
   7. Final admin lookup regeneration
   8. Regenerate test cases (HACS + UKBCD)
   9. Regenerate LAD lookup (postcode -> council -> scraper)
-  10. Regenerate disabled scrapers list (if integration results exist)
 
 Usage:
     uv run python -m pipeline.sync_all
@@ -31,8 +30,6 @@ from pathlib import Path
 import httpx
 
 from pipeline.shared import (
-    API_DIR,
-    OVERRIDES_PATH,
     PIPELINE_DIR,
     PROJECT_ROOT,
     SCRAPERS_DIR,
@@ -231,21 +228,6 @@ def main():
         ["uv", "run", "python", "-m", "scripts.lookup.create_lookup_table"],
         "LAD lookup regeneration",
     )
-
-    # 9. Regenerate disabled list if integration results exist
-    print("\n" + "=" * 50)
-    print("=== Regenerating disabled scrapers list ===")
-    print("=" * 50)
-    integration_output = PROJECT_ROOT / "tests" / "integration_output.json"
-    if integration_output.exists():
-        run_shell(
-            ["uv", "run", "python", "-m", "scripts.generate_disabled_list"],
-            "disabled list regeneration",
-        )
-    else:
-        logger.info(
-            "Skipping: no integration_output.json found. Run integration tests first."
-        )
 
     # Cleanup temp file
     NEEDED_COUNCILS_PATH.unlink(missing_ok=True)

@@ -4,7 +4,7 @@ import re
 from dataclasses import dataclass
 from pathlib import Path
 
-import ibis
+import duckdb
 
 logger = logging.getLogger(__name__)
 
@@ -49,20 +49,18 @@ class CouncilLookup:
             logger.warning("lad_lookup.json not found, local lookup will fail")
             self._lad_to_council = {}
 
-        # Initialize ibis/duckdb for fast parquet queries
+        # Initialize duckdb for fast parquet queries
         self._con = None
-        self._postcodes = None
         self.parquet_loaded = False
         if self._postcode_parquet.exists():
-            self._con = ibis.duckdb.connect()
-            self._postcodes = self._con.read_parquet(self._postcode_parquet)
+            self._con = duckdb.connect()
             self.parquet_loaded = True
         else:
             logger.warning("postcode_lookup.parquet not found, local lookup will fail")
 
     async def close(self) -> None:
         if self._con is not None:
-            self._con.disconnect()
+            self._con.close()
 
     async def __aenter__(self):
         return self
@@ -77,20 +75,23 @@ class CouncilLookup:
             LookupDatabaseError: if the parquet database is not loaded.
             PostcodeNotFoundError: if the postcode is not in the database.
         """
-        if self._postcodes is None:
+        if self._con is None:
             raise LookupDatabaseError("Postcode lookup database is not loaded")
 
         pc_clean = _normalize_postcode(postcode)
         logger.info("Looking up local authority locally for postcode %s", pc_clean)
 
-        res = self._postcodes.filter(self._postcodes.postcode == pc_clean).execute()
+        rows = self._con.execute(
+            "SELECT DISTINCT lad_code FROM read_parquet(?) WHERE postcode = ?",
+            [str(self._postcode_parquet), pc_clean],
+        ).fetchall()
 
-        if res.empty:
+        if not rows:
             raise PostcodeNotFoundError(
                 f"Postcode {pc_clean} not found in our database"
             )
 
-        lad_codes = res["lad_code"].unique()
+        lad_codes = [r[0] for r in rows]
         authorities = []
         for lad in lad_codes:
             council = self._lad_to_council.get(lad)

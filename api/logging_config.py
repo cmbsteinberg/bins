@@ -59,4 +59,4 @@ def setup_logging() -> None:
     logging.getLogger("uvicorn.access").setLevel(logging.WARNING)
     logging.getLogger("httpx").setLevel(logging.WARNING)
     logging.getLogger("httpcore").setLevel(logging.WARNING)
-    logging.getLogger("ibis").setLevel(logging.WARNING)
+    logging.getLogger("duckdb").setLevel(logging.WARNING)

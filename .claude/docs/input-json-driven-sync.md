@@ -5,7 +5,6 @@
 The old sync pipeline pulled in all HACS scrapers blindly, then discovered stale ones reactively via integration test failures. This meant:
 
 - Scrapers for defunct councils (e.g. Allerdale, merged into Cumberland) were synced, tested, and failed
-- `disabled_scrapers.json` was generated after the fact from 0% pass rates
 - No distinction between "council doesn't exist anymore" and "scraper is broken but council is real"
 - Wasted CI time testing scrapers that could never work
 
@@ -25,12 +24,9 @@ UKBCD's `input.json` is now the source of truth for which councils need coverage
 7.  Final admin lookup regeneration
 8.  Regenerate test cases (HACS + UKBCD)
 9.  Regenerate LAD lookup (postcode -> council -> scraper)
-10. Regenerate disabled_scrapers.json (if integration results exist)
 ```
 
-After integration tests run, `test_integration.py` automatically regenerates:
-- `disabled_scrapers.json` (scrapers with 0% pass rate)
-- Coverage map (`coverage.geojson` + `coverage_map.html`)
+After integration tests run, `test_integration.py` automatically regenerates the coverage map (`coverage.geojson` + `coverage_map.html`).
 
 ### Domain Matching
 
@@ -53,7 +49,7 @@ Both `sync_all.py` (filtering stale HACS) and `ukbcd/patch_scrapers.py` (decidin
 | `pipeline/shared.py` | `extract_gov_uk_prefix()` utility |
 | `pipeline/hacs/sync.sh` | HACS clone + patch |
 | `pipeline/ukbcd/sync.sh` | UKBCD clone + patch |
-| `tests/test_integration.py` | After tests: regenerates coverage map + disabled list |
+| `tests/test_integration.py` | After tests: regenerates coverage map |
 | `lefthook.yaml` | Pre-commit runs `pipeline/sync.sh` |
 
 ### Usage
@@ -68,7 +64,7 @@ uv run python -m pipeline.sync_all
 # With unmerged UKBCD PR checking
 pipeline/sync.sh --include-unmerged
 
-# Integration tests (auto-regenerates coverage map + disabled list)
+# Integration tests (auto-regenerates coverage map)
 uv run pytest tests/test_integration.py -v
 ```
 
@@ -77,11 +73,11 @@ uv run pytest tests/test_integration.py -v
 - ~20 stale HACS scrapers filtered out at sync time (allerdale, east_northamptonshire, richmondshire, etc.)
 - ~21 more councils correctly use their HACS scraper instead of a redundant UKBCD one
 - Test cases regenerated after filtering (no stale test entries)
-- Coverage map and disabled list auto-regenerated after integration tests
+- Coverage map auto-regenerated after integration tests
 - Single entry point (`pipeline/sync.sh`) does everything
+- Disabled scrapers concept removed -- all scrapers are loaded, errors surfaced to users via the frontend
 
 ### Overrides vs Filtering
 
 - **Filtered out**: Council not in input.json at all (defunct/merged). Scraper never enters `api/scrapers/`.
 - **Overridden** (`overrides.json`): Council exists but HACS scraper is broken; UKBCD alternative is used instead.
-- **Disabled** (`disabled_scrapers.json`): Council exists, scraper exists, but has 0% integration test pass rate.

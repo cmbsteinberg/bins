@@ -3,7 +3,6 @@ from __future__ import annotations
 import asyncio
 import importlib
 import inspect
-import json
 import logging
 from dataclasses import dataclass
 from datetime import datetime
@@ -15,7 +14,6 @@ from api.config import SCRAPER_TIMEOUT
 logger = logging.getLogger(__name__)
 
 SCRAPERS_DIR = Path(__file__).parent.parent / "scrapers"
-DISABLED_PATH = Path(__file__).parent.parent / "data" / "disabled_scrapers.json"
 
 
 class ScraperTimeoutError(Exception):
@@ -58,28 +56,10 @@ class ScraperRegistry:
     def build(cls) -> ScraperRegistry:
         registry = cls()
 
-        # Load disabled scrapers list
-        disabled: set[str] = set()
-        if DISABLED_PATH.exists():
-            try:
-                data = json.loads(DISABLED_PATH.read_text())
-                disabled = set(data.get("disabled", []))
-                logger.info(
-                    "Loaded %d disabled scrapers from %s",
-                    len(disabled),
-                    DISABLED_PATH.name,
-                )
-            except Exception:
-                logger.warning("Could not read %s", DISABLED_PATH, exc_info=True)
-
         scraper_files = sorted(SCRAPERS_DIR.glob("*.py"))
         loaded = 0
-        skipped = 0
         for path in scraper_files:
             name = path.stem
-            if name in disabled:
-                skipped += 1
-                continue
             try:
                 module = importlib.import_module(f"api.scrapers.{name}")
                 if not hasattr(module, "Source"):
@@ -111,15 +91,7 @@ class ScraperRegistry:
             except Exception:
                 logger.warning("Failed to load scraper %s", name, exc_info=True)
 
-        if skipped:
-            logger.info(
-                "Loaded %d/%d scrapers (%d disabled)",
-                loaded,
-                len(scraper_files),
-                skipped,
-            )
-        else:
-            logger.info("Loaded %d/%d scrapers", loaded, len(scraper_files))
+        logger.info("Loaded %d/%d scrapers", loaded, len(scraper_files))
         return registry
 
     def get(self, council_id: str) -> ScraperMeta | None:

@@ -45,12 +45,10 @@ class Source:
         if self._uprn:
             # Get the page containing bin details
             # /calendar gives further future information over just the "Services" page
-            req = urllib.request.Request(
-                f"{API_URL}/property/{self._uprn}/calendar", headers=HEADERS
-            )
-            __urllib_resp__ = await httpx.AsyncClient(follow_redirects=True).get(__urllib_url__, headers=__urllib_headers__)
 
-            html_doc = __urllib_resp__.content
+            response = await httpx.AsyncClient(follow_redirects=True).get(f"{API_URL}/property/{self._uprn}/calendar", headers=HEADERS)
+
+            html_doc = response.content
 
             # Parse the page to get the data required (collection date and type)
             soup = BeautifulSoup(html_doc, "html.parser")

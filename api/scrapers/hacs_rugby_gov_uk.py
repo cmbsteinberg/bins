@@ -35,5 +35,5 @@ class Source:
         self._client = Cloud9Client("rugby", icon_keywords=ICON_MAP)
         self._uprn = str(uprn)
 
-    def fetch(self) -> list[Collection]:
+    async def fetch(self) -> list[Collection]:
         return self._client.fetch_by_uprn(self._uprn)

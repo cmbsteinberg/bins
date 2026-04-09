@@ -50,7 +50,7 @@ class Source:
         self._postcode = postcode
         self._address = address
 
-    def fetch(self) -> list[Collection]:
+    async def fetch(self) -> list[Collection]:
         if self._uprn:
             return self._client.fetch_by_uprn(self._uprn)
         if not self._postcode:

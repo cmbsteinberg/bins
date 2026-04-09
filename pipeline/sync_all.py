@@ -171,6 +171,10 @@ def main():
     logger.info("Removed %d scraper files.", removed_count)
 
     # 3. Run HACS sync (clone, patch, copy)
+    # Clear version file so HACS sync always runs after a full wipe
+    hacs_version_file = PIPELINE_DIR / "hacs" / ".upstream_version"
+    hacs_version_file.unlink(missing_ok=True)
+
     print("\n" + "=" * 50)
     print("=== Syncing HACS scrapers ===")
     print("=" * 50)

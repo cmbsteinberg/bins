@@ -1,7 +1,10 @@
+# Lewes Borough Council uses the same script.
+
 from bs4 import BeautifulSoup
 
 from api.compat.ukbcd.common import *
 from api.compat.ukbcd.get_bin_data import AbstractGetBinDataClass
+import httpx
 
 
 # import the wonderful Beautiful Soup and the URL grabber
@@ -13,36 +16,61 @@ class CouncilClass(AbstractGetBinDataClass):
     """
 
     def parse_data(self, page: str, **kwargs) -> dict:
+
+        try:
+            user_uprn = kwargs.get("uprn")
+            check_uprn(user_uprn)
+            url = f"https://environmentfirst.co.uk/house.php?uprn={user_uprn}"
+            if not user_uprn:
+                # This is a fallback for if the user stored a URL in old system. Ensures backwards compatibility.
+                url = kwargs.get("url")
+        except Exception as e:
+            raise ValueError(f"Error getting identifier: {str(e)}")
+
         # Make a BS4 object
+        page = httpx.get(url)
         soup = BeautifulSoup(page.text, features="html.parser")
         soup.prettify()
 
+        # Get the paragraph lines from the page
         data = {"bins": []}
-        collections = []
+        page_text = soup.find("div", {"class": "collect"}).find_all("p")
 
-        for bin in soup.find_all("div", class_="mb-4 card"):
-            bin_type = (
-                bin.find("div", class_="card-title")
-                .find("h4")
-                .get_text()
-                .strip()
-                .replace("Wheelie ", "")
-            )
-            bin_date_text = (
-                bin.find_all("div", class_="mt-1")[1]
-                .find("strong")
-                .get_text()
-                .strip()
-                .replace(",", "")
-            )
-            bin_date = datetime.strptime(bin_date_text, "%A %d %B %Y")
-            collections.append((bin_type, bin_date))
+        # Parse the correct lines (find them, remove the ordinal indicator and make them the correct format date) and
+        # then add them to the dictionary
+        rubbish_day = datetime.strptime(
+            remove_ordinal_indicator_from_date_string(
+                page_text[2].find_next("strong").text
+            ),
+            "%d %B %Y",
+        ).strftime(date_format)
+        dict_data = {
+            "type": "Rubbish",
+            "collectionDate": rubbish_day,
+        }
+        data["bins"].append(dict_data)
+        recycling_day = datetime.strptime(
+            remove_ordinal_indicator_from_date_string(
+                page_text[4].find_next("strong").text
+            ),
+            "%d %B %Y",
+        ).strftime(date_format)
+        dict_data = {
+            "type": "Recycling",
+            "collectionDate": recycling_day,
+        }
+        data["bins"].append(dict_data)
 
-        ordered_data = sorted(collections, key=lambda x: x[1])
-        for item in ordered_data:
+        if len(page_text) > 5:
+            garden_day = datetime.strptime(
+                remove_ordinal_indicator_from_date_string(
+                    page_text[6].find_next("strong").text
+                ),
+                "%d %B %Y",
+            ).strftime(date_format)
             dict_data = {
-                "type": item[0].capitalize(),
-                "collectionDate": item[1].strftime(date_format),
+                "type": "Garden",
+                "collectionDate": garden_day,
             }
             data["bins"].append(dict_data)
 
@@ -52,8 +80,8 @@ class CouncilClass(AbstractGetBinDataClass):
 # --- Adapter for Project API ---
 from api.compat.hacs import Collection  # type: ignore[attr-defined]
 
-TITLE = "Solihull"
-URL = "https://digital.solihull.gov.uk/BinCollectionCalendar/Calendar.aspx?UPRN=100071005444"
+TITLE = "Eastbourne"
+URL = "https://www.lewes-eastbourne.gov.uk/article/1158/When-is-my-bin-collection-day"
 TEST_CASES = {}
 
 

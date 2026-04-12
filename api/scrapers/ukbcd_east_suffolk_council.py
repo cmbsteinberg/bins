@@ -23,18 +23,17 @@ class CouncilClass(AbstractGetBinDataClass):
             check_postcode(user_postcode)
             _ctx = await _get_browser_pool().new_context()
             page = await _ctx.new_page()
-            await page.route('**/*', lambda route: route.abort() if route.request.resource_type in {'image', 'stylesheet', 'font', 'media'} else route.continue_())
             await page.goto('https://my.eastsuffolk.gov.uk/service/Bin_collection_dates_finder')
             page.frame_locator('#fillform-frame-1')
-            postcode = page.locator('#alt_postcode_search')
+            postcode = page.locator('#alt_postcode_search').first
             await postcode.fill(user_postcode.replace(' ', ''))
-            address = page.locator('#alt_choose_address')
+            address = page.locator('#alt_choose_address').first
             await page.locator('.spinner-outer').wait_for(state='hidden')
             sleep(2)
             await address.select_option(value=user_uprn)
             await page.locator('.spinner-outer').wait_for(state='hidden')
             sleep(2)
-            data_table = page.locator('xpath=//div[@data-field-name="collection_details"]/div[contains(@class, "fieldContent")]/div[contains(@class, "repeatable-table-wrapper")]')
+            data_table = page.locator('xpath=//div[@data-field-name="collection_details"]/div[contains(@class, "fieldContent")]/div[contains(@class, "repeatable-table-wrapper")]').first
             soup = BeautifulSoup(await data_table.get_attribute('innerHTML'), features='html.parser')
             data = {'bins': []}
             rows = soup.find('table').find('tbody').find_all('tr')

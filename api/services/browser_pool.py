@@ -1,6 +1,6 @@
 """Shared Playwright browser pool.
 
-Manages a single Playwright instance + Chromium browser that all Playwright
+Manages a single Chromium browser with stealth measures that all Playwright
 scrapers share.  Each scraper request gets an isolated BrowserContext (separate
 cookies, storage, cache) via ``new_context()``, so scrapers can't interfere
 with each other — but they all share the same browser process, saving ~500 MB
@@ -27,12 +27,15 @@ class BrowserPool:
         self._lock = asyncio.Lock()
 
     async def start(self) -> None:
-        """Launch the shared Playwright + Chromium browser."""
+        """Launch the shared Chromium browser with stealth flags."""
         async with self._lock:
             if self._browser is not None:
                 return
             self._playwright = await async_playwright().start()
-            self._browser = await self._playwright.chromium.launch(headless=True)
+            self._browser = await self._playwright.chromium.launch(
+                headless=True,
+                args=["--disable-blink-features=AutomationControlled"],
+            )
             logger.info("BrowserPool: shared Chromium launched (pid %s)", self._browser)
 
     async def stop(self) -> None:
@@ -47,14 +50,23 @@ class BrowserPool:
             logger.info("BrowserPool: shut down")
 
     async def new_context(self) -> BrowserContext:
-        """Create a new isolated browser context.
+        """Create a new isolated browser context with realistic fingerprint.
 
         The caller is responsible for closing the context when done
         (``await context.close()``).
         """
         if not self._browser:
             raise RuntimeError("BrowserPool not started — call await pool.start() first")
-        return await self._browser.new_context()
+        return await self._browser.new_context(
+            user_agent=(
+                "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+                "AppleWebKit/537.36 (KHTML, like Gecko) "
+                "Chrome/131.0.0.0 Safari/537.36"
+            ),
+            viewport={"width": 1920, "height": 1080},
+            locale="en-GB",
+            timezone_id="Europe/London",
+        )
 
 
 async def start() -> BrowserPool:

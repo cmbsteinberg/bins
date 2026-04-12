@@ -39,16 +39,15 @@ class CouncilClass(AbstractGetBinDataClass):
             user_agent = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'
             _ctx = await _get_browser_pool().new_context()
             page = await _ctx.new_page()
-            await page.route('**/*', lambda route: route.abort() if route.request.resource_type in {'image', 'stylesheet', 'font', 'media'} else route.continue_())
             await page.goto('https://www.boston.gov.uk/findwastecollections')
             try:
-                accept_button = page.locator('[name="acceptall"]')
+                accept_button = page.locator('[name="acceptall"]').first
                 await accept_button.click()
             except (TimeoutError, ElementClickInterceptedException):
                 pass
-            inputElement_postcode = page.locator('#BBCWASTECOLLECTIONSV2_COLLECTIONS_SEARCHPOSTCODE')
+            inputElement_postcode = page.locator('#BBCWASTECOLLECTIONSV2_COLLECTIONS_SEARCHPOSTCODE').first
             await inputElement_postcode.fill(user_postcode)
-            findAddress = page.locator('#BBCWASTECOLLECTIONSV2_COLLECTIONS_START10_NEXT')
+            findAddress = page.locator('#BBCWASTECOLLECTIONSV2_COLLECTIONS_START10_NEXT').first
             await findAddress.click()
             await page.locator("xpath=//select[contains(@id, 'ADDRESSSELECTION')] | //div[contains(@id, 'chosen')]").wait_for()
             try:
@@ -61,7 +60,7 @@ class CouncilClass(AbstractGetBinDataClass):
                 await page.locator('.chosen-results').wait_for()
                 desired_option = page.locator(f"xpath=//li[@class='active-result' and contains(text(), '{user_paon}')]").first
                 await desired_option.click()
-            next_button = page.locator("xpath=//button[contains(@id, 'NEXT') and contains(@id, 'BBCWASTECOLLECTIONSV2')]")
+            next_button = page.locator("xpath=//button[contains(@id, 'NEXT') and contains(@id, 'BBCWASTECOLLECTIONSV2')]").first
             await next_button.click()
             await page.locator("xpath=//div[contains(@class, 'item__title') or contains(@class, 'grid__cell--listitem')]").wait_for()
             soup = BeautifulSoup(await page.content(), features='html.parser')

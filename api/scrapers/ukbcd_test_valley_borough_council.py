@@ -26,13 +26,13 @@ class CouncilClass(AbstractGetBinDataClass):
             user_agent = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'
             _ctx = await _get_browser_pool().new_context()
             page = await _ctx.new_page()
-            await page.route('**/*', lambda route: route.abort() if route.request.resource_type in {'image', 'stylesheet', 'font', 'media'} else route.continue_())
             await page.goto('https://testvalley.gov.uk/wasteandrecycling/when-are-my-bins-collected/when-are-my-bins-collected')
-            inputElement_postcode = page.locator('#postcodeSearch')
+            inputElement_postcode = page.locator('#postcodeSearch').first
             await inputElement_postcode.fill(user_postcode)
-            findAddress = page.locator('.govuk-button')
+            findAddress = page.locator('.govuk-button').first
             await findAddress.click()
-            await page.locator(f"""xpath={"//select[@id='addressSelect']//option[contains(., '" + user_paon + "')]"}""").click()
+            _opt_val = await page.locator(f"""xpath={"//select[@id='addressSelect']//option[contains(., '" + user_paon + "')]"}""" ).first.get_attribute("value")
+            await page.locator("#addressSelect").select_option(value=_opt_val)
             await page.locator("xpath=//h2[contains(@class,'mt-4') and contains(@class,'govuk-heading-s') and normalize-space(.)='Your next collections']").wait_for()
             soup = BeautifulSoup(await page.content(), features='html.parser')
             collections = soup.find_all('div', {'class': 'p-2'})

@@ -44,14 +44,13 @@ class CouncilClass(AbstractGetBinDataClass):
             check_postcode(user_postcode)
             _ctx = await _get_browser_pool().new_context()
             page = await _ctx.new_page()
-            await page.route('**/*', lambda route: route.abort() if route.request.resource_type in {'image', 'stylesheet', 'font', 'media'} else route.continue_())
             await page.goto(page_url)
             try:
-                cookies_button = page.locator('#close-cookie-message')
+                cookies_button = page.locator('#close-cookie-message').first
                 await cookies_button.click()
             except TimeoutError:
                 pass
-            without_login_button = page.locator('text=or, continue without an account')
+            without_login_button = page.locator('text=or, continue without an account').first
             await without_login_button.click()
             iframe = page.locator('#fillform-frame-1')
             

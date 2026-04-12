@@ -23,27 +23,26 @@ class CouncilClass(AbstractGetBinDataClass):
             check_postcode(user_postcode)
             _ctx = await _get_browser_pool().new_context()
             page = await _ctx.new_page()
-            await page.route('**/*', lambda route: route.abort() if route.request.resource_type in {'image', 'stylesheet', 'font', 'media'} else route.continue_())
             await page.goto('https://www.ceredigion.gov.uk/resident/bins-recycling/')
             try:
-                accept_cookies = page.locator("xpath=//button[@id='ccc-reject-settings']")
+                accept_cookies = page.locator("xpath=//button[@id='ccc-reject-settings']").first
                 await accept_cookies.click()
             except:
                 print('Accept cookies banner not found or clickable within the specified time.')
                 pass
-            postcode_search = page.locator("xpath=//a[contains(text(), 'Postcode Search')]")
+            postcode_search = page.locator("xpath=//a[contains(text(), 'Postcode Search')]").first
             await postcode_search.evaluate('el => el.scrollIntoView(true)')
             sleep(2)
             await postcode_search.click()
-            postcode_entry_box = page.locator("xpath=//input[@data-ebv-desc='Postcode']")
+            postcode_entry_box = page.locator("xpath=//input[@data-ebv-desc='Postcode']").first
             await postcode_entry_box.fill(user_postcode)
-            postcode_button = page.locator("xpath=//input[@value='Find Address']")
+            postcode_button = page.locator("xpath=//input[@value='Find Address']").first
             await postcode_button.click()
-            address_dropdown = page.locator("xpath=//select[@data-ebv-desc='Select Address']")
+            address_dropdown = page.locator("xpath=//select[@data-ebv-desc='Select Address']").first
             await address_dropdown.select_option(label=house_number)
-            address_next_button = page.locator("xpath=//input[@value='Next']")
+            address_next_button = page.locator("xpath=//input[@value='Next']").first
             await address_next_button.click()
-            result = page.locator("xpath=//form[contains(., 'Next collection:')]")
+            result = page.locator("xpath=//form[contains(., 'Next collection:')]").first
             soup = BeautifulSoup(await result.get_attribute('innerHTML'), features='html.parser')
             data = {'bins': []}
             collection_panels = soup.find_all('div', class_='eb-OL2RoeVH-panel')

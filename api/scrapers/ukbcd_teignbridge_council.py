@@ -22,7 +22,6 @@ class CouncilClass(AbstractGetBinDataClass):
             URI = f'https://www.teignbridge.gov.uk/repositories/hidden-pages/bin-finder?uprn={user_uprn}'
             _ctx = await _get_browser_pool().new_context()
             page = await _ctx.new_page()
-            await page.route('**/*', lambda route: route.abort() if route.request.resource_type in {'image', 'stylesheet', 'font', 'media'} else route.continue_())
             await page.goto(URI)
             soup = BeautifulSoup(await page.content(), features='html.parser')
             collection_dates = soup.find_all('h3')

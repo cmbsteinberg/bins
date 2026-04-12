@@ -25,15 +25,14 @@ class CouncilClass(AbstractGetBinDataClass):
             headless = kwargs.get('headless')
             _ctx = await _get_browser_pool().new_context()
             page = await _ctx.new_page()
-            await page.route('**/*', lambda route: route.abort() if route.request.resource_type in {'image', 'stylesheet', 'font', 'media'} else route.continue_())
             await page.goto(page_url)
             address_entry_field = page.locator('xpath=//*[@placeholder="Search Properties..."]')
             await address_entry_field.fill(str(full_address))
-            address_entry_field = page.locator(f'xpath=//*[@title="{full_address}"]')
+            address_entry_field = page.locator(f'xpath=//*[@title="{full_address}"]').first
             await address_entry_field.click()
-            next_button = page.locator("xpath=//lightning-button/button[contains(text(), 'Next')]")
+            next_button = page.locator("xpath=//lightning-button/button[contains(text(), 'Next')]").first
             await next_button.click()
-            result = page.locator('xpath=//table[@class="slds-table slds-table_header-fixed slds-table_bordered slds-table_edit slds-table_resizable-cols"]')
+            result = page.locator('xpath=//table[@class="slds-table slds-table_header-fixed slds-table_bordered slds-table_edit slds-table_resizable-cols"]').first
             soup = BeautifulSoup(await result.get_attribute('innerHTML'), features='html.parser')
             data = {'bins': []}
             today = datetime.now()

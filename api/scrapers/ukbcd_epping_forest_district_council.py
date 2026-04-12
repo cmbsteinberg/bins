@@ -17,7 +17,6 @@ class CouncilClass(AbstractGetBinDataClass):
             print(f'Initializing webdriver with: {web_driver}, headless: {headless}')
             _ctx = await _get_browser_pool().new_context()
             page = await _ctx.new_page()
-            await page.route('**/*', lambda route: route.abort() if route.request.resource_type in {'image', 'stylesheet', 'font', 'media'} else route.continue_())
             page_url = f'https://eppingforestdc.maps.arcgis.com/apps/instant/lookup/index.html?appid=bfca32b46e2a47cd9c0a84f2d8cdde17&find={postcode}'
             print(f'Accessing URL: {page_url}')
             await page.goto(page_url)

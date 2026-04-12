@@ -52,11 +52,10 @@ class CouncilClass(AbstractGetBinDataClass):
     async def _try_selenium_method(self, uprn: str, **kwargs) -> dict:
         _ctx = await _get_browser_pool().new_context()
         page = await _ctx.new_page()
-        await page.route('**/*', lambda route: route.abort() if route.request.resource_type in {'image', 'stylesheet', 'font', 'media'} else route.continue_())
         if not _ctx:
             raise Exception('Selenium driver required for new portal')
         await page.goto('https://mybasildon.powerappsportals.com/check/where_i_live/')
-        postcode_input = page.locator("input[type='text']")
+        postcode_input = page.locator("input[type='text']").first
         await postcode_input.fill('SS14 1EY')
         submit_btn = page.locator("button[type='submit'], input[type='submit']").first
         await submit_btn.click()

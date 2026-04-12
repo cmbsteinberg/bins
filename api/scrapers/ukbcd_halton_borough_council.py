@@ -40,15 +40,14 @@ class CouncilClass(AbstractGetBinDataClass):
             user_agent = 'Mozilla/5.0 (Windows NT 6.1; Win64; x64)'
             _ctx = await _get_browser_pool().new_context()
             page = await _ctx.new_page()
-            await page.route('**/*', lambda route: route.abort() if route.request.resource_type in {'image', 'stylesheet', 'font', 'media'} else route.continue_())
             await page.goto(page_url)
-            inputElement_property = page.locator('[name="ctl00$ContentPlaceHolder1$txtProperty"]')
+            inputElement_property = page.locator('[name="ctl00$ContentPlaceHolder1$txtProperty"]').first
             await inputElement_property.fill(user_paon)
-            inputElement_postcodesearch = page.locator('[name="ctl00$ContentPlaceHolder1$txtPostcode"]')
+            inputElement_postcodesearch = page.locator('[name="ctl00$ContentPlaceHolder1$txtPostcode"]').first
             await inputElement_postcodesearch.fill(user_postcode)
             page.frame_locator("iframe[name^='a-'][src^='https://www.google.com/recaptcha/api2/anchor?']")
-            await page.locator("xpath=//span[@id='recaptcha-anchor']").press('Enter')
-            search_btn = page.locator('xpath=//*[@id="ContentPlaceHolder1_btnSearch"]')
+            await page.locator("xpath=//span[@id='recaptcha-anchor']").first.press('Enter')
+            search_btn = page.locator('xpath=//*[@id="ContentPlaceHolder1_btnSearch"]').first
             await search_btn.press('Enter')
             await page.locator('#collectionTabs').wait_for()
             soup = BeautifulSoup(await page.content(), features='html.parser')

@@ -62,14 +62,13 @@ class CouncilClass(AbstractGetBinDataClass):
             check_postcode(user_postcode)
             _ctx = await _get_browser_pool().new_context()
             page = await _ctx.new_page()
-            await page.route('**/*', lambda route: route.abort() if route.request.resource_type in {'image', 'stylesheet', 'font', 'media'} else route.continue_())
             await page.goto(url)
             try:
-                cookie_button = page.locator('button.btn.btn--cookiemessage.btn--cancel.btn--contrast')
+                cookie_button = page.locator('button.btn.btn--cookiemessage.btn--cancel.btn--contrast').first
                 await cookie_button.click()
             except TimeoutError:
                 pass
-            post_code_input = page.locator('#WASTECOLLECTIONDAYLOOKUPINCLUDEGARDEN_ADDRESSLOOKUPPOSTCODE')
+            post_code_input = page.locator('#WASTECOLLECTIONDAYLOOKUPINCLUDEGARDEN_ADDRESSLOOKUPPOSTCODE').first
             await post_code_input.fill('')
             await post_code_input.fill(user_postcode)
             await post_code_input.press('Tab')

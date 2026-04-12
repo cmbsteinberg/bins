@@ -22,7 +22,6 @@ class CouncilClass(AbstractGetBinDataClass):
         try:
             _ctx = await _get_browser_pool().new_context()
             page = await _ctx.new_page()
-            await page.route('**/*', lambda route: route.abort() if route.request.resource_type in {'image', 'stylesheet', 'font', 'media'} else route.continue_())
             portal_url = 'https://iportal.itouchvision.com/icollectionday/collection-day/?uuid=8E7DCC4BD90D8405D154BE053147018A8C0B5F09'
             await page.goto(portal_url)
             postcode_input = page.locator('#postcodeSearch')

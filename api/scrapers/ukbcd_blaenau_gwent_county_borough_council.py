@@ -19,7 +19,6 @@ class CouncilClass(AbstractGetBinDataClass):
             check_postcode(user_postcode)
             _ctx = await _get_browser_pool().new_context()
             page = await _ctx.new_page()
-            await page.route('**/*', lambda route: route.abort() if route.request.resource_type in {'image', 'stylesheet', 'font', 'media'} else route.continue_())
             await page.goto('https://www.blaenau-gwent.gov.uk/en/resident/waste-recycling/')
             try:
                 await page.locator('#ccc-overlay').wait_for()
@@ -34,15 +33,15 @@ class CouncilClass(AbstractGetBinDataClass):
                         continue
             except:
                 pass
-            find_collection_link = page.locator("xpath=//a[contains(text(), 'Find Your Collection Day')]")
+            find_collection_link = page.locator("xpath=//a[contains(text(), 'Find Your Collection Day')]").first
             collection_url = await find_collection_link.get_attribute('href')
             await page.goto(collection_url)
-            postcode_input = page.locator('#postcodeSearch')
+            postcode_input = page.locator('#postcodeSearch').first
             await postcode_input.fill(user_postcode)
-            find_button = page.locator("xpath=//button[contains(text(), 'Find')]")
+            find_button = page.locator("xpath=//button[contains(text(), 'Find')]").first
             await find_button.click()
             await page.locator('#addressSelect').wait_for()
-            dropdown = page.locator('#addressSelect')
+            dropdown = page.locator('#addressSelect').first
             await dropdown.select_option(value=user_uprn)
             soup = BeautifulSoup(await page.content(), features='html.parser')
             page_text = soup.get_text()

@@ -24,23 +24,22 @@ class CouncilClass(AbstractGetBinDataClass):
             web_driver = kwargs.get('web_driver')
             _ctx = await _get_browser_pool().new_context()
             page = await _ctx.new_page()
-            await page.route('**/*', lambda route: route.abort() if route.request.resource_type in {'image', 'stylesheet', 'font', 'media'} else route.continue_())
             page_url = 'https://www.midulstercouncil.org/resident/bins-recycling'
             await page.goto(page_url)
             try:
-                accept_cookies_button = page.locator("xpath=//button/span[contains(text(), 'I Accept Cookies')]")
+                accept_cookies_button = page.locator("xpath=//button/span[contains(text(), 'I Accept Cookies')]").first
                 await accept_cookies_button.click()
             except Exception as e:
                 print('Accept cookies button not found or clickable within the specified time.')
                 pass
-            postcode_input = page.locator('#postcode-search-input')
+            postcode_input = page.locator('#postcode-search-input').first
             await postcode_input.fill(user_postcode)
-            postcode_search_btn = page.locator("xpath=//button[contains(text(), 'Go')]")
+            postcode_search_btn = page.locator("xpath=//button[contains(text(), 'Go')]").first
             await postcode_search_btn.click()
-            address_btn = page.locator(f"xpath=//button[contains(text(), '{user_paon}')]")
+            address_btn = page.locator(f"xpath=//button[contains(text(), '{user_paon}')]").first
             await address_btn.press('Enter')
             results_heading = page.locator("xpath=//h3[contains(text(), 'Collection day:')]")
-            results = page.locator("xpath=//div/h3[contains(text(), 'My address:')]/parent::div")
+            results = page.locator("xpath=//div/h3[contains(text(), 'My address:')]/parent::div").first
             soup = BeautifulSoup(await results.get_attribute('innerHTML'), features='html.parser')
             data = {'bins': []}
             try:

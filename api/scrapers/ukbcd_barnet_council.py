@@ -54,32 +54,31 @@ class CouncilClass(AbstractGetBinDataClass):
             web_driver = kwargs.get('web_driver')
             _ctx = await _get_browser_pool().new_context()
             page = await _ctx.new_page()
-            await page.route('**/*', lambda route: route.abort() if route.request.resource_type in {'image', 'stylesheet', 'font', 'media'} else route.continue_())
             page_url = 'https://www.barnet.gov.uk/recycling-and-waste/bin-collections/find-your-bin-collection-day'
             await page.goto(page_url)
             try:
-                accept_cookies_button = page.locator("xpath=//button[contains(text(), 'Accept additional cookies')]")
+                accept_cookies_button = page.locator("xpath=//button[contains(text(), 'Accept additional cookies')]").first
                 await accept_cookies_button.evaluate('el => el.click()')
             except Exception as e:
                 print(f'Cookie banner not found or clickable: {e}')
                 pass
-            find_your_collection_button = page.locator('text=Find your household collection day')
+            find_your_collection_button = page.locator('text=Find your household collection day').first
             await find_your_collection_button.evaluate('el => el.scrollIntoView()')
             await find_your_collection_button.evaluate('el => el.click()')
             try:
-                accept_cookies = page.locator('#epdagree')
+                accept_cookies = page.locator('#epdagree').first
                 await accept_cookies.evaluate('el => el.click()')
-                accept_cookies_submit = page.locator('#epdsubmit')
+                accept_cookies_submit = page.locator('#epdsubmit').first
                 await accept_cookies_submit.evaluate('el => el.click()')
             except Exception as e:
                 print(f'Second cookie banner not found or clickable: {e}')
                 pass
-            postcode_input = page.locator('[aria-label="Postcode"]')
+            postcode_input = page.locator('[aria-label="Postcode"]').first
             await postcode_input.fill(user_postcode)
-            find_address_button = page.locator('[value="Find address"]')
+            find_address_button = page.locator('[value="Find address"]').first
             await find_address_button.evaluate('el => el.scrollIntoView()')
             await find_address_button.evaluate('el => el.click()')
-            select_address_input = page.locator('#MainContent_CUSTOM_FIELD_808562d4b07f437ea751317cabd19d9eeaf8742f49cb4f7fa9bef99405b859f2')
+            select_address_input = page.locator('#MainContent_CUSTOM_FIELD_808562d4b07f437ea751317cabd19d9eeaf8742f49cb4f7fa9bef99405b859f2').first
             selected = False
             for addr_option in await select_address_input.locator('option').all():
                 if not await addr_option.text_content() or await addr_option.text_content() == 'Please Select...':

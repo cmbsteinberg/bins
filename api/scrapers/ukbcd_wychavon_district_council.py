@@ -25,34 +25,33 @@ class CouncilClass(AbstractGetBinDataClass):
             user_agent = 'general.useragent.override", "userAgent=Mozilla/5.0 \n            (iPhone; CPU iPhone OS 15_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like \n            Gecko) CriOS/101.0.4951.44 Mobile/15E148 Safari/604.1'
             _ctx = await _get_browser_pool().new_context()
             page = await _ctx.new_page()
-            await page.route('**/*', lambda route: route.abort() if route.request.resource_type in {'image', 'stylesheet', 'font', 'media'} else route.continue_())
             await page.goto(url)
             logging.info('Accepting cookies')
             try:
                 logging.info('Cookies')
                 cookie_window = page.locator('xpath=//div[@id="ccc-content"]')
-                accept_cookies = page.locator('xpath=//button[@id="ccc-recommended-settings"]')
+                accept_cookies = page.locator('xpath=//button[@id="ccc-recommended-settings"]').first
                 await accept_cookies.press('Enter')
                 await accept_cookies.click()
-                accept_cookies_close = page.locator('xpath=//button[@id="ccc-close"]')
+                accept_cookies_close = page.locator('xpath=//button[@id="ccc-close"]').first
                 await accept_cookies_close.press('Enter')
                 await accept_cookies_close.click()
             except:
                 print('Accept cookies banner not found or clickable within the specified time.')
                 pass
             logging.info('Entering postcode')
-            input_element_postcode = page.locator('xpath=//input[@id="alAddrtxt"]')
+            input_element_postcode = page.locator('xpath=//input[@id="alAddrtxt"]').first
             await input_element_postcode.fill(user_postcode)
             logging.info('Searching for postcode')
-            input_element_postcode_btn = page.locator('xpath=//button[@id="alAddrbtn"]')
+            input_element_postcode_btn = page.locator('xpath=//button[@id="alAddrbtn"]').first
             await input_element_postcode_btn.click()
             logging.info('Waiting for address dropdown')
-            input_element_postcode_dropdown = page.locator('xpath=//select[@id="alAddrsel"]')
+            input_element_postcode_dropdown = page.locator('xpath=//select[@id="alAddrsel"]').first
             logging.info('Selecting address')
-            option_element = page.locator(f'option[value="{str(user_uprn)}"]')
+            option_element = page.locator(f'option[value="{str(user_uprn)}"]').first
             await option_element.evaluate('el => el.scrollIntoView()')
             await input_element_postcode_dropdown.select_option(value=str(user_uprn))
-            input_element_address_btn = page.locator('xpath=//input[@id="btnSubmit"]')
+            input_element_address_btn = page.locator('xpath=//input[@id="btnSubmit"]').first
             await input_element_address_btn.click()
             logging.info('Waiting for bin collection page')
             strong_element = page.locator("xpath=//strong[contains(text(), 'Upcoming collections')]")

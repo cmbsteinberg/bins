@@ -20,11 +20,10 @@ class CouncilClass(AbstractGetBinDataClass):
             check_postcode(user_postcode)
             _ctx = await _get_browser_pool().new_context()
             page = await _ctx.new_page()
-            await page.route('**/*', lambda route: route.abort() if route.request.resource_type in {'image', 'stylesheet', 'font', 'media'} else route.continue_())
             if not headless:
                 await page.set_viewport_size({'width': 1920, 'height': 1080})
             await page.goto('https://my.threerivers.gov.uk/en/AchieveForms/?mode=fill&consentMessage=yes&form_uri=sandbox-publish://AF-Process-52df96e3-992a-4b39-bba3-06cfaabcb42b/AF-Stage-01ee28aa-1584-442c-8d1f-119b6e27114a/definition.json&process=1&process_uri=sandbox-processes://AF-Process-52df96e3-992a-4b39-bba3-06cfaabcb42b&process_id=AF-Process-52df96e3-992a-4b39-bba3-06cfaabcb42b&noLoginPrompt=1')
-            await page.locator("xpath=//button[contains(text(), 'Continue')]").click()
+            await page.locator("xpath=//button[contains(text(), 'Continue')]").first.click()
             logging.info('Switching to iframe')
             iframe_presence = page.locator('#fillform-frame-1')
             
@@ -39,7 +38,7 @@ class CouncilClass(AbstractGetBinDataClass):
             await option_element.evaluate('el => el.scrollIntoView()')
             await dropdown.select_option(value=str(user_uprn))
             option_element = frame.locator('xpath=//div[@class="fieldContent"][1]')
-            await page.locator("xpath=//button/span[contains(text(), 'Next')]").click()
+            await page.locator("xpath=//button/span[contains(text(), 'Next')]").first.click()
             logging.info('Waiting for bin schedule')
             bin_results = frame.locator("xpath=//div[@data-field-name='subCollectionCalendar']//table")
             logging.info('Extracting bin collection data')

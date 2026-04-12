@@ -23,14 +23,13 @@ class CouncilClass(AbstractGetBinDataClass):
             web_driver = kwargs.get('web_driver')
             _ctx = await _get_browser_pool().new_context()
             page = await _ctx.new_page()
-            await page.route('**/*', lambda route: route.abort() if route.request.resource_type in {'image', 'stylesheet', 'font', 'media'} else route.continue_())
             page_url = 'https://iapp.itouchvision.com/iappcollectionday/collection-day/?uuid=FEBA68993831481FD81B2E605364D00A8DC017A4'
             await page.goto(page_url)
-            postcode_input = page.locator('#postcodeSearch')
+            postcode_input = page.locator('#postcodeSearch').first
             await postcode_input.fill(user_postcode)
             await postcode_input.press('Tab')
             await postcode_input.press('Enter')
-            select_address_input = page.locator('xpath=//*[@id="addressSelect"]')
+            select_address_input = page.locator('xpath=//*[@id="addressSelect"]').first
             if not user_uprn:
                 raise ValueError('No UPRN provided')
             try:

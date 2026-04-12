@@ -26,7 +26,6 @@ class CouncilClass(AbstractGetBinDataClass):
             user_agent = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'
             _ctx = await _get_browser_pool().new_context()
             page = await _ctx.new_page()
-            await page.route('**/*', lambda route: route.abort() if route.request.resource_type in {'image', 'stylesheet', 'font', 'media'} else route.continue_())
             page_url = 'https://www.enfield.gov.uk/services/rubbish-and-recycling/find-my-collection-day'
             await page.goto(page_url)
             print('Waiting for page to load (Cloudflare check)...')
@@ -42,7 +41,7 @@ class CouncilClass(AbstractGetBinDataClass):
                     else:
                         print('Failed to bypass Cloudflare after multiple attempts')
             try:
-                accept_cookies = page.locator('#ccc-notify-reject')
+                accept_cookies = page.locator('#ccc-notify-reject').first
                 await accept_cookies.click()
             except:
                 print('Accept cookies banner not found or clickable within the specified time.')
@@ -70,16 +69,16 @@ class CouncilClass(AbstractGetBinDataClass):
             selectors = ['[aria-label="Enter your address"]', 'input[placeholder*="postcode"]', 'input[placeholder*="address"]', 'input[type="text"]']
             for selector in selectors:
                 try:
-                    postcode_input = page.locator(selector)
+                    postcode_input = page.locator(selector).first
                     break
                 except:
                     continue
             if not postcode_input:
                 raise ValueError('Could not find postcode input field')
             await postcode_input.fill(user_postcode)
-            find_address_button = page.locator('#submitButton0')
+            find_address_button = page.locator('#submitButton0').first
             await find_address_button.click()
-            select_address_input = page.locator('[aria-label="Select full address"]')
+            select_address_input = page.locator('[aria-label="Select full address"]').first
             first_option = (await select_address_input.locator('option').all())[0].accessible_name
             template_parts = first_option.split(', ')
             template_parts[0] = user_paon

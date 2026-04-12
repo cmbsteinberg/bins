@@ -25,16 +25,16 @@ class CouncilClass(AbstractGetBinDataClass):
             user_paon = user_paon.upper()
             _ctx = await _get_browser_pool().new_context()
             page = await _ctx.new_page()
-            await page.route('**/*', lambda route: route.abort() if route.request.resource_type in {'image', 'stylesheet', 'font', 'media'} else route.continue_())
             await page.goto('https://en.powys.gov.uk/binday')
-            accept_button = page.locator('[name="acceptall"]')
+            accept_button = page.locator('[name="acceptall"]').first
             await accept_button.click()
-            inputElement_postcode = page.locator('#BINDAYLOOKUP_ADDRESSLOOKUP_ADDRESSLOOKUPPOSTCODE')
+            inputElement_postcode = page.locator('#BINDAYLOOKUP_ADDRESSLOOKUP_ADDRESSLOOKUPPOSTCODE').first
             await inputElement_postcode.fill(user_postcode)
-            findAddress = page.locator('#BINDAYLOOKUP_ADDRESSLOOKUP_ADDRESSLOOKUPSEARCH')
+            findAddress = page.locator('#BINDAYLOOKUP_ADDRESSLOOKUP_ADDRESSLOOKUPSEARCH').first
             await findAddress.click()
-            await page.locator(f"""xpath={"//select[@id='BINDAYLOOKUP_ADDRESSLOOKUP_ADDRESSLOOKUPADDRESS']//option[contains(., '" + user_paon + "')]"}""").click()
-            await page.locator('#BINDAYLOOKUP_ADDRESSLOOKUP_ADDRESSLOOKUPBUTTONS_NEXT').click()
+            _opt_val = await page.locator(f"""xpath={"//select[@id='BINDAYLOOKUP_ADDRESSLOOKUP_ADDRESSLOOKUPADDRESS']//option[contains(., '" + user_paon + "')]"}""" ).first.get_attribute("value")
+            await page.locator("#BINDAYLOOKUP_ADDRESSLOOKUP_ADDRESSLOOKUPADDRESS").select_option(value=_opt_val)
+            await page.locator('#BINDAYLOOKUP_ADDRESSLOOKUP_ADDRESSLOOKUPBUTTONS_NEXT').first.click()
             await page.locator('#BINDAYLOOKUP_COLLECTIONDATES_COLLECTIONDATES').wait_for()
             soup = BeautifulSoup(await page.content(), features='html.parser')
             general_rubbish_section = soup.find('div', class_='bdl-card bdl-card--refuse')

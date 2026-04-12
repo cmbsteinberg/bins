@@ -42,13 +42,13 @@ class CouncilClass(AbstractGetBinDataClass):
             check_postcode(user_postcode)
             _ctx = await _get_browser_pool().new_context()
             page = await _ctx.new_page()
-            await page.route('**/*', lambda route: route.abort() if route.request.resource_type in {'image', 'stylesheet', 'font', 'media'} else route.continue_())
             await page.goto('http://www.winchester.gov.uk/bin-calendar')
-            inputElement_postcode = page.locator('#postcodeSearch')
+            inputElement_postcode = page.locator('#postcodeSearch').first
             await inputElement_postcode.fill(user_postcode)
-            findAddress = page.locator('xpath=//button[@class="govuk-button mt-4"]')
+            findAddress = page.locator('xpath=//button[@class="govuk-button mt-4"]').first
             await findAddress.click()
-            await page.locator(f"""xpath={"//select[@id='addressSelect']//option[contains(., '" + user_paon + "')]"}""").click()
+            _opt_val = await page.locator(f"""xpath={"//select[@id='addressSelect']//option[contains(., '" + user_paon + "')]"}""" ).first.get_attribute("value")
+            await page.locator("#addressSelect").select_option(value=_opt_val)
             await page.locator('xpath=//div[contains(@class, "ant-row") and contains(@class, "justify-content-between")]').wait_for()
             soup = BeautifulSoup(await page.content(), features='html.parser')
             recyclingcalendar = soup.find('div', class_=lambda c: c and 'ant-row' in c and ('justify-content-between' in c))

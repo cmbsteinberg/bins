@@ -19,21 +19,20 @@ class CouncilClass(AbstractGetBinDataClass):
             check_postcode(user_postcode)
             _ctx = await _get_browser_pool().new_context()
             page = await _ctx.new_page()
-            await page.route('**/*', lambda route: route.abort() if route.request.resource_type in {'image', 'stylesheet', 'font', 'media'} else route.continue_())
             await page.set_viewport_size({'width': 1920, 'height': 1080})
             await page.goto('https://www.knowsley.gov.uk/bins-waste-and-recycling/your-household-bins/putting-your-bins-out')
             try:
-                accept_cookies = page.locator("xpath=//a[contains(@class, 'agree-button') and contains(text(), 'Accept all cookies')]")
+                accept_cookies = page.locator("xpath=//a[contains(@class, 'agree-button') and contains(text(), 'Accept all cookies')]").first
                 await accept_cookies.click()
             except:
                 pass
-            search_btn = page.locator("xpath=//a[contains(text(), 'Search\xa0by postcode\xa0to find out when your bins are emptied')]")
+            search_btn = page.locator("xpath=//a[contains(text(), 'Search\xa0by postcode\xa0to find out when your bins are emptied')]").first
             await search_btn.press('Enter')
-            postcode_box = page.locator("xpath=//label[contains(text(), 'Please enter the post code')]/following-sibling::input")
+            postcode_box = page.locator("xpath=//label[contains(text(), 'Please enter the post code')]/following-sibling::input").first
             await postcode_box.fill(user_postcode)
-            postcode_search_btn = page.locator("xpath=//label[contains(text(), 'Please enter the post code')]/parent::div/following-sibling::button")
+            postcode_search_btn = page.locator("xpath=//label[contains(text(), 'Please enter the post code')]/parent::div/following-sibling::button").first
             await postcode_search_btn.press('Enter')
-            address_selection_button = page.locator(f"xpath=//span[contains(text(), '{user_paon}')]/ancestor::li//button")
+            address_selection_button = page.locator(f"xpath=//span[contains(text(), '{user_paon}')]/ancestor::li//button").first
             await address_selection_button.press('Enter')
             await page.locator("xpath=//label[contains(text(), 'collection')]").wait_for()
             bin_info_container = page.locator("xpath=//label[contains(text(), 'collection')]/ancestor::div[contains(@class, 'mx-dataview-content')]").first

@@ -19,7 +19,6 @@ class CouncilClass(AbstractGetBinDataClass):
             web_driver = kwargs.get('web_driver')
             _ctx = await _get_browser_pool().new_context()
             page = await _ctx.new_page()
-            await page.route('**/*', lambda route: route.abort() if route.request.resource_type in {'image', 'stylesheet', 'font', 'media'} else route.continue_())
             await page.goto(kwargs.get('url'))
             await page.locator('.waste-service-name').wait_for()
             data = {'bins': []}

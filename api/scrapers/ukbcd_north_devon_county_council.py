@@ -23,22 +23,21 @@ class CouncilClass(AbstractGetBinDataClass):
             check_postcode(user_postcode)
             _ctx = await _get_browser_pool().new_context()
             page = await _ctx.new_page()
-            await page.route('**/*', lambda route: route.abort() if route.request.resource_type in {'image', 'stylesheet', 'font', 'media'} else route.continue_())
             await page.goto('https://my.northdevon.gov.uk/service/WasteRecyclingCollectionCalendar')
             page.frame_locator('#fillform-frame-1')
-            postcode = page.locator('#postcode_search')
+            postcode = page.locator('#postcode_search').first
             await postcode.fill(user_postcode.replace(' ', ''))
-            address = page.locator('#chooseAddress')
+            address = page.locator('#chooseAddress').first
             await page.locator('.spinner-outer').wait_for(state='hidden')
             sleep(2)
             await address.select_option(value=user_uprn)
             await page.locator('.spinner-outer').wait_for(state='hidden')
             sleep(2)
             address_confirmation = page.locator("xpath=//h2[contains(text(), 'Your address')]")
-            next_button = page.locator("xpath=//button/span[contains(@class, 'nextText')]")
+            next_button = page.locator("xpath=//button/span[contains(@class, 'nextText')]").first
             await next_button.click()
             results = page.locator("xpath=//h4[contains(text(), 'Key')]")
-            data_table = page.locator('xpath=//div[@data-field-name="html1"]/div[contains(@class, "fieldContent")]')
+            data_table = page.locator('xpath=//div[@data-field-name="html1"]/div[contains(@class, "fieldContent")]').first
             soup = BeautifulSoup(await data_table.get_attribute('innerHTML'), features='html.parser')
             data = {'bins': []}
             waste_sections = soup.find_all('ul', class_='wasteDates')

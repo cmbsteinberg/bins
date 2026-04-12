@@ -49,9 +49,8 @@ class CouncilClass(AbstractGetBinDataClass):
             headless = kwargs.get('headless')
             _ctx = await _get_browser_pool().new_context()
             page = await _ctx.new_page()
-            await page.route('**/*', lambda route: route.abort() if route.request.resource_type in {'image', 'stylesheet', 'font', 'media'} else route.continue_())
             await page.goto(url)
-            post_code_search = page.locator('.form-control')
+            post_code_search = page.locator('.form-control').first
             await post_code_search.fill(postcode)
             submit_btn = page.locator(f"xpath=//button[contains(@class, 'mx-name-actionButton3')]")
             await submit_btn.press('Enter')
@@ -66,7 +65,7 @@ class CouncilClass(AbstractGetBinDataClass):
                     break
             if not found:
                 raise Exception(f"Address containing '{user_paon}' not found in dropdown options")
-            submit_btn = page.locator(f"xpath=//button[contains(@class, 'mx-name-actionButton5')]")
+            submit_btn = page.locator(f"xpath=//button[contains(@class, 'mx-name-actionButton5')]").first
             await submit_btn.press('Enter')
             results = page.locator(f'xpath=//div[contains(@class,"mx-name-listView1")]')
             soup = BeautifulSoup(await page.content(), features='html.parser')

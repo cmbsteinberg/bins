@@ -34,11 +34,10 @@ class CouncilClass(AbstractGetBinDataClass):
             UserAgent = 'Mozilla/5.0'
             _ctx = await _get_browser_pool().new_context()
             page = await _ctx.new_page()
-            await page.route('**/*', lambda route: route.abort() if route.request.resource_type in {'image', 'stylesheet', 'font', 'media'} else route.continue_())
             page_url = 'https://www.slough.gov.uk/bin-collections'
             await page.goto(page_url)
-            await page.locator('#ccc-recommended-settings').click()
-            address_input = page.locator('#keyword_directory30')
+            await page.locator('#ccc-recommended-settings').first.click()
+            address_input = page.locator('#keyword_directory30').first
             user_address = get_street_from_postcode(user_postcode, 'AIzaSyBDLULT7EIlNtHerswPtfmL15Tt3Oc0bV8')
             await address_input.fill(user_address)
             await address_input.press('Enter')

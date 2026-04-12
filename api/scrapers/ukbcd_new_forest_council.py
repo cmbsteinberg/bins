@@ -47,24 +47,23 @@ class CouncilClass(AbstractGetBinDataClass):
             user_agent = 'general.useragent.override", "userAgent=Mozilla/5.0 \n            (iPhone; CPU iPhone OS 15_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like \n            Gecko) CriOS/101.0.4951.44 Mobile/15E148 Safari/604.1'
             _ctx = await _get_browser_pool().new_context()
             page = await _ctx.new_page()
-            await page.route('**/*', lambda route: route.abort() if route.request.resource_type in {'image', 'stylesheet', 'font', 'media'} else route.continue_())
             await page.goto(url)
             await page.reload()
             logging.info('Entering postcode')
-            input_element_postcode = page.locator('xpath=//input[@id="CTID-JmLqCKl2-_-A"]')
+            input_element_postcode = page.locator('xpath=//input[@id="CTID-JmLqCKl2-_-A"]').first
             await input_element_postcode.evaluate('el => el.scrollIntoView()')
             logging.info(f"Entering postcode '{str(user_postcode)}'")
             await page.evaluate(f"arguments[0].value='{str(user_postcode)}'", input_element_postcode)
             logging.info('Searching for postcode')
-            input_element_postcode_btn = page.locator('xpath=//input[@type="submit"]')
+            input_element_postcode_btn = page.locator('xpath=//input[@type="submit"]').first
             await input_element_postcode_btn.click()
             logging.info('Waiting for address dropdown')
-            input_element_postcode_dropdown = page.locator('xpath=//select[@id="CTID-KOeKcmrC-_-A"]')
+            input_element_postcode_dropdown = page.locator('xpath=//select[@id="CTID-KOeKcmrC-_-A"]').first
             logging.info('Selecting address')
-            option_element = page.locator(f'option[value="{str(user_uprn)}"]')
+            option_element = page.locator(f'option[value="{str(user_uprn)}"]').first
             await option_element.evaluate('el => el.scrollIntoView()')
             await input_element_postcode_dropdown.select_option(value=str(user_uprn))
-            input_element_address_btn = page.locator('xpath=//input[@value="Submit"]')
+            input_element_address_btn = page.locator('xpath=//input[@value="Submit"]').first
             await input_element_address_btn.click()
             try:
                 link_element = page.locator('xpath=//a[contains(text(),"Find your current bin collection day")]').first

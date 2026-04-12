@@ -30,15 +30,14 @@ class CouncilClass(AbstractGetBinDataClass):
             url = 'https://www.midsuffolk.gov.uk/check-your-collection-day'
             _ctx = await _get_browser_pool().new_context()
             page = await _ctx.new_page()
-            await page.route('**/*', lambda route: route.abort() if route.request.resource_type in {'image', 'stylesheet', 'font', 'media'} else route.continue_())
             await page.goto(url)
             await page.locator('[aria-label="Postcode"]').wait_for()
-            postcode_input = page.locator('[aria-label="Postcode"]')
+            postcode_input = page.locator('[aria-label="Postcode"]').first
             await postcode_input.fill(user_postcode)
-            find_address_button = page.locator('.lfr-btn-label')
+            find_address_button = page.locator('.lfr-btn-label').first
             await find_address_button.evaluate('el => el.scrollIntoView()')
             await find_address_button.evaluate('el => el.click()')
-            select_address_input = page.locator('select')
+            select_address_input = page.locator('select').first
             selected = False
             for addr_option in await select_address_input.locator('option').all():
                 if not await addr_option.text_content() or await addr_option.text_content() == 'Please Select...':

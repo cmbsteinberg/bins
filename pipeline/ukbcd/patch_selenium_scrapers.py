@@ -24,8 +24,6 @@ import argparse
 import ast
 import copy
 import re
-import sys
-import textwrap
 from pathlib import Path
 
 # The variable name used for the Playwright Page object in output code.
@@ -371,45 +369,8 @@ class SeleniumToPlaywright(ast.NodeTransformer):
             lineno=lineno,
         ))
 
-        # Block heavy resources
-        blocked_types = ast.Set(elts=[
-            ast.Constant(value=t) for t in ("image", "stylesheet", "font", "media")
-        ])
-        resource_type = ast.Attribute(
-            value=ast.Attribute(
-                value=_make_name("route"),
-                attr="request", ctx=ast.Load(),
-            ),
-            attr="resource_type", ctx=ast.Load(),
-        )
-        abort_call = _make_method_call(_make_name("route"), "abort")
-        continue_call = _make_method_call(_make_name("route"), "continue_")
-        block_lambda = ast.Lambda(
-            args=ast.arguments(
-                posonlyargs=[], args=[ast.arg(arg="route")],
-                vararg=None, kwonlyargs=[], kw_defaults=[], kwarg=None, defaults=[],
-            ),
-            body=ast.IfExp(
-                test=ast.Compare(
-                    left=resource_type,
-                    ops=[ast.In()],
-                    comparators=[blocked_types],
-                ),
-                body=abort_call,
-                orelse=continue_call,
-            ),
-        )
-        stmts.append(ast.Expr(
-            value=ast.Await(value=ast.Call(
-                func=ast.Attribute(
-                    value=_make_name(PW_PAGE),
-                    attr="route", ctx=ast.Load(),
-                ),
-                args=[ast.Constant(value="**/*"), block_lambda],
-                keywords=[],
-            )),
-            lineno=lineno,
-        ))
+        # Resource blocking (images etc.) is handled by Camoufox at the
+        # browser level via block_images=True, so no page.route() needed.
 
         return stmts
 
@@ -1138,12 +1099,19 @@ def inject_playwright_import(tree: ast.Module) -> None:
 
     The __future__ import ensures Selenium type annotations (e.g. WebDriver)
     that survived transpilation are never evaluated at runtime.
+    The browser_pool import is only added if the transpiled code actually
+    references _get_browser_pool (scrapers without create_webdriver don't need it).
     """
+    # Only inject browser_pool import if the code actually uses it
+    _uses_pool = any(
+        isinstance(node, ast.Name) and node.id == "_get_browser_pool"
+        for node in ast.walk(tree)
+    )
     pw_import = ast.ImportFrom(
         module="api.services.browser_pool",
         names=[ast.alias(name="get", asname="_get_browser_pool")],
         level=0,
-    )
+    ) if _uses_pool else None
     # Check if __future__ annotations import already exists
     has_future = any(
         isinstance(node, ast.ImportFrom)
@@ -1159,7 +1127,8 @@ def inject_playwright_import(tree: ast.Module) -> None:
             insert_idx = i + 1
         else:
             break
-    tree.body.insert(insert_idx, pw_import)
+    if pw_import is not None:
+        tree.body.insert(insert_idx, pw_import)
     if not has_future:
         future_import = ast.ImportFrom(
             module="__future__",
@@ -1490,6 +1459,7 @@ def transpile(source: str) -> str:
     strip_time_imports(tree)
     _strip_residual_selenium(tree, transformer.driver_var)
     _rewrite_driver_params(tree, transformer.driver_var)
+    _add_first_to_action_locators(tree)
     _fix_empty_bodies(tree)
 
     # Convert to async: wrap Playwright calls in await, then make containing functions async
@@ -1501,7 +1471,45 @@ def transpile(source: str) -> str:
     _fix_empty_bodies(tree)
 
     ast.fix_missing_locations(tree)
-    return ast.unparse(tree)
+    code = ast.unparse(tree)
+    code = _fix_option_clicks(code)
+    return code
+
+
+
+def _fix_option_clicks(code: str) -> str:
+    """Rewrite option-click patterns to select_option.
+
+    Playwright can't .click() on <option> elements — they're invisible.
+    This rewrites patterns like:
+        page.locator("xpath=//select[@id='X']//option[contains(., 'text')]").click()
+    to:
+        page.locator("#X").select_option(label="text")
+
+    Handles both constant selectors and f-string selectors with variables.
+    """
+    # Pattern 1: f-string XPath with variable — select[@id='X']//option[contains(., 'var')]
+    # Rewrite to: find option value via XPath, then select_option(value=...) on parent.
+    # Uses contains() for partial matching (the original Selenium behavior).
+    # The (?:\.first)? handles cases where _add_first_to_action_locators already ran.
+    code = re.sub(
+        r'''([ ]*)await page\.locator\(f"""xpath=\{"//select\[@id='([^']+)'\]//option\[contains\(\., '" \+ (\w+) \+ "'\)\]"\}"""\)(?:\.first)?\.click\(\)''',
+        lambda m: (
+            f'{m.group(1)}_opt_val = await page.locator(f"""xpath={{"//select[@id=\'{m.group(2)}\']//option[contains(., \'" + {m.group(3)} + "\')]"}}""" ).first.get_attribute("value")\n'
+            f'{m.group(1)}await page.locator("#{m.group(2)}").select_option(value=_opt_val)'
+        ),
+        code,
+    )
+    # Pattern 2: Static XPath — select[@id='X']//option[contains(., 'literal')]
+    code = re.sub(
+        r"""([ ]*)await page\.locator\((['"])xpath=//select\[@id='([^']+)'\]//option\[contains\(\., '([^']+)'\)\]\2\)(?:\.first)?\.click\(\)""",
+        lambda m: (
+            f'{m.group(1)}_opt_val = await page.locator({m.group(2)}xpath=//select[@id=\'{m.group(3)}\']//option[contains(., \'{m.group(4)}\')]{m.group(2)}).first.get_attribute("value")\n'
+            f'{m.group(1)}await page.locator({m.group(2)}#{m.group(3)}{m.group(2)}).select_option(value=_opt_val)'
+        ),
+        code,
+    )
+    return code
 
 
 def _strip_residual_selenium(tree: ast.Module, driver_var: str = "driver") -> None:
@@ -1640,6 +1648,93 @@ def _rewrite_driver_params(tree: ast.Module, driver_var: str = "driver") -> None
             for kw in node.keywords:
                 if isinstance(kw.value, ast.Name) and kw.value.id == driver_var:
                     kw.value.id = PW_PAGE
+
+
+# Methods that trigger Playwright's strict-mode check (must resolve to exactly 1 element).
+_STRICT_ACTIONS = frozenset({
+    "click", "dblclick", "fill", "press", "type", "check", "uncheck",
+    "select_option", "set_input_files", "hover", "focus", "scroll_into_view_if_needed",
+    "get_attribute", "text_content", "inner_text", "inner_html", "input_value",
+    "is_visible", "is_enabled", "is_checked", "evaluate",
+})
+# Suffixes on a locator chain that already narrow to one element.
+_NARROWING_ATTRS = frozenset({"first", "last"})
+_NARROWING_METHODS = frozenset({"nth", "all"})
+
+
+def _add_first_to_action_locators(tree: ast.Module) -> None:
+    """Insert ``.first`` between ``page.locator(sel)`` and strict-mode actions.
+
+    Selenium's ``find_element`` returns the first match; Playwright's locator
+    raises if the selector resolves to multiple elements when an action is
+    performed.  The main transform adds ``.first`` for ``find_element`` calls,
+    but some upstream patterns (WebDriverWait result assignments, manual XPath
+    construction) slip through.  This pass catches them generically.
+
+    Handles both inline chains and variable-based patterns:
+      - ``page.locator(sel).click()``      → ``page.locator(sel).first.click()``
+      - ``var = page.locator(sel); var.click()``  → ``var = page.locator(sel).first; ...``
+    """
+
+    def _is_page_locator(node: ast.AST) -> bool:
+        """True if *node* is ``page.locator(...)``."""
+        return (
+            isinstance(node, ast.Call)
+            and isinstance(node.func, ast.Attribute)
+            and node.func.attr == "locator"
+            and isinstance(node.func.value, ast.Name)
+            and node.func.value.id == PW_PAGE
+        )
+
+    def _already_narrowed(node: ast.AST) -> bool:
+        """True if the expression already ends with .first/.last/.nth()/etc."""
+        if isinstance(node, ast.Attribute) and node.attr in _NARROWING_ATTRS:
+            return True
+        if (
+            isinstance(node, ast.Call)
+            and isinstance(node.func, ast.Attribute)
+            and node.func.attr in _NARROWING_METHODS
+        ):
+            return True
+        return False
+
+    def _wrap_first(node: ast.AST) -> ast.Attribute:
+        return ast.Attribute(value=node, attr="first", ctx=ast.Load())
+
+    # Pass 1: inline chains  —  page.locator(sel).ACTION()
+    # The AST shape is Call(func=Attribute(value=LOCATOR, attr=ACTION))
+    for node in ast.walk(tree):
+        if not isinstance(node, ast.Call):
+            continue
+        func = node.func
+        if not isinstance(func, ast.Attribute):
+            continue
+        if func.attr not in _STRICT_ACTIONS:
+            continue
+        target = func.value  # the object the action is called on
+        if _is_page_locator(target) and not _already_narrowed(target):
+            func.value = _wrap_first(target)
+
+    # Pass 2: variable assignments  —  var = page.locator(sel)  (add .first to RHS)
+    # Only if var is later used with a strict action.
+    # Collect variable names assigned from page.locator()
+    locator_vars: dict[str, ast.Assign] = {}
+    for node in ast.walk(tree):
+        if isinstance(node, ast.Assign) and len(node.targets) == 1:
+            tgt = node.targets[0]
+            if isinstance(tgt, ast.Name) and _is_page_locator(node.value) and not _already_narrowed(node.value):
+                locator_vars[tgt.id] = node
+    # Check if any of those vars are used with strict actions
+    for node in ast.walk(tree):
+        if (
+            isinstance(node, ast.Call)
+            and isinstance(node.func, ast.Attribute)
+            and node.func.attr in _STRICT_ACTIONS
+            and isinstance(node.func.value, ast.Name)
+            and node.func.value.id in locator_vars
+        ):
+            assign = locator_vars.pop(node.func.value.id)
+            assign.value = _wrap_first(assign.value)
 
 
 def _fix_empty_bodies(tree: ast.Module) -> None:

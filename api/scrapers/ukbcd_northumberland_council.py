@@ -56,17 +56,16 @@ class CouncilClass(AbstractGetBinDataClass):
             headless = kwargs.get('headless')
             _ctx = await _get_browser_pool().new_context()
             page = await _ctx.new_page()
-            await page.route('**/*', lambda route: route.abort() if route.request.resource_type in {'image', 'stylesheet', 'font', 'media'} else route.continue_())
             await page.goto(page_url)
-            cookie_button = page.locator('.accept-all')
+            cookie_button = page.locator('.accept-all').first
             await cookie_button.click()
-            inputElement_pc = page.locator('#postcode')
+            inputElement_pc = page.locator('#postcode').first
             await inputElement_pc.fill(user_postcode)
             submit_button = page.locator('.govuk-button')
             await submit_button.click()
-            selectElement_address = page.locator('#address')
+            selectElement_address = page.locator('#address').first
             await selectElement_address.select_option(value=user_uprn)
-            submit_button = page.locator('.govuk-button')
+            submit_button = page.locator('.govuk-button').first
             await submit_button.click()
             route_summary = page.locator('.govuk-table')
             now = datetime.now()

@@ -21,15 +21,14 @@ class CouncilClass(AbstractGetBinDataClass):
         check_postcode(user_postcode)
         _ctx = await _get_browser_pool().new_context()
         page = await _ctx.new_page()
-        await page.route('**/*', lambda route: route.abort() if route.request.resource_type in {'image', 'stylesheet', 'font', 'media'} else route.continue_())
         await page.goto('https://www.staffsmoorlands.gov.uk/findyourbinday')
-        inputElement_postcode = page.locator('#FINDBINDAYSSTAFFORDSHIREMOORLANDS_POSTCODESELECT_POSTCODE')
+        inputElement_postcode = page.locator('#FINDBINDAYSSTAFFORDSHIREMOORLANDS_POSTCODESELECT_POSTCODE').first
         await inputElement_postcode.fill(user_postcode)
-        findAddress = page.locator('#FINDBINDAYSSTAFFORDSHIREMOORLANDS_POSTCODESELECT_PAGE1NEXT_NEXT')
+        findAddress = page.locator('#FINDBINDAYSSTAFFORDSHIREMOORLANDS_POSTCODESELECT_PAGE1NEXT_NEXT').first
         await findAddress.click()
-        dropdown = page.locator('#FINDBINDAYSSTAFFORDSHIREMOORLANDS_ADDRESSSELECT_ADDRESS')
+        dropdown = page.locator('#FINDBINDAYSSTAFFORDSHIREMOORLANDS_ADDRESSSELECT_ADDRESS').first
         await dropdown.select_option(value=user_uprn)
-        submit = page.locator('#FINDBINDAYSSTAFFORDSHIREMOORLANDS_ADDRESSSELECT_ADDRESSSELECTNEXTBTN_NEXT')
+        submit = page.locator('#FINDBINDAYSSTAFFORDSHIREMOORLANDS_ADDRESSSELECT_ADDRESSSELECTNEXTBTN_NEXT').first
         await submit.click()
         await page.locator('.bin-collection__month').wait_for()
         soup = BeautifulSoup(await page.content(), features='html.parser')

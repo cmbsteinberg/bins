@@ -25,7 +25,6 @@ class CouncilClass(AbstractGetBinDataClass):
             headless = kwargs.get('headless')
             _ctx = await _get_browser_pool().new_context()
             page = await _ctx.new_page()
-            await page.route('**/*', lambda route: route.abort() if route.request.resource_type in {'image', 'stylesheet', 'font', 'media'} else route.continue_())
             await page.goto(page_url)
             print('Waiting for Salesforce Lightning components to load...')
             try:
@@ -52,14 +51,14 @@ class CouncilClass(AbstractGetBinDataClass):
             except Exception as e:
                 print(f'Error clicking input field: {e}')
             try:
-                dropdown_option = page.locator("xpath=//li[@role='presentation']")
+                dropdown_option = page.locator("xpath=//li[@role='presentation']").first
                 await dropdown_option.click()
                 print('Clicked dropdown option')
             except Exception as e:
                 print(f'Error clicking dropdown option: {e}')
                 raise
             try:
-                next_button = page.locator("xpath=//button[contains(text(), 'Next')]")
+                next_button = page.locator("xpath=//button[contains(text(), 'Next')]").first
                 await next_button.click()
                 print('Clicked Next button')
             except Exception as e:

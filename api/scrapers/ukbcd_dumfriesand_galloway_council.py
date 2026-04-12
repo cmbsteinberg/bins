@@ -6,7 +6,6 @@ from bs4 import BeautifulSoup
 from icalevents.icalevents import events
 from api.compat.ukbcd.common import *
 from api.compat.ukbcd.get_bin_data import AbstractGetBinDataClass
-from api.services.browser_pool import get as _get_browser_pool
 
 class CouncilClass(AbstractGetBinDataClass):
 

@@ -41,23 +41,22 @@ class CouncilClass(AbstractGetBinDataClass):
             user_uprn = str(user_uprn).zfill(12)
             _ctx = await _get_browser_pool().new_context()
             page = await _ctx.new_page()
-            await page.route('**/*', lambda route: route.abort() if route.request.resource_type in {'image', 'stylesheet', 'font', 'media'} else route.continue_())
             await page.goto(page_url)
             try:
-                accept_cookies = page.locator("xpath=//button[@id='ccc-recommended-settings']")
+                accept_cookies = page.locator("xpath=//button[@id='ccc-recommended-settings']").first
                 await accept_cookies.click()
             except:
                 print('Accept cookies banner not found or clickable within the specified time.')
                 pass
-            postcode_input = page.locator("xpath=//input[@id='edit-postcode']")
+            postcode_input = page.locator("xpath=//input[@id='edit-postcode']").first
             await postcode_input.fill(user_postcode)
-            search_btn = page.locator('#edit-submit')
+            search_btn = page.locator('#edit-submit').first
             await search_btn.click()
-            address_results = page.locator("xpath=//select[@id='edit-address']")
+            address_results = page.locator("xpath=//select[@id='edit-address']").first
             await address_results.select_option(value=user_uprn)
-            submit_btn = page.locator("xpath=//input[@value='Search for my bin collection details']")
+            submit_btn = page.locator("xpath=//input[@value='Search for my bin collection details']").first
             await submit_btn.click()
-            results = page.locator("xpath=//th[contains(text(),'Collection date')]/ancestor::table")
+            results = page.locator("xpath=//th[contains(text(),'Collection date')]/ancestor::table").first
             soup = BeautifulSoup(await results.get_attribute('innerHTML'), features='html.parser')
             today = datetime.today()
             current_year = today.year

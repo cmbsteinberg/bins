@@ -24,15 +24,14 @@ class CouncilClass(AbstractGetBinDataClass):
             check_postcode(user_postcode)
             _ctx = await _get_browser_pool().new_context()
             page = await _ctx.new_page()
-            await page.route('**/*', lambda route: route.abort() if route.request.resource_type in {'image', 'stylesheet', 'font', 'media'} else route.continue_())
             await page.goto(url)
-            accept_cookies_button = page.locator('[name="acceptall"]')
+            accept_cookies_button = page.locator('[name="acceptall"]').first
             await accept_cookies_button.click()
-            postcode_input = page.locator('#WASTECOLLECTIONCALENDARV2_ADDRESS_ALSF')
+            postcode_input = page.locator('#WASTECOLLECTIONCALENDARV2_ADDRESS_ALSF').first
             await postcode_input.fill(user_postcode)
             await postcode_input.press('Tab')
             await postcode_input.press('Enter')
-            select_address_input = page.locator('#WASTECOLLECTIONCALENDARV2_ADDRESS_ALML')
+            select_address_input = page.locator('#WASTECOLLECTIONCALENDARV2_ADDRESS_ALML').first
             await select_address_input.click()
             await select_address_input.select_option(value=user_uprn)
             await select_address_input.click()

@@ -21,17 +21,16 @@ class CouncilClass(AbstractGetBinDataClass):
             print(f'Creating webdriver with: web_driver={web_driver}, headless={headless}')
             _ctx = await _get_browser_pool().new_context()
             page = await _ctx.new_page()
-            await page.route('**/*', lambda route: route.abort() if route.request.resource_type in {'image', 'stylesheet', 'font', 'media'} else route.continue_())
             print(f'Navigating to URL: {url}')
             await page.goto('https://www.torbay.gov.uk/recycling/bin-collections/')
             print('Successfully loaded the page')
             try:
-                cookie_button = page.locator('xpath=/html/body/div[1]/div/div[2]/button[1]')
+                cookie_button = page.locator('xpath=/html/body/div[1]/div/div[2]/button[1]').first
                 await cookie_button.click()
                 print('Cookie banner clicked.')
             except TimeoutError:
                 print('No cookie banner appeared or selector failed.')
-            bin_collection_button = page.locator('xpath=/html/body/main/div[4]/div/div[1]/div/div/div/div/div[2]/div/div/div/p/a')
+            bin_collection_button = page.locator('xpath=/html/body/main/div[4]/div/div[1]/div/div/div/div/div[2]/div/div/div/p/a').first
             await bin_collection_button.click()
             original_window = page
             for window_handle in _ctx.pages:
@@ -40,14 +39,14 @@ class CouncilClass(AbstractGetBinDataClass):
                     break
             print('Looking for postcode input...')
             await page.locator('#FF1168-text').wait_for()
-            post_code_input = page.locator('#FF1168-text')
+            post_code_input = page.locator('#FF1168-text').first
             await post_code_input.fill('')
             await post_code_input.fill(user_postcode)
             print(f'Entered postcode: {user_postcode}')
             await post_code_input.press('Tab')
             await post_code_input.press('Enter')
             print('Pressed ENTER on Search button')
-            address_select = page.locator('#FF1168-list')
+            address_select = page.locator('#FF1168-list').first
             await address_select.click()
             options = await address_select.locator('option').all()
             print(f'Found {len(options)} options in dropdown')
@@ -74,7 +73,7 @@ class CouncilClass(AbstractGetBinDataClass):
             await page.locator('.esbAddressSelected').wait_for()
             print('Address selection confirmed')
             print('Clicking Submit button...')
-            submit_button = page.locator('#submit-button')
+            submit_button = page.locator('#submit-button').first
             await submit_button.click()
             print('Waiting for collection details to load...')
             try:

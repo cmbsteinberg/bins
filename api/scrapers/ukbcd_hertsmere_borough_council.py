@@ -26,13 +26,12 @@ class CouncilClass(AbstractGetBinDataClass):
             URI = 'https://hertsmere-services.onmats.com/w/webpage/round-search'
             _ctx = await _get_browser_pool().new_context()
             page = await _ctx.new_page()
-            await page.route('**/*', lambda route: route.abort() if route.request.resource_type in {'image', 'stylesheet', 'font', 'media'} else route.continue_())
             await page.goto(URI)
-            inputElement_postcode = page.locator('.relation_path_type_ahead_search')
+            inputElement_postcode = page.locator('.relation_path_type_ahead_search').first
             await inputElement_postcode.fill(user_postcode)
             await page.locator('ul.result_list li').wait_for()
             await page.evaluate(f"\n                const results = document.querySelectorAll('ul.result_list li');\n                for (let li of results) {{\n                    const ariaLabel = li.getAttribute('aria-label');\n                    if (ariaLabel && ariaLabel.startsWith('{user_paon} ')) {{\n                        li.click();\n                        return;\n                    }}\n                }}\n            ")
-            await page.locator("input.fragment_presenter_template_edit.btn.bg-primary.btn-medium[type='submit']").click()
+            await page.locator("input.fragment_presenter_template_edit.btn.bg-primary.btn-medium[type='submit']").first.click()
             await page.locator("xpath=//h3[contains(text(), 'Collection days')]").wait_for()
             soup = BeautifulSoup(await page.content(), 'html.parser')
             table = soup.find('table', class_='table listing table-striped')

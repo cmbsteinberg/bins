@@ -25,9 +25,8 @@ class CouncilClass(AbstractGetBinDataClass):
             check_postcode(user_postcode)
             _ctx = await _get_browser_pool().new_context()
             page = await _ctx.new_page()
-            await page.route('**/*', lambda route: route.abort() if route.request.resource_type in {'image', 'stylesheet', 'font', 'media'} else route.continue_())
             await page.goto(page_url)
-            cookies_button = page.locator('#close-cookie-message')
+            cookies_button = page.locator('#close-cookie-message').first
             await cookies_button.click()
             iframe_presense = page.locator('#fillform-frame-1')
             

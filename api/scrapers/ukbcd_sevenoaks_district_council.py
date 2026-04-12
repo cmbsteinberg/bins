@@ -24,13 +24,12 @@ class CouncilClass(AbstractGetBinDataClass):
             user_paon = kwargs.get('paon')
             _ctx = await _get_browser_pool().new_context()
             page = await _ctx.new_page()
-            await page.route('**/*', lambda route: route.abort() if route.request.resource_type in {'image', 'stylesheet', 'font', 'media'} else route.continue_())
             await page.goto(page_url)
             postcode_css_selector = '#address_search_postcode'
             postcode_input_box = page.locator(postcode_css_selector).first
             await postcode_input_box.fill(user_postcode)
             await postcode_input_box.press('Enter')
-            select_address_dropdown = page.locator('xpath=//select')
+            select_address_dropdown = page.locator('xpath=//select').first
             if user_paon is not None:
                 for option in await select_address_dropdown.locator('option').all():
                     if user_paon in await option.text_content():

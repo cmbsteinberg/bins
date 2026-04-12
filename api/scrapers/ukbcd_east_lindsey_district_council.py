@@ -23,14 +23,14 @@ class CouncilClass(AbstractGetBinDataClass):
             check_postcode(user_postcode)
             _ctx = await _get_browser_pool().new_context()
             page = await _ctx.new_page()
-            await page.route('**/*', lambda route: route.abort() if route.request.resource_type in {'image', 'stylesheet', 'font', 'media'} else route.continue_())
             await page.goto('https://www.e-lindsey.gov.uk/mywastecollections')
-            inputElement_postcode = page.locator('#WASTECOLLECTIONDAYS202526_LOOKUP_ADDRESSLOOKUPPOSTCODE')
+            inputElement_postcode = page.locator('#WASTECOLLECTIONDAYS202526_LOOKUP_ADDRESSLOOKUPPOSTCODE').first
             await inputElement_postcode.fill(user_postcode)
-            findAddress = page.locator('#WASTECOLLECTIONDAYS202526_LOOKUP_ADDRESSLOOKUPSEARCH')
+            findAddress = page.locator('#WASTECOLLECTIONDAYS202526_LOOKUP_ADDRESSLOOKUPSEARCH').first
             await findAddress.click()
-            await page.locator(f"""xpath={"//select[@id='WASTECOLLECTIONDAYS202526_LOOKUP_ADDRESSLOOKUPADDRESS']//option[contains(., '" + user_paon + "')]"}""").click()
-            submit = page.locator('#WASTECOLLECTIONDAYS202526_LOOKUP_FIELD2_NEXT')
+            _opt_val = await page.locator(f"""xpath={"//select[@id='WASTECOLLECTIONDAYS202526_LOOKUP_ADDRESSLOOKUPADDRESS']//option[contains(., '" + user_paon + "')]"}""" ).first.get_attribute("value")
+            await page.locator("#WASTECOLLECTIONDAYS202526_LOOKUP_ADDRESSLOOKUPADDRESS").select_option(value=_opt_val)
+            submit = page.locator('#WASTECOLLECTIONDAYS202526_LOOKUP_FIELD2_NEXT').first
             await submit.click()
             await page.locator('.waste-results').wait_for()
             soup = BeautifulSoup(await page.content(), features='html.parser')

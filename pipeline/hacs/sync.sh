@@ -6,7 +6,8 @@ REPO="mampfes/hacs_waste_collection_schedule"
 BRANCH="master"
 SOURCE_DIR="custom_components/waste_collection_schedule/waste_collection_schedule/source"
 WCS_DIR="custom_components/waste_collection_schedule/waste_collection_schedule"
-PATTERN="*_gov_uk.py"
+# All UK scrapers end in _uk.py (*_gov_uk, *_co_uk, *_org_uk, and bare *_uk)
+UK_PATTERN="*_uk.py"
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 PIPELINE_DIR="$(dirname "$SCRIPT_DIR")"
@@ -53,11 +54,11 @@ git clone --depth 1 --branch "$BRANCH" "https://github.com/${REPO}.git" "$CLONE_
 echo "Removing old hacs scrapers..."
 rm -f "$SCRAPERS_DIR"/hacs_*.py
 
-# Copy gov_uk source files
-echo "Copying gov_uk source files..."
+# Copy UK source files (*_gov_uk.py, *_co_uk.py, *_org_uk.py, *_uk.py)
+echo "Copying UK source files..."
 mkdir -p "$LOCAL_DIR"
-cp "$CLONE_DIR/${SOURCE_DIR}"/${PATTERN} "$LOCAL_DIR/"
-count=$(ls -1 "$LOCAL_DIR"/${PATTERN} | wc -l | tr -d ' ')
+cp "$CLONE_DIR/${SOURCE_DIR}"/${UK_PATTERN} "$LOCAL_DIR/"
+count=$(ls -1 "$LOCAL_DIR"/${UK_PATTERN} | wc -l | tr -d ' ')
 echo "Copied ${count} files to ${LOCAL_DIR}/"
 
 # Patch scrapers for async httpx

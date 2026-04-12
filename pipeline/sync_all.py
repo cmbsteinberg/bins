@@ -32,6 +32,8 @@ from pipeline.shared import (
     extract_gov_uk_prefix,
     extract_url_from_scraper,
     load_overrides,
+    normalise_council_name,
+    normalise_domain,
 )
 
 logging.basicConfig(level=logging.INFO, format="%(levelname)s: %(message)s")
@@ -51,27 +53,66 @@ def fetch_input_json() -> dict:
     return data
 
 
-def build_needed_prefixes(input_data: dict) -> set[str]:
-    """Extract the set of gov.uk prefixes that need scraper coverage."""
-    prefixes = set()
+def build_needed_identifiers(input_data: dict) -> set[str]:
+    """Build a broad set of identifiers for councils listed in input.json.
+
+    Extracts three kinds of identifier per entry so that HACS scrapers can be
+    matched even when the input.json URL isn't a *.gov.uk domain:
+      1. gov.uk prefix from the URL  (e.g. "sutton")
+      2. normalised council name from the key  (e.g. "bristol" from BristolCityCouncil)
+      3. primary domain word from non-gov URLs (e.g. "basildon" from mybasildon.powerappsportals.com)
+    """
+    ids: set[str] = set()
     for key, val in input_data.items():
         if not isinstance(val, dict):
             continue
+
+        # 1. Normalised key (most reliable — always present)
+        norm = normalise_council_name(key)
+        if norm:
+            ids.add(norm)
+
         url = val.get("url", "")
         if not url:
             continue
+
+        # 2. gov.uk prefix from URL
         prefix = extract_gov_uk_prefix(url)
         if prefix:
-            prefixes.add(prefix)
-    logger.info("Found %d needed gov.uk prefixes in input.json", len(prefixes))
-    return prefixes
+            ids.add(prefix)
+
+        # 3. Domain-based heuristic for non-gov URLs (PowerApps, fixmystreet, etc.)
+        domain = normalise_domain(url)
+        # e.g. "mybasildon.powerappsportals.com" → try "basildon"
+        #      "bristolcouncil.powerappsportals.com" → try "bristol"
+        first_label = domain.split(".")[0]
+        # Strip common prefixes like "my", "online", "waste-services"
+        for strip_prefix in ("my", "online", "apps", "forms", "waste", "maps"):
+            if first_label.startswith(strip_prefix) and len(first_label) > len(strip_prefix):
+                candidate = first_label[len(strip_prefix):].lstrip("-")
+                if len(candidate) >= 4:  # avoid spurious short matches
+                    ids.add(normalise_council_name(candidate))
+
+    logger.info(
+        "Built %d council identifiers from %d input.json entries",
+        len(ids),
+        sum(1 for v in input_data.values() if isinstance(v, dict)),
+    )
+    return ids
 
 
-def filter_hacs_scrapers(needed_prefixes: set[str]) -> list[str]:
-    """Remove HACS scrapers whose domain isn't needed by input.json.
+def filter_hacs_scrapers(needed_ids: set[str]) -> list[str]:
+    """Remove HACS scrapers whose council isn't needed by input.json.
+
+    Uses multiple matching strategies:
+      1. gov.uk prefix from scraper URL
+      2. normalised scraper filename
+      3. normalised scraper TITLE
 
     Returns list of removed scraper names.
     """
+    import ast
+
     overrides = load_overrides()
     override_hacs = {
         entry["hacs_scraper"] for entry in overrides.get("hacs_to_ukbcd", {}).values()
@@ -79,35 +120,47 @@ def filter_hacs_scrapers(needed_prefixes: set[str]) -> list[str]:
 
     removed = []
     for path in sorted(SCRAPERS_DIR.glob("hacs_*.py")):
-        # Only filter HACS scrapers
-        # Don't remove scrapers that are explicitly overridden (handled separately)
         if path.stem in override_hacs:
             continue
 
+        # Strategy 1: gov.uk prefix from scraper URL
         url = extract_url_from_scraper(path)
-        if not url:
-            continue
+        url_prefix = extract_gov_uk_prefix(url) if url else None
 
-        prefix = extract_gov_uk_prefix(url)
-        if prefix is None:
-            # Non-gov.uk scraper -- keep it (rare edge case)
-            continue
+        # Strategy 2: normalised filename (strip hacs_ prefix + domain suffix)
+        fname_norm = normalise_council_name(path.stem.removeprefix("hacs_"))
 
-        # Also try matching by filename (e.g. hacs_solihull_gov_uk -> solihull)
-        fname_prefix = None
-        stem = path.stem.removeprefix("hacs_")
-        if "_gov_uk" in stem:
-            fname_prefix = stem.rsplit("_gov_uk", 1)[0].replace("_", "-")
+        # Strategy 3: TITLE from scraper source
+        title_norm = None
+        try:
+            tree = ast.parse(path.read_text())
+            for node in ast.walk(tree):
+                if (
+                    isinstance(node, ast.Assign)
+                    and len(node.targets) == 1
+                    and isinstance(node.targets[0], ast.Name)
+                    and node.targets[0].id == "TITLE"
+                    and isinstance(node.value, ast.Constant)
+                    and isinstance(node.value.value, str)
+                ):
+                    title_norm = normalise_council_name(node.value.value)
+                    break
+        except SyntaxError:
+            pass
 
-        if prefix not in needed_prefixes and (
-            fname_prefix is None or fname_prefix not in needed_prefixes
-        ):
+        candidates = [c for c in (url_prefix, fname_norm, title_norm) if c]
+        matched = any(c in needed_ids for c in candidates)
+
+        if not matched:
             path.unlink()
             removed.append(path.stem)
             logger.info(
-                "Removed stale HACS scraper: %s (prefix '%s' not in input.json)",
+                "Removed unneeded HACS scraper: %s (no match in input.json; "
+                "url_prefix=%s, fname=%s, title=%s)",
                 path.stem,
-                prefix,
+                url_prefix,
+                fname_norm,
+                title_norm,
             )
 
     return removed
@@ -122,9 +175,9 @@ def run_shell(cmd: list[str], description: str) -> None:
         sys.exit(result.returncode)
 
 
-def save_needed_councils(needed_prefixes: set[str]) -> None:
-    """Save needed councils to a temp file for other scripts to reference."""
-    NEEDED_COUNCILS_PATH.write_text(json.dumps(sorted(needed_prefixes), indent=2))
+def save_needed_councils(needed_ids: set[str]) -> None:
+    """Save needed council identifiers to a temp file for other scripts to reference."""
+    NEEDED_COUNCILS_PATH.write_text(json.dumps(sorted(needed_ids), indent=2))
 
 
 def main():
@@ -133,8 +186,8 @@ def main():
 
     # 1. Fetch input.json and build needed set
     input_data = fetch_input_json()
-    needed_prefixes = build_needed_prefixes(input_data)
-    save_needed_councils(needed_prefixes)
+    needed_ids = build_needed_identifiers(input_data)
+    save_needed_councils(needed_ids)
 
     # 2. Wipe all scrapers so stale files never linger across syncs
     print("\n" + "=" * 50)
@@ -165,7 +218,7 @@ def main():
     print("\n" + "=" * 50)
     print("=== Filtering HACS scrapers against input.json ===")
     print("=" * 50)
-    removed = filter_hacs_scrapers(needed_prefixes)
+    removed = filter_hacs_scrapers(needed_ids)
     if removed:
         logger.info(
             "Removed %d stale HACS scrapers: %s", len(removed), ", ".join(removed)

@@ -23,6 +23,38 @@ BLOCKED_DOMAINS = {
 }
 
 
+# Common filler words to strip when normalising council names for matching
+_COUNCIL_FILLER = {
+    "council", "city", "borough", "district", "county", "metropolitan",
+    "royal", "london", "of", "and", "the",
+    "mb", "mbc", "mdc", "dc", "bc",  # abbreviations for Met. Borough etc.
+}
+
+
+def normalise_council_name(name: str) -> str:
+    """Normalise a council name or scraper stem to a comparable key.
+
+    Strips common filler words (council, city, borough, etc.), non-alpha chars,
+    and domain suffixes so that e.g. 'BristolCityCouncil', 'bristol_gov_uk',
+    and 'Bristol City Council' all normalise to 'bristol'.
+    """
+    import re as _re
+
+    # Split CamelCase into words (handles sequences like "KnowsleyMBCouncil")
+    name = _re.sub(r"([A-Z]+)([A-Z][a-z])", r"\1 \2", name)
+    name = _re.sub(r"([a-z])([A-Z])", r"\1 \2", name)
+    name = name.lower()
+    # Remove domain suffixes
+    for suffix in ("_gov_uk", "_co_uk", "_org_uk", "_uk", ".gov.uk", ".co.uk", ".org.uk"):
+        if name.endswith(suffix):
+            name = name[: -len(suffix)]
+            break
+    # Replace non-alpha with space, split into words, strip filler
+    words = _re.sub(r"[^a-z]+", " ", name).split()
+    words = [w for w in words if w not in _COUNCIL_FILLER]
+    return "".join(words)
+
+
 def normalise_domain(url: str) -> str:
     """Extract bare domain from a URL."""
     if not url.startswith(("http://", "https://")):

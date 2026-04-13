@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>UK Bin Collections</title>
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/water.css@2/out/light.css"
+        />
+
+        {% include "partials/shared-styles.html" %}
+        <link rel="stylesheet" href="/static/style.css" />
+    </head>
+    <body>
+        <a class="skip-link" href="#main-content">Skip to main content</a>
+        {% include "partials/nav.html" %}
+        <main id="main-content">
+            <h1>Find your next bin collection days</h1>
+
+            <section id="step-postcode" aria-label="Postcode search">
+                <form id="postcode-form">
+                    <label for="postcode">Enter your postcode</label>
+                    <fieldset role="group">
+                        <input
+                            id="postcode"
+                            type="text"
+                            name="postcode"
+                            placeholder="e.g. E11 2PN"
+                            required
+                            autocomplete="postal-code"
+                        />
+                        <button type="submit" class="btn-primary">
+                            Search
+                        </button>
+                    </fieldset>
+                </form>
+            </section>
+
+            <section
+                id="step-address"
+                class="hidden"
+                aria-label="Address selection"
+            >
+                <form id="address-form">
+                    <label for="address-select">Select your address</label>
+                    <fieldset>
+                        <select id="address-select">
+                            <option value="">-- Choose address --</option>
+                        </select>
+                        <button
+                            id="address-btn"
+                            class="btn-primary"
+                            type="button"
+                            disabled
+                        >
+                            Get bin dates
+                        </button>
+                        <button
+                            id="back-btn"
+                            type="button"
+                            class="btn-secondary"
+                        >
+                            Back
+                        </button>
+                    </fieldset>
+                </form>
+            </section>
+
+            <section
+                id="results"
+                class="hidden"
+                aria-live="polite"
+                aria-label="Collection results"
+            ></section>
+            <p id="error" class="hidden" role="alert" aria-live="assertive"></p>
+        </main>
+
+        {% include "partials/footer.html" %}
+
+        <script type="module" src="/static/app.js?"></script>
+    </body>
+</html>

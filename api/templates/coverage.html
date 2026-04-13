@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Coverage - UK Bin Collections</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/light.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  {% include "partials/shared-styles.html" %}
+  <link rel="stylesheet" href="/static/coverage.css">
+</head>
+<body>
+  {% include "partials/nav.html" %}
+  <main>
+    <div id="stats" style="display:none; text-align:center; padding:1rem 0 0;">
+      <span id="council-stat"></span> &nbsp;·&nbsp; <span id="pop-stat"></span>
+    </div>
+    <div id="map"></div>
+  </main>
+  {% include "partials/footer.html" %}
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script>
+    var map = L.map('map').setView([55.3781, -3.4360], 6);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; OpenStreetMap contributors'
+    }).addTo(map);
+
+    var STATUS_COLORS = {
+        working:  '#2ecc71',
+        partial:  '#f39c12',
+        broken:   '#e74c3c'
+    };
+
+    var STATUS_LABELS = {
+        working:  'Working',
+        partial:  'Partially working',
+        broken:   'Broken / not covered'
+    };
+
+    function style(feature) {
+        var status = feature.properties.coverage_status || 'none';
+        return {
+            fillColor: STATUS_COLORS[status] || STATUS_COLORS.none,
+            weight: 1,
+            opacity: 1,
+            color: 'white',
+            fillOpacity: 0.6
+        };
+    }
+
+    function popupText(props) {
+        var status = props.coverage_status || 'none';
+        var label = STATUS_LABELS[status] || 'Unknown';
+        var text = '<strong>' + props.LAD25NM + '</strong><br>' + label;
+        if (props.pass_rate !== undefined) {
+            text += ' (' + props.pass_rate + '% pass rate)';
+        }
+        return text;
+    }
+
+    fetch('/static/coverage.geojson')
+        .then((res) => res.json())
+        .then((data) => {
+            if (data.metadata) {
+                var m = data.metadata;
+                document.getElementById('council-stat').textContent =
+                    m.councils_covered + ' / ' + m.councils_total + ' councils supported';
+                document.getElementById('pop-stat').textContent =
+                    m.population_covered_pct + '% of UK population covered';
+                document.getElementById('stats').style.display = '';
+            }
+            L.geoJson(data, {
+                style: style,
+                onEachFeature: (feature, layer) => {
+                    layer.bindPopup(popupText(feature.properties));
+                }
+            }).addTo(map);
+        });
+
+    var legend = L.control({position: 'bottomright'});
+    legend.onAdd = () => {
+        var div = L.DomUtil.create('div', 'info legend');
+        Object.keys(STATUS_COLORS).forEach((key) => {
+            div.innerHTML += '<i style="background: ' + STATUS_COLORS[key] + '"></i> ' + STATUS_LABELS[key] + '<br>';
+        });
+        return div;
+    };
+    legend.addTo(map);
+  </script>
+</body>
+</html>

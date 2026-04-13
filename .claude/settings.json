@@ -23,7 +23,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "file=$(jq -r .tool_input.file_path) && uv run ruff check --ignore F401 --fix file && uv run ruff format file && npx htmlhint file"
+            "command": "file=$(jq -r .tool_input.file_path) && if [[ \"$file\" == *.py ]]; then uv run ruff check --ignore F401 --fix \"$file\" && uv run ruff format \"$file\"; elif [[ \"$file\" == *.js || \"$file\" == *.html ]]; then npx biome check --write \"$file\"; fi"
           }
         ]
       }

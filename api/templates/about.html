@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>About - UK Bin Collections</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/light.css">
+  {% include "partials/shared-styles.html" %}
+</head>
+<body>
+  {% include "partials/nav.html" %}
+  <main>
+    <h1>About</h1>
+    <p>UK Bin Collections is a free service that helps you find your next bin collection dates by postcode. It aggregates data from hundreds of UK council websites into one simple lookup.</p>
+
+    <h2>How it works</h2>
+    <p>We maintain scrapers for over 350 UK councils. When you search, we identify your council from your postcode, then fetch your collection schedule directly from your council's website in real time.</p>
+
+    <h2>Open source</h2>
+    <p>This project builds on the work of two excellent open-source projects:</p>
+    <ul>
+      <li><a href="https://github.com/mampfes/hacs_waste_collection_schedule">hacs_waste_collection_schedule</a> &mdash; Home Assistant integration for waste collection schedules</li>
+      <li><a href="https://github.com/robbrad/UKBinCollectionData">UKBinCollectionData</a> &mdash; UK household bin collection data scrapers</li>
+    </ul>
+    <p>Thank you to the maintainers and contributors of both projects.</p>
+
+    <h2>API</h2>
+    <p>A free JSON API is available for developers. See the <a href="/api-docs">API documentation</a> for details.</p>
+
+    <h2>Contact</h2>
+    <p>If your collection dates are wrong, use the "Report wrong answer" button on the results page and we'll investigate.</p>
+  </main>
+
+  {% include "partials/footer.html" %}
+</body>
+</html>

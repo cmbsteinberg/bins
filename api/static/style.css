@@ -1,0 +1,239 @@
+:root {
+    --bin-muted: #546e7a;
+    --colour-grey: #a0a0a0;
+    --colour-brown: #a67c52;
+    --colour-green: #93c47d;
+}
+body {
+    max-width: 900px;
+    padding: 0 1.5rem;
+    font-size: 1.2rem;
+}
+.btn-primary {
+    background: var(--links);
+    color: var(--background);
+}
+.btn-primary:hover {
+    opacity: 0.85;
+}
+.btn-secondary {
+    background: transparent;
+    color: var(--text-main);
+    border: 1px solid var(--border);
+}
+.btn-secondary:hover {
+    background: var(--background-alt);
+}
+.hidden {
+    display: none;
+}
+#error {
+    color: #c62828;
+    font-weight: 500;
+}
+main > h1,
+main > p {
+    text-align: center;
+}
+#postcode-form {
+    max-width: 500px;
+    margin: 2rem auto;
+    font-size: 1.2rem;
+}
+#postcode-form input {
+    font-size: 1.2rem;
+}
+fieldset {
+    border: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+fieldset select,
+fieldset input {
+    flex: 1;
+}
+#results {
+    margin-top: 1rem;
+}
+.collection-date {
+    color: #555;
+    font-size: 1rem;
+}
+
+/* Screen-reader only */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* Skip link */
+.skip-link {
+    position: absolute;
+    left: -9999px;
+    top: 0;
+    background: #1565c0;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    z-index: 100;
+    font-size: 0.9rem;
+}
+.skip-link:focus {
+    left: 0;
+}
+
+/* Focus indicator */
+:focus-visible {
+    outline: 3px solid #1565c0;
+    outline-offset: 2px;
+}
+
+/* Results actions — bottom, centered, full-size buttons */
+.results-actions {
+    display: flex;
+    justify-content: center;
+    gap: 0.75rem;
+    align-items: center;
+    margin-top: 1.5rem;
+    flex-wrap: wrap;
+}
+.action-btn {
+    all: unset;
+    padding: 0.5rem 1.25rem;
+    border-radius: 6px;
+    font-size: 1.2rem;
+    font-family: inherit;
+    cursor: pointer;
+    text-align: center;
+    box-sizing: border-box;
+    background: var(--links);
+    color: var(--background);
+    border: 1px solid var(--links);
+}
+.action-btn:hover {
+    opacity: 0.85;
+}
+.action-btn.outline {
+    background: none;
+    border-color: #c62828;
+    color: #c62828;
+}
+.action-btn.outline:hover {
+    background: #fbe9e7;
+    opacity: 1;
+}
+.report-sent {
+    color: #444;
+    font-size: 1rem;
+    display: inline-block;
+    padding: 0.5rem 0;
+}
+
+/* Bin group card */
+.bin-group {
+    border-radius: 8px;
+    padding: 0.75rem 1rem;
+    margin-bottom: 0.75rem;
+    opacity: 0.85;
+}
+.bin-next {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+.bin-icon {
+    flex-shrink: 0;
+    width: 32px;
+    height: 32px;
+}
+.bin-icon svg {
+    width: 100%;
+    height: 100%;
+}
+.bin-info {
+    display: flex;
+    align-items: baseline;
+    gap: 0.75rem;
+    flex: 1;
+    flex-wrap: wrap;
+}
+.bin-type {
+    font-weight: 600;
+    font-size: 1.3rem;
+}
+.bin-date {
+    color: #444;
+    font-size: 1.2rem;
+}
+.bin-relative {
+    font-size: 1rem;
+    color: #444;
+    font-weight: 500;
+    margin-left: auto;
+}
+
+/* Prevent water.css from adding backgrounds/marks to results */
+#results mark,
+#results article {
+    all: unset;
+}
+
+/* Bin colour backgrounds */
+.bin-group[data-bin-colour="grey"] {
+    background: var(--colour-grey);
+}
+.bin-group[data-bin-colour="brown"] {
+    background: var(--colour-brown);
+}
+.bin-group[data-bin-colour="green"] {
+    background: var(--colour-green);
+}
+
+/* All-dates accordion at the bottom */
+.all-dates {
+    margin-top: 0.5rem;
+}
+.all-dates summary {
+    cursor: pointer;
+    font-size: 1.2rem;
+    color: var(--bin-muted);
+    list-style: none;
+}
+.all-dates summary::-webkit-details-marker {
+    display: none;
+}
+.all-dates summary::before {
+    content: "▸ ";
+}
+.all-dates[open] summary::before {
+    content: "▾ ";
+}
+.all-dates-list {
+    margin: 0.25rem 0 0 0;
+    padding: 0;
+    list-style: none;
+}
+.all-dates-list li {
+    font-size: 1.2rem;
+    color: #444;
+    padding: 0.35rem 0.5rem;
+    display: flex;
+    gap: 0.75rem;
+    border-bottom: 1px solid #eee;
+}
+.all-dates-list li:last-child {
+    border-bottom: none;
+}
+.all-dates-type {
+    font-weight: 500;
+    min-width: 140px;
+}

@@ -4,6 +4,7 @@ from datetime import timedelta
 import httpx
 from api.compat.ukbcd.common import *
 from api.compat.ukbcd.get_bin_data import AbstractGetBinDataClass
+from api.compat import httpx_helpers as _http
 
 
 # import the wonderful Beautiful Soup and the URL grabber
@@ -36,7 +37,7 @@ class CouncilClass(AbstractGetBinDataClass):
             "app_ver": "35",
         }
         pass  # urllib3 warnings disabled
-        response = await httpx.AsyncClient(follow_redirects=True).get(
+        response = await _http.get(
             "http://www.sac-bins.co.uk/get_calendar.php", params=params, headers=headers
         )
 

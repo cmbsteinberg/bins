@@ -18,7 +18,7 @@ class AbstractGetBinDataClass(ABC):
         ...
 
     @classmethod
-    def get_data(cls, url) -> str:
+    async def get_data(cls, url) -> str:
         headers = {
             "User-Agent": (
                 "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
@@ -26,8 +26,9 @@ class AbstractGetBinDataClass(ABC):
             )
         }
         try:
-            resp = httpx.get(url, headers=headers, verify=False, timeout=120, follow_redirects=True)
-            return resp
+            async with httpx.AsyncClient(verify=False, follow_redirects=True) as client:
+                resp = await client.get(url, headers=headers, timeout=10)
+                return resp
         except httpx.HTTPError as err:
             _LOGGER.error(f"Request Error: {err}")
             raise

@@ -3,6 +3,7 @@ from bs4 import BeautifulSoup, Tag
 
 from api.compat.ukbcd.common import *
 from api.compat.ukbcd.get_bin_data import AbstractGetBinDataClass
+from api.compat import httpx_helpers as _http
 
 
 # import the wonderful Beautiful Soup and the URL grabber
@@ -22,7 +23,7 @@ class CouncilClass(AbstractGetBinDataClass):
         URI = f"https://diogel.gwynedd.llyw.cymru/Daearyddol/en/LleDwinByw/Index/{user_uprn}"
 
         # Make the GET request
-        response = await httpx.AsyncClient(follow_redirects=True).get(URI)
+        response = await _http.get(URI)
 
         soup = BeautifulSoup(response.text, "html.parser")
         collections_headline = soup.find("h6", text="Next collection dates:")

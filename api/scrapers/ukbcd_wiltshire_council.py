@@ -4,7 +4,7 @@ from bs4 import BeautifulSoup
 
 from api.compat.ukbcd.common import *
 from api.compat.ukbcd.get_bin_data import AbstractGetBinDataClass
-import httpx
+from api.compat import httpx_helpers as _http
 
 
 class CouncilClass(AbstractGetBinDataClass):
@@ -97,7 +97,7 @@ class CouncilClass(AbstractGetBinDataClass):
             }
 
             # Send it all as a POST
-            response = await httpx.AsyncClient(follow_redirects=True).post(
+            response = await _http.post(
                 "https://ilambassadorformsprod.azurewebsites.net/wastecollectiondays/wastecollectioncalendar",
                 cookies=cookies,
                 headers=headers,

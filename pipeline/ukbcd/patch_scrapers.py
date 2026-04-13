@@ -178,17 +178,23 @@ def _replace_requests_imports(source: str) -> str:
 
 
 def _replace_requests_api_calls(source: str) -> str:
-    """Replace requests.get/post/etc and Session() with async httpx equivalents."""
-    # Chained calls: requests.get(...).json() → (await httpx.AsyncClient(...).get(...)).json()
+    """Replace requests.get/post/etc with async _http helpers or httpx.AsyncClient sessions."""
+    # Chained calls: requests.get(...).json() → (await _http.get(...)).json()
     source = re.sub(
-        r"\brequests\.(get|post|put|delete|patch|head|options|request)\(([^)]*?)\)\.(json|text|content|raise_for_status)",
-        r"(await httpx.AsyncClient(follow_redirects=True).\1(\2)).\3",
+        r"\brequests\.(get|post|put|delete|patch|head|options)\(([^)]*?)\)\.(json|text|content|raise_for_status)",
+        r"(await _http.\1(\2)).\3",
         source,
     )
-    # Non-chained: requests.get(...) → await httpx.AsyncClient(...).get(...)
+    # Non-chained: requests.get(...) → await _http.get(...)
     source = re.sub(
-        r"\brequests\.(get|post|put|delete|patch|head|options|request)\(",
-        r"await httpx.AsyncClient(follow_redirects=True).\1(",
+        r"\brequests\.(get|post|put|delete|patch|head|options)\(",
+        r"await _http.\1(",
+        source,
+    )
+    # requests.request(...) → await _http.request(...)
+    source = re.sub(
+        r"\brequests\.request\(",
+        r"await _http.request(",
         source,
     )
     # requests.auth.AuthBase → plain object (httpx uses a different auth interface)
@@ -300,9 +306,7 @@ def _hoist_verify_false(source: str) -> str:
 
 
 def _ensure_httpx_import(source: str) -> str:
-    """Ensure import httpx is present if httpx is referenced."""
-    if "httpx." not in source or "import httpx" in source:
-        return source
+    """Ensure import httpx and _http helper are present if referenced."""
     lines = source.split("\n")
     last_import_idx = 0
     for i, line in enumerate(lines):
@@ -311,7 +315,14 @@ def _ensure_httpx_import(source: str) -> str:
             (" ", "\t")
         ):
             last_import_idx = i
-    lines.insert(last_import_idx + 1, "import httpx")
+    inserts = []
+    if "httpx." in source and "import httpx" not in source:
+        inserts.append("import httpx")
+    if "_http." in source and "import httpx_helpers" not in source and "import _http" not in source:
+        inserts.append("from api.compat import httpx_helpers as _http")
+    if inserts:
+        for j, line in enumerate(inserts):
+            lines.insert(last_import_idx + 1 + j, line)
     return "\n".join(lines)
 
 
@@ -337,9 +348,27 @@ def _make_async(source: str) -> str:
             rf"await {var}.\1(",
             source,
         )
-    # time.sleep → asyncio.sleep
+    # Await calls to self.get_data() (async method on AbstractGetBinDataClass)
+    # Chained: self.get_data(url).text → (await self.get_data(url)).text
+    source = re.sub(
+        r"(?<!await )self\.get_data\(([^)]*?)\)\.(\w+)",
+        r"(await self.get_data(\1)).\2",
+        source,
+    )
+    # Non-chained: self.get_data(url) → await self.get_data(url)
+    source = re.sub(
+        r"(?<!await )(?<!\()self\.get_data\(",
+        "await self.get_data(",
+        source,
+    )
+    # time.sleep / sleep → asyncio.sleep
     if "time.sleep(" in source:
         source = source.replace("time.sleep(", "await asyncio.sleep(")
+        if "import asyncio" not in source:
+            source = "import asyncio\n" + source
+    if re.search(r"(?<!\.)\bsleep\(", source) and "from time import" in source:
+        source = re.sub(r"^from time import sleep\s*$", "", source, flags=re.MULTILINE)
+        source = re.sub(r"(?<!\.)(?<!asyncio\.)\bsleep\(", "await asyncio.sleep(", source)
         if "import asyncio" not in source:
             source = "import asyncio\n" + source
     # Any non-async def that contains 'await' must become async
@@ -385,6 +414,21 @@ def _fix_non_async_awaits(source: str) -> str:
     return source
 
 
+def _replace_exit_calls(source: str) -> str:
+    """Replace exit() / sys.exit() with raise ValueError() to avoid killing the event loop."""
+    source = re.sub(
+        r"\bexit\(\d*\)",
+        'raise ValueError("Scraper error")',
+        source,
+    )
+    source = re.sub(
+        r"\bsys\.exit\(\d*\)",
+        'raise ValueError("Scraper error")',
+        source,
+    )
+    return source
+
+
 def convert_requests_to_async_httpx(source: str) -> str:
     """Convert requests usage to async httpx (AsyncClient)."""
     source = _replace_requests_imports(source)
@@ -396,6 +440,7 @@ def convert_requests_to_async_httpx(source: str) -> str:
     source = _hoist_verify_false(source)
     source = _ensure_httpx_import(source)
     source = _make_async(source)
+    source = _replace_exit_calls(source)
     return source
 
 

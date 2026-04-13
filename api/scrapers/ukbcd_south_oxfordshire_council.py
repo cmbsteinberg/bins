@@ -3,6 +3,7 @@ from bs4 import BeautifulSoup
 
 from api.compat.ukbcd.common import *
 from api.compat.ukbcd.get_bin_data import AbstractGetBinDataClass
+from api.compat import httpx_helpers as _http
 
 
 # import the wonderful Beautiful Soup and the URL grabber
@@ -42,7 +43,7 @@ class CouncilClass(AbstractGetBinDataClass):
             # 'ebz':      '1_1668467255368',
         }
         pass  # urllib3 warnings disabled
-        response = await httpx.AsyncClient(follow_redirects=True).get(
+        response = await _http.get(
             "https://eform.southoxon.gov.uk/ebase/BINZONE_DESKTOP.eb",
             params=params,
             headers=headers,

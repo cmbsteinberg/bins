@@ -53,7 +53,7 @@ class CouncilClass(AbstractGetBinDataClass):
         url = baseurl + user_uprn
 
         # Make the web request using the common helper (standard UA, timeout, logging)
-        response = self.get_data(url).text
+        response = (await self.get_data(url)).text
 
         soup = BeautifulSoup(response, "html.parser")
         # Extract collection information for all bin types

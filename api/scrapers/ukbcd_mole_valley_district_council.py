@@ -6,6 +6,7 @@ from bs4 import BeautifulSoup
 
 from api.compat.ukbcd.common import *
 from api.compat.ukbcd.get_bin_data import AbstractGetBinDataClass
+from api.compat import httpx_helpers as _http
 
 
 class CouncilClass(AbstractGetBinDataClass):
@@ -18,7 +19,7 @@ class CouncilClass(AbstractGetBinDataClass):
         root_url = "https://myproperty.molevalley.gov.uk/molevalley/api/live_addresses/{}?format=json".format(
             user_postcode
         )
-        response = await httpx.AsyncClient(verify=False, follow_redirects=True).get(root_url, verify=False)
+        response = await _http.get(root_url)
 
         if not response.is_success:
             raise ValueError("Invalid server response code retrieving data.")

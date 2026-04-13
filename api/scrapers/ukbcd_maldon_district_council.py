@@ -1,7 +1,7 @@
 from bs4 import BeautifulSoup
 from api.compat.ukbcd.common import *
 from api.compat.ukbcd.get_bin_data import AbstractGetBinDataClass
-import httpx
+from api.compat import httpx_helpers as _http
 
 
 # import the wonderful Beautiful Soup and the URL grabber
@@ -18,7 +18,7 @@ class CouncilClass(AbstractGetBinDataClass):
         check_uprn(uprn)
 
         pass  # urllib3 warnings disabled
-        response = await httpx.AsyncClient(follow_redirects=True).get(
+        response = await _http.get(
             f"https://maldon.suez.co.uk/maldon/ServiceSummary?uprn={uprn}",
             headers={"User-Agent": "Mozilla/5.0 (Windows NT 6.1; Win64; x64)"},
         )

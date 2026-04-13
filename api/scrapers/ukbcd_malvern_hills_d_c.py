@@ -1,7 +1,7 @@
 from bs4 import BeautifulSoup
 from api.compat.ukbcd.common import *
 from api.compat.ukbcd.get_bin_data import AbstractGetBinDataClass
-import httpx
+from api.compat import httpx_helpers as _http
 
 
 # import the wonderful Beautiful Soup and the URL grabber
@@ -26,7 +26,7 @@ class CouncilClass(AbstractGetBinDataClass):
 
         # Make a request to the API
         pass  # urllib3 warnings disabled
-        response = await httpx.AsyncClient(verify=False, follow_redirects=True).post(api_url, data=form_data, verify=False)
+        response = await _http.post(api_url, data=form_data)
 
         # Make a BS4 object
         soup = BeautifulSoup(response.text, features="html.parser")

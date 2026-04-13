@@ -5,6 +5,7 @@ from dateutil.relativedelta import relativedelta
 from bs4 import BeautifulSoup
 from api.compat.ukbcd.common import *
 from api.compat.ukbcd.get_bin_data import AbstractGetBinDataClass
+from api.compat import httpx_helpers as _http
 
 
 # import the wonderful Beautiful Soup and the URL grabber
@@ -42,7 +43,7 @@ class CouncilClass(AbstractGetBinDataClass):
             "UPRN": f"{user_uprn}",
         }
 
-        json_data = (await httpx.AsyncClient(follow_redirects=True).post(
+        json_data = (await _http.post(
             "https://tdcws01.tandridge.gov.uk/TDCWebAppsPublic/TDCMiddleware/RESTAPI/WhiteSpaceAPI/GetCompleteRecordByUPRN",
             headers=headers,
             json=params,

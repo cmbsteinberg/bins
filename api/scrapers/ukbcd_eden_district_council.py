@@ -3,6 +3,7 @@ from bs4 import BeautifulSoup
 
 from api.compat.ukbcd.common import *
 from api.compat.ukbcd.get_bin_data import AbstractGetBinDataClass
+from api.compat import httpx_helpers as _http
 
 
 class CouncilClass(AbstractGetBinDataClass):
@@ -24,7 +25,7 @@ class CouncilClass(AbstractGetBinDataClass):
             "user-agent": "Mozilla/5.0",
         }
 
-        response = await httpx.AsyncClient(follow_redirects=True).get(URI, headers=headers)
+        response = await _http.get(URI, headers=headers)
         soup = BeautifulSoup(response.text, "html.parser")
 
         # Find the Refuse and Recycling panel by looking for the heading

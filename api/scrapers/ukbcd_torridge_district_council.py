@@ -4,7 +4,7 @@ from bs4 import BeautifulSoup
 
 from api.compat.ukbcd.common import *
 from api.compat.ukbcd.get_bin_data import AbstractGetBinDataClass
-import httpx
+from api.compat import httpx_helpers as _http
 
 
 # import the wonderful Beautiful Soup and the URL grabber
@@ -46,7 +46,7 @@ class CouncilClass(AbstractGetBinDataClass):
             + "</UPRN><PW>wax01653</PW></getRoundCalendarForUPRN></soap:Body></soap:Envelope>"
         )
         pass  # urllib3 warnings disabled
-        page = await httpx.AsyncClient(follow_redirects=True).post(url, headers=headers, data=post_data)
+        page = await _http.post(url, headers=headers, data=post_data)
 
         # Remove the soap wrapper
         namespaces = {

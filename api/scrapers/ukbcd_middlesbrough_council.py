@@ -5,6 +5,7 @@ from datetime import date, datetime
 import httpx
 from api.compat.ukbcd.common import *
 from api.compat.ukbcd.get_bin_data import AbstractGetBinDataClass
+from api.compat import httpx_helpers as _http
 
 
 class CouncilClass(AbstractGetBinDataClass):
@@ -46,7 +47,7 @@ class CouncilClass(AbstractGetBinDataClass):
                 "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36",
             }
 
-            response = await httpx.AsyncClient(follow_redirects=True).get(url, headers=headers, params=params)
+            response = await _http.get(url, headers=headers, params=params)
 
             addresses = response.json()
             for address in addresses:
@@ -68,7 +69,7 @@ class CouncilClass(AbstractGetBinDataClass):
                 "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36",
                 "x-recollect-place": place_id + ":50005",
             }
-            response = await httpx.AsyncClient(follow_redirects=True).get(url, headers=headers, params=params)
+            response = await _http.get(url, headers=headers, params=params)
             # response = response.json()
 
             def extract_next_collection(payload: dict):

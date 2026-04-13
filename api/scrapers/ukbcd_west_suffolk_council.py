@@ -5,7 +5,7 @@ from dateutil.parser import parse as date_parse
 
 from api.compat.ukbcd.common import *
 from api.compat.ukbcd.get_bin_data import AbstractGetBinDataClass
-import httpx
+from api.compat import httpx_helpers as _http
 
 
 class CouncilClass(AbstractGetBinDataClass):
@@ -16,7 +16,7 @@ class CouncilClass(AbstractGetBinDataClass):
 
         api_url = f"https://maps.westsuffolk.gov.uk/MyWestSuffolk.aspx?action=SetAddress&UniqueId={user_uprn}"
 
-        response = await httpx.AsyncClient(follow_redirects=True).get(api_url)
+        response = await _http.get(api_url)
 
         soup = BeautifulSoup(response.text, features="html.parser")
         soup.prettify()

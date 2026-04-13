@@ -4,7 +4,7 @@ from bs4 import BeautifulSoup, NavigableString, Tag
 
 from api.compat.ukbcd.common import *
 from api.compat.ukbcd.get_bin_data import AbstractGetBinDataClass
-import httpx
+from api.compat import httpx_helpers as _http
 
 """
 This module provides bin collection data for Cheshire East Council.
@@ -33,7 +33,7 @@ class CouncilClass(AbstractGetBinDataClass):
         urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
         # Make request with SSL verification disabled
-        page = await httpx.AsyncClient(verify=False, follow_redirects=True).get(url, verify=False)
+        page = await _http.get(url)
 
         soup = BeautifulSoup(page.text, features="html.parser")
 

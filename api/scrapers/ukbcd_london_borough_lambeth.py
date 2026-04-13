@@ -3,6 +3,7 @@ import httpx
 
 from api.compat.ukbcd.common import *
 from api.compat.ukbcd.get_bin_data import AbstractGetBinDataClass
+from api.compat import httpx_helpers as _http
 
 
 # import the wonderful Beautiful Soup and the URL grabber
@@ -44,7 +45,7 @@ class CouncilClass(AbstractGetBinDataClass):
         body = {"uprn": user_uprn, "includeEventTypes": False, "includeFlags": True}
         json_data = json.dumps(body)
 
-        res = await httpx.AsyncClient(follow_redirects=True).post(url, headers=headers, data=json_data)
+        res = await _http.post(url, headers=headers, data=json_data)
 
         if res.status_code != 200:
             raise ConnectionRefusedError("Cannot connect to API!")

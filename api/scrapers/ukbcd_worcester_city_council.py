@@ -3,6 +3,7 @@ from bs4 import BeautifulSoup
 
 from api.compat.ukbcd.common import *
 from api.compat.ukbcd.get_bin_data import AbstractGetBinDataClass
+from api.compat import httpx_helpers as _http
 
 
 # import the wonderful Beautiful Soup and the URL grabber
@@ -30,7 +31,7 @@ class CouncilClass(AbstractGetBinDataClass):
             "content-type": "application/x-www-form-urlencoded",
         }
 
-        response = await httpx.AsyncClient(verify=False, follow_redirects=True).post(URI, data=post_data, headers=headers, verify=False)
+        response = await _http.post(URI, data=post_data, headers=headers)
 
         soup = BeautifulSoup(response.content, "html.parser")
         rows = soup.select("table.table tbody tr")

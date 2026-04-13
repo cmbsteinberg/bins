@@ -3,7 +3,7 @@ from api.compat.ukbcd.common import *
 from api.compat.ukbcd.get_bin_data import AbstractGetBinDataClass
 from dateutil.relativedelta import relativedelta
 from datetime import timedelta
-import httpx
+from api.compat import httpx_helpers as _http
 
 
 # import the wonderful Beautiful Soup and the URL grabber
@@ -17,7 +17,7 @@ class CouncilClass(AbstractGetBinDataClass):
     async def parse_data(self, page: str, **kwargs) -> dict:
         data = {"bins": []}
 
-        # response = await httpx.AsyncClient(follow_redirects=True).get('https://www.rochford.gov.uk/online-bin-collections-calendar', headers=headers)
+        # response = await _http.get('https://www.rochford.gov.uk/online-bin-collections-calendar', headers=headers)
         soup = BeautifulSoup(page.text, features="html.parser")
         soup.prettify()
         year = soup.find_all("table", {"class": "responsive-enabled govuk-table"})

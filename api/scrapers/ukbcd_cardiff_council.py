@@ -10,6 +10,7 @@ import httpx
 import httpx
 from api.compat.ukbcd.common import *
 from api.compat.ukbcd.get_bin_data import AbstractGetBinDataClass
+from api.compat import httpx_helpers as _http
 
 
 # Taken from
@@ -73,13 +74,14 @@ async def get_jwt() -> str:
     request_headers = parse_header(request_headers_str)
     try:
         pass  # urllib3 warnings disabled
-        options = await httpx.AsyncClient(follow_redirects=True).options(auth_url, headers=options_headers)
-        response = await httpx.AsyncClient(follow_redirects=True).post(auth_url, headers=request_headers, data=payload)
+        options = await _http.options(auth_url, headers=options_headers)
+        response = await _http.post(auth_url, headers=request_headers, data=payload)
         if not options.is_success or not response.is_success:
             raise ValueError("Invalid server response code getting JWT!")
 
     except Exception as ex:
-        raise ValueError(f"Failed to get JWT: {ex}") from ex
+        print(f"Exception encountered: {ex}")
+        raise ValueError("Scraper error")
     token = parse_token(response.text)
     options.close()
     response.close()
@@ -135,15 +137,16 @@ class CouncilClass(AbstractGetBinDataClass):
         # payload, then add here
         try:
             pass  # urllib3 warnings disabled
-            options = await httpx.AsyncClient(follow_redirects=True).options(api_url, headers=options_header)
-            response = await httpx.AsyncClient(follow_redirects=True).post(
+            options = await _http.options(api_url, headers=options_header)
+            response = await _http.post(
                 api_url, headers=response_header, auth=BearerAuth(token), data=payload
             )
             if not options.is_success or not response.is_success:
                 raise ValueError("Invalid server response code finding UPRN!")
 
         except Exception as ex:
-            raise ValueError(f"Failed to fetch collections: {ex}") from ex
+            print(f"Exception encountered: {ex}")
+            raise ValueError("Scraper error")
 
         result = json.loads(response.text)
 

@@ -1,7 +1,7 @@
 from bs4 import BeautifulSoup
 from api.compat.ukbcd.common import *
 from api.compat.ukbcd.get_bin_data import AbstractGetBinDataClass
-import httpx
+from api.compat import httpx_helpers as _http
 
 
 class CouncilClass(AbstractGetBinDataClass):
@@ -27,7 +27,7 @@ class CouncilClass(AbstractGetBinDataClass):
         }
         headers = {"User-Agent": "Mozilla/5.0 (Windows NT 6.1; Win64; x64)"}
         pass  # urllib3 warnings disabled
-        response = await httpx.AsyncClient(follow_redirects=True).request("POST", api_url, headers=headers, data=values)
+        response = await _http.request("POST", api_url, headers=headers, data=values)
 
         soup = BeautifulSoup(response.text, features="html.parser")
 

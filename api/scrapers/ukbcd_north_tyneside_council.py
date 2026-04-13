@@ -50,7 +50,7 @@ class CouncilClass(AbstractGetBinDataClass):
 
         # Fetch the schedule page (includes UA, verify=False, timeout)
         view_url = f"https://www.northtyneside.gov.uk/waste-collection-schedule/view/{user_uprn}"
-        response = self.get_data(view_url)
+        response = await self.get_data(view_url)
 
         # Fail fast on HTTP errors
         if getattr(response, "raise_for_status", None):

@@ -3,7 +3,7 @@ import urllib.parse
 
 from api.compat.ukbcd.common import *
 from api.compat.ukbcd.get_bin_data import AbstractGetBinDataClass
-import httpx
+from api.compat import httpx_helpers as _http
 
 
 # import the wonderful Beautiful Soup and the URL grabber
@@ -36,7 +36,7 @@ class CouncilClass(AbstractGetBinDataClass):
 
         # Parse each URL and load future data
         for url in calendar_urls:
-            response = await httpx.AsyncClient(follow_redirects=True).get(url)
+            response = await _http.get(url)
             if response.status_code != 200:
                 raise ConnectionError(f"Could not get response from: {url}")
             json_data = response.json()["collectionDates"]

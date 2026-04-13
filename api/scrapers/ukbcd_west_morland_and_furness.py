@@ -3,6 +3,7 @@ from bs4 import BeautifulSoup
 
 from api.compat.ukbcd.common import *
 from api.compat.ukbcd.get_bin_data import AbstractGetBinDataClass
+from api.compat import httpx_helpers as _http
 
 
 # import the wonderful Beautiful Soup and the URL grabber
@@ -28,7 +29,7 @@ class CouncilClass(AbstractGetBinDataClass):
         current_year = datetime.now().year
         current_month = datetime.now().month
 
-        response = await httpx.AsyncClient(follow_redirects=True).get(URI)
+        response = await _http.get(URI)
 
         soup = BeautifulSoup(response.text, "html.parser")
         # Extract links to collection shedule pages and iterate through the pages

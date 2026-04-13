@@ -4,7 +4,7 @@ from bs4 import BeautifulSoup
 
 from api.compat.ukbcd.common import *
 from api.compat.ukbcd.get_bin_data import AbstractGetBinDataClass
-import httpx
+from api.compat import httpx_helpers as _http
 
 
 # import the wonderful Beautiful Soup and the URL grabber
@@ -28,7 +28,7 @@ class CouncilClass(AbstractGetBinDataClass):
             raise ValueError(f"Error getting identifier: {str(e)}")
 
         # Make a BS4 object
-        page = await httpx.AsyncClient(follow_redirects=True).get(url)
+        page = await _http.get(url)
         soup = BeautifulSoup(page.text, features="html.parser")
         soup.prettify()
 

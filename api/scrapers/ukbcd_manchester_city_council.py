@@ -5,6 +5,7 @@ from bs4 import BeautifulSoup
 
 from api.compat.ukbcd.common import *
 from api.compat.ukbcd.get_bin_data import AbstractGetBinDataClass
+from api.compat import httpx_helpers as _http
 
 
 class CouncilClass(AbstractGetBinDataClass):
@@ -31,7 +32,7 @@ class CouncilClass(AbstractGetBinDataClass):
         AUTH_URL = "https://manchester.form.uk.empro.verintcloudservices.com/api/citizen?archived=Y&preview=false&locale=en"
         AUTH_KEY = "Authorization"
 
-        r = await httpx.AsyncClient(follow_redirects=True).get(AUTH_URL)
+        r = await _http.get(AUTH_URL)
         r.raise_for_status()
         auth_token = r.headers[AUTH_KEY]
 
@@ -60,7 +61,7 @@ class CouncilClass(AbstractGetBinDataClass):
             AUTH_KEY: auth_token,
         }
 
-        r = await httpx.AsyncClient(follow_redirects=True).post(API_URL, data=json.dumps(post_data), headers=headers)
+        r = await _http.post(API_URL, data=json.dumps(post_data), headers=headers)
         r.raise_for_status()
 
         result = r.json()

@@ -31,7 +31,7 @@ OUTPUT_PATH = Path(__file__).parent / "integration_output.json"
 BASE_URL = "http://testserver/api/v1"
 
 MAX_CONCURRENCY = 40
-REQUEST_TIMEOUT = 120
+REQUEST_TIMEOUT = 10
 
 
 SCRAPERS_DIR = Path(__file__).resolve().parent.parent / "api" / "scrapers"

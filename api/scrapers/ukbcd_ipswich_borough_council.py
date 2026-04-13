@@ -5,6 +5,7 @@ from bs4 import BeautifulSoup
 
 from api.compat.ukbcd.common import *
 from api.compat.ukbcd.get_bin_data import AbstractGetBinDataClass
+from api.compat import httpx_helpers as _http
 
 
 # import the wonderful Beautiful Soup and the URL grabber
@@ -44,7 +45,7 @@ class CouncilClass(AbstractGetBinDataClass):
 
         # Make the request
         form_data = {"street-input": user_paon}
-        response = await httpx.AsyncClient(follow_redirects=True).post(self.IBC_ENDPOINT, data=form_data, timeout=10)
+        response = await _http.post(self.IBC_ENDPOINT, data=form_data, timeout=10)
         soup = BeautifulSoup(response.content, features="html.parser")
 
         data = {"bins": []}

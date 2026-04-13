@@ -12,6 +12,7 @@ from api.compat.ukbcd.common import (
     date_format
 )
 from api.compat.ukbcd.get_bin_data import AbstractGetBinDataClass
+from api.compat import httpx_helpers as _http
 
 
 # Mobile API constants
@@ -59,7 +60,7 @@ async def lookup_uprn(postcode: str, paon: str) -> str:
     url = f"{MOBILE_API_BASE}/addresses"
 
     try:
-        response = await httpx.AsyncClient(follow_redirects=True).get(url, headers=MOBILE_API_HEADERS, timeout=30, params={"postcode": postcode})
+        response = await _http.get(url, headers=MOBILE_API_HEADERS, timeout=30, params={"postcode": postcode})
     except httpx.HTTPError as exc:
         raise ValueError("Addresses API request failed") from exc
 
@@ -133,7 +134,7 @@ async def fetch_mobile_api(uprn: str) -> dict:
 
     # Perform the HTTP request and surface network-layer errors clearly
     try:
-        response = await httpx.AsyncClient(follow_redirects=True).get(url, headers=MOBILE_API_HEADERS, timeout=30)
+        response = await _http.get(url, headers=MOBILE_API_HEADERS, timeout=30)
     except httpx.HTTPError as exc:
         raise ValueError("Mobile API request failed") from exc
 

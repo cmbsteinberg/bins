@@ -2,7 +2,7 @@ from datetime import datetime
 
 from api.compat.ukbcd.common import *
 from api.compat.ukbcd.get_bin_data import AbstractGetBinDataClass
-import httpx
+from api.compat import httpx_helpers as _http
 
 
 class CouncilClass(AbstractGetBinDataClass):
@@ -39,7 +39,7 @@ class CouncilClass(AbstractGetBinDataClass):
             # print(params)
 
             # Send GET request
-            response = await httpx.AsyncClient(follow_redirects=True).get(URI, params=params, headers=headers)
+            response = await _http.get(URI, params=params, headers=headers)
 
             print(response.content)
 

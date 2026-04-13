@@ -3,6 +3,7 @@ from bs4 import BeautifulSoup
 
 from api.compat.ukbcd.common import *
 from api.compat.ukbcd.get_bin_data import AbstractGetBinDataClass
+from api.compat import httpx_helpers as _http
 
 
 # import the wonderful Beautiful Soup and the URL grabber
@@ -22,7 +23,7 @@ class CouncilClass(AbstractGetBinDataClass):
         URI = f"https://www.carmarthenshire.gov.wales/umbraco/Surface/SurfaceRecycling/Index/?uprn={user_uprn}&lang=en-GB"
 
         # Make the GET request
-        response = await httpx.AsyncClient(follow_redirects=True).get(URI)
+        response = await _http.get(URI)
 
         # Parse the HTML
         soup = BeautifulSoup(response.content, "html.parser")

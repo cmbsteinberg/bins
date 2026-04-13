@@ -2,6 +2,7 @@ import httpx
 from datetime import datetime
 from api.compat.ukbcd.common import date_format
 from api.compat.ukbcd.get_bin_data import AbstractGetBinDataClass
+from api.compat import httpx_helpers as _http
 
 
 class CouncilClass(AbstractGetBinDataClass):
@@ -49,7 +50,7 @@ class CouncilClass(AbstractGetBinDataClass):
         params = {"postcode": postcode}
 
         try:
-            response = await httpx.AsyncClient(follow_redirects=True).get(api_url, headers=headers, params=params, timeout=30)
+            response = await _http.get(api_url, headers=headers, params=params, timeout=30)
             response.raise_for_status()
             data = response.json()
         except httpx.HTTPError as e:

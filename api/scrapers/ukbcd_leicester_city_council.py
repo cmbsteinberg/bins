@@ -3,6 +3,7 @@ import time
 import httpx
 from api.compat.ukbcd.common import *
 from api.compat.ukbcd.get_bin_data import AbstractGetBinDataClass
+from api.compat import httpx_helpers as _http
 
 
 # import the wonderful Beautiful Soup and the URL grabber
@@ -35,7 +36,7 @@ class CouncilClass(AbstractGetBinDataClass):
         }
 
         # Make the GET request
-        response = await httpx.AsyncClient(follow_redirects=True).post(URI, headers=headers, data=payload)
+        response = await _http.post(URI, headers=headers, data=payload)
 
         # Parse the JSON response
         bin_collection = response.json()

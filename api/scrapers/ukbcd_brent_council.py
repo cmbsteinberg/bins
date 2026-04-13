@@ -1,4 +1,4 @@
-from time import sleep
+import asyncio
 
 import httpx
 from bs4 import BeautifulSoup
@@ -50,7 +50,7 @@ class CouncilClass(AbstractGetBinDataClass):
                     counter = counter + 1
                     if counter == 20:
                         return data
-                    sleep(2)
+                    await asyncio.sleep(2)
                     r = await s.get(URI)
 
                 r.raise_for_status()

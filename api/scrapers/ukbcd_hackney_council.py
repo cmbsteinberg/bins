@@ -3,6 +3,7 @@ import time
 import httpx
 from api.compat.ukbcd.common import *
 from api.compat.ukbcd.get_bin_data import AbstractGetBinDataClass
+from api.compat import httpx_helpers as _http
 
 
 # import the wonderful Beautiful Soup and the URL grabber
@@ -29,7 +30,7 @@ class CouncilClass(AbstractGetBinDataClass):
         headers = {"Content-Type": "application/json"}
 
         # Make the GET request
-        response = await httpx.AsyncClient(follow_redirects=True).post(URI, json=data, headers=headers)
+        response = await _http.post(URI, json=data, headers=headers)
 
         addresses = response.json()
 
@@ -40,7 +41,7 @@ class CouncilClass(AbstractGetBinDataClass):
         if systemId:
             URI = f"https://waste-api-hackney-live.ieg4.net/f806d91c-e133-43a6-ba9a-c0ae4f4cccf6/alloywastepages/getproperty/{systemId}"
 
-            response = await httpx.AsyncClient(follow_redirects=True).get(URI)
+            response = await _http.get(URI)
 
             address = response.json()
 
@@ -49,19 +50,19 @@ class CouncilClass(AbstractGetBinDataClass):
             ]
             for binID in binIDs.split(","):
                 URI = f"https://waste-api-hackney-live.ieg4.net/f806d91c-e133-43a6-ba9a-c0ae4f4cccf6/alloywastepages/getbin/{binID}"
-                response = await httpx.AsyncClient(follow_redirects=True).get(URI)
+                response = await _http.get(URI)
                 getBin = response.json()
 
                 bin_type = getBin["subTitle"]
 
                 URI = f"https://waste-api-hackney-live.ieg4.net/f806d91c-e133-43a6-ba9a-c0ae4f4cccf6/alloywastepages/getcollection/{binID}"
-                response = await httpx.AsyncClient(follow_redirects=True).get(URI)
+                response = await _http.get(URI)
                 getcollection = response.json()
 
                 collectionID = getcollection["scheduleCodeWorkflowIDs"][0]
 
                 URI = f"https://waste-api-hackney-live.ieg4.net/f806d91c-e133-43a6-ba9a-c0ae4f4cccf6/alloywastepages/getworkflow/{collectionID}"
-                response = await httpx.AsyncClient(follow_redirects=True).get(URI)
+                response = await _http.get(URI)
                 collection_dates = response.json()
 
                 dates = collection_dates["trigger"]["dates"]

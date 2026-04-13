@@ -2,7 +2,7 @@ from bs4 import BeautifulSoup
 
 from api.compat.ukbcd.common import *
 from api.compat.ukbcd.get_bin_data import AbstractGetBinDataClass
-import httpx
+from api.compat import httpx_helpers as _http
 
 
 class CouncilClass(AbstractGetBinDataClass):
@@ -19,7 +19,7 @@ class CouncilClass(AbstractGetBinDataClass):
         api_url = f"https://geoserver.nottinghamcity.gov.uk/bincollections2/api/collection/{user_uprn}"
 
         pass  # urllib3 warnings disabled
-        response = await httpx.AsyncClient(follow_redirects=True).get(api_url)
+        response = await _http.get(api_url)
         json_data = json.loads(response.text)
         data = {"bins": []}
 

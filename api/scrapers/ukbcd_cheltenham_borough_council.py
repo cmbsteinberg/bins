@@ -11,6 +11,7 @@ from api.compat.ukbcd.common import (
     timedelta,
 )
 from api.compat.ukbcd.get_bin_data import AbstractGetBinDataClass
+from api.compat import httpx_helpers as _http
 
 
 class CouncilClass(AbstractGetBinDataClass):
@@ -234,7 +235,7 @@ class CouncilClass(AbstractGetBinDataClass):
 
         # Build a dictionary of bank holiday changes
         bank_holiday_bins_url = "https://www.cheltenham.gov.uk/bank-holiday-collections"
-        response = await httpx.AsyncClient(follow_redirects=True).get(bank_holiday_bins_url)
+        response = await _http.get(bank_holiday_bins_url)
         soup = BeautifulSoup(response.content, "html.parser")
         response.close()
         tables = soup.find_all("table")

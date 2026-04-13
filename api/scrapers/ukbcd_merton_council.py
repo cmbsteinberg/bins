@@ -8,6 +8,7 @@ from bs4 import BeautifulSoup
 
 from api.compat.ukbcd.common import date_format
 from api.compat.ukbcd.get_bin_data import AbstractGetBinDataClass
+from api.compat import httpx_helpers as _http
 
 
 # Council class for Merton Council
@@ -88,7 +89,7 @@ class CouncilClass(AbstractGetBinDataClass):
         # Poll until data is loaded
         soup = None
         for attempt in range(1, self.MAX_POLLING_ATTEMPTS + 1):
-            response = await httpx.AsyncClient(follow_redirects=True).get(url, headers=headers, timeout=10)
+            response = await _http.get(url, headers=headers, timeout=10)
             soup = BeautifulSoup(response.text, features="html.parser")
 
             # Check if still loading

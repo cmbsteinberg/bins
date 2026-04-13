@@ -14,7 +14,7 @@ class CouncilClass(AbstractGetBinDataClass):
     North Tyneside Council bin collection schedule parser
     """
 
-    def parse_data(self, page: str, **kwargs) -> dict:
+    async def parse_data(self, page: str, **kwargs) -> dict:
         """
         Parse waste collection schedule data for a given UPRN.
 
@@ -50,7 +50,7 @@ class CouncilClass(AbstractGetBinDataClass):
 
         # Fetch the schedule page (includes UA, verify=False, timeout)
         view_url = f"https://www.northtyneside.gov.uk/waste-collection-schedule/view/{user_uprn}"
-        response = self.get_data(view_url)
+        response = await self.get_data(view_url)
 
         # Fail fast on HTTP errors
         if getattr(response, "raise_for_status", None):
@@ -137,19 +137,12 @@ class Source:
         self._scraper = CouncilClass()
 
     async def fetch(self) -> list[Collection]:
-        import asyncio
         from datetime import datetime
 
         kwargs = {}
         if self.uprn: kwargs['uprn'] = self.uprn
 
-        def _run():
-            page = ""
-            if hasattr(self._scraper, "parse_data"):
-                return self._scraper.parse_data(page, **kwargs)
-            raise NotImplementedError("Could not find parse_data on scraper")
-
-        data = await asyncio.to_thread(_run)
+        data = await self._scraper.parse_data("", **kwargs)
 
         entries = []
         if isinstance(data, dict) and "bins" in data:

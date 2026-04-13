@@ -4,7 +4,7 @@ from bs4 import BeautifulSoup
 
 from api.compat.ukbcd.common import *
 from api.compat.ukbcd.get_bin_data import AbstractGetBinDataClass
-import httpx
+from api.compat import httpx_helpers as _http
 
 
 class CouncilClass(AbstractGetBinDataClass):
@@ -14,7 +14,7 @@ class CouncilClass(AbstractGetBinDataClass):
     implementation.
     """
 
-    def parse_data(self, page: str, **kwargs) -> dict:
+    async def parse_data(self, page: str, **kwargs) -> dict:
         """
         Extract upcoming bin collection dates and their types for the supplied postcode or UPRN.
         
@@ -97,7 +97,7 @@ class CouncilClass(AbstractGetBinDataClass):
             }
 
             # Send it all as a POST
-            response = httpx.post(
+            response = await _http.post(
                 "https://ilambassadorformsprod.azurewebsites.net/wastecollectiondays/wastecollectioncalendar",
                 cookies=cookies,
                 headers=headers,
@@ -153,20 +153,13 @@ class Source:
         self._scraper = CouncilClass()
 
     async def fetch(self) -> list[Collection]:
-        import asyncio
         from datetime import datetime
 
         kwargs = {}
         if self.uprn: kwargs['uprn'] = self.uprn
         if self.postcode: kwargs['postcode'] = self.postcode
 
-        def _run():
-            page = ""
-            if hasattr(self._scraper, "parse_data"):
-                return self._scraper.parse_data(page, **kwargs)
-            raise NotImplementedError("Could not find parse_data on scraper")
-
-        data = await asyncio.to_thread(_run)
+        data = await self._scraper.parse_data("", **kwargs)
 
         entries = []
         if isinstance(data, dict) and "bins" in data:

@@ -4,6 +4,7 @@ from datetime import timedelta
 import httpx
 from api.compat.ukbcd.common import *
 from api.compat.ukbcd.get_bin_data import AbstractGetBinDataClass
+from api.compat import httpx_helpers as _http
 
 
 # import the wonderful Beautiful Soup and the URL grabber
@@ -14,7 +15,7 @@ class CouncilClass(AbstractGetBinDataClass):
     implementation.
     """
 
-    def parse_data(self, page: str, **kwargs) -> dict:
+    async def parse_data(self, page: str, **kwargs) -> dict:
         # Get and check both the passed UPRN and postcode
         user_uprn = kwargs.get("uprn")
         check_uprn(user_uprn)
@@ -36,7 +37,7 @@ class CouncilClass(AbstractGetBinDataClass):
             "app_ver": "35",
         }
         pass  # urllib3 warnings disabled
-        response = httpx.get(
+        response = await _http.get(
             "http://www.sac-bins.co.uk/get_calendar.php", params=params, headers=headers
         )
 
@@ -88,20 +89,13 @@ class Source:
         self._scraper = CouncilClass()
 
     async def fetch(self) -> list[Collection]:
-        import asyncio
         from datetime import datetime
 
         kwargs = {}
         if self.uprn: kwargs['uprn'] = self.uprn
         if self.postcode: kwargs['postcode'] = self.postcode
 
-        def _run():
-            page = ""
-            if hasattr(self._scraper, "parse_data"):
-                return self._scraper.parse_data(page, **kwargs)
-            raise NotImplementedError("Could not find parse_data on scraper")
-
-        data = await asyncio.to_thread(_run)
+        data = await self._scraper.parse_data("", **kwargs)
 
         entries = []
         if isinstance(data, dict) and "bins" in data:

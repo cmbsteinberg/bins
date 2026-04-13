@@ -3,6 +3,7 @@ import time
 import httpx
 from api.compat.ukbcd.common import *
 from api.compat.ukbcd.get_bin_data import AbstractGetBinDataClass
+from api.compat import httpx_helpers as _http
 
 
 # import the wonderful Beautiful Soup and the URL grabber
@@ -13,7 +14,7 @@ class CouncilClass(AbstractGetBinDataClass):
     implementation.
     """
 
-    def parse_data(self, page: str, **kwargs) -> dict:
+    async def parse_data(self, page: str, **kwargs) -> dict:
 
         user_postcode = kwargs.get("postcode")
         user_paon = kwargs.get("paon")
@@ -32,7 +33,7 @@ class CouncilClass(AbstractGetBinDataClass):
         # print(params)
 
         # Send GET request
-        response = httpx.get(URI, params=params)
+        response = await _http.get(URI, params=params)
 
         addresses = response.json()
 
@@ -74,7 +75,7 @@ class CouncilClass(AbstractGetBinDataClass):
         # print(params)
 
         # Send GET request
-        response = httpx.get(URI, params=params)
+        response = await _http.get(URI, params=params)
 
         response = response.json()
 
@@ -122,20 +123,13 @@ class Source:
         self._scraper = CouncilClass()
 
     async def fetch(self) -> list[Collection]:
-        import asyncio
         from datetime import datetime
 
         kwargs = {}
         if self.postcode: kwargs['postcode'] = self.postcode
         if self.house_number: kwargs['paon'] = self.house_number
 
-        def _run():
-            page = ""
-            if hasattr(self._scraper, "parse_data"):
-                return self._scraper.parse_data(page, **kwargs)
-            raise NotImplementedError("Could not find parse_data on scraper")
-
-        data = await asyncio.to_thread(_run)
+        data = await self._scraper.parse_data("", **kwargs)
 
         entries = []
         if isinstance(data, dict) and "bins" in data:

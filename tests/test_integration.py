@@ -31,7 +31,7 @@ OUTPUT_PATH = Path(__file__).parent / "integration_output.json"
 BASE_URL = "http://testserver/api/v1"
 
 MAX_CONCURRENCY = 40
-REQUEST_TIMEOUT = 120
+REQUEST_TIMEOUT = 10
 
 
 SCRAPERS_DIR = Path(__file__).resolve().parent.parent / "api" / "scrapers"
@@ -71,7 +71,7 @@ TEST_DATA = _load_all_test_cases()
 @pytest_asyncio.fixture(scope="session", loop_scope="session")
 async def client():
     async with LifespanManager(app) as manager:
-        transport = httpx.ASGITransport(app=manager.app)
+        transport = httpx.ASGITransport(app=manager.app, raise_app_exceptions=False)
         async with httpx.AsyncClient(
             transport=transport, base_url=BASE_URL, timeout=REQUEST_TIMEOUT
         ) as c:
@@ -182,9 +182,28 @@ async def all_results(client: httpx.AsyncClient):
     semaphore = asyncio.Semaphore(MAX_CONCURRENCY)
     batch_start = time.monotonic()
 
+    async def _guarded(council, label, params):
+        try:
+            return await asyncio.wait_for(
+                _run_lookup(client, semaphore, council, label, params),
+                timeout=REQUEST_TIMEOUT + 30,
+            )
+        except asyncio.TimeoutError:
+            return {
+                "council": council,
+                "label": label,
+                "uprn": str(params.get("uprn", "0")),
+                "query_params": {"council": council, **params},
+                "endpoint": f"/lookup/{params.get('uprn', '0')}",
+                "passed": False,
+                "error_type": "hard_timeout",
+                "error_class": "TimeoutError",
+                "error_message": f"Task exceeded {REQUEST_TIMEOUT + 30}s hard limit",
+            }
+
     results = await asyncio.gather(
         *[
-            _run_lookup(client, semaphore, council, label, params)
+            _guarded(council, label, params)
             for council, label, params in TEST_DATA
         ]
     )
@@ -263,9 +282,14 @@ async def all_results(client: httpx.AsyncClient):
     # Regenerate coverage map from fresh results
     import subprocess
 
+    cwd = Path(__file__).parent.parent
     subprocess.run(
         ["uv", "run", "python", "-m", "scripts.coverage.generate_coverage_map"],
-        cwd=Path(__file__).parent.parent,
+        cwd=cwd,
+    )
+    subprocess.run(
+        ["uv", "run", "python", "-m", "scripts.generate_sankey"],
+        cwd=cwd,
     )
 
     return _results_cache

@@ -26,12 +26,12 @@ brew install nikto
 
 ## Usage
 
-All scripts take the base URL as the first argument (defaults to `https://bincollection.co.uk`):
+All scripts take the base URL as the first argument (defaults to `https://ukbindays.co.uk`):
 
 ```bash
 # Run against production
 ./tests/battletest/smoke.sh
-./tests/battletest/load.sh https://bincollection.co.uk
+./tests/battletest/load.sh https://ukbindays.co.uk
 
 # Run against local Docker stack
 ./tests/battletest/smoke.sh http://localhost:8000

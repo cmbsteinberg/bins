@@ -100,7 +100,7 @@ def _process_selenium_council(
 
     # Rewrite UKBCD imports, convert any requests usage to httpx
     source_code = rewrite_imports(source_code)
-    source_code = convert_requests_to_httpx_sync(source_code)
+    source_code = convert_requests_to_async_httpx(source_code)
 
     # Transpile Selenium → async Playwright
     try:
@@ -178,14 +178,29 @@ def _replace_requests_imports(source: str) -> str:
 
 
 def _replace_requests_api_calls(source: str) -> str:
-    """Replace requests.get/post/etc and Session() with httpx equivalents."""
+    """Replace requests.get/post/etc with async _http helpers or httpx.AsyncClient sessions."""
+    # Chained calls: requests.get(...).json() → (await _http.get(...)).json()
     source = re.sub(
-        r"\brequests\.(get|post|put|delete|patch|head|options|request)\b", r"httpx.\1", source
+        r"\brequests\.(get|post|put|delete|patch|head|options)\(([^)]*?)\)\.(json|text|content|raise_for_status)",
+        r"(await _http.\1(\2)).\3",
+        source,
+    )
+    # Non-chained: requests.get(...) → await _http.get(...)
+    source = re.sub(
+        r"\brequests\.(get|post|put|delete|patch|head|options)\(",
+        r"await _http.\1(",
+        source,
+    )
+    # requests.request(...) → await _http.request(...)
+    source = re.sub(
+        r"\brequests\.request\(",
+        r"await _http.request(",
+        source,
     )
     # requests.auth.AuthBase → plain object (httpx uses a different auth interface)
     source = source.replace("requests.auth.AuthBase", "object")
-    source = source.replace("requests.Session()", "httpx.Client(follow_redirects=True)")
-    source = source.replace("requests.session()", "httpx.Client(follow_redirects=True)")
+    source = source.replace("requests.Session()", "httpx.AsyncClient(follow_redirects=True)")
+    source = source.replace("requests.session()", "httpx.AsyncClient(follow_redirects=True)")
     source = source.replace("requests.Response", "httpx.Response")
     return source
 
@@ -237,12 +252,12 @@ def _strip_requests_adapters(source: str) -> str:
         flags=re.MULTILINE,
     )
     source = re.sub(
-        r"^[ \t]+\w+\s*=\s*Retry\([^)]*\)\n?",
+        r"^[ \t]+\w+\s*=\s*Retry\((?:[^()]*|\([^()]*\))*\)\n?",
         "",
         source,
         flags=re.MULTILINE,
     )
-    source = re.sub(r"^[ \t]+\w+\.mount\([^)]*\)\n?", "", source, flags=re.MULTILINE)
+    source = re.sub(r"^[ \t]+\w+\.mount\((?:[^()]*|\([^()]*\))*\)\n?", "", source, flags=re.MULTILINE)
     return source
 
 
@@ -258,11 +273,17 @@ def _fix_httpx_compat(source: str) -> str:
         r"\1, data=\2)",
         source,
     )
+    # with httpx.Client → async with httpx.AsyncClient
+    source = re.sub(
+        r"(\s*)with (httpx\.AsyncClient\([^)]*\)) as (\w+):",
+        r"\1async with \2 as \3:",
+        source,
+    )
     return source
 
 
 def _hoist_verify_false(source: str) -> str:
-    """Move verify=False from per-request calls to Client constructor."""
+    """Move verify=False from per-request calls to AsyncClient constructor."""
     has_verify_in_calls = bool(
         re.search(r"\.(get|post|put|delete|patch|head)\([^)]*verify=", source)
     )
@@ -272,22 +293,20 @@ def _hoist_verify_false(source: str) -> str:
     lines = source.split("\n")
     new_lines = []
     for line in lines:
-        if "verify=False" in line and "Client(" not in line:
+        if "verify=False" in line and "AsyncClient(" not in line:
             line = re.sub(r",\s*verify=False", "", line)
             line = re.sub(r"verify=False,\s*", "", line)
         new_lines.append(line)
     source = "\n".join(new_lines)
     source = source.replace(
-        "httpx.Client(follow_redirects=True)",
-        "httpx.Client(verify=False, follow_redirects=True)",
+        "httpx.AsyncClient(follow_redirects=True)",
+        "httpx.AsyncClient(verify=False, follow_redirects=True)",
     )
     return source
 
 
 def _ensure_httpx_import(source: str) -> str:
-    """Ensure import httpx is present if httpx is referenced."""
-    if "httpx." not in source or "import httpx" in source:
-        return source
+    """Ensure import httpx and _http helper are present if referenced."""
     lines = source.split("\n")
     last_import_idx = 0
     for i, line in enumerate(lines):
@@ -296,12 +315,122 @@ def _ensure_httpx_import(source: str) -> str:
             (" ", "\t")
         ):
             last_import_idx = i
-    lines.insert(last_import_idx + 1, "import httpx")
+    inserts = []
+    if "httpx." in source and "import httpx" not in source:
+        inserts.append("import httpx")
+    if "_http." in source and "import httpx_helpers" not in source and "import _http" not in source:
+        inserts.append("from api.compat import httpx_helpers as _http")
+    if inserts:
+        for j, line in enumerate(inserts):
+            lines.insert(last_import_idx + 1 + j, line)
     return "\n".join(lines)
 
 
-def convert_requests_to_httpx_sync(source: str) -> str:
-    """Convert requests usage to httpx (sync Client, not AsyncClient)."""
+def _make_async(source: str) -> str:
+    """Make parse_data and any function containing await into async functions."""
+    # Make parse_data async
+    source = re.sub(
+        r"(\s+)def parse_data\(self",
+        r"\1async def parse_data(self",
+        source,
+    )
+    # Find session variable names (assigned or context-managed from AsyncClient)
+    session_vars = set()
+    for m in re.finditer(r"(\w+)\s*=\s*httpx\.AsyncClient\(", source):
+        session_vars.add(m.group(1))
+    for m in re.finditer(r"async with httpx\.AsyncClient\([^)]*\) as (\w+):", source):
+        session_vars.add(m.group(1))
+    # Add await to session.get(), session.post(), etc.
+    for var in session_vars:
+        escaped = re.escape(var)
+        source = re.sub(
+            rf"(?<!await )\b{escaped}\.(get|post|put|delete|patch|head)\(",
+            rf"await {var}.\1(",
+            source,
+        )
+    # Await calls to self.get_data() (async method on AbstractGetBinDataClass)
+    # Chained: self.get_data(url).text → (await self.get_data(url)).text
+    source = re.sub(
+        r"(?<!await )self\.get_data\(([^)]*?)\)\.(\w+)",
+        r"(await self.get_data(\1)).\2",
+        source,
+    )
+    # Non-chained: self.get_data(url) → await self.get_data(url)
+    source = re.sub(
+        r"(?<!await )(?<!\()self\.get_data\(",
+        "await self.get_data(",
+        source,
+    )
+    # time.sleep / sleep → asyncio.sleep
+    if "time.sleep(" in source:
+        source = source.replace("time.sleep(", "await asyncio.sleep(")
+        if "import asyncio" not in source:
+            source = "import asyncio\n" + source
+    if re.search(r"(?<!\.)\bsleep\(", source) and "from time import" in source:
+        source = re.sub(r"^from time import sleep\s*$", "", source, flags=re.MULTILINE)
+        source = re.sub(r"(?<!\.)(?<!asyncio\.)\bsleep\(", "await asyncio.sleep(", source)
+        if "import asyncio" not in source:
+            source = "import asyncio\n" + source
+    # Any non-async def that contains 'await' must become async
+    source = _fix_non_async_awaits(source)
+    return source
+
+
+def _fix_non_async_awaits(source: str) -> str:
+    """Find sync functions that contain await and make them async.
+    Also adds await to call sites of those functions."""
+    changed = True
+    while changed:
+        changed = False
+        lines = source.split("\n")
+        new_lines = []
+        async_funcs = set()
+        for i, line in enumerate(lines):
+            m = re.match(r"^(\s*)def (\w+)\(", line)
+            if m and "async def" not in line:
+                indent = len(m.group(1))
+                # Scan body for await
+                for j in range(i + 1, len(lines)):
+                    body_line = lines[j]
+                    if body_line.strip() == "":
+                        continue
+                    body_indent = len(body_line) - len(body_line.lstrip())
+                    if body_indent <= indent and body_line.strip():
+                        break
+                    if "await " in body_line:
+                        line = line.replace(f"def {m.group(2)}(", f"async def {m.group(2)}(", 1)
+                        async_funcs.add(m.group(2))
+                        changed = True
+                        break
+            new_lines.append(line)
+        source = "\n".join(new_lines)
+        # Add await to call sites of newly-async functions
+        for fn in async_funcs:
+            source = re.sub(
+                rf"(?<!await )(?<!def )(?<!async def )\b{fn}\(",
+                rf"await {fn}(",
+                source,
+            )
+    return source
+
+
+def _replace_exit_calls(source: str) -> str:
+    """Replace exit() / sys.exit() with raise ValueError() to avoid killing the event loop."""
+    source = re.sub(
+        r"\bexit\(\d*\)",
+        'raise ValueError("Scraper error")',
+        source,
+    )
+    source = re.sub(
+        r"\bsys\.exit\(\d*\)",
+        'raise ValueError("Scraper error")',
+        source,
+    )
+    return source
+
+
+def convert_requests_to_async_httpx(source: str) -> str:
+    """Convert requests usage to async httpx (AsyncClient)."""
     source = _replace_requests_imports(source)
     source = _replace_requests_api_calls(source)
     source = _replace_requests_exceptions(source)
@@ -310,6 +439,8 @@ def convert_requests_to_httpx_sync(source: str) -> str:
     source = _fix_httpx_compat(source)
     source = _hoist_verify_false(source)
     source = _ensure_httpx_import(source)
+    source = _make_async(source)
+    source = _replace_exit_calls(source)
     return source
 
 
@@ -415,19 +546,12 @@ class Source:
         self._scraper = {original_class_name}()
 
     async def fetch(self) -> list[Collection]:
-        import asyncio
         from datetime import datetime
 
         kwargs = {{}}
 {kwargs_block}
 
-        def _run():
-            page = ""
-            if hasattr(self._scraper, "parse_data"):
-                return self._scraper.parse_data(page, **kwargs)
-            raise NotImplementedError("Could not find parse_data on scraper")
-
-        data = await asyncio.to_thread(_run)
+        data = await self._scraper.parse_data("", **kwargs)
 
         entries = []
         if isinstance(data, dict) and "bins" in data:
@@ -459,6 +583,17 @@ def _load_ukbcd_override_domains() -> set[str]:
     return domains
 
 
+def _domain_in_overrides(domain: str, override_domains: set[str]) -> bool:
+    """Check if domain or any of its parent domains is in the override set."""
+    if domain in override_domains:
+        return True
+    parts = domain.split(".")
+    for i in range(1, len(parts)):
+        if ".".join(parts[i:]) in override_domains:
+            return True
+    return False
+
+
 def _resolve_url(data: dict) -> str | None:
     """Extract the URL from a council's input.json data."""
     return data.get("url") or data.get("wiki_url")
@@ -484,7 +619,7 @@ def _process_council(
 
     source_code = source_file.read_text()
     new_source = rewrite_imports(source_code)
-    new_source = convert_requests_to_httpx_sync(new_source)
+    new_source = convert_requests_to_async_httpx(new_source)
 
     try:
         tree = ast.parse(new_source)
@@ -612,7 +747,7 @@ def _patch_councils(
         else:
             hacs_scraper = None
 
-        if hacs_scraper and domain not in ukbcd_override_domains:
+        if hacs_scraper and not _domain_in_overrides(domain, ukbcd_override_domains):
             stats.skipped_existing += 1
             # Upgrade to HACS scraper_id
             for lad in lad_codes:

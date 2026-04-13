@@ -2,6 +2,31 @@
 
 A FastAPI service that returns bin and waste collection schedules for UK councils. It wraps about 350 council scrapers from two upstream open-source projects and exposes them as a single async API.
 
+## Coverage Flow
+
+```mermaid
+---
+config:
+  sankey:
+    showValues: false
+    width: 800
+    height: 400
+    linkColor: source
+    nodeAlignment: left
+---
+sankey-beta
+
+"LAD Codes (343)","HACS (208)",208
+"LAD Codes (343)","UKBCD (86)",86
+"LAD Codes (343)","Not Supported (49)",49
+
+"HACS (208)","Passing (194)",194
+"HACS (208)","Failing (14)",14
+
+"UKBCD (86)","UKBCD Passing (79)",79
+"UKBCD (86)","UKBCD Failing (7)",7
+```
+
 ## How It Works
 
 Each UK council publishes bin collection dates on its own website in its own format. Two community projects have built scrapers for these sites: [hacs_waste_collection_schedule](https://github.com/mampfes/hacs_waste_collection_schedule) (primarily for Home Assistant) and [UKBinCollectionData](https://github.com/robbrad/UKBinCollectionData). This project takes those scrapers, patches them to run as async Python (converting `requests` to `httpx` via AST transforms), and serves them behind a FastAPI application.

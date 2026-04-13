@@ -252,12 +252,12 @@ def _strip_requests_adapters(source: str) -> str:
         flags=re.MULTILINE,
     )
     source = re.sub(
-        r"^[ \t]+\w+\s*=\s*Retry\([^)]*\)\n?",
+        r"^[ \t]+\w+\s*=\s*Retry\((?:[^()]*|\([^()]*\))*\)\n?",
         "",
         source,
         flags=re.MULTILINE,
     )
-    source = re.sub(r"^[ \t]+\w+\.mount\([^)]*\)\n?", "", source, flags=re.MULTILINE)
+    source = re.sub(r"^[ \t]+\w+\.mount\((?:[^()]*|\([^()]*\))*\)\n?", "", source, flags=re.MULTILINE)
     return source
 
 
@@ -583,6 +583,17 @@ def _load_ukbcd_override_domains() -> set[str]:
     return domains
 
 
+def _domain_in_overrides(domain: str, override_domains: set[str]) -> bool:
+    """Check if domain or any of its parent domains is in the override set."""
+    if domain in override_domains:
+        return True
+    parts = domain.split(".")
+    for i in range(1, len(parts)):
+        if ".".join(parts[i:]) in override_domains:
+            return True
+    return False
+
+
 def _resolve_url(data: dict) -> str | None:
     """Extract the URL from a council's input.json data."""
     return data.get("url") or data.get("wiki_url")
@@ -736,7 +747,7 @@ def _patch_councils(
         else:
             hacs_scraper = None
 
-        if hacs_scraper and domain not in ukbcd_override_domains:
+        if hacs_scraper and not _domain_in_overrides(domain, ukbcd_override_domains):
             stats.skipped_existing += 1
             # Upgrade to HACS scraper_id
             for lad in lad_codes:

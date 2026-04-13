@@ -165,7 +165,7 @@ volumes:
 ### Caddyfile
 
 ```
-bincollection.co.uk {
+ukbindays.co.uk {
     reverse_proxy api:8000
 }
 ```

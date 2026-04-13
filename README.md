@@ -16,15 +16,15 @@ config:
 ---
 sankey-beta
 
-"LAD Codes (343)","HACS (209)",209
-"LAD Codes (343)","UKBCD (88)",88
-"LAD Codes (343)","Not Supported (46)",46
+"LAD Codes (343)","HACS (208)",208
+"LAD Codes (343)","UKBCD (86)",86
+"LAD Codes (343)","Not Supported (49)",49
 
-"HACS (209)","Passing (190)",190
-"HACS (209)","Failing (19)",19
+"HACS (208)","Passing (194)",194
+"HACS (208)","Failing (14)",14
 
-"UKBCD (88)","UKBCD Passing (77)",77
-"UKBCD (88)","UKBCD Failing (11)",11
+"UKBCD (86)","UKBCD Passing (79)",79
+"UKBCD (86)","UKBCD Failing (7)",7
 ```
 
 ## How It Works

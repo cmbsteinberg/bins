@@ -282,9 +282,14 @@ async def all_results(client: httpx.AsyncClient):
     # Regenerate coverage map from fresh results
     import subprocess
 
+    cwd = Path(__file__).parent.parent
     subprocess.run(
         ["uv", "run", "python", "-m", "scripts.coverage.generate_coverage_map"],
-        cwd=Path(__file__).parent.parent,
+        cwd=cwd,
+    )
+    subprocess.run(
+        ["uv", "run", "python", "-m", "scripts.generate_sankey"],
+        cwd=cwd,
     )
 
     return _results_cache

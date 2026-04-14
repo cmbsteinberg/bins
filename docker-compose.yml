@@ -16,6 +16,8 @@ services:
       - SCRAPER_TIMEOUT=${SCRAPER_TIMEOUT:-30}
       - CACHE_TTL=${CACHE_TTL:-50400}
       - RATE_LIMIT_DAILY=${RATE_LIMIT_DAILY:-100}
+      - ADDRESS_API_URL=${ADDRESS_API_URL:-}
+      - ADDRESS_API_COMPANY_ID=${ADDRESS_API_COMPANY_ID:-}
     healthcheck:
       test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000/api/v1/status')"]
       interval: 30s

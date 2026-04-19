@@ -11,24 +11,45 @@
   {% include "partials/nav.html" %}
   <main>
     <h1>About</h1>
-    <p>UK Bin Collections is a free service that helps you find your next bin collection dates by postcode. It aggregates data from hundreds of UK council websites into one simple lookup.</p>
+    <p>UKBinDay is a service designed to make finding out your bin days a little easier. It provides a wrapper around approximately three-quarters of UK council websites into a single search box. It also creates a calendar link for you to help remember!</p>
 
-    <h2>How it works</h2>
-    <p>We maintain scrapers for over 350 UK councils. When you search, we identify your council from your postcode, then fetch your collection schedule directly from your council's website in real time.</p>
-
-    <h2>Open source</h2>
-    <p>This project builds on the work of two excellent open-source projects:</p>
-    <ul>
-      <li><a href="https://github.com/mampfes/hacs_waste_collection_schedule">hacs_waste_collection_schedule</a> &mdash; Home Assistant integration for waste collection schedules</li>
-      <li><a href="https://github.com/robbrad/UKBinCollectionData">UKBinCollectionData</a> &mdash; UK household bin collection data scrapers</li>
-    </ul>
+    <p>This project builds on the work of two open-source projects designed for Home Assistant automation. The contributors to these two projects have done the seriously hard work of figuring out each individual councils website:</p>
+    <p>
+        <a
+            class="gh-link"
+            href="https://github.com/mampfes/hacs_waste_collection_schedule"
+            rel="noopener"
+            target="_blank"
+        >
+            <img
+                class="gh-icon"
+                src="/static/github-mark.svg"
+                alt=""
+                width="16"
+                height="16"
+            />
+            hacs_waste_collection_schedule<span class="sr-only"></span>
+        </a>
+        <a
+            class="gh-link"
+            href="https://github.com/robbrad/UKBinCollectionData"
+            rel="noopener"
+            target="_blank"
+        >
+            <img
+                class="gh-icon"
+                src="/static/github-mark.svg"
+                alt=""
+                width="16"
+                height="16"
+            />
+            UKBinCollectionData<span class="sr-only"> </span>
+        </a>
+    </p>
     <p>Thank you to the maintainers and contributors of both projects.</p>
 
     <h2>API</h2>
-    <p>A free JSON API is available for developers. See the <a href="/api-docs">API documentation</a> for details.</p>
-
-    <h2>Contact</h2>
-    <p>If your collection dates are wrong, use the "Report wrong answer" button on the results page and we'll investigate.</p>
+    <p>A free JSON API is available for the Home Automation community, and whoever else finds this useful. The UPRN endpoint is not publicly exposed, to prevent abuse. See the <a href="/api-docs">API documentation</a> for details.</p>
   </main>
 
   {% include "partials/footer.html" %}

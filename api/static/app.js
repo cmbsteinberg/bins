@@ -28,18 +28,9 @@ $("#postcode-form").addEventListener("submit", async (e) => {
 	btn.setAttribute("aria-busy", "true");
 
 	try {
-		const [addressResp, councilResp] = await Promise.all([
-			fetch(`${API}/addresses/${encodeURIComponent(postcode)}`),
-			fetch(`${API}/council/${encodeURIComponent(postcode)}`),
-		]);
-
-		if (!addressResp.ok) {
-			const err = await addressResp.json().catch(() => ({}));
-			throw new Error(
-				err.detail || `Address lookup failed (${addressResp.status})`,
-			);
-		}
-		const { addresses } = await addressResp.json();
+		const councilResp = await fetch(
+			`${API}/council/${encodeURIComponent(postcode)}`,
+		);
 
 		let council_id = null;
 		let council_name = null;
@@ -47,7 +38,34 @@ $("#postcode-form").addEventListener("submit", async (e) => {
 			const councilData = await councilResp.json();
 			council_id = councilData.council_id;
 			council_name = councilData.council_name;
+		} else {
+			const err = await councilResp.json().catch(() => ({}));
+			showError(
+				err.detail ||
+					`We don't support this council yet (${councilResp.status}).`,
+			);
+			return;
 		}
+
+		if (!council_id) {
+			showError(
+				council_name
+					? `${council_name} council is not supported yet.`
+					: "We couldn't determine a supported council for that postcode.",
+			);
+			return;
+		}
+
+		const addressResp = await fetch(
+			`${API}/addresses/${encodeURIComponent(postcode)}`,
+		);
+		if (!addressResp.ok) {
+			const err = await addressResp.json().catch(() => ({}));
+			throw new Error(
+				err.detail || `Address lookup failed (${addressResp.status})`,
+			);
+		}
+		const { addresses } = await addressResp.json();
 
 		currentData = { addresses, council_id, council_name };
 
@@ -208,6 +226,14 @@ function renderResults(addr, data) {
 	});
 	const calUrl = `${API}/calendar/${encodeURIComponent(addr.uprn)}?${calParams}`;
 
+	const PASSTHROUGH_ICS = {
+		ukbcd_google_public_calendar_council:
+			"https://calendar.google.com/calendar/ical/0d775884b4db6a7bae5204f06dae113c1a36e505b25991ebc27c6bd42edf5b5e%40group.calendar.google.com/public/basic.ics",
+	};
+	const subscribeUrl = PASSTHROUGH_ICS[councilId]
+		? PASSTHROUGH_ICS[councilId].replace(/^https:/, "webcal:")
+		: calUrl;
+
 	if (data.collections.length === 0) {
 		section.innerHTML = `
 			<div>
@@ -219,7 +245,7 @@ function renderResults(addr, data) {
 			</div>
 			<p>No upcoming collections found.</p>
 			<div class="results-actions">
-				<a href="${calUrl}" class="action-btn">Add to Calendar</a>
+				<a href="${subscribeUrl}" class="action-btn">Add to Calendar</a>
 				<button class="action-btn outline" id="report-btn" type="button">Report wrong answer</button>
 				<span id="report-status" role="status" aria-live="polite"></span>
 			</div>`;
@@ -291,7 +317,7 @@ function renderResults(addr, data) {
 		${cards}
 		${accordionHtml}
 		<div class="results-actions">
-			<a href="${calUrl}" class="action-btn">Add to Calendar</a>
+			<a href="${subscribeUrl}" class="action-btn">Add to Calendar</a>
 			<button class="action-btn outline" id="report-btn" type="button">Report wrong answer</button>
 			<span id="report-status" role="status" aria-live="polite"></span>
 		</div>`;

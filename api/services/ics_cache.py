@@ -147,30 +147,28 @@ class IcsCache:
         tmp.write_bytes(content)
         os.replace(tmp, path)
 
-    def _merge_and_prune(
-        self,
-        ics_path: Path,
-        uprn: str,
-        new_collections: list[dict],
-        retention_days: int,
-        today: date,
-    ) -> Calendar:
-        cal = self._load_ics(ics_path)
-        existing_by_uid: dict[str, Event] = {}
-        other_components = []
+    def _split_components(
+        self, cal: Calendar
+    ) -> tuple[dict[str, Event], list]:
+        events_by_uid: dict[str, Event] = {}
+        other_components: list = []
         for comp in cal.subcomponents:
             if comp.name == "VEVENT":
                 uid = str(comp.get("UID", ""))
                 if uid:
-                    existing_by_uid[uid] = comp
+                    events_by_uid[uid] = comp
             else:
                 other_components.append(comp)
+        return events_by_uid, other_components
 
-        now = datetime.now(UTC)
-        cutoff = today - timedelta(days=retention_days)
-
+    def _refresh_existing(
+        self,
+        events_by_uid: dict[str, Event],
+        cutoff: date,
+        now: datetime,
+    ) -> dict[str, Event]:
         merged: dict[str, Event] = {}
-        for uid, ev in existing_by_uid.items():
+        for uid, ev in events_by_uid.items():
             dtstart = ev.get("DTSTART")
             if dtstart is None:
                 continue
@@ -183,7 +181,15 @@ class IcsCache:
                 del ev["DTSTAMP"]
             ev.add("dtstamp", now)
             merged[uid] = ev
+        return merged
 
+    def _merge_new(
+        self,
+        merged: dict[str, Event],
+        new_collections: list[dict],
+        cutoff: date,
+        now: datetime,
+    ) -> None:
         for c in new_collections:
             uid = c["uid"]
             if uid in merged:
@@ -201,17 +207,41 @@ class IcsCache:
                 ev.add("description", c["icon"])
             merged[uid] = ev
 
+    def _build_calendar(
+        self,
+        uprn: str,
+        merged: dict[str, Event],
+        other_components: list,
+        now: datetime,
+    ) -> Calendar:
         new_cal = Calendar()
         new_cal.add("prodid", "-//UK Bin Collections//bins//EN")
         new_cal.add("version", "2.0")
         new_cal.add("x-wr-calname", f"Bin Collections ({uprn})")
         new_cal.add("last-modified", now)
         for comp in other_components:
-            if comp.name not in ("VEVENT",):
-                continue
+            new_cal.add_component(comp)
         for ev in sorted(merged.values(), key=lambda e: e.get("DTSTART").dt):
             new_cal.add_component(ev)
         return new_cal
+
+    def _merge_and_prune(
+        self,
+        ics_path: Path,
+        uprn: str,
+        new_collections: list[dict],
+        retention_days: int,
+        today: date,
+    ) -> Calendar:
+        cal = self._load_ics(ics_path)
+        events_by_uid, other_components = self._split_components(cal)
+
+        now = datetime.now(UTC)
+        cutoff = today - timedelta(days=retention_days)
+
+        merged = self._refresh_existing(events_by_uid, cutoff, now)
+        self._merge_new(merged, new_collections, cutoff, now)
+        return self._build_calendar(uprn, merged, other_components, now)
 
     def _extract_upcoming(self, cal: Calendar, uprn: str, today: date) -> list[dict]:
         items: list[dict] = []

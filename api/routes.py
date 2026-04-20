@@ -81,6 +81,57 @@ def _map_scrape_exception(council: str, exc: Exception) -> HTTPException:
     )
 
 
+def _build_scrape_params(
+    meta, council: str, uprn: str, query_params
+) -> dict[str, str]:
+    params: dict[str, str] = {}
+    if uprn and uprn != "0":
+        params["uprn"] = uprn
+    for key, value in query_params.items():
+        if key != "council" and value:
+            params[key] = value
+    missing = [p for p in meta.required_params if p not in params]
+    if missing:
+        raise HTTPException(
+            status_code=422,
+            detail=f"Missing required parameters for {council}: {missing}. "
+            f"Required: {meta.required_params}, Optional: {meta.optional_params}",
+        )
+    return params
+
+
+async def _get_or_scrape(request, uprn: str, council: str, params: dict[str, str]):
+    """Return (CacheEntry, cached) — handles cache, lock, scrape, write."""
+    cache = request.app.state.ics_cache
+    registry = request.app.state.registry
+    redis_client = getattr(request.app.state, "redis", None)
+
+    entry = await cache.read(uprn)
+    if entry is not None and entry.last_success is not None:
+        return entry, True
+
+    lock_acquired = await _acquire_scrape_lock(redis_client, uprn)
+    try:
+        if not lock_acquired:
+            await asyncio.sleep(0.5)
+            entry = await cache.read(uprn)
+            if entry is not None and entry.last_success is not None:
+                return entry, True
+
+        try:
+            collections = await registry.invoke(council, params)
+            registry.record_success(council)
+        except Exception as exc:
+            registry.record_failure(council, str(exc))
+            await cache.record_failure(uprn, str(exc))
+            raise _map_scrape_exception(council, exc) from exc
+
+        entry = await cache.write(uprn, council, params, collections)
+        return entry, False
+    finally:
+        if lock_acquired:
+            await _release_scrape_lock(redis_client, uprn)
+
 async def _resolve_council(lookup, postcode: str) -> tuple[str | None, str | None]:
     """Resolve postcode to council, raising HTTPException on distinct failures."""
     try:
@@ -181,66 +232,14 @@ async def lookup(
             "Check /api/v1/councils for the list of supported councils.",
         )
 
-    # Build params from path + query, excluding 'council' which is routing-only
-    params: dict[str, str] = {}
-    if uprn and uprn != "0":
-        params["uprn"] = uprn
-    for key, value in request.query_params.items():
-        if key != "council" and value:
-            params[key] = value
-
-    # Validate required params
-    missing = [p for p in meta.required_params if p not in params]
-    if missing:
-        raise HTTPException(
-            status_code=422,
-            detail=f"Missing required parameters for {council}: {missing}. "
-            f"Required: {meta.required_params}, Optional: {meta.optional_params}",
-        )
-
-    cache = request.app.state.ics_cache
-    redis_client = getattr(request.app.state, "redis", None)
-
-    entry = await cache.read(uprn)
-    if entry is not None and entry.last_success is not None:
-        return LookupResponse(
-            uprn=uprn,
-            council=council,
-            cached=True,
-            cached_at=entry.last_success,
-            collections=[CollectionItem(**c) for c in entry.collections],
-        )
-
-    lock_acquired = await _acquire_scrape_lock(redis_client, uprn)
-    if not lock_acquired:
-        await asyncio.sleep(0.5)
-        entry = await cache.read(uprn)
-        if entry is not None and entry.last_success is not None:
-            return LookupResponse(
-                uprn=uprn,
-                council=council,
-                cached=True,
-                cached_at=entry.last_success,
-                collections=[CollectionItem(**c) for c in entry.collections],
-            )
-
-    try:
-        try:
-            collections = await registry.invoke(council, params)
-            registry.record_success(council)
-        except Exception as exc:
-            registry.record_failure(council, str(exc))
-            await cache.record_failure(uprn, str(exc))
-            raise _map_scrape_exception(council, exc) from exc
-
-        entry = await cache.write(uprn, council, params, collections)
-    finally:
-        if lock_acquired:
-            await _release_scrape_lock(redis_client, uprn)
+    params = _build_scrape_params(meta, council, uprn, request.query_params)
+    entry, cached = await _get_or_scrape(request, uprn, council, params)
 
     return LookupResponse(
         uprn=uprn,
         council=council,
+        cached=cached,
+        cached_at=entry.last_success if cached else None,
         collections=[CollectionItem(**c) for c in entry.collections],
     )
 
@@ -263,39 +262,10 @@ async def calendar(
             "Check /api/v1/councils for the list of supported councils.",
         )
 
-    params: dict[str, str] = {}
-    if uprn and uprn != "0":
-        params["uprn"] = uprn
-    for key, value in request.query_params.items():
-        if key != "council" and value:
-            params[key] = value
-
-    missing = [p for p in meta.required_params if p not in params]
-    if missing:
-        raise HTTPException(
-            status_code=422,
-            detail=f"Missing required parameters for {council}: {missing}",
-        )
+    params = _build_scrape_params(meta, council, uprn, request.query_params)
+    await _get_or_scrape(request, uprn, council, params)
 
     cache = request.app.state.ics_cache
-    redis_client = getattr(request.app.state, "redis", None)
-
-    entry = await cache.read(uprn)
-    if entry is None or entry.last_success is None:
-        lock_acquired = await _acquire_scrape_lock(redis_client, uprn)
-        try:
-            try:
-                collections = await registry.invoke(council, params)
-                registry.record_success(council)
-            except Exception as exc:
-                registry.record_failure(council, str(exc))
-                await cache.record_failure(uprn, str(exc))
-                raise _map_scrape_exception(council, exc) from exc
-            await cache.write(uprn, council, params, collections)
-        finally:
-            if lock_acquired:
-                await _release_scrape_lock(redis_client, uprn)
-
     ics_bytes = await cache.read_ics_bytes(uprn)
     if ics_bytes is None:
         raise HTTPException(

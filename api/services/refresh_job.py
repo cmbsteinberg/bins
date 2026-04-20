@@ -3,6 +3,7 @@ from __future__ import annotations
 import asyncio
 import json
 import logging
+import os
 import time
 from dataclasses import asdict, dataclass
 from datetime import UTC, date, datetime, timedelta
@@ -10,6 +11,7 @@ from pathlib import Path
 
 from api import config
 from api.services.ics_cache import IcsCache
+from api.services.scrape_lock import acquire, release
 from api.services.scraper_registry import ScraperRegistry
 
 logger = logging.getLogger(__name__)
@@ -43,51 +45,88 @@ class RefreshJob:
         self.last_run: datetime | None = None
         self.last_stats: RefreshStats | None = None
 
-    def _eligible(self, next_collection: date | None, today: date) -> bool:
-        if next_collection is None:
+    def _eligible(self, entry, today: date) -> bool:
+        if entry.next_collection is None:
             return True
-        return next_collection <= today + timedelta(days=1)
+        if entry.next_collection > today + timedelta(days=1):
+            return False
+        if entry.last_success is not None:
+            last = entry.last_success
+            if last.tzinfo is None:
+                last = last.replace(tzinfo=UTC)
+            age = datetime.now(UTC) - last
+            if age < timedelta(hours=config.ICS_REFRESH_MIN_AGE_HOURS):
+                return False
+        return True
+
+    async def _refresh_one(self, entry, stats: RefreshStats) -> None:
+        lock_acquired = await acquire(self.redis, entry.uprn)
+        if not lock_acquired:
+            stats.skipped += 1
+            return
+        try:
+            try:
+                collections = await self.registry.invoke(entry.scraper, entry.params)
+                self.registry.record_success(entry.scraper)
+                await self.cache.write(
+                    entry.uprn, entry.scraper, entry.params, collections
+                )
+                stats.refreshed += 1
+            except Exception as exc:
+                self.registry.record_failure(entry.scraper, str(exc))
+                await self.cache.record_failure(
+                    entry.uprn,
+                    str(exc),
+                    scraper_id=entry.scraper,
+                    params=entry.params,
+                )
+                stats.failed += 1
+                new_entry = await self.cache.read(entry.uprn)
+                if (
+                    new_entry is not None
+                    and new_entry.consecutive_failures >= self.failure_threshold
+                ):
+                    await self.cache.delete(entry.uprn)
+                    stats.deleted += 1
+                logger.warning(
+                    "Refresh failed for %s (%s): %s",
+                    entry.uprn,
+                    entry.scraper,
+                    exc,
+                )
+        finally:
+            await release(self.redis, entry.uprn)
 
     async def run_once(self) -> RefreshStats:
         stats = RefreshStats()
         start = time.monotonic()
         today = date.today()
-        sem = asyncio.Semaphore(self.concurrency)
 
-        async def handle(entry) -> None:
-            async with sem:
+        queue: asyncio.Queue = asyncio.Queue()
+
+        async def worker() -> None:
+            while True:
+                entry = await queue.get()
                 try:
-                    collections = await self.registry.invoke(entry.scraper, entry.params)
-                    self.registry.record_success(entry.scraper)
-                    await self.cache.write(
-                        entry.uprn, entry.scraper, entry.params, collections
-                    )
-                    stats.refreshed += 1
-                except Exception as exc:
-                    self.registry.record_failure(entry.scraper, str(exc))
-                    await self.cache.record_failure(entry.uprn, str(exc))
-                    stats.failed += 1
-                    new_entry = await self.cache.read(entry.uprn)
-                    if (
-                        new_entry is not None
-                        and new_entry.consecutive_failures >= self.failure_threshold
-                    ):
-                        await self.cache.delete(entry.uprn)
-                        stats.deleted += 1
-                    logger.warning(
-                        "Refresh failed for %s (%s): %s", entry.uprn, entry.scraper, exc
-                    )
+                    if entry is None:
+                        return
+                    await self._refresh_one(entry, stats)
+                finally:
+                    queue.task_done()
 
-        tasks = []
+        workers = [asyncio.create_task(worker()) for _ in range(self.concurrency)]
+
         for entry in self.cache.iter_entries():
             stats.scanned += 1
-            if not self._eligible(entry.next_collection, today):
+            if not self._eligible(entry, today):
                 stats.skipped += 1
                 continue
-            tasks.append(asyncio.create_task(handle(entry)))
+            await queue.put(entry)
 
-        if tasks:
-            await asyncio.gather(*tasks)
+        await queue.join()
+        for _ in workers:
+            await queue.put(None)
+        await asyncio.gather(*workers, return_exceptions=True)
 
         stats.duration_s = round(time.monotonic() - start, 2)
         self.last_run = datetime.now(UTC)
@@ -99,14 +138,15 @@ class RefreshJob:
     def _write_heartbeat(self, stats: RefreshStats) -> None:
         try:
             path = Path(config.DATA_DIR) / ".worker_heartbeat"
-            path.write_text(
-                json.dumps(
-                    {
-                        "last_run": self.last_run.isoformat() if self.last_run else None,
-                        "stats": asdict(stats),
-                    }
-                )
-            )
+            payload = json.dumps(
+                {
+                    "last_run": self.last_run.isoformat() if self.last_run else None,
+                    "stats": asdict(stats),
+                }
+            ).encode()
+            tmp = path.with_suffix(path.suffix + ".tmp")
+            tmp.write_bytes(payload)
+            os.replace(tmp, path)
         except OSError:
             logger.debug("Failed to write heartbeat", exc_info=True)
 
@@ -137,8 +177,6 @@ async def _main() -> None:
     cache = IcsCache(Path(config.DATA_DIR) / config.ICS_CACHE_SUBDIR)
     registry = ScraperRegistry.build()
     redis_client = None
-    import os
-
     redis_url = os.getenv("REDIS_URL")
     if redis_url:
         try:
@@ -157,6 +195,8 @@ async def _main() -> None:
         concurrency=config.ICS_REFRESH_CONCURRENCY,
         failure_threshold=config.ICS_FAILURE_THRESHOLD,
     )
+    if os.getenv("RUN_REFRESH_NOW") == "1":
+        await job.run_once()
     await job.run_forever(hour_utc=config.ICS_REFRESH_HOUR_UTC)
 
 

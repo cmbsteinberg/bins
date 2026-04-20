@@ -113,6 +113,9 @@ class IcsCache:
         )
 
     async def read(self, uprn: str) -> CacheEntry | None:
+        return await asyncio.to_thread(self._read_sync, uprn)
+
+    def _read_sync(self, uprn: str) -> CacheEntry | None:
         ics_path, sidecar_path = self.paths_for(uprn)
         if not ics_path.exists() or not sidecar_path.exists():
             return None
@@ -124,6 +127,9 @@ class IcsCache:
         return self._build_entry(data)
 
     async def read_ics_bytes(self, uprn: str) -> bytes | None:
+        return await asyncio.to_thread(self._read_ics_bytes_sync, uprn)
+
+    def _read_ics_bytes_sync(self, uprn: str) -> bytes | None:
         ics_path, _ = self.paths_for(uprn)
         if not ics_path.exists():
             return None
@@ -136,7 +142,7 @@ class IcsCache:
         if ics_path.exists():
             try:
                 return Calendar.from_ical(ics_path.read_bytes())
-            except Exception:
+            except (ValueError, OSError):
                 logger.warning("Failed to parse existing ICS %s — rebuilding", ics_path)
         cal = Calendar()
         cal.add("prodid", "-//UK Bin Collections//bins//EN")
@@ -270,7 +276,7 @@ class IcsCache:
                 }
             )
         items.sort(key=lambda x: x["date"])
-        return items[:60]
+        return items[: config.ICS_SIDECAR_UPCOMING_LIMIT]
 
     async def write(
         self,
@@ -280,60 +286,100 @@ class IcsCache:
         collections: list[Collection],
     ) -> CacheEntry:
         async with self._lock_for(uprn):
-            ics_path, sidecar_path = self.paths_for(uprn)
-            today = date.today()
-            new_dicts = _collection_dicts(collections, uprn)
-
-            cal = self._merge_and_prune(
-                ics_path, uprn, new_dicts, config.ICS_RETENTION_DAYS, today
+            return await asyncio.to_thread(
+                self._write_sync, uprn, scraper_id, params, collections
             )
-            self._atomic_write(ics_path, cal.to_ical())
 
-            upcoming = self._extract_upcoming(cal, uprn, today)
-            next_collection = upcoming[0]["date"] if upcoming else None
+    def _write_sync(
+        self,
+        uprn: str,
+        scraper_id: str,
+        params: dict[str, str],
+        collections: list[Collection],
+    ) -> CacheEntry:
+        ics_path, sidecar_path = self.paths_for(uprn)
+        today = date.today()
+        new_dicts = _collection_dicts(collections, uprn)
 
-            now = datetime.now(UTC)
-            existing: dict = {}
-            if sidecar_path.exists():
-                try:
-                    existing = json.loads(sidecar_path.read_text())
-                except (OSError, json.JSONDecodeError):
-                    existing = {}
+        cal = self._merge_and_prune(
+            ics_path, uprn, new_dicts, config.ICS_RETENTION_DAYS, today
+        )
+        self._atomic_write(ics_path, cal.to_ical())
 
-            sidecar = {
-                "uprn": uprn,
-                "scraper": scraper_id,
-                "params": params,
-                "created_at": existing.get("created_at") or _iso_utc(now),
-                "last_scraped": _iso_utc(now),
-                "last_success": _iso_utc(now),
-                "last_error": None,
-                "consecutive_failures": 0,
-                "next_collection": next_collection,
-                "collections": upcoming,
-            }
-            self._atomic_write(
-                sidecar_path,
-                json.dumps(sidecar, indent=2, default=str).encode(),
-            )
-            return self._build_entry(sidecar)
+        upcoming = self._extract_upcoming(cal, uprn, today)
+        next_collection = upcoming[0]["date"] if upcoming else None
 
-    async def record_failure(self, uprn: str, error: str) -> None:
+        now = datetime.now(UTC)
+        existing: dict = {}
+        if sidecar_path.exists():
+            try:
+                existing = json.loads(sidecar_path.read_text())
+            except (OSError, json.JSONDecodeError):
+                existing = {}
+
+        sidecar = {
+            "uprn": uprn,
+            "scraper": scraper_id,
+            "params": params,
+            "created_at": existing.get("created_at") or _iso_utc(now),
+            "last_scraped": _iso_utc(now),
+            "last_success": _iso_utc(now),
+            "last_error": None,
+            "consecutive_failures": 0,
+            "next_collection": next_collection,
+            "collections": upcoming,
+        }
+        self._atomic_write(
+            sidecar_path,
+            json.dumps(sidecar, indent=2, default=str).encode(),
+        )
+        return self._build_entry(sidecar)
+
+    async def record_failure(
+        self,
+        uprn: str,
+        error: str,
+        *,
+        scraper_id: str = "",
+        params: dict[str, str] | None = None,
+    ) -> None:
         async with self._lock_for(uprn):
-            _, sidecar_path = self.paths_for(uprn)
-            if not sidecar_path.exists():
-                return
+            await asyncio.to_thread(
+                self._record_failure_sync, uprn, error, scraper_id, params or {}
+            )
+
+    def _record_failure_sync(
+        self,
+        uprn: str,
+        error: str,
+        scraper_id: str,
+        params: dict[str, str],
+    ) -> None:
+        _, sidecar_path = self.paths_for(uprn)
+        now_iso = _iso_utc(datetime.now(UTC))
+        data: dict = {}
+        if sidecar_path.exists():
             try:
                 data = json.loads(sidecar_path.read_text())
             except (OSError, json.JSONDecodeError):
-                return
-            data["last_scraped"] = _iso_utc(datetime.now(UTC))
-            data["last_error"] = error[:500]
-            data["consecutive_failures"] = int(data.get("consecutive_failures", 0)) + 1
-            self._atomic_write(
-                sidecar_path,
-                json.dumps(data, indent=2, default=str).encode(),
-            )
+                data = {}
+        if not data:
+            data = {
+                "uprn": uprn,
+                "scraper": scraper_id,
+                "params": params,
+                "created_at": now_iso,
+                "last_success": None,
+                "next_collection": None,
+                "collections": [],
+            }
+        data["last_scraped"] = now_iso
+        data["last_error"] = error[:500]
+        data["consecutive_failures"] = int(data.get("consecutive_failures", 0)) + 1
+        self._atomic_write(
+            sidecar_path,
+            json.dumps(data, indent=2, default=str).encode(),
+        )
 
     def iter_entries(self) -> Iterator[CacheEntry]:
         for sidecar_path in sorted(self.root.glob("*.json")):
@@ -347,9 +393,15 @@ class IcsCache:
 
     async def delete(self, uprn: str) -> None:
         async with self._lock_for(uprn):
-            ics_path, sidecar_path = self.paths_for(uprn)
-            for p in (ics_path, sidecar_path):
-                try:
-                    p.unlink()
-                except FileNotFoundError:
-                    pass
+            await asyncio.to_thread(self._delete_sync, uprn)
+
+    def _delete_sync(self, uprn: str) -> None:
+        ics_path, sidecar_path = self.paths_for(uprn)
+        for p in (ics_path, sidecar_path):
+            try:
+                p.unlink()
+            except FileNotFoundError:
+                pass
+
+    def count_entries(self) -> int:
+        return sum(1 for _ in self.root.glob("*.json"))

@@ -2,23 +2,26 @@ from __future__ import annotations
 
 import asyncio
 import logging
+import re
 
 import httpx
 from fastapi import APIRouter, Depends, HTTPException, Request
 from fastapi.responses import Response
 from pydantic import BaseModel
 
+from api import config
 from api.compat.hacs.exceptions import (
     SourceArgumentException,
     SourceArgumentExceptionMultiple,
 )
-from api.config import CACHE_TTL, RATE_LIMIT_DAILY, SCRAPER_TIMEOUT
+from api.config import RATE_LIMIT_DAILY, SCRAPER_TIMEOUT
 from api.services import address_lookup
 from api.services.council_lookup import LookupDatabaseError, PostcodeNotFoundError
 from api.services.models import (
     AddressLookupResponse,
     AddressResult,
     CollectionItem,
+    CouncilCandidate,
     CouncilInfo,
     CouncilLookupResponse,
     HealthEntry,
@@ -26,6 +29,7 @@ from api.services.models import (
     SystemHealth,
 )
 from api.services.rate_limiting import rate_limit
+from api.services.scrape_lock import acquire, release
 from api.services.scraper_registry import ScraperTimeoutError
 
 logger = logging.getLogger(__name__)
@@ -33,25 +37,11 @@ logger = logging.getLogger(__name__)
 router = APIRouter()
 
 
-async def _acquire_scrape_lock(redis_client, uprn: str) -> bool:
-    if redis_client is None:
-        return True
-    try:
-        return bool(
-            await redis_client.set(f"scrape-lock:{uprn}", "1", nx=True, ex=30)
-        )
-    except Exception:
-        logger.warning("Scrape lock acquire failed", exc_info=True)
-        return True
+_UPRN_RE = re.compile(r"^[0-9]{1,20}$")
 
 
-async def _release_scrape_lock(redis_client, uprn: str) -> None:
-    if redis_client is None:
-        return
-    try:
-        await redis_client.delete(f"scrape-lock:{uprn}")
-    except Exception:
-        pass
+def _safe_uprn_filename(uprn: str) -> str:
+    return uprn if _UPRN_RE.match(uprn) else "unknown"
 
 
 def _map_scrape_exception(council: str, exc: Exception) -> HTTPException:
@@ -110,31 +100,39 @@ async def _get_or_scrape(request, uprn: str, council: str, params: dict[str, str
     if entry is not None and entry.last_success is not None:
         return entry, True
 
-    lock_acquired = await _acquire_scrape_lock(redis_client, uprn)
-    try:
-        if not lock_acquired:
-            await asyncio.sleep(0.5)
+    lock_acquired = await acquire(redis_client, uprn)
+    if not lock_acquired:
+        deadline = asyncio.get_event_loop().time() + config.SCRAPE_LOCK_MAX_WAIT_S
+        while asyncio.get_event_loop().time() < deadline:
+            await asyncio.sleep(config.SCRAPE_LOCK_POLL_INTERVAL_S)
             entry = await cache.read(uprn)
             if entry is not None and entry.last_success is not None:
                 return entry, True
+        raise HTTPException(
+            status_code=503,
+            detail="Another request is already fetching this schedule. "
+            "Please try again in a few seconds.",
+        )
 
+    try:
         try:
             collections = await registry.invoke(council, params)
             registry.record_success(council)
         except Exception as exc:
             registry.record_failure(council, str(exc))
-            await cache.record_failure(uprn, str(exc))
+            await cache.record_failure(
+                uprn, str(exc), scraper_id=council, params=params
+            )
             raise _map_scrape_exception(council, exc) from exc
 
         entry = await cache.write(uprn, council, params, collections)
         return entry, False
     finally:
-        if lock_acquired:
-            await _release_scrape_lock(redis_client, uprn)
+        await release(redis_client, uprn)
 
 async def _resolve_council(
     request: Request, lookup, postcode: str
-) -> tuple[str, str]:
+) -> tuple[str | None, str | None, list[CouncilCandidate]]:
     """Resolve postcode to a single council, raising HTTPException otherwise."""
     request_id = getattr(request.state, "request_id", None)
     log_extra = {"request_id": request_id, "postcode": postcode}
@@ -169,7 +167,7 @@ async def _resolve_council(
                 detail=f"We found your council ({authority.name}) but don't have "
                 "a scraper for it yet. Check /api/v1/councils for supported councils.",
             )
-        return authority.slug, authority.name
+        return authority.slug, authority.name, []
 
     logger.info(
         "Ambiguous postcode: %d candidate councils",
@@ -177,18 +175,11 @@ async def _resolve_council(
         extra=log_extra,
     )
     candidates = [
-        {"slug": a.slug, "name": a.name, "homepage_url": a.homepage_url}
+        CouncilCandidate(slug=a.slug, name=a.name, homepage_url=a.homepage_url)
         for a in authorities
         if a.slug
     ]
-    raise HTTPException(
-        status_code=300,
-        detail={
-            "message": "This postcode straddles multiple councils. "
-            "Please pick the one that covers your address.",
-            "candidates": candidates,
-        },
-    )
+    return None, None, candidates
 
 
 @router.get("/addresses/{postcode}", response_model=AddressLookupResponse)
@@ -232,12 +223,15 @@ async def council_lookup(
     _rate_limit: None = Depends(rate_limit),
 ):
     lookup = request.app.state.council_lookup
-    council_id, council_name = await _resolve_council(request, lookup, postcode)
+    council_id, council_name, candidates = await _resolve_council(
+        request, lookup, postcode
+    )
 
     return CouncilLookupResponse(
         postcode=postcode.strip().upper(),
         council_id=council_id,
         council_name=council_name,
+        candidates=candidates,
     )
 
 
@@ -299,10 +293,13 @@ async def calendar(
             status_code=503,
             detail="Calendar temporarily unavailable. Please try again later.",
         )
+    safe_name = _safe_uprn_filename(uprn)
     return Response(
         content=ics_bytes,
         media_type="text/calendar",
-        headers={"Content-Disposition": f'attachment; filename="bins-{uprn}.ics"'},
+        headers={
+            "Content-Disposition": f'attachment; filename="bins-{safe_name}.ics"'
+        },
     )
 
 
@@ -396,7 +393,7 @@ async def metrics(request: Request):
     ics_info = None
     if ics_cache is not None:
         ics_info = {
-            "entries": sum(1 for _ in ics_cache.iter_entries()),
+            "entries": ics_cache.count_entries(),
             "last_refresh": refresh_job.last_run.isoformat()
             if refresh_job and refresh_job.last_run
             else None,
@@ -420,9 +417,9 @@ async def metrics(request: Request):
         },
         "ics_cache": ics_info,
         "config": {
-            "cache_ttl": CACHE_TTL,
             "scraper_timeout": SCRAPER_TIMEOUT,
             "rate_limit_daily": RATE_LIMIT_DAILY,
+            "ics_retention_days": config.ICS_RETENTION_DAYS,
         },
     }
 

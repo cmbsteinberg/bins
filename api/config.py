@@ -13,9 +13,6 @@ def _int_env(key: str, default: int) -> int:
 # Scraper invocation
 SCRAPER_TIMEOUT: int = _int_env("SCRAPER_TIMEOUT", 30)
 
-# Redis cache (deprecated — kept only for /metrics until followup removes it)
-CACHE_TTL: int = _int_env("CACHE_TTL", 72 * 3600)
-
 # ICS cache
 DATA_DIR: str = os.getenv("DATA_DIR", "data")
 ICS_CACHE_SUBDIR: str = "calendars"
@@ -23,7 +20,17 @@ ICS_RETENTION_DAYS: int = _int_env("ICS_RETENTION_DAYS", 365)
 ICS_REFRESH_HOUR_UTC: int = _int_env("ICS_REFRESH_HOUR_UTC", 3)
 ICS_REFRESH_CONCURRENCY: int = _int_env("ICS_REFRESH_CONCURRENCY", 4)
 ICS_FAILURE_THRESHOLD: int = _int_env("ICS_FAILURE_THRESHOLD", 14)
+ICS_SIDECAR_UPCOMING_LIMIT: int = _int_env("ICS_SIDECAR_UPCOMING_LIMIT", 60)
+ICS_REFRESH_MIN_AGE_HOURS: int = _int_env("ICS_REFRESH_MIN_AGE_HOURS", 12)
 RUN_REFRESH_JOB: bool = os.getenv("RUN_REFRESH_JOB", "1") != "0"
+
+# Scrape coalescing (API inline scrape on cache miss)
+SCRAPE_LOCK_POLL_INTERVAL_S: float = float(
+    os.getenv("SCRAPE_LOCK_POLL_INTERVAL_S", "0.5")
+)
+SCRAPE_LOCK_MAX_WAIT_S: float = float(
+    os.getenv("SCRAPE_LOCK_MAX_WAIT_S", "15")
+)
 
 # Rate limiting
 RATE_LIMIT_DAILY: int = _int_env("RATE_LIMIT_DAILY", 100)

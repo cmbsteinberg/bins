@@ -27,6 +27,7 @@ class ScraperMeta:
     url: str
     required_params: list[str]
     optional_params: list[str]
+    passthrough_url: str | None = None
 
 
 @dataclass
@@ -67,6 +68,7 @@ class ScraperRegistry:
 
                 title = getattr(module, "TITLE", name)
                 url = getattr(module, "URL", "")
+                passthrough_url = getattr(module, "PASSTHROUGH_URL", None)
 
                 sig = inspect.signature(module.Source.__init__)
                 required = []
@@ -86,6 +88,7 @@ class ScraperRegistry:
                     url=url,
                     required_params=required,
                     optional_params=optional,
+                    passthrough_url=passthrough_url,
                 )
                 loaded += 1
             except Exception:

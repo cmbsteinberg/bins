@@ -6,7 +6,7 @@ import re
 
 import httpx
 from fastapi import APIRouter, Depends, HTTPException, Request
-from fastapi.responses import Response
+from fastapi.responses import RedirectResponse, Response
 from pydantic import BaseModel
 
 from api import config
@@ -129,6 +129,20 @@ async def _get_or_scrape(request, uprn: str, council: str, params: dict[str, str
         return entry, False
     finally:
         await release(redis_client, uprn)
+
+
+async def _live_scrape(
+    request: Request, council: str, params: dict[str, str]
+):
+    """Invoke the scraper without touching the ICS cache."""
+    registry = request.app.state.registry
+    try:
+        collections = await registry.invoke(council, params)
+        registry.record_success(council)
+    except Exception as exc:
+        registry.record_failure(council, str(exc))
+        raise _map_scrape_exception(council, exc) from exc
+    return collections
 
 async def _resolve_council(
     request: Request, lookup, postcode: str
@@ -254,8 +268,21 @@ async def lookup(
         )
 
     params = _build_scrape_params(meta, council, uprn, request.query_params)
-    entry, cached = await _get_or_scrape(request, uprn, council, params)
 
+    if meta.passthrough_url:
+        collections = await _live_scrape(request, council, params)
+        return LookupResponse(
+            uprn=uprn,
+            council=council,
+            cached=False,
+            cached_at=None,
+            collections=[
+                CollectionItem(date=c.date, type=c.type, icon=c.icon)
+                for c in collections
+            ],
+        )
+
+    entry, cached = await _get_or_scrape(request, uprn, council, params)
     return LookupResponse(
         uprn=uprn,
         council=council,
@@ -284,6 +311,10 @@ async def calendar(
         )
 
     params = _build_scrape_params(meta, council, uprn, request.query_params)
+
+    if meta.passthrough_url:
+        return RedirectResponse(url=meta.passthrough_url, status_code=302)
+
     await _get_or_scrape(request, uprn, council, params)
 
     cache = request.app.state.ics_cache

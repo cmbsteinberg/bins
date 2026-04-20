@@ -44,6 +44,7 @@ from api.compat.hacs import Collection  # type: ignore[attr-defined]
 
 TITLE = "Google Calendar (Public)"
 URL = "https://calendar.google.com/calendar/ical/0d775884b4db6a7bae5204f06dae113c1a36e505b25991ebc27c6bd42edf5b5e%40group.calendar.google.com/public/basic.ics"
+PASSTHROUGH_URL = URL
 TEST_CASES = {}
 
 

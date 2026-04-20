@@ -63,15 +63,11 @@ jobs:
           name: integration-results
           path: tests/integration_output.json
 
-      - name: Update README badge and sankey
-        if: always()
-        run: uv run python -m scripts.generate_sankey
-
-      - name: Commit updated badge and README
+      - name: Commit regenerated artefacts
         if: always()
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add badge_coverage.json README.md
-          git diff --staged --quiet || git commit -m "Update coverage badge and sankey [skip ci]"
+          git add -A
+          git diff --staged --quiet || git commit -m "Update post-integration artefacts [skip ci]"
           git push

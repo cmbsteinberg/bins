@@ -15,6 +15,10 @@ logger = logging.getLogger(__name__)
 
 SCRAPERS_DIR = Path(__file__).parent.parent / "scrapers"
 
+_PASSTHROUGH_SCRAPER_IDS: set[str] = {
+    "ukbcd_google_public_calendar_council",
+}
+
 
 class ScraperTimeoutError(Exception):
     """Raised when a scraper exceeds the allowed timeout."""
@@ -68,7 +72,9 @@ class ScraperRegistry:
 
                 title = getattr(module, "TITLE", name)
                 url = getattr(module, "URL", "")
-                passthrough_url = getattr(module, "PASSTHROUGH_URL", None)
+                passthrough_url = (
+                    url if name in _PASSTHROUGH_SCRAPER_IDS else None
+                )
 
                 sig = inspect.signature(module.Source.__init__)
                 required = []

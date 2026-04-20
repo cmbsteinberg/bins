@@ -77,6 +77,9 @@ COMPAT_SERVICE_FILES=(
     "ICS.py"
     "SSLError.py"
     "uk_cloud9_apps.py"
+    "AchieveForms.py"
+    "FirmstepSelfService.py"
+    "WhitespaceWRP.py"
 )
 
 mkdir -p "${COMPAT_DIR}/service"

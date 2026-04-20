@@ -41,7 +41,7 @@ class Source:
 
     async def fetch(self):
         session = httpx.AsyncClient(follow_redirects=True)
-        form_inputs = get_hidden_form_inputs(session, FORM_URL)
+        form_inputs = await get_hidden_form_inputs(session, FORM_URL)
         required = {"__RequestVerificationToken", "FormGuid", "ObjectTemplateID", "CurrentSectionID"}
         if not required.issubset(form_inputs.keys()):
             raise ValueError("Unable to read South Kesteven form metadata")
@@ -88,7 +88,7 @@ class Source:
 
         # If the new flow does not yield rows, try postcode lookup then resubmit.
         if not collections and not self._address_id.startswith("U"):
-            addresses = lookup_addresses(
+            addresses = await lookup_addresses(
                 session, ADDRESS_LOOKUP_URL, self._address_id, search_nlpg="False"
             )
             if addresses:

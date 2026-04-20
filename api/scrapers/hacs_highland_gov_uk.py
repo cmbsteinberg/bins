@@ -39,9 +39,9 @@ class Source:
 
     async def fetch(self) -> list[Collection]:
         session = httpx.AsyncClient(follow_redirects=True)
-        sid = init_session(session, INITIAL_URL, AUTH_URL, HOSTNAME)
+        sid = await init_session(session, INITIAL_URL, AUTH_URL, HOSTNAME)
 
-        result = run_lookup(
+        result = await run_lookup(
             session,
             API_URL,
             sid,

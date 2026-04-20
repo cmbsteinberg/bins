@@ -35,7 +35,7 @@ class Source:
 
     async def fetch(self):
         session = httpx.AsyncClient(follow_redirects=True)
-        sid = init_session(session, INITIAL_URL, AUTH_URL, HOSTNAME)
+        sid = await init_session(session, INITIAL_URL, AUTH_URL, HOSTNAME)
 
         # Stevenage-specific: GET a one-time token before the main lookup
         t = await session.get(TOKEN_URL)
@@ -53,7 +53,7 @@ class Source:
             }
         }
 
-        result = run_lookup(session, API_URL, sid, LOOKUP_ID, form_values)
+        result = await run_lookup(session, API_URL, sid, LOOKUP_ID, form_values)
         rows_data = result["integration"]["transformed"]["rows_data"]
         if not isinstance(rows_data, dict):
             raise ValueError("Invalid data returned from API")

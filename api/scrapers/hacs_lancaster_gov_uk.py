@@ -43,7 +43,7 @@ class Source:
         self._client = WhitespaceClient(API_URL)
 
     async def fetch(self):
-        schedule = self._client.fetch_schedule(
+        schedule = await self._client.fetch_schedule(
             address_name_number=self._house_number,
             address_postcode=self._postcode,
             address_street="",

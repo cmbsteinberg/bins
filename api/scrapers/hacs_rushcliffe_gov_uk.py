@@ -65,9 +65,9 @@ class Source:
         s.headers.update(header)
 
         args: dict[str, str] = POST_ARGS.copy()
-        args["__RequestVerificationToken"] = get_verification_token(s, API_URL)
+        args["__RequestVerificationToken"] = await get_verification_token(s, API_URL)
 
-        addresses = lookup_addresses(s, ADDRESS_LOOKUP, self._postcode)
+        addresses = await lookup_addresses(s, ADDRESS_LOOKUP, self._postcode)
 
         args[POST_POST_UPRN_KEY] = next(
             (

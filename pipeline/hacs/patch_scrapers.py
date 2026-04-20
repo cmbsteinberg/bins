@@ -16,6 +16,19 @@ from pathlib import Path
 
 from pipeline.shared import load_overrides
 
+# Service modules in api.compat.hacs.service that expose async helpers.
+# Any call to these names (as bare function or .attr method) must be awaited,
+# and the enclosing method must be made async. Keep in sync with patch_compat.py.
+ASYNC_SERVICE_SYMBOLS: dict[str, set[str]] = {
+    "AchieveForms": {"init_session", "run_lookup"},
+    "FirmstepSelfService": {
+        "get_hidden_form_inputs",
+        "get_verification_token",
+        "lookup_addresses",
+    },
+    "WhitespaceWRP": {"fetch_schedule"},
+}
+
 
 class SourceRewriter:
     """Collects edits (indexed by line/col) and applies them in reverse order."""
@@ -105,6 +118,7 @@ class _AnalysisResult:
     session_var_names: set[str] = field(default_factory=set)
     init_session_attr: str | None = None
     methods_needing_async: set[str] = field(default_factory=set)
+    async_callables: set[str] = field(default_factory=set)
 
 
 def _analyse_import_node(node: ast.Import, result: _AnalysisResult) -> None:
@@ -128,6 +142,10 @@ def _analyse_import_from_node(node: ast.ImportFrom, result: _AnalysisResult) -> 
         result.has_curl_cffi_import = True
     if mod == "time" and any(a.name == "sleep" for a in node.names):
         result.has_from_time_import_sleep = True
+    if mod.startswith("waste_collection_schedule.service."):
+        module_tail = mod.rsplit(".", 1)[-1]
+        if module_tail in ASYNC_SERVICE_SYMBOLS:
+            result.async_callables.update(ASYNC_SERVICE_SYMBOLS[module_tail])
 
 
 def _analyse_imports(tree: ast.Module, result: _AnalysisResult) -> None:
@@ -189,18 +207,37 @@ def _analyse_time_usage(tree: ast.Module, result: _AnalysisResult) -> None:
                 result.uses_time_other = True
 
 
-def _method_needs_async(func: ast.FunctionDef, init_session_attr: str | None) -> bool:
-    """Check if a helper method directly needs async (uses sessions or requests)."""
+def _method_needs_async(
+    func: ast.FunctionDef,
+    init_session_attr: str | None,
+    async_callables: set[str],
+) -> bool:
+    """Check if a helper method directly needs async (uses sessions, requests,
+    or calls an async service helper)."""
     param_names = {a.arg for a in func.args.args}
     if param_names & {"s", "session"}:
         return True
     if init_session_attr and _body_uses_attr(func, "self", init_session_attr):
         return True
-    return any(
-        isinstance(n, ast.Call)
-        and (_is_bare_requests_call(n) or _is_requests_session(n))
-        for n in ast.walk(func)
-    )
+    for n in ast.walk(func):
+        if isinstance(n, ast.Call):
+            if _is_bare_requests_call(n) or _is_requests_session(n):
+                return True
+            if _call_matches_async_helper(n, async_callables):
+                return True
+    return False
+
+
+def _call_matches_async_helper(node: ast.Call, async_callables: set[str]) -> bool:
+    """Check if a Call node targets one of the known async service helpers."""
+    if not async_callables:
+        return False
+    func = node.func
+    if isinstance(func, ast.Name) and func.id in async_callables:
+        return True
+    if isinstance(func, ast.Attribute) and func.attr in async_callables:
+        return True
+    return False
 
 
 def _build_self_call_graph(tree: ast.Module) -> dict[str, set[str]]:
@@ -224,7 +261,9 @@ def _analyse_async_methods(tree: ast.Module, result: _AnalysisResult) -> None:
         if (
             isinstance(node, ast.FunctionDef)
             and node.name not in ("__init__", "fetch")
-            and _method_needs_async(node, result.init_session_attr)
+            and _method_needs_async(
+                node, result.init_session_attr, result.async_callables
+            )
         ):
             result.methods_needing_async.add(node.name)
 
@@ -396,7 +435,11 @@ def transform_source(source: str) -> tuple[str, list[str]]:
 
     analysis = _analyse_tree(tree)
 
-    if not analysis.has_requests_import and not analysis.has_cloudscraper_import:
+    if (
+        not analysis.has_requests_import
+        and not analysis.has_cloudscraper_import
+        and not analysis.async_callables
+    ):
         patched = _final_requests_cleanup(source)
         # Even without requests/cloudscraper, fetch() must be async for the registry
         if "async def fetch" not in patched:
@@ -440,6 +483,7 @@ def transform_source(source: str) -> tuple[str, list[str]]:
             analysis.methods_needing_async,
             analysis.init_session_attr,
             source,
+            analysis.async_callables,
         )
 
     # Process module-level functions that use requests
@@ -473,6 +517,7 @@ def _process_class(
     methods_needing_async: set[str],
     init_session_attr: str | None,
     full_source: str,
+    async_callables: set[str],
 ):
     """Process the Source class: transform methods, session creation, HTTP calls."""
 
@@ -489,6 +534,7 @@ def _process_class(
                 methods_needing_async,
                 init_session_attr,
                 full_source,
+                async_callables,
             )
 
 
@@ -526,9 +572,13 @@ def _transform_call_node(
     local_session_vars: set[str],
     methods_needing_async: set[str],
     chained_bare_requests: set[int],
+    async_callables: set[str],
 ) -> None:
     """Transform a Call node: add awaits, replace requests→httpx, sleep→asyncio."""
     if _is_session_http_call(node, local_session_vars):
+        _add_await_before_call(node, lines, line_replacements)
+
+    if _call_matches_async_helper(node, async_callables):
         _add_await_before_call(node, lines, line_replacements)
 
     if _is_bare_requests_call(node) and id(node) not in chained_bare_requests:
@@ -568,6 +618,7 @@ def _transform_node(
     methods_needing_async: set[str],
     chained_bare_requests: set[int],
     full_source: str,
+    async_callables: set[str],
 ) -> None:
     """Transform a single AST node within a method body."""
     if (
@@ -600,6 +651,7 @@ def _transform_node(
             local_session_vars,
             methods_needing_async,
             chained_bare_requests,
+            async_callables,
         )
     elif isinstance(node, ast.Attribute):
         _replace_requests_exceptions_in_node(node, lines, line_replacements)
@@ -649,6 +701,7 @@ def _process_method(
     methods_needing_async: set[str],
     init_session_attr: str | None,
     full_source: str,
+    async_callables: set[str],
 ):
     """Process a single method within Source class."""
     if method.name == "fetch" or method.name in methods_needing_async:
@@ -678,6 +731,7 @@ def _process_method(
             methods_needing_async,
             chained_bare_requests,
             full_source,
+            async_callables,
         )
 
     if method.name == "__init__" and init_session_attr:

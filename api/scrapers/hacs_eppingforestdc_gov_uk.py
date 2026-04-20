@@ -57,13 +57,13 @@ class Source:
 
     async def fetch(self) -> list[Collection]:
         session = httpx.AsyncClient(follow_redirects=True)
-        sid = init_session(
+        sid = await init_session(
             session,
             SERVICE_URL,
             AUTH_URL,
             "eppingforestdc-self.achieveservice.com",
         )
-        result = run_lookup(
+        result = await run_lookup(
             session,
             API_URL,
             sid,

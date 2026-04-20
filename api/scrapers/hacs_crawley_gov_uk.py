@@ -61,7 +61,7 @@ class Source:
         }
 
     async def get_collections(self, session_key: str, session: httpx.AsyncClient) -> list[Collection]:
-        result = run_lookup(
+        result = await run_lookup(
             session,
             API_URL,
             session_key,
@@ -72,7 +72,7 @@ class Source:
 
     async def fetch(self) -> list[Collection]:
         session = httpx.AsyncClient(follow_redirects=True)
-        session_key = init_session(
+        session_key = await init_session(
             session,
             INTIAL_URL,
             AUTH_URL,

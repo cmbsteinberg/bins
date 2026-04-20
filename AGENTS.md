@@ -75,17 +75,21 @@ docker compose up --build
 **API layer** (`api/`):
 - `main.py` -- FastAPI app with lifespan managing `ScraperRegistry`, `CouncilLookup`, optional Redis, and `BrowserPool`
 - `config.py` -- Centralised configuration from environment variables (timeouts, rate limits, address API, CORS, logging)
-- `routes.py` -- All endpoints: `/api/v1/addresses/{postcode}`, `/api/v1/council/{postcode}`, `/api/v1/lookup/{uprn}`, `/api/v1/calendar/{uprn}`, `/api/v1/councils`, `/api/v1/health`, `/api/v1/status`, `/api/v1/metrics`, `/api/v1/report`. Routes are mounted under both `/api` and `/api/v1`
+- `routes.py` -- All endpoints: `/api/v1/addresses/{postcode}`, `/api/v1/council/{postcode}`, `/api/v1/lookup/{uprn}`, `/api/v1/calendar/{uprn}`, `/api/v1/councils`, `/api/v1/health`, `/api/v1/status`, `/api/v1/metrics`, `/api/v1/report`. Routes are mounted under `/api/v1` only
 - `services/scraper_registry.py` -- Dynamically imports all `api/scrapers/*.py` at startup, introspects `Source.__init__` signatures for required/optional params, and dispatches `await source.fetch()` calls
 - `services/council_lookup.py` -- Resolves postcodes to local authorities via local parquet lookup with ibis/duckdb. Provides `CouncilLookup` class with `get_local_authority()` and `get_authority_by_slug()`
 - `services/address_lookup.py` -- Resolves postcodes to addresses via external address API (configured via `ADDRESS_API_URL` and `ADDRESS_API_COMPANY_ID`)
 - `services/browser_pool.py` -- Shared Playwright browser pool for browser-based scrapers
 - `services/models.py` -- Pydantic response models
 - `services/rate_limiting.py` -- Redis-backed rate limiter (disabled when no `REDIS_URL`)
+- `services/ics_cache.py` -- Persistent on-disk ICS cache keyed by UPRN. Writes `data/calendars/{uprn}.ics` + `{uprn}.json` sidecar atomically. The ICS file is the source of truth served by `/calendar`; the sidecar holds scraper params, `last_success`, `consecutive_failures`, and an upcoming-collections slice for `/lookup`
+- `services/refresh_job.py` -- Nightly worker that re-scrapes stale UPRNs. Scans sidecars, skips UPRNs successfully refreshed within `ICS_REFRESH_MIN_AGE_HOURS`, fans out via bounded queue, deletes entries after `ICS_FAILURE_THRESHOLD` consecutive failures. Runs in a dedicated `worker` container (API sets `RUN_REFRESH_JOB=0`)
+- `services/scrape_lock.py` -- Redis `SET NX` lock keyed by UPRN, shared by API and worker so the same UPRN isn't scraped twice concurrently
 - `data/admin_scraper_lookup.json` -- Council domain to scraper ID mapping
 - `data/lad_lookup.json` -- LAD code to council name, URL, scraper ID, and working status
 - `data/badge_coverage.json` -- Coverage stats for README badge
 - `data/postcode_lookup.parquet` -- 1.6M postcodes mapped to LAD codes for fast local lookup
+- `data/calendars/` -- On-disk ICS cache (`{uprn}.ics` + `{uprn}.json` sidecar), gitignored
 - `templates/` -- HTML pages: landing (`index.html`), coverage map (`coverage.html`), API docs (`api-docs.html`)
 - `static/` -- Frontend JS (`app.js`), coverage GeoJSON, Leaflet map
 
@@ -129,7 +133,7 @@ docker compose up --build
 **CI/CD** (`.github/workflows/deploy.yml`):
 - On push to `main`: runs smoke tests → deploys to Hetzner via SSH (git pull + docker compose) → runs integration tests (non-blocking) → regenerates coverage badge and sankey diagram → auto-commits results
 
-**Infrastructure**: Docker Compose runs the API + Redis + Caddy (reverse proxy) + GoAccess (log analytics) + Uptime Kuma (monitoring). Pre-commit hooks via lefthook run the unified sync script, ruff, biome, and CI smoke tests. Deployment to Hetzner is automated via GitHub Actions and `deploy/deployment.py`.
+**Infrastructure**: Docker Compose runs the API + refresh worker + Redis + Caddy (reverse proxy) + GoAccess (log analytics) + Uptime Kuma (monitoring). API and worker share a named volume (`bins_data`) mounted at `/app/data` for the ICS cache. Pre-commit hooks via lefthook run the unified sync script, ruff, biome, and CI smoke tests. Deployment to Hetzner is automated via GitHub Actions and `deploy/deployment.py`.
 
 ## Key Patterns
 
@@ -139,5 +143,6 @@ docker compose up --build
 - The `/calendar/{uprn}` endpoint returns iCal format for calendar subscription
 - hacs scrapers take priority over ukbcd; `pipeline/overrides.json` maps specific failing hacs scrapers to working ukbcd alternatives
 - Some scrapers use `requests_fallback.py` (Cloudflare-blocked sites) or `curl_cffi_fallback.py` (TLS fingerprinting) instead of plain httpx
-- Redis cache uses dynamic TTL based on next collection date proximity
-- Routes include `/status` (system health with uptime/scraper counts) and `/metrics` (Prometheus-format metrics)
+- Cache miss on `/lookup` or `/calendar` triggers an inline scrape guarded by the Redis scrape-lock; parallel requests for the same UPRN poll the cache up to `SCRAPE_LOCK_MAX_WAIT_S` (default 15s) and return 503 on timeout rather than racing
+- `/calendar/{uprn}` streams the on-disk ICS directly; events are merged on write (stable UIDs = sha1(uprn|date|type)) and pruned by `ICS_RETENTION_DAYS`
+- Routes include `/status` (system health with uptime/scraper counts) and `/metrics` (Prometheus-format metrics plus ICS cache entry count and last refresh stats)

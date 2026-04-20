@@ -1,6 +1,6 @@
 # UK Bin Collection API
 
-![councils passing](https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2F09steicm%2Fbins%2Fmain%2Fapi%2Fdata%2Fbadge_coverage.json)
+![councils passing](https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2F09steicm%2Fbins%2Fmain%2Fbadge_coverage.json)
 
 An API that tells you when your bins are being collected. Enter a postcode, pick your address, get your collection dates back as JSON or subscribe via iCal.
 

@@ -11,7 +11,6 @@ GEOJSON_URL = "https://services1.arcgis.com/ESMARspQHYMw9BZ9/arcgis/rest/service
 POPULATION_URL = "https://www.ons.gov.uk/file?uri=/peoplepopulationandcommunity/populationandmigration/populationestimates/datasets/populationestimatesforukenglandandwalesscotlandandnorthernireland/mid2024/mye24tablesuk.xlsx"
 OUTPUT_DIR = pathlib.Path("api/static")
 OUTPUT_GEOJSON = OUTPUT_DIR / "coverage.geojson"
-OUTPUT_MAP_HTML = OUTPUT_DIR / "coverage_map.html"
 
 COORD_PRECISION = 5  # ~1m accuracy, significantly reduces file size
 
@@ -52,18 +51,12 @@ def _load_scraper_pass_rates() -> dict[str, float]:
 
 
 def _coverage_status(scraper_id: str | None, pass_rates: dict[str, float]) -> str:
-    """Return coverage status: 'working', 'partial', or 'broken'."""
+    """Return coverage status: 'working' or 'broken'."""
     if not scraper_id:
         return "broken"
     if scraper_id not in pass_rates:
-        # Has a scraper but no test results — treat as partial (unverified)
-        return "partial"
-    rate = pass_rates[scraper_id]
-    if rate >= 0.8:
         return "working"
-    if rate > 0:
-        return "partial"
-    return "broken"
+    return "working" if pass_rates[scraper_id] > 0 else "broken"
 
 
 def _load_population_by_lad() -> dict[str, int]:
@@ -92,13 +85,19 @@ def main():
 
     print("Loading integration test results...")
     pass_rates = _load_scraper_pass_rates()
-    if pass_rates:
-        working = sum(1 for r in pass_rates.values() if r >= 0.8)
-        partial = sum(1 for r in pass_rates.values() if 0 < r < 0.8)
-        broken = sum(1 for r in pass_rates.values() if r == 0)
-        print(
-            f"  {len(pass_rates)} scrapers tested: {working} working, {partial} partial, {broken} broken"
-        )
+    tested_working = sum(1 for r in pass_rates.values() if r > 0)
+    tested_broken = sum(1 for r in pass_rates.values() if r == 0)
+    untested = sum(
+        1
+        for info in lad_lookup.values()
+        if info.get("scraper_id") and info["scraper_id"] not in pass_rates
+    )
+    no_scraper = sum(1 for info in lad_lookup.values() if not info.get("scraper_id"))
+    print(
+        f"  {len(pass_rates)} scrapers tested: {tested_working} working, {tested_broken} broken"
+    )
+    print(f"  {untested} councils have a scraper but no test coverage")
+    print(f"  {no_scraper} councils have no scraper (not covered)")
 
     print("Loading population data...")
     population = _load_population_by_lad()
@@ -145,15 +144,12 @@ def main():
 
     # Population from GeoJSON features (aligned with boundary data)
     total_pop = sum(pop_by_status.values())
-    covered_pop = pop_by_status["working"] + pop_by_status["partial"]
+    covered_pop = pop_by_status["working"]
 
     if total_pop:
         print("\nPopulation coverage (mid-2024 ONS estimates):")
         print(
             f"  Working:     {pop_by_status['working']:>12,} ({pop_by_status['working'] / total_pop:.1%})"
-        )
-        print(
-            f"  Partial:     {pop_by_status['partial']:>12,} ({pop_by_status['partial'] / total_pop:.1%})"
         )
         print(
             f"  Not covered: {pop_by_status['broken']:>12,} ({pop_by_status['broken'] / total_pop:.1%})"
@@ -182,92 +178,6 @@ def main():
     with open(OUTPUT_GEOJSON, "w") as f:
         json.dump(geojson_data, f, separators=(",", ":"))
 
-    map_html = """\
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Coverage Map</title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-    <style>
-        body { margin: 0; padding: 0; }
-        #map { height: 600px; width: 100%; }
-        .info { padding: 6px 8px; font: 14px/16px Arial, Helvetica, sans-serif; background: white; background: rgba(255,255,255,0.8); box-shadow: 0 0 15px rgba(0,0,0,0.2); border-radius: 5px; }
-        .legend { line-height: 18px; color: #555; background: white; padding: 10px; border-radius: 5px; box-shadow: 0 0 15px rgba(0,0,0,0.2); }
-        .legend i { width: 18px; height: 18px; float: left; margin-right: 8px; opacity: 0.7; }
-    </style>
-</head>
-<body>
-    <div id="map"></div>
-    <script>
-        var map = L.map('map').setView([55.3781, -3.4360], 6);
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            attribution: '&copy; OpenStreetMap contributors'
-        }).addTo(map);
-
-        var STATUS_COLORS = {
-            working:  '#2ecc71',
-            partial:  '#f39c12',
-            broken:   '#e74c3c'
-        };
-
-        var STATUS_LABELS = {
-            working:  'Working',
-            partial:  'Partially working',
-            broken:   'Broken / not covered'
-        };
-
-        function style(feature) {
-            var status = feature.properties.coverage_status || 'none';
-            return {
-                fillColor: STATUS_COLORS[status] || STATUS_COLORS.none,
-                weight: 1,
-                opacity: 1,
-                color: 'white',
-                fillOpacity: 0.6
-            };
-        }
-
-        function popupText(props) {
-            var status = props.coverage_status || 'none';
-            var label = STATUS_LABELS[status] || 'Unknown';
-            var text = '<strong>' + props.LAD25NM + '</strong><br>' + label;
-            if (props.pass_rate !== undefined) {
-                text += ' (' + props.pass_rate + '% pass rate)';
-            }
-            return text;
-        }
-
-        fetch('/static/coverage.geojson')
-            .then(res => res.json())
-            .then(data => {
-                L.geoJson(data, {
-                    style: style,
-                    onEachFeature: function(feature, layer) {
-                        layer.bindPopup(popupText(feature.properties));
-                    }
-                }).addTo(map);
-            });
-
-        var legend = L.control({position: 'bottomright'});
-        legend.onAdd = function (map) {
-            var div = L.DomUtil.create('div', 'info legend');
-            Object.keys(STATUS_COLORS).forEach(function(key) {
-                div.innerHTML += '<i style="background: ' + STATUS_COLORS[key] + '"></i> ' + STATUS_LABELS[key] + '<br>';
-            });
-            return div;
-        };
-        legend.addTo(map);
-    </script>
-</body>
-</html>
-"""
-
-    print(f"Writing {OUTPUT_MAP_HTML}...")
-    with open(OUTPUT_MAP_HTML, "w") as f:
-        f.write(map_html)
 
     print("Done!")
 

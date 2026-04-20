@@ -128,7 +128,7 @@ def build_badge(c):
     }
 
 
-BADGE_PATH = ROOT / "api" / "data" / "badge_coverage.json"
+BADGE_PATH = ROOT / "badge_coverage.json"
 
 
 def main():

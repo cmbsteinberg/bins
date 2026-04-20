@@ -87,7 +87,7 @@ docker compose up --build
 - `services/scrape_lock.py` -- Redis `SET NX` lock keyed by UPRN, shared by API and worker so the same UPRN isn't scraped twice concurrently
 - `data/admin_scraper_lookup.json` -- Council domain to scraper ID mapping
 - `data/lad_lookup.json` -- LAD code to council name, URL, scraper ID, and working status
-- `data/badge_coverage.json` -- Coverage stats for README badge
+- `badge_coverage.json` (repo root) -- Coverage stats for README badge
 - `data/postcode_lookup.parquet` -- 1.6M postcodes mapped to LAD codes for fast local lookup
 - `data/calendars/` -- On-disk ICS cache (`{uprn}.ics` + `{uprn}.json` sidecar), gitignored
 - `templates/` -- HTML pages: landing (`index.html`), coverage map (`coverage.html`), API docs (`api-docs.html`)

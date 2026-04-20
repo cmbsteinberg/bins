@@ -16,8 +16,18 @@ fi
 
 tmp=$(mktemp)
 awk -v key="$KEY:" -v url="$URL" '
+  pending && /"[^"]*"/ {
+    sub(/"[^"]*"/, "\"" url "\"")
+    pending = 0
+    print
+    next
+  }
   index($0, key) {
-    sub(/"[^"]*"/, "\"" url "\"", $0)
+    if ($0 ~ /"[^"]*"/) {
+      sub(/"[^"]*"/, "\"" url "\"")
+    } else {
+      pending = 1
+    }
   }
   { print }
 ' "$APP_JS" > "$tmp"

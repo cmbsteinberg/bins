@@ -27,14 +27,12 @@
 
     var STATUS_COLORS = {
         working:  '#2ecc71',
-        partial:  '#f39c12',
         broken:   '#e74c3c'
     };
 
     var STATUS_LABELS = {
-        working:  'Working',
-        partial:  'Partially working',
-        broken:   'Broken / not covered'
+        working:  'Covered',
+        broken:   'Not covered'
     };
 
     function style(feature) {
@@ -86,6 +84,7 @@
         return div;
     };
     legend.addTo(map);
+
   </script>
 </body>
 </html>

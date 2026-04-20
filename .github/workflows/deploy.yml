@@ -71,6 +71,6 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add api/data/badge_coverage.json README.md
+          git add badge_coverage.json README.md
           git diff --staged --quiet || git commit -m "Update coverage badge and sankey [skip ci]"
           git push

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>About</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/light.css">
+  {% include "partials/shared-styles.html" %}
+</head>
+<body>
+  {% include "partials/nav.html" %}
+  <main>
+    <h1>About</h1>
+    <p>Hi, I'm <a href= https://cmbsteinberg.github.io/> Chris</a>. I built UKBinDay to make finding out your bin days a little easier. It provides a search box for approximately three-quarters of UK council websites. You can subscribe to a live calendar feed that keeps itself up to date as your council publishes new dates so you never forget again! Please reach out to <a href="mailto:hello@ukbinday.com">hello@ukbinday.com</a> if you have any thoughts or suggestions!</p>
+
+    <p>This project builds on the work of two open-source projects designed for Home Assistant automation. The contributors to these two projects have done the seriously hard work of figuring out each individual councils website:</p>
+    <p>
+        <a
+            class="gh-link"
+            href="https://github.com/mampfes/hacs_waste_collection_schedule"
+            rel="noopener"
+            target="_blank"
+        >
+            <img
+                class="gh-icon"
+                src="/static/github-mark.svg"
+                alt=""
+                width="16"
+                height="16"
+            />
+            hacs_waste_collection_schedule<span class="sr-only"></span>
+        </a>
+        <a
+            class="gh-link"
+            href="https://github.com/robbrad/UKBinCollectionData"
+            rel="noopener"
+            target="_blank"
+        >
+            <img
+                class="gh-icon"
+                src="/static/github-mark.svg"
+                alt=""
+                width="16"
+                height="16"
+            />
+            UKBinCollectionData<span class="sr-only"> </span>
+        </a>
+    </p>
+    <p>Thank you to the maintainers and contributors of both projects.</p>
+
+    <h2>API</h2>
+    <p>A free JSON API is available for the Home Automation community, and whoever else finds this useful. The UPRN endpoint is not publicly exposed, to prevent abuse. See the <a href="/api-docs">API documentation</a> for details.</p>
+
+  </main>
+
+  {% include "partials/footer.html" %}
+</body>
+</html>

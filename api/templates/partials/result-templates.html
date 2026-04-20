@@ -1,0 +1,57 @@
+<template id="tpl-results-header">
+    <div>
+        <strong data-slot="address"></strong>
+        <div class="collection-date" data-slot="council"></div>
+    </div>
+</template>
+
+<template id="tpl-empty-state">
+    <p>No upcoming collections found.</p>
+</template>
+
+<template id="tpl-bin-card">
+    <div class="bin-group" role="group">
+        <div class="bin-next">
+            <div class="bin-icon">
+                <svg viewBox="0 0 64 80" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+                    <rect x="12" y="18" width="40" height="54" rx="3" fill="#546E7A" stroke="#37474F" stroke-width="2"/>
+                    <rect x="16" y="24" width="4" height="40" rx="1" fill="#455A64"/>
+                    <rect x="24" y="24" width="4" height="40" rx="1" fill="#455A64"/>
+                    <rect x="36" y="24" width="4" height="40" rx="1" fill="#455A64"/>
+                    <rect x="44" y="24" width="4" height="40" rx="1" fill="#455A64"/>
+                    <rect x="8" y="12" width="48" height="8" rx="2" fill="#607D8B" stroke="#37474F" stroke-width="2"/>
+                    <rect x="24" y="6" width="16" height="8" rx="2" fill="#78909C" stroke="#37474F" stroke-width="2"/>
+                    <rect x="14" y="72" width="10" height="4" rx="2" fill="#37474F"/>
+                    <rect x="40" y="72" width="10" height="4" rx="2" fill="#37474F"/>
+                </svg>
+            </div>
+            <div class="bin-info">
+                <span class="bin-type" data-slot="type"></span>
+                <span class="bin-date" data-slot="date"></span>
+                <span class="bin-relative" data-slot="relative"></span>
+            </div>
+        </div>
+    </div>
+</template>
+
+<template id="tpl-accordion">
+    <details class="all-dates">
+        <summary>All upcoming dates (<span data-slot="count"></span>)</summary>
+        <ul class="all-dates-list"></ul>
+    </details>
+</template>
+
+<template id="tpl-accordion-item">
+    <li>
+        <span class="all-dates-type" data-slot="type"></span>
+        <span data-slot="date"></span>
+    </li>
+</template>
+
+<template id="tpl-actions">
+    <div class="results-actions">
+        <a data-slot="subscribe" class="action-btn">Subscribe to live calendar</a>
+        <button class="action-btn outline" id="report-btn" type="button">Report wrong answer</button>
+        <span id="report-status" role="status" aria-live="polite"></span>
+    </div>
+</template>

@@ -55,3 +55,7 @@ CORS_ORIGINS: list[str] = (
     if FRONTEND_URL
     else []
 )
+
+# Cloudflare Turnstile
+TURNSTILE_SITE_KEY: str = os.getenv("TURNSTILE_SITE_KEY", "")
+TURNSTILE_SECRET: str = os.getenv("TURNSTILE_SECRET", "")

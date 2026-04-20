@@ -194,7 +194,11 @@ app.mount("/static", StaticFiles(directory=_STATIC_DIR), name="static")
 # Frontend pages
 @app.get("/", response_class=HTMLResponse, include_in_schema=False)
 async def landing_page(request: Request):
-    return _templates.TemplateResponse(request, "index.html")
+    return _templates.TemplateResponse(
+        request,
+        "index.html",
+        {"turnstile_site_key": config.TURNSTILE_SITE_KEY},
+    )
 
 
 @app.get("/coverage", response_class=HTMLResponse, include_in_schema=False)

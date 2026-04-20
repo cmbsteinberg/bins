@@ -1,6 +1,35 @@
 const API = "/api/v1";
 let currentData = null;
 
+let turnstileToken = null;
+window.onTurnstileOk = (t) => {
+	turnstileToken = t;
+};
+window.onTurnstileExpired = () => {
+	turnstileToken = null;
+	if (window.turnstile) window.turnstile.reset();
+};
+window.onTurnstileError = () => {
+	turnstileToken = null;
+};
+
+async function getTurnstileToken() {
+	if (!window.turnstile) return null;
+	if (turnstileToken) return turnstileToken;
+	return await new Promise((resolve) => {
+		const start = Date.now();
+		const poll = () => {
+			if (turnstileToken) return resolve(turnstileToken);
+			if (Date.now() - start > 8000) return resolve(null);
+			setTimeout(poll, 150);
+		};
+		try {
+			window.turnstile.execute();
+		} catch {}
+		poll();
+	});
+}
+
 const $ = (sel) => document.querySelector(sel);
 
 function show(id) {
@@ -56,9 +85,23 @@ $("#postcode-form").addEventListener("submit", async (e) => {
 			return;
 		}
 
+		const token = await getTurnstileToken();
+		if (!token) {
+			showError(
+				"Could not verify your browser. Please reload the page and try again.",
+			);
+			return;
+		}
 		const addressResp = await fetch(
 			`${API}/addresses/${encodeURIComponent(postcode)}`,
+			{ headers: { "X-Turnstile-Token": token } },
 		);
+		turnstileToken = null;
+		if (window.turnstile) {
+			try {
+				window.turnstile.reset();
+			} catch {}
+		}
 		if (!addressResp.ok) {
 			const err = await addressResp.json().catch(() => ({}));
 			throw new Error(

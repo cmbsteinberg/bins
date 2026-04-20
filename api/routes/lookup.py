@@ -7,6 +7,7 @@ import httpx
 from fastapi import APIRouter, Depends, HTTPException, Request
 from fastapi.responses import RedirectResponse, Response
 
+from api import config
 from api.services import address_lookup
 from api.services.models import (
     AddressLookupResponse,
@@ -34,10 +35,37 @@ def _safe_uprn_filename(uprn: str) -> str:
     return uprn if _UPRN_RE.match(uprn) else "unknown"
 
 
+async def verify_turnstile(request: Request) -> None:
+    if not config.TURNSTILE_SECRET:
+        return
+    token = request.headers.get("X-Turnstile-Token")
+    if not token:
+        raise HTTPException(status_code=403, detail="Missing challenge token.")
+    try:
+        async with httpx.AsyncClient(timeout=5) as client:
+            resp = await client.post(
+                "https://challenges.cloudflare.com/turnstile/v0/siteverify",
+                data={
+                    "secret": config.TURNSTILE_SECRET,
+                    "response": token,
+                    "remoteip": request.client.host if request.client else "",
+                },
+            )
+        data = resp.json()
+    except Exception:
+        logger.exception("Turnstile verification request failed")
+        raise HTTPException(status_code=503, detail="Challenge verification unavailable.")
+    if not data.get("success"):
+        logger.info("Turnstile verification failed: %s", data.get("error-codes"))
+        raise HTTPException(status_code=403, detail="Challenge failed.")
+
+
 @router.get("/addresses/{postcode}", response_model=AddressLookupResponse, include_in_schema=False)
 async def addresses(
+    request: Request,
     postcode: str,
     _rate_limit: None = Depends(rate_limit),
+    _turnstile: None = Depends(verify_turnstile),
 ):
     try:
         results = await address_lookup.search_addresses(postcode)

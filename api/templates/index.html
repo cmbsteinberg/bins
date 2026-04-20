@@ -11,6 +11,9 @@
 
         {% include "partials/shared-styles.html" %}
         <link rel="stylesheet" href="/static/style.css" />
+        {% if turnstile_site_key %}
+        <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+        {% endif %}
     </head>
     <body>
         <a class="skip-link" href="#main-content">Skip to main content</a>
@@ -35,6 +38,16 @@
                         </button>
                     </fieldset>
                 </form>
+                {% if turnstile_site_key %}
+                <div
+                    class="cf-turnstile"
+                    data-sitekey="{{ turnstile_site_key }}"
+                    data-callback="onTurnstileOk"
+                    data-expired-callback="onTurnstileExpired"
+                    data-error-callback="onTurnstileError"
+                    data-size="invisible"
+                ></div>
+                {% endif %}
             </section>
 
             <section

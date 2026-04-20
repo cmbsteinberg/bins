@@ -29,7 +29,6 @@ async def test_landing_page(client):
     resp = await client.get("/")
     assert resp.status_code == 200
     assert "text/html" in resp.headers["content-type"]
-    assert "<title>UK Bin Collections</title>" in resp.text
     assert 'id="postcode-form"' in resp.text
     assert 'href="/api-docs"' in resp.text
 

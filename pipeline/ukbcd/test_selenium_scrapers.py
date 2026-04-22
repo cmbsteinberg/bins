@@ -189,6 +189,27 @@ def build_cli_args(council: str, data: dict) -> list[str]:
     return args
 
 
+def _extract_json_blob(stdout: str) -> str:
+    """Pull the JSON object out of collect_data.py stdout.
+
+    Logs and prints can interleave with the pretty-printed JSON block, and the
+    block itself contains blank lines, so we find the last line that is exactly
+    '{' at column 0 and take everything from there until the matching closing
+    '}' at column 0.
+    """
+    lines = stdout.splitlines()
+    start = None
+    for i, line in enumerate(lines):
+        if line == "{":
+            start = i
+    if start is None:
+        return stdout.strip()
+    for j in range(len(lines) - 1, start, -1):
+        if lines[j] == "}":
+            return "\n".join(lines[start : j + 1])
+    return "\n".join(lines[start:])
+
+
 def validate_against_schema(output: str, schema: dict | None = None) -> tuple[bool, str, int]:
     try:
         parsed = json.loads(output)
@@ -275,15 +296,7 @@ def run_single(council: str, data: dict, clone_dir: Path, schema: dict) -> Resul
                 stderr_tail=stderr[-800:],
             )
 
-        # collect_data prints the JSON via print(); logs may also go to stderr.
-        # Grab the last JSON-looking chunk from stdout.
-        json_text = ""
-        for chunk in stdout.strip().split("\n\n"):
-            c = chunk.strip()
-            if c.startswith("{"):
-                json_text = c
-        if not json_text:
-            json_text = stdout.strip()
+        json_text = _extract_json_blob(stdout)
 
         ok, err, bins = validate_against_schema(json_text, schema)
         if not ok:

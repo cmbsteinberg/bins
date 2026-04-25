@@ -1,3 +1,4 @@
+import asyncio
 import re
 from datetime import datetime
 
@@ -26,6 +27,9 @@ ICON_MAP = {
     "Garden Waste": "mdi:leaf",
 }
 
+MAX_POLLS = 10
+POLL_INTERVAL_S = 2
+
 
 class Source:
     def __init__(
@@ -42,9 +46,7 @@ class Source:
             follow_redirects=True, timeout=30.0, headers=HEADERS
         ) as client:
             property_id = await self._resolve_property_id(client)
-            r = await client.get(f"{BASE_URL}/{property_id}", params={"page_loading": "1"})
-            r.raise_for_status()
-            return _parse_schedule(r.text)
+            return await self._poll_schedule(client, property_id)
 
     async def _resolve_property_id(self, client: httpx.AsyncClient) -> str:
         r = await client.post(BASE_URL, data={"postcode": self._postcode})
@@ -65,6 +67,26 @@ class Source:
 
         raise ValueError(
             f"Address '{self._house_number}' not found for postcode {self._postcode}"
+        )
+
+    async def _poll_schedule(
+        self, client: httpx.AsyncClient, property_id: str
+    ) -> list[Collection]:
+        # Initial request triggers server-side data processing
+        await client.post(BASE_URL, data={"address": property_id, "go": "Go"})
+
+        # WasteWorks processes data async; poll until schedule appears
+        url = f"{BASE_URL}/{property_id}"
+        for _ in range(MAX_POLLS):
+            await asyncio.sleep(POLL_INTERVAL_S)
+            r = await client.get(url)
+            r.raise_for_status()
+            entries = _parse_schedule(r.text)
+            if entries:
+                return entries
+
+        raise TimeoutError(
+            f"Schedule not ready after {MAX_POLLS * POLL_INTERVAL_S}s for property {property_id}"
         )
 
 

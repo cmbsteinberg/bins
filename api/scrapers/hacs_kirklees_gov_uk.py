@@ -14,9 +14,9 @@ TITLE = "Kirklees Council"
 DESCRIPTION = "Source for waste collections for Kirklees Council"
 URL = "https://www.kirklees.gov.uk"
 TEST_CASES = {
-    "Test_001": {"door_num": 20, "postcode": "HD9 6LW"},
-    "test_002": {"door_num": "6", "postcode": "hd9 1js"},
-    "HD8 8NA, 1": {"door_num": "1", "postcode": "HD8 8NA", "uprn": "83194785"},
+    "Test_001": {"house_number": 20, "postcode": "HD9 6LW"},
+    "test_002": {"house_number": "6", "postcode": "hd9 1js"},
+    "HD8 8NA, 1": {"house_number": "1", "postcode": "HD8 8NA", "uprn": "83194785"},
 }
 
 BASE_URL = "https://www.kirklees.gov.uk/beta/your-property-bins-recycling/your-bins/"
@@ -46,9 +46,9 @@ ICON_MAP = {
 
 class Source:
     def __init__(
-        self, door_num: str | int, postcode: str, uprn: str | int | None = None
+        self, house_number: str | int, postcode: str, uprn: str | int | None = None
     ):
-        self._door_num = door_num
+        self._house_number = house_number
         self._postcode = postcode
         self._uprn = uprn
         self._session = _CurlCffiClient(follow_redirects=True)
@@ -73,7 +73,7 @@ class Source:
         ):
             self._params[
                 "ctl00$ctl00$cphPageBody$cphContent$thisGeoSearch$txtGeoPremises"
-            ] = self._door_num
+            ] = self._house_number
             self._params[
                 "ctl00$ctl00$cphPageBody$cphContent$thisGeoSearch$txtGeoSearch"
             ] = self._postcode

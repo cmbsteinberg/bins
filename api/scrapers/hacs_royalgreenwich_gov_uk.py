@@ -17,7 +17,7 @@ DESCRIPTION = "Source for services from the Royal Borough Of Greenwich"
 URL = "https://www.royalgreenwich.gov.uk/"
 TEST_CASES = {
     "address": {"address": "25 - Tizzard Grove - London - SE3 9DH"},
-    "houseNumber": {"post_code": "SE9 5AW", "house": "11"},
+    "houseNumber": {"postcode": "SE9 5AW", "house": "11"},
     "alternativeWeek": {"address": "32 - Glenlyon Road - London - SE9 1AJ"},
 }
 
@@ -40,7 +40,7 @@ HOW_TO_GET_ARGUMENTS_DESCRIPTION = {  # Optional dictionary to describe how to g
 
 PARAM_DESCRIPTIONS = {  # Optional dict to describe the arguments, will be shown in the GUI configuration below the respective input field
     "en": {
-        "post_code": "Postcode",
+        "postcode": "Postcode",
         "house": "House number or name",
         "address": "Full address",
     }
@@ -56,20 +56,20 @@ HEADERS = {
 class Source:
     def __init__(
         self,
-        post_code: Optional[str] = None,
+        postcode: Optional[str] = None,
         house: Optional[str] = None,
         address: Optional[str] = None,
     ):
-        self._post_code = post_code
+        self._postcode = postcode
         self._house = house
         self._address = address
 
     async def _find_address(self) -> str:
-        if not self._post_code:
+        if not self._postcode:
             raise SourceArgumentRequired(
-                "post_code", "postcode is required if address is not provided"
+                "postcode", "postcode is required if address is not provided"
             )
-        term_list = [self._post_code]
+        term_list = [self._postcode]
         if self._house:
             term_list.append(self._house)
 

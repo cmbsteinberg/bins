@@ -12,10 +12,10 @@ DESCRIPTION = "Source for ashfield.gov.uk, Ashfield District Council, UK"
 URL = "https://www.ashfield.gov.uk"
 TEST_CASES = {
     "11 Maun View Gardens, Sutton-in-Ashfield": {"uprn": 10001336299},
-    "101 Main Street, Huthwaite": {"post_code": "NG17 2LQ", "uprn": "100031253415"},
-    "1 Acacia Avenue, Kirkby-in-Ashfield": {"post_code": "NG17 9BH", "number": "1"},
+    "101 Main Street, Huthwaite": {"postcode": "NG17 2LQ", "uprn": "100031253415"},
+    "1 Acacia Avenue, Kirkby-in-Ashfield": {"postcode": "NG17 9BH", "house_number": "1"},
     "Council Offices, Kirkby-in-Ashfield": {
-        "post_code": "NG178ZA",
+        "postcode": "NG178ZA",
         "name": "COUNCIL OFFICES",
     },
 }
@@ -41,28 +41,28 @@ NAMES = {
 
 
 class Source:
-    def __init__(self, post_code=None, number=None, name=None, uprn=None):
-        self._post_code = post_code
-        self._number = number
+    def __init__(self, postcode=None, house_number=None, name=None, uprn=None):
+        self._postcode = postcode
+        self._house_number = house_number
         self._name = name
         self._uprn = uprn
 
     async def fetch(self):
         if not self._uprn:
-            if not self._post_code:
-                raise ValueError("post_code is required when uprn is not provided")
-            if not (self._name or self._number):
+            if not self._postcode:
+                raise ValueError("postcode is required when uprn is not provided")
+            if not (self._name or self._house_number):
                 raise ValueError(
-                    "Either name or number must be provided when uprn is not provided"
+                    "Either name or house_number must be provided when uprn is not provided"
                 )
             # look up the UPRN for the address
-            q = str(API_URLS["address_search"]).format(postcode=self._post_code)
+            q = str(API_URLS["address_search"]).format(postcode=self._postcode)
             r = await _CurlCffiClient(follow_redirects=True).get(q, timeout=30)
             r.raise_for_status()
             addresses = r.json()["results"]
 
             if not addresses:
-                raise SourceArgumentNotFound("post_code", self._post_code)
+                raise SourceArgumentNotFound("postcode", self._postcode)
 
             matching = []
             if self._name:
@@ -72,10 +72,10 @@ class Source:
                     building_name = dpa.get("BUILDING_NAME")
                     if building_name and building_name.casefold() == name_cf:
                         matching.append(x)
-            elif self._number:
+            elif self._house_number:
                 for x in addresses:
                     dpa = x.get("DPA") or {}
-                    if dpa.get("BUILDING_NUMBER") == self._number:
+                    if dpa.get("BUILDING_NUMBER") == self._house_number:
                         matching.append(x)
 
             if matching:
@@ -89,9 +89,9 @@ class Source:
                     argument=(
                         "name"
                         if self._name
-                        else "number" if self._number else "post_code"
+                        else "house_number" if self._house_number else "postcode"
                     ),
-                    value=self._name or self._number or self._post_code,
+                    value=self._name or self._house_number or self._postcode,
                     suggestions=[
                         f"{(x.get('DPA') or {}).get('BUILDING_NUMBER', '')} {(x.get('DPA') or {}).get('BUILDING_NAME', '')}".strip()
                         for x in addresses

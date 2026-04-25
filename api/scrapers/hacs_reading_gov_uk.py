@@ -16,10 +16,10 @@ URL = "https://reading.gov.uk"
 TEST_CASES = {
     "known_uprn": {"uprn": "310027679"},
     "known_uprn as number": {"uprn": 310027679},
-    "unknown_uprn_by_number": {"postcode": "RG31 5PN", "housenameornumber": "65"},
+    "unknown_uprn_by_number": {"postcode": "RG31 5PN", "house_number": "65"},
     "unknown_uprn_by_number as number": {
         "postcode": "RG31 5PN",
-        "housenameornumber": 65,
+        "house_number": 65,
     },
 }
 
@@ -44,18 +44,18 @@ SEARCH_URLS = {
 
 
 class Source:
-    def __init__(self, uprn=None, postcode=None, housenameornumber=None):
+    def __init__(self, uprn=None, postcode=None, house_number=None):
         self._postcode = postcode
-        self._housenameornumber = str(housenameornumber)
+        self._house_number = str(house_number)
         self._uprn = uprn
-        if not any((uprn, postcode and housenameornumber)):
+        if not any((uprn, postcode and house_number)):
             errors = []
             if postcode:
-                errors.append("housenameornumber")
-            elif housenameornumber:
+                errors.append("house_number")
+            elif house_number:
                 errors.append("postcode")
             else:
-                errors = ["uprn", "postcode", "housenameornumber"]
+                errors = ["uprn", "postcode", "house_number"]
             raise SourceArgumentExceptionMultiple(
                 errors,
                 "Must provide either a UPRN or both the Postcode and House Name or Number",
@@ -75,8 +75,8 @@ class Source:
         address = next(filter(self.filter_addresses, addresses), None)
         if address is None:
             raise SourceArgumentNotFoundWithSuggestions(
-                "housenameornumber",
-                self._housenameornumber,
+                "house_number",
+                self._house_number,
                 {self.extract_nameornum(a) for a in addresses},
             )
         return address["AccountSiteUprn"]
@@ -89,7 +89,7 @@ class Source:
 
     def filter_addresses(self, address) -> bool:
         nameornum = self.extract_nameornum(address)
-        return self._housenameornumber == nameornum
+        return self._house_number == nameornum
 
     def parse_collection(self, col) -> Collection:
         dt = datetime.strptime(col["date"], "%d/%m/%Y %H:%M:%S").date()

@@ -8,11 +8,11 @@ TITLE = "Peterborough City Council"
 DESCRIPTION = "Source for peterborough.gov.uk services for Peterborough"
 URL = "https://peterborough.gov.uk"
 TEST_CASES = {
-    "houseUprn": {"post_code": "PE57AX", "uprn": "100090214774"},
+    "houseUprn": {"postcode": "PE57AX", "uprn": "100090214774"},
 }
 
 API_URLS = {
-    "collection": "https://report.peterborough.gov.uk/waste/{post_code}:{uprn}/calendar.ics",
+    "collection": "https://report.peterborough.gov.uk/waste/{postcode}:{uprn}/calendar.ics",
 }
 
 ICON_MAP = {
@@ -23,20 +23,20 @@ ICON_MAP = {
 
 
 class Source:
-    def __init__(self, post_code, uprn):
-        self._post_code = post_code
+    def __init__(self, postcode, uprn):
+        self._postcode = postcode
         self._uprn = uprn
         self._ics = ICS()
 
     async def fetch(self):
-        if not self._post_code:
-            raise SourceArgumentNotFound("post_code", "Postcode is required")
+        if not self._postcode:
+            raise SourceArgumentNotFound("postcode", "Postcode is required")
 
         if not self._uprn:
             raise SourceArgumentNotFound("uprn", "UPRN is required")
 
         ics_url = API_URLS["collection"].format(
-            post_code=self._post_code, uprn=self._uprn
+            postcode=self._postcode, uprn=self._uprn
         )
         r = await httpx.AsyncClient(follow_redirects=True).get(ics_url, timeout=10)
         r.raise_for_status()

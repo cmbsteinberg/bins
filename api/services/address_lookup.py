@@ -31,6 +31,21 @@ def _format_address(item: dict) -> str:
     return ", ".join(formatted)
 
 
+_HOUSE_NUM_RE = re.compile(r"^([0-9]+[A-Za-z]?)\s+(.*)$")
+
+
+def _split_address_line_1(
+    line1: str | None, line2: str | None
+) -> tuple[str | None, str | None]:
+    if not line1:
+        return None, _title_case(line2) if line2 else None
+    line1 = line1.strip()
+    m = _HOUSE_NUM_RE.match(line1)
+    if m:
+        return m.group(1), _title_case(m.group(2))
+    return _title_case(line1), _title_case(line2) if line2 else None
+
+
 async def _get_session(client: httpx.AsyncClient) -> str:
     resp = await client.get(_SESSION_PAGE)
     resp.raise_for_status()
@@ -64,11 +79,19 @@ async def search_addresses(postcode: str) -> list[dict]:
         resp.raise_for_status()
 
     data = resp.json()
-    return [
-        {
-            "uprn": item["UPRN"],
-            "full_address": _format_address(item),
-            "postcode": item.get("postcode", postcode),
-        }
-        for item in data
-    ]
+    results = []
+    for item in data:
+        line1 = item.get("addressLine1")
+        line2 = item.get("addressLine2")
+        house, street = _split_address_line_1(line1, line2)
+        results.append(
+            {
+                "uprn": item["UPRN"],
+                "full_address": _format_address(item),
+                "postcode": item.get("postcode", postcode),
+                "address_line_1": _title_case(line1) if line1 else None,
+                "house_number_or_name": house,
+                "street": street,
+            }
+        )
+    return results

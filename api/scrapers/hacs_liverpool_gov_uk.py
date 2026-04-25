@@ -25,7 +25,7 @@ ICON_MAP = {
 
 
 class Source:
-    def __init__(self, uprn=None, postcode=None, name_number=None):
+    def __init__(self, uprn=None, postcode=None, house_number=None):
         self._uprn = uprn
 
     async def fetch(self):

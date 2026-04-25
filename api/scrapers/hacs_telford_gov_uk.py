@@ -17,8 +17,8 @@ URL = "https://www.telford.gov.uk"
 
 TEST_CASES = {
     "10 Long Row Drive, Lawley": {"uprn": "000452097493"},
-    "126 Dunsheath, Telford": {"post_code": "TF3 2DA", "name_number": "126"},
-    "11 Pinewoods, Telford": {"post_code": "TF10 9LN", "name_number": "11"},
+    "126 Dunsheath, Telford": {"postcode": "TF3 2DA", "house_number": "126"},
+    "11 Pinewoods, Telford": {"postcode": "TF10 9LN", "house_number": "11"},
 }
 
 API_URLS = {
@@ -39,20 +39,20 @@ IMAGEPATH = "https://dac.telford.gov.uk/BinDayFinder/Content/BinIcons/"
 
 
 class Source:
-    def __init__(self, post_code=None, name_number=None, uprn=None):
-        self._post_code = post_code
-        self._name_number = name_number
+    def __init__(self, postcode=None, house_number=None, uprn=None):
+        self._postcode = postcode
+        self._house_number = house_number
         self._uprn = uprn
 
     async def fetch(self):
         if not self._uprn:
             # look up the UPRN for the address
 
-            params = {"postcode": self._post_code}
+            params = {"postcode": self._postcode}
             r = await httpx.AsyncClient(follow_redirects=True).get(API_URLS["address_search"], params=params)
             if r.status_code == 500:
                 raise SourceArgumentException(
-                    "post_code",
+                    "postcode",
                     "Postcode is not in the correct format or service is unavailable",
                 )
 
@@ -61,16 +61,16 @@ class Source:
             # Required to parse the returned JSON
             addresses = json.loads(r.json())
             if len(addresses["properties"]) == 0:
-                raise SourceArgumentNotFound("post_code", self._post_code)
+                raise SourceArgumentNotFound("postcode", self._postcode)
 
             for property in addresses["properties"]:
-                if property["PrimaryName"].lower() == self._name_number.lower():
+                if property["PrimaryName"].lower() == self._house_number.lower():
                     self._uprn = property["UPRN"]
 
             if not self._uprn:
                 raise SourceArgumentNotFoundWithSuggestions(
-                    "name_number",
-                    self._name_number,
+                    "house_number",
+                    self._house_number,
                     [property["PrimaryName"] for property in addresses["properties"]],
                 )
 

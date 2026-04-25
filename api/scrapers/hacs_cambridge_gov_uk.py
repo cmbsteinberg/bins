@@ -15,8 +15,8 @@ DESCRIPTION = (
 )
 URL = "https://cambridge.gov.uk"
 TEST_CASES = {
-    "houseNumber": {"post_code": "CB13JD", "number": 37},
-    "houseName": {"post_code": "cb215hd", "number": "ROSEMARY HOUSE"},
+    "houseNumber": {"postcode": "CB13JD", "house_number": 37},
+    "houseName": {"postcode": "cb215hd", "house_number": "ROSEMARY HOUSE"},
 }
 
 API_URLS = {
@@ -34,28 +34,28 @@ _LOGGER = logging.getLogger(__name__)
 
 
 class Source:
-    def __init__(self, post_code: str, number: str):
-        self._post_code = post_code
-        self._number = str(number).capitalize()
+    def __init__(self, postcode: str, house_number: str):
+        self._postcode = postcode
+        self._house_number = str(house_number).capitalize()
 
     async def fetch(self):
         # fetch location id
         r = await httpx.AsyncClient(follow_redirects=True).get(
-            API_URLS["address_search"], params={"postCode": self._post_code}
+            API_URLS["address_search"], params={"postCode": self._postcode}
         )
         r.raise_for_status()
         addresses = r.json()
         if len(addresses) == 0:
-            raise SourceArgumentNotFound("post_code", self._post_code)
+            raise SourceArgumentNotFound("postcode", self._postcode)
 
         address_ids = [
-            x["id"] for x in addresses if x["houseNumber"].capitalize() == self._number
+            x["id"] for x in addresses if x["houseNumber"].capitalize() == self._house_number
         ]
 
         if len(address_ids) == 0:
             raise SourceArgumentNotFoundWithSuggestions(
-                "number",
-                self._number,
+                "house_number",
+                self._house_number,
                 [x["houseNumber"] for x in addresses],
             )
 

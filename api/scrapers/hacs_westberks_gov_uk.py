@@ -14,10 +14,10 @@ TEST_CASES = {
     "known_uprn as number": {"uprn": 100081026602},
     "unknown_uprn_by_name": {
         "postcode": "RG7 6NZ",
-        "housenumberorname": "PARROG HOUSE",
+        "house_number": "PARROG HOUSE",
     },
-    "unknown_uprn_by_number": {"postcode": "RG18 4QU", "housenumberorname": "6"},
-    "unknown_uprn_business": {"postcode": "RG18 4GE", "housenumberorname": "3"},
+    "unknown_uprn_by_number": {"postcode": "RG18 4QU", "house_number": "6"},
+    "unknown_uprn_business": {"postcode": "RG18 4GE", "house_number": "3"},
 }
 
 ICON_MAP = {
@@ -42,11 +42,11 @@ def fix_date(d: date):
 
 class Source:
     def __init__(
-        self, uprn=None, postcode=None, housenumberorname=None
+        self, uprn=None, postcode=None, house_number=None
     ):  # argX correspond to the args dict in the source configuration
         self._uprn = str(uprn).zfill(12) if uprn is not None else None
         self._postcode = postcode
-        self._housenumberorname = housenumberorname
+        self._house_number = house_number
 
     async def fetch(self):
         entries = []
@@ -71,10 +71,10 @@ class Source:
 
             propertyUprns = address_data["result"]
             for match in propertyUprns:
-                if match["line1"].startswith(self._housenumberorname):
+                if match["line1"].startswith(self._house_number):
                     self._uprn = match["udprn"]
                 if match["buildingnumber"].startswith(
-                    self._housenumberorname
+                    self._house_number
                 ):  # no evidence (yet) that their database uses this
                     self._uprn = match["udprn"]
 

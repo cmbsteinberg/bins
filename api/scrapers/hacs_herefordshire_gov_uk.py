@@ -14,7 +14,7 @@ TITLE = "Herefordshire City Council"
 DESCRIPTION = "Source for herefordshire.gov.uk services for hereford"
 URL = "https://herefordshire.gov.uk"
 TEST_CASES = {
-    "houseNumber": {"post_code": "hr49js", "number": "52"},
+    "houseNumber": {"postcode": "hr49js", "house_number": "52"},
 }
 
 API_URLS = {
@@ -31,17 +31,17 @@ _LOGGER = logging.getLogger(__name__)
 
 
 class Source:
-    def __init__(self, post_code: str, number: str):
-        self._post_code = post_code
+    def __init__(self, postcode: str, house_number: str):
+        self._postcode = postcode
         # keep original behaviour, but normalise for comparisons later
-        self._number = str(number).capitalize()
+        self._house_number = str(house_number).capitalize()
 
     async def fetch(self):
         # fetch location id
         r = await httpx.AsyncClient(follow_redirects=True).get(
             API_URLS["address_search"],
             headers=HEADER,
-            params={"postcode": self._post_code, "type": "standard"},
+            params={"postcode": self._postcode, "type": "standard"},
         )
         r.raise_for_status()
         addresses = r.json()
@@ -50,10 +50,10 @@ class Source:
             or "results" not in addresses
             or len(addresses["results"]) == 0
         ):
-            raise SourceArgumentNotFound("post_code", self._post_code)
+            raise SourceArgumentNotFound("postcode", self._postcode)
 
         # cast PAO fields to str to avoid .lower() on non-strings (some APIs return ints)
-        target = self._number.lower()
+        target = self._house_number.lower()
         address_ids = [
             x
             for x in addresses["results"]
@@ -73,7 +73,7 @@ class Source:
                 {x["LPI"].get("PAO_START_NUMBER") for x in addresses["results"]}
             )
             numbers -= {None}
-            raise SourceArgumentNotFoundWithSuggestions("number", self._number, numbers)
+            raise SourceArgumentNotFoundWithSuggestions("house_number", self._house_number, numbers)
 
         q = str(API_URLS["collection"])
         r = await httpx.AsyncClient(follow_redirects=True).get(

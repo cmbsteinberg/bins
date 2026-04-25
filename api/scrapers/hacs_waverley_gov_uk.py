@@ -8,14 +8,14 @@ DESCRIPTION = "Source for www.waverley.gov.uk services for Waverley Borough Coun
 URL = "https://waverley.gov.uk"
 TEST_CASES = {
     "Example": {
-        "address_postcode": "GU8 5QQ",
-        "address_name_numer": "1",
-        "address_street": "Gasden Drive",
+        "postcode": "GU8 5QQ",
+        "house_number": "1",
+        "street": "Gasden Drive",
     },
     "Example No Postcode Space": {
-        "address_postcode": "GU85QQ",
-        "address_name_numer": "1",
-        "address_street": "Gasden Drive",
+        "postcode": "GU85QQ",
+        "house_number": "1",
+        "street": "Gasden Drive",
     },
 }
 ICON_MAP = {
@@ -31,23 +31,23 @@ API_URL = "https://wav-wrp.whitespacews.com/"
 class Source:
     def __init__(
         self,
-        address_name_numer=None,
-        address_street=None,
-        street_town=None,
-        address_postcode=None,
+        house_number=None,
+        street=None,
+        town=None,
+        postcode=None,
     ):
-        self._address_name_numer = address_name_numer
-        self._address_street = address_street
-        self._street_town = street_town
-        self._address_postcode = address_postcode
+        self._house_number = house_number
+        self._street = street
+        self._town = town
+        self._postcode = postcode
         self._client = WhitespaceClient(API_URL)
 
     async def fetch(self):
         schedule = await self._client.fetch_schedule(
-            address_name_number=self._address_name_numer,
-            address_postcode=self._address_postcode,
-            address_street=self._address_street,
-            street_town=self._street_town,
+            address_name_number=self._house_number,
+            postcode=self._postcode,
+            street=self._street,
+            town=self._town,
         )
 
         entries = []

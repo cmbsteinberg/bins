@@ -11,18 +11,18 @@ DESCRIPTION = "Source for Sefton Council, UK"  # Describe your source
 URL = "https://www.sefton.gov.uk/"  # Insert url to service homepage. URL will show up in README.md and info.md
 TEST_CASES = {  # Insert arguments for test cases to be used by test_sources.py script
     "Issue2369": {
-        "house_number_or_name": "1",
-        "streetname": "Ken Mews",
+        "house_number": "1",
+        "street": "Ken Mews",
         "postcode": "L20 6GF",
     },
     "Housename": {
-        "house_number_or_name": "Gladstone House",
-        "streetname": "Rosemary Lane",
+        "house_number": "Gladstone House",
+        "street": "Rosemary Lane",
         "postcode": "L37 3JB",
     },
     "Issue2496": {
-        "house_number_or_name": 22,
-        "streetname": "Elton Avenue",
+        "house_number": 22,
+        "street": "Elton Avenue",
         "postcode": "L23 8UW",
     },
 }
@@ -40,13 +40,13 @@ HOW_TO_GET_ARGUMENTS_DESCRIPTION = {  # Optional dictionary to describe how to g
     "en": "Using a browser, go to [sefton.gov.uk](https://www.sefton.gov.uk/bins-and-recycling/bins-and-recycling/when-is-my-bin-collection-day/). "
     "For _Postcode_ and _Street name_ use the values you'd enter on Sefton's first page."
     "Search, and then for _House Name or Number_ you need the value that comes before the street name you entered on the first screen."
-    "e.g. if your streetname is 'Liverpool Road' and the select box has an option of '1A Liverpool Road' enter '1A' as your _House Name or Number_."
+    "e.g. if your street is 'Liverpool Road' and the select box has an option of '1A Liverpool Road' enter '1A' as your _House Name or Number_."
 }
 
 PARAM_DESCRIPTIONS = {  # Optional dict to describe the arguments, will be shown in the GUI configuration below the respective input field
     "en": {
-        "house_number_or_name": "House name or number",
-        "streetname": "Street name",
+        "house_number": "House name or number",
+        "street": "Street name",
         "postcode": "Postcode",
     }
 }
@@ -57,10 +57,10 @@ PARAM_DESCRIPTIONS = {  # Optional dict to describe the arguments, will be shown
 
 class Source:
     def __init__(
-        self, house_number_or_name: str | int, streetname: str, postcode: str
+        self, house_number: str | int, street: str, postcode: str
     ):  # argX correspond to the args dict in the source configuration
-        self._house_number_or_name = str(house_number_or_name).upper()
-        self._streetname = streetname
+        self._house_number = str(house_number).upper()
+        self._street = street
         self._postcode = postcode
 
     async def fetch(self) -> list[Collection]:
@@ -73,7 +73,7 @@ class Source:
             hidden = soup.find_all("input", {"type": "hidden"}, limit=2)
             payload = {x["name"]: x["value"] for x in hidden}
             payload["Postcode"] = self._postcode
-            payload["Streetname"] = self._streetname
+            payload["Streetname"] = self._street
             request = await sess.post(
                 "https://www.sefton.gov.uk/bins-and-recycling/bins-and-recycling/when-is-my-bin-collection-day/",
                 data=payload,
@@ -85,13 +85,13 @@ class Source:
             payload["action"] = "Select"
             option_tags = soup.select("select option")
             for option in option_tags:
-                if option.text.upper().strip().startswith(self._house_number_or_name):
+                if option.text.upper().strip().startswith(self._house_number):
                     payload["selectedValue"] = option["value"]
                     break
             if "selectedValue" not in payload:
                 raise SourceArgumentNotFoundWithSuggestions(
                     "houseNumberOrName",
-                    self._house_number_or_name,
+                    self._house_number,
                     [option.text.strip() for option in option_tags],
                 )
             request = await sess.post(

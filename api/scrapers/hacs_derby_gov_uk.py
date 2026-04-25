@@ -36,14 +36,14 @@ _LOGGER = logging.getLogger(__name__)
 PARAM_TRANSLATIONS = {
     "en": {
         "premises_id": "premises_id",
-        "post_code": "DEPRECATED: post_code",
+        "postcode": "DEPRECATED: postcode",
         "house_number": "DEPRECATED: house_number",
     }
 }
 
 PARAM_DESCRIPTIONS = {
     "en": {
-        "post_code": "LEAVE EMPTY is not used anymore.",
+        "postcode": "LEAVE EMPTY is not used anymore.",
         "house_number": "LEAVE EMPTY is not used anymore.",
     }
 }
@@ -57,7 +57,7 @@ class Source:
     def __init__(
         self,
         premises_id: int | None = None,
-        post_code: str | None = None,
+        postcode: str | None = None,
         house_number: str | None = None,
     ):
         self._premises_id = premises_id

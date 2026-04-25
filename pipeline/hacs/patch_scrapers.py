@@ -1547,6 +1547,72 @@ def _inject_verify_false(client_name: str, args: str, force: bool = False) -> st
     return f"{client_name}(verify=False)"
 
 
+# --- Init param normalisation ---
+
+
+PARAM_NAME_NORMALISATIONS: dict[str, str] = {
+    "post_code": "postcode",
+    "address_postcode": "postcode",
+    "number": "house_number",
+    "house_number_or_name": "house_number",
+    "housenumberorname": "house_number",
+    "housenameornumber": "house_number",
+    "name_number": "house_number",
+    "door_num": "house_number",
+    "property_name_or_number": "house_number",
+    "address_name_number": "house_number",
+    "address_name_numer": "house_number",
+    "streetname": "street",
+    "street_name": "street",
+    "road_name": "street",
+    "address_street": "street",
+    "street_town": "town",
+}
+
+
+def _normalise_init_params(source: str) -> str:
+    """Rename idiosyncratic Source.__init__ params to canonical names."""
+    try:
+        tree = ast.parse(source)
+    except SyntaxError:
+        return source
+
+    cls = _find_source_class(tree)
+    if cls is None:
+        return source
+
+    init = next(
+        (
+            n
+            for n in cls.body
+            if isinstance(n, ast.FunctionDef) and n.name == "__init__"
+        ),
+        None,
+    )
+    if init is None:
+        return source
+
+    existing = {a.arg for a in init.args.args} | {
+        a.arg for a in init.args.kwonlyargs
+    }
+    renames: dict[str, str] = {}
+    for arg in init.args.args:
+        new_name = PARAM_NAME_NORMALISATIONS.get(arg.arg)
+        if new_name is None:
+            continue
+        if new_name in existing or new_name in renames.values():
+            continue
+        renames[arg.arg] = new_name
+
+    if not renames:
+        return source
+
+    for old, new in renames.items():
+        source = re.sub(rf"\b{re.escape(old)}\b", new, source)
+        source = re.sub(rf"\b_{re.escape(old)}\b", f"_{new}", source)
+    return source
+
+
 # --- File-level entry points ---
 
 
@@ -1559,6 +1625,7 @@ def transform_file(
 ) -> list[str]:
     source = source_path.read_text()
     transformed, warnings = transform_source(source)
+    transformed = _normalise_init_params(transformed)
     if use_curl_cffi_fallback:
         transformed = _apply_curl_cffi_fallback(transformed)
     elif use_requests_fallback:

@@ -14,8 +14,8 @@ TITLE = "Canterbury City Council"
 DESCRIPTION = "Source for canterbury.gov.uk services for canterbury"
 URL = "https://canterbury.gov.uk"
 TEST_CASES = {
-    "houseNumber": {"post_code": "ct68ru", "number": "63"},
-    "houseName": {"post_code": "ct68ru", "number": "KOWLOON"},
+    "houseNumber": {"postcode": "ct68ru", "house_number": "63"},
+    "houseName": {"postcode": "ct68ru", "house_number": "KOWLOON"},
 }
 HEADERS = {
     "Content-Type": "application/json",
@@ -41,15 +41,15 @@ _LOGGER = logging.getLogger(__name__)
 
 
 class Source:
-    def __init__(self, post_code: str, number: str):
-        self._post_code = post_code
-        self._number = str(number).capitalize()
+    def __init__(self, postcode: str, house_number: str):
+        self._postcode = postcode
+        self._house_number = str(house_number).capitalize()
 
     async def fetch(self):
         # fetch location id
         r = await httpx.AsyncClient(follow_redirects=True).get(
             API_URLS["address_search"],
-            params={"postcode": self._post_code, "type": "standard"},
+            params={"postcode": self._postcode, "type": "standard"},
         )
         r.raise_for_status()
         addresses = r.json()
@@ -59,20 +59,20 @@ class Source:
             for x in addresses["results"]
             if (
                 x["LPI"].get("PAO_TEXT")
-                and x["LPI"]["PAO_TEXT"].lower() == self._number.lower()
+                and x["LPI"]["PAO_TEXT"].lower() == self._house_number.lower()
             )
             or (
                 x["LPI"].get("PAO_START_NUMBER")
-                and x["LPI"]["PAO_START_NUMBER"].lower() == self._number.lower()
+                and x["LPI"]["PAO_START_NUMBER"].lower() == self._house_number.lower()
             )
         ]
 
         if len(address_ids) == 0:
             if len(addresses["results"]) == 0:
-                raise SourceArgumentNotFound("post_code", self._post_code)
+                raise SourceArgumentNotFound("postcode", self._postcode)
             raise SourceArgumentNotFoundWithSuggestions(
-                "number",
-                self._number,
+                "house_number",
+                self._house_number,
                 {
                     x["LPI"].get("PAO_TEXT") or x["LPI"].get("PAO_START_NUMBER")
                     for x in addresses["results"]

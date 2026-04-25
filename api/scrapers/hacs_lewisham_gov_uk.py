@@ -13,8 +13,8 @@ TITLE = "London Borough of Lewisham"
 DESCRIPTION = "Source for services from the London Borough of Lewisham"
 URL = "https://lewisham.gov.uk"
 TEST_CASES = {
-    "houseNumber": {"post_code": "SE41LR", "number": 4},
-    "houseName": {"post_code": "SE233TE", "name": "The Haven"},
+    "houseNumber": {"postcode": "SE41LR", "house_number": 4},
+    "houseName": {"postcode": "SE233TE", "name": "The Haven"},
     "houseUprn": {"uprn": "10070495030"},
     "houseUprn2": {"uprn": 100021959032},
 }
@@ -47,16 +47,16 @@ class InsufficientDataError(Exception):
 
 
 class Source:
-    def __init__(self, post_code=None, number=None, name=None, uprn=None):
-        self._post_code = post_code
-        self._number = number
+    def __init__(self, postcode=None, house_number=None, name=None, uprn=None):
+        self._postcode = postcode
+        self._house_number = house_number
         self._name = name
         self._uprn = uprn
 
     async def get_uprn(self) -> None:
         if not self._uprn:
             # look up the UPRN for the address
-            p = {"postcodeOrStreet": self._post_code}
+            p = {"postcodeOrStreet": self._postcode}
             r = await httpx.AsyncClient(follow_redirects=True).post(
                 ADDRESS_SEARCH_URL,
                 params=p,
@@ -71,16 +71,16 @@ class Source:
                     for x in addresses
                     if (x["Title"]).upper().startswith(self._name.upper())
                 ][0]
-            elif self._number:
+            elif self._house_number:
                 self._uprn = [
                     x["Uprn"]
                     for x in addresses
-                    if (x["Title"]).startswith(str(self._number))
+                    if (x["Title"]).startswith(str(self._house_number))
                 ][0]
 
             if not self._uprn:
                 raise Exception(
-                    f"Could not find address {self._post_code} {self._number}{self._name}"
+                    f"Could not find address {self._postcode} {self._house_number}{self._name}"
                 )
 
     async def fetch(self) -> list[Collection]:

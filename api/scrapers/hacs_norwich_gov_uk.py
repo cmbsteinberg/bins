@@ -19,23 +19,23 @@ API_URL = "https://bnr-wrp.whitespacews.com"
 # Test cases used by the integration framework for validation
 TEST_CASES = {
     "GoodExample": {
-        "property_name_or_number": "33",
-        "street_name": "Carrow Road",
+        "house_number": "33",
+        "street": "Carrow Road",
         "postcode": "NR1 1HS",
     },
     "FlatAddress": {
-        "property_name_or_number": "Flat 1",
-        "street_name": "Unthank Road",
+        "house_number": "Flat 1",
+        "street": "Unthank Road",
         "postcode": "NR2 2RN",
     },
     "UncompletedRoadName": {
-        "property_name_or_number": "18",
-        "street_name": "Aylsham",
+        "house_number": "18",
+        "street": "Aylsham",
         "postcode": "NR3 3HG",
     },
     "PostcodeMissingSpace": {
-        "property_name_or_number": "258",
-        "street_name": "North Park Avenue",
+        "house_number": "258",
+        "street": "North Park Avenue",
         "postcode": "NR47ED",
     },
 }
@@ -76,19 +76,19 @@ class Source:
 
     def __init__(
         self,
-        property_name_or_number: str,
-        street_name: str,
+        house_number: str,
+        street: str,
         postcode: str,
     ):
         """Initialise the source with an address to look up.
 
         Args:
-            property_name_or_number: Name or number of the property.
-            street_name: Street name of the property.
+            house_number: Name or number of the property.
+            street: Street name of the property.
             postcode: Postcode of the property.
         """
-        self._property_name_or_number = property_name_or_number
-        self._street_name = street_name
+        self._house_number = house_number
+        self._street = street
         self._postcode = postcode
 
         self._headers = {
@@ -197,8 +197,8 @@ class Source:
                 data[name] = value
 
         # Insert the user-supplied address fields
-        data["address_name_number"] = self._property_name_or_number
-        data["address_street"] = self._street_name
+        data["address_name_number"] = self._house_number
+        data["address_street"] = self._street
         data["address_postcode"] = self._postcode
 
         # Submit the form using the correct HTTP method
@@ -213,8 +213,8 @@ class Source:
 
         # Identify the correct address by matching both number/name and street
         required_words = [
-            self._property_name_or_number.lower(),
-            self._street_name.lower(),
+            self._house_number.lower(),
+            self._street.lower(),
         ]
 
         matches = []

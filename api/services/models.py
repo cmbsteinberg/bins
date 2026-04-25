@@ -21,6 +21,9 @@ class AddressResult(BaseModel):
     uprn: str
     full_address: str
     postcode: str
+    address_line_1: str | None = None
+    house_number_or_name: str | None = None
+    street: str | None = None
 
 
 class AddressLookupResponse(BaseModel):

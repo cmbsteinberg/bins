@@ -1,9 +1,10 @@
-import httpx
 import datetime
 import logging
 
-from api.compat.curl_cffi_fallback import AsyncClient as _CurlCffiClient
+import httpx
 from bs4 import BeautifulSoup, NavigableString, Tag
+
+from api.compat.curl_cffi_fallback import AsyncClient as _CurlCffiClient
 from api.compat.hacs import Collection  # type: ignore[attr-defined]
 from api.compat.hacs.exceptions import SourceArgumentException
 

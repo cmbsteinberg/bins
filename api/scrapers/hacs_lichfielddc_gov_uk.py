@@ -3,6 +3,7 @@ import datetime
 import httpx
 from bs4 import BeautifulSoup
 from dateutil import parser
+
 from api.compat.hacs import Collection  # type: ignore[attr-defined]
 
 TITLE = "Lichfield District Council"

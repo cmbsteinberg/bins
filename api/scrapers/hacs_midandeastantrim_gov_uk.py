@@ -2,6 +2,7 @@ from datetime import date, datetime
 
 import httpx
 from bs4 import BeautifulSoup, Tag
+
 from api.compat.hacs import Collection  # type: ignore[attr-defined]
 
 TITLE = "Mid and East Antrim"

@@ -1,9 +1,10 @@
+import asyncio
 import logging
 from datetime import date, datetime, timedelta
-import asyncio
+
+from bs4 import BeautifulSoup
 
 from api.compat.curl_cffi_fallback import AsyncClient as _CurlCffiClient
-from bs4 import BeautifulSoup
 from api.compat.hacs import Collection  # type: ignore[attr-defined]
 
 _LOGGER = logging.getLogger(__name__)

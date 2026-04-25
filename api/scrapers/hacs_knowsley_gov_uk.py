@@ -4,6 +4,7 @@ import time
 from datetime import datetime
 
 import httpx
+
 from api.compat.hacs import Collection  # type: ignore[attr-defined]
 from api.compat.hacs.exceptions import SourceArgumentNotFound
 

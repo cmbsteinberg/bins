@@ -1,8 +1,9 @@
 from datetime import date, datetime
 from typing import Optional
 
-from bs4 import BeautifulSoup
 import httpx
+from bs4 import BeautifulSoup
+
 from api.compat.hacs import Collection  # type: ignore[attr-defined]
 
 TITLE = "Preston City Council"

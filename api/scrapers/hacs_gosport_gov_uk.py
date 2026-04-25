@@ -6,6 +6,7 @@ from urllib.parse import parse_qs, urlparse
 
 import httpx
 from bs4 import BeautifulSoup
+
 from api.compat.hacs import Collection  # type: ignore[attr-defined]
 
 TITLE = "Gosport Borough Council"

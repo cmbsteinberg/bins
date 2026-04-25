@@ -3,6 +3,7 @@ from datetime import datetime
 from time import time_ns
 
 import httpx
+
 from api.compat.hacs import Collection  # type: ignore[attr-defined]
 
 TITLE = "Maidstone Borough Council"

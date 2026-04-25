@@ -36,3 +36,8 @@ pre-commit:
       tags: test
       glob: "*.py"
       run: uv run pytest tests/test_ci.py -x -q --tb=short
+
+pre-push:
+  commands:
+    integration-tests:
+      run: uv run pytest tests/test_integration.py -v --tb=short; ./scripts/post_integration.sh

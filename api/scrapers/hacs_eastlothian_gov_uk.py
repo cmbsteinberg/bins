@@ -2,8 +2,9 @@ import logging
 import re
 from datetime import datetime
 
-from api.compat.curl_cffi_fallback import AsyncClient as _CurlCffiClient
 from bs4 import BeautifulSoup, Tag
+
+from api.compat.curl_cffi_fallback import AsyncClient as _CurlCffiClient
 from api.compat.hacs import Collection  # type: ignore[attr-defined]
 from api.compat.hacs.exceptions import (
     SourceArgumentNotFound,

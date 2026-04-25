@@ -1,7 +1,8 @@
 from datetime import datetime
 
-from api.compat.curl_cffi_fallback import AsyncClient as _CurlCffiClient
 import urllib3
+
+from api.compat.curl_cffi_fallback import AsyncClient as _CurlCffiClient
 from api.compat.hacs import Collection  # type: ignore[attr-defined]
 
 # With verify=True the POST fails due to a SSLCertVerificationError.

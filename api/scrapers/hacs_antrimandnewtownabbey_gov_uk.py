@@ -5,6 +5,7 @@ from datetime import date, datetime, timedelta
 import httpx
 from bs4 import BeautifulSoup, Tag
 from dateutil.parser import parse
+
 from api.compat.hacs import Collection  # type: ignore[attr-defined]
 from api.compat.hacs.exceptions import SourceArgumentExceptionMultiple
 

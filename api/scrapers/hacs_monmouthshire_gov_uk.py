@@ -4,6 +4,7 @@ from datetime import date, datetime
 
 import httpx
 from bs4 import BeautifulSoup
+
 from api.compat.hacs import Collection
 from api.compat.hacs.exceptions import SourceArgumentException
 

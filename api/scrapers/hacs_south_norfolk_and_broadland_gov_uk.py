@@ -1,4 +1,3 @@
-import httpx
 import json
 import re
 from datetime import date
@@ -6,8 +5,10 @@ from time import strptime
 from typing import List
 from urllib.parse import quote
 
-from api.compat.curl_cffi_fallback import AsyncClient as _CurlCffiClient
+import httpx
 from bs4 import BeautifulSoup as soup
+
+from api.compat.curl_cffi_fallback import AsyncClient as _CurlCffiClient
 from api.compat.hacs import Collection
 from api.compat.hacs.exceptions import (
     SourceArgumentExceptionMultiple,

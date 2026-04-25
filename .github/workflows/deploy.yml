@@ -48,36 +48,3 @@ jobs:
             mv .env.tmp .env
             docker compose up -d --build --remove-orphans
             docker compose exec -T redis redis-cli --scan --pattern 'ratelimit:*' | xargs -r docker compose exec -T redis redis-cli del || true
-
-  integration-test:
-    needs: deploy
-    runs-on: ubuntu-latest
-    timeout-minutes: 30
-    permissions:
-      contents: write
-    steps:
-      - uses: actions/checkout@v4
-
-      - uses: astral-sh/setup-uv@v4
-
-      - name: Install dependencies
-        run: uv sync
-
-      - name: Integration tests
-        run: uv run pytest tests/test_integration.py -v --tb=short || true
-
-      - name: Upload results
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: integration-results
-          path: tests/integration_output.json
-
-      - name: Commit regenerated artefacts
-        if: always()
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add -A
-          git diff --staged --quiet || git commit -m "Update post-integration artefacts [skip ci]"
-          git push

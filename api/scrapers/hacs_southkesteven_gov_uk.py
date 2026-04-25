@@ -3,6 +3,7 @@ from datetime import datetime
 
 import bs4
 import httpx
+
 from api.compat.hacs import Collection  # type: ignore[attr-defined]
 from api.compat.hacs.service.FirmstepSelfService import (
     get_hidden_form_inputs,

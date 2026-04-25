@@ -3,6 +3,7 @@ import re
 from datetime import datetime
 
 import httpx
+
 from api.compat.hacs import Collection  # type: ignore[attr-defined]
 
 TITLE = "East Riding of Yorkshire Council"

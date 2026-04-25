@@ -1,6 +1,7 @@
 import httpx
 from bs4 import BeautifulSoup
 from dateutil import parser
+
 from api.compat.hacs import Collection  # type: ignore[attr-defined]
 
 TITLE = "North West Leicestershire District Council"  # Title will show up in README.md and info.md

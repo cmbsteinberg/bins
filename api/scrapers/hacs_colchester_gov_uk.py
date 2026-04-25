@@ -2,6 +2,7 @@ import json
 from datetime import datetime, timedelta
 
 import httpx
+
 from api.compat.hacs import Collection  # type: ignore[attr-defined]
 
 TITLE = "Colchester City Council"

@@ -6,6 +6,7 @@ from datetime import datetime
 
 import httpx
 from bs4 import BeautifulSoup
+
 from api.compat.hacs import Collection  # type: ignore[attr-defined]
 
 TITLE = "Shropshire Council"

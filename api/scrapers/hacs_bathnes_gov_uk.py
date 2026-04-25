@@ -2,6 +2,7 @@ from datetime import datetime
 from typing import Any, List, Mapping, Optional
 
 import httpx
+
 from api.compat.hacs import Collection
 from api.compat.hacs.exceptions import (
     SourceArgumentException,

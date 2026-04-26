@@ -14,7 +14,7 @@ import sys
 from dataclasses import dataclass, field
 from pathlib import Path
 
-from pipeline.shared import load_overrides
+from pipeline.shared import load_hacs_patch_overrides
 
 # Service modules in api.compat.hacs.service that expose async helpers.
 # Any call to these names (as bare function or .attr method) must be awaited,
@@ -1441,11 +1441,11 @@ def _is_deprecated_scraper(source: str) -> bool:
 
 
 def _load_override_sets() -> tuple[set[str], set[str], set[str], set[str], dict[str, str]]:
-    """Load all override sets from overrides.json.
+    """Load all override sets from hacs/patch_overrides.json.
 
     Returns (requests_fallback, curl_cffi_fallback, ssl_verify_disabled, broken, uprn_alias).
     """
-    overrides = load_overrides()
+    overrides = load_hacs_patch_overrides()
     return (
         set(overrides.get("requests_fallback", [])),
         set(overrides.get("curl_cffi_fallback", [])),

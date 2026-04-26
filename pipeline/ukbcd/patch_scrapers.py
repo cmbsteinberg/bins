@@ -20,7 +20,7 @@ from pipeline.shared import (
     BLOCKED_DOMAINS,
     LAD_LOOKUP_PATH,
     extract_gov_uk_prefix,
-    load_overrides,
+    load_routing,
     normalise_domain,
 )
 
@@ -576,7 +576,7 @@ class Source:
 
 def _load_ukbcd_override_domains() -> set[str]:
     """Load domains where UKBCD should be preferred over HACS."""
-    overrides = load_overrides()
+    overrides = load_routing()
     domains = {entry["domain"] for entry in overrides.get("hacs_to_ukbcd", {}).values() if "domain" in entry}
     if domains:
         logger.info(f"Loaded {len(domains)} HACS→UKBCD overrides.")

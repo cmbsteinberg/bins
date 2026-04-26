@@ -14,13 +14,14 @@ import logging
 import sys
 from pathlib import Path
 
+from pipeline.shared import load_routing
+
 logging.basicConfig(level=logging.INFO, format="%(levelname)s: %(message)s")
 logger = logging.getLogger(__name__)
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent.parent
 SCRAPERS_DIR = PROJECT_ROOT / "api" / "scrapers"
 OUTPUT_PATH = PROJECT_ROOT / "tests" / "test_cases.json"
-OVERRIDES_PATH = PROJECT_ROOT / "pipeline" / "overrides.json"
 
 
 def extract_test_cases(path: Path) -> dict | None:
@@ -49,10 +50,7 @@ def extract_test_cases(path: Path) -> dict | None:
 
 def _load_overridden_scrapers() -> set[str]:
     """Return set of HACS scraper IDs that are overridden by UKBCD equivalents."""
-    if not OVERRIDES_PATH.exists():
-        return set()
-    overrides = json.loads(OVERRIDES_PATH.read_text())
-    return set(overrides.get("hacs_to_ukbcd", {}).keys())
+    return set(load_routing().get("hacs_to_ukbcd", {}).keys())
 
 
 def main():

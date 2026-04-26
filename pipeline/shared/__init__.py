@@ -13,7 +13,9 @@ PROJECT_ROOT = PIPELINE_DIR.parent
 API_DIR = PROJECT_ROOT / "api"
 SCRAPERS_DIR = API_DIR / "scrapers"
 LAD_LOOKUP_PATH = API_DIR / "data" / "lad_lookup.json"
-OVERRIDES_PATH = PIPELINE_DIR / "overrides.json"
+ROUTING_PATH = PIPELINE_DIR / "routing.json"
+HACS_PATCH_OVERRIDES_PATH = PIPELINE_DIR / "hacs" / "patch_overrides.json"
+LAD_OVERRIDES_PATH = PIPELINE_DIR / "lad_overrides.json"
 
 # Overly broad domains that should never be used as lookup keys
 BLOCKED_DOMAINS = {
@@ -115,8 +117,22 @@ def build_hacs_domain_lookup(scrapers_dir: Path) -> dict[str, str]:
     return lookup
 
 
-def load_overrides() -> dict:
-    """Load the pipeline overrides config."""
-    if not OVERRIDES_PATH.exists():
+def _load_json(path: Path) -> dict:
+    if not path.exists():
         return {}
-    return json.loads(OVERRIDES_PATH.read_text())
+    return json.loads(path.read_text())
+
+
+def load_routing() -> dict:
+    """Load HACS↔UKBCD routing config (hacs_to_ukbcd map)."""
+    return _load_json(ROUTING_PATH)
+
+
+def load_hacs_patch_overrides() -> dict:
+    """Load HACS AST-patcher knobs (fallbacks, ssl, broken, uprn aliases)."""
+    return _load_json(HACS_PATCH_OVERRIDES_PATH)
+
+
+def load_lad_overrides() -> dict:
+    """Load preserved scrapers + LAD code overrides for sync orchestration."""
+    return _load_json(LAD_OVERRIDES_PATH)

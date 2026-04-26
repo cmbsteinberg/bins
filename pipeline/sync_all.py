@@ -31,7 +31,8 @@ from pipeline.shared import (
     SCRAPERS_DIR,
     extract_gov_uk_prefix,
     extract_url_from_scraper,
-    load_overrides,
+    load_lad_overrides,
+    load_routing,
     normalise_council_name,
     normalise_domain,
 )
@@ -117,9 +118,8 @@ def filter_hacs_scrapers(needed_ids: set[str]) -> list[str]:
     """
     import ast
 
-    overrides = load_overrides()
-    override_hacs = set(overrides.get("hacs_to_ukbcd", {}).keys())
-    preserved = set(overrides.get("preserved_scrapers", {}))
+    override_hacs = set(load_routing().get("hacs_to_ukbcd", {}).keys())
+    preserved = set(load_lad_overrides().get("preserved_scrapers", {}))
 
     removed = []
     for path in sorted(SCRAPERS_DIR.glob("hacs_*.py")):
@@ -206,13 +206,13 @@ def _copy_ports() -> list[str]:
 def _merge_preserved_scrapers() -> None:
     """Wire preserved scrapers and ports into lad_lookup.json.
 
-    Reads the preserved_scrapers and ports maps from overrides.json
+    Reads the preserved_scrapers and lad_overrides maps from lad_overrides.json
     (scraper_id → [LAD codes]), imports TITLE and URL from each scraper module,
     and patches the corresponding lad_lookup entries.
     """
     import importlib
 
-    overrides = load_overrides()
+    overrides = load_lad_overrides()
     combined: dict[str, list[str]] = {}
     combined.update(overrides.get("preserved_scrapers", {}))
     combined.update(overrides.get("lad_overrides", {}))
@@ -274,12 +274,11 @@ def main():
     save_needed_councils(needed_ids)
 
     # 2. Wipe all scrapers so stale files never linger across syncs
-    #    (preserved scrapers from overrides.json are kept)
+    #    (preserved scrapers from lad_overrides.json are kept)
     print("\n" + "=" * 50)
     print("=== Cleaning scrapers directory ===")
     print("=" * 50)
-    overrides = load_overrides()
-    preserved = set(overrides.get("preserved_scrapers", {}))
+    preserved = set(load_lad_overrides().get("preserved_scrapers", {}))
     removed_count = 0
     for path in SCRAPERS_DIR.glob("*.py"):
         if path.name == "__init__.py":

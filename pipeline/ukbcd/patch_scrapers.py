@@ -577,7 +577,7 @@ class Source:
 def _load_ukbcd_override_domains() -> set[str]:
     """Load domains where UKBCD should be preferred over HACS."""
     overrides = load_overrides()
-    domains = set(overrides.get("hacs_to_ukbcd", {}).keys())
+    domains = {entry["domain"] for entry in overrides.get("hacs_to_ukbcd", {}).values() if "domain" in entry}
     if domains:
         logger.info(f"Loaded {len(domains)} HACS→UKBCD overrides.")
     return domains
@@ -597,6 +597,55 @@ def _domain_in_overrides(domain: str, override_domains: set[str]) -> bool:
 def _resolve_url(data: dict) -> str | None:
     """Extract the URL from a council's input.json data."""
     return data.get("url") or data.get("wiki_url")
+
+
+# ---------------------------------------------------------------------------
+# Per-scraper transforms
+#
+# Local fixes for upstream UKBCD scraper bugs that haven't been merged into
+# robbrad/UKBinCollectionData yet. Each transform is keyed on the council_name
+# (the input.json key) and applied AFTER rewrite_imports + the requests->httpx
+# conversion, so the patches operate on the same code shape that ships in
+# api/scrapers/. Keep transforms minimal and prefer upstreaming the fix; remove
+# the entry here once the upstream PR lands so the next sync pulls a clean copy.
+# ---------------------------------------------------------------------------
+def _apply_per_scraper_transforms(council_name: str, source: str) -> str:
+    if council_name == "NorthYorkshire":
+        # Bug 1: upstream hardcodes `bin_data[1]["data"]`, but the Drupal AJAX
+        # response now returns 3 commands (settings, add_css, insert) for at
+        # least some former-district UPRNs. Index 1 is then `add_css` whose
+        # `data` is a list of stylesheet dicts, and BeautifulSoup raises
+        # `TypeError: expected string or bytes-like object, got 'list'` -> 503.
+        # Walk the commands and pick the first string `data` payload, matching
+        # the more robust pattern from the (now-deleted) hacs northyorks_*
+        # scrapers. See docs/plans/lad_remapping_plan.md for full context.
+        source = source.replace(
+            'soup = BeautifulSoup(bin_data[1]["data"], "html.parser")',
+            (
+                'html = next(\n'
+                '            cmd["data"]\n'
+                '            for cmd in bin_data\n'
+                '            if isinstance(cmd, dict) and isinstance(cmd.get("data"), str)\n'
+                '        )\n'
+                '        soup = BeautifulSoup(html, "html.parser")'
+            ),
+        )
+        # Bug 2: cols[2].stripped_strings can pick up icon-font text artifacts
+        # adjacent to each bin type. The hacs version reads the text node that
+        # immediately follows each <i> icon tag, which is what the rendered
+        # widget actually shows to humans.
+        source = source.replace(
+            'bin_types = [txt for txt in cols[2].stripped_strings]',
+            (
+                'bin_types = [\n'
+                '                br.next_sibling.strip()\n'
+                '                for br in cols[2].find_all("i")\n'
+                '                if br.next_sibling and isinstance(br.next_sibling, str) and br.next_sibling.strip()\n'
+                '            ]'
+            ),
+        )
+    return source
+
 
 
 def _process_council(
@@ -620,6 +669,7 @@ def _process_council(
     source_code = source_file.read_text()
     new_source = rewrite_imports(source_code)
     new_source = convert_requests_to_async_httpx(new_source)
+    new_source = _apply_per_scraper_transforms(council_name, new_source)
 
     try:
         tree = ast.parse(new_source)

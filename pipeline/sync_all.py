@@ -118,9 +118,7 @@ def filter_hacs_scrapers(needed_ids: set[str]) -> list[str]:
     import ast
 
     overrides = load_overrides()
-    override_hacs = {
-        entry["hacs_scraper"] for entry in overrides.get("hacs_to_ukbcd", {}).values()
-    }
+    override_hacs = set(overrides.get("hacs_to_ukbcd", {}).keys())
     preserved = set(overrides.get("preserved_scrapers", {}))
 
     removed = []
@@ -217,7 +215,7 @@ def _merge_preserved_scrapers() -> None:
     overrides = load_overrides()
     combined: dict[str, list[str]] = {}
     combined.update(overrides.get("preserved_scrapers", {}))
-    combined.update(overrides.get("ports", {}))
+    combined.update(overrides.get("lad_overrides", {}))
     if not combined:
         return
 
@@ -235,6 +233,7 @@ def _merge_preserved_scrapers() -> None:
 
         for lad in lad_codes:
             if lad in lad_data:
+                lad_data[lad]["name"] = title
                 lad_data[lad]["scraper_id"] = scraper_id
                 lad_data[lad]["url"] = url
             else:
@@ -247,6 +246,22 @@ def _merge_preserved_scrapers() -> None:
 
     LAD_LOOKUP_PATH.write_text(json.dumps(lad_data, indent=2))
     logger.info("Merged %d preserved/port scraper entries into lad_lookup.json", patched)
+
+
+def _check_lad_lookup_consistency() -> None:
+    """Warn for any LAD whose scraper_id doesn't exist in api/scrapers/."""
+    lad_data = json.loads(LAD_LOOKUP_PATH.read_text())
+    missing = []
+    for lad, entry in lad_data.items():
+        sid = entry.get("scraper_id")
+        if sid and not (SCRAPERS_DIR / f"{sid}.py").exists():
+            missing.append((lad, sid))
+    if missing:
+        for lad, sid in missing:
+            logger.warning("lad_lookup.json: %s -> %s (file missing)", lad, sid)
+        logger.warning("%d LAD entries reference missing scrapers", len(missing))
+    else:
+        logger.info("lad_lookup.json consistency check passed (%d entries).", len(lad_data))
 
 
 def main():
@@ -343,6 +358,8 @@ def main():
         ["uv", "run", "python", "-m", "scripts.lookup.create_lookup_table"],
         "postcode lookup regeneration",
     )
+    # 8. Sanity-check: every scraper_id in lad_lookup.json must exist on disk
+    _check_lad_lookup_consistency()
 
     # Cleanup temp file
     NEEDED_COUNCILS_PATH.unlink(missing_ok=True)

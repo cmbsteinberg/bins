@@ -52,9 +52,7 @@ def _load_overridden_scrapers() -> set[str]:
     if not OVERRIDES_PATH.exists():
         return set()
     overrides = json.loads(OVERRIDES_PATH.read_text())
-    return {
-        entry["hacs_scraper"] for entry in overrides.get("hacs_to_ukbcd", {}).values()
-    }
+    return set(overrides.get("hacs_to_ukbcd", {}).keys())
 
 
 def main():

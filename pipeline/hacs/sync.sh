@@ -114,8 +114,8 @@ python3 -c "
 import json, pathlib
 overrides = json.loads(pathlib.Path('${PIPELINE_DIR}/overrides.json').read_text())
 scrapers_dir = pathlib.Path('${SCRAPERS_DIR}')
-for entry in overrides.get('hacs_to_ukbcd', {}).values():
-    hacs_file = scrapers_dir / (entry['hacs_scraper'] + '.py')
+for hacs_name, entry in overrides.get('hacs_to_ukbcd', {}).items():
+    hacs_file = scrapers_dir / (hacs_name + '.py')
     if hacs_file.exists():
         hacs_file.unlink()
         print(f'  Removed {hacs_file.name} (replaced by {entry[\"ukbcd_scraper\"]})')

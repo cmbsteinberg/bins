@@ -50,8 +50,8 @@ TEST_CASES_PATH = Path(__file__).parent / "test_cases.json"
 OUTPUT_PATH = Path(__file__).parent / "output" / "frontend_flow_output.json"
 BASE_URL = "http://testserver/api/v1"
 
-MAX_CONCURRENCY = 20
-REQUEST_TIMEOUT = 15
+MAX_CONCURRENCY = 15
+REQUEST_TIMEOUT = 30
 
 SCRAPERS_DIR = Path(__file__).resolve().parent.parent / "api" / "scrapers"
 

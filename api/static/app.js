@@ -281,9 +281,13 @@ function renderAccordion(items) {
 	return frag;
 }
 
-function renderActions(subscribeUrl) {
+function renderActions(icsUrl) {
 	const frag = tpl("tpl-actions");
-	frag.querySelector('[data-slot="subscribe"]').href = subscribeUrl;
+	const webcalUrl = icsUrl.replace(/^https:/, "webcal:");
+	const googleUrl = `https://calendar.google.com/calendar/r?cid=${encodeURIComponent(icsUrl)}`;
+	frag.querySelector('[data-slot="apple"]').href = webcalUrl;
+	frag.querySelector('[data-slot="google"]').href = googleUrl;
+	frag.querySelector('[data-slot="other"]').href = webcalUrl;
 	return frag;
 }
 
@@ -292,10 +296,8 @@ const PASSTHROUGH_ICS = {
 		"https://calendar.google.com/calendar/ical/0d775884b4db6a7bae5204f06dae113c1a36e505b25991ebc27c6bd42edf5b5e%40group.calendar.google.com/public/basic.ics",
 };
 
-function subscribeUrlFor(councilId, addr) {
-	if (PASSTHROUGH_ICS[councilId]) {
-		return PASSTHROUGH_ICS[councilId].replace(/^https:/, "webcal:");
-	}
+function icsUrlFor(councilId, addr) {
+	if (PASSTHROUGH_ICS[councilId]) return PASSTHROUGH_ICS[councilId];
 	const params = new URLSearchParams({
 		council: councilId,
 		postcode: addr.postcode,
@@ -304,8 +306,7 @@ function subscribeUrlFor(councilId, addr) {
 	if (addr.house_number_or_name)
 		params.set("house_number", addr.house_number_or_name);
 	if (addr.street) params.set("street", addr.street);
-	const path = `${API}/calendar/${encodeURIComponent(addr.uprn)}?${params}`;
-	return `webcal://${window.location.host}${path}`;
+	return `${window.location.origin}${API}/calendar/${encodeURIComponent(addr.uprn)}?${params}`;
 }
 
 function attachReportHandler(addr, data, councilId) {
@@ -347,7 +348,7 @@ function renderResults(addr, data) {
 	const section = $("#results");
 	const council = currentData.council_name || data.council;
 	const councilId = currentData.council_id;
-	const subscribeUrl = subscribeUrlFor(councilId, addr);
+	const icsUrl = icsUrlFor(councilId, addr);
 
 	section.replaceChildren();
 	section.appendChild(renderHeader(addr.full_address, council));
@@ -374,7 +375,7 @@ function renderResults(addr, data) {
 		if (allFuture.length > 0) section.appendChild(renderAccordion(allFuture));
 	}
 
-	section.appendChild(renderActions(subscribeUrl));
+	section.appendChild(renderActions(icsUrl));
 	show("results");
 	section.tabIndex = -1;
 	section.focus();

@@ -86,7 +86,7 @@ $("#postcode-form").addEventListener("submit", async (e) => {
 		}
 
 		const token = await getTurnstileToken();
-		if (!token) {
+		if (window.turnstile && !token) {
 			showError(
 				"Could not verify your browser. Please reload the page and try again.",
 			);
@@ -94,7 +94,7 @@ $("#postcode-form").addEventListener("submit", async (e) => {
 		}
 		const addressResp = await fetch(
 			`${API}/addresses/${encodeURIComponent(postcode)}`,
-			{ headers: { "X-Turnstile-Token": token } },
+			token ? { headers: { "X-Turnstile-Token": token } } : {},
 		);
 		turnstileToken = null;
 		if (window.turnstile) {

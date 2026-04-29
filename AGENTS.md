@@ -64,7 +64,7 @@ docker compose up --build
 **API layer** (`api/`):
 - `main.py` -- FastAPI app with lifespan managing `ScraperRegistry`, `CouncilLookup`, optional Redis, and `BrowserPool`
 - `config.py` -- Centralised configuration from environment variables (timeouts, rate limits, address API, CORS, logging)
-- `routes.py` -- All endpoints: `/api/v1/addresses/{postcode}`, `/api/v1/council/{postcode}`, `/api/v1/lookup/{uprn}`, `/api/v1/calendar/{uprn}`, `/api/v1/councils`, `/api/v1/health`, `/api/v1/status`, `/api/v1/metrics`, `/api/v1/report`. Routes are mounted under `/api/v1` only
+- `routes.py` -- All endpoints: `/api/v1/addresses/{postcode}`, `/api/v1/council/{postcode}`, `/api/v1/lookup/{uprn}`, `/api/v1/calendar/{uprn}`, `/api/v1/councils`, `/api/v1/health`, `/api/v1/status`, `/api/v1/metrics`. Routes are mounted under `/api/v1` only
 - `services/scraper_registry.py` -- Dynamically imports all `api/scrapers/*.py` at startup, introspects `Source.__init__` signatures for required/optional params, and dispatches `await source.fetch()` calls
 - `services/council_lookup.py` -- Resolves postcodes to local authorities via local parquet lookup with ibis/duckdb. Provides `CouncilLookup` class with `get_local_authority()` and `get_authority_by_slug()`
 - `services/address_lookup.py` -- Resolves postcodes to addresses via external address API (configured via `ADDRESS_API_URL` and `ADDRESS_API_COMPANY_ID`)

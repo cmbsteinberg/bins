@@ -281,14 +281,49 @@ function renderAccordion(items) {
 	return frag;
 }
 
+function pickCalendarUrl(httpsIcsUrl) {
+	const webcalUrl = httpsIcsUrl.replace(/^https:/, "webcal:");
+	const googleUrl = `https://calendar.google.com/calendar/render?cid=${webcalUrl}`;
+	const ua = navigator.userAgent || "";
+	const isApple = /iPhone|iPad|iPod|Macintosh|Mac OS X/.test(ua);
+	const isAndroid = /Android/.test(ua);
+	if (isApple || isAndroid) return webcalUrl;
+	return googleUrl;
+}
+
 function renderActions(icsUrl) {
 	const frag = tpl("tpl-actions");
-	const webcalUrl = icsUrl.replace(/^https:/, "webcal:");
-	const googleUrl = `https://calendar.google.com/calendar/r?cid=${encodeURIComponent(icsUrl)}`;
-	frag.querySelector('[data-slot="apple"]').href = webcalUrl;
-	frag.querySelector('[data-slot="google"]').href = googleUrl;
-	frag.querySelector('[data-slot="other"]').href = webcalUrl;
+	frag.querySelector('[data-slot="add"]').href = pickCalendarUrl(icsUrl);
 	return frag;
+}
+
+function attachCopyHandler(icsUrl) {
+	const btn = document.getElementById("copy-btn");
+	const label = document.getElementById("copy-btn-label");
+	if (!btn || !label) return;
+	btn.addEventListener("click", async () => {
+		try {
+			await navigator.clipboard.writeText(icsUrl);
+			label.textContent = "Copied!";
+		} catch {
+			const ta = document.createElement("textarea");
+			ta.value = icsUrl;
+			ta.style.position = "fixed";
+			ta.style.opacity = "0";
+			document.body.appendChild(ta);
+			ta.select();
+			try {
+				document.execCommand("copy");
+				label.textContent = "Copied!";
+			} catch {
+				label.textContent = "Copy failed";
+			}
+			ta.remove();
+		}
+		setTimeout(() => {
+			label.textContent = "Copy ICS";
+		}, 2000);
+	});
 }
 
 const PASSTHROUGH_ICS = {
@@ -335,11 +370,11 @@ function attachReportHandler(addr, data, councilId) {
 				status.textContent = "Failed to send report.";
 				status.style.color = "#e53935";
 				reportBtn.disabled = false;
-				reportBtn.textContent = "Report wrong answer";
+				reportBtn.textContent = "Report incorrect";
 			}
 		} catch {
 			reportBtn.disabled = false;
-			reportBtn.textContent = "Report wrong answer";
+			reportBtn.textContent = "Report incorrect";
 		}
 	});
 }
@@ -380,5 +415,6 @@ function renderResults(addr, data) {
 	section.tabIndex = -1;
 	section.focus();
 
+	attachCopyHandler(icsUrl);
 	attachReportHandler(addr, data, councilId);
 }

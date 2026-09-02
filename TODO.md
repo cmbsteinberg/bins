@@ -7,6 +7,7 @@
 **Pin to latest codes via UPRN table (correct):**
 - `pipeline/data/onspd_postcode_lad.parquet` (363 distinct `oslaua` incl. L/M) + `onsud_uprn_postcode.parquet` is the source for `api/data/postcode_lookup.parquet` — this is what `/council/{postcode}` actually resolves (`api/services/council_lookup.py:84`). It is newer than `LAD_MAY_2025` boundaries (361) — e.g. it has `E07000242` (East Herts new) not `E07000097` (old), but still `E08000016/19` not `E08000038/39` (Boundary/ONSPD lag).
 - **Decision:** pin `lad_lookup` to **ONSPD+ONSUD distinct codes** (363 incl. 2 non-UK) + **GOV.UK Local Links Manager** `LGSL524/LGIL8` (355 GSS→rubbish URL) as URL source. Boundary file only for `coverage.geojson` map, not for lookup. Store ONSPD version in parquet metadata and update monthly.
+- **We don't have this yet:** `scripts/lookup/create_lookup_table.py:17` is manual (`Download ONSPD multi_csv zip, unzip, and run COPY ...`). Ideally add `scripts/lookup/fetch_latest.sh` to `curl` latest ONSPD (ONS Geoportal), ONSUD, LAD boundaries (`LAD_MAY_2025_UK_BUC` `scripts/coverage/generate_coverage_map.py:10`), and GOV.UK CSV in one go — then `uv run python -m scripts.lookup.create_lookup_table` is a true one-liner.
 
 **Gap:** 22 in parquet not in `lad_lookup` (Rutland E06000017, Southend E06000033, Westminster E09000033 etc — all have GOV.UK URLs), 2 stale in `lad_lookup` not in parquet (E07000097, E07000165), 26 null scrapers all have GOV.UK deeplinks.
 

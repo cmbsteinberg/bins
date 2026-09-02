@@ -18,7 +18,7 @@ from pathlib import Path
 
 from pipeline.shared import (
     BLOCKED_DOMAINS,
-    LAD_LOOKUP_PATH,
+    SCRAPER_LAD_MAP_PATH,
     extract_gov_uk_prefix,
     load_routing,
     normalise_domain,
@@ -779,13 +779,13 @@ def _patch_councils(
 
         ukbcd_name = _council_to_ukbcd_name(council_name)
         lad_codes = _get_lad_codes(data)
-        name = data.get("wiki_name") or ""
 
-        # Record baseline: every council gets its UKBCD scraper name
+        # Record baseline: every council gets its UKBCD scraper name.
+        # Council names deliberately aren't recorded here — input.json's
+        # wiki_name isn't ground truth; lad_base.json owns the ONS name.
         for lad in lad_codes:
             if lad not in stats.lad_mappings:
                 stats.lad_mappings[lad] = {
-                    "name": name,
                     "scraper_id": ukbcd_name,
                     "url": url,
                 }
@@ -890,13 +890,18 @@ def main():
         ukbcd_override_domains,
     )
 
-    # Write lad_lookup.json directly
+    # Write the scraper wiring. api/data/lad_lookup.json is composed from this
+    # plus pipeline/data/lad_base.json by scripts/lookup/build_lad_lookup.py,
+    # which sync_all.py runs next — input.json must not decide which councils
+    # exist, only which of them have a scraper.
     if stats.lad_mappings:
         logger.info(
-            f"Writing {len(stats.lad_mappings)} LAD mappings to lad_lookup.json"
+            f"Writing {len(stats.lad_mappings)} LAD mappings to scraper_lad_map.json"
         )
-        LAD_LOOKUP_PATH.parent.mkdir(parents=True, exist_ok=True)
-        LAD_LOOKUP_PATH.write_text(json.dumps(stats.lad_mappings, indent=2))
+        SCRAPER_LAD_MAP_PATH.parent.mkdir(parents=True, exist_ok=True)
+        SCRAPER_LAD_MAP_PATH.write_text(
+            json.dumps(dict(sorted(stats.lad_mappings.items())), indent=2) + "\n"
+        )
 
     stats.log_summary()
 

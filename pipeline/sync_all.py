@@ -7,9 +7,14 @@ Flow:
   2. Wipe all scrapers so stale files never linger across syncs
   3. Run HACS sync (clone, patch, copy scrapers)
   4. Filter HACS scrapers: remove any whose gov.uk prefix isn't in input.json
-  5. Run UKBCD sync (fills gaps + builds lad_lookup.json with scraper IDs)
+  5. Run UKBCD sync (fills gaps + writes scraper_lad_map.json)
+  5c. Wire preserved scrapers, then compose api/data/lad_lookup.json from
+      pipeline/data/lad_base.json (ONS/GOV.UK ground truth) + that map
   6. Regenerate test cases (HACS + UKBCD)
   7. Regenerate postcode lookup (postcode -> LAD code parquet)
+
+input.json decides which councils have a *scraper*; lad_base.json decides which
+councils exist. Nothing in this flow may add or drop a council.
 
 Usage:
     uv run python -m pipeline.sync_all
@@ -28,6 +33,7 @@ import httpx
 from pipeline.shared import (
     PIPELINE_DIR,
     PROJECT_ROOT,
+    SCRAPER_LAD_MAP_PATH,
     SCRAPERS_DIR,
     extract_gov_uk_prefix,
     extract_url_from_scraper,
@@ -204,11 +210,12 @@ def _copy_ports() -> list[str]:
 
 
 def _merge_preserved_scrapers() -> None:
-    """Wire preserved scrapers and ports into lad_lookup.json.
+    """Wire preserved scrapers and ports into the scraper LAD map.
 
     Reads the preserved_scrapers and lad_overrides maps from lad_overrides.json
-    (scraper_id → [LAD codes]), imports TITLE and URL from each scraper module,
-    and patches the corresponding lad_lookup entries.
+    (scraper_id → [LAD codes]), imports URL from each scraper module, and
+    patches the corresponding scraper_lad_map entries. Council names come from
+    lad_base.json, not from scraper TITLE constants, so they aren't touched here.
     """
     import importlib
 
@@ -219,33 +226,31 @@ def _merge_preserved_scrapers() -> None:
     if not combined:
         return
 
-    lad_data = json.loads(LAD_LOOKUP_PATH.read_text())
+    scraper_map = (
+        json.loads(SCRAPER_LAD_MAP_PATH.read_text())
+        if SCRAPER_LAD_MAP_PATH.exists()
+        else {}
+    )
     patched = 0
 
     for scraper_id, lad_codes in combined.items():
         try:
             mod = importlib.import_module(f"api.scrapers.{scraper_id}")
-            title = getattr(mod, "TITLE", scraper_id)
             url = getattr(mod, "URL", "")
         except Exception:
             logger.warning("Could not import preserved scraper %s", scraper_id)
             continue
 
         for lad in lad_codes:
-            if lad in lad_data:
-                lad_data[lad]["name"] = title
-                lad_data[lad]["scraper_id"] = scraper_id
-                lad_data[lad]["url"] = url
-            else:
-                lad_data[lad] = {
-                    "name": title,
-                    "scraper_id": scraper_id,
-                    "url": url,
-                }
+            scraper_map[lad] = {"scraper_id": scraper_id, "url": url}
             patched += 1
 
-    LAD_LOOKUP_PATH.write_text(json.dumps(lad_data, indent=2))
-    logger.info("Merged %d preserved/port scraper entries into lad_lookup.json", patched)
+    SCRAPER_LAD_MAP_PATH.write_text(
+        json.dumps(dict(sorted(scraper_map.items())), indent=2) + "\n"
+    )
+    logger.info(
+        "Merged %d preserved/port scraper entries into scraper_lad_map.json", patched
+    )
 
 
 def _check_lad_lookup_consistency() -> None:
@@ -333,8 +338,15 @@ def main():
     copied_ports = _copy_ports()
     logger.info("Copied %d ports from pipeline/ports/ into api/scrapers/.", len(copied_ports))
 
-    # 5b. Wire preserved scrapers into lad_lookup.json
+    # 5c. Wire preserved scrapers into the scraper LAD map, then compose
+    #     api/data/lad_lookup.json from lad_base.json (ONS/GOV.UK ground truth)
+    #     + that map. lad_base.json only changes when upstream does
+    #     (scripts/lookup/fetch_latest.sh).
     _merge_preserved_scrapers()
+    run_shell(
+        ["uv", "run", "python", "-m", "scripts.lookup.build_lad_lookup", "--compose"],
+        "lad_lookup composition",
+    )
 
     # 6. Regenerate test cases (after filtering, so stale scrapers are excluded)
     print("\n" + "=" * 50)

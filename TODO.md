@@ -1,6 +1,42 @@
 # Full coverage — TODO
 
-## 1. True council mapping — rebuild first
+## 1. True council mapping — DONE
+
+`lad_lookup.json` is now 361 entries pinned to the distinct LAD codes in
+`onspd_postcode_lad.parquet` (363 minus `L99999999`/`M99999999`, which are
+Channel Islands/Isle of Man pseudo-codes, not councils), named from ONS
+`LAD25NM`, with `govuk_url` from GOV.UK Local Links Manager `LGSL524`
+(357 of 361; missing for `E06000063`, `E06000064`, `E06000066`, `W06000024`).
+22 codes added, 2 stale retired (`E07000097`, `E07000165`). Ownership split:
+`pipeline/data/lad_base.json` (ONS/GOV.UK ground truth) + `scraper_lad_map.json`
+(input.json/overrides wiring) → composed into `api/data/lad_lookup.json`.
+`scripts/lookup/fetch_latest.sh` version-checks all four sources. See AGENTS.md.
+
+**Left over from the rebuild:**
+- `pipeline/data/onspd_postcode_lad.parquet` is stamped `onspd_edition: unknown`
+  — the edition of the committed artifact was never recorded. Upstream is now
+  `ONSPD_AUG_2026` (ours predates it); the next `fetch_latest.sh` run stamps a
+  real edition. `onsud_uprn_postcode.parquet` is unstamped (88MB rewrite, no
+  benefit until refetch).
+- Orphan scrapers: 29 were wired to no LAD. Resolved by adding 8
+  `lad_overrides.json` entries (wired 315 → 321, unwired LADs 46 → 40):
+  Basildon `E07000066`, Knowsley `E08000011`, Teignbridge `E07000045`, Epping
+  Forest `E07000072` (input.json URL is a third-party portal or, for
+  Teignbridge, literally `google.co.uk`, so domain matching couldn't reach the
+  scraper); East Herts `E07000242` (recoded); Gosport `E07000088` and Stroud
+  `E07000082` (input.json gave Gosport Stroud's `LAD24CD`); Blackburn with
+  Darwen `E06000008` (input.json listed Blackburn with **Blaby's** URL, so the
+  LAD served Blaby's bin days).
+  Remaining ~18 orphans are duplicate hacs/ukbcd/port files for an
+  already-wired council — benign, since HACS retention matches on a looser key
+  (prefix/name) than wiring (exact domain). `ukbcd_harrogate_borough_council`
+  and `ukbcd_eden_district_council` cover fractions of successor authorities
+  (North Yorkshire `E06000065`, Westmorland and Furness `E06000064`) and need
+  postcode-level sub-routing, not a LAD wire. `ukbcd_environment_first` has no
+  `LAD24CD` upstream; Lewes and Eastbourne are already wired.
+- 40 LADs still have no scraper — see §2.
+
+## 1a. Original analysis (kept for context)
 
 **Problem:** `lad_lookup.json` (343) built from `input.json` LAD24CD. Not ground truth — we don't know what we don't know.
 

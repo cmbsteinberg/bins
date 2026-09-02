@@ -13,6 +13,10 @@ PROJECT_ROOT = PIPELINE_DIR.parent
 API_DIR = PROJECT_ROOT / "api"
 SCRAPERS_DIR = API_DIR / "scrapers"
 LAD_LOOKUP_PATH = API_DIR / "data" / "lad_lookup.json"
+# LAD code -> {scraper_id, url}, this sync's scraper wiring. Composed with
+# pipeline/data/lad_base.json (ONS/GOV.UK ground truth) into LAD_LOOKUP_PATH by
+# scripts/lookup/build_lad_lookup.py.
+SCRAPER_LAD_MAP_PATH = PIPELINE_DIR / "data" / "scraper_lad_map.json"
 ROUTING_PATH = PIPELINE_DIR / "routing.json"
 HACS_PATCH_OVERRIDES_PATH = PIPELINE_DIR / "hacs" / "patch_overrides.json"
 LAD_OVERRIDES_PATH = PIPELINE_DIR / "lad_overrides.json"

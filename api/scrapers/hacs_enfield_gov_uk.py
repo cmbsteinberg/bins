@@ -2,7 +2,7 @@ import datetime
 import re
 from typing import Any
 
-import httpx
+from api.compat.curl_cffi_fallback import AsyncClient as _CurlCffiClient
 
 from api.compat.hacs import Collection
 from api.compat.hacs.exceptions import (
@@ -96,7 +96,7 @@ class Source:
         if self._uprn and not self._uprn.isdigit():
             raise SourceArgumentException("uprn", "UPRN must be numeric.")
 
-        self._session = httpx.AsyncClient(follow_redirects=True)
+        self._session = _CurlCffiClient(follow_redirects=True)
         self._session.headers.update(HEADERS)
 
     async def fetch(self) -> list[Collection]:

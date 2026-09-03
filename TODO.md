@@ -34,7 +34,7 @@ Channel Islands/Isle of Man pseudo-codes, not councils), named from ONS
   (North Yorkshire `E06000065`, Westmorland and Furness `E06000064`) and need
   postcode-level sub-routing, not a LAD wire. `ukbcd_environment_first` has no
   `LAD24CD` upstream; Lewes and Eastbourne are already wired.
-- 40 LADs still have no scraper — see §2.
+- 40 LADs still have no scraper — see §2 (33 after this session's 7 wires).
 
 ## 1a. Original analysis (kept for context)
 
@@ -52,14 +52,49 @@ Channel Islands/Isle of Man pseudo-codes, not councils), named from ONS
 - Regenerate `lad_lookup.json` from `363` parquet codes + GOV.UK URL, then attach `scraper_id` from `input.json`/`lad_overrides.json`.
 - Add 22, retire 2 stale (Harrogate now N.Yorks E06000065, East Herts already E07000242 in parquet).
 
-## 2. 100% on existing coverage
+## 2. 100% on existing coverage + 33 scopeless
 
-**Current:** 682/728 cases pass, 46 fails = 31 councils (295/317 badge).
+**Current:** 328/361 wired, badge 295/328; 658/736 cases pass
+(live-site 503 flaps move this ±6 run to run — flips never touch the wired set).
 
-**Do:**
-- **Sync blocker:** latest HACS sources import `Icons`, but our compat sync does
-  not copy/export `icons.py`; add it, then regenerate and test the recovered scrapers.
-- **7 partials** (bedford, eastherts, enfield, harlow, kirklees, reigate, st_helens): refresh stale `TEST_CASES` UPRN via `enrich_test_postcodes.py`.
+**Done since:** Icons sync blocker fixed (`api/compat/hacs/icons.py` +
+`pipeline/hacs/sync.sh`); stale UPRNs resampled
+(`pipeline/shared/enrich_test_postcodes.py`); XHR recapture for the 4 port
+regressions + North Devon AchieveForms rewrite; 7 scopeless wired (321 → 328):
+Worthing `E07000229` free via the shared Adur backend (verified with Worthing
+UPRNs from the ONSUD/ONSPD join, auto-wires on GOV.UK domain match);
+Babergh `E07000200` + Mid Suffolk `E07000203` via two per-LAD Placecube ports
+(the shared HACS source is unusable — its required `council` selector collides
+with the API's reserved `council` query key; base suppressed via
+`routing.json`); Cotswold `E07000079`, Forest of Dean `E07000080`, East Suffolk
+`E07000244` restored from `pipeline/upstream` (the pre-fix council filter had
+deleted them); Powys `W06000023` via a GOSS Forms port (GET `binday` tokens →
+form POST with UPRN alone → `bdl-card` dates).
+
+**Triage rule (port vs deeplink)** — full version + sibling-template table in
+`pipeline/ports/README.md`. Deeplink only if all three hold: (1) no *working*
+plain-HTTP path (broken HACS / Selenium-only counts as absent); (2) a 30–60
+min probe finds no data endpoint (`httpx_convertible: false` means "probe",
+never "browser"); (3) stateful proprietary runtime (Mendix, Aura w/o fallback,
+captcha/Turnstile) — this gate is the crux. Target selection (council bin page
+> GOV.UK page > nothing) is separate; "nothing" (Merthyr `W06000024`, no
+GOV.UK URL either) is discovery backlog, still deeplink-shaped, never 404.
+
+**Verdicts from the captured 7:** Brighton = deeplink (Mendix; needs a
+`{deeplink}` response — 404 today); Hertsmere + Sevenoaks = Oncreate-family
+port pair (token replay, no captcha; Hertsmere's `round-search` needs
+round→date mapping); Staffs Moorlands undecided (`bins.*` PublicDashboard SPA,
+one more probe for the data endpoint).
+
+**Remaining 33, in order:** Hertsmere/Sevenoaks pair → batch XHR capture over
+the 12 never-captured with URLs (Boston — external `mybostonuk.com`, Castle
+Point, Chelmsford, Great Yarmouth, Halton, NE Derbyshire, North Norfolk,
+Nuneaton, Slough, South Kesteven — `/binday` like Powys, possible GOSS
+sibling — Uttlesford on a dedicated `bins.` host, Anglesey) → Staffs probe
+alongside → discovery on the 17 no-URL (16 from their GOV.UK start point,
+Merthyr manual).
+
+**Still open from before:**
+- **7 partials** (bedford, eastherts, enfield, harlow, kirklees, reigate, st_helens): resample done, still flapping — live-site noise vs stale params TBD per council.
 - **9 hacs dead + 11 ukbcd dead:** `curl_cffi` for Cloudflare, else `routing.json` fallback.
-- **4 port regressions** (hillingdon, north_devon, northumberland, three_rivers): re-run `capture_upstream_xhrs.py`.
-- **26 null:** re-run XHR capture; port ~10 `httpx_convertible`, **deeplink is correct** for ~5 JS-only (Mendix/Salesforce/Jadu) via GOV.UK URL — return `{deeplink}` not 404.
+- **4 port regressions** (hillingdon, north_devon, northumberland, three_rivers): recaptured; hillingdon/north_devon/three_rivers still fail 1 case each, northumberland fixed.

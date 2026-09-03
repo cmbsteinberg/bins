@@ -57,8 +57,11 @@ def normalise_council_name(name: str) -> str:
             break
     # Replace non-alpha with space, split into words, strip filler
     words = _re.sub(r"[^a-z]+", " ", name).split()
-    words = [w for w in words if w not in _COUNCIL_FILLER]
-    return "".join(words)
+    significant_words = [w for w in words if w not in _COUNCIL_FILLER]
+    # Some proper names consist entirely of otherwise-generic filler words
+    # (notably "City of London"). Never collapse a non-empty name to the
+    # empty identifier, which would make unrelated councils collide.
+    return "".join(significant_words or words)
 
 
 def normalise_domain(url: str) -> str:

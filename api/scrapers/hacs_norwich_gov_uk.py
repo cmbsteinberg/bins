@@ -1,6 +1,6 @@
 import datetime as dt
 import re
-from typing import Any, Dict, List
+from typing import Any
 
 import httpx
 from bs4 import BeautifulSoup
@@ -96,7 +96,7 @@ class Source:
             "Accept": "application/json,text/javascript,*/*;q=0.01",
         }
 
-    async def fetch(self) -> List[Collection]:
+    async def fetch(self) -> list[Collection]:
         """Fetch the collection schedule for the configured address.
 
         Orchestrate the crawl: find the tracking link, submit the address
@@ -135,7 +135,7 @@ class Source:
 
         return entries
 
-    async def _begin_crawl(self, session: httpx.AsyncClient, headers: Dict[str, str]) -> Any:
+    async def _begin_crawl(self, session: httpx.AsyncClient, headers: dict[str, str]) -> Any:
         """Load the main site and return the tracking link href.
 
         Performs a GET request on :data:`API_URL` and looks for the "View my
@@ -161,7 +161,7 @@ class Source:
         return link.get("href") if link else None
 
     async def _compose_search_query(
-        self, session: httpx.AsyncClient, headers: Dict[str, str], tracking: str
+        self, session: httpx.AsyncClient, headers: dict[str, str], tracking: str
     ) -> Any:
         """Submit the address search form and return the selected address link.
 
@@ -229,7 +229,7 @@ class Source:
         return link.get("href") if link else None
 
     async def _get_collections(
-        self, session: httpx.AsyncClient, headers: Dict[str, str], collections: str
+        self, session: httpx.AsyncClient, headers: dict[str, str], collections: str
     ) -> Any:
         """Load the schedule page and extract collection dates and service types.
 

@@ -4,7 +4,7 @@ from datetime import datetime
 from bs4 import BeautifulSoup
 
 from api.compat.curl_cffi_fallback import AsyncClient as _CurlCffiClient
-from api.compat.hacs import Collection  # type: ignore[attr-defined]
+from api.compat.hacs import Collection, Icons  # type: ignore[attr-defined]
 
 TITLE = "Folkestone and Hythe District Councol"
 DESCRIPTION = "Source for Folkestone and Hythe District Council, United Kingdom."
@@ -14,8 +14,8 @@ TEST_CASES = {
     "Hythe_Test": {"uprn": "50019287"},
 }
 ICON_MAP = {
-    "Non-Recyclables (Green Lid) and Food Waste": "mdi:trash-can",
-    "Recycling (Purple Lid / Black Box and Food Waste)": "mdi:recycle",
+    "Non-Recyclables (Green Lid) and Food Waste": Icons.BIO_KITCHEN,
+    "Recycling (Purple Lid / Black Box and Food Waste)": Icons.BIO_KITCHEN,
 }
 REGEX_ORDINALS = r"(?<=\d)(st|nd|rd|th)"
 

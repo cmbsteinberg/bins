@@ -1,10 +1,11 @@
 import datetime
 import logging
+from urllib.parse import urljoin
 
 import httpx
 from bs4 import BeautifulSoup
 
-from api.compat.hacs import Collection
+from api.compat.hacs import Collection, Icons
 from api.compat.hacs.exceptions import (
     SourceArgumentException,
     SourceArgumentNotFound,
@@ -43,11 +44,10 @@ TEST_CASES = {
 }
 
 ICON_MAP = {
-    "DOMESTIC FOOD WASTE SERVICE": "mdi:food-apple",
-    "DOMESTIC RECYCLING WASTE COLLECTION SERVICE": "mdi:recycle",
-    "DOMESTIC REFUSE WASTE COLLECTION SERVICE": "mdi:trash-can",
-    "DOMESTIC GARDEN WASTE SERVICE": "mdi:leaf",
-    # Add other types as needed
+    "DOMESTIC FOOD WASTE SERVICE": Icons.BIO_KITCHEN,
+    "DOMESTIC RECYCLING WASTE COLLECTION SERVICE": Icons.GENERAL_WASTE,
+    "DOMESTIC REFUSE WASTE COLLECTION SERVICE": Icons.GENERAL_WASTE,
+    "DOMESTIC GARDEN WASTE SERVICE": Icons.GARDEN,
 }
 
 # Arguments affecting the configuration GUI
@@ -98,9 +98,16 @@ class Source:
 
     async def fetch(self) -> list[Collection]:
         entries = []
-        BASE_URL = "https://sms-wrp.whitespacews.com"
+        BASE_URL = "https://waste.services.midsussex.gov.uk"
 
         async with httpx.AsyncClient() as session:
+            session.headers.update(
+                {
+                    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36",
+                    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+                    "Accept-Language": "en-GB,en;q=0.5",
+                }
+            )
             # --- STEP 1: Get the Dynamic Track Token ---
             r1 = await session.get(f"{BASE_URL}/mop.php", timeout=30)
             r1.raise_for_status()
@@ -119,7 +126,9 @@ class Source:
             try:
                 track_token = dynamic_link.split("Track=")[1].split("&")[0]  # type: ignore[union-attr]
             except IndexError:
-                raise ValueError("Could not parse dynamic Track token in Step 1.")
+                raise ValueError(
+                    "Could not parse dynamic Track token in Step 1."
+                ) from None
 
             # --- STEP 2: Submit the Address ---
             post_url = f"{BASE_URL}/mop.php?serviceID=A&Track={track_token}&seq=2"
@@ -141,17 +150,21 @@ class Source:
 
             search_text = self._number.upper()
 
-            address_link = soup2.find(
-                "a",
-                class_="app-subnav__link",
-                string=lambda t: t and search_text in t.upper(),
+            all_address_links = soup2.find_all("a", class_="app-subnav__link")
+            address_link = next(
+                (
+                    link
+                    for link in all_address_links
+                    if search_text in link.get_text(strip=True).upper()
+                ),
+                None,
             )
 
             if not address_link:
                 raise SourceArgumentNotFound("number", self._number)
 
             final_link_path = address_link["href"]  # type: ignore[index]
-            final_schedule_url = f"{BASE_URL}/{final_link_path}"
+            final_schedule_url = urljoin(BASE_URL + "/", final_link_path)
 
             # --- STEP 4: Scrape the Final Schedule ---
             r3 = await session.get(final_schedule_url, timeout=30)

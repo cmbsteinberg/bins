@@ -1,8 +1,7 @@
 import logging
 from datetime import datetime
-from typing import Union
 
-from api.compat.hacs import Collection  # type: ignore[attr-defined]
+from api.compat.hacs import Collection, Icons  # type: ignore[attr-defined]
 from api.compat.hacs.service.WhitespaceWRP import WhitespaceClient
 
 TITLE = "Lancaster City Council"
@@ -13,11 +12,12 @@ TEST_CASES = {
 }
 API_URL = "https://lcc-wrp.whitespacews.com"
 ICON_MAP = {
-    "Domestic Waste": "mdi:trash-can",
-    "Garden Waste": "mdi:leaf",
-    # Dynamic (non-PDF) calendar does not split the types of recycling other than garden and food.
-    "Recycling": "mdi:recycle",
-    "Food Waste": "mdi:food",
+    "Domestic Waste": Icons.GENERAL_WASTE,
+    "Garden Waste": Icons.GARDEN,
+    "Recycling Red": Icons.RECYCLING,
+    "Recycling Yellow": Icons.RECYCLING,
+    "Recycling": Icons.RECYCLING,
+    "Food Waste": Icons.BIO_KITCHEN,
 }
 SUFFIXES = (
     " Collection Service",
@@ -35,9 +35,7 @@ def _clean_collection_type(type_text: str) -> str:
 
 
 class Source:
-    def __init__(
-        self, postcode: str, house_number: Union[int, str, None] = None
-    ) -> None:
+    def __init__(self, postcode: str, house_number: int | str | None = None) -> None:
         self._house_number = house_number
         self._postcode = postcode
         self._client = WhitespaceClient(API_URL)
@@ -51,9 +49,14 @@ class Source:
 
         entries = []
         for date_str, type_str in schedule:
-            collection_type = next(
-                (key for key in ICON_MAP if type_str.startswith(key)),
-                _clean_collection_type(type_str),
+            cleaned = _clean_collection_type(type_str)
+            collection_type = (
+                cleaned
+                if cleaned in ICON_MAP
+                else next(
+                    (key for key in ICON_MAP if type_str.startswith(key)),
+                    cleaned,
+                )
             )
             try:
                 entries.append(

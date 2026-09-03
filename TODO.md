@@ -34,7 +34,7 @@ Channel Islands/Isle of Man pseudo-codes, not councils), named from ONS
   (North Yorkshire `E06000065`, Westmorland and Furness `E06000064`) and need
   postcode-level sub-routing, not a LAD wire. `ukbcd_environment_first` has no
   `LAD24CD` upstream; Lewes and Eastbourne are already wired.
-- 40 LADs still have no scraper — see §2 (33 after this session's 7 wires).
+- 40 LADs still have no scraper — see §2 (12 after this session's wires).
 
 ## 1a. Original analysis (kept for context)
 
@@ -54,8 +54,8 @@ Channel Islands/Isle of Man pseudo-codes, not councils), named from ONS
 
 ## 2. 100% on existing coverage + 33 scopeless
 
-**Current:** 328/361 wired, badge 295/328; 658/736 cases pass
-(live-site 503 flaps move this ±6 run to run — flips never touch the wired set).
+**Current:** 349/361 wired (badge still 295/328 until post-integration regen);
+367 scrapers in `test_cases.json`.
 
 **Done since:** Icons sync blocker fixed (`api/compat/hacs/icons.py` +
 `pipeline/hacs/sync.sh`); stale UPRNs resampled
@@ -86,15 +86,26 @@ port pair (token replay, no captcha; Hertsmere's `round-search` needs
 round→date mapping); Staffs Moorlands undecided (`bins.*` PublicDashboard SPA,
 one more probe for the data endpoint).
 
-**Remaining 33, in order:** Hertsmere/Sevenoaks pair → batch XHR capture over
-the 12 never-captured with URLs (Boston — external `mybostonuk.com`, Castle
-Point, Chelmsford, Great Yarmouth, Halton, NE Derbyshire, North Norfolk,
-Nuneaton, Slough, South Kesteven — `/binday` like Powys, possible GOSS
-sibling — Uttlesford on a dedicated `bins.` host, Anglesey) → Staffs probe
-alongside → discovery on the 17 no-URL (16 from their GOV.UK start point,
-Merthyr manual).
+**Remaining 12:** Halton, Rutland, Brighton and Hove (deeplink — Mendix,
+needs a `{deeplink}` response, 404 today), Isles of Scilly, North East
+Derbyshire, West Devon, Uttlesford, Hertsmere, South Kesteven, North Norfolk,
+City of London, Kensington and Chelsea. Wired since the 33-count: the 6
+previously-unindexed (Caerphilly, Na h-Eileanan Siar, Merthyr Tydfil, Orkney,
+Shetland, Tamworth — upstream indexed them, wired via `lad_overrides.json`
+since input.json carries no LAD24CD) + Rotherham (new ukbcd port over the
+Imactivate shared API; HACS dropped its scraper upstream) + 14 HACS
+additions/returns (Southend, Slough, Castle Point, Chelmsford, Sevenoaks,
+Boston, Great Yarmouth, Nuneaton, Staffs Moorlands, Tower Hamlets,
+Westminster, Inverclyde, Scottish Borders, Bridgend).
 
 **Still open from before:**
 - **7 partials** (bedford, eastherts, enfield, harlow, kirklees, reigate, st_helens): resample done, still flapping — live-site noise vs stale params TBD per council.
 - **9 hacs dead + 11 ukbcd dead:** `curl_cffi` for Cloudflare, else `routing.json` fallback.
 - **4 port regressions** (hillingdon, north_devon, northumberland, three_rivers): recaptured; hillingdon/north_devon/three_rivers still fail 1 case each, northumberland fixed.
+
+## 3. Scraper family templates
+
+335 scrapers, ~half bespoke — but four families are large enough to warrant
+shared clients + patch-time definitions (extract URLs/lookup IDs/field maps
+by AST, emit config not logic): AchieveForms ~42, Whitespace ~21,
+ASPX-postback ~21, ICS ~12. Rest stays hand-written.

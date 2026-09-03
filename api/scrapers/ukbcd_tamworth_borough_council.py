@@ -1,8 +1,8 @@
+import re
+
 import httpx
-import json
-import urllib.parse
-from dateutil.relativedelta import relativedelta
 from bs4 import BeautifulSoup
+
 from api.compat.ukbcd.common import *
 from api.compat.ukbcd.get_bin_data import AbstractGetBinDataClass
 from api.compat import httpx_helpers as _http
@@ -17,61 +17,69 @@ class CouncilClass(AbstractGetBinDataClass):
     """
 
     async def parse_data(self, page: str, **kwargs) -> dict:
+
         user_uprn = kwargs.get("uprn")
         check_uprn(user_uprn)
+        bindata = {"bins": []}
 
-        data = {"bins": []}
+        def solve(s):
+            return re.sub(r"(\d)(st|nd|rd|th)", r"\1", s)
 
         headers = {
-            "Accept": "application/json, text/javascript, */*; q=0.01",
-            "Accept-Language": "en-GB,en;q=0.9",
-            "Cache-Control": "no-cache",
-            "Connection": "keep-alive",
-            # Already added when you pass json=
-            # 'Content-Type': 'application/json',
-            # 'Cookie': 'ASP.NET_SessionId=n2kxv5ssap4gobb11va1oxge',
-            "Origin": "https://tdcws01.tandridge.gov.uk",
-            "Pragma": "no-cache",
-            "Referer": "https://tdcws01.tandridge.gov.uk/TDCWebAppsPublic/tfaBranded/408?utm_source=pressrelease&utm_medium=smposts&utm_campaign=check_my_bin_day",
-            "Sec-Fetch-Dest": "empty",
-            "Sec-Fetch-Mode": "cors",
-            "Sec-Fetch-Site": "same-origin",
-            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36",
+            "Origin": "https://www.lichfielddc.gov.uk",
+            "Referer": "https://www.lichfielddc.gov.uk",
+            "User-Agent": "Mozilla/5.0",
         }
 
-        params = {
-            "UPRN": f"{user_uprn}",
-        }
+        # Tamworth waste services are operated by Lichfield District Council
+        URI = f"https://www.lichfielddc.gov.uk/homepage/6/bin-collection-dates?uprn={user_uprn}"
 
-        json_data = (await _http.post(
-            "https://tdcws01.tandridge.gov.uk/TDCWebAppsPublic/TDCMiddleware/RESTAPI/WhiteSpaceAPI/GetCompleteRecordByUPRN",
-            headers=headers,
-            json=params,
-        )).json()["lstNextCollections"]
+        # Make the GET request
+        response = await _http.get(URI, headers=headers)
 
-        for item in json_data:
+        soup = BeautifulSoup(response.text, "html.parser")
+
+        bins = soup.find_all("h3", class_="bin-collection-tasks__heading")
+        dates = soup.find_all("p", class_="bin-collection-tasks__date")
+
+        current_year = datetime.now().year
+        current_month = datetime.now().month
+
+        for i in range(len(dates)):
+            bint = " ".join(bins[i].text.split()[2:4])
+            date = dates[i].text
+
+            date = datetime.strptime(
+                solve(date),
+                "%d %B",
+            )
+
+            if (current_month > 10) and (date.month < 3):
+                date = date.replace(year=(current_year + 1))
+            else:
+                date = date.replace(year=current_year)
+
             dict_data = {
-                "type": item.get("Service").replace("Collection Service", "").strip(),
-                "collectionDate": datetime.strptime(
-                    item.get("Date"), "%d/%m/%Y %H:%M:%S"
-                ).strftime(date_format),
+                "type": bint,
+                "collectionDate": date.strftime("%d/%m/%Y"),
             }
-            data["bins"].append(dict_data)
+            bindata["bins"].append(dict_data)
 
-        return data
+        return bindata
 
 
 # --- Adapter for Project API ---
 from api.compat.hacs import Collection  # type: ignore[attr-defined]
 
-TITLE = "Tandridge"
-URL = "https://tdcws01.tandridge.gov.uk/TDCWebAppsPublic/tfaBranded/408?utm_source=pressrelease&utm_medium=smposts&utm_campaign=check_my_bin_day"
+TITLE = "Tamworth Borough"
+URL = "https://www.tamworth.gov.uk"
 TEST_CASES = {}
 
 
 class Source:
-    def __init__(self, uprn: str | None = None):
+    def __init__(self, uprn: str | None = None, postcode: str | None = None):
         self.uprn = uprn
+        self.postcode = postcode
         self._scraper = CouncilClass()
 
     async def fetch(self) -> list[Collection]:
@@ -79,6 +87,7 @@ class Source:
 
         kwargs = {}
         if self.uprn: kwargs['uprn'] = self.uprn
+        if self.postcode: kwargs['postcode'] = self.postcode
 
         data = await self._scraper.parse_data("", **kwargs)
 

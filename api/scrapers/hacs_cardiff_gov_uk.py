@@ -4,7 +4,7 @@ import xml.etree.ElementTree as ET
 
 import httpx
 
-from api.compat.hacs import Collection
+from api.compat.hacs import Collection, Icons
 
 TITLE = "Cardiff Council"
 DESCRIPTION = "Source script for cardiff.gov.uk"
@@ -15,11 +15,11 @@ TEST_CASES = {
 }
 
 ICON_MAP = {
-    "General": "mdi:trash-can",
-    "Recycling": "mdi:recycle",
-    "Garden": "mdi:leaf",
-    "Food": "mdi:food",
-    "Glass": "mdi:glass-fragile",
+    "General": Icons.GENERAL_WASTE,
+    "Recycling": Icons.RECYCLING,
+    "Garden": Icons.GARDEN,
+    "Food": Icons.BIO_KITCHEN,
+    "Glass": Icons.GLASS,
 }
 
 PAYLOAD_GET_JWT = (

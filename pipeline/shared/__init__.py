@@ -143,3 +143,15 @@ def load_hacs_patch_overrides() -> dict:
 def load_lad_overrides() -> dict:
     """Load preserved scrapers + LAD code overrides for sync orchestration."""
     return _load_json(LAD_OVERRIDES_PATH)
+
+
+def load_unwired_lads() -> dict[str, str]:
+    """LAD code -> reason for councils deliberately left without a scraper.
+
+    Used to settle councils whose only upstream option is a placeholder that
+    can never return real data (e.g. the shared UKBCD Google-calendar test
+    fixture). Blocklisted codes are stripped from the scraper map at compose
+    time so re-syncs can't silently re-wire them; the reason is recorded in
+    lad_lookup.json as the entry's "status".
+    """
+    return load_lad_overrides().get("unwired_lads", {})

@@ -103,6 +103,20 @@ Westminster, Inverclyde, Scottish Borders, Bridgend).
 - **9 hacs dead + 11 ukbcd dead:** `curl_cffi` for Cloudflare, else `routing.json` fallback.
 - **4 port regressions** (hillingdon, north_devon, northumberland, three_rivers): recaptured; hillingdon/north_devon/three_rivers still fail 1 case each, northumberland fixed.
 
+**Settled 2026-09-03 (not fixed):** the 10 LADs wired to
+`ukbcd_google_public_calendar_council` (Bassetlaw, Brentwood, Ribble Valley,
+Rossendale, Trafford, Causeway Coast and Glens, Derry City and Strabane,
+Newry Mourne and Down, Isle of Wight, Torfaen) are unwired and blocklisted.
+That scraper's URL is the shared upstream *test* fixture (`...Test Calendar`,
+Thursday Grey/Blue/Black for every LAD) and its `Source` never forwards `url`,
+so `/lookup` always 503d while `/calendar` 302d test bins as real data.
+Enforcement: `"unwired_lads"` in `pipeline/lad_overrides.json` (code →
+reason), stripped in `sync_all._drop_unwired_lads` + `compose()`, reason
+shipped as entry `"status"`, passthrough emptied in `scraper_registry.py`.
+Wired 349 → 340 (incl. Hertsmere port). Re-wire a LAD only with a real
+per-council feed; the generic adapter needs a `?url=` allowlist design first
+(SSRF surface) — see session notes 2026-09-03.
+
 ## 3. Scraper family templates
 
 335 scrapers, ~half bespoke — but four families are large enough to warrant

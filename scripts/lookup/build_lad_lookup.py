@@ -89,6 +89,10 @@ CODE_ALIASES = {
 # One scraper legitimately serves many councils via their public Google
 # Calendar feeds, so its domain never matches any council's. Any other
 # domain mismatch is a wiring bug worth shouting about.
+# NOTE 2026-09-03: the calendar scraper is currently blocklisted (see
+# "unwired_lads" in pipeline/lad_overrides.json) — its URL is the shared
+# UKBCD *test* fixture, not per-council data. Kept here so the exemption
+# still applies if real per-council feeds ever re-wire it.
 PASSTHROUGH_SCRAPERS = {"ukbcd_google_public_calendar_council"}
 
 # Domain words that identify a host rather than a council.
@@ -257,6 +261,15 @@ def compose() -> dict[str, dict]:
             SCRAPER_MAP_PATH,
         )
 
+    # Deliberately unwired LADs (placeholder scrapers that can never return
+    # real data). Stripped here so any sync output re-wiring them is settled
+    # back to null at composition time; the reason ships as "status".
+    from pipeline.shared import load_unwired_lads  # noqa: PLC0415
+
+    unwired = load_unwired_lads()
+    for code in unwired:
+        scrapers.pop(code, None)
+
     previous = (
         json.loads(LAD_LOOKUP_PATH.read_text()) if LAD_LOOKUP_PATH.exists() else {}
     )
@@ -264,12 +277,15 @@ def compose() -> dict[str, dict]:
     lookup = {}
     for code, entry in base.items():
         scraper = scrapers.get(code) or {}
-        lookup[code] = {
+        record = {
             "name": entry["name"],
             "scraper_id": scraper.get("scraper_id"),
             "url": scraper.get("url"),
             "govuk_url": entry["govuk_url"],
         }
+        if code in unwired:
+            record["status"] = unwired[code]
+        lookup[code] = record
 
     stale = sorted(set(scrapers) - set(base))
     if stale:

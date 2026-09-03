@@ -40,6 +40,7 @@ from pipeline.shared import (
     extract_url_from_scraper,
     load_lad_overrides,
     load_routing,
+    load_unwired_lads,
     normalise_council_name,
     normalise_domain,
 )
@@ -324,6 +325,29 @@ def _merge_preserved_scrapers() -> None:
     )
 
 
+def _drop_unwired_lads() -> None:
+    """Strip blocklisted LADs from scraper_lad_map.json so re-syncs can't
+    re-wire placeholders that can never return real data. See
+    load_unwired_lads() and the "unwired_lads" map in lad_overrides.json."""
+    unwired = load_unwired_lads()
+    if not unwired or not SCRAPER_LAD_MAP_PATH.exists():
+        return
+    scraper_map = json.loads(SCRAPER_LAD_MAP_PATH.read_text())
+    dropped = sorted(set(scraper_map) & set(unwired))
+    if not dropped:
+        return
+    for lad in dropped:
+        del scraper_map[lad]
+    SCRAPER_LAD_MAP_PATH.write_text(
+        json.dumps(dict(sorted(scraper_map.items())), indent=2) + "\n"
+    )
+    logger.info(
+        "Dropped %d blocklisted LAD mapping(s): %s",
+        len(dropped),
+        ", ".join(dropped),
+    )
+
+
 def _check_lad_lookup_consistency() -> None:
     """Warn for any LAD whose scraper_id doesn't exist in api/scrapers/."""
     lad_data = json.loads(LAD_LOOKUP_PATH.read_text())
@@ -417,6 +441,7 @@ def main():
     #     (scripts/lookup/fetch_latest.sh).
     _wire_lad_hacs_scrapers()
     _merge_preserved_scrapers()
+    _drop_unwired_lads()
     run_shell(
         ["uv", "run", "python", "-m", "scripts.lookup.build_lad_lookup", "--compose"],
         "lad_lookup composition",

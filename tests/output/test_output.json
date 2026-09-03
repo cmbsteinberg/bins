@@ -1,21 +1,141 @@
 {
-  "total": 2,
-  "passed": 2,
-  "failed": 0,
+  "total": 14,
+  "passed": 11,
+  "failed": 3,
   "skipped": 0,
-  "failure_categories": {},
+  "failure_categories": {
+    "tests/test_integration.py:341: Failed": {
+      "count": 3,
+      "councils": [
+        {
+          "council": "hacs_newcastle_gov_uk",
+          "label": "Test_001",
+          "uprn": "",
+          "status_code": "",
+          "error_summary": "",
+          "duration": 0.0
+        },
+        {
+          "council": "hacs_newcastle_gov_uk",
+          "label": "Test_002",
+          "uprn": "",
+          "status_code": "",
+          "error_summary": "",
+          "duration": 0.0
+        },
+        {
+          "council": "hacs_walthamforest_gov_uk",
+          "label": "200001421821",
+          "uprn": "",
+          "status_code": "",
+          "error_summary": "",
+          "duration": 0.0
+        }
+      ]
+    }
+  },
   "results": [
     {
-      "node_id": "tests/test_integration.py::test_scraper[port_hertsmere_borough_council|1 Abbots Place, Borehamwood WD6 5QP]",
-      "council": "port_hertsmere_borough_council",
-      "label": "1 Abbots Place, Borehamwood WD6 5QP",
+      "node_id": "tests/test_integration.py::test_scraper[hacs_harrow_gov_uk|1 Dudley Gardens]",
+      "council": "hacs_harrow_gov_uk",
+      "label": "1 Dudley Gardens",
       "status": "passed",
       "duration": 0.0
     },
     {
-      "node_id": "tests/test_integration.py::test_scraper[port_hertsmere_borough_council|Flat 1, 1 Shenley Road, Borehamwood WD6 1AA]",
-      "council": "port_hertsmere_borough_council",
-      "label": "Flat 1, 1 Shenley Road, Borehamwood WD6 1AA",
+      "node_id": "tests/test_integration.py::test_scraper[hacs_newcastle_gov_uk|Test_001]",
+      "council": "hacs_newcastle_gov_uk",
+      "label": "Test_001",
+      "status": "failed",
+      "duration": 0.0,
+      "full_message": "all_results = {'hacs_aberdeencity_gov_uk|179 Skene Street, AB10 1QN': {'collection_types': ['General', 'Recycling'], 'collections_co...Refuse and food waste'], 'collections_count': 3, 'council': 'hacs_aberdeenshire_gov_uk', 'elapsed_s': 2.058, ...}, ...}\ncouncil = 'hacs_newcastle_gov_uk', label = 'Test_001'\nparams = {'postcode': 'NE5 3UY ', 'uprn': '004510053797'}\n\n    @pytest.mark.asyncio(loop_scope=\"session\")\n    @pytest.mark.parametrize(\n        \"council, label, params\",\n        TEST_DATA,\n        ids=[f\"{council}|{label}\" for council, label, _ in TEST_DATA],\n    )\n    async def test_scraper(all_results, council: str, label: str, params: dict):\n        key = f\"{council}|{label}\"\n        r = all_results[key]\n    \n        if r[\"passed\"]:\n            return\n    \n        # Build a detailed failure message\n        lines = [f\"FAILED: {council} / {label}\"]\n        lines.append(f\"  Endpoint:      GET {r['endpoint']}\")\n        lines.append(f\"  UPRN:          {r['uprn']}\")\n        lines.append(f\"  Query params:  {json.dumps(r['query_params'])}\")\n        lines.append(f\"  Elapsed:       {r.get('elapsed_s', '?')}s\")\n    \n        if \"status_code\" in r:\n            lines.append(f\"  Status code:   {r['status_code']}\")\n        if r.get(\"response_size_bytes\") is not None:\n            lines.append(f\"  Response size: {r['response_size_bytes']} bytes\")\n    \n        err_type = r.get(\"error_type\", \"unknown\")\n        lines.append(f\"  Error type:    {err_type}\")\n    \n        if \"error_class\" in r:\n            lines.append(f\"  Error class:   {r['error_class']}\")\n        if \"error_detail\" in r:\n            lines.append(f\"  Error detail:  {r['error_detail']}\")\n        if \"error_message\" in r:\n            lines.append(f\"  Error message: {r['error_message'][:500]}\")\n        if \"response_keys\" in r:\n            lines.append(f\"  Response keys: {r['response_keys']}\")\n    \n        # Show a snippet of the response body for debugging\n        preview = r.get(\"response_body_preview\", \"\")\n        if preview:\n            lines.append(f\"  Response body: {preview[:500]}\")\n    \n>       pytest.fail(\"\\n\".join(lines))\nE       Failed: FAILED: hacs_newcastle_gov_uk / Test_001\nE         Endpoint:      GET /lookup/004510053797\nE         UPRN:          004510053797\nE         Query params:  {\"council\": \"hacs_newcastle_gov_uk\", \"postcode\": \"NE5 3UY \"}\nE         Elapsed:       5.1s\nE         Status code:   503\nE         Response size: 115 bytes\nE         Error type:    http_503\nE         Error detail:  We couldn't reach your council's website. The site may be temporarily down \u2014 please try again later.\nE         Response body: {\"detail\":\"We couldn't reach your council's website. The site may be temporarily down \u2014 please try again later.\"}\n\ntests/test_integration.py:341: Failed",
+      "failure_category": "tests/test_integration.py:341: Failed"
+    },
+    {
+      "node_id": "tests/test_integration.py::test_scraper[hacs_newcastle_gov_uk|Test_002]",
+      "council": "hacs_newcastle_gov_uk",
+      "label": "Test_002",
+      "status": "failed",
+      "duration": 0.0,
+      "full_message": "all_results = {'hacs_aberdeencity_gov_uk|179 Skene Street, AB10 1QN': {'collection_types': ['General', 'Recycling'], 'collections_co...Refuse and food waste'], 'collections_count': 3, 'council': 'hacs_aberdeenshire_gov_uk', 'elapsed_s': 2.058, ...}, ...}\ncouncil = 'hacs_newcastle_gov_uk', label = 'Test_002'\nparams = {'postcode': 'NE5 3UY ', 'uprn': '4510053797'}\n\n    @pytest.mark.asyncio(loop_scope=\"session\")\n    @pytest.mark.parametrize(\n        \"council, label, params\",\n        TEST_DATA,\n        ids=[f\"{council}|{label}\" for council, label, _ in TEST_DATA],\n    )\n    async def test_scraper(all_results, council: str, label: str, params: dict):\n        key = f\"{council}|{label}\"\n        r = all_results[key]\n    \n        if r[\"passed\"]:\n            return\n    \n        # Build a detailed failure message\n        lines = [f\"FAILED: {council} / {label}\"]\n        lines.append(f\"  Endpoint:      GET {r['endpoint']}\")\n        lines.append(f\"  UPRN:          {r['uprn']}\")\n        lines.append(f\"  Query params:  {json.dumps(r['query_params'])}\")\n        lines.append(f\"  Elapsed:       {r.get('elapsed_s', '?')}s\")\n    \n        if \"status_code\" in r:\n            lines.append(f\"  Status code:   {r['status_code']}\")\n        if r.get(\"response_size_bytes\") is not None:\n            lines.append(f\"  Response size: {r['response_size_bytes']} bytes\")\n    \n        err_type = r.get(\"error_type\", \"unknown\")\n        lines.append(f\"  Error type:    {err_type}\")\n    \n        if \"error_class\" in r:\n            lines.append(f\"  Error class:   {r['error_class']}\")\n        if \"error_detail\" in r:\n            lines.append(f\"  Error detail:  {r['error_detail']}\")\n        if \"error_message\" in r:\n            lines.append(f\"  Error message: {r['error_message'][:500]}\")\n        if \"response_keys\" in r:\n            lines.append(f\"  Response keys: {r['response_keys']}\")\n    \n        # Show a snippet of the response body for debugging\n        preview = r.get(\"response_body_preview\", \"\")\n        if preview:\n            lines.append(f\"  Response body: {preview[:500]}\")\n    \n>       pytest.fail(\"\\n\".join(lines))\nE       Failed: FAILED: hacs_newcastle_gov_uk / Test_002\nE         Endpoint:      GET /lookup/4510053797\nE         UPRN:          4510053797\nE         Query params:  {\"council\": \"hacs_newcastle_gov_uk\", \"postcode\": \"NE5 3UY \"}\nE         Elapsed:       5.509s\nE         Status code:   503\nE         Response size: 115 bytes\nE         Error type:    http_503\nE         Error detail:  We couldn't reach your council's website. The site may be temporarily down \u2014 please try again later.\nE         Response body: {\"detail\":\"We couldn't reach your council's website. The site may be temporarily down \u2014 please try again later.\"}\n\ntests/test_integration.py:341: Failed",
+      "failure_category": "tests/test_integration.py:341: Failed"
+    },
+    {
+      "node_id": "tests/test_integration.py::test_scraper[hacs_newcastle_staffs_gov_uk|Test_001]",
+      "council": "hacs_newcastle_staffs_gov_uk",
+      "label": "Test_001",
+      "status": "passed",
+      "duration": 0.0
+    },
+    {
+      "node_id": "tests/test_integration.py::test_scraper[hacs_newcastle_staffs_gov_uk|Test_002]",
+      "council": "hacs_newcastle_staffs_gov_uk",
+      "label": "Test_002",
+      "status": "passed",
+      "duration": 0.0
+    },
+    {
+      "node_id": "tests/test_integration.py::test_scraper[hacs_newcastle_staffs_gov_uk|Test_003]",
+      "council": "hacs_newcastle_staffs_gov_uk",
+      "label": "Test_003",
+      "status": "passed",
+      "duration": 0.0
+    },
+    {
+      "node_id": "tests/test_integration.py::test_scraper[hacs_newcastle_staffs_gov_uk|Test_004]",
+      "council": "hacs_newcastle_staffs_gov_uk",
+      "label": "Test_004",
+      "status": "passed",
+      "duration": 0.0
+    },
+    {
+      "node_id": "tests/test_integration.py::test_scraper[hacs_walsall_gov_uk|test001]",
+      "council": "hacs_walsall_gov_uk",
+      "label": "test001",
+      "status": "passed",
+      "duration": 0.0
+    },
+    {
+      "node_id": "tests/test_integration.py::test_scraper[hacs_walsall_gov_uk|test002]",
+      "council": "hacs_walsall_gov_uk",
+      "label": "test002",
+      "status": "passed",
+      "duration": 0.0
+    },
+    {
+      "node_id": "tests/test_integration.py::test_scraper[hacs_walsall_gov_uk|test003]",
+      "council": "hacs_walsall_gov_uk",
+      "label": "test003",
+      "status": "passed",
+      "duration": 0.0
+    },
+    {
+      "node_id": "tests/test_integration.py::test_scraper[hacs_walsall_gov_uk|test004]",
+      "council": "hacs_walsall_gov_uk",
+      "label": "test004",
+      "status": "passed",
+      "duration": 0.0
+    },
+    {
+      "node_id": "tests/test_integration.py::test_scraper[hacs_walthamforest_gov_uk|200001421821]",
+      "council": "hacs_walthamforest_gov_uk",
+      "label": "200001421821",
+      "status": "failed",
+      "duration": 0.0,
+      "full_message": "all_results = {'hacs_aberdeencity_gov_uk|179 Skene Street, AB10 1QN': {'collection_types': ['General', 'Recycling'], 'collections_co...Refuse and food waste'], 'collections_count': 3, 'council': 'hacs_aberdeenshire_gov_uk', 'elapsed_s': 2.058, ...}, ...}\ncouncil = 'hacs_walthamforest_gov_uk', label = '200001421821'\nparams = {'postcode': 'E11 1DY ', 'uprn': '200001421821'}\n\n    @pytest.mark.asyncio(loop_scope=\"session\")\n    @pytest.mark.parametrize(\n        \"council, label, params\",\n        TEST_DATA,\n        ids=[f\"{council}|{label}\" for council, label, _ in TEST_DATA],\n    )\n    async def test_scraper(all_results, council: str, label: str, params: dict):\n        key = f\"{council}|{label}\"\n        r = all_results[key]\n    \n        if r[\"passed\"]:\n            return\n    \n        # Build a detailed failure message\n        lines = [f\"FAILED: {council} / {label}\"]\n        lines.append(f\"  Endpoint:      GET {r['endpoint']}\")\n        lines.append(f\"  UPRN:          {r['uprn']}\")\n        lines.append(f\"  Query params:  {json.dumps(r['query_params'])}\")\n        lines.append(f\"  Elapsed:       {r.get('elapsed_s', '?')}s\")\n    \n        if \"status_code\" in r:\n            lines.append(f\"  Status code:   {r['status_code']}\")\n        if r.get(\"response_size_bytes\") is not None:\n            lines.append(f\"  Response size: {r['response_size_bytes']} bytes\")\n    \n        err_type = r.get(\"error_type\", \"unknown\")\n        lines.append(f\"  Error type:    {err_type}\")\n    \n        if \"error_class\" in r:\n            lines.append(f\"  Error class:   {r['error_class']}\")\n        if \"error_detail\" in r:\n            lines.append(f\"  Error detail:  {r['error_detail']}\")\n        if \"error_message\" in r:\n            lines.append(f\"  Error message: {r['error_message'][:500]}\")\n        if \"response_keys\" in r:\n            lines.append(f\"  Response keys: {r['response_keys']}\")\n    \n        # Show a snippet of the response body for debugging\n        preview = r.get(\"response_body_preview\", \"\")\n        if preview:\n            lines.append(f\"  Response body: {preview[:500]}\")\n    \n>       pytest.fail(\"\\n\".join(lines))\nE       Failed: FAILED: hacs_walthamforest_gov_uk / 200001421821\nE         Endpoint:      GET /lookup/200001421821\nE         UPRN:          200001421821\nE         Query params:  {\"council\": \"hacs_walthamforest_gov_uk\", \"postcode\": \"E11 1DY \"}\nE         Elapsed:       5.118s\nE         Status code:   503\nE         Response size: 115 bytes\nE         Error type:    http_503\nE         Error detail:  We couldn't reach your council's website. The site may be temporarily down \u2014 please try again later.\nE         Response body: {\"detail\":\"We couldn't reach your council's website. The site may be temporarily down \u2014 please try again later.\"}\n\ntests/test_integration.py:341: Failed",
+      "failure_category": "tests/test_integration.py:341: Failed"
+    },
+    {
+      "node_id": "tests/test_integration.py::test_scraper[hacs_walthamforest_gov_uk|100023583909]",
+      "council": "hacs_walthamforest_gov_uk",
+      "label": "100023583909",
+      "status": "passed",
+      "duration": 0.0
+    },
+    {
+      "node_id": "tests/test_integration.py::test_scraper[ukbcd_dudley_council|Dudley]",
+      "council": "ukbcd_dudley_council",
+      "label": "Dudley",
       "status": "passed",
       "duration": 0.0
     }

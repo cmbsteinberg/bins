@@ -34,7 +34,8 @@ Channel Islands/Isle of Man pseudo-codes, not councils), named from ONS
   (North Yorkshire `E06000065`, Westmorland and Furness `E06000064`) and need
   postcode-level sub-routing, not a LAD wire. `ukbcd_environment_first` has no
   `LAD24CD` upstream; Lewes and Eastbourne are already wired.
-- 40 LADs still have no scraper — see §2 (12 after this session's wires).
+- LADs with no scraper — see §2 open-work types (build backlog vs
+  settled placeholders).
 
 ## 1a. Original analysis (kept for context)
 
@@ -52,10 +53,14 @@ Channel Islands/Isle of Man pseudo-codes, not councils), named from ONS
 - Regenerate `lad_lookup.json` from `363` parquet codes + GOV.UK URL, then attach `scraper_id` from `input.json`/`lad_overrides.json`.
 - Add 22, retire 2 stale (Harrogate now N.Yorks E06000065, East Herts already E07000242 in parquet).
 
-## 2. 100% on existing coverage + 33 scopeless
+## 2. Full coverage on existing councils
 
-**Current:** 349/361 wired (badge still 295/328 until post-integration regen);
-367 scrapers in `test_cases.json`.
+**Current:** read live, never snapshot — wired vs unwired is null
+`scraper_id` in `api/data/lad_lookup.json`, broken is wired plus
+`working: false` (written by `annotate_lad_working` from
+`tests/output/integration_output.json`); badge, README sankey and
+`coverage.geojson` regen via `./pipeline/ci/post_integration.sh`, which
+runs automatically after integration runs.
 
 **Done since:** Icons sync blocker fixed (`api/compat/hacs/icons.py` +
 `pipeline/hacs/sync.sh`); stale UPRNs resampled
@@ -86,36 +91,30 @@ port pair (token replay, no captcha; Hertsmere's `round-search` needs
 round→date mapping); Staffs Moorlands undecided (`bins.*` PublicDashboard SPA,
 one more probe for the data endpoint).
 
-**Remaining 12:** Halton, Rutland, Brighton and Hove (deeplink — Mendix,
-needs a `{deeplink}` response, 404 today), Isles of Scilly, North East
-Derbyshire, West Devon, Uttlesford, Hertsmere, South Kesteven, North Norfolk,
-City of London, Kensington and Chelsea. Wired since the 33-count: the 6
-previously-unindexed (Caerphilly, Na h-Eileanan Siar, Merthyr Tydfil, Orkney,
-Shetland, Tamworth — upstream indexed them, wired via `lad_overrides.json`
-since input.json carries no LAD24CD) + Rotherham (new ukbcd port over the
-Imactivate shared API; HACS dropped its scraper upstream) + 14 HACS
-additions/returns (Southend, Slough, Castle Point, Chelmsford, Sevenoaks,
-Boston, Great Yarmouth, Nuneaton, Staffs Moorlands, Tower Hamlets,
-Westminster, Inverclyde, Scottish Borders, Bridgend).
+**Open work by type** (live lists via the queries above, not snapshots):
 
-**Still open from before:**
-- **7 partials** (bedford, eastherts, enfield, harlow, kirklees, reigate, st_helens): resample done, still flapping — live-site noise vs stale params TBD per council.
-- **9 hacs dead + 11 ukbcd dead:** `curl_cffi` for Cloudflare, else `routing.json` fallback.
-- **4 port regressions** (hillingdon, north_devon, northumberland, three_rivers): recaptured; hillingdon/north_devon/three_rivers still fail 1 case each, northumberland fixed.
+- **Build backlog (unwired, no blocklist):** each needs a 30–60 min
+  port-vs-deeplink probe per the triage rule; Brighton is the deeplink
+  reference case (spec done, `{deeplink}` response implementation open).
+- **Settled placeholders (unwired, blocklisted in `unwired_lads`):**
+  re-wire only on real per-council feeds; the generic calendar adapter
+  needs a `?url=` allowlist design first (SSRF surface).
+- **Broken-but-wired triage:** one retry, then classify — slow-503 (site
+  down, wait), fast-503 (block, consider `curl_cffi` flag), partial
+  (stale UPRN — resample via `_sample_uprns_for_lad`), 422 (site-side
+  validation or a dead finder like Calderdale's notice page — read the
+  council page before resampling).
+- **Port debt (our code, fix first):** North Devon, Three Rivers.
+- **Zero-signal (wired, zero test rows):** Antrim, Dartford, South Staffs
+  — probe before building (Bridgend pattern: upstream fixtures beat
+  resampling; ONS samples can return councils-unknown UPRNs).
+- **Orphan noise:** failing scraper files with no LAD wired (e.g.
+  Hillingdon-HACS while the port passes) — ignore unless wired.
 
-**Settled 2026-09-03 (not fixed):** the 10 LADs wired to
-`ukbcd_google_public_calendar_council` (Bassetlaw, Brentwood, Ribble Valley,
-Rossendale, Trafford, Causeway Coast and Glens, Derry City and Strabane,
-Newry Mourne and Down, Isle of Wight, Torfaen) are unwired and blocklisted.
-That scraper's URL is the shared upstream *test* fixture (`...Test Calendar`,
-Thursday Grey/Blue/Black for every LAD) and its `Source` never forwards `url`,
-so `/lookup` always 503d while `/calendar` 302d test bins as real data.
-Enforcement: `"unwired_lads"` in `pipeline/lad_overrides.json` (code →
-reason), stripped in `sync_all._drop_unwired_lads` + `compose()`, reason
-shipped as entry `"status"`, passthrough emptied in `scraper_registry.py`.
-Wired 349 → 340 (incl. Hertsmere port). Re-wire a LAD only with a real
-per-council feed; the generic adapter needs a `?url=` allowlist design first
-(SSRF surface) — see session notes 2026-09-03.
+**Settled pattern (first use 2026-09-03, calendar placeholders):**
+unwire + blocklist in `unwired_lads`, strip in `sync_all` post-merge and in
+`compose()`, reason shipped as entry `status`, serving path disabled
+(registry passthrough). Reuse for future settlements.
 
 ## 3. Scraper family templates
 

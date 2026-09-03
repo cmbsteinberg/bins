@@ -57,6 +57,8 @@ Channel Islands/Isle of Man pseudo-codes, not councils), named from ONS
 **Current:** 682/728 cases pass, 46 fails = 31 councils (295/317 badge).
 
 **Do:**
+- **Sync blocker:** latest HACS sources import `Icons`, but our compat sync does
+  not copy/export `icons.py`; add it, then regenerate and test the recovered scrapers.
 - **7 partials** (bedford, eastherts, enfield, harlow, kirklees, reigate, st_helens): refresh stale `TEST_CASES` UPRN via `enrich_test_postcodes.py`.
 - **9 hacs dead + 11 ukbcd dead:** `curl_cffi` for Cloudflare, else `routing.json` fallback.
 - **4 port regressions** (hillingdon, north_devon, northumberland, three_rivers): re-run `capture_upstream_xhrs.py`.

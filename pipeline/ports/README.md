@@ -3,7 +3,7 @@
 Draft ports of UKBCD selenium scrapers to plain `httpx` + `BeautifulSoup`.
 Each file follows the HACS scraper pattern (`Source` class, `TITLE`, `URL`, `TEST_CASES`, `async fetch()`).
 
-## Ported (14 councils)
+## Ported (15 councils)
 
 ### Browserless (no XHR traffic — upstream never used the browser for data)
 | File | Council | Notes |
@@ -36,6 +36,11 @@ Each file follows the HACS scraper pattern (`Source` class, `TITLE`, `URL`, `TES
 |------|---------|-------------|
 | `port_powys_council.py` | Powys | GET `binday` (tokens in hidden inputs) → POST form with UPRN → `bdl-card` dates |
 
+### Oncreate-family (`oncreate.app` / `onmats.com`, `webpage_token` + `webpage_subpage_id`)
+| File | Council | Lookup chain |
+|------|---------|--------------|
+| `port_hertsmere_borough_council.py` | Hertsmere | GET landing (cookie) → AJAX dynamic page (fresh token + form fields + typeahead params) → `html_get_type_ahead_results` typeahead → search-form POST with record id → Collection-days table. Source publishes weekdays only, so dates are next-occurrence projections (no multi-week fabrication) |
+
 ### Placecube/Liferay cluster (shared Babergh & Mid Suffolk service)
 | File | Council | Lookup chain |
 |------|---------|-------------|
@@ -62,7 +67,7 @@ Before porting from scratch, check whether the council's platform already has a 
 | GOSS Forms (`/apiserver/formsservice/http/processsubmission`, `*_FORM` hidden inputs) | `port_powys_council.py` | GET page tokens → POST form with UPRN (+ NEXT button field) → card/table parse |
 | IEG4 AchieveForms (`/apibroker/runLookup`, `AF-` form/stage IDs) | `port_north_devon_council.py` | Auth → lookup chain with session/token IDs scraped from page |
 | Placecube/Liferay portlet (`mvcRenderCommandName`, `p_p_id`) | `port_babergh_district_council.py` | CSRF seed → portlet POST with UPRN → table parse |
-| Oncreate-family (`oncreate.app` / `onmats.com`, `webpage_token` + `webpage_subpage_id`) | none yet (Hertsmere + Sevenoaks are the first candidates) | GET page tokens → `/w/ajax` typeahead → `widget_action=handle_event` |
+| Oncreate-family (`oncreate.app` / `onmats.com`, `webpage_token` + `webpage_subpage_id`) | `port_hertsmere_borough_council.py` | GET page tokens → `/w/ajax` typeahead → search-form POST with record id |
 | Mendix (`mxui`, `mxclientsystem`) | none — deeplink | Brighton is the reference case |
 ## Not ported
 
@@ -75,7 +80,7 @@ Before porting from scratch, check whether the council's platform already has a 
 - **MidSuffolk** — ported as `port_mid_suffolk_district_council.py` (Placecube POST, plain HTTP); Babergh likewise.
 - **ForestOfDean** — covered by restored `hacs_forest_of_dean_gov_uk.py`.
 - **Brighton** (Mendix) — confirmed deeplink, the reference case.
-- **Sevenoaks, Hertsmere** (Oncreate-family) — port candidates, not ruled out: token replay, no captcha seen. Hertsmere's `round-search` returns rounds, not dates, so needs round→date mapping.
+- **Sevenoaks** (Oncreate-family) — port candidate, not ruled out: token replay, no captcha seen. Hertsmere ported as `port_hertsmere_borough_council.py` (same family, but a search-widget flow rather than Sevenoaks' `handle_event` + minted-URL flow).
 - **StaffsMoorlands** (`bins.*` PublicDashboard SPA) — undecided, needs one more probe for the dashboard data endpoint.
 
 ### Too complex for plain HTTP (original assessment, kept for context)

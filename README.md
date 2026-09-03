@@ -20,13 +20,13 @@ config:
 sankey-beta
 
 "LAD Codes","HACS",262
-"LAD Codes","UKBCD",87
-"LAD Codes","Not Supported",12
+"LAD Codes","UKBCD",78
+"LAD Codes","Not Supported",21
 
-"HACS","Passing",249
-"HACS","Failing",13
+"HACS","Passing",248
+"HACS","Failing",14
 
-"UKBCD","UKBCD Passing",83
+"UKBCD","UKBCD Passing",74
 "UKBCD","UKBCD Failing",4
 ```
 

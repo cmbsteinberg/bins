@@ -30,13 +30,55 @@ Each file follows the HACS scraper pattern (`Source` class, `TITLE`, `URL`, `TES
 | `ceredigion_county_council.py` | Ceredigion | Oracle eBase/UFS form (postcode → address → results page) |
 | `mid_ulster_district_council.py` | Mid Ulster | Azure REST API (`/api/addresses` + `/api/collectiondates`) |
 | `hillingdon_council.py` | Hillingdon | Jadu CXM JSON-RPC (`/apiserver/ajaxlibrary`) — returns day name + bin types |
+
+### GOSS Forms cluster (same platform family as Hillingdon, different flow)
+| File | Council | Lookup chain |
+|------|---------|-------------|
+| `port_powys_council.py` | Powys | GET `binday` (tokens in hidden inputs) → POST form with UPRN → `bdl-card` dates |
+
+### Placecube/Liferay cluster (shared Babergh & Mid Suffolk service)
+| File | Council | Lookup chain |
+|------|---------|-------------|
+| `port_babergh_district_council.py` | Babergh | CSRF seed → portlet POST with UPRN → HTML table. Split per-LAD because the upstream HACS source's required `council` selector collides with the API's reserved `council` query key |
+| `port_mid_suffolk_district_council.py` | Mid Suffolk | Same, hardcoded to the Mid Suffolk backend |
+
+## Triage rule: port vs deeplink
+
+For scopeless LADs, deeplink (serve the GOV.UK/council URL, no scraper) only if **all three** hold; otherwise port it:
+
+1. **No working plain-HTTP path available off the shelf.** An upstream file counts only if it actually runs — broken HACS sources and Selenium-only UKBCD ones count as absent. (Forest of Dean looked Salesforce-only until its working HACS path surfaced.)
+2. **A short probe finds no data endpoint.** Cap at ~30–60 min per council: replay candidate XHRs with a test UPRN/postcode. `httpx_convertible: false` in the capture summary means "needs human probe", never "needs browser" — Mid Suffolk scored false (its candidate URL was a live-chat tracker) yet ports as one CSRF + POST.
+3. **The platform is a stateful proprietary runtime.** Mendix (`mxui`/`mxclientsystem`, empty shell), Salesforce Aura/Lightning with no server fallback, anything behind captcha/Turnstile. Token-replayable low-code forms (GOSS `apiserver`/Forms, AchieveForms, Placecube, Oncreate-family `webpage_token` flows) fail this gate — they are ports, even when fiddly. **This gate is the crux; 1–2 are just cheap elimination around it.**
+
+Target selection (council bin page > GOV.UK page > nothing) is a separate follow-on step, not part of the decision. "Nothing" (e.g. Merthyr Tydfil, which has no GOV.UK link either) is a discovery backlog item, still served deeplink-shaped, never 404.
+
+## Sibling templates
+
+Before porting from scratch, check whether the council's platform already has a template. Copy the lookup chain, keep the parse:
+
+| Platform signal | Template port | Flow to reuse |
+|---|---|---|
+| GOSS `/apiserver/ajaxlibrary` JSON-RPC (`*.DatasourceQueries.alloy.*`) | `port_hillingdon_council.py` | POST JSON-RPC with UPRN → day name + bin types |
+| GOSS Forms (`/apiserver/formsservice/http/processsubmission`, `*_FORM` hidden inputs) | `port_powys_council.py` | GET page tokens → POST form with UPRN (+ NEXT button field) → card/table parse |
+| IEG4 AchieveForms (`/apibroker/runLookup`, `AF-` form/stage IDs) | `port_north_devon_council.py` | Auth → lookup chain with session/token IDs scraped from page |
+| Placecube/Liferay portlet (`mvcRenderCommandName`, `p_p_id`) | `port_babergh_district_council.py` | CSRF seed → portlet POST with UPRN → table parse |
+| Oncreate-family (`oncreate.app` / `onmats.com`, `webpage_token` + `webpage_subpage_id`) | none yet (Hertsmere + Sevenoaks are the first candidates) | GET page tokens → `/w/ajax` typeahead → `widget_action=handle_event` |
+| Mendix (`mxui`, `mxclientsystem`) | none — deeplink | Brighton is the reference case |
 ## Not ported
 
 ### Already covered by HACS scrapers
 - Teignbridge (`hacs_teignbridge_gov_uk.py`)
 - Basildon (`hacs_basildon_gov_uk.py`)
 
-### Too complex for plain HTTP
+### Decided since (see triage rule above)
+- **Powys** — ported as `port_powys_council.py` (GOSS Forms, plain HTTP).
+- **MidSuffolk** — ported as `port_mid_suffolk_district_council.py` (Placecube POST, plain HTTP); Babergh likewise.
+- **ForestOfDean** — covered by restored `hacs_forest_of_dean_gov_uk.py`.
+- **Brighton** (Mendix) — confirmed deeplink, the reference case.
+- **Sevenoaks, Hertsmere** (Oncreate-family) — port candidates, not ruled out: token replay, no captcha seen. Hertsmere's `round-search` returns rounds, not dates, so needs round→date mapping.
+- **StaffsMoorlands** (`bins.*` PublicDashboard SPA) — undecided, needs one more probe for the dashboard data endpoint.
+
+### Too complex for plain HTTP (original assessment, kept for context)
 - **StaffsMoorlands, Powys** (Jadu CXM) — client-side Handlebars rendering, session-dependent form tokens
 - **Sevenoaks, Hertsmere** (Jadu Continuum) — encrypted typeahead params, version-specific page IDs
 - **MidSuffolk** (Liferay) — React form-context-provider API

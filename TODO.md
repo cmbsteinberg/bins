@@ -91,6 +91,33 @@ port pair (token replay, no captcha; Hertsmere's `round-search` needs
 round→date mapping); Staffs Moorlands undecided (`bins.*` PublicDashboard SPA,
 one more probe for the data endpoint).
 
+**Verdicts 2026-09-04 (live-probed, 4 councils):**
+- **Isles of Scilly `E06000053` = deeplink, settled.** No address lookup
+  exists at all — static round map + area table, no kerbside collection off
+  St Mary's/St Martin's. Deeplinks to its GOV.UK page (`scilly.gov.uk/waste`,
+  live).
+- **North East Derbyshire `E07000038` = deeplink, settled.** Firmstep
+  `Check_your_Bin_Day` is retired (302s, the button is commented out of the
+  council page); only static Calendar A/B PDFs remain and `apibroker` 403s.
+  Deeplinks to its GOV.UK bin-dates page. Its stale Firmstep `url` is gone
+  from `lad_lookup.json` now the code is blocklisted.
+- **Kensington and Chelsea `E09000020` = port, backlog.** Not a deeplink: a
+  plain ASP.NET street form, no proprietary runtime, so gate (3) fails.
+- **West Devon `E07000047` = port, backlog.** Not a deeplink: the FCC JSON
+  backend works end-to-end (sibling of the other FCC councils).
+
+**Deeplink targets:** the default target is the entry's own `url`, else
+`govuk_url` (`api/services/deeplinks.py`). Where that default is dead, add the
+code to `deeplink_urls` in `lad_overrides.json` — `compose()` writes it into
+the entry's `url`, so a wired scraper's URL always wins and an override on a
+wired code is inert (logged as a warning). One entry today: Fylde
+`E07000119`, whose GOV.UK `/refuse` 404s after the portal moved to
+`new.fylde.gov.uk/wasteportal`. Scilly and NE Derbyshire need no override —
+their GOV.UK pages are live and correct. Covered by `tests/test_deeplinks.py`
+(service resolution, `/lookup` 200+deeplink, `/calendar` 302, and the
+data invariants: every unwired LAD has a target, every override reaches the
+lookup, every blocklist reason ships as `status`).
+
 **Open work by type** (live lists via the queries above, not snapshots):
 
 - **Build backlog (unwired, no blocklist):** each needs a 30–60 min
@@ -103,17 +130,42 @@ one more probe for the data endpoint).
   per-council feeds; the generic calendar adapter needs a `?url=`
   allowlist design first (SSRF surface). Selenium-backed councils with
   real entries (Halton, Brighton, etc.) are build backlog, not settled.
+  Probe 2026-09-04: shared ICS is literally `UKBCD Test Calendar` dummy;
+  none of the 10 publish a real council ICS (6 of the 16 Google-listed
+  LADs already have real working scrapers: E Hants, Havant, N Warks,
+  Clacks, E Dunbarts, Pendle):
+  | Council | Mechanism | ICS? | Path |
+  |---|---|---|---|
+  | Bassetlaw | ReCollect widget (svc 50015) | per-address via PLACE_UUID | port: address→UUID→ICS |
+  | Brentwood | MapStore GIS + route PDFs, no public UPRN→route | none | blocked |
+  | Ribble Valley | Jadu search → weekday + PDF | none | Jadu port + PDF rotation |
+  | Rossendale | Jadu search → zone-PDF link only | none | Jadu port + zone-PDF parse |
+  | Trafford | POST apps.trafford → weekday + A/B PDF | none | weekday+A/B computation |
+  | Causeway | 4 static PDFs, no lookup | none | static table or unsupported |
+  | Derry | 1 static PDF + app | none | static table or unsupported |
+  | Newry | POST postcode → 1 of 10 zone PDFs | none | POST+zone port (zone only) |
+  | Isle of Wight | Blazor/SignalR only | none | browser-only, weekday-only, defer |
+  | Torfaen | iTouchVision AES JSON, dated per-address | client-side only (use JSON) | bespoke httpx port, no Selenium |
 - **Broken-but-wired triage:** one retry, then classify — slow-503 (site
   down, wait), fast-503 (block, consider `curl_cffi` flag), partial
   (stale UPRN — resample via `_sample_uprns_for_lad`), 422 (site-side
   validation or a dead finder like Calderdale's notice page — read the
   council page before resampling).
 - **Port debt (our code, fix first):** North Devon, Three Rivers.
+- **Probed, port confirmed, not built:** Kensington and Chelsea `E09000020`
+  (ASP.NET street form), West Devon `E07000047` (FCC JSON backend, sibling
+  template exists). Both still serve deeplink-shaped from their existing
+  `url`/`govuk_url` until ported.
 - **Zero-signal (wired, zero test rows):** Antrim, Dartford, South Staffs
   — probe before building (Bridgend pattern: upstream fixtures beat
   resampling; ONS samples can return councils-unknown UPRNs).
 - **Orphan noise:** failing scraper files with no LAD wired (e.g.
   Hillingdon-HACS while the port passes) — ignore unless wired.
+- **Badge vs `working` disagree (pre-existing, 2026-09-04):** the badge says
+  334/341 while `annotate_lad_working` says 331 working, because
+  `scripts/generate_sankey.py:56` counts a council with *no* test rows as
+  passing (`results is None or results["pass"] > 0`) — the zero-signal
+  councils. Pick one definition; untested is not passing.
 
 **Settled pattern (first use 2026-09-03, calendar placeholders):**
 unwire + blocklist in `unwired_lads`, strip in `sync_all` post-merge and in

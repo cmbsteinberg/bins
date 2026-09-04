@@ -55,7 +55,7 @@ def _icon(waste_type: str) -> str:
     return "mdi:trash-can"
 
 
-def _run_lookup(s: _CurlCffiClient, sid: str, lookup_id: str, payload: dict) -> dict:
+async def _run_lookup(s: _CurlCffiClient, sid: str, lookup_id: str, payload: dict) -> dict:
     ts = time_ns() // 1_000_000
     url = (
         f"{BASE_URL}/apibroker/runLookup"
@@ -63,7 +63,7 @@ def _run_lookup(s: _CurlCffiClient, sid: str, lookup_id: str, payload: dict) -> 
         f"&getOnlyTokens=undefined&log_id=&app_name=AF-Renderer::Self"
         f"&_={ts}&sid={sid}"
     )
-    r = s.post(url, headers=HEADERS, json=payload, timeout=30)
+    r = await s.post(url, headers=HEADERS, json=payload, timeout=30)
     r.raise_for_status()
     return r.json()
 
@@ -88,11 +88,11 @@ class Source:
 
         # 1. Init session cookies
         ts = time_ns() // 1_000_000
-        await s.get(
+        (await s.get(
             f"{BASE_URL}/apibroker/domain/my.kirklees.gov.uk?_={ts}",
             headers=HEADERS,
             timeout=30,
-        ).raise_for_status()
+        )).raise_for_status()
 
         # 2. Obtain auth-session SID
         auth_url = (
@@ -107,7 +107,7 @@ class Source:
             raise ValueError("Kirklees API: failed to obtain session ID")
 
         # 3. Postcode lookup — validate the UPRN is at this postcode
-        addr_data = _run_lookup(
+        addr_data = await _run_lookup(
             s,
             sid,
             LOOKUP_ADDRESS,
@@ -170,7 +170,7 @@ class Source:
         }
 
         # 5. Get GovDeliveryCategorye for this property
-        prop_data = _run_lookup(
+        prop_data = await _run_lookup(
             s,
             sid,
             LOOKUP_PROP_TYPE,
@@ -199,7 +199,7 @@ class Source:
         search_section["PropertyType"] = {"value": prop_type}
 
         # 6. Set session validatedUPRN token
-        _run_lookup(
+        await _run_lookup(
             s,
             sid,
             LOOKUP_UPRN_VALID,
@@ -214,7 +214,7 @@ class Source:
         from_date = (today - timedelta(days=7)).strftime("%d/%m/%Y")
         to_date = (today + timedelta(days=28)).strftime("%d/%m/%Y")
 
-        col_data = _run_lookup(
+        col_data = await _run_lookup(
             s,
             sid,
             LOOKUP_COLLECTIONS,

@@ -264,11 +264,22 @@ def compose() -> dict[str, dict]:
     # Deliberately unwired LADs (placeholder scrapers that can never return
     # real data). Stripped here so any sync output re-wiring them is settled
     # back to null at composition time; the reason ships as "status".
-    from pipeline.shared import load_unwired_lads  # noqa: PLC0415
+    from pipeline.shared import load_deeplink_urls, load_unwired_lads  # noqa: PLC0415
 
     unwired = load_unwired_lads()
     for code in unwired:
         scrapers.pop(code, None)
+
+    # Unwired LADs whose default deeplink target (GOV.UK) is dead or wrong.
+    # A wired scraper's own url always wins, so an override on a wired code is
+    # inert — worth saying out loud rather than leaving it to rot.
+    deeplink_urls = load_deeplink_urls()
+    inert = sorted(code for code in deeplink_urls if scrapers.get(code, {}).get("url"))
+    if inert:
+        logger.warning(
+            "deeplink_urls override(s) ignored — these LADs are wired: %s",
+            ", ".join(inert),
+        )
 
     previous = (
         json.loads(LAD_LOOKUP_PATH.read_text()) if LAD_LOOKUP_PATH.exists() else {}
@@ -280,7 +291,7 @@ def compose() -> dict[str, dict]:
         record = {
             "name": entry["name"],
             "scraper_id": scraper.get("scraper_id"),
-            "url": scraper.get("url"),
+            "url": scraper.get("url") or deeplink_urls.get(code),
             "govuk_url": entry["govuk_url"],
         }
         if code in unwired:

@@ -53,8 +53,14 @@ class Source:
         # Append the current year, and then check to see if the date is in the past.
         # If it is, increment the year by 1.
         today: date = datetime.now().date()
+        s = d.strip()
+        try:
+            # Already carries a year (today/tomorrow branches, "14 April 2025").
+            return datetime.strptime(s, "%d %B %Y").date()
+        except ValueError:
+            pass
         year: int = today.year
-        dt: date = datetime.strptime(f"{d} {year!s}", "%d %B %Y").date()
+        dt: date = datetime.strptime(f"{s} {year!s}", "%d %B %Y").date()
         if (dt - today) < timedelta(days=-31):
             dt = dt.replace(year=dt.year + 1)
         return dt
@@ -133,8 +139,8 @@ class Source:
 
         action = urljoin(str(response.url), form.get("action") or str(response.url))
         if method == "get":
-            return request(action, params=payload)
-        return request(action, data=payload)
+            return await request(action, params=payload)
+        return await request(action, data=payload)
 
     async def fetch(self) -> list[Collection]:
         s = _CurlCffiClient(follow_redirects=True)

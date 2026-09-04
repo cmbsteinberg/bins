@@ -155,3 +155,14 @@ def load_unwired_lads() -> dict[str, str]:
     lad_lookup.json as the entry's "status".
     """
     return load_lad_overrides().get("unwired_lads", {})
+
+
+def load_deeplink_urls() -> dict[str, str]:
+    """LAD code -> council bin page to deeplink to, overriding the composed url.
+
+    Unwired LADs deeplink to their GOV.UK `govuk_url` by default, which is
+    sometimes dead (Fylde's `/refuse` 404s after a portal redesign). An entry
+    here replaces the entry's "url" at compose time, so api/services/deeplinks
+    prefers it over GOV.UK. Only add a code whose default target is wrong.
+    """
+    return load_lad_overrides().get("deeplink_urls", {})

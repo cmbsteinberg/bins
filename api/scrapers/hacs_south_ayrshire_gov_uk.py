@@ -4,7 +4,7 @@ import re
 from datetime import date, datetime, timedelta, timezone
 from urllib.parse import parse_qs, urlparse
 
-import httpx
+from api.compat.curl_cffi_fallback import AsyncClient as _CurlCffiClient
 from bs4 import BeautifulSoup
 
 from api.compat.hacs import Collection, Icons  # type: ignore[attr-defined]
@@ -34,7 +34,7 @@ class Source:
         self._uprn = str(uprn)
 
     async def fetch(self) -> list[Collection]:
-        session = httpx.AsyncClient(follow_redirects=True)
+        session = _CurlCffiClient(follow_redirects=True)
 
         r = await session.get(COLLECTION_PAGE_URL, timeout=30)
         r.raise_for_status()

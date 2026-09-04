@@ -3,8 +3,7 @@ import datetime
 import json
 import re
 
-import httpx
-
+from api.compat.curl_cffi_fallback import AsyncClient as _CurlCffiClient
 from api.compat.hacs import Collection, Icons  # type: ignore[attr-defined]
 from api.compat.hacs.exceptions import SourceArgumentNotFound
 
@@ -55,7 +54,7 @@ class Source:
         self._uprn = str(uprn)
 
     async def fetch(self) -> list[Collection]:
-        session = httpx.AsyncClient(follow_redirects=True)
+        session = _CurlCffiClient(follow_redirects=True)
 
         # Step 1: GET the page to extract form prefix and session tokens
         r = await session.get(_PAGE_URL, timeout=30)

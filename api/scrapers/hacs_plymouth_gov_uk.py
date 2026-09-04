@@ -55,7 +55,10 @@ class Source:
                 }
             },
         )
-        return list(result["integration"]["transformed"]["rows_data"].values())
+        rows_data = result["integration"]["transformed"]["rows_data"]
+        if isinstance(rows_data, dict):
+            return list(rows_data.values())
+        return list(rows_data)
 
     async def fetch(self) -> list[Collection]:
         session = httpx.AsyncClient(follow_redirects=True)

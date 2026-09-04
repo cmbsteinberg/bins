@@ -97,8 +97,12 @@ one more probe for the data endpoint).
   port-vs-deeplink probe per the triage rule; Brighton is the deeplink
   reference case (spec done, `{deeplink}` response implementation open).
 - **Settled placeholders (unwired, blocklisted in `unwired_lads`):**
-  re-wire only on real per-council feeds; the generic calendar adapter
-  needs a `?url=` allowlist design first (SSRF surface).
+  test-fixture only — the shared UKBCD Google-calendar dummy
+  (`api/services/scraper_registry.py:19`, 2026-09-03: identical bins for
+  all, `/lookup` 503d), not Selenium in general. Re-wire only on real
+  per-council feeds; the generic calendar adapter needs a `?url=`
+  allowlist design first (SSRF surface). Selenium-backed councils with
+  real entries (Halton, Brighton, etc.) are build backlog, not settled.
 - **Broken-but-wired triage:** one retry, then classify — slow-503 (site
   down, wait), fast-503 (block, consider `curl_cffi` flag), partial
   (stale UPRN — resample via `_sample_uprns_for_lad`), 422 (site-side

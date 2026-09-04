@@ -23,6 +23,7 @@ Each file follows the HACS scraper pattern (`Source` class, `TITLE`, `URL`, `TES
 | File | Council | Pattern |
 |------|---------|---------|
 | `argyll_and_bute_council.py` | Argyll & Bute | Drupal form POST (postcode → UPRN → HTML table) |
+| `antrim_and_newtownabbey_council.py` | Antrim & Newtownabbey | Plain GET with address `Id` → `div.feature-box.bins` dates (id-path only; Bryson UPRN path dead) |
 | `northumberland_council.py` | Northumberland | CSRF form (postcode → UPRN → HTML table) |
 | `torbay_council.py` | Torbay | ServiceBuilder form (renderform + UPRN → HTML) |
 | `wychavon_district_council.py` | Wychavon | Address lookup API + form POST → HTML table |

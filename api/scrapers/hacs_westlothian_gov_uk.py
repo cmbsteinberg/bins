@@ -78,14 +78,16 @@ class Source:
         if ical_content is not None:
             if ical_content.get("error") is not None:
                 raise Exception(ical_content.get("error"))
-            # iCal data returned isn't compatible with _ics.convert because it's UNTIL values
-            # don't specify a timezone, but the ICS module asks for "timezone-aware" parsing.
-            # So, change the UNTILs to be Z because they're date only and are UK-based.
+            # iCal data returned isn't compatible with _ics.convert because its UNTIL values
+            # are bare dates (UNTIL=YYYYMMDD) while DTSTART is a naive datetime.
+            # Normalise UNTIL to a naive datetime (matching DTSTART) and strip any
+            # trailing Z (a UTC UNTIL with naive DTSTART is rejected by icalevents).
             ics_data = re.sub(
-                r"UNTIL=([0-9]+)",
-                lambda m: "UNTIL=" + m.group(1) + "Z",
+                r"UNTIL=(\d{8})(?![T\d])",
+                r"UNTIL=\1T000000",
                 ical_content.get("value"),
             )
+            ics_data = re.sub(r"UNTIL=(\d{8}T\d{6})Z", r"UNTIL=\1", ics_data)
             dates = self._ics.convert(ics_data)
             entries = []
             for d in dates:

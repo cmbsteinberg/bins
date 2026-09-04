@@ -86,7 +86,7 @@ class Source:
 
         entries = []
 
-        jwt = get_token()
+        jwt = await get_token()
         client = httpx.AsyncClient(follow_redirects=True)
         headers = get_headers()
         headers.update({"Authorization": f"Bearer {jwt}"})
